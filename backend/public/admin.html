@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM WhatsApp - Painel Administrativo</title>
+  <!-- Google Fonts - Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --bg-dark: #0a0a0e;
+      --bg-card: rgba(18, 18, 26, 0.7);
+      --bg-input: rgba(30, 30, 42, 0.6);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --primary: #8b5cf6;
+      --primary-hover: #7c3aed;
+      --secondary: #ec4899;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --gradient-neon: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+      --gradient-success: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      --gradient-danger: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+      --shadow-premium: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 40%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Layout Principal */
+    header {
+      background: rgba(10, 10, 14, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.5rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .logo-icon {
+      background: var(--gradient-neon);
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: white;
+      box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+    }
+
+    .logo-text h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: var(--gradient-neon);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-text p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: var(--success);
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .status-badge i {
+      animation: pulse 2rem infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.7; }
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 2rem;
+    }
+
+    @media (max-width: 1024px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Filtros e Controle */
+    .dashboard-header {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .filter-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 0.3rem;
+      border-radius: 12px;
+      display: flex;
+      gap: 0.3rem;
+      backdrop-filter: blur(5px);
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover {
+      color: var(--text-main);
+    }
+
+    .filter-btn.active {
+      background: var(--gradient-neon);
+      color: white;
+      box-shadow: 0 4px 10px rgba(139, 92, 246, 0.2);
+    }
+
+    /* Cards de Estatísticas */
+    .stats-grid {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-premium);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(139, 92, 246, 0.2);
+    }
+
+    .stat-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: white;
+    }
+
+    .stat-icon.total { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); }
+    .stat-icon.sucesso { background: var(--gradient-success); }
+    .stat-icon.pendente { background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%); }
+    .stat-icon.falha { background: var(--gradient-danger); }
+
+    .stat-info h3 {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-info p {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    /* Conteúdo Principal */
+    .content-area {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text-main);
+    }
+
+    .section-title i {
+      color: var(--primary);
+    }
+
+    /* Lista de Atendentes */
+    .atendentes-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-premium);
+    }
+
+    .atendentes-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .atendente-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: 14px;
+      padding: 1.2rem;
+      display: grid;
+      grid-template-columns: 60px 1fr 140px 140px 120px;
+      align-items: center;
+      gap: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .atendente-item {
+        grid-template-columns: 50px 1fr;
+        gap: 0.8rem;
+      }
+      .atendente-stats-inline {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+      }
+    }
+
+    .atendente-item:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(139, 92, 246, 0.15);
+      transform: translateX(3px);
+    }
+
+    .atendente-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--gradient-neon);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      box-shadow: 0 4px 10px rgba(139, 92, 246, 0.2);
+    }
+
+    .atendente-info h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .atendente-info p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .badge-role {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      padding: 0.15rem 0.4rem;
+      border-radius: 6px;
+      margin-left: 0.4rem;
+      font-weight: 600;
+      vertical-align: middle;
+    }
+
+    .badge-role.admin {
+      background: rgba(236, 72, 153, 0.15);
+      color: var(--secondary);
+      border: 1px solid rgba(236, 72, 153, 0.25);
+    }
+
+    .badge-role.operador {
+      background: rgba(139, 92, 246, 0.15);
+      color: var(--primary);
+      border: 1px solid rgba(139, 92, 246, 0.25);
+    }
+
+    .atendente-num {
+      text-align: center;
+    }
+
+    .atendente-num label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 0.15rem;
+    }
+
+    .atendente-num span {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .atendente-num span.success { color: var(--success); }
+
+    .atendente-progress-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .atendente-progress-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .atendente-progress-info .pct {
+      color: var(--success);
+      font-weight: 700;
+    }
+
+    .progress-bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--gradient-success);
+      border-radius: 10px;
+      width: 0%;
+      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Formulário Lateral de Cadastro */
+    .sidebar-area {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .cadastro-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 1.8rem;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-premium);
+      position: sticky;
+      top: 110px;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-wrapper i {
+      position: absolute;
+      left: 1rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .form-control {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      padding: 0.8rem 1rem 0.8rem 2.6rem;
+      border-radius: 10px;
+      color: white;
+      font-family: inherit;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 10px rgba(139, 92, 246, 0.25);
+      background: rgba(30, 30, 42, 0.8);
+    }
+
+    select.form-control {
+      appearance: none;
+      cursor: pointer;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--gradient-neon);
+      border: none;
+      padding: 0.9rem;
+      color: white;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn-submit:hover {
+      box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    /* Avisos e Feedbacks */
+    .toast-container {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .toast {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      box-shadow: var(--shadow-premium);
+      transform: translateY(50px);
+      opacity: 0;
+      animation: slideIn 0.3s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      backdrop-filter: blur(10px);
+    }
+
+    @keyframes slideIn {
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .toast.success {
+      border-left: 4px solid var(--success);
+    }
+    .toast.success i { color: var(--success); }
+
+    .toast.error {
+      border-left: 4px solid var(--danger);
+    }
+    .toast.error i { color: var(--danger); }
+
+    /* Estilo de tabela vazia */
+    .empty-state {
+      padding: 3rem;
+      text-align: center;
+      color: var(--text-muted);
+    }
+    .empty-state i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: var(--gradient-neon);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <div class="logo-icon">
+        <i class="fa-brands fa-whatsapp"></i>
+      </div>
+      <div class="logo-text">
+        <h1>GP Premium</h1>
+        <p>Dashboard Administrativo</p>
+      </div>
+    </div>
+    
+    <div class="header-actions">
+      <div class="status-badge">
+        <i class="fa-solid fa-circle"></i>
+        <span id="socket-status">Conectado (Tempo Real)</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Filtros Superiores de Período -->
+    <div class="dashboard-header">
+      <h2>Métricas por Período</h2>
+      
+      <div class="filter-container">
+        <button class="filter-btn active" data-periodo="dia" onclick="alterarPeriodo(this)">Hoje</button>
+        <button class="filter-btn" data-periodo="semana" onclick="alterarPeriodo(this)">Semana</button>
+        <button class="filter-btn" data-periodo="mes" onclick="alterarPeriodo(this)">Mês</button>
+        <button class="filter-btn" data-periodo="ano" onclick="alterarPeriodo(this)">Ano</button>
+      </div>
+    </div>
+
+    <!-- Cards de Estatísticas Acumuladas -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon total">
+          <i class="fa-solid fa-calendar-days"></i>
+        </div>
+        <div class="stat-info">
+          <h3>Agendamentos</h3>
+          <p id="total-schedules">0</p>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon sucesso">
+          <i class="fa-solid fa-paper-plane"></i>
+        </div>
+        <div class="stat-info">
+          <h3>Enviados</h3>
+          <p id="total-sent" style="color: var(--success)">0</p>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon pendente">
+          <i class="fa-solid fa-clock"></i>
+        </div>
+        <div class="stat-info">
+          <h3>Pendentes</h3>
+          <p id="total-pending" style="color: var(--warning)">0</p>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon falha">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <div class="stat-info">
+          <h3>Falhados</h3>
+          <p id="total-failed" style="color: var(--danger)">0</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Área Esquerda: Tabela de Atendentes -->
+    <div class="content-area">
+      <div class="atendentes-card">
+        <div class="section-title">
+          <i class="fa-solid fa-users"></i>
+          <h3>Desempenho dos Atendentes</h3>
+        </div>
+        
+        <div class="atendentes-grid" id="atendentes-container">
+          <!-- Gerado dinamicamente -->
+          <div class="empty-state">
+            <i class="fa-solid fa-spinner fa-spin"></i>
+            <p>Carregando métricas de atendentes...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Área Direita: Cadastro de Usuário (Sticky) -->
+    <div class="sidebar-area">
+      <div class="cadastro-card">
+        <div class="section-title">
+          <i class="fa-solid fa-user-plus"></i>
+          <h3>Cadastrar Atendente</h3>
+        </div>
+        
+        <form id="cadastro-form" onsubmit="cadastrarUsuario(event)">
+          <div class="form-group">
+            <label for="cad-nome">Nome Completo</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" id="cad-nome" class="form-control" placeholder="Ex: Maicon Batn" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cad-email">E-mail de Login</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" id="cad-email" class="form-control" placeholder="Ex: vendedor@crm.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cad-senha">Senha de Acesso</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" id="cad-senha" class="form-control" placeholder="Senha" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cad-role">Nível de Permissão</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-shield-halved"></i>
+              <select id="cad-role" class="form-control" required style="padding-right: 2rem;">
+                <option value="operador">Operador (Atendente)</option>
+                <option value="admin">Administrador Master</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit" id="btn-cadastro-submit">
+            <i class="fa-solid fa-circle-check"></i>
+            Salvar Operador
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Carrega biblioteca Socket.io integrada no node -->
+  <script src="/socket.io/socket.io.js"></script>
+  
+  <script>
+    let periodoAtual = 'dia';
+    const socket = io();
+
+    // Notificações Toast
+    function showToast(mensagem, tipo = 'success') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = `toast ${tipo}`;
+      
+      const icone = tipo === 'success' ? 'fa-circle-check' : 'fa-triangle-exclamation';
+      
+      toast.innerHTML = `
+        <i class="fa-solid ${icone}"></i>
+        <span>${mensagem}</span>
+      `;
+      
+      container.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.style.animation = 'none';
+        toast.offsetHeight; /* Trigger reflow */
+        toast.style.transition = 'all 0.3s ease';
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(-20px)';
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    // Alterar o período selecionado e recarregar dados
+    function alterarPeriodo(btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      periodoAtual = btn.dataset.periodo;
+      carregarMetricas();
+    }
+
+    // Carrega métricas agregadas do backend e renderiza
+    async function carregarMetricas() {
+      try {
+        const res = await fetch(`/api/usuarios/metricas?periodo=${periodoAtual}`);
+        if (!res.ok) throw new Error('Falha ao obter métricas.');
+        
+        const metricas = await res.json();
+        renderizarPainel(metricas);
+      } catch (err) {
+        console.error(err);
+        showToast('Erro ao carregar dados dos atendentes.', 'error');
+      }
+    }
+
+    // Renderiza os dados nas estatísticas principais e na tabela
+    function renderizarPainel(metricas) {
+      const container = document.getElementById('atendentes-container');
+      
+      if (!Array.isArray(metricas) || metricas.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <i class="fa-solid fa-users-slash"></i>
+            <p>Nenhum atendente cadastrado ou com dados no período.</p>
+          </div>
+        `;
+        // Zera contadores
+        document.getElementById('total-schedules').innerText = '0';
+        document.getElementById('total-sent').innerText = '0';
+        document.getElementById('total-pending').innerText = '0';
+        document.getElementById('total-failed').innerText = '0';
+        return;
+      }
+
+      // Calcula totais globais
+      let globalTotal = 0;
+      let globalSent = 0;
+      let globalPending = 0;
+      let globalFailed = 0;
+
+      container.innerHTML = '';
+      
+      metricas.forEach(m => {
+        globalTotal += m.total;
+        globalSent += m.enviados;
+        globalPending += m.pendentes;
+        globalFailed += m.falhados;
+
+        // Iniciais para avatar
+        const iniciais = m.nome ? m.nome.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase() : 'OP';
+
+        const item = document.createElement('div');
+        item.className = 'atendente-item';
+        item.innerHTML = `
+          <div class="atendente-avatar">${iniciais}</div>
+          <div class="atendente-info">
+            <h4>${m.nome}<span class="badge-role ${m.role}">${m.role}</span></h4>
+            <p>${m.email}</p>
+          </div>
+          <div class="atendente-num">
+            <label>Agendamentos</label>
+            <span>${m.total}</span>
+          </div>
+          <div class="atendente-num">
+            <label>Enviados</label>
+            <span class="success">${m.enviados}</span>
+          </div>
+          <div class="atendente-progress-container">
+            <div class="atendente-progress-info">
+              <span>Conversão</span>
+              <span class="pct">${m.conversao}%</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: ${m.conversao}%"></div>
+            </div>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+
+      // Atualiza contadores globais com efeito animado rápido
+      document.getElementById('total-schedules').innerText = globalTotal;
+      document.getElementById('total-sent').innerText = globalSent;
+      document.getElementById('total-pending').innerText = globalPending;
+      document.getElementById('total-failed').innerText = globalFailed;
+    }
+
+    // Formulário de Cadastro de Novos Usuários
+    async function cadastrarUsuario(event) {
+      event.preventDefault();
+      
+      const btn = document.getElementById('btn-cadastro-submit');
+      const originalHtml = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Cadastrando...';
+
+      const nome = document.getElementById('cad-nome').value;
+      const email = document.getElementById('cad-email').value;
+      const senha = document.getElementById('cad-senha').value;
+      const role = document.getElementById('cad-role').value;
+
+      try {
+        const res = await fetch('/api/usuarios/cadastrar', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nome, email, senha, role })
+        });
+
+        const data = await res.json();
+        
+        if (res.ok) {
+          showToast(`Operador "${nome}" cadastrado com sucesso!`);
+          document.getElementById('cadastro-form').reset();
+          // Atualiza as métricas da tela
+          carregarMetricas();
+        } else {
+          showToast(data.error || 'Erro ao realizar cadastro.', 'error');
+        }
+      } catch (err) {
+        console.error(err);
+        showToast('Erro de comunicação com o servidor.', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalHtml;
+      }
+    }
+
+    // Socket.io - Atualização em tempo real impecável
+    socket.on('connect', () => {
+      document.getElementById('socket-status').innerText = 'Conectado (Tempo Real)';
+      document.querySelector('.status-badge').style.background = 'rgba(16, 185, 129, 0.1)';
+      document.querySelector('.status-badge').style.color = 'var(--success)';
+      document.querySelector('.status-badge').style.borderColor = 'rgba(16, 185, 129, 0.2)';
+    });
+
+    socket.on('disconnect', () => {
+      document.getElementById('socket-status').innerText = 'Desconectado - Tentando conectar...';
+      document.querySelector('.status-badge').style.background = 'rgba(239, 68, 68, 0.1)';
+      document.querySelector('.status-badge').style.color = 'var(--danger)';
+      document.querySelector('.status-badge').style.borderColor = 'rgba(239, 68, 68, 0.2)';
+    });
+
+    // Eventos do CRM que disparam atualização automática
+    socket.on('AGENDAMENTO_CRIADO', () => {
+      console.log('[Socket] Novo agendamento criado recebido! Atualizando métricas...');
+      carregarMetricas();
+    });
+
+    socket.on('STATUS_ATUALIZADO', () => {
+      console.log('[Socket] Status de agendamento alterado recebido! Atualizando métricas...');
+      carregarMetricas();
+    });
+
+    socket.on('AGENDAMENTO_EXCLUIDO', () => {
+      console.log('[Socket] Agendamento excluído recebido! Atualizando métricas...');
+      carregarMetricas();
+    });
+
+    socket.on('AGENDAMENTO_ATUALIZADO', () => {
+      console.log('[Socket] Agendamento editado recebido! Atualizando métricas...');
+      carregarMetricas();
+    });
+
+    // Carga inicial
+    carregarMetricas();
+  </script>
+</body>
+</html>

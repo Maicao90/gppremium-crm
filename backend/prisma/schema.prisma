@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Usuario {
+  id           String        @id @default(uuid())
+  nome         String
+  email        String        @unique @default("")
+  senha        String        @default("")
+  role         String        @default("operador") // admin, operador
+  agendamentos Agendamento[]
+  criadoEm     DateTime      @default(now())
+}
+
+model Agendamento {
+  id                    String   @id @default(uuid())
+  cliente               String
+  numero                String
+  mensagem              String
+  enviarEm              DateTime
+  status                String   @default("pendente") // pendente, enviado, cancelado, falhou, cliente_respondeu
+  cancelarSeResponder   Boolean  @default(true)
+  
+  criadoPorId           String
+  criadoPor             Usuario  @relation(fields: [criadoPorId], references: [id])
+  
+  criadoEm              DateTime @default(now())
+  atualizadoEm          DateTime @updatedAt
+}
+
+model Contato {
+  id           String   @id @default(uuid())
+  nome         String
+  numero       String   @unique
+  criadoEm     DateTime @default(now())
+  atualizadoEm DateTime @updatedAt
+}
+
+model Configuracao {
+  id               String   @id @default("global")
+  expedienteAtivo  Boolean  @default(false)
+  expedienteInicio String   @default("08:00")
+  expedienteFim    String   @default("18:00")
+  expedienteDias   String   @default("1,2,3,4,5") // Segunda a Sexta (1,2,3,4,5)
+  atualizadoEm     DateTime @updatedAt
+}
+
+
