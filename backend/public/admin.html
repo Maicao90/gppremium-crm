@@ -4,19 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CRM WhatsApp - Painel Administrativo</title>
-  <!-- Google Fonts - Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- FontAwesome para ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <style>
     :root {
       --bg-dark: #0a0a0e;
-      --bg-card: rgba(18, 18, 26, 0.7);
+      --bg-sidebar: #0d0d14;
+      --bg-card: rgba(18, 18, 26, 0.75);
       --bg-input: rgba(30, 30, 42, 0.6);
-      --border-color: rgba(255, 255, 255, 0.08);
+      --border-color: rgba(255, 255, 255, 0.07);
       --primary: #8b5cf6;
       --primary-hover: #7c3aed;
       --secondary: #ec4899;
@@ -28,724 +27,952 @@
       --gradient-neon: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
       --gradient-success: linear-gradient(135deg, #059669 0%, #10b981 100%);
       --gradient-danger: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
-      --shadow-premium: 0 10px 30px rgba(0, 0, 0, 0.5);
+      --shadow-premium: 0 10px 30px rgba(0,0,0,0.5);
+      --sidebar-w: 240px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Outfit', sans-serif;
       background-color: var(--bg-dark);
-      background-image: 
-        radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 40%);
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(139,92,246,0.07) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(236,72,153,0.07) 0%, transparent 40%);
       color: var(--text-main);
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      overflow-x: hidden;
     }
 
-    /* Layout Principal */
-    header {
-      background: rgba(10, 10, 14, 0.8);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-color);
-      padding: 1.5rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: var(--sidebar-w);
+      min-height: 100vh;
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border-color);
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      position: fixed;
+      left: 0; top: 0; bottom: 0;
+      z-index: 200;
     }
 
-    .logo-container {
+    .sidebar-logo {
+      padding: 1.5rem 1.4rem;
+      border-bottom: 1px solid var(--border-color);
       display: flex;
       align-items: center;
       gap: 0.8rem;
     }
 
-    .logo-icon {
+    .sidebar-logo-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
       background: var(--gradient-neon);
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      color: white;
-      box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: white;
+      box-shadow: 0 0 14px rgba(139,92,246,0.4);
+      flex-shrink: 0;
     }
 
-    .logo-text h1 {
-      font-size: 1.5rem;
-      font-weight: 700;
+    .sidebar-logo h1 {
+      font-size: 1.15rem; font-weight: 700;
       background: var(--gradient-neon);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      letter-spacing: -0.5px;
     }
 
-    .logo-text p {
-      font-size: 0.75rem;
-      color: var(--text-muted);
+    .sidebar-logo p {
+      font-size: 0.68rem; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.8px;
+    }
+
+    .sidebar-nav {
+      flex: 1;
+      padding: 1rem 0.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .nav-section-label {
+      font-size: 0.65rem;
+      color: rgba(156,163,175,0.5);
       text-transform: uppercase;
       letter-spacing: 1px;
+      font-weight: 600;
+      padding: 0.6rem 0.6rem 0.3rem;
+      margin-top: 0.5rem;
     }
 
-    .header-actions {
+    .nav-item {
       display: flex;
       align-items: center;
-      gap: 1rem;
-    }
-
-    .status-badge {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.2);
-      color: var(--success);
-      padding: 0.5rem 1rem;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    .status-badge i {
-      animation: pulse 2rem infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.7; }
-      50% { transform: scale(1.2); opacity: 1; }
-      100% { transform: scale(1); opacity: 0.7; }
-    }
-
-    main {
-      flex: 1;
-      padding: 2rem;
-      max-width: 1400px;
-      width: 100%;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 2rem;
-    }
-
-    @media (max-width: 1024px) {
-      main {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Filtros e Controle */
-    .dashboard-header {
-      grid-column: 1 / -1;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.5rem;
-    }
-
-    .filter-container {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      padding: 0.3rem;
-      border-radius: 12px;
-      display: flex;
-      gap: 0.3rem;
-      backdrop-filter: blur(5px);
-    }
-
-    .filter-btn {
-      background: transparent;
-      border: none;
-      color: var(--text-muted);
-      padding: 0.5rem 1.2rem;
-      border-radius: 8px;
+      gap: 0.75rem;
+      padding: 0.7rem 0.9rem;
+      border-radius: 10px;
       cursor: pointer;
-      font-family: inherit;
+      transition: all 0.25s ease;
+      color: var(--text-muted);
       font-size: 0.9rem;
       font-weight: 500;
-      transition: all 0.3s ease;
+      border: 1px solid transparent;
+      user-select: none;
     }
 
-    .filter-btn:hover {
+    .nav-item i { width: 18px; text-align: center; font-size: 0.95rem; }
+
+    .nav-item:hover {
+      background: rgba(255,255,255,0.04);
       color: var(--text-main);
     }
 
-    .filter-btn.active {
-      background: var(--gradient-neon);
-      color: white;
-      box-shadow: 0 4px 10px rgba(139, 92, 246, 0.2);
+    .nav-item.active {
+      background: rgba(139,92,246,0.12);
+      border-color: rgba(139,92,246,0.2);
+      color: var(--primary);
     }
 
-    /* Cards de Estatísticas */
+    .nav-item.active i { color: var(--primary); }
+
+    .sidebar-footer {
+      padding: 1rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .cloud-mini-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      transition: all 0.4s;
+    }
+    .cloud-mini-badge.online  { background: rgba(16,185,129,0.1);  border:1px solid rgba(16,185,129,0.2);  color: var(--success); }
+    .cloud-mini-badge.offline { background: rgba(239,68,68,0.1);   border:1px solid rgba(239,68,68,0.2);   color: var(--danger);  }
+    .cloud-mini-badge.checking{ background: rgba(245,158,11,0.1);  border:1px solid rgba(245,158,11,0.2);  color: var(--warning); }
+    .cloud-mini-badge .dot { width:7px; height:7px; border-radius:50%; background:currentColor; flex-shrink:0; }
+
+    /* ── LAYOUT PRINCIPAL ── */
+    .main-wrapper {
+      margin-left: var(--sidebar-w);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: rgba(10,10,14,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0; z-index: 100;
+    }
+
+    .header-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .header-title span { color: var(--text-muted); font-weight: 400; font-size: 0.9rem; margin-left: 0.5rem; }
+
+    .header-actions { display: flex; align-items: center; gap: 0.8rem; }
+
+    .status-badge {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: rgba(16,185,129,0.1);
+      border: 1px solid rgba(16,185,129,0.2);
+      color: var(--success);
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+      font-size: 0.82rem; font-weight: 500;
+    }
+
+    .status-badge i { animation: pulseDot 2s infinite; }
+
+    @keyframes pulseDot {
+      0%,100% { transform: scale(1); opacity: 0.7; }
+      50%      { transform: scale(1.3); opacity: 1; }
+    }
+
+    /* ── PÁGINAS / SEÇÕES ── */
+    .page { display: none; padding: 2rem; animation: fadeIn 0.3s ease; }
+    .page.active { display: block; }
+
+    @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+
+    /* ── GRID DASHBOARD ── */
     .stats-grid {
-      grid-column: 1 / -1;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2rem;
     }
 
     .stat-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 16px;
-      padding: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
+      padding: 1.4rem;
+      display: flex; align-items: center; gap: 1rem;
       backdrop-filter: blur(10px);
       box-shadow: var(--shadow-premium);
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      transition: transform 0.3s, border-color 0.3s;
     }
-
-    .stat-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(139, 92, 246, 0.2);
-    }
+    .stat-card:hover { transform: translateY(-3px); border-color: rgba(139,92,246,0.2); }
 
     .stat-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      color: white;
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; color: white; flex-shrink: 0;
     }
-
-    .stat-icon.total { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); }
+    .stat-icon.total   { background: linear-gradient(135deg,#6366f1,#a855f7); }
     .stat-icon.sucesso { background: var(--gradient-success); }
-    .stat-icon.pendente { background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%); }
-    .stat-icon.falha { background: var(--gradient-danger); }
+    .stat-icon.pendente{ background: linear-gradient(135deg,#d97706,#f59e0b); }
+    .stat-icon.falha   { background: var(--gradient-danger); }
 
-    .stat-info h3 {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.2rem;
-    }
+    .stat-info h3 { font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:0.15rem; }
+    .stat-info p  { font-size:1.7rem; font-weight:700; }
 
-    .stat-info p {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    /* Conteúdo Principal */
-    .content-area {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
+    /* ── PERIOD FILTER ── */
+    .section-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 1.5rem;
     }
 
     .section-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: var(--text-main);
+      font-size: 1.05rem; font-weight: 600;
+      display: flex; align-items: center; gap: 0.5rem;
     }
+    .section-title i { color: var(--primary); }
 
-    .section-title i {
-      color: var(--primary);
-    }
-
-    /* Lista de Atendentes */
-    .atendentes-card {
+    .filter-container {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 2rem;
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow-premium);
-    }
-
-    .atendentes-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-
-    .atendente-item {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.03);
-      border-radius: 14px;
-      padding: 1.2rem;
-      display: grid;
-      grid-template-columns: 60px 1fr 140px 140px 120px;
-      align-items: center;
-      gap: 1rem;
-      transition: all 0.3s ease;
-    }
-
-    @media (max-width: 768px) {
-      .atendente-item {
-        grid-template-columns: 50px 1fr;
-        gap: 0.8rem;
-      }
-      .atendente-stats-inline {
-        grid-column: 1 / -1;
-        display: flex;
-        justify-content: space-between;
-        margin-top: 0.5rem;
-      }
-    }
-
-    .atendente-item:hover {
-      background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(139, 92, 246, 0.15);
-      transform: translateX(3px);
-    }
-
-    .atendente-avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--gradient-neon);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: white;
-      box-shadow: 0 4px 10px rgba(139, 92, 246, 0.2);
-    }
-
-    .atendente-info h4 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 0.15rem;
-    }
-
-    .atendente-info p {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .badge-role {
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      padding: 0.15rem 0.4rem;
-      border-radius: 6px;
-      margin-left: 0.4rem;
-      font-weight: 600;
-      vertical-align: middle;
-    }
-
-    .badge-role.admin {
-      background: rgba(236, 72, 153, 0.15);
-      color: var(--secondary);
-      border: 1px solid rgba(236, 72, 153, 0.25);
-    }
-
-    .badge-role.operador {
-      background: rgba(139, 92, 246, 0.15);
-      color: var(--primary);
-      border: 1px solid rgba(139, 92, 246, 0.25);
-    }
-
-    .atendente-num {
-      text-align: center;
-    }
-
-    .atendente-num label {
-      display: block;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      margin-bottom: 0.15rem;
-    }
-
-    .atendente-num span {
-      font-size: 1.2rem;
-      font-weight: 700;
-    }
-
-    .atendente-num span.success { color: var(--success); }
-
-    .atendente-progress-container {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-    }
-
-    .atendente-progress-info {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      font-weight: 500;
-    }
-
-    .atendente-progress-info .pct {
-      color: var(--success);
-      font-weight: 700;
-    }
-
-    .progress-bar-bg {
-      height: 8px;
-      background: rgba(255, 255, 255, 0.05);
+      padding: 0.25rem;
       border-radius: 10px;
-      overflow: hidden;
-      position: relative;
+      display: flex; gap: 0.2rem;
     }
 
-    .progress-bar-fill {
-      height: 100%;
-      background: var(--gradient-success);
-      border-radius: 10px;
-      width: 0%;
-      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    .filter-btn {
+      background: transparent; border: none;
+      color: var(--text-muted);
+      padding: 0.4rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit; font-size: 0.85rem; font-weight: 500;
+      transition: all 0.25s;
     }
+    .filter-btn:hover { color: var(--text-main); }
+    .filter-btn.active { background: var(--gradient-neon); color: white; box-shadow:0 3px 8px rgba(139,92,246,0.25); }
 
-    /* Formulário Lateral de Cadastro */
-    .sidebar-area {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .cadastro-card {
+    /* ── ATENDENTES ── */
+    .card-box {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 20px;
       padding: 1.8rem;
       backdrop-filter: blur(10px);
       box-shadow: var(--shadow-premium);
-      position: sticky;
-      top: 110px;
     }
 
-    .form-group {
-      margin-bottom: 1.2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
+    .atendentes-grid { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.2rem; }
 
-    .form-group label {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .input-wrapper {
-      position: relative;
-      display: flex;
+    .atendente-item {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.03);
+      border-radius: 14px;
+      padding: 1.1rem 1.3rem;
+      display: grid;
+      grid-template-columns: 52px 1fr 130px 130px;
       align-items: center;
+      gap: 1rem;
+      transition: all 0.3s;
+    }
+    .atendente-item:hover { background:rgba(255,255,255,0.04); border-color:rgba(139,92,246,0.15); transform:translateX(3px); }
+
+    .atendente-avatar {
+      width: 46px; height: 46px; border-radius: 50%;
+      background: var(--gradient-neon);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1rem; color: white;
+      box-shadow: 0 3px 8px rgba(139,92,246,0.2);
     }
 
-    .input-wrapper i {
-      position: absolute;
-      left: 1rem;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
+    .atendente-info h4 { font-size:1rem; font-weight:600; margin-bottom:0.1rem; }
+    .atendente-info p  { font-size:0.78rem; color:var(--text-muted); }
+
+    .badge-role { font-size:0.62rem; text-transform:uppercase; padding:0.12rem 0.4rem; border-radius:5px; margin-left:0.4rem; font-weight:600; vertical-align:middle; }
+    .badge-role.admin   { background:rgba(236,72,153,0.15); color:var(--secondary); border:1px solid rgba(236,72,153,0.25); }
+    .badge-role.operador{ background:rgba(139,92,246,0.15); color:var(--primary);   border:1px solid rgba(139,92,246,0.25); }
+
+    .atendente-num { text-align:center; }
+    .atendente-num label { display:block; font-size:0.72rem; color:var(--text-muted); text-transform:uppercase; margin-bottom:0.1rem; }
+    .atendente-num span  { font-size:1.15rem; font-weight:700; }
+    .atendente-num span.success { color: var(--success); }
+
+    .progress-wrap { display:flex; flex-direction:column; gap:0.3rem; }
+    .progress-info { display:flex; justify-content:space-between; font-size:0.75rem; font-weight:500; }
+    .progress-info .pct { color:var(--success); font-weight:700; }
+    .progress-bg   { height:7px; background:rgba(255,255,255,0.05); border-radius:10px; overflow:hidden; }
+    .progress-fill { height:100%; background:var(--gradient-success); border-radius:10px; width:0; transition:width 0.8s cubic-bezier(.4,0,.2,1); }
+
+    /* ── CADASTRO ── */
+    .two-col { display: grid; grid-template-columns: 1fr 360px; gap: 2rem; align-items: start; }
+
+    .form-group { margin-bottom: 1.1rem; display:flex; flex-direction:column; gap:0.35rem; }
+    .form-group label { font-size:0.83rem; color:var(--text-muted); font-weight:500; }
+
+    .input-wrapper { position:relative; display:flex; align-items:center; }
+    .input-wrapper i { position:absolute; left:1rem; color:var(--text-muted); font-size:0.9rem; }
 
     .form-control {
-      width: 100%;
-      background: var(--bg-input);
-      border: 1px solid var(--border-color);
-      padding: 0.8rem 1rem 0.8rem 2.6rem;
-      border-radius: 10px;
-      color: white;
-      font-family: inherit;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
+      width:100%; background:var(--bg-input);
+      border:1px solid var(--border-color);
+      padding:0.75rem 1rem 0.75rem 2.5rem;
+      border-radius:10px; color:white;
+      font-family:inherit; font-size:0.88rem;
+      transition: all 0.3s;
     }
-
-    .form-control:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 10px rgba(139, 92, 246, 0.25);
-      background: rgba(30, 30, 42, 0.8);
-    }
-
-    select.form-control {
-      appearance: none;
-      cursor: pointer;
-    }
+    .form-control:focus { outline:none; border-color:var(--primary); box-shadow:0 0 10px rgba(139,92,246,0.2); }
+    select.form-control { appearance:none; cursor:pointer; }
 
     .btn-submit {
-      width: 100%;
-      background: var(--gradient-neon);
-      border: none;
-      padding: 0.9rem;
-      color: white;
-      font-family: inherit;
-      font-size: 0.95rem;
-      font-weight: 600;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
-      transition: all 0.3s ease;
+      width:100%; background:var(--gradient-neon); border:none;
+      padding:0.85rem; color:white;
+      font-family:inherit; font-size:0.9rem; font-weight:600;
+      border-radius:10px; cursor:pointer;
+      box-shadow:0 4px 14px rgba(139,92,246,0.3);
+      transition: all 0.3s;
+      display:flex; align-items:center; justify-content:center; gap:0.5rem;
+    }
+    .btn-submit:hover { box-shadow:0 6px 20px rgba(139,92,246,0.5); transform:translateY(-1px); }
+
+    /* ── BANCO DE DADOS ── */
+    .db-hero {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
+      justify-content: space-between;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-premium);
+      gap: 2rem;
+      flex-wrap: wrap;
     }
 
-    .btn-submit:hover {
-      box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
-      transform: translateY(-1px);
+    .db-hero-text h2 { font-size:1.3rem; font-weight:700; margin-bottom:0.5rem; }
+    .db-hero-text p  { font-size:0.87rem; color:var(--text-muted); max-width:520px; line-height:1.6; }
+
+    .db-status-large {
+      display: inline-flex; align-items:center; gap:0.7rem;
+      padding: 0.6rem 1.3rem;
+      border-radius: 30px;
+      font-size: 0.9rem; font-weight: 600;
+      flex-shrink: 0;
+      transition: all 0.4s;
+    }
+    .db-status-large.online  { background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.3); color:var(--success); }
+    .db-status-large.offline { background:rgba(239,68,68,0.12);  border:1px solid rgba(239,68,68,0.3);  color:var(--danger);  }
+    .db-status-large.checking{ background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.3); color:var(--warning); }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem;
     }
 
-    .btn-submit:active {
-      transform: translateY(0);
+    .plan-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 1.8rem;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-premium);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .plan-card::before {
+      content:'';
+      position:absolute; top:0; left:0; right:0;
+      height:3px; border-radius:20px 20px 0 0;
+    }
+    .plan-card.pa::before { background: var(--gradient-success); }
+    .plan-card.pb::before { background: linear-gradient(135deg,#3b82f6,#06b6d4); }
+    .plan-card.pc::before { background: linear-gradient(135deg,#a855f7,#ec4899); }
+
+    .plan-card:hover { transform:translateY(-4px); border-color:rgba(139,92,246,0.2); }
+
+    .plan-card.is-active {
+      border-color: rgba(16,185,129,0.35);
+      box-shadow: 0 0 0 2px rgba(16,185,129,0.07), var(--shadow-premium);
     }
 
-    /* Avisos e Feedbacks */
+    .plan-head {
+      display:flex; align-items:center; justify-content:space-between;
+      margin-bottom:1.2rem;
+    }
+
+    .plan-badge {
+      width:42px; height:42px; border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.2rem; font-weight:800; color:white;
+      flex-shrink:0;
+    }
+    .pa .plan-badge { background: var(--gradient-success); }
+    .pb .plan-badge { background: linear-gradient(135deg,#3b82f6,#06b6d4); }
+    .pc .plan-badge { background: linear-gradient(135deg,#a855f7,#ec4899); }
+
+    .plan-info { margin-left:0.8rem; }
+    .plan-info strong { display:block; font-size:1rem; font-weight:700; }
+    .plan-info small  { font-size:0.75rem; color:var(--text-muted); }
+
+    .plan-indicator {
+      width:10px; height:10px; border-radius:50%;
+      background:rgba(255,255,255,0.1);
+      flex-shrink:0; transition:all 0.4s;
+    }
+    .plan-indicator.on  { background:var(--success); box-shadow:0 0 8px rgba(16,185,129,0.6); }
+    .plan-indicator.off { background:var(--danger); }
+
+    .plan-hint {
+      font-size:0.76rem; color:var(--text-muted); line-height:1.55;
+      padding:0.75rem; background:rgba(255,255,255,0.02);
+      border-radius:8px; border:1px solid var(--border-color);
+      margin-bottom:1rem;
+    }
+    .plan-hint a { color:var(--primary); text-decoration:none; font-weight:600; }
+    .plan-hint a:hover { text-decoration:underline; }
+
+    .plan-input-wrap { position:relative; margin-bottom:1rem; }
+    .plan-input-wrap label {
+      display:block; font-size:0.75rem; color:var(--text-muted);
+      text-transform:uppercase; letter-spacing:0.5px; font-weight:500;
+      margin-bottom:0.45rem;
+    }
+
+    .plan-input {
+      width:100%; background:var(--bg-input);
+      border:1px solid var(--border-color);
+      color:white; font-family:'Courier New',monospace; font-size:0.8rem;
+      padding:0.75rem 2.8rem 0.75rem 1rem;
+      border-radius:10px; transition:all 0.3s;
+    }
+    .plan-input:focus { outline:none; border-color:var(--primary); box-shadow:0 0 10px rgba(139,92,246,0.2); }
+    .plan-input::placeholder { color:rgba(156,163,175,0.35); }
+
+    .toggle-vis {
+      position:absolute; right:0.8rem; bottom:0.7rem;
+      background:none; border:none; color:var(--text-muted);
+      cursor:pointer; padding:0.2rem; transition:color 0.2s;
+    }
+    .toggle-vis:hover { color:var(--text-main); }
+
+    .plan-btn {
+      width:100%; padding:0.72rem; border:none; border-radius:10px;
+      font-family:inherit; font-size:0.88rem; font-weight:600;
+      cursor:pointer; display:flex; align-items:center; justify-content:center;
+      gap:0.5rem; transition:all 0.3s;
+    }
+    .pa .plan-btn { background:var(--gradient-success); color:white; box-shadow:0 4px 12px rgba(16,185,129,0.25); }
+    .pb .plan-btn { background:linear-gradient(135deg,#3b82f6,#06b6d4); color:white; box-shadow:0 4px 12px rgba(59,130,246,0.25); }
+    .pc .plan-btn { background:linear-gradient(135deg,#a855f7,#ec4899); color:white; box-shadow:0 4px 12px rgba(168,85,247,0.25); }
+    .plan-btn:hover { filter:brightness(1.1); transform:translateY(-1px); }
+    .plan-btn:disabled { opacity:0.55; cursor:not-allowed; transform:none; }
+
+    /* ── TOAST ── */
     .toast-container {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
+      position:fixed; bottom:2rem; right:2rem;
+      z-index:1000; display:flex; flex-direction:column; gap:0.7rem;
     }
 
     .toast {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      padding: 1rem 1.5rem;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      box-shadow: var(--shadow-premium);
-      transform: translateY(50px);
-      opacity: 0;
-      animation: slideIn 0.3s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      backdrop-filter: blur(10px);
+      background:var(--bg-card);
+      border:1px solid var(--border-color);
+      padding:0.9rem 1.4rem;
+      border-radius:12px;
+      display:flex; align-items:center; gap:0.75rem;
+      box-shadow:var(--shadow-premium);
+      transform:translateY(50px); opacity:0;
+      animation:slideUp 0.3s forwards cubic-bezier(.175,.885,.32,1.275);
+      backdrop-filter:blur(10px);
     }
+    @keyframes slideUp { to { transform:translateY(0); opacity:1; } }
+    .toast.success { border-left:4px solid var(--success); }
+    .toast.success i { color:var(--success); }
+    .toast.error   { border-left:4px solid var(--danger); }
+    .toast.error i { color:var(--danger); }
 
-    @keyframes slideIn {
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    .toast.success {
-      border-left: 4px solid var(--success);
-    }
-    .toast.success i { color: var(--success); }
-
-    .toast.error {
-      border-left: 4px solid var(--danger);
-    }
-    .toast.error i { color: var(--danger); }
-
-    /* Estilo de tabela vazia */
+    /* ── EMPTY STATE ── */
     .empty-state {
-      padding: 3rem;
-      text-align: center;
-      color: var(--text-muted);
+      padding:3rem; text-align:center; color:var(--text-muted);
     }
     .empty-state i {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size:2.8rem; margin-bottom:0.8rem;
+      background:var(--gradient-neon);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+
+    /* ── AÇÕES DOS ATENDENTES & MODAL PREMIUM ── */
+    .atendente-item.full-page {
+      grid-template-columns: 52px 1fr 110px 110px 100px;
+    }
+    .atendente-item-actions {
+      display: flex; gap: 0.5rem; justify-content: flex-end;
+    }
+    .btn-action-edit, .btn-action-delete {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      width: 36px; height: 36px;
+      border-radius: 8px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.25s ease;
+    }
+    .btn-action-edit:hover {
+      background: rgba(139,92,246,0.15); border-color: rgba(139,92,246,0.4); color: var(--primary);
+    }
+    .btn-action-delete:hover {
+      background: rgba(239,68,68,0.15); border-color: rgba(239,68,68,0.4); color: var(--danger);
+    }
+    
+    /* MODAL DE EDIÇÃO */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(5, 5, 8, 0.7); backdrop-filter: blur(10px);
+      z-index: 1000; display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .modal-overlay.active {
+      opacity: 1; pointer-events: all;
+    }
+    .modal-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 2.2rem; width: 100%; max-width: 480px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      transform: translateY(30px) scale(0.96); transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      backdrop-filter: blur(15px);
+    }
+    .modal-overlay.active .modal-box {
+      transform: translateY(0) scale(1);
+    }
+    .modal-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.8rem;
+    }
+    .modal-header h3 {
+      font-size: 1.2rem; font-weight: 700;
       background: var(--gradient-neon);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .modal-close {
+      background: none; border: none; color: var(--text-muted);
+      font-size: 1.25rem; cursor: pointer; transition: color 0.2s;
+    }
+    .modal-close:hover { color: white; }
+    
+    .modal-footer {
+      display: flex; gap: 0.8rem; margin-top: 1.8rem;
+    }
+    .btn-cancel {
+      flex: 1; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color);
+      padding: 0.8rem; color: var(--text-main); border-radius: 10px; font-weight: 600; cursor: pointer;
+      font-family: inherit; font-size: 0.88rem; transition: all 0.25s;
+    }
+    .btn-cancel:hover { background: rgba(255,255,255,0.08); }
+    .btn-save {
+      flex: 1; background: var(--gradient-neon); border: none;
+      padding: 0.8rem; color: white; border-radius: 10px; font-weight: 600; cursor: pointer;
+      font-family: inherit; font-size: 0.88rem; transition: all 0.25s;
+      box-shadow: 0 4px 12px rgba(139,92,246,0.3);
+    }
+    .btn-save:hover { box-shadow: 0 6px 20px rgba(139,92,246,0.5); transform: translateY(-1px); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .sidebar { transform:translateX(-100%); }
+      .main-wrapper { margin-left: 0; }
+      .two-col { grid-template-columns: 1fr; }
+      .atendente-item { grid-template-columns: 46px 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo-container">
-      <div class="logo-icon">
-        <i class="fa-brands fa-whatsapp"></i>
-      </div>
-      <div class="logo-text">
+  <!-- ══ SIDEBAR ══ -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="sidebar-logo-icon"><i class="fa-brands fa-whatsapp"></i></div>
+      <div>
         <h1>GP Premium</h1>
-        <p>Dashboard Administrativo</p>
-      </div>
-    </div>
-    
-    <div class="header-actions">
-      <div class="status-badge">
-        <i class="fa-solid fa-circle"></i>
-        <span id="socket-status">Conectado (Tempo Real)</span>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- Filtros Superiores de Período -->
-    <div class="dashboard-header">
-      <h2>Métricas por Período</h2>
-      
-      <div class="filter-container">
-        <button class="filter-btn active" data-periodo="dia" onclick="alterarPeriodo(this)">Hoje</button>
-        <button class="filter-btn" data-periodo="semana" onclick="alterarPeriodo(this)">Semana</button>
-        <button class="filter-btn" data-periodo="mes" onclick="alterarPeriodo(this)">Mês</button>
-        <button class="filter-btn" data-periodo="ano" onclick="alterarPeriodo(this)">Ano</button>
+        <p>Painel Admin</p>
       </div>
     </div>
 
-    <!-- Cards de Estatísticas Acumuladas -->
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-icon total">
-          <i class="fa-solid fa-calendar-days"></i>
-        </div>
-        <div class="stat-info">
-          <h3>Agendamentos</h3>
-          <p id="total-schedules">0</p>
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Principal</div>
+
+      <div class="nav-item active" id="nav-dashboard" onclick="navTo('dashboard')">
+        <i class="fa-solid fa-chart-pie"></i>
+        Dashboard
+      </div>
+
+      <div class="nav-item" id="nav-atendentes" onclick="navTo('atendentes')">
+        <i class="fa-solid fa-users"></i>
+        Atendentes
+      </div>
+
+      <div class="nav-section-label">Sistema</div>
+
+      <div class="nav-item" id="nav-banco" onclick="navTo('banco')">
+        <i class="fa-solid fa-database"></i>
+        Banco de Dados
+      </div>
+
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="cloud-mini-badge checking" id="sidebar-cloud-badge">
+        <span class="dot"></span>
+        <span id="sidebar-cloud-text">Nuvem: verificando...</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ══ WRAPPER PRINCIPAL ══ -->
+  <div class="main-wrapper">
+
+    <header>
+      <div>
+        <span class="header-title" id="header-title">Dashboard <span>/ Métricas por Período</span></span>
+      </div>
+      <div class="header-actions">
+        <div class="status-badge">
+          <i class="fa-solid fa-circle"></i>
+          <span id="socket-status">Conectado</span>
         </div>
       </div>
-      
-      <div class="stat-card">
-        <div class="stat-icon sucesso">
-          <i class="fa-solid fa-paper-plane"></i>
-        </div>
-        <div class="stat-info">
-          <h3>Enviados</h3>
-          <p id="total-sent" style="color: var(--success)">0</p>
+    </header>
+
+    <!-- ══ PÁGINA: DASHBOARD ══ -->
+    <div class="page active" id="page-dashboard">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
+        <div class="section-title"><i class="fa-solid fa-chart-bar"></i> Métricas Gerais</div>
+        <div class="filter-container">
+          <button class="filter-btn active" data-periodo="dia"    onclick="alterarPeriodo(this)">Hoje</button>
+          <button class="filter-btn"        data-periodo="semana" onclick="alterarPeriodo(this)">Semana</button>
+          <button class="filter-btn"        data-periodo="mes"    onclick="alterarPeriodo(this)">Mês</button>
+          <button class="filter-btn"        data-periodo="ano"    onclick="alterarPeriodo(this)">Ano</button>
         </div>
       </div>
 
-      <div class="stat-card">
-        <div class="stat-icon pendente">
-          <i class="fa-solid fa-clock"></i>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon total"><i class="fa-solid fa-calendar-days"></i></div>
+          <div class="stat-info"><h3>Agendamentos</h3><p id="total-schedules">0</p></div>
         </div>
-        <div class="stat-info">
-          <h3>Pendentes</h3>
-          <p id="total-pending" style="color: var(--warning)">0</p>
+        <div class="stat-card">
+          <div class="stat-icon sucesso"><i class="fa-solid fa-paper-plane"></i></div>
+          <div class="stat-info"><h3>Enviados</h3><p id="total-sent" style="color:var(--success)">0</p></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon pendente"><i class="fa-solid fa-clock"></i></div>
+          <div class="stat-info"><h3>Pendentes</h3><p id="total-pending" style="color:var(--warning)">0</p></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon falha"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <div class="stat-info"><h3>Falhados</h3><p id="total-failed" style="color:var(--danger)">0</p></div>
         </div>
       </div>
 
-      <div class="stat-card">
-        <div class="stat-icon falha">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-        </div>
-        <div class="stat-info">
-          <h3>Falhados</h3>
-          <p id="total-failed" style="color: var(--danger)">0</p>
+      <div class="card-box">
+        <div class="section-title"><i class="fa-solid fa-users"></i> Top Atendentes</div>
+        <div class="atendentes-grid" id="atendentes-container-dash">
+          <div class="empty-state"><i class="fa-solid fa-spinner fa-spin"></i><p>Carregando...</p></div>
         </div>
       </div>
     </div>
 
-    <!-- Área Esquerda: Tabela de Atendentes -->
-    <div class="content-area">
-      <div class="atendentes-card">
-        <div class="section-title">
-          <i class="fa-solid fa-users"></i>
-          <h3>Desempenho dos Atendentes</h3>
-        </div>
-        
-        <div class="atendentes-grid" id="atendentes-container">
-          <!-- Gerado dinamicamente -->
-          <div class="empty-state">
-            <i class="fa-solid fa-spinner fa-spin"></i>
-            <p>Carregando métricas de atendentes...</p>
+    <!-- ══ PÁGINA: ATENDENTES ══ -->
+    <div class="page" id="page-atendentes">
+      <div class="two-col">
+        <div class="card-box">
+          <div class="section-title"><i class="fa-solid fa-users"></i> Todos os Atendentes</div>
+          <div class="atendentes-grid" id="atendentes-container-full">
+            <div class="empty-state"><i class="fa-solid fa-spinner fa-spin"></i><p>Carregando...</p></div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Área Direita: Cadastro de Usuário (Sticky) -->
-    <div class="sidebar-area">
-      <div class="cadastro-card">
-        <div class="section-title">
-          <i class="fa-solid fa-user-plus"></i>
-          <h3>Cadastrar Atendente</h3>
-        </div>
-        
-        <form id="cadastro-form" onsubmit="cadastrarUsuario(event)">
-          <div class="form-group">
-            <label for="cad-nome">Nome Completo</label>
-            <div class="input-wrapper">
-              <i class="fa-solid fa-user"></i>
-              <input type="text" id="cad-nome" class="form-control" placeholder="Ex: Maicon Batn" required>
+        <div class="card-box" style="position:sticky; top:80px;">
+          <div class="section-title" style="margin-bottom:1.2rem;"><i class="fa-solid fa-user-plus"></i> Cadastrar Atendente</div>
+          <form id="cadastro-form" onsubmit="cadastrarUsuario(event)">
+            <div class="form-group">
+              <label for="cad-nome">Nome Completo</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="cad-nome" class="form-control" placeholder="Ex: João Silva" required>
+              </div>
             </div>
-          </div>
-
-          <div class="form-group">
-            <label for="cad-email">E-mail de Login</label>
-            <div class="input-wrapper">
-              <i class="fa-solid fa-envelope"></i>
-              <input type="email" id="cad-email" class="form-control" placeholder="Ex: vendedor@crm.com" required>
+            <div class="form-group">
+              <label for="cad-email">E-mail de Login</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="cad-email" class="form-control" placeholder="Ex: vendedor@crm.com" required>
+              </div>
             </div>
-          </div>
-
-          <div class="form-group">
-            <label for="cad-senha">Senha de Acesso</label>
-            <div class="input-wrapper">
-              <i class="fa-solid fa-lock"></i>
-              <input type="password" id="cad-senha" class="form-control" placeholder="Senha" required>
+            <div class="form-group">
+              <label for="cad-senha">Senha de Acesso</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="cad-senha" class="form-control" placeholder="Senha forte" required>
+              </div>
             </div>
-          </div>
-
-          <div class="form-group">
-            <label for="cad-role">Nível de Permissão</label>
-            <div class="input-wrapper">
-              <i class="fa-solid fa-shield-halved"></i>
-              <select id="cad-role" class="form-control" required style="padding-right: 2rem;">
-                <option value="operador">Operador (Atendente)</option>
-                <option value="admin">Administrador Master</option>
-              </select>
+            <div class="form-group">
+              <label for="cad-role">Nível de Permissão</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-shield-halved"></i>
+                <select id="cad-role" class="form-control" style="padding-right:2rem;">
+                  <option value="operador">Operador (Atendente)</option>
+                  <option value="admin">Administrador Master</option>
+                </select>
+              </div>
             </div>
+            <button type="submit" class="btn-submit" id="btn-cadastro-submit">
+              <i class="fa-solid fa-circle-check"></i> Salvar Operador
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ PÁGINA: BANCO DE DADOS ══ -->
+    <div class="page" id="page-banco">
+
+      <!-- Hero card de status -->
+      <div class="db-hero">
+        <div class="db-hero-text">
+          <h2><i class="fa-solid fa-database" style="color:var(--primary); margin-right:0.5rem;"></i>Banco de Dados na Nuvem</h2>
+          <p>Configure até 3 bancos PostgreSQL. Se o <strong>Plano A</strong> cair, o sistema muda automaticamente para o <strong>Plano B</strong> ou <strong>C</strong> — seus agendamentos nunca serão perdidos.</p>
+        </div>
+        <div class="db-status-large checking" id="db-status-badge">
+          <i class="fa-solid fa-circle-notch fa-spin"></i>
+          <span id="db-status-text">Verificando...</span>
+        </div>
+      </div>
+
+      <!-- 3 cards de planos -->
+      <div class="plans-grid">
+
+        <!-- PLANO A -->
+        <div class="plan-card pa" id="card-pa">
+          <div class="plan-head">
+            <div style="display:flex; align-items:center;">
+              <div class="plan-badge">A</div>
+              <div class="plan-info">
+                <strong>Plano Principal</strong>
+                <small>Supabase — recomendado</small>
+              </div>
+            </div>
+            <div class="plan-indicator" id="ind-pa"></div>
           </div>
 
-          <button type="submit" class="btn-submit" id="btn-cadastro-submit">
-            <i class="fa-solid fa-circle-check"></i>
-            Salvar Operador
+          <div class="plan-hint">
+            <i class="fa-solid fa-circle-info" style="color:var(--success); margin-right:4px;"></i>
+            Acesse <a href="https://supabase.com" target="_blank">supabase.com</a> → crie um projeto → vá em
+            <em>Project Settings → Database</em> e copie a <strong>Connection String</strong>.
+          </div>
+
+          <div class="plan-input-wrap">
+            <label><i class="fa-solid fa-link" style="margin-right:3px;"></i> Connection String</label>
+            <input type="password" id="inp-pa" class="plan-input" placeholder="postgresql://user:pass@host:5432/db">
+            <button class="toggle-vis" onclick="toggleVis('inp-pa',this)" type="button">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+
+          <button class="plan-btn" onclick="salvarPlanos()">
+            <i class="fa-solid fa-cloud-arrow-up"></i> Salvar e Testar
           </button>
-        </form>
+        </div>
+
+        <!-- PLANO B -->
+        <div class="plan-card pb" id="card-pb">
+          <div class="plan-head">
+            <div style="display:flex; align-items:center;">
+              <div class="plan-badge">B</div>
+              <div class="plan-info">
+                <strong>Backup Primário</strong>
+                <small>Neon.tech — 0.5 GB grátis</small>
+              </div>
+            </div>
+            <div class="plan-indicator" id="ind-pb"></div>
+          </div>
+
+          <div class="plan-hint">
+            <i class="fa-solid fa-shield-halved" style="color:#3b82f6; margin-right:4px;"></i>
+            Acesse <a href="https://neon.tech" target="_blank">neon.tech</a> → crie um projeto → copie a
+            Connection String em <em>Dashboard → Connection Details</em>.
+          </div>
+
+          <div class="plan-input-wrap">
+            <label><i class="fa-solid fa-link" style="margin-right:3px;"></i> Connection String <span style="opacity:0.5;">(opcional)</span></label>
+            <input type="password" id="inp-pb" class="plan-input" placeholder="postgresql://user:pass@host:5432/db">
+            <button class="toggle-vis" onclick="toggleVis('inp-pb',this)" type="button">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+
+          <button class="plan-btn" onclick="salvarPlanos()">
+            <i class="fa-solid fa-cloud-arrow-up"></i> Salvar e Testar
+          </button>
+        </div>
+
+        <!-- PLANO C -->
+        <div class="plan-card pc" id="card-pc">
+          <div class="plan-head">
+            <div style="display:flex; align-items:center;">
+              <div class="plan-badge">C</div>
+              <div class="plan-info">
+                <strong>Backup Final</strong>
+                <small>Aiven.io — 5 GB grátis</small>
+              </div>
+            </div>
+            <div class="plan-indicator" id="ind-pc"></div>
+          </div>
+
+          <div class="plan-hint">
+            <i class="fa-solid fa-lock" style="color:#a855f7; margin-right:4px;"></i>
+            Acesse <a href="https://aiven.io" target="_blank">aiven.io</a> → crie um serviço PostgreSQL →
+            copie o URI de conexão fornecido na tela do projeto.
+          </div>
+
+          <div class="plan-input-wrap">
+            <label><i class="fa-solid fa-link" style="margin-right:3px;"></i> Connection String <span style="opacity:0.5;">(opcional)</span></label>
+            <input type="password" id="inp-pc" class="plan-input" placeholder="postgresql://user:pass@host:5432/db">
+            <button class="toggle-vis" onclick="toggleVis('inp-pc',this)" type="button">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+
+          <button class="plan-btn" onclick="salvarPlanos()">
+            <i class="fa-solid fa-cloud-arrow-up"></i> Salvar e Testar
+          </button>
+        </div>
+
       </div>
+    </div><!-- /page-banco -->
+
+  </div><!-- /main-wrapper -->
+
+  <!-- ══ MODAL PREMIUM DE EDIÇÃO DE ATENDENTE ══ -->
+  <div class="modal-overlay" id="edit-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-user-gear"></i> Editar Atendente</h3>
+        <button class="modal-close" onclick="fecharModal()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="edit-form" onsubmit="salvarEdicaoUsuario(event)">
+        <input type="hidden" id="edit-id">
+        <div class="form-group">
+          <label for="edit-nome">Nome Completo</label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" id="edit-nome" class="form-control" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="edit-email">E-mail de Login</label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" id="edit-email" class="form-control" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="edit-senha">Senha de Acesso</label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="edit-senha" class="form-control" required>
+            <button class="toggle-vis" onclick="toggleVis('edit-senha', this)" type="button" style="bottom: 0.35rem;">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="edit-role">Nível de Permissão</label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-shield-halved"></i>
+            <select id="edit-role" class="form-control" style="padding-right:2rem;">
+              <option value="operador">Operador (Atendente)</option>
+              <option value="admin">Administrador Master</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-cancel" onclick="fecharModal()">Cancelar</button>
+          <button type="submit" class="btn-save" id="btn-edit-submit">Salvar Alterações</button>
+        </div>
+      </form>
     </div>
-  </main>
+  </div>
 
   <div class="toast-container" id="toast-container"></div>
 
-  <!-- Carrega biblioteca Socket.io integrada no node -->
   <script src="/socket.io/socket.io.js"></script>
-  
   <script>
-    let periodoAtual = 'dia';
-    const socket = io();
+    // ── NAVEGAÇÃO LATERAL ──────────────────────────────────────────────
+    const PAGE_TITLES = {
+      dashboard:  'Dashboard <span>/ Métricas por Período</span>',
+      atendentes: 'Atendentes <span>/ Gestão da Equipe</span>',
+      banco:      'Banco de Dados <span>/ Configuração Multi-Cloud</span>',
+    };
 
-    // Notificações Toast
-    function showToast(mensagem, tipo = 'success') {
-      const container = document.getElementById('toast-container');
-      const toast = document.createElement('div');
-      toast.className = `toast ${tipo}`;
-      
-      const icone = tipo === 'success' ? 'fa-circle-check' : 'fa-triangle-exclamation';
-      
-      toast.innerHTML = `
-        <i class="fa-solid ${icone}"></i>
-        <span>${mensagem}</span>
-      `;
-      
-      container.appendChild(toast);
-      
+    function navTo(id) {
+      // Oculta todas as páginas
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+
+      document.getElementById('page-' + id).classList.add('active');
+      document.getElementById('nav-'  + id).classList.add('active');
+      document.getElementById('header-title').innerHTML = PAGE_TITLES[id];
+
+      if (id === 'dashboard')  carregarMetricas();
+      if (id === 'atendentes') carregarAtendentes();
+      if (id === 'banco')      carregarConfigsNuvem();
+    }
+
+    // ── TOAST ──────────────────────────────────────────────────────────
+    function showToast(msg, tipo = 'success') {
+      const c = document.getElementById('toast-container');
+      const t = document.createElement('div');
+      t.className = `toast ${tipo}`;
+      t.innerHTML = `<i class="fa-solid ${tipo==='success'?'fa-circle-check':'fa-triangle-exclamation'}"></i><span>${msg}</span>`;
+      c.appendChild(t);
       setTimeout(() => {
-        toast.style.animation = 'none';
-        toast.offsetHeight; /* Trigger reflow */
-        toast.style.transition = 'all 0.3s ease';
-        toast.style.opacity = '0';
-        toast.style.transform = 'translateY(-20px)';
-        setTimeout(() => toast.remove(), 300);
+        t.style.transition = 'all 0.3s'; t.style.opacity = '0';
+        t.style.transform = 'translateY(-16px)';
+        setTimeout(() => t.remove(), 300);
       }, 3500);
     }
 
-    // Alterar o período selecionado e recarregar dados
+    // ── PERÍODO ────────────────────────────────────────────────────────
+    let periodoAtual = 'dia';
     function alterarPeriodo(btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
@@ -753,170 +980,295 @@
       carregarMetricas();
     }
 
-    // Carrega métricas agregadas do backend e renderiza
+    // ── MÉTRICAS ───────────────────────────────────────────────────────
     async function carregarMetricas() {
       try {
         const res = await fetch(`/api/usuarios/metricas?periodo=${periodoAtual}`);
-        if (!res.ok) throw new Error('Falha ao obter métricas.');
-        
+        if (!res.ok) throw new Error();
         const metricas = await res.json();
-        renderizarPainel(metricas);
-      } catch (err) {
-        console.error(err);
-        showToast('Erro ao carregar dados dos atendentes.', 'error');
+        renderizarDash(metricas);
+        renderizarAtendentes(metricas, 'atendentes-container-dash', 3);
+      } catch {
+        showToast('Erro ao carregar métricas.', 'error');
       }
     }
 
-    // Renderiza os dados nas estatísticas principais e na tabela
-    function renderizarPainel(metricas) {
-      const container = document.getElementById('atendentes-container');
-      
-      if (!Array.isArray(metricas) || metricas.length === 0) {
-        container.innerHTML = `
-          <div class="empty-state">
-            <i class="fa-solid fa-users-slash"></i>
-            <p>Nenhum atendente cadastrado ou com dados no período.</p>
-          </div>
-        `;
-        // Zera contadores
-        document.getElementById('total-schedules').innerText = '0';
-        document.getElementById('total-sent').innerText = '0';
-        document.getElementById('total-pending').innerText = '0';
-        document.getElementById('total-failed').innerText = '0';
+    async function carregarAtendentes() {
+      try {
+        const res = await fetch(`/api/usuarios/metricas?periodo=${periodoAtual}`);
+        if (!res.ok) throw new Error();
+        const metricas = await res.json();
+        renderizarAtendentes(metricas, 'atendentes-container-full', Infinity);
+      } catch {
+        showToast('Erro ao carregar atendentes.', 'error');
+      }
+    }
+
+    function renderizarDash(metricas) {
+      let t=0,s=0,p=0,f=0;
+      (metricas||[]).forEach(m => { t+=m.total; s+=m.enviados; p+=m.pendentes; f+=m.falhados; });
+      document.getElementById('total-schedules').innerText = t;
+      document.getElementById('total-sent').innerText      = s;
+      document.getElementById('total-pending').innerText   = p;
+      document.getElementById('total-failed').innerText    = f;
+    }
+
+    // Cache global para manter os dados completos dos atendentes (incluindo as senhas)
+    const cacheUsuarios = new Map();
+
+    function renderizarAtendentes(metricas, containerId, limit) {
+      const c = document.getElementById(containerId);
+      if (!Array.isArray(metricas) || !metricas.length) {
+        c.innerHTML = `<div class="empty-state"><i class="fa-solid fa-users-slash"></i><p>Nenhum atendente com dados no período.</p></div>`;
         return;
       }
+      c.innerHTML = '';
 
-      // Calcula totais globais
-      let globalTotal = 0;
-      let globalSent = 0;
-      let globalPending = 0;
-      let globalFailed = 0;
+      const isFullPage = containerId === 'atendentes-container-full';
 
-      container.innerHTML = '';
-      
-      metricas.forEach(m => {
-        globalTotal += m.total;
-        globalSent += m.enviados;
-        globalPending += m.pendentes;
-        globalFailed += m.falhados;
+      metricas.slice(0, limit).forEach(m => {
+        // Guarda no cache
+        cacheUsuarios.set(String(m.id), m);
 
-        // Iniciais para avatar
-        const iniciais = m.nome ? m.nome.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase() : 'OP';
+        const ini = (m.nome||'OP').split(' ').map(n=>n[0]).slice(0,2).join('').toUpperCase();
+        const div = document.createElement('div');
+        div.className = `atendente-item ${isFullPage ? 'full-page' : ''}`;
 
-        const item = document.createElement('div');
-        item.className = 'atendente-item';
-        item.innerHTML = `
-          <div class="atendente-avatar">${iniciais}</div>
+        let acoesHtml = '';
+        if (isFullPage) {
+          acoesHtml = `
+            <div class="atendente-item-actions">
+              <button class="btn-action-edit" onclick="abrirModalEdicao('${m.id}')" title="Editar Login/Senha">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button class="btn-action-delete" onclick="excluirUsuario('${m.id}', '${m.nome.replace(/'/g, "\\'")}')" title="Excluir Atendente">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          `;
+        }
+
+        div.innerHTML = `
+          <div class="atendente-avatar">${ini}</div>
           <div class="atendente-info">
             <h4>${m.nome}<span class="badge-role ${m.role}">${m.role}</span></h4>
             <p>${m.email}</p>
           </div>
-          <div class="atendente-num">
-            <label>Agendamentos</label>
-            <span>${m.total}</span>
-          </div>
-          <div class="atendente-num">
-            <label>Enviados</label>
-            <span class="success">${m.enviados}</span>
-          </div>
-          <div class="atendente-progress-container">
-            <div class="atendente-progress-info">
-              <span>Conversão</span>
-              <span class="pct">${m.conversao}%</span>
-            </div>
-            <div class="progress-bar-bg">
-              <div class="progress-bar-fill" style="width: ${m.conversao}%"></div>
-            </div>
-          </div>
-        `;
-        container.appendChild(item);
+          <div class="atendente-num"><label>Total</label><span>${m.total}</span></div>
+          <div class="atendente-num"><label>Enviados</label><span class="success">${m.enviados}</span></div>
+          ${acoesHtml}`;
+        c.appendChild(div);
       });
-
-      // Atualiza contadores globais com efeito animado rápido
-      document.getElementById('total-schedules').innerText = globalTotal;
-      document.getElementById('total-sent').innerText = globalSent;
-      document.getElementById('total-pending').innerText = globalPending;
-      document.getElementById('total-failed').innerText = globalFailed;
     }
 
-    // Formulário de Cadastro de Novos Usuários
-    async function cadastrarUsuario(event) {
-      event.preventDefault();
-      
-      const btn = document.getElementById('btn-cadastro-submit');
-      const originalHtml = btn.innerHTML;
-      btn.disabled = true;
-      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Cadastrando...';
+    // ── CONTROLE DO MODAL DE EDIÇÃO ───────────────────────────────────
+    function abrirModalEdicao(id) {
+      const u = cacheUsuarios.get(String(id));
+      if (!u) return;
 
-      const nome = document.getElementById('cad-nome').value;
-      const email = document.getElementById('cad-email').value;
-      const senha = document.getElementById('cad-senha').value;
-      const role = document.getElementById('cad-role').value;
+      document.getElementById('edit-id').value = u.id;
+      document.getElementById('edit-nome').value = u.nome;
+      document.getElementById('edit-email').value = u.email;
+      document.getElementById('edit-senha').value = u.senha || '';
+      document.getElementById('edit-role').value = u.role || 'operador';
+
+      // Reseta a visibilidade da senha para oculta por padrão ao abrir
+      document.getElementById('edit-senha').type = 'password';
+
+      document.getElementById('edit-modal').classList.add('active');
+    }
+
+    function fecharModal() {
+      document.getElementById('edit-modal').classList.remove('active');
+      document.getElementById('edit-form').reset();
+    }
+
+    async function salvarEdicaoUsuario(e) {
+      e.preventDefault();
+      const id = document.getElementById('edit-id').value;
+      const btn = document.getElementById('btn-edit-submit');
+      const orig = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Salvando...';
+
+      const nome  = document.getElementById('edit-nome').value;
+      const email = document.getElementById('edit-email').value;
+      const senha = document.getElementById('edit-senha').value;
+      const role  = document.getElementById('edit-role').value;
 
       try {
-        const res = await fetch('/api/usuarios/cadastrar', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ nome, email, senha, role })
+        const res  = await fetch(`/api/usuarios/${id}`, {
+          method:'PUT', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({nome,email,senha,role})
         });
-
         const data = await res.json();
-        
         if (res.ok) {
-          showToast(`Operador "${nome}" cadastrado com sucesso!`);
-          document.getElementById('cadastro-form').reset();
-          // Atualiza as métricas da tela
+          showToast(`Operador "${nome}" atualizado com sucesso!`);
+          fecharModal();
+          carregarAtendentes();
+          carregarMetricas(); // Atualiza também o dashboard se necessário
+        } else {
+          showToast(data.error || 'Erro ao atualizar atendente.', 'error');
+        }
+      } catch { showToast('Erro de comunicação.', 'error'); }
+      finally  { btn.disabled=false; btn.innerHTML=orig; }
+    }
+
+    async function excluirUsuario(id, nome) {
+      if (!confirm(`Tem certeza absoluta que deseja excluir o atendente "${nome}"?\nEsta ação removerá permanentemente o acesso dele e não pode ser desfeita.`)) {
+        return;
+      }
+
+      try {
+        const res = await fetch(`/api/usuarios/${id}`, { method: 'DELETE' });
+        const data = await res.json();
+        if (res.ok) {
+          showToast(`Atendente "${nome}" excluído com sucesso.`);
+          carregarAtendentes();
           carregarMetricas();
         } else {
-          showToast(data.error || 'Erro ao realizar cadastro.', 'error');
+          showToast(data.error || 'Erro ao excluir atendente.', 'error');
         }
-      } catch (err) {
-        console.error(err);
-        showToast('Erro de comunicação com o servidor.', 'error');
-      } finally {
-        btn.disabled = false;
-        btn.innerHTML = originalHtml;
+      } catch {
+        showToast('Erro de comunicação ao tentar excluir.', 'error');
       }
     }
 
-    // Socket.io - Atualização em tempo real impecável
+    // ── CADASTRO ───────────────────────────────────────────────────────
+    async function cadastrarUsuario(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btn-cadastro-submit');
+      const orig = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Cadastrando...';
+
+      const nome  = document.getElementById('cad-nome').value;
+      const email = document.getElementById('cad-email').value;
+      const senha = document.getElementById('cad-senha').value;
+      const role  = document.getElementById('cad-role').value;
+
+      try {
+        const res  = await fetch('/api/usuarios/cadastrar', {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({nome,email,senha,role})
+        });
+        const data = await res.json();
+        if (res.ok) {
+          showToast(`Operador "${nome}" cadastrado!`);
+          document.getElementById('cadastro-form').reset();
+          carregarAtendentes();
+        } else {
+          showToast(data.error || 'Erro ao cadastrar.', 'error');
+        }
+      } catch { showToast('Erro de comunicação.', 'error'); }
+      finally  { btn.disabled=false; btn.innerHTML=orig; }
+    }
+
+    // ── BANCO DE DADOS NA NUVEM ────────────────────────────────────────
+    function toggleVis(id, btn) {
+      const inp = document.getElementById(id);
+      const hide = inp.type === 'password';
+      inp.type = hide ? 'text' : 'password';
+      btn.innerHTML = hide
+        ? '<i class="fa-solid fa-eye-slash"></i>'
+        : '<i class="fa-solid fa-eye"></i>';
+    }
+
+    function atualizarStatusNuvem(ativo) {
+      const badge  = document.getElementById('db-status-badge');
+      const text   = document.getElementById('db-status-text');
+      const sBar   = document.getElementById('sidebar-cloud-badge');
+      const sText  = document.getElementById('sidebar-cloud-text');
+
+      ['pa','pb','pc'].forEach(p => {
+        const ind  = document.getElementById('ind-' + p);
+        const card = document.getElementById('card-' + p);
+        const plano = p.slice(1).toUpperCase(); // A, B, C
+        if (ativo === plano) {
+          ind.classList.add('on'); ind.classList.remove('off');
+          card.classList.add('is-active');
+        } else {
+          ind.classList.remove('on');
+          if (ativo) ind.classList.add('off');
+          card.classList.remove('is-active');
+        }
+      });
+
+      if (ativo) {
+        badge.className = 'db-status-large online';
+        badge.innerHTML = `<i class="fa-solid fa-circle-check"></i><span>Operando via Plano ${ativo}</span>`;
+        sBar.className  = 'cloud-mini-badge online';
+        sText.textContent = `Nuvem: Plano ${ativo} ativo`;
+      } else {
+        badge.className = 'db-status-large offline';
+        badge.innerHTML = `<i class="fa-solid fa-circle-xmark"></i><span>Offline / Não configurado</span>`;
+        sBar.className  = 'cloud-mini-badge offline';
+        sText.textContent = 'Nuvem: Desconectada';
+      }
+    }
+
+    async function carregarConfigsNuvem() {
+      try {
+        const res  = await fetch('/api/admin/nuvem');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data.planoA) document.getElementById('inp-pa').value = data.planoA;
+        if (data.planoB) document.getElementById('inp-pb').value = data.planoB;
+        if (data.planoC) document.getElementById('inp-pc').value = data.planoC;
+        atualizarStatusNuvem(data.ativo);
+      } catch(err) { console.error('[Admin] Erro ao carregar nuvem:', err); }
+    }
+
+    async function salvarPlanos() {
+      const btns = document.querySelectorAll('.plan-btn');
+      btns.forEach(b => { b.disabled=true; b.innerHTML='<i class="fa-solid fa-circle-notch fa-spin"></i> Testando...'; });
+
+      const payload = {
+        planoA: document.getElementById('inp-pa').value.trim(),
+        planoB: document.getElementById('inp-pb').value.trim(),
+        planoC: document.getElementById('inp-pc').value.trim(),
+      };
+
+      try {
+        const res  = await fetch('/api/admin/nuvem', {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (res.ok) {
+          atualizarStatusNuvem(data.ativo);
+          showToast(`✅ Conectado com sucesso ao Plano ${data.ativo}!`);
+        } else {
+          atualizarStatusNuvem(null);
+          showToast('❌ ' + (data.error || 'Nenhuma URL conectou. Revise as credenciais.'), 'error');
+        }
+      } catch { showToast('Erro de comunicação com o servidor.', 'error'); }
+      finally {
+        btns.forEach(b => {
+          b.disabled = false;
+          b.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Salvar e Testar';
+        });
+      }
+    }
+
+    // ── SOCKET.IO ──────────────────────────────────────────────────────
+    const socket = io();
+
     socket.on('connect', () => {
-      document.getElementById('socket-status').innerText = 'Conectado (Tempo Real)';
-      document.querySelector('.status-badge').style.background = 'rgba(16, 185, 129, 0.1)';
+      document.getElementById('socket-status').textContent = 'Conectado';
       document.querySelector('.status-badge').style.color = 'var(--success)';
-      document.querySelector('.status-badge').style.borderColor = 'rgba(16, 185, 129, 0.2)';
     });
-
     socket.on('disconnect', () => {
-      document.getElementById('socket-status').innerText = 'Desconectado - Tentando conectar...';
-      document.querySelector('.status-badge').style.background = 'rgba(239, 68, 68, 0.1)';
+      document.getElementById('socket-status').textContent = 'Reconectando...';
       document.querySelector('.status-badge').style.color = 'var(--danger)';
-      document.querySelector('.status-badge').style.borderColor = 'rgba(239, 68, 68, 0.2)';
     });
 
-    // Eventos do CRM que disparam atualização automática
-    socket.on('AGENDAMENTO_CRIADO', () => {
-      console.log('[Socket] Novo agendamento criado recebido! Atualizando métricas...');
-      carregarMetricas();
-    });
+    ['AGENDAMENTO_CRIADO','STATUS_ATUALIZADO','AGENDAMENTO_EXCLUIDO','AGENDAMENTO_ATUALIZADO']
+      .forEach(ev => socket.on(ev, carregarMetricas));
 
-    socket.on('STATUS_ATUALIZADO', () => {
-      console.log('[Socket] Status de agendamento alterado recebido! Atualizando métricas...');
-      carregarMetricas();
-    });
-
-    socket.on('AGENDAMENTO_EXCLUIDO', () => {
-      console.log('[Socket] Agendamento excluído recebido! Atualizando métricas...');
-      carregarMetricas();
-    });
-
-    socket.on('AGENDAMENTO_ATUALIZADO', () => {
-      console.log('[Socket] Agendamento editado recebido! Atualizando métricas...');
-      carregarMetricas();
-    });
-
-    // Carga inicial
+    // ── BOOT ───────────────────────────────────────────────────────────
     carregarMetricas();
+    carregarConfigsNuvem();
   </script>
 </body>
 </html>
