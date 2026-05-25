@@ -52,7 +52,7 @@ export default function Dashboard({ agendamentos, onClose, contatosDisponiveis =
       numero: editNumero.replace(/\D/g, ''),
       mensagem: editMensagem,
       enviarEm: new Date(editEnviarEm).toISOString(),
-      cancelarSeResponder: editCancelarSeResponder
+      cancelarSeResponder: false
     });
     
     setEditingId(null);
@@ -253,15 +253,7 @@ export default function Dashboard({ agendamentos, onClose, contatosDisponiveis =
                       />
                     </div>
 
-                    <label className="flex items-center gap-2 cursor-pointer mt-1">
-                      <input 
-                        type="checkbox" 
-                        checked={editCancelarSeResponder}
-                        onChange={(e) => setEditCancelarSeResponder(e.target.checked)}
-                        className="w-4 h-4 accent-[#00a884] rounded"
-                      />
-                      <span className="text-[10px] font-bold text-gray-600">Pausar se responder</span>
-                    </label>
+
                   </div>
                   
                   <div className="flex gap-2 justify-end mt-2 pt-2 border-t border-gray-50">

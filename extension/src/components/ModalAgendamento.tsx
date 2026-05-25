@@ -50,7 +50,7 @@ function AvatarContato({ nome, foto }: { nome: string; foto?: string }) {
   )
 }
 
-export default function ModalAgendamento({ onClose, usuarioId, contatoNome = "", contatoNumero = "", contatosDisponiveis = [] }) {
+export default function ModalAgendamento({ onClose, onSuccess, usuarioId, contatoNome = "", contatoNumero = "", contatosDisponiveis = [] }) {
   const [localContatos, setLocalContatos] = useState(contatosDisponiveis)
   const typingTimeout = useRef(null)
   const [dropdownAberto, setDropdownAberto] = useState(false)
@@ -113,7 +113,6 @@ export default function ModalAgendamento({ onClose, usuarioId, contatoNome = "",
   const [minutos, setMinutos] = useState("30")
   const [dataExata, setDataExata] = useState(getTodayDate())
   const [horaExata, setHoraExata] = useState(getTodayTime())
-  const [pausar, setPausar] = useState(true)
   const [numero, setNumero] = useState(contatoNumero)
   const [nomeCliente, setNomeCliente] = useState(contatoNome || "Manual")
 
@@ -156,12 +155,13 @@ export default function ModalAgendamento({ onClose, usuarioId, contatoNome = "",
       enviarEm = new Date(`${dataExata}T${horaExata}:00`).toISOString()
     }
 
-    // Lógica de Assinatura do Atendente
-    const usarAssinatura = localStorage.getItem("crm_usar_assinatura") === "true"
+    // Como agora o disparo ocorre direto pelo servidor (Baileys), o servidor não tem acesso
+    // ao localStorage do navegador. Portanto, injetamos a assinatura na mensagem no momento da CRIAÇÃO do agendamento.
+    let mensagemFinal = mensagem;
+    const usarAssinaturaRobo = localStorage.getItem("crm_usar_assinatura") === "true"
     const nomeAtendente = localStorage.getItem("crm_nome_atendente") || ""
-    let mensagemFinal = mensagem
-    if (usarAssinatura && nomeAtendente) {
-      mensagemFinal = `${mensagem}\n\n*Atendente: ${nomeAtendente}*`
+    if (usarAssinaturaRobo && nomeAtendente) {
+      mensagemFinal = `*${nomeAtendente}:*\n${mensagem}`
     }
 
     // Helper de normalização local robusto para números brasileiros
@@ -182,19 +182,31 @@ export default function ModalAgendamento({ onClose, usuarioId, contatoNome = "",
       mensagem: mensagemFinal,
       enviarEm,
       criadoPorId: usuarioId,
-      cancelarSeResponder: pausar
+      cancelarSeResponder: false
     }
 
     try {
-      await fetch('http://localhost:3000/api/agendamentos', {
+      const response = await fetch('https://crm.marleysupermecado.com.br:3000/api/agendamentos', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       })
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+        throw new Error(errorData.error || `Erro no servidor (${response.status})`)
+      }
+
+      if (onSuccess) onSuccess();
       onClose()
-    } catch (err) {
-      console.error(err)
-      alert("Erro ao agendar")
+    } catch (err: any) {
+      console.error("Erro ao agendar:", err)
+      const msgErro = err.message || "Erro desconhecido"
+      if (err instanceof TypeError && err.message.includes("fetch")) {
+        alert("Erro ao agendar: Não foi possível conectar ao servidor. Por favor, certifique-se de que o backend está rodando em HTTPS (porta 3000).")
+      } else {
+        alert(`Erro ao agendar: ${msgErro}`)
+      }
     }
   }
 
@@ -239,7 +251,7 @@ export default function ModalAgendamento({ onClose, usuarioId, contatoNome = "",
               <div className="relative">
                 <input 
                   type="text" 
-                  placeholder="Ex: Helen figurante ou Maicon" 
+                  placeholder="Ex: Maicon" 
                   className="w-full border border-gray-200 rounded-lg p-3 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-[#00a884] focus:border-transparent transition text-gray-800 bg-white font-medium shadow-sm"
                   value={nomeCliente === "Manual" ? "" : nomeCliente}
                   onFocus={() => setDropdownAberto(true)}
@@ -456,24 +468,7 @@ export default function ModalAgendamento({ onClose, usuarioId, contatoNome = "",
               )}
             </div>
 
-            {/* Opções */}
-            <label className="flex items-start gap-3 bg-[#f8f9fa] p-4 rounded-xl cursor-pointer border border-gray-100 hover:border-gray-200 transition mt-2 mb-2">
-              <div className="pt-1">
-                <input 
-                  type="checkbox" 
-                  checked={pausar} 
-                  onChange={e => setPausar(e.target.checked)} 
-                  className="w-5 h-5 accent-[#00a884] rounded"
-                />
-              </div>
-              <div>
-                <div className="font-bold text-gray-800 flex items-center gap-1">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><line x1="10" y1="15" x2="10" y2="9"/><line x1="14" y1="15" x2="14" y2="9"/></svg>
-                  Pausar se cliente responder
-                </div>
-                <div className="text-xs text-gray-500 mt-1">Não envia se houver resposta antes do horário marcado</div>
-              </div>
-            </label>
+
           </div>
 
           {/* Botoes Footer fixados */}

@@ -90,7 +90,9 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       if (!remoteJid) return;
       if (remoteJid.includes('@g.us')) return; // ignorar grupos
 
-      const numero = remoteJid.split('@')[0];
+      const parts = remoteJid.split('@');
+      const numero = parts[0];
+      if (!numero) return;
 
       // Busca dados do usuário para verificar a configuração de auto-resposta
       const usuario = await prisma.usuario.findUnique({
@@ -106,7 +108,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
         where: {
           usuarioId_numero: {
             usuarioId: usuario.id,
-            numero: remoteJid.split('@')[0]
+            numero: numero
           }
         }
       });
@@ -120,7 +122,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
         await prisma.autoReplyHistory.create({
           data: {
             usuarioId: usuario.id,
-            numero: remoteJid.split('@')[0]
+            numero: numero
           }
         });
       }

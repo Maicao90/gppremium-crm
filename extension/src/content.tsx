@@ -1,5 +1,5 @@
 import cssText from "data-text:~style.css"
-import logoUrl from "data-base64:~assets/logo.jpg"
+import logoUrl from "url:~assets/logo.jpg"
 import type { PlasmoCSConfig } from "plasmo"
 import React, { useEffect, useState } from "react"
 import ReactDOM from "react-dom"
@@ -20,7 +20,9 @@ export const getStyle = () => {
   return style
 }
 
-const socket = io("http://localhost:3000")
+const socket = io("https://crm.marleysupermecado.com.br:3000", { rejectUnauthorized: false })
+
+let crmUltimoInputVendedor = 0;
 
 // Sistema centralizado de logs para envio silencioso e diagnóstico no backend
 const logExtension = async (nivel: 'info' | 'warn' | 'error', escopo: string, mensagem: string, erro?: any) => {
@@ -34,7 +36,7 @@ const logExtension = async (nivel: 'info' | 'warn' | 'error', escopo: string, me
   }
   
   try {
-    await fetch("http://localhost:3000/api/extension-logs", {
+    await fetch("https://crm.marleysupermecado.com.br:3000/api/extension-logs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nivel, escopo, mensagem, erro: erro ? { message: erro.message, stack: erro.stack } : undefined })
@@ -45,18 +47,23 @@ const logExtension = async (nivel: 'info' | 'warn' | 'error', escopo: string, me
 }
 
 // ═══ Helpers Geométricos do DOM: robustez total a mudanças de seletores do WhatsApp Web ═══
-const obterBarraPesquisaGeometrica = (): HTMLDivElement | null => {
-  const elements = Array.from(document.querySelectorAll('div[contenteditable="true"]')) as HTMLDivElement[];
+const obterBarraPesquisaGeometrica = (): HTMLElement | null => {
+  const elements = Array.from(document.querySelectorAll('div[contenteditable="true"], input[type="text"], input[type="search"]')) as HTMLElement[];
   if (elements.length === 0) return null;
 
-  const sorted = elements
-    .map(el => ({ el, rect: el.getBoundingClientRect() }))
-    .filter(item => item.rect.width > 0 && item.rect.height > 0)
-    .sort((a, b) => a.rect.left - b.rect.left);
+  const validos = elements.filter(el => {
+    const noChatAtivo = el.closest('footer') || 
+                        el.closest('#main') || 
+                        el.closest('[data-testid="conversation-compose-box-input"]') || 
+                        el.closest('[data-testid="compose-box"]');
+    return !noChatAtivo;
+  });
 
-  if (sorted.length === 0) return null;
+  if (validos.length > 0) {
+    return validos.sort((a, b) => a.getBoundingClientRect().left - b.getBoundingClientRect().left)[0];
+  }
 
-  return sorted[0].el;
+  return null;
 }
 
 const obterCampoTextoGeometrico = (): HTMLDivElement | null => {
@@ -85,9 +92,59 @@ const obterCampoTextoGeometrico = (): HTMLDivElement | null => {
   return null;
 }
 
+const obterBotaoEnviarGeometrico = (): HTMLElement | null => {
+  const SELS = [
+    'button[data-testid="compose-btn-send"]',
+    'footer button[aria-label="Enviar"]',
+    'footer button[aria-label="Send"]',
+    'footer span[data-icon="send"]',
+    '[data-testid="send"]',
+  ]
+  for (const s of SELS) {
+    const el = document.querySelector(s)
+    if (el) {
+      return (el.closest('button') || el) as HTMLElement
+    }
+  }
+
+  // Fallback Geométrico: encontra todos os botões e elementos com role="button" no footer
+  const footer = document.querySelector('footer')
+  if (!footer) return null
+  
+  const botoes = Array.from(footer.querySelectorAll('button, [role="button"]')) as HTMLElement[]
+  if (botoes.length === 0) return null
+
+  // Ordena os botões do footer da esquerda para a direita (maior left primeiro)
+  const sorted = botoes
+    .map(el => ({ el, rect: el.getBoundingClientRect() }))
+    .filter(item => item.rect.width > 0 && item.rect.height > 0)
+    .sort((a, b) => b.rect.left - a.rect.left)
+
+  if (sorted.length > 0) {
+    return sorted[0].el
+  }
+
+  return null
+}
+
 // ═══ Helper: insere texto no editor Lexical do WhatsApp via ClipboardEvent ═══
 // Esta é a única forma 100% confiável — o Lexical processa eventos de paste nativamente
 const inserirTextoNoLexical = async (el: HTMLElement, texto: string, acao: 'replace' | 'prepend' | 'append' = 'append'): Promise<void> => {
+  if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+    const input = el as HTMLInputElement | HTMLTextAreaElement;
+    input.focus();
+    if (acao === 'replace') {
+      input.value = texto;
+    } else if (acao === 'prepend') {
+      input.value = texto + input.value;
+    } else {
+      input.value = input.value + texto;
+    }
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+    input.dispatchEvent(new Event('change', { bubbles: true }));
+    return;
+  }
+
   el.focus()
 
   // Simula mousedown e mouseup para ativar o Lexical internamente
@@ -99,15 +156,10 @@ const inserirTextoNoLexical = async (el: HTMLElement, texto: string, acao: 'repl
 
   try {
     if (acao === 'replace') {
-      try {
-        range.selectNodeContents(el)
-        sel?.removeAllRanges()
-        sel?.addRange(range)
-        document.execCommand('delete', false)
-      } catch (e) {
-        el.textContent = ""
-        el.dispatchEvent(new InputEvent('input', { bubbles: true, inputType: 'deleteContentBackward' }))
-      }
+      el.focus()
+      range.selectNodeContents(el)
+      sel?.removeAllRanges()
+      sel?.addRange(range)
     } else if (acao === 'prepend') {
       range.selectNodeContents(el)
       range.collapse(true)
@@ -120,28 +172,35 @@ const inserirTextoNoLexical = async (el: HTMLElement, texto: string, acao: 'repl
       sel?.addRange(range)
     }
   } catch (err) {
-    // Fallback de segurança se a seleção ou colapso falhar
-    if (acao === 'replace') {
-      el.textContent = ""
-    }
+    logExtension('error', 'lexical', 'Erro ao configurar seleção no Lexical', err)
   }
   
   document.dispatchEvent(new Event('selectionchange'))
   await new Promise(r => setTimeout(r, 30))
 
   if (texto) {
-    // Tenta o método nativo de digitação insertText (mais robusto de todos no Lexical)
+    let colado = false
+    // A simulação de colagem por ClipboardEvent (paste) é o método supremo e nativo do Lexical.
+    // Ela substitui a seleção atual inteira (ótimo para replace) e atualiza o estado interno do React/Lexical na hora.
     try {
-      document.execCommand('insertText', false, texto)
-    } catch (err) {
-      // Fallback paste Clipboard se falhar insertText
+      const dt = new DataTransfer()
+      dt.setData('text/plain', texto)
+      const ev = new ClipboardEvent('paste', { bubbles: true, cancelable: true, clipboardData: dt })
+      el.dispatchEvent(ev)
+      colado = true
+    } catch (e) {
+      logExtension('warn', 'lexical', 'Falha ao simular colagem por ClipboardEvent, tentando insertText...', e)
+    }
+
+    if (!colado) {
+      // Fallback para document.execCommand
       try {
-        const dt = new DataTransfer()
-        dt.setData('text/plain', texto)
-        const ev = new ClipboardEvent('paste', { bubbles: true, cancelable: true, clipboardData: dt })
-        el.dispatchEvent(ev)
-      } catch (e) {
-        logExtension('error', 'lexical', 'Erro no fallback paste', e)
+        if (acao === 'replace') {
+          document.execCommand('delete', false)
+        }
+        document.execCommand('insertText', false, texto)
+      } catch (err) {
+        logExtension('error', 'lexical', 'Falha total na inserção de texto no Lexical', err)
       }
     }
   }
@@ -171,7 +230,17 @@ const WhatsAppCRM = () => {
   const obterContatosCache = (): any[] => {
     try {
       const cached = localStorage.getItem("crm_contatos_acumulados")
-      return cached ? JSON.parse(cached) : []
+      if (!cached) return []
+      const lista = JSON.parse(cached)
+      if (Array.isArray(lista)) {
+        // Limpeza automática: filtra e remove contatos legados gigantes com mais de 13 dígitos do cache do navegador
+        const filtrada = lista.filter((c: any) => c.numero && c.numero.replace(/\D/g, '').length <= 13)
+        if (filtrada.length !== lista.length) {
+          localStorage.setItem("crm_contatos_acumulados", JSON.stringify(filtrada))
+        }
+        return filtrada
+      }
+      return []
     } catch (e) {
       console.error("Erro ao obter cache de contatos:", e)
       return []
@@ -180,7 +249,9 @@ const WhatsAppCRM = () => {
 
   const salvarContatosCache = (contatos: any[]) => {
     try {
-      localStorage.setItem("crm_contatos_acumulados", JSON.stringify(contatos))
+      // Blindagem defensiva: impede a entrada de qualquer número gigante com mais de 13 dígitos no cache local
+      const filtrados = contatos.filter((c: any) => c.numero && c.numero.replace(/\D/g, '').length <= 13)
+      localStorage.setItem("crm_contatos_acumulados", JSON.stringify(filtrados))
     } catch (e) {
       console.error("Erro ao salvar cache de contatos:", e)
     }
@@ -202,7 +273,7 @@ const WhatsAppCRM = () => {
     if (!contatos || contatos.length === 0) return
     try {
       console.log(`[CRM] Sincronizando ${contatos.length} contatos com o backend...`)
-      const res = await fetch("http://localhost:3000/api/contatos/sincronizar", {
+      const res = await fetch("https://crm.marleysupermecado.com.br:3000/api/contatos/sincronizar", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ contatos })
@@ -221,7 +292,7 @@ const WhatsAppCRM = () => {
   // Busca todos os contatos salvos no SQLite do backend, atualizando cache e UI
   const carregarContatosDoServidor = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/contatos")
+      const res = await fetch("https://crm.marleysupermecado.com.br:3000/api/contatos")
       if (res.ok) {
         const contatos = await res.json()
         if (Array.isArray(contatos)) {
@@ -250,7 +321,7 @@ const WhatsAppCRM = () => {
       setAgendamentos([]);
       return;
     }
-    fetch(`http://localhost:3000/api/agendamentos?criadoPorId=${idFiltro}`)
+    fetch(`https://crm.marleysupermecado.com.br:3000/api/agendamentos?criadoPorId=${idFiltro}`)
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) {
@@ -283,13 +354,17 @@ const WhatsAppCRM = () => {
   const [loginSenha, setLoginSenha] = useState("")
   const [loginLoading, setLoginLoading] = useState(false)
   const [loginError, setLoginError] = useState("")
+  
+  // Controle do QR Code e Status Headless
+  const [qrCodeBackend, setQrCodeBackend] = useState<string | null>(null)
+  const [backendConectado, setBackendConectado] = useState<boolean>(false)
 
   const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoginLoading(true)
     setLoginError("")
     try {
-      const res = await fetch("http://localhost:3000/api/usuarios/login", {
+      const res = await fetch("https://crm.marleysupermecado.com.br:3000/api/usuarios/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: loginEmail, senha: loginSenha })
@@ -350,22 +425,20 @@ const WhatsAppCRM = () => {
         socket.emit("registrar_atendente", usuarioLogado.id)
       }
     })
+
+    socket.on("WHATSAPP_QR_CODE", (qrData) => {
+      setQrCodeBackend(qrData)
+      setBackendConectado(false)
+    })
     
-    socket.on("DISPARAR_MENSAGEM", async (agendamento) => {
-      console.log("Hora de enviar a mensagem!", agendamento)
-      try {
-        const finalStatus = await enviarMensagemWhatsApp(agendamento.numero, agendamento.mensagem, agendamento)
-        console.log(`[RPA] Atualizando status no backend para: ${finalStatus}`)
-        
-        await fetch(`http://localhost:3000/api/agendamentos/${agendamento.id}/status`, {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ status: finalStatus })
-        })
-      } catch (error) {
-        console.error("[RPA] Erro no fluxo de disparo de mensagem:", error)
+    socket.on("WHATSAPP_STATUS", (status) => {
+      setBackendConectado(status.conectado)
+      if (status.conectado) {
+        setQrCodeBackend(null)
       }
     })
+    
+
 
     socket.on("AGENDAMENTO_CRIADO", (agendamento) => {
       if (usuarioLogado && agendamento.criadoPorId === usuarioLogado.id) {
@@ -400,6 +473,13 @@ const WhatsAppCRM = () => {
       if (event.data?.type === "CRM_LOG") {
         const { nivel, escopo, mensagem, erro } = event.data
         logExtension(nivel, escopo, mensagem, erro)
+        return
+      }
+
+      // Notificação de que os Stores do Webpack estão prontos para envio silencioso
+      if (event.data?.type === "CRM_STORES_PRONTAS") {
+        console.log("[CRM] ✅ Stores do Webpack pre-aquecidas e prontas para envio silencioso!")
+        ;(window as any).crm_stores_prontas = true
         return
       }
 
@@ -554,7 +634,69 @@ const WhatsAppCRM = () => {
     }, 10000)
     carregarContatosDoServidor()
 
-    fetch('http://localhost:3000/api/agendamentos')
+    // ── FALLBACK SUPREMO: Verifica se a página foi recarregada para forçar o envio ──
+    const verificarFallbackSupremo = async () => {
+      const fallbackDataStr = localStorage.getItem("crm_fallback_agendamento")
+      if (fallbackDataStr) {
+        try {
+          const fallbackData = JSON.parse(fallbackDataStr)
+          logExtension('info', 'rpa-supremo', `Detectado Fallback Supremo em andamento para o número: ${fallbackData.numero}`)
+          
+          // Aguarda o WhatsApp Web carregar o chat da URL (pode levar alguns segundos)
+          let enviou = false
+          for (let i = 0; i < 20; i++) {
+            await new Promise(r => setTimeout(r, 1000))
+            const btnSend = obterBotaoEnviarGeometrico()
+            if (btnSend) {
+              logExtension('info', 'rpa-supremo', 'Botão de enviar encontrado! O WhatsApp já preencheu o texto. Clicando...')
+              btnSend.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window }))
+              btnSend.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window }))
+              btnSend.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }))
+              if (typeof (btnSend as any).click === 'function') {
+                try { (btnSend as HTMLElement).click() } catch (_) {}
+              }
+              
+              // Marca como enviado no backend
+              await fetch(`https://crm.marleysupermecado.com.br:3000/api/agendamentos/${fallbackData.id}/status`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                  status: 'enviado',
+                  observacoes: { sucesso: true, metodo: "Fallback Supremo URL" }
+                })
+              })
+              
+              logExtension('info', 'rpa-supremo', 'Mensagem do Fallback Supremo enviada com sucesso!')
+              enviou = true
+              break
+            }
+          }
+          
+          if (!enviou) {
+            logExtension('error', 'rpa-supremo', 'Falha no Fallback Supremo: O botão de enviar não apareceu após o carregamento da URL.')
+            await fetch(`https://crm.marleysupermecado.com.br:3000/api/agendamentos/${fallbackData.id}/status`, {
+              method: 'PUT',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ 
+                status: 'falhou',
+                observacoes: { sucesso: false, erros: ["Fallback Supremo URL falhou: botão não carregou"] }
+              })
+            })
+          }
+          
+        } catch (err) {
+          console.error("Erro ao processar fallback supremo", err)
+        } finally {
+          localStorage.removeItem("crm_fallback_agendamento")
+          // Limpa a URL para não reenviar se o usuário recarregar a página manualmente
+          window.history.replaceState(null, "", "/")
+        }
+      }
+    }
+    
+    verificarFallbackSupremo()
+
+    fetch('https://crm.marleysupermecado.com.br:3000/api/agendamentos')
       .then(res => res.json())
       .then(data => {
         setAgendamentos(data)
@@ -660,30 +802,38 @@ const WhatsAppCRM = () => {
 
     // ═══ Helper: clica no botão de enviar ═══
     const clicarEnviar = (): void => {
-      const SELS = [
-        'button[data-testid="compose-btn-send"]',
-        'footer button[aria-label="Enviar"]',
-        'footer button[aria-label="Send"]',
-        '[data-testid="send"]',
-        'footer span[data-icon="send"]',
-      ]
-      for (const s of SELS) {
-        const el = document.querySelector(s)
-        if (!el) continue
-        const btn = (el.closest('button') || el) as HTMLElement
+      const btn = obterBotaoEnviarGeometrico()
+      if (btn) {
         btn.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window }))
         btn.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window }))
         btn.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }))
         setTimeout(() => { try { btn.click() } catch (_) {} }, 100)
-        break
+      } else {
+        // Fallback supremo: se não localizou o botão de enviar, simula a tecla Enter física no editor Lexical!
+        const inputEl = obterCampoTexto()
+        if (inputEl) {
+          console.log("[GP-Assinatura] Botão de enviar não localizado. Executando fallback de Enter artificial...");
+          inputEl.dispatchEvent(new KeyboardEvent('keydown', {
+            key: 'Enter',
+            code: 'Enter',
+            keyCode: 13,
+            which: 13,
+            bubbles: true,
+            cancelable: true
+          }))
+        }
       }
     }
 
     const handleKeyDown = (e: KeyboardEvent) => {
       // 1. Interceptação de atalhos rápidos (/) ao pressionar Espaço ou Enter
       const rawTarget = e.target as HTMLElement
-      const targetEl = rawTarget ? rawTarget.closest('[contenteditable="true"]') as HTMLElement : null
+      const targetEl = (rawTarget && typeof rawTarget.closest === 'function')
+        ? rawTarget.closest('[contenteditable="true"]') as HTMLElement | null
+        : null
+        
       if (targetEl && targetEl.closest('footer')) {
+        crmUltimoInputVendedor = Date.now()
         if (e.key === ' ' || e.key === 'Enter') {
           const textoAtual = targetEl.innerText || targetEl.textContent || ""
           const textoLimpo = textoAtual.trim()
@@ -751,14 +901,18 @@ const WhatsAppCRM = () => {
       if (e.key === 'Enter' && !e.shiftKey) {
         const rawTarget = e.target as HTMLElement
         // É uma área editável que NÃO está no painel lateral esquerdo (#side = pesquisa)?
-        const target = rawTarget?.closest('[contenteditable="true"]') as HTMLElement | null
+        const target = (rawTarget && typeof rawTarget.closest === 'function')
+          ? rawTarget.closest('[contenteditable="true"]') as HTMLElement | null
+          : null
+          
         const isComposeBox = target &&
           !target.closest('#side') &&
           !target.closest('[data-testid="chat-list-search"]')
 
-        if (isComposeBox) {
+        if (isComposeBox && !(window as any).crm_robo_enviando) {
           const usarAssinaturaManual = localStorage.getItem("crm_usar_assinatura_manual") === "true"
           const nomeAtendente = localStorage.getItem("crm_nome_atendente") || ""
+          console.log("[GP-Assinatura] Enter detectado. Configs:", { usarAssinaturaManual, nomeAtendente, texto: target.textContent });
 
           if (usarAssinaturaManual && nomeAtendente) {
             // Usamos textContent puro para checar a assinatura (ignora quebras de linha problemáticas do innerText)
@@ -768,9 +922,14 @@ const WhatsAppCRM = () => {
             if (textoAtualRaw.trim() && !textoAtualRaw.startsWith(`*${nomeAtendente}:*`)) {
               e.preventDefault()
               e.stopPropagation()
+              console.log("[GP-Assinatura] Injetando assinatura manual via Enter...");
+
+              // Direciona a injeção do Lexical para o nó de parágrafo <p> interno (onde fica o cursor real)
+              const targetNode = target.querySelector('p') || target
 
               // Injeta a assinatura perfeitamente no INÍCIO (prepend), sem destruir e recriar o texto atual!
-              inserirTextoNoLexical(target, prefixo, 'prepend').then(() => {
+              inserirTextoNoLexical(targetNode, prefixo, 'prepend').then(() => {
+                console.log("[GP-Assinatura] Injetado com sucesso. Disparando clique de envio.");
                 setTimeout(() => clicarEnviar(), 50)
               })
             }
@@ -781,6 +940,7 @@ const WhatsAppCRM = () => {
 
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement
+      if (!target || typeof target.closest !== 'function') return
       
       const btnNode = target.closest('button') || target.closest('[role="button"]') || target
       const isSendBtn =
@@ -794,8 +954,9 @@ const WhatsAppCRM = () => {
         const usarAssinaturaManual = localStorage.getItem("crm_usar_assinatura_manual") === "true"
         const nomeAtendente = localStorage.getItem("crm_nome_atendente") || ""
         const inputEl = obterCampoTexto()
+        console.log("[GP-Assinatura] Clique no botão de enviar detectado. Configs:", { usarAssinaturaManual, nomeAtendente });
 
-        if (usarAssinaturaManual && nomeAtendente && inputEl) {
+        if (usarAssinaturaManual && nomeAtendente && inputEl && !(window as any).crm_robo_enviando) {
           const textoAtualRaw = (inputEl.textContent || "").replace(/[\u200b\u200c\u200d\ufeff\u00a0]/g, "")
           const prefixo = `*${nomeAtendente}:*\n`
 
@@ -803,8 +964,13 @@ const WhatsAppCRM = () => {
             e.preventDefault()
             e.stopPropagation()
             e.stopImmediatePropagation()
+            console.log("[GP-Assinatura] Injetando assinatura manual via Clique...");
 
-            inserirTextoNoLexical(inputEl, prefixo, 'prepend').then(() => {
+            // Direciona a injeção do Lexical para o nó de parágrafo <p> interno (onde fica o cursor real)
+            const targetNode = inputEl.querySelector('p') || inputEl
+
+            inserirTextoNoLexical(targetNode, prefixo, 'prepend').then(() => {
+              console.log("[GP-Assinatura] Injetado com sucesso no clique. Disparando envio.");
               setTimeout(() => clicarEnviar(), 50)
             })
           }
@@ -814,8 +980,11 @@ const WhatsAppCRM = () => {
 
     const handleInput = (e: Event) => {
       const rawTarget = e.target as HTMLElement
-      const target = rawTarget ? rawTarget.closest('[contenteditable="true"]') as HTMLElement : null
+      const target = (rawTarget && typeof rawTarget.closest === 'function')
+        ? rawTarget.closest('[contenteditable="true"]') as HTMLElement : null
+        
       if (target && target.closest('footer')) {
+        crmUltimoInputVendedor = Date.now()
         // Tenta obter o texto juntando os spans do Lexical para máxima precisão e sem atraso do DOM
         const spans = target.querySelectorAll('[data-lexical-text="true"]')
         let texto = ""
@@ -873,54 +1042,71 @@ const WhatsAppCRM = () => {
       return null
     }
 
-    try {
-      let currentEl: Element | null = el
-      let depth = 0
-      
-      while (currentEl && depth < 4) {
-        const key = Object.keys(currentEl).find(k => k.startsWith('__reactFiber$'))
+    const checkElementFiber = (element: Element): { nome: string, numero: string } | null => {
+      try {
+        const key = Object.keys(element).find(k => k.startsWith('__reactFiber$'))
+        if (!key) return null
         
-        if (key) {
-          let fiber: any = (currentEl as any)[key]
-          let fiberDepth = 0
-          while (fiber && fiberDepth < 10) {
-            const props = fiber.memoizedProps || fiber.pendingProps
-            if (props) {
-              const possibleContacts = [
-                props.chat,
-                props.contact,
-                props.data?.contact,
-                props.data?.chat?.contact,
-                props.data,
-                props.chat?.contact
-              ]
-              
-              for (const c of possibleContacts) {
-                if (c && c.id) {
-                  let num = ''
-                  if (typeof c.id === 'string' && c.id.includes('@c.us')) {
-                    num = c.id.split('@')[0]
-                  } else if (typeof c.id === 'object' && c.id.user && c.id.server === 'c.us') {
-                    num = c.id.user
-                  }
-                  
-                  if (num && num.length >= 8) {
-                    const name = c.name || c.pushname || c.formattedName || num
-                    return { nome: name, numero: num }
-                  }
+        let fiber = (element as any)[key]
+        let fiberDepth = 0
+        while (fiber && fiberDepth < 10) {
+          const props = fiber.memoizedProps || fiber.pendingProps
+          if (props) {
+            const possibleContacts = [
+              props.chat,
+              props.contact,
+              props.data?.contact,
+              props.data?.chat?.contact,
+              props.data,
+              props.chat?.contact
+            ]
+            
+            for (const c of possibleContacts) {
+              if (c && c.id) {
+                let num = ''
+                if (typeof c.id === 'string' && c.id.includes('@c.us')) {
+                  num = c.id.split('@')[0]
+                } else if (typeof c.id === 'object' && c.id.user && c.id.server === 'c.us') {
+                  num = c.id.user
+                }
+                
+                if (num && num.length >= 8) {
+                  const name = c.name || c.pushname || c.formattedName || num
+                  return { nome: name, numero: num }
                 }
               }
-              
-              // Fallback extremo: busca recursiva profunda pelo JID nos props
-              const deepNum = findJidInObject(props)
-              if (deepNum) {
-                return { nome: props.name || props.title || deepNum, numero: deepNum }
-              }
             }
-            fiber = fiber.return
-            fiberDepth++
+            
+            const deepNum = findJidInObject(props)
+            if (deepNum) {
+              return { nome: props.name || props.title || deepNum, numero: deepNum }
+            }
           }
+          fiber = fiber.return
+          fiberDepth++
         }
+      } catch (err) {}
+      return null
+    }
+
+    try {
+      // 1. Verifica o próprio elemento
+      const selfRes = checkElementFiber(el)
+      if (selfRes) return selfRes
+
+      // 2. Verifica os descendentes do elemento
+      const descendants = el.querySelectorAll('*')
+      for (const desc of Array.from(descendants)) {
+        const res = checkElementFiber(desc)
+        if (res) return res
+      }
+
+      // 3. Sobe a árvore (ancestrais)
+      let currentEl: Element | null = el.parentElement
+      let depth = 0
+      while (currentEl && depth < 4) {
+        const res = checkElementFiber(currentEl)
+        if (res) return res
         currentEl = currentEl.parentElement
         depth++
       }
@@ -1113,40 +1299,44 @@ const WhatsAppCRM = () => {
 
     // ── Passo 1: Encontrar a barra de pesquisa com Polling Resiliente e Geometria DOM ──
     const SEARCH_SELECTORS = [
+      '#side div[contenteditable="true"]',
+      '#side [contenteditable="true"]',
+      '#side div[contenteditable="true"][role="textbox"]',
+      '[data-testid="chat-list-search"]',
       'div[contenteditable="true"][data-tab="3"]',
       'div[contenteditable="true"][title="Pesquisar ou começar uma nova conversa"]',
       'div[contenteditable="true"][title="Search or start new chat"]',
       'div[contenteditable="true"][title*="Pesquisar"]',
       'div[contenteditable="true"][title*="Search"]',
-      '#side div[contenteditable="true"]',
-      '#side [contenteditable="true"]',
       'div[contenteditable="true"][role="textbox"]',
       'div[role="textbox"][data-tab="3"]',
-      '[data-testid="chat-list-search"]',
       'span[data-icon="search"] ~ div[contenteditable="true"]',
       'div.lexical-rich-text-input [contenteditable="true"]',
     ]
 
-    let searchInput: HTMLDivElement | null = null
-    logExtension('info', 'rpa-visual', 'Procurando pela barra de pesquisa do WhatsApp (com polling resiliente e geometria DOM)...')
+    let searchInput: HTMLElement | null = null
+    logExtension('info', 'rpa-visual', 'Procurando pela barra de pesquisa do WhatsApp (com polling resiliente)...')
     for (let i = 0; i < 10; i++) {
       const geomEl = obterBarraPesquisaGeometrica()
       if (geomEl) {
         searchInput = geomEl
-        logExtension('info', 'rpa-visual', 'Barra de pesquisa localizada geometricamente com sucesso.')
+        logExtension('info', 'rpa-visual', 'Barra de pesquisa localizada com sucesso via helper inabalável.')
         break
       }
-
-      for (const sel of SEARCH_SELECTORS) {
-        const el = document.querySelector(sel) as HTMLDivElement
-        if (el) { searchInput = el; break }
+      
+      // Se não achou, tenta clicar em ícones de lupa que podem abrir a busca
+      if (i === 3 || i === 6) {
+        const searchIcons = document.querySelectorAll('button[aria-label="Pesquisar"], button[aria-label="Search"], span[data-icon="search"], button[aria-label="Nova conversa"], button[aria-label="New chat"], span[data-icon="chat"]')
+        for (const icon of Array.from(searchIcons)) {
+           try { (icon.closest('button') || icon as HTMLElement).click() } catch(e) {}
+        }
       }
-      if (searchInput) break
-      await new Promise(r => setTimeout(r, 300))
+      
+      await new Promise(r => setTimeout(r, 400))
     }
 
     if (!searchInput) {
-      logExtension('error', 'rpa-visual', 'Barra de pesquisa não encontrada no DOM após polling de geometria e seletores. Abortando.')
+      logExtension('error', 'rpa-visual', 'Barra de pesquisa não encontrada no DOM após polling resiliente. Abortando.')
       return false
     }
 
@@ -1325,25 +1515,8 @@ const WhatsAppCRM = () => {
     const delayDigitar = savedDelayDigitar ? parseFloat(savedDelayDigitar) * 1000 : 800
     await new Promise(r => setTimeout(r, delayDigitar))
 
-    // ── Passo 5: Encontrar e clicar no botão de enviar com múltiplos seletores ──
-    const SEND_SELECTORS = [
-      'button[data-testid="compose-btn-send"]',
-      'footer button[aria-label="Enviar"]',
-      'footer button[aria-label="Send"]',
-      'footer span[data-icon="send"]',
-      '[data-testid="send"]',
-      'footer button:last-of-type',
-    ]
-
-    let sendBtn: HTMLElement | null = null
-    for (const sel of SEND_SELECTORS) {
-      const el = document.querySelector(sel)
-      if (el) {
-        // Se achou um span, sobe para o botão pai
-        sendBtn = (el.tagName === 'BUTTON' ? el : el.closest('button')) as HTMLElement || el as HTMLElement
-        if (sendBtn) { logExtension('info', 'rpa-visual', `Botão de enviar encontrado: ${sel}`); break }
-      }
-    }
+    // ── Passo 5: Encontrar e clicar no botão de enviar usando o Helper Geométrico Supremo ──
+    let sendBtn = obterBotaoEnviarGeometrico()
 
     if (sendBtn) {
       // Emulação física completa
@@ -1417,106 +1590,97 @@ const WhatsAppCRM = () => {
   }
 
   // Disparador Automático da Mensagem
-  const enviarMensagemWhatsApp = async (numero: string, mensagem: string, agendamento: any): Promise<string> => {
-    const numNormalizado = normalizarNumeroRPA(numero)
-    logExtension('info', 'rpa-envio', `Iniciando envio automático para: ${numNormalizado} (original: ${numero})`)
-    
-    // ── ESTRATÉGIA SUPREMA: ENVIO SILENCIOSO EM SEGUNDO PLANO ──
+  async function enviarMensagemWhatsApp(numero: string, mensagemOriginal: string, agendamento: any, observacoesObj: any): Promise<string> {
+    (window as any).crm_robo_enviando = true;
     try {
-      logExtension('info', 'rpa-envio', `Tentando envio silencioso em segundo plano para: ${numNormalizado}...`)
-      const responseId = Math.random().toString(36).substring(7)
+      const numNormalizado = normalizarNumeroRPA(numero)
       
-      const envioSilenciosoPromessa = new Promise<boolean>((resolve) => {
-        const handler = (e: MessageEvent) => {
-          if (e.source !== window) return
-          if (e.data && e.data.type === "CRM_ENVIAR_MENSAGEM_SILENCIOSA_RESPOSTA" && e.data.id === responseId) {
-            window.removeEventListener("message", handler)
-            resolve(e.data.sucesso)
-          }
-        }
-        window.addEventListener("message", handler)
+      // Suporte a assinatura automática nos disparos do robô
+      const usarAssinaturaRobo = localStorage.getItem("crm_usar_assinatura") === "true"
+      const nomeAtendente = localStorage.getItem("crm_nome_atendente") || ""
+      const mensagem = (usarAssinaturaRobo && nomeAtendente) 
+        ? `*${nomeAtendente}:*\n${mensagemOriginal}`
+        : mensagemOriginal
         
-        // Timeout de 4 segundos para o envio silencioso
-        setTimeout(() => {
-          window.removeEventListener("message", handler)
-          resolve(false)
-        }, 4000)
-      })
+      logExtension('info', 'rpa-envio', `Iniciando envio automático para: ${numNormalizado} (original: ${numero}). Mensagem formatada: ${mensagem}`)
+      
+      // ── ESTRATÉGIA SUPREMA: TENTATIVA DE ENVIO SILENCIOSO COM RETRIES LOCAIS ──
+      let sucessoSilencioso = false;
+      
+      for (let ret = 1; ret <= 3; ret++) {
+        try {
+          logExtension('info', 'rpa-envio', `Tentando envio silencioso (tentativa local ${ret}/3) para: ${numNormalizado}...`)
 
-      window.postMessage({ 
-        type: "CRM_ENVIAR_MENSAGEM_SILENCIOSA", 
-        id: responseId, 
-        numero: numNormalizado, 
-        mensagem 
-      }, "*")
+          // Se os stores ainda não estiverem aquecidos, solicita aquecimento forçado
+          const storesProntas = (window as any).crm_stores_prontas === true;
+          if (!storesProntas) {
+            logExtension('warn', 'rpa-envio', `[Retry ${ret}] Stores ainda não aquecidas. Solicitando aquecimento forçado...`)
+            window.postMessage({ type: "CRM_FORCAR_AQUECIMENTO" }, "*")
+            let esperaAquecimento = 0;
+            while (!(window as any).crm_stores_prontas && esperaAquecimento < 5000) {
+              await new Promise(r => setTimeout(r, 500))
+              esperaAquecimento += 500;
+            }
+          }
 
-      const sucessoSilencioso = await envioSilenciosoPromessa
-      if (sucessoSilencioso) {
-        logExtension('info', 'rpa-envio', `Sucesso absoluto! Mensagem enviada silenciosamente em segundo plano para ${numNormalizado}.`)
-        return 'enviado'
-      }
-      logExtension('warn', 'rpa-envio', `Envio silencioso falhou ou expirou. Caindo para a estratégia de fallback do RPA visual...`)
-    } catch (err) {
-      logExtension('error', 'rpa-envio', `Erro na tentativa de envio silencioso. Caindo para o RPA visual:`, err)
-    }
+          const responseId = Math.random().toString(36).substring(7)
+          
+          const envioSilenciosoPromessa = new Promise<boolean>((resolve) => {
+            const handler = (e: MessageEvent) => {
+              if (e.source !== window) return
+              if (e.data && e.data.type === "CRM_ENVIAR_MENSAGEM_SILENCIOSA_RESPOSTA" && e.data.id === responseId) {
+                window.removeEventListener("message", handler)
+                resolve(e.data.sucesso)
+              }
+            }
+            window.addEventListener("message", handler)
+            
+            // Timeout de 10 segundos por tentativa silenciosa
+            setTimeout(() => {
+              window.removeEventListener("message", handler)
+              resolve(false)
+            }, 10000)
+          })
 
-    let chatAtual = getActiveChatInfo()
-    let numChatAtualNormalizado = normalizarNumeroRPA(chatAtual.numero)
+          window.postMessage({ 
+            type: "CRM_ENVIAR_MENSAGEM_SILENCIOSA", 
+            id: responseId, 
+            numero: numNormalizado, 
+            mensagem 
+          }, "*")
 
-    // Se a conversa correta não estiver aberta, o robô abre ela primeiro!
-    if (!numChatAtualNormalizado || !compararNumerosBrasileiros(numChatAtualNormalizado, numNormalizado)) {
-      const nomeParaBusca = agendamento ? (agendamento.cliente || agendamento.nome) : ""
-      logExtension('info', 'rpa-envio', `Chat correto não está aberto (atual: ${numChatAtualNormalizado || 'Nenhum'}). Solicitando abertura de chat para: ${numNormalizado}`)
-      const abriu = await abrirConversa(numNormalizado, nomeParaBusca)
-      if (!abriu) {
-        logExtension('error', 'rpa-envio', `Erro: Não foi possível abrir o chat de ${numNormalizado}`)
-        return 'falhou'
-      }
-
-      // Polling de Ativação do Chat
-      logExtension('info', 'rpa-envio', `Aguardando confirmação visual do chat ativo para: ${numNormalizado}...`)
-      let confirmado = false
-      for (let i = 0; i < 15; i++) {
-        await new Promise(r => setTimeout(r, 300))
-        chatAtual = getActiveChatInfo()
-        numChatAtualNormalizado = normalizarNumeroRPA(chatAtual.numero)
-        if (numChatAtualNormalizado && compararNumerosBrasileiros(numChatAtualNormalizado, numNormalizado)) {
-          confirmado = true
-          logExtension('info', 'rpa-envio', `Confirmado! Chat de ${numNormalizado} carregado no cabeçalho com sucesso.`)
-          break
+          const resSilencioso = await envioSilenciosoPromessa
+          if (resSilencioso) {
+            logExtension('info', 'rpa-envio', `✅ Mensagem enviada silenciosamente via Store na tentativa ${ret} para ${numNormalizado}.`)
+            return 'enviado'
+          }
+          
+          logExtension('warn', 'rpa-envio', `Tentativa de envio silencioso ${ret}/3 falhou para ${numNormalizado}.`)
+          await new Promise(r => setTimeout(r, 2000)); // Pequena pausa antes de retentar
+        } catch (err: any) {
+          logExtension('error', 'rpa-envio', `Erro na tentativa de envio silencioso ${ret}: ${err?.message || err}`)
         }
       }
 
-      if (!confirmado) {
-        logExtension('warn', 'rpa-envio', `Aviso: Cabeçalho não atualizou a tempo para o número ${numNormalizado}. Prosseguindo com cautela...`)
+      if (observacoesObj && Array.isArray(observacoesObj.erros)) {
+        observacoesObj.erros.push("Envio silencioso falhou após 3 tentativas locais.");
       }
-    }
 
-    // Aguarda um momento adicional curto (600ms)
-    await new Promise(r => setTimeout(r, 600))
-
-    // Se estiver configurado para pausar se o cliente responder, faz a checagem
-    if (agendamento && agendamento.cancelarSeResponder) {
-      const respondeu = verificarSeClienteRespondeu()
-      if (respondeu) {
-        logExtension('info', 'rpa-envio', `Envio cancelado porque o cliente respondeu!`)
-        return 'cliente_respondeu'
-      }
-    }
-
-    // Digita e envia a mensagem de fato
-    const enviado = await digitarESend(mensagem)
-    if (enviado) {
-      logExtension('info', 'rpa-envio', `Mensagem enviada via RPA visual com sucesso!`)
-      return 'enviado'
-    } else {
-      logExtension('error', 'rpa-envio', `Erro ao disparar clique de envio visual.`)
+      logExtension('error', 'rpa-envio', `Envio silencioso falhou em todas as tentativas para ${numNormalizado}. Abortando envio para não interromper o operador na tela.`);
       return 'falhou'
+    } catch (err: any) {
+      logExtension('error', 'rpa-envio', `Erro crítico no fluxo do robô: ${err?.message || err}`, err);
+      if (observacoesObj && Array.isArray(observacoesObj.erros)) {
+        observacoesObj.erros.push(`Erro crítico: ${err?.message || err}`);
+      }
+      return 'falhou'
+    } finally {
+      (window as any).crm_robo_enviando = false;
     }
   }
 
   // Varre a barra lateral esquerda do WhatsApp Web e mapeia os contatos ativos
-  const obterContatosRecentes = () => {
+  function obterContatosRecentes() {
     const contatosCache = obterContatosCache()
     const contatosMap = new Map<string, { nome: string; foto: string }>() // mapa de numero -> { nome, foto }
 
@@ -1981,6 +2145,7 @@ const WhatsAppCRM = () => {
       {showModal && (
         <ModalAgendamento 
           onClose={() => setShowModal(false)} 
+          onSuccess={() => carregarAgendamentosDoServidor()}
           usuarioId={usuarioId} 
           contatoNome={activeChat.nome === 'Conversa Sem Nome' ? '' : activeChat.nome}
           contatoNumero={activeChat.numero}
@@ -1996,7 +2161,7 @@ const WhatsAppCRM = () => {
           contatosDisponiveis={obterContatosRecentes()}
           onDelete={async (id) => {
             try {
-              const res = await fetch(`http://localhost:3000/api/agendamentos/${id}`, {
+              const res = await fetch(`https://crm.marleysupermecado.com.br:3000/api/agendamentos/${id}`, {
                 method: 'DELETE'
               })
               if (!res.ok) throw new Error("Erro ao deletar")
@@ -2007,7 +2172,7 @@ const WhatsAppCRM = () => {
           }}
           onEdit={async (id, dados) => {
             try {
-              const res = await fetch(`http://localhost:3000/api/agendamentos/${id}`, {
+              const res = await fetch(`https://crm.marleysupermecado.com.br:3000/api/agendamentos/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(dados)
@@ -2062,6 +2227,68 @@ const WhatsAppCRM = () => {
         />
       )}
 
+      {/* Renderiza o QR Code do Servidor, se não estiver conectado e houver QR Code */}
+      {qrCodeBackend && !backendConectado && usuarioLogado && (
+        <div style={{
+          position: 'fixed',
+          top: 0, left: 0, right: 0, bottom: 0,
+          backgroundColor: 'rgba(0,0,0,0.85)',
+          zIndex: 999999,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+          <div style={{
+            backgroundColor: '#1E1E2D',
+            padding: '30px',
+            borderRadius: '16px',
+            maxWidth: '400px',
+            width: '90%',
+            textAlign: 'center',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+            border: '1px solid rgba(255,255,255,0.1)'
+          }}>
+            <h2 style={{ color: '#fff', fontSize: '20px', fontWeight: 'bold', marginBottom: '15px' }}>
+              WhatsApp do Servidor Desconectado
+            </h2>
+            <p style={{ color: '#aaa', fontSize: '14px', marginBottom: '20px', lineHeight: '1.4' }}>
+              Para que os <strong>agendamentos automáticos</strong> sejam enviados de forma silenciosa, 
+              o servidor precisa estar conectado como um "Aparelho Conectado".
+              <br/><br/>
+              Aponte a câmera do WhatsApp (Aparelhos Conectados) para este código:
+            </p>
+            <div style={{ 
+              background: '#fff', 
+              padding: '10px', 
+              borderRadius: '8px', 
+              display: 'inline-block',
+              marginBottom: '20px'
+            }}>
+              <img src={qrCodeBackend} alt="QR Code WhatsApp" style={{ width: '250px', height: '250px' }} />
+            </div>
+            
+            <button 
+              onClick={() => setQrCodeBackend(null)}
+              style={{
+                display: 'block',
+                width: '100%',
+                padding: '12px',
+                background: 'rgba(255,255,255,0.05)',
+                color: '#fff',
+                border: '1px solid rgba(255,255,255,0.1)',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+                transition: 'all 0.2s'
+              }}
+              onMouseOver={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+              onMouseOut={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'}
+            >
+              Fechar e tentar mais tarde
+            </button>
+          </div>
+        </div>
+      )}
 
     </>
   )
