@@ -210,4 +210,25 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+// Atualizar auto-resposta do atendente
+router.put('/:id/autoresposta', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { autoRespostaAtiva, autoRespostaMensagem } = req.body;
+    
+    const usuarioAtualizado = await prisma.usuario.update({
+      where: { id },
+      data: {
+        autoRespostaAtiva: Boolean(autoRespostaAtiva),
+        autoRespostaMensagem: autoRespostaMensagem || ''
+      }
+    });
+
+    res.json(usuarioAtualizado);
+  } catch (error) {
+    console.error('Erro ao atualizar auto-resposta:', error);
+    res.status(500).json({ error: 'Erro ao atualizar auto-resposta' });
+  }
+});
+
 export default router;

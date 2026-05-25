@@ -34,6 +34,10 @@ export default function Configuracoes({ onClose }) {
   const [expedienteFim, setExpedienteFim] = useState("18:00")
   const [expedienteDias, setExpedienteDias] = useState<number[]>([1, 2, 3, 4, 5]) // Segunda a Sexta por padrão
   
+  // Auto Resposta (Carregada do usuário no banco de dados)
+  const [autoRespostaAtiva, setAutoRespostaAtiva] = useState(usuarioLogado?.autoRespostaAtiva || false)
+  const [autoRespostaMensagem, setAutoRespostaMensagem] = useState(usuarioLogado?.autoRespostaMensagem || "Oi! Sou a Josi 👋\nPor gentileza me diz seu NOME e a medida de PNEUS que você precisa.\n\nHorário de atendimento:\nSegunda a sexta de 08h às 18h\nSábado de 08h às 12h.")
+
   const [salvoFeedback, setSalvoFeedback] = useState(false)
 
   // Carrega configurações salvas ao montar o componente
@@ -51,7 +55,7 @@ export default function Configuracoes({ onClose }) {
     if (savedDelayDigitar) setDelayDigitar(savedDelayDigitar)
 
     // Carrega configurações de expediente do banco de dados SQLite do servidor
-    fetch("http://localhost:3000/api/configuracoes")
+    fetch("https://crm.marleysupermecado.com.br:3000/api/configuracoes")
       .then(res => res.json())
       .then(data => {
         if (data) {
@@ -83,7 +87,7 @@ export default function Configuracoes({ onClose }) {
     expedienteDias: string
   }) => {
     try {
-      await fetch("http://localhost:3000/api/configuracoes", {
+      await fetch("https://crm.marleysupermecado.com.br:3000/api/configuracoes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
@@ -122,6 +126,38 @@ export default function Configuracoes({ onClose }) {
     setDelayDigitar(value)
     localStorage.setItem("crm_delay_digitar", value)
     dispararFeedbackSalvo()
+  }
+
+  // Auto-Resposta Backend
+  const salvarAutoRespostaBackend = async (ativa: boolean, mensagem: string) => {
+    if (!usuarioLogado) return;
+    try {
+      await fetch(`https://crm.marleysupermecado.com.br:3000/api/usuarios/${usuarioLogado.id}/autoresposta`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ autoRespostaAtiva: ativa, autoRespostaMensagem: mensagem })
+      });
+      // Atualizar no localStorage para manter
+      const atualizado = { ...usuarioLogado, autoRespostaAtiva: ativa, autoRespostaMensagem: mensagem };
+      localStorage.setItem("crm_usuario_logado", JSON.stringify(atualizado));
+      setUsuarioLogado(atualizado);
+      dispararFeedbackSalvo();
+    } catch (err) {
+      console.error("Erro ao salvar auto-resposta:", err);
+    }
+  }
+
+  const handleAutoRespostaAtivaChange = (checked: boolean) => {
+    setAutoRespostaAtiva(checked)
+    salvarAutoRespostaBackend(checked, autoRespostaMensagem)
+  }
+
+  const handleAutoRespostaMensagemChange = (value: string) => {
+    setAutoRespostaMensagem(value)
+  }
+
+  const handleBlurAutoResposta = () => {
+    salvarAutoRespostaBackend(autoRespostaAtiva, autoRespostaMensagem)
   }
 
   // Funções para controle de expediente
@@ -310,6 +346,44 @@ export default function Configuracoes({ onClose }) {
                 required={usarAssinatura || usarAssinaturaManual}
               />
               <span className="text-[9px] text-gray-400 italic font-medium">As mensagens selecionadas começarão com: <br/><b className="text-gray-600">*{nomeAtendente || 'Nome'}:*</b> em negrito.</span>
+            </div>
+          )}
+        </div>
+
+        {/* Auto-Resposta */}
+        <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col gap-4">
+          <div className="flex justify-between items-center">
+            <h3 className="font-bold text-sm text-gray-800 flex items-center gap-1.5" style={{ margin: 0 }}>
+              <span>💬</span> Mensagem de Auto-Resposta
+            </h3>
+            <label className="relative inline-flex items-center cursor-pointer">
+              <input 
+                type="checkbox" 
+                checked={autoRespostaAtiva} 
+                onChange={e => handleAutoRespostaAtivaChange(e.target.checked)}
+                className="sr-only peer"
+                disabled={!usuarioLogado}
+              />
+              <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#00a884]"></div>
+            </label>
+          </div>
+          
+          <span className="text-[9px] text-gray-400 -mt-2">
+            Se ativado, envia automaticamente a mensagem abaixo para todo novo cliente que mandar mensagem. (Envia apenas 1 vez por cliente)
+          </span>
+
+          {autoRespostaAtiva && (
+            <div className="flex flex-col gap-1.5 pt-2 border-t border-gray-50 transition-all duration-300">
+              <label className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Sua Mensagem Padrão</label>
+              <textarea 
+                className="border border-gray-200 bg-[#f8f9fa] p-2.5 rounded-lg text-xs font-semibold text-gray-700 focus:outline-none focus:border-[#00a884]"
+                value={autoRespostaMensagem}
+                onChange={e => handleAutoRespostaMensagemChange(e.target.value)}
+                onBlur={handleBlurAutoResposta}
+                rows={5}
+                placeholder="Escreva a mensagem..."
+              />
+              <span className="text-[9px] text-gray-400 italic">Dica: O texto será salvo automaticamente quando você clicar fora da caixa.</span>
             </div>
           )}
         </div>
