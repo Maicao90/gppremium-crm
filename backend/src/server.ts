@@ -1,4 +1,6 @@
 import express from 'express';
+import fs from 'fs';
+import https from 'https';
 import http from 'http';
 import { Server } from 'socket.io';
 import cors from 'cors';
@@ -6,6 +8,7 @@ import { PrismaClient } from '@prisma/client';
 import dotenv from 'dotenv';
 import path from 'path';
 import { initWorker } from './workers/agendaWorker';
+import { connectToWhatsApp } from './workers/whatsappService';
 import agendamentosRouter from './routes/agendamentos';
 import contatosRouter from './routes/contatos';
 import configuracoesRouter from './routes/configuracoes';
@@ -18,31 +21,125 @@ app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
-const server = http.createServer(app);
+// Lógica de boot em HTTPS nativo seguro
+let server: any;
+try {
+  const keyPath = path.join(__dirname, '../key.pem');
+  const certPath = path.join(__dirname, '../cert.pem');
+  
+  if (fs.existsSync(keyPath) && fs.existsSync(certPath)) {
+    const options = {
+      key: fs.readFileSync(keyPath),
+      cert: fs.readFileSync(certPath)
+    };
+    server = https.createServer(options, app);
+    console.log('[SSL] Iniciando servidor em modo seguro HTTPS (SSL nativo)!');
+  } else {
+    server = http.createServer(app);
+    console.log('[SSL] Chaves SSL não encontradas. Iniciando em modo padrão HTTP.');
+  }
+} catch (e) {
+  server = http.createServer(app);
+  console.log('[SSL] Falha ao configurar SSL. Iniciando em modo padrão HTTP.');
+}
+
 export const io = new Server(server, {
   cors: { origin: '*' }
 });
 
-export const prisma = new PrismaClient();
+// Integração com Failover Multi-Cloud
+import { cloudManager } from './cloudManager';
 
-// Inicia Worker do BullMQ
-initWorker();
+// Exporta um proxy que intercepta as chamadas para o Prisma
+// Isso garante que todos os arquivos (whatsappService, agendaWorker, rotas)
+// sempre usem a instância mais recente do Prisma, que pode mudar caso ocorra um Failover.
+export const prisma = new Proxy({} as PrismaClient, {
+  get(target, prop) {
+    return cloudManager.getPrisma()[prop as keyof PrismaClient];
+  }
+});
 
-// Rotas
+let coreIniciado = false;
+async function iniciarCoreDoSistema() {
+  if (coreIniciado) return;
+  try {
+    // Tenta acessar o banco só para garantir que subiu
+    await prisma.configuracao.count(); 
+    coreIniciado = true;
+    console.log('[Core] Iniciando workers principais...');
+    initWorker();
+    
+    // Inicia a conexão do WhatsApp para todos os usuários que estão ativos e possivelmente conectados
+    try {
+      const usuarios = await prisma.usuario.findMany({ where: { ativo: true } });
+      for (const user of usuarios) {
+        connectToWhatsApp(user.id).catch(err => console.error(`[Baileys] Erro ao iniciar WhatsApp para ${user.id}:`, err));
+      }
+    } catch (err) {
+      console.error('[Core] Erro ao carregar usuários para iniciar o WhatsApp:', err);
+    }
+    
+    seedAdmin();
+  } catch (err) {
+    console.error('[Core] Erro ao iniciar core:', err);
+  }
+}
+
+// Inicia o Failover no boot
+cloudManager.initializeFailover().then(({ ativo }) => {
+  if (ativo) {
+    iniciarCoreDoSistema();
+  } else {
+    console.warn('\n======================================================');
+    console.warn('BANCO DE DADOS NÃO CONFIGURADO OU FORA DO AR!');
+    console.warn('O sistema principal está pausado.');
+    console.warn('Acesse: http://localhost:3000/admin para configurar.');
+    console.warn('======================================================\n');
+  }
+});
+
+// Servir arquivos estáticos da pasta public/ (admin.html, admin/index.html, etc.)
+app.use(express.static(path.join(__dirname, '../public')));
+
+// Rota explícita para o painel admin principal
+app.get('/admin.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/admin.html'));
+});
+
+// Rota para o painel de credenciais de nuvem
+app.use('/admin', express.static(path.join(__dirname, '../public/admin')));
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/admin/index.html'));
+});
+
+// Rotas de API
 app.use('/api/agendamentos', agendamentosRouter);
 app.use('/api/contatos', contatosRouter);
 app.use('/api/configuracoes', configuracoesRouter);
 app.use('/api/usuarios', usuariosRouter);
 
-// Servir a pasta pública no endpoint /admin
-app.use('/admin', express.static(path.join(__dirname, '../public')));
-
-// Rotas explícitas para garantir o carregamento do Dashboard em /admin ou /admin/
-app.get('/admin', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/admin.html'));
+// Rotas da API de Nuvem do Painel Admin
+app.get('/api/admin/nuvem', (req, res) => {
+  const configs = cloudManager.getConfigs();
+  const ativo = cloudManager.getAtivo();
+  res.json({ ...configs, ativo });
 });
-app.get('/admin/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/admin.html'));
+
+app.post('/api/admin/nuvem', async (req, res) => {
+  try {
+    const { planoA, planoB, planoC } = req.body;
+    await cloudManager.saveConfigs({ planoA, planoB, planoC });
+    
+    const { ativo } = await cloudManager.initializeFailover();
+    if (ativo) {
+      iniciarCoreDoSistema();
+      res.json({ success: true, ativo });
+    } else {
+      res.status(400).json({ error: 'Nenhuma das URLs fornecidas conseguiu conectar.' });
+    }
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 // Rota de logs em tempo real direcionados da extensão para diagnóstico
@@ -71,6 +168,12 @@ io.on('connection', async (socket) => {
   socket.on('registrar_atendente', (usuarioId) => {
     console.log(`[Socket] Atendente ${usuarioId} registrado no socket ${socket.id}`);
     usuariosConectados.set(socket.id, String(usuarioId));
+    
+    // Entrar na sala do usuário
+    socket.join(String(usuarioId));
+    
+    // Garante que o WhatsApp está conectado ou em processo de conexão para este usuário
+    connectToWhatsApp(String(usuarioId), socket.id).catch(err => console.error(`[Baileys] Erro crítico ao conectar WhatsApp do usuário ${usuarioId}:`, err));
   });
 
   // Quando a extensão se conecta (WhatsApp Web abriu), recupera IMEDIATAMENTE 
@@ -113,7 +216,7 @@ async function seedAdmin() {
     console.error('[Prisma Seed] Erro no seed de administrador:', err);
   }
 }
-seedAdmin();
+// O seedAdmin() agora é chamado dentro do iniciarCoreDoSistema() para evitar falhas se o BD estiver offline.
 
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {

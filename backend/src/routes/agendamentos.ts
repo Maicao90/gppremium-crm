@@ -48,8 +48,8 @@ router.post('/', async (req, res) => {
       }
     });
 
-    // Removemos a fila temporariamente para rodar 100% nativo (sem Redis)
-    io.emit('AGENDAMENTO_CRIADO', agendamento);
+    // Envia o evento de socket isolado para a sala do usuário
+    io.to(usuario.id).emit('AGENDAMENTO_CRIADO', agendamento);
     res.status(201).json(agendamento);
   } catch (error) {
     console.error(error);
@@ -61,14 +61,19 @@ router.post('/', async (req, res) => {
 router.put('/:id/status', async (req, res) => {
   try {
     const { id } = req.params;
-    const { status } = req.body;
+    const { status, observacoes } = req.body;
+
+    const updateData: any = { status };
+    if (observacoes !== undefined) {
+      updateData.observacoes = typeof observacoes === 'object' ? JSON.stringify(observacoes) : observacoes;
+    }
 
     const agendamento = await prisma.agendamento.update({
       where: { id },
-      data: { status }
+      data: updateData
     });
 
-    io.emit('STATUS_ATUALIZADO', agendamento);
+    io.to(agendamento.criadoPorId).emit('STATUS_ATUALIZADO', agendamento);
     res.json(agendamento);
   } catch (error) {
     res.status(500).json({ error: 'Erro ao atualizar status' });
@@ -79,10 +84,13 @@ router.put('/:id/status', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    await prisma.agendamento.delete({
-      where: { id }
-    });
-    io.emit('AGENDAMENTO_EXCLUIDO', { id });
+    const agendamento = await prisma.agendamento.findUnique({ where: { id } });
+    if (agendamento) {
+      await prisma.agendamento.delete({
+        where: { id }
+      });
+      io.to(agendamento.criadoPorId).emit('AGENDAMENTO_EXCLUIDO', { id });
+    }
     res.sendStatus(204);
   } catch (error) {
     console.error(error);
@@ -115,7 +123,7 @@ router.put('/:id', async (req, res) => {
       }
     });
 
-    io.emit('AGENDAMENTO_ATUALIZADO', agendamento);
+    io.to(agendamento.criadoPorId).emit('AGENDAMENTO_ATUALIZADO', agendamento);
     res.json(agendamento);
   } catch (error) {
     console.error(error);

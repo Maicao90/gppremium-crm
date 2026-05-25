@@ -15,6 +15,10 @@ router.post('/login', async (req, res) => {
       where: { email: email.toLowerCase().trim() }
     });
 
+    if (usuario && !usuario.ativo) {
+      return res.status(401).json({ error: 'Usuário inativo.' });
+    }
+
     if (!usuario || usuario.senha !== senha) {
       return res.status(401).json({ error: 'E-mail ou senha incorretos.' });
     }
@@ -69,6 +73,7 @@ router.post('/cadastrar', async (req, res) => {
 router.get('/', async (req, res) => {
   try {
     const usuarios = await prisma.usuario.findMany({
+      where: { ativo: true },
       select: {
         id: true,
         nome: true,
@@ -107,8 +112,9 @@ router.get('/metricas', async (req, res) => {
       dataInicio.setHours(0, 0, 0, 0);
     }
 
-    // Busca usuários e inclui apenas os agendamentos do período selecionado
+    // Busca usuários ativos e inclui apenas os agendamentos do período selecionado
     const usuarios = await prisma.usuario.findMany({
+      where: { ativo: true },
       include: {
         agendamentos: {
           where: {
@@ -129,6 +135,7 @@ router.get('/metricas', async (req, res) => {
         id: u.id,
         nome: u.nome,
         email: u.email,
+        senha: u.senha,
         role: u.role,
         total,
         enviados,
@@ -142,6 +149,64 @@ router.get('/metricas', async (req, res) => {
   } catch (error) {
     console.error('Erro ao buscar métricas de usuários:', error);
     res.status(500).json({ error: 'Erro ao processar métricas.' });
+  }
+});
+
+// Atualizar atendente (editar nome, e-mail, senha e permissão)
+router.put('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { nome, email, senha, role } = req.body;
+    
+    if (!nome || !email || !senha) {
+      return res.status(400).json({ error: 'Nome, e-mail e senha são obrigatórios.' });
+    }
+
+    const emailLimpo = email.toLowerCase().trim();
+
+    // Verificar se o e-mail já está em uso por outro usuário
+    const existente = await prisma.usuario.findFirst({
+      where: {
+        email: emailLimpo,
+        NOT: { id }
+      }
+    });
+
+    if (existente) {
+      return res.status(400).json({ error: 'E-mail já está sendo utilizado por outro atendente.' });
+    }
+
+    const usuarioAtualizado = await prisma.usuario.update({
+      where: { id },
+      data: {
+        nome,
+        email: emailLimpo,
+        senha,
+        role: role || 'operador'
+      }
+    });
+
+    res.json(usuarioAtualizado);
+  } catch (error) {
+    console.error('Erro ao atualizar usuário:', error);
+    res.status(500).json({ error: 'Erro ao atualizar atendente' });
+  }
+});
+
+// Excluir atendente
+router.delete('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    await prisma.usuario.update({
+      where: { id },
+      data: { ativo: false }
+    });
+    
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Erro ao excluir usuário:', error);
+    res.status(500).json({ error: 'Erro ao excluir atendente' });
   }
 });
 

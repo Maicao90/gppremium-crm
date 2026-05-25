@@ -6,18 +6,23 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model Usuario {
-  id           String        @id @default(uuid())
-  nome         String
-  email        String        @unique @default("")
-  senha        String        @default("")
-  role         String        @default("operador") // admin, operador
-  agendamentos Agendamento[]
-  criadoEm     DateTime      @default(now())
+  id                   String        @id @default(uuid())
+  nome                 String
+  email                String        @unique @default("")
+  senha                String        @default("")
+  role                 String        @default("operador") // admin, operador
+  ativo                Boolean       @default(true)
+  whatsappConectado    Boolean       @default(false)
+  autoRespostaAtiva    Boolean       @default(false)
+  autoRespostaMensagem String        @default("Oi! Sou a Josi 👋\nPor gentileza me diz seu NOME e a medida de PNEUS que você precisa.\n\nHorário de atendimento:\nSegunda a sexta de 08h às 18h\nSábado de 08h às 12h.")
+  agendamentos         Agendamento[]
+  autoReplyHistories   AutoReplyHistory[]
+  criadoEm             DateTime      @default(now())
 }
 
 model Agendamento {
@@ -28,6 +33,7 @@ model Agendamento {
   enviarEm              DateTime
   status                String   @default("pendente") // pendente, enviado, cancelado, falhou, cliente_respondeu
   cancelarSeResponder   Boolean  @default(true)
+  observacoes           String?  // Campo para rastrear tentativas de retry e informações de diagnóstico
   
   criadoPorId           String
   criadoPor             Usuario  @relation(fields: [criadoPorId], references: [id])
@@ -53,4 +59,12 @@ model Configuracao {
   atualizadoEm     DateTime @updatedAt
 }
 
+model AutoReplyHistory {
+  id           String   @id @default(uuid())
+  usuarioId    String
+  usuario      Usuario  @relation(fields: [usuarioId], references: [id])
+  numero       String
+  criadoEm     DateTime @default(now())
 
+  @@unique([usuarioId, numero]) // Garante que o mesmo número só receba uma vez por usuário
+}

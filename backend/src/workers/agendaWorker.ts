@@ -5,151 +5,174 @@ async function estaNoExpediente(agora: Date): Promise<boolean> {
   try {
     let config = await prisma.configuracao.findUnique({ where: { id: 'global' } });
     if (!config) {
-      // Se não existir nenhuma configuração no banco, cria o registro default
       config = await prisma.configuracao.create({
         data: {
           id: 'global',
           expedienteAtivo: false,
           expedienteInicio: '08:00',
           expedienteFim: '18:00',
-          expedienteDias: '1,2,3,4,5' // Segunda a Sexta
+          expedienteDias: '1,2,3,4,5'
         }
       });
     }
 
-    // Se o expediente não estiver ativado, o envio é livre a qualquer momento
     if (!config.expedienteAtivo) {
       return true;
     }
 
-    // Obter dia da semana atual (0 = Domingo, 1 = Segunda, ..., 6 = Sábado)
     const diaSemana = agora.getDay();
     const diasConfigurados = config.expedienteDias.split(',').map(d => parseInt(d.trim()));
 
-    // Se o dia atual não está nos dias configurados, está fora do expediente
     if (!diasConfigurados.includes(diaSemana)) {
       return false;
     }
 
-    // Obter hora e minutos atuais do sistema local do usuário
     const horaAtual = agora.getHours();
     const minutoAtual = agora.getMinutes();
     const tempoAtualEmMinutos = horaAtual * 60 + minutoAtual;
 
-    // Converter horário de início ("HH:MM") para minutos
     const partesInicio = config.expedienteInicio.split(':').map(Number);
     const hInicio = partesInicio[0] !== undefined ? partesInicio[0] : 8;
     const mInicio = partesInicio[1] !== undefined ? partesInicio[1] : 0;
     const tempoInicioEmMinutos = hInicio * 60 + mInicio;
 
-    // Converter horário de término ("HH:MM") para minutos
     const partesFim = config.expedienteFim.split(':').map(Number);
     const hFim = partesFim[0] !== undefined ? partesFim[0] : 18;
     const mFim = partesFim[1] !== undefined ? partesFim[1] : 0;
-    const tempoFimEmMinutos = hFim * 60 + mFim;
+    let tempoFimEmMinutos = hFim * 60 + mFim;
 
-    // Retorna verdadeiro se o horário atual está contido no intervalo de expediente
+    if (tempoFimEmMinutos === 0 || tempoFimEmMinutos < tempoInicioEmMinutos) {
+      tempoFimEmMinutos = 24 * 60;
+    }
+
     return tempoAtualEmMinutos >= tempoInicioEmMinutos && tempoAtualEmMinutos <= tempoFimEmMinutos;
   } catch (error) {
     console.error("[Worker] Erro ao verificar horário de expediente:", error);
-    return true; // Em caso de falha crítica no banco, libera o envio para não travar a aplicação
+    return true;
   }
 }
 
-export function initWorker() {
-  console.log("Worker de agendamentos iniciado (Local Polling & Expediente Seguro)");
+// Intervalo de retry para agendamentos que falharam: 3 minutos
+const INTERVALO_RETRY_MS = 3 * 60 * 1000;
+// Máximo de tentativas de retry
+const MAX_TENTATIVAS = 3;
 
-  // Polling seguro a cada 5 segundos
+export function initWorker() {
+  console.log("Worker de agendamentos iniciado (Polling 10s, Retry Persistente no SQLite & Expediente Seguro)");
+
   setInterval(async () => {
     try {
       const agora = new Date();
 
-      // 1. FALLBACK / RECUPERAÇÃO AUTOMÁTICA:
-      // Se algum agendamento ficou travado no status 'enviando' por mais de 5 minutos,
-      // significa que a extensão ou navegador desconectou ou travou no meio.
-      // Resetamos esse status de volta para 'pendente' para nova tentativa automática.
+      // ─── 1. RECUPERAÇÃO DE TRAVADOS ─────────────────────────────────────
+      // Se algum agendamento ficou travado em 'enviando' por mais de 5 minutos,
+      // reseta para 'pendente' para nova tentativa de envio
       const cincoMinutosAtras = new Date(agora.getTime() - 5 * 60 * 1000);
       const travadosRecuperados = await prisma.agendamento.updateMany({
         where: {
           status: 'enviando',
-          atualizadoEm: {
-            lte: cincoMinutosAtras
-          }
+          atualizadoEm: { lte: cincoMinutosAtras }
         },
-        data: {
-          status: 'pendente'
-        }
+        data: { status: 'pendente' }
       });
 
       if (travadosRecuperados.count > 0) {
-        console.log(`[Worker] Recuperação Automática: ${travadosRecuperados.count} agendamento(s) travado(s) em 'enviando' redefinido(s) para 'pendente'.`);
+        console.log(`[Worker] Recuperação: ${travadosRecuperados.count} agendamento(s) travado(s) em 'enviando' → 'pendente'.`);
       }
 
-      // 2. VERIFICAÇÃO DE EXPEDIENTE:
+      // ─── 2. RETRY AUTOMÁTICO DE AGENDAMENTOS QUE FALHARAM (PERSISTIDO NO SQLITE) ───
+      // Agendamentos com status 'falhou' há mais de 3 minutos são retentados.
+      // O histórico de tentativas e logs de erro é salvo no campo 'observacoes'.
+      const tresMinutosAtras = new Date(agora.getTime() - INTERVALO_RETRY_MS);
+      const falhadosParaRetry = await prisma.agendamento.findMany({
+        where: {
+          status: 'falhou',
+          atualizadoEm: { lte: tresMinutosAtras }
+        }
+      });
+
+      for (const ag of falhadosParaRetry) {
+        let dadosRetry = { tentativas: 0, erros: [] as string[] };
+        if (ag.observacoes) {
+          try {
+            const parsed = JSON.parse(ag.observacoes);
+            if (typeof parsed === 'object' && parsed !== null) {
+              dadosRetry = {
+                tentativas: typeof parsed.tentativas === 'number' ? parsed.tentativas : 0,
+                erros: Array.isArray(parsed.erros) ? parsed.erros : []
+              };
+            }
+          } catch (e) {
+            // Caso seja texto de erro antigo de versões anteriores
+            dadosRetry = { tentativas: 1, erros: [ag.observacoes] };
+          }
+        }
+
+        if (dadosRetry.tentativas < MAX_TENTATIVAS) {
+          dadosRetry.tentativas += 1;
+          await prisma.agendamento.update({
+            where: { id: ag.id },
+            data: {
+              status: 'pendente',
+              observacoes: JSON.stringify(dadosRetry)
+            }
+          });
+          console.log(`[Worker] Retry automático: Agendamento ${ag.id} (tentativa ${dadosRetry.tentativas}/${MAX_TENTATIVAS}) → 'pendente'.`);
+        } else {
+          console.log(`[Worker] Agendamento ${ag.id} atingiu limite de ${MAX_TENTATIVAS} tentativas. Mantido como 'falhou'.`);
+        }
+      }
+
+      // ─── 3. VERIFICAÇÃO DE EXPEDIENTE ────────────────────────────────────
       const noExpediente = await estaNoExpediente(agora);
       if (!noExpediente) {
-        // Ignora o processamento de envios no ciclo atual se estiver fora do expediente comercial
-        // Os agendamentos continuam como 'pendente' e acumularão para serem enviados na abertura.
         return;
       }
 
-      // 3. BUSCA E DISPARO DE MENSAGENS PENDENTES:
-      // Só tenta buscar e disparar se houver pelo menos uma extensão (WhatsApp Web) conectada e ativa no Socket.
-      const conexoesAtivas = io.sockets.sockets.size;
-      if (conexoesAtivas > 0) {
-        const pendentes = await prisma.agendamento.findMany({
-          where: {
-            status: 'pendente',
-            enviarEm: {
-              lte: agora
-            }
-          }
-        });
- 
-        // Importação dinâmica para evitar referências circulares
-        const { usuariosConectados } = require('../server');
+      // ─── 4. BUSCA E DISPARO DE MENSAGENS PENDENTES ───────────────────────
+      const pendentes = await prisma.agendamento.findMany({
+        where: {
+          status: 'pendente',
+          enviarEm: { lte: agora }
+        }
+      });
 
+      if (pendentes.length > 0) {
+        const { enviarMensagem } = require('./whatsappService');
+        
         for (const agendamento of pendentes) {
-          // Localiza as conexões socket que pertencem especificamente ao criador do agendamento
-          let socketsAtendentes: any[] = [];
-          for (const [sockId, usrId] of usuariosConectados.entries()) {
-            if (usrId === agendamento.criadoPorId) {
-              const sock = io.sockets.sockets.get(sockId);
-              if (sock) {
-                socketsAtendentes.push(sock);
-              }
-            }
-          }
-
-          // Fallback para agendamentos de sistema legados sem criador definido: dispara em qualquer socket
-          if (!agendamento.criadoPorId) {
-            const qualquerSock = Array.from(io.sockets.sockets.values())[0];
-            if (qualquerSock) {
-              socketsAtendentes.push(qualquerSock);
-            }
-          }
-
-          if (socketsAtendentes.length > 0) {
-            // Marcamos IMEDIATAMENTE como 'enviando' no banco de dados SQLite.
-            // Isso remove a mensagem da lista de pendentes no próximo ciclo de polling (daqui a 5 segundos),
-            // eliminando completamente qualquer risco de envios duplicados para o cliente se a digitação/clique atrasar.
+          await prisma.agendamento.update({
+            where: { id: agendamento.id },
+            data: { status: 'enviando' }
+          });
+          
+          console.log(`[Worker] Disparando agendamento ${agendamento.id} para ${agendamento.numero} via Baileys (Simulando humano)...`);
+          
+          // Envia a mensagem (a função já adiciona o delay de "digitando")
+          const sucesso = await enviarMensagem(agendamento.criadoPorId, agendamento.numero, agendamento.mensagem);
+          
+          if (sucesso) {
             await prisma.agendamento.update({
               where: { id: agendamento.id },
-              data: { status: 'enviando' }
+              data: { status: 'enviado' }
             });
- 
-            // Envia o comando via Socket.io especificamente para a extensão do atendente responsável
-            socketsAtendentes.forEach(sock => {
-              sock.emit('DISPARAR_MENSAGEM', agendamento);
-            });
-            console.log(`[Worker] Agendamento (ID: ${agendamento.id}) enviado especificamente para a extensão do atendente dono (${agendamento.criadoPorId || 'Legado/Sistema'}) e marcado como 'enviando'.`);
+            console.log(`[Worker] ✅ Agendamento ${agendamento.id} marcado como enviado.`);
+            
+            // Notifica o frontend de que o status atualizou (se tiver alguém online para ver a UI atualizar)
+            io.to(agendamento.criadoPorId).emit('STATUS_ATUALIZADO', { ...agendamento, status: 'enviado' });
           } else {
-            console.log(`[Worker] Agendamento (ID: ${agendamento.id}) do atendente ${agendamento.criadoPorId} ignorado temporariamente: Atendente dono offline.`);
+            await prisma.agendamento.update({
+              where: { id: agendamento.id },
+              data: { status: 'falhou' }
+            });
+            console.log(`[Worker] ❌ Agendamento ${agendamento.id} falhou. Cairá no retry automático.`);
+            
+            io.to(agendamento.criadoPorId).emit('STATUS_ATUALIZADO', { ...agendamento, status: 'falhou' });
           }
         }
       }
     } catch (error) {
-      console.error("[Worker] Erro crítico no loop do Worker de Agendamentos:", error);
+      console.error("[Worker] Erro crítico no loop do Worker:", error);
     }
-  }, 5000);
+  }, 10000); // Polling a cada 10 segundos
 }
