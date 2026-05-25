@@ -11,6 +11,12 @@ export const sessions = new Map<string, WASocket>();
 export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
   if (!usuarioId) return;
 
+  // Evita criar múltiplas instâncias para o mesmo usuário se já estiver rodando
+  if (sessions.has(usuarioId)) {
+    console.log(`[Baileys] Sessão já existe para o usuário ${usuarioId}. Ignorando recriação.`);
+    return;
+  }
+
   const authDir = path.join(__dirname, `../../../prisma/auth_info_baileys_${usuarioId}`);
   const { state, saveCreds } = await useMultiFileAuthState(authDir);
 
