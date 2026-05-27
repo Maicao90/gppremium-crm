@@ -20,7 +20,7 @@ export const getStyle = () => {
   return style
 }
 
-const socket = io("https://crm.marleysupermecado.com.br:3000", { rejectUnauthorized: false })
+const socket = io("https://crm.nailacademyprofissional.com:3000", { rejectUnauthorized: false })
 
 let crmUltimoInputVendedor = 0;
 
@@ -36,7 +36,7 @@ const logExtension = async (nivel: 'info' | 'warn' | 'error', escopo: string, me
   }
   
   try {
-    await fetch("https://crm.marleysupermecado.com.br:3000/api/extension-logs", {
+    await fetch("https://crm.nailacademyprofissional.com:3000/api/extension-logs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nivel, escopo, mensagem, erro: erro ? { message: erro.message, stack: erro.stack } : undefined })
@@ -273,7 +273,7 @@ const WhatsAppCRM = () => {
     if (!contatos || contatos.length === 0) return
     try {
       console.log(`[CRM] Sincronizando ${contatos.length} contatos com o backend...`)
-      const res = await fetch("https://crm.marleysupermecado.com.br:3000/api/contatos/sincronizar", {
+      const res = await fetch("https://crm.nailacademyprofissional.com:3000/api/contatos/sincronizar", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ contatos })
@@ -292,7 +292,7 @@ const WhatsAppCRM = () => {
   // Busca todos os contatos salvos no SQLite do backend, atualizando cache e UI
   const carregarContatosDoServidor = async () => {
     try {
-      const res = await fetch("https://crm.marleysupermecado.com.br:3000/api/contatos")
+      const res = await fetch("https://crm.nailacademyprofissional.com:3000/api/contatos")
       if (res.ok) {
         const contatos = await res.json()
         if (Array.isArray(contatos)) {
@@ -321,7 +321,7 @@ const WhatsAppCRM = () => {
       setAgendamentos([]);
       return;
     }
-    fetch(`https://crm.marleysupermecado.com.br:3000/api/agendamentos?criadoPorId=${idFiltro}`)
+    fetch(`https://crm.nailacademyprofissional.com:3000/api/agendamentos?criadoPorId=${idFiltro}`)
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) {
@@ -364,7 +364,7 @@ const WhatsAppCRM = () => {
     setLoginLoading(true)
     setLoginError("")
     try {
-      const res = await fetch("https://crm.marleysupermecado.com.br:3000/api/usuarios/login", {
+      const res = await fetch("https://crm.nailacademyprofissional.com:3000/api/usuarios/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: loginEmail, senha: loginSenha })
@@ -657,7 +657,7 @@ const WhatsAppCRM = () => {
               }
               
               // Marca como enviado no backend
-              await fetch(`https://crm.marleysupermecado.com.br:3000/api/agendamentos/${fallbackData.id}/status`, {
+              await fetch(`https://crm.nailacademyprofissional.com:3000/api/agendamentos/${fallbackData.id}/status`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
@@ -674,7 +674,7 @@ const WhatsAppCRM = () => {
           
           if (!enviou) {
             logExtension('error', 'rpa-supremo', 'Falha no Fallback Supremo: O botão de enviar não apareceu após o carregamento da URL.')
-            await fetch(`https://crm.marleysupermecado.com.br:3000/api/agendamentos/${fallbackData.id}/status`, {
+            await fetch(`https://crm.nailacademyprofissional.com:3000/api/agendamentos/${fallbackData.id}/status`, {
               method: 'PUT',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ 
@@ -696,7 +696,7 @@ const WhatsAppCRM = () => {
     
     verificarFallbackSupremo()
 
-    fetch('https://crm.marleysupermecado.com.br:3000/api/agendamentos')
+    fetch('https://crm.nailacademyprofissional.com:3000/api/agendamentos')
       .then(res => res.json())
       .then(data => {
         setAgendamentos(data)
@@ -2161,7 +2161,7 @@ const WhatsAppCRM = () => {
           contatosDisponiveis={obterContatosRecentes()}
           onDelete={async (id) => {
             try {
-              const res = await fetch(`https://crm.marleysupermecado.com.br:3000/api/agendamentos/${id}`, {
+              const res = await fetch(`https://crm.nailacademyprofissional.com:3000/api/agendamentos/${id}`, {
                 method: 'DELETE'
               })
               if (!res.ok) throw new Error("Erro ao deletar")
@@ -2172,7 +2172,7 @@ const WhatsAppCRM = () => {
           }}
           onEdit={async (id, dados) => {
             try {
-              const res = await fetch(`https://crm.marleysupermecado.com.br:3000/api/agendamentos/${id}`, {
+              const res = await fetch(`https://crm.nailacademyprofissional.com:3000/api/agendamentos/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(dados)
