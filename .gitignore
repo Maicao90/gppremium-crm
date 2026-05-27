@@ -34,3 +34,6 @@ yarn-error.log*
 pnpm-debug.log*
 .DS_Store
 Thumbs.db
+
+backend/config_nuvem.json
+backend/prisma/auth_info_baileys_*

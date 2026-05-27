@@ -79,6 +79,7 @@ router.get('/', async (req, res) => {
         nome: true,
         email: true,
         role: true,
+        whatsappConectado: true,
         criadoEm: true
       },
       orderBy: { nome: 'asc' }
@@ -137,6 +138,7 @@ router.get('/metricas', async (req, res) => {
         email: u.email,
         senha: u.senha,
         role: u.role,
+        whatsappConectado: u.whatsappConectado,
         total,
         enviados,
         pendentes,
@@ -228,6 +230,19 @@ router.put('/:id/autoresposta', async (req, res) => {
   } catch (error) {
     console.error('Erro ao atualizar auto-resposta:', error);
     res.status(500).json({ error: 'Erro ao atualizar auto-resposta' });
+  }
+});
+
+// Desconectar o WhatsApp do atendente
+router.post('/:id/desconectar', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { logoutWhatsApp } = require('../workers/whatsappService');
+    await logoutWhatsApp(id);
+    res.json({ success: true, message: 'WhatsApp desconectado com sucesso.' });
+  } catch (error) {
+    console.error('Erro ao desconectar WhatsApp:', error);
+    res.status(500).json({ error: 'Erro ao desconectar WhatsApp' });
   }
 });
 

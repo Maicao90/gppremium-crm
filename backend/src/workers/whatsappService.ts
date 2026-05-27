@@ -162,10 +162,28 @@ export async function enviarMensagem(usuarioId: string, numero: string, mensagem
 
     // 3. Envia a mensagem
     await sock.sendMessage(jid, { text: mensagem });
-    console.log(`[Baileys] ✅ Mensagem enviada com sucesso para ${numero} pelo usuário ${usuarioId}`);
+    console.log(`[Baileys] 🚀 Mensagem enviada com sucesso para ${numero} pelo usuário ${usuarioId}`);
     return true;
   } catch (error) {
     console.error(`[Baileys] ❌ Erro ao enviar mensagem para ${numero} pelo usuário ${usuarioId}:`, error);
     return false;
   }
+}
+
+// Função para deslogar e limpar sessão do usuário
+export async function logoutWhatsApp(usuarioId: string) {
+  const sock = sessions.get(usuarioId);
+  if (sock) {
+    try { await sock.logout(); } catch (e) {}
+    sessions.delete(usuarioId);
+  }
+
+  const fs = require('fs');
+  const dir = path.join(__dirname, `../../../prisma/auth_info_baileys_${usuarioId}`);
+  if (fs.existsSync(dir)) {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+
+  await prisma.usuario.update({ where: { id: usuarioId }, data: { whatsappConectado: false } }).catch(()=>{});
+  io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false });
 }

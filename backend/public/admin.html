@@ -527,7 +527,7 @@
 
     /* ── AÇÕES DOS ATENDENTES & MODAL PREMIUM ── */
     .atendente-item.full-page {
-      grid-template-columns: 52px 1fr 110px 110px 100px;
+      grid-template-columns: 52px 1fr 110px 110px 140px;
     }
     .atendente-item-actions {
       display: flex; gap: 0.5rem; justify-content: flex-end;
@@ -1038,6 +1038,9 @@
         if (isFullPage) {
           acoesHtml = `
             <div class="atendente-item-actions">
+              <button class="btn-action-edit" onclick="desconectarWhatsApp('${m.id}', '${m.nome.replace(/'/g, "\\'")}')" title="Desconectar WhatsApp (Gerar Novo QR)" style="background: rgba(245,158,11,0.1); color: var(--warning); border-color: rgba(245,158,11,0.3);">
+                <i class="fa-solid fa-plug-circle-xmark"></i>
+              </button>
               <button class="btn-action-edit" onclick="abrirModalEdicao('${m.id}')" title="Editar Login/Senha">
                 <i class="fa-solid fa-pen-to-square"></i>
               </button>
@@ -1048,17 +1051,41 @@
           `;
         }
 
+        const statusConexao = m.whatsappConectado 
+          ? `<span style="color: var(--success); font-size: 0.75rem; display: flex; align-items: center; gap: 4px; margin-top: 2px;"><i class="fa-solid fa-circle" style="font-size: 0.5rem;"></i> Conectado</span>` 
+          : `<span style="color: var(--danger); font-size: 0.75rem; display: flex; align-items: center; gap: 4px; margin-top: 2px;"><i class="fa-solid fa-circle" style="font-size: 0.5rem;"></i> Aguardando QR</span>`;
+
         div.innerHTML = `
           <div class="atendente-avatar">${ini}</div>
           <div class="atendente-info">
             <h4>${m.nome}<span class="badge-role ${m.role}">${m.role}</span></h4>
-            <p>${m.email}</p>
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <p>${m.email}</p>
+              ${statusConexao}
+            </div>
           </div>
           <div class="atendente-num"><label>Total</label><span>${m.total}</span></div>
           <div class="atendente-num"><label>Enviados</label><span class="success">${m.enviados}</span></div>
           ${acoesHtml}`;
         c.appendChild(div);
       });
+    }
+
+    async function desconectarWhatsApp(id, nome) {
+      if (!confirm(`Tem certeza que deseja DESCONECTAR o WhatsApp de ${nome}? \n\nA pasta de conexão será apagada e ela precisará ler um QR Code novo.`)) return;
+      
+      try {
+        const res = await fetch(`/api/usuarios/${id}/desconectar`, { method: 'POST' });
+        if (res.ok) {
+          showToast(`WhatsApp de ${nome} desconectado. O QR Code aparecerá novamente!`);
+          carregarMetricas();
+        } else {
+          const err = await res.json();
+          showToast(err.error || 'Erro ao desconectar.', 'error');
+        }
+      } catch {
+        showToast('Erro de rede ao desconectar.', 'error');
+      }
     }
 
     // ── CONTROLE DO MODAL DE EDIÇÃO ───────────────────────────────────
