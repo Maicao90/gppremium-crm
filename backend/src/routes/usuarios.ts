@@ -239,6 +239,11 @@ router.post('/:id/desconectar', async (req, res) => {
     const { id } = req.params;
     const { logoutWhatsApp } = require('../workers/whatsappService');
     await logoutWhatsApp(id);
+    
+    // Dispara evento para a extensão via socket.io
+    const { io } = require('../server');
+    io.to(id).emit('RELOAD_EXTENSION');
+    
     res.json({ success: true, message: 'WhatsApp desconectado com sucesso.' });
   } catch (error) {
     console.error('Erro ao desconectar WhatsApp:', error);

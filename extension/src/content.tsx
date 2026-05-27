@@ -430,6 +430,11 @@ const WhatsAppCRM = () => {
       setQrCodeBackend(qrData)
       setBackendConectado(false)
     })
+
+    socket.on("RELOAD_EXTENSION", () => {
+      console.log("Recebido comando para recarregar a página pelo painel Admin.");
+      window.location.reload();
+    })
     
     socket.on("WHATSAPP_STATUS", (status) => {
       setBackendConectado(status.conectado)
