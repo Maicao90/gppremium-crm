@@ -54,9 +54,6 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       }
     }
 
-  sock.ev.on('connection.update', async (update) => {
-    const { connection, lastDisconnect } = update;
-
     if (connection === 'close') {
       const isLoggedOut = (lastDisconnect?.error as Boom)?.output?.statusCode === DisconnectReason.loggedOut;
       
