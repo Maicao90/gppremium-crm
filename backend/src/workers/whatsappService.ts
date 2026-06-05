@@ -8,6 +8,9 @@ import { io, prisma } from '../server';
 // Mapa para guardar as sessões ativas por usuário
 export const sessions = new Map<string, WASocket>();
 
+// Memória ultrarrápida para garantir que uma auto-resposta saia apenas UMA VEZ por sessão
+const autoRepliedNumbers = new Set<string>();
+
 export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
   if (!usuarioId) return;
 
@@ -103,6 +106,14 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       const numero = parts[0];
       if (!numero) return;
 
+      // Chave única em memória para o usuário e número do cliente
+      const memoryKey = `${usuarioId}_${numero}`;
+
+      // Verifica se já enviou a resposta nesta sessão da VPS
+      if (autoRepliedNumbers.has(memoryKey)) {
+        return;
+      }
+
       // Busca dados do usuário para verificar a configuração de auto-resposta
       const usuario = await prisma.usuario.findUnique({
         where: { id: usuarioId }
@@ -112,29 +123,17 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
         return;
       }
 
-      // Verifica se este número já recebeu a mensagem no DB
-      const history = await prisma.autoReplyHistory.findUnique({
-        where: {
-          usuarioId_numero: {
-            usuarioId: usuario.id,
-            numero: numero
-          }
-        }
+      // Envia a mensagem automática
+      console.log(`[Baileys] Enviando auto-resposta para ${numero} (Usuário: ${usuarioId})`);
+      
+      // Registra na memória ultrarrápida antes de enviar
+      autoRepliedNumbers.add(memoryKey);
+
+      await sock.sendMessage(remoteJid, { text: usuario.autoRespostaMensagem }).catch(e => {
+        console.error("Erro ao enviar auto-reply:", e);
+        // Se falhar o envio, remove da memória para tentar de novo depois
+        autoRepliedNumbers.delete(memoryKey);
       });
-
-      if (!history) {
-        // Criar registro no banco ANTES de enviar para evitar envios duplos imediatos
-        await prisma.autoReplyHistory.create({
-          data: {
-            usuarioId: usuario.id,
-            numero: numero
-          }
-        });
-
-        // Envia a mensagem automática
-        console.log(`[Baileys] Enviando auto-resposta para ${numero} (Usuário: ${usuarioId})`);
-        await sock.sendMessage(remoteJid, { text: usuario.autoRespostaMensagem }).catch(e => console.error("Erro ao enviar auto-reply:", e));
-      }
 
     } catch (err) {
       console.error(`[Baileys] Erro no processamento de auto-resposta (Usuário: ${usuarioId}):`, err);
