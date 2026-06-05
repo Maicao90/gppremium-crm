@@ -51,21 +51,28 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       }
     }
 
+  sock.ev.on('connection.update', async (update) => {
+    const { connection, lastDisconnect } = update;
+
     if (connection === 'close') {
-      const shouldReconnect = (lastDisconnect?.error as Boom)?.output?.statusCode !== DisconnectReason.loggedOut;
-      console.log(`[Baileys] Conexão fechada (Usuário ${usuarioId}). Motivo:`, lastDisconnect?.error, 'Reconectando:', shouldReconnect);
+      const isLoggedOut = (lastDisconnect?.error as Boom)?.output?.statusCode === DisconnectReason.loggedOut;
+      
+      console.log(`[Baileys] Conexão fechada (Usuário ${usuarioId}). Motivo:`, lastDisconnect?.error, 'Deslogado:', isLoggedOut);
       
       io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false });
-      await prisma.usuario.update({
-        where: { id: usuarioId },
-        data: { whatsappConectado: false }
-      }).catch(() => {});
       
-      if (shouldReconnect) {
-        setTimeout(() => connectToWhatsApp(usuarioId), 5000);
-      } else {
-        console.log(`[Baileys] Aparelho deslogado para o usuário ${usuarioId}. Remova a pasta auth_info_baileys_${usuarioId} se necessário.`);
+      if (isLoggedOut) {
+        // Usuário deslogou pelo celular
+        console.log(`[Baileys] Aparelho deslogado para o usuário ${usuarioId}.`);
         sessions.delete(usuarioId);
+        await prisma.usuario.update({
+          where: { id: usuarioId },
+          data: { whatsappConectado: false }
+        }).catch(() => {});
+      } else {
+        // Queda de internet ou erro interno, força a reconexão INFINITA
+        console.log(`[Baileys] Tentando reconectar usuário ${usuarioId} em 5 segundos...`);
+        setTimeout(() => connectToWhatsApp(usuarioId).catch(err => console.error("Erro no retry:", err)), 5000);
       }
     } else if (connection === 'open') {
       console.log(`[Baileys] Conexão aberta com sucesso! Servidor pronto para disparos do usuário ${usuarioId}.`);
@@ -80,15 +87,17 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
 
   sock.ev.on('creds.update', saveCreds);
 
-  // Escutar mensagens recebidas para responder automaticamente
+  // Auto-resposta
   sock.ev.on('messages.upsert', async (m) => {
     try {
+      // APENAS processar se for uma mensagem chegando (notify)
+      if (m.type !== 'notify') return;
+
       const msg = m.messages[0];
       if (!msg || !msg.message || !msg.key || msg.key.fromMe) return;
       
       const remoteJid = msg.key.remoteJid;
-      if (!remoteJid) return;
-      if (remoteJid.includes('@g.us')) return; // ignorar grupos
+      if (!remoteJid || remoteJid.includes('@g.us') || remoteJid.includes('status@broadcast')) return; // ignorar grupos e status
 
       const parts = remoteJid.split('@');
       const numero = parts[0];
@@ -103,7 +112,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
         return;
       }
 
-      // Verifica se este número já recebeu a mensagem deste usuário
+      // Verifica se este número já recebeu a mensagem no DB
       const history = await prisma.autoReplyHistory.findUnique({
         where: {
           usuarioId_numero: {
@@ -114,21 +123,21 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       });
 
       if (!history) {
-        // Envia a mensagem automática
-        console.log(`[Baileys] Enviando auto-resposta para ${numero} (Usuário: ${usuarioId})`);
-        await sock.sendMessage(remoteJid, { text: usuario.autoRespostaMensagem });
-        
-        // Registra que já enviou para não enviar novamente
+        // Criar registro no banco ANTES de enviar para evitar envios duplos imediatos
         await prisma.autoReplyHistory.create({
           data: {
             usuarioId: usuario.id,
             numero: numero
           }
         });
+
+        // Envia a mensagem automática
+        console.log(`[Baileys] Enviando auto-resposta para ${numero} (Usuário: ${usuarioId})`);
+        await sock.sendMessage(remoteJid, { text: usuario.autoRespostaMensagem }).catch(e => console.error("Erro ao enviar auto-reply:", e));
       }
 
     } catch (err) {
-      console.error(`[Baileys] Erro no processamento de mensagens para auto-resposta (Usuário: ${usuarioId}):`, err);
+      console.error(`[Baileys] Erro no processamento de auto-resposta (Usuário: ${usuarioId}):`, err);
     }
   });
 }
