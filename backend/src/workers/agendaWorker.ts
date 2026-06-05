@@ -59,8 +59,9 @@ const MAX_TENTATIVAS = 3;
 
 export function initWorker() {
   console.log("Worker de agendamentos iniciado (Polling 10s, Retry Persistente no SQLite & Expediente Seguro)");
-
-  setInterval(async () => {
+  
+  // Loop recursivo robusto para evitar atropelamento de tarefas
+  async function loopWorker() {
     try {
       const agora = new Date();
 
@@ -125,54 +126,64 @@ export function initWorker() {
 
       // ─── 3. VERIFICAÇÃO DE EXPEDIENTE ────────────────────────────────────
       const noExpediente = await estaNoExpediente(agora);
-      if (!noExpediente) {
-        return;
-      }
+      if (noExpediente) {
+        // ─── 4. BUSCA E DISPARO DE MENSAGENS PENDENTES ───────────────────────
+        const pendentes = await prisma.agendamento.findMany({
+          where: {
+            status: 'pendente',
+            enviarEm: { lte: agora }
+          }
+        });
 
-      // ─── 4. BUSCA E DISPARO DE MENSAGENS PENDENTES ───────────────────────
-      const pendentes = await prisma.agendamento.findMany({
-        where: {
-          status: 'pendente',
-          enviarEm: { lte: agora }
-        }
-      });
+        if (pendentes.length > 0) {
+          const { enviarMensagem, sessions } = require('./whatsappService');
+          
+          for (const agendamento of pendentes) {
+            // REGRA DE PROTEÇÃO: Se não estiver conectado, PULA o agendamento (congela ele)
+            if (!sessions.has(agendamento.criadoPorId)) {
+              console.log(`[Worker] Escudo ativado: Loja do usuário ${agendamento.criadoPorId} está desconectada. Agendamento ${agendamento.id} retido até a próxima conexão.`);
+              continue;
+            }
 
-      if (pendentes.length > 0) {
-        const { enviarMensagem } = require('./whatsappService');
-        
-        for (const agendamento of pendentes) {
-          await prisma.agendamento.update({
-            where: { id: agendamento.id },
-            data: { status: 'enviando' }
-          });
-          
-          console.log(`[Worker] Disparando agendamento ${agendamento.id} para ${agendamento.numero} via Baileys (Simulando humano)...`);
-          
-          // Envia a mensagem (a função já adiciona o delay de "digitando")
-          const sucesso = await enviarMensagem(agendamento.criadoPorId, agendamento.numero, agendamento.mensagem);
-          
-          if (sucesso) {
             await prisma.agendamento.update({
               where: { id: agendamento.id },
-              data: { status: 'enviado' }
+              data: { status: 'enviando' }
             });
-            console.log(`[Worker] ✅ Agendamento ${agendamento.id} marcado como enviado.`);
             
-            // Notifica o frontend de que o status atualizou (se tiver alguém online para ver a UI atualizar)
-            io.to(agendamento.criadoPorId).emit('STATUS_ATUALIZADO', { ...agendamento, status: 'enviado' });
-          } else {
-            await prisma.agendamento.update({
-              where: { id: agendamento.id },
-              data: { status: 'falhou' }
-            });
-            console.log(`[Worker] ❌ Agendamento ${agendamento.id} falhou. Cairá no retry automático.`);
+            console.log(`[Worker] Disparando agendamento ${agendamento.id} para ${agendamento.numero} via Baileys (Simulando humano)...`);
             
-            io.to(agendamento.criadoPorId).emit('STATUS_ATUALIZADO', { ...agendamento, status: 'falhou' });
+            // Envia a mensagem (a função já adiciona o delay de "digitando")
+            const sucesso = await enviarMensagem(agendamento.criadoPorId, agendamento.numero, agendamento.mensagem);
+            
+            if (sucesso) {
+              await prisma.agendamento.update({
+                where: { id: agendamento.id },
+                data: { status: 'enviado' }
+              });
+              console.log(`[Worker] ✅ Agendamento ${agendamento.id} marcado como enviado.`);
+              
+              // Notifica o frontend de que o status atualizou (se tiver alguém online para ver a UI atualizar)
+              io.to(agendamento.criadoPorId).emit('STATUS_ATUALIZADO', { ...agendamento, status: 'enviado' });
+            } else {
+              await prisma.agendamento.update({
+                where: { id: agendamento.id },
+                data: { status: 'falhou' }
+              });
+              console.log(`[Worker] ❌ Agendamento ${agendamento.id} falhou. Cairá no retry automático.`);
+              
+              io.to(agendamento.criadoPorId).emit('STATUS_ATUALIZADO', { ...agendamento, status: 'falhou' });
+            }
           }
         }
       }
     } catch (error) {
       console.error("[Worker] Erro crítico no loop do Worker:", error);
     }
-  }, 10000); // Polling a cada 10 segundos
+
+    // Chama novamente o loop após 10 segundos, garantindo que não haverá atropelamento
+    setTimeout(loopWorker, 10000);
+  }
+
+  // Inicia o loop
+  loopWorker();
 }

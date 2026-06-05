@@ -2232,8 +2232,8 @@ const WhatsAppCRM = () => {
         />
       )}
 
-      {/* Renderiza o QR Code do Servidor, se não estiver conectado e houver QR Code */}
-      {qrCodeBackend && !backendConectado && usuarioLogado && (
+      {/* Renderiza o Bloqueio de Tela de Conexão */}
+      {!backendConectado && usuarioLogado && (
         <div style={{
           position: 'fixed',
           top: 0, left: 0, right: 0, bottom: 0,
@@ -2241,56 +2241,67 @@ const WhatsAppCRM = () => {
           zIndex: 999999,
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          backdropFilter: 'blur(10px)'
         }}>
           <div style={{
             backgroundColor: '#1E1E2D',
-            padding: '30px',
-            borderRadius: '16px',
-            maxWidth: '400px',
+            padding: '40px 30px',
+            borderRadius: '20px',
+            maxWidth: '450px',
             width: '90%',
             textAlign: 'center',
-            boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
-            border: '1px solid rgba(255,255,255,0.1)'
+            boxShadow: '0 15px 40px rgba(0,0,0,0.6)',
+            border: '1px solid rgba(255,255,255,0.05)',
+            position: 'relative'
           }}>
-            <h2 style={{ color: '#fff', fontSize: '20px', fontWeight: 'bold', marginBottom: '15px' }}>
-              WhatsApp do Servidor Desconectado
-            </h2>
-            <p style={{ color: '#aaa', fontSize: '14px', marginBottom: '20px', lineHeight: '1.4' }}>
-              Para que os <strong>agendamentos automáticos</strong> sejam enviados de forma silenciosa, 
-              o servidor precisa estar conectado como um "Aparelho Conectado".
-              <br/><br/>
-              Aponte a câmera do WhatsApp (Aparelhos Conectados) para este código:
-            </p>
-            <div style={{ 
-              background: '#fff', 
-              padding: '10px', 
-              borderRadius: '8px', 
-              display: 'inline-block',
-              marginBottom: '20px'
+            {/* Ícone de cadeado de segurança */}
+            <div style={{
+              width: '60px', height: '60px',
+              backgroundColor: 'rgba(255, 59, 48, 0.1)',
+              color: '#ff3b30',
+              borderRadius: '50%',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              fontSize: '28px',
+              margin: '0 auto 20px auto'
             }}>
-              <img src={qrCodeBackend} alt="QR Code WhatsApp" style={{ width: '250px', height: '250px' }} />
+              <i className="fa-solid fa-lock"></i>
             </div>
             
-            <button 
-              onClick={() => setQrCodeBackend(null)}
-              style={{
-                display: 'block',
-                width: '100%',
-                padding: '12px',
-                background: 'rgba(255,255,255,0.05)',
-                color: '#fff',
-                border: '1px solid rgba(255,255,255,0.1)',
-                borderRadius: '8px',
-                cursor: 'pointer',
-                fontWeight: 'bold',
-                transition: 'all 0.2s'
-              }}
-              onMouseOver={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
-              onMouseOut={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'}
-            >
-              Fechar e tentar mais tarde
-            </button>
+            <h2 style={{ color: '#fff', fontSize: '22px', fontWeight: 'bold', marginBottom: '15px' }}>
+              Sistema de Segurança Ativado
+            </h2>
+            <p style={{ color: '#aaa', fontSize: '15px', marginBottom: '25px', lineHeight: '1.5' }}>
+              Para garantir que seus agendamentos automáticos funcionem com precisão, o uso do CRM está <strong>bloqueado</strong> até que o Servidor seja pareado com o seu WhatsApp.
+            </p>
+            
+            {qrCodeBackend ? (
+              <>
+                <p style={{ color: '#fff', fontSize: '14px', marginBottom: '15px', fontWeight: 'bold' }}>
+                  Aponte a câmera do WhatsApp para conectar:
+                </p>
+                <div style={{ 
+                  background: '#fff', 
+                  padding: '15px', 
+                  borderRadius: '12px', 
+                  display: 'inline-block',
+                  boxShadow: '0 5px 15px rgba(0,0,0,0.2)'
+                }}>
+                  <img src={qrCodeBackend} alt="QR Code WhatsApp" style={{ width: '250px', height: '250px', display: 'block' }} />
+                </div>
+              </>
+            ) : (
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}>
+                <div className="spinner" style={{
+                  border: '4px solid rgba(255,255,255,0.1)',
+                  borderLeftColor: '#ff3b30',
+                  borderRadius: '50%',
+                  width: '40px', height: '40px',
+                  animation: 'spin 1s linear infinite'
+                }}></div>
+                <p style={{ color: '#888', marginTop: '15px', fontSize: '14px' }}>Aguardando conexão com o Servidor...</p>
+              </div>
+            )}
           </div>
         </div>
       )}
