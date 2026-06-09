@@ -35,28 +35,35 @@ class CloudManager {
     await fs.writeFile(CONFIG_PATH, JSON.stringify(this.configs, null, 2), 'utf-8');
   }
 
-  // Testa uma URL usando o próprio Prisma de forma efêmera
+  // Testa uma URL usando o próprio Prisma de forma efêmera.
+  // Tenta VÁRIAS vezes, porque o Supabase free às vezes recusa a 1ª conexão
+  // (limite de conexões / "acordando"). Sem o retry, o failover caía em banco vazio.
   private async testConnection(url: string): Promise<boolean> {
     if (!url || !url.startsWith('postgres')) return false;
-    
-    const tester = new PrismaClient({
-      datasources: { db: { url } }
-    });
-    
-    try {
-      // Timeout de 25 segundos: tolera o banco principal (Supabase) responder devagar
-      // ao "acordar", evitando que o failover pule para um banco vazio por engano.
-      await Promise.race([
-        tester.$connect(),
-        new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 25000))
-      ]);
-      await tester.$disconnect();
-      return true;
-    } catch (e) {
-      console.log(`[CloudManager] Falha ao testar URL: ${url.split('@')[1] || 'URL Inválida'}`);
-      try { await tester.$disconnect(); } catch(e){}
-      return false;
+
+    const MAX_TENTATIVAS = 5;
+    for (let tentativa = 1; tentativa <= MAX_TENTATIVAS; tentativa++) {
+      const tester = new PrismaClient({
+        datasources: { db: { url } }
+      });
+      try {
+        // Timeout de 25s por tentativa: tolera o banco responder devagar ao "acordar".
+        await Promise.race([
+          tester.$connect(),
+          new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 25000))
+        ]);
+        await tester.$disconnect();
+        return true;
+      } catch (e) {
+        console.log(`[CloudManager] Falha ao testar URL (tentativa ${tentativa}/${MAX_TENTATIVAS}): ${url.split('@')[1] || 'URL Inválida'}`);
+        try { await tester.$disconnect(); } catch (e) {}
+        // Espera antes de tentar de novo (dá tempo do Supabase liberar conexão)
+        if (tentativa < MAX_TENTATIVAS) {
+          await new Promise(r => setTimeout(r, 5000));
+        }
+      }
     }
+    return false;
   }
 
   // Descobre qual plano está online e atualiza o PrismaClient oficial
