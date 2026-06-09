@@ -1,12 +1,13 @@
 import "~style.css"
+import logoUrl from "url:~assets/logo.jpg"
 
 function IndexPopup() {
   return (
     <div className="w-64 p-4 flex flex-col items-center bg-white" style={{fontFamily: 'Inter, sans-serif'}}>
       <div className="w-40 h-16 flex items-center justify-center overflow-hidden mb-3">
-        <img 
-          src={chrome.runtime.getURL("assets/logo.jpg")} 
-          alt="GP Pneus Logo" 
+        <img
+          src={logoUrl}
+          alt="GP Premium Logo"
           className="w-full h-full object-contain"
         />
       </div>
