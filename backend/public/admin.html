@@ -474,9 +474,10 @@
     .plan-input::placeholder { color:rgba(156,163,175,0.35); }
 
     .toggle-vis {
-      position:absolute; right:0.8rem; bottom:0.7rem;
+      position:absolute; right:0.8rem; top:50%; transform:translateY(-50%);
       background:none; border:none; color:var(--text-muted);
       cursor:pointer; padding:0.2rem; transition:color 0.2s;
+      display:flex; align-items:center;
     }
     .toggle-vis:hover { color:var(--text-main); }
 
@@ -909,7 +910,7 @@
           <div class="input-wrapper">
             <i class="fa-solid fa-lock"></i>
             <input type="password" id="edit-senha" class="form-control" required>
-            <button class="toggle-vis" onclick="toggleVis('edit-senha', this)" type="button" style="bottom: 0.35rem;">
+            <button class="toggle-vis" onclick="toggleVis('edit-senha', this)" type="button">
               <i class="fa-solid fa-eye"></i>
             </button>
           </div>
@@ -1067,6 +1068,14 @@
           <div class="atendente-num"><label>Total</label><span>${m.total}</span></div>
           <div class="atendente-num"><label>Enviados</label><span class="success">${m.enviados}</span></div>
           ${acoesHtml}`;
+
+        // Card clicável: clicar no atendente abre o modal dele (ignora cliques nos botões de ação)
+        div.style.cursor = 'pointer';
+        div.addEventListener('click', (e) => {
+          if (e.target.closest('button')) return;
+          abrirModalEdicao(String(m.id));
+        });
+
         c.appendChild(div);
       });
     }

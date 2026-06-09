@@ -4,7 +4,9 @@ module.exports = {
       name: 'whatsapp-crm',
       script: 'src/server.ts',
       interpreter: 'ts-node',
-      interpreter_args: '--project tsconfig.json',
+      // --prefer-ts-exts: faz o ts-node usar os arquivos .ts (fonte verdadeira) e IGNORAR
+      // quaisquer .js compilados antigos que estejam "escondendo" os .ts no src/.
+      interpreter_args: '--prefer-ts-exts --project tsconfig.json',
       cwd: '/root/whatsapp-crm/backend',
       env: {
         NODE_ENV: 'production',
