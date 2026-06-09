@@ -220,11 +220,10 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
         });
       }
 
-      // ─── 3. AUTO-RESPOSTA ───
-      // Chave única em memória para o usuário e número do cliente
+      // ─── 3. AUTO-RESPOSTA (recepção) — enviada SÓ UMA VEZ por contato ───
       const memoryKey = `${usuarioId}_${numero}`;
 
-      // Verifica se já enviou a resposta nesta sessão da VPS
+      // Check rápido em memória (evita trabalho repetido na mesma sessão)
       if (autoRepliedNumbers.has(memoryKey)) {
         return;
       }
@@ -238,16 +237,33 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
         return;
       }
 
-      // Envia a mensagem automática
-      console.log(`[Baileys] Enviando auto-resposta para ${numero} (Usuário: ${usuarioId})`);
-      
-      // Registra na memória ultrarrápida antes de enviar
-      autoRepliedNumbers.add(memoryKey);
+      // DEDUP PERSISTENTE: registra no banco ANTES de enviar. A chave única
+      // (usuarioId + numero) garante que, mesmo após reiniciar a VPS ou com várias
+      // mensagens chegando juntas, a recepção saia UMA única vez por contato.
+      try {
+        await prisma.autoReplyHistory.create({ data: { usuarioId, numero } });
+      } catch (e: any) {
+        if (e?.code === 'P2002') {
+          // Já respondemos este contato antes — não envia de novo.
+          autoRepliedNumbers.add(memoryKey);
+          return;
+        }
+        // Erro diferente (ex.: tabela indisponível): não bloqueia o atendimento,
+        // cai no controle em memória abaixo.
+        console.error('[Baileys] Aviso no dedup de auto-resposta (seguindo em memória):', e?.message);
+      }
 
-      await sock.sendMessage(remoteJid, { text: usuario.autoRespostaMensagem }).catch(e => {
+      // Marca em memória e envia a recepção
+      autoRepliedNumbers.add(memoryKey);
+      console.log(`[Baileys] Enviando auto-resposta (1x) para ${numero} (Usuário: ${usuarioId})`);
+
+      await sock.sendMessage(remoteJid, { text: usuario.autoRespostaMensagem }).catch(async (e) => {
         console.error("Erro ao enviar auto-reply:", e);
-        // Se falhar o envio, remove da memória para tentar de novo depois
+        // Se falhar o envio, libera para tentar de novo depois (memória + banco)
         autoRepliedNumbers.delete(memoryKey);
+        await prisma.autoReplyHistory.delete({
+          where: { usuarioId_numero: { usuarioId, numero } }
+        }).catch(() => {});
       });
 
     } catch (err) {
