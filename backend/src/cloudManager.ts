@@ -44,10 +44,11 @@ class CloudManager {
     });
     
     try {
-      // Timeout de 5 segundos
+      // Timeout de 25 segundos: tolera o banco principal (Supabase) responder devagar
+      // ao "acordar", evitando que o failover pule para um banco vazio por engano.
       await Promise.race([
         tester.$connect(),
-        new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 5000))
+        new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 25000))
       ]);
       await tester.$disconnect();
       return true;
@@ -86,16 +87,19 @@ class CloudManager {
       
       console.log(`[CloudManager] Conectado com sucesso ao Plano ${this.planoAtivo}!`);
       
+      // SEGURANÇA: NÃO usamos mais `--accept-data-loss` (ele podia APAGAR dados se o
+      // esquema divergisse). Sem a flag, o db push só faz mudanças aditivas seguras;
+      // se exigiria perda de dados, ele falha e mantemos o banco como está.
       try {
-        console.log('[CloudManager] Sincronizando tabelas do Prisma com a nuvem...');
+        console.log('[CloudManager] Sincronizando tabelas do Prisma com a nuvem (modo seguro, sem perda de dados)...');
         const { execSync } = require('child_process');
-        execSync('npx prisma db push --accept-data-loss', { 
+        execSync('npx prisma db push --skip-generate', {
           env: { ...process.env, DATABASE_URL: activeUrl },
-          stdio: 'inherit' 
+          stdio: 'inherit'
         });
-        console.log('[CloudManager] Tabelas da nuvem criadas/sincronizadas com sucesso!');
+        console.log('[CloudManager] Tabelas da nuvem sincronizadas com sucesso!');
       } catch (e) {
-        console.error('[CloudManager] Erro ao sincronizar Prisma com a Nuvem:', e);
+        console.error('[CloudManager] Aviso ao sincronizar Prisma (mantendo banco como está):', e);
       }
 
       this.prismaInstance = new PrismaClient({
