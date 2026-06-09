@@ -388,47 +388,6 @@ export default function Configuracoes({ onClose }) {
           )}
         </div>
 
-        {/* Delays de Automação (RPA) */}
-        <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col gap-4">
-          <h3 className="font-bold text-sm text-gray-800 flex items-center gap-1.5">
-            <span>🤖</span> Delays da Automação (RPA)
-          </h3>
-
-          <div className="flex flex-col gap-2">
-            <div className="flex justify-between items-center">
-              <label className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Tempo de Busca do Chat</label>
-              <span className="text-xs font-bold text-[#00a884] bg-green-50 px-2 py-0.5 rounded-full">{delayAbrirChat}s</span>
-            </div>
-            <input 
-              type="range" 
-              min="0.5" 
-              max="5.0" 
-              step="0.5"
-              className="w-full accent-[#00a884] cursor-pointer"
-              value={delayAbrirChat}
-              onChange={e => handleDelayAbrirChange(e.target.value)}
-            />
-            <span className="text-[9px] text-gray-400">Tempo de espera para carregar a busca do WhatsApp Web ao trocar de chat.</span>
-          </div>
-
-          <div className="flex flex-col gap-2 pt-2 border-t border-gray-100">
-            <div className="flex justify-between items-center">
-              <label className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Tempo de Clique / Envio</label>
-              <span className="text-xs font-bold text-[#00a884] bg-green-50 px-2 py-0.5 rounded-full">{delayDigitar}s</span>
-            </div>
-            <input 
-              type="range" 
-              min="0.2" 
-              max="3.0" 
-              step="0.1"
-              className="w-full accent-[#00a884] cursor-pointer"
-              value={delayDigitar}
-              onChange={e => handleDelayDigitarChange(e.target.value)}
-            />
-            <span className="text-[9px] text-gray-400">Delay entre digitar e clicar no botão de enviar mensagem.</span>
-          </div>
-        </div>
-
         {/* Feedback visual de salvo */}
         {salvoFeedback && (
           <div className="bg-[#e8f5f0] text-[#00a884] border border-[#d1ebd9] px-4 py-2.5 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm animate-pulse">
