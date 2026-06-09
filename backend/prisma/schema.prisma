@@ -44,10 +44,15 @@ model Agendamento {
 
 model Contato {
   id           String   @id @default(uuid())
+  usuarioId    String
   nome         String
-  numero       String   @unique
+  numero       String
   criadoEm     DateTime @default(now())
   atualizadoEm DateTime @updatedAt
+
+  // Cada contato pertence a um usuário; o mesmo número pode existir para usuários diferentes.
+  @@unique([usuarioId, numero])
+  @@index([usuarioId])
 }
 
 model Configuracao {

@@ -273,12 +273,17 @@ const WhatsAppCRM = () => {
   // Envia a lista completa de contatos extraida para a API de sincronizacao em lote no backend
   const sincronizarContatosComServidor = async (contatos: any[]) => {
     if (!contatos || contatos.length === 0) return
+    const usuarioId = usuarioLogado?.id
+    if (!usuarioId) {
+      console.warn("[CRM] Sem usuário logado — sincronização de contatos ignorada.")
+      return
+    }
     try {
       console.log(`[CRM] Sincronizando ${contatos.length} contatos com o backend...`)
       const res = await fetch("https://crm.nailacademyprofissional.com/api/contatos/sincronizar", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ contatos })
+        body: JSON.stringify({ contatos, usuarioId })
       })
       if (res.ok) {
         const result = await res.json()
@@ -293,8 +298,13 @@ const WhatsAppCRM = () => {
 
   // Busca todos os contatos salvos no SQLite do backend, atualizando cache e UI
   const carregarContatosDoServidor = async () => {
+    const usuarioId = usuarioLogado?.id
+    if (!usuarioId) {
+      setContatosRecentes([])
+      return
+    }
     try {
-      const res = await fetch("https://crm.nailacademyprofissional.com/api/contatos")
+      const res = await fetch(`https://crm.nailacademyprofissional.com/api/contatos?usuarioId=${usuarioId}`)
       if (res.ok) {
         const contatos = await res.json()
         if (Array.isArray(contatos)) {
