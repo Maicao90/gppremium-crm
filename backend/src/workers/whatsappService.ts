@@ -8,6 +8,14 @@ import { io, prisma } from '../server';
 // Mapa para guardar as sessões ativas por usuário
 export const sessions = new Map<string, WASocket>();
 
+// Guarda o QR Code mais recente (base64) de cada usuário enquanto ele ainda não escaneou.
+// Serve para REENVIAR o QR a uma extensão que conecta DEPOIS do QR ter sido gerado
+// (ex.: QR gerado no boot da VPS, antes do navegador da pessoa estar aberto).
+export const latestQR = new Map<string, string>();
+
+// Conjunto de usuários com a conexão realmente ABERTA (autenticada e pronta).
+export const connectedUsers = new Set<string>();
+
 // Memória ultrarrápida para garantir que uma auto-resposta saia apenas UMA VEZ por sessão
 const autoRepliedNumbers = new Set<string>();
 
@@ -48,9 +56,12 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       
       try {
         const qrBase64 = await qrcode.toDataURL(qr);
+        // Guarda o QR no cache para reenviar a quem conectar depois
+        latestQR.set(usuarioId, qrBase64);
+        connectedUsers.delete(usuarioId);
         // Emite o QR Code apenas para a sala do usuário específico
         io.to(usuarioId).emit('WHATSAPP_QR_CODE', qrBase64);
-        
+
         // Atualiza status no banco
         await prisma.usuario.update({
           where: { id: usuarioId },
@@ -69,6 +80,8 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
 
       io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false });
 
+      connectedUsers.delete(usuarioId);
+
       // CRÍTICO: sempre remove o socket morto do mapa antes de qualquer decisão.
       // Sem isso, o `if (sessions.has(usuarioId)) return` no topo de connectToWhatsApp
       // faz a reconexão virar um no-op e a sessão morre para sempre.
@@ -79,6 +92,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
         // no celular. O WhatsApp invalida a sessão (código 401), então apagamos as credenciais
         // mortas do disco para que um QR Code novo e limpo seja gerado na próxima conexão.
         console.log(`[Baileys] Aparelho REMOVIDO pelo celular (usuário ${usuarioId}). Limpando credenciais e aguardando novo QR Code.`);
+        latestQR.delete(usuarioId);
         try {
           const fs = require('fs');
           if (fs.existsSync(authDir)) {
@@ -103,6 +117,9 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       }
     } else if (connection === 'open') {
       console.log(`[Baileys] Conexão aberta com sucesso! Servidor pronto para disparos do usuário ${usuarioId}.`);
+      // Conectou: não há mais QR pendente e o usuário entra na lista de conectados.
+      connectedUsers.add(usuarioId);
+      latestQR.delete(usuarioId);
       io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: true });
       
       await prisma.usuario.update({
