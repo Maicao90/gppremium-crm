@@ -37,3 +37,16 @@ Thumbs.db
 
 backend/config_nuvem.json
 backend/prisma/auth_info_baileys_*
+
+# Sessões Baileys — NUNCA versionar (contém credenciais/chaves do WhatsApp)
+# Cobre tanto a pasta única "auth_info_baileys" quanto as por-usuário "auth_info_baileys_<id>"
+auth_info_baileys
+auth_info_baileys*
+**/auth_info_baileys
+**/auth_info_baileys*
+prisma/auth_info_baileys*
+
+# Certificados SSL
+*.pem
+backend/key.pem
+backend/cert.pem

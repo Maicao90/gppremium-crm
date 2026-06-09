@@ -57,6 +57,45 @@ const INTERVALO_RETRY_MS = 3 * 60 * 1000;
 // Máximo de tentativas de retry
 const MAX_TENTATIVAS = 3;
 
+// ════════════════════════════════════════════════════════════════════════
+// CONFIGURAÇÕES ANTI-BAN (ajuste estes valores conforme necessário)
+// ════════════════════════════════════════════════════════════════════════
+// 1) Intervalo ALEATÓRIO entre o envio de uma mensagem e a próxima (em ms).
+//    Evita disparo em rajada, que é o principal fator de banimento.
+const GAP_MIN_MS = 20 * 1000;  // mínimo 20 segundos
+const GAP_MAX_MS = 90 * 1000;  // máximo 90 segundos
+// 2) Limite máximo de mensagens enviadas por usuário POR DIA (0 = ilimitado).
+//    O que passar do limite continua 'pendente' e dispara no dia seguinte.
+const LIMITE_DIARIO_POR_USUARIO = 200;
+// ════════════════════════════════════════════════════════════════════════
+
+// Pausa assíncrona simples
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+// Retorna um inteiro aleatório entre min e max (inclusive)
+function gapAleatorio(): number {
+  return Math.floor(Math.random() * (GAP_MAX_MS - GAP_MIN_MS + 1)) + GAP_MIN_MS;
+}
+
+// Variação invisível do texto: garante que mensagens não fiquem byte-a-byte
+// idênticas (reduz risco de detecção por spam) SEM alterar o que o cliente lê.
+function humanizarTexto(texto: string): string {
+  // Variacao invisivel: insere um espaco de largura zero (U+200B) em posicao aleatoria
+  // entre palavras, garantindo que as mensagens nao fiquem byte-a-byte identicas
+  // SEM alterar o que o cliente le.
+  const ZWSP = String.fromCharCode(0x200B);
+  let resultado = texto;
+  const partes = resultado.split(" ");
+  if (partes.length > 2) {
+    const pos = 1 + Math.floor(Math.random() * (partes.length - 1));
+    partes[pos] = ZWSP + partes[pos];
+    resultado = partes.join(" ");
+  }
+  // Varia a quantidade de espacos no final (0 a 2) — inofensivo e invisivel
+  resultado += " ".repeat(Math.floor(Math.random() * 3));
+  return resultado;
+}
+
 export function initWorker() {
   console.log("Worker de agendamentos iniciado (Polling 10s, Retry Persistente no SQLite & Expediente Seguro)");
   
@@ -136,32 +175,73 @@ export function initWorker() {
         });
 
         if (pendentes.length > 0) {
-          const { enviarMensagem, sessions } = require('./whatsappService');
-          
+          const { enviarMensagem, sessions, connectToWhatsApp } = require('./whatsappService');
+
+          // ─── LIMITE DIÁRIO: conta quantas mensagens cada usuário já enviou HOJE ───
+          // (cacheado por ciclo; vai sendo incrementado conforme novos envios)
+          const inicioDoDia = new Date(agora);
+          inicioDoDia.setHours(0, 0, 0, 0);
+          const enviadosHojePorUsuario = new Map<string, number>();
+          async function jaEnviadosHoje(usuarioId: string): Promise<number> {
+            if (enviadosHojePorUsuario.has(usuarioId)) return enviadosHojePorUsuario.get(usuarioId)!;
+            const count = await prisma.agendamento.count({
+              where: { criadoPorId: usuarioId, status: 'enviado', atualizadoEm: { gte: inicioDoDia } }
+            });
+            enviadosHojePorUsuario.set(usuarioId, count);
+            return count;
+          }
+
+          // Controla o intervalo (gap) anti-rajada: só aplica a pausa ENTRE envios,
+          // nunca antes do primeiro nem depois do último.
+          let primeiroEnvioDoCiclo = true;
+
           for (const agendamento of pendentes) {
-            // REGRA DE PROTEÇÃO: Se não estiver conectado, PULA o agendamento (congela ele)
+            // REGRA DE PROTEÇÃO 1: Se não estiver conectado, PULA o agendamento (congela ele)
             if (!sessions.has(agendamento.criadoPorId)) {
               console.log(`[Worker] Escudo ativado: Loja do usuário ${agendamento.criadoPorId} está desconectada. Agendamento ${agendamento.id} retido até a próxima conexão.`);
+              // Auto-religamento dirigido: tenta restabelecer a sessão usando as credenciais
+              // salvas em disco (sem QR), para que a mensagem saia assim que reconectar.
+              connectToWhatsApp(agendamento.criadoPorId).catch((err: any) => console.error(`[Worker] Erro ao tentar religar sessão do usuário ${agendamento.criadoPorId}:`, err));
               continue;
             }
+
+            // REGRA DE PROTEÇÃO 2 (ANTI-BAN): respeita o limite diário por usuário.
+            // O que passar do limite continua 'pendente' e dispara no dia seguinte.
+            if (LIMITE_DIARIO_POR_USUARIO > 0) {
+              const enviados = await jaEnviadosHoje(agendamento.criadoPorId);
+              if (enviados >= LIMITE_DIARIO_POR_USUARIO) {
+                console.log(`[Worker] Limite diário (${LIMITE_DIARIO_POR_USUARIO}) atingido para o usuário ${agendamento.criadoPorId}. Agendamento ${agendamento.id} adiado para o próximo dia.`);
+                continue;
+              }
+            }
+
+            // ANTI-BAN: pausa aleatória ENTRE mensagens (evita disparo em rajada)
+            if (!primeiroEnvioDoCiclo) {
+              const gap = gapAleatorio();
+              console.log(`[Worker] Aguardando ${Math.round(gap / 1000)}s antes do próximo disparo (anti-ban)...`);
+              await sleep(gap);
+            }
+            primeiroEnvioDoCiclo = false;
 
             await prisma.agendamento.update({
               where: { id: agendamento.id },
               data: { status: 'enviando' }
             });
-            
+
             console.log(`[Worker] Disparando agendamento ${agendamento.id} para ${agendamento.numero} via Baileys (Simulando humano)...`);
-            
-            // Envia a mensagem (a função já adiciona o delay de "digitando")
-            const sucesso = await enviarMensagem(agendamento.criadoPorId, agendamento.numero, agendamento.mensagem);
-            
+
+            // Envia a mensagem (humanizada + a função já adiciona o delay de "digitando")
+            const sucesso = await enviarMensagem(agendamento.criadoPorId, agendamento.numero, humanizarTexto(agendamento.mensagem));
+
             if (sucesso) {
               await prisma.agendamento.update({
                 where: { id: agendamento.id },
                 data: { status: 'enviado' }
               });
+              // Incrementa o contador diário em memória para este usuário
+              enviadosHojePorUsuario.set(agendamento.criadoPorId, (enviadosHojePorUsuario.get(agendamento.criadoPorId) || 0) + 1);
               console.log(`[Worker] ✅ Agendamento ${agendamento.id} marcado como enviado.`);
-              
+
               // Notifica o frontend de que o status atualizou (se tiver alguém online para ver a UI atualizar)
               io.to(agendamento.criadoPorId).emit('STATUS_ATUALIZADO', { ...agendamento, status: 'enviado' });
             } else {
@@ -170,7 +250,7 @@ export function initWorker() {
                 data: { status: 'falhou' }
               });
               console.log(`[Worker] ❌ Agendamento ${agendamento.id} falhou. Cairá no retry automático.`);
-              
+
               io.to(agendamento.criadoPorId).emit('STATUS_ATUALIZADO', { ...agendamento, status: 'falhou' });
             }
           }

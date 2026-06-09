@@ -27,7 +27,14 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
     auth: state,
     printQRInTerminal: false,
     browser: Browsers.windows('Desktop'),
-    syncFullHistory: false
+    syncFullHistory: false,
+    // Mantém a conexão viva 24/7 na VPS: envia pings periódicos ao WhatsApp.
+    // Sem isso a conexão pode "congelar em silêncio" sem disparar o evento de queda.
+    keepAliveIntervalMs: 30000,
+    connectTimeoutMs: 60000,
+    retryRequestDelayMs: 2000,
+    // Não marca o aparelho como "online" ao conectar — evita roubar as notificações do celular.
+    markOnlineOnConnect: false
   });
 
   // Salva a instância no mapa
@@ -55,23 +62,43 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
     }
 
     if (connection === 'close') {
-      const isLoggedOut = (lastDisconnect?.error as Boom)?.output?.statusCode === DisconnectReason.loggedOut;
-      
-      console.log(`[Baileys] Conexão fechada (Usuário ${usuarioId}). Motivo:`, lastDisconnect?.error, 'Deslogado:', isLoggedOut);
-      
+      const statusCode = (lastDisconnect?.error as Boom)?.output?.statusCode;
+      const isLoggedOut = statusCode === DisconnectReason.loggedOut;
+
+      console.log(`[Baileys] Conexão fechada (Usuário ${usuarioId}). Código: ${statusCode}. Motivo:`, lastDisconnect?.error, 'Deslogado:', isLoggedOut);
+
       io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false });
-      
+
+      // CRÍTICO: sempre remove o socket morto do mapa antes de qualquer decisão.
+      // Sem isso, o `if (sessions.has(usuarioId)) return` no topo de connectToWhatsApp
+      // faz a reconexão virar um no-op e a sessão morre para sempre.
+      sessions.delete(usuarioId);
+
       if (isLoggedOut) {
-        // Usuário deslogou pelo celular
-        console.log(`[Baileys] Aparelho deslogado para o usuário ${usuarioId}.`);
-        sessions.delete(usuarioId);
+        // ÚNICO caso que para de vez: o usuário REMOVEU o aparelho em "Aparelhos conectados"
+        // no celular. O WhatsApp invalida a sessão (código 401), então apagamos as credenciais
+        // mortas do disco para que um QR Code novo e limpo seja gerado na próxima conexão.
+        console.log(`[Baileys] Aparelho REMOVIDO pelo celular (usuário ${usuarioId}). Limpando credenciais e aguardando novo QR Code.`);
+        try {
+          const fs = require('fs');
+          if (fs.existsSync(authDir)) {
+            fs.rmSync(authDir, { recursive: true, force: true });
+          }
+        } catch (e) {
+          console.error(`[Baileys] Erro ao limpar credenciais do usuário ${usuarioId}:`, e);
+        }
         await prisma.usuario.update({
           where: { id: usuarioId },
           data: { whatsappConectado: false }
         }).catch(() => {});
       } else {
-        // Queda de internet ou erro interno, força a reconexão INFINITA
-        console.log(`[Baileys] Tentando reconectar usuário ${usuarioId} em 5 segundos...`);
+        // Inclui o código 515 (restartRequired) que o Baileys dispara logo após escanear o QR,
+        // além de quedas de internet / erros internos. Em todos esses casos é preciso recriar o socket.
+        await prisma.usuario.update({
+          where: { id: usuarioId },
+          data: { whatsappConectado: false }
+        }).catch(() => {});
+        console.log(`[Baileys] Reconectando usuário ${usuarioId} em 5 segundos...`);
         setTimeout(() => connectToWhatsApp(usuarioId).catch(err => console.error("Erro no retry:", err)), 5000);
       }
     } else if (connection === 'open') {
