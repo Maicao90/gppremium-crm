@@ -121,6 +121,10 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       connectedUsers.add(usuarioId);
       latestQR.delete(usuarioId);
       io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: true });
+
+      // Mantém o dispositivo web como "offline" para NÃO roubar as notificações do celular.
+      // Assim as mensagens recebidas continuam aparecendo normalmente no telefone da pessoa.
+      sock.sendPresenceUpdate('unavailable').catch(() => {});
       
       await prisma.usuario.update({
         where: { id: usuarioId },
@@ -212,6 +216,12 @@ export async function enviarMensagem(usuarioId: string, numero: string, mensagem
     // 3. Envia a mensagem
     await sock.sendMessage(jid, { text: mensagem });
     console.log(`[Baileys] 🚀 Mensagem enviada com sucesso para ${numero} pelo usuário ${usuarioId}`);
+
+    // 4. CRÍTICO: volta a presença para "offline" (unavailable).
+    // Se o web ficar marcado como "online", o WhatsApp passa a entregar as mensagens
+    // RECEBIDAS apenas no web, e elas "somem" do celular. Liberar a presença aqui
+    // devolve as notificações ao telefone da pessoa.
+    await sock.sendPresenceUpdate('unavailable').catch(() => {});
     return true;
   } catch (error) {
     console.error(`[Baileys] ❌ Erro ao enviar mensagem para ${numero} pelo usuário ${usuarioId}:`, error);
