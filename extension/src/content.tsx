@@ -225,6 +225,8 @@ const WhatsAppCRM = () => {
   const [contatosRecentes, setContatosRecentes] = useState<any[]>([])
 
   const [agendamentos, setAgendamentos] = useState<any[]>([])
+  // Mensagens que os clientes apagaram (mostradas num aviso flutuante)
+  const [mensagensApagadas, setMensagensApagadas] = useState<any[]>([])
 
   // Funções auxiliares para persistir os contatos coletados no localStorage
   const obterContatosCache = (): any[] => {
@@ -441,6 +443,12 @@ const WhatsAppCRM = () => {
       if (status.conectado) {
         setQrCodeBackend(null)
       }
+    })
+
+    // Mensagem apagada por um cliente: mostra um aviso flutuante com o conteúdo original
+    socket.on("MENSAGEM_APAGADA", (data) => {
+      const item = { ...data, _key: `${data?.numero || ''}-${data?.apagadaEm || Math.random()}` }
+      setMensagensApagadas((prev) => [item, ...prev].slice(0, 30))
     })
     
 
@@ -1879,6 +1887,28 @@ const WhatsAppCRM = () => {
   // Sidebar Direita Injetada sobre o WhatsApp
   return (
     <>
+      {/* Aviso flutuante de mensagens apagadas pelos clientes */}
+      {mensagensApagadas.length > 0 && (
+        <div style={{ position: 'fixed', bottom: 16, left: 16, zIndex: 9999999, width: 340, maxWidth: '90vw', fontFamily: 'Inter, sans-serif' }}>
+          <div style={{ background: '#fff', borderRadius: 12, boxShadow: '0 8px 30px rgba(0,0,0,0.18)', border: '1px solid #fecaca', overflow: 'hidden' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 12px', background: '#fef2f2', borderBottom: '1px solid #fecaca' }}>
+              <span style={{ fontWeight: 700, fontSize: 13, color: '#b91c1c' }}>🗑️ Mensagens apagadas ({mensagensApagadas.length})</span>
+              <button onClick={() => setMensagensApagadas([])} style={{ border: 'none', background: 'transparent', cursor: 'pointer', color: '#b91c1c', fontSize: 12, fontWeight: 700 }}>Limpar</button>
+            </div>
+            <div style={{ maxHeight: 280, overflowY: 'auto' }}>
+              {mensagensApagadas.map((m, i) => (
+                <div key={m._key || i} style={{ padding: '10px 12px', borderBottom: '1px solid #f3f4f6' }}>
+                  <div style={{ fontSize: 12, fontWeight: 600, color: '#111827' }}>{m.nome ? `${m.nome} (${m.numero})` : m.numero}</div>
+                  <div style={{ fontSize: 13, color: '#374151', marginTop: 2, wordBreak: 'break-word' }}>
+                    {m.texto ? m.texto : <i style={{ color: '#9ca3af' }}>(conteúdo não capturado)</i>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Barra Lateral Direita */}
       <div className="fixed top-0 right-0 h-full w-[60px] bg-white border-l border-gray-200 shadow-xl z-[99999] flex flex-col items-center py-4 gap-4" style={{fontFamily: 'Inter, sans-serif'}}>
         

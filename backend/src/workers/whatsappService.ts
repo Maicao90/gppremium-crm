@@ -1,4 +1,4 @@
-import { makeWASocket, useMultiFileAuthState, DisconnectReason, Browsers, delay, WASocket } from '@whiskeysockets/baileys';
+import { makeWASocket, useMultiFileAuthState, DisconnectReason, Browsers, delay, WASocket, proto } from '@whiskeysockets/baileys';
 import { Boom } from '@hapi/boom';
 import qrcodeTerminal from 'qrcode-terminal';
 import qrcode from 'qrcode';
@@ -15,6 +15,32 @@ export const latestQR = new Map<string, string>();
 
 // Conjunto de usuários com a conexão realmente ABERTA (autenticada e pronta).
 export const connectedUsers = new Set<string>();
+
+// ─── MENSAGENS APAGADAS ───────────────────────────────────────────────────
+// Guarda em memória as mensagens recebidas (id -> conteúdo), para que, quando o
+// cliente APAGAR uma mensagem, ainda tenhamos o texto original para mostrar.
+// Limitado para não crescer infinito (LRU simples: descarta as mais antigas).
+const MAX_MENSAGENS_ARMAZENADAS = 4000;
+const mensagensRecentes = new Map<string, { usuarioId: string; numero: string; nome: string; texto: string; timestamp: number }>();
+
+function armazenarMensagemRecente(id: string, dados: { usuarioId: string; numero: string; nome: string; texto: string; timestamp: number }) {
+  mensagensRecentes.set(id, dados);
+  if (mensagensRecentes.size > MAX_MENSAGENS_ARMAZENADAS) {
+    const maisAntiga = mensagensRecentes.keys().next().value;
+    if (maisAntiga) mensagensRecentes.delete(maisAntiga);
+  }
+}
+
+// Extrai o texto de uma mensagem do WhatsApp (cobre os tipos mais comuns)
+function extrairTextoMensagem(message: any): string | null {
+  if (!message) return null;
+  return message.conversation
+    || message.extendedTextMessage?.text
+    || message.imageMessage?.caption
+    || message.videoMessage?.caption
+    || message.documentMessage?.caption
+    || null;
+}
 
 // Memória ultrarrápida para garantir que uma auto-resposta saia apenas UMA VEZ por sessão
 const autoRepliedNumbers = new Set<string>();
@@ -135,22 +161,66 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
 
   sock.ev.on('creds.update', saveCreds);
 
-  // Auto-resposta
+  // Mensagens recebidas: detecta APAGADAS, armazena e faz auto-resposta
   sock.ev.on('messages.upsert', async (m) => {
     try {
       // APENAS processar se for uma mensagem chegando (notify)
       if (m.type !== 'notify') return;
 
       const msg = m.messages[0];
-      if (!msg || !msg.message || !msg.key || msg.key.fromMe) return;
-      
+      if (!msg || !msg.message || !msg.key) return;
+
       const remoteJid = msg.key.remoteJid;
       if (!remoteJid || remoteJid.includes('@g.us') || remoteJid.includes('status@broadcast')) return; // ignorar grupos e status
 
-      const parts = remoteJid.split('@');
-      const numero = parts[0];
+      const numero = remoteJid.split('@')[0];
       if (!numero) return;
 
+      // ─── 1. MENSAGEM APAGADA (REVOKE) ───
+      // Quando o cliente apaga uma mensagem, o WhatsApp envia um protocolMessage REVOKE
+      // apontando para o id da original. Recuperamos o texto guardado e avisamos a extensão.
+      const protocolMsg = msg.message.protocolMessage;
+      if (protocolMsg && protocolMsg.type === proto.Message.ProtocolMessage.Type.REVOKE) {
+        const idApagado = protocolMsg.key?.id || undefined;
+        const original = idApagado ? mensagensRecentes.get(idApagado) : undefined;
+        if (original) {
+          console.log(`[Baileys] 🗑️ ${original.nome || original.numero} apagou: "${original.texto}"`);
+          io.to(usuarioId).emit('MENSAGEM_APAGADA', {
+            numero: original.numero,
+            nome: original.nome,
+            texto: original.texto,
+            recebidaEm: original.timestamp,
+            apagadaEm: Date.now()
+          });
+        } else {
+          console.log(`[Baileys] 🗑️ ${numero} apagou uma mensagem (conteúdo não estava em cache).`);
+          io.to(usuarioId).emit('MENSAGEM_APAGADA', {
+            numero,
+            nome: msg.pushName || '',
+            texto: null,
+            recebidaEm: null,
+            apagadaEm: Date.now()
+          });
+        }
+        return;
+      }
+
+      // Daqui pra frente só interessam mensagens RECEBIDAS (não as enviadas por nós)
+      if (msg.key.fromMe) return;
+
+      // ─── 2. ARMAZENA a mensagem recebida (para o caso de ser apagada depois) ───
+      const textoRecebido = extrairTextoMensagem(msg.message);
+      if (textoRecebido && msg.key.id) {
+        armazenarMensagemRecente(msg.key.id, {
+          usuarioId,
+          numero,
+          nome: msg.pushName || '',
+          texto: textoRecebido,
+          timestamp: Date.now()
+        });
+      }
+
+      // ─── 3. AUTO-RESPOSTA ───
       // Chave única em memória para o usuário e número do cliente
       const memoryKey = `${usuarioId}_${numero}`;
 
