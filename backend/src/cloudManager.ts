@@ -14,6 +14,9 @@ class CloudManager {
   private configs: CloudConfigs = { planoA: '', planoB: '', planoC: '' };
   private planoAtivo: 'A' | 'B' | 'C' | null = null;
   private prismaInstance: PrismaClient | null = null;
+  // Trava: garante que só UMA verificação de failover rode por vez (evita boot duplo
+  // competindo por conexões com o banco free e derrubando a conexão).
+  private initializingPromise: Promise<{ ativo: 'A'|'B'|'C'|null, prisma: PrismaClient|null }> | null = null;
 
   async loadConfigs(): Promise<CloudConfigs> {
     try {
@@ -66,60 +69,79 @@ class CloudManager {
     return false;
   }
 
-  // Descobre qual plano está online e atualiza o PrismaClient oficial
+  // Descobre qual plano está online e atualiza o PrismaClient oficial.
+  // Protegido por trava para nunca rodar duas vezes em paralelo.
   async initializeFailover(): Promise<{ ativo: 'A'|'B'|'C'|null, prisma: PrismaClient|null }> {
+    if (this.initializingPromise) {
+      // Já há uma verificação em andamento — reaproveita (evita boot duplo).
+      return this.initializingPromise;
+    }
+    this.initializingPromise = this._doInitializeFailover();
+    try {
+      return await this.initializingPromise;
+    } finally {
+      this.initializingPromise = null;
+    }
+  }
+
+  private async _doInitializeFailover(): Promise<{ ativo: 'A'|'B'|'C'|null, prisma: PrismaClient|null }> {
     await this.loadConfigs();
-    
+
     console.log('[CloudManager] Iniciando verificação de nuvens...');
-    
+
+    let novoPlano: 'A' | 'B' | 'C' | null = null;
     if (this.configs.planoA && await this.testConnection(this.configs.planoA)) {
-      this.planoAtivo = 'A';
+      novoPlano = 'A';
     } else if (this.configs.planoB && await this.testConnection(this.configs.planoB)) {
-      this.planoAtivo = 'B';
+      novoPlano = 'B';
     } else if (this.configs.planoC && await this.testConnection(this.configs.planoC)) {
-      this.planoAtivo = 'C';
-    } else {
-      this.planoAtivo = null;
+      novoPlano = 'C';
     }
 
-    if (this.prismaInstance) {
-      await this.prismaInstance.$disconnect();
-    }
-
-    if (this.planoAtivo) {
-      let activeUrl = '';
-      if (this.planoAtivo === 'A') activeUrl = this.configs.planoA;
-      if (this.planoAtivo === 'B') activeUrl = this.configs.planoB;
-      if (this.planoAtivo === 'C') activeUrl = this.configs.planoC;
-      
-      console.log(`[CloudManager] Conectado com sucesso ao Plano ${this.planoAtivo}!`);
-      
-      // SEGURANÇA: NÃO usamos mais `--accept-data-loss` (ele podia APAGAR dados se o
-      // esquema divergisse). Sem a flag, o db push só faz mudanças aditivas seguras;
-      // se exigiria perda de dados, ele falha e mantemos o banco como está.
-      try {
-        console.log('[CloudManager] Sincronizando tabelas do Prisma com a nuvem (modo seguro, sem perda de dados)...');
-        const { execSync } = require('child_process');
-        execSync('npx prisma db push --skip-generate', {
-          env: { ...process.env, DATABASE_URL: activeUrl },
-          stdio: 'inherit'
-        });
-        console.log('[CloudManager] Tabelas da nuvem sincronizadas com sucesso!');
-      } catch (e) {
-        console.error('[CloudManager] Aviso ao sincronizar Prisma (mantendo banco como está):', e);
+    // Nenhuma URL conectou agora.
+    if (!novoPlano) {
+      // Se já temos uma conexão ativa funcionando, MANTEMOS ela — não derruba o banco
+      // por uma falha intermitente de teste (Supabase free às vezes recusa um teste).
+      if (this.prismaInstance && this.planoAtivo) {
+        console.warn(`[CloudManager] Teste falhou agora, mas mantendo a conexão ativa existente (Plano ${this.planoAtivo}).`);
+        return { ativo: this.planoAtivo, prisma: this.prismaInstance };
       }
-
-      this.prismaInstance = new PrismaClient({
-        datasources: { db: { url: activeUrl } }
-      });
-      // Importante: garante que a conexão inicie
-      await this.prismaInstance.$connect();
-      return { ativo: this.planoAtivo, prisma: this.prismaInstance };
-    } else {
       console.warn('[CloudManager] ALERTA CRÍTICO: Nenhum banco de dados na nuvem está online ou configurado.');
       this.prismaInstance = null;
+      this.planoAtivo = null;
       return { ativo: null, prisma: null };
     }
+
+    let activeUrl = '';
+    if (novoPlano === 'A') activeUrl = this.configs.planoA;
+    if (novoPlano === 'B') activeUrl = this.configs.planoB;
+    if (novoPlano === 'C') activeUrl = this.configs.planoC;
+
+    console.log(`[CloudManager] Conectado com sucesso ao Plano ${novoPlano}!`);
+
+    // SEGURANÇA: sem `--accept-data-loss` — só mudanças aditivas seguras.
+    try {
+      console.log('[CloudManager] Sincronizando tabelas do Prisma com a nuvem (modo seguro)...');
+      const { execSync } = require('child_process');
+      execSync('npx prisma db push --skip-generate', {
+        env: { ...process.env, DATABASE_URL: activeUrl },
+        stdio: 'inherit'
+      });
+      console.log('[CloudManager] Tabelas sincronizadas com sucesso!');
+    } catch (e) {
+      console.error('[CloudManager] Aviso ao sincronizar Prisma (mantendo banco como está):', e);
+    }
+
+    // Cria a nova instância e SÓ ENTÃO desconecta a antiga (nunca fica sem banco no meio).
+    const novaInstancia = new PrismaClient({ datasources: { db: { url: activeUrl } } });
+    await novaInstancia.$connect();
+    const antiga = this.prismaInstance;
+    this.prismaInstance = novaInstancia;
+    this.planoAtivo = novoPlano;
+    if (antiga) {
+      antiga.$disconnect().catch(() => {});
+    }
+    return { ativo: novoPlano, prisma: novaInstancia };
   }
 
   getPrisma(): PrismaClient {
