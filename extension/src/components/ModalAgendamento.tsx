@@ -186,7 +186,7 @@ export default function ModalAgendamento({ onClose, onSuccess, usuarioId, contat
     }
 
     try {
-      const response = await fetch('https://crm.nailacademyprofissional.com:3000/api/agendamentos', {
+      const response = await fetch('https://crm.nailacademyprofissional.com/api/agendamentos', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

@@ -8,7 +8,7 @@ module.exports = {
       cwd: '/root/whatsapp-crm/backend',
       env: {
         NODE_ENV: 'production',
-        PORT: 3000
+        PORT: 443
       },
       // Auto-reinicia se o processo cair
       autorestart: true,

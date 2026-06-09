@@ -55,7 +55,7 @@ export default function Configuracoes({ onClose }) {
     if (savedDelayDigitar) setDelayDigitar(savedDelayDigitar)
 
     // Carrega configurações de expediente do banco de dados SQLite do servidor
-    fetch("https://crm.nailacademyprofissional.com:3000/api/configuracoes")
+    fetch("https://crm.nailacademyprofissional.com/api/configuracoes")
       .then(res => res.json())
       .then(data => {
         if (data) {
@@ -87,7 +87,7 @@ export default function Configuracoes({ onClose }) {
     expedienteDias: string
   }) => {
     try {
-      await fetch("https://crm.nailacademyprofissional.com:3000/api/configuracoes", {
+      await fetch("https://crm.nailacademyprofissional.com/api/configuracoes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
@@ -132,7 +132,7 @@ export default function Configuracoes({ onClose }) {
   const salvarAutoRespostaBackend = async (ativa: boolean, mensagem: string) => {
     if (!usuarioLogado) return;
     try {
-      await fetch(`https://crm.nailacademyprofissional.com:3000/api/usuarios/${usuarioLogado.id}/autoresposta`, {
+      await fetch(`https://crm.nailacademyprofissional.com/api/usuarios/${usuarioLogado.id}/autoresposta`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ autoRespostaAtiva: ativa, autoRespostaMensagem: mensagem })
