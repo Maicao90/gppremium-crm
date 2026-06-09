@@ -732,9 +732,12 @@ const WhatsAppCRM = () => {
     
     verificarFallbackSupremo()
 
-    fetch('https://crm.nailacademyprofissional.com/api/agendamentos')
+    const idUsuarioAtual = usuarioLogado?.id
+    if (idUsuarioAtual) {
+      fetch(`https://crm.nailacademyprofissional.com/api/agendamentos?criadoPorId=${idUsuarioAtual}`)
       .then(res => res.json())
       .then(data => {
+        if (!Array.isArray(data)) return
         setAgendamentos(data)
         // Alimenta o cache de contatos com contatos vindos de agendamentos salvos
         if (Array.isArray(data)) {
@@ -758,6 +761,9 @@ const WhatsAppCRM = () => {
           salvarContatosCache(novosContatos)
         }
       })
+    } else {
+      setAgendamentos([])
+    }
 
     // Solicita re-extração de contatos do IndexedDB via MAIN world a cada 30 minutos (1800000ms) como backup
     const intervalSincronizar = setInterval(() => {

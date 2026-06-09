@@ -163,8 +163,10 @@ export function initWorker() {
         }
       }
 
-      // ─── 3. VERIFICAÇÃO DE EXPEDIENTE ────────────────────────────────────
-      const noExpediente = await estaNoExpediente(agora);
+      // ─── 3. EXPEDIENTE REMOVIDO ──────────────────────────────────────────
+      // Os disparos acontecem SEMPRE no horário que a pessoa configurou (enviarEm),
+      // sem nenhuma janela de "expediente" segurando mensagens.
+      const noExpediente = true;
       if (noExpediente) {
         // ─── 4. BUSCA E DISPARO DE MENSAGENS PENDENTES ───────────────────────
         const pendentes = await prisma.agendamento.findMany({
