@@ -520,15 +520,28 @@ const WhatsAppCRM = () => {
 
       if (event.data?.type === "CRM_LIVE_SEARCH") {
         const query = event.data.query
+        // Seletores robustos: o WhatsApp Web mudou a caixa de busca ao longo das versões
+        // (ora usa title, ora aria-label, ora role=textbox/data-tab). Tentamos todos.
         const SEARCH_SELECTORS = [
-          'div[contenteditable="true"][title="Pesquisar ou começar uma nova conversa"]',
-          'div[contenteditable="true"][title="Search or start new chat"]',
-          '#side div[contenteditable="true"]'
+          'div[contenteditable="true"][aria-label*="esquis"]',   // "Pesquisar..." (PT)
+          'div[contenteditable="true"][aria-label*="earch"]',    // "Search..." (EN)
+          'div[contenteditable="true"][title*="esquis"]',
+          'div[contenteditable="true"][title*="earch"]',
+          'div[role="textbox"][contenteditable="true"][data-tab="3"]',
+          '#side div[contenteditable="true"][role="textbox"]',
+          '#side div[contenteditable="true"]',
+          'div[data-testid="chat-list-search"] div[contenteditable="true"]'
         ]
         let searchInput: HTMLDivElement | null = null
         for (const sel of SEARCH_SELECTORS) {
           const el = document.querySelector(sel) as HTMLDivElement
           if (el) { searchInput = el; break }
+        }
+
+        if (!searchInput) {
+          console.warn("[CRM] Caixa de busca do WhatsApp Web não encontrada (seletores podem ter mudado).")
+          window.postMessage({ type: "CRM_LIVE_SEARCH_RESULTS", results: [] }, "*")
+          return
         }
 
         if (searchInput) {
