@@ -417,53 +417,55 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       }
 
       // ─── 3. AUTO-RESPOSTA (recepção) — enviada SÓ UMA VEZ por contato ───
-      // Dedup pelo NÚMERO REAL: o mesmo contato pode chegar ora como @lid, ora como
-      // @s.whatsapp.net. Sem normalizar, viravam 2 chaves diferentes e a recepção saía 2x.
-      const numeroDedup = (await resolverNumeroReal(sock, msg, remoteJid)) || numero;
-      const memoryKey = `${usuarioId}_${numeroDedup}`;
+      const numeroRecep = (await resolverNumeroReal(sock, msg, remoteJid)) || numero;
+      // Considera TODAS as formas que o contato pode ter sido salvo (número real OU @lid cru),
+      // para NUNCA repetir — nem na virada de chave (@lid -> número real).
+      const chavesDedup = Array.from(new Set([numeroRecep, numero].filter(Boolean)));
+      const memKeys = chavesDedup.map(k => `${usuarioId}_${k}`);
 
-      // Check rápido em memória (evita trabalho repetido na mesma sessão)
-      if (autoRepliedNumbers.has(memoryKey)) {
-        return;
-      }
+      // Check rápido em memória (qualquer das chaves)
+      if (memKeys.some(mk => autoRepliedNumbers.has(mk))) return;
 
-      // Busca dados do usuário para verificar a configuração de auto-resposta
-      const usuario = await prisma.usuario.findUnique({
-        where: { id: usuarioId }
-      });
+      const usuario = await prisma.usuario.findUnique({ where: { id: usuarioId } });
+      if (!usuario || !usuario.autoRespostaAtiva || !usuario.autoRespostaMensagem) return;
 
-      if (!usuario || !usuario.autoRespostaAtiva || !usuario.autoRespostaMensagem) {
-        return;
-      }
+      // DEDUP PERSISTENTE: já respondemos este contato por QUALQUER uma das chaves?
+      const jaRespondido = await prisma.autoReplyHistory.findFirst({
+        where: { usuarioId, numero: { in: chavesDedup } }
+      }).catch(() => null);
+      if (jaRespondido) { memKeys.forEach(mk => autoRepliedNumbers.add(mk)); return; }
 
-      // DEDUP PERSISTENTE: registra no banco ANTES de enviar. A chave única
-      // (usuarioId + numero) garante que, mesmo após reiniciar a VPS ou com várias
-      // mensagens chegando juntas, a recepção saia UMA única vez por contato.
+      // Registra (chave canônica = número real) ANTES de enviar, contra corridas/reinícios
       try {
-        await prisma.autoReplyHistory.create({ data: { usuarioId, numero: numeroDedup } });
+        await prisma.autoReplyHistory.create({ data: { usuarioId, numero: numeroRecep } });
       } catch (e: any) {
-        if (e?.code === 'P2002') {
-          // Já respondemos este contato antes — não envia de novo.
-          autoRepliedNumbers.add(memoryKey);
-          return;
-        }
-        // Erro diferente (ex.: tabela indisponível): não bloqueia o atendimento,
-        // cai no controle em memória abaixo.
+        if (e?.code === 'P2002') { memKeys.forEach(mk => autoRepliedNumbers.add(mk)); return; }
         console.error('[Baileys] Aviso no dedup de auto-resposta (seguindo em memória):', e?.message);
       }
+      memKeys.forEach(mk => autoRepliedNumbers.add(mk));
+      console.log(`[Baileys] Enviando auto-resposta (1x) para ${numeroRecep} (Usuário: ${usuarioId})`);
 
-      // Marca em memória e envia a recepção
-      autoRepliedNumbers.add(memoryKey);
-      console.log(`[Baileys] Enviando auto-resposta (1x) para ${numero} (Usuário: ${usuarioId})`);
-
-      await sock.sendMessage(remoteJid, { text: usuario.autoRespostaMensagem }).catch(async (e) => {
+      try {
+        const enviadaAuto = await sock.sendMessage(remoteJid, { text: usuario.autoRespostaMensagem });
+        // Mostra a recepção também na Caixa de Entrada do painel (o sendMessage não dispara captura)
+        try {
+          const waIdAuto = enviadaAuto?.key?.id || null;
+          lembrarWaId(waIdAuto);
+          const salvaAuto = await prisma.mensagem.create({
+            data: {
+              usuarioId, chatJid: remoteJid, chatNome: '', fromMe: true,
+              texto: usuario.autoRespostaMensagem, tipo: 'texto', waId: waIdAuto,
+              numeroReal: numeroRecep || null
+            }
+          });
+          io.to(usuarioId).emit('NOVA_MENSAGEM', salvaAuto);
+        } catch (e) { console.error('[Inbox] Erro ao salvar auto-resposta na inbox:', (e as any)?.message); }
+      } catch (e) {
         console.error("Erro ao enviar auto-reply:", e);
         // Se falhar o envio, libera para tentar de novo depois (memória + banco)
-        autoRepliedNumbers.delete(memoryKey);
-        await prisma.autoReplyHistory.delete({
-          where: { usuarioId_numero: { usuarioId, numero: numeroDedup } }
-        }).catch(() => {});
-      });
+        memKeys.forEach(mk => autoRepliedNumbers.delete(mk));
+        await prisma.autoReplyHistory.delete({ where: { usuarioId_numero: { usuarioId, numero: numeroRecep } } }).catch(() => {});
+      }
 
     } catch (err) {
       console.error(`[Baileys] Erro no processamento de auto-resposta (Usuário: ${usuarioId}):`, err);
