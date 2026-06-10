@@ -25,6 +25,41 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Gráfico de envios por dia (últimos N dias). Opcional: filtra por criadoPorId.
+router.get('/grafico', async (req, res) => {
+  try {
+    const dias = Math.min(Math.max(parseInt(String(req.query.dias)) || 7, 1), 60);
+    const inicio = new Date();
+    inicio.setHours(0, 0, 0, 0);
+    inicio.setDate(inicio.getDate() - (dias - 1));
+
+    const where: any = { status: 'enviado', atualizadoEm: { gte: inicio } };
+    const { criadoPorId } = req.query;
+    if (criadoPorId && criadoPorId !== 'undefined' && criadoPorId !== 'null') {
+      where.criadoPorId = String(criadoPorId);
+    }
+
+    const enviados = await prisma.agendamento.findMany({ where, select: { atualizadoEm: true } });
+
+    // Inicializa todos os dias com 0
+    const mapa: Record<string, number> = {};
+    for (let i = 0; i < dias; i++) {
+      const d = new Date(inicio);
+      d.setDate(inicio.getDate() + i);
+      mapa[d.toISOString().slice(0, 10)] = 0;
+    }
+    enviados.forEach(e => {
+      const key = new Date(e.atualizadoEm).toISOString().slice(0, 10);
+      if (mapa[key] !== undefined) mapa[key]++;
+    });
+
+    res.json(Object.entries(mapa).map(([dia, total]) => ({ dia, total })));
+  } catch (error) {
+    console.error('Erro ao gerar gráfico:', error);
+    res.status(500).json({ error: 'Erro ao gerar gráfico' });
+  }
+});
+
 // Criar agendamento
 router.post('/', async (req, res) => {
   try {
