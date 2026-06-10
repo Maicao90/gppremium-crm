@@ -368,10 +368,17 @@ export async function enviarMensagemInbox(usuarioId: string, jid: string, texto:
     console.error(`[Inbox] WhatsApp não conectado para o usuário ${usuarioId}.`);
     return false;
   }
+  // Assinatura: prefixa o nome do atendente em negrito (igual ao WhatsApp: *nome:* texto)
+  let textoFinal = texto;
+  try {
+    const u = await prisma.usuario.findUnique({ where: { id: usuarioId } });
+    if (u && u.nome) textoFinal = `*${u.nome}:* ${texto}`;
+  } catch (e) {}
+
   try {
     await sock.sendPresenceUpdate('composing', jid).catch(() => {});
     await delay(700);
-    const enviada = await sock.sendMessage(jid, { text: texto });
+    const enviada = await sock.sendMessage(jid, { text: textoFinal });
     // volta a "offline" para não roubar as notificações do celular
     await sock.sendPresenceUpdate('unavailable').catch(() => {});
 
@@ -381,7 +388,7 @@ export async function enviarMensagemInbox(usuarioId: string, jid: string, texto:
       const waId = enviada?.key?.id || null;
       lembrarWaId(waId);
       const salva = await prisma.mensagem.create({
-        data: { usuarioId, chatJid: jid, chatNome: '', fromMe: true, texto, tipo: 'texto', waId }
+        data: { usuarioId, chatJid: jid, chatNome: '', fromMe: true, texto: textoFinal, tipo: 'texto', waId }
       });
       io.to(usuarioId).emit('NOVA_MENSAGEM', salva);
     } catch (e) {

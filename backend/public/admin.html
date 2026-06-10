@@ -1028,6 +1028,26 @@
     </div>
   </div>
 
+  <!-- ══ MODAL DE REAGENDAR ══ -->
+  <div class="modal-overlay" id="reagendar-modal" style="z-index:10001;">
+    <div class="modal-box" style="max-width:380px;">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-clock-rotate-left"></i> Reagendar mensagem</h3>
+        <button class="modal-close" onclick="fecharReagendar()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <input type="hidden" id="reagendar-id">
+      <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:12px;" id="reagendar-info"></div>
+      <div class="form-group">
+        <label for="reagendar-data">Nova data e hora</label>
+        <input type="datetime-local" id="reagendar-data" class="form-control" style="padding-left:1rem;">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-cancel" onclick="fecharReagendar()">Cancelar</button>
+        <button type="button" class="btn-save" onclick="salvarReagendamento()">Reagendar</button>
+      </div>
+    </div>
+  </div>
+
   <div class="toast-container" id="toast-container"></div>
 
   <script src="/socket.io/socket.io.js"></script>
@@ -1140,14 +1160,18 @@
       const cont = document.getElementById('grafico-envios');
       if (!cont) return;
       try {
-        const res = await fetch('/api/agendamentos/grafico?dias=7');
+        const diasMap = { dia: 1, semana: 7, mes: 30, ano: 30 };
+        const dias = diasMap[periodoAtual] || 7;
+        const res = await fetch('/api/agendamentos/grafico?dias=' + dias);
         if (!res.ok) return;
         const dados = await res.json();
         const max = Math.max(1, ...dados.map(d => d.total));
+        const muitos = dados.length > 10;
         cont.innerHTML = dados.map(d => {
           const altura = Math.round((d.total / max) * 100);
           const dia = new Date(d.dia + 'T00:00:00');
-          const label = dia.toLocaleDateString('pt-BR', { weekday: 'short' }).replace('.', '');
+          const pad = n => String(n).padStart(2,'0');
+          const label = muitos ? `${pad(dia.getDate())}/${pad(dia.getMonth()+1)}` : dia.toLocaleDateString('pt-BR', { weekday: 'short' }).replace('.', '');
           return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:5px;height:100%;">
             <div style="font-size:0.72rem;color:#fff;font-weight:700;">${d.total}</div>
             <div style="width:60%;background:linear-gradient(180deg,#a855f7,#7c3aed);border-radius:6px 6px 0 0;height:${Math.max(4, altura)}%;min-height:4px;"></div>
@@ -1358,22 +1382,35 @@
         else showToast('Erro ao cancelar.', 'error');
       } catch { showToast('Erro de comunicação.', 'error'); }
     }
-    async function reagendarAgendamento(id) {
+    // Abre o modal de reagendamento (seletor de data/hora nativo)
+    function reagendarAgendamento(id) {
       const a = _agCache[id];
       if (!a) return;
-      const atual = new Date(a.enviarEm);
+      const dt = new Date(a.enviarEm);
       const pad = n => String(n).padStart(2,'0');
-      const sugestao = `${atual.getFullYear()}-${pad(atual.getMonth()+1)}-${pad(atual.getDate())} ${pad(atual.getHours())}:${pad(atual.getMinutes())}`;
-      const novo = prompt('Nova data/hora (AAAA-MM-DD HH:MM):', sugestao);
-      if (!novo) return;
-      const dt = new Date(novo.replace(' ', 'T'));
+      // formato do datetime-local: AAAA-MM-DDTHH:MM (hora local)
+      const val = `${dt.getFullYear()}-${pad(dt.getMonth()+1)}-${pad(dt.getDate())}T${pad(dt.getHours())}:${pad(dt.getMinutes())}`;
+      document.getElementById('reagendar-data').value = val;
+      document.getElementById('reagendar-id').value = id;
+      document.getElementById('reagendar-info').textContent = (a.cliente || a.numero) + ' · ' + a.numero;
+      document.getElementById('reagendar-modal').classList.add('active');
+    }
+    function fecharReagendar() {
+      document.getElementById('reagendar-modal').classList.remove('active');
+    }
+    async function salvarReagendamento() {
+      const id = document.getElementById('reagendar-id').value;
+      const val = document.getElementById('reagendar-data').value;
+      const a = _agCache[id];
+      if (!val || !a) return;
+      const dt = new Date(val);
       if (isNaN(dt.getTime())) { showToast('Data inválida.', 'error'); return; }
       try {
         const res = await fetch('/api/agendamentos/' + id, {
           method: 'PUT', headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ cliente: a.cliente, numero: a.numero, mensagem: a.mensagem, enviarEm: dt.toISOString(), cancelarSeResponder: a.cancelarSeResponder })
         });
-        if (res.ok) { showToast('Agendamento reagendado.'); verAgendamentosDoAtendente(a.criadoPorId); carregarMetricas(); }
+        if (res.ok) { showToast('Agendamento reagendado!'); fecharReagendar(); verAgendamentosDoAtendente(a.criadoPorId); carregarMetricas(); }
         else showToast('Erro ao reagendar.', 'error');
       } catch { showToast('Erro de comunicação.', 'error'); }
     }
