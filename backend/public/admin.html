@@ -610,6 +610,22 @@
     .btn-save:hover { box-shadow: 0 6px 20px rgba(139,92,246,0.5); transform: translateY(-1px); }
 
     /* ── RESPONSIVE ── */
+    /* ── Caixa de Entrada ── */
+    .inbox-layout { display:grid; grid-template-columns: 320px 1fr; gap:1rem; height: calc(100vh - 230px); min-height:420px; }
+    .inbox-conversas { background:var(--bg-card); border:1px solid var(--border-color); border-radius:14px; overflow-y:auto; }
+    .inbox-thread { background:var(--bg-card); border:1px solid var(--border-color); border-radius:14px; display:flex; flex-direction:column; overflow:hidden; }
+    .conversa-item { padding:12px 14px; border-bottom:1px solid var(--border-color); cursor:pointer; transition:background 0.15s; }
+    .conversa-item:hover, .conversa-item.active { background:rgba(255,255,255,0.05); }
+    .conversa-nome { font-weight:600; font-size:0.85rem; color:white; }
+    .conversa-previa { font-size:0.75rem; color:var(--text-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-top:2px; }
+    .inbox-thread-header { padding:12px 16px; border-bottom:1px solid var(--border-color); font-weight:700; color:white; display:flex; align-items:center; gap:8px; }
+    .inbox-msgs { flex:1; overflow-y:auto; padding:16px; display:flex; flex-direction:column; gap:8px; }
+    .msg-bubble { max-width:75%; padding:8px 12px; border-radius:12px; font-size:0.85rem; line-height:1.4; word-break:break-word; }
+    .msg-in { background:rgba(255,255,255,0.07); align-self:flex-start; border-bottom-left-radius:4px; color:#e5e7eb; }
+    .msg-out { background:linear-gradient(135deg,#7c3aed,#a855f7); color:white; align-self:flex-end; border-bottom-right-radius:4px; }
+    .msg-time { font-size:0.6rem; opacity:0.65; margin-top:3px; text-align:right; }
+    .msg-midia { font-style:italic; opacity:0.85; }
+
     /* Botão de menu (hambúrguer) e fundo — só aparecem no mobile */
     .menu-toggle { display:none; background:none; border:none; color:var(--text-main); font-size:1.3rem; cursor:pointer; padding:0.3rem; align-items:center; }
     .sidebar-backdrop { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:150; }
@@ -628,6 +644,9 @@
       .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
       .modal-box { max-width: 94vw; padding: 1.4rem; }
       .header-title span { display:none; }
+      .inbox-layout { grid-template-columns: 1fr; height:auto; }
+      .inbox-conversas { max-height: 260px; }
+      .inbox-thread { height: 60vh; }
     }
     @media (max-width: 480px) {
       .stats-grid { grid-template-columns: 1fr; }
@@ -659,6 +678,11 @@
       <div class="nav-item" id="nav-atendentes" onclick="navTo('atendentes')">
         <i class="fa-solid fa-users"></i>
         Atendentes
+      </div>
+
+      <div class="nav-item" id="nav-inbox" onclick="navTo('inbox')">
+        <i class="fa-solid fa-comments"></i>
+        Caixa de Entrada
       </div>
 
       <div class="nav-section-label">Sistema</div>
@@ -916,6 +940,24 @@
       </div>
     </div><!-- /page-banco -->
 
+    <!-- ══ PÁGINA: CAIXA DE ENTRADA ══ -->
+    <div class="page" id="page-inbox">
+      <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1rem; flex-wrap:wrap;">
+        <div class="section-title"><i class="fa-solid fa-comments"></i> Caixa de Entrada</div>
+        <select id="inbox-atendente" class="form-control" style="max-width:300px; padding-left:1rem;" onchange="inboxSelecionarAtendente()">
+          <option value="">Selecione um atendente conectado...</option>
+        </select>
+      </div>
+      <div class="inbox-layout">
+        <div class="inbox-conversas" id="inbox-conversas">
+          <div class="empty-state" style="padding:2rem 1rem;"><i class="fa-solid fa-inbox"></i><p>Selecione um atendente.</p></div>
+        </div>
+        <div class="inbox-thread" id="inbox-thread">
+          <div class="empty-state" style="margin:auto;"><i class="fa-solid fa-comment-dots"></i><p>Selecione uma conversa.</p></div>
+        </div>
+      </div>
+    </div><!-- /page-inbox -->
+
   </div><!-- /main-wrapper -->
 
   <!-- ══ MODAL PREMIUM DE EDIÇÃO DE ATENDENTE ══ -->
@@ -988,6 +1030,7 @@
     const PAGE_TITLES = {
       dashboard:  'Dashboard <span>/ Métricas por Período</span>',
       atendentes: 'Atendentes <span>/ Gestão da Equipe</span>',
+      inbox:      'Caixa de Entrada <span>/ Pós-venda</span>',
       banco:      'Banco de Dados <span>/ Configuração Multi-Cloud</span>',
     };
 
@@ -1003,6 +1046,7 @@
       if (id === 'dashboard')  carregarMetricas();
       if (id === 'atendentes') carregarAtendentes();
       if (id === 'banco')      carregarConfigsNuvem();
+      if (id === 'inbox')      carregarInboxAtendentes();
       fecharSidebar(); // no mobile, fecha o menu ao navegar
     }
 
@@ -1510,6 +1554,93 @@
 
     ['AGENDAMENTO_CRIADO','STATUS_ATUALIZADO','AGENDAMENTO_EXCLUIDO','AGENDAMENTO_ATUALIZADO']
       .forEach(ev => socket.on(ev, carregarMetricas));
+
+    // ── CAIXA DE ENTRADA ───────────────────────────────────────────────
+    let inboxAtendenteAtual = '';
+    let inboxConversaAtual = '';
+
+    function escapeHtml(s){ return (s||'').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    function carregarInboxAtendentes() {
+      const sel = document.getElementById('inbox-atendente');
+      if (!sel) return;
+      const atual = sel.value;
+      fetch('/api/usuarios/metricas?periodo=ano').then(r=>r.json()).then(lista => {
+        if (!Array.isArray(lista)) return;
+        sel.innerHTML = '<option value="">Selecione um atendente...</option>' +
+          lista.map(u => `<option value="${u.id}" ${u.id===atual?'selected':''}>${u.nome} ${u.whatsappConectado?'🟢':'🔴'}</option>`).join('');
+      }).catch(()=>{});
+    }
+
+    function inboxSelecionarAtendente() {
+      const id = document.getElementById('inbox-atendente').value;
+      inboxAtendenteAtual = id;
+      inboxConversaAtual = '';
+      document.getElementById('inbox-thread').innerHTML = '<div class="empty-state" style="margin:auto;"><i class="fa-solid fa-comment-dots"></i><p>Selecione uma conversa.</p></div>';
+      if (!id) {
+        document.getElementById('inbox-conversas').innerHTML = '<div class="empty-state" style="padding:2rem 1rem;"><i class="fa-solid fa-inbox"></i><p>Selecione um atendente.</p></div>';
+        return;
+      }
+      socket.emit('assistir_atendente', id);
+      carregarConversas(id);
+    }
+
+    function previewConversa(c) {
+      if (c.tipo && c.tipo !== 'texto') return '📎 ' + c.tipo;
+      return (c.fromMe ? 'Você: ' : '') + (c.texto || '');
+    }
+
+    async function carregarConversas(usuarioId) {
+      const cont = document.getElementById('inbox-conversas');
+      if (!cont) return;
+      try {
+        const res = await fetch('/api/inbox/conversas?usuarioId=' + usuarioId);
+        const lista = await res.json();
+        if (!Array.isArray(lista) || !lista.length) {
+          cont.innerHTML = '<div class="empty-state" style="padding:2rem 1rem;"><i class="fa-solid fa-inbox"></i><p>Sem conversas ainda.</p></div>';
+          return;
+        }
+        cont.innerHTML = lista.map(c => {
+          const nome = c.chatNome || c.chatJid.split('@')[0];
+          return `<div class="conversa-item ${c.chatJid===inboxConversaAtual?'active':''}" onclick="abrirConversa('${c.chatJid}', '${(nome||'').replace(/'/g,"\\'")}')">
+            <div class="conversa-nome">${escapeHtml(nome)}</div>
+            <div class="conversa-previa">${escapeHtml(previewConversa(c))}</div>
+          </div>`;
+        }).join('');
+      } catch { cont.innerHTML = '<div class="empty-state" style="padding:2rem;"><p>Erro ao carregar.</p></div>'; }
+    }
+
+    function bolhaMsg(m) {
+      const hora = new Date(m.timestamp).toLocaleTimeString('pt-BR', {hour:'2-digit', minute:'2-digit'});
+      const corpo = (m.tipo && m.tipo !== 'texto')
+        ? `<span class="msg-midia">📎 ${m.tipo}${m.texto?': '+escapeHtml(m.texto):''}</span>`
+        : escapeHtml(m.texto || '');
+      return `<div class="msg-bubble ${m.fromMe?'msg-out':'msg-in'}">${corpo}<div class="msg-time">${hora}</div></div>`;
+    }
+
+    async function abrirConversa(jid, nome) {
+      inboxConversaAtual = jid;
+      const thread = document.getElementById('inbox-thread');
+      thread.innerHTML = `<div class="inbox-thread-header"><i class="fa-solid fa-user"></i> ${escapeHtml(nome)} <span style="font-weight:400;color:var(--text-muted);font-size:0.8rem;">(${jid.split('@')[0]})</span></div><div class="inbox-msgs" id="inbox-msgs"><div class="empty-state" style="margin:auto;"><i class="fa-solid fa-spinner fa-spin"></i></div></div>`;
+      carregarConversas(inboxAtendenteAtual);
+      try {
+        const res = await fetch('/api/inbox/mensagens?usuarioId=' + inboxAtendenteAtual + '&jid=' + encodeURIComponent(jid));
+        const msgs = await res.json();
+        const cont = document.getElementById('inbox-msgs');
+        if (!cont) return;
+        cont.innerHTML = (Array.isArray(msgs) && msgs.length) ? msgs.map(bolhaMsg).join('') : '<div class="empty-state" style="margin:auto;"><p>Sem mensagens.</p></div>';
+        cont.scrollTop = cont.scrollHeight;
+      } catch {}
+    }
+
+    socket.on('NOVA_MENSAGEM', (m) => {
+      if (!inboxAtendenteAtual || m.usuarioId !== inboxAtendenteAtual) return;
+      if (m.chatJid === inboxConversaAtual) {
+        const cont = document.getElementById('inbox-msgs');
+        if (cont) { cont.insertAdjacentHTML('beforeend', bolhaMsg(m)); cont.scrollTop = cont.scrollHeight; }
+      }
+      carregarConversas(inboxAtendenteAtual);
+    });
 
     // ── BOOT ───────────────────────────────────────────────────────────
     carregarMetricas();

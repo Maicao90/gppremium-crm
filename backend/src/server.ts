@@ -13,6 +13,7 @@ import agendamentosRouter from './routes/agendamentos';
 import contatosRouter from './routes/contatos';
 import configuracoesRouter from './routes/configuracoes';
 import usuariosRouter from './routes/usuarios';
+import inboxRouter from './routes/inbox';
 
 dotenv.config();
 
@@ -117,6 +118,7 @@ app.use('/api/agendamentos', agendamentosRouter);
 app.use('/api/contatos', contatosRouter);
 app.use('/api/configuracoes', configuracoesRouter);
 app.use('/api/usuarios', usuariosRouter);
+app.use('/api/inbox', inboxRouter);
 
 // Rotas da API de Nuvem do Painel Admin
 app.get('/api/admin/nuvem', (req, res) => {
@@ -189,6 +191,12 @@ io.on('connection', async (socket) => {
     // Garante que o WhatsApp está conectado ou em processo de conexão para este usuário.
     // (Se não houver sessão, cria uma nova e o QR fluirá para a sala onde a extensão já está.)
     connectToWhatsApp(uid, socket.id).catch(err => console.error(`[Baileys] Erro crítico ao conectar WhatsApp do usuário ${uid}:`, err));
+  });
+
+  // Painel admin: "assistir" a caixa de entrada de um atendente (entra na sala para
+  // receber NOVA_MENSAGEM em tempo real, SEM os efeitos do registrar_atendente).
+  socket.on('assistir_atendente', (usuarioId) => {
+    socket.join(String(usuarioId));
   });
 
   // Quando a extensão se conecta (WhatsApp Web abriu), recupera IMEDIATAMENTE 

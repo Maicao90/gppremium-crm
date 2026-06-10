@@ -73,3 +73,19 @@ model AutoReplyHistory {
 
   @@unique([usuarioId, numero]) // Garante que o mesmo número só receba uma vez por usuário
 }
+
+// Caixa de Entrada (pós-venda): histórico de mensagens por sessão/atendente
+model Mensagem {
+  id         String   @id @default(uuid())
+  usuarioId  String   // a sessão/atendente dono da conexão WhatsApp
+  chatJid    String   // o contato (ex: 5511999999999@s.whatsapp.net)
+  chatNome   String   @default("")
+  fromMe     Boolean  @default(false) // true = enviada por nós; false = recebida do cliente
+  texto      String   @default("")
+  tipo       String   @default("texto") // texto, imagem, video, audio, documento, outro
+  waId       String?  // id da mensagem no WhatsApp (para baixar a mídia depois)
+  timestamp  DateTime @default(now())
+
+  @@index([usuarioId, chatJid])
+  @@index([usuarioId])
+}

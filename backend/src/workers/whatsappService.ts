@@ -42,6 +42,18 @@ function extrairTextoMensagem(message: any): string | null {
     || null;
 }
 
+// Identifica o tipo da mensagem (para a Caixa de Entrada)
+function tipoMensagem(message: any): string {
+  if (!message) return 'outro';
+  if (message.conversation || message.extendedTextMessage) return 'texto';
+  if (message.imageMessage) return 'imagem';
+  if (message.videoMessage) return 'video';
+  if (message.audioMessage) return 'audio';
+  if (message.documentMessage) return 'documento';
+  if (message.stickerMessage) return 'figurinha';
+  return 'outro';
+}
+
 // Memória ultrarrápida para garantir que uma auto-resposta saia apenas UMA VEZ por sessão
 const autoRepliedNumbers = new Set<string>();
 
@@ -203,6 +215,25 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
           });
         }
         return;
+      }
+
+      // ─── CAIXA DE ENTRADA: salva a mensagem (recebida E enviada) e avisa o painel ───
+      const _tipoMsg = tipoMensagem(msg.message);
+      const _textoMsg = extrairTextoMensagem(msg.message) || '';
+      if (_textoMsg || _tipoMsg !== 'texto') {
+        prisma.mensagem.create({
+          data: {
+            usuarioId,
+            chatJid: remoteJid,
+            chatNome: msg.pushName || '',
+            fromMe: !!msg.key.fromMe,
+            texto: _textoMsg,
+            tipo: _tipoMsg,
+            waId: msg.key.id || null
+          }
+        }).then((salva: any) => {
+          io.to(usuarioId).emit('NOVA_MENSAGEM', salva);
+        }).catch((e: any) => console.error('[Inbox] Erro ao salvar mensagem:', e?.message));
       }
 
       // Daqui pra frente só interessam mensagens RECEBIDAS (não as enviadas por nós)
