@@ -1048,6 +1048,45 @@
     </div>
   </div>
 
+  <!-- ══ MODAL: AGENDAR NO CHAT ══ -->
+  <div class="modal-overlay" id="agendar-chat-modal" style="z-index:10001;">
+    <div class="modal-box" style="max-width:420px;">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-calendar-plus"></i> Agendar mensagem</h3>
+        <button class="modal-close" onclick="fecharAgendarChat()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:12px;" id="agendar-chat-info"></div>
+      <div class="form-group">
+        <label for="agendar-chat-msg">Mensagem</label>
+        <textarea id="agendar-chat-msg" class="form-control" rows="3" style="padding-left:1rem;resize:vertical;" placeholder="O que será enviado..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="agendar-chat-data">Data e hora do envio</label>
+        <input type="datetime-local" id="agendar-chat-data" class="form-control" style="padding-left:1rem;">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-cancel" onclick="fecharAgendarChat()">Cancelar</button>
+        <button type="button" class="btn-save" onclick="salvarAgendamentoChat()">Agendar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ MODAL: MENSAGENS RÁPIDAS ══ -->
+  <div class="modal-overlay" id="templates-modal" style="z-index:10001;">
+    <div class="modal-box" style="max-width:480px;">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-bolt"></i> Mensagens Rápidas</h3>
+        <button class="modal-close" onclick="fecharTemplates()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div style="display:flex; gap:8px; margin-bottom:12px;">
+        <input type="text" id="template-novo-atalho" class="form-control" placeholder="/atalho" style="max-width:130px;padding-left:1rem;">
+        <input type="text" id="template-novo-texto" class="form-control" placeholder="Texto da mensagem..." style="padding-left:1rem;">
+        <button type="button" class="btn-save" style="min-width:auto;padding:0 14px;" onclick="criarTemplate()"><i class="fa-solid fa-plus"></i></button>
+      </div>
+      <div id="templates-lista" style="max-height:340px;overflow-y:auto;"></div>
+    </div>
+  </div>
+
   <div class="toast-container" id="toast-container"></div>
 
   <script src="/socket.io/socket.io.js"></script>
@@ -1675,7 +1714,9 @@
         </div>
         <div class="inbox-msgs" id="inbox-msgs"><div class="empty-state" style="margin:auto;"><i class="fa-solid fa-spinner fa-spin"></i></div></div>
         <div class="inbox-composer">
-          <button class="composer-btn" title="Anexar (em breve)" onclick="showToast('Anexos e áudio: em breve (Fase 3)')"><i class="fa-solid fa-plus"></i></button>
+          <button class="composer-btn" title="Anexar (em breve)" onclick="showToast('Anexos e áudio: em breve')"><i class="fa-solid fa-plus"></i></button>
+          <button class="composer-btn" title="Mensagens rápidas" onclick="abrirTemplatesChat()"><i class="fa-solid fa-bolt"></i></button>
+          <button class="composer-btn" title="Agendar mensagem" onclick="abrirAgendarChat()"><i class="fa-solid fa-calendar-plus"></i></button>
           <input type="text" id="inbox-input" placeholder="Digite uma mensagem..." autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();enviarInbox();}" />
           <button class="composer-send" title="Enviar" onclick="enviarInbox()"><i class="fa-solid fa-paper-plane"></i></button>
         </div>`;
@@ -1714,6 +1755,86 @@
         if (!res.ok) { const e = await res.json().catch(() => ({})); showToast(e.error || 'Erro ao enviar.', 'error'); }
         // a mensagem enviada volta via NOVA_MENSAGEM e aparece sozinha na conversa
       } catch { showToast('Erro de comunicação.', 'error'); }
+    }
+
+    // ── AGENDAR DENTRO DO CHAT ──────────────────────────────────────────
+    function abrirAgendarChat() {
+      if (!inboxConversaAtual || !inboxAtendenteAtual) { showToast('Abra uma conversa primeiro.', 'error'); return; }
+      const inp = document.getElementById('inbox-input');
+      document.getElementById('agendar-chat-msg').value = (inp && inp.value) ? inp.value : '';
+      const d = new Date(Date.now() + 3600000);
+      const pad = n => String(n).padStart(2,'0');
+      document.getElementById('agendar-chat-data').value = `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+      const numero = inboxConversaAtual.split('@')[0];
+      const ehLid = inboxConversaAtual.includes('@lid');
+      document.getElementById('agendar-chat-info').innerHTML = ehLid
+        ? '⚠️ Contato com ID interno (@lid) — o agendamento pode não ser entregue. Prefira contatos com número normal.'
+        : 'Será enviado para: <b>' + numero + '</b>';
+      document.getElementById('agendar-chat-modal').classList.add('active');
+    }
+    function fecharAgendarChat() { document.getElementById('agendar-chat-modal').classList.remove('active'); }
+    async function salvarAgendamentoChat() {
+      const msg = document.getElementById('agendar-chat-msg').value.trim();
+      const val = document.getElementById('agendar-chat-data').value;
+      if (!msg || !val || !inboxConversaAtual || !inboxAtendenteAtual) { showToast('Preencha mensagem e data.', 'error'); return; }
+      const dt = new Date(val);
+      if (isNaN(dt.getTime())) { showToast('Data inválida.', 'error'); return; }
+      const numero = inboxConversaAtual.split('@')[0];
+      const nome = (document.querySelector('.inbox-thread-header span') || {}).textContent || '';
+      try {
+        const res = await fetch('/api/agendamentos', {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ cliente: nome, numero, mensagem: msg, enviarEm: dt.toISOString(), criadoPorId: inboxAtendenteAtual })
+        });
+        if (res.ok) { showToast('Mensagem agendada! ✅'); fecharAgendarChat(); const i=document.getElementById('inbox-input'); if(i) i.value=''; }
+        else showToast('Erro ao agendar.', 'error');
+      } catch { showToast('Erro de comunicação.', 'error'); }
+    }
+
+    // ── MENSAGENS RÁPIDAS (TEMPLATES) ───────────────────────────────────
+    let _templatesCache = {};
+    function abrirTemplatesChat() { document.getElementById('templates-modal').classList.add('active'); carregarTemplates(); }
+    function fecharTemplates() { document.getElementById('templates-modal').classList.remove('active'); }
+    async function carregarTemplates() {
+      const cont = document.getElementById('templates-lista');
+      cont.innerHTML = '<div class="empty-state" style="padding:1rem;"><i class="fa-solid fa-spinner fa-spin"></i></div>';
+      try {
+        const res = await fetch('/api/inbox/templates');
+        const lista = await res.json();
+        if (!Array.isArray(lista) || !lista.length) { cont.innerHTML = '<div class="empty-state" style="padding:1rem;"><p>Nenhuma mensagem rápida ainda. Crie acima.</p></div>'; return; }
+        _templatesCache = {};
+        cont.innerHTML = lista.map(t => { _templatesCache[t.id] = t; return `<div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:10px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+            <span style="font-weight:700;color:var(--primary);font-size:0.8rem;">${escapeHtml(t.atalho || '')}</span>
+            <div style="display:flex;gap:6px;">
+              <button onclick="usarTemplate('${t.id}')" style="font-size:0.7rem;padding:4px 10px;border-radius:6px;border:1px solid var(--primary);background:rgba(139,92,246,0.12);color:var(--primary);cursor:pointer;">Usar</button>
+              <button onclick="excluirTemplate('${t.id}')" style="font-size:0.7rem;padding:4px 8px;border-radius:6px;border:1px solid rgba(239,68,68,0.3);background:rgba(239,68,68,0.1);color:var(--danger);cursor:pointer;"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+          </div>
+          <div style="font-size:0.78rem;color:#cbd5e1;margin-top:6px;white-space:pre-wrap;">${escapeHtml(t.texto)}</div>
+        </div>`; }).join('');
+      } catch { cont.innerHTML = '<div class="empty-state" style="padding:1rem;"><p>Erro ao carregar.</p></div>'; }
+    }
+    async function criarTemplate() {
+      const atalho = document.getElementById('template-novo-atalho').value.trim();
+      const texto = document.getElementById('template-novo-texto').value.trim();
+      if (!texto) { showToast('Escreva o texto.', 'error'); return; }
+      try {
+        const res = await fetch('/api/inbox/templates', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ atalho, texto }) });
+        if (res.ok) { document.getElementById('template-novo-atalho').value=''; document.getElementById('template-novo-texto').value=''; carregarTemplates(); }
+        else showToast('Erro ao criar.', 'error');
+      } catch { showToast('Erro de comunicação.', 'error'); }
+    }
+    async function excluirTemplate(id) {
+      if (!confirm('Excluir esta mensagem rápida?')) return;
+      try { const res = await fetch('/api/inbox/templates/' + id, { method:'DELETE' }); if (res.ok||res.status===204) carregarTemplates(); } catch {}
+    }
+    function usarTemplate(id) {
+      const t = _templatesCache[id];
+      if (!t) return;
+      const inp = document.getElementById('inbox-input');
+      if (inp) { inp.value = t.texto; inp.focus(); }
+      fecharTemplates();
     }
 
     // ── BOOT ───────────────────────────────────────────────────────────

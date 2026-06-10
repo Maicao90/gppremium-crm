@@ -82,10 +82,19 @@ model Mensagem {
   chatNome   String   @default("")
   fromMe     Boolean  @default(false) // true = enviada por nós; false = recebida do cliente
   texto      String   @default("")
-  tipo       String   @default("texto") // texto, imagem, video, audio, documento, outro
-  waId       String?  // id da mensagem no WhatsApp (para baixar a mídia depois)
+  tipo       String   @default("texto") // texto, imagem, video, audio, documento, figurinha, outro
+  midiaUrl   String?  // caminho da mídia baixada (ex: /midias/abc.jpg)
+  waId       String?  // id da mensagem no WhatsApp
   timestamp  DateTime @default(now())
 
   @@index([usuarioId, chatJid])
   @@index([usuarioId])
+}
+
+// Mensagens rápidas (templates) usadas na Caixa de Entrada — compartilhadas pela equipe
+model Template {
+  id        String   @id @default(uuid())
+  atalho    String   @default("")
+  texto     String
+  criadoEm  DateTime @default(now())
 }

@@ -71,4 +71,36 @@ router.post('/enviar', async (req, res) => {
   }
 });
 
+// ── Mensagens rápidas (templates) — compartilhadas pela equipe ──
+router.get('/templates', async (_req, res) => {
+  try {
+    const templates = await prisma.template.findMany({ orderBy: { criadoEm: 'asc' } });
+    res.json(templates);
+  } catch (e) {
+    console.error('Erro ao buscar templates:', e);
+    res.status(500).json({ error: 'Erro ao buscar templates' });
+  }
+});
+
+router.post('/templates', async (req, res) => {
+  try {
+    const { atalho, texto } = req.body;
+    if (!texto || !String(texto).trim()) return res.status(400).json({ error: 'texto é obrigatório.' });
+    const t = await prisma.template.create({ data: { atalho: String(atalho || '').trim(), texto: String(texto).trim() } });
+    res.status(201).json(t);
+  } catch (e) {
+    console.error('Erro ao criar template:', e);
+    res.status(500).json({ error: 'Erro ao criar template' });
+  }
+});
+
+router.delete('/templates/:id', async (req, res) => {
+  try {
+    await prisma.template.delete({ where: { id: req.params.id } });
+    res.sendStatus(204);
+  } catch (e) {
+    res.status(500).json({ error: 'Erro ao excluir template' });
+  }
+});
+
 export default router;
