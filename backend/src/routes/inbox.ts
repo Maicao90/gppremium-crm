@@ -16,6 +16,16 @@ router.get('/conversas', async (req, res) => {
       WHERE "usuarioId" = ${usuarioId}
       ORDER BY "chatJid", "timestamp" DESC
     `;
+    // Preenche o nome do contato (do mapa de contatos do WhatsApp) quando estiver vazio
+    try {
+      const { contatosNomes } = require('../workers/whatsappService');
+      conversas.forEach((c: any) => {
+        if ((!c.chatNome || !String(c.chatNome).trim()) && contatosNomes.has(c.chatJid)) {
+          c.chatNome = contatosNomes.get(c.chatJid);
+        }
+      });
+    } catch (e) {}
+
     // Ordena por mais recente
     conversas.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
     res.json(conversas);

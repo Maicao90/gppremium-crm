@@ -16,6 +16,13 @@ export const latestQR = new Map<string, string>();
 // Conjunto de usuários com a conexão realmente ABERTA (autenticada e pronta).
 export const connectedUsers = new Set<string>();
 
+// Nomes de contatos (jid -> nome), preenchido pelos eventos de contatos do WhatsApp.
+// Usado para mostrar o NOME do contato na Caixa de Entrada em vez do número/ID interno.
+export const contatosNomes = new Map<string, string>();
+function registrarNomeContato(jid?: string | null, nome?: string | null) {
+  if (jid && nome && String(nome).trim()) contatosNomes.set(jid, String(nome).trim());
+}
+
 // IDs de mensagens já salvas pelo envio da Caixa de Entrada (evita duplicar se o
 // evento messages.upsert também disparar para a mesma mensagem que nós enviamos).
 const waIdsRecentes = new Set<string>();
@@ -185,6 +192,14 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
 
   sock.ev.on('creds.update', saveCreds);
 
+  // Captura os nomes dos contatos para mostrar na Caixa de Entrada (em vez do número/@lid)
+  sock.ev.on('contacts.upsert', (contatos: any[]) => {
+    for (const c of contatos || []) registrarNomeContato(c.id, c.name || c.notify || c.verifiedName);
+  });
+  sock.ev.on('contacts.update', (contatos: any[]) => {
+    for (const c of contatos || []) registrarNomeContato(c.id, c.name || c.notify || c.verifiedName);
+  });
+
   // Mensagens recebidas: detecta APAGADAS, armazena e faz auto-resposta
   sock.ev.on('messages.upsert', async (m) => {
     try {
@@ -238,7 +253,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
           data: {
             usuarioId,
             chatJid: remoteJid,
-            chatNome: msg.pushName || '',
+            chatNome: msg.pushName || contatosNomes.get(remoteJid) || '',
             fromMe: !!msg.key.fromMe,
             texto: _textoMsg,
             tipo: _tipoMsg,
