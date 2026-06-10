@@ -1744,9 +1744,12 @@
           return;
         }
         cont.innerHTML = lista.map(c => {
-          const nome = c.chatNome || c.chatJid.split('@')[0];
+          const num = c.chatJid.split('@')[0];
+          const nome = c.chatNome || num;
+          const temNome = !!(c.chatNome && c.chatNome.trim());
           return `<div class="conversa-item ${c.chatJid===inboxConversaAtual?'active':''}" onclick="abrirConversa('${c.chatJid}', '${(nome||'').replace(/'/g,"\\'")}')">
             <div class="conversa-nome">${escapeHtml(nome)}</div>
+            ${temNome ? `<div style="font-size:0.68rem;color:var(--text-muted);">📞 ${num}</div>` : ''}
             <div class="conversa-previa">${escapeHtml(previewConversa(c))}</div>
           </div>`;
         }).join('');

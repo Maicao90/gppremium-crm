@@ -33,9 +33,10 @@ router.get('/conversas', async (req, res) => {
     try { contatosNomes = require('../workers/whatsappService').contatosNomes; } catch (e) {}
 
     conversas.forEach((c: any) => {
+      // Nome só vem de: msgs recebidas (pushName do contato) OU contatos salvos.
+      // NUNCA do nosso próprio nome (que vazava nas msgs enviadas).
       c.chatNome = mapaNomes[c.chatJid]
         || (contatosNomes.has(c.chatJid) ? contatosNomes.get(c.chatJid) : '')
-        || (c.chatNome && String(c.chatNome).trim() ? c.chatNome : '')
         || '';
     });
 
