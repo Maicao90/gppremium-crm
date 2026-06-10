@@ -417,7 +417,10 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       }
 
       // ─── 3. AUTO-RESPOSTA (recepção) — enviada SÓ UMA VEZ por contato ───
-      const memoryKey = `${usuarioId}_${numero}`;
+      // Dedup pelo NÚMERO REAL: o mesmo contato pode chegar ora como @lid, ora como
+      // @s.whatsapp.net. Sem normalizar, viravam 2 chaves diferentes e a recepção saía 2x.
+      const numeroDedup = (await resolverNumeroReal(sock, msg, remoteJid)) || numero;
+      const memoryKey = `${usuarioId}_${numeroDedup}`;
 
       // Check rápido em memória (evita trabalho repetido na mesma sessão)
       if (autoRepliedNumbers.has(memoryKey)) {
@@ -437,7 +440,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       // (usuarioId + numero) garante que, mesmo após reiniciar a VPS ou com várias
       // mensagens chegando juntas, a recepção saia UMA única vez por contato.
       try {
-        await prisma.autoReplyHistory.create({ data: { usuarioId, numero } });
+        await prisma.autoReplyHistory.create({ data: { usuarioId, numero: numeroDedup } });
       } catch (e: any) {
         if (e?.code === 'P2002') {
           // Já respondemos este contato antes — não envia de novo.
@@ -458,7 +461,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
         // Se falhar o envio, libera para tentar de novo depois (memória + banco)
         autoRepliedNumbers.delete(memoryKey);
         await prisma.autoReplyHistory.delete({
-          where: { usuarioId_numero: { usuarioId, numero } }
+          where: { usuarioId_numero: { usuarioId, numero: numeroDedup } }
         }).catch(() => {});
       });
 
