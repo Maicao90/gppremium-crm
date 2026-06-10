@@ -60,14 +60,14 @@ async function salvarFotoAnuncio(adReply: any): Promise<string | null> {
 // que esconde o número), então buscamos o PN: 1) o alternativo na própria mensagem;
 // 2) o mapeamento LID->PN que o Baileys mantém. Retorna só os dígitos (sem @dominio).
 async function resolverNumeroReal(sock: any, msg: any, remoteJid: string): Promise<string> {
-  if (!remoteJid || !remoteJid.includes('@lid')) return (remoteJid || '').split('@')[0];
+  if (!remoteJid || !remoteJid.includes('@lid')) return (remoteJid || '').split('@')[0] || '';
   const alt = msg?.key?.remoteJidAlt || msg?.key?.participantPn || msg?.key?.participantAlt;
-  if (alt && typeof alt === 'string' && alt.includes('@')) return alt.split('@')[0];
+  if (alt && typeof alt === 'string' && alt.includes('@')) return alt.split('@')[0] || '';
   try {
     const lm = sock?.signalRepository?.lidMapping;
     if (lm && typeof lm.getPNForLID === 'function') {
       const pn = await lm.getPNForLID(remoteJid);
-      if (pn && typeof pn === 'string' && pn.includes('@')) return pn.split('@')[0];
+      if (pn && typeof pn === 'string' && pn.includes('@')) return pn.split('@')[0] || '';
     }
   } catch (e) {}
   return '';
@@ -95,12 +95,12 @@ async function backfillNumerosReais(usuarioId: string, sock: any) {
 
 // Resolve o número real de um JID @lid avulso (sem mensagem em mãos), usando só o mapeamento.
 async function resolverNumeroRealPorJid(sock: any, jid: string): Promise<string> {
-  if (!jid || !jid.includes('@lid')) return (jid || '').split('@')[0];
+  if (!jid || !jid.includes('@lid')) return (jid || '').split('@')[0] || '';
   try {
     const lm = sock?.signalRepository?.lidMapping;
     if (lm && typeof lm.getPNForLID === 'function') {
       const pn = await lm.getPNForLID(jid);
-      if (pn && typeof pn === 'string' && pn.includes('@')) return pn.split('@')[0];
+      if (pn && typeof pn === 'string' && pn.includes('@')) return pn.split('@')[0] || '';
     }
   } catch (e) {}
   return '';
