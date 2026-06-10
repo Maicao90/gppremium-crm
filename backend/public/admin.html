@@ -1666,6 +1666,15 @@
     let inboxConversaAtual = '';
 
     function escapeHtml(s){ return (s||'').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    // Converte a formatação do WhatsApp (*negrito*, _itálico_, ~tachado~) e quebras de linha em HTML
+    function formatarWhatsapp(t) {
+      let s = escapeHtml(t || '');
+      s = s.replace(/\*([^*\n]+)\*/g, '<b>$1</b>');
+      s = s.replace(/_([^_\n]+)_/g, '<i>$1</i>');
+      s = s.replace(/~([^~\n]+)~/g, '<s>$1</s>');
+      s = s.replace(/\n/g, '<br>');
+      return s;
+    }
 
     let _inboxAtendentesData = {};
     function carregarInboxAtendentes() {
@@ -1748,7 +1757,7 @@
       const hora = new Date(m.timestamp).toLocaleTimeString('pt-BR', {hour:'2-digit', minute:'2-digit'});
       let corpo;
       if (m.midiaUrl) {
-        const legenda = m.texto ? `<div style="margin-top:5px;">${escapeHtml(m.texto)}</div>` : '';
+        const legenda = m.texto ? `<div style="margin-top:5px;">${formatarWhatsapp(m.texto)}</div>` : '';
         if (m.tipo === 'imagem' || m.tipo === 'figurinha') {
           corpo = `<img src="${m.midiaUrl}" style="max-width:240px;max-height:280px;border-radius:8px;display:block;cursor:pointer;" onclick="window.open('${m.midiaUrl}','_blank')">${legenda}`;
         } else if (m.tipo === 'video') {
@@ -1761,7 +1770,7 @@
       } else if (m.tipo && m.tipo !== 'texto') {
         corpo = `<span class="msg-midia">📎 ${escapeHtml(m.tipo)}${m.texto?': '+escapeHtml(m.texto):''}</span>`;
       } else {
-        corpo = escapeHtml(m.texto || '');
+        corpo = formatarWhatsapp(m.texto || '');
       }
       return `<div class="msg-bubble ${m.fromMe?'msg-out':'msg-in'}">${corpo}<div class="msg-time">${hora}</div></div>`;
     }

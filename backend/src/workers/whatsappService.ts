@@ -465,9 +465,9 @@ export async function enviarMensagemInbox(usuarioId: string, jid: string, texto:
     if (u) {
       if (u.assinaturaPainel !== null && u.assinaturaPainel !== undefined) {
         const a = String(u.assinaturaPainel).trim();
-        textoFinal = a ? `*${a}:* ${texto}` : texto;
+        textoFinal = a ? `*${a}*\n${texto}` : texto;
       } else if (u.nome) {
-        textoFinal = `*${u.nome}:* ${texto}`;
+        textoFinal = `*${u.nome}*\n${texto}`;
       }
     }
   } catch (e) {}
