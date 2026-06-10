@@ -22,7 +22,7 @@ router.get('/conversas', async (req, res) => {
     const nomes: any[] = await prisma.$queryRaw`
       SELECT DISTINCT ON ("chatJid") "chatJid", "chatNome"
       FROM "Mensagem"
-      WHERE "usuarioId" = ${usuarioId} AND "chatNome" <> ''
+      WHERE "usuarioId" = ${usuarioId} AND "chatNome" <> '' AND "fromMe" = false
       ORDER BY "chatJid", "timestamp" DESC
     `;
     const mapaNomes: Record<string, string> = {};

@@ -1779,7 +1779,7 @@
       inboxConversaAtual = jid;
       const numero = jid.split('@')[0];
       const ehLid = jid.includes('@lid');
-      const subInfo = ehLid ? 'ID interno' : numero;
+      const subInfo = ehLid ? ('🔒 ' + numero + ' (ID interno)') : ('📞 ' + numero);
       const thread = document.getElementById('inbox-thread');
       thread.innerHTML = `
         <div class="inbox-thread-header">

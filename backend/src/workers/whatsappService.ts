@@ -319,7 +319,11 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
               data: {
                 usuarioId,
                 chatJid: remoteJid,
-                chatNome: msg.pushName || contatosNomes.get(remoteJid) || '',
+                // pushName só vale para mensagens RECEBIDAS (é o nome do contato). Nas ENVIADAS,
+                // o pushName é o NOSSO próprio nome — então usamos só o contato salvo (ou vazio).
+                chatNome: msg.key.fromMe
+                  ? (contatosNomes.get(remoteJid) || '')
+                  : (msg.pushName || contatosNomes.get(remoteJid) || ''),
                 fromMe: !!msg.key.fromMe,
                 texto: textoSalvar,
                 tipo: tipoSalvar,
