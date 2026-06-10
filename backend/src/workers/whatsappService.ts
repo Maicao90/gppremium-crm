@@ -16,6 +16,18 @@ export const latestQR = new Map<string, string>();
 // Conjunto de usuários com a conexão realmente ABERTA (autenticada e pronta).
 export const connectedUsers = new Set<string>();
 
+// IDs de mensagens já salvas pelo envio da Caixa de Entrada (evita duplicar se o
+// evento messages.upsert também disparar para a mesma mensagem que nós enviamos).
+const waIdsRecentes = new Set<string>();
+function lembrarWaId(id?: string | null) {
+  if (!id) return;
+  waIdsRecentes.add(id);
+  if (waIdsRecentes.size > 3000) {
+    const maisAntigo = waIdsRecentes.values().next().value;
+    if (maisAntigo) waIdsRecentes.delete(maisAntigo);
+  }
+}
+
 // ─── MENSAGENS APAGADAS ───────────────────────────────────────────────────
 // Guarda em memória as mensagens recebidas (id -> conteúdo), para que, quando o
 // cliente APAGAR uma mensagem, ainda tenhamos o texto original para mostrar.
@@ -220,7 +232,8 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       // ─── CAIXA DE ENTRADA: salva a mensagem (recebida E enviada) e avisa o painel ───
       const _tipoMsg = tipoMensagem(msg.message);
       const _textoMsg = extrairTextoMensagem(msg.message) || '';
-      if (_textoMsg || _tipoMsg !== 'texto') {
+      // Pula se já salvamos esta mensagem pelo envio da Caixa de Entrada (evita duplicar)
+      if ((_textoMsg || _tipoMsg !== 'texto') && !(msg.key.id && waIdsRecentes.has(msg.key.id))) {
         prisma.mensagem.create({
           data: {
             usuarioId,
@@ -358,9 +371,22 @@ export async function enviarMensagemInbox(usuarioId: string, jid: string, texto:
   try {
     await sock.sendPresenceUpdate('composing', jid).catch(() => {});
     await delay(700);
-    await sock.sendMessage(jid, { text: texto });
+    const enviada = await sock.sendMessage(jid, { text: texto });
     // volta a "offline" para não roubar as notificações do celular
     await sock.sendPresenceUpdate('unavailable').catch(() => {});
+
+    // Guarda a mensagem ENVIADA e avisa o painel na hora. (O sock.sendMessage nem sempre
+    // dispara messages.upsert para as nossas próprias mensagens, então salvamos aqui.)
+    try {
+      const waId = enviada?.key?.id || null;
+      lembrarWaId(waId);
+      const salva = await prisma.mensagem.create({
+        data: { usuarioId, chatJid: jid, chatNome: '', fromMe: true, texto, tipo: 'texto', waId }
+      });
+      io.to(usuarioId).emit('NOVA_MENSAGEM', salva);
+    } catch (e) {
+      console.error('[Inbox] Erro ao salvar mensagem enviada:', e);
+    }
     return true;
   } catch (e) {
     console.error('[Inbox] Erro ao enviar mensagem:', e);
