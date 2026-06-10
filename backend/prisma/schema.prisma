@@ -87,6 +87,7 @@ model Mensagem {
   midiaUrl   String?  // caminho da mídia baixada (ex: /midias/abc.jpg)
   waId       String?  // id da mensagem no WhatsApp
   apagada    Boolean  @default(false) // o contato apagou esta mensagem (mantemos visível, riscada)
+  numeroReal String?  // número de telefone REAL do contato (resolvido a partir do @lid)
   timestamp  DateTime @default(now())
 
   @@index([usuarioId, chatJid])

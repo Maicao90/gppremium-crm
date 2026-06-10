@@ -1744,12 +1744,11 @@
           return;
         }
         cont.innerHTML = lista.map(c => {
-          const num = c.chatJid.split('@')[0];
-          const nome = c.chatNome || num;
-          const temNome = !!(c.chatNome && c.chatNome.trim());
-          return `<div class="conversa-item ${c.chatJid===inboxConversaAtual?'active':''}" onclick="abrirConversa('${c.chatJid}', '${(nome||'').replace(/'/g,"\\'")}')">
+          const num = c.numeroReal || (String(c.chatJid).includes('@lid') ? '' : String(c.chatJid).split('@')[0]);
+          const nome = (c.chatNome && c.chatNome.trim()) ? c.chatNome : (num || 'Contato');
+          return `<div class="conversa-item ${c.chatJid===inboxConversaAtual?'active':''}" onclick="abrirConversa('${c.chatJid}', '${(nome||'').replace(/'/g,"\\'")}', '${num}')">
             <div class="conversa-nome">${escapeHtml(nome)}</div>
-            ${temNome ? `<div style="font-size:0.68rem;color:var(--text-muted);">📞 ${num}</div>` : ''}
+            ${num ? `<div style="font-size:0.68rem;color:var(--text-muted);">📞 ${num}</div>` : ''}
             <div class="conversa-previa">${escapeHtml(previewConversa(c))}</div>
           </div>`;
         }).join('');
@@ -1783,11 +1782,10 @@
       return `<div class="msg-bubble ${m.fromMe?'msg-out':'msg-in'}">${corpo}<div class="msg-time">${hora}</div></div>`;
     }
 
-    async function abrirConversa(jid, nome) {
+    async function abrirConversa(jid, nome, numeroReal) {
       inboxConversaAtual = jid;
-      const numero = jid.split('@')[0];
-      const ehLid = jid.includes('@lid');
-      const subInfo = ehLid ? ('🔒 ' + numero + ' (ID interno)') : ('📞 ' + numero);
+      const num = numeroReal || (jid.includes('@lid') ? '' : jid.split('@')[0]);
+      const subInfo = num ? ('📞 ' + num) : '';
       const thread = document.getElementById('inbox-thread');
       thread.innerHTML = `
         <div class="inbox-thread-header">

@@ -56,6 +56,56 @@ async function salvarFotoAnuncio(adReply: any): Promise<string | null> {
   }
 }
 
+// Resolve o número de telefone REAL do contato. O WhatsApp agora usa @lid (um ID interno
+// que esconde o número), então buscamos o PN: 1) o alternativo na própria mensagem;
+// 2) o mapeamento LID->PN que o Baileys mantém. Retorna só os dígitos (sem @dominio).
+async function resolverNumeroReal(sock: any, msg: any, remoteJid: string): Promise<string> {
+  if (!remoteJid || !remoteJid.includes('@lid')) return (remoteJid || '').split('@')[0];
+  const alt = msg?.key?.remoteJidAlt || msg?.key?.participantPn || msg?.key?.participantAlt;
+  if (alt && typeof alt === 'string' && alt.includes('@')) return alt.split('@')[0];
+  try {
+    const lm = sock?.signalRepository?.lidMapping;
+    if (lm && typeof lm.getPNForLID === 'function') {
+      const pn = await lm.getPNForLID(remoteJid);
+      if (pn && typeof pn === 'string' && pn.includes('@')) return pn.split('@')[0];
+    }
+  } catch (e) {}
+  return '';
+}
+
+// Preenche o número real dos chats @lid já existentes no banco (roda quando a sessão conecta).
+async function backfillNumerosReais(usuarioId: string, sock: any) {
+  try {
+    const chats: any[] = await prisma.$queryRaw`
+      SELECT DISTINCT "chatJid" FROM "Mensagem"
+      WHERE "usuarioId" = ${usuarioId} AND "chatJid" LIKE '%@lid'
+      AND ("numeroReal" IS NULL OR "numeroReal" = '')
+    `;
+    let resolvidos = 0;
+    for (const ch of chats) {
+      const num = await resolverNumeroRealPorJid(sock, ch.chatJid);
+      if (num) {
+        await prisma.mensagem.updateMany({ where: { usuarioId, chatJid: ch.chatJid }, data: { numeroReal: num } });
+        resolvidos++;
+      }
+    }
+    if (resolvidos > 0) console.log(`[Inbox] Backfill: ${resolvidos} contato(s) @lid resolvidos para número real (usuário ${usuarioId}).`);
+  } catch (e) { console.error('[Inbox] Erro no backfill de números:', (e as any)?.message); }
+}
+
+// Resolve o número real de um JID @lid avulso (sem mensagem em mãos), usando só o mapeamento.
+async function resolverNumeroRealPorJid(sock: any, jid: string): Promise<string> {
+  if (!jid || !jid.includes('@lid')) return (jid || '').split('@')[0];
+  try {
+    const lm = sock?.signalRepository?.lidMapping;
+    if (lm && typeof lm.getPNForLID === 'function') {
+      const pn = await lm.getPNForLID(jid);
+      if (pn && typeof pn === 'string' && pn.includes('@')) return pn.split('@')[0];
+    }
+  } catch (e) {}
+  return '';
+}
+
 // Mapa para guardar as sessões ativas por usuário
 export const sessions = new Map<string, WASocket>();
 
@@ -238,6 +288,9 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
         where: { id: usuarioId },
         data: { whatsappConectado: true }
       }).catch(() => {});
+
+      // Resolve os números reais dos chats @lid existentes (o mapeamento LID->PN já carregou).
+      setTimeout(() => { backfillNumerosReais(usuarioId, sock).catch(() => {}); }, 8000);
     }
   });
 
@@ -321,6 +374,8 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
           } else if (_tipoMsg !== 'texto') {
             midiaUrl = await baixarMidia(sock, msg, _tipoMsg, msg.key.id || '');
           }
+          // Resolve o número REAL do contato (mesmo quando o chat é @lid)
+          const numeroReal = await resolverNumeroReal(sock, msg, remoteJid);
           try {
             const salva = await prisma.mensagem.create({
               data: {
@@ -335,7 +390,8 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
                 texto: textoSalvar,
                 tipo: tipoSalvar,
                 midiaUrl,
-                waId: msg.key.id || null
+                waId: msg.key.id || null,
+                numeroReal: numeroReal || null
               }
             });
             io.to(usuarioId).emit('NOVA_MENSAGEM', salva);

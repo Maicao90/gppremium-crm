@@ -28,14 +28,34 @@ router.get('/conversas', async (req, res) => {
     const mapaNomes: Record<string, string> = {};
     nomes.forEach((n: any) => { mapaNomes[n.chatJid] = n.chatNome; });
 
+    // Melhor NÚMERO REAL de cada chat (resolvido do @lid)
+    const numeros: any[] = await prisma.$queryRaw`
+      SELECT DISTINCT ON ("chatJid") "chatJid", "numeroReal"
+      FROM "Mensagem"
+      WHERE "usuarioId" = ${usuarioId} AND "numeroReal" IS NOT NULL AND "numeroReal" <> ''
+      ORDER BY "chatJid", "timestamp" DESC
+    `;
+    const mapaNumeros: Record<string, string> = {};
+    numeros.forEach((n: any) => { mapaNumeros[n.chatJid] = n.numeroReal; });
+
+    // Nomes SALVOS nos contatos do atendente (por número real) — fonte extra de nome
+    const mapaContatoNome: Record<string, string> = {};
+    try {
+      const salvos = await prisma.contato.findMany({ where: { usuarioId }, select: { numero: true, nome: true } });
+      salvos.forEach((ct: any) => { if (ct.numero && ct.nome) mapaContatoNome[String(ct.numero).replace(/\D/g, '')] = ct.nome; });
+    } catch (e) {}
+
     // Fallback: mapa de contatos do WhatsApp (em memória)
     let contatosNomes: Map<string, string> = new Map();
     try { contatosNomes = require('../workers/whatsappService').contatosNomes; } catch (e) {}
 
     conversas.forEach((c: any) => {
-      // Nome só vem de: msgs recebidas (pushName do contato) OU contatos salvos.
-      // NUNCA do nosso próprio nome (que vazava nas msgs enviadas).
+      const numReal = mapaNumeros[c.chatJid] || (String(c.chatJid).includes('@lid') ? '' : String(c.chatJid).split('@')[0]);
+      c.numeroReal = numReal;
+      // Nome: msgs recebidas (pushName) > contato salvo (por número) > contatos em memória.
+      // NUNCA o nosso próprio nome.
       c.chatNome = mapaNomes[c.chatJid]
+        || (numReal && mapaContatoNome[numReal.replace(/\D/g, '')] ? mapaContatoNome[numReal.replace(/\D/g, '')] : '')
         || (contatosNomes.has(c.chatJid) ? contatosNomes.get(c.chatJid) : '')
         || '';
     });
