@@ -614,6 +614,8 @@
     /* ── Caixa de Entrada ── */
     .inbox-layout { display:grid; grid-template-columns: 320px 1fr; gap:1rem; height: calc(100vh - 230px); min-height:420px; }
     .inbox-conversas { background:var(--bg-card); border:1px solid var(--border-color); border-radius:14px; overflow-y:auto; }
+    .inbox-busca-input { position:sticky; top:0; z-index:3; width:100%; box-sizing:border-box; background:var(--bg-input); border:none; border-bottom:1px solid var(--border-color); padding:12px 14px; color:white; font-size:0.82rem; outline:none; }
+    .inbox-busca-input::placeholder { color:var(--text-muted); }
     .inbox-thread { background:var(--bg-card); border:1px solid var(--border-color); border-radius:14px; display:flex; flex-direction:column; overflow:hidden; }
     .conversa-item { padding:12px 14px; border-bottom:1px solid var(--border-color); cursor:pointer; transition:background 0.15s; }
     .conversa-item:hover, .conversa-item.active { background:rgba(255,255,255,0.05); }
@@ -959,7 +961,10 @@
       </div>
       <div class="inbox-layout">
         <div class="inbox-conversas" id="inbox-conversas">
-          <div class="empty-state" style="padding:2rem 1rem;"><i class="fa-solid fa-inbox"></i><p>Selecione um atendente.</p></div>
+          <input type="text" id="inbox-busca" class="inbox-busca-input" placeholder="🔍 Buscar contato (nome ou número)..." oninput="filtrarConversas()" autocomplete="off" />
+          <div id="inbox-conversas-lista">
+            <div class="empty-state" style="padding:2rem 1rem;"><i class="fa-solid fa-inbox"></i><p>Selecione um atendente.</p></div>
+          </div>
         </div>
         <div class="inbox-thread" id="inbox-thread">
           <div class="empty-state" style="margin:auto;"><i class="fa-solid fa-comment-dots"></i><p>Selecione uma conversa.</p></div>
@@ -1721,7 +1726,7 @@
       if (btnAss) btnAss.style.display = id ? 'inline-flex' : 'none';
       document.getElementById('inbox-thread').innerHTML = '<div class="empty-state" style="margin:auto;"><i class="fa-solid fa-comment-dots"></i><p>Selecione uma conversa.</p></div>';
       if (!id) {
-        document.getElementById('inbox-conversas').innerHTML = '<div class="empty-state" style="padding:2rem 1rem;"><i class="fa-solid fa-inbox"></i><p>Selecione um atendente.</p></div>';
+        document.getElementById('inbox-conversas-lista').innerHTML = '<div class="empty-state" style="padding:2rem 1rem;"><i class="fa-solid fa-inbox"></i><p>Selecione um atendente.</p></div>';
         return;
       }
       socket.emit('assistir_atendente', id);
@@ -1733,26 +1738,44 @@
       return (c.fromMe ? 'Você: ' : '') + (c.texto || '');
     }
 
+    let _inboxConversas = [];
     async function carregarConversas(usuarioId) {
-      const cont = document.getElementById('inbox-conversas');
+      const cont = document.getElementById('inbox-conversas-lista');
       if (!cont) return;
       try {
         const res = await fetch('/api/inbox/conversas?usuarioId=' + usuarioId);
         const lista = await res.json();
-        if (!Array.isArray(lista) || !lista.length) {
-          cont.innerHTML = '<div class="empty-state" style="padding:2rem 1rem;"><i class="fa-solid fa-inbox"></i><p>Sem conversas ainda.</p></div>';
-          return;
-        }
-        cont.innerHTML = lista.map(c => {
-          const num = c.numeroReal || (String(c.chatJid).includes('@lid') ? '' : String(c.chatJid).split('@')[0]);
-          const nome = (c.chatNome && c.chatNome.trim()) ? c.chatNome : (num || 'Contato');
-          return `<div class="conversa-item ${c.chatJid===inboxConversaAtual?'active':''}" onclick="abrirConversa('${c.chatJid}', '${(nome||'').replace(/'/g,"\\'")}', '${num}')">
-            <div class="conversa-nome">${escapeHtml(nome)}</div>
-            ${num ? `<div style="font-size:0.68rem;color:var(--text-muted);">📞 ${num}</div>` : ''}
-            <div class="conversa-previa">${escapeHtml(previewConversa(c))}</div>
-          </div>`;
-        }).join('');
+        _inboxConversas = Array.isArray(lista) ? lista : [];
+        renderConversas();
       } catch { cont.innerHTML = '<div class="empty-state" style="padding:2rem;"><p>Erro ao carregar.</p></div>'; }
+    }
+
+    function filtrarConversas() { renderConversas(); }
+
+    function renderConversas() {
+      const cont = document.getElementById('inbox-conversas-lista');
+      if (!cont) return;
+      const f = ((document.getElementById('inbox-busca') || {}).value || '').toLowerCase().trim();
+      let lista = _inboxConversas;
+      if (f) {
+        lista = lista.filter(c => {
+          const num = c.numeroReal || String(c.chatJid).split('@')[0];
+          return (c.chatNome || '').toLowerCase().includes(f) || String(num || '').includes(f);
+        });
+      }
+      if (!lista.length) {
+        cont.innerHTML = '<div class="empty-state" style="padding:2rem 1rem;"><i class="fa-solid fa-inbox"></i><p>' + (f ? 'Nenhum contato encontrado.' : 'Sem conversas ainda.') + '</p></div>';
+        return;
+      }
+      cont.innerHTML = lista.map(c => {
+        const num = c.numeroReal || (String(c.chatJid).includes('@lid') ? '' : String(c.chatJid).split('@')[0]);
+        const nome = (c.chatNome && c.chatNome.trim()) ? c.chatNome : (num || 'Contato');
+        return `<div class="conversa-item ${c.chatJid===inboxConversaAtual?'active':''}" onclick="abrirConversa('${c.chatJid}', '${(nome||'').replace(/'/g,"\\'")}', '${num}')">
+          <div class="conversa-nome">${escapeHtml(nome)}</div>
+          ${num ? `<div style="font-size:0.68rem;color:var(--text-muted);">📞 ${num}</div>` : ''}
+          <div class="conversa-previa">${escapeHtml(previewConversa(c))}</div>
+        </div>`;
+      }).join('');
     }
 
     function bolhaMsg(m) {
