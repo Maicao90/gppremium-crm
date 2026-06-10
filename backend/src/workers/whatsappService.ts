@@ -1,9 +1,30 @@
-import { makeWASocket, useMultiFileAuthState, DisconnectReason, Browsers, delay, WASocket, proto } from '@whiskeysockets/baileys';
+import { makeWASocket, useMultiFileAuthState, DisconnectReason, Browsers, delay, WASocket, proto, downloadMediaMessage } from '@whiskeysockets/baileys';
 import { Boom } from '@hapi/boom';
 import qrcodeTerminal from 'qrcode-terminal';
 import qrcode from 'qrcode';
 import path from 'path';
+import fs from 'fs';
 import { io, prisma } from '../server';
+
+// Pasta onde as mídias recebidas são salvas (servida estaticamente em /midias)
+const MIDIAS_DIR = path.join(__dirname, '../../public/midias');
+try { fs.mkdirSync(MIDIAS_DIR, { recursive: true }); } catch (e) {}
+const EXT_POR_TIPO: Record<string, string> = { imagem: 'jpg', video: 'mp4', audio: 'ogg', documento: 'bin', figurinha: 'webp' };
+
+// Baixa a mídia de uma mensagem e salva em /public/midias, retornando a URL pública.
+async function baixarMidia(sock: any, msg: any, tipo: string, waId: string): Promise<string | null> {
+  try {
+    const buffer = await downloadMediaMessage(msg, 'buffer', {}, { logger: console as any, reuploadRequest: sock.updateMediaMessage });
+    if (!buffer) return null;
+    const ext = EXT_POR_TIPO[tipo] || 'bin';
+    const nome = `${(waId || 'm').replace(/[^a-zA-Z0-9]/g, '')}_${Math.floor(Math.random() * 1000000)}.${ext}`;
+    fs.writeFileSync(path.join(MIDIAS_DIR, nome), buffer as Buffer);
+    return `/midias/${nome}`;
+  } catch (e) {
+    console.error('[Inbox] Erro ao baixar mídia:', (e as any)?.message);
+    return null;
+  }
+}
 
 // Mapa para guardar as sessões ativas por usuário
 export const sessions = new Map<string, WASocket>();
@@ -249,19 +270,29 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       const _textoMsg = extrairTextoMensagem(msg.message) || '';
       // Pula se já salvamos esta mensagem pelo envio da Caixa de Entrada (evita duplicar)
       if ((_textoMsg || _tipoMsg !== 'texto') && !(msg.key.id && waIdsRecentes.has(msg.key.id))) {
-        prisma.mensagem.create({
-          data: {
-            usuarioId,
-            chatJid: remoteJid,
-            chatNome: msg.pushName || contatosNomes.get(remoteJid) || '',
-            fromMe: !!msg.key.fromMe,
-            texto: _textoMsg,
-            tipo: _tipoMsg,
-            waId: msg.key.id || null
+        (async () => {
+          let midiaUrl: string | null = null;
+          if (_tipoMsg !== 'texto') {
+            midiaUrl = await baixarMidia(sock, msg, _tipoMsg, msg.key.id || '');
           }
-        }).then((salva: any) => {
-          io.to(usuarioId).emit('NOVA_MENSAGEM', salva);
-        }).catch((e: any) => console.error('[Inbox] Erro ao salvar mensagem:', e?.message));
+          try {
+            const salva = await prisma.mensagem.create({
+              data: {
+                usuarioId,
+                chatJid: remoteJid,
+                chatNome: msg.pushName || contatosNomes.get(remoteJid) || '',
+                fromMe: !!msg.key.fromMe,
+                texto: _textoMsg,
+                tipo: _tipoMsg,
+                midiaUrl,
+                waId: msg.key.id || null
+              }
+            });
+            io.to(usuarioId).emit('NOVA_MENSAGEM', salva);
+          } catch (e: any) {
+            console.error('[Inbox] Erro ao salvar mensagem:', e?.message);
+          }
+        })();
       }
 
       // Daqui pra frente só interessam mensagens RECEBIDAS (não as enviadas por nós)
@@ -341,7 +372,9 @@ export async function enviarMensagem(usuarioId: string, numero: string, mensagem
   }
 
   try {
-    const jid = numero.includes('@c.us') ? numero : `${numero}@s.whatsapp.net`;
+    // Se já vier um JID completo (ex.: @lid, @s.whatsapp.net, @c.us), usa direto — assim
+    // o agendamento entrega para QUALQUER contato (igual o chat da Caixa de Entrada).
+    const jid = numero.includes('@') ? numero.replace('@c.us', '@s.whatsapp.net') : `${numero}@s.whatsapp.net`;
     
     // 1. Simula que a pessoa entrou no chat e está online
     await sock.sendPresenceUpdate('available', jid);

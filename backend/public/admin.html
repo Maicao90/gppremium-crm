@@ -1694,9 +1694,23 @@
 
     function bolhaMsg(m) {
       const hora = new Date(m.timestamp).toLocaleTimeString('pt-BR', {hour:'2-digit', minute:'2-digit'});
-      const corpo = (m.tipo && m.tipo !== 'texto')
-        ? `<span class="msg-midia">📎 ${m.tipo}${m.texto?': '+escapeHtml(m.texto):''}</span>`
-        : escapeHtml(m.texto || '');
+      let corpo;
+      if (m.midiaUrl) {
+        const legenda = m.texto ? `<div style="margin-top:5px;">${escapeHtml(m.texto)}</div>` : '';
+        if (m.tipo === 'imagem' || m.tipo === 'figurinha') {
+          corpo = `<img src="${m.midiaUrl}" style="max-width:240px;max-height:280px;border-radius:8px;display:block;cursor:pointer;" onclick="window.open('${m.midiaUrl}','_blank')">${legenda}`;
+        } else if (m.tipo === 'video') {
+          corpo = `<video src="${m.midiaUrl}" controls style="max-width:240px;border-radius:8px;display:block;"></video>${legenda}`;
+        } else if (m.tipo === 'audio') {
+          corpo = `<audio src="${m.midiaUrl}" controls style="max-width:230px;"></audio>${legenda}`;
+        } else {
+          corpo = `<a href="${m.midiaUrl}" target="_blank" style="color:inherit;text-decoration:underline;">📎 Baixar ${escapeHtml(m.tipo)}</a>${legenda}`;
+        }
+      } else if (m.tipo && m.tipo !== 'texto') {
+        corpo = `<span class="msg-midia">📎 ${escapeHtml(m.tipo)}${m.texto?': '+escapeHtml(m.texto):''}</span>`;
+      } else {
+        corpo = escapeHtml(m.texto || '');
+      }
       return `<div class="msg-bubble ${m.fromMe?'msg-out':'msg-in'}">${corpo}<div class="msg-time">${hora}</div></div>`;
     }
 
@@ -1765,11 +1779,8 @@
       const d = new Date(Date.now() + 3600000);
       const pad = n => String(n).padStart(2,'0');
       document.getElementById('agendar-chat-data').value = `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
-      const numero = inboxConversaAtual.split('@')[0];
-      const ehLid = inboxConversaAtual.includes('@lid');
-      document.getElementById('agendar-chat-info').innerHTML = ehLid
-        ? '⚠️ Contato com ID interno (@lid) — o agendamento pode não ser entregue. Prefira contatos com número normal.'
-        : 'Será enviado para: <b>' + numero + '</b>';
+      const nomeC = (document.querySelector('.inbox-thread-header span') || {}).textContent || inboxConversaAtual.split('@')[0];
+      document.getElementById('agendar-chat-info').innerHTML = 'Será enviado para: <b>' + escapeHtml(nomeC) + '</b>';
       document.getElementById('agendar-chat-modal').classList.add('active');
     }
     function fecharAgendarChat() { document.getElementById('agendar-chat-modal').classList.remove('active'); }
@@ -1779,7 +1790,7 @@
       if (!msg || !val || !inboxConversaAtual || !inboxAtendenteAtual) { showToast('Preencha mensagem e data.', 'error'); return; }
       const dt = new Date(val);
       if (isNaN(dt.getTime())) { showToast('Data inválida.', 'error'); return; }
-      const numero = inboxConversaAtual.split('@')[0];
+      const numero = inboxConversaAtual; // JID completo — entrega pra QUALQUER contato (inclusive @lid)
       const nome = (document.querySelector('.inbox-thread-header span') || {}).textContent || '';
       try {
         const res = await fetch('/api/agendamentos', {
