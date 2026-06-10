@@ -292,6 +292,13 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
             apagadaEm: Date.now()
           });
         }
+        // Caixa de Entrada: marca a mensagem como apagada (mantém visível, riscada no painel)
+        if (idApagado) {
+          try {
+            const r = await prisma.mensagem.updateMany({ where: { usuarioId, waId: idApagado }, data: { apagada: true } });
+            if (r.count > 0) io.to(usuarioId).emit('MENSAGEM_APAGADA_INBOX', { usuarioId, chatJid: remoteJid, waId: idApagado });
+          } catch (e) { console.error('[Inbox] Erro ao marcar mensagem apagada:', (e as any)?.message); }
+        }
         return;
       }
 

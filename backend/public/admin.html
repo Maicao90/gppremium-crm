@@ -1756,7 +1756,12 @@
     function bolhaMsg(m) {
       const hora = new Date(m.timestamp).toLocaleTimeString('pt-BR', {hour:'2-digit', minute:'2-digit'});
       let corpo;
-      if (m.midiaUrl) {
+      if (m.apagada) {
+        const orig = m.texto
+          ? `<div style="opacity:0.55;font-size:0.8rem;margin-top:4px;text-decoration:line-through;">${formatarWhatsapp(m.texto)}</div>`
+          : (m.midiaUrl ? `<div style="opacity:0.55;font-size:0.8rem;margin-top:4px;"><i>(mídia apagada)</i></div>` : '');
+        corpo = `<span style="opacity:0.85;"><i class="fa-solid fa-ban"></i> <i>Mensagem apagada pelo contato</i></span>${orig}`;
+      } else if (m.midiaUrl) {
         const legenda = m.texto ? `<div style="margin-top:5px;">${formatarWhatsapp(m.texto)}</div>` : '';
         if (m.tipo === 'imagem' || m.tipo === 'figurinha') {
           corpo = `<img src="${m.midiaUrl}" style="max-width:240px;max-height:280px;border-radius:8px;display:block;cursor:pointer;" onclick="window.open('${m.midiaUrl}','_blank')">${legenda}`;
@@ -1813,6 +1818,20 @@
       if (m.chatJid === inboxConversaAtual) {
         const cont = document.getElementById('inbox-msgs');
         if (cont) { cont.insertAdjacentHTML('beforeend', bolhaMsg(m)); cont.scrollTop = cont.scrollHeight; }
+      }
+      carregarConversas(inboxAtendenteAtual);
+    });
+
+    // Contato apagou uma mensagem -> marca como apagada na conversa (mantém visível, riscada)
+    socket.on('MENSAGEM_APAGADA_INBOX', async (d) => {
+      if (!d || d.usuarioId !== inboxAtendenteAtual) return;
+      if (d.chatJid === inboxConversaAtual) {
+        try {
+          const res = await fetch('/api/inbox/mensagens?usuarioId=' + inboxAtendenteAtual + '&jid=' + encodeURIComponent(inboxConversaAtual));
+          const msgs = await res.json();
+          const cont = document.getElementById('inbox-msgs');
+          if (cont && Array.isArray(msgs)) { cont.innerHTML = msgs.map(bolhaMsg).join(''); cont.scrollTop = cont.scrollHeight; }
+        } catch {}
       }
       carregarConversas(inboxAtendenteAtual);
     });
