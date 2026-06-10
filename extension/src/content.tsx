@@ -386,7 +386,10 @@ const WhatsAppCRM = () => {
         localStorage.setItem("crm_usuario_logado", JSON.stringify(data))
         if (data && data.nome) {
           localStorage.setItem("crm_nome_atendente", data.nome)
-          localStorage.setItem("crm_usar_assinatura_manual", "true")
+          // Liga a assinatura manual SÓ na primeira vez (padrão). Depois respeita a caixinha.
+          if (localStorage.getItem("crm_usar_assinatura_manual") === null) {
+            localStorage.setItem("crm_usar_assinatura_manual", "true")
+          }
         }
         setUsuarioLogado(data)
         setLoginEmail("")
@@ -417,7 +420,10 @@ const WhatsAppCRM = () => {
   useEffect(() => {
     if (usuarioLogado && usuarioLogado.nome) {
       localStorage.setItem("crm_nome_atendente", usuarioLogado.nome)
-      localStorage.setItem("crm_usar_assinatura_manual", "true")
+      // Liga a assinatura manual SÓ na primeira vez (padrão). Depois respeita a caixinha.
+      if (localStorage.getItem("crm_usar_assinatura_manual") === null) {
+        localStorage.setItem("crm_usar_assinatura_manual", "true")
+      }
       socket.emit("registrar_atendente", usuarioLogado.id)
       carregarAgendamentosDoServidor(usuarioLogado.id)
     } else {
