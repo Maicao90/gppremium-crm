@@ -331,11 +331,10 @@
     .form-group { margin-bottom: 1.1rem; display:flex; flex-direction:column; gap:0.35rem; }
     .form-group label { font-size:0.83rem; color:var(--text-muted); font-weight:500; }
 
-    .input-wrapper { position:relative; }
-    .input-wrapper i { position:absolute; left:1rem; top:50%; transform:translateY(-50%); color:var(--text-muted); font-size:0.9rem; pointer-events:none; }
-    .input-wrapper .form-control { display:block; width:100%; }
-    /* dá espaço à direita pro botão do olho não cobrir o texto */
-    .input-wrapper input.form-control { padding-right:2.5rem; }
+    .input-wrapper { position:relative; display:flex; align-items:center; }
+    /* só o ícone decorativo da esquerda (lock/email) é não-clicável — NÃO o olho */
+    .input-wrapper > i { position:absolute; left:1rem; top:50%; transform:translateY(-50%); color:var(--text-muted); font-size:0.9rem; pointer-events:none; z-index:1; }
+    .input-wrapper .form-control { flex:1; width:100%; padding-right:2.6rem; }
 
     .form-control {
       width:100%; background:var(--bg-input);
@@ -625,6 +624,13 @@
     .msg-out { background:linear-gradient(135deg,#7c3aed,#a855f7); color:white; align-self:flex-end; border-bottom-right-radius:4px; }
     .msg-time { font-size:0.6rem; opacity:0.65; margin-top:3px; text-align:right; }
     .msg-midia { font-style:italic; opacity:0.85; }
+    .inbox-composer { display:flex; align-items:center; gap:8px; padding:10px 12px; border-top:1px solid var(--border-color); background:rgba(255,255,255,0.02); }
+    .inbox-composer input { flex:1; background:var(--bg-input); border:1px solid var(--border-color); border-radius:22px; padding:10px 16px; color:white; font-size:0.88rem; outline:none; }
+    .inbox-composer input:focus { border-color:var(--primary); }
+    .composer-btn, .composer-send { background:none; border:none; color:var(--text-muted); font-size:1.05rem; cursor:pointer; width:38px; height:38px; min-width:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; transition:all 0.15s; }
+    .composer-btn:hover { color:white; background:rgba(255,255,255,0.07); }
+    .composer-send { background:linear-gradient(135deg,#7c3aed,#a855f7); color:white; }
+    .composer-send:hover { filter:brightness(1.1); }
 
     /* Botão de menu (hambúrguer) e fundo — só aparecem no mobile */
     .menu-toggle { display:none; background:none; border:none; color:var(--text-main); font-size:1.3rem; cursor:pointer; padding:0.3rem; align-items:center; }
@@ -1620,8 +1626,22 @@
 
     async function abrirConversa(jid, nome) {
       inboxConversaAtual = jid;
+      const numero = jid.split('@')[0];
+      const ehLid = jid.includes('@lid');
+      const subInfo = ehLid ? 'ID interno' : numero;
       const thread = document.getElementById('inbox-thread');
-      thread.innerHTML = `<div class="inbox-thread-header"><i class="fa-solid fa-user"></i> ${escapeHtml(nome)} <span style="font-weight:400;color:var(--text-muted);font-size:0.8rem;">(${jid.split('@')[0]})</span></div><div class="inbox-msgs" id="inbox-msgs"><div class="empty-state" style="margin:auto;"><i class="fa-solid fa-spinner fa-spin"></i></div></div>`;
+      thread.innerHTML = `
+        <div class="inbox-thread-header">
+          <i class="fa-solid fa-user"></i>
+          <span>${escapeHtml(nome)}</span>
+          <span style="font-weight:400;color:var(--text-muted);font-size:0.78rem;">${subInfo}</span>
+        </div>
+        <div class="inbox-msgs" id="inbox-msgs"><div class="empty-state" style="margin:auto;"><i class="fa-solid fa-spinner fa-spin"></i></div></div>
+        <div class="inbox-composer">
+          <button class="composer-btn" title="Anexar (em breve)" onclick="showToast('Anexos e áudio: em breve (Fase 3)')"><i class="fa-solid fa-plus"></i></button>
+          <input type="text" id="inbox-input" placeholder="Digite uma mensagem..." autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();enviarInbox();}" />
+          <button class="composer-send" title="Enviar" onclick="enviarInbox()"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>`;
       carregarConversas(inboxAtendenteAtual);
       try {
         const res = await fetch('/api/inbox/mensagens?usuarioId=' + inboxAtendenteAtual + '&jid=' + encodeURIComponent(jid));
@@ -1641,6 +1661,23 @@
       }
       carregarConversas(inboxAtendenteAtual);
     });
+
+    async function enviarInbox() {
+      const inp = document.getElementById('inbox-input');
+      if (!inp) return;
+      const texto = (inp.value || '').trim();
+      if (!texto || !inboxAtendenteAtual || !inboxConversaAtual) return;
+      inp.value = '';
+      inp.focus();
+      try {
+        const res = await fetch('/api/inbox/enviar', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ usuarioId: inboxAtendenteAtual, jid: inboxConversaAtual, texto })
+        });
+        if (!res.ok) { const e = await res.json().catch(() => ({})); showToast(e.error || 'Erro ao enviar.', 'error'); }
+        // a mensagem enviada volta via NOVA_MENSAGEM e aparece sozinha na conversa
+      } catch { showToast('Erro de comunicação.', 'error'); }
+    }
 
     // ── BOOT ───────────────────────────────────────────────────────────
     carregarMetricas();

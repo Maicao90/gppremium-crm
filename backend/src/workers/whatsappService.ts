@@ -346,6 +346,28 @@ export async function enviarMensagem(usuarioId: string, numero: string, mensagem
   }
 }
 
+// Envia uma mensagem pela Caixa de Entrada (resposta interativa a um JID específico).
+// Mais rápida que enviarMensagem (sem o delay longo de "digitando"), porque é o
+// atendente conversando em tempo real, não um disparo em massa.
+export async function enviarMensagemInbox(usuarioId: string, jid: string, texto: string): Promise<boolean> {
+  const sock = sessions.get(usuarioId);
+  if (!sock) {
+    console.error(`[Inbox] WhatsApp não conectado para o usuário ${usuarioId}.`);
+    return false;
+  }
+  try {
+    await sock.sendPresenceUpdate('composing', jid).catch(() => {});
+    await delay(700);
+    await sock.sendMessage(jid, { text: texto });
+    // volta a "offline" para não roubar as notificações do celular
+    await sock.sendPresenceUpdate('unavailable').catch(() => {});
+    return true;
+  } catch (e) {
+    console.error('[Inbox] Erro ao enviar mensagem:', e);
+    return false;
+  }
+}
+
 // Função para deslogar e limpar sessão do usuário
 export async function logoutWhatsApp(usuarioId: string) {
   const sock = sessions.get(usuarioId);

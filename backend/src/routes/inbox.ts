@@ -44,4 +44,21 @@ router.get('/mensagens', async (req, res) => {
   }
 });
 
+// Enviar mensagem (texto) pela Caixa de Entrada
+router.post('/enviar', async (req, res) => {
+  try {
+    const { usuarioId, jid, texto } = req.body;
+    if (!usuarioId || !jid || !texto) {
+      return res.status(400).json({ error: 'usuarioId, jid e texto são obrigatórios.' });
+    }
+    const { enviarMensagemInbox } = require('../workers/whatsappService');
+    const ok = await enviarMensagemInbox(String(usuarioId), String(jid), String(texto));
+    if (ok) res.json({ success: true });
+    else res.status(503).json({ error: 'WhatsApp não está conectado ou falhou ao enviar.' });
+  } catch (e) {
+    console.error('Erro ao enviar (inbox):', e);
+    res.status(500).json({ error: 'Erro ao enviar mensagem' });
+  }
+});
+
 export default router;
