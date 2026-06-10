@@ -610,11 +610,29 @@
     .btn-save:hover { box-shadow: 0 6px 20px rgba(139,92,246,0.5); transform: translateY(-1px); }
 
     /* ── RESPONSIVE ── */
+    /* Botão de menu (hambúrguer) e fundo — só aparecem no mobile */
+    .menu-toggle { display:none; background:none; border:none; color:var(--text-main); font-size:1.3rem; cursor:pointer; padding:0.3rem; align-items:center; }
+    .sidebar-backdrop { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:150; }
+    .sidebar { transition: transform 0.3s ease; }
+
     @media (max-width: 900px) {
+      .menu-toggle { display:flex; }
       .sidebar { transform:translateX(-100%); }
+      .sidebar.open { transform:translateX(0); box-shadow: 4px 0 28px rgba(0,0,0,0.55); }
+      .sidebar-backdrop.open { display:block; }
       .main-wrapper { margin-left: 0; }
       .two-col { grid-template-columns: 1fr; }
-      .atendente-item { grid-template-columns: 46px 1fr; }
+      .atendente-item { grid-template-columns: 46px 1fr 80px; }
+      .page { padding: 1rem; }
+      header { padding: 1rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+      .modal-box { max-width: 94vw; padding: 1.4rem; }
+      .header-title span { display:none; }
+    }
+    @media (max-width: 480px) {
+      .stats-grid { grid-template-columns: 1fr; }
+      .atendente-item { grid-template-columns: 42px 1fr; }
+      .filter-container { flex-wrap: wrap; }
     }
   </style>
 </head>
@@ -661,10 +679,13 @@
   </aside>
 
   <!-- ══ WRAPPER PRINCIPAL ══ -->
+  <div class="sidebar-backdrop" id="sidebar-backdrop" onclick="toggleSidebar()"></div>
+
   <div class="main-wrapper">
 
     <header>
-      <div>
+      <div style="display:flex; align-items:center; gap:0.8rem;">
+        <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Abrir menu"><i class="fa-solid fa-bars"></i></button>
         <span class="header-title" id="header-title">Dashboard <span>/ Métricas por Período</span></span>
       </div>
       <div class="header-actions">
@@ -982,6 +1003,17 @@
       if (id === 'dashboard')  carregarMetricas();
       if (id === 'atendentes') carregarAtendentes();
       if (id === 'banco')      carregarConfigsNuvem();
+      fecharSidebar(); // no mobile, fecha o menu ao navegar
+    }
+
+    // ── MENU MOBILE (sidebar deslizante) ───────────────────────────────
+    function toggleSidebar() {
+      document.querySelector('.sidebar')?.classList.toggle('open');
+      document.getElementById('sidebar-backdrop')?.classList.toggle('open');
+    }
+    function fecharSidebar() {
+      document.querySelector('.sidebar')?.classList.remove('open');
+      document.getElementById('sidebar-backdrop')?.classList.remove('open');
     }
 
     // ── TOAST ──────────────────────────────────────────────────────────

@@ -77,23 +77,11 @@ function gapAleatorio(): number {
   return Math.floor(Math.random() * (GAP_MAX_MS - GAP_MIN_MS + 1)) + GAP_MIN_MS;
 }
 
-// Variação invisível do texto: garante que mensagens não fiquem byte-a-byte
-// idênticas (reduz risco de detecção por spam) SEM alterar o que o cliente lê.
+// Variação leve e INVISÍVEL do texto, só para as mensagens não ficarem byte-a-byte
+// idênticas. NÃO usamos mais o caractere de largura zero (U+200B): ele aparecia como
+// "?" em alguns aparelhos, sujando a mensagem. Agora só varia espaços no final (invisível).
 function humanizarTexto(texto: string): string {
-  // Variacao invisivel: insere um espaco de largura zero (U+200B) em posicao aleatoria
-  // entre palavras, garantindo que as mensagens nao fiquem byte-a-byte identicas
-  // SEM alterar o que o cliente le.
-  const ZWSP = String.fromCharCode(0x200B);
-  let resultado = texto;
-  const partes = resultado.split(" ");
-  if (partes.length > 2) {
-    const pos = 1 + Math.floor(Math.random() * (partes.length - 1));
-    partes[pos] = ZWSP + partes[pos];
-    resultado = partes.join(" ");
-  }
-  // Varia a quantidade de espacos no final (0 a 2) — inofensivo e invisivel
-  resultado += " ".repeat(Math.floor(Math.random() * 3));
-  return resultado;
+  return texto + " ".repeat(Math.floor(Math.random() * 3));
 }
 
 export function initWorker() {
