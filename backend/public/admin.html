@@ -1728,10 +1728,12 @@
         </div>
         <div class="inbox-msgs" id="inbox-msgs"><div class="empty-state" style="margin:auto;"><i class="fa-solid fa-spinner fa-spin"></i></div></div>
         <div class="inbox-composer">
-          <button class="composer-btn" title="Anexar (em breve)" onclick="showToast('Anexos e áudio: em breve')"><i class="fa-solid fa-plus"></i></button>
+          <input type="file" id="inbox-file" accept="image/*,video/*,audio/*,application/pdf" style="display:none" onchange="enviarArquivoInbox(event)" />
+          <button class="composer-btn" title="Anexar foto/vídeo/arquivo" onclick="document.getElementById('inbox-file').click()"><i class="fa-solid fa-plus"></i></button>
           <button class="composer-btn" title="Mensagens rápidas" onclick="abrirTemplatesChat()"><i class="fa-solid fa-bolt"></i></button>
           <button class="composer-btn" title="Agendar mensagem" onclick="abrirAgendarChat()"><i class="fa-solid fa-calendar-plus"></i></button>
           <input type="text" id="inbox-input" placeholder="Digite uma mensagem..." autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();enviarInbox();}" />
+          <button class="composer-btn" id="btn-mic" title="Gravar áudio" onclick="gravarAudioInbox(this)"><i class="fa-solid fa-microphone"></i></button>
           <button class="composer-send" title="Enviar" onclick="enviarInbox()"><i class="fa-solid fa-paper-plane"></i></button>
         </div>`;
       carregarConversas(inboxAtendenteAtual);
@@ -1769,6 +1771,69 @@
         if (!res.ok) { const e = await res.json().catch(() => ({})); showToast(e.error || 'Erro ao enviar.', 'error'); }
         // a mensagem enviada volta via NOVA_MENSAGEM e aparece sozinha na conversa
       } catch { showToast('Erro de comunicação.', 'error'); }
+    }
+
+    // ── ENVIAR MÍDIA (foto/vídeo/arquivo) ───────────────────────────────
+    function enviarArquivoInbox(event) {
+      const file = event.target.files[0];
+      event.target.value = '';
+      if (!file || !inboxConversaAtual || !inboxAtendenteAtual) return;
+      if (file.size > 16 * 1024 * 1024) { showToast('Arquivo muito grande (máx. 16MB).', 'error'); return; }
+      let tipo = 'documento';
+      if (file.type.startsWith('image/')) tipo = 'imagem';
+      else if (file.type.startsWith('video/')) tipo = 'video';
+      else if (file.type.startsWith('audio/')) tipo = 'audio';
+      const reader = new FileReader();
+      reader.onload = async () => {
+        const base64 = String(reader.result).split(',')[1];
+        showToast('Enviando...');
+        try {
+          const res = await fetch('/api/inbox/enviar-midia', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ usuarioId: inboxAtendenteAtual, jid: inboxConversaAtual, base64, mimetype: file.type, tipo })
+          });
+          if (!res.ok) { const e = await res.json().catch(() => ({})); showToast(e.error || 'Erro ao enviar.', 'error'); }
+        } catch { showToast('Erro de comunicação.', 'error'); }
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // ── GRAVAR E ENVIAR ÁUDIO (microfone) ───────────────────────────────
+    let _mediaRecorder = null, _audioChunks = [], _gravando = false;
+    async function gravarAudioInbox(btn) {
+      if (_gravando && _mediaRecorder) { _mediaRecorder.stop(); return; }
+      if (!inboxConversaAtual || !inboxAtendenteAtual) { showToast('Abra uma conversa primeiro.', 'error'); return; }
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        _mediaRecorder = new MediaRecorder(stream);
+        _audioChunks = [];
+        _mediaRecorder.ondataavailable = e => { if (e.data && e.data.size) _audioChunks.push(e.data); };
+        _mediaRecorder.onstop = async () => {
+          _gravando = false;
+          btn.innerHTML = '<i class="fa-solid fa-microphone"></i>'; btn.style.color = '';
+          stream.getTracks().forEach(t => t.stop());
+          const blob = new Blob(_audioChunks, { type: (_audioChunks[0] && _audioChunks[0].type) || 'audio/webm' });
+          const reader = new FileReader();
+          reader.onload = async () => {
+            const base64 = String(reader.result).split(',')[1];
+            showToast('Enviando áudio...');
+            try {
+              const res = await fetch('/api/inbox/enviar-midia', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ usuarioId: inboxAtendenteAtual, jid: inboxConversaAtual, base64, mimetype: blob.type, tipo: 'audio' })
+              });
+              if (!res.ok) { const e = await res.json().catch(() => ({})); showToast(e.error || 'Erro ao enviar áudio.', 'error'); }
+            } catch { showToast('Erro de comunicação.', 'error'); }
+          };
+          reader.readAsDataURL(blob);
+        };
+        _mediaRecorder.start();
+        _gravando = true;
+        btn.innerHTML = '<i class="fa-solid fa-stop"></i>'; btn.style.color = 'var(--danger)';
+        showToast('Gravando... clique no microfone de novo pra enviar.');
+      } catch (e) {
+        showToast('Não foi possível acessar o microfone.', 'error');
+      }
     }
 
     // ── AGENDAR DENTRO DO CHAT ──────────────────────────────────────────

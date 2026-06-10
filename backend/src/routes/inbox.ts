@@ -84,6 +84,23 @@ router.post('/enviar', async (req, res) => {
   }
 });
 
+// Enviar MÍDIA (foto, vídeo, áudio, documento) pela Caixa de Entrada
+router.post('/enviar-midia', async (req, res) => {
+  try {
+    const { usuarioId, jid, base64, mimetype, tipo, legenda } = req.body;
+    if (!usuarioId || !jid || !base64 || !tipo) {
+      return res.status(400).json({ error: 'usuarioId, jid, base64 e tipo são obrigatórios.' });
+    }
+    const { enviarMidiaInbox } = require('../workers/whatsappService');
+    const ok = await enviarMidiaInbox(String(usuarioId), String(jid), String(base64), String(mimetype || ''), String(tipo), legenda ? String(legenda) : undefined);
+    if (ok) res.json({ success: true });
+    else res.status(503).json({ error: 'WhatsApp não conectado ou falha ao enviar mídia.' });
+  } catch (e) {
+    console.error('Erro ao enviar mídia (inbox):', e);
+    res.status(500).json({ error: 'Erro ao enviar mídia' });
+  }
+});
+
 // ── Mensagens rápidas (templates) — compartilhadas pela equipe ──
 router.get('/templates', async (_req, res) => {
   try {

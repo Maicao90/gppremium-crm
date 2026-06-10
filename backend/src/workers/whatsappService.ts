@@ -449,6 +449,44 @@ export async function enviarMensagemInbox(usuarioId: string, jid: string, texto:
   }
 }
 
+// Envia uma MÍDIA (foto, vídeo, áudio ou documento) pela Caixa de Entrada.
+export async function enviarMidiaInbox(usuarioId: string, jid: string, base64: string, mimetype: string, tipo: string, legenda?: string): Promise<boolean> {
+  const sock = sessions.get(usuarioId);
+  if (!sock) {
+    console.error(`[Inbox] WhatsApp não conectado para o usuário ${usuarioId}.`);
+    return false;
+  }
+  try {
+    const buffer = Buffer.from(base64, 'base64');
+    let conteudo: any;
+    if (tipo === 'imagem') conteudo = { image: buffer, caption: legenda || undefined };
+    else if (tipo === 'video') conteudo = { video: buffer, caption: legenda || undefined };
+    else if (tipo === 'audio') conteudo = { audio: buffer, mimetype: 'audio/ogg; codecs=opus', ptt: true };
+    else conteudo = { document: buffer, mimetype: mimetype || 'application/octet-stream', fileName: 'arquivo' };
+
+    await sock.sendPresenceUpdate('composing', jid).catch(() => {});
+    const enviada = await sock.sendMessage(jid, conteudo);
+    await sock.sendPresenceUpdate('unavailable').catch(() => {});
+
+    // Salva a mídia localmente para exibir no painel
+    const ext = EXT_POR_TIPO[tipo] || 'bin';
+    const nome = `out_${(enviada?.key?.id || 'm').replace(/[^a-zA-Z0-9]/g, '')}_${Math.floor(Math.random() * 1000000)}.${ext}`;
+    let midiaUrl: string | null = null;
+    try { fs.writeFileSync(path.join(MIDIAS_DIR, nome), buffer); midiaUrl = `/midias/${nome}`; } catch (e) {}
+
+    const waId = enviada?.key?.id || null;
+    lembrarWaId(waId);
+    const salva = await prisma.mensagem.create({
+      data: { usuarioId, chatJid: jid, chatNome: '', fromMe: true, texto: legenda || '', tipo, midiaUrl, waId }
+    });
+    io.to(usuarioId).emit('NOVA_MENSAGEM', salva);
+    return true;
+  } catch (e) {
+    console.error('[Inbox] Erro ao enviar mídia:', e);
+    return false;
+  }
+}
+
 // Função para deslogar e limpar sessão do usuário
 export async function logoutWhatsApp(usuarioId: string) {
   const sock = sessions.get(usuarioId);
