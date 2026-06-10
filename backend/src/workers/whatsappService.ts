@@ -26,6 +26,36 @@ async function baixarMidia(sock: any, msg: any, tipo: string, waId: string): Pro
   }
 }
 
+// Detecta se a mensagem veio de um ANÚNCIO (Click-to-WhatsApp). Retorna o externalAdReply.
+function getAnuncio(message: any): any {
+  if (!message) return null;
+  for (const key of Object.keys(message)) {
+    const ci = message[key] && message[key].contextInfo;
+    if (ci && ci.externalAdReply) return ci.externalAdReply;
+  }
+  return null;
+}
+
+// Salva a miniatura (foto) do anúncio e retorna a URL pública.
+async function salvarFotoAnuncio(adReply: any): Promise<string | null> {
+  try {
+    let buffer: Buffer | null = null;
+    if (adReply.thumbnail && adReply.thumbnail.length) {
+      buffer = Buffer.from(adReply.thumbnail);
+    } else if (adReply.thumbnailUrl) {
+      const resp = await fetch(adReply.thumbnailUrl);
+      if (resp.ok) buffer = Buffer.from(await resp.arrayBuffer());
+    }
+    if (!buffer) return null;
+    const nome = `ad_${Math.floor(Math.random() * 1000000000)}.jpg`;
+    fs.writeFileSync(path.join(MIDIAS_DIR, nome), buffer);
+    return `/midias/${nome}`;
+  } catch (e) {
+    console.error('[Inbox] Erro ao salvar foto do anúncio:', (e as any)?.message);
+    return null;
+  }
+}
+
 // Mapa para guardar as sessões ativas por usuário
 export const sessions = new Map<string, WASocket>();
 
@@ -268,11 +298,20 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       // ─── CAIXA DE ENTRADA: salva a mensagem (recebida E enviada) e avisa o painel ───
       const _tipoMsg = tipoMensagem(msg.message);
       const _textoMsg = extrairTextoMensagem(msg.message) || '';
+      const _anuncio = getAnuncio(msg.message); // mensagem vinda de anúncio (Click-to-WhatsApp)
       // Pula se já salvamos esta mensagem pelo envio da Caixa de Entrada (evita duplicar)
-      if ((_textoMsg || _tipoMsg !== 'texto') && !(msg.key.id && waIdsRecentes.has(msg.key.id))) {
+      if ((_textoMsg || _tipoMsg !== 'texto' || _anuncio) && !(msg.key.id && waIdsRecentes.has(msg.key.id))) {
         (async () => {
           let midiaUrl: string | null = null;
-          if (_tipoMsg !== 'texto') {
+          let textoSalvar = _textoMsg;
+          let tipoSalvar = _tipoMsg;
+          if (_anuncio) {
+            // Veio de anúncio: salva a FOTO do anúncio e rotula a mensagem
+            midiaUrl = await salvarFotoAnuncio(_anuncio);
+            if (midiaUrl) tipoSalvar = 'imagem';
+            const titulo = _anuncio.title || _anuncio.body || 'Anúncio';
+            textoSalvar = `📢 [Anúncio] ${titulo}` + (_textoMsg ? `\n\n${_textoMsg}` : '');
+          } else if (_tipoMsg !== 'texto') {
             midiaUrl = await baixarMidia(sock, msg, _tipoMsg, msg.key.id || '');
           }
           try {
@@ -282,8 +321,8 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
                 chatJid: remoteJid,
                 chatNome: msg.pushName || contatosNomes.get(remoteJid) || '',
                 fromMe: !!msg.key.fromMe,
-                texto: _textoMsg,
-                tipo: _tipoMsg,
+                texto: textoSalvar,
+                tipo: tipoSalvar,
                 midiaUrl,
                 waId: msg.key.id || null
               }
