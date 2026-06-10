@@ -9,6 +9,17 @@ import Dashboard from "./components/Dashboard"
 import Configuracoes from "./components/Configuracoes"
 import MensagensRapidas from "./components/MensagensRapidas"
 
+// Lê SEMPRE o usuário logado ATUAL do localStorage. Evita o "closure travado" do React:
+// se a pessoa faz login DEPOIS de abrir o WhatsApp Web, o estado capturado fica vazio e a
+// sincronização de contatos é ignorada. Lendo do localStorage, sempre pega o login certo.
+function getUsuarioIdAtual(): string | null {
+  try {
+    const u = JSON.parse(localStorage.getItem("crm_usuario_logado") || "{}")
+    return u?.id || null
+  } catch {
+    return null
+  }
+}
 
 export const config: PlasmoCSConfig = {
   matches: ["https://web.whatsapp.com/*"]
@@ -273,7 +284,7 @@ const WhatsAppCRM = () => {
   // Envia a lista completa de contatos extraida para a API de sincronizacao em lote no backend
   const sincronizarContatosComServidor = async (contatos: any[]) => {
     if (!contatos || contatos.length === 0) return
-    const usuarioId = usuarioLogado?.id
+    const usuarioId = getUsuarioIdAtual() || usuarioLogado?.id
     if (!usuarioId) {
       console.warn("[CRM] Sem usuário logado — sincronização de contatos ignorada.")
       return
@@ -298,7 +309,7 @@ const WhatsAppCRM = () => {
 
   // Busca todos os contatos salvos no SQLite do backend, atualizando cache e UI
   const carregarContatosDoServidor = async () => {
-    const usuarioId = usuarioLogado?.id
+    const usuarioId = getUsuarioIdAtual() || usuarioLogado?.id
     if (!usuarioId) {
       setContatosRecentes([])
       return
@@ -397,6 +408,10 @@ const WhatsAppCRM = () => {
         // Registra o atendente logado no Socket.io e carrega seus agendamentos imediatamente
         socket.emit("registrar_atendente", data.id)
         carregarAgendamentosDoServidor(data.id)
+        // Acabou de logar: carrega os contatos já salvos e dispara uma extração AGORA
+        // (não espera o timer), para a agenda dele aparecer logo no seletor de agendamento.
+        carregarContatosDoServidor()
+        setTimeout(() => solicitarExtracaoContatos(), 1500)
       } else {
         setLoginError(data.error || "E-mail ou senha incorretos.")
       }
