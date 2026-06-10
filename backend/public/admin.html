@@ -953,6 +953,7 @@
         <select id="inbox-atendente" class="form-control" style="max-width:300px; padding-left:1rem;" onchange="inboxSelecionarAtendente()">
           <option value="">Selecione um atendente conectado...</option>
         </select>
+        <button class="btn-cancel" id="btn-assinatura" style="display:none; padding:8px 14px;" onclick="abrirAssinaturaModal()"><i class="fa-solid fa-signature"></i> Assinatura do CRM</button>
       </div>
       <div class="inbox-layout">
         <div class="inbox-conversas" id="inbox-conversas">
@@ -1084,6 +1085,27 @@
         <button type="button" class="btn-save" style="min-width:auto;padding:0 14px;" onclick="criarTemplate()"><i class="fa-solid fa-plus"></i></button>
       </div>
       <div id="templates-lista" style="max-height:340px;overflow-y:auto;"></div>
+    </div>
+  </div>
+
+  <!-- ══ MODAL: ASSINATURA DO CRM ══ -->
+  <div class="modal-overlay" id="assinatura-modal" style="z-index:10001;">
+    <div class="modal-box" style="max-width:430px;">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-signature"></i> Assinatura do CRM</h3>
+        <button class="modal-close" onclick="fecharAssinaturaModal()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:12px;">
+        As mensagens enviadas por este atendente <b>pelo painel</b> começarão com <b style="color:var(--primary);">*assinatura:*</b> (separada da extensão). Deixe <b>vazio</b> para não assinar.
+      </div>
+      <div class="form-group">
+        <label for="assinatura-input">Texto da assinatura</label>
+        <input type="text" id="assinatura-input" class="form-control" style="padding-left:1rem;" placeholder="Ex: Pós-venda GP">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-cancel" onclick="fecharAssinaturaModal()">Cancelar</button>
+        <button type="button" class="btn-save" onclick="salvarAssinatura()">Salvar</button>
+      </div>
     </div>
   </div>
 
@@ -1643,21 +1665,49 @@
 
     function escapeHtml(s){ return (s||'').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
+    let _inboxAtendentesData = {};
     function carregarInboxAtendentes() {
       const sel = document.getElementById('inbox-atendente');
       if (!sel) return;
       const atual = sel.value;
       fetch('/api/usuarios/metricas?periodo=ano').then(r=>r.json()).then(lista => {
         if (!Array.isArray(lista)) return;
+        _inboxAtendentesData = {};
+        lista.forEach(u => { _inboxAtendentesData[u.id] = u; });
         sel.innerHTML = '<option value="">Selecione um atendente...</option>' +
           lista.map(u => `<option value="${u.id}" ${u.id===atual?'selected':''}>${u.nome} ${u.whatsappConectado?'🟢':'🔴'}</option>`).join('');
       }).catch(()=>{});
+    }
+
+    function abrirAssinaturaModal() {
+      const u = _inboxAtendentesData[inboxAtendenteAtual];
+      if (!u) { showToast('Selecione um atendente.', 'error'); return; }
+      const valor = (u.assinaturaPainel === null || u.assinaturaPainel === undefined) ? (u.nome || '') : u.assinaturaPainel;
+      document.getElementById('assinatura-input').value = valor;
+      document.getElementById('assinatura-modal').classList.add('active');
+    }
+    function fecharAssinaturaModal() { document.getElementById('assinatura-modal').classList.remove('active'); }
+    async function salvarAssinatura() {
+      const val = document.getElementById('assinatura-input').value;
+      try {
+        const res = await fetch('/api/usuarios/' + inboxAtendenteAtual + '/assinatura', {
+          method: 'PUT', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ assinaturaPainel: val })
+        });
+        if (res.ok) {
+          showToast('Assinatura do CRM salva!');
+          if (_inboxAtendentesData[inboxAtendenteAtual]) _inboxAtendentesData[inboxAtendenteAtual].assinaturaPainel = val;
+          fecharAssinaturaModal();
+        } else showToast('Erro ao salvar.', 'error');
+      } catch { showToast('Erro de comunicação.', 'error'); }
     }
 
     function inboxSelecionarAtendente() {
       const id = document.getElementById('inbox-atendente').value;
       inboxAtendenteAtual = id;
       inboxConversaAtual = '';
+      const btnAss = document.getElementById('btn-assinatura');
+      if (btnAss) btnAss.style.display = id ? 'inline-flex' : 'none';
       document.getElementById('inbox-thread').innerHTML = '<div class="empty-state" style="margin:auto;"><i class="fa-solid fa-comment-dots"></i><p>Selecione uma conversa.</p></div>';
       if (!id) {
         document.getElementById('inbox-conversas').innerHTML = '<div class="empty-state" style="padding:2rem 1rem;"><i class="fa-solid fa-inbox"></i><p>Selecione um atendente.</p></div>';

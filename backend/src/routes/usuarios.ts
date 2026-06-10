@@ -139,6 +139,7 @@ router.get('/metricas', async (req, res) => {
         senha: u.senha,
         role: u.role,
         whatsappConectado: u.whatsappConectado,
+        assinaturaPainel: u.assinaturaPainel ?? null,
         total,
         enviados,
         pendentes,
@@ -151,6 +152,22 @@ router.get('/metricas', async (req, res) => {
   } catch (error) {
     console.error('Erro ao buscar métricas de usuários:', error);
     res.status(500).json({ error: 'Erro ao processar métricas.' });
+  }
+});
+
+// Atualizar a assinatura do painel CRM (separada da extensão)
+router.put('/:id/assinatura', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { assinaturaPainel } = req.body;
+    const u = await prisma.usuario.update({
+      where: { id },
+      data: { assinaturaPainel: (assinaturaPainel === null || assinaturaPainel === undefined) ? null : String(assinaturaPainel) }
+    });
+    res.json({ success: true, assinaturaPainel: u.assinaturaPainel });
+  } catch (error) {
+    console.error('Erro ao salvar assinatura do painel:', error);
+    res.status(500).json({ error: 'Erro ao salvar assinatura' });
   }
 });
 

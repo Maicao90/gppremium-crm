@@ -416,11 +416,21 @@ export async function enviarMensagemInbox(usuarioId: string, jid: string, texto:
     console.error(`[Inbox] WhatsApp não conectado para o usuário ${usuarioId}.`);
     return false;
   }
-  // Assinatura: prefixa o nome do atendente em negrito (igual ao WhatsApp: *nome:* texto)
+  // Assinatura do PAINEL CRM (separada da extensão). Regras:
+  //  - assinaturaPainel definida e não-vazia  -> usa ela: *assinatura:* texto
+  //  - assinaturaPainel definida e vazia ("")  -> sem assinatura
+  //  - assinaturaPainel não definida (null)    -> padrão: *nome do atendente:* texto
   let textoFinal = texto;
   try {
     const u = await prisma.usuario.findUnique({ where: { id: usuarioId } });
-    if (u && u.nome) textoFinal = `*${u.nome}:* ${texto}`;
+    if (u) {
+      if (u.assinaturaPainel !== null && u.assinaturaPainel !== undefined) {
+        const a = String(u.assinaturaPainel).trim();
+        textoFinal = a ? `*${a}:* ${texto}` : texto;
+      } else if (u.nome) {
+        textoFinal = `*${u.nome}:* ${texto}`;
+      }
+    }
   } catch (e) {}
 
   try {
