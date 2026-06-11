@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CRM WhatsApp - Painel Administrativo</title>
+  <title>GP Premium — CRM</title>
+  <link rel="icon" href="/logo-gp.jpg">
+  <script>(function(){try{var t=localStorage.getItem('gp_theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -691,8 +693,11 @@
 
     /* Sidebar escura — texto claro */
     .sidebar { background: linear-gradient(180deg,#1a2348 0%,#141b3a 100%); border-right-color: rgba(255,255,255,0.09); }
-    .sidebar-logo { border-bottom-color: rgba(255,255,255,0.09); justify-content: center; padding: 1.3rem 1.1rem; }
-    .sidebar-logo-img { width: 100%; max-width: 175px; height: auto; display: block; background:#fff; border-radius: 12px; padding: 12px 16px; }
+    .sidebar-logo { border-bottom-color: rgba(255,255,255,0.09); justify-content: center; height: 72px; padding: 0 1.1rem; }
+    .sidebar-logo-img { height: 44px; width: auto; max-width: 92%; display: block; background:#fff; border-radius: 10px; padding: 6px 12px; }
+    header { height: 72px; min-height: 72px; padding: 0 2rem; }
+    .theme-toggle { background:#fff; border:1px solid var(--border-color); color: var(--text-muted); width:38px; height:38px; border-radius:10px; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.95rem; transition:all 0.2s; }
+    .theme-toggle:hover { color: var(--primary); border-color: rgba(232,37,44,0.35); }
     .sidebar-logo-icon { background: var(--primary); box-shadow: 0 6px 16px -6px rgba(232,37,44,0.7); }
     .sidebar-logo h1 { background: none; -webkit-text-fill-color:#fff; color:#fff; font-style: italic; }
     .sidebar-logo p { color: rgba(255,255,255,0.5); }
@@ -737,6 +742,30 @@
     .composer-btn:hover { color: var(--secondary); background: rgba(30,42,107,0.06); }
     .composer-send { background: var(--primary); }
     .menu-toggle { color: var(--text-main); }
+
+    /* ===== TEMA ESCURO (toggle) — sidebar segue navy; só o conteúdo muda ===== */
+    html[data-theme="dark"] {
+      --bg-dark: #0d1122;
+      --bg-card: #161b2e;
+      --bg-input: #1c2238;
+      --border-color: rgba(255,255,255,0.09);
+      --text-main: #eef1fa;
+      --text-muted: #9aa4bd;
+      --shadow-premium: 0 12px 30px -16px rgba(0,0,0,0.5);
+    }
+    html[data-theme="dark"] body { background-image: radial-gradient(900px circle at 100% -10%, rgba(232,37,44,0.06), transparent 45%); }
+    html[data-theme="dark"] header { background: var(--bg-card); }
+    html[data-theme="dark"] .theme-toggle { background: var(--bg-input); }
+    html[data-theme="dark"] .stat-card, html[data-theme="dark"] .card-box, html[data-theme="dark"] .db-hero, html[data-theme="dark"] .plan-card, html[data-theme="dark"] .toast, html[data-theme="dark"] .modal-box, html[data-theme="dark"] .filter-container, html[data-theme="dark"] .inbox-conversas, html[data-theme="dark"] .inbox-thread { background: var(--bg-card); }
+    html[data-theme="dark"] .atendente-item { background: var(--bg-input); }
+    html[data-theme="dark"] .atendente-item:hover { background: #232a42; }
+    html[data-theme="dark"] .form-control, html[data-theme="dark"] .plan-input, html[data-theme="dark"] .inbox-busca-input, html[data-theme="dark"] .inbox-composer input { background: var(--bg-input); color: var(--text-main); }
+    html[data-theme="dark"] .inbox-composer { background: var(--bg-card); }
+    html[data-theme="dark"] .conversa-nome, html[data-theme="dark"] .inbox-thread-header { color: var(--text-main); }
+    html[data-theme="dark"] .conversa-item:hover, html[data-theme="dark"] .conversa-item.active { background: rgba(255,255,255,0.05); }
+    html[data-theme="dark"] .msg-in { background: rgba(255,255,255,0.07); color: #e5e7eb; }
+    html[data-theme="dark"] .plan-hint { background: var(--bg-input); }
+    html[data-theme="dark"] .btn-cancel { background: var(--bg-input); }
   </style>
 </head>
 <body>
@@ -763,13 +792,6 @@
       <div class="nav-item" id="nav-inbox" onclick="navTo('inbox')">
         <i class="fa-solid fa-comments"></i>
         Caixa de Entrada
-      </div>
-
-      <div class="nav-section-label">Sistema</div>
-
-      <div class="nav-item" id="nav-banco" onclick="navTo('banco')">
-        <i class="fa-solid fa-database"></i>
-        Banco de Dados
       </div>
 
       <div class="nav-section-label">Marketing</div>
@@ -800,6 +822,7 @@
         <span class="header-title" id="header-title">Dashboard <span>/ Métricas por Período</span></span>
       </div>
       <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" onclick="toggleTema()" aria-label="Alternar tema" title="Tema claro/escuro"><i class="fa-solid fa-moon"></i></button>
         <div class="status-badge">
           <i class="fa-solid fa-circle"></i>
           <span id="socket-status">Conectado</span>
@@ -1204,6 +1227,15 @@
       inbox:      'Caixa de Entrada <span>/ Pós-venda</span>',
       banco:      'Banco de Dados <span>/ Configuração Multi-Cloud</span>',
     };
+
+    function toggleTema() {
+      var atual = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', atual);
+      try { localStorage.setItem('gp_theme', atual); } catch (e) {}
+      var ic = document.querySelector('#theme-toggle i');
+      if (ic) ic.className = atual === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    }
+    (function () { var t = document.documentElement.getAttribute('data-theme'); var ic = document.querySelector('#theme-toggle i'); if (ic && t === 'dark') ic.className = 'fa-solid fa-sun'; })();
 
     function navTo(id) {
       // Oculta todas as páginas
