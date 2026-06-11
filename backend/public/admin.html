@@ -663,6 +663,79 @@
       .atendente-item { grid-template-columns: 42px 1fr; }
       .filter-container { flex-wrap: wrap; }
     }
+
+    /* ===================================================================
+       TEMA GP — sidebar azul-marinho escura + conteúdo claro (override)
+       Cores da marca: vermelho #e8252c + azul-marinho #1e2a6b
+       =================================================================== */
+    :root {
+      --bg-dark: #eef1f7;
+      --bg-sidebar: #1a2348;
+      --bg-card: #ffffff;
+      --bg-input: #ffffff;
+      --border-color: rgba(30,42,107,0.12);
+      --primary: #e8252c;
+      --primary-hover: #c81e24;
+      --secondary: #1e2a6b;
+      --success: #1d9e5e;
+      --warning: #d9892a;
+      --danger: #e8252c;
+      --text-main: #18213b;
+      --text-muted: #6b7588;
+      --gradient-neon: linear-gradient(135deg,#e8252c 0%,#c81e24 100%);
+      --gradient-success: linear-gradient(135deg,#1d9e5e 0%,#15794a 100%);
+      --gradient-danger: linear-gradient(135deg,#e8252c 0%,#c81e24 100%);
+      --shadow-premium: 0 12px 30px -16px rgba(20,26,53,0.22);
+    }
+    body { background-color: var(--bg-dark); background-image: radial-gradient(900px circle at 100% -10%, rgba(30,42,107,0.06), transparent 45%); color: var(--text-main); }
+
+    /* Sidebar escura — texto claro */
+    .sidebar { background: linear-gradient(180deg,#1a2348 0%,#141b3a 100%); border-right-color: rgba(255,255,255,0.09); }
+    .sidebar-logo { border-bottom-color: rgba(255,255,255,0.09); }
+    .sidebar-logo-icon { background: var(--primary); box-shadow: 0 6px 16px -6px rgba(232,37,44,0.7); }
+    .sidebar-logo h1 { background: none; -webkit-text-fill-color:#fff; color:#fff; font-style: italic; }
+    .sidebar-logo p { color: rgba(255,255,255,0.5); }
+    .nav-section-label { color: rgba(255,255,255,0.42); }
+    .sidebar .nav-item { color: rgba(255,255,255,0.72); }
+    .sidebar .nav-item:hover { background: rgba(255,255,255,0.07); color:#fff; }
+    .sidebar .nav-item.active { background: rgba(232,37,44,0.16); border-color: rgba(232,37,44,0.4); color:#fff; }
+    .sidebar .nav-item.active i { color:#fff; }
+    .sidebar-footer { border-top-color: rgba(255,255,255,0.09); }
+
+    /* Conteúdo claro */
+    header { background:#fff; backdrop-filter:none; }
+    .header-title span { color: var(--text-muted); }
+    .stat-card, .card-box, .db-hero, .plan-card, .toast, .modal-box, .filter-container, .inbox-conversas, .inbox-thread { backdrop-filter:none; }
+    .stat-card { box-shadow: 0 1px 2px rgba(20,26,53,0.05); }
+    .stat-card:hover, .plan-card:hover { border-color: rgba(232,37,44,0.25); }
+    .stat-icon.total { background: linear-gradient(135deg,#1e2a6b,#2a3a86); }
+    .atendente-item { background:#fff; border-color: var(--border-color); }
+    .atendente-item:hover { background:#f7f9fc; border-color: rgba(232,37,44,0.18); }
+    .progress-bg { background: rgba(30,42,107,0.08); }
+    .plan-indicator { background: rgba(30,42,107,0.12); }
+    .plan-hint { background:#f7f9fc; }
+    .form-control, .plan-input { color: var(--text-main); }
+    .form-control:focus, .plan-input:focus { box-shadow: 0 0 0 3px rgba(232,37,44,0.18); }
+    .btn-action-edit, .btn-action-delete { background:#fff; }
+    .btn-cancel { background:#fff; }
+    .btn-cancel:hover { background:#f1f4fa; }
+
+    /* Modal claro */
+    .modal-overlay { background: rgba(20,26,53,0.45); backdrop-filter: blur(4px); }
+    .modal-box { box-shadow: var(--shadow-premium); backdrop-filter:none; }
+    .modal-close:hover { color: var(--primary); }
+    .toggle-vis:hover { color: var(--primary); }
+
+    /* Caixa de Entrada (WhatsApp) — corrige textos brancos sobre claro */
+    .inbox-busca-input, .inbox-composer input { background:#fff; color: var(--text-main); }
+    .conversa-nome, .inbox-thread-header { color: var(--text-main); }
+    .conversa-item:hover, .conversa-item.active { background: rgba(30,42,107,0.05); }
+    .inbox-composer { background:#f7f9fc; }
+    .msg-in { background:#eef1f7; color:#18213b; }
+    .msg-out { background:#1e2a6b; color:#fff; }
+    .composer-btn:hover { color: var(--secondary); background: rgba(30,42,107,0.06); }
+    .composer-send { background: var(--primary); }
+    .menu-toggle { color: var(--text-main); }
   </style>
 </head>
 <body>
@@ -700,6 +773,13 @@
       <div class="nav-item" id="nav-banco" onclick="navTo('banco')">
         <i class="fa-solid fa-database"></i>
         Banco de Dados
+      </div>
+
+      <div class="nav-section-label">Marketing</div>
+
+      <div class="nav-item" id="nav-anuncios" onclick="window.location.href='/anuncios/'">
+        <i class="fa-solid fa-bullhorn"></i>
+        CRM de Anúncios
       </div>
 
     </nav>
