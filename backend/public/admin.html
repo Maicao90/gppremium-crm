@@ -772,6 +772,13 @@
 
     /* Nada de informação de banco/nuvem à mostra na sidebar */
     .sidebar-footer .cloud-mini-badge { display: none; }
+
+    /* ===== MODO EMBED (?embed=1) — esta página dentro da central /anuncios:
+       o menu/header daqui somem; quem manda é o menu único da central ===== */
+    html.embed .sidebar, html.embed .sidebar-backdrop, html.embed header { display: none !important; }
+    html.embed .main-wrapper { margin-left: 0; }
+    html.embed body { background-image: none; }
+    html.embed .page { padding: 1.2rem; }
   </style>
 </head>
 <body>
@@ -1242,6 +1249,17 @@
       if (ic) ic.className = atual === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
     }
     (function () { var t = document.documentElement.getAttribute('data-theme'); var ic = document.querySelector('#theme-toggle i'); if (ic && t === 'dark') ic.className = 'fa-solid fa-sun'; })();
+
+    // Modo embed: esta página rodando DENTRO da central /anuncios (menu único lá).
+    // ?embed=1 esconde sidebar/header; ?view=dashboard|atendentes|inbox abre a tela direto.
+    (function () {
+      try {
+        var p = new URLSearchParams(location.search);
+        if (p.get('embed') === '1') document.documentElement.classList.add('embed');
+        var v = p.get('view');
+        if (v) navTo(v);
+      } catch (e) { /* noop */ }
+    })();
 
     function navTo(id) {
       // Oculta todas as páginas
