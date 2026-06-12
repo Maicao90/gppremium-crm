@@ -695,9 +695,10 @@
     .sidebar { background: linear-gradient(180deg,#1a2348 0%,#141b3a 100%); border-right-color: rgba(255,255,255,0.09); }
     .sidebar-logo { border-bottom-color: rgba(255,255,255,0.09); justify-content: center; height: 72px; padding: 0 1.1rem; }
     .sidebar-logo-img { height: 44px; width: auto; max-width: 92%; display: block; background:#fff; border-radius: 10px; padding: 6px 12px; }
-    .gp-mark { font-family: 'Outfit', sans-serif; font-style: italic; font-weight: 800; font-size: 3rem; letter-spacing: -3px; line-height: 1; user-select: none; }
+    .gp-mark { font-family: 'Outfit', sans-serif; font-style: italic; font-weight: 800; font-size: 2rem; letter-spacing: -1px; line-height: 1; user-select: none; display: inline-flex; align-items: baseline; gap: 5px; }
     .gp-mark .gp-g { color: #e8252c; }
     .gp-mark .gp-p { color: #fff; }
+    .gp-mark .gp-premium { font-size: 0.92rem; font-weight: 600; font-style: italic; letter-spacing: 1px; text-transform: uppercase; color: #b8c0d6; }
     header { height: 72px; min-height: 72px; padding: 0 2rem; }
     .theme-toggle { background:#fff; border:1px solid var(--border-color); color: var(--text-muted); width:38px; height:38px; border-radius:10px; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.95rem; transition:all 0.2s; }
     .theme-toggle:hover { color: var(--primary); border-color: rgba(232,37,44,0.35); }
@@ -786,7 +787,7 @@
   <!-- ══ SIDEBAR ══ -->
   <aside class="sidebar">
     <div class="sidebar-logo">
-      <span class="gp-mark"><span class="gp-g">G</span><span class="gp-p">P</span></span>
+      <span class="gp-mark"><span class="gp-g">G</span><span class="gp-p">P</span><span class="gp-premium">Premium</span></span>
     </div>
 
     <nav class="sidebar-nav">
