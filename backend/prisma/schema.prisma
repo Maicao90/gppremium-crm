@@ -101,3 +101,61 @@ model Template {
   texto     String
   criadoEm  DateTime @default(now())
 }
+
+// ── CRM de ANÚNCIOS (antes mock/localStorage; agora persiste no mesmo banco) ──
+model Empresa {
+  id         String     @id @default(uuid())
+  name       String     @default("")
+  segment    String     @default("")
+  notes      String     @default("")
+  created_at DateTime   @default(now())
+  lojas      Loja[]
+  campanhas  Campanha[]
+}
+
+model Loja {
+  id            String     @id @default(uuid())
+  company_id    String
+  empresa       Empresa    @relation(fields: [company_id], references: [id], onDelete: Cascade)
+  store_name    String     @default("")
+  city          String     @default("")
+  state         String     @default("")
+  whatsapp      String     @default("")
+  telefone_fixo String     @default("")
+  site          String     @default("")
+  instagram     String     @default("")
+  manager_name  String     @default("")
+  notes         String     @default("")
+  created_at    DateTime   @default(now())
+  campanhas     Campanha[]
+}
+
+model Campanha {
+  id           String   @id @default(uuid())
+  company_id   String
+  empresa      Empresa  @relation(fields: [company_id], references: [id], onDelete: Cascade)
+  store_id     String?
+  loja         Loja?    @relation(fields: [store_id], references: [id], onDelete: SetNull)
+  name         String   @default("")
+  platform     String   @default("Meta")
+  status       String   @default("Active")
+  spend        Float    @default(0)
+  leads        Int      @default(0)
+  daily_budget Float?
+  keywords     String?
+  created_at   DateTime @default(now())
+
+  @@index([company_id])
+}
+
+model ContaAnuncio {
+  id             String   @id @default(uuid())
+  nome           String   @default("")
+  plataforma     String   @default("google")
+  saldo          Float    @default(0)
+  gastoDia       Float    @default(0)
+  limiteAlerta   Float    @default(0)
+  ultimoDepValor Float    @default(0)
+  ultimoDepData  String   @default("")
+  created_at     DateTime @default(now())
+}

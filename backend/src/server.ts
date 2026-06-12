@@ -14,6 +14,7 @@ import contatosRouter from './routes/contatos';
 import configuracoesRouter from './routes/configuracoes';
 import usuariosRouter from './routes/usuarios';
 import inboxRouter from './routes/inbox';
+import crmAnunciosRouter from './routes/crmAnuncios';
 
 dotenv.config();
 
@@ -119,6 +120,7 @@ app.use('/api/contatos', contatosRouter);
 app.use('/api/configuracoes', configuracoesRouter);
 app.use('/api/usuarios', usuariosRouter);
 app.use('/api/inbox', inboxRouter);
+app.use('/api', crmAnunciosRouter); // /api/empresas, /api/lojas, /api/campanhas, /api/contas
 
 // Rotas da API de Nuvem do Painel Admin
 app.get('/api/admin/nuvem', (req, res) => {
