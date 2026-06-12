@@ -541,26 +541,42 @@ const WhatsAppCRM = () => {
 
       if (event.data?.type === "CRM_LIVE_SEARCH") {
         const query = event.data.query
-        // Seletores robustos: o WhatsApp Web mudou a caixa de busca ao longo das versões
-        // (ora usa title, ora aria-label, ora role=textbox/data-tab). Tentamos todos.
-        const SEARCH_SELECTORS = [
-          'div[contenteditable="true"][aria-label*="esquis"]',   // "Pesquisar..." (PT)
-          'div[contenteditable="true"][aria-label*="earch"]',    // "Search..." (EN)
-          'div[contenteditable="true"][title*="esquis"]',
-          'div[contenteditable="true"][title*="earch"]',
-          'div[role="textbox"][contenteditable="true"][data-tab="3"]',
-          '#side div[contenteditable="true"][role="textbox"]',
-          '#side div[contenteditable="true"]',
-          'div[data-testid="chat-list-search"] div[contenteditable="true"]'
-        ]
-        let searchInput: HTMLDivElement | null = null
-        for (const sel of SEARCH_SELECTORS) {
-          const el = document.querySelector(sel) as HTMLDivElement
-          if (el) { searchInput = el; break }
+        // Camada 1: helper geométrico (o mesmo do RPA) — acha contenteditable OU input,
+        // ignorando a caixa de digitar do chat. Sobrevive a mudanças de seletor do WhatsApp.
+        let searchInput: HTMLElement | null = obterBarraPesquisaGeometrica()
+
+        // Camada 2: seletores conhecidos das versões do WhatsApp Web
+        if (!searchInput) {
+          const SEARCH_SELECTORS = [
+            'div[contenteditable="true"][aria-label*="esquis"]',   // "Pesquisar..." (PT)
+            'div[contenteditable="true"][aria-label*="earch"]',    // "Search..." (EN)
+            'div[contenteditable="true"][title*="esquis"]',
+            'div[contenteditable="true"][title*="earch"]',
+            'div[role="textbox"][contenteditable="true"][data-tab="3"]',
+            '#side div[contenteditable="true"][role="textbox"]',
+            '#side div[contenteditable="true"]',
+            '#side input[type="text"], #side input[type="search"]',
+            'div[data-testid="chat-list-search"] div[contenteditable="true"]'
+          ]
+          for (const sel of SEARCH_SELECTORS) {
+            const el = document.querySelector(sel) as HTMLElement
+            if (el) { searchInput = el; break }
+          }
+        }
+
+        // Camada 3: a caixa pode estar fechada — clica na lupa e tenta de novo
+        if (!searchInput) {
+          const lupa = document.querySelector('button[aria-label*="esquis"], button[aria-label*="earch"], span[data-icon="search"]')
+          if (lupa) {
+            try { ((lupa.closest('button') || lupa) as HTMLElement).click() } catch { /* noop */ }
+            await new Promise(r => setTimeout(r, 350))
+            searchInput = obterBarraPesquisaGeometrica()
+          }
         }
 
         if (!searchInput) {
-          console.warn("[CRM] Caixa de busca do WhatsApp Web não encontrada (seletores podem ter mudado).")
+          const editaveis = document.querySelectorAll('div[contenteditable="true"], input').length
+          console.warn(`[CRM] Caixa de busca do WhatsApp Web não encontrada (DOM mudou?). Campos editáveis na página: ${editaveis}.`)
           window.postMessage({ type: "CRM_LIVE_SEARCH_RESULTS", results: [] }, "*")
           return
         }
