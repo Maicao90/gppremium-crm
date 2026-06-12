@@ -438,14 +438,17 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
 
       try {
         // Conversa recente? Qualquer mensagem (enviada OU recebida) dentro da janela de
-        // silêncio bloqueia a saudação — ignorando a mensagem que acabou de chegar.
+        // silêncio bloqueia a saudação. IMPORTANTE: ignoramos os últimos 45s — a mensagem
+        // que ACABOU de chegar (e mídias, que são salvas com atraso por causa do download)
+        // não podem contar como "conversa anterior", senão a 1ª mensagem de áudio/figurinha
+        // bloqueava a própria saudação. O "enviar só 1x" é garantido pelo autoReplyHistory abaixo.
         const desde = new Date(agoraMs - SILENCIO_HORAS * 60 * 60 * 1000);
+        const ate = new Date(agoraMs - 45 * 1000);
         const conversaRecente = await prisma.mensagem.findFirst({
           where: {
             usuarioId,
             OR: [{ chatJid: remoteJid }, { numeroReal: { in: chavesDedup } }],
-            timestamp: { gte: desde },
-            NOT: { waId: msg.key.id || '___sem_id___' }
+            timestamp: { gte: desde, lt: ate }
           }
         });
         if (conversaRecente) return;
