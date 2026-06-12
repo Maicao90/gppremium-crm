@@ -174,8 +174,15 @@ function tipoMensagem(message: any): string {
   return 'outro';
 }
 
-// Memória ultrarrápida para garantir que uma auto-resposta saia apenas UMA VEZ por sessão
-const autoRepliedNumbers = new Set<string>();
+// ─── AUTO-RESPOSTA POR "SILÊNCIO" ───
+// A saudação só sai quando a conversa estava PARADA: se houve qualquer troca de
+// mensagem com o contato nas últimas AUTO_REPLY_SILENCIO_HORAS, não envia.
+// Quem conversa todo dia nunca recebe; quem sumiu 2+ dias recebe de novo.
+// Trava extra: nunca mais de 1 por contato a cada 24h (sobrevive a reinícios via banco).
+const SILENCIO_HORAS = Number(process.env.AUTO_REPLY_SILENCIO_HORAS || 48);
+const TRAVA_24H_MS = 24 * 60 * 60 * 1000;
+// Memória rápida: última auto-resposta por contato (evita rajada entre mensagens seguidas)
+const ultimaAutoMem = new Map<string, number>();
 
 export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
   if (!usuarioId) return;
@@ -416,34 +423,56 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
         });
       }
 
-      // ─── 3. AUTO-RESPOSTA (recepção) — enviada SÓ UMA VEZ por contato ───
+      // ─── 3. AUTO-RESPOSTA (recepção) — regra de SILÊNCIO (não é mais "1x para sempre") ───
       const numeroRecep = (await resolverNumeroReal(sock, msg, remoteJid)) || numero;
-      // Considera TODAS as formas que o contato pode ter sido salvo (número real OU @lid cru),
-      // para NUNCA repetir — nem na virada de chave (@lid -> número real).
+      // Considera TODAS as formas que o contato pode ter sido salvo (número real OU @lid cru)
       const chavesDedup = Array.from(new Set([numeroRecep, numero].filter(Boolean)));
       const memKeys = chavesDedup.map(k => `${usuarioId}_${k}`);
 
-      // Check rápido em memória (qualquer das chaves)
-      if (memKeys.some(mk => autoRepliedNumbers.has(mk))) return;
+      // Trava rápida em memória: já saiu auto-resposta pra esse contato nas últimas 24h?
+      const agoraMs = Date.now();
+      if (memKeys.some(mk => (ultimaAutoMem.get(mk) || 0) > agoraMs - TRAVA_24H_MS)) return;
 
       const usuario = await prisma.usuario.findUnique({ where: { id: usuarioId } });
       if (!usuario || !usuario.autoRespostaAtiva || !usuario.autoRespostaMensagem) return;
 
-      // DEDUP PERSISTENTE: já respondemos este contato por QUALQUER uma das chaves?
-      const jaRespondido = await prisma.autoReplyHistory.findFirst({
-        where: { usuarioId, numero: { in: chavesDedup } }
-      }).catch(() => null);
-      if (jaRespondido) { memKeys.forEach(mk => autoRepliedNumbers.add(mk)); return; }
-
-      // Registra (chave canônica = número real) ANTES de enviar, contra corridas/reinícios
       try {
-        await prisma.autoReplyHistory.create({ data: { usuarioId, numero: numeroRecep } });
+        // Conversa recente? Qualquer mensagem (enviada OU recebida) dentro da janela de
+        // silêncio bloqueia a saudação — ignorando a mensagem que acabou de chegar.
+        const desde = new Date(agoraMs - SILENCIO_HORAS * 60 * 60 * 1000);
+        const conversaRecente = await prisma.mensagem.findFirst({
+          where: {
+            usuarioId,
+            OR: [{ chatJid: remoteJid }, { numeroReal: { in: chavesDedup } }],
+            timestamp: { gte: desde },
+            NOT: { waId: msg.key.id || '___sem_id___' }
+          }
+        });
+        if (conversaRecente) return;
+
+        // Trava persistente (sobrevive a reinício): última auto-resposta < 24h?
+        const ultimaAuto = await prisma.autoReplyHistory.findFirst({
+          where: { usuarioId, numero: { in: chavesDedup } },
+          orderBy: { criadoEm: 'desc' }
+        });
+        if (ultimaAuto && ultimaAuto.criadoEm.getTime() > agoraMs - TRAVA_24H_MS) {
+          memKeys.forEach(mk => ultimaAutoMem.set(mk, ultimaAuto.criadoEm.getTime()));
+          return;
+        }
+
+        // Registra ANTES de enviar (contra corridas/reinícios)
+        await prisma.autoReplyHistory.upsert({
+          where: { usuarioId_numero: { usuarioId, numero: numeroRecep } },
+          update: { criadoEm: new Date() },
+          create: { usuarioId, numero: numeroRecep }
+        });
       } catch (e: any) {
-        if (e?.code === 'P2002') { memKeys.forEach(mk => autoRepliedNumbers.add(mk)); return; }
-        console.error('[Baileys] Aviso no dedup de auto-resposta (seguindo em memória):', e?.message);
+        // Banco indisponível → NÃO envia (antes, o erro deixava enviar repetido).
+        console.error('[Baileys] Auto-resposta pulada por erro no banco:', e?.message);
+        return;
       }
-      memKeys.forEach(mk => autoRepliedNumbers.add(mk));
-      console.log(`[Baileys] Enviando auto-resposta (1x) para ${numeroRecep} (Usuário: ${usuarioId})`);
+      memKeys.forEach(mk => ultimaAutoMem.set(mk, agoraMs));
+      console.log(`[Baileys] Enviando auto-resposta (silêncio > ${SILENCIO_HORAS}h) para ${numeroRecep} (Usuário: ${usuarioId})`);
 
       try {
         const enviadaAuto = await sock.sendMessage(remoteJid, { text: usuario.autoRespostaMensagem });
@@ -463,7 +492,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       } catch (e) {
         console.error("Erro ao enviar auto-reply:", e);
         // Se falhar o envio, libera para tentar de novo depois (memória + banco)
-        memKeys.forEach(mk => autoRepliedNumbers.delete(mk));
+        memKeys.forEach(mk => ultimaAutoMem.delete(mk));
         await prisma.autoReplyHistory.delete({ where: { usuarioId_numero: { usuarioId, numero: numeroRecep } } }).catch(() => {});
       }
 

@@ -236,7 +236,7 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 1.3rem; color: white; flex-shrink: 0;
     }
-    .stat-icon.total   { background: linear-gradient(135deg,#6366f1,#a855f7); }
+    .stat-icon.total   { background: linear-gradient(135deg,#1e2a6b,#2a3a86); }
     .stat-icon.sucesso { background: var(--gradient-success); }
     .stat-icon.pendente{ background: linear-gradient(135deg,#d97706,#f59e0b); }
     .stat-icon.falha   { background: var(--gradient-danger); }
@@ -1357,7 +1357,7 @@
           const label = muitos ? `${pad(dia.getDate())}/${pad(dia.getMonth()+1)}` : dia.toLocaleDateString('pt-BR', { weekday: 'short' }).replace('.', '');
           return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:5px;height:100%;">
             <div style="font-size:0.72rem;color:#fff;font-weight:700;">${d.total}</div>
-            <div style="width:60%;background:linear-gradient(180deg,#a855f7,#7c3aed);border-radius:6px 6px 0 0;height:${Math.max(4, altura)}%;min-height:4px;"></div>
+            <div style="width:60%;background:linear-gradient(180deg,#e8252c,#c81e24);border-radius:6px 6px 0 0;height:${Math.max(4, altura)}%;min-height:4px;"></div>
             <div style="font-size:0.65rem;color:var(--text-muted);text-transform:capitalize;">${label}</div>
           </div>`;
         }).join('');
@@ -1502,7 +1502,7 @@
           ${card('Enviados', u.enviados, 'var(--success)')}
           ${card('Pendentes', u.pendentes, 'var(--warning)')}
           ${card('Falhados', u.falhados, 'var(--danger)')}
-          <div style="grid-column:span 2;">${card('Taxa de Conversão', u.conversao + '%', '#a855f7')}</div>
+          <div style="grid-column:span 2;">${card('Taxa de Conversão', u.conversao + '%', '#e8252c')}</div>
         </div>
         <div style="display:flex;gap:8px;margin-top:18px;">
           <button class="btn-save" style="flex:1;" onclick="fecharModalMetricas();abrirModalEdicao('${u.id}')"><i class="fa-solid fa-pen-to-square"></i> Editar</button>
@@ -1534,7 +1534,7 @@
           return;
         }
         _agCache = {};
-        const cores = { pendente:'var(--warning)', enviado:'var(--success)', falhou:'var(--danger)', enviando:'#3b82f6', cliente_respondeu:'#a855f7', cancelado:'var(--text-muted)' };
+        const cores = { pendente:'var(--warning)', enviado:'var(--success)', falhou:'var(--danger)', enviando:'#3b82f6', cliente_respondeu:'#4a61c9', cancelado:'var(--text-muted)' };
         cont.innerHTML = lista.map(a => {
           _agCache[a.id] = a;
           const cor = cores[a.status] || 'var(--text-muted)';
