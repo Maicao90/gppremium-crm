@@ -432,9 +432,19 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       // Trava rápida em memória: já saiu auto-resposta pra esse contato nas últimas 24h?
       const agoraMs = Date.now();
       if (memKeys.some(mk => (ultimaAutoMem.get(mk) || 0) > agoraMs - TRAVA_24H_MS)) return;
+      // RESERVA IMEDIATA (anti-corrida): o cliente costuma mandar várias mensagens juntas
+      // (texto + áudio + áudio) e cada uma é um evento separado. As checagens abaixo usam
+      // 'await' (banco), então dois eventos passavam pela trava acima AO MESMO TEMPO e os
+      // DOIS enviavam a saudação. Marcamos AQUI, de forma síncrona (sem await no meio): o
+      // segundo evento já encontra a trava e sai. Se não enviarmos (erro de banco), a
+      // reserva é desfeita mais abaixo para permitir nova tentativa.
+      memKeys.forEach(mk => ultimaAutoMem.set(mk, agoraMs));
 
       const usuario = await prisma.usuario.findUnique({ where: { id: usuarioId } });
-      if (!usuario || !usuario.autoRespostaAtiva || !usuario.autoRespostaMensagem) return;
+      if (!usuario || !usuario.autoRespostaAtiva || !usuario.autoRespostaMensagem) {
+        memKeys.forEach(mk => ultimaAutoMem.delete(mk)); // sem auto-resposta configurada: libera a reserva
+        return;
+      }
 
       try {
         // Conversa recente? Qualquer mensagem (enviada OU recebida) dentro da janela de
@@ -472,6 +482,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       } catch (e: any) {
         // Banco indisponível → NÃO envia (antes, o erro deixava enviar repetido).
         console.error('[Baileys] Auto-resposta pulada por erro no banco:', e?.message);
+        memKeys.forEach(mk => ultimaAutoMem.delete(mk)); // desfaz a reserva: permite nova tentativa depois
         return;
       }
       memKeys.forEach(mk => ultimaAutoMem.set(mk, agoraMs));
