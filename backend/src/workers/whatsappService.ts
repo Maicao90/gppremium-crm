@@ -210,6 +210,48 @@ function iniciarVigiaConexao() {
 }
 iniciarVigiaConexao();
 
+// ─── LEMBRETE DE AGENDAMENTOS (no WhatsApp do PRÓPRIO atendente) ───
+// A cada ~2-3h no expediente, manda um lembrete pro número do próprio atendente
+// (conversa "Mensagens para mim") pra ele agendar os retornos. 100% no servidor —
+// não mexe na extensão. Ajustável por env: LEMBRETE_INTERVALO_H.
+const LEMBRETE_INTERVALO_MS = Number(process.env.LEMBRETE_INTERVALO_H || 2.5) * 60 * 60 * 1000;
+const TEXTO_LEMBRETE = '🔔 *Lembrete:* agende os retornos dos seus clientes!\nCada agendamento marcado é uma venda a mais 📈';
+const ultimoLembrete = new Map<string, number>();
+
+function estaNoExpedienteLembrete(): boolean {
+  const agoraBR = new Date(Date.now() - 3 * 60 * 60 * 1000); // fuso BR (UTC-3)
+  const hora = agoraBR.getUTCHours();
+  const dia = agoraBR.getUTCDay(); // 0=dom ... 6=sáb
+  return dia >= 1 && dia <= 6 && hora >= 8 && hora < 18; // seg a sáb, 8h às 18h
+}
+
+let lembretesIniciado = false;
+function iniciarLembretes() {
+  if (lembretesIniciado) return;
+  lembretesIniciado = true;
+  setInterval(() => {
+    try {
+      if (!estaNoExpedienteLembrete()) return;
+      const agora = Date.now();
+      for (const [uid, sock] of sessions.entries()) {
+        if (!connectedUsers.has(uid)) continue;
+        const last = ultimoLembrete.get(uid);
+        if (last === undefined) { ultimoLembrete.set(uid, agora); continue; } // 1ª vez: só marca, não envia já
+        if (last > agora - LEMBRETE_INTERVALO_MS) continue;
+        const proprio = (sock as any).user?.id;
+        if (!proprio) continue;
+        const num = String(proprio).replace(/[:@].*$/, ''); // só os dígitos do número do atendente
+        if (!num) continue;
+        ultimoLembrete.set(uid, agora);
+        (sock as any).sendMessage(num + '@s.whatsapp.net', { text: TEXTO_LEMBRETE })
+          .then((sent: any) => { lembrarWaId(sent?.key?.id); console.log(`[Lembrete] enviado para o atendente ${uid}`); })
+          .catch((e: any) => console.error('[Lembrete] erro ao enviar:', e?.message));
+      }
+    } catch (e) {}
+  }, 5 * 60 * 1000); // checa a cada 5 min
+}
+iniciarLembretes();
+
 export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
   if (!usuarioId) return;
 
