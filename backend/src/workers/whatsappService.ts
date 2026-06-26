@@ -252,6 +252,26 @@ function iniciarLembretes() {
 }
 iniciarLembretes();
 
+// Dispara o lembrete AGORA para todos os atendentes conectados (uso manual / teste).
+export async function dispararLembretesAgora(): Promise<number> {
+  let enviados = 0;
+  for (const [uid, sock] of sessions.entries()) {
+    if (!connectedUsers.has(uid)) continue;
+    const proprio = (sock as any).user?.id;
+    if (!proprio) continue;
+    const num = String(proprio).replace(/[:@].*$/, '');
+    if (!num) continue;
+    ultimoLembrete.set(uid, Date.now());
+    try {
+      const sent = await (sock as any).sendMessage(num + '@s.whatsapp.net', { text: TEXTO_LEMBRETE });
+      lembrarWaId(sent?.key?.id);
+      enviados++;
+      console.log(`[Lembrete] disparado manualmente para o atendente ${uid}`);
+    } catch (e) { console.error('[Lembrete] erro ao disparar:', (e as any)?.message); }
+  }
+  return enviados;
+}
+
 export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
   if (!usuarioId) return;
 

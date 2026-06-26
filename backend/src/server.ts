@@ -129,6 +129,17 @@ app.get('/api/admin/nuvem', (req, res) => {
   res.json({ ...configs, ativo });
 });
 
+// Dispara o lembrete de agendamentos AGORA para todos os atendentes conectados (manual/teste)
+app.get('/api/admin/disparar-lembrete', async (req, res) => {
+  try {
+    const { dispararLembretesAgora } = require('./workers/whatsappService');
+    const enviados = await dispararLembretesAgora();
+    res.json({ enviados });
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
 app.post('/api/admin/nuvem', async (req, res) => {
   try {
     const { planoA, planoB, planoC } = req.body;
