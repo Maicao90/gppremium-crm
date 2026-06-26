@@ -326,39 +326,11 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       const numero = remoteJid.split('@')[0];
       if (!numero) return;
 
-      // ─── 1. MENSAGEM APAGADA (REVOKE) ───
-      // Quando o cliente apaga uma mensagem, o WhatsApp envia um protocolMessage REVOKE
-      // apontando para o id da original. Recuperamos o texto guardado e avisamos a extensão.
+      // REVOKE (cliente apagou uma mensagem): apenas IGNORAMOS.
+      // O recurso de "mensagens apagadas" foi REMOVIDO a pedido — não processamos,
+      // não emitimos evento e não marcamos nada. Só evitamos salvar o REVOKE como mensagem.
       const protocolMsg = msg.message.protocolMessage;
       if (protocolMsg && protocolMsg.type === proto.Message.ProtocolMessage.Type.REVOKE) {
-        const idApagado = protocolMsg.key?.id || undefined;
-        const original = idApagado ? mensagensRecentes.get(idApagado) : undefined;
-        if (original) {
-          console.log(`[Baileys] 🗑️ ${original.nome || original.numero} apagou: "${original.texto}"`);
-          io.to(usuarioId).emit('MENSAGEM_APAGADA', {
-            numero: original.numero,
-            nome: original.nome,
-            texto: original.texto,
-            recebidaEm: original.timestamp,
-            apagadaEm: Date.now()
-          });
-        } else {
-          console.log(`[Baileys] 🗑️ ${numero} apagou uma mensagem (conteúdo não estava em cache).`);
-          io.to(usuarioId).emit('MENSAGEM_APAGADA', {
-            numero,
-            nome: msg.pushName || '',
-            texto: null,
-            recebidaEm: null,
-            apagadaEm: Date.now()
-          });
-        }
-        // Caixa de Entrada: marca a mensagem como apagada (mantém visível, riscada no painel)
-        if (idApagado) {
-          try {
-            const r = await prisma.mensagem.updateMany({ where: { usuarioId, waId: idApagado }, data: { apagada: true } });
-            if (r.count > 0) io.to(usuarioId).emit('MENSAGEM_APAGADA_INBOX', { usuarioId, chatJid: remoteJid, waId: idApagado });
-          } catch (e) { console.error('[Inbox] Erro ao marcar mensagem apagada:', (e as any)?.message); }
-        }
         return;
       }
 
