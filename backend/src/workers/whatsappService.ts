@@ -425,11 +425,12 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       const numeroRecep = (await resolverNumeroReal(sock, msg, remoteJid)) || numero;
       // Considera TODAS as formas que o contato pode ter sido salvo (número real OU @lid cru)
       const chavesDedup = Array.from(new Set([numeroRecep, numero].filter(Boolean)));
-      const memKeys = chavesDedup.map(k => `${usuarioId}_${k}`);
+      const hojeBR = new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString().slice(0, 10);
+      const memKeys = chavesDedup.map(k => `${usuarioId}_${k}_${hojeBR}`);
 
       // Trava rápida em memória: já saiu auto-resposta pra esse contato nas últimas 24h?
       const agoraMs = Date.now();
-      if (memKeys.some(mk => (ultimaAutoMem.get(mk) || 0) > agoraMs - TRAVA_24H_MS)) return;
+      if (memKeys.some(mk => ultimaAutoMem.has(mk))) return;
       // RESERVA IMEDIATA (anti-corrida): o cliente costuma mandar várias mensagens juntas
       // (texto + áudio + áudio) e cada uma é um evento separado. As checagens abaixo usam
       // 'await' (banco), então dois eventos passavam pela trava acima AO MESMO TEMPO e os
@@ -450,25 +451,16 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
         // que ACABOU de chegar (e mídias, que são salvas com atraso por causa do download)
         // não podem contar como "conversa anterior", senão a 1ª mensagem de áudio/figurinha
         // bloqueava a própria saudação. O "enviar só 1x" é garantido pelo autoReplyHistory abaixo.
-        const desde = new Date(agoraMs - SILENCIO_HORAS * 60 * 60 * 1000);
-        const ate = new Date(agoraMs - 45 * 1000);
-        const conversaRecente = await prisma.mensagem.findFirst({
-          where: {
-            usuarioId,
-            OR: [{ chatJid: remoteJid }, { numeroReal: { in: chavesDedup } }],
-            timestamp: { gte: desde, lt: ate }
-          }
-        });
-        if (conversaRecente) return;
+        // Regra: 1x POR DIA (calendario, fuso BR). A checagem do "ja respondeu hoje" esta abaixo.
 
         // Trava persistente (sobrevive a reinício): última auto-resposta < 24h?
         const ultimaAuto = await prisma.autoReplyHistory.findFirst({
           where: { usuarioId, numero: { in: chavesDedup } },
           orderBy: { criadoEm: 'desc' }
         });
-        if (ultimaAuto && ultimaAuto.criadoEm.getTime() > agoraMs - TRAVA_24H_MS) {
-          memKeys.forEach(mk => ultimaAutoMem.set(mk, ultimaAuto.criadoEm.getTime()));
-          return;
+        if (ultimaAuto) {
+          const ultimaBR = new Date(ultimaAuto.criadoEm.getTime() - 3 * 60 * 60 * 1000).toISOString().slice(0, 10);
+          if (ultimaBR === hojeBR) { memKeys.forEach(mk => ultimaAutoMem.set(mk, ultimaAuto.criadoEm.getTime())); return; }
         }
 
         // Registra ANTES de enviar (contra corridas/reinícios)
