@@ -184,6 +184,32 @@ const TRAVA_24H_MS = 24 * 60 * 60 * 1000;
 // Memória rápida: última auto-resposta por contato (evita rajada entre mensagens seguidas)
 const ultimaAutoMem = new Map<string, number>();
 
+// ─── VIGIA DE CONEXÃO ───
+// A cada 60s, garante que TODO atendente com credenciais salvas tenha uma sessão ativa.
+// Pega os casos raros em que a sessão morre SEM disparar o evento 'close' (congelamento
+// silencioso) ou em que um retry falhou. Reconecta sozinho — sem precisar de QR novo.
+let vigiaIniciado = false;
+function iniciarVigiaConexao() {
+  if (vigiaIniciado) return;
+  vigiaIniciado = true;
+  setInterval(() => {
+    try {
+      const dir = path.join(__dirname, '../../../prisma');
+      if (!fs.existsSync(dir)) return;
+      const sessoes: string[] = fs.readdirSync(dir).filter((d: string) => d.startsWith('auth_info_baileys_'));
+      for (const s of sessoes) {
+        const uid = s.replace('auth_info_baileys_', '');
+        // Tem credencial salva, mas não está conectado NEM conectando → ressuscita.
+        if (uid && !sessions.has(uid) && !connectedUsers.has(uid)) {
+          console.log(`[Baileys][Vigia] Sessão de ${uid} caída — reconectando automaticamente...`);
+          connectToWhatsApp(uid).catch(() => {});
+        }
+      }
+    } catch (e) {}
+  }, 60000);
+}
+iniciarVigiaConexao();
+
 export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
   if (!usuarioId) return;
 
@@ -277,8 +303,8 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
           where: { id: usuarioId },
           data: { whatsappConectado: false }
         }).catch(() => {});
-        console.log(`[Baileys] Reconectando usuário ${usuarioId} em 5 segundos...`);
-        setTimeout(() => connectToWhatsApp(usuarioId).catch(err => console.error("Erro no retry:", err)), 5000);
+        console.log(`[Baileys] Reconectando usuário ${usuarioId} em 2 segundos...`);
+        setTimeout(() => connectToWhatsApp(usuarioId).catch(err => console.error("Erro no retry:", err)), 2000);
       }
     } else if (connection === 'open') {
       console.log(`[Baileys] Conexão aberta com sucesso! Servidor pronto para disparos do usuário ${usuarioId}.`);
