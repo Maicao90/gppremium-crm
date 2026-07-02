@@ -1,4 +1,4 @@
-import { MetricaCampanhaDia, ResultadoTeste, periodoDias } from './tipos';
+import { MetricaCampanhaDia, ResultadoTeste, SaldoConta, periodoDias } from './tipos';
 
 // ════════════════════════════════════════════════════════════════════════
 // INTEGRAÇÃO META ADS (Graph API — Facebook/Instagram)
@@ -136,6 +136,46 @@ export async function buscarMetricasDiarias(credenciais: CredenciaisMeta, dias =
   }
 
   return metricas;
+}
+
+// Busca saldo e gasto do dia da CONTA (alimenta a tela "Saldos das Contas").
+// - saldo: spend_cap e amount_spent vêm em CENTAVOS; só há saldo calculável quando
+//   a conta tem limite de gastos (spend_cap > 0). Conta sem limite (pós-paga no
+//   cartão) → saldo = null, e a UI preserva o valor digitado manualmente.
+// - gastoDia: insights com date_preset=today (spend já vem em unidade monetária).
+export async function buscarSaldoConta(credenciais: CredenciaisMeta): Promise<SaldoConta> {
+  const erroValidacao = validarCredenciais(credenciais);
+  if (erroValidacao) throw new Error(erroValidacao);
+
+  const conta = normalizarConta(credenciais.adAccountId);
+
+  // 1) Dados da conta: spend_cap / amount_spent (centavos) + moeda
+  const paramsConta = new URLSearchParams({
+    fields: 'name,currency,amount_spent,spend_cap',
+    access_token: credenciais.accessToken,
+  });
+  const jsonConta = await chamarGraph(`${GRAPH_BASE}/${conta}?${paramsConta.toString()}`);
+
+  const spendCap = Number(jsonConta?.spend_cap ?? 0);
+  const amountSpent = Number(jsonConta?.amount_spent ?? 0);
+  // spend_cap = 0 (ou ausente) significa "sem limite de gastos" → saldo desconhecido
+  const saldo = spendCap > 0 ? Math.round(spendCap - amountSpent) / 100 : null;
+  const moeda = jsonConta?.currency ? String(jsonConta.currency) : undefined;
+
+  // 2) Gasto de HOJE no nível da conta (insights sem level = conta inteira)
+  const paramsGasto = new URLSearchParams({
+    date_preset: 'today',
+    fields: 'spend',
+    access_token: credenciais.accessToken,
+  });
+  const jsonGasto = await chamarGraph(`${GRAPH_BASE}/${conta}/insights?${paramsGasto.toString()}`);
+
+  let gastoDia = 0;
+  for (const linha of jsonGasto?.data || []) {
+    gastoDia += Number(linha?.spend ?? 0); // spend já vem em unidade monetária
+  }
+
+  return { saldo, gastoDia: Math.round(gastoDia * 100) / 100, moeda };
 }
 
 // Testa a conexão: busca nome e status da conta de anúncios

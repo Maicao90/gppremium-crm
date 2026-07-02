@@ -195,4 +195,7 @@ model ContaAnuncio {
   ultimoDepValor Float    @default(0)
   ultimoDepData  String   @default("")
   created_at     DateTime @default(now())
+  // Vínculo com a ConexaoAds que alimenta esta conta automaticamente (saldo/gasto do dia).
+  // Null = conta gerenciada manualmente na tela "Saldos das Contas".
+  conexao_id     String?
 }

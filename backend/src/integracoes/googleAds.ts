@@ -1,4 +1,4 @@
-import { MetricaCampanhaDia, ResultadoTeste, periodoDias } from './tipos';
+import { MetricaCampanhaDia, ResultadoTeste, SaldoConta, periodoDias } from './tipos';
 
 // ════════════════════════════════════════════════════════════════════════
 // INTEGRAÇÃO GOOGLE ADS (REST)
@@ -134,6 +134,65 @@ export async function buscarMetricasDiarias(credenciais: CredenciaisGoogle, dias
   }
 
   return metricas;
+}
+
+// Busca saldo e gasto do dia da CONTA (alimenta a tela "Saldos das Contas").
+// - gastoDia: soma do cost_micros de hoje (nível customer).
+// - saldo: só existe em conta PRÉ-PAGA/faturada (account_budget aprovado).
+//   Conta pós-paga no cartão (sem account_budget ou limite infinito) → saldo = null,
+//   e a UI preserva o valor digitado manualmente.
+export async function buscarSaldoConta(credenciais: CredenciaisGoogle): Promise<SaldoConta> {
+  const erroValidacao = validarCredenciais(credenciais);
+  if (erroValidacao) throw new Error(erroValidacao);
+
+  const accessToken = await trocarRefreshPorAccessToken(credenciais);
+
+  // 1) Gasto de HOJE no nível da conta (customer) + moeda da conta
+  const linhasGasto = await executarBusca(
+    credenciais,
+    accessToken,
+    `SELECT metrics.cost_micros, customer.currency_code FROM customer WHERE segments.date DURING TODAY`,
+  );
+
+  let gastoDia = 0;
+  let moeda: string | undefined;
+  for (const linha of linhasGasto) {
+    gastoDia += Number(linha?.metrics?.costMicros ?? 0) / 1_000_000; // micros → moeda
+    if (linha?.customer?.currencyCode) moeda = String(linha.customer.currencyCode);
+  }
+
+  // 2) Saldo via account_budget (orçamento de conta aprovado — só pré-pago/faturado)
+  const linhasBudget = await executarBusca(
+    credenciais,
+    accessToken,
+    `SELECT account_budget.status, account_budget.adjusted_spending_limit_micros, ` +
+      `account_budget.amount_served_micros FROM account_budget ` +
+      `WHERE account_budget.status = 'APPROVED'`,
+  );
+
+  let saldo: number | null = null;
+  let algumIlimitado = false;
+  let somaSaldo = 0;
+  let temBudget = false;
+
+  for (const linha of linhasBudget) {
+    const budget = linha?.accountBudget;
+    if (!budget) continue;
+    temBudget = true;
+    // Limite ausente ou -1 = orçamento ILIMITADO (pós-pago) → não dá para calcular saldo
+    const limiteMicros = Number(budget?.adjustedSpendingLimitMicros ?? -1);
+    if (!Number.isFinite(limiteMicros) || limiteMicros < 0) {
+      algumIlimitado = true;
+      continue;
+    }
+    const servidoMicros = Number(budget?.amountServedMicros ?? 0);
+    somaSaldo += (limiteMicros - servidoMicros) / 1_000_000;
+  }
+
+  // Sem account_budget ou com limite infinito → conta no cartão pós-pago → saldo = null
+  if (temBudget && !algumIlimitado) saldo = Math.round(somaSaldo * 100) / 100;
+
+  return { saldo, gastoDia: Math.round(gastoDia * 100) / 100, moeda };
 }
 
 // Testa a conexão: valida o refresh token e faz uma query mínima na conta

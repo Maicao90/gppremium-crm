@@ -8,6 +8,8 @@ const contaOut = (c: any) => ({
   id: c.id, nome: c.nome, plataforma: c.plataforma, saldo: c.saldo,
   gastoDia: c.gastoDia, limiteAlerta: c.limiteAlerta,
   ultimoDeposito: { valor: c.ultimoDepValor, data: c.ultimoDepData },
+  // Preenchido quando a conta é alimentada automaticamente por uma ConexaoAds
+  conexaoId: c.conexao_id || null,
 });
 const contaIn = (b: any) => ({
   nome: b.nome || '', plataforma: b.plataforma || 'google',

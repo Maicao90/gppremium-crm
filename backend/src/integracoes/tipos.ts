@@ -18,6 +18,15 @@ export interface ResultadoTeste {
   detalhe: string;
 }
 
+// Saldo e gasto do dia de UMA conta de anúncio (alimenta a tela "Saldos das Contas").
+// saldo = null significa "a plataforma não informa saldo" (ex.: conta pós-paga no
+// cartão) — nesse caso o valor manual digitado pelo usuário é preservado.
+export interface SaldoConta {
+  saldo: number | null;
+  gastoDia: number;
+  moeda?: string;
+}
+
 // Formata uma data como YYYY-MM-DD (padrão aceito pelo Google e pelo Meta)
 export function formatarDataISO(d: Date): string {
   return d.toISOString().slice(0, 10);

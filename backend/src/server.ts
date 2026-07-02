@@ -14,6 +14,7 @@ import contatosRouter from './routes/contatos';
 import configuracoesRouter from './routes/configuracoes';
 import usuariosRouter from './routes/usuarios';
 import inboxRouter from './routes/inbox';
+import iaRouter from './routes/ia';
 import crmAnunciosRouter from './routes/crmAnuncios';
 import integracoesRouter from './routes/integracoes';
 import { initSyncAds } from './integracoes/syncService';
@@ -123,6 +124,7 @@ app.use('/api/contatos', contatosRouter);
 app.use('/api/configuracoes', configuracoesRouter);
 app.use('/api/usuarios', usuariosRouter);
 app.use('/api/inbox', inboxRouter);
+app.use('/api/ia', iaRouter); // Assistente IA (Claude) com contexto do CRM
 app.use('/api/integracoes', integracoesRouter); // integrações Google Ads / Meta Ads
 app.use('/api', crmAnunciosRouter); // /api/empresas, /api/lojas, /api/campanhas, /api/contas
 

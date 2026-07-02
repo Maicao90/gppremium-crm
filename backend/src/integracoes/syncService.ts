@@ -1,5 +1,5 @@
 import { prisma } from '../server';
-import { MetricaCampanhaDia } from './tipos';
+import { MetricaCampanhaDia, SaldoConta } from './tipos';
 import * as googleAds from './googleAds';
 import * as metaAds from './metaAds';
 
@@ -122,7 +122,41 @@ export async function sincronizarConexao(conexaoId: string): Promise<ResultadoSy
       }
     }
 
-    // 5) Marca a sincronização como concluída (limpa o último erro)
+    // 5) Saldo e gasto do dia da CONTA (alimenta a tela "Saldos das Contas").
+    // Try/catch SEPARADO: erro de saldo não pode derrubar o sync de campanhas.
+    try {
+      const info: SaldoConta = conexao.plataforma === 'meta'
+        ? await metaAds.buscarSaldoConta(credenciais)
+        : await googleAds.buscarSaldoConta(credenciais);
+
+      const gastoDia = Math.round(info.gastoDia * 100) / 100;
+      const existente = await prisma.contaAnuncio.findFirst({ where: { conexao_id: conexao.id } });
+      if (existente) {
+        // gastoDia atualiza SEMPRE; saldo só quando a plataforma informa (não-null) —
+        // em conta pós-paga (saldo null) o valor manual do usuário é preservado.
+        const dados: { gastoDia: number; saldo?: number } = { gastoDia };
+        if (info.saldo !== null) dados.saldo = Math.round(info.saldo * 100) / 100;
+        await prisma.contaAnuncio.update({ where: { id: existente.id }, data: dados });
+      } else {
+        await prisma.contaAnuncio.create({
+          data: {
+            nome: conexao.nome || (conexao.plataforma === 'meta' ? 'Conta Meta' : 'Conta Google'),
+            plataforma: conexao.plataforma === 'meta' ? 'meta' : 'google',
+            gastoDia,
+            saldo: info.saldo !== null ? Math.round(info.saldo * 100) / 100 : 0,
+            conexao_id: conexao.id,
+          },
+        });
+      }
+      // Saldo null = conta pós-paga: registramos no detalhe para o painel explicar
+      if (info.saldo === null) {
+        avisos.push('plataforma não informa saldo (conta pós-paga) — saldo manual mantido, só o gasto do dia foi atualizado');
+      }
+    } catch (e: any) {
+      avisos.push(`saldo da conta: ${e?.message || e}`);
+    }
+
+    // 6) Marca a sincronização como concluída (limpa o último erro)
     await prisma.conexaoAds.update({
       where: { id: conexao.id },
       data: { ultimaSync: new Date(), ultimoErro: null },
