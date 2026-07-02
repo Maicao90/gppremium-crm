@@ -434,7 +434,12 @@ const WhatsAppCRM = () => {
 
   useEffect(() => {
     if (usuarioLogado && usuarioLogado.nome) {
-      localStorage.setItem("crm_nome_atendente", usuarioLogado.nome)
+      // Só define o nome da assinatura se ainda NÃO existir um salvo.
+      // Antes, sobrescrevia em TODO reload — apagava a assinatura personalizada
+      // que a pessoa salvou nas Configurações ("salva e depois volta ao normal").
+      if (localStorage.getItem("crm_nome_atendente") === null) {
+        localStorage.setItem("crm_nome_atendente", usuarioLogado.nome)
+      }
       // Liga a assinatura manual SÓ na primeira vez (padrão). Depois respeita a caixinha.
       if (localStorage.getItem("crm_usar_assinatura_manual") === null) {
         localStorage.setItem("crm_usar_assinatura_manual", "true")
