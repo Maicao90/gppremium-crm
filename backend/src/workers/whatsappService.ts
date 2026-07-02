@@ -300,7 +300,12 @@ export async function dispararLembretesAgora(): Promise<number> {
   return enviados;
 }
 
-export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
+// Códigos de pareamento (8 dígitos) por usuário — alternativa ao QR.
+// A pessoa digita esse código no WhatsApp (Aparelhos conectados → Conectar com
+// número de telefone), sem precisar escanear QR nenhum.
+export const pairingCodes = new Map<string, string>();
+
+export async function connectToWhatsApp(usuarioId: string, socketId?: string, numeroPareamento?: string) {
   if (!usuarioId) return;
 
   // Evita criar múltiplas instâncias para o mesmo usuário se já estiver rodando
@@ -328,6 +333,22 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
 
   // Salva a instância no mapa
   sessions.set(usuarioId, sock);
+
+  // ─── PAREAMENTO POR CÓDIGO (alternativa ao QR) ───
+  // Se veio um número e a conta ainda NÃO está registrada, pede à WhatsApp um
+  // código de 8 dígitos. Não interfere no fluxo de QR (só roda quando pedido).
+  if (numeroPareamento && !sock.authState.creds.registered) {
+    setTimeout(async () => {
+      try {
+        const code = await sock.requestPairingCode(numeroPareamento);
+        pairingCodes.set(usuarioId, code);
+        io.to(usuarioId).emit('WHATSAPP_PAIRING_CODE', code);
+        console.log(`[Baileys] Código de pareamento gerado para o usuário ${usuarioId}.`);
+      } catch (e: any) {
+        console.error(`[Baileys] Erro ao gerar código de pareamento (${usuarioId}):`, e?.message);
+      }
+    }, 2500);
+  }
 
   sock.ev.on('connection.update', async (update) => {
     const { connection, lastDisconnect, qr } = update;
@@ -398,9 +419,10 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       }
     } else if (connection === 'open') {
       console.log(`[Baileys] Conexão aberta com sucesso! Servidor pronto para disparos do usuário ${usuarioId}.`);
-      // Conectou: não há mais QR pendente e o usuário entra na lista de conectados.
+      // Conectou: não há mais QR nem código de pareamento pendentes.
       connectedUsers.add(usuarioId);
       latestQR.delete(usuarioId);
+      pairingCodes.delete(usuarioId);
       io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: true });
 
       // Mantém o dispositivo web como "offline" para NÃO roubar as notificações do celular.
@@ -753,6 +775,8 @@ export async function logoutWhatsApp(usuarioId: string) {
     try { await sock.logout(); } catch (e) {}
     sessions.delete(usuarioId);
   }
+  connectedUsers.delete(usuarioId);
+  pairingCodes.delete(usuarioId);
 
   const fs = require('fs');
   const dir = path.join(__dirname, `../../../prisma/auth_info_baileys_${usuarioId}`);
@@ -762,4 +786,42 @@ export async function logoutWhatsApp(usuarioId: string) {
 
   await prisma.usuario.update({ where: { id: usuarioId }, data: { whatsappConectado: false } }).catch(()=>{});
   io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false });
+}
+
+// Gera um CÓDIGO DE PAREAMENTO (8 dígitos) para o atendente digitar no WhatsApp
+// em vez de escanear o QR. Começa a sessão do zero (apaga credenciais mortas),
+// pede o código à WhatsApp e o retorna. `numero` = DDI+DDD+telefone só dígitos.
+export async function gerarCodigoPareamento(usuarioId: string, numero: string): Promise<string> {
+  const num = String(numero || '').replace(/\D/g, '');
+  if (num.length < 12 || num.length > 15) {
+    throw new Error('Número inválido. Use DDI + DDD + número (ex.: 5561999998888).');
+  }
+  if (connectedUsers.has(usuarioId)) {
+    throw new Error('Este atendente já está com o WhatsApp conectado.');
+  }
+
+  // Derruba qualquer sessão/QR em andamento e limpa credenciais mortas, para
+  // garantir um pareamento limpo (o código só é aceito em conta não-registrada).
+  const antigo = sessions.get(usuarioId);
+  if (antigo) { try { antigo.end(undefined as any); } catch (e) {} }
+  sessions.delete(usuarioId);
+  latestQR.delete(usuarioId);
+  pairingCodes.delete(usuarioId);
+  try {
+    const fs = require('fs');
+    const dir = path.join(__dirname, `../../../prisma/auth_info_baileys_${usuarioId}`);
+    if (fs.existsSync(dir)) fs.rmSync(dir, { recursive: true, force: true });
+  } catch (e) {}
+
+  // Pequena espera para o socket antigo encerrar de verdade antes de recriar.
+  await new Promise((r) => setTimeout(r, 600));
+  await connectToWhatsApp(usuarioId, undefined, num);
+
+  // Espera o código ser gerado (requestPairingCode roda ~2,5s após o socket subir).
+  for (let i = 0; i < 25; i++) {
+    const code = pairingCodes.get(usuarioId);
+    if (code) return code;
+    await new Promise((r) => setTimeout(r, 400));
+  }
+  throw new Error('Não foi possível gerar o código agora. Tente novamente em alguns segundos.');
 }

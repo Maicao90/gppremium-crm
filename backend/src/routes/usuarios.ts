@@ -250,6 +250,23 @@ router.put('/:id/autoresposta', async (req, res) => {
   }
 });
 
+// Gerar CÓDIGO DE PAREAMENTO (8 dígitos) para conectar o WhatsApp sem QR.
+// Body: { numero: 'DDI+DDD+telefone' }. O atendente digita o código no WhatsApp
+// (Aparelhos conectados → Conectar com número de telefone).
+router.post('/:id/codigo-pareamento', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { numero } = req.body;
+    if (!numero) return res.status(400).json({ error: 'Informe o número de telefone (com DDD).' });
+    const { gerarCodigoPareamento } = require('../workers/whatsappService');
+    const codigo = await gerarCodigoPareamento(id, String(numero));
+    res.json({ codigo });
+  } catch (error: any) {
+    console.error('Erro ao gerar código de pareamento:', error?.message);
+    res.status(400).json({ error: error?.message || 'Erro ao gerar código de pareamento.' });
+  }
+});
+
 // Desconectar o WhatsApp do atendente
 router.post('/:id/desconectar', async (req, res) => {
   try {
