@@ -151,6 +151,28 @@ function armazenarMensagemRecente(id: string, dados: { usuarioId: string; numero
   }
 }
 
+// Desembrulha os "envelopes" do WhatsApp que escondem a mensagem real lá dentro:
+// mensagens temporárias (ephemeral), visualização única (viewOnce), documento com
+// legenda e mensagem editada. Sem isso, um TEXTO normal de um contato com
+// "mensagens temporárias" ligadas era salvo como tipo "outro" (ilegível no painel).
+function desembrulharMensagem(message: any): any {
+  let m = message;
+  for (let i = 0; i < 5 && m; i++) {
+    const interno =
+      m.ephemeralMessage?.message ||
+      m.viewOnceMessage?.message ||
+      m.viewOnceMessageV2?.message ||
+      m.viewOnceMessageV2Extension?.message ||
+      m.documentWithCaptionMessage?.message ||
+      m.deviceSentMessage?.message ||
+      m.editedMessage?.message?.protocolMessage?.editedMessage ||
+      m.editedMessage?.message;
+    if (!interno) break;
+    m = interno;
+  }
+  return m;
+}
+
 // Extrai o texto de uma mensagem do WhatsApp (cobre os tipos mais comuns)
 function extrairTextoMensagem(message: any): string | null {
   if (!message) return null;
@@ -159,6 +181,9 @@ function extrairTextoMensagem(message: any): string | null {
     || message.imageMessage?.caption
     || message.videoMessage?.caption
     || message.documentMessage?.caption
+    || message.contactMessage?.displayName && `👤 ${message.contactMessage.displayName}`
+    || message.locationMessage && `${message.locationMessage.degreesLatitude},${message.locationMessage.degreesLongitude}${message.locationMessage.name ? ' — ' + message.locationMessage.name : ''}`
+    || (message.pollCreationMessage || message.pollCreationMessageV2 || message.pollCreationMessageV3)?.name
     || null;
 }
 
@@ -167,10 +192,13 @@ function tipoMensagem(message: any): string {
   if (!message) return 'outro';
   if (message.conversation || message.extendedTextMessage) return 'texto';
   if (message.imageMessage) return 'imagem';
-  if (message.videoMessage) return 'video';
+  if (message.videoMessage || message.ptvMessage) return 'video';
   if (message.audioMessage) return 'audio';
   if (message.documentMessage) return 'documento';
   if (message.stickerMessage) return 'figurinha';
+  if (message.contactMessage || message.contactsArrayMessage) return 'contato';
+  if (message.locationMessage || message.liveLocationMessage) return 'localizacao';
+  if (message.pollCreationMessage || message.pollCreationMessageV2 || message.pollCreationMessageV3) return 'enquete';
   return 'outro';
 }
 
@@ -423,9 +451,11 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       }
 
       // ─── CAIXA DE ENTRADA: salva a mensagem (recebida E enviada) e avisa o painel ───
-      const _tipoMsg = tipoMensagem(msg.message);
-      const _textoMsg = extrairTextoMensagem(msg.message) || '';
-      const _anuncio = getAnuncio(msg.message); // mensagem vinda de anúncio (Click-to-WhatsApp)
+      // Desembrulha envelopes (temporária/visualização única/etc.) ANTES de classificar.
+      const _conteudo = desembrulharMensagem(msg.message);
+      const _tipoMsg = tipoMensagem(_conteudo);
+      const _textoMsg = extrairTextoMensagem(_conteudo) || '';
+      const _anuncio = getAnuncio(_conteudo); // mensagem vinda de anúncio (Click-to-WhatsApp)
       // Pula se já salvamos esta mensagem pelo envio da Caixa de Entrada (evita duplicar)
       if ((_textoMsg || _tipoMsg !== 'texto' || _anuncio) && !(msg.key.id && waIdsRecentes.has(msg.key.id))) {
         (async () => {
@@ -438,8 +468,12 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
             if (midiaUrl) tipoSalvar = 'imagem';
             const titulo = _anuncio.title || _anuncio.body || 'Anúncio';
             textoSalvar = `📢 [Anúncio] ${titulo}` + (_textoMsg ? `\n\n${_textoMsg}` : '');
-          } else if (_tipoMsg !== 'texto') {
-            midiaUrl = await baixarMidia(sock, msg, _tipoMsg, msg.key.id || '');
+          } else if (['imagem', 'video', 'audio', 'documento', 'figurinha'].includes(_tipoMsg)) {
+            // Baixa usando o conteúdo já DESEMBRULHADO (senão viewOnce/temporária falha)
+            midiaUrl = await baixarMidia(sock, { ...msg, message: _conteudo }, _tipoMsg, msg.key.id || '');
+          } else if (_tipoMsg === 'outro' && !textoSalvar) {
+            // Último recurso: salva o NOME do tipo cru pra pelo menos identificar o que veio
+            textoSalvar = Object.keys(_conteudo || {}).filter((k) => k !== 'messageContextInfo')[0] || '';
           }
           // Resolve o número REAL do contato (mesmo quando o chat é @lid)
           const numeroReal = await resolverNumeroReal(sock, msg, remoteJid);
@@ -472,7 +506,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       if (msg.key.fromMe) return;
 
       // ─── 2. ARMAZENA a mensagem recebida (para o caso de ser apagada depois) ───
-      const textoRecebido = extrairTextoMensagem(msg.message);
+      const textoRecebido = extrairTextoMensagem(_conteudo);
       if (textoRecebido && msg.key.id) {
         armazenarMensagemRecente(msg.key.id, {
           usuarioId,
