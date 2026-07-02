@@ -453,6 +453,15 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
       // ─── CAIXA DE ENTRADA: salva a mensagem (recebida E enviada) e avisa o painel ───
       // Desembrulha envelopes (temporária/visualização única/etc.) ANTES de classificar.
       const _conteudo = desembrulharMensagem(msg.message);
+
+      // IGNORA mensagens de SISTEMA (não são conversa): aviso de "mensagens temporárias
+      // ativadas" (protocolMessage), chaves de criptografia, sincronização de app.
+      // Sem isso, elas eram salvas como tipo "outro" e poluíam a Caixa de Entrada.
+      const TIPOS_SISTEMA = ['protocolMessage', 'senderKeyDistributionMessage', 'messageContextInfo', 'reactionMessage', 'pollUpdateMessage'];
+      const chavesReais = Object.keys(_conteudo || {}).filter((k) => !TIPOS_SISTEMA.includes(k));
+      if (chavesReais.length === 0) {
+        return; // só continha ruído de sistema — não salva nem exibe
+      }
       const _tipoMsg = tipoMensagem(_conteudo);
       const _textoMsg = extrairTextoMensagem(_conteudo) || '';
       const _anuncio = getAnuncio(_conteudo); // mensagem vinda de anúncio (Click-to-WhatsApp)

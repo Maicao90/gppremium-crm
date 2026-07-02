@@ -9,11 +9,14 @@ router.get('/conversas', async (req, res) => {
     const usuarioId = String(req.query.usuarioId || '');
     if (!usuarioId) return res.json([]);
 
-    // Última mensagem de cada chat (para a prévia)
+    // Última mensagem de cada chat (para a prévia).
+    // Ignora mensagens de SISTEMA/ruído ("outro" vazio ou protocolMessage sem mídia),
+    // que não são conversa e sujavam a prévia da Caixa de Entrada.
     const conversas: any[] = await prisma.$queryRaw`
       SELECT DISTINCT ON ("chatJid") "chatJid", "chatNome", "texto", "tipo", "fromMe", "timestamp"
       FROM "Mensagem"
       WHERE "usuarioId" = ${usuarioId}
+        AND NOT (tipo = 'outro' AND ("midiaUrl" IS NULL OR "midiaUrl" = '') AND texto IN ('', 'protocolMessage'))
       ORDER BY "chatJid", "timestamp" DESC
     `;
 
@@ -77,7 +80,12 @@ router.get('/mensagens', async (req, res) => {
     if (!usuarioId || !jid) return res.json([]);
 
     const mensagens = await prisma.mensagem.findMany({
-      where: { usuarioId, chatJid: jid },
+      where: {
+        usuarioId,
+        chatJid: jid,
+        // Esconde o ruído de sistema ("outro" vazio/protocolMessage sem mídia)
+        NOT: { tipo: 'outro', midiaUrl: null, texto: { in: ['', 'protocolMessage'] } }
+      },
       orderBy: { timestamp: 'asc' },
       take: 300
     });
