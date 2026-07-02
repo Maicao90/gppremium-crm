@@ -1,7 +1,7 @@
 {
   "name": "gppremium-extension",
-  "displayName": "GPPREMIUM EXTENCION",
-  "version": "1.0.0",
+  "displayName": "GP Premium CRM",
+  "version": "1.0.1",
   "description": "Ferramenta de Agendamentos e CRM nativo no WhatsApp Web",
   "author": "Maicon",
   "scripts": {
@@ -28,7 +28,9 @@
   },
   "manifest": {
     "host_permissions": [
-      "https://*/*"
-    ]
+      "https://web.whatsapp.com/*",
+      "https://crm.nailacademyprofissional.com/*"
+    ],
+    "permissions": []
   }
 }
