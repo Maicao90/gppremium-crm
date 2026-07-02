@@ -24,7 +24,9 @@ export interface ResultadoTeste {
 export interface SaldoConta {
   saldo: number | null;
   gastoDia: number;
-  moeda?: string;
+  // `| undefined` explícito: a VPS compila com exactOptionalPropertyTypes e sem
+  // isso o boot inteiro quebra (erro TS2375 em tempo de require do ts-node).
+  moeda?: string | undefined;
 }
 
 // Formata uma data como YYYY-MM-DD (padrão aceito pelo Google e pelo Meta)
