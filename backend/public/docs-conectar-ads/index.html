@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia — Conectar Google Ads e Meta Ads ao CRM</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; max-width: 820px; margin: 0 auto; padding: 32px 18px 60px; color: #18213b; line-height: 1.65; background: #f5f7fb; }
+  h1 { color: #1e2a6b; font-size: 1.7rem; border-bottom: 3px solid #e8252c; padding-bottom: 10px; }
+  h2 { color: #e8252c; margin-top: 40px; }
+  h3 { color: #1e2a6b; margin-top: 28px; }
+  code { background: #e9edf5; padding: 2px 6px; border-radius: 5px; font-size: 0.88em; word-break: break-all; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; background: #fff; }
+  th, td { border: 1px solid #d5dbe8; padding: 8px 12px; text-align: left; font-size: 0.92rem; }
+  th { background: #1e2a6b; color: #fff; }
+  blockquote { background: #fff4f4; border-left: 4px solid #e8252c; margin: 14px 0; padding: 10px 16px; border-radius: 0 8px 8px 0; }
+  a { color: #1e2a6b; font-weight: 600; }
+  li { margin: 5px 0; }
+  hr { border: none; border-top: 1px solid #d5dbe8; margin: 30px 0; }
+  .voltar { display: inline-block; margin-bottom: 18px; background: #e8252c; color: #fff; padding: 8px 16px; border-radius: 9px; text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+<a class="voltar" href="/anuncios/">← Voltar ao painel</a>
+<h1>Como conectar seus anúncios ao CRM (Google Ads e Meta Ads)</h1>
+<p><strong>Para quem é este guia:</strong> para você, dono da loja, sem precisar de nenhum conhecimento técnico.</p>
+<p><strong>O que vamos fazer:</strong> pegar as &quot;chaves de acesso&quot; (credenciais) do Google Ads e da Meta (Facebook/Instagram) para colar na tela <strong>Configurações → Conexões de Anúncios</strong> do seu CRM. Com isso, o CRM passa a mostrar os dados dos seus anúncios automaticamente.</p>
+<p><strong>Tempo estimado:</strong> 40 a 60 minutos de trabalho seu + alguns dias úteis de espera pela aprovação do Google (explicado abaixo).</p>
+<hr>
+<h2>⚠️ ANTES DE COMEÇAR: avisos de segurança</h2>
+<blockquote>
+<p><strong>Essas chaves são como a senha do cofre da loja.</strong>
+Quem tiver essas chaves consegue ver (e em alguns casos mexer) nas suas contas de anúncio.</p>
+<ul>
+<li><strong>NUNCA</strong> envie essas chaves por WhatsApp, e-mail, chat ou mensagem para ninguém.</li>
+<li>Cole cada chave <strong>direto no painel do CRM</strong>, na tela Configurações → Conexões de Anúncios.</li>
+<li>Se você desconfiar que alguma chave vazou: <strong>revogue (cancele) a chave antiga e gere uma nova</strong>. Os passos de gerar de novo são os mesmos deste guia.</li>
+<li>Não tire print das chaves nem salve em bloco de notas compartilhado.</li>
+</ul>
+</blockquote>
+<hr>
+<h1>PARTE 1 — Google Ads</h1>
+<p>Você vai sair desta parte com 6 informações em mãos:</p>
+<table>
+<thead>
+<tr>
+<th>O que é</th>
+<th>Exemplo de aparência</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Developer Token</td>
+<td><code>Ab1cDe2fGh3iJk4lMn5oPq</code></td>
+</tr>
+<tr>
+<td>Client ID</td>
+<td><code>123456789-abc123.apps.googleusercontent.com</code></td>
+</tr>
+<tr>
+<td>Client Secret</td>
+<td><code>GOCSPX-xxxxxxxxxxxx</code></td>
+</tr>
+<tr>
+<td>Refresh Token</td>
+<td><code>1//0xxxxxxxxxxxxxxxxxxxx</code></td>
+</tr>
+<tr>
+<td>Customer ID</td>
+<td><code>1234567890</code> (10 dígitos)</td>
+</tr>
+<tr>
+<td>Login Customer ID</td>
+<td><code>9876543210</code> (só se usar conta de gerenciador)</td>
+</tr>
+</tbody></table>
+<h2>Passo 1.1 — Criar uma Conta de Gerenciador (MCC), se ainda não tiver</h2>
+<p>O Developer Token (a chave principal do Google) só existe dentro de uma <strong>Conta de Gerenciador</strong>, também chamada de <strong>MCC</strong>. É uma conta &quot;guarda-chuva&quot; gratuita que fica por cima da sua conta de anúncios normal.</p>
+<ol>
+<li>Acesse: <a href="https://ads.google.com/home/tools/manager-accounts/">https://ads.google.com/home/tools/manager-accounts/</a></li>
+<li>Clique em <strong>Criar uma conta de administrador</strong> (ou &quot;Criar conta de gerenciador&quot;).</li>
+<li>Entre com o seu e-mail do Google (pode ser o mesmo que você já usa no Google Ads).</li>
+<li>Dê um nome (ex.: &quot;Gerenciador Super Via Pneus&quot;), escolha <strong>Brasil</strong>, moeda <strong>Real (BRL)</strong> e conclua.</li>
+<li>Depois de criada, dentro da conta de gerenciador, vincule sua conta de anúncios normal: menu <strong>Contas</strong> → botão <strong>+</strong> → <strong>Vincular conta existente</strong> → digite o número da sua conta de anúncios → o Google envia um convite → aceite o convite dentro da sua conta de anúncios normal.</li>
+</ol>
+<blockquote>
+<p>Se você já tem uma conta de gerenciador (MCC), pule para o passo 1.2.</p>
+</blockquote>
+<h2>Passo 1.2 — Pegar o Developer Token no Centro de API</h2>
+<ol>
+<li>Entre na sua <strong>Conta de Gerenciador (MCC)</strong> em <a href="https://ads.google.com">https://ads.google.com</a></li>
+<li>No topo, clique em <strong>Ferramentas e configurações</strong> (ícone de chave inglesa 🔧).</li>
+<li>Na coluna <strong>Configuração</strong>, clique em <strong>Centro de API</strong> (em inglês: API Center).<ul>
+<li>Se não aparecer &quot;Centro de API&quot;, confirme que você está dentro da conta de GERENCIADOR, e não na conta de anúncios comum.</li>
+</ul>
+</li>
+<li>Aceite os termos da API, preencha os dados da empresa que forem pedidos.</li>
+<li>O <strong>Developer Token</strong> aparece nessa tela. Copie e guarde.</li>
+</ol>
+<h3>⚠️ IMPORTANTE: os &quot;níveis de acesso&quot; do Developer Token</h3>
+<p>O token nasce com <strong>Acesso de teste</strong> e precisa ser promovido para <strong>Acesso básico</strong>:</p>
+<ul>
+<li><strong>Acesso de teste</strong> (como o token é criado): o token <strong>só funciona com contas de teste</strong> do Google Ads (contas falsas, sem anúncios reais). Ou seja: <strong>com acesso de teste, o CRM NÃO vai conseguir ler os dados dos seus anúncios de verdade.</strong></li>
+<li><strong>Acesso básico</strong>: funciona com contas reais (é o que você precisa). Para conseguir, é preciso <strong>preencher um formulário de solicitação</strong> do Google, e a análise <strong>demora alguns dias úteis</strong>.</li>
+</ul>
+<p>Como pedir o Acesso básico:</p>
+<ol>
+<li>Na mesma tela do <strong>Centro de API</strong>, procure o nível de acesso (aparece como &quot;Acesso de teste&quot; / &quot;Test account access&quot;).</li>
+<li>Clique em <strong>Solicitar acesso básico</strong> (ou no link &quot;Aplicar para acesso básico&quot; / &quot;Apply for Basic access&quot;), que abre o formulário do Google.</li>
+<li>Preencha com calma. Dicas de resposta:<ul>
+<li><strong>Para que vai usar a API:</strong> &quot;Painel interno (CRM) para visualizar relatórios das minhas próprias campanhas de Google Ads. Uso próprio, não é ferramenta vendida a terceiros.&quot;</li>
+<li><strong>Quem vai usar:</strong> apenas a sua empresa.</li>
+</ul>
+</li>
+<li>Aguarde o e-mail de aprovação do Google (normalmente de 1 a 5 dias úteis).</li>
+</ol>
+<blockquote>
+<p>Você pode seguir com os passos 1.3 a 1.6 enquanto espera a aprovação. Só a conexão final no CRM é que depende do acesso básico aprovado.</p>
+</blockquote>
+<h2>Passo 1.3 — Criar um projeto no Google Cloud e ativar a Google Ads API</h2>
+<ol>
+<li>Acesse o Google Cloud Console: <a href="https://console.cloud.google.com">https://console.cloud.google.com</a> (entre com o MESMO e-mail do Google Ads).</li>
+<li>No topo da tela, clique no seletor de projetos e depois em <strong>Novo projeto</strong>.</li>
+<li>Dê um nome (ex.: &quot;CRM Anuncios&quot;) e clique em <strong>Criar</strong>. Aguarde e selecione esse projeto.</li>
+<li>No menu lateral (☰), vá em <strong>APIs e serviços</strong> → <strong>Biblioteca</strong>.</li>
+<li>Na busca, digite <strong>Google Ads API</strong> e clique no resultado.</li>
+<li>Clique no botão <strong>Ativar</strong>.</li>
+</ol>
+<h2>Passo 1.4 — Configurar a Tela de consentimento OAuth</h2>
+<p>É a telinha de &quot;Fazer login com o Google&quot; que vai aparecer uma única vez para você autorizar o acesso.</p>
+<ol>
+<li>Ainda no Google Cloud, vá em <strong>APIs e serviços</strong> → <strong>Tela de permissão OAuth</strong> (também aparece como &quot;Tela de consentimento OAuth&quot;).</li>
+<li>Tipo de usuário: escolha <strong>Externo</strong> e clique em <strong>Criar</strong>.</li>
+<li>Preencha o mínimo obrigatório:<ul>
+<li><strong>Nome do app:</strong> ex. &quot;CRM Anuncios&quot;</li>
+<li><strong>E-mail para suporte do usuário:</strong> o seu e-mail</li>
+<li><strong>Dados de contato do desenvolvedor:</strong> o seu e-mail</li>
+</ul>
+</li>
+<li>Clique em <strong>Salvar e continuar</strong> nas telas seguintes (não precisa adicionar nada em &quot;Escopos&quot;).</li>
+<li>Na etapa <strong>Usuários de teste</strong>, clique em <strong>+ Adicionar usuários</strong> e adicione <strong>o seu próprio e-mail do Google</strong>. Salve.</li>
+<li>Conclua. Não é preciso &quot;publicar&quot; o app para o público; ele pode ficar em modo &quot;Em teste&quot;.</li>
+</ol>
+<blockquote>
+<p>Se o app ficar em modo &quot;Em teste&quot;, o Google pode expirar a autorização depois de um tempo. Se um dia o CRM parar de ler os dados do Google, volte na Tela de permissão OAuth, clique em <strong>Publicar app</strong> e gere o Refresh Token de novo (passo 1.6).</p>
+</blockquote>
+<h2>Passo 1.5 — Criar a credencial OAuth (Client ID e Client Secret)</h2>
+<ol>
+<li>No Google Cloud, vá em <strong>APIs e serviços</strong> → <strong>Credenciais</strong>.</li>
+<li>Clique em <strong>+ Criar credenciais</strong> → <strong>ID do cliente OAuth</strong>.</li>
+<li>Em <strong>Tipo de aplicativo</strong>, escolha <strong>App para computador</strong> (em inglês: &quot;Desktop app&quot;).</li>
+<li>Nome: ex. &quot;CRM Desktop&quot;. Clique em <strong>Criar</strong>.</li>
+<li>Vai aparecer uma janela com o <strong>ID do cliente</strong> (Client ID) e a <strong>Chave secreta do cliente</strong> (Client Secret). Copie os dois. Você também pode baixar o arquivo JSON como cópia de segurança — guarde em local seguro, ele contém as chaves.</li>
+</ol>
+<h2>Passo 1.6 — Gerar o Refresh Token no OAuth 2.0 Playground</h2>
+<p>O Refresh Token é a &quot;autorização permanente&quot; para o CRM ler seus dados sem pedir login toda hora.</p>
+<ol>
+<li>Abra: <a href="https://developers.google.com/oauthplayground">https://developers.google.com/oauthplayground</a></li>
+<li>No canto superior direito, clique na <strong>engrenagem</strong> (⚙️ &quot;OAuth 2.0 configuration&quot;).</li>
+<li>Marque a caixinha <strong>&quot;Use your own OAuth credentials&quot;</strong> (usar suas próprias credenciais).</li>
+<li>Cole o seu <strong>Client ID</strong> em &quot;OAuth Client ID&quot; e o <strong>Client Secret</strong> em &quot;OAuth Client secret&quot;. Feche a janelinha da engrenagem.</li>
+<li>Na coluna da esquerda (&quot;Step 1&quot;), NÃO procure na lista: no campo de texto <strong>&quot;Input your own scopes&quot;</strong>, cole exatamente:<pre><code>https://www.googleapis.com/auth/adwords
+</code></pre>
+</li>
+<li>Clique no botão azul <strong>Authorize APIs</strong>.</li>
+<li>Faça login com o e-mail que tem acesso ao Google Ads. Se aparecer o aviso &quot;O Google não verificou este app&quot;, clique em <strong>Avançado</strong> → <strong>Acessar CRM Anuncios (não seguro)</strong> — é o SEU próprio app, pode confiar.</li>
+<li>Autorize o acesso (&quot;Permitir&quot; / &quot;Continuar&quot;).</li>
+<li>De volta ao Playground, no &quot;Step 2&quot;, clique em <strong>Exchange authorization code for tokens</strong>.</li>
+<li>Vai aparecer o <strong>Refresh token</strong> (começa com <code>1//</code>). Copie e guarde. É essa a chave que vai no CRM.</li>
+</ol>
+<blockquote>
+<p><strong>Se der o erro &quot;Erro 400: redirect_uri_mismatch&quot; no passo 7:</strong> volte ao Google Cloud → <strong>APIs e serviços</strong> → <strong>Credenciais</strong> → <strong>+ Criar credenciais</strong> → <strong>ID do cliente OAuth</strong>, mas desta vez escolha o tipo <strong>Aplicativo da Web</strong>, e em <strong>URIs de redirecionamento autorizados</strong> clique em <strong>+ Adicionar URI</strong> e cole <code>https://developers.google.com/oauthplayground</code>. Salve, e repita o passo 1.6 usando o Client ID e Client Secret DESSA nova credencial (e use esse mesmo par no CRM).</p>
+</blockquote>
+<h2>Passo 1.7 — Achar o Customer ID (e o Login Customer ID)</h2>
+<ol>
+<li>Entre em <a href="https://ads.google.com">https://ads.google.com</a> na sua <strong>conta de anúncios normal</strong> (a que roda as campanhas da loja).</li>
+<li>Olhe no <strong>canto superior direito</strong> da tela: aparece um número no formato <strong>XXX-XXX-XXXX</strong> (ex.: 123-456-7890). Esse é o seu <strong>Customer ID</strong>.</li>
+<li>No CRM, digite <strong>só os 10 números, sem os traços</strong> (ex.: 1234567890).</li>
+<li><strong>Login Customer ID (opcional):</strong> só preencha se você acessa a conta ATRAVÉS da conta de gerenciador (MCC). Nesse caso, entre na conta de gerenciador e copie o número dela (também fica no canto superior direito), sem traços. Se você não usa MCC para acessar, deixe em branco.</li>
+</ol>
+<hr>
+<h1>PARTE 2 — Meta (Facebook / Instagram Ads)</h1>
+<p>Você vai sair desta parte com 2 informações em mãos:</p>
+<table>
+<thead>
+<tr>
+<th>O que é</th>
+<th>Exemplo de aparência</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Access Token (usuário do sistema)</td>
+<td><code>EAAGxxxxxxxxxxxxxxxx...</code> (bem longo)</td>
+</tr>
+<tr>
+<td>ID da conta de anúncios</td>
+<td><code>act_1234567890</code></td>
+</tr>
+</tbody></table>
+<p><strong>Pré-requisito:</strong> ter um <strong>Gerenciador de Negócios</strong> (Business Manager) em <a href="https://business.facebook.com">https://business.facebook.com</a> com a sua conta de anúncios dentro dele. Se seus anúncios rodam só no perfil pessoal, crie o Gerenciador de Negócios primeiro (é gratuito, em <a href="https://business.facebook.com/overview">https://business.facebook.com/overview</a> clique em <strong>Criar conta</strong>) e adicione sua conta de anúncios nele.</p>
+<h2>Passo 2.1 — Criar um app na plataforma de desenvolvedores da Meta</h2>
+<ol>
+<li>Acesse: <a href="https://developers.facebook.com">https://developers.facebook.com</a></li>
+<li>Faça login com o Facebook que administra o seu negócio.</li>
+<li>Clique em <strong>Meus apps</strong> (canto superior direito) → <strong>Criar app</strong>.</li>
+<li>Quando perguntar o caso de uso, escolha a opção <strong>Outro</strong> (se aparecer) e avance.</li>
+<li>Em <strong>tipo de app</strong>, escolha <strong>Empresa</strong> (em inglês: &quot;Business&quot;). Avance.</li>
+<li>Preencha:<ul>
+<li><strong>Nome do app:</strong> ex. &quot;CRM GP Premium&quot;</li>
+<li><strong>E-mail de contato:</strong> o seu</li>
+<li><strong>Portfólio empresarial / Conta do Gerenciador de Negócios:</strong> selecione o SEU Gerenciador de Negócios (isso vincula o app ao seu negócio — é obrigatório para o passo do token funcionar).</li>
+</ul>
+</li>
+<li>Clique em <strong>Criar app</strong>.</li>
+</ol>
+<h2>Passo 2.2 — Adicionar o produto &quot;Marketing API&quot; ao app</h2>
+<ol>
+<li>Dentro do painel do app recém-criado, procure a seção <strong>Adicionar produtos ao seu app</strong> (ou &quot;Produtos&quot; no menu lateral esquerdo).</li>
+<li>Encontre o cartão <strong>Marketing API</strong> e clique em <strong>Configurar</strong>.</li>
+<li>Pronto — não precisa configurar mais nada dentro do produto. O app só precisa &quot;ter&quot; a Marketing API.</li>
+</ol>
+<blockquote>
+<p>O app pode ficar em <strong>modo de desenvolvimento</strong>. Para ler dados das SUAS próprias contas de anúncio com um usuário do sistema, não é preciso passar pela análise/revisão pública da Meta.</p>
+</blockquote>
+<h2>Passo 2.3 — Criar um Usuário do Sistema no Gerenciador de Negócios</h2>
+<p>O &quot;usuário do sistema&quot; é um funcionário-robô: ele não é uma pessoa, então o token dele <strong>não expira</strong> quando alguém troca a senha ou sai de férias.</p>
+<ol>
+<li>Acesse: <a href="https://business.facebook.com">https://business.facebook.com</a></li>
+<li>Vá em <strong>Configurações do negócio</strong> (ícone de engrenagem, ou menu ☰ → Configurações).</li>
+<li>No menu esquerdo: <strong>Usuários</strong> → <strong>Usuários do sistema</strong>.</li>
+<li>Clique em <strong>Adicionar</strong>.</li>
+<li>Nome: ex. &quot;crm-integracao&quot;. Função: <strong>Funcionário</strong> já é suficiente (só leitura de dados; não escolha Administrador sem necessidade).</li>
+<li>Clique em <strong>Criar usuário do sistema</strong>.</li>
+</ol>
+<h2>Passo 2.4 — Dar acesso da conta de anúncios ao Usuário do Sistema</h2>
+<ol>
+<li>Ainda na tela do usuário do sistema, clique em <strong>Adicionar ativos</strong> (ou &quot;Atribuir ativos&quot;).</li>
+<li>Na janela: escolha <strong>Contas de anúncios</strong> → marque a sua conta de anúncios.</li>
+<li>Nas permissões, ative <strong>Visualizar desempenho</strong> (leitura de relatórios é suficiente para o CRM; não precisa de &quot;Gerenciar conta&quot;).</li>
+<li>Clique em <strong>Salvar alterações</strong>.</li>
+</ol>
+<h2>Passo 2.5 — Gerar o Access Token (o que não expira)</h2>
+<ol>
+<li>Na tela do usuário do sistema, clique em <strong>Gerar novo token</strong>.</li>
+<li><strong>Selecionar app:</strong> escolha o app que você criou no passo 2.1 (ex. &quot;CRM GP Premium&quot;).</li>
+<li><strong>Validade do token / Expiração:</strong> escolha <strong>Nunca</strong> (&quot;Never&quot; / &quot;Nunca expira&quot;). É isso que torna esse token &quot;de longa duração&quot;.</li>
+<li><strong>Permissões:</strong> marque APENAS estas duas:<ul>
+<li><code>ads_read</code> (ler dados de anúncios)</li>
+<li><code>read_insights</code> (ler relatórios de desempenho)</li>
+</ul>
+</li>
+<li>Clique em <strong>Gerar token</strong>.</li>
+<li><strong>Copie o token AGORA</strong> (é um texto bem longo começando com <code>EAA...</code>). A Meta mostra ele uma única vez. Cole direto no CRM.</li>
+</ol>
+<blockquote>
+<p>Perdeu o token antes de colar? Sem problema: gere um novo token no mesmo lugar. Vazou? Clique nos três pontinhos do token → revogar, e gere outro.</p>
+</blockquote>
+<h2>Passo 2.6 — Achar o ID da conta de anúncios</h2>
+<ol>
+<li>Em <a href="https://business.facebook.com">https://business.facebook.com</a>, vá em <strong>Configurações do negócio</strong>.</li>
+<li>Menu esquerdo: <strong>Contas</strong> → <strong>Contas de anúncios</strong>.</li>
+<li>Clique na sua conta de anúncios: o <strong>número de identificação</strong> aparece logo abaixo do nome (ex.: 1234567890).</li>
+<li>No CRM, digite no formato <strong><code>act_</code> + o número</strong>, tudo junto: <code>act_1234567890</code>.</li>
+</ol>
+<hr>
+<h1>PARTE 3 — Checklist final: o que ter em mãos antes de abrir o painel</h1>
+<p>Imprima ou marque conforme for conseguindo. Quando TODAS as caixinhas estiverem marcadas, abra o CRM em <strong>Configurações → Conexões de Anúncios</strong> e cole tudo.</p>
+<h2>Google Ads</h2>
+<ul>
+<li><input disabled="" type="checkbox"> Tenho uma <strong>Conta de Gerenciador (MCC)</strong> e minha conta de anúncios está vinculada a ela</li>
+<li><input disabled="" type="checkbox"> Copiei o <strong>Developer Token</strong> do Centro de API</li>
+<li><input disabled="" type="checkbox"> Meu Developer Token tem <strong>Acesso básico APROVADO</strong> (recebi o e-mail do Google) — sem isso, só funciona com contas de teste</li>
+<li><input disabled="" type="checkbox"> Copiei o <strong>Client ID</strong> (termina em <code>.apps.googleusercontent.com</code>)</li>
+<li><input disabled="" type="checkbox"> Copiei o <strong>Client Secret</strong> (começa com <code>GOCSPX-</code>)</li>
+<li><input disabled="" type="checkbox"> Gerei e copiei o <strong>Refresh Token</strong> no OAuth Playground (começa com <code>1//</code>)</li>
+<li><input disabled="" type="checkbox"> Anotei o <strong>Customer ID</strong> — 10 números, SEM traços</li>
+<li><input disabled="" type="checkbox"> (Só se uso MCC para acessar) Anotei o <strong>Login Customer ID</strong> — 10 números, sem traços</li>
+</ul>
+<h2>Meta (Facebook/Instagram)</h2>
+<ul>
+<li><input disabled="" type="checkbox"> Criei o <strong>app tipo Empresa</strong> em developers.facebook.com, vinculado ao meu Gerenciador de Negócios</li>
+<li><input disabled="" type="checkbox"> Adicionei o produto <strong>Marketing API</strong> ao app</li>
+<li><input disabled="" type="checkbox"> Criei o <strong>Usuário do Sistema</strong> e atribuí minha conta de anúncios a ele (permissão &quot;Visualizar desempenho&quot;)</li>
+<li><input disabled="" type="checkbox"> Gerei e copiei o <strong>Access Token</strong> com validade <strong>Nunca</strong> e permissões <code>ads_read</code> + <code>read_insights</code></li>
+<li><input disabled="" type="checkbox"> Anotei o <strong>ID da conta de anúncios</strong> no formato <code>act_NUMERO</code></li>
+</ul>
+<h2>Segurança</h2>
+<ul>
+<li><input disabled="" type="checkbox"> Não mandei NENHUMA dessas chaves por WhatsApp, e-mail ou chat</li>
+<li><input disabled="" type="checkbox"> Colei tudo direto no painel do CRM e apaguei qualquer rascunho</li>
+</ul>
+<hr>
+<p><em>Dúvidas ou algo diferente na tela? Os menus do Google e da Meta mudam de nome de vez em quando — procure pelo nome mais parecido ou fale com o suporte do CRM.</em></p>
+
+</body></html>

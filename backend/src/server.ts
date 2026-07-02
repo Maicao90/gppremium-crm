@@ -15,6 +15,8 @@ import configuracoesRouter from './routes/configuracoes';
 import usuariosRouter from './routes/usuarios';
 import inboxRouter from './routes/inbox';
 import crmAnunciosRouter from './routes/crmAnuncios';
+import integracoesRouter from './routes/integracoes';
+import { initSyncAds } from './integracoes/syncService';
 
 dotenv.config();
 
@@ -70,6 +72,7 @@ async function iniciarCoreDoSistema() {
     coreIniciado = true;
     console.log('[Core] Iniciando workers principais...');
     initWorker();
+    initSyncAds(); // sincronização periódica de Google Ads / Meta Ads
     
     // Inicia a conexão do WhatsApp para todos os usuários que estão ativos e possivelmente conectados
     try {
@@ -120,6 +123,7 @@ app.use('/api/contatos', contatosRouter);
 app.use('/api/configuracoes', configuracoesRouter);
 app.use('/api/usuarios', usuariosRouter);
 app.use('/api/inbox', inboxRouter);
+app.use('/api/integracoes', integracoesRouter); // integrações Google Ads / Meta Ads
 app.use('/api', crmAnunciosRouter); // /api/empresas, /api/lojas, /api/campanhas, /api/contas
 
 // Rotas da API de Nuvem do Painel Admin
