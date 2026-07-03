@@ -121,6 +121,75 @@ router.get('/metricas', async (req, res) => {
   } catch (e) { erro(res, e); }
 });
 
+/* ===== DESEMPENHO POR PERÍODO (para o Dashboard filtrar por 7/30/90 dias) ===== */
+// GET /api/integracoes/desempenho?companyId=X&dias=30&plataforma=all|Google|Meta
+// Soma o gasto DIÁRIO real (MetricaDiaria) no período, já mapeado por loja.
+router.get('/desempenho', async (req, res) => {
+  try {
+    const companyId = String(req.query.companyId || '');
+    if (!companyId) return res.status(400).json({ error: 'companyId obrigatório' });
+    const dias = Math.max(1, parseInt(String(req.query.dias || '30'), 10) || 30);
+    const plataforma = String(req.query.plataforma || 'all');
+
+    const vazio = { totalSpend: 0, totalCampanhas: 0, totalAtivas: 0, lojasComTrafego: 0, porLoja: [], campanhas: [] };
+
+    const conexoes = await prisma.conexaoAds.findMany({ where: { company_id: companyId } });
+    if (conexoes.length === 0) return res.json(vazio);
+
+    // Campanhas do CRM (para saber loja/status/nome de cada external_id)
+    const campanhas = await prisma.campanha.findMany({ where: { company_id: companyId } });
+    const mapaCamp = new Map<string, any>();
+    for (const c of campanhas as any[]) {
+      if (c.external_id && c.conexao_id) mapaCamp.set(`${c.conexao_id}|${c.external_id}`, c);
+    }
+
+    // Janela do período (UTC, mesmo fuso usado ao gravar MetricaDiaria)
+    const inicio = new Date();
+    inicio.setUTCHours(0, 0, 0, 0);
+    inicio.setUTCDate(inicio.getUTCDate() - dias);
+
+    const metricas = await prisma.metricaDiaria.findMany({
+      where: { conexaoId: { in: conexoes.map((c: any) => c.id) }, data: { gte: inicio } },
+    });
+
+    // Agrega por campanha, herdando loja/status/nome da Campanha do CRM
+    const porCampanha = new Map<string, any>();
+    for (const m of metricas as any[]) {
+      const camp = mapaCamp.get(`${m.conexaoId}|${m.campanhaExternalId}`);
+      const plat = camp?.platform || m.plataforma;
+      if (plataforma !== 'all' && plat !== plataforma) continue;
+      const key = `${m.conexaoId}|${m.campanhaExternalId}`;
+      const atual = porCampanha.get(key) || {
+        externalId: m.campanhaExternalId, nome: m.campanhaNome, plataforma: plat,
+        storeId: camp?.store_id || null, status: camp?.status || 'Active',
+        spend: 0, leads: 0, impressoes: 0, cliques: 0,
+      };
+      if (m.campanhaNome) atual.nome = m.campanhaNome;
+      atual.spend += m.spend; atual.leads += m.leads; atual.impressoes += m.impressoes; atual.cliques += m.cliques;
+      porCampanha.set(key, atual);
+    }
+    const listaCamp = Array.from(porCampanha.values()).map((c) => ({ ...c, spend: Math.round(c.spend * 100) / 100 }));
+
+    // Agrega por loja
+    const porLoja = new Map<string, any>();
+    for (const c of listaCamp) {
+      const sid = c.storeId || '—';
+      const l = porLoja.get(sid) || { storeId: c.storeId, spend: 0, campanhas: 0, ativas: 0 };
+      l.spend += c.spend; l.campanhas += 1; if (c.status === 'Active') l.ativas += 1;
+      porLoja.set(sid, l);
+    }
+
+    res.json({
+      totalSpend: Math.round(listaCamp.reduce((a, c) => a + c.spend, 0) * 100) / 100,
+      totalCampanhas: listaCamp.length,
+      totalAtivas: listaCamp.filter((c) => c.status === 'Active').length,
+      lojasComTrafego: porLoja.size,
+      porLoja: Array.from(porLoja.values()).map((l) => ({ ...l, spend: Math.round(l.spend * 100) / 100 })),
+      campanhas: listaCamp,
+    });
+  } catch (e) { erro(res, e); }
+});
+
 /* ===== CRIAR / ATUALIZAR CONEXÃO ===== */
 router.post('/', async (req, res) => {
   try {
