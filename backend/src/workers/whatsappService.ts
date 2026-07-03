@@ -314,8 +314,11 @@ export const pausados = new Set<string>();
 export async function connectToWhatsApp(usuarioId: string, socketId?: string, numeroPareamento?: string) {
   if (!usuarioId) return;
 
-  // Conexão pausada para este usuário: não tenta nada até ser retomada.
-  if (pausados.has(usuarioId)) {
+  // Conexão pausada: não tenta nada até ser retomada. EXCEÇÃO: um pareamento por
+  // código (numeroPareamento presente) sempre passa — é uma ação intencional, e a
+  // pausa serve justamente para BLOQUEAR as reconexões automáticas que competiam
+  // com o pareamento (a "corrida" que contaminava a sessão).
+  if (pausados.has(usuarioId) && !numeroPareamento) {
     console.log(`[Baileys] Conexão do usuário ${usuarioId} está PAUSADA. Ignorando.`);
     return;
   }
@@ -431,10 +434,12 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
       }
     } else if (connection === 'open') {
       console.log(`[Baileys] Conexão aberta com sucesso! Servidor pronto para disparos do usuário ${usuarioId}.`);
-      // Conectou: não há mais QR nem código de pareamento pendentes.
+      // Conectou: não há mais QR nem código de pareamento pendentes. Sai da pausa
+      // (se estava pausado para o pareamento) para as reconexões automáticas voltarem.
       connectedUsers.add(usuarioId);
       latestQR.delete(usuarioId);
       pairingCodes.delete(usuarioId);
+      pausados.delete(usuarioId);
       io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: true });
 
       // Mantém o dispositivo web como "offline" para NÃO roubar as notificações do celular.
@@ -832,8 +837,13 @@ export async function gerarCodigoPareamento(usuarioId: string, numero: string): 
     throw new Error('Este atendente já está com o WhatsApp conectado.');
   }
 
-  // Derruba qualquer sessão/QR em andamento e limpa credenciais mortas, para
-  // garantir um pareamento limpo (o código só é aceito em conta não-registrada).
+  // 1) PAUSA primeiro: bloqueia TODA reconexão automática (vigia / evento 'close' /
+  //    boot) enquanto preparamos o pareamento. Era essa competição que contaminava
+  //    a sessão e fazia o pareamento nunca completar.
+  pausados.add(usuarioId);
+
+  // 2) Derruba qualquer socket/QR em andamento e limpa credenciais mortas
+  //    (o código só é aceito em conta ainda não registrada).
   const antigo = sessions.get(usuarioId);
   if (antigo) { try { antigo.end(undefined as any); } catch (e) {} }
   sessions.delete(usuarioId);
@@ -845,8 +855,12 @@ export async function gerarCodigoPareamento(usuarioId: string, numero: string): 
     if (fs.existsSync(dir)) fs.rmSync(dir, { recursive: true, force: true });
   } catch (e) {}
 
-  // Pequena espera para o socket antigo encerrar de verdade antes de recriar.
-  await new Promise((r) => setTimeout(r, 600));
+  // 3) Espera o socket antigo encerrar DE VERDADE (e qualquer reconexão de 2s virar
+  //    no-op por causa da pausa) antes de criar o socket limpo do pareamento.
+  await new Promise((r) => setTimeout(r, 2500));
+
+  // 4) Cria a sessão limpa pedindo o código. numeroPareamento fura a pausa (ação
+  //    intencional); a pausa segue bloqueando só as reconexões automáticas.
   await connectToWhatsApp(usuarioId, undefined, num);
 
   // Espera o código ser gerado (requestPairingCode roda ~2,5s após o socket subir).
