@@ -124,7 +124,7 @@ router.get('/metricas', async (req, res) => {
 /* ===== CRIAR / ATUALIZAR CONEXÃO ===== */
 router.post('/', async (req, res) => {
   try {
-    const { id, plataforma, nome, companyId, storeId, credenciais, ativo } = req.body || {};
+    const { id, plataforma, nome, companyId, storeId, credenciais, ativo, herdarDe } = req.body || {};
     if (!PLATAFORMAS.includes(plataforma)) {
       return res.status(400).json({ error: "plataforma deve ser 'google' ou 'meta'" });
     }
@@ -148,14 +148,21 @@ router.post('/', async (req, res) => {
       return res.json({ ok: true, id });
     }
 
-    // CREATE
+    // CREATE. Se veio `herdarDe`, começa das credenciais COMPARTILHADAS de outra
+    // conexão (ex.: a mesma MCC do Google para as 6 lojas) e só sobrescreve o que
+    // mudar (o Customer ID). Assim as credenciais compartilhadas são digitadas 1x.
+    let credBase = '{}';
+    if (herdarDe) {
+      const origem = await prisma.conexaoAds.findUnique({ where: { id: String(herdarDe) } });
+      if (origem) credBase = origem.credenciais;
+    }
     const criada = await prisma.conexaoAds.create({
       data: {
         plataforma,
         nome: String(nome || ''),
         company_id: String(companyId || ''),
         store_id: storeId || null,
-        credenciais: mesclarCredenciais('{}', credenciais),
+        credenciais: mesclarCredenciais(credBase, credenciais),
         ativo: ativo !== false,
       },
     });
