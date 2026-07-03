@@ -228,7 +228,8 @@ function iniciarVigiaConexao() {
       for (const s of sessoes) {
         const uid = s.replace('auth_info_baileys_', '');
         // Tem credencial salva, mas não está conectado NEM conectando → ressuscita.
-        if (uid && !sessions.has(uid) && !connectedUsers.has(uid)) {
+        // (Pula quem está pausado, para não ficar gerando QR de conta travada.)
+        if (uid && !sessions.has(uid) && !connectedUsers.has(uid) && !pausados.has(uid)) {
           console.log(`[Baileys][Vigia] Sessão de ${uid} caída — reconectando automaticamente...`);
           connectToWhatsApp(uid).catch(() => {});
         }
@@ -305,8 +306,19 @@ export async function dispararLembretesAgora(): Promise<number> {
 // número de telefone), sem precisar escanear QR nenhum.
 export const pairingCodes = new Map<string, string>();
 
+// Usuários com a conexão PAUSADA: o servidor para de tentar conectar (não gera QR
+// nem reconecta) até ser retomado. Serve para contas travadas pelo WhatsApp,
+// evitando a enxurrada de QR Codes na tela do atendente.
+export const pausados = new Set<string>();
+
 export async function connectToWhatsApp(usuarioId: string, socketId?: string, numeroPareamento?: string) {
   if (!usuarioId) return;
+
+  // Conexão pausada para este usuário: não tenta nada até ser retomada.
+  if (pausados.has(usuarioId)) {
+    console.log(`[Baileys] Conexão do usuário ${usuarioId} está PAUSADA. Ignorando.`);
+    return;
+  }
 
   // Evita criar múltiplas instâncias para o mesmo usuário se já estiver rodando
   if (sessions.has(usuarioId)) {
@@ -786,6 +798,26 @@ export async function logoutWhatsApp(usuarioId: string) {
 
   await prisma.usuario.update({ where: { id: usuarioId }, data: { whatsappConectado: false } }).catch(()=>{});
   io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false });
+}
+
+// PAUSA a conexão de um atendente: derruba o socket, para de gerar QR e de
+// reconectar até ser retomado. Não apaga credenciais (retomar reconecta sozinho).
+export async function pausarWhatsApp(usuarioId: string) {
+  pausados.add(usuarioId);
+  const sock = sessions.get(usuarioId);
+  if (sock) { try { sock.end(undefined as any); } catch (e) {} }
+  sessions.delete(usuarioId);
+  latestQR.delete(usuarioId);
+  pairingCodes.delete(usuarioId);
+  io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false, pausado: true });
+  console.log(`[Baileys] Conexão do usuário ${usuarioId} PAUSADA.`);
+}
+
+// RETOMA a conexão de um atendente pausado e tenta conectar de novo.
+export async function retomarWhatsApp(usuarioId: string) {
+  pausados.delete(usuarioId);
+  console.log(`[Baileys] Conexão do usuário ${usuarioId} RETOMADA.`);
+  await connectToWhatsApp(usuarioId).catch(() => {});
 }
 
 // Gera um CÓDIGO DE PAREAMENTO (8 dígitos) para o atendente digitar no WhatsApp

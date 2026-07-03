@@ -267,6 +267,28 @@ router.post('/:id/codigo-pareamento', async (req, res) => {
   }
 });
 
+// Pausar as tentativas de conexão do WhatsApp (para o QR infinito de conta travada)
+router.post('/:id/pausar', async (req, res) => {
+  try {
+    const { pausarWhatsApp } = require('../workers/whatsappService');
+    await pausarWhatsApp(req.params.id);
+    res.json({ success: true, pausado: true });
+  } catch (error: any) {
+    res.status(500).json({ error: error?.message || 'Erro ao pausar.' });
+  }
+});
+
+// Retomar as tentativas de conexão do WhatsApp
+router.post('/:id/retomar', async (req, res) => {
+  try {
+    const { retomarWhatsApp } = require('../workers/whatsappService');
+    await retomarWhatsApp(req.params.id);
+    res.json({ success: true, pausado: false });
+  } catch (error: any) {
+    res.status(500).json({ error: error?.message || 'Erro ao retomar.' });
+  }
+});
+
 // Desconectar o WhatsApp do atendente
 router.post('/:id/desconectar', async (req, res) => {
   try {
