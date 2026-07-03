@@ -829,9 +829,12 @@ export async function retomarWhatsApp(usuarioId: string) {
 // em vez de escanear o QR. Começa a sessão do zero (apaga credenciais mortas),
 // pede o código à WhatsApp e o retorna. `numero` = DDI+DDD+telefone só dígitos.
 export async function gerarCodigoPareamento(usuarioId: string, numero: string): Promise<string> {
-  const num = String(numero || '').replace(/\D/g, '');
+  let num = String(numero || '').replace(/\D/g, '');
+  // Aceita FIXO (DDD+8=10) e CELULAR (DDD+9=11): completa com o DDI 55 do Brasil.
+  if (num.startsWith('0')) num = num.replace(/^0+/, '');
+  if (num.length === 10 || num.length === 11) num = '55' + num;
   if (num.length < 12 || num.length > 15) {
-    throw new Error('Número inválido. Use DDI + DDD + número (ex.: 5561999998888).');
+    throw new Error('Número inválido. Use DDD + número (fixo: 10 dígitos, celular: 11).');
   }
   if (connectedUsers.has(usuarioId)) {
     throw new Error('Este atendente já está com o WhatsApp conectado.');
