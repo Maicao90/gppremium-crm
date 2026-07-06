@@ -814,6 +814,9 @@ export async function pausarWhatsApp(usuarioId: string) {
   sessions.delete(usuarioId);
   latestQR.delete(usuarioId);
   pairingCodes.delete(usuarioId);
+  // Persiste no banco: sem isso, um restart do servidor esquecia a pausa (o Set
+  // é só memória) e o vigia voltava a gerar QR sozinho minutos depois.
+  await prisma.usuario.update({ where: { id: usuarioId }, data: { whatsappPausado: true } }).catch(() => {});
   io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false, pausado: true });
   console.log(`[Baileys] Conexão do usuário ${usuarioId} PAUSADA.`);
 }
@@ -821,8 +824,21 @@ export async function pausarWhatsApp(usuarioId: string) {
 // RETOMA a conexão de um atendente pausado e tenta conectar de novo.
 export async function retomarWhatsApp(usuarioId: string) {
   pausados.delete(usuarioId);
+  await prisma.usuario.update({ where: { id: usuarioId }, data: { whatsappPausado: false } }).catch(() => {});
   console.log(`[Baileys] Conexão do usuário ${usuarioId} RETOMADA.`);
   await connectToWhatsApp(usuarioId).catch(() => {});
+}
+
+// Carrega do banco quem estava pausado ANTES do restart, repovoando o Set em
+// memória. Chamado uma vez no boot do servidor (server.ts).
+export async function carregarPausadosDoBanco() {
+  try {
+    const pausadosNoBanco = await prisma.usuario.findMany({ where: { whatsappPausado: true }, select: { id: true } });
+    for (const u of pausadosNoBanco) pausados.add(u.id);
+    if (pausadosNoBanco.length > 0) {
+      console.log(`[Baileys] ${pausadosNoBanco.length} usuário(s) carregado(s) como PAUSADO(S) do banco (sobrevive a restart).`);
+    }
+  } catch (e) { console.error('[Baileys] Erro ao carregar pausados do banco:', e); }
 }
 
 // Gera um CÓDIGO DE PAREAMENTO (8 dígitos) para o atendente digitar no WhatsApp

@@ -8,7 +8,7 @@ import { PrismaClient } from '@prisma/client';
 import dotenv from 'dotenv';
 import path from 'path';
 import { initWorker } from './workers/agendaWorker';
-import { connectToWhatsApp, latestQR, connectedUsers } from './workers/whatsappService';
+import { connectToWhatsApp, latestQR, connectedUsers, carregarPausadosDoBanco } from './workers/whatsappService';
 import agendamentosRouter from './routes/agendamentos';
 import contatosRouter from './routes/contatos';
 import configuracoesRouter from './routes/configuracoes';
@@ -75,6 +75,10 @@ async function iniciarCoreDoSistema() {
     initWorker();
     initSyncAds(); // sincronização periódica de Google Ads / Meta Ads
     
+    // Restaura do banco quem estava PAUSADO antes deste restart (senão o vigia
+    // reconecta sozinho e gera QR infinito de contas que pedimos pra não mexer).
+    await carregarPausadosDoBanco();
+
     // Inicia a conexão do WhatsApp para todos os usuários que estão ativos e possivelmente conectados
     try {
       const usuarios = await prisma.usuario.findMany({ where: { ativo: true } });
