@@ -1,9 +1,25 @@
 import { Router } from 'express';
+import fs from 'fs';
+import path from 'path';
 import { prisma } from '../server';
 
 const router = Router();
 
 const erro = (res: any, e: any) => res.status(500).json({ error: e?.message || 'Erro' });
+
+// Upload de imagem (logo/fundo) do Link na Bio: mesmo padrão de /api/inbox/enviar-midia
+// (frontend manda base64 no corpo JSON, sem multer) — salva em public/midias/linkbio,
+// servida estaticamente como caminho relativo (funciona em qualquer host/subdominio
+// que aponte pra este mesmo backend).
+const MIDIAS_LINKBIO_DIR = path.join(__dirname, '../../public/midias/linkbio');
+const EXT_POR_MIME: Record<string, string> = {
+  'image/jpeg': 'jpg',
+  'image/jpg': 'jpg',
+  'image/png': 'png',
+  'image/webp': 'webp',
+  'image/gif': 'gif',
+};
+const TAMANHO_MAX_BYTES = 8 * 1024 * 1024; // 8MB
 
 // Valores default usados quando a loja ainda não tem PaginaLink no banco
 // (mesmos defaults do schema.prisma) — só pra popular o formulário vazio no painel.
@@ -98,6 +114,27 @@ router.post('/', async (req, res) => {
     }
 
     res.status(201).json(salvo);
+  } catch (e) { erro(res, e); }
+});
+
+router.post('/upload-imagem', async (req, res) => {
+  try {
+    const { base64, mimetype } = req.body;
+    if (!base64) return res.status(400).json({ error: 'Envie a imagem (base64).' });
+
+    const ext = EXT_POR_MIME[String(mimetype || '').toLowerCase()];
+    if (!ext) return res.status(400).json({ error: 'Formato de imagem não suportado. Use JPG, PNG, WEBP ou GIF.' });
+
+    const buffer = Buffer.from(String(base64), 'base64');
+    if (buffer.length > TAMANHO_MAX_BYTES) {
+      return res.status(400).json({ error: 'Imagem muito grande (máximo 8MB).' });
+    }
+
+    fs.mkdirSync(MIDIAS_LINKBIO_DIR, { recursive: true });
+    const nome = `linkbio_${Date.now()}_${Math.floor(Math.random() * 1000000)}.${ext}`;
+    fs.writeFileSync(path.join(MIDIAS_LINKBIO_DIR, nome), buffer);
+
+    res.json({ url: `/midias/linkbio/${nome}` });
   } catch (e) { erro(res, e); }
 });
 
