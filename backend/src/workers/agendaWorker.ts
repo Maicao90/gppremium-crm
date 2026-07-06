@@ -147,7 +147,15 @@ export function initWorker() {
           });
           console.log(`[Worker] Retry automático: Agendamento ${ag.id} (tentativa ${dadosRetry.tentativas}/${MAX_TENTATIVAS}) → 'pendente'.`);
         } else {
-          console.log(`[Worker] Agendamento ${ag.id} atingiu limite de ${MAX_TENTATIVAS} tentativas. Mantido como 'falhou'.`);
+          // BUG CORRIGIDO: antes não tocava em `atualizadoEm`, então esse mesmo
+          // agendamento continuava batendo no filtro `atualizadoEm <= 3min atrás`
+          // e era relogado A CADA CICLO (10s) para sempre. Só reescrever o campo
+          // (mesmo valor de observacoes) já atualiza `atualizadoEm` e para o loop.
+          await prisma.agendamento.update({
+            where: { id: ag.id },
+            data: { observacoes: JSON.stringify(dadosRetry) }
+          });
+          console.log(`[Worker] Agendamento ${ag.id} atingiu limite de ${MAX_TENTATIVAS} tentativas. Mantido como 'falhou' (não será mais relogado).`);
         }
       }
 

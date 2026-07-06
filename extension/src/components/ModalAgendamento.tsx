@@ -202,6 +202,20 @@ export default function ModalAgendamento({ onClose, onSuccess, usuarioId, contat
     } catch (err: any) {
       console.error("Erro ao agendar:", err)
       const msgErro = err.message || "Erro desconhecido"
+      // Reporta o erro pro servidor: antes só ficava no console local do navegador,
+      // impossível de diagnosticar remotamente quando o atendente reporta "não consigo agendar".
+      try {
+        fetch("https://crm.nailacademyprofissional.com/api/extension-logs", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            nivel: "error",
+            escopo: "modal-agendamento",
+            mensagem: `Falha ao criar agendamento (usuarioId=${usuarioId}): ${msgErro}`,
+            erro: { message: err?.message, stack: err?.stack, payload }
+          })
+        })
+      } catch (e) { /* falha silenciosa no log */ }
       if (err instanceof TypeError && err.message.includes("fetch")) {
         alert("Erro ao agendar: Não foi possível conectar ao servidor. Por favor, certifique-se de que o backend está rodando em HTTPS (porta 3000).")
       } else {
