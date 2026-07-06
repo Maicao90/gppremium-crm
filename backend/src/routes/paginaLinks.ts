@@ -14,6 +14,7 @@ const DEFAULTS = {
   titulo: '',
   bio: '',
   fotoUrl: null,
+  imagemFundoUrl: null,
   corFundo: '#0d1122',
   corBotao: '#e8252c',
   corTexto: '#ffffff',
@@ -40,7 +41,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const {
-      lojaId, subdominio, titulo, bio, fotoUrl,
+      lojaId, subdominio, titulo, bio, fotoUrl, imagemFundoUrl,
       corFundo, corBotao, corTexto, formato, links, ativo,
     } = req.body;
 
@@ -70,6 +71,7 @@ router.post('/', async (req, res) => {
       titulo: titulo || '',
       bio: bio || '',
       fotoUrl: fotoUrl || null,
+      imagemFundoUrl: imagemFundoUrl || null,
       corFundo: corFundo || '#0d1122',
       corBotao: corBotao || '#e8252c',
       corTexto: corTexto || '#ffffff',

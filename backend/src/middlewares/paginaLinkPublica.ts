@@ -45,6 +45,13 @@ function renderPaginaLinkHTML(pagina: any, loja: any): string {
   const titulo = pagina.titulo || loja?.store_name || '';
   const bio = pagina.bio || '';
 
+  // Imagem de fundo (opcional): cobre a tela toda, centralizada, sem repetir —
+  // assim qualquer tamanho de imagem que a loja subir fica bem enquadrado,
+  // sem depender de a pessoa cortar a imagem num tamanho exato antes.
+  const fundoStyle = pagina.imagemFundoUrl
+    ? `background-image: url('${escapeHtml(pagina.imagemFundoUrl)}'); background-size: cover; background-position: center; background-repeat: no-repeat; background-color: ${escapeHtml(pagina.corFundo)};`
+    : `background: ${escapeHtml(pagina.corFundo)};`;
+
   const fotoHtml = pagina.fotoUrl
     ? `<img class="avatar" src="${escapeHtml(pagina.fotoUrl)}" alt="${escapeHtml(titulo)}" />`
     : `<div class="avatar avatar-fallback">${escapeHtml(iniciais(titulo))}</div>`;
@@ -67,7 +74,7 @@ function renderPaginaLinkHTML(pagina: any, loja: any): string {
   body {
     margin: 0;
     min-height: 100vh;
-    background: ${escapeHtml(pagina.corFundo)};
+    ${fundoStyle}
     color: ${escapeHtml(pagina.corTexto)};
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     display: flex;
@@ -81,6 +88,13 @@ function renderPaginaLinkHTML(pagina: any, loja: any): string {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+  .wrap-com-fundo {
+    margin: 1.5rem 0;
+    padding: 2rem 1.25rem 1.5rem;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.38);
+    backdrop-filter: blur(6px);
   }
   .avatar {
     width: 96px;
@@ -118,18 +132,16 @@ function renderPaginaLinkHTML(pagina: any, loja: any): string {
   }
   .link-btn:active { transform: scale(0.97); opacity: 0.9; }
   .link-emoji { font-size: 1.05rem; line-height: 1; }
-  footer { margin-top: 2.5rem; font-size: 0.7rem; opacity: 0.45; }
 </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="wrap${pagina.imagemFundoUrl ? ' wrap-com-fundo' : ''}">
     ${fotoHtml}
     <h1>${escapeHtml(titulo)}</h1>
     ${bio ? `<p class="bio">${escapeHtml(bio)}</p>` : ''}
     <div class="links">
       ${botoesHtml}
     </div>
-    <footer>Criado com GP CRM</footer>
   </div>
 </body>
 </html>`;

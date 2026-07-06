@@ -207,20 +207,21 @@ model MetricaDiaria {
 // (ex.: link.pneusgppremium.com.br), interceptado por hostname no server.ts ANTES
 // do express.static — ver middleware paginaLinkPublica.
 model PaginaLink {
-  id           String   @id @default(uuid())
-  loja_id      String   @unique // 1 pagina por loja
-  subdominio   String?  @unique // ex.: "link.pneusgppremium.com.br" (host exato que vai bater na requisicao). Null = ainda nao publicada/sem dominio configurado.
-  titulo       String   @default("")
-  bio          String   @default("")
-  fotoUrl      String? // logo/avatar, so URL (sem upload de arquivo por enquanto)
-  corFundo     String   @default("#0d1122")
-  corBotao     String   @default("#e8252c")
-  corTexto     String   @default("#ffffff")
-  formato      String   @default("arredondado") // arredondado | quadrado | pill
-  links        String   @default("[]") // JSON: [{ id, label, url, icone, ordem }]
-  ativo        Boolean  @default(true)
-  criadoEm     DateTime @default(now())
-  atualizadoEm DateTime @updatedAt
+  id             String   @id @default(uuid())
+  loja_id        String   @unique // 1 pagina por loja
+  subdominio     String?  @unique // ex.: "link.pneusgppremium.com.br" (host exato que vai bater na requisicao). Null = ainda nao publicada/sem dominio configurado.
+  titulo         String   @default("")
+  bio            String   @default("")
+  fotoUrl        String? // logo/avatar, so URL (sem upload de arquivo por enquanto)
+  imagemFundoUrl String? // imagem de fundo da pagina, so URL. Se null, usa corFundo (cor solida).
+  corFundo       String   @default("#0d1122")
+  corBotao       String   @default("#e8252c")
+  corTexto       String   @default("#ffffff")
+  formato        String   @default("arredondado") // arredondado | quadrado | pill
+  links          String   @default("[]") // JSON: [{ id, label, url, icone, ordem }]
+  ativo          Boolean  @default(true)
+  criadoEm       DateTime @default(now())
+  atualizadoEm   DateTime @updatedAt
 }
 
 model ContaAnuncio {
