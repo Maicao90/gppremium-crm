@@ -33,6 +33,10 @@ model Usuario {
   // vinculados e duplicaria toda mensagem recebida). Campo solto (sem @relation formal),
   // no mesmo estilo de outros campos soltos já existentes (ex.: ContaAnuncio.conexao_id).
   whatsappDonoId       String?
+  // Loja (do CRM de Anúncios) a que este atendente pertence — só pra organizar a
+  // lista de atendentes por loja no painel. Campo solto (sem @relation), mesmo
+  // estilo dos demais campos soltos já existentes.
+  lojaId               String?
   agendamentos         Agendamento[]
   autoReplyHistories   AutoReplyHistory[]
   criadoEm             DateTime           @default(now())

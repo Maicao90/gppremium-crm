@@ -37,7 +37,7 @@ router.post('/login', async (req, res) => {
 // Cadastrar novo operador
 router.post('/cadastrar', async (req, res) => {
   try {
-    const { nome, email, senha, role } = req.body;
+    const { nome, email, senha, role, lojaId } = req.body;
     if (!nome || !email || !senha) {
       return res.status(400).json({ error: 'Nome, e-mail e senha são obrigatórios.' });
     }
@@ -58,7 +58,8 @@ router.post('/cadastrar', async (req, res) => {
         nome,
         email: emailLimpo,
         senha,
-        role: role || 'operador'
+        role: role || 'operador',
+        lojaId: lojaId || null
       }
     });
 
@@ -82,6 +83,7 @@ router.get('/', async (req, res) => {
         role: true,
         whatsappConectado: true,
         whatsappDonoId: true,
+        lojaId: true,
         criadoEm: true
       },
       orderBy: { nome: 'asc' }
@@ -199,8 +201,8 @@ router.put('/:id/assinatura', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const { nome, email, senha, role } = req.body;
-    
+    const { nome, email, senha, role, lojaId } = req.body;
+
     if (!nome || !email || !senha) {
       return res.status(400).json({ error: 'Nome, e-mail e senha são obrigatórios.' });
     }
@@ -225,7 +227,8 @@ router.put('/:id', async (req, res) => {
         nome,
         email: emailLimpo,
         senha,
-        role: role || 'operador'
+        role: role || 'operador',
+        lojaId: lojaId || null
       }
     });
 
