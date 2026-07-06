@@ -28,9 +28,11 @@ function escapeHtml(s: string): string {
 
 function iniciais(titulo: string): string {
   const partes = String(titulo || '').trim().split(/\s+/).filter(Boolean);
-  if (partes.length === 0) return '?';
-  if (partes.length === 1) return partes[0].slice(0, 2).toUpperCase();
-  return (partes[0][0] + partes[1][0]).toUpperCase();
+  const primeira = partes[0] || '';
+  const segunda = partes[1] || '';
+  if (!primeira) return '?';
+  if (!segunda) return primeira.slice(0, 2).toUpperCase();
+  return ((primeira[0] ?? '') + (segunda[0] ?? '')).toUpperCase();
 }
 
 function renderPaginaLinkHTML(pagina: any, loja: any): string {
