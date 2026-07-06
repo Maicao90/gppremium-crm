@@ -17,6 +17,8 @@ import inboxRouter from './routes/inbox';
 import iaRouter from './routes/ia';
 import crmAnunciosRouter from './routes/crmAnuncios';
 import integracoesRouter from './routes/integracoes';
+import paginaLinksRouter from './routes/paginaLinks';
+import { paginaLinkPublica } from './middlewares/paginaLinkPublica';
 import { initSyncAds } from './integracoes/syncService';
 
 dotenv.config();
@@ -108,6 +110,12 @@ cloudManager.initializeFailover().then(({ ativo }) => {
   }
 });
 
+// Link na Bio: intercepta requisições cujo Host bata com o subdominio cadastrado de
+// alguma Loja e serve a página pública direto, ANTES do static/rotas normais. Para
+// qualquer outro Host (ex.: crm.nailacademyprofissional.com), cai no next() e o
+// comportamento atual continua 100% intacto.
+app.use(paginaLinkPublica);
+
 // Servir arquivos estáticos da pasta public/ (admin.html, admin/index.html, etc.)
 app.use(express.static(path.join(__dirname, '../public')));
 
@@ -131,6 +139,7 @@ app.use('/api/inbox', inboxRouter);
 app.use('/api/ia', iaRouter); // Assistente IA (Claude) com contexto do CRM
 app.use('/api/integracoes', integracoesRouter); // integrações Google Ads / Meta Ads
 app.use('/api', crmAnunciosRouter); // /api/empresas, /api/lojas, /api/campanhas, /api/contas
+app.use('/api/paginalinks', paginaLinksRouter); // Link na Bio (CRUD do conteúdo por loja)
 
 // Rotas da API de Nuvem do Painel Admin
 app.get('/api/admin/nuvem', (req, res) => {
