@@ -273,6 +273,9 @@ async function seedAdmin() {
 // O seedAdmin() agora é chamado dentro do iniciarCoreDoSistema() para evitar falhas se o BD estiver offline.
 
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+// Só localhost: a partir de agora o Nginx é quem fica exposto na porta 443/80
+// (termina o HTTPS e faz proxy pra cá), cuidando de múltiplos domínios/certificados.
+// O Node não deve mais ser alcançável direto de fora.
+server.listen(PORT, '127.0.0.1', () => {
+  console.log(`Servidor rodando na porta ${PORT} (somente localhost, atrás do Nginx)`);
 });
