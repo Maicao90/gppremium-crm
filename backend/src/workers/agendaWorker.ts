@@ -173,7 +173,7 @@ export function initWorker() {
         });
 
         if (pendentes.length > 0) {
-          const { enviarMensagem, sessions, connectToWhatsApp } = require('./whatsappService');
+          const { enviarMensagem, sessions, connectToWhatsApp, resolverConexaoEfetiva } = require('./whatsappService');
 
           // ─── LIMITE DIÁRIO: conta quantas mensagens cada usuário já enviou HOJE ───
           // (cacheado por ciclo; vai sendo incrementado conforme novos envios)
@@ -194,12 +194,17 @@ export function initWorker() {
           let primeiroEnvioDoCiclo = true;
 
           for (const agendamento of pendentes) {
+            // Resolve a conexão EFETIVA: se quem criou o agendamento COMPARTILHA o
+            // WhatsApp de outro atendente, a sessão Baileys real vive sob o ID do dono —
+            // é ela que precisa estar conectada e é ela que efetivamente envia a mensagem.
+            const efetivoId = await resolverConexaoEfetiva(agendamento.criadoPorId);
+
             // REGRA DE PROTEÇÃO 1: Se não estiver conectado, PULA o agendamento (congela ele)
-            if (!sessions.has(agendamento.criadoPorId)) {
-              console.log(`[Worker] Escudo ativado: Loja do usuário ${agendamento.criadoPorId} está desconectada. Agendamento ${agendamento.id} retido até a próxima conexão.`);
+            if (!sessions.has(efetivoId)) {
+              console.log(`[Worker] Escudo ativado: Loja do usuário ${efetivoId} está desconectada. Agendamento ${agendamento.id} retido até a próxima conexão.`);
               // Auto-religamento dirigido: tenta restabelecer a sessão usando as credenciais
               // salvas em disco (sem QR), para que a mensagem saia assim que reconectar.
-              connectToWhatsApp(agendamento.criadoPorId).catch((err: any) => console.error(`[Worker] Erro ao tentar religar sessão do usuário ${agendamento.criadoPorId}:`, err));
+              connectToWhatsApp(efetivoId).catch((err: any) => console.error(`[Worker] Erro ao tentar religar sessão do usuário ${efetivoId}:`, err));
               continue;
             }
 
@@ -229,7 +234,8 @@ export function initWorker() {
             console.log(`[Worker] Disparando agendamento ${agendamento.id} para ${agendamento.numero} via Baileys (Simulando humano)...`);
 
             // Envia a mensagem (humanizada + a função já adiciona o delay de "digitando")
-            const sucesso = await enviarMensagem(agendamento.criadoPorId, agendamento.numero, humanizarTexto(agendamento.mensagem));
+            // pela sessão EFETIVA (do dono, se compartilhado; do próprio, senão).
+            const sucesso = await enviarMensagem(efetivoId, agendamento.numero, humanizarTexto(agendamento.mensagem));
 
             if (sucesso) {
               await prisma.agendamento.update({

@@ -8,7 +8,7 @@ import { PrismaClient } from '@prisma/client';
 import dotenv from 'dotenv';
 import path from 'path';
 import { initWorker } from './workers/agendaWorker';
-import { connectToWhatsApp, latestQR, connectedUsers, carregarPausadosDoBanco } from './workers/whatsappService';
+import { connectToWhatsApp, latestQR, connectedUsers, carregarPausadosDoBanco, resolverConexaoEfetiva } from './workers/whatsappService';
 import agendamentosRouter from './routes/agendamentos';
 import contatosRouter from './routes/contatos';
 import configuracoesRouter from './routes/configuracoes';
@@ -190,30 +190,38 @@ io.on('connection', async (socket) => {
   console.log('Cliente conectado:', socket.id);
   
   // Registra atendente ativo no socket conectado
-  socket.on('registrar_atendente', (usuarioId) => {
+  socket.on('registrar_atendente', async (usuarioId) => {
     const uid = String(usuarioId);
     console.log(`[Socket] Atendente ${uid} registrado no socket ${socket.id}`);
     usuariosConectados.set(socket.id, uid);
 
-    // Entrar na sala do usuário
+    // COMPARTILHAMENTO DE WHATSAPP: se este atendente compartilha a conexão de outro
+    // (whatsappDonoId), a sessão Baileys REAL vive sob o ID do dono. Resolve isso ANTES
+    // de decidir status/QR/conectar — senão quem compartilha nunca sai de "Aguardando".
+    const efetivoId = await resolverConexaoEfetiva(uid);
+
+    // Entrar na sala do próprio usuário E na sala do dono (se for diferente), para
+    // receber eventos emitidos para a sala do dono (NOVA_MENSAGEM, WHATSAPP_STATUS, etc.)
     socket.join(uid);
+    if (efetivoId !== uid) socket.join(efetivoId);
 
     // CORREÇÃO DO "AGUARDANDO QR" ETERNO:
     // Informa IMEDIATAMENTE o estado atual a esta extensão que acabou de conectar.
     // Sem isso, um QR gerado antes da extensão abrir (ex.: no boot da VPS) se perdia
     // e a tela ficava travada em "Aguardando QR Code".
-    if (connectedUsers.has(uid)) {
+    if (connectedUsers.has(efetivoId)) {
       // Já está conectado: avisa a extensão para sair da tela de QR.
       socket.emit('WHATSAPP_STATUS', { conectado: true });
-    } else if (latestQR.has(uid)) {
+    } else if (latestQR.has(efetivoId)) {
       // Existe um QR pendente: reenvia na hora para esta extensão.
-      console.log(`[Socket] Reenviando QR Code pendente para o atendente ${uid}.`);
-      socket.emit('WHATSAPP_QR_CODE', latestQR.get(uid));
+      console.log(`[Socket] Reenviando QR Code pendente para o atendente ${efetivoId}.`);
+      socket.emit('WHATSAPP_QR_CODE', latestQR.get(efetivoId));
     }
 
-    // Garante que o WhatsApp está conectado ou em processo de conexão para este usuário.
-    // (Se não houver sessão, cria uma nova e o QR fluirá para a sala onde a extensão já está.)
-    connectToWhatsApp(uid, socket.id).catch(err => console.error(`[Baileys] Erro crítico ao conectar WhatsApp do usuário ${uid}:`, err));
+    // Garante que o WhatsApp está conectado ou em processo de conexão para o DONO da
+    // conexão efetiva. (Se não houver sessão, cria uma nova e o QR fluirá para a sala
+    // onde a extensão já está — inclusive quem compartilha, que também entrou nela acima.)
+    connectToWhatsApp(efetivoId, socket.id).catch(err => console.error(`[Baileys] Erro crítico ao conectar WhatsApp do usuário ${efetivoId}:`, err));
   });
 
   // Painel admin: "assistir" a caixa de entrada de um atendente (entra na sala para

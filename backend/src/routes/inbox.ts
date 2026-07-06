@@ -1,13 +1,17 @@
 import { Router } from 'express';
 import { prisma } from '../server';
+import { resolverConexaoEfetiva } from '../workers/whatsappService';
 
 const router = Router();
 
 // Lista de conversas (última mensagem de cada contato) de um atendente
 router.get('/conversas', async (req, res) => {
   try {
-    const usuarioId = String(req.query.usuarioId || '');
-    if (!usuarioId) return res.json([]);
+    const usuarioIdOriginal = String(req.query.usuarioId || '');
+    if (!usuarioIdOriginal) return res.json([]);
+    // Quem COMPARTILHA WhatsApp enxerga a MESMA Caixa de Entrada do dono (as mensagens
+    // são fisicamente salvas sob o ID do dono, pois só a sessão dele existe de verdade).
+    const usuarioId = await resolverConexaoEfetiva(usuarioIdOriginal);
 
     // Última mensagem de cada chat (para a prévia).
     // Ignora mensagens de SISTEMA/ruído ("outro" vazio ou protocolMessage sem mídia),
@@ -75,9 +79,10 @@ router.get('/conversas', async (req, res) => {
 // Mensagens de uma conversa específica
 router.get('/mensagens', async (req, res) => {
   try {
-    const usuarioId = String(req.query.usuarioId || '');
+    const usuarioIdOriginal = String(req.query.usuarioId || '');
     const jid = String(req.query.jid || '');
-    if (!usuarioId || !jid) return res.json([]);
+    if (!usuarioIdOriginal || !jid) return res.json([]);
+    const usuarioId = await resolverConexaoEfetiva(usuarioIdOriginal);
 
     const mensagens = await prisma.mensagem.findMany({
       where: {
@@ -104,7 +109,11 @@ router.post('/enviar', async (req, res) => {
       return res.status(400).json({ error: 'usuarioId, jid e texto são obrigatórios.' });
     }
     const { enviarMensagemInbox } = require('../workers/whatsappService');
-    const ok = await enviarMensagemInbox(String(usuarioId), String(jid), String(texto));
+    // Envia de fato pela sessão do DONO (efetivoId), mas grava enviadoPorId com o ID
+    // ORIGINAL (antes de resolver) para registrar quem de fato mandou a mensagem.
+    const efetivoId = await resolverConexaoEfetiva(String(usuarioId));
+    const enviadoPorId = efetivoId !== String(usuarioId) ? String(usuarioId) : undefined;
+    const ok = await enviarMensagemInbox(efetivoId, String(jid), String(texto), enviadoPorId);
     if (ok) res.json({ success: true });
     else res.status(503).json({ error: 'WhatsApp não está conectado ou falhou ao enviar.' });
   } catch (e) {
@@ -121,7 +130,9 @@ router.post('/enviar-midia', async (req, res) => {
       return res.status(400).json({ error: 'usuarioId, jid, base64 e tipo são obrigatórios.' });
     }
     const { enviarMidiaInbox } = require('../workers/whatsappService');
-    const ok = await enviarMidiaInbox(String(usuarioId), String(jid), String(base64), String(mimetype || ''), String(tipo), legenda ? String(legenda) : undefined);
+    const efetivoId = await resolverConexaoEfetiva(String(usuarioId));
+    const enviadoPorId = efetivoId !== String(usuarioId) ? String(usuarioId) : undefined;
+    const ok = await enviarMidiaInbox(efetivoId, String(jid), String(base64), String(mimetype || ''), String(tipo), legenda ? String(legenda) : undefined, enviadoPorId);
     if (ok) res.json({ success: true });
     else res.status(503).json({ error: 'WhatsApp não conectado ou falha ao enviar mídia.' });
   } catch (e) {

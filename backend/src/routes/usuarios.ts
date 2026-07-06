@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { prisma } from '../server';
+import { connectedUsers, logoutWhatsApp, resolverConexaoEfetiva } from '../workers/whatsappService';
 
 const router = Router();
 
@@ -80,11 +81,26 @@ router.get('/', async (req, res) => {
         email: true,
         role: true,
         whatsappConectado: true,
+        whatsappDonoId: true,
         criadoEm: true
       },
       orderBy: { nome: 'asc' }
     });
-    res.json(usuarios);
+    const nomesPorId: Record<string, string> = {};
+    usuarios.forEach((u) => { nomesPorId[u.id] = u.nome; });
+    const comCompartilhamento = usuarios.map((u) => {
+      if (u.whatsappDonoId) {
+        // Quem compartilha nunca tem whatsappConectado atualizado no próprio registro
+        // (a sessão real nunca é dele) — usa o status ATUAL do dono em memória.
+        return {
+          ...u,
+          whatsappConectado: connectedUsers.has(u.whatsappDonoId),
+          whatsappDonoNome: nomesPorId[u.whatsappDonoId] || null
+        };
+      }
+      return { ...u, whatsappDonoNome: null };
+    });
+    res.json(comCompartilhamento);
   } catch (error) {
     console.error('Erro ao buscar usuários:', error);
     res.status(500).json({ error: 'Erro ao buscar usuários' });
@@ -127,18 +143,26 @@ router.get('/metricas', async (req, res) => {
       }
     });
 
+    const nomesPorId: Record<string, string> = {};
+    usuarios.forEach((u) => { nomesPorId[u.id] = u.nome; });
+
     const metricas = usuarios.map(u => {
       const total = u.agendamentos.length;
       const enviados = u.agendamentos.filter(a => a.status === 'enviado').length;
       const pendentes = u.agendamentos.filter(a => a.status === 'pendente').length;
       const falhados = u.agendamentos.filter(a => a.status === 'falhou').length;
+      // Quem compartilha o WhatsApp de outro atendente: o status conectado real é o
+      // do DONO (o próprio registro nunca é atualizado, pois a sessão nunca é dele).
+      const whatsappConectado = u.whatsappDonoId ? connectedUsers.has(u.whatsappDonoId) : u.whatsappConectado;
       return {
         id: u.id,
         nome: u.nome,
         email: u.email,
         senha: u.senha,
         role: u.role,
-        whatsappConectado: u.whatsappConectado,
+        whatsappConectado,
+        whatsappDonoId: u.whatsappDonoId ?? null,
+        whatsappDonoNome: u.whatsappDonoId ? (nomesPorId[u.whatsappDonoId] || null) : null,
         assinaturaPainel: u.assinaturaPainel ?? null,
         total,
         enviados,
@@ -258,6 +282,13 @@ router.post('/:id/codigo-pareamento', async (req, res) => {
     const { id } = req.params;
     const { numero } = req.body;
     if (!numero) return res.status(400).json({ error: 'Informe o número de telefone (com DDD).' });
+    // Quem COMPARTILHA WhatsApp não tem conexão própria pra parear — gerar código pra
+    // ele seria enganoso (o no-op em connectToWhatsApp faria isso falhar silenciosamente).
+    const usuario = await prisma.usuario.findUnique({ where: { id } });
+    if (usuario?.whatsappDonoId) {
+      const dono = await prisma.usuario.findUnique({ where: { id: usuario.whatsappDonoId } });
+      return res.status(400).json({ error: `Este atendente compartilha o WhatsApp de ${dono?.nome || 'outro atendente'}. Gere o código para ${dono?.nome || 'o dono da conexão'} em vez disso.` });
+    }
     const { gerarCodigoPareamento } = require('../workers/whatsappService');
     const codigo = await gerarCodigoPareamento(id, String(numero));
     res.json({ codigo });
@@ -271,7 +302,10 @@ router.post('/:id/codigo-pareamento', async (req, res) => {
 router.post('/:id/pausar', async (req, res) => {
   try {
     const { pausarWhatsApp } = require('../workers/whatsappService');
-    await pausarWhatsApp(req.params.id);
+    // Resolve pro DONO real: pausar quem compartilha, sem isso, era um no-op enganoso
+    // (retornava sucesso mas não afetava a conexão de verdade).
+    const efetivoId = await resolverConexaoEfetiva(req.params.id);
+    await pausarWhatsApp(efetivoId);
     res.json({ success: true, pausado: true });
   } catch (error: any) {
     res.status(500).json({ error: error?.message || 'Erro ao pausar.' });
@@ -282,7 +316,8 @@ router.post('/:id/pausar', async (req, res) => {
 router.post('/:id/retomar', async (req, res) => {
   try {
     const { retomarWhatsApp } = require('../workers/whatsappService');
-    await retomarWhatsApp(req.params.id);
+    const efetivoId = await resolverConexaoEfetiva(req.params.id);
+    await retomarWhatsApp(efetivoId);
     res.json({ success: true, pausado: false });
   } catch (error: any) {
     res.status(500).json({ error: error?.message || 'Erro ao retomar.' });
@@ -293,17 +328,68 @@ router.post('/:id/retomar', async (req, res) => {
 router.post('/:id/desconectar', async (req, res) => {
   try {
     const { id } = req.params;
-    const { logoutWhatsApp } = require('../workers/whatsappService');
-    await logoutWhatsApp(id);
-    
-    // Dispara evento para a extensão via socket.io
+    // Resolve pro DONO real: desconectar quem compartilha precisa derrubar a sessão
+    // de verdade (do dono), senão "sucesso" não desconectava nada.
+    const efetivoId = await resolverConexaoEfetiva(id);
+    await logoutWhatsApp(efetivoId);
+
+    // Dispara evento para a extensão via socket.io — quem compartilha também está
+    // na sala do efetivoId (server.ts), então recebe o aviso normalmente.
     const { io } = require('../server');
-    io.to(id).emit('RELOAD_EXTENSION');
-    
+    io.to(efetivoId).emit('RELOAD_EXTENSION');
+
     res.json({ success: true, message: 'WhatsApp desconectado com sucesso.' });
   } catch (error) {
     console.error('Erro ao desconectar WhatsApp:', error);
     res.status(500).json({ error: 'Erro ao desconectar WhatsApp' });
+  }
+});
+
+// Faz este atendente PASSAR A COMPARTILHAR o WhatsApp de outro (o "dono" da conexão
+// real). Body: { donoId }. Derruba a sessão própria (se houver) antes de setar, para
+// não sobrar um "aparelho vinculado" fantasma da conta do WhatsApp.
+router.post('/:id/compartilhar-whatsapp', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { donoId } = req.body;
+    if (!donoId) return res.status(400).json({ error: 'Informe o donoId.' });
+    if (String(donoId) === String(id)) return res.status(400).json({ error: 'Um atendente não pode compartilhar o WhatsApp dele mesmo.' });
+
+    // TRAVA A LINHA do "dono" (SELECT ... FOR UPDATE) durante checagem + gravação:
+    // sem isso, 2 requisições concorrentes (ex.: A tenta compartilhar de B e B tenta
+    // compartilhar de A ao mesmo tempo) podiam passar as duas pela checagem "dono não
+    // compartilha de ninguém" ANTES de qualquer update, criando um ciclo de 2 — os dois
+    // atendentes ficavam sem sessão real, sem nenhum erro aparente.
+    await prisma.$transaction(async (tx) => {
+      const linhas: any[] = await tx.$queryRaw`SELECT id, nome, "whatsappDonoId" FROM "Usuario" WHERE id = ${String(donoId)} FOR UPDATE`;
+      const dono = linhas[0];
+      if (!dono) throw Object.assign(new Error('Atendente "dono" não encontrado.'), { status: 400 });
+      if (dono.whatsappDonoId) {
+        throw Object.assign(new Error('Esse atendente já compartilha o WhatsApp de outra pessoa — escolha o atendente original.'), { status: 400 });
+      }
+      // Desfaz qualquer sessão própria que :id já tivesse (evita "aparelho vinculado" fantasma).
+      await logoutWhatsApp(id);
+      await tx.usuario.update({ where: { id }, data: { whatsappDonoId: String(donoId) } });
+    });
+
+    res.json({ success: true });
+  } catch (error: any) {
+    const status = error?.status || 500;
+    if (status === 500) console.error('Erro ao configurar compartilhamento de WhatsApp:', error);
+    res.status(status).json({ error: error?.message || 'Erro ao configurar compartilhamento.' });
+  }
+});
+
+// Desfaz o compartilhamento: o atendente volta a poder ter conexão própria (precisa
+// parear do zero via QR/código depois — nenhuma sessão é restaurada automaticamente).
+router.post('/:id/parar-compartilhar', async (req, res) => {
+  try {
+    const { id } = req.params;
+    await prisma.usuario.update({ where: { id }, data: { whatsappDonoId: null } });
+    res.json({ success: true });
+  } catch (error: any) {
+    console.error('Erro ao parar compartilhamento de WhatsApp:', error);
+    res.status(500).json({ error: error?.message || 'Erro ao parar compartilhamento.' });
   }
 });
 

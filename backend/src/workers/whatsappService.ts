@@ -205,9 +205,10 @@ function tipoMensagem(message: any): string {
 // ─── AUTO-RESPOSTA POR "SILÊNCIO" ───
 // A saudação só sai quando a conversa estava PARADA: se houve qualquer troca de
 // mensagem com o contato nas últimas AUTO_REPLY_SILENCIO_HORAS, não envia.
-// Quem conversa todo dia nunca recebe; quem sumiu 2+ dias recebe de novo.
+// Quem conversa todo dia nunca recebe; quem sumiu 5+ dias recebe de novo.
 // Trava extra: nunca mais de 1 por contato a cada 24h (sobrevive a reinícios via banco).
-const SILENCIO_HORAS = Number(process.env.AUTO_REPLY_SILENCIO_HORAS || 48);
+// Prazo definido a pedido do Maicon (06/07/2026): antes eram 48h (2 dias), agora 5 dias.
+const SILENCIO_HORAS = Number(process.env.AUTO_REPLY_SILENCIO_HORAS || 120);
 const TRAVA_24H_MS = 24 * 60 * 60 * 1000;
 // Memória rápida: última auto-resposta por contato (evita rajada entre mensagens seguidas)
 const ultimaAutoMem = new Map<string, number>();
@@ -311,8 +312,39 @@ export const pairingCodes = new Map<string, string>();
 // evitando a enxurrada de QR Codes na tela do atendente.
 export const pausados = new Set<string>();
 
+// Resolve a conexão EFETIVA de um usuário: se ele COMPARTILHA o WhatsApp de outro
+// atendente (whatsappDonoId preenchido), retorna o ID do DONO — é a sessão Baileys
+// dele que deve ser usada para conectar/enviar/consultar. Caso contrário, retorna o
+// próprio usuarioId (ele é dono da sua própria conexão, comportamento de sempre).
+// Só resolve 1 nível (não segue cadeias) — cadeias são bloqueadas na rota de gestão.
+// Sem cache: é uma consulta simples, a tabela Usuario é pequena.
+export async function resolverConexaoEfetiva(usuarioId: string): Promise<string> {
+  if (!usuarioId) return usuarioId;
+  try {
+    const usuario = await prisma.usuario.findUnique({ where: { id: usuarioId }, select: { whatsappDonoId: true } });
+    if (usuario?.whatsappDonoId) return usuario.whatsappDonoId;
+  } catch (e) {
+    console.error(`[Baileys] Erro ao resolver conexão efetiva de ${usuarioId}:`, (e as any)?.message);
+  }
+  return usuarioId;
+}
+
 export async function connectToWhatsApp(usuarioId: string, socketId?: string, numeroPareamento?: string) {
   if (!usuarioId) return;
+
+  // COMPARTILHAMENTO: quem compartilha o WhatsApp de outro atendente NÃO pode ter
+  // sessão Baileys própria — se ela existisse, o WhatsApp trataria como um 2º
+  // aparelho vinculado da MESMA conta do dono, duplicando toda mensagem recebida
+  // (a causa raiz do bug de duplicidade). Então aqui é um no-op puro.
+  try {
+    const usuario = await prisma.usuario.findUnique({ where: { id: usuarioId }, select: { whatsappDonoId: true } });
+    if (usuario?.whatsappDonoId) {
+      console.log(`[Baileys] Usuário ${usuarioId} compartilha WhatsApp de ${usuario.whatsappDonoId} — não cria sessão própria.`);
+      return;
+    }
+  } catch (e) {
+    console.error(`[Baileys] Erro ao checar compartilhamento de ${usuarioId}:`, (e as any)?.message);
+  }
 
   // Conexão pausada: não tenta nada até ser retomada. EXCEÇÃO: um pareamento por
   // código (numeroPareamento presente) sempre passa — é uma ação intencional, e a
@@ -698,7 +730,7 @@ export async function enviarMensagem(usuarioId: string, numero: string, mensagem
 // Envia uma mensagem pela Caixa de Entrada (resposta interativa a um JID específico).
 // Mais rápida que enviarMensagem (sem o delay longo de "digitando"), porque é o
 // atendente conversando em tempo real, não um disparo em massa.
-export async function enviarMensagemInbox(usuarioId: string, jid: string, texto: string): Promise<boolean> {
+export async function enviarMensagemInbox(usuarioId: string, jid: string, texto: string, enviadoPorId?: string): Promise<boolean> {
   const sock = sessions.get(usuarioId);
   if (!sock) {
     console.error(`[Inbox] WhatsApp não conectado para o usuário ${usuarioId}.`);
@@ -734,7 +766,7 @@ export async function enviarMensagemInbox(usuarioId: string, jid: string, texto:
       const waId = enviada?.key?.id || null;
       lembrarWaId(waId);
       const salva = await prisma.mensagem.create({
-        data: { usuarioId, chatJid: jid, chatNome: '', fromMe: true, texto: textoFinal, tipo: 'texto', waId }
+        data: { usuarioId, chatJid: jid, chatNome: '', fromMe: true, texto: textoFinal, tipo: 'texto', waId, enviadoPorId: enviadoPorId || null }
       });
       io.to(usuarioId).emit('NOVA_MENSAGEM', salva);
     } catch (e) {
@@ -748,7 +780,7 @@ export async function enviarMensagemInbox(usuarioId: string, jid: string, texto:
 }
 
 // Envia uma MÍDIA (foto, vídeo, áudio ou documento) pela Caixa de Entrada.
-export async function enviarMidiaInbox(usuarioId: string, jid: string, base64: string, mimetype: string, tipo: string, legenda?: string): Promise<boolean> {
+export async function enviarMidiaInbox(usuarioId: string, jid: string, base64: string, mimetype: string, tipo: string, legenda?: string, enviadoPorId?: string): Promise<boolean> {
   const sock = sessions.get(usuarioId);
   if (!sock) {
     console.error(`[Inbox] WhatsApp não conectado para o usuário ${usuarioId}.`);
@@ -775,7 +807,7 @@ export async function enviarMidiaInbox(usuarioId: string, jid: string, base64: s
     const waId = enviada?.key?.id || null;
     lembrarWaId(waId);
     const salva = await prisma.mensagem.create({
-      data: { usuarioId, chatJid: jid, chatNome: '', fromMe: true, texto: legenda || '', tipo, midiaUrl, waId }
+      data: { usuarioId, chatJid: jid, chatNome: '', fromMe: true, texto: legenda || '', tipo, midiaUrl, waId, enviadoPorId: enviadoPorId || null }
     });
     io.to(usuarioId).emit('NOVA_MENSAGEM', salva);
     return true;
