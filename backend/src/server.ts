@@ -18,6 +18,7 @@ import iaRouter from './routes/ia';
 import crmAnunciosRouter from './routes/crmAnuncios';
 import integracoesRouter from './routes/integracoes';
 import paginaLinksRouter from './routes/paginaLinks';
+import otimizadorAdsRouter from './routes/otimizadorAds';
 import { paginaLinkPublica } from './middlewares/paginaLinkPublica';
 import { initSyncAds } from './integracoes/syncService';
 
@@ -140,6 +141,7 @@ app.use('/api/ia', iaRouter); // Assistente IA (Claude) com contexto do CRM
 app.use('/api/integracoes', integracoesRouter); // integrações Google Ads / Meta Ads
 app.use('/api', crmAnunciosRouter); // /api/empresas, /api/lojas, /api/campanhas, /api/contas
 app.use('/api/paginalinks', paginaLinksRouter); // Link na Bio (CRUD do conteúdo por loja)
+app.use('/api/otimizador', otimizadorAdsRouter); // Otimizador de Google Ads (auditoria + ações aprovadas)
 
 // Rotas da API de Nuvem do Painel Admin
 app.get('/api/admin/nuvem', (req, res) => {

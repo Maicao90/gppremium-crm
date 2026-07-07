@@ -188,6 +188,23 @@ model ConexaoAds {
   criadoEm    DateTime  @default(now())
 }
 
+// Log de auditoria do Otimizador de Google Ads: 1 linha por ação REALMENTE
+// aplicada (aprovada manualmente no painel). Nunca guarda sugestões pendentes —
+// a auditoria/análise é recalculada ao vivo a cada visita à tela.
+model OtimizacaoExecucao {
+  id           String   @id @default(uuid())
+  conexaoId    String
+  operacao     String // pause_keyword | add_negative
+  entidadeNome String   @default("")
+  acaoResumo   String   @default("")
+  parametros   String   @default("{}") // JSON
+  sucesso      Boolean  @default(false)
+  resultado    String   @default("{}") // JSON (resposta da API ou erro)
+  criadoEm     DateTime @default(now())
+
+  @@index([conexaoId])
+}
+
 // Métricas por campanha POR DIA, vindas das plataformas de anúncio.
 // A unique (conexaoId + campanhaExternalId + data) permite re-sincronizar sem duplicar.
 model MetricaDiaria {

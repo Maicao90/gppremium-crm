@@ -53,7 +53,7 @@ export async function trocarRefreshPorAccessToken(credenciais: CredenciaisGoogle
 }
 
 // Monta os headers exigidos pela API do Google Ads
-function montarHeaders(credenciais: CredenciaisGoogle, accessToken: string): Record<string, string> {
+export function montarHeaders(credenciais: CredenciaisGoogle, accessToken: string): Record<string, string> {
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${accessToken}`,
@@ -67,7 +67,7 @@ function montarHeaders(credenciais: CredenciaisGoogle, accessToken: string): Rec
 }
 
 // Executa uma query GAQL via googleAds:search, tratando a paginação (nextPageToken)
-async function executarBusca(credenciais: CredenciaisGoogle, accessToken: string, query: string): Promise<any[]> {
+export async function executarBusca(credenciais: CredenciaisGoogle, accessToken: string, query: string): Promise<any[]> {
   const customerId = credenciais.customerId.replace(/\D/g, ''); // garante só dígitos
   const url = `https://googleads.googleapis.com/${GOOGLE_ADS_API_VERSION}/customers/${customerId}/googleAds:search`;
 
@@ -95,6 +95,31 @@ async function executarBusca(credenciais: CredenciaisGoogle, accessToken: string
   } while (pageToken);
 
   return resultados;
+}
+
+// Executa 1 operação de escrita (mutate) contra um recurso da Google Ads API REST
+// (ex.: "adGroupCriteria", "campaignCriteria"). Usada pelo Otimizador de Anúncios —
+// nunca chamada sem aprovação humana explícita do usuário no painel.
+export async function executarMutate(
+  credenciais: CredenciaisGoogle,
+  accessToken: string,
+  recurso: string,
+  operacao: Record<string, unknown>,
+): Promise<any> {
+  const customerId = credenciais.customerId.replace(/\D/g, '');
+  const url = `https://googleads.googleapis.com/${GOOGLE_ADS_API_VERSION}/customers/${customerId}/${recurso}:mutate`;
+
+  const resp = await fetch(url, {
+    method: 'POST',
+    headers: montarHeaders(credenciais, accessToken),
+    body: JSON.stringify({ operations: [operacao] }),
+  });
+
+  const json: any = await resp.json().catch(() => ({}));
+  if (!resp.ok) {
+    throw new Error(json?.error?.message || `Google Ads respondeu HTTP ${resp.status}`);
+  }
+  return json?.results?.[0] || json;
 }
 
 // Busca métricas POR CAMPANHA e POR DIA dos últimos N dias
