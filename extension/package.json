@@ -1,7 +1,7 @@
 {
   "name": "gppremium-extension",
   "displayName": "GP Premium CRM",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Ferramenta de Agendamentos e CRM nativo no WhatsApp Web",
   "author": "Maicon",
   "scripts": {

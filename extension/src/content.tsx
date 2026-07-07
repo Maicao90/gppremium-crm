@@ -338,6 +338,52 @@ const WhatsAppCRM = () => {
     }
   })
 
+  // Ref sempre com o login MAIS RECENTE. O handler socket.on("connect") vive num
+  // useEffect com deps [] (roda 1x), então sem esse ref ele congelaria o usuarioLogado
+  // do momento em que montou e, numa reconexão, poderia não re-registrar o atendente —
+  // deixando a tela de bloqueio travada pra sempre mesmo com o servidor já de volta.
+  const usuarioLogadoRef = React.useRef(usuarioLogado)
+  React.useEffect(() => { usuarioLogadoRef.current = usuarioLogado }, [usuarioLogado])
+
+  // AUTO-RECUPERAÇÃO da tela de bloqueio: enquanto o CRM estiver "trancado"
+  // (backendConectado === false) mas houver atendente logado, a cada 5s a extensão
+  // (1) re-registra no socket e (2) pergunta ao servidor, por REST, se o WhatsApp
+  // deste atendente já está conectado — se estiver, destranca na hora, sem depender
+  // de o push do socket ter chegado. Assim, uma queda/volta do servidor NUNCA deixa
+  // o atendente preso: ele volta sozinho. Só roda enquanto bloqueado (não polla à toa).
+  React.useEffect(() => {
+    if (backendConectado || !usuarioLogado || !usuarioLogado.id) return
+    let cancelado = false
+    const tentarReconectar = async () => {
+      try {
+        if (socket.connected) socket.emit("registrar_atendente", usuarioLogado.id)
+        const res = await fetch("https://crm.nailacademyprofissional.com/api/usuarios")
+        if (!res.ok) return
+        const lista = await res.json()
+        const eu = Array.isArray(lista) ? lista.find((x: any) => x.id === usuarioLogado.id) : null
+        if (!cancelado && eu && eu.whatsappConectado) {
+          setBackendConectado(true)
+          setQrCodeBackend(null)
+        }
+      } catch { /* servidor ainda fora do ar: mantém a tentativa no próximo ciclo */ }
+    }
+    tentarReconectar()
+    const id = setInterval(tentarReconectar, 5000)
+    return () => { cancelado = true; clearInterval(id) }
+  }, [backendConectado, usuarioLogado])
+
+  // CARÊNCIA antes de mostrar o overlay de bloqueio: só aparece se ficar desconectado
+  // por 12s CONTÍNUOS. Reconexões rápidas do Baileys (2s) nunca cruzam esse limite, então
+  // a tela não pisca mais. Se reconectar antes dos 12s, o timer é zerado e nada aparece.
+  React.useEffect(() => {
+    if (backendConectado || !usuarioLogado) {
+      setBloqueioVisivel(false)
+      return
+    }
+    const id = setTimeout(() => setBloqueioVisivel(true), 12000)
+    return () => clearTimeout(id)
+  }, [backendConectado, usuarioLogado])
+
   const carregarAgendamentosDoServidor = (usrId?: string) => {
     const idFiltro = usrId || (usuarioLogado ? usuarioLogado.id : null);
     if (!idFiltro) {
@@ -381,6 +427,12 @@ const WhatsAppCRM = () => {
   // Controle do QR Code e Status Headless
   const [qrCodeBackend, setQrCodeBackend] = useState<string | null>(null)
   const [backendConectado, setBackendConectado] = useState<boolean>(false)
+  // Overlay de bloqueio COM ATRASO: nunca aparece no primeiro instante de desconexão.
+  // O Baileys reestabelece a sessão o tempo todo (churn de "prekey bundle"), e a cada
+  // ciclo o servidor manda conectado:false -> 2s depois conectado:true. Sem atraso, o
+  // overlay de tela cheia PISCAVA a cada reconexão, atrapalhando o atendente. Agora só
+  // mostra se a desconexão PERSISTIR além do período de carência (ver useEffect abaixo).
+  const [bloqueioVisivel, setBloqueioVisivel] = useState<boolean>(false)
 
   const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -464,8 +516,12 @@ const WhatsAppCRM = () => {
     
     socket.on("connect", () => {
       console.log("Conectado ao CRM Backend")
-      if (usuarioLogado && usuarioLogado.id) {
-        socket.emit("registrar_atendente", usuarioLogado.id)
+      // Usa o REF (login atual), não a variável congelada do closure — garante que
+      // TODA reconexão re-registra o atendente e o servidor reenvia o WHATSAPP_STATUS,
+      // tirando a extensão da tela de bloqueio sozinha assim que o servidor volta.
+      const u = usuarioLogadoRef.current
+      if (u && u.id) {
+        socket.emit("registrar_atendente", u.id)
       }
     })
 
@@ -2338,8 +2394,9 @@ const WhatsAppCRM = () => {
         />
       )}
 
-      {/* Renderiza o Bloqueio de Tela de Conexão */}
-      {!backendConectado && usuarioLogado && (
+      {/* Renderiza o Bloqueio de Tela de Conexão — só após a carência (bloqueioVisivel),
+          nunca no primeiro instante de uma desconexão passageira. */}
+      {bloqueioVisivel && usuarioLogado && (
         <div style={{
           position: 'fixed',
           top: 0, left: 0, right: 0, bottom: 0,

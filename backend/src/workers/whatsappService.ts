@@ -427,7 +427,10 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
 
       console.log(`[Baileys] Conexão fechada (Usuário ${usuarioId}). Código: ${statusCode}. Motivo:`, lastDisconnect?.error, 'Deslogado:', isLoggedOut);
 
-      io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false });
+      // NÃO avisa "desconectado" aqui em cima: o Baileys fecha e reabre a sessão o tempo
+      // todo (código 515 pós-QR, churn de prekey, quedinhas de rede) e reconecta em 2s.
+      // Avisar false a cada ciclo fazia a extensão PISCAR a tela de bloqueio de tela cheia.
+      // Só avisamos "desconectado" no caso de logout REAL (aparelho removido) — ver abaixo.
 
       connectedUsers.delete(usuarioId);
 
@@ -441,6 +444,8 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
         // no celular. O WhatsApp invalida a sessão (código 401), então apagamos as credenciais
         // mortas do disco para que um QR Code novo e limpo seja gerado na próxima conexão.
         console.log(`[Baileys] Aparelho REMOVIDO pelo celular (usuário ${usuarioId}). Limpando credenciais e aguardando novo QR Code.`);
+        // Logout de verdade: AGORA sim avisa a extensão para mostrar a tela de pareamento.
+        io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false });
         latestQR.delete(usuarioId);
         try {
           const fs = require('fs');
