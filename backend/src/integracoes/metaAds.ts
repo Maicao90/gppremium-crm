@@ -7,15 +7,19 @@ import { MetricaCampanhaDia, ResultadoTeste, SaldoConta, periodoDias } from './t
 // Se as chamadas começarem a falhar com erro de versão descontinuada,
 // basta atualizar a constante abaixo para a versão vigente (ex.: 'v24.0').
 // Changelog: https://developers.facebook.com/docs/graph-api/changelog
-export const META_GRAPH_VERSION = 'v23.0';
+export const META_GRAPH_VERSION = 'v25.0';
 
 const GRAPH_BASE = `https://graph.facebook.com/${META_GRAPH_VERSION}`;
 
 // Credenciais esperadas para a plataforma 'meta'
 // adAccountId no formato act_123456789
+// appSecret é OPCIONAL: se presente, todas as chamadas assinam com appsecret_proof
+// (camada extra de segurança que o app pode exigir). Sem ele, funciona se o app não
+// tiver "Require app secret" ligado.
 export interface CredenciaisMeta {
   accessToken: string;
   adAccountId: string;
+  appSecret?: string;
 }
 
 // Tipos de ação que contamos como LEAD.
@@ -51,6 +55,59 @@ async function chamarGraph(url: string): Promise<any> {
     throw new Error(json?.error?.message || `Meta Graph respondeu HTTP ${resp.status}`);
   }
   return json;
+}
+
+// appsecret_proof = HMAC-SHA256 do access_token usando o App Secret como chave.
+// Só é gerado se a conexão tiver appSecret. Adiciona uma camada de segurança contra
+// uso do token roubado sem o segredo do app.
+function appsecretProof(accessToken: string, appSecret?: string): string | null {
+  if (!appSecret || !appSecret.trim()) return null;
+  const crypto = require('crypto');
+  return crypto.createHmac('sha256', appSecret.trim()).update(accessToken).digest('hex');
+}
+
+// Executa uma ESCRITA (POST) na Graph API. O token e os parâmetros vão no BODY
+// (form-urlencoded), nunca na URL — então a URL pode aparecer em log sem vazar segredo.
+// Usada só pelo Otimizador do Meta, sempre após aprovação humana individual no painel.
+export async function chamarGraphPost(
+  credenciais: CredenciaisMeta,
+  path: string,
+  campos: Record<string, string | number>,
+): Promise<any> {
+  const body = new URLSearchParams();
+  for (const [k, v] of Object.entries(campos)) body.set(k, String(v));
+  body.set('access_token', credenciais.accessToken);
+  const proof = appsecretProof(credenciais.accessToken, credenciais.appSecret);
+  if (proof) body.set('appsecret_proof', proof);
+
+  const resp = await fetch(`${GRAPH_BASE}/${path}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: body.toString(),
+  });
+  const json: any = await resp.json().catch(() => ({}));
+  if (!resp.ok || json?.error) {
+    throw new Error(traduzirErroMeta(json?.error?.message || `Meta Graph respondeu HTTP ${resp.status}`));
+  }
+  return json;
+}
+
+// Traduz erros comuns da Graph API para português leigo.
+export function traduzirErroMeta(msg: string): string {
+  const m = String(msg).toLowerCase();
+  if (m.includes('token') && (m.includes('expired') || m.includes('invalid') || m.includes('session'))) {
+    return 'A conexão com o Facebook expirou ou foi revogada. Gere um novo token (Usuário do Sistema) e atualize a conexão.';
+  }
+  if (m.includes('permission') || m.includes('(#200)') || m.includes('do not have')) {
+    return 'Sem permissão para alterar esta conta. Confirme que o token tem "ads_management" e que a conta está atribuída ao Usuário do Sistema.';
+  }
+  if (m.includes('budget') && (m.includes('minimum') || m.includes('too low') || m.includes('less than'))) {
+    return 'Orçamento abaixo do mínimo permitido pelo Facebook para esta campanha.';
+  }
+  if (m.includes('rate') || m.includes('(#17)') || m.includes('(#613)') || m.includes('too many')) {
+    return 'Muitas alterações em pouco tempo (limite do Facebook). Espere alguns minutos e tente de novo.';
+  }
+  return msg;
 }
 
 // Soma o valor das actions cujo action_type conta como lead

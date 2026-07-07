@@ -108,6 +108,9 @@ export type OperacaoApi =
   | 'set_campaign_status'
   | 'change_match_type'
   | 'add_keyword'
+  // Operações do Meta (Facebook) Ads — compartilham o mesmo contrato AcaoOtimizacao.
+  | 'set_status_meta'
+  | 'update_budget_meta'
   | 'nenhum';
 
 // Quando presente, a recomendação tem um VALOR editável pelo usuário no painel antes de

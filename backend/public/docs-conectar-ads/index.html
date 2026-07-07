@@ -228,14 +228,14 @@ Quem tiver essas chaves consegue ver (e em alguns casos mexer) nas suas contas d
 <li>Vá em <strong>Configurações do negócio</strong> (ícone de engrenagem, ou menu ☰ → Configurações).</li>
 <li>No menu esquerdo: <strong>Usuários</strong> → <strong>Usuários do sistema</strong>.</li>
 <li>Clique em <strong>Adicionar</strong>.</li>
-<li>Nome: ex. &quot;crm-integracao&quot;. Função: <strong>Funcionário</strong> já é suficiente (só leitura de dados; não escolha Administrador sem necessidade).</li>
+<li>Nome: ex. &quot;crm-integracao&quot;. Função: <strong>Administrador</strong> (necessário para o CRM poder GERENCIAR — pausar/ativar campanhas e mudar orçamento — além de ler).</li>
 <li>Clique em <strong>Criar usuário do sistema</strong>.</li>
 </ol>
 <h2>Passo 2.4 — Dar acesso da conta de anúncios ao Usuário do Sistema</h2>
 <ol>
 <li>Ainda na tela do usuário do sistema, clique em <strong>Adicionar ativos</strong> (ou &quot;Atribuir ativos&quot;).</li>
-<li>Na janela: escolha <strong>Contas de anúncios</strong> → marque a sua conta de anúncios.</li>
-<li>Nas permissões, ative <strong>Visualizar desempenho</strong> (leitura de relatórios é suficiente para o CRM; não precisa de &quot;Gerenciar conta&quot;).</li>
+<li>Na janela: escolha <strong>Contas de anúncios</strong> → marque <strong>TODAS</strong> as suas contas de anúncio (uma por loja).</li>
+<li>Nas permissões, ative o <strong>Controle total / Gerenciar campanhas</strong> (não só &quot;Visualizar desempenho&quot; — o controle total é o que permite pausar/ativar e mudar orçamento pelo CRM).</li>
 <li>Clique em <strong>Salvar alterações</strong>.</li>
 </ol>
 <h2>Passo 2.5 — Gerar o Access Token (o que não expira)</h2>
@@ -243,8 +243,10 @@ Quem tiver essas chaves consegue ver (e em alguns casos mexer) nas suas contas d
 <li>Na tela do usuário do sistema, clique em <strong>Gerar novo token</strong>.</li>
 <li><strong>Selecionar app:</strong> escolha o app que você criou no passo 2.1 (ex. &quot;CRM GP Premium&quot;).</li>
 <li><strong>Validade do token / Expiração:</strong> escolha <strong>Nunca</strong> (&quot;Never&quot; / &quot;Nunca expira&quot;). É isso que torna esse token &quot;de longa duração&quot;.</li>
-<li><strong>Permissões:</strong> marque APENAS estas duas:<ul>
+<li><strong>Permissões:</strong> marque estas (as três primeiras são obrigatórias para o CRM gerenciar as campanhas):<ul>
+<li><code>ads_management</code> (gerenciar — pausar/ativar e mudar orçamento)</li>
 <li><code>ads_read</code> (ler dados de anúncios)</li>
+<li><code>business_management</code> (listar/organizar as contas)</li>
 <li><code>read_insights</code> (ler relatórios de desempenho)</li>
 </ul>
 </li>
@@ -260,6 +262,14 @@ Quem tiver essas chaves consegue ver (e em alguns casos mexer) nas suas contas d
 <li>Menu esquerdo: <strong>Contas</strong> → <strong>Contas de anúncios</strong>.</li>
 <li>Clique na sua conta de anúncios: o <strong>número de identificação</strong> aparece logo abaixo do nome (ex.: 1234567890).</li>
 <li>No CRM, digite no formato <strong><code>act_</code> + o número</strong>, tudo junto: <code>act_1234567890</code>.</li>
+<li><strong>Repita para cada loja/conta:</strong> anote o <code>act_...</code> de cada uma. No painel você cria uma conexão por conta (mesmo token, ID diferente).</li>
+</ol>
+<h2>Passo 2.7 — (Opcional, mas recomendado) Segredo do App</h2>
+<p>Para uma camada extra de segurança nas alterações (pausar/orçamento), o CRM pode assinar cada comando com o <strong>Segredo do App</strong>.</p>
+<ol>
+<li>Em <a href="https://developers.facebook.com">developers.facebook.com</a> → seu app → <strong>Configurações → Básico</strong>.</li>
+<li>No campo <strong>Chave Secreta do App</strong>, clique em <strong>Mostrar</strong> e copie.</li>
+<li>Cole no campo <strong>&quot;Segredo do App (opcional)&quot;</strong> ao conectar o Meta no painel. Se o seu app não exigir, pode deixar em branco.</li>
 </ol>
 <hr>
 <h1>PARTE 3 — Checklist final: o que ter em mãos antes de abrir o painel</h1>
@@ -279,9 +289,10 @@ Quem tiver essas chaves consegue ver (e em alguns casos mexer) nas suas contas d
 <ul>
 <li><input disabled="" type="checkbox"> Criei o <strong>app tipo Empresa</strong> em developers.facebook.com, vinculado ao meu Gerenciador de Negócios</li>
 <li><input disabled="" type="checkbox"> Adicionei o produto <strong>Marketing API</strong> ao app</li>
-<li><input disabled="" type="checkbox"> Criei o <strong>Usuário do Sistema</strong> e atribuí minha conta de anúncios a ele (permissão &quot;Visualizar desempenho&quot;)</li>
-<li><input disabled="" type="checkbox"> Gerei e copiei o <strong>Access Token</strong> com validade <strong>Nunca</strong> e permissões <code>ads_read</code> + <code>read_insights</code></li>
-<li><input disabled="" type="checkbox"> Anotei o <strong>ID da conta de anúncios</strong> no formato <code>act_NUMERO</code></li>
+<li><input disabled="" type="checkbox"> Criei o <strong>Usuário do Sistema</strong> (Administrador) e atribuí <strong>todas</strong> as contas a ele com <strong>Controle total / Gerenciar campanhas</strong></li>
+<li><input disabled="" type="checkbox"> Gerei e copiei o <strong>Access Token</strong> com validade <strong>Nunca</strong> e permissões <code>ads_management</code> + <code>ads_read</code> + <code>business_management</code></li>
+<li><input disabled="" type="checkbox"> Anotei o <strong>ID de cada conta de anúncios</strong> no formato <code>act_NUMERO</code></li>
+<li><input disabled="" type="checkbox"> (Opcional) Copiei a <strong>Chave Secreta do App</strong> (Configurações → Básico)</li>
 </ul>
 <h2>Segurança</h2>
 <ul>
