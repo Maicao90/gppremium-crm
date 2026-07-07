@@ -33,6 +33,11 @@ export interface CampanhaColetada {
   custoPorConversao: number;
   limitadaPorOrcamento: boolean;
   conversoesHistoricas: number;
+  estrategiaLance: string;        // MANUAL_CPC, MAXIMIZE_CONVERSIONS, TARGET_CPA, etc.
+  campanhaResourceName: string;   // customers/{cid}/campaigns/{id} — usado nas ações de escrita
+  budgetResourceName: string;     // customers/{cid}/campaignBudgets/{id} — usado ao ajustar orçamento
+  orcamentoCompartilhado: boolean; // orçamento usado por +de 1 campanha — ajustar afeta TODAS
+  orcamentoRefCount: number;       // quantas campanhas usam este mesmo orçamento
 }
 
 export interface AdGroupColetado {
@@ -58,6 +63,7 @@ export interface KeywordColetada {
   cliques: number;
   ctr: number;
   cpcMedio: number;
+  cpcBid: number;   // lance máximo (CPC) manual atual, em reais (0 = sem lance manual/bidding automático)
   custo: number;
   conversoes: number;
   qualityScore: number;
@@ -94,7 +100,27 @@ export interface DadosColetados {
   termosPesquisa: TermoPesquisaColetado[];
 }
 
-export type OperacaoApi = 'pause_keyword' | 'add_negative' | 'update_bid' | 'add_keyword' | 'nenhum';
+export type OperacaoApi =
+  | 'pause_keyword'
+  | 'add_negative'
+  | 'update_bid'
+  | 'update_budget'
+  | 'set_campaign_status'
+  | 'change_match_type'
+  | 'add_keyword'
+  | 'nenhum';
+
+// Quando presente, a recomendação tem um VALOR editável pelo usuário no painel antes de
+// aplicar (ex.: novo lance em R$, novo orçamento diário). O valor final digitado volta no
+// campo indicado de parametrosApi (`campoValor`), já convertido de reais quando aplicável.
+export interface ValorEditavel {
+  tipo: 'moeda';           // por ora só valores em R$
+  label: string;           // rótulo do input (ex.: "Novo lance máximo por clique (R$)")
+  atual: number;           // valor atual, em reais
+  sugerido: number;        // valor sugerido pela regra, em reais (default do input)
+  min: number;             // mínimo aceitável em reais (validação)
+  campoValor: string;      // nome do campo em parametrosApi que recebe o valor em reais
+}
 
 export interface AcaoOtimizacao {
   id: string;
@@ -109,6 +135,7 @@ export interface AcaoOtimizacao {
   dadosAtuais: Record<string, unknown>;
   operacaoApi: OperacaoApi;
   parametrosApi: Record<string, unknown>;
+  valorEditavel?: ValorEditavel;   // presente só quando o usuário edita um valor antes de aplicar
   reversivel: boolean;
   economiaEstimada: number;
   regra: string;
@@ -122,7 +149,9 @@ const microsToReais = (v: unknown): number => Number(v || 0) / MICROS;
 const CAMPAIGN_QUERY = `
   SELECT
     campaign.id, campaign.name, campaign.status, campaign.advertising_channel_type,
-    campaign_budget.amount_micros,
+    campaign.resource_name, campaign.bidding_strategy_type,
+    campaign_budget.amount_micros, campaign_budget.resource_name,
+    campaign_budget.explicitly_shared, campaign_budget.reference_count,
     metrics.impressions, metrics.clicks, metrics.ctr, metrics.average_cpc,
     metrics.cost_micros, metrics.conversions, metrics.cost_per_conversion,
     metrics.search_budget_lost_impression_share
@@ -144,6 +173,7 @@ const KEYWORD_QUERY = `
   SELECT
     ad_group_criterion.criterion_id, ad_group_criterion.keyword.text,
     ad_group_criterion.keyword.match_type, ad_group_criterion.status,
+    ad_group_criterion.cpc_bid_micros,
     ad_group.id, ad_group.name, campaign.id, campaign.name,
     metrics.impressions, metrics.clicks, metrics.ctr, metrics.average_cpc,
     metrics.cost_micros, metrics.conversions,
@@ -204,6 +234,11 @@ export async function coletarDados(credenciais: CredenciaisGoogle): Promise<Dado
       custoPorConversao: microsToReais(m.costPerConversion),
       limitadaPorOrcamento: Number(m.searchBudgetLostImpressionShare || 0) > 0.05,
       conversoesHistoricas: 0, // a API não expõe histórico "vitalício" numa única query simples
+      estrategiaLance: String(row?.campaign?.biddingStrategyType ?? ''),
+      campanhaResourceName: String(row?.campaign?.resourceName ?? `customers/${customerId}/campaigns/${row?.campaign?.id ?? ''}`),
+      budgetResourceName: String(row?.campaignBudget?.resourceName ?? ''),
+      orcamentoCompartilhado: Boolean(row?.campaignBudget?.explicitlyShared) || Number(row?.campaignBudget?.referenceCount ?? 0) > 1,
+      orcamentoRefCount: Number(row?.campaignBudget?.referenceCount ?? 0),
     };
   });
 
@@ -236,6 +271,7 @@ export async function coletarDados(credenciais: CredenciaisGoogle): Promise<Dado
       cliques: Number(m.clicks || 0),
       ctr: Number(m.ctr || 0) * 100,
       cpcMedio: microsToReais(m.averageCpc),
+      cpcBid: microsToReais(crit.cpcBidMicros),
       custo: microsToReais(m.costMicros),
       conversoes: Number(m.conversions || 0),
       qualityScore: Number(crit.qualityInfo?.qualityScore || 0),
@@ -315,7 +351,13 @@ const brl = (v: number): string => `R$ ${v.toFixed(2).replace('.', ',').replace(
 let seq = 0;
 const novaAcao = (a: Omit<AcaoOtimizacao, 'id'>): AcaoOtimizacao => ({ id: `acao-${Date.now()}-${seq++}`, ...a });
 
-function checarKeywords(keywords: KeywordColetada[], temConversao: boolean): AcaoOtimizacao[] {
+// Só faz sentido editar o LANCE (CPC) manual em campanhas de lance manual. Em campanhas
+// com lance automático (Maximize Conversions, Target CPA...) o Google ignora/rejeita lance
+// por palavra, então nesses casos a recomendação de CPC alto fica só como revisão manual.
+const LANCE_MANUAL = new Set(['MANUAL_CPC', 'ENHANCED_CPC']);
+const CUSTO_MIN_TROCAR_MATCH = 30.0; // ampla sem conversão acima disso → oferece trocar p/ frase
+
+function checarKeywords(keywords: KeywordColetada[], temConversao: boolean, campanhaPorId: Map<string, CampanhaColetada>): AcaoOtimizacao[] {
   const acoes: AcaoOtimizacao[] = [];
   for (const kw of keywords) {
     if (kw.status !== 'ENABLED') continue;
@@ -385,17 +427,43 @@ function checarKeywords(keywords: KeywordColetada[], temConversao: boolean): Aca
       }));
     }
 
-    // Lance (CPC) alto para o setor
+    // Lance (CPC) alto para o setor — editável só em campanhas de lance manual
     if (kw.cpcMedio > CPC_ALTO_SETOR && kw.cliques > 0) {
+      const camp = campanhaPorId.get(kw.campanhaId);
+      const manual = camp ? LANCE_MANUAL.has(camp.estrategiaLance) : false;
+      // Sugestão de novo lance: teto do setor, mas nunca acima do lance atual (só reduzir).
+      const lanceAtual = kw.cpcBid > 0 ? kw.cpcBid : kw.cpcMedio;
+      const sugerido = Math.max(0.5, Math.min(CPC_ALTO_SETOR, Math.round(lanceAtual * 0.8 * 100) / 100));
       acoes.push(novaAcao({
         prioridade: 'ALERTA', categoria: 'LANCES', entidade: 'palavra-chave',
         entidadeId: kw.id, entidadeNome: `"${kw.texto}"`,
         problema: `O custo médio por clique dessa palavra está em ${brl(kw.cpcMedio)}, bem acima do normal (cerca de ${brl(CPC_ALTO_SETOR)}). Você está pagando caro por cada visita.`,
-        acao: `Revisar o lance manual de "${kw.texto}" (considerar reduzir)`,
+        acao: manual
+          ? `Reduzir o lance máximo de "${kw.texto}"`
+          : `Revisar o lance de "${kw.texto}" (campanha usa lance automático — ajuste pela estratégia da campanha)`,
         impactoEsperado: 'Pagar menos por clique mantendo um volume parecido de visitas.',
-        dadosAtuais: { cpcMedio: kw.cpcMedio, cliques: kw.cliques, custo30d: kw.custo },
-        operacaoApi: 'nenhum', parametrosApi: {},
+        dadosAtuais: { cpcMedio: kw.cpcMedio, lanceAtual, cliques: kw.cliques, custo30d: kw.custo },
+        operacaoApi: manual ? 'update_bid' : 'nenhum',
+        parametrosApi: manual ? { resourceName: kw.resourceName, cpcBidReais: sugerido } : {},
+        ...(manual ? { valorEditavel: { tipo: 'moeda' as const, label: 'Novo lance máximo por clique (R$)', atual: lanceAtual, sugerido, min: 0.01, campoValor: 'cpcBidReais' } } : {}),
         reversivel: true, economiaEstimada: 0, regra: 'cpc_alto',
+      }));
+    }
+
+    // Correspondência ampla gastando sem converter → oferece trocar para FRASE (mais controle).
+    // Reversível, mas RECRIA a palavra (perde o histórico dela) — deixado claro no texto.
+    if (kw.matchType === 'ampla' && kw.custo > CUSTO_MIN_TROCAR_MATCH && kw.conversoes === 0) {
+      acoes.push(novaAcao({
+        prioridade: 'ALERTA', categoria: 'PALAVRAS_CHAVE', entidade: 'palavra-chave',
+        entidadeId: kw.id, entidadeNome: nome,
+        problema: `A palavra ${nome} é de correspondência AMPLA (o Google decide para quais pesquisas mostrar) e gastou ${brl(kw.custo)} sem nenhuma conversão. Trocar para FRASE dá mais controle.`,
+        acao: `Trocar "${kw.texto}" de ampla para correspondência de frase`,
+        impactoEsperado: 'Mostrar o anúncio só para pesquisas mais próximas do que você vende, cortando desperdício.',
+        dadosAtuais: { matchAtual: kw.matchType, custo30d: kw.custo, cliques: kw.cliques, conversoes: kw.conversoes },
+        // Recria a palavra em modo frase: remove a antiga + cria a nova no mesmo grupo/lance.
+        operacaoApi: 'change_match_type',
+        parametrosApi: { oldResourceName: kw.resourceName, adGroupId: kw.adGroupId, texto: kw.texto, novoMatchType: 'PHRASE', cpcBidReais: kw.cpcBid > 0 ? kw.cpcBid : 0 },
+        reversivel: true, economiaEstimada: kw.custo * 0.4, regra: 'trocar_match_ampla',
       }));
     }
   }
@@ -540,14 +608,25 @@ function checarOrcamento(campanhas: CampanhaColetada[]): AcaoOtimizacao[] {
   const acoes: AcaoOtimizacao[] = [];
   for (const c of campanhas) {
     if (c.status === 'ENABLED' && c.limitadaPorOrcamento) {
+      const podeEditar = !!c.budgetResourceName; // sem resource name não dá pra escrever o orçamento
+      const sugerido = Math.max(1, Math.round(c.budgetDiario * 1.3 * 100) / 100); // +30%
+      // ⚠️ Orçamento COMPARTILHADO: mexer aqui muda o orçamento de TODAS as campanhas que
+      // usam este mesmo orçamento — o usuário PRECISA ver isso antes de aprovar (achado C1).
+      const avisoCompart = c.orcamentoCompartilhado
+        ? ` ⚠️ ATENÇÃO: este orçamento é COMPARTILHADO por ${c.orcamentoRefCount} campanhas — alterá-lo muda o orçamento de todas elas, não só desta.`
+        : '';
       acoes.push(novaAcao({
         prioridade: 'ALERTA', categoria: 'ORCAMENTO', entidade: 'campanha',
         entidadeId: c.id, entidadeNome: c.nome,
-        problema: `A campanha '${c.nome}' está 'limitada por orçamento' — ela poderia aparecer mais, mas o dinheiro do dia acaba antes. Você está perdendo pesquisas de quem quer comprar.`,
-        acao: 'Avaliar aumentar o orçamento diário ou redistribuir de campanhas fracas',
-        impactoEsperado: 'Capturar mais pesquisas relevantes que hoje ficam de fora.',
-        dadosAtuais: { budgetDiario: c.budgetDiario, conversoes: c.conversoes, custoPorConversao: c.custoPorConversao },
-        operacaoApi: 'nenhum', parametrosApi: {},
+        problema: `A campanha '${c.nome}' está 'limitada por orçamento' — ela poderia aparecer mais, mas o dinheiro do dia acaba antes. Você está perdendo pesquisas de quem quer comprar.${avisoCompart}`,
+        acao: podeEditar ? `Aumentar o orçamento diário de '${c.nome}'` : 'Avaliar aumentar o orçamento diário',
+        impactoEsperado: c.orcamentoCompartilhado
+          ? `Capturar mais pesquisas relevantes. Lembre: afeta as ${c.orcamentoRefCount} campanhas que dividem este orçamento.`
+          : 'Capturar mais pesquisas relevantes que hoje ficam de fora.',
+        dadosAtuais: { budgetDiario: c.budgetDiario, orcamentoCompartilhado: c.orcamentoCompartilhado, conversoes: c.conversoes, custoPorConversao: c.custoPorConversao },
+        operacaoApi: podeEditar ? 'update_budget' : 'nenhum',
+        parametrosApi: podeEditar ? { budgetResourceName: c.budgetResourceName, amountReais: sugerido } : {},
+        ...(podeEditar ? { valorEditavel: { tipo: 'moeda' as const, label: 'Novo orçamento diário (R$)', atual: c.budgetDiario, sugerido, min: 1, campoValor: 'amountReais' } } : {}),
         reversivel: true, economiaEstimada: 0, regra: 'limitada_por_orcamento',
       }));
     }
@@ -559,8 +638,10 @@ const PRIORIDADE_ORDEM: Record<string, number> = { CRITICO: 0, ALERTA: 1, SUGEST
 
 export function analisar(dados: DadosColetados): AcaoOtimizacao[] {
   const temConversao = dados.campanhas.some((c) => c.conversoes > 0);
+  const campanhaPorId = new Map<string, CampanhaColetada>();
+  for (const c of dados.campanhas) campanhaPorId.set(c.id, c);
   const acoes: AcaoOtimizacao[] = [
-    ...checarKeywords(dados.keywords, temConversao),
+    ...checarKeywords(dados.keywords, temConversao, campanhaPorId),
     ...checarBroadMatch(dados.keywords, dados.campanhas),
     ...checarTermosPesquisa(dados.termosPesquisa, dados.campanhas),
     ...checarEstrutura(dados.adGroups, dados.anuncios),
@@ -620,8 +701,76 @@ export async function executarAcao(
       return { success: true, detalhe: 'Palavra-chave negativa adicionada.' };
     }
 
+    if (acao.operacaoApi === 'update_bid') {
+      const reais = Number(p.cpcBidReais);
+      if (!Number.isFinite(reais) || reais <= 0 || reais > 1000) {
+        return { success: false, erro: 'Lance inválido. Informe um valor entre R$ 0,01 e R$ 1.000,00.' };
+      }
+      if (!p.resourceName) return { success: false, erro: 'Palavra-chave não identificada.' };
+      await executarMutate(credenciais, accessToken, 'adGroupCriteria', {
+        updateMask: 'cpcBidMicros',
+        update: { resourceName: p.resourceName, cpcBidMicros: Math.round(reais * MICROS) },
+      });
+      return { success: true, detalhe: `Lance ajustado para ${brl(reais)}.` };
+    }
+
+    if (acao.operacaoApi === 'update_budget') {
+      const reais = Number(p.amountReais);
+      if (!Number.isFinite(reais) || reais <= 0 || reais > 100000) {
+        return { success: false, erro: 'Orçamento inválido. Informe um valor entre R$ 1,00 e R$ 100.000,00.' };
+      }
+      if (!p.budgetResourceName) return { success: false, erro: 'Orçamento da campanha não identificado.' };
+      await executarMutate(credenciais, accessToken, 'campaignBudgets', {
+        updateMask: 'amountMicros',
+        update: { resourceName: p.budgetResourceName, amountMicros: Math.round(reais * MICROS) },
+      });
+      return { success: true, detalhe: `Orçamento diário ajustado para ${brl(reais)}.` };
+    }
+
+    if (acao.operacaoApi === 'set_campaign_status') {
+      const status = p.status === 'ENABLED' ? 'ENABLED' : p.status === 'PAUSED' ? 'PAUSED' : null;
+      if (!status) return { success: false, erro: 'Status inválido.' };
+      if (!p.campaignResourceName) return { success: false, erro: 'Campanha não identificada.' };
+      await executarMutate(credenciais, accessToken, 'campaigns', {
+        updateMask: 'status',
+        update: { resourceName: p.campaignResourceName, status },
+      });
+      return { success: true, detalhe: status === 'ENABLED' ? 'Campanha reativada.' : 'Campanha pausada.' };
+    }
+
+    if (acao.operacaoApi === 'change_match_type') {
+      const customerId = credenciais.customerId.replace(/\D/g, '');
+      const novoMatch = ['PHRASE', 'EXACT', 'BROAD'].includes(p.novoMatchType) ? p.novoMatchType : 'PHRASE';
+      if (!p.oldResourceName || !p.adGroupId || !p.texto) {
+        return { success: false, erro: 'Dados insuficientes para trocar a correspondência.' };
+      }
+      const create: Record<string, unknown> = {
+        adGroup: `customers/${customerId}/adGroups/${p.adGroupId}`,
+        status: 'ENABLED',
+        keyword: { text: p.texto, matchType: novoMatch },
+      };
+      const bid = Number(p.cpcBidReais);
+      if (Number.isFinite(bid) && bid > 0) create.cpcBidMicros = Math.round(bid * MICROS);
+      // Remove a antiga + cria a nova numa só chamada atômica.
+      await executarMutate(credenciais, accessToken, 'adGroupCriteria', [
+        { remove: p.oldResourceName },
+        { create },
+      ]);
+      return { success: true, detalhe: 'Correspondência trocada (palavra recriada em modo frase/exata).' };
+    }
+
     return { success: false, erro: `Operação não suportada: ${acao.operacaoApi}` };
   } catch (e: any) {
-    return { success: false, erro: String(e?.message || 'Erro ao aplicar a ação na Google Ads API.') };
+    return { success: false, erro: traduzirErroGoogle(String(e?.message || 'Erro ao aplicar a ação na Google Ads API.')) };
   }
+}
+
+// Traduz erros comuns da Google Ads API para português claro (o cru é técnico demais).
+function traduzirErroGoogle(msg: string): string {
+  const m = msg.toLowerCase();
+  if (m.includes('duplicate')) return 'Já existe uma palavra-chave igual (nesse modo) nesse grupo — nada foi alterado.';
+  if (m.includes('budget') && m.includes('shared')) return 'Este orçamento é compartilhado por outras campanhas. A alteração afeta todas elas.';
+  if (m.includes('permission') || m.includes('not authorized') || m.includes('unauthorized')) return 'Sem permissão para alterar esta conta. Verifique o acesso da conexão.';
+  if (m.includes('invalid') && m.includes('bid')) return 'Lance inválido para esta campanha (pode usar lance automático — ajuste pela estratégia da campanha).';
+  return msg;
 }

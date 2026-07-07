@@ -97,22 +97,24 @@ export async function executarBusca(credenciais: CredenciaisGoogle, accessToken:
   return resultados;
 }
 
-// Executa 1 operação de escrita (mutate) contra um recurso da Google Ads API REST
-// (ex.: "adGroupCriteria", "campaignCriteria"). Usada pelo Otimizador de Anúncios —
-// nunca chamada sem aprovação humana explícita do usuário no painel.
+// Executa operação(ões) de escrita (mutate) contra um recurso da Google Ads API REST
+// (ex.: "adGroupCriteria", "campaignBudgets", "campaigns"). Aceita 1 operação ou um
+// array (ex.: trocar correspondência = remover a antiga + criar a nova, atômico).
+// Usada pelo Otimizador de Anúncios — nunca chamada sem aprovação humana explícita.
 export async function executarMutate(
   credenciais: CredenciaisGoogle,
   accessToken: string,
   recurso: string,
-  operacao: Record<string, unknown>,
+  operacoes: Record<string, unknown> | Record<string, unknown>[],
 ): Promise<any> {
   const customerId = credenciais.customerId.replace(/\D/g, '');
   const url = `https://googleads.googleapis.com/${GOOGLE_ADS_API_VERSION}/customers/${customerId}/${recurso}:mutate`;
+  const operations = Array.isArray(operacoes) ? operacoes : [operacoes];
 
   const resp = await fetch(url, {
     method: 'POST',
     headers: montarHeaders(credenciais, accessToken),
-    body: JSON.stringify({ operations: [operacao] }),
+    body: JSON.stringify({ operations }),
   });
 
   const json: any = await resp.json().catch(() => ({}));

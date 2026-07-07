@@ -35,7 +35,20 @@ router.get('/:conexaoId/auditoria', async (req, res) => {
       totalCampanhas: dados.campanhas.length,
       totalKeywords: dados.keywords.length,
     };
-    res.json({ nome: achado.nome, resumo, acoes });
+    // Lista de campanhas p/ o painel gerenciar diretamente (pausar/reativar + orçamento),
+    // independente das recomendações. Só campanhas não-removidas (a coleta já filtra REMOVED).
+    const campanhas = dados.campanhas.map((c) => ({
+      id: c.id,
+      nome: c.nome,
+      status: c.status,
+      budgetDiario: c.budgetDiario,
+      custo30d: Math.round(c.custo * 100) / 100,
+      campanhaResourceName: c.campanhaResourceName,
+      budgetResourceName: c.budgetResourceName,
+      orcamentoCompartilhado: c.orcamentoCompartilhado,
+      orcamentoRefCount: c.orcamentoRefCount,
+    }));
+    res.json({ nome: achado.nome, resumo, acoes, campanhas });
   } catch (e) { erro(res, e); }
 });
 
@@ -48,7 +61,8 @@ router.post('/:conexaoId/executar', async (req, res) => {
 
     const acao: AcaoOtimizacao | undefined = req.body?.acao;
     if (!acao || !acao.operacaoApi) return res.status(400).json({ error: 'Ação inválida.' });
-    if (acao.operacaoApi !== 'pause_keyword' && acao.operacaoApi !== 'add_negative') {
+    const OPERACOES_PERMITIDAS = ['pause_keyword', 'add_negative', 'update_bid', 'update_budget', 'set_campaign_status', 'change_match_type'];
+    if (!OPERACOES_PERMITIDAS.includes(acao.operacaoApi)) {
       return res.status(400).json({ error: 'Esta sugestão exige revisão manual — não há operação automática para aplicar.' });
     }
 
