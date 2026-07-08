@@ -815,6 +815,13 @@
         CRM de Anúncios
       </div>
 
+      <div class="nav-section-label">Robô</div>
+
+      <div class="nav-item" id="nav-botpneus" onclick="navTo('botpneus')">
+        <i class="fa-solid fa-robot"></i>
+        Bot Pneus (Charles)
+      </div>
+
     </nav>
 
     <div class="sidebar-footer">
@@ -1191,6 +1198,46 @@
         <button type="button" class="btn-save" onclick="salvarAgendamentoChat()">Agendar</button>
       </div>
     </div>
+
+    <!-- ══ PÁGINA: BOT PNEUS (Charles) ══ -->
+    <div class="page" id="page-botpneus">
+      <div class="section-title" style="margin-bottom:1.2rem;"><i class="fa-solid fa-robot"></i> Conversas do robô (WhatsApp oficial da loja)</div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1rem; margin-bottom:1.5rem;">
+        <div style="background:var(--bg-card,#fff); border:1px solid rgba(128,128,128,0.2); border-radius:14px; padding:1rem 1.2rem;">
+          <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.06em; opacity:0.6;">Contatos</div>
+          <div id="bp-kpi-total" style="font-size:1.7rem; font-weight:700;">—</div>
+        </div>
+        <div style="background:var(--bg-card,#fff); border:1px solid rgba(128,128,128,0.2); border-radius:14px; padding:1rem 1.2rem;">
+          <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.06em; opacity:0.6;">Ativos hoje</div>
+          <div id="bp-kpi-hoje" style="font-size:1.7rem; font-weight:700;">—</div>
+        </div>
+        <div style="background:var(--bg-card,#fff); border:1px solid rgba(128,128,128,0.2); border-radius:14px; padding:1rem 1.2rem;">
+          <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.06em; opacity:0.6;">Vêm à loja</div>
+          <div id="bp-kpi-loja" style="font-size:1.7rem; font-weight:700;">—</div>
+        </div>
+        <div style="background:var(--bg-card,#fff); border:1px solid rgba(128,128,128,0.2); border-radius:14px; padding:1rem 1.2rem;">
+          <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.06em; opacity:0.6;">Bot pausado</div>
+          <div id="bp-kpi-pausados" style="font-size:1.7rem; font-weight:700;">—</div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:1.2rem; align-items:start;">
+        <div style="background:var(--bg-card,#fff); border:1px solid rgba(128,128,128,0.2); border-radius:14px; overflow:hidden;">
+          <div style="padding:0.9rem 1.1rem; font-weight:700; border-bottom:1px solid rgba(128,128,128,0.15); display:flex; justify-content:space-between; align-items:center;">
+            <span><i class="fa-solid fa-list"></i> Leads do bot</span>
+            <button onclick="carregarBotPneus()" style="background:none;border:none;cursor:pointer;color:inherit;opacity:0.7;" title="Atualizar"><i class="fa-solid fa-rotate"></i></button>
+          </div>
+          <div id="botpneus-lista" style="max-height:560px; overflow-y:auto;"></div>
+        </div>
+        <div style="background:var(--bg-card,#fff); border:1px solid rgba(128,128,128,0.2); border-radius:14px; overflow:hidden;">
+          <div id="botpneus-conversa-titulo" style="padding:0.9rem 1.1rem; font-weight:700; border-bottom:1px solid rgba(128,128,128,0.15);"><i class="fa-solid fa-comments"></i> Conversa</div>
+          <div id="botpneus-conversa" style="max-height:560px; overflow-y:auto; padding:1rem;">
+            <div style="opacity:0.5; font-size:0.85rem;">Clique num lead pra ver a conversa completa do Charles.</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- ══ MODAL: MENSAGENS RÁPIDAS ══ -->
@@ -1240,6 +1287,7 @@
       atendentes: 'Atendentes <span>/ Gestão da Equipe</span>',
       inbox:      'Caixa de Entrada <span>/ Pós-venda</span>',
       banco:      'Banco de Dados <span>/ Configuração Multi-Cloud</span>',
+      botpneus:   'Bot Pneus <span>/ Conversas do Charles (WhatsApp oficial)</span>',
     };
 
     function toggleTema() {
@@ -1275,6 +1323,7 @@
       if (id === 'atendentes') carregarAtendentes();
       if (id === 'banco')      carregarConfigsNuvem();
       if (id === 'inbox')      carregarInboxAtendentes();
+      if (id === 'botpneus')   carregarBotPneus();
       fecharSidebar(); // no mobile, fecha o menu ao navegar
     }
 
@@ -2163,6 +2212,62 @@
     // ── BOOT ───────────────────────────────────────────────────────────
     carregarMetricas();
     carregarConfigsNuvem();
+  </script>
+
+  <script>
+    // ══ MÓDULO BOT PNEUS (Charles) — conversas do robô de vendas (pneus-bot/Vercel) ══
+    const BP_STATUS = { NOVO: ['Novo', '#2b6cb0'], NAO_COMPROU: ['Sem compra', '#b7791f'], COMPROU: ['Comprou', '#2f855a'] };
+    function bpEsc(s) { return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+    function bpHora(d) { try { return new Date(d).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }); } catch (e) { return ''; } }
+
+    async function carregarBotPneus() {
+      const lista = document.getElementById('botpneus-lista');
+      lista.innerHTML = '<div style="padding:1.5rem; opacity:0.6;">Carregando conversas do bot...</div>';
+      try {
+        const r = await fetch('/api/bot-pneus/resumo').then(x => x.json());
+        if (r.error) { lista.innerHTML = '<div style="padding:1.5rem; color:#c0392b;">⚠️ ' + bpEsc(r.error) + (r.dica ? '<br><small>' + bpEsc(r.dica) + '</small>' : '') + '</div>'; return; }
+        document.getElementById('bp-kpi-total').textContent = r.kpis.total;
+        document.getElementById('bp-kpi-hoje').textContent = r.kpis.hoje;
+        document.getElementById('bp-kpi-loja').textContent = r.kpis.viraramLoja;
+        document.getElementById('bp-kpi-pausados').textContent = r.kpis.botPausados;
+        if (!r.contatos.length) { lista.innerHTML = '<div style="padding:1.5rem; opacity:0.6;">Nenhuma conversa ainda.</div>'; return; }
+        lista.innerHTML = r.contatos.map(c => {
+          const st = BP_STATUS[c.status] || [c.status, '#718096'];
+          let chips = '<span style="background:' + st[1] + '1a; color:' + st[1] + '; padding:2px 8px; border-radius:99px; font-size:0.68rem; font-weight:700;">' + st[0] + '</span>';
+          if (c.viraALoja) chips += '<span style="background:#2f855a1a; color:#2f855a; padding:2px 8px; border-radius:99px; font-size:0.68rem; font-weight:700;">🏁 vem à loja</span>';
+          if (c.botPausado) chips += '<span style="background:#c530301a; color:#c53030; padding:2px 8px; border-radius:99px; font-size:0.68rem; font-weight:700;">⏸ bot pausado</span>';
+          const info = [c.medida, c.modeloRecomendado].filter(Boolean).join(' · ');
+          const ult = c.ultimaMensagem ? (c.ultimaMensagem.direcao === 'ENTRADA' ? '👤 ' : '🤖 ') + bpEsc(c.ultimaMensagem.texto) : '';
+          return '<div onclick="bpAbrirConversa(\'' + c.id + '\', \'' + bpEsc(c.nome || c.telefone) + '\')" style="padding:0.85rem 1.1rem; border-bottom:1px solid rgba(128,128,128,0.12); cursor:pointer;" onmouseover="this.style.background=\'rgba(128,128,128,0.06)\'" onmouseout="this.style.background=\'\'">'
+            + '<div style="display:flex; justify-content:space-between; gap:0.5rem; align-items:center;"><b style="font-size:0.9rem;">' + bpEsc(c.nome || c.telefone) + '</b><small style="opacity:0.55; white-space:nowrap;">' + bpHora(c.ultimaMsgEm) + '</small></div>'
+            + '<div style="display:flex; gap:6px; margin:4px 0; flex-wrap:wrap; align-items:center;">' + chips + (info ? '<span style="opacity:0.65; font-size:0.72rem;">' + bpEsc(info) + '</span>' : '') + '</div>'
+            + '<div style="opacity:0.6; font-size:0.78rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + ult + '</div>'
+            + '</div>';
+        }).join('');
+      } catch (e) {
+        lista.innerHTML = '<div style="padding:1.5rem; color:#c0392b;">Erro de comunicação: ' + bpEsc(e) + '</div>';
+      }
+    }
+
+    async function bpAbrirConversa(id, nome) {
+      const box = document.getElementById('botpneus-conversa');
+      document.getElementById('botpneus-conversa-titulo').innerHTML = '<i class="fa-solid fa-comments"></i> ' + bpEsc(nome);
+      box.innerHTML = '<div style="opacity:0.6;">Carregando...</div>';
+      try {
+        const r = await fetch('/api/bot-pneus/conversa/' + encodeURIComponent(id)).then(x => x.json());
+        if (r.error) { box.innerHTML = '<div style="color:#c0392b;">⚠️ ' + bpEsc(r.error) + '</div>'; return; }
+        box.innerHTML = (r.mensagens || []).map(m => {
+          const doBot = m.direcao === 'SAIDA';
+          const autor = m.autor === 'SISTEMA' ? '⚙️' : (doBot ? '🤖' : '👤');
+          return '<div style="display:flex; ' + (doBot ? 'justify-content:flex-end;' : '') + ' margin-bottom:6px;">'
+            + '<div style="max-width:82%; padding:0.5rem 0.75rem; border-radius:12px; font-size:0.82rem; line-height:1.35; background:' + (doBot ? 'rgba(37,211,102,0.14)' : 'rgba(128,128,128,0.10)') + ';">'
+            + '<div>' + autor + ' ' + bpEsc(m.conteudo) + '</div>'
+            + '<div style="font-size:0.65rem; opacity:0.5; text-align:right; margin-top:2px;">' + bpHora(m.criadoEm) + '</div>'
+            + '</div></div>';
+        }).join('') || '<div style="opacity:0.6;">Sem mensagens.</div>';
+        box.scrollTop = box.scrollHeight;
+      } catch (e) { box.innerHTML = '<div style="color:#c0392b;">Erro: ' + bpEsc(e) + '</div>'; }
+    }
   </script>
 </body>
 </html>
