@@ -213,7 +213,7 @@ router.put('/:id/assinatura', async (req, res) => {
 // Senha é opcional: em branco mantém a atual (não força retypar).
 router.put('/:id', requireMaster, async (req, res) => {
   try {
-    const { id } = req.params;
+    const id = String(req.params.id);
     const { nome, email, senha, role, lojaId, modulosPermitidos } = req.body;
 
     if (!nome || !email) {
@@ -255,8 +255,8 @@ router.put('/:id', requireMaster, async (req, res) => {
 // Excluir atendente (apenas master)
 router.delete('/:id', requireMaster, async (req, res) => {
   try {
-    const { id } = req.params;
-    
+    const id = String(req.params.id);
+
     await prisma.usuario.update({
       where: { id },
       data: { ativo: false }
