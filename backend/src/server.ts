@@ -98,8 +98,32 @@ async function iniciarCoreDoSistema() {
     
     await seedAdmin();
     await migrarSenhas();
+    await ensureMaster();
   } catch (err) {
     console.error('[Core] Erro ao iniciar core:', err);
+  }
+}
+
+// Garante que SEMPRE exista um master ativo pra entrar no painel. Só age quando
+// NÃO há nenhum master/admin ativo (idempotente): reativa/cria admin@crm.com com
+// senha inicial "admin123" (o dono troca no painel). Depois que houver um master
+// ativo, não mexe mais — preserva a senha escolhida.
+async function ensureMaster() {
+  try {
+    const jaTem = await prisma.usuario.findFirst({ where: { ativo: true, role: { in: ['master', 'admin'] } } });
+    if (jaTem) return;
+    const email = 'admin@crm.com';
+    const hash = await hashSenha('admin123');
+    const existente = await prisma.usuario.findUnique({ where: { email } });
+    if (existente) {
+      await prisma.usuario.update({ where: { email }, data: { ativo: true, role: 'admin', senha: hash, modulosPermitidos: '[]' } });
+      console.log('[auth] Master admin@crm.com REATIVADO (senha inicial admin123 — troque no painel).');
+    } else {
+      await prisma.usuario.create({ data: { nome: 'Administrador Master', email, senha: hash, role: 'admin', ativo: true, modulosPermitidos: '[]' } });
+      console.log('[auth] Master admin@crm.com CRIADO (senha inicial admin123 — troque no painel).');
+    }
+  } catch (e) {
+    console.error('[auth] Erro ao garantir master ativo:', e);
   }
 }
 

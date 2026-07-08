@@ -10,7 +10,9 @@ module.exports = {
       cwd: '/root/whatsapp-crm/backend',
       env: {
         NODE_ENV: 'production',
-        PORT: 443
+        // Porta INTERNA (localhost). O Nginx fica exposto em 443/80 e faz proxy pra cá.
+        // NÃO usar 443 aqui (colide com o Nginx -> EADDRINUSE). Fixado em 3001 (06/07/2026).
+        PORT: 3001
       },
       // Auto-reinicia se o processo cair
       autorestart: true,
