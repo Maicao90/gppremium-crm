@@ -36,7 +36,9 @@ router.post('/login', async (req, res) => {
     const modulos = parseModulos(usuario.modulosPermitidos);
     const token = assinarToken({ sub: usuario.id, role: usuario.role, lojaId: usuario.lojaId || null, modulos });
     const { senha: _, ...usuarioDados } = usuario;
-    res.json({ token, usuario: usuarioDados });
+    // Retrocompatível: campos do usuário no TOPO (a extensão lê data.id/data.nome
+    // direto) + `token` e `usuario` para o painel novo. Não quebra a extensão atual.
+    res.json({ ...usuarioDados, token, usuario: usuarioDados });
   } catch (error) {
     console.error('Erro no login:', error);
     res.status(500).json({ error: 'Erro interno ao realizar login' });
