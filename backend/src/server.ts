@@ -21,6 +21,10 @@ import paginaLinksRouter from './routes/paginaLinks';
 import otimizadorAdsRouter from './routes/otimizadorAds';
 import { paginaLinkPublica } from './middlewares/paginaLinkPublica';
 import { initSyncAds } from './integracoes/syncService';
+import { requireAuth } from './middlewares/requireAuth';
+import { requireModulo, requireAnyModulo } from './middlewares/requireModulo';
+import { authOpcional } from './middlewares/requireAuth';
+import { hashSenha } from './auth/senha';
 
 dotenv.config();
 
@@ -92,9 +96,25 @@ async function iniciarCoreDoSistema() {
       console.error('[Core] Erro ao carregar usuários para iniciar o WhatsApp:', err);
     }
     
-    seedAdmin();
+    await seedAdmin();
+    await migrarSenhas();
   } catch (err) {
     console.error('[Core] Erro ao iniciar core:', err);
+  }
+}
+
+// Migra senhas legadas (texto puro) para hash bcrypt, uma vez. Idempotente:
+// senhas já em hash (começam com "$2") são ignoradas.
+async function migrarSenhas() {
+  try {
+    const legadas = await prisma.usuario.findMany({ where: { NOT: { senha: { startsWith: '$2' } } } });
+    let n = 0;
+    for (const u of legadas) {
+      if (u.senha) { await prisma.usuario.update({ where: { id: u.id }, data: { senha: await hashSenha(u.senha) } }); n++; }
+    }
+    if (n) console.log(`[auth] ${n} senha(s) migrada(s) para hash bcrypt.`);
+  } catch (err) {
+    console.error('[auth] Erro ao migrar senhas:', err);
   }
 }
 
@@ -132,16 +152,21 @@ app.get('/admin', (req, res) => {
 });
 
 // Rotas de API
+// Rotas de WhatsApp/atendimento: seguem abertas na Fase 1 (a extensão ainda chama sem
+// token). O gate por loja delas vem na Fase 2, depois da extensão atualizada.
 app.use('/api/agendamentos', agendamentosRouter);
 app.use('/api/contatos', contatosRouter);
 app.use('/api/configuracoes', configuracoesRouter);
-app.use('/api/usuarios', usuariosRouter);
+// login é público; as escritas de usuário exigem master (requireMaster dentro do router).
+// authOpcional popula req.user quando há token, sem bloquear a extensão/GETs.
+app.use('/api/usuarios', authOpcional, usuariosRouter);
 app.use('/api/inbox', inboxRouter);
-app.use('/api/ia', iaRouter); // Assistente IA (Claude) com contexto do CRM
-app.use('/api/integracoes', integracoesRouter); // integrações Google Ads / Meta Ads
-app.use('/api', crmAnunciosRouter); // /api/empresas, /api/lojas, /api/campanhas, /api/contas
-app.use('/api/paginalinks', paginaLinksRouter); // Link na Bio (CRUD do conteúdo por loja)
-app.use('/api/otimizador', otimizadorAdsRouter); // Otimizador de Google Ads (auditoria + ações aprovadas)
+// Ferramentas 100% do painel de anúncios: enforce no servidor (gerente sem esses módulos → 403).
+app.use('/api/ia', requireAuth, requireModulo('assistant'), iaRouter); // Assistente IA (Claude)
+app.use('/api/integracoes', requireAuth, requireAnyModulo(['dashboard', 'otimizador']), integracoesRouter); // Google/Meta Ads
+app.use('/api', crmAnunciosRouter); // /api/empresas, /api/lojas, /api/campanhas, /api/contas (gate por loja: Fase 2)
+app.use('/api/paginalinks', requireAuth, requireModulo('linkbio'), paginaLinksRouter); // Link na Bio
+app.use('/api/otimizador', requireAuth, requireModulo('otimizador'), otimizadorAdsRouter); // Otimizador
 
 // Rotas da API de Nuvem do Painel Admin
 app.get('/api/admin/nuvem', (req, res) => {

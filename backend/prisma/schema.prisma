@@ -37,6 +37,10 @@ model Usuario {
   // lista de atendentes por loja no painel. Campo solto (sem @relation), mesmo
   // estilo dos demais campos soltos já existentes.
   lojaId               String?
+  // Controle de acesso ao painel: JSON array de ids de modulo permitidos
+  // (ex.: ["at-dashboard","at-atendentes","at-inbox"] para um gerente).
+  // Roles master/admin ignoram e enxergam tudo. Default "[]" (sem acesso ao painel).
+  modulosPermitidos    String             @default("[]")
   agendamentos         Agendamento[]
   autoReplyHistories   AutoReplyHistory[]
   criadoEm             DateTime           @default(now())

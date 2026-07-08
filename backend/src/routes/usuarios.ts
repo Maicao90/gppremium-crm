@@ -1,10 +1,19 @@
 import { Router } from 'express';
 import { prisma } from '../server';
 import { connectedUsers, logoutWhatsApp, resolverConexaoEfetiva } from '../workers/whatsappService';
+import { conferirSenha, hashSenha } from '../auth/senha';
+import { assinarToken } from '../auth/jwt';
+import { requireMaster } from '../middlewares/requireModulo';
 
 const router = Router();
 
-// Rota de login
+const parseModulos = (v: unknown): string[] => {
+  if (Array.isArray(v)) return v.map(String);
+  if (typeof v === 'string') { try { const a = JSON.parse(v); return Array.isArray(a) ? a.map(String) : []; } catch { return []; } }
+  return [];
+};
+
+// Rota de login — confere a senha (hash bcrypt ou legada) e devolve um token JWT.
 router.post('/login', async (req, res) => {
   try {
     const { email, senha } = req.body;
@@ -13,31 +22,31 @@ router.post('/login', async (req, res) => {
     }
 
     const usuario = await prisma.usuario.findUnique({
-      where: { email: email.toLowerCase().trim() }
+      where: { email: String(email).toLowerCase().trim() }
     });
 
     if (usuario && !usuario.ativo) {
       return res.status(401).json({ error: 'Usuário inativo.' });
     }
 
-    if (!usuario || usuario.senha !== senha) {
+    if (!usuario || !(await conferirSenha(String(senha), usuario.senha))) {
       return res.status(401).json({ error: 'E-mail ou senha incorretos.' });
     }
 
-    // Retorna o usuário autenticado sem expor a senha por completo se preferir, 
-    // mas retornaremos o objeto normal para simplicidade local.
+    const modulos = parseModulos(usuario.modulosPermitidos);
+    const token = assinarToken({ sub: usuario.id, role: usuario.role, lojaId: usuario.lojaId || null, modulos });
     const { senha: _, ...usuarioDados } = usuario;
-    res.json(usuarioDados);
+    res.json({ token, usuario: usuarioDados });
   } catch (error) {
     console.error('Erro no login:', error);
     res.status(500).json({ error: 'Erro interno ao realizar login' });
   }
 });
 
-// Cadastrar novo operador
-router.post('/cadastrar', async (req, res) => {
+// Cadastrar novo usuário/atendente (apenas master)
+router.post('/cadastrar', requireMaster, async (req, res) => {
   try {
-    const { nome, email, senha, role, lojaId } = req.body;
+    const { nome, email, senha, role, lojaId, modulosPermitidos } = req.body;
     if (!nome || !email || !senha) {
       return res.status(400).json({ error: 'Nome, e-mail e senha são obrigatórios.' });
     }
@@ -57,9 +66,10 @@ router.post('/cadastrar', async (req, res) => {
       data: {
         nome,
         email: emailLimpo,
-        senha,
+        senha: await hashSenha(String(senha)),
         role: role || 'operador',
-        lojaId: lojaId || null
+        lojaId: lojaId || null,
+        modulosPermitidos: JSON.stringify(parseModulos(modulosPermitidos))
       }
     });
 
@@ -197,14 +207,15 @@ router.put('/:id/assinatura', async (req, res) => {
   }
 });
 
-// Atualizar atendente (editar nome, e-mail, senha e permissão)
-router.put('/:id', async (req, res) => {
+// Atualizar atendente (editar nome, e-mail, senha, permissão, módulos) — apenas master.
+// Senha é opcional: em branco mantém a atual (não força retypar).
+router.put('/:id', requireMaster, async (req, res) => {
   try {
     const { id } = req.params;
-    const { nome, email, senha, role, lojaId } = req.body;
+    const { nome, email, senha, role, lojaId, modulosPermitidos } = req.body;
 
-    if (!nome || !email || !senha) {
-      return res.status(400).json({ error: 'Nome, e-mail e senha são obrigatórios.' });
+    if (!nome || !email) {
+      return res.status(400).json({ error: 'Nome e e-mail são obrigatórios.' });
     }
 
     const emailLimpo = email.toLowerCase().trim();
@@ -221,26 +232,26 @@ router.put('/:id', async (req, res) => {
       return res.status(400).json({ error: 'E-mail já está sendo utilizado por outro atendente.' });
     }
 
-    const usuarioAtualizado = await prisma.usuario.update({
-      where: { id },
-      data: {
-        nome,
-        email: emailLimpo,
-        senha,
-        role: role || 'operador',
-        lojaId: lojaId || null
-      }
-    });
+    const data: any = {
+      nome,
+      email: emailLimpo,
+      role: role || 'operador',
+      lojaId: lojaId || null
+    };
+    if (senha) data.senha = await hashSenha(String(senha));
+    if (modulosPermitidos !== undefined) data.modulosPermitidos = JSON.stringify(parseModulos(modulosPermitidos));
 
-    res.json(usuarioAtualizado);
+    const usuarioAtualizado = await prisma.usuario.update({ where: { id }, data });
+    const { senha: _s, ...usuarioDados } = usuarioAtualizado;
+    res.json(usuarioDados);
   } catch (error) {
     console.error('Erro ao atualizar usuário:', error);
     res.status(500).json({ error: 'Erro ao atualizar atendente' });
   }
 });
 
-// Excluir atendente
-router.delete('/:id', async (req, res) => {
+// Excluir atendente (apenas master)
+router.delete('/:id', requireMaster, async (req, res) => {
   try {
     const { id } = req.params;
     
