@@ -28,3 +28,11 @@ export function authOpcional(req: Request, _res: Response, next: NextFunction) {
   if (payload) req.user = payload;
   next();
 }
+
+// Interruptor da trava final das rotas de WhatsApp: quando WHATSAPP_REQUIRE_AUTH=true
+// (setar no .env da VPS DEPOIS que a extensão nova — que manda token — estiver em todos
+// os atendentes), exige token de verdade; senão fica em modo transição (não bloqueia).
+export function authWhatsapp(req: Request, res: Response, next: NextFunction) {
+  if (process.env.WHATSAPP_REQUIRE_AUTH === 'true') return requireAuth(req, res, next);
+  return authOpcional(req, res, next);
+}

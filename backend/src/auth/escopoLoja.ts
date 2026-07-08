@@ -2,11 +2,13 @@ import { Request } from 'express';
 import { prisma } from '../server';
 import { ehMaster } from './modulos';
 
-// Um usuário LOGADO que NÃO é master deve ser escopado à própria loja.
-// (Sem token = extensão/atendente, tratado pelo fluxo antigo — não escopa aqui.)
+// Quem deve ser escopado à própria loja: o GERENTE (usuário de painel não-master).
+// Master vê tudo. Operador (atendente) NÃO é escopado por aqui — ele se auto-escopa
+// pelo próprio usuarioId na extensão; escopar por loja mudaria o que ele vê hoje.
+// Sem token (extensão sem login novo) também não escopa.
 export function ehEscopado(req: Request): boolean {
   const u = req.user;
-  return !!u && !ehMaster(u.role);
+  return !!u && !ehMaster(u.role) && u.role !== 'operador';
 }
 
 // Ids dos atendentes (Usuario) da loja do usuário logado, para escopar dados de

@@ -23,7 +23,7 @@ import { paginaLinkPublica } from './middlewares/paginaLinkPublica';
 import { initSyncAds } from './integracoes/syncService';
 import { requireAuth } from './middlewares/requireAuth';
 import { requireModulo, requireAnyModulo } from './middlewares/requireModulo';
-import { authOpcional } from './middlewares/requireAuth';
+import { authOpcional, authWhatsapp } from './middlewares/requireAuth';
 import { hashSenha } from './auth/senha';
 
 dotenv.config();
@@ -179,12 +179,12 @@ app.get('/admin', (req, res) => {
 // Rotas de WhatsApp/atendimento: authOpcional popula req.user quando há token
 // (gerente no painel → escopado por loja dentro dos handlers), MAS não bloqueia
 // quem chega sem token (a extensão dos atendentes continua funcionando igual).
-app.use('/api/agendamentos', authOpcional, agendamentosRouter);
-app.use('/api/contatos', contatosRouter);
+app.use('/api/agendamentos', authWhatsapp, agendamentosRouter);
+app.use('/api/contatos', authWhatsapp, contatosRouter);
 app.use('/api/configuracoes', configuracoesRouter);
 // login é público; as escritas de usuário exigem master (requireMaster dentro do router).
 app.use('/api/usuarios', authOpcional, usuariosRouter);
-app.use('/api/inbox', authOpcional, inboxRouter);
+app.use('/api/inbox', authWhatsapp, inboxRouter);
 // Ferramentas 100% do painel de anúncios: enforce no servidor (gerente sem esses módulos → 403).
 app.use('/api/ia', requireAuth, requireModulo('assistant'), iaRouter); // Assistente IA (Claude)
 app.use('/api/integracoes', requireAuth, requireAnyModulo(['dashboard', 'otimizador']), integracoesRouter); // Google/Meta Ads

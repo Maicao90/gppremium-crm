@@ -21,6 +21,27 @@ function getUsuarioIdAtual(): string | null {
   }
 }
 
+// Token JWT do login (o "crachá"). Guardado no login; enviado em toda chamada ao backend.
+function getTokenCrm(): string {
+  try { return localStorage.getItem("crm_token") || "" } catch { return "" }
+}
+
+// Injeta Authorization: Bearer em TODA chamada fetch ao backend do CRM, sem precisar
+// mexer em cada fetch espalhado pelos componentes. Só afeta requests pro domínio do CRM.
+const __crmOrigFetch = globalThis.fetch.bind(globalThis)
+globalThis.fetch = function (input: any, init: any = {}) {
+  try {
+    const url = typeof input === "string" ? input : (input && input.url) || ""
+    if (url.includes("crm.nailacademyprofissional.com")) {
+      const tk = getTokenCrm()
+      if (tk) {
+        init = { ...init, headers: { ...(init && init.headers ? init.headers : {}), Authorization: "Bearer " + tk } }
+      }
+    }
+  } catch {}
+  return __crmOrigFetch(input, init)
+} as any
+
 export const config: PlasmoCSConfig = {
   matches: ["https://web.whatsapp.com/*"]
 }
@@ -31,7 +52,11 @@ export const getStyle = () => {
   return style
 }
 
-const socket = io("https://crm.nailacademyprofissional.com", { rejectUnauthorized: false })
+const socket = io("https://crm.nailacademyprofissional.com", {
+  rejectUnauthorized: false,
+  // Manda o token (crachá) no handshake; função = lê o valor mais recente a cada (re)conexão.
+  auth: (cb: (d: any) => void) => cb({ token: getTokenCrm() })
+})
 
 let crmUltimoInputVendedor = 0;
 
@@ -447,6 +472,11 @@ const WhatsAppCRM = () => {
       const data = await res.json()
       if (res.ok) {
         localStorage.setItem("crm_usuario_logado", JSON.stringify(data))
+        // Guarda o token (crachá) e reconecta o socket pra re-autenticar já com ele.
+        if (data && data.token) {
+          localStorage.setItem("crm_token", data.token)
+          try { socket.disconnect(); socket.connect() } catch {}
+        }
         if (data && data.nome) {
           // Só define o nome da assinatura se ainda NÃO existir um salvo — mesma
           // regra do useEffect abaixo. Antes, TODO login (não só o primeiro)
