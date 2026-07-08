@@ -176,15 +176,15 @@ app.get('/admin', (req, res) => {
 });
 
 // Rotas de API
-// Rotas de WhatsApp/atendimento: seguem abertas na Fase 1 (a extensão ainda chama sem
-// token). O gate por loja delas vem na Fase 2, depois da extensão atualizada.
-app.use('/api/agendamentos', agendamentosRouter);
+// Rotas de WhatsApp/atendimento: authOpcional popula req.user quando há token
+// (gerente no painel → escopado por loja dentro dos handlers), MAS não bloqueia
+// quem chega sem token (a extensão dos atendentes continua funcionando igual).
+app.use('/api/agendamentos', authOpcional, agendamentosRouter);
 app.use('/api/contatos', contatosRouter);
 app.use('/api/configuracoes', configuracoesRouter);
 // login é público; as escritas de usuário exigem master (requireMaster dentro do router).
-// authOpcional popula req.user quando há token, sem bloquear a extensão/GETs.
 app.use('/api/usuarios', authOpcional, usuariosRouter);
-app.use('/api/inbox', inboxRouter);
+app.use('/api/inbox', authOpcional, inboxRouter);
 // Ferramentas 100% do painel de anúncios: enforce no servidor (gerente sem esses módulos → 403).
 app.use('/api/ia', requireAuth, requireModulo('assistant'), iaRouter); // Assistente IA (Claude)
 app.use('/api/integracoes', requireAuth, requireAnyModulo(['dashboard', 'otimizador']), integracoesRouter); // Google/Meta Ads

@@ -1,14 +1,26 @@
 import { Router } from 'express';
 import { prisma } from '../server';
 import { resolverConexaoEfetiva } from '../workers/whatsappService';
+import { ehEscopado, idsAtendentesDaLoja } from '../auth/escopoLoja';
 
 const router = Router();
+
+// Gerente logado só pode mexer no WhatsApp de atendentes da própria loja.
+// Retorna true se PODE seguir; se bloquear, já responde 403 e retorna false.
+async function permiteAtendente(req: any, res: any, usuarioId: string): Promise<boolean> {
+  if (!ehEscopado(req)) return true; // sem token (extensão) ou master → fluxo normal
+  const ids = (await idsAtendentesDaLoja(req)) || [];
+  if (ids.includes(String(usuarioId))) return true;
+  res.status(403).json({ error: 'Sem acesso a este atendente.' });
+  return false;
+}
 
 // Lista de conversas (última mensagem de cada contato) de um atendente
 router.get('/conversas', async (req, res) => {
   try {
     const usuarioIdOriginal = String(req.query.usuarioId || '');
     if (!usuarioIdOriginal) return res.json([]);
+    if (!(await permiteAtendente(req, res, usuarioIdOriginal))) return;
     // Quem COMPARTILHA WhatsApp enxerga a MESMA Caixa de Entrada do dono (as mensagens
     // são fisicamente salvas sob o ID do dono, pois só a sessão dele existe de verdade).
     const usuarioId = await resolverConexaoEfetiva(usuarioIdOriginal);
@@ -82,6 +94,7 @@ router.get('/mensagens', async (req, res) => {
     const usuarioIdOriginal = String(req.query.usuarioId || '');
     const jid = String(req.query.jid || '');
     if (!usuarioIdOriginal || !jid) return res.json([]);
+    if (!(await permiteAtendente(req, res, usuarioIdOriginal))) return;
     const usuarioId = await resolverConexaoEfetiva(usuarioIdOriginal);
 
     const mensagens = await prisma.mensagem.findMany({
@@ -108,6 +121,7 @@ router.post('/enviar', async (req, res) => {
     if (!usuarioId || !jid || !texto) {
       return res.status(400).json({ error: 'usuarioId, jid e texto são obrigatórios.' });
     }
+    if (!(await permiteAtendente(req, res, String(usuarioId)))) return;
     const { enviarMensagemInbox } = require('../workers/whatsappService');
     // Envia de fato pela sessão do DONO (efetivoId), mas grava enviadoPorId com o ID
     // ORIGINAL (antes de resolver) para registrar quem de fato mandou a mensagem.
@@ -129,6 +143,7 @@ router.post('/enviar-midia', async (req, res) => {
     if (!usuarioId || !jid || !base64 || !tipo) {
       return res.status(400).json({ error: 'usuarioId, jid, base64 e tipo são obrigatórios.' });
     }
+    if (!(await permiteAtendente(req, res, String(usuarioId)))) return;
     const { enviarMidiaInbox } = require('../workers/whatsappService');
     const efetivoId = await resolverConexaoEfetiva(String(usuarioId));
     const enviadoPorId = efetivoId !== String(usuarioId) ? String(usuarioId) : undefined;

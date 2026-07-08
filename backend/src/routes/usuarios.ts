@@ -4,6 +4,7 @@ import { connectedUsers, logoutWhatsApp, resolverConexaoEfetiva } from '../worke
 import { conferirSenha, hashSenha } from '../auth/senha';
 import { assinarToken } from '../auth/jwt';
 import { requireMaster } from '../middlewares/requireModulo';
+import { ehEscopado } from '../auth/escopoLoja';
 
 const router = Router();
 
@@ -86,8 +87,11 @@ router.post('/cadastrar', requireMaster, async (req, res) => {
 // Listar todos os usuários
 router.get('/', async (req, res) => {
   try {
+    // Gerente logado no painel só enxerga atendentes da própria loja.
+    const where: any = { ativo: true };
+    if (ehEscopado(req)) where.lojaId = req.user!.lojaId || '__sem_loja__';
     const usuarios = await prisma.usuario.findMany({
-      where: { ativo: true },
+      where,
       select: {
         id: true,
         nome: true,
@@ -143,9 +147,12 @@ router.get('/metricas', async (req, res) => {
       dataInicio.setHours(0, 0, 0, 0);
     }
 
-    // Busca usuários ativos e inclui apenas os agendamentos do período selecionado
+    // Busca usuários ativos e inclui apenas os agendamentos do período selecionado.
+    // Gerente só vê as métricas dos atendentes da própria loja.
+    const whereU: any = { ativo: true };
+    if (ehEscopado(req)) whereU.lojaId = req.user!.lojaId || '__sem_loja__';
     const usuarios = await prisma.usuario.findMany({
-      where: { ativo: true },
+      where: whereU,
       include: {
         agendamentos: {
           where: {

@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { prisma, io } from '../server';
+import { ehEscopado, idsAtendentesDaLoja } from '../auth/escopoLoja';
 
 const router = Router();
 
@@ -8,9 +9,15 @@ router.get('/', async (req, res) => {
   try {
     const { criadoPorId } = req.query;
     const where: any = {};
-    
+
     if (criadoPorId && criadoPorId !== 'undefined' && criadoPorId !== 'null') {
       where.criadoPorId = String(criadoPorId);
+    }
+
+    // Gerente logado só vê agendamentos dos atendentes da própria loja
+    // (sobrepõe qualquer criadoPorId pedido pelo cliente).
+    if (ehEscopado(req)) {
+      where.criadoPorId = { in: (await idsAtendentesDaLoja(req)) || [] };
     }
 
     const agendamentos = await prisma.agendamento.findMany({
@@ -37,6 +44,10 @@ router.get('/grafico', async (req, res) => {
     const { criadoPorId } = req.query;
     if (criadoPorId && criadoPorId !== 'undefined' && criadoPorId !== 'null') {
       where.criadoPorId = String(criadoPorId);
+    }
+    // Gerente só vê o gráfico dos atendentes da própria loja.
+    if (ehEscopado(req)) {
+      where.criadoPorId = { in: (await idsAtendentesDaLoja(req)) || [] };
     }
 
     const enviados = await prisma.agendamento.findMany({ where, select: { atualizadoEm: true } });
@@ -95,8 +106,14 @@ router.post('/', async (req, res) => {
 // Atualizar status
 router.put('/:id/status', async (req, res) => {
   try {
-    const { id } = req.params;
+    const id = String(req.params.id);
     const { status, observacoes } = req.body;
+
+    if (ehEscopado(req)) {
+      const ids = (await idsAtendentesDaLoja(req)) || [];
+      const alvo = await prisma.agendamento.findUnique({ where: { id } });
+      if (!alvo || !ids.includes(alvo.criadoPorId)) return res.status(403).json({ error: 'Sem acesso a este agendamento.' });
+    }
 
     const updateData: any = { status };
     if (observacoes !== undefined) {
@@ -118,8 +135,12 @@ router.put('/:id/status', async (req, res) => {
 // Excluir agendamento
 router.delete('/:id', async (req, res) => {
   try {
-    const { id } = req.params;
+    const id = String(req.params.id);
     const agendamento = await prisma.agendamento.findUnique({ where: { id } });
+    if (ehEscopado(req)) {
+      const ids = (await idsAtendentesDaLoja(req)) || [];
+      if (!agendamento || !ids.includes(agendamento.criadoPorId)) return res.status(403).json({ error: 'Sem acesso a este agendamento.' });
+    }
     if (agendamento) {
       await prisma.agendamento.delete({
         where: { id }
@@ -136,12 +157,16 @@ router.delete('/:id', async (req, res) => {
 // Editar agendamento
 router.put('/:id', async (req, res) => {
   try {
-    const { id } = req.params;
+    const id = String(req.params.id);
     const { cliente, numero, mensagem, enviarEm, cancelarSeResponder } = req.body;
 
     const agendamentoAtual = await prisma.agendamento.findUnique({ where: { id } });
     if (!agendamentoAtual) {
       return res.status(404).json({ error: 'Agendamento não encontrado' });
+    }
+    if (ehEscopado(req)) {
+      const ids = (await idsAtendentesDaLoja(req)) || [];
+      if (!ids.includes(agendamentoAtual.criadoPorId)) return res.status(403).json({ error: 'Sem acesso a este agendamento.' });
     }
 
     const novoStatus = agendamentoAtual.status === 'falhou' || agendamentoAtual.status === 'cliente_respondeu' ? 'pendente' : agendamentoAtual.status;
