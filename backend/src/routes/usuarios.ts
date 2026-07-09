@@ -100,6 +100,7 @@ router.get('/', async (req, res) => {
         whatsappConectado: true,
         whatsappDonoId: true,
         lojaId: true,
+        modulosPermitidos: true,
         criadoEm: true
       },
       orderBy: { nome: 'asc' }
