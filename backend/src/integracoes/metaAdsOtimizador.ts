@@ -12,6 +12,18 @@ import { AcaoOtimizacao, ResultadoExecucao } from './googleAdsOtimizador';
 const GRAPH_BASE = `https://graph.facebook.com/${META_GRAPH_VERSION}`;
 const CENTAVOS = 100;
 
+// Objetivos válidos de campanha na Graph API atual (modelo ODAX). Validamos antes de
+// enviar para dar um erro claro em vez do erro cru da Meta.
+const OBJETIVOS_META = ['OUTCOME_LEADS', 'OUTCOME_SALES', 'OUTCOME_ENGAGEMENT', 'OUTCOME_TRAFFIC', 'OUTCOME_AWARENESS', 'OUTCOME_APP_PROMOTION'];
+export const OBJETIVOS_META_LABEL: Record<string, string> = {
+  OUTCOME_LEADS: 'Leads / Contatos (WhatsApp, formulário)',
+  OUTCOME_ENGAGEMENT: 'Engajamento / Mensagens',
+  OUTCOME_TRAFFIC: 'Tráfego (visitas ao site)',
+  OUTCOME_SALES: 'Vendas / Conversões',
+  OUTCOME_AWARENESS: 'Reconhecimento (alcance)',
+  OUTCOME_APP_PROMOTION: 'Promoção de aplicativo',
+};
+
 // Tipos de ação que contam como LEAD (mesma lista do metaAds — lojas usam muito
 // click-to-WhatsApp, então "conversa iniciada" conta como lead).
 const TIPOS_ACAO_LEAD = ['lead', 'onsite_conversion.lead_grouped', 'onsite_conversion.messaging_conversation_started_7d'];
@@ -250,6 +262,40 @@ export async function executarAcaoMeta(
       await chamarGraphPost(cred, String(p.id), { daily_budget: Math.round(reais * CENTAVOS) });
       return { success: true, detalhe: `Orçamento diário ajustado para ${brl(reais)}.` };
     } catch (e: any) { return { success: false, erro: String(e?.message || 'Erro ao aplicar no Facebook.') }; }
+  }
+
+  if (acao.operacaoApi === 'criar_campanha_meta') {
+    const nome = String(p.nome ?? '').trim();
+    const objetivo = String(p.objetivo ?? '').trim().toUpperCase();
+    const temBudget = p.budgetDiarioReais !== undefined && p.budgetDiarioReais !== null && p.budgetDiarioReais !== '';
+    const reais = Number(p.budgetDiarioReais);
+    if (!nome) return { success: false, erro: 'Informe um nome para a campanha.' };
+    if (!OBJETIVOS_META.includes(objetivo)) return { success: false, erro: 'Objetivo inválido. Escolha um objetivo válido do Facebook.' };
+    if (temBudget && (!Number.isFinite(reais) || reais <= 0 || reais > 100000)) {
+      return { success: false, erro: 'Orçamento inválido. Informe um valor entre R$ 1,00 e R$ 100.000,00.' };
+    }
+    if (simular) {
+      return { success: true, simulado: true, detalhe: `Campanha "${nome}" (${OBJETIVOS_META_LABEL[objetivo] || objetivo}) seria criada como PAUSADA${temBudget ? ` com orçamento de ${brl(reais)}/dia` : ''}.` };
+    }
+    try {
+      const conta = normalizarConta(cred.adAccountId);
+      const campos: Record<string, string | number> = {
+        name: nome,
+        objective: objetivo,
+        status: 'PAUSED',              // sempre nasce PAUSADA — nunca gasta sem revisão humana
+        special_ad_categories: '[]',   // obrigatório na Graph atual
+      };
+      if (temBudget) {
+        // ⚠️ CENTAVOS (×100). Orçamento no nível da campanha (CBO) exige estratégia de lance.
+        campos.daily_budget = Math.round(reais * CENTAVOS);
+        campos.bid_strategy = 'LOWEST_COST_WITHOUT_CAP';
+      }
+      const r = await chamarGraphPost(cred, `${conta}/campaigns`, campos);
+      const novoId = String((r && (r.id || r?.data?.id)) || '');
+      return { success: true, detalhe: `Campanha "${nome}" criada como PAUSADA${novoId ? ` (ID ${novoId})` : ''}. Falta configurar o conjunto (público/orçamento) e o anúncio antes de ativar.` };
+    } catch (e: any) {
+      return { success: false, erro: String(e?.message || 'Erro ao criar a campanha no Facebook.') };
+    }
   }
 
   return { success: false, erro: `Operação não suportada: ${acao.operacaoApi}` };

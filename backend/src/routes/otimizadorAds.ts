@@ -21,7 +21,7 @@ async function buscarConexao(conexaoId: string): Promise<{ credenciais: any; nom
 
 // Operações de escrita permitidas por plataforma (nunca em lote — 1 por requisição).
 const OPS_GOOGLE = ['pause_keyword', 'add_negative', 'update_bid', 'update_budget', 'set_campaign_status', 'change_match_type'];
-const OPS_META = ['set_status_meta', 'update_budget_meta'];
+const OPS_META = ['set_status_meta', 'update_budget_meta', 'criar_campanha_meta'];
 
 /* ===== AUDITORIA: coleta + regras + campanhas gerenciáveis, ao vivo ===== */
 router.get('/:conexaoId/auditoria', async (req, res) => {

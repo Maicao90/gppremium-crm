@@ -1,6 +1,6 @@
 // Ids de modulo do painel (batem com os do frontend em crm-de-anuncios/src/config/modulos.js).
 export const MODULOS = [
-  'dashboard', 'stores', 'contas', 'linkbio', 'otimizador',
+  'dashboard', 'stores', 'contas', 'linkbio', 'otimizador', 'meta-campanhas',
   'at-dashboard', 'at-atendentes', 'at-inbox', 'assistant', 'settings',
 ] as const;
 export type ModuloId = typeof MODULOS[number];
