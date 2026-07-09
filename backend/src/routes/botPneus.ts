@@ -46,6 +46,9 @@ router.get('/agendamentos/:id', (req, res) => {
   proxyBot(`/api/crm?agendamentos=${encodeURIComponent(req.params.id)}`, res);
 });
 
+// Configurações do bot (SEM credenciais — o backend do bot filtra)
+router.get('/config', (_req, res) => { proxyBot('/api/crm?config=1', res); });
+
 // Mídia (foto/áudio) de uma mensagem — stream de BYTES (não é JSON).
 // A tag <img>/<audio> do painel aponta pra cá; o token nunca aparece no navegador.
 router.get('/midia/:id', async (req, res) => {
