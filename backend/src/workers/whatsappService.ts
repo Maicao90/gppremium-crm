@@ -111,7 +111,9 @@ export const sessions = new Map<string, WASocket>();
 
 // Número (telefone) da própria sessão — ex.: "556137742115" de "556137742115:26@s.whatsapp.net".
 function numeroDaSessao(sock: WASocket | undefined): string {
-  return String(sock?.user?.id || '').split(':')[0].split('@')[0];
+  const bruto = String(sock?.user?.id || '');
+  const semDevice = bruto.split(':')[0] ?? bruto;
+  return (semDevice.split('@')[0] ?? semDevice) || '';
 }
 
 // Usuários com sessão CONECTADA no MESMO telefone (inclui o próprio). Existe porque
@@ -732,7 +734,8 @@ export async function enviarMensagem(usuarioId: string, numero: string, mensagem
     // nunca marcamos "enviado" sem confirmar que dava pra entregar.
     if (!numero.includes('@')) {
       try {
-        const [info] = await sock.onWhatsApp(numero);
+        const resultados = await sock.onWhatsApp(numero);
+        const info = resultados?.[0];
         if (!info?.exists) {
           console.error(`[Baileys] ❌ Número ${numero} não tem WhatsApp — marcando como FALHA (não foi entregue).`);
           return false;
