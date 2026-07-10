@@ -1,4 +1,5 @@
 import { prisma, io } from '../server';
+import { pareceNumero, resolverNumeroContato } from '../utils/resolverNumeroContato';
 
 // Função utilitária para verificar se a hora atual do sistema está no expediente configurado
 async function estaNoExpediente(agora: Date): Promise<boolean> {
@@ -231,11 +232,26 @@ export function initWorker() {
               data: { status: 'enviando' }
             });
 
-            console.log(`[Worker] Disparando agendamento ${agendamento.id} para ${agendamento.numero} via Baileys (Simulando humano)...`);
+            // LEGADO: agendamentos antigos podem ter o NOME no campo numero (a extensão
+            // não conseguia extrair o telefone). Tenta resolver pelo contato/histórico
+            // antes de disparar — se resolver, corrige o registro pra sempre.
+            let numeroEnvio = agendamento.numero;
+            if (!pareceNumero(numeroEnvio)) {
+              const resolvido = await resolverNumeroContato(agendamento.criadoPorId, numeroEnvio);
+              if (resolvido) {
+                numeroEnvio = resolvido;
+                await prisma.agendamento.update({ where: { id: agendamento.id }, data: { numero: resolvido } });
+                console.log(`[Worker] Número resolvido pelo nome: "${agendamento.numero}" -> ${resolvido} (agendamento ${agendamento.id}).`);
+              } else {
+                console.log(`[Worker] ⚠️ Agendamento ${agendamento.id} tem NOME no lugar do número ("${agendamento.numero}") e não achei o contato — vai falhar até ser editado.`);
+              }
+            }
+
+            console.log(`[Worker] Disparando agendamento ${agendamento.id} para ${numeroEnvio} via Baileys (Simulando humano)...`);
 
             // Envia a mensagem (humanizada + a função já adiciona o delay de "digitando")
             // pela sessão EFETIVA (do dono, se compartilhado; do próprio, senão).
-            const sucesso = await enviarMensagem(efetivoId, agendamento.numero, humanizarTexto(agendamento.mensagem));
+            const sucesso = await enviarMensagem(efetivoId, numeroEnvio, humanizarTexto(agendamento.mensagem));
 
             if (sucesso) {
               await prisma.agendamento.update({

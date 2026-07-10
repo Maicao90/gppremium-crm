@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { prisma, io } from '../server';
 import { ehEscopado, idsAtendentesDaLoja } from '../auth/escopoLoja';
+import { resolverNumeroContato } from '../utils/resolverNumeroContato';
 
 const router = Router();
 
@@ -75,7 +76,7 @@ router.get('/grafico', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const { cliente, numero, mensagem, enviarEm, criadoPorId, cancelarSeResponder } = req.body;
-    
+
     let usuario = await prisma.usuario.findUnique({ where: { id: criadoPorId } });
     if (!usuario) {
       usuario = await prisma.usuario.create({
@@ -83,10 +84,19 @@ router.post('/', async (req, res) => {
       });
     }
 
+    // A extensão manda o NOME no campo numero quando não conseguiu extrair o telefone
+    // da tela do WhatsApp. Resolve aqui (agenda sincronizada + histórico); se não der,
+    // recusa JÁ com mensagem clara — antes aceitava e falhava em silêncio no disparo.
+    const entrada = String(numero ?? '').trim() || String(cliente ?? '').trim();
+    const numeroResolvido = await resolverNumeroContato(usuario.id, entrada);
+    if (!numeroResolvido) {
+      return res.status(400).json({ error: `Não encontrei o número de "${entrada || 'contato'}" nos contatos. Digite o número do WhatsApp com DDD (ex.: 61999998888).` });
+    }
+
     const agendamento = await prisma.agendamento.create({
       data: {
         cliente,
-        numero,
+        numero: numeroResolvido,
         mensagem,
         enviarEm: new Date(enviarEm),
         criadoPorId: usuario.id,
