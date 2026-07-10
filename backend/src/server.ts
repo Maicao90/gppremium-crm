@@ -19,6 +19,7 @@ import crmAnunciosRouter from './routes/crmAnuncios';
 import integracoesRouter from './routes/integracoes';
 import paginaLinksRouter from './routes/paginaLinks';
 import otimizadorAdsRouter from './routes/otimizadorAds';
+import botPneusRouter from './routes/botPneus';
 import { paginaLinkPublica } from './middlewares/paginaLinkPublica';
 import { initSyncAds } from './integracoes/syncService';
 import { requireAuth } from './middlewares/requireAuth';
@@ -185,6 +186,7 @@ app.use('/api/configuracoes', configuracoesRouter);
 // login é público; as escritas de usuário exigem master (requireMaster dentro do router).
 app.use('/api/usuarios', authOpcional, usuariosRouter);
 app.use('/api/inbox', authWhatsapp, inboxRouter);
+app.use('/api/bot-pneus', authWhatsapp, botPneusRouter); // Bot Pneus (Charles) — proxy pro pneus-bot da Vercel
 // Ferramentas 100% do painel de anúncios: enforce no servidor (gerente sem esses módulos → 403).
 app.use('/api/ia', requireAuth, requireModulo('assistant'), iaRouter); // Assistente IA (Claude)
 app.use('/api/integracoes', requireAuth, requireAnyModulo(['dashboard', 'otimizador']), integracoesRouter); // Google/Meta Ads
