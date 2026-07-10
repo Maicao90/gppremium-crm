@@ -68,9 +68,11 @@ router.get('/conversas', async (req, res) => {
       WHERE "usuarioId" = ${usuarioId} AND "fromMe" = true
       ORDER BY "chatJid", "timestamp" DESC
     `;
-    // Equipe desta conexão: o dono + quem compartilha o WhatsApp dele.
+    // Assinatura pode ser de QUALQUER atendente ativo (várias pessoas atendem o mesmo
+    // número via WhatsApp Web multi-aparelho, sem whatsappDonoId configurado) — então
+    // o casamento nome→id usa todos os usuários ativos, não só o dono e compartilhantes.
     const equipe = await prisma.usuario.findMany({
-      where: { OR: [{ id: usuarioId }, { whatsappDonoId: usuarioId }] },
+      where: { ativo: true },
       select: { id: true, nome: true },
     });
     const nomePorIdU: Record<string, string> = {};
