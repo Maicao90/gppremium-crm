@@ -57,6 +57,44 @@ router.get('/conversas', async (req, res) => {
     const mapaNumeros: Record<string, string> = {};
     numeros.forEach((n: any) => { mapaNumeros[n.chatJid] = n.numeroReal; });
 
+    // ── Atribuição por ATENDENTE (número compartilhado) ──
+    // A conversa "é" de quem mandou a ÚLTIMA resposta nela. Fontes (nesta ordem):
+    // 1. enviadoPorId (mensagem mandada pelo painel por quem compartilha a conexão);
+    // 2. assinatura "*Nome:*" que a extensão injeta nas mensagens do WhatsApp Web.
+    // Sem nenhuma das duas → conversa "sem atendente" (atendenteId null).
+    const ultimasRespostas: any[] = await prisma.$queryRaw`
+      SELECT DISTINCT ON ("chatJid") "chatJid", "texto", "enviadoPorId"
+      FROM "Mensagem"
+      WHERE "usuarioId" = ${usuarioId} AND "fromMe" = true
+      ORDER BY "chatJid", "timestamp" DESC
+    `;
+    // Equipe desta conexão: o dono + quem compartilha o WhatsApp dele.
+    const equipe = await prisma.usuario.findMany({
+      where: { OR: [{ id: usuarioId }, { whatsappDonoId: usuarioId }] },
+      select: { id: true, nome: true },
+    });
+    const nomePorIdU: Record<string, string> = {};
+    const idPorNome: Record<string, string> = {};
+    equipe.forEach((u) => { nomePorIdU[u.id] = u.nome; idPorNome[u.nome.trim().toLowerCase()] = u.id; });
+    // enviadoPorId pode ser alguém fora da equipe (ex.: master pelo painel) — busca o nome também.
+    const idsExtras = [...new Set(ultimasRespostas.map((m: any) => m.enviadoPorId).filter((id: any) => id && !nomePorIdU[id]))] as string[];
+    if (idsExtras.length) {
+      const extras = await prisma.usuario.findMany({ where: { id: { in: idsExtras } }, select: { id: true, nome: true } });
+      extras.forEach((u) => { nomePorIdU[u.id] = u.nome; });
+    }
+    const donoPorChat: Record<string, string | null> = {};
+    ultimasRespostas.forEach((m: any) => {
+      let id: string | null = null;
+      if (m.enviadoPorId) {
+        id = String(m.enviadoPorId);
+      } else {
+        const ass = /^\*(.+?):\*/.exec(String(m.texto || ''));
+        const achado = ass && ass[1] ? idPorNome[ass[1].trim().toLowerCase()] : undefined;
+        if (achado) id = achado;
+      }
+      donoPorChat[m.chatJid] = id;
+    });
+
     // Nomes SALVOS nos contatos do atendente (por número real) — fonte extra de nome
     const mapaContatoNome: Record<string, string> = {};
     try {
@@ -77,11 +115,21 @@ router.get('/conversas', async (req, res) => {
         || (numReal && mapaContatoNome[numReal.replace(/\D/g, '')] ? mapaContatoNome[numReal.replace(/\D/g, '')] : '')
         || (contatosNomes.has(c.chatJid) ? contatosNomes.get(c.chatJid) : '')
         || '';
+      // Atendente responsável (última resposta atribuível)
+      const atId = donoPorChat[c.chatJid] ?? null;
+      c.atendenteId = atId;
+      c.atendenteNome = atId ? (nomePorIdU[atId] ?? null) : null;
     });
 
     // Ordena por mais recente
     conversas.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
-    res.json(conversas);
+
+    // Filtro opcional por atendente: ?atendenteId=<id> (só as dele) ou 'sem' (não atribuídas).
+    const atendenteFiltro = String(req.query.atendenteId || '');
+    let lista = conversas;
+    if (atendenteFiltro === 'sem') lista = conversas.filter((c: any) => !c.atendenteId);
+    else if (atendenteFiltro) lista = conversas.filter((c: any) => c.atendenteId === atendenteFiltro);
+    res.json(lista);
   } catch (e) {
     console.error('Erro ao buscar conversas:', e);
     res.status(500).json({ error: 'Erro ao buscar conversas' });
