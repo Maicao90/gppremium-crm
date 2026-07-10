@@ -109,6 +109,22 @@ async function resolverNumeroRealPorJid(sock: any, jid: string): Promise<string>
 // Mapa para guardar as sessões ativas por usuário
 export const sessions = new Map<string, WASocket>();
 
+// Número (telefone) da própria sessão — ex.: "556137742115" de "556137742115:26@s.whatsapp.net".
+function numeroDaSessao(sock: WASocket | undefined): string {
+  return String(sock?.user?.id || '').split(':')[0].split('@')[0];
+}
+
+// Usuários com sessão CONECTADA no MESMO telefone (inclui o próprio). Existe porque
+// 2 atendentes podem parear cada um a própria sessão no MESMO chip (ex.: Ana e Marina)
+// — toda mensagem chega em dobro e as travas por usuarioId não se enxergavam.
+function usuariosComSessaoNoMesmoNumero(usuarioId: string, meuNumero: string): string[] {
+  const ids = new Set([usuarioId]);
+  if (meuNumero) {
+    sessions.forEach((s, uid) => { if (numeroDaSessao(s) === meuNumero) ids.add(uid); });
+  }
+  return [...ids];
+}
+
 // Guarda o QR Code mais recente (base64) de cada usuário enquanto ele ainda não escaneou.
 // Serve para REENVIAR o QR a uma extensão que conecta DEPOIS do QR ter sido gerado
 // (ex.: QR gerado no boot da VPS, antes do navegador da pessoa estar aberto).
@@ -607,7 +623,12 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
       // Considera TODAS as formas que o contato pode ter sido salvo (número real OU @lid cru)
       const chavesDedup = Array.from(new Set([numeroRecep, numero].filter(Boolean)));
       const hojeBR = new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString().slice(0, 10);
-      const memKeys = chavesDedup.map(k => `${usuarioId}_${k}_${hojeBR}`);
+      // Trava pelo TELEFONE da sessão (não pelo usuarioId): quando 2 atendentes têm
+      // sessão própria no MESMO chip (Ana/Marina), a mesma mensagem chega nas duas e
+      // cada uma respondia — o cliente recebia a saudação em DOBRO. Com a chave pelo
+      // número, a primeira sessão que responder trava a outra (mesmo processo).
+      const meuNumero = numeroDaSessao(sock) || usuarioId;
+      const memKeys = chavesDedup.map(k => `${meuNumero}_${k}_${hojeBR}`);
 
       // Trava rápida em memória: já saiu auto-resposta pra esse contato nas últimas 24h?
       const agoraMs = Date.now();
@@ -635,8 +656,11 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
         // Regra: 1x POR DIA (calendario, fuso BR). A checagem do "ja respondeu hoje" esta abaixo.
 
         // Trava persistente (sobrevive a reinício): última auto-resposta < 24h?
+        // Considera TAMBÉM os outros usuários com sessão no MESMO telefone (Ana/Marina):
+        // se a sessão da outra já saudou este contato hoje, esta NÃO sauda de novo.
+        const idsMesmoNumero = usuariosComSessaoNoMesmoNumero(usuarioId, meuNumero);
         const ultimaAuto = await prisma.autoReplyHistory.findFirst({
-          where: { usuarioId, numero: { in: chavesDedup } },
+          where: { usuarioId: { in: idsMesmoNumero }, numero: { in: chavesDedup } },
           orderBy: { criadoEm: 'desc' }
         });
         if (ultimaAuto) {
@@ -699,8 +723,27 @@ export async function enviarMensagem(usuarioId: string, numero: string, mensagem
   try {
     // Se já vier um JID completo (ex.: @lid, @s.whatsapp.net, @c.us), usa direto — assim
     // o agendamento entrega para QUALQUER contato (igual o chat da Caixa de Entrada).
-    const jid = numero.includes('@') ? numero.replace('@c.us', '@s.whatsapp.net') : `${numero}@s.whatsapp.net`;
-    
+    let jid = numero.includes('@') ? numero.replace('@c.us', '@s.whatsapp.net') : `${numero}@s.whatsapp.net`;
+
+    // VALIDAÇÃO ANTI-FALSO-POSITIVO: sendMessage NÃO dá erro para número sem WhatsApp
+    // (ou com a sessão instável) — ele "envia pro vazio" e a mensagem some, mas antes
+    // isso era marcado como ENVIADO. Aqui confirmamos que o número existe no WhatsApp e
+    // pegamos o JID canônico. Se não existir, ou a checagem falhar, retornamos FALHA —
+    // nunca marcamos "enviado" sem confirmar que dava pra entregar.
+    if (!numero.includes('@')) {
+      try {
+        const [info] = await sock.onWhatsApp(numero);
+        if (!info?.exists) {
+          console.error(`[Baileys] ❌ Número ${numero} não tem WhatsApp — marcando como FALHA (não foi entregue).`);
+          return false;
+        }
+        jid = info.jid;
+      } catch (e) {
+        console.error(`[Baileys] ❌ Não consegui verificar o WhatsApp de ${numero} (sessão instável?) — marcando como FALHA:`, e);
+        return false;
+      }
+    }
+
     // 1. Simula que a pessoa entrou no chat e está online
     await sock.sendPresenceUpdate('available', jid);
     await delay(1000);
@@ -716,8 +759,12 @@ export async function enviarMensagem(usuarioId: string, numero: string, mensagem
     // Para de aparecer "digitando"
     await sock.sendPresenceUpdate('paused', jid);
 
-    // 3. Envia a mensagem
-    await sock.sendMessage(jid, { text: mensagem });
+    // 3. Envia a mensagem — e confirma que o Baileys aceitou (retornou uma key).
+    const enviado = await sock.sendMessage(jid, { text: mensagem });
+    if (!enviado?.key?.id) {
+      console.error(`[Baileys] ❌ sendMessage não retornou confirmação para ${numero} — marcando como FALHA.`);
+      return false;
+    }
     console.log(`[Baileys] 🚀 Mensagem enviada com sucesso para ${numero} pelo usuário ${usuarioId}`);
 
     // 4. CRÍTICO: volta a presença para "offline" (unavailable).

@@ -93,7 +93,17 @@ router.delete('/campanhas/:id', async (req, res) => {
 
 /* ===== CONTAS (Saldos) ===== */
 router.get('/contas', async (_req, res) => {
-  try { res.json((await prisma.contaAnuncio.findMany({ orderBy: { created_at: 'asc' } })).map(contaOut)); } catch (e) { erro(res, e); }
+  try {
+    // Junta a LOJA de cada conta (via ConexaoAds.store_id) pra tela agrupar os saldos
+    // de Google e Meta da mesma loja numa caixinha só.
+    const [contas, conexoes] = await Promise.all([
+      prisma.contaAnuncio.findMany({ orderBy: { created_at: 'asc' } }),
+      prisma.conexaoAds.findMany({ select: { id: true, store_id: true } }),
+    ]);
+    const storePorConexao: Record<string, string | null> = {};
+    conexoes.forEach((cx) => { storePorConexao[cx.id] = cx.store_id ?? null; });
+    res.json(contas.map((c) => ({ ...contaOut(c), storeId: c.conexao_id ? (storePorConexao[c.conexao_id] ?? null) : null })));
+  } catch (e) { erro(res, e); }
 });
 router.post('/contas', async (req, res) => {
   try { res.status(201).json(contaOut(await prisma.contaAnuncio.create({ data: contaIn(req.body) }))); } catch (e) { erro(res, e); }
