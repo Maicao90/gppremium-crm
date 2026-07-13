@@ -24,6 +24,66 @@ const logMain = (nivel: 'info' | 'warn' | 'error', mensagem: string, erro?: any)
   }
 }
 
+// === Resolve @lid -> número REAL usando o Store interno do WhatsApp Web ===
+// O WhatsApp esconde o número atrás de @lid, MAS o navegador tem o número de verdade
+// (precisa dele pra enviar). A função interna Store.LidUtils.getPhoneNumber devolve o
+// número real. Isso só funciona AQUI (no navegador) — no servidor o WhatsApp bloqueia.
+// É o mesmo método que o whatsapp-web.js/wa-js usam.
+function resolverLidsViaStore(contatos: any[]): Promise<any[]> {
+  return new Promise((resolve) => {
+    try {
+      const lids = (contatos || []).filter((c) => c && c.jidLid);
+      if (lids.length === 0 || !(window as any).webpackChunkwhatsapp_web_client) { resolve(contatos); return; }
+      const rid = 'lidres' + Math.random().toString(36).slice(2, 8);
+      (window as any).webpackChunkwhatsapp_web_client.push([[rid], {}, (require: any) => {
+        let lidUtils: any = null, widFactory: any = null;
+        try {
+          const mods = require.c;
+          for (const k in mods) {
+            try {
+              const ex = mods[k] && mods[k].exports; if (!ex) continue;
+              for (const c of [ex, ex.default]) {
+                if (!c) continue;
+                if (!lidUtils && typeof c.getPhoneNumber === 'function') lidUtils = c;
+                if (!widFactory && typeof c.createWid === 'function') widFactory = c;
+              }
+              if (lidUtils && widFactory) break;
+            } catch (e) { /* modulo problematico, segue */ }
+          }
+        } catch (e) { /* segue */ }
+
+        let resolvidos = 0;
+        if (lidUtils && typeof lidUtils.getPhoneNumber === 'function') {
+          for (const c of lids) {
+            try {
+              let wid: any = c.jidLid;
+              if (widFactory && typeof widFactory.createWid === 'function') {
+                try { wid = widFactory.createWid(c.jidLid); } catch (e) { wid = c.jidLid; }
+              }
+              const pn = lidUtils.getPhoneNumber(wid);
+              if (pn) {
+                const s = pn._serialized || pn.user || String(pn);
+                const num = String(s).split('@')[0].replace(/\D/g, '');
+                if (num && num.length >= 10 && num.length <= 15) { c.numero = num; c.resolvidoLid = true; resolvidos++; }
+              }
+            } catch (e) { /* esse nao deu, segue */ }
+          }
+        }
+        logMain('info', `LID->numero: ${resolvidos}/${lids.length} resolvidos (LidUtils ${lidUtils ? 'OK' : 'NAO achado'}, WidFactory ${widFactory ? 'OK' : 'NAO'}).`);
+        resolve(contatos);
+      }]);
+      // Trava de segurança: se o webpack não chamar em 4s, envia como está.
+      setTimeout(() => resolve(contatos), 4000);
+    } catch (e) { resolve(contatos); }
+  });
+}
+
+// Resolve os @lid e SÓ ENTÃO envia os contatos pro content script.
+async function postarContatos(contatos: any[]) {
+  const resolvidos = await resolverLidsViaStore(contatos);
+  window.postMessage({ type: "CRM_CONTATOS_EXTRAIDOS", contatos: resolvidos }, "*");
+}
+
 const extrairContatosIndexedDB = async () => {
     // Lista de bancos conhecidos no WA Web
     const dbNames = ["model-storage", "wa-web-db", "wa-web", "wawc", "whatsapp-web"]
@@ -89,13 +149,14 @@ const extrairContatosIndexedDB = async () => {
                   // Só adiciona se o nome for de fato um nome (e não apenas o número repetido)
                   if (!nome || nome === numero || nome.trim() === '') return null
 
-                  return { nome: nome.trim(), numero: numero }
+                  // Marca contatos @lid pra resolver o número real depois (via Store do WhatsApp Web).
+                  return { nome: nome.trim(), numero: numero, jidLid: String(id).includes('@lid') ? id : null }
                 })
                 .filter(Boolean)
 
               if (contatosValidos.length > 0) {
                 logMain("info", `Extraídos ${contatosValidos.length} contatos do banco ${dbName}.`)
-                window.postMessage({ type: "CRM_CONTATOS_EXTRAIDOS", contatos: contatosValidos }, "*")
+                postarContatos(contatosValidos)
                 extracted = true
               }
               resolve()
@@ -173,7 +234,7 @@ const extrairContatosIndexedDB = async () => {
 
               if (extractedContacts.length > 0) {
                 logMain("info", `Extraídos ${extractedContacts.length} contatos via Webpack Agressivo.`)
-                window.postMessage({ type: "CRM_CONTATOS_EXTRAIDOS", contatos: extractedContacts }, "*")
+                postarContatos(extractedContacts)
               } else {
                 logMain("warn", "Falha ao extrair contatos via Webpack Agressivo.")
               }
