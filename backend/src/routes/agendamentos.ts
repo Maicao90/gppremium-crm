@@ -72,6 +72,23 @@ router.get('/grafico', async (req, res) => {
   }
 });
 
+// Lookup: resolve um NOME de contato para o número de WhatsApp, usando a agenda
+// sincronizada + histórico de conversa. A extensão chama isto no formulário de
+// agendamento pra preencher o campo de número na hora (quando o navegador não achou
+// o número). Nunca falha com erro: se não encontrar, devolve { numero: null }.
+router.get('/numero-contato', async (req, res) => {
+  try {
+    const nome = String(req.query.nome ?? '').trim();
+    const usuarioId = String(req.query.usuarioId ?? req.query.criadoPorId ?? '').trim();
+    if (!nome || !usuarioId) return res.json({ numero: null });
+    const numero = await resolverNumeroContato(usuarioId, nome);
+    return res.json({ numero: numero ?? null });
+  } catch (error) {
+    console.error('Erro no lookup de numero-contato:', error);
+    return res.json({ numero: null });
+  }
+});
+
 // Criar agendamento
 router.post('/', async (req, res) => {
   try {

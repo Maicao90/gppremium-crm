@@ -16,6 +16,17 @@ function escapeHtml(s: string): string {
     .replace(/"/g, '&quot;');
 }
 
+// Transforma "Feirão dos Pneus" em "feirao-dos-pneus" — usado no link público por
+// caminho (/p/<slug>), que funciona sem depender de DNS próprio da loja.
+function slugify(s: string): string {
+  return String(s || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 function iniciais(titulo: string): string {
   const partes = String(titulo || '').trim().split(/\s+/).filter(Boolean);
   const primeira = partes[0] || '';
@@ -141,6 +152,36 @@ function renderPaginaLinkHTML(pagina: any, loja: any): string {
 export async function paginaLinkPublica(req: Request, res: Response, next: NextFunction) {
   try {
     if (req.method !== 'GET') return next();
+
+    // Link público por CAMINHO (não depende de DNS próprio): /p/<slug>, onde slug é
+    // o id da loja OU o nome da loja "slugificado" (ex.: /p/gp-premium). Assim a loja
+    // já tem um link que funciona no mesmo domínio do painel (com HTTPS), na hora.
+    const mPath = req.path.match(/^\/p\/([^/]+)\/?$/);
+    if (mPath) {
+      const slug = decodeURIComponent(mPath[1] ?? '').toLowerCase();
+      if (!slug) return next();
+      const paginas = await prisma.paginaLink.findMany({ where: { ativo: true } });
+      let pagina = paginas.find((p) => p.loja_id === slug) ?? null;
+      let loja: any = null;
+      if (!pagina) {
+        const lojas = await prisma.loja.findMany();
+        const byId: Record<string, any> = {};
+        lojas.forEach((l) => { byId[l.id] = l; });
+        pagina = paginas.find((p) => {
+          const l = byId[p.loja_id];
+          const sub = String(p.subdominio || '').toLowerCase();
+          const subFirst = sub.split('.')[0] ?? '';
+          return (l ? slugify(l.store_name) === slug : false) || sub === slug || subFirst === slug;
+        }) ?? null;
+        if (pagina) loja = byId[pagina.loja_id] ?? null;
+      }
+      if (!pagina) return next();
+      if (!loja) loja = await prisma.loja.findUnique({ where: { id: pagina.loja_id } });
+      const html = renderPaginaLinkHTML(pagina, loja);
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      res.send(html);
+      return;
+    }
 
     const hostname = (req.hostname || String(req.headers.host || '').split(':')[0] || '').toLowerCase();
     if (!hostname) return next();

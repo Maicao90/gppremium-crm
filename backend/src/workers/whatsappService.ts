@@ -142,6 +142,58 @@ function registrarNomeContato(jid?: string | null, nome?: string | null) {
   if (jid && nome && String(nome).trim()) contatosNomes.set(jid, String(nome).trim());
 }
 
+// PERSISTE na tabela Contato os nomes que o WhatsApp/Baileys entrega (agenda
+// sincronizada). Antes esses nomes só iam pro mapa em memória (Caixa de Entrada) e
+// a busca do agendamento não os via — por isso "digitar o nome não puxava o número".
+// Só grava nome de verdade (não o próprio número, não grupo/@lid) e faz "upgrade" de
+// registros que estavam salvos só com o número, sem sobrescrever nomes já bons.
+async function persistirContatosBaileys(usuarioId: string, lista: any[]) {
+  try {
+    if (!usuarioId || !Array.isArray(lista) || lista.length === 0) return;
+    const mapa = new Map<string, string>();
+    for (const c of lista) {
+      const jid = String(c?.id || '');
+      if (!jid || jid.includes('@g.us') || jid.includes('@lid') || jid.includes('-')) continue;
+      const numero = (jid.split('@')[0] || '').replace(/\D/g, '');
+      if (!numero || numero.length < 10 || numero.length > 15) continue;
+      const nome = String(c?.name || c?.notify || c?.verifiedName || '').trim();
+      if (!nome || nome === numero) continue;
+      mapa.set(numero, nome);
+    }
+    if (mapa.size === 0) return;
+
+    const numeros = [...mapa.keys()];
+    const existentes = await prisma.contato.findMany({
+      where: { usuarioId, numero: { in: numeros } },
+      select: { numero: true, nome: true },
+    });
+    const nomeAtual = new Map<string, string>();
+    for (const e of existentes) nomeAtual.set(e.numero, e.nome);
+
+    const novos: { usuarioId: string; numero: string; nome: string }[] = [];
+    const atualizar: { numero: string; nome: string }[] = [];
+    for (const [numero, nome] of mapa) {
+      const atual = nomeAtual.get(numero);
+      if (atual === undefined) novos.push({ usuarioId, numero, nome });
+      else if (atual !== nome && (atual === '' || atual === numero)) atualizar.push({ numero, nome });
+    }
+
+    for (let i = 0; i < novos.length; i += 500) {
+      await prisma.contato.createMany({ data: novos.slice(i, i + 500), skipDuplicates: true });
+    }
+    for (let i = 0; i < atualizar.length; i += 100) {
+      await prisma.$transaction(atualizar.slice(i, i + 100).map((c) =>
+        prisma.contato.update({ where: { usuarioId_numero: { usuarioId, numero: c.numero } }, data: { nome: c.nome } })
+      ));
+    }
+    if (novos.length || atualizar.length) {
+      console.log(`[contatos-baileys] user ${usuarioId}: +${novos.length} novos, ${atualizar.length} nomes preenchidos`);
+    }
+  } catch (e) {
+    console.error('[contatos-baileys] erro ao persistir:', (e as any)?.message);
+  }
+}
+
 // IDs de mensagens já salvas pelo envio da Caixa de Entrada (evita duplicar se o
 // evento messages.upsert também disparar para a mesma mensagem que nós enviamos).
 const waIdsRecentes = new Set<string>();
@@ -513,12 +565,24 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
 
   sock.ev.on('creds.update', saveCreds);
 
-  // Captura os nomes dos contatos para mostrar na Caixa de Entrada (em vez do número/@lid)
+  // Captura os nomes dos contatos: mapa em memória (Caixa de Entrada) + tabela Contato
+  // (busca do agendamento). O persistir roda em background pra não travar o evento.
   sock.ev.on('contacts.upsert', (contatos: any[]) => {
     for (const c of contatos || []) registrarNomeContato(c.id, c.name || c.notify || c.verifiedName);
+    persistirContatosBaileys(usuarioId, contatos).catch(() => {});
   });
   sock.ev.on('contacts.update', (contatos: any[]) => {
     for (const c of contatos || []) registrarNomeContato(c.id, c.name || c.notify || c.verifiedName);
+    persistirContatosBaileys(usuarioId, contatos).catch(() => {});
+  });
+  // Agenda inteira que chega no connect (sync de app-state): é aqui que vêm os nomes
+  // reais de todos os contatos salvos — a fonte confiável, sem depender do navegador.
+  sock.ev.on('messaging-history.set', (payload: any) => {
+    const contatos = payload?.contacts;
+    if (Array.isArray(contatos) && contatos.length) {
+      for (const c of contatos) registrarNomeContato(c.id, c.name || c.notify || c.verifiedName);
+      persistirContatosBaileys(usuarioId, contatos).catch(() => {});
+    }
   });
 
   // Mensagens recebidas: detecta APAGADAS, armazena e faz auto-resposta
@@ -535,6 +599,14 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
 
       const numero = remoteJid.split('@')[0];
       if (!numero) return;
+
+      // Enriquece a agenda com o NOME (pushName) de quem manda mensagem — assim a busca
+      // do agendamento acha o número pelo nome mesmo sem re-sincronizar a agenda inteira,
+      // e funciona nas sessões que já estão conectadas. Guarda evita bater no banco à toa.
+      if (!msg.key.fromMe && msg.pushName && contatosNomes.get(remoteJid) !== msg.pushName) {
+        registrarNomeContato(remoteJid, msg.pushName);
+        persistirContatosBaileys(usuarioId, [{ id: remoteJid, notify: msg.pushName }]).catch(() => {});
+      }
 
       // REVOKE (cliente apagou uma mensagem): apenas IGNORAMOS.
       // O recurso de "mensagens apagadas" foi REMOVIDO a pedido — não processamos,

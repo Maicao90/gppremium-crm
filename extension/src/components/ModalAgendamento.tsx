@@ -115,12 +115,42 @@ export default function ModalAgendamento({ onClose, onSuccess, usuarioId, contat
   const [horaExata, setHoraExata] = useState(getTodayTime())
   const [numero, setNumero] = useState(contatoNumero)
   const [nomeCliente, setNomeCliente] = useState(contatoNome || "Manual")
+  const [buscandoNumero, setBuscandoNumero] = useState(false)
+  const [numeroDoServidor, setNumeroDoServidor] = useState(false)
+  const buscaNumTimeout = useRef(null)
 
   // Atualiza os dados do contato quando as props mudarem
   useEffect(() => {
     setNumero(contatoNumero)
     setNomeCliente(contatoNome || "Manual")
   }, [contatoNome, contatoNumero])
+
+  // Se há um NOME mas o número está vazio, pergunta ao SERVIDOR (agenda sincronizada
+  // + histórico de conversa) e preenche o campo na hora. É o que evita o agendamento
+  // falhar por falta de número quando o navegador não conseguiu extrair da tela.
+  useEffect(() => {
+    const nome = (nomeCliente || "").trim()
+    if (!nome || nome === "Manual" || numero.trim() || !usuarioId) {
+      setBuscandoNumero(false)
+      return
+    }
+    if (buscaNumTimeout.current) clearTimeout(buscaNumTimeout.current)
+    buscaNumTimeout.current = setTimeout(async () => {
+      if (nome.length < 2) return
+      setBuscandoNumero(true)
+      setNumeroDoServidor(false)
+      try {
+        const r = await fetch(`https://crm.nailacademyprofissional.com/api/agendamentos/numero-contato?nome=${encodeURIComponent(nome)}&usuarioId=${encodeURIComponent(usuarioId)}`)
+        const data = await r.json().catch(() => ({}))
+        if (data && data.numero) {
+          setNumero(String(data.numero))
+          setNumeroDoServidor(true)
+        }
+      } catch (e) { /* silencioso: o servidor ainda tenta resolver no momento do envio */ }
+      setBuscandoNumero(false)
+    }, 600)
+    return () => { if (buscaNumTimeout.current) clearTimeout(buscaNumTimeout.current) }
+  }, [nomeCliente, numero, usuarioId])
 
   // Calcula a data de previsão para o modo relativo
   const [previsao, setPrevisao] = useState("")
@@ -407,10 +437,18 @@ export default function ModalAgendamento({ onClose, onSuccess, usuarioId, contat
                   value={numero} 
                   onChange={e => setNumero(e.target.value)} 
                 />
+                {buscandoNumero && !numero && (
+                  <div className="mt-2 text-[11px] text-gray-500 font-semibold">🔎 Procurando o número pelo nome…</div>
+                )}
                 {nomeCliente && nomeCliente !== "Manual" && numero && (
-                  <div className="mt-2 bg-[#e8f5f0] text-[#00a884] px-3.5 py-2.5 rounded-xl border border-green-150 text-xs font-bold flex items-center gap-2 animate-pulse shadow-sm">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#00a884] animate-ping"></span>
-                    <span>✓ Contato pronto para agendamento</span>
+                  <div className="mt-2 bg-[#e8f5f0] text-[#00a884] px-3.5 py-2.5 rounded-xl border border-green-150 text-xs font-bold flex items-center gap-2 shadow-sm">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#00a884]"></span>
+                    <span>✓ {numeroDoServidor ? "Número encontrado pela agenda — pronto" : "Contato pronto para agendamento"}</span>
+                  </div>
+                )}
+                {nomeCliente && nomeCliente !== "Manual" && !numero && !buscandoNumero && (
+                  <div className="mt-2 text-[11px] text-amber-600 font-semibold">
+                    Não achei o número desse contato. Se ele nunca te mandou mensagem, digite o número acima (com DDD).
                   </div>
                 )}
               </div>

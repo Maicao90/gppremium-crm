@@ -60,5 +60,24 @@ export async function resolverNumeroContato(criadoPorId: string, entrada: string
     if (parciais.length === 1 && parciais[0]?.numero) return normalizar(parciais[0].numero);
   } catch { /* segue */ }
 
+  // 4. Fallback tolerante a ACENTOS: o `mode: 'insensitive'` do Postgres ignora
+  //    maiúsculas, mas NÃO acentos ("Joao" não casa com "João"). Aqui buscamos os
+  //    contatos do usuário e comparamos pelos nomes normalizados (sem acento).
+  try {
+    const norm = (s: string) => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, ' ').trim();
+    const alvo = norm(bruto);
+    if (alvo) {
+      const contatos = await prisma.contato.findMany({
+        where: { usuarioId: { in: ids }, NOT: { numero: '' } },
+        select: { nome: true, numero: true },
+        take: 4000,
+      });
+      const exato = contatos.find((c) => norm(c.nome) === alvo);
+      if (exato?.numero) return normalizar(exato.numero);
+      const parciais = contatos.filter((c) => norm(c.nome).includes(alvo));
+      if (parciais.length === 1 && parciais[0]?.numero) return normalizar(parciais[0].numero);
+    }
+  } catch { /* segue */ }
+
   return null;
 }
