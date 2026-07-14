@@ -1,4 +1,4 @@
-import { makeWASocket, useMultiFileAuthState, DisconnectReason, Browsers, delay, WASocket, proto, downloadMediaMessage } from '@whiskeysockets/baileys';
+import { makeWASocket, useMultiFileAuthState, DisconnectReason, Browsers, delay, WASocket, proto, downloadMediaMessage, fetchLatestWaWebVersion } from '@whiskeysockets/baileys';
 import { Boom } from '@hapi/boom';
 import qrcodeTerminal from 'qrcode-terminal';
 import qrcode from 'qrcode';
@@ -54,6 +54,29 @@ async function salvarFotoAnuncio(adReply: any): Promise<string | null> {
     console.error('[Inbox] Erro ao salvar foto do anúncio:', (e as any)?.message);
     return null;
   }
+}
+
+// Versão ATUAL do WhatsApp Web (com cache de 6h). O rc13 do Baileys embute uma versão
+// velha que faz o TELEFONE recusar o vínculo de aparelho novo (QR e código) — issue
+// #2679. Buscamos a atual; se a busca falhar, devolve a última em cache (ou undefined,
+// que faz o Baileys usar a embutida — pior, mas não derruba nada).
+let waWebVersaoCache: { versao: any; em: number } | null = null;
+async function obterVersaoWaWeb(): Promise<any | undefined> {
+  try {
+    if (waWebVersaoCache && Date.now() - waWebVersaoCache.em < 6 * 60 * 60 * 1000) {
+      return waWebVersaoCache.versao;
+    }
+    const r: any = await fetchLatestWaWebVersion({});
+    const v: any = r ? r.version : null;
+    if (Array.isArray(v) && v.length === 3) {
+      waWebVersaoCache = { versao: v, em: Date.now() };
+      console.log(`[Baileys] Versão do WA Web em uso: ${v.join('.')}`);
+      return v;
+    }
+  } catch (e: any) {
+    console.error('[Baileys] Falha ao buscar versão atual do WA Web (usando a embutida):', e?.message);
+  }
+  return waWebVersaoCache ? waWebVersaoCache.versao : undefined;
 }
 
 // Resolve o número de telefone REAL do contato. O WhatsApp agora usa @lid (um ID interno
@@ -434,7 +457,13 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
   const authDir = path.join(__dirname, `../../../prisma/auth_info_baileys_${usuarioId}`);
   const { state, saveCreds } = await useMultiFileAuthState(authDir);
 
-  const sock = makeWASocket({
+  // BUG conhecido do Baileys 7.0.0-rc13 (issue #2679): a versão do WA Web EMBUTIDA
+  // está velha e o telefone RECUSA o vínculo ("Não foi possível conectar o aparelho")
+  // no QR e no código. Fix: buscar a versão atual com fetchLatestWaWebVersion e passar
+  // no socket. Com cache de 6h e fallback pra embutida se a busca falhar.
+  const versaoWa = await obterVersaoWaWeb();
+
+  const configSocket: any = {
     auth: state,
     printQRInTerminal: false,
     browser: Browsers.windows('Desktop'),
@@ -446,25 +475,37 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
     retryRequestDelayMs: 2000,
     // Não marca o aparelho como "online" ao conectar — evita roubar as notificações do celular.
     markOnlineOnConnect: false
-  });
+  };
+  if (versaoWa) configSocket.version = versaoWa;
+
+  const sock = makeWASocket(configSocket);
 
   // Salva a instância no mapa
   sessions.set(usuarioId, sock);
 
   // ─── PAREAMENTO POR CÓDIGO (alternativa ao QR) ───
   // Se veio um número e a conta ainda NÃO está registrada, pede à WhatsApp um
-  // código de 8 dígitos. Não interfere no fluxo de QR (só roda quando pedido).
+  // código de 8 dígitos. O momento CERTO de pedir é quando o 1º QR chega (prova
+  // que o socket está pronto) — pedir num timer cego gerava código que o telefone
+  // recusava/expirava. Mantemos um fallback por tempo caso o QR demore.
+  let pareamentoPedido = false;
+  const pedirCodigoPareamento = async (origem: string) => {
+    if (pareamentoPedido || !numeroPareamento) return;
+    if (sock.authState?.creds?.registered) return;
+    pareamentoPedido = true;
+    try {
+      const code = await sock.requestPairingCode(numeroPareamento);
+      pairingCodes.set(usuarioId, code);
+      io.to(usuarioId).emit('WHATSAPP_PAIRING_CODE', code);
+      console.log(`[Baileys] Código de pareamento gerado para o usuário ${usuarioId} (via ${origem}).`);
+    } catch (e: any) {
+      // Libera pra tentar de novo no próximo QR/fallback (falha costuma ser socket ainda subindo)
+      pareamentoPedido = false;
+      console.error(`[Baileys] Erro ao gerar código de pareamento (${usuarioId}, via ${origem}):`, e?.message);
+    }
+  };
   if (numeroPareamento && !sock.authState.creds.registered) {
-    setTimeout(async () => {
-      try {
-        const code = await sock.requestPairingCode(numeroPareamento);
-        pairingCodes.set(usuarioId, code);
-        io.to(usuarioId).emit('WHATSAPP_PAIRING_CODE', code);
-        console.log(`[Baileys] Código de pareamento gerado para o usuário ${usuarioId}.`);
-      } catch (e: any) {
-        console.error(`[Baileys] Erro ao gerar código de pareamento (${usuarioId}):`, e?.message);
-      }
-    }, 2500);
+    setTimeout(() => { pedirCodigoPareamento('fallback-6s').catch(() => {}); }, 6000);
   }
 
   sock.ev.on('connection.update', async (update) => {
@@ -472,7 +513,11 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
     
     if (qr) {
       console.log(`\n[Baileys] QR Code gerado para o usuário ${usuarioId}`);
-      
+
+      // Modo pareamento por código: o 1º QR prova que o socket está PRONTO —
+      // este é o momento certo de pedir o código (o timer é só fallback).
+      pedirCodigoPareamento('qr-pronto').catch(() => {});
+
       try {
         const qrBase64 = await qrcode.toDataURL(qr);
         // Guarda o QR no cache para reenviar a quem conectar depois
