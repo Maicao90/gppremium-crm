@@ -324,6 +324,16 @@ function iniciarVigiaConexao() {
         // Tem credencial salva, mas não está conectado NEM conectando → ressuscita.
         // (Pula quem está pausado, para não ficar gerando QR de conta travada.)
         if (uid && !sessions.has(uid) && !connectedUsers.has(uid) && !pausados.has(uid)) {
+          // SÓ ressuscita sessão REGISTRADA (creds.registered = true). Sessão sem
+          // registro ressuscitada vira LOOP ETERNO de QR que ninguém escaneia —
+          // isso alimenta o rate-limit do WhatsApp contra o IP da VPS e atrapalha
+          // os pareamentos de verdade. QR de conta nova só sob demanda humana.
+          let registrada = false;
+          try {
+            const creds = JSON.parse(fs.readFileSync(path.join(dir, s, 'creds.json'), 'utf8'));
+            registrada = !!(creds && creds.registered);
+          } catch (e) { registrada = false; }
+          if (!registrada) continue;
           console.log(`[Baileys][Vigia] Sessão de ${uid} caída — reconectando automaticamente...`);
           connectToWhatsApp(uid).catch(() => {});
         }
@@ -463,10 +473,17 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
   // no socket. Com cache de 6h e fallback pra embutida se a busca falhar.
   const versaoWa = await obterVersaoWaWeb();
 
+  // IDENTIDADE do cliente: pra PAREAMENTO NOVO usamos "Chrome no Ubuntu" — o
+  // "Windows Desktop" anuncia o WhatsApp Desktop APOSENTADO pela Meta e o servidor
+  // rejeita o vínculo (428 antes do QR valer -> loop 408 -> 401; issue #2677 do
+  // Baileys, mesma rc13). Sessões JÁ registradas mantêm a identidade antiga pra
+  // não arriscar as lojas conectadas.
+  const jaRegistrado = !!(state.creds && (state.creds as any).registered);
+
   const configSocket: any = {
     auth: state,
     printQRInTerminal: false,
-    browser: Browsers.windows('Desktop'),
+    browser: jaRegistrado ? Browsers.windows('Desktop') : Browsers.ubuntu('Chrome'),
     syncFullHistory: false,
     // Mantém a conexão viva 24/7 na VPS: envia pings periódicos ao WhatsApp.
     // Sem isso a conexão pode "congelar em silêncio" sem disparar o evento de queda.
@@ -483,6 +500,23 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
   if (versaoWa) configSocket.version = versaoWa;
 
   const sock = makeWASocket(configSocket);
+
+  // DETECTOR do fluxo "Shortcake" (passkey nova da Meta, ~30/06 — issue #2672):
+  // se essas notificações aparecerem no log durante um pareamento, a conta exige o
+  // fluxo de passkey que o Baileys rc13 ainda não fala — aí o caminho é o PR #2689.
+  // O ack evita o stall imediato (paliativo), e o log é o nosso diagnóstico.
+  if (!jaRegistrado) {
+    try {
+      const ackShortcake = async (node: any, tipo: string) => {
+        console.log(`[Baileys][Shortcake] Notificação "${tipo}" recebida no pareamento de ${usuarioId} — conta exige fluxo de passkey CRSC (issue #2672).`);
+        try {
+          await (sock as any).sendNode({ tag: 'ack', attrs: { id: node?.attrs?.id || '', class: 'notification', to: node?.attrs?.from || '', type: node?.attrs?.type || '' } });
+        } catch (e) { /* ack é melhor-esforço */ }
+      };
+      (sock.ws as any).on('CB:notification,type:passkey_prologue_request', (node: any) => { ackShortcake(node, 'passkey_prologue_request').catch(() => {}); });
+      (sock.ws as any).on('CB:notification,type:crsc_continuation', (node: any) => { ackShortcake(node, 'crsc_continuation').catch(() => {}); });
+    } catch (e) { /* diagnóstico opcional; nunca derruba a conexão */ }
+  }
 
   // Salva a instância no mapa
   sessions.set(usuarioId, sock);
