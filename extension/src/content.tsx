@@ -35,7 +35,7 @@ if (typeof window !== "undefined") {
     fetch("https://crm.nailacademyprofissional.com/api/extension-logs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ nivel: "info", escopo: "boot-crm", mensagem: "content.tsx v1.0.10 CARREGOU no navegador (script rodando)" })
+      body: JSON.stringify({ nivel: "info", escopo: "boot-crm", mensagem: "content.tsx CARREGOU no navegador (script rodando, build nao-minificado)" })
     }).catch(() => {})
   } catch (e) {}
 }

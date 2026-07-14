@@ -1,12 +1,12 @@
 {
   "name": "gppremium-extension",
   "displayName": "GP Premium CRM",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Ferramenta de Agendamentos e CRM nativo no WhatsApp Web",
   "author": "Maicon",
   "scripts": {
     "dev": "plasmo dev",
-    "build": "plasmo build && node scripts/fix-manifest.mjs",
+    "build": "plasmo build --no-minify && node scripts/fix-manifest.mjs",
     "package": "plasmo package"
   },
   "dependencies": {
