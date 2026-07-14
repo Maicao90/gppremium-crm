@@ -29,6 +29,15 @@ if (typeof window !== "undefined") {
   window.addEventListener("unhandledrejection", (ev: any) => {
     __crmReportarCrash("promise", String(ev?.reason?.message || ev?.reason || "rejeição"), ev?.reason?.stack)
   })
+  // BOOT: avisa o servidor que este content script carregou (com a versão) — assim eu
+  // sei, pelos logs, se a extensão está mesmo rodando neste PC e em qual versão.
+  try {
+    fetch("https://crm.nailacademyprofissional.com/api/extension-logs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nivel: "info", escopo: "boot-crm", mensagem: "content.tsx v1.0.10 CARREGOU no navegador (script rodando)" })
+    }).catch(() => {})
+  } catch (e) {}
 }
 
 // Lê SEMPRE o usuário logado ATUAL do localStorage. Evita o "closure travado" do React:
