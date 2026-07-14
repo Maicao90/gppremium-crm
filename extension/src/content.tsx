@@ -9,6 +9,28 @@ import Dashboard from "./components/Dashboard"
 import Configuracoes from "./components/Configuracoes"
 import MensagensRapidas from "./components/MensagensRapidas"
 
+// ═══ RELATOR DE CRASH GLOBAL ═══
+// Se QUALQUER erro derrubar a extensão (inclusive um crash de render do React — o
+// React 18 relança erros não-capturados pra window), manda o erro pro servidor pra
+// eu diagnosticar remotamente. Registra assim que o script carrega, antes de montar.
+const __crmReportarCrash = (origem: string, msg: string, stack?: string, extra?: any) => {
+  try {
+    fetch("https://crm.nailacademyprofissional.com/api/extension-logs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nivel: "error", escopo: "crash-" + origem, mensagem: msg, erro: { message: msg, stack, ...extra } })
+    }).catch(() => {})
+  } catch (e) {}
+}
+if (typeof window !== "undefined") {
+  window.addEventListener("error", (ev: any) => {
+    __crmReportarCrash("window", String(ev?.message || "erro sem mensagem"), ev?.error?.stack, { file: ev?.filename, line: ev?.lineno, col: ev?.colno })
+  })
+  window.addEventListener("unhandledrejection", (ev: any) => {
+    __crmReportarCrash("promise", String(ev?.reason?.message || ev?.reason || "rejeição"), ev?.reason?.stack)
+  })
+}
+
 // Lê SEMPRE o usuário logado ATUAL do localStorage. Evita o "closure travado" do React:
 // se a pessoa faz login DEPOIS de abrir o WhatsApp Web, o estado capturado fica vazio e a
 // sincronização de contatos é ignorada. Lendo do localStorage, sempre pega o login certo.
