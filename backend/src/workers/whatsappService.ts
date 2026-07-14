@@ -473,6 +473,10 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
     keepAliveIntervalMs: 30000,
     connectTimeoutMs: 60000,
     retryRequestDelayMs: 2000,
+    // PAREAMENTO: mantém o socket vivo por 3 min em cada QR. Sem isso o Baileys encerra
+    // rápido ("QR refs attempts ended" / 408) e o CÓDIGO DE PAREAMENTO expira antes de a
+    // pessoa digitar no celular → "Não foi possível conectar o dispositivo".
+    qrTimeout: 180000,
     // Não marca o aparelho como "online" ao conectar — evita roubar as notificações do celular.
     markOnlineOnConnect: false
   };
