@@ -401,6 +401,14 @@ const WhatsAppCRM = () => {
   const usuarioLogadoRef = React.useRef(usuarioLogado)
   React.useEffect(() => { usuarioLogadoRef.current = usuarioLogado }, [usuarioLogado])
 
+  // Estados de conexão do backend/QR — DECLARADOS AQUI, ANTES dos useEffects abaixo que
+  // os consomem. Se ficarem depois, o array de dependências [backendConectado, ...] é
+  // avaliado durante o render ANTES da variável existir → "Cannot access 'backendConectado'
+  // before initialization", e a extensão inteira não monta (tela some).
+  const [qrCodeBackend, setQrCodeBackend] = useState<string | null>(null)
+  const [backendConectado, setBackendConectado] = useState<boolean>(false)
+  const [bloqueioVisivel, setBloqueioVisivel] = useState<boolean>(false)
+
   // AUTO-RECUPERAÇÃO da tela de bloqueio: enquanto o CRM estiver "trancado"
   // (backendConectado === false) mas houver atendente logado, a cada 5s a extensão
   // (1) re-registra no socket e (2) pergunta ao servidor, por REST, se o WhatsApp
@@ -480,15 +488,8 @@ const WhatsAppCRM = () => {
   const [loginLoading, setLoginLoading] = useState(false)
   const [loginError, setLoginError] = useState("")
   
-  // Controle do QR Code e Status Headless
-  const [qrCodeBackend, setQrCodeBackend] = useState<string | null>(null)
-  const [backendConectado, setBackendConectado] = useState<boolean>(false)
-  // Overlay de bloqueio COM ATRASO: nunca aparece no primeiro instante de desconexão.
-  // O Baileys reestabelece a sessão o tempo todo (churn de "prekey bundle"), e a cada
-  // ciclo o servidor manda conectado:false -> 2s depois conectado:true. Sem atraso, o
-  // overlay de tela cheia PISCAVA a cada reconexão, atrapalhando o atendente. Agora só
-  // mostra se a desconexão PERSISTIR além do período de carência (ver useEffect abaixo).
-  const [bloqueioVisivel, setBloqueioVisivel] = useState<boolean>(false)
+  // (qrCodeBackend, backendConectado e bloqueioVisivel agora são declarados mais acima,
+  //  antes dos useEffects que os consomem — ver o comentário lá sobre a ordem.)
 
   const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
