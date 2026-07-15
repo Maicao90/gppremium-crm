@@ -868,8 +868,14 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
   });
 }
 
-// Função usada pelo worker para enviar mensagens diretamente simulando ser humano
-export async function enviarMensagem(usuarioId: string, numero: string, mensagem: string): Promise<boolean> {
+// Função usada pelo worker para enviar mensagens diretamente simulando ser humano.
+// `midia` (opcional): anexa foto/vídeo/áudio/documento. Sem midia = texto puro (padrão).
+export async function enviarMensagem(
+  usuarioId: string,
+  numero: string,
+  mensagem: string,
+  midia?: { tipo: string; caminho: string; nome?: string | null }
+): Promise<boolean> {
   const sock = sessions.get(usuarioId);
   
   if (!sock) {
@@ -918,7 +924,48 @@ export async function enviarMensagem(usuarioId: string, numero: string, mensagem
     await sock.sendPresenceUpdate('paused', jid);
 
     // 3. Envia a mensagem — e confirma que o Baileys aceitou (retornou uma key).
-    const enviado = await sock.sendMessage(jid, { text: mensagem });
+    // Com mídia: manda o arquivo (foto/vídeo com legenda; áudio como voz/PTT e documento
+    // com o texto em mensagem separada, pois o WhatsApp não aceita legenda nesses).
+    let enviado: any;
+    const temMidia = !!(midia && midia.tipo && midia.tipo !== 'texto' && midia.caminho);
+    if (temMidia) {
+      const fsM = require('fs');
+      const pathM = require('path');
+      const abs = pathM.join(__dirname, '../../public', String(midia!.caminho));
+      let buffer: Buffer;
+      try {
+        buffer = fsM.readFileSync(abs);
+      } catch (e) {
+        console.error(`[Baileys] ❌ Mídia do agendamento não encontrada (${abs}) — FALHA:`, e);
+        return false;
+      }
+      const legenda = mensagem && mensagem.trim() ? mensagem : '';
+      const ext = String(midia!.caminho.split('.').pop() || '').toLowerCase();
+      // Monta o conteúdo com `as any`: o tipo AnyMessageContent do Baileys com
+      // exactOptionalPropertyTypes rejeita `caption: undefined` — por isso omitimos o
+      // caption quando não há legenda (adicionamos só se tiver texto).
+      if (midia!.tipo === 'imagem') {
+        const c: any = { image: buffer };
+        if (legenda) c.caption = legenda;
+        enviado = await sock.sendMessage(jid, c);
+      } else if (midia!.tipo === 'video') {
+        const c: any = { video: buffer };
+        if (legenda) c.caption = legenda;
+        enviado = await sock.sendMessage(jid, c);
+      } else if (midia!.tipo === 'audio') {
+        const mime = ext === 'mp3' ? 'audio/mpeg' : (ext === 'm4a' || ext === 'mp4') ? 'audio/mp4' : 'audio/ogg; codecs=opus';
+        enviado = await sock.sendMessage(jid, { audio: buffer, mimetype: mime, ptt: true } as any);
+        if (legenda) await sock.sendMessage(jid, { text: legenda }).catch(() => {});
+      } else if (midia!.tipo === 'documento') {
+        const mime = ext === 'pdf' ? 'application/pdf' : 'application/octet-stream';
+        enviado = await sock.sendMessage(jid, { document: buffer, fileName: (midia!.nome || `arquivo.${ext}`), mimetype: mime } as any);
+        if (legenda) await sock.sendMessage(jid, { text: legenda }).catch(() => {});
+      } else {
+        enviado = await sock.sendMessage(jid, { text: mensagem });
+      }
+    } else {
+      enviado = await sock.sendMessage(jid, { text: mensagem });
+    }
     if (!enviado?.key?.id) {
       console.error(`[Baileys] ❌ sendMessage não retornou confirmação para ${numero} — marcando como FALHA.`);
       return false;

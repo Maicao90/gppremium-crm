@@ -1,5 +1,17 @@
+import fs from 'fs';
+import path from 'path';
 import { prisma, io } from '../server';
 import { pareceNumero, resolverNumeroContato } from '../utils/resolverNumeroContato';
+
+// Apaga o arquivo de mídia do agendamento do disco (best-effort, não bloqueia o loop).
+// Chamado quando o agendamento chega a um estado final (enviado / falhou de vez).
+function apagarMidiaAgendamento(midiaUrl?: string | null) {
+  if (!midiaUrl) return;
+  try {
+    const abs = path.join(__dirname, '../../public', String(midiaUrl));
+    fs.unlink(abs, () => {});
+  } catch (e) { /* ignora */ }
+}
 
 // Função utilitária para verificar se a hora atual do sistema está no expediente configurado
 async function estaNoExpediente(agora: Date): Promise<boolean> {
@@ -156,6 +168,7 @@ export function initWorker() {
             where: { id: ag.id },
             data: { observacoes: JSON.stringify(dadosRetry) }
           });
+          apagarMidiaAgendamento(ag.midiaUrl); // falhou de vez → limpa o arquivo do disco
           console.log(`[Worker] Agendamento ${ag.id} atingiu limite de ${MAX_TENTATIVAS} tentativas. Mantido como 'falhou' (não será mais relogado).`);
         }
       }
@@ -249,15 +262,21 @@ export function initWorker() {
 
             console.log(`[Worker] Disparando agendamento ${agendamento.id} para ${numeroEnvio} via Baileys (Simulando humano)...`);
 
+            // Anexo de mídia (foto/vídeo/áudio/documento), se houver.
+            const midia = agendamento.tipo && agendamento.tipo !== 'texto' && agendamento.midiaUrl
+              ? { tipo: agendamento.tipo, caminho: agendamento.midiaUrl, nome: agendamento.midiaNome }
+              : undefined;
+
             // Envia a mensagem (humanizada + a função já adiciona o delay de "digitando")
             // pela sessão EFETIVA (do dono, se compartilhado; do próprio, senão).
-            const sucesso = await enviarMensagem(efetivoId, numeroEnvio, humanizarTexto(agendamento.mensagem));
+            const sucesso = await enviarMensagem(efetivoId, numeroEnvio, humanizarTexto(agendamento.mensagem), midia);
 
             if (sucesso) {
               await prisma.agendamento.update({
                 where: { id: agendamento.id },
                 data: { status: 'enviado' }
               });
+              apagarMidiaAgendamento(agendamento.midiaUrl); // enviou → não precisa mais do arquivo
               // Incrementa o contador diário em memória para este usuário
               enviadosHojePorUsuario.set(agendamento.criadoPorId, (enviadosHojePorUsuario.get(agendamento.criadoPorId) || 0) + 1);
               console.log(`[Worker] ✅ Agendamento ${agendamento.id} marcado como enviado.`);

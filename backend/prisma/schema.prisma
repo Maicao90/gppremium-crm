@@ -56,6 +56,11 @@ model Agendamento {
   cancelarSeResponder Boolean  @default(true)
   observacoes         String? // Campo para rastrear tentativas de retry e informações de diagnóstico
 
+  // Anexo de mídia (opcional). Sem mídia = mensagem de texto pura (comportamento antigo).
+  tipo      String  @default("texto") // texto, imagem, video, audio, documento
+  midiaUrl  String? // caminho no disco, ex: /midias/agendamentos/<uuid>.jpg
+  midiaNome String? // nome original do arquivo (pra documento exibir certo)
+
   criadoPorId String
   criadoPor   Usuario @relation(fields: [criadoPorId], references: [id])
 

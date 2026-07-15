@@ -1,9 +1,37 @@
 import { Router } from 'express';
+import fs from 'fs';
+import path from 'path';
+import crypto from 'crypto';
 import { prisma, io } from '../server';
 import { ehEscopado, idsAtendentesDaLoja } from '../auth/escopoLoja';
 import { resolverNumeroContato } from '../utils/resolverNumeroContato';
 
 const router = Router();
+
+// Salva a mídia (base64, pode vir como data-URL) no disco e devolve o midiaUrl público
+// (ex.: /midias/agendamentos/<uuid>.jpg). O arquivo é servido pelo express.static(public).
+const EXT_POR_TIPO: Record<string, string> = { imagem: 'jpg', video: 'mp4', audio: 'ogg', documento: 'bin' };
+function salvarMidiaBase64(midiaBase64: string, tipo: string, midiaNome?: string): string {
+  let dados = String(midiaBase64 || '');
+  let ext = '';
+  const m = /^data:([^;]+);base64,([\s\S]*)$/.exec(dados);
+  if (m && m[1] && m[2]) {
+    ext = (m[1].split('/')[1] || '').split(';')[0] || '';
+    dados = m[2];
+  }
+  // Extensão: prioridade pro nome do arquivo original (documento), depois o mime, depois o tipo.
+  if (midiaNome && midiaNome.includes('.')) ext = String(midiaNome.split('.').pop()).toLowerCase();
+  if (!ext) ext = EXT_POR_TIPO[tipo] || 'bin';
+  ext = ext.replace(/[^a-z0-9]/gi, '').slice(0, 8) || 'bin';
+
+  const buffer = Buffer.from(dados, 'base64');
+  if (buffer.length === 0) throw new Error('arquivo vazio');
+  const dir = path.join(__dirname, '../../public/midias/agendamentos');
+  fs.mkdirSync(dir, { recursive: true });
+  const nomeArquivo = crypto.randomUUID() + '.' + ext;
+  fs.writeFileSync(path.join(dir, nomeArquivo), buffer);
+  return '/midias/agendamentos/' + nomeArquivo;
+}
 
 // Listar agendamentos (permite isolar agendamentos de operadores pelo query param criadoPorId)
 router.get('/', async (req, res) => {
@@ -92,7 +120,7 @@ router.get('/numero-contato', async (req, res) => {
 // Criar agendamento
 router.post('/', async (req, res) => {
   try {
-    const { cliente, numero, mensagem, enviarEm, criadoPorId, cancelarSeResponder } = req.body;
+    const { cliente, numero, mensagem, enviarEm, criadoPorId, cancelarSeResponder, midiaBase64, tipo, midiaNome } = req.body;
 
     let usuario = await prisma.usuario.findUnique({ where: { id: criadoPorId } });
     if (!usuario) {
@@ -110,14 +138,32 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: `Não encontrei o número de "${entrada || 'contato'}" nos contatos. Digite o número do WhatsApp com DDD (ex.: 61999998888).` });
     }
 
+    // Anexo de mídia (opcional): salva o arquivo no disco e guarda o caminho.
+    let tipoFinal = 'texto';
+    let midiaUrl: string | null = null;
+    let midiaNomeFinal: string | null = null;
+    if (midiaBase64 && tipo && ['imagem', 'video', 'audio', 'documento'].includes(String(tipo))) {
+      try {
+        midiaUrl = salvarMidiaBase64(String(midiaBase64), String(tipo), midiaNome);
+        tipoFinal = String(tipo);
+        midiaNomeFinal = midiaNome ? String(midiaNome).slice(0, 200) : null;
+      } catch (e) {
+        console.error('[Agendamento] Falha ao salvar mídia:', e);
+        return res.status(400).json({ error: 'Não consegui salvar o arquivo anexado. Tente outro arquivo.' });
+      }
+    }
+
     const agendamento = await prisma.agendamento.create({
       data: {
         cliente,
         numero: numeroResolvido,
-        mensagem,
+        mensagem: mensagem || '',
         enviarEm: new Date(enviarEm),
         criadoPorId: usuario.id,
-        cancelarSeResponder: cancelarSeResponder !== undefined ? cancelarSeResponder : true
+        cancelarSeResponder: cancelarSeResponder !== undefined ? cancelarSeResponder : true,
+        tipo: tipoFinal,
+        midiaUrl,
+        midiaNome: midiaNomeFinal
       }
     });
 
