@@ -155,6 +155,46 @@ export default function ModalAgendamento({ onClose, onSuccess, usuarioId, contat
   // Calcula a data de previsão para o modo relativo
   const [previsao, setPrevisao] = useState("")
 
+  // ── Anexo de mídia (foto/vídeo/áudio/documento) ──
+  const LIMITE_ANEXO_MB = 16
+  const [anexoBase64, setAnexoBase64] = useState("")
+  const [anexoTipo, setAnexoTipo] = useState("") // imagem | video | audio | documento
+  const [anexoNome, setAnexoNome] = useState("")
+  const [anexoPreview, setAnexoPreview] = useState("")
+  const fileInputRef = useRef<HTMLInputElement>(null)
+
+  const iconePorTipo = (t: string) => t === "video" ? "🎬" : t === "audio" ? "🎙️" : t === "documento" ? "📄" : "🖼️"
+  const tipoDoArquivo = (mime: string): string => {
+    if (mime.startsWith("image/")) return "imagem"
+    if (mime.startsWith("video/")) return "video"
+    if (mime.startsWith("audio/")) return "audio"
+    return "documento"
+  }
+  const aoEscolherArquivo = (e: any) => {
+    const file = e.target.files && e.target.files[0]
+    if (!file) return
+    if (file.size > LIMITE_ANEXO_MB * 1024 * 1024) {
+      alert(`Arquivo muito grande. O limite é ${LIMITE_ANEXO_MB} MB.`)
+      e.target.value = ""
+      return
+    }
+    const tipo = tipoDoArquivo(file.type || "")
+    const reader = new FileReader()
+    reader.onload = () => {
+      const dataUrl = String(reader.result || "")
+      setAnexoBase64(dataUrl)
+      setAnexoTipo(tipo)
+      setAnexoNome(file.name)
+      setAnexoPreview(tipo === "imagem" ? dataUrl : "")
+    }
+    reader.onerror = () => alert("Não consegui ler o arquivo. Tente outro.")
+    reader.readAsDataURL(file)
+  }
+  const removerAnexo = () => {
+    setAnexoBase64(""); setAnexoTipo(""); setAnexoNome(""); setAnexoPreview("")
+    if (fileInputRef.current) fileInputRef.current.value = ""
+  }
+
   useEffect(() => {
     if (minutos) {
       const date = new Date(Date.now() + parseInt(minutos) * 60000)
@@ -178,6 +218,12 @@ export default function ModalAgendamento({ onClose, onSuccess, usuarioId, contat
       return
     }
 
+    // Precisa de mensagem OU de um anexo (mídia sem legenda é permitida).
+    if (!mensagem.trim() && !anexoBase64) {
+      alert("Digite uma mensagem ou anexe um arquivo (foto, vídeo, áudio ou documento).")
+      return
+    }
+
     let enviarEm;
     if (tipoAgendamento === "relativo") {
       enviarEm = new Date(Date.now() + parseInt(minutos) * 60000).toISOString()
@@ -190,7 +236,7 @@ export default function ModalAgendamento({ onClose, onSuccess, usuarioId, contat
     let mensagemFinal = mensagem;
     const usarAssinaturaRobo = localStorage.getItem("crm_usar_assinatura") === "true"
     const nomeAtendente = localStorage.getItem("crm_nome_atendente") || ""
-    if (usarAssinaturaRobo && nomeAtendente) {
+    if (usarAssinaturaRobo && nomeAtendente && mensagem.trim()) {
       mensagemFinal = `*${nomeAtendente}:*\n${mensagem}`
     }
 
@@ -206,13 +252,18 @@ export default function ModalAgendamento({ onClose, onSuccess, usuarioId, contat
     // Se o usuário digitou apenas o nome e não sabe o número, passamos o nome para o RPA pesquisar na lupa
     const identificador = numero ? normalizarNumero(numero) : nomeCliente
 
-    const payload = {
+    const payload: any = {
       cliente: (nomeCliente && nomeCliente !== "Manual") ? nomeCliente : "Manual",
       numero: identificador,
       mensagem: mensagemFinal,
       enviarEm,
       criadoPorId: usuarioId,
       cancelarSeResponder: false
+    }
+    if (anexoBase64 && anexoTipo) {
+      payload.midiaBase64 = anexoBase64
+      payload.tipo = anexoTipo
+      payload.midiaNome = anexoNome
     }
 
     try {
@@ -453,15 +504,45 @@ export default function ModalAgendamento({ onClose, onSuccess, usuarioId, contat
                 )}
               </div>
 
-            {/* Mensagem */}
+            {/* Mensagem + Anexo */}
             <div>
-              <label className="text-xs font-bold text-gray-500 mb-1 block uppercase tracking-wider">Mensagem</label>
-              <textarea 
-                placeholder="Digite sua mensagem..." 
+              <label className="text-xs font-bold text-gray-500 mb-1 block uppercase tracking-wider">
+                {anexoTipo ? "Legenda (opcional)" : "Mensagem"}
+              </label>
+              <textarea
+                placeholder={anexoTipo ? "Legenda do anexo (opcional)..." : "Digite sua mensagem..."}
                 className="w-full border border-gray-300 p-3 rounded-xl min-h-[120px] focus:outline-none focus:border-[#00a884] focus:ring-1 focus:ring-[#00a884] resize-none text-gray-700"
-                value={mensagem} onChange={e => setMensagem(e.target.value)} required
+                value={mensagem} onChange={e => setMensagem(e.target.value)}
               />
-              <div className="text-right text-xs text-gray-400 mt-1">{mensagem.length} / 4096</div>
+              <div className="flex items-center justify-between mt-1">
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  className="flex items-center gap-1 text-xs font-semibold text-[#00a884] hover:bg-green-50 px-2 py-1 rounded-lg transition"
+                >📎 Anexar arquivo</button>
+                <span className="text-xs text-gray-400">{mensagem.length} / 4096</span>
+              </div>
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.xls,.xlsx,.txt"
+                onChange={aoEscolherArquivo}
+                style={{ display: "none" }}
+              />
+              {anexoTipo && (
+                <div className="mt-2 flex items-center gap-2 p-2 bg-gray-50 rounded-lg border border-gray-200">
+                  {anexoPreview
+                    ? <img src={anexoPreview} alt="prévia" className="w-10 h-10 object-cover rounded" />
+                    : <span className="text-2xl">{iconePorTipo(anexoTipo)}</span>}
+                  <span className="text-xs text-gray-600 flex-1 truncate">{anexoNome}</span>
+                  <button
+                    type="button"
+                    onClick={removerAnexo}
+                    className="text-gray-400 hover:text-red-500 font-bold px-1"
+                    title="Remover anexo"
+                  >✕</button>
+                </div>
+              )}
             </div>
             
             {/* Quando Enviar */}
