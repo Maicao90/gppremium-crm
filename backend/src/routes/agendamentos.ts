@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 
     // Gerente logado só vê agendamentos dos atendentes da própria loja
     // (sobrepõe qualquer criadoPorId pedido pelo cliente).
-    if (ehEscopado(req)) {
+    if (await ehEscopado(req)) {
       where.criadoPorId = { in: (await idsAtendentesDaLoja(req)) || [] };
     }
 
@@ -47,7 +47,7 @@ router.get('/grafico', async (req, res) => {
       where.criadoPorId = String(criadoPorId);
     }
     // Gerente só vê o gráfico dos atendentes da própria loja.
-    if (ehEscopado(req)) {
+    if (await ehEscopado(req)) {
       where.criadoPorId = { in: (await idsAtendentesDaLoja(req)) || [] };
     }
 
@@ -136,7 +136,7 @@ router.put('/:id/status', async (req, res) => {
     const id = String(req.params.id);
     const { status, observacoes } = req.body;
 
-    if (ehEscopado(req)) {
+    if (await ehEscopado(req)) {
       const ids = (await idsAtendentesDaLoja(req)) || [];
       const alvo = await prisma.agendamento.findUnique({ where: { id } });
       if (!alvo || !ids.includes(alvo.criadoPorId)) return res.status(403).json({ error: 'Sem acesso a este agendamento.' });
@@ -164,7 +164,7 @@ router.delete('/:id', async (req, res) => {
   try {
     const id = String(req.params.id);
     const agendamento = await prisma.agendamento.findUnique({ where: { id } });
-    if (ehEscopado(req)) {
+    if (await ehEscopado(req)) {
       const ids = (await idsAtendentesDaLoja(req)) || [];
       if (!agendamento || !ids.includes(agendamento.criadoPorId)) return res.status(403).json({ error: 'Sem acesso a este agendamento.' });
     }
@@ -191,7 +191,7 @@ router.put('/:id', async (req, res) => {
     if (!agendamentoAtual) {
       return res.status(404).json({ error: 'Agendamento não encontrado' });
     }
-    if (ehEscopado(req)) {
+    if (await ehEscopado(req)) {
       const ids = (await idsAtendentesDaLoja(req)) || [];
       if (!ids.includes(agendamentoAtual.criadoPorId)) return res.status(403).json({ error: 'Sem acesso a este agendamento.' });
     }

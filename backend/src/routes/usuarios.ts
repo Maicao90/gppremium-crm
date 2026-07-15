@@ -4,7 +4,8 @@ import { connectedUsers, logoutWhatsApp, resolverConexaoEfetiva } from '../worke
 import { conferirSenha, hashSenha } from '../auth/senha';
 import { assinarToken } from '../auth/jwt';
 import { requireMaster } from '../middlewares/requireModulo';
-import { ehEscopado } from '../auth/escopoLoja';
+import { requireAuth } from '../middlewares/requireAuth';
+import { lojaDoUsuario } from '../auth/escopoLoja';
 
 const router = Router();
 
@@ -87,9 +88,11 @@ router.post('/cadastrar', requireMaster, async (req, res) => {
 // Listar todos os usuários
 router.get('/', async (req, res) => {
   try {
-    // Gerente logado no painel só enxerga atendentes da própria loja.
+    // Gerente logado no painel só enxerga atendentes da própria loja (papel/loja
+    // lidos do banco — imune a token velho). Sem token (extensão) ou master: vê tudo.
     const where: any = { ativo: true };
-    if (ehEscopado(req)) where.lojaId = req.user!.lojaId || '__sem_loja__';
+    const ljLista = await lojaDoUsuario(req);
+    if (ljLista) where.lojaId = ljLista;
     const usuarios = await prisma.usuario.findMany({
       where,
       select: {
@@ -126,8 +129,10 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Buscar estatísticas/métricas de agendamentos por filtro de período
-router.get('/metricas', async (req, res) => {
+// Buscar estatísticas/métricas de agendamentos por filtro de período.
+// requireAuth: tela EXCLUSIVA do painel (a extensão não usa) — sem token, 401. Isso
+// fecha o buraco de, sem token, o escopo ser pulado e devolver todas as lojas.
+router.get('/metricas', requireAuth, async (req, res) => {
   try {
     const { periodo } = req.query; // dia, semana, mes, ano
     const agora = new Date();
@@ -149,9 +154,11 @@ router.get('/metricas', async (req, res) => {
     }
 
     // Busca usuários ativos e inclui apenas os agendamentos do período selecionado.
-    // Gerente só vê as métricas dos atendentes da própria loja.
+    // Gerente só vê as métricas dos atendentes da própria loja (papel/loja lidos do
+    // banco — imune a token velho de quem foi promovido a gerente após o login).
     const whereU: any = { ativo: true };
-    if (ehEscopado(req)) whereU.lojaId = req.user!.lojaId || '__sem_loja__';
+    const ljMetricas = await lojaDoUsuario(req);
+    if (ljMetricas) whereU.lojaId = ljMetricas;
     const usuarios = await prisma.usuario.findMany({
       where: whereU,
       include: {
@@ -180,7 +187,6 @@ router.get('/metricas', async (req, res) => {
         id: u.id,
         nome: u.nome,
         email: u.email,
-        senha: u.senha,
         role: u.role,
         whatsappConectado,
         whatsappDonoId: u.whatsappDonoId ?? null,

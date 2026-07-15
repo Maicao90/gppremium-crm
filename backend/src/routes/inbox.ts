@@ -8,7 +8,7 @@ const router = Router();
 // Gerente logado só pode mexer no WhatsApp de atendentes da própria loja.
 // Retorna true se PODE seguir; se bloquear, já responde 403 e retorna false.
 async function permiteAtendente(req: any, res: any, usuarioId: string): Promise<boolean> {
-  if (!ehEscopado(req)) return true; // sem token (extensão) ou master → fluxo normal
+  if (!(await ehEscopado(req))) return true; // sem token (extensão) ou master → fluxo normal
   const ids = (await idsAtendentesDaLoja(req)) || [];
   if (ids.includes(String(usuarioId))) return true;
   res.status(403).json({ error: 'Sem acesso a este atendente.' });
