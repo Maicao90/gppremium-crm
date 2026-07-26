@@ -41,5 +41,12 @@
     "noUncheckedSideEffectImports": false,
     "moduleDetection": "auto",
     "skipLibCheck": true,
-  }
+  },
+  // Sem isso, o tsc tentava incluir arquivos soltos na raiz do projeto (fetch_fails.ts,
+  // scratch/migrar_dados.ts — debris de 09/06, fora do rootDir) e ABORTAVA a checagem
+  // inteira com "TS6059 File is not under rootDir" ANTES de checar tipos de verdade —
+  // ou seja, `npx tsc --noEmit` rodava "limpo" mesmo com erro real em outro arquivo
+  // (descoberto 22/07/2026, ao validar a rota de depósitos). Restringe ao que o
+  // ts-node de produção realmente executa.
+  "include": ["src/**/*.ts"]
 }

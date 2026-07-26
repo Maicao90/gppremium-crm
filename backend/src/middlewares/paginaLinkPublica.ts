@@ -186,6 +186,12 @@ export async function paginaLinkPublica(req: Request, res: Response, next: NextF
     const hostname = (req.hostname || String(req.headers.host || '').split(':')[0] || '').toLowerCase();
     if (!hostname) return next();
 
+    // No domínio próprio só servimos a página no caminho RAIZ. Qualquer outro caminho
+    // (a logo e o fundo vêm de /midias/..., além de /anuncios, /api e arquivos estáticos)
+    // precisa seguir o fluxo normal via express.static — senão a logo voltava como HTML
+    // (imagem quebrada), que foi exatamente o que aconteceu no link.pneusgppremium.com.br.
+    if (req.path !== '/') return next();
+
     const pagina = await prisma.paginaLink.findFirst({ where: { subdominio: hostname, ativo: true } });
     if (!pagina) return next();
 

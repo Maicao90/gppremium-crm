@@ -57,15 +57,32 @@ router.get('/conversas', async (req, res) => {
     const mapaNumeros: Record<string, string> = {};
     numeros.forEach((n: any) => { mapaNumeros[n.chatJid] = n.numeroReal; });
 
+    // Normaliza nome pra comparar: minúsculo + sem acento. "José" e "jose" (apelido sem
+    // acento que a pessoa digita na assinatura) precisam bater com o mesmo cadastro.
+    const normalizarNome = (s: string) => s.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+
     // ── Atribuição por ATENDENTE (número compartilhado) ──
-    // A conversa "é" de quem mandou a ÚLTIMA resposta nela. Fontes (nesta ordem):
-    // 1. enviadoPorId (mensagem mandada pelo painel por quem compartilha a conexão);
-    // 2. assinatura "*Nome:*" que a extensão injeta nas mensagens do WhatsApp Web.
-    // Sem nenhuma das duas → conversa "sem atendente" (atendenteId null).
+    // A conversa "é" de quem mandou a resposta atribuível mais recente nela. Fontes
+    // (nesta ordem): 1. enviadoPorId (mensagem mandada pelo painel por quem compartilha
+    // a conexão); 2. assinatura no início da mensagem — "*Nome:*" (injetada pela
+    // extensão) OU "*Nome*" sem dois-pontos (alguns atendentes digitam/usam template
+    // próprio nesse formato — ex.: "*Alan machado*\nBoa tarde!..."). Sem nenhuma das
+    // duas em NENHUMA das últimas mensagens → "sem atendente" (atendenteId null).
+    // Olha as últimas N mensagens NOSSAS de cada chat (não só a literal última) — uma
+    // localização, figurinha ou mídia sem legenda não carrega assinatura nem
+    // enviadoPorId, e se ela for a msg mais recente da conversa, "escondia" quem
+    // realmente atendeu (bug real: atendente respondeu com assinatura e, logo em
+    // seguida, mandou a localização da loja → a conversa caía como "Sem atendente"
+    // mesmo tendo sido atendida).
+    const JANELA_ATRIBUICAO = 15;
     const ultimasRespostas: any[] = await prisma.$queryRaw`
-      SELECT DISTINCT ON ("chatJid") "chatJid", "texto", "enviadoPorId"
-      FROM "Mensagem"
-      WHERE "usuarioId" = ${usuarioId} AND "fromMe" = true
+      SELECT "chatJid", "texto", "enviadoPorId" FROM (
+        SELECT "chatJid", "texto", "enviadoPorId", "timestamp",
+               ROW_NUMBER() OVER (PARTITION BY "chatJid" ORDER BY "timestamp" DESC) AS rn
+        FROM "Mensagem"
+        WHERE "usuarioId" = ${usuarioId} AND "fromMe" = true
+      ) t
+      WHERE rn <= ${JANELA_ATRIBUICAO}
       ORDER BY "chatJid", "timestamp" DESC
     `;
     // Assinatura pode ser de QUALQUER atendente ativo (várias pessoas atendem o mesmo
@@ -77,24 +94,41 @@ router.get('/conversas', async (req, res) => {
     });
     const nomePorIdU: Record<string, string> = {};
     const idPorNome: Record<string, string> = {};
-    equipe.forEach((u) => { nomePorIdU[u.id] = u.nome; idPorNome[u.nome.trim().toLowerCase()] = u.id; });
+    // A extensão deixa o atendente PERSONALIZAR a assinatura (ex.: só o primeiro nome,
+    // "Camila" em vez de "Camila Louseiro" do cadastro) — então casa também pelo
+    // primeiro nome, e só quando ele for ÚNICO entre os ativos (evita confundir duas
+    // pessoas com o mesmo primeiro nome).
+    const idPorPrimeiroNome: Record<string, string | null> = {};
+    equipe.forEach((u) => {
+      nomePorIdU[u.id] = u.nome;
+      const nomeCompleto = normalizarNome(u.nome);
+      idPorNome[nomeCompleto] = u.id;
+      const primeiro = nomeCompleto.split(/\s+/)[0];
+      if (primeiro) idPorPrimeiroNome[primeiro] = primeiro in idPorPrimeiroNome ? null : u.id;
+    });
     // enviadoPorId pode ser alguém fora da equipe (ex.: master pelo painel) — busca o nome também.
     const idsExtras = [...new Set(ultimasRespostas.map((m: any) => m.enviadoPorId).filter((id: any) => id && !nomePorIdU[id]))] as string[];
     if (idsExtras.length) {
       const extras = await prisma.usuario.findMany({ where: { id: { in: idsExtras } }, select: { id: true, nome: true } });
       extras.forEach((u) => { nomePorIdU[u.id] = u.nome; });
     }
+    // As linhas já vêm ordenadas por chat + mais recente primeiro (rn=1 primeiro):
+    // pega a PRIMEIRA atribuível de cada chat e ignora as mensagens seguintes dele
+    // (mais antigas) — não sobrescreve com uma atribuição mais velha.
     const donoPorChat: Record<string, string | null> = {};
     ultimasRespostas.forEach((m: any) => {
+      if (donoPorChat[m.chatJid] !== undefined) return; // já achou a mais recente atribuível deste chat
       let id: string | null = null;
       if (m.enviadoPorId) {
         id = String(m.enviadoPorId);
       } else {
-        const ass = /^\*(.+?):\*/.exec(String(m.texto || ''));
-        const achado = ass && ass[1] ? idPorNome[ass[1].trim().toLowerCase()] : undefined;
+        const ass = /^\*(.+?):?\*/.exec(String(m.texto || ''));
+        const assNome = ass && ass[1] ? normalizarNome(ass[1]) : '';
+        // Tenta nome completo primeiro; se não bater, tenta só o primeiro nome.
+        const achado = assNome ? (idPorNome[assNome] ?? idPorPrimeiroNome[assNome] ?? undefined) : undefined;
         if (achado) id = achado;
       }
-      donoPorChat[m.chatJid] = id;
+      if (id) donoPorChat[m.chatJid] = id;
     });
 
     // Nomes SALVOS nos contatos do atendente (por número real) — fonte extra de nome

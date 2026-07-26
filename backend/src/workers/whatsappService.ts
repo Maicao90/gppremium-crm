@@ -344,11 +344,12 @@ function iniciarVigiaConexao() {
 iniciarVigiaConexao();
 
 // ─── LEMBRETE DE AGENDAMENTOS (no WhatsApp do PRÓPRIO atendente) ───
-// A cada ~2-3h no expediente, manda um lembrete pro número do próprio atendente
-// (conversa "Mensagens para mim") pra ele agendar os retornos. 100% no servidor —
-// não mexe na extensão. Ajustável por env: LEMBRETE_INTERVALO_H.
+// No expediente, manda um lembrete pro número do próprio atendente (conversa
+// "Mensagens para mim") — mas SÓ quando existe um cliente de verdade pendente, citando
+// o nome dele. Mensagem genérica solta num timer era ignorada (não dizia QUEM);
+// virou reativo: só fala quando tem algo acionável (24/07/2026, a pedido do Maicon —
+// "essa mensagem não tá dando efeito").
 const LEMBRETE_INTERVALO_MS = Number(process.env.LEMBRETE_INTERVALO_H || 2.5) * 60 * 60 * 1000;
-const TEXTO_LEMBRETE = '🔔 *Lembrete:* agende os retornos dos seus clientes!\nCada agendamento marcado é uma venda a mais 📈';
 const ultimoLembrete = new Map<string, number>();
 
 function estaNoExpedienteLembrete(): boolean {
@@ -356,6 +357,57 @@ function estaNoExpedienteLembrete(): boolean {
   const hora = agoraBR.getUTCHours();
   const dia = agoraBR.getUTCDay(); // 0=dom ... 6=sáb
   return dia >= 1 && dia <= 6 && hora >= 8 && hora < 18; // seg a sáb, 8h às 18h
+}
+
+// Acha UM cliente que o atendente já atendeu (mandou msg nessa conversa alguma vez),
+// a conversa esfriou (última msg, de qualquer lado, entre 24h e 30 dias atrás — recente
+// o bastante pra ainda fazer sentido cutucar, velha o bastante pra não ser prematuro) e
+// NENHUM agendamento (de qualquer status) existe pra esse número, criado por ele. Sem
+// candidato = null, e nesse caso não manda nada (melhor calado que chato à toa).
+async function buscarClienteSemAgendamento(usuarioId: string): Promise<{ nome: string; numero: string } | null> {
+  const agora = Date.now();
+  const ha24h = new Date(agora - 24 * 60 * 60 * 1000).getTime();
+  const ha30d = new Date(agora - 30 * 24 * 60 * 60 * 1000).getTime();
+
+  // Última mensagem de cada chat (mesmo filtro de ruído de sistema do inbox)
+  const ultimas: any[] = await prisma.$queryRaw`
+    SELECT DISTINCT ON ("chatJid") "chatJid", "chatNome", "numeroReal", "timestamp"
+    FROM "Mensagem"
+    WHERE "usuarioId" = ${usuarioId}
+      AND NOT (tipo = 'outro' AND ("midiaUrl" IS NULL OR "midiaUrl" = '') AND texto IN ('', 'protocolMessage'))
+    ORDER BY "chatJid", "timestamp" DESC
+  `;
+  const esfriados = ultimas.filter((m) => {
+    const t = new Date(m.timestamp).getTime();
+    return t < ha24h && t > ha30d && m.numeroReal;
+  });
+  if (esfriados.length === 0) return null;
+
+  // Só conta se o ATENDENTE já respondeu nessa conversa alguma vez (não é lead intocado)
+  const respondidos: any[] = await prisma.$queryRaw`
+    SELECT DISTINCT "chatJid" FROM "Mensagem" WHERE "usuarioId" = ${usuarioId} AND "fromMe" = true
+  `;
+  const setRespondidos = new Set(respondidos.map((r: any) => r.chatJid));
+  const candidatos = esfriados.filter((m) => setRespondidos.has(m.chatJid));
+  if (candidatos.length === 0) return null;
+
+  // Números que já têm QUALQUER agendamento criado por esse atendente
+  const existentes = await prisma.agendamento.findMany({ where: { criadoPorId: usuarioId }, select: { numero: true } });
+  const setAgendados = new Set(existentes.map((a) => a.numero.replace(/\D/g, '')));
+
+  // O mais recente "esfriado" primeiro — mais fresco na memória do atendente
+  candidatos.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+
+  for (const c of candidatos) {
+    const numDigitos = String(c.numeroReal || '').replace(/\D/g, '');
+    if (!numDigitos || setAgendados.has(numDigitos)) continue;
+    return { nome: c.chatNome || numDigitos, numero: numDigitos };
+  }
+  return null;
+}
+
+function textoLembrete(nome: string): string {
+  return `🔔 *Lembrete:* Você atendeu *${nome}* e ainda não agendou um retorno.\nQuer marcar agora? Cada agendamento marcado é uma venda a mais 📈`;
 }
 
 let lembretesIniciado = false;
@@ -375,17 +427,21 @@ function iniciarLembretes() {
         if (!proprio) continue;
         const num = String(proprio).replace(/[:@].*$/, ''); // só os dígitos do número do atendente
         if (!num) continue;
-        ultimoLembrete.set(uid, agora);
-        (sock as any).sendMessage(num + '@s.whatsapp.net', { text: TEXTO_LEMBRETE })
-          .then((sent: any) => { lembrarWaId(sent?.key?.id); console.log(`[Lembrete] enviado para o atendente ${uid}`); })
-          .catch((e: any) => console.error('[Lembrete] erro ao enviar:', e?.message));
+        buscarClienteSemAgendamento(uid)
+          .then((candidato) => {
+            if (!candidato) return; // ninguém pendente agora — tenta de novo no próximo ciclo (5min)
+            ultimoLembrete.set(uid, agora); // só conta a janela de 2h30 quando REALMENTE manda algo
+            return (sock as any).sendMessage(num + '@s.whatsapp.net', { text: textoLembrete(candidato.nome) })
+              .then((sent: any) => { lembrarWaId(sent?.key?.id); console.log(`[Lembrete] enviado para o atendente ${uid} sobre ${candidato.nome}`); });
+          })
+          .catch((e: any) => console.error('[Lembrete] erro:', e?.message));
       }
     } catch (e) {}
   }, 5 * 60 * 1000); // checa a cada 5 min
 }
 iniciarLembretes();
 
-// Dispara o lembrete AGORA para todos os atendentes conectados (uso manual / teste).
+// Dispara o lembrete AGORA para os atendentes conectados que TENHAM candidato (uso manual/teste).
 export async function dispararLembretesAgora(): Promise<number> {
   let enviados = 0;
   for (const [uid, sock] of sessions.entries()) {
@@ -394,12 +450,14 @@ export async function dispararLembretesAgora(): Promise<number> {
     if (!proprio) continue;
     const num = String(proprio).replace(/[:@].*$/, '');
     if (!num) continue;
+    const candidato = await buscarClienteSemAgendamento(uid);
+    if (!candidato) continue;
     ultimoLembrete.set(uid, Date.now());
     try {
-      const sent = await (sock as any).sendMessage(num + '@s.whatsapp.net', { text: TEXTO_LEMBRETE });
+      const sent = await (sock as any).sendMessage(num + '@s.whatsapp.net', { text: textoLembrete(candidato.nome) });
       lembrarWaId(sent?.key?.id);
       enviados++;
-      console.log(`[Lembrete] disparado manualmente para o atendente ${uid}`);
+      console.log(`[Lembrete] disparado manualmente para o atendente ${uid} sobre ${candidato.nome}`);
     } catch (e) { console.error('[Lembrete] erro ao disparar:', (e as any)?.message); }
   }
   return enviados;

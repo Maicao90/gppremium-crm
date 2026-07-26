@@ -268,3 +268,36 @@ model ContaAnuncio {
   // Null = conta gerenciada manualmente na tela "Saldos das Contas".
   conexao_id     String?
 }
+
+// Histórico de depósitos de uma ContaAnuncio. Cada "Registrar depósito" no painel vira
+// UM registro aqui (não sobrescreve mais nada) — permite somar quanto entrou em cada
+// mês por conta. ultimoDepValor/ultimoDepData em ContaAnuncio continuam existindo (o
+// depósito mais recente, calculado a partir daqui) só pra não quebrar quem já lia isso.
+model Deposito {
+  id       String   @id @default(uuid())
+  contaId  String
+  valor    Float
+  data     String // YYYY-MM-DD
+  criadoEm DateTime @default(now())
+}
+
+// Lista de clientes de uma campanha de disparo MANUAL de WhatsApp (o atendente clica,
+// o WhatsApp abre com a mensagem pronta, ele confere e aperta enviar — nada é enviado
+// sozinho, pra não arriscar bloqueio do número). Hoje só a Direcional Pneus usa isso
+// (importado de uma ferramenta avulsa que existia fora do CRM).
+model DisparoContato {
+  id           String    @id @default(uuid())
+  storeId      String
+  nome         String
+  tel          String    @default("") // só dígitos com DDI; "" = sem telefone válido
+  telDisp      String    @default("") // formatado, pra exibir
+  segmento     String    @default("")
+  valor        Float     @default(0) // valor já gasto pelo cliente (LTV) — pra priorizar
+  servicos     String    @default("")
+  verificar    Boolean   @default(false) // telefone com formato estranho, conferir antes
+  mensagemBase String    @default("") // com __DESCONTO__ / __VALIDADE__ pra preencher
+  contatado    Boolean   @default(false)
+  contatadoEm  DateTime? // última vez que "contatado" virou true (checkbox OU botão)
+  enviadoEm    DateTime? // só quando o botão "Abrir WhatsApp" foi clicado — conta pro limite diário
+  criadoEm     DateTime  @default(now())
+}

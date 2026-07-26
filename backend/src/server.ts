@@ -20,6 +20,7 @@ import integracoesRouter from './routes/integracoes';
 import paginaLinksRouter from './routes/paginaLinks';
 import otimizadorAdsRouter from './routes/otimizadorAds';
 import botPneusRouter from './routes/botPneus';
+import disparoRouter from './routes/disparo';
 import { paginaLinkPublica } from './middlewares/paginaLinkPublica';
 import { initSyncAds } from './integracoes/syncService';
 import { requireAuth } from './middlewares/requireAuth';
@@ -33,6 +34,23 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
+
+// Health check DE VERDADE: testa o banco, não só se o processo está de pé. Sem isso,
+// o watchdog (curl em "/") só via se o Node respondia — se o CloudManager falhasse ao
+// conectar no boot (ex.: blip de rede no Supabase) e não sobrasse nuvem de reserva
+// configurada, o app ficava "online" no pm2 mas TUDO que toca banco quebrado, sem
+// ninguém perceber (aconteceu em 24/07/2026, ~20min até o Maicon notar via "erro ao
+// buscar usuários"). `prisma` é referenciado aqui mas só é usado quando a rota é
+// chamada — nesse ponto o módulo inteiro já terminou de carregar, então é seguro
+// mesmo declarado mais abaixo no arquivo.
+app.get('/api/health', async (_req, res) => {
+  try {
+    await prisma.configuracao.count();
+    res.status(200).json({ ok: true });
+  } catch (e: any) {
+    res.status(503).json({ ok: false, error: e?.message || 'Banco indisponível' });
+  }
+});
 
 // Lógica de boot em HTTPS nativo seguro
 let server: any;
@@ -193,6 +211,7 @@ app.use('/api/integracoes', requireAuth, requireAnyModulo(['dashboard', 'otimiza
 app.use('/api', crmAnunciosRouter); // /api/empresas, /api/lojas, /api/campanhas, /api/contas (gate por loja: Fase 2)
 app.use('/api/paginalinks', requireAuth, requireModulo('linkbio'), paginaLinksRouter); // Link na Bio
 app.use('/api/otimizador', requireAuth, requireModulo('otimizador'), otimizadorAdsRouter); // Otimizador
+app.use('/api/disparo', requireAuth, requireModulo('at-disparo'), disparoRouter); // Disparo manual WhatsApp (Direcional)
 
 // Rotas da API de Nuvem do Painel Admin
 app.get('/api/admin/nuvem', (req, res) => {
@@ -209,6 +228,20 @@ app.get('/api/admin/disparar-lembrete', async (req, res) => {
     res.json({ enviados });
   } catch (e: any) {
     res.status(500).json({ error: e.message });
+  }
+});
+
+// Recarrega a extensão em TODOS os PCs conectados agora (via socket RELOAD_EXTENSION).
+// Cada extensão dá window.location.reload() → re-sincroniza a agenda e pega o estado
+// mais novo do servidor. É o "atualizar em todos os PCs conectados" de uma vez.
+app.get('/api/admin/reload-extensoes', (req, res) => {
+  try {
+    const conectados = io.engine?.clientsCount ?? 0;
+    io.emit('RELOAD_EXTENSION');
+    console.log(`[admin] RELOAD_EXTENSION disparado para ${conectados} socket(s) conectado(s).`);
+    res.json({ ok: true, socketsConectados: conectados });
+  } catch (e: any) {
+    res.status(500).json({ error: e?.message || 'Erro' });
   }
 });
 

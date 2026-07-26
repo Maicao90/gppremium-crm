@@ -64,7 +64,9 @@ export async function resolverNumeroContato(criadoPorId: string, entrada: string
   //    maiúsculas, mas NÃO acentos ("Joao" não casa com "João"). Aqui buscamos os
   //    contatos do usuário e comparamos pelos nomes normalizados (sem acento).
   try {
-    const norm = (s: string) => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, ' ').trim();
+    // Normaliza pra casar nomes: minúsculo, sem acento E sem emoji/símbolos ("Ana
+    // Paula 🌻" vira "ana paula"). Sem isso, um emoji no nome quebrava a busca.
+    const norm = (s: string) => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
     const alvo = norm(bruto);
     if (alvo) {
       const contatos = await prisma.contato.findMany({
@@ -76,6 +78,21 @@ export async function resolverNumeroContato(criadoPorId: string, entrada: string
       if (exato?.numero) return normalizar(exato.numero);
       const parciais = contatos.filter((c) => norm(c.nome).includes(alvo));
       if (parciais.length === 1 && parciais[0]?.numero) return normalizar(parciais[0].numero);
+
+      // Também no HISTÓRICO de conversa (chatNome -> numeroReal): aqui estão os números
+      // que já foram RESOLVIDOS do @lid do WhatsApp. É o que acha o cliente com quem a
+      // atendente conversou, mesmo quando o contato veio como @lid (sem número na agenda).
+      const msgs = await prisma.mensagem.findMany({
+        where: { usuarioId: efetivoId, numeroReal: { not: null } },
+        select: { chatNome: true, numeroReal: true },
+        distinct: ['chatNome'],
+        orderBy: { timestamp: 'desc' },
+        take: 4000,
+      });
+      const nrExato = msgs.find((m) => m.chatNome && norm(m.chatNome) === alvo)?.numeroReal;
+      if (nrExato) return normalizar(nrExato);
+      const nrParc = msgs.filter((m) => m.chatNome && norm(m.chatNome).includes(alvo));
+      if (nrParc.length === 1 && nrParc[0]?.numeroReal) return normalizar(nrParc[0].numeroReal);
     }
   } catch { /* segue */ }
 
