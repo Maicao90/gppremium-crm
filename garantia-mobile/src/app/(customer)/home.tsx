@@ -1,10 +1,15 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, SafeAreaView, RefreshControl, ActivityIndicator, Image, Modal } from 'react-native';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { LogOut, Bell, Wrench, CheckCircle2, ChevronRight, X } from 'lucide-react-native';
-import { api } from '../../lib/api';
+import { api, API_BASE } from '../../lib/api';
 import { useAuth } from '../../lib/auth';
-import { registrarPush } from '../../lib/push';
+import { registrarPush, mostrarLocais } from '../../lib/push';
+
+const ROTULO_PROB: Record<string, string> = { desgaste_irregular: 'Desgaste irregular', desalinhamento: 'Desalinhamento', desbalanceamento: 'Desbalanceamento', borracha_rasgada: 'Borracha rasgada', corte_lateral: 'Corte lateral', bolha: 'Bolha', furo: 'Furo', pressao_incorreta: 'Pressão incorreta' };
+const ESTADO_LBL: Record<string, string> = { excelente: 'Excelente', bom: 'Bom', regular: 'Regular', ruim: 'Ruim', trocar: 'Precisa trocar' };
+const fotoUrl = (u: any) => (u ? (String(u).startsWith('/') ? API_BASE + u : String(u)) : '');
+const parseProblemas = (s: any) => { try { return JSON.parse(s || '[]'); } catch { return []; } };
 
 const STATUS: Record<string, { label: string; cor: string }> = {
   pendente: { label: 'Aprovação pendente', cor: '#d9892a' },
@@ -26,9 +31,19 @@ export default function CustomerHome() {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [aberta, setAberta] = useState<any>(null); // garantia aberta no detalhe
+  const [pneuAberto, setPneuAberto] = useState<any>(null); // pneu aberto (fotos + histórico)
 
+  const jaNotificou = useRef(false);
   const carregar = useCallback(async () => {
-    try { setDados(await api('/api/garantia-app/cliente/me')); } catch { /* mantém */ }
+    try {
+      const d: any = await api('/api/garantia-app/cliente/me');
+      setDados(d);
+      // Ao abrir o app, mostra na tela do celular os avisos pendentes (notificação local).
+      if (!jaNotificou.current) {
+        const pend = (d.notificacoes || []).filter((n: any) => !n.enviada);
+        if (pend.length) { mostrarLocais(pend); jaNotificou.current = true; }
+      }
+    } catch { /* mantém */ }
     setLoading(false);
   }, []);
   useFocusEffect(useCallback(() => { carregar(); }, [carregar]));
@@ -44,7 +59,7 @@ export default function CustomerHome() {
       <ScrollView contentContainerStyle={s.scroll} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={async () => { setRefreshing(true); await carregar(); setRefreshing(false); }} />}>
         <View style={s.header}>
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
-            <Image source={require('../../../assets/logo-gp.jpg')} style={s.logoImg} resizeMode="contain" />
+            <Image source={require('../../../assets/logo-gp.png')} style={s.logoImg} resizeMode="contain" />
             <View><Text style={s.hi}>Olá,</Text><Text style={s.nome}>{(identidade?.nome || '').split(' ')[0]}</Text></View>
           </View>
           <View style={{ flexDirection: 'row', gap: 8 }}>
@@ -56,7 +71,7 @@ export default function CustomerHome() {
         </View>
 
         {(dados?.garantias || []).length === 0 && (
-          <View style={s.vazio}><Image source={require('../../../assets/logo-gp.jpg')} style={{ width: 90, height: 56, opacity: 0.55 }} resizeMode="contain" /><Text style={s.vazioT}>Você ainda não tem garantia cadastrada.</Text><Text style={s.vazioS}>Quando a loja ativar a garantia dos seus pneus GP Premium, ela aparece aqui.</Text></View>
+          <View style={s.vazio}><Image source={require('../../../assets/logo-gp.png')} style={{ width: 90, height: 56, opacity: 0.55 }} resizeMode="contain" /><Text style={s.vazioT}>Você ainda não tem garantia cadastrada.</Text><Text style={s.vazioS}>Quando a loja ativar a garantia dos seus pneus GP Premium, ela aparece aqui.</Text></View>
         )}
 
         {(dados?.garantias || []).map((g: any) => {
@@ -108,17 +123,18 @@ export default function CustomerHome() {
                 <Text style={s.detLinha}>KM atual do carro: {fmtKm(aberta.veiculo?.kmAtual)}</Text>
               </View>
 
-              {/* Pneus */}
+              {/* Pneus (toca pra ver fotos + histórico) */}
               <Text style={s.secao}>Pneus ({(aberta.pneus || []).length})</Text>
               {(aberta.pneus || []).map((p: any) => (
-                <View key={p.id} style={[s.card, p.cancelada && { borderColor: '#e11d48', borderWidth: 1 }]}>
+                <TouchableOpacity key={p.id} style={[s.card, p.cancelada && { borderColor: '#e11d48', borderWidth: 1 }]} activeOpacity={0.85}
+                  onPress={() => setPneuAberto({ ...p, revisoes: aberta.revisoes || [] })}>
                   <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <Text style={s.pneuPos}>{ROTULO_POS[p.posicao] || p.posicao}</Text>
-                    {p.cancelada && <Text style={s.canc}>garantia cancelada</Text>}
+                    {p.cancelada ? <Text style={s.canc}>garantia cancelada</Text> : <ChevronRight size={16} color="#0ea5e9" />}
                   </View>
                   <Text style={s.detLinha}>{[p.marca, p.modelo, p.medida].filter(Boolean).join(' ')}</Text>
-                  <Text style={s.detMuted}>DOT {p.dot || '—'} • Série {p.codigoSerie || '—'}</Text>
-                </View>
+                  <Text style={s.detMuted}>DOT {p.dot || '—'} • Série {p.codigoSerie || '—'} • toque pra ver fotos</Text>
+                </TouchableOpacity>
               ))}
 
               {/* Revisões */}
@@ -142,6 +158,59 @@ export default function CustomerHome() {
               <View style={{ height: 20 }} />
             </ScrollView>
           )}
+
+          {/* Detalhe do PNEU (fotos + histórico de sulcos por revisão) */}
+          <Modal visible={!!pneuAberto} animationType="slide" onRequestClose={() => setPneuAberto(null)}>
+            <SafeAreaView style={s.container}>
+              <View style={s.modalTop}>
+                <Text style={s.modalTitle}>{pneuAberto ? (ROTULO_POS[pneuAberto.posicao] || pneuAberto.posicao) : 'Pneu'}</Text>
+                <TouchableOpacity onPress={() => setPneuAberto(null)}><X size={24} color="#0f172a" /></TouchableOpacity>
+              </View>
+              {pneuAberto && (
+                <ScrollView contentContainerStyle={{ padding: 18 }}>
+                  <View style={s.card}>
+                    <Text style={s.detLinha}>{[pneuAberto.marca, pneuAberto.modelo, pneuAberto.medida].filter(Boolean).join(' ') || '—'}</Text>
+                    <Text style={s.detMuted}>DOT {pneuAberto.dot || '—'} • Série {pneuAberto.codigoSerie || '—'}</Text>
+                    {pneuAberto.cancelada ? <Text style={[s.canc, { marginTop: 8 }]}>⛔ Garantia deste pneu cancelada{pneuAberto.canceladaMotivo ? `: ${pneuAberto.canceladaMotivo}` : ''}</Text> : null}
+                  </View>
+
+                  {/* Fotos do cadastro */}
+                  {[pneuAberto.fotoUrl, pneuAberto.fotoLateralUrl, pneuAberto.fotoBandaUrl].some(Boolean) && (
+                    <>
+                      <Text style={s.secao}>Fotos do cadastro</Text>
+                      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                        {[pneuAberto.fotoUrl, pneuAberto.fotoLateralUrl, pneuAberto.fotoBandaUrl].filter(Boolean).map((u: any, i: number) => (
+                          <Image key={i} source={{ uri: fotoUrl(u) }} style={s.foto} resizeMode="cover" />
+                        ))}
+                      </ScrollView>
+                    </>
+                  )}
+
+                  {/* Histórico nas revisões */}
+                  <Text style={s.secao}>Histórico nas revisões</Text>
+                  {(() => {
+                    const hist = (pneuAberto.revisoes || [])
+                      .map((r: any) => ({ r, rp: (r.pneus || []).find((x: any) => x.posicao === pneuAberto.posicao) }))
+                      .filter((h: any) => h.rp);
+                    if (hist.length === 0) return <Text style={s.detMuted}>Este pneu ainda não passou por revisão.</Text>;
+                    return hist.map(({ r, rp }: any) => {
+                      const probs = parseProblemas(rp.problemas).map((k: string) => ROTULO_PROB[k] || k);
+                      return (
+                        <View key={rp.id} style={s.card}>
+                          <Text style={s.pneuPos}>{fmtData(r.criadoEm)} • {fmtKm(r.km)} km</Text>
+                          <Text style={s.detLinha}>Sulco: {String(rp.profundidadeSulco).replace('.', ',')} mm • Estado: {ESTADO_LBL[rp.estado] || rp.estado}</Text>
+                          {rp.arrancamentoBorracha ? <Text style={s.canc}>⚠ Arrancamento de borracha detectado</Text> : null}
+                          {probs.length > 0 ? <Text style={s.detMuted}>Problemas: {probs.join(', ')}</Text> : null}
+                          {rp.recomendacao ? <Text style={s.detMuted}>Recomendação: {rp.recomendacao}</Text> : null}
+                        </View>
+                      );
+                    });
+                  })()}
+                  <View style={{ height: 20 }} />
+                </ScrollView>
+              )}
+            </SafeAreaView>
+          </Modal>
         </SafeAreaView>
       </Modal>
     </SafeAreaView>
@@ -186,4 +255,5 @@ const s = StyleSheet.create({
   revPneu: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 6, paddingTop: 6, borderTopWidth: 1, borderTopColor: '#f1f5f9' },
   revPneuPos: { fontSize: 12, color: '#475569' },
   revPneuSulco: { fontSize: 12, color: '#0f172a', fontWeight: '700' },
+  foto: { width: 130, height: 130, borderRadius: 10, marginRight: 10, backgroundColor: '#e2e8f0' },
 });

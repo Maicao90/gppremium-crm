@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView, Alert, ActivityIndicator, SafeAreaView, Modal, Image } from 'react-native';
 import { useRouter } from 'expo-router';
-import { ArrowLeft, Check, X } from 'lucide-react-native';
+import { ArrowLeft, Check, X, Eye, EyeOff } from 'lucide-react-native';
 import { useAuth } from '../../lib/auth';
 import { registrarPush } from '../../lib/push';
 
@@ -35,6 +35,7 @@ export default function Register() {
   const [f, setF] = useState({ nome: '', cpf: '', telefone: '', email: '', senha: '' });
   const [aceito, setAceito] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [verSenha, setVerSenha] = useState(false);
   const set = (k: string, v: string) => setF((s) => ({ ...s, [k]: v }));
 
   const cadastrar = async () => {
@@ -59,7 +60,7 @@ export default function Register() {
       <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled" automaticallyAdjustKeyboardInsets keyboardDismissMode="interactive">
         <TouchableOpacity style={styles.back} onPress={() => router.back()}><ArrowLeft size={20} color="#0f172a" /><Text style={styles.backText}>Voltar</Text></TouchableOpacity>
         <View style={styles.header}>
-          <Image source={require('../../../assets/logo-gp.jpg')} style={styles.logo} resizeMode="contain" />
+          <Image source={require('../../../assets/logo-gp.png')} style={styles.logo} resizeMode="contain" />
           <Text style={styles.title}>Criar conta</Text>
           <Text style={styles.sub}>Acompanhe a garantia e as revisões dos seus pneus.</Text>
         </View>
@@ -74,7 +75,12 @@ export default function Register() {
           <Text style={styles.label}>E-mail</Text>
           <TextInput style={styles.input} value={f.email} onChangeText={(v) => set('email', v)} autoCapitalize="none" keyboardType="email-address" placeholder="voce@email.com" placeholderTextColor="#94a3b8" />
           <Text style={styles.label}>Senha</Text>
-          <TextInput style={styles.input} value={f.senha} onChangeText={(v) => set('senha', v)} secureTextEntry placeholder="Crie uma senha" placeholderTextColor="#94a3b8" />
+          <View style={styles.senhaBox}>
+            <TextInput style={styles.senhaInput} value={f.senha} onChangeText={(v) => set('senha', v)} secureTextEntry={!verSenha} placeholder="Crie uma senha" placeholderTextColor="#94a3b8" />
+            <TouchableOpacity onPress={() => setVerSenha(!verSenha)} hitSlop={10}>
+              {verSenha ? <EyeOff size={18} color="#94a3b8" /> : <Eye size={18} color="#94a3b8" />}
+            </TouchableOpacity>
+          </View>
 
           <View style={styles.termo}>
             <TouchableOpacity onPress={() => setAceito(!aceito)} activeOpacity={0.7}>
@@ -126,6 +132,8 @@ const styles = StyleSheet.create({
   card: { backgroundColor: '#fff', borderRadius: 18, padding: 20, borderWidth: 1, borderColor: 'rgba(0,0,0,0.05)' },
   label: { fontSize: 12, fontWeight: '700', color: '#475569', marginBottom: 5, marginTop: 10 },
   input: { backgroundColor: '#f8fafc', borderWidth: 1, borderColor: 'rgba(0,0,0,0.06)', borderRadius: 10, paddingHorizontal: 12, paddingVertical: 11, fontSize: 14, color: '#0f172a' },
+  senhaBox: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#f8fafc', borderWidth: 1, borderColor: 'rgba(0,0,0,0.06)', borderRadius: 10, paddingHorizontal: 12 },
+  senhaInput: { flex: 1, paddingVertical: 11, fontSize: 14, color: '#0f172a' },
   termo: { flexDirection: 'row', gap: 10, marginTop: 18, alignItems: 'flex-start' },
   check: { width: 22, height: 22, borderRadius: 6, borderWidth: 1.5, borderColor: '#cbd5e1', alignItems: 'center', justifyContent: 'center', marginTop: 1 },
   checkOn: { backgroundColor: '#e11d2a', borderColor: '#e11d2a' },

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, SafeAreaView, Alert, ActivityIndicator, ScrollView, Image } from 'react-native';
 import { useRouter } from 'expo-router';
-import { Lock, User } from 'lucide-react-native';
+import { Lock, User, Eye, EyeOff } from 'lucide-react-native';
 import { useAuth } from '../lib/auth';
 
 const soDigitos = (s: string) => s.replace(/\D/g, '');
@@ -14,6 +14,7 @@ export default function LoginScreen() {
   const { identidade, carregando, loginLoja, loginCliente } = useAuth();
   const [ident, setIdent] = useState('');
   const [senha, setSenha] = useState('');
+  const [verSenha, setVerSenha] = useState(false);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -46,7 +47,7 @@ export default function LoginScreen() {
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled" automaticallyAdjustKeyboardInsets keyboardDismissMode="interactive">
         <View style={styles.header}>
-          <Image source={require('../../assets/logo-gp.jpg')} style={styles.logo} resizeMode="contain" />
+          <Image source={require('../../assets/logo-gp.png')} style={styles.logo} resizeMode="contain" />
           <Text style={styles.subtitle}>GARANTIA 50.000 KM</Text>
         </View>
 
@@ -62,7 +63,10 @@ export default function LoginScreen() {
           <View style={styles.inputBox}>
             <Lock size={16} color="#64748b" />
             <TextInput style={styles.input} placeholder="Senha" placeholderTextColor="#94a3b8"
-              secureTextEntry value={senha} onChangeText={setSenha} />
+              secureTextEntry={!verSenha} value={senha} onChangeText={setSenha} />
+            <TouchableOpacity onPress={() => setVerSenha(!verSenha)} hitSlop={10}>
+              {verSenha ? <EyeOff size={18} color="#94a3b8" /> : <Eye size={18} color="#94a3b8" />}
+            </TouchableOpacity>
           </View>
 
           <TouchableOpacity style={styles.btn} onPress={entrar} disabled={loading} activeOpacity={0.85}>

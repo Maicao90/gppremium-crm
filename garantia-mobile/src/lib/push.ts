@@ -16,6 +16,29 @@ Notifications.setNotificationHandler({
   }),
 });
 
+// Garante permissão de notificação (pra local E push).
+async function garantirPermissao(): Promise<boolean> {
+  const atual = await Notifications.getPermissionsAsync();
+  if (atual.status === 'granted') return true;
+  return (await Notifications.requestPermissionsAsync()).status === 'granted';
+}
+
+// Mostra notificações LOCAIS na tela do celular (funciona no Expo Go, diferente do push
+// remoto). Usado pra o cliente ver os avisos pendentes aparecerem quando abre o app.
+export async function mostrarLocais(notifs: { id: string; mensagem: string; enviada?: boolean }[]): Promise<void> {
+  try {
+    if (!(await garantirPermissao())) return;
+    for (const n of notifs.filter((x) => !x.enviada)) {
+      await Notifications.scheduleNotificationAsync({
+        content: { title: 'GP Premium 🛞', body: n.mensagem, data: { id: n.id } },
+        trigger: null, // imediata
+      });
+    }
+  } catch (e) {
+    console.warn('[push] notificação local falhou:', (e as any)?.message);
+  }
+}
+
 // Pede permissão, pega o token do Expo e registra no backend. Chamar depois do login
 // do CLIENTE. Silencioso: se algo falhar (simulador, permissão negada), não quebra o app.
 export async function registrarPush(): Promise<void> {
