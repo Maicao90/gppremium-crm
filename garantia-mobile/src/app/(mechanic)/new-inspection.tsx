@@ -64,7 +64,7 @@ export default function NewInspection() {
   return (
     <SafeAreaView style={s.container}>
       <View style={s.top}><TouchableOpacity onPress={() => router.back()}><ArrowLeft size={22} color="#0f172a" /></TouchableOpacity><Text style={s.topTitle}>Nova Revisão</Text><View style={{ width: 22 }} /></View>
-      <ScrollView contentContainerStyle={s.scroll} keyboardShouldPersistTaps="handled">
+      <ScrollView contentContainerStyle={s.scroll} keyboardShouldPersistTaps="handled" automaticallyAdjustKeyboardInsets keyboardDismissMode="interactive">
         <View style={s.card}>
           <Text style={s.cardTitle}>Buscar veículo</Text>
           <View style={{ flexDirection: 'row', gap: 8 }}>

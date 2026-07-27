@@ -44,7 +44,7 @@ export default function LoginScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
+      <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled" automaticallyAdjustKeyboardInsets keyboardDismissMode="interactive">
         <View style={styles.header}>
           <Image source={require('../../assets/logo-gp.jpg')} style={styles.logo} resizeMode="contain" />
           <Text style={styles.subtitle}>GARANTIA 50.000 KM</Text>

@@ -56,7 +56,7 @@ export default function Register() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
+      <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled" automaticallyAdjustKeyboardInsets keyboardDismissMode="interactive">
         <TouchableOpacity style={styles.back} onPress={() => router.back()}><ArrowLeft size={20} color="#0f172a" /><Text style={styles.backText}>Voltar</Text></TouchableOpacity>
         <View style={styles.header}>
           <Image source={require('../../../assets/logo-gp.jpg')} style={styles.logo} resizeMode="contain" />

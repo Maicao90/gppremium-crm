@@ -81,7 +81,7 @@ export default function NewWarranty() {
         <Text style={s.topTitle}>Ativar Garantia</Text>
         <View style={{ width: 22 }} />
       </View>
-      <ScrollView contentContainerStyle={s.scroll} keyboardShouldPersistTaps="handled">
+      <ScrollView contentContainerStyle={s.scroll} keyboardShouldPersistTaps="handled" automaticallyAdjustKeyboardInsets keyboardDismissMode="interactive">
         {/* CPF */}
         <View style={s.card}>
           <Text style={s.cardTitle}>Cliente</Text>

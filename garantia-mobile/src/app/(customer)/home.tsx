@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, SafeAreaView, RefreshControl, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, SafeAreaView, RefreshControl, ActivityIndicator, Image } from 'react-native';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { Shield, LogOut, Bell, Wrench, CheckCircle2 } from 'lucide-react-native';
 import { api } from '../../lib/api';
@@ -41,7 +41,7 @@ export default function CustomerHome() {
       <ScrollView contentContainerStyle={s.scroll} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={async () => { setRefreshing(true); await carregar(); setRefreshing(false); }} />}>
         <View style={s.header}>
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
-            <View style={s.logo}><Shield size={22} color="#0ea5e9" /></View>
+            <Image source={require('../../../assets/logo-gp.jpg')} style={s.logoImg} resizeMode="contain" />
             <View><Text style={s.hi}>Olá,</Text><Text style={s.nome}>{(identidade?.nome || '').split(' ')[0]}</Text></View>
           </View>
           <View style={{ flexDirection: 'row', gap: 8 }}>
@@ -95,7 +95,7 @@ const s = StyleSheet.create({
   center: { alignItems: 'center', justifyContent: 'center' },
   scroll: { padding: 18, paddingTop: 40 },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 },
-  logo: { width: 42, height: 42, borderRadius: 12, backgroundColor: 'rgba(14,165,233,0.08)', alignItems: 'center', justifyContent: 'center' },
+  logoImg: { width: 60, height: 40 },
   hi: { fontSize: 13, color: '#64748b' },
   nome: { fontSize: 18, fontWeight: '900', color: '#0f172a' },
   iconBtn: { padding: 10, backgroundColor: '#fff', borderRadius: 12, borderWidth: 1, borderColor: '#e2e8f0' },
