@@ -182,6 +182,53 @@ router.get('/conversas', async (req, res) => {
   }
 });
 
+// Métricas diárias do WhatsApp: quantas PESSOAS (contatos distintos) chegaram por dia
+// e, dessas, quantas foram RESPONDIDAS. "Chegou" = mandou ao menos 1 mensagem recebida
+// (fromMe=false) no dia. "Respondido" = esse contato recebeu ao menos 1 resposta nossa
+// (fromMe=true) do dia da chegada em diante. Dia no fuso de São Paulo (não UTC), pra
+// bater com o dia real do atendente. Escopo: mesma conexão efetiva da Caixa de Entrada.
+router.get('/metricas-diarias', async (req, res) => {
+  try {
+    const usuarioIdOriginal = String(req.query.usuarioId || '');
+    if (!usuarioIdOriginal) return res.json([]);
+    if (!(await permiteAtendente(req, res, usuarioIdOriginal))) return;
+    const usuarioId = await resolverConexaoEfetiva(usuarioIdOriginal);
+    const dias = Math.max(1, Math.min(180, Number(req.query.dias) || 30));
+    // Recorte pelos últimos N dias (no fuso local). Faz a conta em SQL, agrupando por dia.
+    const linhas: any[] = await prisma.$queryRaw`
+      WITH inbound AS (
+        SELECT "chatJid",
+               date_trunc('day', ("timestamp" AT TIME ZONE 'UTC' AT TIME ZONE 'America/Sao_Paulo')) AS dia,
+               MIN("timestamp") AS primeiro
+        FROM "Mensagem"
+        WHERE "usuarioId" = ${usuarioId}
+          AND "fromMe" = false
+          AND ("timestamp" AT TIME ZONE 'UTC' AT TIME ZONE 'America/Sao_Paulo') >= (now() AT TIME ZONE 'America/Sao_Paulo') - (${dias} || ' days')::interval
+        GROUP BY "chatJid", 2
+      ),
+      marcado AS (
+        SELECT i.dia,
+               EXISTS (
+                 SELECT 1 FROM "Mensagem" m
+                 WHERE m."usuarioId" = ${usuarioId} AND m."chatJid" = i."chatJid"
+                   AND m."fromMe" = true AND m."timestamp" >= i.primeiro
+               ) AS respondeu
+        FROM inbound i
+      )
+      SELECT to_char(dia, 'YYYY-MM-DD') AS dia,
+             COUNT(*)::int AS contatos,
+             COUNT(*) FILTER (WHERE respondeu)::int AS respondidos
+      FROM marcado
+      GROUP BY dia
+      ORDER BY dia DESC
+    `;
+    res.json(linhas);
+  } catch (e) {
+    console.error('Erro nas métricas diárias:', e);
+    res.status(500).json({ error: 'Erro ao calcular métricas.' });
+  }
+});
+
 // Mensagens de uma conversa específica
 router.get('/mensagens', async (req, res) => {
   try {
