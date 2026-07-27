@@ -1,15 +1,36 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView, Alert, ActivityIndicator, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView, Alert, ActivityIndicator, SafeAreaView, Modal, Image } from 'react-native';
 import { useRouter } from 'expo-router';
-import { Shield, ArrowLeft, Check } from 'lucide-react-native';
+import { ArrowLeft, Check, X } from 'lucide-react-native';
 import { useAuth } from '../../lib/auth';
 import { registrarPush } from '../../lib/push';
 
 const soDigitos = (s: string) => s.replace(/\D/g, '');
 const fmtCPF = (s: string) => soDigitos(s).slice(0, 11).replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d{1,2})$/, '$1-$2');
 
+const TERMOS = `TERMOS DA GARANTIA GP PREMIUM 50.000 KM
+
+1. COBERTURA
+A GP Premium oferece garantia de durabilidade de 50.000 km OU 2 anos (o que ocorrer primeiro) contra desgaste prematuro dos pneus GP Premium, contados a partir da data da instalação registrada no ato da venda.
+
+2. REVISÕES OBRIGATÓRIAS
+A garantia só é válida com as revisões periódicas feitas em uma loja credenciada GP Premium (a cada 10.000 km rodados, aproximadamente). Nessas revisões é feito o rodízio dos pneus GRATUITAMENTE e a medição dos sulcos.
+
+3. O QUE CANCELA A GARANTIA
+- Marcas de tração/arrancamento de borracha na banda de rodagem (sinal de "cavalo de pau"/patinação) cancelam a garantia do pneu envolvido.
+- Desgaste por desalinhamento, suspensão danificada, calibragem incorreta ou mau uso não é coberto.
+- Adulteração do odômetro do veículo cancela a garantia.
+- Pneu que atingir o sulco mínimo legal de 1,6 mm perde o direito ao acionamento.
+
+4. NOTIFICAÇÕES
+Enviaremos lembretes aproximados da data de revisão. O acompanhamento da quilometragem e a realização das revisões no prazo são de responsabilidade do cliente, mesmo que uma notificação não seja recebida.
+
+5. PRIVACIDADE (LGPD)
+Seus dados (nome, CPF, telefone, e-mail, veículo e fotos) são usados apenas para gerir a garantia, as revisões e a comunicação com você. Não são vendidos a terceiros. Você pode solicitar a exclusão dos seus dados a qualquer momento.`;
+
 export default function Register() {
   const router = useRouter();
+  const [verTermos, setVerTermos] = useState(false);
   const { registrarCliente } = useAuth();
   const [f, setF] = useState({ nome: '', cpf: '', telefone: '', email: '', senha: '' });
   const [aceito, setAceito] = useState(false);
@@ -38,7 +59,7 @@ export default function Register() {
       <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
         <TouchableOpacity style={styles.back} onPress={() => router.back()}><ArrowLeft size={20} color="#0f172a" /><Text style={styles.backText}>Voltar</Text></TouchableOpacity>
         <View style={styles.header}>
-          <View style={styles.iconBox}><Shield size={32} color="#0EA5E9" /></View>
+          <Image source={require('../../../assets/logo-gp.jpg')} style={styles.logo} resizeMode="contain" />
           <Text style={styles.title}>Criar conta</Text>
           <Text style={styles.sub}>Acompanhe a garantia e as revisões dos seus pneus.</Text>
         </View>
@@ -55,16 +76,40 @@ export default function Register() {
           <Text style={styles.label}>Senha</Text>
           <TextInput style={styles.input} value={f.senha} onChangeText={(v) => set('senha', v)} secureTextEntry placeholder="Crie uma senha" placeholderTextColor="#94a3b8" />
 
-          <TouchableOpacity style={styles.termo} onPress={() => setAceito(!aceito)} activeOpacity={0.7}>
-            <View style={[styles.check, aceito && styles.checkOn]}>{aceito && <Check size={14} color="#fff" />}</View>
-            <Text style={styles.termoText}>Li e aceito os termos da Garantia GP Premium 50.000 KM e a política de privacidade (LGPD).</Text>
-          </TouchableOpacity>
+          <View style={styles.termo}>
+            <TouchableOpacity onPress={() => setAceito(!aceito)} activeOpacity={0.7}>
+              <View style={[styles.check, aceito && styles.checkOn]}>{aceito && <Check size={14} color="#fff" />}</View>
+            </TouchableOpacity>
+            <Text style={styles.termoText}>
+              Li e aceito os{' '}
+              <Text style={styles.termoLink} onPress={() => setVerTermos(true)}>termos da Garantia GP Premium 50.000 KM e a política de privacidade (LGPD)</Text>.
+              {'  '}<Text style={styles.termoLink} onPress={() => setVerTermos(true)}>(ler)</Text>
+            </Text>
+          </View>
 
           <TouchableOpacity style={styles.btn} onPress={cadastrar} disabled={loading} activeOpacity={0.85}>
             {loading ? <ActivityIndicator color="#fff" /> : <Text style={styles.btnText}>CRIAR CONTA</Text>}
           </TouchableOpacity>
         </View>
       </ScrollView>
+
+      {/* Modal com os termos pra LER */}
+      <Modal visible={verTermos} animationType="slide" onRequestClose={() => setVerTermos(false)}>
+        <SafeAreaView style={styles.container}>
+          <View style={styles.modalTop}>
+            <Text style={styles.modalTitle}>Termos da Garantia</Text>
+            <TouchableOpacity onPress={() => setVerTermos(false)}><X size={24} color="#0f172a" /></TouchableOpacity>
+          </View>
+          <ScrollView contentContainerStyle={{ padding: 20 }}>
+            <Text style={styles.termosTexto}>{TERMOS}</Text>
+          </ScrollView>
+          <View style={{ padding: 16 }}>
+            <TouchableOpacity style={styles.btn} onPress={() => { setAceito(true); setVerTermos(false); }} activeOpacity={0.85}>
+              <Text style={styles.btnText}>LI E ACEITO</Text>
+            </TouchableOpacity>
+          </View>
+        </SafeAreaView>
+      </Modal>
     </SafeAreaView>
   );
 }
@@ -75,7 +120,7 @@ const styles = StyleSheet.create({
   back: { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 12 },
   backText: { fontSize: 14, color: '#0f172a', fontWeight: '600' },
   header: { alignItems: 'center', marginBottom: 22 },
-  iconBox: { backgroundColor: 'rgba(14,165,233,0.06)', padding: 14, borderRadius: 20, marginBottom: 12, borderWidth: 1, borderColor: 'rgba(14,165,233,0.15)' },
+  logo: { width: 150, height: 66, marginBottom: 8 },
   title: { fontSize: 22, fontWeight: '900', color: '#0f172a' },
   sub: { fontSize: 13, color: '#64748b', marginTop: 4, textAlign: 'center' },
   card: { backgroundColor: '#fff', borderRadius: 18, padding: 20, borderWidth: 1, borderColor: 'rgba(0,0,0,0.05)' },
@@ -83,8 +128,12 @@ const styles = StyleSheet.create({
   input: { backgroundColor: '#f8fafc', borderWidth: 1, borderColor: 'rgba(0,0,0,0.06)', borderRadius: 10, paddingHorizontal: 12, paddingVertical: 11, fontSize: 14, color: '#0f172a' },
   termo: { flexDirection: 'row', gap: 10, marginTop: 18, alignItems: 'flex-start' },
   check: { width: 22, height: 22, borderRadius: 6, borderWidth: 1.5, borderColor: '#cbd5e1', alignItems: 'center', justifyContent: 'center', marginTop: 1 },
-  checkOn: { backgroundColor: '#0ea5e9', borderColor: '#0ea5e9' },
+  checkOn: { backgroundColor: '#e11d2a', borderColor: '#e11d2a' },
   termoText: { flex: 1, fontSize: 12, color: '#64748b', lineHeight: 17 },
-  btn: { backgroundColor: '#0ea5e9', borderRadius: 10, padding: 14, alignItems: 'center', marginTop: 20 },
+  termoLink: { color: '#e11d2a', fontWeight: '700', textDecorationLine: 'underline' },
+  btn: { backgroundColor: '#e11d2a', borderRadius: 10, padding: 14, alignItems: 'center', marginTop: 20 },
   btnText: { color: '#fff', fontWeight: '800', fontSize: 14, letterSpacing: 0.5 },
+  modalTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 16, borderBottomWidth: 1, borderBottomColor: '#e2e8f0' },
+  modalTitle: { fontSize: 17, fontWeight: '800', color: '#0f172a' },
+  termosTexto: { fontSize: 13, color: '#334155', lineHeight: 21 },
 });
