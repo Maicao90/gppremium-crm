@@ -301,3 +301,96 @@ model DisparoContato {
   enviadoEm    DateTime? // só quando o botão "Abrir WhatsApp" foi clicado — conta pro limite diário
   criadoEm     DateTime  @default(now())
 }
+
+// ===== Garantia 50.000 KM (módulo "aplicativo", importado do protótipo GPPREMIUMGARANTIA50K) =====
+// Fluxo: loja vende pneus → ativa a garantia pro cliente (nasce "pendente") → admin
+// audita e aprova/reprova → revisões periódicas registram sulcos e problemas por pneu.
+// Regras de negócio fixas: kmMaximo = kmInicial + 50000; dataExpiracao = início + 2 anos.
+
+model GarantiaCliente {
+  id         String   @id @default(uuid())
+  nome       String
+  cpf        String   @unique // só dígitos (11)
+  telefone   String   @default("")
+  email      String   @default("")
+  nascimento String   @default("") // YYYY-MM-DD ou "" (pra campanha de aniversário no futuro)
+  criadoEm   DateTime @default(now())
+}
+
+model GarantiaVeiculo {
+  id              String   @id @default(uuid())
+  clienteId       String
+  placa           String   @unique // maiúsculas sem hífen (Mercosul ou padrão antigo)
+  marca           String   @default("")
+  modelo          String   @default("")
+  ano             Int      @default(0)
+  kmAtual         Int      @default(0) // atualizado a cada revisão
+  fotoUrl         String? // foto geral do veículo (em /midias/garantia/)
+  fotoOdometroUrl String?
+  criadoEm        DateTime @default(now())
+}
+
+model Garantia {
+  id            String   @id @default(uuid())
+  clienteId     String
+  veiculoId     String
+  status        String   @default("pendente") // pendente, em_analise, ativa, atencao, reprovada, cancelada, expirada
+  kmInicial     Int
+  kmMaximo      Int // kmInicial + 50000
+  dataInicio    String // YYYY-MM-DD
+  dataExpiracao String // dataInicio + 2 anos
+  dotDivergente Boolean  @default(false) // alguma revisão leu um DOT diferente do cadastrado
+  criadoPorId   String? // Usuario do painel que ativou (campo solto, padrão do projeto)
+  criadoEm      DateTime @default(now())
+  atualizadoEm  DateTime @updatedAt
+}
+
+model GarantiaPneu {
+  id          String   @id @default(uuid())
+  garantiaId  String
+  posicao     String // dianteiro_esquerdo, dianteiro_direito, traseiro_esquerdo, traseiro_direito, estepe
+  marca       String   @default("")
+  modelo      String   @default("")
+  medida      String   @default("") // ex.: 205/55 R16
+  dot         String   @default("") // 4 dígitos (semana+ano de fabricação)
+  codigoSerie String   @default("")
+  fotoUrl     String?
+  criadoEm    DateTime @default(now())
+}
+
+model GarantiaRevisao {
+  id              String   @id @default(uuid())
+  garantiaId      String
+  km              Int
+  status          String   @default("pendente") // pendente, aprovada, reprovada
+  mecanico        String   @default("") // nome livre — mecânico de pista não tem login no painel
+  observacoes     String   @default("")
+  fotoOdometroUrl String?
+  criadoPorId     String? // Usuario do painel que registrou
+  criadoEm        DateTime @default(now())
+}
+
+model GarantiaRevisaoPneu {
+  id           String   @id @default(uuid())
+  revisaoId    String
+  pneuId       String? // GarantiaPneu correspondente (null se a posição não bateu com nenhum)
+  posicao      String
+  sulcoExterno Float    @default(0) // mm
+  sulcoCentral Float    @default(0)
+  sulcoInterno Float    @default(0)
+  estado       String   @default("bom") // excelente, bom, regular, ruim, trocar
+  problemas    String   @default("[]") // JSON array: desgaste_irregular, desalinhamento, desbalanceamento, borracha_rasgada, corte_lateral, bolha, furo, pressao_incorreta
+  dotLido      String   @default("") // DOT visto na hora da revisão (comparado com o cadastrado)
+  observacoes  String   @default("")
+  recomendacao String   @default("")
+  criadoEm     DateTime @default(now())
+}
+
+// Sorteio entre clientes com garantia ATIVA (Fisher-Yates com crypto — auditável, sem Math.random).
+model GarantiaSorteio {
+  id          String   @id @default(uuid())
+  titulo      String
+  vencedores  String   @default("[]") // JSON [{clienteId, nome, cpf, placa}]
+  criadoPorId String?
+  criadoEm    DateTime @default(now())
+}

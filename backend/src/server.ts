@@ -21,6 +21,7 @@ import paginaLinksRouter from './routes/paginaLinks';
 import otimizadorAdsRouter from './routes/otimizadorAds';
 import botPneusRouter from './routes/botPneus';
 import disparoRouter from './routes/disparo';
+import garantiaRouter from './routes/garantia';
 import { paginaLinkPublica } from './middlewares/paginaLinkPublica';
 import { initSyncAds } from './integracoes/syncService';
 import { requireAuth } from './middlewares/requireAuth';
@@ -212,6 +213,7 @@ app.use('/api', crmAnunciosRouter); // /api/empresas, /api/lojas, /api/campanhas
 app.use('/api/paginalinks', requireAuth, requireModulo('linkbio'), paginaLinksRouter); // Link na Bio
 app.use('/api/otimizador', requireAuth, requireModulo('otimizador'), otimizadorAdsRouter); // Otimizador
 app.use('/api/disparo', requireAuth, requireModulo('at-disparo'), disparoRouter); // Disparo manual WhatsApp (Direcional)
+app.use('/api/garantia', requireAuth, requireModulo('garantia50k'), garantiaRouter); // Garantia 50.000 KM
 
 // Rotas da API de Nuvem do Painel Admin
 app.get('/api/admin/nuvem', (req, res) => {
