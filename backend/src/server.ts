@@ -22,6 +22,8 @@ import otimizadorAdsRouter from './routes/otimizadorAds';
 import botPneusRouter from './routes/botPneus';
 import disparoRouter from './routes/disparo';
 import garantiaRouter from './routes/garantia';
+import garantiaAppRouter from './routes/garantiaApp';
+import { initGarantiaPush } from './workers/garantiaPush';
 import { paginaLinkPublica } from './middlewares/paginaLinkPublica';
 import { initSyncAds } from './integracoes/syncService';
 import { requireAuth } from './middlewares/requireAuth';
@@ -101,6 +103,7 @@ async function iniciarCoreDoSistema() {
     console.log('[Core] Iniciando workers principais...');
     initWorker();
     initSyncAds(); // sincronização periódica de Google Ads / Meta Ads
+    initGarantiaPush(); // envio de push das notificações de garantia (cliente com app)
     
     // Restaura do banco quem estava PAUSADO antes deste restart (senão o vigia
     // reconecta sozinho e gera QR infinito de contas que pedimos pra não mexer).
@@ -213,7 +216,8 @@ app.use('/api', crmAnunciosRouter); // /api/empresas, /api/lojas, /api/campanhas
 app.use('/api/paginalinks', requireAuth, requireModulo('linkbio'), paginaLinksRouter); // Link na Bio
 app.use('/api/otimizador', requireAuth, requireModulo('otimizador'), otimizadorAdsRouter); // Otimizador
 app.use('/api/disparo', requireAuth, requireModulo('at-disparo'), disparoRouter); // Disparo manual WhatsApp (Direcional)
-app.use('/api/garantia', requireAuth, requireModulo('garantia50k'), garantiaRouter); // Garantia 50.000 KM
+app.use('/api/garantia', requireAuth, requireModulo('garantia50k'), garantiaRouter); // Garantia 50.000 KM (painel + app do mecânico, login CRM)
+app.use('/api/garantia-app', garantiaAppRouter); // App do CLIENTE final (auth própria por CPF+senha, cada rota se protege)
 
 // Rotas da API de Nuvem do Painel Admin
 app.get('/api/admin/nuvem', (req, res) => {

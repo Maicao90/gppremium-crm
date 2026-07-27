@@ -314,6 +314,11 @@ model GarantiaCliente {
   telefone   String   @default("")
   email      String   @default("")
   nascimento String   @default("") // YYYY-MM-DD ou "" (pra campanha de aniversário no futuro)
+  // Login do CLIENTE no app (CPF + senha). Vazio = cliente cadastrado pela loja que
+  // ainda não criou senha no app; ele cria no primeiro acesso.
+  senha      String   @default("") // hash bcrypt
+  // Token de push do Expo (aparelho do cliente) — pra notificação na tela do celular.
+  pushToken  String   @default("")
   criadoEm   DateTime @default(now())
 }
 

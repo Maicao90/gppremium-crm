@@ -17,6 +17,14 @@ export const assinarToken = (p: TokenPayload): string => {
   return jwt.sign(p, s, { expiresIn: '12h' });
 };
 
+// Token do CLIENTE do app de Garantia (não é usuário do CRM). role='cliente',
+// sub = GarantiaCliente.id. Validade longa: cliente de app não fica relogando.
+export const assinarTokenCliente = (clienteId: string): string => {
+  const s = segredo();
+  if (!s) throw new Error('JWT_SECRET não configurado no servidor.');
+  return jwt.sign({ sub: clienteId, role: 'cliente', lojaId: null, modulos: [] }, s, { expiresIn: '180d' });
+};
+
 export const verificarToken = (token: string): TokenPayload | null => {
   const s = segredo();
   if (!s || !token) return null;
