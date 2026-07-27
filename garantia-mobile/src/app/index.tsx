@@ -5,9 +5,12 @@ import { Lock, User, Eye, EyeOff } from 'lucide-react-native';
 import { useAuth } from '../lib/auth';
 
 const soDigitos = (s: string) => s.replace(/\D/g, '');
+const fmtCPF = (s: string) => soDigitos(s).slice(0, 11).replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d{1,2})$/, '$1-$2');
 // Se o que a pessoa digitou parece CPF (só números, 11 dígitos) → cliente.
 // Se tem "@" ou letras → e-mail da loja. É assim que o app identifica sozinho.
 const pareceCPF = (v: string) => !v.includes('@') && soDigitos(v).length >= 11 && soDigitos(v).length === v.replace(/[.\-\s]/g, '').length;
+// Formata como CPF SÓ quando é só número/pontuação; se tiver letra/@ (e-mail), deixa como está.
+const fmtIdent = (v: string) => (v.includes('@') || /[a-zA-Z]/.test(v) ? v : fmtCPF(v));
 
 export default function LoginScreen() {
   const router = useRouter();

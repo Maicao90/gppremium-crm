@@ -222,7 +222,7 @@ const s = StyleSheet.create({
   center: { alignItems: 'center', justifyContent: 'center' },
   scroll: { padding: 18, paddingTop: 40 },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 },
-  logoImg: { width: 60, height: 40 },
+  logoImg: { width: 68, height: 26 },
   hi: { fontSize: 13, color: '#64748b' },
   nome: { fontSize: 18, fontWeight: '900', color: '#0f172a' },
   iconBtn: { padding: 10, backgroundColor: '#fff', borderRadius: 12, borderWidth: 1, borderColor: '#e2e8f0' },
