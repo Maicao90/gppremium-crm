@@ -7,12 +7,13 @@ import { prisma } from '../server';
 // no painel pra envio manual por WhatsApp — os dois canais convivem.
 
 const EXPO_PUSH_URL = 'https://exp.host/--/api/v2/push/send';
-const TIPOS_CLIENTE = ['revisao_proxima', 'pneu_cancelado', 'garantia_expira']; // odometro_suspeito é do analista, não vai pro cliente
+const TIPOS_CLIENTE = ['revisao_proxima', 'pneu_cancelado', 'garantia_expira', 'aviso']; // odometro_suspeito é do analista, não vai pro cliente
 
 const TITULO: Record<string, string> = {
   revisao_proxima: 'Revisão dos seus pneus GP Premium 🛞',
   pneu_cancelado: 'Aviso sobre sua garantia GP Premium',
   garantia_expira: 'Sua garantia GP Premium está terminando',
+  aviso: 'GP Premium 🛞',
 };
 
 const hojeStr = () => new Date().toISOString().slice(0, 10);

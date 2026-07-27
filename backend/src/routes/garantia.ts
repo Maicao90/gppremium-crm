@@ -616,6 +616,29 @@ router.post('/notificacoes/:id/enviada', async (req, res) => {
   } catch (e) { erro(res, e); }
 });
 
+// Disparo MANUAL de notificação (master): você escreve a mensagem e escolhe quem recebe
+// (um cliente pelo CPF, ou TODOS). Cai na lista do app do cliente e — quando houver dev
+// build com push — chega na tela do celular também (tipo 'aviso' está no worker de push).
+router.post('/notificacoes/manual', requireMaster, async (req, res) => {
+  try {
+    const b = req.body || {};
+    const mensagem = String(b.mensagem || '').trim();
+    if (!mensagem) return res.status(400).json({ error: 'Escreva a mensagem.' });
+    let clientes: { id: string }[] = [];
+    if (b.alvo === 'todos') {
+      clientes = await prisma.garantiaCliente.findMany({ select: { id: true } });
+    } else if (b.cpf) {
+      const c = await prisma.garantiaCliente.findUnique({ where: { cpf: soDigitos(b.cpf) }, select: { id: true } });
+      if (c) clientes = [c];
+    }
+    if (!clientes.length) return res.status(404).json({ error: 'Nenhum cliente encontrado pra esse alvo.' });
+    await prisma.garantiaNotificacao.createMany({
+      data: clientes.map((c) => ({ clienteId: c.id, garantiaId: '', tipo: 'aviso', mensagem, agendadaPara: hojeStr(), enviada: false })),
+    });
+    res.status(201).json({ ok: true, total: clientes.length });
+  } catch (e) { erro(res, e); }
+});
+
 // ---------- Sorteio ----------
 
 // Sorteia entre clientes com garantia ATIVA. Fisher-Yates com crypto.randomInt
