@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, SafeAreaView, TextInput, ActivityIndicator, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
-import { Shield, ArrowLeft, Search } from 'lucide-react-native';
+import { ArrowLeft, Search } from 'lucide-react-native';
 import { api } from '../../lib/api';
 import { FotoBotao } from '../../components/FotoBotao';
 import { Foto } from '../../lib/foto';
@@ -139,7 +139,7 @@ export default function NewWarranty() {
         ))}
 
         <TouchableOpacity style={s.btn} onPress={salvar} disabled={salvando} activeOpacity={0.85}>
-          {salvando ? <ActivityIndicator color="#fff" /> : <><Shield size={18} color="#fff" /><Text style={s.btnText}>ATIVAR GARANTIA</Text></>}
+          {salvando ? <ActivityIndicator color="#fff" /> : <Text style={s.btnText}>ATIVAR GARANTIA</Text>}
         </TouchableOpacity>
         <View style={{ height: 30 }} />
       </ScrollView>

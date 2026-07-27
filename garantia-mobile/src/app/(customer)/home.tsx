@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, SafeAreaView, RefreshControl, ActivityIndicator, Image } from 'react-native';
 import { useRouter, useFocusEffect } from 'expo-router';
-import { Shield, LogOut, Bell, Wrench, CheckCircle2 } from 'lucide-react-native';
+import { LogOut, Bell, Wrench, CheckCircle2 } from 'lucide-react-native';
 import { api } from '../../lib/api';
 import { useAuth } from '../../lib/auth';
 import { registrarPush } from '../../lib/push';
@@ -53,7 +53,7 @@ export default function CustomerHome() {
         </View>
 
         {(dados?.garantias || []).length === 0 && (
-          <View style={s.vazio}><Shield size={40} color="#cbd5e1" /><Text style={s.vazioT}>Você ainda não tem garantia cadastrada.</Text><Text style={s.vazioS}>Quando a loja ativar a garantia dos seus pneus GP Premium, ela aparece aqui.</Text></View>
+          <View style={s.vazio}><Image source={require('../../../assets/logo-gp.jpg')} style={{ width: 90, height: 56, opacity: 0.55 }} resizeMode="contain" /><Text style={s.vazioT}>Você ainda não tem garantia cadastrada.</Text><Text style={s.vazioS}>Quando a loja ativar a garantia dos seus pneus GP Premium, ela aparece aqui.</Text></View>
         )}
 
         {(dados?.garantias || []).map((g: any) => {
