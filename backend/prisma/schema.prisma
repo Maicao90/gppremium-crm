@@ -354,6 +354,7 @@ model Garantia {
   dataExpiracao String // dataInicio + 2 anos
   dotDivergente Boolean  @default(false) // alguma revisão leu um DOT diferente do cadastrado
   criadoPorId   String? // Usuario do painel que ativou (campo solto, padrão do projeto)
+  lojaId        String? // loja credenciada que VENDEU/ativou (escopo: a loja só vê as suas). Null = master
   criadoEm      DateTime @default(now())
   atualizadoEm  DateTime @updatedAt
 }
@@ -392,6 +393,7 @@ model GarantiaRevisao {
   // (odômetro andou pra trás = possível adulteração) → alerta pro analista.
   odometroSuspeito Boolean  @default(false)
   criadoPorId      String? // Usuario do painel que registrou
+  lojaId           String? // loja credenciada que FEZ a revisão (pode ser diferente da que vendeu)
   criadoEm         DateTime @default(now())
 }
 

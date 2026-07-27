@@ -4,6 +4,7 @@ import path from 'path';
 import crypto from 'crypto';
 import { prisma } from '../server';
 import { requireMaster } from '../middlewares/requireModulo';
+import { ehMaster } from '../auth/modulos';
 
 // ===== Garantia 50.000 KM =====
 // Módulo "aplicativo" do painel (importado do protótipo GPPREMIUMGARANTIA50K).
@@ -13,6 +14,23 @@ import { requireMaster } from '../middlewares/requireModulo';
 
 const router = Router();
 const erro = (res: any, e: any) => res.status(500).json({ error: e?.message || 'Erro' });
+
+// Escopo por loja (hierarquia): master/admin (GP Premium) vê TUDO; qualquer outro
+// usuário é uma LOJA credenciada e só enxerga/gerencia as garantias e revisões DELA.
+// Lê o papel + loja ATUAIS do banco (não confia no token, que pode estar velho — mesmo
+// motivo do escopoLoja do WhatsApp). Retorna { master, lojaId }.
+//   master=true  → sem filtro (vê tudo);
+//   master=false, lojaId="x" → filtra por lojaId "x";
+//   master=false, lojaId=null → loja sem loja definida → não vê nada (usa "__sem_loja__").
+async function escopoGarantia(req: any): Promise<{ master: boolean; lojaId: string | null }> {
+  const uid = req.user?.sub;
+  if (!uid) return { master: false, lojaId: '__sem_loja__' };
+  const u = await prisma.usuario.findUnique({ where: { id: String(uid) }, select: { role: true, lojaId: true } });
+  if (u && ehMaster(u.role)) return { master: true, lojaId: null };
+  return { master: false, lojaId: u?.lojaId || '__sem_loja__' };
+}
+// Cláusula `where` do escopo pra ser espalhada nas queries de garantia (por lojaId).
+const whereEscopo = (esc: { master: boolean; lojaId: string | null }) => esc.master ? {} : { lojaId: esc.lojaId };
 
 const soDigitos = (s: string) => String(s || '').replace(/\D/g, '');
 const hojeStr = () => new Date().toISOString().slice(0, 10);
@@ -116,17 +134,25 @@ async function agendarProximaRevisao(params: {
 }
 
 // ---------- Resumo (KPIs do Painel) ----------
-router.get('/resumo', async (_req, res) => {
+router.get('/resumo', async (req, res) => {
   try {
     await expirarVencidas();
+    const esc = await escopoGarantia(req);
+    const wG = whereEscopo(esc); // filtro por lojaId nas garantias
+    // Revisões e notificações da(s) garantia(s) no escopo (via lista de ids da loja).
+    const idsGarantia = esc.master ? null : (await prisma.garantia.findMany({ where: wG, select: { id: true } })).map((g) => g.id);
+    const wRev = esc.master ? { status: 'pendente' } : { status: 'pendente', garantiaId: { in: idsGarantia! } };
+    const wNot = esc.master
+      ? { enviada: false, agendadaPara: { lte: hojeStr() } }
+      : { enviada: false, agendadaPara: { lte: hojeStr() }, garantiaId: { in: idsGarantia! } };
     const [ativas, pendentes, emAnalise, atencao, total, revisoesPendentes, notificacoesPendentes] = await Promise.all([
-      prisma.garantia.count({ where: { status: 'ativa' } }),
-      prisma.garantia.count({ where: { status: 'pendente' } }),
-      prisma.garantia.count({ where: { status: 'em_analise' } }),
-      prisma.garantia.count({ where: { status: 'atencao' } }),
-      prisma.garantia.count(),
-      prisma.garantiaRevisao.count({ where: { status: 'pendente' } }),
-      prisma.garantiaNotificacao.count({ where: { enviada: false, agendadaPara: { lte: hojeStr() } } }),
+      prisma.garantia.count({ where: { ...wG, status: 'ativa' } }),
+      prisma.garantia.count({ where: { ...wG, status: 'pendente' } }),
+      prisma.garantia.count({ where: { ...wG, status: 'em_analise' } }),
+      prisma.garantia.count({ where: { ...wG, status: 'atencao' } }),
+      prisma.garantia.count({ where: wG }),
+      prisma.garantiaRevisao.count({ where: wRev }),
+      prisma.garantiaNotificacao.count({ where: wNot }),
     ]);
     res.json({ ativas, pendentes, emAnalise, atencao, total, revisoesPendentes, notificacoesPendentes });
   } catch (e) { erro(res, e); }
@@ -136,10 +162,11 @@ router.get('/resumo', async (_req, res) => {
 
 // Lista completa pro Painel: cada garantia já vem com cliente, veículo e pneus
 // embutidos (3 queries no total, sem N+1 — os modelos usam campos soltos, sem relation).
-router.get('/garantias', async (_req, res) => {
+router.get('/garantias', async (req, res) => {
   try {
     await expirarVencidas();
-    const garantias = await prisma.garantia.findMany({ orderBy: { criadoEm: 'desc' } });
+    const esc = await escopoGarantia(req);
+    const garantias = await prisma.garantia.findMany({ where: whereEscopo(esc), orderBy: { criadoEm: 'desc' } });
     const clientes = await prisma.garantiaCliente.findMany({ where: { id: { in: garantias.map((g) => g.clienteId) } } });
     const veiculos = await prisma.garantiaVeiculo.findMany({ where: { id: { in: garantias.map((g) => g.veiculoId) } } });
     const pneus = await prisma.garantiaPneu.findMany({ where: { garantiaId: { in: garantias.map((g) => g.id) } } });
@@ -165,6 +192,28 @@ router.get('/clientes/busca', async (req, res) => {
     if (!cliente) return res.json({ encontrado: false });
     const veiculo = await prisma.garantiaVeiculo.findFirst({ where: { clienteId: cliente.id }, orderBy: { criadoEm: 'desc' } });
     res.json({ encontrado: true, cliente, veiculo });
+  } catch (e) { erro(res, e); }
+});
+
+// Busca a garantia EM ANDAMENTO de uma placa — pra fazer REVISÃO. NÃO é escopada por
+// loja de propósito: pela regra do plano, o cliente pode revisar em QUALQUER loja
+// credenciada, então qualquer loja precisa achar o carro pela placa (mesmo que a
+// garantia tenha sido vendida por outra loja).
+router.get('/garantias/por-placa', async (req, res) => {
+  try {
+    await expirarVencidas();
+    const placa = String(req.query.placa || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    if (placa.length !== 7) return res.status(400).json({ error: 'Placa inválida.' });
+    const veiculo = await prisma.garantiaVeiculo.findUnique({ where: { placa } });
+    if (!veiculo) return res.json({ encontrada: false });
+    const garantia = await prisma.garantia.findFirst({
+      where: { veiculoId: veiculo.id, status: { in: ['pendente', 'em_analise', 'ativa', 'atencao'] } },
+      orderBy: { criadoEm: 'desc' },
+    });
+    if (!garantia) return res.json({ encontrada: false });
+    const cliente = await prisma.garantiaCliente.findUnique({ where: { id: garantia.clienteId } });
+    const pneus = await prisma.garantiaPneu.findMany({ where: { garantiaId: garantia.id } });
+    res.json({ encontrada: true, garantia: { ...garantia, cliente, veiculo, pneus } });
   } catch (e) { erro(res, e); }
 });
 
@@ -252,6 +301,8 @@ router.post('/garantias', async (req, res) => {
       create: { placa, ...dadosVeiculo },
     });
 
+    // Carimba a LOJA de quem ativou (escopo): a garantia "pertence" à loja do usuário.
+    const criador = req.user?.sub ? await prisma.usuario.findUnique({ where: { id: String(req.user.sub) }, select: { lojaId: true } }) : null;
     const inicio = hojeStr();
     const exp = new Date();
     exp.setMonth(exp.getMonth() + cfg.garantiaMeses);
@@ -264,6 +315,7 @@ router.post('/garantias', async (req, res) => {
         dataInicio: inicio,
         dataExpiracao: exp.toISOString().slice(0, 10),
         criadoPorId: req.user?.sub || null,
+        lojaId: criador?.lojaId || null,
       },
     });
 
@@ -309,9 +361,11 @@ router.post('/garantias/:id/status', requireMaster, async (req, res) => {
 
 // ---------- Revisões ----------
 
-router.get('/revisoes', async (_req, res) => {
+router.get('/revisoes', async (req, res) => {
   try {
-    const revisoes = await prisma.garantiaRevisao.findMany({ orderBy: { criadoEm: 'desc' }, take: 100 });
+    // Loja vê as revisões que ELA fez (revisao.lojaId); master vê todas.
+    const esc = await escopoGarantia(req);
+    const revisoes = await prisma.garantiaRevisao.findMany({ where: whereEscopo(esc), orderBy: { criadoEm: 'desc' }, take: 100 });
     const garantias = await prisma.garantia.findMany({ where: { id: { in: revisoes.map((r) => r.garantiaId) } } });
     const clientes = await prisma.garantiaCliente.findMany({ where: { id: { in: garantias.map((g) => g.clienteId) } } });
     const veiculos = await prisma.garantiaVeiculo.findMany({ where: { id: { in: garantias.map((g) => g.veiculoId) } } });
@@ -370,6 +424,9 @@ router.post('/revisoes', async (req, res) => {
     const maiorKmAnterior = Math.max(garantia.kmInicial, ultimaRev?.km || 0);
     const odometroSuspeito = km < maiorKmAnterior;
 
+    // Carimba a LOJA que fez a revisão (pode ser diferente da que vendeu — revisão
+    // pode ser feita em qualquer loja credenciada).
+    const revisor = req.user?.sub ? await prisma.usuario.findUnique({ where: { id: String(req.user.sub) }, select: { lojaId: true } }) : null;
     const fotoOdometroUrl = salvarFoto(b.fotoOdometroBase64);
     const etiquetaOleoUrl = salvarFoto(b.etiquetaOleoBase64);
     const revisao = await prisma.garantiaRevisao.create({
@@ -382,6 +439,7 @@ router.post('/revisoes', async (req, res) => {
         ...(fotoOdometroUrl ? { fotoOdometroUrl } : {}),
         ...(etiquetaOleoUrl ? { etiquetaOleoUrl } : {}),
         criadoPorId: req.user?.sub || null,
+        lojaId: revisor?.lojaId || null,
       },
     });
 
@@ -516,8 +574,14 @@ router.post('/config', requireMaster, async (req, res) => {
 // envio MANUAL (mesma filosofia do Disparo — nada sai sozinho, pra não arriscar bloqueio).
 router.get('/notificacoes', async (req, res) => {
   try {
+    const esc = await escopoGarantia(req);
     const soPendentes = String(req.query.pendentes || '') === '1';
     const where: any = soPendentes ? { enviada: false, agendadaPara: { lte: hojeStr() } } : {};
+    // Loja só vê notificações das garantias dela.
+    if (!esc.master) {
+      const ids = (await prisma.garantia.findMany({ where: whereEscopo(esc), select: { id: true } })).map((g) => g.id);
+      where.garantiaId = { in: ids };
+    }
     const notifs = await prisma.garantiaNotificacao.findMany({ where, orderBy: { agendadaPara: 'asc' }, take: 200 });
     const clientes = await prisma.garantiaCliente.findMany({ where: { id: { in: notifs.map((n) => n.clienteId) } } });
     const cliPorId = Object.fromEntries(clientes.map((c) => [c.id, c]));
@@ -535,7 +599,8 @@ router.post('/notificacoes/:id/enviada', async (req, res) => {
 
 // Sorteia entre clientes com garantia ATIVA. Fisher-Yates com crypto.randomInt
 // (CSPRNG, auditável) — herdado da edge function do protótipo, sem Math.random.
-router.post('/sorteios', async (req, res) => {
+// SÓ master (GP Premium) — sorteio é ação da marca, não da loja.
+router.post('/sorteios', requireMaster, async (req, res) => {
   try {
     const titulo = String(req.body.titulo || '').trim() || `Sorteio ${hojeStr()}`;
     const quantidade = Math.max(1, Math.min(10, Number(req.body.quantidade) || 1));
