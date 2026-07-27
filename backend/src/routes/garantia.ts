@@ -2,6 +2,7 @@ import { Router } from 'express';
 import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
+import Jimp from 'jimp';
 import { prisma } from '../server';
 import { requireMaster } from '../middlewares/requireModulo';
 import { ehMaster } from '../auth/modulos';
@@ -92,6 +93,38 @@ function salvarFoto(base64: string | undefined | null): string | null {
   const nome = crypto.randomUUID() + '.' + ext;
   fs.writeFileSync(path.join(dir, nome), buffer);
   return '/midias/garantia/' + nome;
+}
+
+// Valida a QUALIDADE de uma foto (rejeita preta/estourada/embaçada/baixa resolução) —
+// o mecânico é obrigado a mandar foto nítida. Retorna null se OK, ou a mensagem de erro.
+// Só valida se a foto foi enviada (obrigatoriedade em si é regra do app).
+async function validarFoto(base64: any, rotulo: string): Promise<string | null> {
+  if (!base64) return null;
+  try {
+    let dados = String(base64);
+    const m = /^data:[^;]+;base64,([\s\S]*)$/.exec(dados);
+    if (m && m[1]) dados = m[1];
+    const buf = Buffer.from(dados, 'base64');
+    const img = await Jimp.read(buf);
+    const w = img.bitmap.width, h = img.bitmap.height;
+    if (w < 300 || h < 300) return `A foto de "${rotulo}" está com resolução muito baixa. Tire de novo, mais nítida.`;
+    // Brilho médio (0–255)
+    let soma = 0, n = 0;
+    img.scan(0, 0, w, h, function (_x, _y, idx) { soma += ((this.bitmap.data[idx] || 0) + (this.bitmap.data[idx + 1] || 0) + (this.bitmap.data[idx + 2] || 0)) / 3; n++; });
+    const brilho = soma / n;
+    if (brilho < 28) return `A foto de "${rotulo}" está muito escura (quase preta). Tire de novo com mais luz.`;
+    if (brilho > 246) return `A foto de "${rotulo}" está estourada/branca demais. Tire de novo.`;
+    // Nitidez: variância do Laplaciano no cinza. Limiar conservador (só barra foto muito
+    // embaçada/lente coberta), pra não recusar foto boa à toa.
+    const lap = img.clone().greyscale().convolute([[0, 1, 0], [1, -4, 1], [0, 1, 0]]);
+    let s = 0, s2 = 0, c = 0;
+    lap.scan(0, 0, lap.bitmap.width, lap.bitmap.height, function (_x, _y, idx) { const v = this.bitmap.data[idx] || 0; s += v; s2 += v * v; c++; });
+    const varia = s2 / c - (s / c) * (s / c);
+    if (varia < 8) return `A foto de "${rotulo}" está embaçada ou a lente estava coberta. Segure firme e tire de novo com foco.`;
+    return null;
+  } catch {
+    return `Não consegui ler a foto de "${rotulo}". Tire de novo.`;
+  }
 }
 
 const POSICOES = ['dianteiro_esquerdo', 'dianteiro_direito', 'traseiro_esquerdo', 'traseiro_direito', 'estepe'];
@@ -257,6 +290,17 @@ router.post('/garantias', async (req, res) => {
     for (const p of pneusIn) {
       if (!POSICOES.includes(String(p.posicao))) return res.status(400).json({ error: `Posição de pneu inválida: ${p.posicao}` });
     }
+
+    // Qualidade das fotos: recusa preta/estourada/embaçada ANTES de salvar qualquer coisa.
+    const errosFoto = (await Promise.all([
+      validarFoto(vei.fotoBase64, 'veículo'),
+      validarFoto(vei.fotoOdometroBase64, 'odômetro'),
+      ...(Boolean(vei.semEtiquetaOleo) ? [] : [validarFoto(vei.etiquetaOleoBase64, 'etiqueta de óleo')]),
+      ...pneusIn.map((p, i) => validarFoto(p.fotoBase64, `pneu ${i + 1} (etiqueta)`)),
+      ...pneusIn.map((p, i) => validarFoto(p.fotoLateralBase64, `pneu ${i + 1} (lateral)`)),
+      ...pneusIn.map((p, i) => validarFoto(p.fotoBandaBase64, `pneu ${i + 1} (banda)`)),
+    ])).filter(Boolean);
+    if (errosFoto.length) return res.status(400).json({ error: errosFoto[0] });
 
     // Checa duplicidade ANTES de escrever qualquer coisa: se a placa já existe e tem
     // garantia em andamento, recusa sem ter tocado no cliente/veículo/fotos. (Antes, os
@@ -434,6 +478,13 @@ router.post('/revisoes', async (req, res) => {
     }
     const pneusIn: any[] = Array.isArray(b.pneus) ? b.pneus : [];
     if (pneusIn.length === 0) return res.status(400).json({ error: 'Informe os dados de pelo menos 1 pneu.' });
+
+    // Qualidade das fotos da revisão (recusa preta/embaçada antes de salvar).
+    const errosFotoRev = (await Promise.all([
+      validarFoto(b.fotoOdometroBase64, 'odômetro'),
+      validarFoto(b.etiquetaOleoBase64, 'etiqueta de óleo'),
+    ])).filter(Boolean);
+    if (errosFotoRev.length) return res.status(400).json({ error: errosFotoRev[0] });
 
     const cfg = await getConfig();
     const veiculo = await prisma.garantiaVeiculo.findUnique({ where: { id: garantia.veiculoId } });
