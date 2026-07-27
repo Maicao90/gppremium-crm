@@ -122,10 +122,20 @@ router.get('/conversas', async (req, res) => {
       if (m.enviadoPorId) {
         id = String(m.enviadoPorId);
       } else {
+        const textoNorm = normalizarNome(String(m.texto || ''));
+        // 1) Assinatura no início: "*Nome:*" ou "*Nome*".
         const ass = /^\*(.+?):?\*/.exec(String(m.texto || ''));
         const assNome = ass && ass[1] ? normalizarNome(ass[1]) : '';
-        // Tenta nome completo primeiro; se não bater, tenta só o primeiro nome.
-        const achado = assNome ? (idPorNome[assNome] ?? idPorPrimeiroNome[assNome] ?? undefined) : undefined;
+        let achado = assNome ? (idPorNome[assNome] ?? idPorPrimeiroNome[assNome] ?? undefined) : undefined;
+        // 2) Sem assinatura, mas o atendente se apresentou NO TEXTO: "me chamo Alan",
+        //    "meu nome é Camila", "aqui é o Alan", "sou o/a Camila"… Casa o primeiro
+        //    nome citado com um atendente ativo (só se o primeiro nome for único).
+        //    Seguro: essa varredura só roda em mensagens NOSSAS (fromMe=true).
+        if (!achado) {
+          const apres = /(?:me chamo|meu nome e|aqui quem fala e|aqui e|falo com voce|sou o|sou a|sou)\s+([a-z]+)/.exec(textoNorm);
+          const cand = apres && apres[1] ? apres[1] : '';
+          if (cand && idPorPrimeiroNome[cand]) achado = idPorPrimeiroNome[cand] as string;
+        }
         if (achado) id = achado;
       }
       if (id) donoPorChat[m.chatJid] = id;

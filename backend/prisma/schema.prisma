@@ -327,6 +327,14 @@ model GarantiaVeiculo {
   kmAtual         Int      @default(0) // atualizado a cada revisão
   fotoUrl         String? // foto geral do veículo (em /midias/garantia/)
   fotoOdometroUrl String?
+  // Etiqueta de troca de óleo — base do cálculo de km/dia (motor de notificação).
+  // Se o veículo não tem etiqueta, semEtiquetaOleo=true e a próxima revisão é agendada
+  // pelo mesmo nº de dias da revisão anterior (regra do plano).
+  oleoData        String   @default("") // YYYY-MM-DD da última troca de óleo
+  oleoKm          Int      @default(0) // km do carro na última troca de óleo
+  semEtiquetaOleo Boolean  @default(false)
+  etiquetaOleoUrl String? // foto da etiqueta de óleo
+  kmPorDia        Float    @default(0) // média calculada (recalculada a cada revisão)
   criadoEm        DateTime @default(now())
 }
 
@@ -346,44 +354,87 @@ model Garantia {
 }
 
 model GarantiaPneu {
-  id          String   @id @default(uuid())
-  garantiaId  String
-  posicao     String // dianteiro_esquerdo, dianteiro_direito, traseiro_esquerdo, traseiro_direito, estepe
-  marca       String   @default("")
-  modelo      String   @default("")
-  medida      String   @default("") // ex.: 205/55 R16
-  dot         String   @default("") // 4 dígitos (semana+ano de fabricação)
-  codigoSerie String   @default("")
-  fotoUrl     String?
-  criadoEm    DateTime @default(now())
+  id              String    @id @default(uuid())
+  garantiaId      String
+  posicao         String // dianteiro_esquerdo, dianteiro_direito, traseiro_esquerdo, traseiro_direito, estepe
+  marca           String    @default("")
+  modelo          String    @default("")
+  medida          String    @default("") // ex.: 205/55 R16
+  dot             String    @default("") // 4 dígitos (semana+ano de fabricação)
+  codigoSerie     String    @default("")
+  etiquetaNumero  String    @default("") // nº da etiqueta do pneu (rastreio)
+  fotoUrl         String? // foto principal (etiqueta)
+  fotoLateralUrl  String?
+  fotoBandaUrl    String?
+  // Garantia DESTE pneu cancelada (ex.: arrancamento de borracha detectado numa revisão).
+  // Pneu cancelado não aceita mais revisão e o cliente é notificado.
+  cancelada       Boolean   @default(false)
+  canceladaMotivo String    @default("")
+  canceladaEm     DateTime?
+  criadoEm        DateTime  @default(now())
 }
 
 model GarantiaRevisao {
-  id              String   @id @default(uuid())
-  garantiaId      String
-  km              Int
-  status          String   @default("pendente") // pendente, aprovada, reprovada
-  mecanico        String   @default("") // nome livre — mecânico de pista não tem login no painel
-  observacoes     String   @default("")
-  fotoOdometroUrl String?
-  criadoPorId     String? // Usuario do painel que registrou
-  criadoEm        DateTime @default(now())
+  id               String   @id @default(uuid())
+  garantiaId       String
+  km               Int
+  status           String   @default("pendente") // pendente, aprovada, reprovada
+  mecanico         String   @default("") // nome livre — mecânico de pista não tem login no painel
+  observacoes      String   @default("")
+  fotoOdometroUrl  String?
+  etiquetaOleoUrl  String? // foto da etiqueta de óleo na revisão
+  // Odômetro suspeito: o km informado é MENOR que o da revisão/ativação anterior
+  // (odômetro andou pra trás = possível adulteração) → alerta pro analista.
+  odometroSuspeito Boolean  @default(false)
+  criadoPorId      String? // Usuario do painel que registrou
+  criadoEm         DateTime @default(now())
 }
 
 model GarantiaRevisaoPneu {
-  id           String   @id @default(uuid())
-  revisaoId    String
-  pneuId       String? // GarantiaPneu correspondente (null se a posição não bateu com nenhum)
-  posicao      String
-  sulcoExterno Float    @default(0) // mm
-  sulcoCentral Float    @default(0)
-  sulcoInterno Float    @default(0)
-  estado       String   @default("bom") // excelente, bom, regular, ruim, trocar
-  problemas    String   @default("[]") // JSON array: desgaste_irregular, desalinhamento, desbalanceamento, borracha_rasgada, corte_lateral, bolha, furo, pressao_incorreta
-  dotLido      String   @default("") // DOT visto na hora da revisão (comparado com o cadastrado)
-  observacoes  String   @default("")
-  recomendacao String   @default("")
-  criadoEm     DateTime @default(now())
+  id                   String   @id @default(uuid())
+  revisaoId            String
+  pneuId               String? // GarantiaPneu correspondente (null se a posição não bateu com nenhum)
+  posicao              String
+  // Profundidade do sulco (menor medida), campo selecionável 1.6–10.0 (regra do plano).
+  profundidadeSulco    Float    @default(0)
+  sulcoExterno         Float    @default(0) // mm (detalhe opcional)
+  sulcoCentral         Float    @default(0)
+  sulcoInterno         Float    @default(0)
+  estado               String   @default("bom") // excelente, bom, regular, ruim, trocar
+  // Flag de FRAUDE: marcas de tração/arrancamento de pedaços de borracha na banda.
+  // Marcada → cancela a garantia DESTE pneu automaticamente (regra do plano).
+  arrancamentoBorracha Boolean  @default(false)
+  problemas            String   @default("[]") // JSON array de outros problemas
+  dotLido              String   @default("") // DOT visto na hora (comparado com o cadastrado)
+  observacoes          String   @default("")
+  recomendacao         String   @default("")
+  criadoEm             DateTime @default(now())
+}
+
+// Config do módulo (singleton id="global"). Os números do plano são configuráveis
+// porque a planilha se contradiz (1 vs 2 anos; 5.000 vs 10.000 km) — o master ajusta
+// pelo painel sem mexer no código.
+model GarantiaConfig {
+  id                 String   @id @default("global")
+  garantiaMeses      Int      @default(24) // duração da garantia (meses)
+  garantiaKm         Int      @default(50000) // durabilidade (km)
+  intervaloRevisaoKm Int      @default(10000) // revisão a cada X km
+  atualizadoEm       DateTime @updatedAt
+}
+
+// Notificações ao cliente (motor de km/dia). São AGENDADAS (agendadaPara) e o painel
+// mostra as devidas do dia pra envio manual (mesma filosofia do Disparo — nada é
+// enviado sozinho, pra não arriscar bloqueio do WhatsApp).
+model GarantiaNotificacao {
+  id           String    @id @default(uuid())
+  clienteId    String
+  garantiaId   String
+  tipo         String // revisao_proxima, pneu_cancelado, garantia_expira, odometro_suspeito
+  mensagem     String
+  agendadaPara String // YYYY-MM-DD (dia em que deve ser enviada)
+  enviada      Boolean   @default(false)
+  enviadaEm    DateTime?
+  criadoEm     DateTime  @default(now())
 }
 
 // Sorteio entre clientes com garantia ATIVA (Fisher-Yates com crypto — auditável, sem Math.random).

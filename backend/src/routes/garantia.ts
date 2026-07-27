@@ -62,20 +62,73 @@ function salvarFoto(base64: string | undefined | null): string | null {
 }
 
 const POSICOES = ['dianteiro_esquerdo', 'dianteiro_direito', 'traseiro_esquerdo', 'traseiro_direito', 'estepe'];
+const ROTULO_POSICAO: Record<string, string> = {
+  dianteiro_esquerdo: 'dianteiro esquerdo', dianteiro_direito: 'dianteiro direito',
+  traseiro_esquerdo: 'traseiro esquerdo', traseiro_direito: 'traseiro direito', estepe: 'estepe',
+};
+const rotuloPosicao = (p: string) => ROTULO_POSICAO[p] || p;
+
+// Config do módulo (singleton). Os números do plano são configuráveis porque a planilha
+// se contradiz (1 vs 2 anos; 5.000 vs 10.000 km) — default = a regra "cabeçalho" (2 anos,
+// 50.000 km, revisão a cada 10.000 km, que é o que o exemplo de cálculo do plano usa).
+async function getConfig() {
+  const c = await prisma.garantiaConfig.findUnique({ where: { id: 'global' } });
+  if (c) return c;
+  return prisma.garantiaConfig.create({ data: { id: 'global' } });
+}
+
+const diasEntre = (aIso: string, bIso: string): number => {
+  const a = new Date(aIso + 'T00:00:00Z').getTime();
+  const b = new Date(bIso + 'T00:00:00Z').getTime();
+  if (!Number.isFinite(a) || !Number.isFinite(b)) return 0;
+  return Math.round((b - a) / 86400000);
+};
+const somaDias = (iso: string, dias: number): string => {
+  const d = new Date(iso + 'T00:00:00Z');
+  d.setUTCDate(d.getUTCDate() + Math.round(dias));
+  return d.toISOString().slice(0, 10);
+};
+
+// km/dia a partir da etiqueta de óleo: (kmAtual − kmNaTroca) / dias desde a troca.
+// Sem etiqueta (ou dados incoerentes) → 0 (agenda por nº de dias fixo, ver agendarProximaRevisao).
+function calcularKmPorDia(oleoData: string, oleoKm: number, kmAtual: number): number {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(oleoData)) return 0;
+  const dias = diasEntre(oleoData, hojeStr());
+  const rodou = kmAtual - oleoKm;
+  if (dias <= 0 || rodou <= 0) return 0;
+  return rodou / dias;
+}
+
+// Agenda a notificação da PRÓXIMA revisão. Com km/dia: quantos dias faltam pra rodar mais
+// `intervaloKm`. Sem km/dia (sem etiqueta): usa `diasFallback` (nº de dias da revisão
+// anterior, ou 60 por padrão). Remove notificações futuras não enviadas dessa garantia
+// antes (a nova projeção substitui a antiga).
+async function agendarProximaRevisao(params: {
+  clienteId: string; garantiaId: string; kmPorDia: number; intervaloKm: number; diasFallback: number;
+}): Promise<string> {
+  const { clienteId, garantiaId, kmPorDia, intervaloKm, diasFallback } = params;
+  const dias = kmPorDia > 0 ? Math.max(1, Math.round(intervaloKm / kmPorDia)) : Math.max(1, diasFallback || 60);
+  const agendadaPara = somaDias(hojeStr(), dias);
+  await prisma.garantiaNotificacao.deleteMany({ where: { garantiaId, tipo: 'revisao_proxima', enviada: false } });
+  const msg = `Olá! Não se esqueça de ficar de olho na quilometragem do seu carro e fazer a revisão de garantia dos pneus GP Premium a cada ${intervaloKm.toLocaleString('pt-BR')} km. Leve o veículo a uma loja autorizada GP Premium e faça o rodízio dos pneus GRATUITAMENTE para manter a garantia de durabilidade dos seus pneus GP Premium.`;
+  await prisma.garantiaNotificacao.create({ data: { clienteId, garantiaId, tipo: 'revisao_proxima', mensagem: msg, agendadaPara } });
+  return agendadaPara;
+}
 
 // ---------- Resumo (KPIs do Painel) ----------
 router.get('/resumo', async (_req, res) => {
   try {
     await expirarVencidas();
-    const [ativas, pendentes, emAnalise, atencao, total, revisoesPendentes] = await Promise.all([
+    const [ativas, pendentes, emAnalise, atencao, total, revisoesPendentes, notificacoesPendentes] = await Promise.all([
       prisma.garantia.count({ where: { status: 'ativa' } }),
       prisma.garantia.count({ where: { status: 'pendente' } }),
       prisma.garantia.count({ where: { status: 'em_analise' } }),
       prisma.garantia.count({ where: { status: 'atencao' } }),
       prisma.garantia.count(),
       prisma.garantiaRevisao.count({ where: { status: 'pendente' } }),
+      prisma.garantiaNotificacao.count({ where: { enviada: false, agendadaPara: { lte: hojeStr() } } }),
     ]);
-    res.json({ ativas, pendentes, emAnalise, atencao, total, revisoesPendentes });
+    res.json({ ativas, pendentes, emAnalise, atencao, total, revisoesPendentes, notificacoesPendentes });
   } catch (e) { erro(res, e); }
 });
 
@@ -150,6 +203,15 @@ router.post('/garantias', async (req, res) => {
       if (jaTem) return res.status(400).json({ error: 'Este veículo já tem uma garantia em andamento.' });
     }
 
+    const cfg = await getConfig();
+
+    // Etiqueta de óleo → base do cálculo de km/dia (motor de notificação). Só usa se
+    // o operador NÃO marcou "sem etiqueta" e os dados forem coerentes.
+    const semEtiquetaOleo = Boolean(vei.semEtiquetaOleo);
+    const oleoData = /^\d{4}-\d{2}-\d{2}$/.test(String(vei.oleoData || '')) ? String(vei.oleoData) : '';
+    const oleoKm = Number(vei.oleoKm) || 0;
+    const kmPorDia = semEtiquetaOleo ? 0 : calcularKmPorDia(oleoData, oleoKm, km);
+
     const cliente = await prisma.garantiaCliente.upsert({
       where: { cpf },
       update: {
@@ -169,14 +231,20 @@ router.post('/garantias', async (req, res) => {
 
     const fotoUrl = salvarFoto(vei.fotoBase64);
     const fotoOdometroUrl = salvarFoto(vei.fotoOdometroBase64);
+    const etiquetaOleoUrl = salvarFoto(vei.etiquetaOleoBase64);
     const dadosVeiculo = {
       clienteId: cliente.id,
       marca: String(vei.marca || '').trim(),
       modelo: String(vei.modelo || '').trim(),
       ano: Number(vei.ano) || 0,
       kmAtual: km,
+      oleoData: semEtiquetaOleo ? '' : oleoData,
+      oleoKm: semEtiquetaOleo ? 0 : oleoKm,
+      semEtiquetaOleo,
+      kmPorDia,
       ...(fotoUrl ? { fotoUrl } : {}),
       ...(fotoOdometroUrl ? { fotoOdometroUrl } : {}),
+      ...(etiquetaOleoUrl ? { etiquetaOleoUrl } : {}),
     };
     const veiculo = await prisma.garantiaVeiculo.upsert({
       where: { placa },
@@ -186,13 +254,13 @@ router.post('/garantias', async (req, res) => {
 
     const inicio = hojeStr();
     const exp = new Date();
-    exp.setFullYear(exp.getFullYear() + 2);
+    exp.setMonth(exp.getMonth() + cfg.garantiaMeses);
     const garantia = await prisma.garantia.create({
       data: {
         clienteId: cliente.id,
         veiculoId: veiculo.id,
         kmInicial: km,
-        kmMaximo: km + 50000,
+        kmMaximo: km + cfg.garantiaKm,
         dataInicio: inicio,
         dataExpiracao: exp.toISOString().slice(0, 10),
         criadoPorId: req.user?.sub || null,
@@ -208,11 +276,20 @@ router.post('/garantias', async (req, res) => {
         medida: String(p.medida || '').trim(),
         dot: soDigitos(p.dot).slice(0, 4),
         codigoSerie: String(p.codigoSerie || '').trim(),
+        etiquetaNumero: String(p.etiquetaNumero || '').trim(),
         fotoUrl: salvarFoto(p.fotoBase64),
+        fotoLateralUrl: salvarFoto(p.fotoLateralBase64),
+        fotoBandaUrl: salvarFoto(p.fotoBandaBase64),
       })),
     });
 
-    res.status(201).json({ id: garantia.id, status: garantia.status });
+    // Agenda a 1ª notificação de revisão (a cada intervaloRevisaoKm). Sem km/dia
+    // (sem etiqueta) cai no fallback de 60 dias.
+    const agendadaPara = await agendarProximaRevisao({
+      clienteId: cliente.id, garantiaId: garantia.id, kmPorDia, intervaloKm: cfg.intervaloRevisaoKm, diasFallback: 60,
+    });
+
+    res.status(201).json({ id: garantia.id, status: garantia.status, kmPorDia, proximaRevisaoEm: agendadaPara });
   } catch (e) { erro(res, e); }
 });
 
@@ -256,11 +333,15 @@ router.get('/revisoes', async (_req, res) => {
   } catch (e) { erro(res, e); }
 });
 
-// Registra uma revisão. Checagens automáticas (regras vindas do protótipo):
-// - DOT lido diferente do cadastrado no pneu → garantia marcada dotDivergente e vai
-//   pra "em_analise" (admin decide);
-// - qualquer sulco abaixo de 1.6mm (limite legal) → garantia vai pra "atencao";
-// - o km do veículo é atualizado; passou de kmMaximo → garantia "expirada".
+// Registra uma revisão. Checagens automáticas (regras do plano):
+// - odômetro andou pra trás (km < km da revisão/ativação anterior) → suspeito de
+//   adulteração → alerta pro analista (notificação odometro_suspeito) + em_analise;
+// - DOT lido diferente do cadastrado → dotDivergente + em_analise;
+// - flag "arrancamento de borracha" num pneu → cancela a garantia DAQUELE pneu
+//   (não aceita mais revisão nele) + notifica o cliente;
+// - sulco abaixo de 1.6mm → garantia vai pra "atencao";
+// - km do veículo atualizado; passou de kmMaximo → "expirada";
+// - recalcula km/dia e reagenda a próxima notificação de revisão.
 router.post('/revisoes', async (req, res) => {
   try {
     const b = req.body || {};
@@ -279,39 +360,57 @@ router.post('/revisoes', async (req, res) => {
     const pneusIn: any[] = Array.isArray(b.pneus) ? b.pneus : [];
     if (pneusIn.length === 0) return res.status(400).json({ error: 'Informe os dados de pelo menos 1 pneu.' });
 
+    const cfg = await getConfig();
+    const veiculo = await prisma.garantiaVeiculo.findUnique({ where: { id: garantia.veiculoId } });
     const pneusGar = await prisma.garantiaPneu.findMany({ where: { garantiaId: garantia.id } });
     const pneuPorPosicao = Object.fromEntries(pneusGar.map((p) => [p.posicao, p]));
 
+    // Odômetro suspeito: km menor que o maior km já registrado (última revisão ou ativação).
+    const ultimaRev = await prisma.garantiaRevisao.findFirst({ where: { garantiaId: garantia.id }, orderBy: { km: 'desc' } });
+    const maiorKmAnterior = Math.max(garantia.kmInicial, ultimaRev?.km || 0);
+    const odometroSuspeito = km < maiorKmAnterior;
+
     const fotoOdometroUrl = salvarFoto(b.fotoOdometroBase64);
+    const etiquetaOleoUrl = salvarFoto(b.etiquetaOleoBase64);
     const revisao = await prisma.garantiaRevisao.create({
       data: {
         garantiaId: garantia.id,
         km,
         mecanico: String(b.mecanico || '').trim(),
         observacoes: String(b.observacoes || '').trim(),
+        odometroSuspeito,
         ...(fotoOdometroUrl ? { fotoOdometroUrl } : {}),
+        ...(etiquetaOleoUrl ? { etiquetaOleoUrl } : {}),
         criadoPorId: req.user?.sub || null,
       },
     });
 
     let dotDivergente = false;
     let sulcoBaixo = false;
+    const pneusCancelados: { id: string; posicao: string }[] = [];
     await prisma.garantiaRevisaoPneu.createMany({
       data: pneusIn.map((p) => {
         const posicao = String(p.posicao || '');
         const pneu = pneuPorPosicao[posicao];
         const dotLido = soDigitos(p.dotLido).slice(0, 4);
         if (dotLido && pneu?.dot && dotLido !== pneu.dot) dotDivergente = true;
+        const prof = Number(p.profundidadeSulco) || 0;
         const sulcos = [Number(p.sulcoExterno) || 0, Number(p.sulcoCentral) || 0, Number(p.sulcoInterno) || 0];
-        if (sulcos.some((s) => s > 0 && s < 1.6)) sulcoBaixo = true;
+        const menorSulco = [prof, ...sulcos].filter((s) => s > 0).sort((a, c) => a - c)[0] || 0;
+        if (menorSulco > 0 && menorSulco < 1.6) sulcoBaixo = true;
+        const arrancamento = Boolean(p.arrancamentoBorracha);
+        // Só cancela um pneu que ainda tem garantia (evita recancelar/renotificar).
+        if (arrancamento && pneu && !pneu.cancelada) pneusCancelados.push({ id: pneu.id, posicao });
         return {
           revisaoId: revisao.id,
           pneuId: pneu?.id || null,
           posicao,
+          profundidadeSulco: prof,
           sulcoExterno: sulcos[0] ?? 0,
           sulcoCentral: sulcos[1] ?? 0,
           sulcoInterno: sulcos[2] ?? 0,
           estado: String(p.estado || 'bom'),
+          arrancamentoBorracha: arrancamento,
           problemas: JSON.stringify(Array.isArray(p.problemas) ? p.problemas : []),
           dotLido,
           observacoes: String(p.observacoes || '').trim(),
@@ -320,11 +419,40 @@ router.post('/revisoes', async (req, res) => {
       }),
     });
 
-    // Atualiza o km do veículo e aplica as consequências automáticas na garantia.
-    await prisma.garantiaVeiculo.update({ where: { id: garantia.veiculoId }, data: { kmAtual: km } });
+    // Arrancamento de borracha → cancela a garantia DAQUELE pneu + notifica o cliente.
+    for (const pc of pneusCancelados) {
+      await prisma.garantiaPneu.update({
+        where: { id: pc.id },
+        data: { cancelada: true, canceladaMotivo: 'Arrancamento de borracha detectado na revisão', canceladaEm: new Date() },
+      });
+      await prisma.garantiaNotificacao.create({
+        data: {
+          clienteId: garantia.clienteId, garantiaId: garantia.id, tipo: 'pneu_cancelado', agendadaPara: hojeStr(),
+          mensagem: `Atenção: identificamos na revisão marcas de arrancamento de borracha no pneu ${rotuloPosicao(pc.posicao)}. Conforme o termo de garantia GP Premium, a garantia de durabilidade DESTE pneu foi cancelada.`,
+        },
+      });
+    }
+    // Odômetro suspeito → notificação pro analista (aparece no painel).
+    if (odometroSuspeito) {
+      await prisma.garantiaNotificacao.create({
+        data: {
+          clienteId: garantia.clienteId, garantiaId: garantia.id, tipo: 'odometro_suspeito', agendadaPara: hojeStr(),
+          mensagem: `Odômetro suspeito na revisão do veículo ${veiculo?.placa || ''}: km informado (${km.toLocaleString('pt-BR')}) é menor que o já registrado (${maiorKmAnterior.toLocaleString('pt-BR')}). Verificar possível adulteração.`,
+        },
+      });
+    }
+
+    // Atualiza km + recalcula km/dia (a partir da etiqueta de óleo do cadastro).
+    const kmPorDia = veiculo && !veiculo.semEtiquetaOleo
+      ? calcularKmPorDia(veiculo.oleoData, veiculo.oleoKm, km) : 0;
+    await prisma.garantiaVeiculo.update({ where: { id: garantia.veiculoId }, data: { kmAtual: km, kmPorDia } });
+
+    // Novo status. Fraude (DOT divergente / odômetro suspeito) VENCE o "expirada": é
+    // mais acionável mandar pra análise do que deixar expirar limpo escondendo a
+    // divergência. Depois vem o limite de km, depois sulco baixo.
     let novoStatus = garantia.status;
-    if (km >= garantia.kmMaximo) novoStatus = 'expirada';
-    else if (dotDivergente) novoStatus = 'em_analise';
+    if (dotDivergente || odometroSuspeito) novoStatus = 'em_analise';
+    else if (km >= garantia.kmMaximo) novoStatus = 'expirada';
     else if (sulcoBaixo && garantia.status === 'ativa') novoStatus = 'atencao';
     if (novoStatus !== garantia.status || dotDivergente) {
       await prisma.garantia.update({
@@ -333,7 +461,24 @@ router.post('/revisoes', async (req, res) => {
       });
     }
 
-    res.status(201).json({ id: revisao.id, dotDivergente, sulcoBaixo, statusGarantia: novoStatus });
+    // Reagenda a próxima notificação de revisão — SÓ se a garantia continua em vigência.
+    // Se expirou (km), não faz sentido mandar o cliente a uma revisão que o sistema vai
+    // recusar. Sem etiqueta: mesmo nº de dias da revisão anterior, fallback 60 dias.
+    if (novoStatus !== 'expirada') {
+      const diasFallback = ultimaRev ? Math.max(1, diasEntre(ultimaRev.criadoEm.toISOString().slice(0, 10), hojeStr())) : 60;
+      await agendarProximaRevisao({
+        clienteId: garantia.clienteId, garantiaId: garantia.id, kmPorDia, intervaloKm: cfg.intervaloRevisaoKm, diasFallback,
+      });
+    } else {
+      // Expirou: limpa qualquer lembrete de revisão futuro que ainda não foi enviado.
+      await prisma.garantiaNotificacao.deleteMany({ where: { garantiaId: garantia.id, tipo: 'revisao_proxima', enviada: false } });
+    }
+
+    res.status(201).json({
+      id: revisao.id, dotDivergente, sulcoBaixo, odometroSuspeito,
+      pneusCancelados: pneusCancelados.map((p) => rotuloPosicao(p.posicao)),
+      statusGarantia: novoStatus, kmPorDia,
+    });
   } catch (e) { erro(res, e); }
 });
 
@@ -344,6 +489,45 @@ router.post('/revisoes/:id/status', requireMaster, async (req, res) => {
     if (!['aprovada', 'reprovada'].includes(status)) return res.status(400).json({ error: 'Status inválido.' });
     const revisao = await prisma.garantiaRevisao.update({ where: { id: String(req.params.id) }, data: { status } });
     res.json(revisao);
+  } catch (e) { erro(res, e); }
+});
+
+// ---------- Config (números do plano, ajustáveis pelo master) ----------
+router.get('/config', async (_req, res) => {
+  try { res.json(await getConfig()); } catch (e) { erro(res, e); }
+});
+router.post('/config', requireMaster, async (req, res) => {
+  try {
+    const b = req.body || {};
+    const garantiaMeses = Math.max(1, Math.min(120, Number(b.garantiaMeses) || 24));
+    const garantiaKm = Math.max(1000, Math.min(500000, Number(b.garantiaKm) || 50000));
+    const intervaloRevisaoKm = Math.max(500, Math.min(100000, Number(b.intervaloRevisaoKm) || 10000));
+    const cfg = await prisma.garantiaConfig.upsert({
+      where: { id: 'global' },
+      update: { garantiaMeses, garantiaKm, intervaloRevisaoKm },
+      create: { id: 'global', garantiaMeses, garantiaKm, intervaloRevisaoKm },
+    });
+    res.json(cfg);
+  } catch (e) { erro(res, e); }
+});
+
+// ---------- Notificações (motor de km/dia) ----------
+// Pendentes = já venceu o dia agendado e ainda não foi enviada. O painel mostra pra
+// envio MANUAL (mesma filosofia do Disparo — nada sai sozinho, pra não arriscar bloqueio).
+router.get('/notificacoes', async (req, res) => {
+  try {
+    const soPendentes = String(req.query.pendentes || '') === '1';
+    const where: any = soPendentes ? { enviada: false, agendadaPara: { lte: hojeStr() } } : {};
+    const notifs = await prisma.garantiaNotificacao.findMany({ where, orderBy: { agendadaPara: 'asc' }, take: 200 });
+    const clientes = await prisma.garantiaCliente.findMany({ where: { id: { in: notifs.map((n) => n.clienteId) } } });
+    const cliPorId = Object.fromEntries(clientes.map((c) => [c.id, c]));
+    res.json(notifs.map((n) => ({ ...n, cliente: cliPorId[n.clienteId] || null })));
+  } catch (e) { erro(res, e); }
+});
+router.post('/notificacoes/:id/enviada', async (req, res) => {
+  try {
+    const n = await prisma.garantiaNotificacao.update({ where: { id: String(req.params.id) }, data: { enviada: true, enviadaEm: new Date() } });
+    res.json(n);
   } catch (e) { erro(res, e); }
 });
 
