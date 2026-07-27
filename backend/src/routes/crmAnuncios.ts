@@ -48,6 +48,7 @@ router.get('/lojas', async (_req, res) => {
 router.post('/lojas', async (req, res) => {
   try {
     const d: any = {}; LOJA.forEach((k) => { d[k] = req.body[k] ?? ''; });
+    if (req.body.credenciadaGarantia !== undefined) d.credenciadaGarantia = Boolean(req.body.credenciadaGarantia);
     if (!d.company_id) return res.status(400).json({ error: 'company_id obrigatório' });
     res.status(201).json(await prisma.loja.create({ data: d }));
   } catch (e) { erro(res, e); }
@@ -55,6 +56,7 @@ router.post('/lojas', async (req, res) => {
 router.put('/lojas/:id', async (req, res) => {
   try {
     const d: any = {}; LOJA.forEach((k) => { if (req.body[k] !== undefined) d[k] = req.body[k]; });
+    if (req.body.credenciadaGarantia !== undefined) d.credenciadaGarantia = Boolean(req.body.credenciadaGarantia);
     res.json(await prisma.loja.update({ where: { id: req.params.id }, data: d }));
   } catch (e) { erro(res, e); }
 });

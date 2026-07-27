@@ -32,6 +32,21 @@ async function escopoGarantia(req: any): Promise<{ master: boolean; lojaId: stri
 // Cláusula `where` do escopo pra ser espalhada nas queries de garantia (por lojaId).
 const whereEscopo = (esc: { master: boolean; lojaId: string | null }) => esc.master ? {} : { lojaId: esc.lojaId };
 
+// Só quem PODE cadastrar garantia / fazer revisão: o master (GP Premium) ou um usuário
+// de uma LOJA CREDENCIADA no programa. Loja não credenciada (mesmo com o módulo) não
+// pode — a revisão/cadastro é exclusivo da rede credenciada.
+async function ehCredenciada(req: any): Promise<boolean> {
+  const uid = req.user?.sub;
+  if (!uid) return false;
+  const u = await prisma.usuario.findUnique({ where: { id: String(uid) }, select: { role: true, lojaId: true } });
+  if (!u) return false;
+  if (ehMaster(u.role)) return true;
+  if (!u.lojaId) return false;
+  const loja = await prisma.loja.findUnique({ where: { id: u.lojaId }, select: { credenciadaGarantia: true } });
+  return !!loja?.credenciadaGarantia;
+}
+const RECUSA_CREDENCIADA = 'Apenas lojas CREDENCIADAS no programa Garantia GP Premium podem cadastrar garantias e fazer revisões.';
+
 const soDigitos = (s: string) => String(s || '').replace(/\D/g, '');
 const hojeStr = () => new Date().toISOString().slice(0, 10);
 
@@ -154,7 +169,8 @@ router.get('/resumo', async (req, res) => {
       prisma.garantiaRevisao.count({ where: wRev }),
       prisma.garantiaNotificacao.count({ where: wNot }),
     ]);
-    res.json({ ativas, pendentes, emAnalise, atencao, total, revisoesPendentes, notificacoesPendentes });
+    const podeCadastrar = await ehCredenciada(req); // loja credenciada ou master
+    res.json({ ativas, pendentes, emAnalise, atencao, total, revisoesPendentes, notificacoesPendentes, podeCadastrar, master: esc.master });
   } catch (e) { erro(res, e); }
 });
 
@@ -201,6 +217,9 @@ router.get('/clientes/busca', async (req, res) => {
 // garantia tenha sido vendida por outra loja).
 router.get('/garantias/por-placa', async (req, res) => {
   try {
+    // Só loja credenciada (ou master) pode buscar carro pra revisar — a revisão é
+    // exclusiva da rede credenciada, mas QUALQUER credenciada revisa QUALQUER carro.
+    if (!(await ehCredenciada(req))) return res.status(403).json({ error: RECUSA_CREDENCIADA });
     await expirarVencidas();
     const placa = String(req.query.placa || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
     if (placa.length !== 7) return res.status(400).json({ error: 'Placa inválida.' });
@@ -221,6 +240,7 @@ router.get('/garantias/por-placa', async (req, res) => {
 // cria a garantia como "pendente" (admin aprova depois no Painel) e os pneus.
 router.post('/garantias', async (req, res) => {
   try {
+    if (!(await ehCredenciada(req))) return res.status(403).json({ error: RECUSA_CREDENCIADA });
     const b = req.body || {};
     const cli = b.cliente || {};
     const vei = b.veiculo || {};
@@ -398,6 +418,7 @@ router.get('/revisoes', async (req, res) => {
 // - recalcula km/dia e reagenda a próxima notificação de revisão.
 router.post('/revisoes', async (req, res) => {
   try {
+    if (!(await ehCredenciada(req))) return res.status(403).json({ error: RECUSA_CREDENCIADA });
     const b = req.body || {};
     const garantia = await prisma.garantia.findUnique({ where: { id: String(b.garantiaId || '') } });
     if (!garantia) return res.status(404).json({ error: 'Garantia não encontrada.' });

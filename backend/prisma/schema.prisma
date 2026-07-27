@@ -156,6 +156,9 @@ model Loja {
   instagram     String     @default("")
   manager_name  String     @default("")
   notes         String     @default("")
+  // Loja credenciada no programa Garantia 50k: só credenciada (ou master) pode
+  // cadastrar garantia e fazer revisão. Ligado/desligado por loja na tela de Lojas.
+  credenciadaGarantia Boolean @default(false)
   created_at    DateTime   @default(now())
   campanhas     Campanha[]
 }
