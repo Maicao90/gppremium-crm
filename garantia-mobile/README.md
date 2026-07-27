@@ -1,38 +1,48 @@
-# Garantia 50k — App Mobile (protótipo)
+# Garantia 50k — App Mobile (GP Premium)
 
-App do cliente/mecânico da **Garantia 50.000 KM** (Expo / React Native), trazido do
-repositório original `GPPREMIUMGARANTIA50K` para morar junto do CRM.
+App Expo/React Native **amarrado ao backend real** do CRM
+(`https://crm.nailacademyprofissional.com`). Um app só, com duas caras conforme o login:
 
-## ⚠️ Estado atual: PROTÓTIPO VISUAL
+- **Loja (mecânico)** — entra com o **mesmo login do CRM**. Cadastra garantia e faz
+  revisão, com **câmera de verdade**. Só loja **credenciada** consegue cadastrar/revisar.
+- **Cliente** — entra com **CPF + senha** (cria no cadastro). Vê as garantias e revisões
+  dele, recebe **push** de lembrete de revisão e acha as oficinas autorizadas.
 
-Este app ainda **não está conectado** ao CRM. Ele foi construído como demonstração:
+O painel **admin** NÃO está no app — é o painel web do CRM (aba Garantia 50k).
 
-- O login é fake (roteia pelo e-mail digitado: `mecanico@gmail.com` → tela do mecânico,
-  `admin@gmail.com` → admin, qualquer outro → cliente). Não valida senha.
-- Os dados vêm de um arquivo JSON local (`/api/database` de um servidor Next.js que não
-  existe mais) ou são fixos no código — nada é lido/gravado no banco do CRM.
-- As "fotos" dos formulários são placeholders de texto (não abrem a câmera).
-- Cadastro de cliente não grava em lugar nenhum.
-
-## O que JÁ foi portado pro CRM (e vale de verdade)
-
-A parte administrativa/web deste sistema virou o módulo **Garantia 50k** do painel
-(`crm-de-anuncios` → aba Aplicativos), com banco PostgreSQL e login reais:
-
-- Ativação de garantia (cliente por CPF + veículo + pneus + fotos) → `backend/src/routes/garantia.ts`
-- Auditoria (aprovar/reprovar), revisões com sulcos por pneu, alertas automáticos de
-  DOT divergente e sulco abaixo de 1.6mm
-- Sorteio criptográfico (Fisher-Yates + crypto) entre garantias ativas
-
-## Próximo passo (quando for a hora de ter o app de verdade)
-
-1. Trocar as chamadas a `http://localhost:3000/api/database` por `https://crm.nailacademyprofissional.com/api/garantia/...`
-2. Login real contra `/api/auth/login` do CRM (JWT) + um papel "cliente"
-3. Câmera de verdade (`expo-camera`/`expo-image-picker`) nos formulários de foto
-
-## Rodar o protótipo localmente
+## Rodar (primeira vez)
 
 ```bash
+cd garantia-mobile
 npm install
+# alinha as libs nativas à versão exata do SDK do Expo instalado:
+npx expo install expo-image-picker expo-notifications expo-device expo-secure-store
 npx expo start
 ```
+
+Abra no **Expo Go** (celular) ou pressione `a`/`i` pra emulador. Push e câmera só
+funcionam em **aparelho de verdade** (não no simulador nem no web).
+
+## O que está amarrado (funciona de ponta a ponta)
+
+| Tela | Backend |
+|---|---|
+| Login loja | `POST /api/usuarios/login` |
+| Login/Cadastro cliente | `POST /api/garantia-app/cliente/{login,registrar}` |
+| Mecânico: home (KPIs) | `GET /api/garantia/resumo` |
+| Mecânico: **Ativar Garantia** (fotos reais) | `GET /clientes/busca`, `POST /api/garantia/garantias` |
+| Mecânico: **Nova Revisão** (fotos reais) | `GET /garantias/por-placa`, `POST /api/garantia/revisoes` |
+| Cliente: home (garantias + revisões) | `GET /api/garantia-app/cliente/me` |
+| Cliente: notificações | `GET /cliente/me`, `POST /cliente/notificacoes/:id/lida` |
+| Cliente: oficinas | `GET /api/garantia-app/oficinas` |
+| Push token | `POST /api/garantia-app/cliente/push-token` (worker `garantiaPush` dispara) |
+
+Estrutura: `src/lib/` (api, auth, foto, push) · `src/components/FotoBotao.tsx` ·
+`src/app/` (rotas expo-router).
+
+## Ainda por fazer (próximas iterações)
+
+- Testar tudo em aparelho real (câmera + push) — precisa ser feito por você.
+- Telas extras do cliente (promoções, sorteios, suporte) — removidas por enquanto (eram
+  protótipo estático); dá pra trazer de volta amarradas quando quiser.
+- Build de produção (EAS) e publicação nas lojas.
