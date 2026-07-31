@@ -110,17 +110,30 @@ router.get('/', async (req, res) => {
     });
     const nomesPorId: Record<string, string> = {};
     usuarios.forEach((u) => { nomesPorId[u.id] = u.nome; });
+
+    // Nome da LOJA de cada atendente — a Caixa de Entrada agrupa os números por loja
+    // (uma loja pode ter 2 números, ex.: Feirão = Marina + Ana Paula), então o front
+    // precisa do rótulo, não só do lojaId.
+    const lojaIds = [...new Set(usuarios.map((u) => u.lojaId).filter(Boolean) as string[])];
+    const lojas = lojaIds.length
+      ? await prisma.loja.findMany({ where: { id: { in: lojaIds } }, select: { id: true, store_name: true } })
+      : [];
+    const lojaNomePorId: Record<string, string> = {};
+    lojas.forEach((l) => { lojaNomePorId[l.id] = l.store_name; });
+
     const comCompartilhamento = usuarios.map((u) => {
+      const lojaNome = u.lojaId ? (lojaNomePorId[u.lojaId] || null) : null;
       if (u.whatsappDonoId) {
         // Quem compartilha nunca tem whatsappConectado atualizado no próprio registro
         // (a sessão real nunca é dele) — usa o status ATUAL do dono em memória.
         return {
           ...u,
+          lojaNome,
           whatsappConectado: connectedUsers.has(u.whatsappDonoId),
           whatsappDonoNome: nomesPorId[u.whatsappDonoId] || null
         };
       }
-      return { ...u, whatsappDonoNome: null };
+      return { ...u, lojaNome, whatsappDonoNome: null };
     });
     res.json(comCompartilhamento);
   } catch (error) {
