@@ -135,7 +135,7 @@ router.post('/', async (req, res) => {
     const entrada = String(numero ?? '').trim() || String(cliente ?? '').trim();
     const numeroResolvido = await resolverNumeroContato(usuario.id, entrada);
     if (!numeroResolvido) {
-      return res.status(400).json({ error: `Não encontrei o número de "${entrada || 'contato'}" nos contatos. Digite o número do WhatsApp com DDD (ex.: 61999998888).` });
+      return res.status(400).json({ error: `Não consegui identificar com segurança o número de "${entrada || 'contato'}" (nome não encontrado, ou existe mais de um contato com esse nome). Digite o número do WhatsApp com DDD (ex.: 61999998888).` });
     }
 
     // Anexo de mídia (opcional): salva o arquivo no disco e guarda o caminho.
@@ -153,12 +153,35 @@ router.post('/', async (req, res) => {
       }
     }
 
+    // ── TRAVA ANTI-DUPLICATA (incidente 29/07/2026) ──
+    // Clique duplo no botão, retry de rede da extensão ou reenvio do formulário criavam
+    // VÁRIOS agendamentos idênticos — 30 cópias da mesma mensagem chegaram a ser criadas
+    // em 3 segundos e o worker disparou tudo, virando spam no WhatsApp do cliente (risco
+    // real de banimento do número). Se já existe um agendamento PENDENTE igual (mesmo
+    // número + mesma mensagem + mesmo horário de envio), devolve o que já existe em vez
+    // de criar outro. Idempotente: o operador pode clicar 10x que agenda uma vez só.
+    const msgNormalizada = String(mensagem || '').trim().replace(/\s+/g, ' ');
+    const quandoEnviar = new Date(enviarEm);
+    const jaExiste = await prisma.agendamento.findFirst({
+      where: {
+        numero: numeroResolvido,
+        status: 'pendente',
+        enviarEm: quandoEnviar,
+        criadoPorId: usuario.id,
+      },
+      orderBy: { criadoEm: 'desc' },
+    });
+    if (jaExiste && String(jaExiste.mensagem || '').trim().replace(/\s+/g, ' ') === msgNormalizada) {
+      console.log(`[Agendamento] Duplicata evitada (numero ${numeroResolvido}) — devolvendo o agendamento ${jaExiste.id} que já existia.`);
+      return res.status(200).json(jaExiste);
+    }
+
     const agendamento = await prisma.agendamento.create({
       data: {
         cliente,
         numero: numeroResolvido,
         mensagem: mensagem || '',
-        enviarEm: new Date(enviarEm),
+        enviarEm: quandoEnviar,
         criadoPorId: usuario.id,
         cancelarSeResponder: cancelarSeResponder !== undefined ? cancelarSeResponder : true,
         tipo: tipoFinal,

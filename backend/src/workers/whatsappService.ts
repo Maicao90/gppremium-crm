@@ -1055,9 +1055,18 @@ export async function enviarMensagemInbox(usuarioId: string, jid: string, texto:
   //  - assinaturaPainel definida e não-vazia  -> usa ela: *assinatura:* texto
   //  - assinaturaPainel definida e vazia ("")  -> sem assinatura
   //  - assinaturaPainel não definida (null)    -> padrão: *nome do atendente:* texto
+  // Por padrão assina com o DONO da conexão (usuarioId = efetivoId, dono da sessão do
+  // WhatsApp). EXCEÇÃO pedida pelo dono do CRM: se quem de fato mandou (enviadoPorId) é
+  // um GERENTE numa caixa compartilhada, assina com o nome DELE — não com o nome do dono
+  // cujo número está sendo usado. Admin/master e demais papéis continuam assinando como
+  // o dono da conexão (comportamento antigo, mantido de propósito).
   let textoFinal = texto;
   try {
-    const u = await prisma.usuario.findUnique({ where: { id: usuarioId } });
+    let u = await prisma.usuario.findUnique({ where: { id: usuarioId } });
+    if (enviadoPorId && enviadoPorId !== usuarioId) {
+      const remetente = await prisma.usuario.findUnique({ where: { id: enviadoPorId } });
+      if (remetente && remetente.role === 'gerente') u = remetente;
+    }
     if (u) {
       if (u.assinaturaPainel !== null && u.assinaturaPainel !== undefined) {
         const a = String(u.assinaturaPainel).trim();

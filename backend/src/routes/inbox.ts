@@ -5,6 +5,24 @@ import { ehEscopado, idsAtendentesDaLoja } from '../auth/escopoLoja';
 
 const router = Router();
 
+// Quem de fato deve assinar a mensagem: por padrão é o atendente selecionado no seletor
+// da Caixa de Entrada (usuarioId), só diferente do dono da conexão (efetivoId) quando ele
+// está numa caixa COMPARTILHADA (comportamento antigo, vale pra admin/operador). EXCEÇÃO
+// pedida pelo dono do CRM: se quem está LOGADO DE VERDADE (req.user, não o selecionado no
+// dropdown) é um GERENTE, a assinatura vai com o nome dele — mesmo vendo o WhatsApp/chat
+// de outro atendente da loja. Admin/master e operador continuam como antes.
+async function resolverEnviadoPorId(req: any, usuarioId: string, efetivoId: string): Promise<string | undefined> {
+  let enviadoPorId = efetivoId !== usuarioId ? usuarioId : undefined;
+  const logadoId = req.user?.sub ? String(req.user.sub) : '';
+  if (logadoId && logadoId !== efetivoId) {
+    try {
+      const logado = await prisma.usuario.findUnique({ where: { id: logadoId }, select: { role: true } });
+      if (logado?.role === 'gerente') enviadoPorId = logadoId;
+    } catch { /* noop — mantém o comportamento padrão se a checagem falhar */ }
+  }
+  return enviadoPorId;
+}
+
 // Gerente logado só pode mexer no WhatsApp de atendentes da própria loja.
 // Retorna true se PODE seguir; se bloquear, já responde 403 e retorna false.
 async function permiteAtendente(req: any, res: any, usuarioId: string): Promise<boolean> {
@@ -238,17 +256,21 @@ router.get('/mensagens', async (req, res) => {
     if (!(await permiteAtendente(req, res, usuarioIdOriginal))) return;
     const usuarioId = await resolverConexaoEfetiva(usuarioIdOriginal);
 
-    const mensagens = await prisma.mensagem.findMany({
+    // Busca as MAIS RECENTES (desc + take) e inverte pra ordem de exibição (asc).
+    // Bug antigo: orderBy asc + take trazia as 300 mais ANTIGAS, fixas pra sempre —
+    // numa conversa com mais de 300 mensagens, as novas nunca apareciam (janela
+    // congelada no passado, nunca deslizava).
+    const recentes = await prisma.mensagem.findMany({
       where: {
         usuarioId,
         chatJid: jid,
         // Esconde o ruído de sistema ("outro" vazio/protocolMessage sem mídia)
         NOT: { tipo: 'outro', midiaUrl: null, texto: { in: ['', 'protocolMessage'] } }
       },
-      orderBy: { timestamp: 'asc' },
+      orderBy: { timestamp: 'desc' },
       take: 300
     });
-    res.json(mensagens);
+    res.json(recentes.reverse());
   } catch (e) {
     console.error('Erro ao buscar mensagens:', e);
     res.status(500).json({ error: 'Erro ao buscar mensagens' });
@@ -264,10 +286,10 @@ router.post('/enviar', async (req, res) => {
     }
     if (!(await permiteAtendente(req, res, String(usuarioId)))) return;
     const { enviarMensagemInbox } = require('../workers/whatsappService');
-    // Envia de fato pela sessão do DONO (efetivoId), mas grava enviadoPorId com o ID
-    // ORIGINAL (antes de resolver) para registrar quem de fato mandou a mensagem.
+    // Envia de fato pela sessão do DONO (efetivoId), mas grava enviadoPorId com o ID de
+    // quem deve ASSINAR a mensagem (ver resolverEnviadoPorId).
     const efetivoId = await resolverConexaoEfetiva(String(usuarioId));
-    const enviadoPorId = efetivoId !== String(usuarioId) ? String(usuarioId) : undefined;
+    const enviadoPorId = await resolverEnviadoPorId(req, String(usuarioId), efetivoId);
     const ok = await enviarMensagemInbox(efetivoId, String(jid), String(texto), enviadoPorId);
     if (ok) res.json({ success: true });
     else res.status(503).json({ error: 'WhatsApp não está conectado ou falhou ao enviar.' });
@@ -287,7 +309,7 @@ router.post('/enviar-midia', async (req, res) => {
     if (!(await permiteAtendente(req, res, String(usuarioId)))) return;
     const { enviarMidiaInbox } = require('../workers/whatsappService');
     const efetivoId = await resolverConexaoEfetiva(String(usuarioId));
-    const enviadoPorId = efetivoId !== String(usuarioId) ? String(usuarioId) : undefined;
+    const enviadoPorId = await resolverEnviadoPorId(req, String(usuarioId), efetivoId);
     const ok = await enviarMidiaInbox(efetivoId, String(jid), String(base64), String(mimetype || ''), String(tipo), legenda ? String(legenda) : undefined, enviadoPorId);
     if (ok) res.json({ success: true });
     else res.status(503).json({ error: 'WhatsApp não conectado ou falha ao enviar mídia.' });

@@ -50,3 +50,11 @@ prisma/auth_info_baileys*
 *.pem
 backend/key.pem
 backend/cert.pem
+
+# Expo (cache local do dev, nao vai pro repo)
+.expo/
+**/.expo/
+
+# Artefatos temporarios de desenvolvimento (QR de teste, scripts pontuais)
+qr-expo*.png
+**/qr-expo*.png

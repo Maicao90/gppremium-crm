@@ -27,6 +27,13 @@ async function proxyBot(caminho: string, res: any) {
   try {
     const r = await fetchGlobal(`${BASE}${caminho}`, { headers: { Authorization: `Bearer ${token()}` } });
     const body = await r.json().catch(() => ({ error: 'resposta inválida do bot' }));
+    // NUNCA repassar 401/403 do bot: isso é auth ENTRE o CRM e o pneus-bot (token do bot
+    // errado/expirado), não a sessão do usuário. Se vazar 401, o interceptador do painel
+    // acha que a SESSÃO do usuário caiu e desloga todo mundo. Vira 502 (erro de upstream).
+    if (r.status === 401 || r.status === 403) {
+      res.status(502).json({ error: 'pneus-bot recusou o token do CRM (verifique PNEUS_BOT_TOKEN).', upstream: r.status });
+      return;
+    }
     res.status(r.status).json(body);
   } catch (e) {
     res.status(502).json({ error: 'Falha ao falar com o pneus-bot: ' + String(e) });
@@ -76,6 +83,10 @@ router.post('/acao', async (req, res) => {
       body: JSON.stringify(req.body || {}),
     });
     const body = await r.json().catch(() => ({ error: 'resposta inválida do bot' }));
+    if (r.status === 401 || r.status === 403) {
+      res.status(502).json({ error: 'pneus-bot recusou o token do CRM (verifique PNEUS_BOT_TOKEN).', upstream: r.status });
+      return;
+    }
     res.status(r.status).json(body);
   } catch (e) {
     res.status(502).json({ error: 'Falha ao falar com o pneus-bot: ' + String(e) });
