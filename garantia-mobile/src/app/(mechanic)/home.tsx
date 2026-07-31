@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, SafeAreaView, RefreshControl, Alert } from 'react-native';
 import { useRouter, useFocusEffect } from 'expo-router';
-import { Plus, Wrench, LogOut, AlertTriangle } from 'lucide-react-native';
+import { Plus, Wrench, LogOut, AlertTriangle, ClipboardList } from 'lucide-react-native';
 import { api } from '../../lib/api';
 import { useAuth } from '../../lib/auth';
 
@@ -36,9 +36,15 @@ export default function MechanicHome() {
         {!podeCadastrar && <View style={s.aviso}><Text style={s.avisoTxt}>Sua loja ainda não está credenciada no programa Garantia 50k. Fale com a GP Premium para liberar o cadastro e as revisões.</Text></View>}
 
         <View style={s.kpis}>
-          <View style={s.kpi}><Text style={s.kpiN}>{resumo?.ativas ?? '—'}</Text><Text style={s.kpiL}>Ativas</Text></View>
-          <View style={s.kpi}><Text style={s.kpiN}>{resumo?.pendentes ?? '—'}</Text><Text style={s.kpiL}>Pendentes</Text></View>
-          <View style={s.kpi}><Text style={s.kpiN}>{resumo?.total ?? '—'}</Text><Text style={s.kpiL}>Total</Text></View>
+          <TouchableOpacity style={s.kpi} onPress={() => router.push('/(mechanic)/garantias?filtro=ativa')} activeOpacity={0.7}>
+            <Text style={s.kpiN}>{resumo?.ativas ?? '—'}</Text><Text style={s.kpiL}>Ativas</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={s.kpi} onPress={() => router.push('/(mechanic)/garantias?filtro=pendente')} activeOpacity={0.7}>
+            <Text style={s.kpiN}>{resumo?.pendentes ?? '—'}</Text><Text style={s.kpiL}>Pendentes</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={s.kpi} onPress={() => router.push('/(mechanic)/garantias?filtro=total')} activeOpacity={0.7}>
+            <Text style={s.kpiN}>{resumo?.total ?? '—'}</Text><Text style={s.kpiL}>Total</Text>
+          </TouchableOpacity>
         </View>
 
         {podeCadastrar && (
@@ -48,6 +54,9 @@ export default function MechanicHome() {
             </TouchableOpacity>
             <TouchableOpacity style={[s.acao, { backgroundColor: '#0f172a' }]} onPress={() => router.push('/(mechanic)/new-inspection')} activeOpacity={0.85}>
               <Wrench size={26} color="#fff" /><View><Text style={s.acaoT}>Nova Revisão</Text><Text style={s.acaoS}>Medir sulcos e registrar a revisão</Text></View>
+            </TouchableOpacity>
+            <TouchableOpacity style={[s.acao, { backgroundColor: '#475569' }]} onPress={() => router.push('/(mechanic)/history')} activeOpacity={0.85}>
+              <ClipboardList size={26} color="#fff" /><View><Text style={s.acaoT}>Histórico</Text><Text style={s.acaoS}>Ver revisões já feitas e o status delas</Text></View>
             </TouchableOpacity>
           </>
         )}

@@ -6,11 +6,26 @@ import { api } from '../../lib/api';
 import { FotoBotao } from '../../components/FotoBotao';
 import { Foto } from '../../lib/foto';
 
-const ROTULO: Record<string, string> = { dianteiro_esquerdo: 'Dianteiro Esq.', dianteiro_direito: 'Dianteiro Dir.', traseiro_esquerdo: 'Traseiro Esq.', traseiro_direito: 'Traseiro Dir.', estepe: 'Estepe' };
+const ROTULO: Record<string, string> = { dianteiro_esquerdo: 'Pneu 1', dianteiro_direito: 'Pneu 2', traseiro_esquerdo: 'Pneu 3', traseiro_direito: 'Pneu 4', estepe: 'Estepe' };
 // Profundidade selecionável 1,6 a 10,0
 const OPCOES = Array.from({ length: 85 }, (_, i) => Number((1.6 + i * 0.1).toFixed(1)));
 
-type PneuRev = { posicao: string; profundidadeSulco: number | ''; arrancamentoBorracha: boolean; dotLido: string; foto: Foto };
+// Checklist de problemas por pneu — mesmos códigos que o painel do CRM lê.
+const PROBLEMAS: { chave: string; rotulo: string }[] = [
+  { chave: 'desgaste_irregular', rotulo: 'Desgaste irregular' },
+  { chave: 'desalinhamento', rotulo: 'Desalinhamento' },
+  { chave: 'desbalanceamento', rotulo: 'Desbalanceamento' },
+  { chave: 'borracha_rasgada', rotulo: 'Borracha rasgada' },
+  { chave: 'corte_lateral', rotulo: 'Corte lateral' },
+  { chave: 'bolha', rotulo: 'Bolha / deformação' },
+  { chave: 'furo', rotulo: 'Furo / reparo' },
+  { chave: 'pressao_incorreta', rotulo: 'Pressão incorreta' },
+];
+const ESTADOS: { chave: string; rotulo: string }[] = [
+  { chave: 'excelente', rotulo: 'Excelente' }, { chave: 'bom', rotulo: 'Bom' }, { chave: 'regular', rotulo: 'Regular' }, { chave: 'ruim', rotulo: 'Ruim' }, { chave: 'trocar', rotulo: 'Trocar' },
+];
+
+type PneuRev = { posicao: string; profundidadeSulco: number | ''; estado: string; arrancamentoBorracha: boolean; dotLido: string; fotoEtiqueta: Foto; fotoLateral: Foto; fotoBanda: Foto; problemas: string[]; observacoes: string; recomendacao: string };
 
 export default function NewInspection() {
   const router = useRouter();
@@ -20,6 +35,7 @@ export default function NewInspection() {
   const [km, setKm] = useState('');
   const [mecanico, setMecanico] = useState('');
   const [fOdo, setFOdo] = useState<Foto>(null);
+  const [obsGeral, setObsGeral] = useState('');
   const [pneus, setPneus] = useState<PneuRev[]>([]);
   const [salvando, setSalvando] = useState(false);
 
@@ -32,7 +48,7 @@ export default function NewInspection() {
       if (!r.encontrada) { Alert.alert('Nada encontrado', 'Nenhuma garantia em andamento pra essa placa.'); }
       else {
         setGarantia(r.garantia);
-        setPneus((r.garantia.pneus || []).filter((p: any) => !p.cancelada).map((p: any) => ({ posicao: p.posicao, profundidadeSulco: '', arrancamentoBorracha: false, dotLido: '', foto: null })));
+        setPneus((r.garantia.pneus || []).filter((p: any) => !p.cancelada).map((p: any) => ({ posicao: p.posicao, profundidadeSulco: '', estado: 'bom', arrancamentoBorracha: false, dotLido: '', fotoEtiqueta: null, fotoLateral: null, fotoBanda: null, problemas: [], observacoes: '', recomendacao: '' })));
         setKm('');
       }
     } catch (e: any) { Alert.alert('Erro', e?.message); }
@@ -40,17 +56,35 @@ export default function NewInspection() {
   };
 
   const setPneu = (i: number, k: string, v: any) => setPneus((ps) => ps.map((p, j) => (j === i ? { ...p, [k]: v } : p)));
+  const toggleProb = (i: number, chave: string) => setPneus((ps) => ps.map((p, j) => {
+    if (j !== i) return p;
+    return { ...p, problemas: p.problemas.includes(chave) ? p.problemas.filter((x) => x !== chave) : [...p.problemas, chave] };
+  }));
 
   const salvar = async () => {
     if (km === '') return Alert.alert('Ops', 'Informe o KM da revisão.');
+    if (!mecanico.trim()) return Alert.alert('Ops', 'Informe o nome do mecânico responsável (obrigatório).');
     if (pneus.some((p) => p.profundidadeSulco === '')) return Alert.alert('Ops', 'Selecione a profundidade do sulco de todos os pneus.');
+    if (!fOdo?.base64) return Alert.alert('Foto obrigatória', 'Tire a foto do odômetro.');
+    for (let i = 0; i < pneus.length; i++) {
+      const p = pneus[i];
+      const falta = !p.fotoEtiqueta?.base64 ? 'etiqueta/DOT' : !p.fotoLateral?.base64 ? 'lateral' : !p.fotoBanda?.base64 ? 'banda de rodagem' : '';
+      if (falta) return Alert.alert('Foto obrigatória', `Tire a foto "${falta}" do pneu ${ROTULO[p.posicao] || i + 1}. São 3 fotos por pneu.`);
+    }
     setSalvando(true);
     try {
       const r = await api<any>('/api/garantia/revisoes', {
         method: 'POST',
         body: {
-          garantiaId: garantia.id, km: Number(km), mecanico, fotoOdometroBase64: fOdo?.base64 || null,
-          pneus: pneus.map((p) => ({ posicao: p.posicao, profundidadeSulco: Number(p.profundidadeSulco) || 0, arrancamentoBorracha: p.arrancamentoBorracha, dotLido: p.dotLido })),
+          garantiaId: garantia.id, km: Number(km), mecanico, observacoes: obsGeral, fotoOdometroBase64: fOdo?.base64 || null,
+          pneus: pneus.map((p) => ({
+            posicao: p.posicao, profundidadeSulco: Number(p.profundidadeSulco) || 0, estado: p.estado,
+            arrancamentoBorracha: p.arrancamentoBorracha, dotLido: p.dotLido, problemas: p.problemas,
+            observacoes: p.observacoes, recomendacao: p.recomendacao,
+            fotoEtiquetaBase64: p.fotoEtiqueta?.base64 || null,
+            fotoLateralBase64: p.fotoLateral?.base64 || null,
+            fotoBandaBase64: p.fotoBanda?.base64 || null,
+          })),
         },
       });
       let msg = 'Revisão registrada!';
@@ -79,6 +113,7 @@ export default function NewInspection() {
             <View style={s.card}>
               <TextInput style={s.input} placeholder="KM da revisão" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={km} onChangeText={setKm} />
               <TextInput style={s.input} placeholder="Mecânico responsável" placeholderTextColor="#94a3b8" value={mecanico} onChangeText={setMecanico} />
+              <TextInput style={[s.input, { minHeight: 60, textAlignVertical: 'top' }]} placeholder="Observações gerais da revisão (opcional)" placeholderTextColor="#94a3b8" multiline value={obsGeral} onChangeText={setObsGeral} />
               <FotoBotao label="Foto do odômetro" valor={fOdo} onChange={setFOdo} />
             </View>
 
@@ -93,12 +128,38 @@ export default function NewInspection() {
                     </TouchableOpacity>
                   ))}
                 </ScrollView>
+                <Text style={s.lbl}>Estado do pneu</Text>
+                <View style={s.wrap}>
+                  {ESTADOS.map((e) => (
+                    <TouchableOpacity key={e.chave} style={[s.pill, p.estado === e.chave && s.pillOn]} onPress={() => setPneu(i, 'estado', e.chave)}>
+                      <Text style={[s.pillT, p.estado === e.chave && s.pillTOn]}>{e.rotulo}</Text>
+                    </TouchableOpacity>
+                  ))}
+                </View>
+
                 <TextInput style={s.input} placeholder="DOT lido (4 dígitos)" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={p.dotLido} onChangeText={(v) => setPneu(i, 'dotLido', v.replace(/\D/g, '').slice(0, 4))} />
+
                 <TouchableOpacity style={[s.arr, p.arrancamentoBorracha && s.arrOn]} onPress={() => setPneu(i, 'arrancamentoBorracha', !p.arrancamentoBorracha)}>
                   <AlertTriangle size={15} color={p.arrancamentoBorracha ? '#e11d48' : '#94a3b8'} />
                   <Text style={[s.arrT, p.arrancamentoBorracha && { color: '#e11d48' }]}>Arrancamento de borracha (cancela este pneu)</Text>
                 </TouchableOpacity>
-                <FotoBotao label="Foto do sulco / banda" valor={p.foto} onChange={(f) => setPneu(i, 'foto', f)} />
+
+                <Text style={[s.lbl, { marginTop: 4 }]}>Problemas encontrados</Text>
+                <View style={s.wrap}>
+                  {PROBLEMAS.map((pr) => (
+                    <TouchableOpacity key={pr.chave} style={[s.pill, p.problemas.includes(pr.chave) && s.pillProbOn]} onPress={() => toggleProb(i, pr.chave)}>
+                      <Text style={[s.pillT, p.problemas.includes(pr.chave) && s.pillTOn]}>{pr.rotulo}</Text>
+                    </TouchableOpacity>
+                  ))}
+                </View>
+
+                <TextInput style={[s.input, { marginTop: 8 }]} placeholder="Observações deste pneu (opcional)" placeholderTextColor="#94a3b8" value={p.observacoes} onChangeText={(v) => setPneu(i, 'observacoes', v)} />
+                <TextInput style={s.input} placeholder="Recomendação (ex.: fazer alinhamento)" placeholderTextColor="#94a3b8" value={p.recomendacao} onChangeText={(v) => setPneu(i, 'recomendacao', v)} />
+
+                <Text style={[s.lbl, { marginTop: 4 }]}>3 fotos obrigatórias (nítidas)</Text>
+                <FotoBotao label="1) Etiqueta / DOT" valor={p.fotoEtiqueta} onChange={(f) => setPneu(i, 'fotoEtiqueta', f)} />
+                <FotoBotao label="2) Lateral" valor={p.fotoLateral} onChange={(f) => setPneu(i, 'fotoLateral', f)} />
+                <FotoBotao label="3) Banda de rodagem (sulco)" valor={p.fotoBanda} onChange={(f) => setPneu(i, 'fotoBanda', f)} />
               </View>
             ))}
 
@@ -128,6 +189,12 @@ const s = StyleSheet.create({
   chipOn: { backgroundColor: '#0ea5e9', borderColor: '#0ea5e9' },
   chipT: { fontSize: 13, color: '#475569', fontWeight: '600' },
   chipTOn: { color: '#fff' },
+  wrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginBottom: 8 },
+  pill: { paddingHorizontal: 11, paddingVertical: 6, borderRadius: 999, borderWidth: 1, borderColor: '#cbd5e1' },
+  pillOn: { backgroundColor: '#0ea5e9', borderColor: '#0ea5e9' },
+  pillProbOn: { backgroundColor: '#e11d48', borderColor: '#e11d48' },
+  pillT: { fontSize: 12, color: '#475569', fontWeight: '600' },
+  pillTOn: { color: '#fff' },
   arr: { flexDirection: 'row', alignItems: 'center', gap: 8, padding: 10, borderRadius: 9, borderWidth: 1, borderColor: '#e2e8f0', marginBottom: 4 },
   arrOn: { backgroundColor: 'rgba(225,29,72,0.06)', borderColor: 'rgba(225,29,72,0.4)' },
   arrT: { fontSize: 12, color: '#64748b', flex: 1 },

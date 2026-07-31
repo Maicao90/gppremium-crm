@@ -10,10 +10,10 @@ const soDigitos = (s: string) => s.replace(/\D/g, '');
 const fmtCPF = (s: string) => soDigitos(s).slice(0, 11).replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d{1,2})$/, '$1-$2');
 
 const POSICOES = [
-  { key: 'dianteiro_esquerdo', label: 'Dianteiro Esq.' },
-  { key: 'dianteiro_direito', label: 'Dianteiro Dir.' },
-  { key: 'traseiro_esquerdo', label: 'Traseiro Esq.' },
-  { key: 'traseiro_direito', label: 'Traseiro Dir.' },
+  { key: 'dianteiro_esquerdo', label: 'Pneu 1' },
+  { key: 'dianteiro_direito', label: 'Pneu 2' },
+  { key: 'traseiro_esquerdo', label: 'Pneu 3' },
+  { key: 'traseiro_direito', label: 'Pneu 4' },
 ];
 type PneuForm = { posicao: string; marca: string; medida: string; dot: string; codigoSerie: string; foto: Foto };
 const pneuInicial = (): PneuForm[] => POSICOES.map((p) => ({ posicao: p.key, marca: 'GP Premium', medida: '', dot: '', codigoSerie: '', foto: null }));

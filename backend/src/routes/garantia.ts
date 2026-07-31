@@ -134,6 +134,18 @@ const ROTULO_POSICAO: Record<string, string> = {
 };
 const rotuloPosicao = (p: string) => ROTULO_POSICAO[p] || p;
 
+// Cancela a GARANTIA INTEIRA (revisão reprovada — manual ou automática por km fora do
+// intervalo) e notifica o cliente. Usado tanto pelo auditor (POST /revisoes/:id/status)
+// quanto pelo auto-reprovar do POST /revisoes.
+async function reprovarGarantiaDaRevisao(garantiaId: string, mensagem: string): Promise<void> {
+  const garantia = await prisma.garantia.findUnique({ where: { id: garantiaId } });
+  if (!garantia || garantia.status === 'cancelada') return;
+  await prisma.garantia.update({ where: { id: garantia.id }, data: { status: 'cancelada' } });
+  await prisma.garantiaNotificacao.create({
+    data: { clienteId: garantia.clienteId, garantiaId: garantia.id, tipo: 'garantia_cancelada', agendadaPara: hojeStr(), mensagem },
+  });
+}
+
 // Config do módulo (singleton). Os números do plano são configuráveis porque a planilha
 // se contradiz (1 vs 2 anos; 5.000 vs 10.000 km) — default = a regra "cabeçalho" (2 anos,
 // 50.000 km, revisão a cada 10.000 km, que é o que o exemplo de cálculo do plano usa).
@@ -418,7 +430,30 @@ router.post('/garantias/:id/status', requireMaster, async (req, res) => {
     if (!['ativa', 'reprovada', 'cancelada', 'atencao'].includes(status)) {
       return res.status(400).json({ error: 'Status inválido.' });
     }
+    const anterior = await prisma.garantia.findUnique({ where: { id: String(req.params.id) } });
     const garantia = await prisma.garantia.update({ where: { id: String(req.params.id) }, data: { status } });
+
+    // Notifica o cliente numa mudança que FAZ SENTIDO pra ele (aprovação ou negativa),
+    // não em toda troca de status silenciosa (ex.: nada muda se já estava no mesmo status).
+    if (anterior && anterior.status !== status) {
+      if (status === 'ativa') {
+        await prisma.garantiaNotificacao.create({
+          data: {
+            clienteId: garantia.clienteId, garantiaId: garantia.id, tipo: 'garantia_aprovada', agendadaPara: hojeStr(),
+            mensagem: `Sua garantia GP Premium foi aprovada! Cobertura até ${garantia.kmMaximo.toLocaleString('pt-BR')} km.`,
+          },
+        });
+      } else if (status === 'reprovada' || status === 'cancelada') {
+        await prisma.garantiaNotificacao.create({
+          data: {
+            clienteId: garantia.clienteId, garantiaId: garantia.id, tipo: 'garantia_cancelada', agendadaPara: hojeStr(),
+            mensagem: status === 'reprovada'
+              ? 'Sua solicitação de garantia GP Premium não foi aprovada na auditoria. Procure uma loja credenciada para mais informações.'
+              : 'Sua garantia GP Premium foi cancelada. Procure uma loja credenciada para mais informações.',
+          },
+        });
+      }
+    }
     res.json(garantia);
   } catch (e) { erro(res, e); }
 });
@@ -434,6 +469,10 @@ router.get('/revisoes', async (req, res) => {
     const clientes = await prisma.garantiaCliente.findMany({ where: { id: { in: garantias.map((g) => g.clienteId) } } });
     const veiculos = await prisma.garantiaVeiculo.findMany({ where: { id: { in: garantias.map((g) => g.veiculoId) } } });
     const pneusRev = await prisma.garantiaRevisaoPneu.findMany({ where: { revisaoId: { in: revisoes.map((r) => r.id) } } });
+    // Loja que FEZ cada revisão (pode diferir da que vendeu) — pro painel mostrar onde foi feita.
+    const lojaIds = [...new Set(revisoes.map((r) => r.lojaId).filter(Boolean) as string[])];
+    const lojas = lojaIds.length ? await prisma.loja.findMany({ where: { id: { in: lojaIds } }, select: { id: true, store_name: true } }) : [];
+    const lojaPorId = Object.fromEntries(lojas.map((l) => [l.id, { id: l.id, nome: l.store_name }]));
     const garPorId = Object.fromEntries(garantias.map((g) => [g.id, g]));
     const cliPorId = Object.fromEntries(clientes.map((c) => [c.id, c]));
     const veiPorId = Object.fromEntries(veiculos.map((v) => [v.id, v]));
@@ -445,6 +484,7 @@ router.get('/revisoes', async (req, res) => {
         ...r,
         cliente: g ? (cliPorId[g.clienteId] || null) : null,
         veiculo: g ? (veiPorId[g.veiculoId] || null) : null,
+        loja: r.lojaId ? (lojaPorId[r.lojaId] || null) : null,
         pneus: pneusPorRev[r.id] || [],
       };
     }));
@@ -479,10 +519,26 @@ router.post('/revisoes', async (req, res) => {
     const pneusIn: any[] = Array.isArray(b.pneus) ? b.pneus : [];
     if (pneusIn.length === 0) return res.status(400).json({ error: 'Informe os dados de pelo menos 1 pneu.' });
 
-    // Qualidade das fotos da revisão (recusa preta/embaçada antes de salvar).
+    // Obrigatoriedades (regra do plano): quem revisou e as fotos comprobatórias.
+    // Cada pneu tem 3 fotos OBRIGATÓRIAS: etiqueta/DOT, lateral e banda de rodagem.
+    if (!String(b.mecanico || '').trim()) return res.status(400).json({ error: 'Informe o nome do mecânico responsável (obrigatório).' });
+    if (!b.fotoOdometroBase64) return res.status(400).json({ error: 'A foto do odômetro é obrigatória.' });
+    const AS_3 = [
+      { campo: 'fotoEtiquetaBase64', rotulo: 'etiqueta/DOT' },
+      { campo: 'fotoLateralBase64', rotulo: 'lateral' },
+      { campo: 'fotoBandaBase64', rotulo: 'banda de rodagem' },
+    ];
+    for (let i = 0; i < pneusIn.length; i++) {
+      for (const f of AS_3) {
+        if (!pneusIn[i][f.campo]) return res.status(400).json({ error: `Faltou a foto "${f.rotulo}" do pneu ${i + 1} — as 3 fotos de cada pneu são obrigatórias.` });
+      }
+    }
+
+    // Qualidade de TODAS as fotos (recusa preta/embaçada/pequena antes de salvar).
     const errosFotoRev = (await Promise.all([
       validarFoto(b.fotoOdometroBase64, 'odômetro'),
       validarFoto(b.etiquetaOleoBase64, 'etiqueta de óleo'),
+      ...pneusIn.flatMap((p, i) => AS_3.map((f) => validarFoto(p[f.campo], `pneu ${i + 1} (${f.rotulo})`))),
     ])).filter(Boolean);
     if (errosFotoRev.length) return res.status(400).json({ error: errosFotoRev[0] });
 
@@ -496,6 +552,13 @@ router.post('/revisoes', async (req, res) => {
     const maiorKmAnterior = Math.max(garantia.kmInicial, ultimaRev?.km || 0);
     const odometroSuspeito = km < maiorKmAnterior;
 
+    // KM esperado = km da última revisão (ou da ativação) + intervalo configurado. Se a
+    // revisão registrada fugir mais de 10% desse valor (pra mais OU pra menos), reprova
+    // automaticamente — sem esperar o master auditar.
+    const kmEsperado = maiorKmAnterior + cfg.intervaloRevisaoKm;
+    const diffPctEsperado = kmEsperado > 0 ? (Math.abs(km - kmEsperado) / kmEsperado) * 100 : 0;
+    const foraDoIntervalo = diffPctEsperado > 10;
+
     // Carimba a LOJA que fez a revisão (pode ser diferente da que vendeu — revisão
     // pode ser feita em qualquer loja credenciada).
     const revisor = req.user?.sub ? await prisma.usuario.findUnique({ where: { id: String(req.user.sub) }, select: { lojaId: true } }) : null;
@@ -505,6 +568,8 @@ router.post('/revisoes', async (req, res) => {
       data: {
         garantiaId: garantia.id,
         km,
+        kmEsperado,
+        status: foraDoIntervalo ? 'reprovada' : 'pendente',
         mecanico: String(b.mecanico || '').trim(),
         observacoes: String(b.observacoes || '').trim(),
         odometroSuspeito,
@@ -545,6 +610,9 @@ router.post('/revisoes', async (req, res) => {
           dotLido,
           observacoes: String(p.observacoes || '').trim(),
           recomendacao: String(p.recomendacao || '').trim(),
+          fotoUrl: salvarFoto(p.fotoEtiquetaBase64),
+          fotoLateralUrl: salvarFoto(p.fotoLateralBase64),
+          fotoBandaUrl: salvarFoto(p.fotoBandaBase64),
         };
       }),
     });
@@ -577,37 +645,49 @@ router.post('/revisoes', async (req, res) => {
       ? calcularKmPorDia(veiculo.oleoData, veiculo.oleoKm, km) : 0;
     await prisma.garantiaVeiculo.update({ where: { id: garantia.veiculoId }, data: { kmAtual: km, kmPorDia } });
 
-    // Novo status. Fraude (DOT divergente / odômetro suspeito) VENCE o "expirada": é
-    // mais acionável mandar pra análise do que deixar expirar limpo escondendo a
-    // divergência. Depois vem o limite de km, depois sulco baixo.
     let novoStatus = garantia.status;
-    if (dotDivergente || odometroSuspeito) novoStatus = 'em_analise';
-    else if (km >= garantia.kmMaximo) novoStatus = 'expirada';
-    else if (sulcoBaixo && garantia.status === 'ativa') novoStatus = 'atencao';
-    if (novoStatus !== garantia.status || dotDivergente) {
-      await prisma.garantia.update({
-        where: { id: garantia.id },
-        data: { status: novoStatus, ...(dotDivergente ? { dotDivergente: true } : {}) },
-      });
-    }
-
-    // Reagenda a próxima notificação de revisão — SÓ se a garantia continua em vigência.
-    // Se expirou (km), não faz sentido mandar o cliente a uma revisão que o sistema vai
-    // recusar. Sem etiqueta: mesmo nº de dias da revisão anterior, fallback 60 dias.
-    if (novoStatus !== 'expirada') {
-      const diasFallback = ultimaRev ? Math.max(1, diasEntre(ultimaRev.criadoEm.toISOString().slice(0, 10), hojeStr())) : 60;
-      await agendarProximaRevisao({
-        clienteId: garantia.clienteId, garantiaId: garantia.id, kmPorDia, intervaloKm: cfg.intervaloRevisaoKm, diasFallback,
-      });
-    } else {
-      // Expirou: limpa qualquer lembrete de revisão futuro que ainda não foi enviado.
+    if (foraDoIntervalo) {
+      // KM muito fora do esperado (>10% de diferença) → reprova na hora, sem esperar
+      // o master auditar. Cancela a garantia inteira e avisa o cliente.
+      novoStatus = 'cancelada';
+      await reprovarGarantiaDaRevisao(
+        garantia.id,
+        `Sua garantia GP Premium foi cancelada: a quilometragem desta revisão (${km.toLocaleString('pt-BR')} km) ficou muito diferente da esperada (${kmEsperado.toLocaleString('pt-BR')} km) — mais de 10% de diferença do intervalo de ${cfg.intervaloRevisaoKm.toLocaleString('pt-BR')} km entre revisões.`,
+      );
+      // Cancelada: limpa qualquer lembrete de revisão futuro que ainda não foi enviado.
       await prisma.garantiaNotificacao.deleteMany({ where: { garantiaId: garantia.id, tipo: 'revisao_proxima', enviada: false } });
+    } else {
+      // Novo status. Fraude (DOT divergente / odômetro suspeito) VENCE o "expirada": é
+      // mais acionável mandar pra análise do que deixar expirar limpo escondendo a
+      // divergência. Depois vem o limite de km, depois sulco baixo.
+      if (dotDivergente || odometroSuspeito) novoStatus = 'em_analise';
+      else if (km >= garantia.kmMaximo) novoStatus = 'expirada';
+      else if (sulcoBaixo && garantia.status === 'ativa') novoStatus = 'atencao';
+      if (novoStatus !== garantia.status || dotDivergente) {
+        await prisma.garantia.update({
+          where: { id: garantia.id },
+          data: { status: novoStatus, ...(dotDivergente ? { dotDivergente: true } : {}) },
+        });
+      }
+
+      // Reagenda a próxima notificação de revisão — SÓ se a garantia continua em vigência.
+      // Se expirou (km), não faz sentido mandar o cliente a uma revisão que o sistema vai
+      // recusar. Sem etiqueta: mesmo nº de dias da revisão anterior, fallback 60 dias.
+      if (novoStatus !== 'expirada') {
+        const diasFallback = ultimaRev ? Math.max(1, diasEntre(ultimaRev.criadoEm.toISOString().slice(0, 10), hojeStr())) : 60;
+        await agendarProximaRevisao({
+          clienteId: garantia.clienteId, garantiaId: garantia.id, kmPorDia, intervaloKm: cfg.intervaloRevisaoKm, diasFallback,
+        });
+      } else {
+        await prisma.garantiaNotificacao.deleteMany({ where: { garantiaId: garantia.id, tipo: 'revisao_proxima', enviada: false } });
+      }
     }
 
     res.status(201).json({
       id: revisao.id, dotDivergente, sulcoBaixo, odometroSuspeito,
       pneusCancelados: pneusCancelados.map((p) => rotuloPosicao(p.posicao)),
       statusGarantia: novoStatus, kmPorDia,
+      foraDoIntervalo, kmEsperado, diffPctEsperado: Math.round(diffPctEsperado),
     });
   } catch (e) { erro(res, e); }
 });
@@ -618,6 +698,24 @@ router.post('/revisoes/:id/status', requireMaster, async (req, res) => {
     const status = String(req.body.status || '');
     if (!['aprovada', 'reprovada'].includes(status)) return res.status(400).json({ error: 'Status inválido.' });
     const revisao = await prisma.garantiaRevisao.update({ where: { id: String(req.params.id) }, data: { status } });
+
+    if (status === 'reprovada') {
+      // Revisão REPROVADA cancela a garantia INTEIRA (regra do plano: revisão negada na
+      // auditoria = garantia negada ao cliente) e avisa o cliente pelo app.
+      await reprovarGarantiaDaRevisao(revisao.garantiaId, 'Sua garantia GP Premium foi cancelada: a revisão registrada não foi aprovada na auditoria. Procure uma loja credenciada para mais informações.');
+    } else {
+      // Revisão APROVADA — avisa o cliente que passou na auditoria (fecha o loop:
+      // ele já é avisado quando é reprovada, faz sentido avisar quando aprova também).
+      const garantia = await prisma.garantia.findUnique({ where: { id: revisao.garantiaId } });
+      if (garantia) {
+        await prisma.garantiaNotificacao.create({
+          data: {
+            clienteId: garantia.clienteId, garantiaId: garantia.id, tipo: 'revisao_aprovada', agendadaPara: hojeStr(),
+            mensagem: `Sua revisão de ${revisao.km.toLocaleString('pt-BR')} km foi aprovada! Sua garantia GP Premium continua em dia.`,
+          },
+        });
+      }
+    }
     res.json(revisao);
   } catch (e) { erro(res, e); }
 });

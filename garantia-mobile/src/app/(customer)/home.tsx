@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, SafeAreaView, RefreshControl, ActivityIndicator, Image, Modal } from 'react-native';
 import { useRouter, useFocusEffect } from 'expo-router';
-import { LogOut, Bell, Wrench, CheckCircle2, ChevronRight, X } from 'lucide-react-native';
+import { LogOut, Bell, Wrench, CheckCircle2, XCircle, ChevronRight, X } from 'lucide-react-native';
 import { api, API_BASE } from '../../lib/api';
 import { useAuth } from '../../lib/auth';
 import { registrarPush, mostrarLocais } from '../../lib/push';
@@ -20,7 +20,7 @@ const STATUS: Record<string, { label: string; cor: string }> = {
   expirada: { label: 'Expirada', cor: '#64748b' },
   cancelada: { label: 'Cancelada', cor: '#64748b' },
 };
-const ROTULO_POS: Record<string, string> = { dianteiro_esquerdo: 'Dianteiro Esq.', dianteiro_direito: 'Dianteiro Dir.', traseiro_esquerdo: 'Traseiro Esq.', traseiro_direito: 'Traseiro Dir.', estepe: 'Estepe' };
+const ROTULO_POS: Record<string, string> = { dianteiro_esquerdo: 'Pneu 1', dianteiro_direito: 'Pneu 2', traseiro_esquerdo: 'Pneu 3', traseiro_direito: 'Pneu 4', estepe: 'Estepe' };
 const fmtKm = (n: any) => Number(n || 0).toLocaleString('pt-BR');
 const fmtData = (s: any) => { const d = new Date(s); return isNaN(d.getTime()) ? '' : d.toLocaleDateString('pt-BR'); };
 
@@ -57,11 +57,12 @@ export default function CustomerHome() {
   return (
     <SafeAreaView style={s.container}>
       <ScrollView contentContainerStyle={s.scroll} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={async () => { setRefreshing(true); await carregar(); setRefreshing(false); }} />}>
+        {/* Logo completa "PNEUS GP PREMIUM" centralizada no topo (substituiu a logo GP
+            que ficava ao lado do "Olá"). */}
+        <Image source={require('../../../assets/logo-premium.png')} style={s.logoTopo} resizeMode="contain" />
+
         <View style={s.header}>
-          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
-            <Image source={require('../../../assets/logo-gp.png')} style={s.logoImg} resizeMode="contain" />
-            <View><Text style={s.hi}>Olá,</Text><Text style={s.nome}>{(identidade?.nome || '').split(' ')[0]}</Text></View>
-          </View>
+          <View><Text style={s.hi}>Olá,</Text><Text style={s.nome}>{(identidade?.nome || '').split(' ')[0]}</Text></View>
           <View style={{ flexDirection: 'row', gap: 8 }}>
             <TouchableOpacity onPress={() => router.push('/(customer)/notifications')} style={s.iconBtn}>
               <Bell size={18} color="#64748b" />{naoLidas > 0 && <View style={s.badge}><Text style={s.badgeT}>{naoLidas}</Text></View>}
@@ -141,10 +142,19 @@ export default function CustomerHome() {
               <Text style={s.secao}>Revisões ({(aberta.revisoes || []).length})</Text>
               {(aberta.revisoes || []).length === 0 && <Text style={s.detMuted}>Nenhuma revisão registrada ainda.</Text>}
               {(aberta.revisoes || []).map((r: any) => (
-                <View key={r.id} style={s.card}>
+                <View key={r.id} style={[s.card, r.status === 'reprovada' && { borderColor: '#e11d48', borderWidth: 1 }]}>
                   <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                     <Text style={s.pneuPos}>{fmtData(r.criadoEm)} • {fmtKm(r.km)} km</Text>
-                    {r.status === 'aprovada' ? <CheckCircle2 size={16} color="#16a34a" /> : <Text style={s.detMuted}>{r.status}</Text>}
+                    {r.status === 'aprovada' ? (
+                      <CheckCircle2 size={16} color="#16a34a" />
+                    ) : r.status === 'reprovada' ? (
+                      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
+                        <XCircle size={16} color="#e11d48" />
+                        <Text style={[s.detMuted, { color: '#e11d48', fontWeight: '700' }]}>Reprovada</Text>
+                      </View>
+                    ) : (
+                      <Text style={s.detMuted}>Pendente</Text>
+                    )}
                   </View>
                   {(r.pneus || []).map((rp: any) => (
                     <View key={rp.id} style={s.revPneu}>
@@ -222,6 +232,7 @@ const s = StyleSheet.create({
   center: { alignItems: 'center', justifyContent: 'center' },
   scroll: { padding: 18, paddingTop: 40 },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 },
+  logoTopo: { width: '78%', height: 46, alignSelf: 'center', marginBottom: 18 },
   logoImg: { width: 68, height: 26 },
   hi: { fontSize: 13, color: '#64748b' },
   nome: { fontSize: 18, fontWeight: '900', color: '#0f172a' },

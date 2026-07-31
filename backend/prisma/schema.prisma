@@ -387,6 +387,9 @@ model GarantiaRevisao {
   id               String   @id @default(uuid())
   garantiaId       String
   km               Int
+  // KM que deveria ter sido feita a revisão (última revisão/ativação + intervaloRevisaoKm
+  // da config, calculado no momento do registro) — usado pra auditoria e pro auto-reprovar.
+  kmEsperado       Int?
   status           String   @default("pendente") // pendente, aprovada, reprovada
   mecanico         String   @default("") // nome livre — mecânico de pista não tem login no painel
   observacoes      String   @default("")
@@ -418,6 +421,9 @@ model GarantiaRevisaoPneu {
   dotLido              String   @default("") // DOT visto na hora (comparado com o cadastrado)
   observacoes          String   @default("")
   recomendacao         String   @default("")
+  fotoUrl              String? // foto 1: etiqueta/DOT do pneu nesta revisão
+  fotoLateralUrl       String? // foto 2: lateral/flanco
+  fotoBandaUrl         String? // foto 3: banda de rodagem (sulco)
   criadoEm             DateTime @default(now())
 }
 

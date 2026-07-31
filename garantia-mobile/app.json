@@ -1,14 +1,21 @@
 {
   "expo": {
-    "name": "GP Premium",
+    "name": "GPPREMIUM",
     "slug": "gp-premium-mobile-app",
     "version": "1.0.0",
     "orientation": "portrait",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "assetBundlePatterns": [
       "**/*"
     ],
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0f172a"
+    },
     "ios": {
+      "bundleIdentifier": "com.gppremium.garantia",
       "supportsTablet": true,
       "infoPlist": {
         "NSCameraUsageDescription": "O app usa a câmera para fotografar o odômetro, os pneus e a etiqueta de óleo na garantia e nas revisões.",
@@ -16,7 +23,15 @@
       }
     },
     "android": {
-      "permissions": ["CAMERA"]
+      "package": "com.gppremium.garantia",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0f172a"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "bundler": "metro"
@@ -25,11 +40,20 @@
       "expo-router",
       [
         "expo-image-picker",
-        { "cameraPermission": "O app usa a câmera para fotografar odômetro, pneus e etiqueta de óleo." }
+        {
+          "cameraPermission": "O app usa a câmera para fotografar odômetro, pneus e etiqueta de óleo."
+        }
       ],
       "expo-notifications",
       "expo-secure-store"
     ],
-    "scheme": "gppremium"
+    "scheme": "gppremium",
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "7eca4298-d137-4034-a9d5-6c8c879d92be"
+      }
+    },
+    "owner": "madrazo017"
   }
 }
