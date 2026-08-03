@@ -305,6 +305,20 @@ model DisparoContato {
   criadoEm     DateTime  @default(now())
 }
 
+// Configuração da CAMPANHA de disparo de cada loja: a arte que vai junto do texto e o
+// teto de envios por dia. Antes a foto vivia só na memória da aba (sumia ao recarregar,
+// e cada operador tinha que anexar de novo) e o limite diário só existia no navegador —
+// duas abas abertas furavam o teto sem o servidor perceber.
+model DisparoCampanha {
+  id          String   @id @default(uuid())
+  storeId     String   @unique
+  fotoUrl     String? // arte enviada junto do texto (em /midias/disparo/)
+  fotoNome    String? // nome do arquivo original, só pra exibir no painel
+  limiteDia   Int      @default(30) // teto de envios por dia, valendo no SERVIDOR
+  atualizadoEm DateTime @updatedAt
+  criadoEm    DateTime @default(now())
+}
+
 // ===== Garantia 50.000 KM (módulo "aplicativo", importado do protótipo GPPREMIUMGARANTIA50K) =====
 // Fluxo: loja vende pneus → ativa a garantia pro cliente (nasce "pendente") → admin
 // audita e aprova/reprova → revisões periódicas registram sulcos e problemas por pneu.
