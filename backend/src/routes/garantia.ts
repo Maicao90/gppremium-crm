@@ -256,6 +256,49 @@ router.get('/clientes/busca', async (req, res) => {
   } catch (e) { erro(res, e); }
 });
 
+// Lista os CLIENTES do app (tela Usuários → aba "Clientes do app"). Até então o painel
+// não tinha como enxergar quem usa o app: o cliente vive na tabela GarantiaCliente
+// (login por CPF, separado dos Usuario do painel), então ninguém conseguia ver quem já
+// criou senha, quem instalou o app, nem ajudar quem esqueceu a senha.
+router.get('/clientes', requireMaster, async (_req, res) => {
+  try {
+    const clientes = await prisma.garantiaCliente.findMany({ orderBy: { criadoEm: 'desc' }, take: 500 });
+    const ids = clientes.map((c) => c.id);
+    const garantias = ids.length ? await prisma.garantia.findMany({ where: { clienteId: { in: ids } }, select: { id: true, clienteId: true, status: true } }) : [];
+    const porCliente: Record<string, { total: number; ativas: number }> = {};
+    garantias.forEach((g) => {
+      const acc = (porCliente[g.clienteId] = porCliente[g.clienteId] || { total: 0, ativas: 0 });
+      acc.total += 1;
+      if (g.status === 'ativa') acc.ativas += 1;
+    });
+    res.json(clientes.map((c) => ({
+      id: c.id,
+      nome: c.nome,
+      cpf: c.cpf,
+      telefone: c.telefone,
+      email: c.email,
+      criadoEm: c.criadoEm,
+      // Nunca devolve a senha (nem o hash) — só o que o painel precisa saber pra ajudar.
+      temSenha: !!c.senha,
+      appInstalado: !!c.pushToken,
+      garantias: porCliente[c.id]?.total || 0,
+      garantiasAtivas: porCliente[c.id]?.ativas || 0,
+    })));
+  } catch (e) { erro(res, e); }
+});
+
+// Libera o cliente a criar uma senha nova (quando ele esquece). NÃO define senha aqui:
+// apaga a atual, e o cliente refaz o cadastro no app com o próprio CPF — assim ninguém
+// no painel fica sabendo/escolhendo a senha de um cliente.
+router.post('/clientes/:id/liberar-senha', requireMaster, async (req, res) => {
+  try {
+    const cliente = await prisma.garantiaCliente.findUnique({ where: { id: String(req.params.id) } });
+    if (!cliente) return res.status(404).json({ error: 'Cliente não encontrado.' });
+    await prisma.garantiaCliente.update({ where: { id: cliente.id }, data: { senha: '' } });
+    res.json({ ok: true, nome: cliente.nome, aviso: 'O cliente pode entrar no app com o CPF e definir uma senha nova.' });
+  } catch (e) { erro(res, e); }
+});
+
 // Busca a garantia EM ANDAMENTO de uma placa — pra fazer REVISÃO. NÃO é escopada por
 // loja de propósito: pela regra do plano, o cliente pode revisar em QUALQUER loja
 // credenciada, então qualquer loja precisa achar o carro pela placa (mesmo que a
