@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Instalar extensão — GP Premium</title>
+<style>
+  :root {
+    --azul: #0e46a3;
+    --vermelho: #e21b24;
+    --bg: #0a0a0f;
+    --card: #16161f;
+    --card-2: #1e1e2b;
+    --texto: #f3f4f6;
+    --texto-muted: #9ca3af;
+    --borda: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--texto);
+    min-height: 100vh;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 32px 20px 80px; }
+  .topo { text-align: center; margin-bottom: 28px; }
+  .logo {
+    width: 64px; height: 64px; border-radius: 16px; margin: 0 auto 14px;
+    background: white; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 24px rgba(14,70,163,0.35);
+  }
+  .logo svg { width: 38px; height: 38px; }
+  h1 {
+    font-size: 1.5rem; margin: 0 0 6px;
+    background: linear-gradient(135deg, var(--azul) 0%, var(--vermelho) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .subtitulo { color: var(--texto-muted); font-size: 0.92rem; margin: 0; }
+
+  .aviso-mobile {
+    display: none;
+    background: rgba(217,137,42,0.12); border: 1px solid rgba(217,137,42,0.35);
+    border-radius: 12px; padding: 14px 16px; margin-bottom: 24px; font-size: 0.88rem;
+  }
+
+  .codigo-card {
+    background: var(--card); border: 1px solid var(--borda); border-radius: 16px;
+    padding: 20px; margin-bottom: 24px; text-align: center;
+  }
+  .codigo-label { font-size: 0.8rem; color: var(--texto-muted); margin-bottom: 10px; }
+  .codigo-valor {
+    font-family: 'SF Mono', Consolas, monospace; font-size: 1.4rem; font-weight: 700;
+    letter-spacing: 0.06em; color: var(--texto); word-break: break-all; margin-bottom: 14px;
+  }
+  .codigo-sem { color: var(--texto-muted); font-size: 0.85rem; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 12px 20px; border-radius: 10px; border: none; font-weight: 600;
+    font-size: 0.92rem; cursor: pointer; text-decoration: none; transition: opacity .15s;
+  }
+  .btn:active { opacity: 0.8; }
+  .btn-primario { background: linear-gradient(135deg, var(--azul) 0%, var(--vermelho) 100%); color: white; width: 100%; }
+  .btn-secundario { background: var(--card-2); color: var(--texto); border: 1px solid var(--borda); }
+
+  .passo {
+    background: var(--card); border: 1px solid var(--borda); border-radius: 16px;
+    padding: 18px 20px; margin-bottom: 14px; display: flex; gap: 14px; align-items: flex-start;
+  }
+  .passo-num {
+    flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--azul) 0%, var(--vermelho) 100%);
+    display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem;
+  }
+  .passo-corpo { flex: 1; min-width: 0; }
+  .passo-titulo { font-weight: 600; margin: 0 0 4px; font-size: 0.98rem; }
+  .passo-texto { color: var(--texto-muted); font-size: 0.86rem; line-height: 1.5; margin: 0 0 10px; }
+  .passo-texto strong { color: var(--texto); }
+
+  details {
+    background: var(--card); border: 1px solid var(--borda); border-radius: 16px;
+    padding: 16px 20px; margin-top: 20px;
+  }
+  summary { cursor: pointer; font-weight: 600; font-size: 0.9rem; }
+  details p { color: var(--texto-muted); font-size: 0.85rem; line-height: 1.6; }
+
+  .rodape { text-align: center; color: var(--texto-muted); font-size: 0.78rem; margin-top: 32px; }
+  .copiado { color: #22c55e; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topo">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="#0e46a3" stroke-width="2"/>
+          <path d="M8 12l3 3 5-6" stroke="#e21b24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h1>GP PREMIUM</h1>
+      <p class="subtitulo">Instalar a extensão do WhatsApp — leva 1 minuto</p>
+    </div>
+
+    <div class="aviso-mobile" id="avisoMobile">
+      📱 Você abriu esse link pelo celular. A extensão só funciona no <strong>computador</strong>, no Google Chrome. Guarde esse link e abra ele lá.
+    </div>
+
+    <div class="codigo-card">
+      <div class="codigo-label">Seu código de ativação</div>
+      <div class="codigo-valor" id="codigoValor">—</div>
+      <button class="btn btn-secundario" id="btnCopiarCodigo" onclick="copiarCodigo()">📋 Copiar código</button>
+      <div class="codigo-sem" id="codigoSemAviso" style="display:none; margin-top:10px;">
+        Não veio um código nesse link? Peça pra quem te chamou mandar de novo.
+      </div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-num">1</div>
+      <div class="passo-corpo">
+        <p class="passo-titulo">Baixe e instale (automático)</p>
+        <p class="passo-texto">Clique no botão abaixo. O Windows vai perguntar se pode adicionar as informações ao registro — clique em <strong>"Sim"</strong>. Isso NÃO instala nenhum programa, só avisa o Chrome pra buscar a extensão sozinho.</p>
+        <a class="btn btn-primario" href="/ext/instalar-extensao-gp.reg" download>⬇️ Baixar instalador</a>
+      </div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-num">2</div>
+      <div class="passo-corpo">
+        <p class="passo-titulo">Feche o Chrome e abra de novo</p>
+        <p class="passo-texto">Feche <strong>todas</strong> as janelas do Google Chrome (não só uma aba) e abra ele de novo. A extensão aparece sozinha em alguns segundos — não precisa fazer mais nada nessa parte.</p>
+      </div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-num">3</div>
+      <div class="passo-corpo">
+        <p class="passo-titulo">Abra o WhatsApp Web</p>
+        <p class="passo-texto">Vá em <strong>web.whatsapp.com</strong> e escaneie o QR Code com o WhatsApp do seu celular, como você já faz normalmente.</p>
+        <a class="btn btn-secundario" href="https://web.whatsapp.com" target="_blank" rel="noopener">Abrir WhatsApp Web</a>
+      </div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-num">4</div>
+      <div class="passo-corpo">
+        <p class="passo-titulo">Ative com o código</p>
+        <p class="passo-texto">Vai aparecer uma tela pedindo login. Clique em <strong>"Tenho um código de ativação"</strong> e cole o código lá em cima. Depois disso não precisa fazer login de novo, nunca mais.</p>
+      </div>
+    </div>
+
+    <details>
+      <summary>Não é Windows, ou o passo 1 não funcionou?</summary>
+      <p>Baixe a extensão em formato de pasta e instale manualmente:</p>
+      <p>1) <a href="/ext/gppremium-extensao-manual.zip" style="color:#8ab4ff;" download>Baixe o arquivo .zip aqui</a> e extraia a pasta.<br>
+      2) No Chrome, digite <strong>chrome://extensions</strong> na barra de endereço.<br>
+      3) Ative o <strong>"Modo do desenvolvedor"</strong> (canto superior direito).<br>
+      4) Clique em <strong>"Carregar sem compactação"</strong> e escolha a pasta extraída.<br>
+      5) Siga os passos 3 e 4 acima normalmente.</p>
+      <p style="margin-top:10px;">⚠️ Esse jeito manual não atualiza sozinho — de vez em quando pode ser preciso repetir com uma pasta nova.</p>
+    </details>
+
+    <p class="rodape">Extensão oficial GP Premium · Se você não pediu isso, pode ignorar esta página.</p>
+  </div>
+
+<script>
+  if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+    document.getElementById('avisoMobile').style.display = 'block';
+  }
+  const params = new URLSearchParams(window.location.search);
+  const codigo = (params.get('codigo') || '').trim();
+  const el = document.getElementById('codigoValor');
+  if (codigo) {
+    el.textContent = codigo;
+  } else {
+    el.textContent = '(nenhum código neste link)';
+    document.getElementById('btnCopiarCodigo').style.display = 'none';
+    document.getElementById('codigoSemAviso').style.display = 'block';
+  }
+  function copiarCodigo() {
+    navigator.clipboard.writeText(codigo).then(() => {
+      const btn = document.getElementById('btnCopiarCodigo');
+      const original = btn.textContent;
+      btn.textContent = '✅ Copiado!';
+      btn.classList.add('copiado');
+      setTimeout(() => { btn.textContent = original; btn.classList.remove('copiado'); }, 2000);
+    });
+  }
+</script>
+</body>
+</html>
