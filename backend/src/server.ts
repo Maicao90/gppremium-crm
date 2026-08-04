@@ -208,7 +208,15 @@ app.use('/api/configuracoes', configuracoesRouter);
 // login é público; as escritas de usuário exigem master (requireMaster dentro do router).
 app.use('/api/usuarios', authOpcional, usuariosRouter);
 app.use('/api/inbox', authWhatsapp, inboxRouter);
-app.use('/api/bot-pneus', authWhatsapp, botPneusRouter); // Bot Pneus (Charles) — proxy pro pneus-bot da Vercel
+// Bot Pneus (Charles) — proxy pro pneus-bot da Vercel.
+// ⚠️ VAZAMENTO CORRIGIDO 03/08/2026: esta rota subia com `authWhatsapp`, que só exige
+// token quando WHATSAPP_REQUIRE_AUTH=true — e essa env NÃO existe na VPS. Na prática
+// caía em authOpcional, que NÃO bloqueia: qualquer pessoa na internet chamava
+// /api/bot-pneus/resumo sem login e recebia 200 com telefone, status e resumo de
+// conversa dos clientes, mais a tabela de preços e o prompt inteiro em /config.
+// Era a única rota sensível do painel sem requireModulo. Agora segue o mesmo padrão
+// das outras (disparo, garantia): exige login E o módulo do Bot Pneus.
+app.use('/api/bot-pneus', requireAuth, requireModulo('at-botpneus'), botPneusRouter);
 // Ferramentas 100% do painel de anúncios: enforce no servidor (gerente sem esses módulos → 403).
 app.use('/api/ia', requireAuth, requireModulo('assistant'), iaRouter); // Assistente IA (Claude)
 app.use('/api/integracoes', requireAuth, requireAnyModulo(['dashboard', 'otimizador']), integracoesRouter); // Google/Meta Ads
