@@ -305,7 +305,21 @@ export default function Configuracoes({ onClose }) {
             </div>
           )}
         </div>
-        
+
+        {/* Agendamento (conexão própria do servidor via código de pareamento) — o que
+            permite "Agendar mensagem" funcionar mesmo com o navegador fechado. Sem essa
+            conexão, uma mensagem agendada fica presa sem nunca avisar por quê; por isso
+            deixamos isso auto-servido aqui, em vez de exigir que alguém do painel gere
+            pra cada pessoa manualmente. */}
+        {usuarioLogado && (
+          <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col gap-3">
+            <h3 className="font-bold text-sm text-gray-800 flex items-center gap-1.5" style={{ margin: 0 }}>
+              <span>📅</span> Agendamento
+            </h3>
+            <ConexaoAgendamento usuarioLogado={usuarioLogado} />
+          </div>
+        )}
+
         {/* Assinatura das Mensagens */}
         <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col gap-4">
           <h3 className="font-bold text-sm text-gray-800 flex items-center gap-1.5">
@@ -406,5 +420,109 @@ export default function Configuracoes({ onClose }) {
         </button>
       </form>
     </div>
+  )
+}
+
+// Conexão própria com o servidor (código de pareamento) — necessária SÓ pra "Agendar
+// mensagem" funcionar (mandar algo mais tarde, mesmo com o navegador fechado). A
+// conversa em tempo real dentro do WhatsApp Web NÃO passa por aqui: essa conexão é
+// usada só pelo servidor pra entregar o que foi agendado.
+function ConexaoAgendamento({ usuarioLogado }: { usuarioLogado: any }) {
+  const [conectado, setConectado] = useState<boolean>(!!usuarioLogado?.whatsappConectado)
+  const [numero, setNumero] = useState("")
+  const [codigo, setCodigo] = useState("")
+  const [carregando, setCarregando] = useState(false)
+  const [erro, setErro] = useState("")
+
+  // Enquanto um código está na tela, confere periodicamente se já conectou (o
+  // WhatsApp linka assim que a pessoa digita o código no celular dela).
+  useEffect(() => {
+    if (!codigo || conectado) return
+    const id = setInterval(async () => {
+      try {
+        const res = await fetch("https://crm.nailacademyprofissional.com/api/usuarios")
+        const lista = await res.json()
+        const eu = Array.isArray(lista) ? lista.find((u: any) => u.id === usuarioLogado.id) : null
+        if (eu?.whatsappConectado) {
+          setConectado(true)
+          setCodigo("")
+          const atualizado = { ...usuarioLogado, whatsappConectado: true }
+          localStorage.setItem("crm_usuario_logado", JSON.stringify(atualizado))
+        }
+      } catch { /* tenta de novo no próximo ciclo */ }
+    }, 4000)
+    return () => clearInterval(id)
+  }, [codigo, conectado, usuarioLogado])
+
+  const gerarCodigo = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setCarregando(true)
+    setErro("")
+    setCodigo("")
+    try {
+      const res = await fetch("https://crm.nailacademyprofissional.com/api/usuarios/me/codigo-pareamento", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ numero })
+      })
+      const data = await res.json()
+      if (res.ok) {
+        setCodigo(data.codigo)
+      } else {
+        setErro(data.error || "Erro ao gerar código.")
+      }
+    } catch {
+      setErro("Erro de comunicação com o servidor.")
+    } finally {
+      setCarregando(false)
+    }
+  }
+
+  if (conectado) {
+    return (
+      <div className="flex items-center gap-2 bg-green-50 p-2.5 rounded-lg border border-green-100">
+        <span className="text-[#00a884]">✅</span>
+        <p className="text-xs font-bold text-[#00a884]" style={{ margin: 0 }}>Conectado — "Agendar mensagem" está pronto pra usar.</p>
+      </div>
+    )
+  }
+
+  if (codigo) {
+    return (
+      <div className="flex flex-col gap-2">
+        <p className="text-[11px] text-gray-500" style={{ margin: 0 }}>
+          No <strong>seu celular</strong>: WhatsApp → <strong>⋮ Mais opções → Aparelhos conectados → Conectar com número de telefone</strong> → digite este código:
+        </p>
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 text-center">
+          <span className="font-mono font-bold text-lg tracking-widest text-gray-800">{codigo}</span>
+        </div>
+        <p className="text-[10px] text-gray-400 text-center" style={{ margin: 0 }}>Aguardando você digitar no celular…</p>
+      </div>
+    )
+  }
+
+  return (
+    <form onSubmit={gerarCodigo} className="flex flex-col gap-2">
+      <p className="text-[11px] text-gray-500" style={{ margin: 0 }}>
+        Só precisa disso se você for usar o botão de <strong>agendar mensagem</strong>. Pra conversar no dia a dia isso não é necessário.
+      </p>
+      <input
+        type="text"
+        required
+        value={numero}
+        onChange={(e) => setNumero(e.target.value)}
+        placeholder="Seu número com DDD (ex: 61999998888)"
+        className="w-full text-xs border border-gray-200 rounded-lg px-3 py-2 outline-none focus:border-[#00a884]"
+      />
+      {erro && <p className="text-[11px] text-red-500 font-semibold" style={{ margin: 0 }}>{erro}</p>}
+      <button
+        type="submit"
+        disabled={carregando}
+        className="w-full bg-gray-50 text-gray-700 hover:bg-gray-100 text-xs font-bold py-2.5 px-4 rounded-lg border border-gray-200 transition"
+        style={{ cursor: carregando ? 'wait' : 'pointer', fontFamily: 'inherit' }}
+      >
+        {carregando ? 'Gerando…' : 'Conectar agendamento'}
+      </button>
+    </form>
   )
 }

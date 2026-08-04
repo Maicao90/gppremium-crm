@@ -320,12 +320,49 @@ router.put('/:id/autoresposta', async (req, res) => {
   }
 });
 
+// SELF-SERVICE: a própria pessoa logada (equipe OU parceiro externo) conecta o WhatsApp
+// da conta dela mesma — usa o id de dentro do token (req.user.sub), nunca um id vindo do
+// corpo da requisição, então não tem como pedir código pra conta de outra pessoa.
+// Existe pro parceiro da extensão (sem acesso ao painel) conseguir ativar o agendamento
+// sozinho, sem precisar que o master gere isso por ele toda vez.
+//
+// PRECISA vir ANTES de '/:id/codigo-pareamento' abaixo: o Express testa rotas na ordem
+// em que são registradas, e '/:id/...' também bate com o literal "me" como se fosse um
+// id — registrada depois, essa rota nunca seria alcançada (caiu nisso ao testar: dava
+// "Apenas o administrador" porque quem respondia era a rota de baixo, não esta).
+router.post('/me/codigo-pareamento', requireAuth, async (req, res) => {
+  try {
+    const id = String(req.user!.sub);
+    const { numero } = req.body;
+    if (!numero) return res.status(400).json({ error: 'Informe o número de telefone (com DDD).' });
+    const usuario = await prisma.usuario.findUnique({ where: { id } });
+    if (!usuario || !usuario.ativo) return res.status(404).json({ error: 'Conta não encontrada.' });
+    if (usuario.whatsappDonoId) {
+      return res.status(400).json({ error: 'Sua conta compartilha o WhatsApp de outra pessoa — não é possível conectar uma conexão própria.' });
+    }
+    const { gerarCodigoPareamento } = require('../workers/whatsappService');
+    const codigo = await gerarCodigoPareamento(id, String(numero));
+    res.json({ codigo });
+  } catch (error: any) {
+    console.error('Erro ao gerar código de pareamento (self-service):', error?.message);
+    res.status(400).json({ error: error?.message || 'Erro ao gerar código de pareamento.' });
+  }
+});
+
 // Gerar CÓDIGO DE PAREAMENTO (8 dígitos) para conectar o WhatsApp sem QR.
 // Body: { numero: 'DDI+DDD+telefone' }. O atendente digita o código no WhatsApp
 // (Aparelhos conectados → Conectar com número de telefone).
-router.post('/:id/codigo-pareamento', async (req, res) => {
+//
+// ⚠️ Adicionado requireAuth+requireMaster aqui em 04/08/2026: essa rota não tinha
+// NENHUMA proteção — qualquer chamada com um :id válido gerava o código de
+// pareamento de QUALQUER pessoa, sem checar se quem pediu era aquela mesma
+// pessoa ou um admin. Achado ao construir a conexão self-service dos parceiros
+// da extensão (ver /me/codigo-pareamento acima) — quem quiser conectar a
+// PRÓPRIA conta agora usa a rota /me acima; esta aqui volta a ser só do painel
+// (admin gerando pra outro atendente, fluxo original).
+router.post('/:id/codigo-pareamento', requireAuth, requireMaster, async (req, res) => {
   try {
-    const { id } = req.params;
+    const id = String(req.params.id);
     const { numero } = req.body;
     if (!numero) return res.status(400).json({ error: 'Informe o número de telefone (com DDD).' });
     // Quem COMPARTILHA WhatsApp não tem conexão própria pra parear — gerar código pra
