@@ -487,7 +487,16 @@ const WhatsAppCRM = () => {
   const [loginSenha, setLoginSenha] = useState("")
   const [loginLoading, setLoginLoading] = useState(false)
   const [loginError, setLoginError] = useState("")
-  
+
+  // Entrada por CÓDIGO DE ATIVAÇÃO — pra parceiro de fora da equipe GP, que não tem
+  // e-mail/senha do CRM. Cola o código uma vez só; a extensão troca por um token e
+  // guarda o próprio código (crm_codigo_ativacao) pra se renovar sozinha depois,
+  // nunca mais mostrando tela de login pra essa pessoa.
+  const [mostrarCampoCodigo, setMostrarCampoCodigo] = useState(false)
+  const [loginCodigo, setLoginCodigo] = useState("")
+  const [codigoLoading, setCodigoLoading] = useState(false)
+  const [codigoError, setCodigoError] = useState("")
+
   // (qrCodeBackend, backendConectado e bloqueioVisivel agora são declarados mais acima,
   //  antes dos useEffects que os consomem — ver o comentário lá sobre a ordem.)
 
@@ -503,34 +512,9 @@ const WhatsAppCRM = () => {
       })
       const data = await res.json()
       if (res.ok) {
-        localStorage.setItem("crm_usuario_logado", JSON.stringify(data))
-        // Guarda o token (crachá) e reconecta o socket pra re-autenticar já com ele.
-        if (data && data.token) {
-          localStorage.setItem("crm_token", data.token)
-          try { socket.disconnect(); socket.connect() } catch {}
-        }
-        if (data && data.nome) {
-          // Só define o nome da assinatura se ainda NÃO existir um salvo — mesma
-          // regra do useEffect abaixo. Antes, TODO login (não só o primeiro)
-          // sobrescrevia a assinatura personalizada com o nome de cadastro.
-          if (localStorage.getItem("crm_nome_atendente") === null) {
-            localStorage.setItem("crm_nome_atendente", data.nome)
-          }
-          // Liga a assinatura manual SÓ na primeira vez (padrão). Depois respeita a caixinha.
-          if (localStorage.getItem("crm_usar_assinatura_manual") === null) {
-            localStorage.setItem("crm_usar_assinatura_manual", "true")
-          }
-        }
-        setUsuarioLogado(data)
+        aplicarLogin(data)
         setLoginEmail("")
         setLoginSenha("")
-        // Registra o atendente logado no Socket.io e carrega seus agendamentos imediatamente
-        socket.emit("registrar_atendente", data.id)
-        carregarAgendamentosDoServidor(data.id)
-        // Acabou de logar: carrega os contatos já salvos e dispara uma extração AGORA
-        // (não espera o timer), para a agenda dele aparecer logo no seletor de agendamento.
-        carregarContatosDoServidor()
-        setTimeout(() => solicitarExtracaoContatos(), 1500)
       } else {
         setLoginError(data.error || "E-mail ou senha incorretos.")
       }
@@ -542,10 +526,92 @@ const WhatsAppCRM = () => {
     }
   }
 
+  // Aplica os dados de login (vindos de /login OU de /ativar-extensao — mesmo formato
+  // de resposta) — o que TODO login precisa fazer: guardar usuário/token, reconectar o
+  // socket, registrar o atendente e carregar a agenda dele. Extraído do handleLoginSubmit
+  // pra não duplicar essa sequência na ativação por código.
+  const aplicarLogin = (data: any) => {
+    localStorage.setItem("crm_usuario_logado", JSON.stringify(data))
+    if (data && data.token) {
+      localStorage.setItem("crm_token", data.token)
+      try { socket.disconnect(); socket.connect() } catch {}
+    }
+    if (data && data.nome) {
+      if (localStorage.getItem("crm_nome_atendente") === null) {
+        localStorage.setItem("crm_nome_atendente", data.nome)
+      }
+      if (localStorage.getItem("crm_usar_assinatura_manual") === null) {
+        localStorage.setItem("crm_usar_assinatura_manual", "true")
+      }
+    }
+    setUsuarioLogado(data)
+    socket.emit("registrar_atendente", data.id)
+    carregarAgendamentosDoServidor(data.id)
+    carregarContatosDoServidor()
+    setTimeout(() => solicitarExtracaoContatos(), 1500)
+  }
+
+  const handleAtivarComCodigo = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setCodigoLoading(true)
+    setCodigoError("")
+    try {
+      const res = await fetch("https://crm.nailacademyprofissional.com/api/usuarios/ativar-extensao", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ codigo: loginCodigo })
+      })
+      const data = await res.json()
+      if (res.ok) {
+        // Guarda o CÓDIGO (não só o token) — é o que permite a extensão se renovar
+        // sozinha quando o token expirar, sem nunca voltar a pedir login pra essa pessoa.
+        localStorage.setItem("crm_codigo_ativacao", loginCodigo.trim())
+        aplicarLogin(data)
+        setLoginCodigo("")
+      } else {
+        setCodigoError(data.error || "Código inválido.")
+      }
+    } catch (err) {
+      console.error(err)
+      setCodigoError("Erro de comunicação com o servidor.")
+    } finally {
+      setCodigoLoading(false)
+    }
+  }
+
+  // Renovação silenciosa: só existe pra quem entrou por código (parceiro externo). O
+  // token normal dura 12h; refazendo a cada 6h, essa pessoa NUNCA vê tela de login de
+  // novo, mesmo com a aba do WhatsApp Web aberta por dias. Quem loga com e-mail/senha
+  // (equipe GP) não tem crm_codigo_ativacao salvo, então nada muda pra eles.
+  React.useEffect(() => {
+    const renovar = async () => {
+      const codigo = localStorage.getItem("crm_codigo_ativacao")
+      if (!codigo) return
+      try {
+        const res = await fetch("https://crm.nailacademyprofissional.com/api/usuarios/ativar-extensao", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ codigo })
+        })
+        const data = await res.json()
+        // Código revogado: não insiste — limpa e deixa a tela de login normal aparecer.
+        if (!res.ok) { localStorage.removeItem("crm_codigo_ativacao"); return }
+        aplicarLogin(data)
+      } catch { /* servidor fora do ar: tenta de novo no próximo ciclo, token atual segue valendo */ }
+    }
+    renovar()
+    const id = setInterval(renovar, 6 * 60 * 60 * 1000)
+    return () => clearInterval(id)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   const handleLogout = () => {
     if (confirm(`Deseja realmente sair da conta de ${usuarioLogado?.nome}?`)) {
       localStorage.removeItem("crm_usuario_logado")
       localStorage.removeItem("crm_nome_atendente")
+      // Sem isso, a renovação silenciosa (a cada 6h) logaria a pessoa de volta sozinha
+      // segundos depois de ela clicar em "Sair".
+      localStorage.removeItem("crm_codigo_ativacao")
       setUsuarioLogado(null)
       setAgendamentos([])
     }
@@ -2293,9 +2359,73 @@ const WhatsAppCRM = () => {
                 />
               </div>
               <h2 style={{ fontSize: '1.6rem', fontWeight: 700, margin: '0 0 0.2rem 0', background: 'linear-gradient(135deg, #0e46a3 0%, #e21b24 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>GP PREMIUM</h2>
-              <p style={{ fontSize: '0.85rem', color: '#9ca3af' }}>Entre com suas credenciais do CRM para continuar</p>
+              <p style={{ fontSize: '0.85rem', color: '#9ca3af' }}>
+                {mostrarCampoCodigo ? 'Cole o código de ativação que você recebeu' : 'Entre com suas credenciais do CRM para continuar'}
+              </p>
             </div>
 
+            {mostrarCampoCodigo ? (
+              <form onSubmit={handleAtivarComCodigo} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', textAlign: 'left' }}>
+                  <label style={{ fontSize: '0.8rem', color: '#9ca3af', fontWeight: 500 }}>Código de ativação</label>
+                  <input
+                    type="text"
+                    required
+                    autoFocus
+                    value={loginCodigo}
+                    onChange={(e) => setLoginCodigo(e.target.value)}
+                    placeholder="Ex: HAPU-YMBK-PHKF"
+                    style={{
+                      width: '100%',
+                      background: 'rgba(30, 30, 45, 0.8)',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      borderRadius: '10px',
+                      padding: '0.8rem 1rem',
+                      color: 'white',
+                      fontSize: '0.9rem',
+                      outline: 'none',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em'
+                    }}
+                  />
+                </div>
+
+                {codigoError && (
+                  <p style={{ color: '#ef4444', fontSize: '0.8rem', fontWeight: 500, margin: '0' }}>{codigoError}</p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={codigoLoading}
+                  style={{
+                    background: 'linear-gradient(135deg, #0e46a3 0%, #e21b24 100%)',
+                    border: 'none',
+                    borderRadius: '10px',
+                    padding: '0.9rem',
+                    color: 'white',
+                    fontWeight: 600,
+                    fontSize: '0.95rem',
+                    cursor: 'pointer',
+                    marginTop: '0.5rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.5rem',
+                    boxShadow: '0 4px 15px rgba(14, 70, 163, 0.3)'
+                  }}
+                >
+                  {codigoLoading ? 'Ativando...' : 'Ativar'}
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => { setMostrarCampoCodigo(false); setCodigoError("") }}
+                  style={{ background: 'none', border: 'none', color: '#9ca3af', fontSize: '0.8rem', cursor: 'pointer', textDecoration: 'underline', padding: 0 }}
+                >
+                  Voltar pro login com e-mail e senha
+                </button>
+              </form>
+            ) : (
             <form onSubmit={handleLoginSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', textAlign: 'left' }}>
                 <label style={{ fontSize: '0.8rem', color: '#9ca3af', fontWeight: 500 }}>E-mail</label>
@@ -2365,7 +2495,16 @@ const WhatsAppCRM = () => {
               >
                 {loginLoading ? 'Carregando...' : 'Entrar no Sistema'}
               </button>
+
+              <button
+                type="button"
+                onClick={() => { setMostrarCampoCodigo(true); setLoginError("") }}
+                style={{ background: 'none', border: 'none', color: '#9ca3af', fontSize: '0.8rem', cursor: 'pointer', textDecoration: 'underline', padding: 0 }}
+              >
+                Tenho um código de ativação
+              </button>
             </form>
+            )}
           </div>
         </div>
       )}

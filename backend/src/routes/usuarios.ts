@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import crypto from 'crypto';
 import { prisma } from '../server';
 import { connectedUsers, logoutWhatsApp, resolverConexaoEfetiva } from '../workers/whatsappService';
 import { conferirSenha, hashSenha } from '../auth/senha';
@@ -90,7 +91,9 @@ router.get('/', async (req, res) => {
   try {
     // Gerente logado no painel só enxerga atendentes da própria loja (papel/loja
     // lidos do banco — imune a token velho). Sem token (extensão) ou master: vê tudo.
-    const where: any = { ativo: true };
+    // externo:false sempre — parceiro da extensão (fora da equipe) nunca aparece aqui
+    // nem no seletor de loja da Caixa de Entrada, só no painel escondido de Parceiros.
+    const where: any = { ativo: true, externo: false };
     const ljLista = await lojaDoUsuario(req);
     if (ljLista) where.lojaId = ljLista;
     const usuarios = await prisma.usuario.findMany({
@@ -433,6 +436,153 @@ router.post('/:id/parar-compartilhar', async (req, res) => {
   } catch (error: any) {
     console.error('Erro ao parar compartilhamento de WhatsApp:', error);
     res.status(500).json({ error: error?.message || 'Erro ao parar compartilhamento.' });
+  }
+});
+
+// ── PARCEIROS DA EXTENSÃO (painel escondido, só o master vê) ──────────────────────
+// Gente de fora da equipe GP que usa só a extensão do WhatsApp, sem virar funcionário
+// formal: entra com um CÓDIGO em vez de e-mail/senha. Fica de fora de qualquer tela
+// normal (usuários, seletor de loja) — só existe nas rotas abaixo e no painel escondido.
+
+// Alfabeto sem caracteres confundíveis (sem 0/O, 1/I/L) — o código é lido/digitado
+// por gente de fora, então precisa ser fácil de copiar certo por WhatsApp/telefone.
+const ALFABETO_CODIGO = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+// Guarda SEM hífen (é a chave de busca — precisa bater exatamente com o que
+// normalizarCodigo() produz a partir do que a pessoa digitar/colar, com ou sem
+// hífen/espaço). Os hífens são só cosméticos, aplicados na hora de EXIBIR.
+function gerarCodigoAtivacao(): string {
+  const bytes = crypto.randomBytes(12);
+  let s = '';
+  for (let i = 0; i < 12; i++) s += ALFABETO_CODIGO[bytes[i]! % ALFABETO_CODIGO.length];
+  return s;
+}
+const normalizarCodigo = (v: unknown) => String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+
+router.get('/parceiros', requireAuth, requireMaster, async (_req, res) => {
+  try {
+    const parceiros = await prisma.usuario.findMany({
+      where: { externo: true },
+      select: { id: true, nome: true, ativo: true, codigoAtivacao: true, whatsappConectado: true, criadoEm: true },
+      orderBy: { criadoEm: 'desc' },
+    });
+    res.json(parceiros);
+  } catch (error) {
+    console.error('Erro ao listar parceiros da extensão:', error);
+    res.status(500).json({ error: 'Erro ao listar parceiros.' });
+  }
+});
+
+router.post('/parceiros', requireAuth, requireMaster, async (req, res) => {
+  try {
+    const nome = String(req.body?.nome || '').trim();
+    if (!nome) return res.status(400).json({ error: 'Dê um nome pra identificar o parceiro.' });
+
+    // Placeholder de e-mail/senha só pra satisfazer o schema — ninguém usa: o acesso
+    // deste usuário é exclusivamente pelo código, nunca por /login.
+    const email = `parceiro-${crypto.randomBytes(6).toString('hex')}@ext.gpcrm.local`;
+    const senhaInutilizavel = await hashSenha(crypto.randomBytes(24).toString('hex'));
+    const codigoAtivacao = gerarCodigoAtivacao();
+
+    const parceiro = await prisma.usuario.create({
+      data: {
+        nome, email, senha: senhaInutilizavel,
+        role: 'operador',
+        modulosPermitidos: JSON.stringify(['at-inbox']), // só Caixa de Entrada — nada além disso
+        externo: true,
+        codigoAtivacao,
+      },
+      select: { id: true, nome: true, ativo: true, codigoAtivacao: true, whatsappConectado: true, criadoEm: true },
+    });
+    res.status(201).json(parceiro);
+  } catch (error) {
+    console.error('Erro ao criar parceiro da extensão:', error);
+    res.status(500).json({ error: 'Erro ao criar parceiro.' });
+  }
+});
+
+// Busca o parceiro por id e confere externo:true antes de qualquer ação — Prisma não
+// aceita filtro composto em update/delete (where só leva campo único), então o check
+// de "é mesmo um parceiro externo" é feito aqui, na mão, antes de tocar no registro.
+async function acharParceiro(id: string) {
+  const u = await prisma.usuario.findUnique({ where: { id } });
+  return u && u.externo ? u : null;
+}
+
+router.post('/parceiros/:id/revogar', requireAuth, requireMaster, async (req, res) => {
+  try {
+    const id = String(req.params.id);
+    if (!(await acharParceiro(id))) return res.status(404).json({ error: 'Parceiro não encontrado.' });
+    // Some é imediato pra chamada nova; um token já emitido continua valendo até
+    // expirar (até 12h) — o middleware de auth não confere o banco a cada request.
+    const p = await prisma.usuario.update({ where: { id }, data: { ativo: false } });
+    res.json({ ok: true, nome: p.nome });
+  } catch {
+    res.status(500).json({ error: 'Erro ao revogar.' });
+  }
+});
+
+router.post('/parceiros/:id/reativar', requireAuth, requireMaster, async (req, res) => {
+  try {
+    const id = String(req.params.id);
+    if (!(await acharParceiro(id))) return res.status(404).json({ error: 'Parceiro não encontrado.' });
+    const p = await prisma.usuario.update({ where: { id }, data: { ativo: true } });
+    res.json({ ok: true, nome: p.nome });
+  } catch {
+    res.status(500).json({ error: 'Erro ao reativar.' });
+  }
+});
+
+// Gera um código novo — invalida o antigo na hora (quem ainda não trocou por token
+// não consegue mais; quem já tinha token válido segue até ele expirar).
+router.post('/parceiros/:id/novo-codigo', requireAuth, requireMaster, async (req, res) => {
+  try {
+    const id = String(req.params.id);
+    if (!(await acharParceiro(id))) return res.status(404).json({ error: 'Parceiro não encontrado.' });
+    const p = await prisma.usuario.update({
+      where: { id },
+      data: { codigoAtivacao: gerarCodigoAtivacao() },
+    });
+    res.json({ codigoAtivacao: p.codigoAtivacao });
+  } catch {
+    res.status(500).json({ error: 'Erro ao gerar novo código.' });
+  }
+});
+
+router.delete('/parceiros/:id', requireAuth, requireMaster, async (req, res) => {
+  try {
+    const id = String(req.params.id);
+    if (!(await acharParceiro(id))) return res.status(404).json({ error: 'Parceiro não encontrado.' });
+    await prisma.usuario.delete({ where: { id } });
+    res.json({ ok: true });
+  } catch {
+    res.status(500).json({ error: 'Erro ao excluir.' });
+  }
+});
+
+// PÚBLICA DE PROPÓSITO — é o próprio mecanismo de login do parceiro (troca o código
+// pelo token, no lugar de e-mail/senha). O código tem 12 caracteres aleatórios (~10^18
+// combinações), então adivinhar não é viável; tentativa inválida só loga um aviso.
+router.post('/ativar-extensao', async (req, res) => {
+  try {
+    const codigo = normalizarCodigo(req.body?.codigo);
+    if (!codigo) return res.status(400).json({ error: 'Digite o código de ativação.' });
+
+    const parceiro = await prisma.usuario.findFirst({ where: { codigoAtivacao: codigo, externo: true } });
+    if (!parceiro) {
+      console.warn(`[ativar-extensao] Código não encontrado (tentativa): ${codigo.slice(0, 4)}****`);
+      return res.status(401).json({ error: 'Código inválido.' });
+    }
+    if (!parceiro.ativo) return res.status(401).json({ error: 'Este código foi revogado.' });
+
+    const modulos = parseModulos(parceiro.modulosPermitidos);
+    const token = assinarToken({ sub: parceiro.id, role: parceiro.role, lojaId: parceiro.lojaId || null, modulos });
+    const { senha: _, codigoAtivacao: __, ...dados } = parceiro;
+    // Mesmo formato do /login (campos no topo + token + usuario) — a extensão lê
+    // data.token/data.id/data.nome direto, sem precisar saber que veio por código.
+    res.json({ ...dados, token, usuario: dados });
+  } catch (error) {
+    console.error('Erro ao ativar extensão por código:', error);
+    res.status(500).json({ error: 'Erro interno ao ativar.' });
   }
 });
 

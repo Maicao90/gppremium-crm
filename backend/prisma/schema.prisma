@@ -41,6 +41,13 @@ model Usuario {
   // (ex.: ["at-dashboard","at-atendentes","at-inbox"] para um gerente).
   // Roles master/admin ignoram e enxergam tudo. Default "[]" (sem acesso ao painel).
   modulosPermitidos    String             @default("[]")
+  // Parceiro externo (fora da equipe GP) que usa só a extensão do WhatsApp, sem conta
+  // formal de funcionário. Fica de fora das telas normais (Usuários, seletor de loja da
+  // Caixa de Entrada) — só aparece no painel escondido de Parceiros da Extensão.
+  externo              Boolean            @default(false)
+  // Código que a extensão troca por um token de acesso — dispensa e-mail/senha pro
+  // parceiro externo. Só usuário externo tem; nulo pros funcionários normais.
+  codigoAtivacao       String?            @unique
   agendamentos         Agendamento[]
   autoReplyHistories   AutoReplyHistory[]
   criadoEm             DateTime           @default(now())
