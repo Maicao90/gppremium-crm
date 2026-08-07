@@ -11,14 +11,19 @@ import { Foto } from '../../lib/foto';
 const soDigitos = (s: string) => s.replace(/\D/g, '');
 const fmtCPF = (s: string) => soDigitos(s).slice(0, 11).replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d{1,2})$/, '$1-$2');
 
+// O cliente pode comprar de 1 a 5 pneus (nem todo mundo troca os 4) — o mecânico marca
+// QUAIS posições foram compradas e só essas viram cartão pra preencher. Antes a tela
+// exigia os 4 sempre, travando quem comprou 2.
 const POSICOES = [
-  { key: 'dianteiro_esquerdo', label: 'Pneu 1' },
-  { key: 'dianteiro_direito', label: 'Pneu 2' },
-  { key: 'traseiro_esquerdo', label: 'Pneu 3' },
-  { key: 'traseiro_direito', label: 'Pneu 4' },
+  { key: 'dianteiro_esquerdo', label: 'Dianteiro esquerdo' },
+  { key: 'dianteiro_direito', label: 'Dianteiro direito' },
+  { key: 'traseiro_esquerdo', label: 'Traseiro esquerdo' },
+  { key: 'traseiro_direito', label: 'Traseiro direito' },
+  { key: 'estepe', label: 'Estepe' },
 ];
+const rotuloPosicao = (key: string) => POSICOES.find((p) => p.key === key)?.label || key;
 type PneuForm = { posicao: string; marca: string; medida: string; dot: string; codigoSerie: string; foto: Foto; fotoEtiqueta: Foto };
-const pneuInicial = (): PneuForm[] => POSICOES.map((p) => ({ posicao: p.key, marca: 'GP Premium', medida: '', dot: '', codigoSerie: '', foto: null, fotoEtiqueta: null }));
+const novoPneu = (posicao: string): PneuForm => ({ posicao, marca: 'GP Premium', medida: '', dot: '', codigoSerie: '', foto: null, fotoEtiqueta: null });
 
 export default function NewWarranty() {
   const router = useRouter();
@@ -30,8 +35,18 @@ export default function NewWarranty() {
   const [fVeic, setFVeic] = useState<Foto>(null);
   const [fOdo, setFOdo] = useState<Foto>(null);
   const [fEtiq, setFEtiq] = useState<Foto>(null);
-  const [pneus, setPneus] = useState<PneuForm[]>(pneuInicial());
+  const [pneus, setPneus] = useState<PneuForm[]>([]);
   const [salvando, setSalvando] = useState(false);
+
+  // Liga/desliga uma posição. Ao ligar cria o cartão daquele pneu; ao desligar joga fora
+  // o que já tinha sido preenchido nele (inclusive as fotos) — é o que o mecânico espera
+  // ao dizer "esse aqui o cliente não comprou".
+  const togglePosicao = (key: string) => setPneus((ps) => {
+    if (ps.some((p) => p.posicao === key)) return ps.filter((p) => p.posicao !== key);
+    // Mantém sempre na ordem das POSICOES, não na ordem em que foi clicado.
+    const comNovo = [...ps, novoPneu(key)];
+    return POSICOES.map((pos) => comNovo.find((p) => p.posicao === pos.key)).filter(Boolean) as PneuForm[];
+  });
 
   const buscar = async () => {
     if (soDigitos(cpf).length !== 11) return Alert.alert('Ops', 'Digite o CPF completo.');
@@ -55,6 +70,12 @@ export default function NewWarranty() {
     if (!cli.nome.trim()) return Alert.alert('Ops', 'Informe o nome do cliente.');
     if (soDigitos(vei.placa).length + vei.placa.replace(/[^A-Za-z]/g, '').length < 7) { /* validação leve */ }
     if (!vei.placa.trim() || vei.km === '') return Alert.alert('Ops', 'Informe placa e KM atual.');
+    if (pneus.length === 0) return Alert.alert('Ops', 'Marque quais pneus o cliente comprou.');
+    for (const p of pneus) {
+      const nome = rotuloPosicao(p.posicao);
+      if (!p.foto?.base64) return Alert.alert('Foto obrigatória', `Tire a foto do pneu ${nome}.`);
+      if (!p.fotoEtiqueta?.base64) return Alert.alert('Foto obrigatória', `Tire a foto da etiqueta do pneu ${nome}.`);
+    }
     setSalvando(true);
     try {
       const r = await api<any>('/api/garantia/garantias', {
@@ -130,10 +151,27 @@ export default function NewWarranty() {
           )}
         </View>
 
+        {/* Quais pneus o cliente comprou (nem sempre são os 4) */}
+        <View style={s.card}>
+          <Text style={s.cardTitle}>Pneus comprados</Text>
+          <Text style={s.ajuda}>Marque só as posições que receberam pneu novo.</Text>
+          <View style={s.wrap}>
+            {POSICOES.map((pos) => {
+              const marcado = pneus.some((p) => p.posicao === pos.key);
+              return (
+                <TouchableOpacity key={pos.key} style={[s.pill, marcado && s.pillOn]} onPress={() => togglePosicao(pos.key)} activeOpacity={0.8}>
+                  <Text style={[s.pillT, marcado && s.pillTOn]}>{pos.label}</Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+          <Text style={s.ajuda}>{pneus.length === 0 ? 'Nenhum pneu marcado ainda.' : `${pneus.length} pneu(s) selecionado(s).`}</Text>
+        </View>
+
         {/* Pneus */}
         {pneus.map((p, i) => (
           <View key={p.posicao} style={s.card}>
-            <Text style={s.cardTitle}>{POSICOES[i].label}</Text>
+            <Text style={s.cardTitle}>{rotuloPosicao(p.posicao)}</Text>
             <View style={{ flexDirection: 'row', gap: 8 }}>
               <TextInput style={[s.input, { flex: 1 }]} placeholder="Medida (205/55 R16)" placeholderTextColor="#94a3b8" value={p.medida} onChangeText={(v) => setPneu(i, 'medida', v)} />
               <TextInput style={[s.input, { width: 90 }]} placeholder="DOT" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={p.dot} onChangeText={(v) => setPneu(i, 'dot', soDigitos(v).slice(0, 4))} />
@@ -166,6 +204,12 @@ const s = StyleSheet.create({
   check: { width: 20, height: 20, borderRadius: 5, borderWidth: 1.5, borderColor: '#cbd5e1' },
   checkOn: { backgroundColor: '#0ea5e9', borderColor: '#0ea5e9' },
   checkTxt: { fontSize: 13, color: '#475569' },
+  ajuda: { fontSize: 12, color: '#64748b', marginBottom: 8 },
+  wrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginBottom: 4 },
+  pill: { paddingHorizontal: 12, paddingVertical: 8, borderRadius: 999, borderWidth: 1, borderColor: '#cbd5e1' },
+  pillOn: { backgroundColor: '#0ea5e9', borderColor: '#0ea5e9' },
+  pillT: { fontSize: 12.5, color: '#475569', fontWeight: '600' },
+  pillTOn: { color: '#fff' },
   btn: { flexDirection: 'row', gap: 8, backgroundColor: '#0ea5e9', borderRadius: 12, padding: 16, alignItems: 'center', justifyContent: 'center', marginTop: 4 },
   btnText: { color: '#fff', fontWeight: '800', fontSize: 15, letterSpacing: 0.5 },
 });
