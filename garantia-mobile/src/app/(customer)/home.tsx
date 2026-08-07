@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, SafeAreaView, RefreshControl, ActivityIndicator, Image, Modal } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, RefreshControl, ActivityIndicator, Image, Modal } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { LogOut, Bell, Wrench, CheckCircle2, XCircle, ChevronRight, X } from 'lucide-react-native';
 import { api, API_BASE } from '../../lib/api';

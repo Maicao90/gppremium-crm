@@ -530,9 +530,13 @@ router.post('/garantias/:id/status', requireMaster, async (req, res) => {
 
 router.get('/revisoes', async (req, res) => {
   try {
-    // Loja vê as revisões que ELA fez (revisao.lojaId); master vê todas.
+    // Loja vê as revisões que ELA fez (revisao.lojaId); master vê todas. Filtro opcional
+    // por criadoPorId — histórico de UM mecânico específico (conta própria, não texto
+    // livre) — usado pelo painel na ficha do mecânico.
     const esc = await escopoGarantia(req);
-    const revisoes = await prisma.garantiaRevisao.findMany({ where: whereEscopo(esc), orderBy: { criadoEm: 'desc' }, take: 100 });
+    const where: any = whereEscopo(esc);
+    if (req.query.criadoPorId) where.criadoPorId = String(req.query.criadoPorId);
+    const revisoes = await prisma.garantiaRevisao.findMany({ where, orderBy: { criadoEm: 'desc' }, take: 100 });
     const garantias = await prisma.garantia.findMany({ where: { id: { in: revisoes.map((r) => r.garantiaId) } } });
     const clientes = await prisma.garantiaCliente.findMany({ where: { id: { in: garantias.map((g) => g.clienteId) } } });
     const veiculos = await prisma.garantiaVeiculo.findMany({ where: { id: { in: garantias.map((g) => g.veiculoId) } } });
@@ -619,6 +623,9 @@ router.post('/revisoes', async (req, res) => {
       const primeira = ehPrimeiraRevisaoDoPneu(String(p.posicao || ''));
       if (!Array.isArray(p.problemas) || p.problemas.length === 0) {
         return res.status(400).json({ error: `Marque o checklist de problemas do pneu ${i + 1} (use "Nenhum problema encontrado" se estiver tudo certo).` });
+      }
+      if (soDigitos(p.dotLido).length !== 4) {
+        return res.status(400).json({ error: `Digite os 4 dígitos do DOT do pneu ${i + 1} (além da foto).` });
       }
       if (primeira && !p.fotoEtiquetaInternaBase64) {
         return res.status(400).json({ error: `Falta a foto da etiqueta interna do pneu ${i + 1} — é a 1ª revisão desse pneu, ela é obrigatória.` });

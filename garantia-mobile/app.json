@@ -12,7 +12,7 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#0f172a"
+      "backgroundColor": "#ffffff"
     },
     "ios": {
       "bundleIdentifier": "com.gppremium.garantia",
@@ -32,7 +32,7 @@
         "android.permission.CAMERA",
         "android.permission.RECORD_AUDIO"
       ],
-      "versionCode": 8
+      "versionCode": 10
     },
     "web": {
       "bundler": "metro"

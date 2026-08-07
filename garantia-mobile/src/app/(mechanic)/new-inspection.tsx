@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, SafeAreaView, TextInput, ActivityIndicator, Alert } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, ActivityIndicator, Alert } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { ArrowLeft, Search, Wrench, AlertTriangle } from 'lucide-react-native';
 import { api } from '../../lib/api';
@@ -92,6 +93,7 @@ export default function NewInspection() {
       const p = pneus[i];
       const nomePneu = ROTULO[p.posicao] || i + 1;
       if (p.problemas.length === 0) return Alert.alert('Checklist obrigatório', `Marque o checklist de problemas do ${nomePneu} (use "Nenhum problema encontrado" se estiver tudo certo).`);
+      if (p.dotLido.length !== 4) return Alert.alert('DOT obrigatório', `Digite os 4 dígitos do DOT do ${nomePneu} (além da foto).`);
       if (!p.jaRevisado && !p.fotoEtiquetaInterna?.base64) return Alert.alert('Foto obrigatória', `Tire a foto da etiqueta interna do ${nomePneu} — é a 1ª revisão desse pneu.`);
       const falta = !p.fotoDot?.base64 ? 'DOT junto com o pneu' : !p.fotoBandaDireita?.base64 ? 'banda — ombro direito' : !p.fotoBandaEsquerda?.base64 ? 'banda — ombro esquerdo' : '';
       if (falta) return Alert.alert('Foto obrigatória', `Tire a foto "${falta}" do ${nomePneu}.`);
@@ -163,7 +165,7 @@ export default function NewInspection() {
                   ))}
                 </View>
 
-                <TextInput style={s.input} placeholder="DOT lido (4 dígitos)" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={p.dotLido} onChangeText={(v) => setPneu(i, 'dotLido', v.replace(/\D/g, '').slice(0, 4))} />
+                <TextInput style={s.input} placeholder="DOT lido (4 dígitos, obrigatório)" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={p.dotLido} onChangeText={(v) => setPneu(i, 'dotLido', v.replace(/\D/g, '').slice(0, 4))} />
 
                 <TouchableOpacity style={[s.arr, p.arrancamentoBorracha && s.arrOn]} onPress={() => setPneu(i, 'arrancamentoBorracha', !p.arrancamentoBorracha)}>
                   <AlertTriangle size={15} color={p.arrancamentoBorracha ? '#e11d48' : '#94a3b8'} />
