@@ -31,7 +31,8 @@
       "permissions": [
         "android.permission.CAMERA",
         "android.permission.RECORD_AUDIO"
-      ]
+      ],
+      "versionCode": 8
     },
     "web": {
       "bundler": "metro"
@@ -45,7 +46,8 @@
         }
       ],
       "expo-notifications",
-      "expo-secure-store"
+      "expo-secure-store",
+      "@react-native-community/datetimepicker"
     ],
     "scheme": "gppremium",
     "extra": {

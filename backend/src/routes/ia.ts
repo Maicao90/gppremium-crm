@@ -118,7 +118,7 @@ async function montarContexto(): Promise<string> {
   // 5) Atendentes (nome, WhatsApp conectado)
   try {
     const atendentes = await prisma.usuario.findMany({
-      where: { ativo: true },
+      where: { ativo: true, externo: false },
       select: { nome: true, whatsappConectado: true },
       take: 20,
     });

@@ -41,6 +41,12 @@ router.get('/', async (req, res) => {
 
     if (criadoPorId && criadoPorId !== 'undefined' && criadoPorId !== 'null') {
       where.criadoPorId = String(criadoPorId);
+    } else {
+      // Listagem geral (sem um criadoPorId específico pedido) — parceiro da extensão
+      // não aparece aqui: some da lista de Agendamentos das Métricas/Disparo pra quem
+      // vê tudo (master). Quem pede o PRÓPRIO id explicitamente (parceiro ou não)
+      // continua vendo os agendamentos dele normalmente.
+      where.criadoPor = { externo: false };
     }
 
     // Gerente logado só vê agendamentos dos atendentes da própria loja

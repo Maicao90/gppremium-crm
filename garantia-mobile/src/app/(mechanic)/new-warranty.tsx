@@ -4,6 +4,7 @@ import { useRouter } from 'expo-router';
 import { ArrowLeft, Search } from 'lucide-react-native';
 import { api } from '../../lib/api';
 import { FotoBotao } from '../../components/FotoBotao';
+import { CampoData } from '../../components/CampoData';
 import { Foto } from '../../lib/foto';
 
 const soDigitos = (s: string) => s.replace(/\D/g, '');
@@ -15,8 +16,8 @@ const POSICOES = [
   { key: 'traseiro_esquerdo', label: 'Pneu 3' },
   { key: 'traseiro_direito', label: 'Pneu 4' },
 ];
-type PneuForm = { posicao: string; marca: string; medida: string; dot: string; codigoSerie: string; foto: Foto };
-const pneuInicial = (): PneuForm[] => POSICOES.map((p) => ({ posicao: p.key, marca: 'GP Premium', medida: '', dot: '', codigoSerie: '', foto: null }));
+type PneuForm = { posicao: string; marca: string; medida: string; dot: string; codigoSerie: string; foto: Foto; fotoEtiqueta: Foto };
+const pneuInicial = (): PneuForm[] => POSICOES.map((p) => ({ posicao: p.key, marca: 'GP Premium', medida: '', dot: '', codigoSerie: '', foto: null, fotoEtiqueta: null }));
 
 export default function NewWarranty() {
   const router = useRouter();
@@ -64,7 +65,10 @@ export default function NewWarranty() {
             semEtiquetaOleo: oleo.sem, oleoData: oleo.data, oleoKm: oleo.km,
             fotoBase64: fVeic?.base64 || null, fotoOdometroBase64: fOdo?.base64 || null, etiquetaOleoBase64: fEtiq?.base64 || null,
           },
-          pneus: pneus.map((p) => ({ posicao: p.posicao, marca: p.marca, medida: p.medida, dot: p.dot, codigoSerie: p.codigoSerie, fotoBase64: p.foto?.base64 || null })),
+          pneus: pneus.map((p) => ({
+            posicao: p.posicao, marca: p.marca, medida: p.medida, dot: p.dot, codigoSerie: p.codigoSerie,
+            fotoBase64: p.fotoEtiqueta?.base64 || null, fotoLateralBase64: p.foto?.base64 || null,
+          })),
         },
       });
       Alert.alert('Garantia ativada!', `Nasce como pendente pra auditoria.${r.proximaRevisaoEm ? `\nPróxima revisão prevista: ${r.proximaRevisaoEm}.` : ''}`, [
@@ -118,7 +122,7 @@ export default function NewWarranty() {
           </TouchableOpacity>
           {!oleo.sem && (
             <>
-              <TextInput style={s.input} placeholder="Data da última troca (AAAA-MM-DD)" placeholderTextColor="#94a3b8" value={oleo.data} onChangeText={(v) => setOleo({ ...oleo, data: v })} />
+              <CampoData label="Data da última troca" valor={oleo.data} onChange={(v) => setOleo({ ...oleo, data: v })} />
               <TextInput style={s.input} placeholder="KM na última troca" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={oleo.km} onChangeText={(v) => setOleo({ ...oleo, km: v })} />
               <FotoBotao label="Foto da etiqueta de óleo" valor={fEtiq} onChange={setFEtiq} />
             </>
@@ -135,6 +139,7 @@ export default function NewWarranty() {
             </View>
             <TextInput style={s.input} placeholder="Nº de série" placeholderTextColor="#94a3b8" value={p.codigoSerie} onChangeText={(v) => setPneu(i, 'codigoSerie', v)} />
             <FotoBotao label="Foto do pneu" valor={p.foto} onChange={(f) => setPneu(i, 'foto', f)} />
+            <FotoBotao label="Foto da etiqueta do pneu" valor={p.fotoEtiqueta} onChange={(f) => setPneu(i, 'fotoEtiqueta', f)} />
           </View>
         ))}
 

@@ -10,8 +10,12 @@ const ROTULO: Record<string, string> = { dianteiro_esquerdo: 'Pneu 1', dianteiro
 // Profundidade selecionável 1,6 a 10,0
 const OPCOES = Array.from({ length: 85 }, (_, i) => Number((1.6 + i * 0.1).toFixed(1)));
 
-// Checklist de problemas por pneu — mesmos códigos que o painel do CRM lê.
+// Checklist de problemas por pneu — mesmos códigos que o painel do CRM lê. "nenhum" é
+// especial: marca que o mecânico REALMENTE revisou e não achou nada (obrigatório marcar
+// algo — nem que seja isso — pra não deixar passar sem olhar).
+const NENHUM_PROBLEMA = 'nenhum';
 const PROBLEMAS: { chave: string; rotulo: string }[] = [
+  { chave: NENHUM_PROBLEMA, rotulo: 'Nenhum problema encontrado' },
   { chave: 'desgaste_irregular', rotulo: 'Desgaste irregular' },
   { chave: 'desalinhamento', rotulo: 'Desalinhamento' },
   { chave: 'desbalanceamento', rotulo: 'Desbalanceamento' },
@@ -25,7 +29,15 @@ const ESTADOS: { chave: string; rotulo: string }[] = [
   { chave: 'excelente', rotulo: 'Excelente' }, { chave: 'bom', rotulo: 'Bom' }, { chave: 'regular', rotulo: 'Regular' }, { chave: 'ruim', rotulo: 'Ruim' }, { chave: 'trocar', rotulo: 'Trocar' },
 ];
 
-type PneuRev = { posicao: string; profundidadeSulco: number | ''; estado: string; arrancamentoBorracha: boolean; dotLido: string; fotoEtiqueta: Foto; fotoLateral: Foto; fotoBanda: Foto; problemas: string[]; observacoes: string; recomendacao: string };
+type PneuRev = {
+  posicao: string;
+  // Se esse pneu específico JÁ passou por alguma revisão antes (vem do backend em
+  // /garantias/por-placa) — só quando for a 1ª vez que pede a foto da etiqueta interna.
+  jaRevisado: boolean;
+  profundidadeSulco: number | ''; estado: string; arrancamentoBorracha: boolean; dotLido: string;
+  fotoEtiquetaInterna: Foto; fotoDot: Foto; fotoBandaDireita: Foto; fotoBandaEsquerda: Foto;
+  problemas: string[]; observacoes: string; recomendacao: string;
+};
 
 export default function NewInspection() {
   const router = useRouter();
@@ -48,7 +60,11 @@ export default function NewInspection() {
       if (!r.encontrada) { Alert.alert('Nada encontrado', 'Nenhuma garantia em andamento pra essa placa.'); }
       else {
         setGarantia(r.garantia);
-        setPneus((r.garantia.pneus || []).filter((p: any) => !p.cancelada).map((p: any) => ({ posicao: p.posicao, profundidadeSulco: '', estado: 'bom', arrancamentoBorracha: false, dotLido: '', fotoEtiqueta: null, fotoLateral: null, fotoBanda: null, problemas: [], observacoes: '', recomendacao: '' })));
+        setPneus((r.garantia.pneus || []).filter((p: any) => !p.cancelada).map((p: any) => ({
+          posicao: p.posicao, jaRevisado: !!p.jaRevisado, profundidadeSulco: '', estado: 'bom', arrancamentoBorracha: false, dotLido: '',
+          fotoEtiquetaInterna: null, fotoDot: null, fotoBandaDireita: null, fotoBandaEsquerda: null,
+          problemas: [], observacoes: '', recomendacao: '',
+        })));
         setKm('');
       }
     } catch (e: any) { Alert.alert('Erro', e?.message); }
@@ -56,9 +72,15 @@ export default function NewInspection() {
   };
 
   const setPneu = (i: number, k: string, v: any) => setPneus((ps) => ps.map((p, j) => (j === i ? { ...p, [k]: v } : p)));
+  // "Nenhum problema" é exclusivo: marcar ele limpa qualquer outro selecionado, e marcar
+  // qualquer outro problema tira o "nenhum" (não faz sentido os dois juntos).
   const toggleProb = (i: number, chave: string) => setPneus((ps) => ps.map((p, j) => {
     if (j !== i) return p;
-    return { ...p, problemas: p.problemas.includes(chave) ? p.problemas.filter((x) => x !== chave) : [...p.problemas, chave] };
+    if (chave === NENHUM_PROBLEMA) {
+      return { ...p, problemas: p.problemas.includes(NENHUM_PROBLEMA) ? [] : [NENHUM_PROBLEMA] };
+    }
+    const semNenhum = p.problemas.filter((x) => x !== NENHUM_PROBLEMA);
+    return { ...p, problemas: semNenhum.includes(chave) ? semNenhum.filter((x) => x !== chave) : [...semNenhum, chave] };
   }));
 
   const salvar = async () => {
@@ -68,8 +90,11 @@ export default function NewInspection() {
     if (!fOdo?.base64) return Alert.alert('Foto obrigatória', 'Tire a foto do odômetro.');
     for (let i = 0; i < pneus.length; i++) {
       const p = pneus[i];
-      const falta = !p.fotoEtiqueta?.base64 ? 'etiqueta/DOT' : !p.fotoLateral?.base64 ? 'lateral' : !p.fotoBanda?.base64 ? 'banda de rodagem' : '';
-      if (falta) return Alert.alert('Foto obrigatória', `Tire a foto "${falta}" do pneu ${ROTULO[p.posicao] || i + 1}. São 3 fotos por pneu.`);
+      const nomePneu = ROTULO[p.posicao] || i + 1;
+      if (p.problemas.length === 0) return Alert.alert('Checklist obrigatório', `Marque o checklist de problemas do ${nomePneu} (use "Nenhum problema encontrado" se estiver tudo certo).`);
+      if (!p.jaRevisado && !p.fotoEtiquetaInterna?.base64) return Alert.alert('Foto obrigatória', `Tire a foto da etiqueta interna do ${nomePneu} — é a 1ª revisão desse pneu.`);
+      const falta = !p.fotoDot?.base64 ? 'DOT junto com o pneu' : !p.fotoBandaDireita?.base64 ? 'banda — ombro direito' : !p.fotoBandaEsquerda?.base64 ? 'banda — ombro esquerdo' : '';
+      if (falta) return Alert.alert('Foto obrigatória', `Tire a foto "${falta}" do ${nomePneu}.`);
     }
     setSalvando(true);
     try {
@@ -81,9 +106,10 @@ export default function NewInspection() {
             posicao: p.posicao, profundidadeSulco: Number(p.profundidadeSulco) || 0, estado: p.estado,
             arrancamentoBorracha: p.arrancamentoBorracha, dotLido: p.dotLido, problemas: p.problemas,
             observacoes: p.observacoes, recomendacao: p.recomendacao,
-            fotoEtiquetaBase64: p.fotoEtiqueta?.base64 || null,
-            fotoLateralBase64: p.fotoLateral?.base64 || null,
-            fotoBandaBase64: p.fotoBanda?.base64 || null,
+            fotoEtiquetaInternaBase64: p.fotoEtiquetaInterna?.base64 || null,
+            fotoDotBase64: p.fotoDot?.base64 || null,
+            fotoBandaDireitaBase64: p.fotoBandaDireita?.base64 || null,
+            fotoBandaEsquerdaBase64: p.fotoBandaEsquerda?.base64 || null,
           })),
         },
       });
@@ -144,22 +170,29 @@ export default function NewInspection() {
                   <Text style={[s.arrT, p.arrancamentoBorracha && { color: '#e11d48' }]}>Arrancamento de borracha (cancela este pneu)</Text>
                 </TouchableOpacity>
 
-                <Text style={[s.lbl, { marginTop: 4 }]}>Problemas encontrados</Text>
+                <Text style={[s.lbl, { marginTop: 4 }]}>Problemas encontrados (obrigatório marcar algo)</Text>
                 <View style={s.wrap}>
-                  {PROBLEMAS.map((pr) => (
-                    <TouchableOpacity key={pr.chave} style={[s.pill, p.problemas.includes(pr.chave) && s.pillProbOn]} onPress={() => toggleProb(i, pr.chave)}>
-                      <Text style={[s.pillT, p.problemas.includes(pr.chave) && s.pillTOn]}>{pr.rotulo}</Text>
-                    </TouchableOpacity>
-                  ))}
+                  {PROBLEMAS.map((pr) => {
+                    const marcado = p.problemas.includes(pr.chave);
+                    const ehNenhum = pr.chave === NENHUM_PROBLEMA;
+                    return (
+                      <TouchableOpacity key={pr.chave} style={[s.pill, marcado && (ehNenhum ? s.pillNenhumOn : s.pillProbOn)]} onPress={() => toggleProb(i, pr.chave)}>
+                        <Text style={[s.pillT, marcado && s.pillTOn]}>{pr.rotulo}</Text>
+                      </TouchableOpacity>
+                    );
+                  })}
                 </View>
 
                 <TextInput style={[s.input, { marginTop: 8 }]} placeholder="Observações deste pneu (opcional)" placeholderTextColor="#94a3b8" value={p.observacoes} onChangeText={(v) => setPneu(i, 'observacoes', v)} />
                 <TextInput style={s.input} placeholder="Recomendação (ex.: fazer alinhamento)" placeholderTextColor="#94a3b8" value={p.recomendacao} onChangeText={(v) => setPneu(i, 'recomendacao', v)} />
 
-                <Text style={[s.lbl, { marginTop: 4 }]}>3 fotos obrigatórias (nítidas)</Text>
-                <FotoBotao label="1) Etiqueta / DOT" valor={p.fotoEtiqueta} onChange={(f) => setPneu(i, 'fotoEtiqueta', f)} />
-                <FotoBotao label="2) Lateral" valor={p.fotoLateral} onChange={(f) => setPneu(i, 'fotoLateral', f)} />
-                <FotoBotao label="3) Banda de rodagem (sulco)" valor={p.fotoBanda} onChange={(f) => setPneu(i, 'fotoBanda', f)} />
+                <Text style={[s.lbl, { marginTop: 4 }]}>{p.jaRevisado ? '3 fotos obrigatórias (nítidas)' : '4 fotos obrigatórias (nítidas) — 1ª revisão deste pneu'}</Text>
+                {!p.jaRevisado && (
+                  <FotoBotao label="Etiqueta interna do pneu" valor={p.fotoEtiquetaInterna} onChange={(f) => setPneu(i, 'fotoEtiquetaInterna', f)} />
+                )}
+                <FotoBotao label="DOT junto com o pneu" valor={p.fotoDot} onChange={(f) => setPneu(i, 'fotoDot', f)} />
+                <FotoBotao label="Banda — ombro direito, com o profundímetro" valor={p.fotoBandaDireita} onChange={(f) => setPneu(i, 'fotoBandaDireita', f)} />
+                <FotoBotao label="Banda — ombro esquerdo, com o profundímetro" valor={p.fotoBandaEsquerda} onChange={(f) => setPneu(i, 'fotoBandaEsquerda', f)} />
               </View>
             ))}
 
@@ -193,6 +226,7 @@ const s = StyleSheet.create({
   pill: { paddingHorizontal: 11, paddingVertical: 6, borderRadius: 999, borderWidth: 1, borderColor: '#cbd5e1' },
   pillOn: { backgroundColor: '#0ea5e9', borderColor: '#0ea5e9' },
   pillProbOn: { backgroundColor: '#e11d48', borderColor: '#e11d48' },
+  pillNenhumOn: { backgroundColor: '#16a34a', borderColor: '#16a34a' },
   pillT: { fontSize: 12, color: '#475569', fontWeight: '600' },
   pillTOn: { color: '#fff' },
   arr: { flexDirection: 'row', alignItems: 'center', gap: 8, padding: 10, borderRadius: 9, borderWidth: 1, borderColor: '#e2e8f0', marginBottom: 4 },

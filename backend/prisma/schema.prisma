@@ -305,10 +305,14 @@ model DisparoContato {
   valor        Float     @default(0) // valor já gasto pelo cliente (LTV) — pra priorizar
   servicos     String    @default("")
   verificar    Boolean   @default(false) // telefone com formato estranho, conferir antes
-  mensagemBase String    @default("") // com __DESCONTO__ / __VALIDADE__ pra preencher
+  mensagemBase String    @default("") // texto pronto do disparo (sem placeholder de desconto)
   contatado    Boolean   @default(false)
   contatadoEm  DateTime? // última vez que "contatado" virou true (checkbox OU botão)
   enviadoEm    DateTime? // só quando o botão "Abrir WhatsApp" foi clicado — conta pro limite diário
+  // QUEM disparou (Usuario.id). A lista de contatos é compartilhada pela loja toda, mas
+  // o dono quer ver quanto cada atendente fez — sem isso, só dava pra contar o total.
+  // Campo solto (sem @relation), mesmo estilo dos outros campos soltos do schema.
+  enviadoPorId String?
   criadoEm     DateTime  @default(now())
 }
 
@@ -442,10 +446,15 @@ model GarantiaRevisaoPneu {
   dotLido              String   @default("") // DOT visto na hora (comparado com o cadastrado)
   observacoes          String   @default("")
   recomendacao         String   @default("")
-  fotoUrl              String? // foto 1: etiqueta/DOT do pneu nesta revisão
-  fotoLateralUrl       String? // foto 2: lateral/flanco
-  fotoBandaUrl         String? // foto 3: banda de rodagem (sulco)
-  criadoEm             DateTime @default(now())
+  // Etiqueta INTERNA do pneu — só obrigatória na 1ª revisão de CADA pneu (o pneu não
+  // muda de identidade entre revisões, então documentar de novo toda vez é redundante).
+  // "1ª revisão desse pneu" é calculado no backend: nunca apareceu antes num
+  // GarantiaRevisaoPneu com esse pneuId → é a primeira.
+  fotoEtiquetaInternaUrl String?
+  fotoDotUrl             String? // DOT junto com o pneu — obrigatória em TODA revisão
+  fotoBandaDireitaUrl    String? // banda de rodagem perto do ombro direito, com o profundímetro no pneu — TODA revisão
+  fotoBandaEsquerdaUrl   String? // banda de rodagem perto do ombro esquerdo, com o profundímetro no pneu — TODA revisão
+  criadoEm               DateTime @default(now())
 }
 
 // Config do módulo (singleton id="global"). Os números do plano são configuráveis

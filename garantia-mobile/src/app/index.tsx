@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, SafeAreaView, Alert, ActivityIndicator, ScrollView, Image } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, SafeAreaView, Alert, ActivityIndicator, ScrollView, Image, KeyboardAvoidingView, Platform } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Lock, User, Eye, EyeOff } from 'lucide-react-native';
 import { useAuth } from '../lib/auth';
@@ -48,6 +48,10 @@ export default function LoginScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
+      {/* No iOS quem já resolve isso é o automaticallyAdjustKeyboardInsets do ScrollView
+          abaixo — só o Android não tinha NADA cuidando do teclado. behavior=undefined
+          no iOS deixa o KeyboardAvoidingView inerte, evitando compensar duas vezes. */}
+      <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'android' ? 'height' : undefined} keyboardVerticalOffset={24}>
       <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled" automaticallyAdjustKeyboardInsets keyboardDismissMode="interactive">
         <View style={styles.header}>
           <Image source={require('../../assets/logo-gp.png')} style={styles.logo} resizeMode="contain" />
@@ -84,6 +88,7 @@ export default function LoginScreen() {
           </TouchableOpacity>
         </View>
       </ScrollView>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 }

@@ -172,7 +172,9 @@ router.get('/metricas', requireAuth, async (req, res) => {
     // Busca usuários ativos e inclui apenas os agendamentos do período selecionado.
     // Gerente só vê as métricas dos atendentes da própria loja (papel/loja lidos do
     // banco — imune a token velho de quem foi promovido a gerente após o login).
-    const whereU: any = { ativo: true };
+    // externo:false — parceiro da extensão nunca aparece aqui, só no painel escondido
+    // de Parceiros (mesma regra da listagem normal de usuários, acima).
+    const whereU: any = { ativo: true, externo: false };
     const ljMetricas = await lojaDoUsuario(req);
     if (ljMetricas) whereU.lojaId = ljMetricas;
     const usuarios = await prisma.usuario.findMany({

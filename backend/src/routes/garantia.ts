@@ -6,6 +6,12 @@ import Jimp from 'jimp';
 import { prisma } from '../server';
 import { requireMaster } from '../middlewares/requireModulo';
 import { ehMaster } from '../auth/modulos';
+import { dispararPushDevidos } from '../workers/garantiaPush';
+
+// Dispara o envio de push AGORA em vez de esperar o próximo ciclo do worker (até 30min).
+// Fire-and-forget (não trava a resposta da rota nem falha ela se o Expo cair) — o
+// worker de 30min continua existindo como rede de segurança/retry.
+function dispararPushAgora(): void { dispararPushDevidos().catch(() => { /* worker de 30min tenta de novo */ }); }
 
 // ===== Garantia 50.000 KM =====
 // Módulo "aplicativo" do painel (importado do protótipo GPPREMIUMGARANTIA50K).
@@ -108,9 +114,16 @@ async function validarFoto(base64: any, rotulo: string): Promise<string | null> 
     const img = await Jimp.read(buf);
     const w = img.bitmap.width, h = img.bitmap.height;
     if (w < 300 || h < 300) return `A foto de "${rotulo}" está com resolução muito baixa. Tire de novo, mais nítida.`;
+    // A câmera manda foto de 8-12 megapixels; escanear isso pixel a pixel (2x: brilho
+    // e nitidez) é o que deixava "ativar garantia" lento — vários segundos por foto,
+    // em série, x até 18 fotos numa ativação. Reduz pra ~640px ANTES de escanear: preto/
+    // estourado/embaçado continuam detectáveis do mesmo jeito (é o padrão usado em
+    // detecção de blur por variância de Laplaciano), só corta o número de pixels.
+    if (Math.max(w, h) > 640) img.resize(w >= h ? 640 : Jimp.AUTO, w >= h ? Jimp.AUTO : 640);
+    const rw = img.bitmap.width, rh = img.bitmap.height;
     // Brilho médio (0–255)
     let soma = 0, n = 0;
-    img.scan(0, 0, w, h, function (_x, _y, idx) { soma += ((this.bitmap.data[idx] || 0) + (this.bitmap.data[idx + 1] || 0) + (this.bitmap.data[idx + 2] || 0)) / 3; n++; });
+    img.scan(0, 0, rw, rh, function (_x, _y, idx) { soma += ((this.bitmap.data[idx] || 0) + (this.bitmap.data[idx + 1] || 0) + (this.bitmap.data[idx + 2] || 0)) / 3; n++; });
     const brilho = soma / n;
     if (brilho < 28) return `A foto de "${rotulo}" está muito escura (quase preta). Tire de novo com mais luz.`;
     if (brilho > 246) return `A foto de "${rotulo}" está estourada/branca demais. Tire de novo.`;
@@ -320,7 +333,14 @@ router.get('/garantias/por-placa', async (req, res) => {
     if (!garantia) return res.json({ encontrada: false });
     const cliente = await prisma.garantiaCliente.findUnique({ where: { id: garantia.clienteId } });
     const pneus = await prisma.garantiaPneu.findMany({ where: { garantiaId: garantia.id } });
-    res.json({ encontrada: true, garantia: { ...garantia, cliente, veiculo, pneus } });
+    // Marca quais pneus JÁ passaram por alguma revisão antes — o app usa isso pra saber
+    // se pede a foto da etiqueta interna (só na 1ª revisão de cada pneu) ou não.
+    const idsJaRevisados = new Set(
+      (await prisma.garantiaRevisaoPneu.findMany({ where: { pneuId: { in: pneus.map((p) => p.id) } }, select: { pneuId: true } }))
+        .map((r) => r.pneuId)
+    );
+    const pneusComHistorico = pneus.map((p) => ({ ...p, jaRevisado: idsJaRevisados.has(p.id) }));
+    res.json({ encontrada: true, garantia: { ...garantia, cliente, veiculo, pneus: pneusComHistorico } });
   } catch (e) { erro(res, e); }
 });
 
@@ -342,8 +362,12 @@ router.post('/garantias', async (req, res) => {
     const km = Number(vei.km);
     if (!Number.isFinite(km) || km < 0) return res.status(400).json({ error: 'Quilometragem inválida.' });
     if (pneusIn.length < 1 || pneusIn.length > 5) return res.status(400).json({ error: 'Informe de 1 a 5 pneus.' });
-    for (const p of pneusIn) {
+    for (const [i, p] of pneusIn.entries()) {
       if (!POSICOES.includes(String(p.posicao))) return res.status(400).json({ error: `Posição de pneu inválida: ${p.posicao}` });
+      // Ativação exige as DUAS fotos de cada pneu: a do pneu em si e a da etiqueta —
+      // sem isso a auditoria não tem como conferir o que foi instalado.
+      if (!p.fotoLateralBase64) return res.status(400).json({ error: `Falta a foto do pneu ${i + 1} (${rotuloPosicao(p.posicao)}).` });
+      if (!p.fotoBase64) return res.status(400).json({ error: `Falta a foto da etiqueta do pneu ${i + 1} (${rotuloPosicao(p.posicao)}).` });
     }
 
     // Qualidade das fotos: recusa preta/estourada/embaçada ANTES de salvar qualquer coisa.
@@ -497,6 +521,7 @@ router.post('/garantias/:id/status', requireMaster, async (req, res) => {
         });
       }
     }
+    dispararPushAgora();
     res.json(garantia);
   } catch (e) { erro(res, e); }
 });
@@ -562,18 +587,44 @@ router.post('/revisoes', async (req, res) => {
     const pneusIn: any[] = Array.isArray(b.pneus) ? b.pneus : [];
     if (pneusIn.length === 0) return res.status(400).json({ error: 'Informe os dados de pelo menos 1 pneu.' });
 
-    // Obrigatoriedades (regra do plano): quem revisou e as fotos comprobatórias.
-    // Cada pneu tem 3 fotos OBRIGATÓRIAS: etiqueta/DOT, lateral e banda de rodagem.
+    const veiculo = await prisma.garantiaVeiculo.findUnique({ where: { id: garantia.veiculoId } });
+    const pneusGar = await prisma.garantiaPneu.findMany({ where: { garantiaId: garantia.id } });
+    const pneuPorPosicao = Object.fromEntries(pneusGar.map((p) => [p.posicao, p]));
+    // "1ª revisão desse pneu": nunca apareceu antes em nenhum GarantiaRevisaoPneu. O pneu
+    // não muda de identidade entre revisões, então só pede a etiqueta interna uma vez.
+    const idsJaRevisados = new Set(
+      (await prisma.garantiaRevisaoPneu.findMany({ where: { pneuId: { in: pneusGar.map((p) => p.id) } }, select: { pneuId: true } }))
+        .map((r) => r.pneuId)
+    );
+    // Pneu sem correspondência por posição (não deveria acontecer, mas por segurança)
+    // é tratado como 1ª revisão — não dá pra provar que já foi documentado antes.
+    const ehPrimeiraRevisaoDoPneu = (posicao: string) => {
+      const pneu = pneuPorPosicao[posicao];
+      return !pneu || !idsJaRevisados.has(pneu.id);
+    };
+
+    // Obrigatoriedades (regra do plano): quem revisou, o checklist de problemas marcado
+    // e as fotos comprobatórias. TODA revisão de cada pneu exige DOT + banda (ombro
+    // direito e esquerdo, com o profundímetro no pneu); a etiqueta INTERNA só na 1ª
+    // revisão daquele pneu específico.
     if (!String(b.mecanico || '').trim()) return res.status(400).json({ error: 'Informe o nome do mecânico responsável (obrigatório).' });
     if (!b.fotoOdometroBase64) return res.status(400).json({ error: 'A foto do odômetro é obrigatória.' });
-    const AS_3 = [
-      { campo: 'fotoEtiquetaBase64', rotulo: 'etiqueta/DOT' },
-      { campo: 'fotoLateralBase64', rotulo: 'lateral' },
-      { campo: 'fotoBandaBase64', rotulo: 'banda de rodagem' },
+    const CAMPOS_SEMPRE = [
+      { campo: 'fotoDotBase64', rotulo: 'DOT junto com o pneu' },
+      { campo: 'fotoBandaDireitaBase64', rotulo: 'banda de rodagem — ombro direito, com o profundímetro' },
+      { campo: 'fotoBandaEsquerdaBase64', rotulo: 'banda de rodagem — ombro esquerdo, com o profundímetro' },
     ];
     for (let i = 0; i < pneusIn.length; i++) {
-      for (const f of AS_3) {
-        if (!pneusIn[i][f.campo]) return res.status(400).json({ error: `Faltou a foto "${f.rotulo}" do pneu ${i + 1} — as 3 fotos de cada pneu são obrigatórias.` });
+      const p = pneusIn[i];
+      const primeira = ehPrimeiraRevisaoDoPneu(String(p.posicao || ''));
+      if (!Array.isArray(p.problemas) || p.problemas.length === 0) {
+        return res.status(400).json({ error: `Marque o checklist de problemas do pneu ${i + 1} (use "Nenhum problema encontrado" se estiver tudo certo).` });
+      }
+      if (primeira && !p.fotoEtiquetaInternaBase64) {
+        return res.status(400).json({ error: `Falta a foto da etiqueta interna do pneu ${i + 1} — é a 1ª revisão desse pneu, ela é obrigatória.` });
+      }
+      for (const f of CAMPOS_SEMPRE) {
+        if (!p[f.campo]) return res.status(400).json({ error: `Falta a foto "${f.rotulo}" do pneu ${i + 1}.` });
       }
     }
 
@@ -581,14 +632,14 @@ router.post('/revisoes', async (req, res) => {
     const errosFotoRev = (await Promise.all([
       validarFoto(b.fotoOdometroBase64, 'odômetro'),
       validarFoto(b.etiquetaOleoBase64, 'etiqueta de óleo'),
-      ...pneusIn.flatMap((p, i) => AS_3.map((f) => validarFoto(p[f.campo], `pneu ${i + 1} (${f.rotulo})`))),
+      ...pneusIn.flatMap((p, i) => [
+        validarFoto(p.fotoEtiquetaInternaBase64, `pneu ${i + 1} (etiqueta interna)`),
+        ...CAMPOS_SEMPRE.map((f) => validarFoto(p[f.campo], `pneu ${i + 1} (${f.rotulo})`)),
+      ]),
     ])).filter(Boolean);
     if (errosFotoRev.length) return res.status(400).json({ error: errosFotoRev[0] });
 
     const cfg = await getConfig();
-    const veiculo = await prisma.garantiaVeiculo.findUnique({ where: { id: garantia.veiculoId } });
-    const pneusGar = await prisma.garantiaPneu.findMany({ where: { garantiaId: garantia.id } });
-    const pneuPorPosicao = Object.fromEntries(pneusGar.map((p) => [p.posicao, p]));
 
     // Odômetro suspeito: km menor que o maior km já registrado (última revisão ou ativação).
     const ultimaRev = await prisma.garantiaRevisao.findFirst({ where: { garantiaId: garantia.id }, orderBy: { km: 'desc' } });
@@ -653,9 +704,10 @@ router.post('/revisoes', async (req, res) => {
           dotLido,
           observacoes: String(p.observacoes || '').trim(),
           recomendacao: String(p.recomendacao || '').trim(),
-          fotoUrl: salvarFoto(p.fotoEtiquetaBase64),
-          fotoLateralUrl: salvarFoto(p.fotoLateralBase64),
-          fotoBandaUrl: salvarFoto(p.fotoBandaBase64),
+          fotoEtiquetaInternaUrl: salvarFoto(p.fotoEtiquetaInternaBase64),
+          fotoDotUrl: salvarFoto(p.fotoDotBase64),
+          fotoBandaDireitaUrl: salvarFoto(p.fotoBandaDireitaBase64),
+          fotoBandaEsquerdaUrl: salvarFoto(p.fotoBandaEsquerdaBase64),
         };
       }),
     });
@@ -726,6 +778,7 @@ router.post('/revisoes', async (req, res) => {
       }
     }
 
+    dispararPushAgora();
     res.status(201).json({
       id: revisao.id, dotDivergente, sulcoBaixo, odometroSuspeito,
       pneusCancelados: pneusCancelados.map((p) => rotuloPosicao(p.posicao)),
@@ -759,6 +812,7 @@ router.post('/revisoes/:id/status', requireMaster, async (req, res) => {
         });
       }
     }
+    dispararPushAgora();
     res.json(revisao);
   } catch (e) { erro(res, e); }
 });
@@ -809,8 +863,8 @@ router.post('/notificacoes/:id/enviada', async (req, res) => {
 });
 
 // Disparo MANUAL de notificação (master): você escreve a mensagem e escolhe quem recebe
-// (um cliente pelo CPF, ou TODOS). Cai na lista do app do cliente e — quando houver dev
-// build com push — chega na tela do celular também (tipo 'aviso' está no worker de push).
+// (um cliente pelo CPF, ou TODOS). Cai na lista do app do cliente e — pro cliente com
+// push registrado — chega na tela do celular na hora (dispararPushAgora abaixo).
 router.post('/notificacoes/manual', requireMaster, async (req, res) => {
   try {
     const b = req.body || {};
@@ -827,6 +881,7 @@ router.post('/notificacoes/manual', requireMaster, async (req, res) => {
     await prisma.garantiaNotificacao.createMany({
       data: clientes.map((c) => ({ clienteId: c.id, garantiaId: '', tipo: 'aviso', mensagem, agendadaPara: hojeStr(), enviada: false })),
     });
+    dispararPushAgora();
     res.status(201).json({ ok: true, total: clientes.length });
   } catch (e) { erro(res, e); }
 });

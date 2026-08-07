@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import { prisma } from '../server';
-import { resolverConexaoEfetiva, enviarMensagem } from '../workers/whatsappService';
+import { resolverConexaoEfetiva, enviarMensagem, connectedUsers } from '../workers/whatsappService';
 
 const router = Router();
 const erro = (res: any, e: any) => res.status(500).json({ error: e?.message || 'Erro' });
@@ -160,10 +160,29 @@ router.post('/contatos/:id/enviar-whatsapp', async (req, res) => {
       });
     }
 
-    // Quem envia: o atendente logado. A sessão real pode ser a de outro (compartilhada).
+    // De QUAL número sai o disparo: tem que ser um WhatsApp CONECTADO DA LOJA do
+    // contato — não o de quem está logado. O master (dono) não tem WhatsApp próprio,
+    // então mandar pela conta dele falhava com "não conectado" mesmo a loja tendo
+    // dois números no ar. Ordem: se quem está logado já é um atendente conectado
+    // daquela loja, usa ele (mantém a conversa no número dele); senão pega qualquer
+    // número conectado da loja.
     const usuarioId = String(req.user?.sub || '');
     if (!usuarioId) return res.status(401).json({ error: 'Não autenticado.' });
-    const efetivoId = await resolverConexaoEfetiva(usuarioId);
+
+    const daLoja = await prisma.usuario.findMany({
+      where: { lojaId: contato.storeId, ativo: true },
+      select: { id: true, nome: true, whatsappDonoId: true },
+    });
+    const conectados: string[] = [];
+    for (const u of daLoja) {
+      const efetivo = await resolverConexaoEfetiva(u.id);
+      if (connectedUsers.has(efetivo) && !conectados.includes(efetivo)) conectados.push(efetivo);
+    }
+    if (!conectados.length) {
+      return res.status(503).json({ error: 'Nenhum WhatsApp desta loja está conectado agora. Conecte um número na tela de Usuários e tente de novo.' });
+    }
+    const meuEfetivo = await resolverConexaoEfetiva(usuarioId);
+    const efetivoId = conectados.includes(meuEfetivo) ? meuEfetivo : conectados[0]!;
 
     // A ARTE DA CAMPANHA (salva uma vez pela tela) vai em TODO disparo desta loja, como
     // imagem + o texto de legenda. Nada de reanexar a cada envio.
@@ -177,9 +196,44 @@ router.post('/contatos/:id/enviar-whatsapp', async (req, res) => {
     const agora = new Date();
     const atualizado = await prisma.disparoContato.update({
       where: { id: contato.id },
-      data: { contatado: true, contatadoEm: agora, enviadoEm: agora },
+      data: { contatado: true, contatadoEm: agora, enviadoEm: agora, enviadoPorId: usuarioId },
     });
     res.json({ ok: true, contato: atualizado, comFoto: !!midia });
+  } catch (e) { erro(res, e); }
+});
+
+// Quem disparou quanto HOJE — a lista de contatos é compartilhada pela loja, mas o dono
+// precisa ver a produção de cada atendente (ex.: Camila x Alan na Direcional).
+router.get('/por-atendente', async (req, res) => {
+  try {
+    const storeId = String(req.query.storeId || '');
+    if (!storeId) return res.status(400).json({ error: 'storeId obrigatório' });
+    const inicio = new Date(); inicio.setHours(0, 0, 0, 0);
+
+    const enviosHoje = await prisma.disparoContato.findMany({
+      where: { storeId, enviadoEm: { gte: inicio } },
+      select: { enviadoPorId: true },
+    });
+    const contagem: Record<string, number> = {};
+    enviosHoje.forEach((e) => {
+      const k = e.enviadoPorId || '__sem_registro__';
+      contagem[k] = (contagem[k] || 0) + 1;
+    });
+
+    const ids = Object.keys(contagem).filter((k) => k !== '__sem_registro__');
+    const usuarios = ids.length
+      ? await prisma.usuario.findMany({ where: { id: { in: ids } }, select: { id: true, nome: true } })
+      : [];
+    const nomePorId: Record<string, string> = {};
+    usuarios.forEach((u) => { nomePorId[u.id] = u.nome; });
+
+    const lista = Object.entries(contagem).map(([id, total]) => ({
+      usuarioId: id === '__sem_registro__' ? null : id,
+      nome: id === '__sem_registro__' ? 'Sem registro (envio antigo)' : (nomePorId[id] || 'Usuário removido'),
+      total,
+    })).sort((a, b) => b.total - a.total);
+
+    res.json({ totalHoje: enviosHoje.length, porAtendente: lista });
   } catch (e) { erro(res, e); }
 });
 
