@@ -613,6 +613,16 @@ router.post('/revisoes', async (req, res) => {
     // revisão daquele pneu específico.
     if (!String(b.mecanico || '').trim()) return res.status(400).json({ error: 'Informe o nome do mecânico responsável (obrigatório).' });
     if (!b.fotoOdometroBase64) return res.status(400).json({ error: 'A foto do odômetro é obrigatória.' });
+    // Etiqueta de óleo em TODA revisão (igual na ativação) — é essa data/km que vira a
+    // NOVA referência pra calcular km/dia e agendar a próxima notificação (antes disso a
+    // revisão nunca atualizava, e o cálculo ficava usando pra sempre a etiqueta da
+    // ativação, mesmo anos depois). Só dispensa quem já nasceu sem etiqueta.
+    const semEtiquetaOleo = Boolean(veiculo?.semEtiquetaOleo);
+    if (!semEtiquetaOleo) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(String(b.oleoData || ''))) return res.status(400).json({ error: 'Informe a data da etiqueta de óleo (obrigatória).' });
+      if (!Number.isFinite(Number(b.oleoKm)) || Number(b.oleoKm) <= 0) return res.status(400).json({ error: 'Informe o km da etiqueta de óleo (obrigatório).' });
+      if (!b.etiquetaOleoBase64) return res.status(400).json({ error: 'A foto da etiqueta de óleo é obrigatória.' });
+    }
     const CAMPOS_SEMPRE = [
       { campo: 'fotoDotBase64', rotulo: 'DOT junto com o pneu' },
       { campo: 'fotoBandaDireitaBase64', rotulo: 'banda de rodagem — ombro direito, com o profundímetro' },
@@ -742,10 +752,22 @@ router.post('/revisoes', async (req, res) => {
       });
     }
 
-    // Atualiza km + recalcula km/dia (a partir da etiqueta de óleo do cadastro).
-    const kmPorDia = veiculo && !veiculo.semEtiquetaOleo
-      ? calcularKmPorDia(veiculo.oleoData, veiculo.oleoKm, km) : 0;
-    await prisma.garantiaVeiculo.update({ where: { id: garantia.veiculoId }, data: { kmAtual: km, kmPorDia } });
+    // Atualiza km + recalcula km/dia a partir da etiqueta de óleo LIDA NESTA revisão (não
+    // mais a da ativação parada no tempo) — essa passa a ser a referência pra próxima
+    // revisão também, até a etiqueta trocar de novo.
+    const novaOleoData = semEtiquetaOleo ? '' : String(b.oleoData);
+    const novaOleoKm = semEtiquetaOleo ? 0 : Number(b.oleoKm);
+    const kmPorDia = semEtiquetaOleo ? 0 : calcularKmPorDia(novaOleoData, novaOleoKm, km);
+    await prisma.garantiaVeiculo.update({
+      where: { id: garantia.veiculoId },
+      data: {
+        kmAtual: km, kmPorDia,
+        ...(semEtiquetaOleo ? {} : { oleoData: novaOleoData, oleoKm: novaOleoKm }),
+        // Mesmo arquivo já salvo acima pro registro da GarantiaRevisao — reaproveita a
+        // URL em vez de gravar o arquivo de novo no disco.
+        ...(etiquetaOleoUrl ? { etiquetaOleoUrl } : {}),
+      },
+    });
 
     let novoStatus = garantia.status;
     if (foraDoIntervalo) {

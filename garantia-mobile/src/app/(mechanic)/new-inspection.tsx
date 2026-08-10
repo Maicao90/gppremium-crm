@@ -5,6 +5,7 @@ import { useRouter } from 'expo-router';
 import { ArrowLeft, Search, Wrench, AlertTriangle } from 'lucide-react-native';
 import { api } from '../../lib/api';
 import { FotoBotao } from '../../components/FotoBotao';
+import { CampoData } from '../../components/CampoData';
 import { Foto } from '../../lib/foto';
 
 const ROTULO: Record<string, string> = { dianteiro_esquerdo: 'Pneu 1', dianteiro_direito: 'Pneu 2', traseiro_esquerdo: 'Pneu 3', traseiro_direito: 'Pneu 4', estepe: 'Estepe' };
@@ -51,6 +52,13 @@ export default function NewInspection() {
   const [obsGeral, setObsGeral] = useState('');
   const [pneus, setPneus] = useState<PneuRev[]>([]);
   const [salvando, setSalvando] = useState(false);
+  // Etiqueta de óleo — igual na ativação, mas AGORA obrigatória em toda revisão: é essa
+  // data/km que vira a nova referência pro cálculo de km/dia da próxima notificação.
+  // "semEtiqueta" vem do cadastro do veículo (decidido lá na ativação, não muda aqui).
+  const [semEtiquetaOleo, setSemEtiquetaOleo] = useState(false);
+  const [oleoData, setOleoData] = useState('');
+  const [oleoKm, setOleoKm] = useState('');
+  const [fEtiq, setFEtiq] = useState<Foto>(null);
 
   const buscar = async () => {
     const alvo = placa.toUpperCase().replace(/[^A-Z0-9]/g, '');
@@ -61,6 +69,8 @@ export default function NewInspection() {
       if (!r.encontrada) { Alert.alert('Nada encontrado', 'Nenhuma garantia em andamento pra essa placa.'); }
       else {
         setGarantia(r.garantia);
+        setSemEtiquetaOleo(!!r.garantia.veiculo?.semEtiquetaOleo);
+        setOleoData(''); setOleoKm(''); setFEtiq(null);
         setPneus((r.garantia.pneus || []).filter((p: any) => !p.cancelada).map((p: any) => ({
           posicao: p.posicao, jaRevisado: !!p.jaRevisado, profundidadeSulco: '', estado: 'bom', arrancamentoBorracha: false, dotLido: '',
           fotoEtiquetaInterna: null, fotoDot: null, fotoBandaDireita: null, fotoBandaEsquerda: null,
@@ -89,6 +99,11 @@ export default function NewInspection() {
     if (!mecanico.trim()) return Alert.alert('Ops', 'Informe o nome do mecânico responsável (obrigatório).');
     if (pneus.some((p) => p.profundidadeSulco === '')) return Alert.alert('Ops', 'Selecione a profundidade do sulco de todos os pneus.');
     if (!fOdo?.base64) return Alert.alert('Foto obrigatória', 'Tire a foto do odômetro.');
+    if (!semEtiquetaOleo) {
+      if (!oleoData) return Alert.alert('Ops', 'Informe a data da etiqueta de óleo.');
+      if (!oleoKm) return Alert.alert('Ops', 'Informe o km da etiqueta de óleo.');
+      if (!fEtiq?.base64) return Alert.alert('Foto obrigatória', 'Tire a foto da etiqueta de óleo.');
+    }
     for (let i = 0; i < pneus.length; i++) {
       const p = pneus[i];
       const nomePneu = ROTULO[p.posicao] || i + 1;
@@ -104,6 +119,7 @@ export default function NewInspection() {
         method: 'POST',
         body: {
           garantiaId: garantia.id, km: Number(km), mecanico, observacoes: obsGeral, fotoOdometroBase64: fOdo?.base64 || null,
+          oleoData, oleoKm, etiquetaOleoBase64: fEtiq?.base64 || null,
           pneus: pneus.map((p) => ({
             posicao: p.posicao, profundidadeSulco: Number(p.profundidadeSulco) || 0, estado: p.estado,
             arrancamentoBorracha: p.arrancamentoBorracha, dotLido: p.dotLido, problemas: p.problemas,
@@ -143,6 +159,20 @@ export default function NewInspection() {
               <TextInput style={s.input} placeholder="Mecânico responsável" placeholderTextColor="#94a3b8" value={mecanico} onChangeText={setMecanico} />
               <TextInput style={[s.input, { minHeight: 60, textAlignVertical: 'top' }]} placeholder="Observações gerais da revisão (opcional)" placeholderTextColor="#94a3b8" multiline value={obsGeral} onChangeText={setObsGeral} />
               <FotoBotao label="Foto do odômetro" valor={fOdo} onChange={setFOdo} />
+            </View>
+
+            <View style={s.card}>
+              <Text style={s.cardTitle}>Etiqueta de óleo</Text>
+              {semEtiquetaOleo ? (
+                <Text style={s.ajuda}>Este veículo foi cadastrado sem etiqueta de óleo — nada a preencher aqui.</Text>
+              ) : (
+                <>
+                  <Text style={s.ajuda}>Confira a etiqueta atual do carro — se trocou o óleo desde a última vez, é essa data/km novos que valem daqui pra frente.</Text>
+                  <CampoData label="Data da etiqueta" valor={oleoData} onChange={setOleoData} />
+                  <TextInput style={s.input} placeholder="KM da etiqueta" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={oleoKm} onChangeText={(v) => setOleoKm(v.replace(/\D/g, ''))} />
+                  <FotoBotao label="Foto da etiqueta de óleo" valor={fEtiq} onChange={setFEtiq} />
+                </>
+              )}
             </View>
 
             {pneus.map((p, i) => (
@@ -217,6 +247,7 @@ const s = StyleSheet.create({
   card: { backgroundColor: '#fff', borderRadius: 14, padding: 16, marginBottom: 12, borderWidth: 1, borderColor: 'rgba(0,0,0,0.04)' },
   cardTitle: { fontSize: 14, fontWeight: '800', color: '#0f172a', marginBottom: 10 },
   lbl: { fontSize: 12, color: '#475569', fontWeight: '700', marginBottom: 6 },
+  ajuda: { fontSize: 12, color: '#64748b', marginBottom: 8 },
   input: { backgroundColor: '#f8fafc', borderWidth: 1, borderColor: 'rgba(0,0,0,0.06)', borderRadius: 9, paddingHorizontal: 11, paddingVertical: 10, fontSize: 13, color: '#0f172a', marginBottom: 8 },
   btnMini: { backgroundColor: '#0ea5e9', borderRadius: 9, width: 46, alignItems: 'center', justifyContent: 'center' },
   ok: { color: '#16a34a', fontSize: 12, marginTop: 8, fontWeight: '600' },
