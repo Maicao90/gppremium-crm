@@ -24,6 +24,9 @@ model Usuario {
   whatsappPausado      Boolean            @default(false)
   autoRespostaAtiva    Boolean            @default(false)
   autoRespostaMensagem String             @default("Oi! Sou a Josi 👋\nPor gentileza me diz seu NOME e a medida de PNEUS que você precisa.\n\nHorário de atendimento:\nSegunda a sexta de 08h às 18h\nSábado de 08h às 12h.")
+  // Bot de vendas com IA. Fica desligado por padrao e usa a sessao Baileys deste usuario.
+  botIaAtivo            Boolean            @default(false)
+  botIaPausaManualMin   Int                @default(120)
   assinaturaPainel     String? // assinatura usada nas mensagens enviadas pelo painel CRM (separada da extensão)
   // Compartilhamento de conexão WhatsApp: quando preenchido, este Usuario NÃO tem
   // sessão Baileys própria — todas as ações de WhatsApp dele (conectar, enviar, receber)
@@ -51,6 +54,23 @@ model Usuario {
   agendamentos         Agendamento[]
   autoReplyHistories   AutoReplyHistory[]
   criadoEm             DateTime           @default(now())
+}
+
+// Estado por conversa do bot Baileys. A pausa sobrevive a restart e impede que a IA
+// responda por cima de um atendente que assumiu o cliente.
+model BotConversa {
+  id                 String    @id @default(uuid())
+  usuarioId          String
+  chatJid            String
+  pausadoAte         DateTime?
+  ultimoInboundWaId  String?
+  ultimaRespostaEm   DateTime?
+  motivoPausa        String?
+  atualizadoEm       DateTime  @updatedAt
+  criadoEm           DateTime  @default(now())
+
+  @@unique([usuarioId, chatJid])
+  @@index([usuarioId, atualizadoEm])
 }
 
 model Agendamento {

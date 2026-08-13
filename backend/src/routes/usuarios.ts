@@ -7,6 +7,7 @@ import { assinarToken } from '../auth/jwt';
 import { requireMaster } from '../middlewares/requireModulo';
 import { requireAuth } from '../middlewares/requireAuth';
 import { lojaDoUsuario } from '../auth/escopoLoja';
+import { cancelarBotDoUsuario } from '../workers/botAtendimentoService';
 
 const router = Router();
 
@@ -105,6 +106,8 @@ router.get('/', async (req, res) => {
         role: true,
         whatsappConectado: true,
         whatsappDonoId: true,
+        botIaAtivo: true,
+        botIaPausaManualMin: true,
         lojaId: true,
         modulosPermitidos: true,
         criadoEm: true
@@ -319,6 +322,30 @@ router.put('/:id/autoresposta', async (req, res) => {
   } catch (error) {
     console.error('Erro ao atualizar auto-resposta:', error);
     res.status(500).json({ error: 'Erro ao atualizar auto-resposta' });
+  }
+});
+
+// Ativa o cerebro de vendas somente no numero escolhido. A recepcao fixa e desligada
+// junto para nunca mandar duas respostas ao mesmo cliente.
+router.put('/:id/bot-ia', requireMaster, async (req, res) => {
+  try {
+    const id = String(req.params.id);
+    const ativo = req.body?.ativo === true;
+    const pausaManualMin = Math.max(15, Math.min(1440, Number(req.body?.pausaManualMin) || 120));
+    const usuario = await prisma.usuario.update({
+      where: { id },
+      data: {
+        botIaAtivo: ativo,
+        botIaPausaManualMin: pausaManualMin,
+        ...(ativo ? { autoRespostaAtiva: false } : {}),
+      },
+    });
+    if (!ativo) cancelarBotDoUsuario(id);
+    const { senha: _, ...seguro } = usuario;
+    res.json(seguro);
+  } catch (error) {
+    console.error('Erro ao atualizar bot IA:', error);
+    res.status(500).json({ error: 'Erro ao atualizar o bot de atendimento.' });
   }
 });
 

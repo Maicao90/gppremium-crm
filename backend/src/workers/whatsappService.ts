@@ -5,6 +5,7 @@ import qrcode from 'qrcode';
 import path from 'path';
 import fs from 'fs';
 import { io, prisma } from '../server';
+import { agendarRespostaBotIA, pausarConversaBotIA } from './botAtendimentoService';
 
 // Pasta onde as mídias recebidas são salvas (servida estaticamente em /midias)
 const MIDIAS_DIR = path.join(__dirname, '../../public/midias');
@@ -220,6 +221,9 @@ async function persistirContatosBaileys(usuarioId: string, lista: any[]) {
 // IDs de mensagens já salvas pelo envio da Caixa de Entrada (evita duplicar se o
 // evento messages.upsert também disparar para a mesma mensagem que nós enviamos).
 const waIdsRecentes = new Set<string>();
+const waIdsBotIA = new Set<string>();
+const chatsBotEnviando = new Set<string>();
+const filasEnvioBotIA = new Map<string, Promise<unknown>>();
 function lembrarWaId(id?: string | null) {
   if (!id) return;
   waIdsRecentes.add(id);
@@ -227,6 +231,58 @@ function lembrarWaId(id?: string | null) {
     const maisAntigo = waIdsRecentes.values().next().value;
     if (maisAntigo) waIdsRecentes.delete(maisAntigo);
   }
+}
+
+function lembrarWaIdBotIA(id?: string | null) {
+  if (!id) return;
+  waIdsBotIA.add(id);
+  if (waIdsBotIA.size > 3000) {
+    const maisAntigo = waIdsBotIA.values().next().value;
+    if (maisAntigo) waIdsBotIA.delete(maisAntigo);
+  }
+}
+
+async function enviarParteBotIA(usuarioId: string, chatJid: string, numeroReal: string, texto: string, tempoDigitacaoMs: number): Promise<boolean> {
+  const anterior = filasEnvioBotIA.get(usuarioId) || Promise.resolve();
+  const atual = anterior.catch(() => {}).then(async () => {
+    const sock = sessions.get(usuarioId);
+    if (!sock) return false;
+    const key = `${usuarioId}:${chatJid}`;
+    chatsBotEnviando.add(key);
+    try {
+      await sock.sendPresenceUpdate('composing', chatJid).catch(() => {});
+      await delay(tempoDigitacaoMs);
+      const enviada = await sock.sendMessage(chatJid, { text: texto });
+      await sock.sendPresenceUpdate('unavailable').catch(() => {});
+      const waId = enviada?.key?.id || null;
+      lembrarWaId(waId);
+      lembrarWaIdBotIA(waId);
+      const salva = await prisma.mensagem.create({
+        data: {
+          usuarioId,
+          chatJid,
+          chatNome: '',
+          fromMe: true,
+          texto,
+          tipo: 'texto',
+          waId,
+          numeroReal: numeroReal || null,
+        },
+      });
+      io.to(usuarioId).emit('NOVA_MENSAGEM', salva);
+      return true;
+    } catch (e) {
+      console.error('[Bot IA] Falha ao enviar parte:', (e as any)?.message || e);
+      return false;
+    } finally {
+      setTimeout(() => chatsBotEnviando.delete(key), 5000).unref?.();
+    }
+  });
+  filasEnvioBotIA.set(usuarioId, atual);
+  atual.finally(() => {
+    if (filasEnvioBotIA.get(usuarioId) === atual) filasEnvioBotIA.delete(usuarioId);
+  });
+  return atual as Promise<boolean>;
 }
 
 // ─── MENSAGENS APAGADAS ───────────────────────────────────────────────────
@@ -741,6 +797,13 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
       const numero = remoteJid.split('@')[0];
       if (!numero) return;
 
+      // Uma mensagem enviada pelo celular ou painel significa que uma pessoa assumiu.
+      // Nao pausa quando o proprio bot esta enviando as bolhas dele.
+      if (msg.key.fromMe && !waIdsBotIA.has(msg.key.id || '') && !chatsBotEnviando.has(`${usuarioId}:${remoteJid}`)) {
+        const cfgBot = await prisma.usuario.findUnique({ where: { id: usuarioId }, select: { botIaAtivo: true } }).catch(() => null);
+        if (cfgBot?.botIaAtivo) await pausarConversaBotIA(usuarioId, remoteJid).catch(() => {});
+      }
+
       // Enriquece a agenda com o NOME (pushName) de quem manda mensagem — assim a busca
       // do agendamento acha o número pelo nome mesmo sem re-sincronizar a agenda inteira,
       // e funciona nas sessões que já estão conectadas. Guarda evita bater no banco à toa.
@@ -772,9 +835,10 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
       const _tipoMsg = tipoMensagem(_conteudo);
       const _textoMsg = extrairTextoMensagem(_conteudo) || '';
       const _anuncio = getAnuncio(_conteudo); // mensagem vinda de anúncio (Click-to-WhatsApp)
+      let persistenciaInbox: Promise<void> = Promise.resolve();
       // Pula se já salvamos esta mensagem pelo envio da Caixa de Entrada (evita duplicar)
       if ((_textoMsg || _tipoMsg !== 'texto' || _anuncio) && !(msg.key.id && waIdsRecentes.has(msg.key.id))) {
-        (async () => {
+        persistenciaInbox = (async () => {
           let midiaUrl: string | null = null;
           let textoSalvar = _textoMsg;
           let tipoSalvar = _tipoMsg;
@@ -815,7 +879,9 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
           } catch (e: any) {
             console.error('[Inbox] Erro ao salvar mensagem:', e?.message);
           }
-        })();
+        })().catch((e: any) => {
+          console.error('[Inbox] Erro ao preparar mensagem:', e?.message || e);
+        });
       }
 
       // Daqui pra frente só interessam mensagens RECEBIDAS (não as enviadas por nós)
@@ -835,6 +901,20 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
 
       // ─── 3. AUTO-RESPOSTA (recepção) — regra de SILÊNCIO (não é mais "1x para sempre") ───
       const numeroRecep = (await resolverNumeroReal(sock, msg, remoteJid)) || numero;
+      const usuario = await prisma.usuario.findUnique({ where: { id: usuarioId } });
+
+      // O bot conversa em todos os turnos. A trava de uma saudacao por dia abaixo
+      // pertence somente a recepcao fixa antiga.
+      if (usuario?.botIaAtivo && msg.key.id) {
+        await persistenciaInbox;
+        await agendarRespostaBotIA({
+          usuarioId,
+          chatJid: remoteJid,
+          waId: msg.key.id,
+          enviarParte: (texto, tempo) => enviarParteBotIA(usuarioId, remoteJid, numeroRecep, texto, tempo),
+        });
+        return;
+      }
       // Considera TODAS as formas que o contato pode ter sido salvo (número real OU @lid cru)
       const chavesDedup = Array.from(new Set([numeroRecep, numero].filter(Boolean)));
       const hojeBR = new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString().slice(0, 10);
@@ -856,7 +936,6 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
       // reserva é desfeita mais abaixo para permitir nova tentativa.
       memKeys.forEach(mk => ultimaAutoMem.set(mk, agoraMs));
 
-      const usuario = await prisma.usuario.findUnique({ where: { id: usuarioId } });
       if (!usuario || !usuario.autoRespostaAtiva || !usuario.autoRespostaMensagem) {
         memKeys.forEach(mk => ultimaAutoMem.delete(mk)); // sem auto-resposta configurada: libera a reserva
         return;
@@ -1051,6 +1130,7 @@ export async function enviarMensagemInbox(usuarioId: string, jid: string, texto:
     console.error(`[Inbox] WhatsApp não conectado para o usuário ${usuarioId}.`);
     return false;
   }
+  await pausarConversaBotIA(usuarioId, jid).catch(() => {});
   // Assinatura do PAINEL CRM (separada da extensão). Regras:
   //  - assinaturaPainel definida e não-vazia  -> usa ela: *assinatura:* texto
   //  - assinaturaPainel definida e vazia ("")  -> sem assinatura
@@ -1110,6 +1190,7 @@ export async function enviarMidiaInbox(usuarioId: string, jid: string, base64: s
     console.error(`[Inbox] WhatsApp não conectado para o usuário ${usuarioId}.`);
     return false;
   }
+  await pausarConversaBotIA(usuarioId, jid).catch(() => {});
   try {
     const buffer = Buffer.from(base64, 'base64');
     let conteudo: any;
