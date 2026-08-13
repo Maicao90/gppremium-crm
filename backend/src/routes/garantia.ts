@@ -402,6 +402,9 @@ router.post('/garantias', async (req, res) => {
     const semEtiquetaOleo = Boolean(vei.semEtiquetaOleo);
     const oleoData = /^\d{4}-\d{2}-\d{2}$/.test(String(vei.oleoData || '')) ? String(vei.oleoData) : '';
     const oleoKm = Number(vei.oleoKm) || 0;
+    // km que a PRÓPRIA ETIQUETA indica pra próxima troca (lido do adesivo) — informativo,
+    // não entra no cálculo de kmPorDia (que já usa oleoData+oleoKm+km atual).
+    const oleoProximaTrocaKm = Number(vei.oleoProximaTrocaKm) || null;
     const kmPorDia = semEtiquetaOleo ? 0 : calcularKmPorDia(oleoData, oleoKm, km);
 
     const cliente = await prisma.garantiaCliente.upsert({
@@ -432,6 +435,7 @@ router.post('/garantias', async (req, res) => {
       kmAtual: km,
       oleoData: semEtiquetaOleo ? '' : oleoData,
       oleoKm: semEtiquetaOleo ? 0 : oleoKm,
+      oleoProximaTrocaKm: semEtiquetaOleo ? null : oleoProximaTrocaKm,
       semEtiquetaOleo,
       kmPorDia,
       ...(fotoUrl ? { fotoUrl } : {}),
@@ -757,12 +761,13 @@ router.post('/revisoes', async (req, res) => {
     // revisão também, até a etiqueta trocar de novo.
     const novaOleoData = semEtiquetaOleo ? '' : String(b.oleoData);
     const novaOleoKm = semEtiquetaOleo ? 0 : Number(b.oleoKm);
+    const novaOleoProximaTrocaKm = semEtiquetaOleo ? null : (Number(b.oleoProximaTrocaKm) || null);
     const kmPorDia = semEtiquetaOleo ? 0 : calcularKmPorDia(novaOleoData, novaOleoKm, km);
     await prisma.garantiaVeiculo.update({
       where: { id: garantia.veiculoId },
       data: {
         kmAtual: km, kmPorDia,
-        ...(semEtiquetaOleo ? {} : { oleoData: novaOleoData, oleoKm: novaOleoKm }),
+        ...(semEtiquetaOleo ? {} : { oleoData: novaOleoData, oleoKm: novaOleoKm, oleoProximaTrocaKm: novaOleoProximaTrocaKm }),
         // Mesmo arquivo já salvo acima pro registro da GarantiaRevisao — reaproveita a
         // URL em vez de gravar o arquivo de novo no disco.
         ...(etiquetaOleoUrl ? { etiquetaOleoUrl } : {}),

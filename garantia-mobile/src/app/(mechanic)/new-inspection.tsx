@@ -58,6 +58,7 @@ export default function NewInspection() {
   const [semEtiquetaOleo, setSemEtiquetaOleo] = useState(false);
   const [oleoData, setOleoData] = useState('');
   const [oleoKm, setOleoKm] = useState('');
+  const [oleoProximaTrocaKm, setOleoProximaTrocaKm] = useState('');
   const [fEtiq, setFEtiq] = useState<Foto>(null);
 
   const buscar = async () => {
@@ -119,7 +120,7 @@ export default function NewInspection() {
         method: 'POST',
         body: {
           garantiaId: garantia.id, km: Number(km), mecanico, observacoes: obsGeral, fotoOdometroBase64: fOdo?.base64 || null,
-          oleoData, oleoKm, etiquetaOleoBase64: fEtiq?.base64 || null,
+          oleoData, oleoKm, oleoProximaTrocaKm, etiquetaOleoBase64: fEtiq?.base64 || null,
           pneus: pneus.map((p) => ({
             posicao: p.posicao, profundidadeSulco: Number(p.profundidadeSulco) || 0, estado: p.estado,
             arrancamentoBorracha: p.arrancamentoBorracha, dotLido: p.dotLido, problemas: p.problemas,
@@ -170,6 +171,7 @@ export default function NewInspection() {
                   <Text style={s.ajuda}>Confira a etiqueta atual do carro — se trocou o óleo desde a última vez, é essa data/km novos que valem daqui pra frente.</Text>
                   <CampoData label="Data da etiqueta" valor={oleoData} onChange={setOleoData} />
                   <TextInput style={s.input} placeholder="KM da etiqueta" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={oleoKm} onChangeText={(v) => setOleoKm(v.replace(/\D/g, ''))} />
+                  <TextInput style={s.input} placeholder="KM da próxima troca (o que a etiqueta indica)" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={oleoProximaTrocaKm} onChangeText={(v) => setOleoProximaTrocaKm(v.replace(/\D/g, ''))} />
                   <FotoBotao label="Foto da etiqueta de óleo" valor={fEtiq} onChange={setFEtiq} />
                 </>
               )}

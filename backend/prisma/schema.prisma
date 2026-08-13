@@ -365,6 +365,7 @@ model GarantiaVeiculo {
   // pelo mesmo nº de dias da revisão anterior (regra do plano).
   oleoData        String   @default("") // YYYY-MM-DD da última troca de óleo
   oleoKm          Int      @default(0) // km do carro na última troca de óleo
+  oleoProximaTrocaKm Int?  // km que a PRÓPRIA ETIQUETA indica pra próxima troca (lido do adesivo, não calculado)
   semEtiquetaOleo Boolean  @default(false)
   etiquetaOleoUrl String? // foto da etiqueta de óleo
   kmPorDia        Float    @default(0) // média calculada (recalculada a cada revisão)

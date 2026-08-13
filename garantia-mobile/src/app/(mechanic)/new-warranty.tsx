@@ -31,7 +31,7 @@ export default function NewWarranty() {
   const [buscando, setBuscando] = useState(false);
   const [cli, setCli] = useState({ nome: '', telefone: '', email: '' });
   const [vei, setVei] = useState({ placa: '', marca: '', modelo: '', ano: '', km: '' });
-  const [oleo, setOleo] = useState({ data: '', km: '', sem: false });
+  const [oleo, setOleo] = useState({ data: '', km: '', proximaTrocaKm: '', sem: false });
   const [fVeic, setFVeic] = useState<Foto>(null);
   const [fOdo, setFOdo] = useState<Foto>(null);
   const [fEtiq, setFEtiq] = useState<Foto>(null);
@@ -84,7 +84,7 @@ export default function NewWarranty() {
           cliente: { ...cli, cpf: soDigitos(cpf) },
           veiculo: {
             placa: vei.placa, marca: vei.marca, modelo: vei.modelo, ano: vei.ano, km: vei.km,
-            semEtiquetaOleo: oleo.sem, oleoData: oleo.data, oleoKm: oleo.km,
+            semEtiquetaOleo: oleo.sem, oleoData: oleo.data, oleoKm: oleo.km, oleoProximaTrocaKm: oleo.proximaTrocaKm,
             fotoBase64: fVeic?.base64 || null, fotoOdometroBase64: fOdo?.base64 || null, etiquetaOleoBase64: fEtiq?.base64 || null,
           },
           pneus: pneus.map((p) => ({
@@ -146,6 +146,7 @@ export default function NewWarranty() {
             <>
               <CampoData label="Data da última troca" valor={oleo.data} onChange={(v) => setOleo({ ...oleo, data: v })} />
               <TextInput style={s.input} placeholder="KM na última troca" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={oleo.km} onChangeText={(v) => setOleo({ ...oleo, km: v })} />
+              <TextInput style={s.input} placeholder="KM da próxima troca (o que a etiqueta indica)" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={oleo.proximaTrocaKm} onChangeText={(v) => setOleo({ ...oleo, proximaTrocaKm: v })} />
               <FotoBotao label="Foto da etiqueta de óleo" valor={fEtiq} onChange={setFEtiq} />
             </>
           )}
