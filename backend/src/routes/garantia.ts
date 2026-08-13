@@ -144,6 +144,29 @@ const POSICOES = ['dianteiro_esquerdo', 'dianteiro_direito', 'traseiro_esquerdo'
 const ordenarPneus = <T extends { posicao: string }>(pneus: T[]): T[] => (
   [...pneus].sort((a, b) => POSICOES.indexOf(a.posicao) - POSICOES.indexOf(b.posicao))
 );
+
+type GarantiaNumeravel = { id: string; veiculoId: string; criadoEm: Date };
+type PneuNumeravel = { id: string; garantiaId: string; posicao: string; criadoEm: Date };
+
+// A numeracao acompanha o historico de compras do veiculo: uma nova placa comeca no
+// Pneu 1, enquanto uma compra posterior para a mesma placa continua a sequencia.
+const criarMapaNumerosPneus = <G extends GarantiaNumeravel, P extends PneuNumeravel>(garantias: G[], pneus: P[]): Map<string, number> => {
+  const garantiasPorVeiculo: Record<string, G[]> = {};
+  const pneusPorGarantia: Record<string, P[]> = {};
+  garantias.forEach((g) => { (garantiasPorVeiculo[g.veiculoId] = garantiasPorVeiculo[g.veiculoId] || []).push(g); });
+  pneus.forEach((p) => { (pneusPorGarantia[p.garantiaId] = pneusPorGarantia[p.garantiaId] || []).push(p); });
+
+  const numeros = new Map<string, number>();
+  Object.values(garantiasPorVeiculo).forEach((lista) => {
+    let numero = 1;
+    lista
+      .sort((a, b) => a.criadoEm.getTime() - b.criadoEm.getTime() || a.id.localeCompare(b.id))
+      .forEach((g) => {
+        ordenarPneus(pneusPorGarantia[g.id] || []).forEach((p) => numeros.set(p.id, numero++));
+      });
+  });
+  return numeros;
+};
 const ROTULO_POSICAO: Record<string, string> = {
   dianteiro_esquerdo: 'dianteiro esquerdo', dianteiro_direito: 'dianteiro direito',
   traseiro_esquerdo: 'traseiro esquerdo', traseiro_direito: 'traseiro direito', estepe: 'estepe',
@@ -246,7 +269,12 @@ router.get('/garantias', async (req, res) => {
     const garantias = await prisma.garantia.findMany({ where: whereEscopo(esc), orderBy: { criadoEm: 'desc' } });
     const clientes = await prisma.garantiaCliente.findMany({ where: { id: { in: garantias.map((g) => g.clienteId) } } });
     const veiculos = await prisma.garantiaVeiculo.findMany({ where: { id: { in: garantias.map((g) => g.veiculoId) } } });
-    const pneus = await prisma.garantiaPneu.findMany({ where: { garantiaId: { in: garantias.map((g) => g.id) } } });
+    const garantiasParaNumeracao = await prisma.garantia.findMany({
+      where: { veiculoId: { in: garantias.map((g) => g.veiculoId) } },
+      select: { id: true, veiculoId: true, criadoEm: true },
+    });
+    const pneus = await prisma.garantiaPneu.findMany({ where: { garantiaId: { in: garantiasParaNumeracao.map((g) => g.id) } } });
+    const numerosPneus = criarMapaNumerosPneus(garantiasParaNumeracao, pneus);
     const lojaIds = [...new Set(garantias.map((g) => g.lojaId).filter(Boolean) as string[])];
     const usuarioIds = [...new Set(garantias.map((g) => g.criadoPorId).filter(Boolean) as string[])];
     const lojas = lojaIds.length ? await prisma.loja.findMany({ where: { id: { in: lojaIds } }, select: { id: true, store_name: true } }) : [];
@@ -261,7 +289,7 @@ router.get('/garantias', async (req, res) => {
       ...g,
       cliente: cliPorId[g.clienteId] || null,
       veiculo: veiPorId[g.veiculoId] || null,
-      pneus: ordenarPneus(pneusPorGar[g.id] || []),
+      pneus: ordenarPneus(pneusPorGar[g.id] || []).map((p) => ({ ...p, numero: numerosPneus.get(p.id) || 1 })),
       lojaCadastro: g.lojaId ? (lojaPorId[g.lojaId] || null) : null,
       mecanicoCadastro: g.criadoPorId ? (usuarioPorId[g.criadoPorId] || '') : '',
     })));
@@ -283,8 +311,30 @@ router.get('/clientes/busca', async (req, res) => {
       },
       select: { veiculoId: true },
     }) : [];
-    const idsComGarantia = new Set(garantiasEmAndamento.map((g) => g.veiculoId));
-    const veiculosOut = veiculos.map((v) => ({ ...v, garantiaEmAndamento: idsComGarantia.has(v.id) }));
+    const todasGarantias = veiculos.length ? await prisma.garantia.findMany({
+      where: { veiculoId: { in: veiculos.map((v) => v.id) } },
+      select: { id: true, veiculoId: true },
+    }) : [];
+    const pneusCadastrados = todasGarantias.length ? await prisma.garantiaPneu.findMany({
+      where: { garantiaId: { in: todasGarantias.map((g) => g.id) } },
+      select: { garantiaId: true },
+    }) : [];
+    const totalPorVeiculo = garantiasEmAndamento.reduce<Record<string, number>>((acc, g) => {
+      acc[g.veiculoId] = (acc[g.veiculoId] || 0) + 1;
+      return acc;
+    }, {});
+    const veiculoPorGarantia = Object.fromEntries(todasGarantias.map((g) => [g.id, g.veiculoId]));
+    const pneusPorVeiculo = pneusCadastrados.reduce<Record<string, number>>((acc, p) => {
+      const veiculoId = veiculoPorGarantia[p.garantiaId];
+      if (veiculoId) acc[veiculoId] = (acc[veiculoId] || 0) + 1;
+      return acc;
+    }, {});
+    const veiculosOut = veiculos.map((v) => ({
+      ...v,
+      garantiaEmAndamento: Boolean(totalPorVeiculo[v.id]),
+      garantiasEmAndamento: totalPorVeiculo[v.id] || 0,
+      proximoNumeroPneu: (pneusPorVeiculo[v.id] || 0) + 1,
+    }));
     res.json({
       encontrado: true,
       cliente: {
@@ -343,7 +393,7 @@ router.post('/clientes/:id/liberar-senha', requireMaster, async (req, res) => {
   } catch (e) { erro(res, e); }
 });
 
-// Busca a garantia EM ANDAMENTO de uma placa — pra fazer REVISÃO. NÃO é escopada por
+// Busca as garantias EM ANDAMENTO de uma placa — pra fazer REVISÃO. NÃO é escopada por
 // loja de propósito: pela regra do plano, o cliente pode revisar em QUALQUER loja
 // credenciada, então qualquer loja precisa achar o carro pela placa (mesmo que a
 // garantia tenha sido vendida por outra loja).
@@ -357,21 +407,41 @@ router.get('/garantias/por-placa', async (req, res) => {
     if (placa.length !== 7) return res.status(400).json({ error: 'Placa inválida.' });
     const veiculo = await prisma.garantiaVeiculo.findUnique({ where: { placa } });
     if (!veiculo) return res.json({ encontrada: false });
-    const garantia = await prisma.garantia.findFirst({
+    const garantias = await prisma.garantia.findMany({
       where: { veiculoId: veiculo.id, status: { in: ['pendente', 'em_analise', 'ativa', 'atencao'] } },
       orderBy: { criadoEm: 'desc' },
     });
-    if (!garantia) return res.json({ encontrada: false });
-    const cliente = await prisma.garantiaCliente.findUnique({ where: { id: garantia.clienteId } });
-    const pneus = ordenarPneus(await prisma.garantiaPneu.findMany({ where: { garantiaId: garantia.id } }));
+    if (garantias.length === 0) return res.json({ encontrada: false });
+    const garantiaMaisRecente = garantias[0]!;
+    const cliente = await prisma.garantiaCliente.findUnique({ where: { id: garantiaMaisRecente.clienteId } });
+    const todasGarantias = await prisma.garantia.findMany({
+      where: { veiculoId: veiculo.id },
+      select: { id: true, veiculoId: true, criadoEm: true },
+    });
+    const todosPneus = await prisma.garantiaPneu.findMany({ where: { garantiaId: { in: todasGarantias.map((g) => g.id) } } });
+    const idsGarantiasEmAndamento = new Set(garantias.map((g) => g.id));
+    const pneus = todosPneus.filter((p) => idsGarantiasEmAndamento.has(p.garantiaId));
+    const numerosPneus = criarMapaNumerosPneus(todasGarantias, todosPneus);
     // Marca quais pneus JÁ passaram por alguma revisão antes — o app usa isso pra saber
     // se pede a foto da etiqueta interna (só na 1ª revisão de cada pneu) ou não.
     const idsJaRevisados = new Set(
       (await prisma.garantiaRevisaoPneu.findMany({ where: { pneuId: { in: pneus.map((p) => p.id) } }, select: { pneuId: true } }))
         .map((r) => r.pneuId)
     );
-    const pneusComHistorico = pneus.map((p) => ({ ...p, jaRevisado: idsJaRevisados.has(p.id) }));
-    res.json({ encontrada: true, garantia: { ...garantia, cliente, veiculo, pneus: pneusComHistorico } });
+    const pneusPorGarantia: Record<string, typeof pneus> = {};
+    pneus.forEach((p) => { (pneusPorGarantia[p.garantiaId] = pneusPorGarantia[p.garantiaId] || []).push(p); });
+    const garantiasOut = garantias.map((g) => ({
+      ...g,
+      cliente,
+      veiculo,
+      pneus: ordenarPneus(pneusPorGarantia[g.id] || []).map((p) => ({
+        ...p,
+        numero: numerosPneus.get(p.id) || 1,
+        jaRevisado: idsJaRevisados.has(p.id),
+      })),
+    }));
+    // `garantia` preserva compatibilidade com versões antigas do app/painel.
+    res.json({ encontrada: true, garantias: garantiasOut, garantia: garantiasOut[0] });
   } catch (e) { erro(res, e); }
 });
 
@@ -400,6 +470,10 @@ router.post('/garantias', async (req, res) => {
       if (!p.fotoLateralBase64) return res.status(400).json({ error: `Falta a foto do pneu ${i + 1} (${rotuloPosicao(p.posicao)}).` });
       if (!p.fotoBase64) return res.status(400).json({ error: `Falta a foto da etiqueta do pneu ${i + 1} (${rotuloPosicao(p.posicao)}).` });
     }
+    const posicoesInformadas = pneusIn.map((p) => String(p.posicao));
+    if (new Set(posicoesInformadas).size !== posicoesInformadas.length) {
+      return res.status(400).json({ error: 'Cada pneu desta compra precisa ter uma posição diferente no carro.' });
+    }
 
     // Qualidade das fotos: recusa preta/estourada/embaçada ANTES de salvar qualquer coisa.
     const errosFoto = (await Promise.all([
@@ -412,18 +486,15 @@ router.post('/garantias', async (req, res) => {
     ])).filter(Boolean);
     if (errosFoto.length) return res.status(400).json({ error: errosFoto[0] });
 
-    // Checa duplicidade ANTES de escrever qualquer coisa: se a placa já existe e tem
-    // garantia em andamento, recusa sem ter tocado no cliente/veículo/fotos. (Antes, os
-    // upserts e o salvamento das fotos rodavam primeiro — uma placa repetida ou um km
-    // errado deixava dados sobrescritos e fotos órfãs no disco, e um erro de digitação
-    // de placa chegava a transferir o veículo pra outro cliente silenciosamente.)
+    // A mesma placa pode receber outra compra/garantia. Só bloqueamos quando a placa já
+    // pertence a OUTRO CPF, evitando transferir o veículo silenciosamente entre clientes.
     await expirarVencidas();
     const veiculoExistente = await prisma.garantiaVeiculo.findUnique({ where: { placa } });
     if (veiculoExistente) {
-      const jaTem = await prisma.garantia.findFirst({
-        where: { veiculoId: veiculoExistente.id, status: { in: ['pendente', 'em_analise', 'ativa', 'atencao'] } },
-      });
-      if (jaTem) return res.status(400).json({ error: 'Este veículo já tem uma garantia em andamento.' });
+      const donoAtual = await prisma.garantiaCliente.findUnique({ where: { id: veiculoExistente.clienteId }, select: { cpf: true } });
+      if (donoAtual && donoAtual.cpf !== cpf) {
+        return res.status(400).json({ error: 'Esta placa já está cadastrada para outro CPF.' });
+      }
     }
 
     const cfg = await getConfig();
@@ -632,7 +703,15 @@ router.post('/revisoes', async (req, res) => {
     if (pneusIn.length === 0) return res.status(400).json({ error: 'Informe os dados de pelo menos 1 pneu.' });
 
     const veiculo = await prisma.garantiaVeiculo.findUnique({ where: { id: garantia.veiculoId } });
-    const pneusGar = ordenarPneus(await prisma.garantiaPneu.findMany({ where: { garantiaId: garantia.id } }));
+    const garantiasDoVeiculo = await prisma.garantia.findMany({
+      where: { veiculoId: garantia.veiculoId },
+      select: { id: true, veiculoId: true, criadoEm: true },
+    });
+    const todosPneusDoVeiculo = await prisma.garantiaPneu.findMany({
+      where: { garantiaId: { in: garantiasDoVeiculo.map((g) => g.id) } },
+    });
+    const numerosPneus = criarMapaNumerosPneus(garantiasDoVeiculo, todosPneusDoVeiculo);
+    const pneusGar = ordenarPneus(todosPneusDoVeiculo.filter((p) => p.garantiaId === garantia.id));
     const pneuPorPosicao = Object.fromEntries(pneusGar.map((p) => [p.posicao, p]));
     // "1ª revisão desse pneu": nunca apareceu antes em nenhum GarantiaRevisaoPneu. O pneu
     // não muda de identidade entre revisões, então só pede a etiqueta interna uma vez.
@@ -670,18 +749,21 @@ router.post('/revisoes', async (req, res) => {
     ];
     for (let i = 0; i < pneusIn.length; i++) {
       const p = pneusIn[i];
-      const primeira = ehPrimeiraRevisaoDoPneu(String(p.posicao || ''));
+      const posicao = String(p.posicao || '');
+      const pneu = pneuPorPosicao[posicao];
+      const numeroPneu = pneu ? (numerosPneus.get(pneu.id) || i + 1) : i + 1;
+      const primeira = ehPrimeiraRevisaoDoPneu(posicao);
       if (!Array.isArray(p.problemas) || p.problemas.length === 0) {
-        return res.status(400).json({ error: `Marque o checklist de problemas do pneu ${i + 1} (use "Nenhum problema encontrado" se estiver tudo certo).` });
+        return res.status(400).json({ error: `Marque o checklist de problemas do Pneu ${numeroPneu} (use "Nenhum problema encontrado" se estiver tudo certo).` });
       }
       if (soDigitos(p.dotLido).length !== 4) {
-        return res.status(400).json({ error: `Digite os 4 dígitos do DOT do pneu ${i + 1} (além da foto).` });
+        return res.status(400).json({ error: `Digite os 4 dígitos do DOT do Pneu ${numeroPneu} (além da foto).` });
       }
       if (primeira && !p.fotoEtiquetaInternaBase64) {
-        return res.status(400).json({ error: `Falta a foto da etiqueta interna do pneu ${i + 1} — é a 1ª revisão desse pneu, ela é obrigatória.` });
+        return res.status(400).json({ error: `Falta a foto da etiqueta interna do Pneu ${numeroPneu} — é a 1ª revisão desse pneu, ela é obrigatória.` });
       }
       for (const f of CAMPOS_SEMPRE) {
-        if (!p[f.campo]) return res.status(400).json({ error: `Falta a foto "${f.rotulo}" do pneu ${i + 1}.` });
+        if (!p[f.campo]) return res.status(400).json({ error: `Falta a foto "${f.rotulo}" do Pneu ${numeroPneu}.` });
       }
     }
 
@@ -735,7 +817,7 @@ router.post('/revisoes', async (req, res) => {
 
     let dotDivergente = false;
     let sulcoBaixo = false;
-    const pneusCancelados: { id: string; posicao: string }[] = [];
+    const pneusCancelados: { id: string; posicao: string; numero: number }[] = [];
     await prisma.garantiaRevisaoPneu.createMany({
       data: pneusIn.map((p) => {
         const posicao = String(p.posicao || '');
@@ -748,7 +830,9 @@ router.post('/revisoes', async (req, res) => {
         if (menorSulco > 0 && menorSulco < 1.6) sulcoBaixo = true;
         const arrancamento = Boolean(p.arrancamentoBorracha);
         // Só cancela um pneu que ainda tem garantia (evita recancelar/renotificar).
-        if (arrancamento && pneu && !pneu.cancelada) pneusCancelados.push({ id: pneu.id, posicao });
+        if (arrancamento && pneu && !pneu.cancelada) {
+          pneusCancelados.push({ id: pneu.id, posicao, numero: numerosPneus.get(pneu.id) || 1 });
+        }
         return {
           revisaoId: revisao.id,
           pneuId: pneu?.id || null,
@@ -780,7 +864,7 @@ router.post('/revisoes', async (req, res) => {
       await prisma.garantiaNotificacao.create({
         data: {
           clienteId: garantia.clienteId, garantiaId: garantia.id, tipo: 'pneu_cancelado', agendadaPara: hojeStr(),
-          mensagem: `Atenção: identificamos na revisão marcas de arrancamento de borracha no pneu ${rotuloPosicao(pc.posicao)}. Conforme o termo de garantia GP Premium, a garantia de durabilidade DESTE pneu foi cancelada.`,
+          mensagem: `Atenção: identificamos na revisão marcas de arrancamento de borracha no Pneu ${pc.numero}. Conforme o termo de garantia GP Premium, a garantia de durabilidade DESTE pneu foi cancelada.`,
         },
       });
     }
@@ -853,7 +937,7 @@ router.post('/revisoes', async (req, res) => {
     dispararPushAgora();
     res.status(201).json({
       id: revisao.id, dotDivergente, sulcoBaixo, odometroSuspeito,
-      pneusCancelados: pneusCancelados.map((p) => rotuloPosicao(p.posicao)),
+      pneusCancelados: pneusCancelados.map((p) => `Pneu ${p.numero}`),
       statusGarantia: novoStatus, kmPorDia,
       foraDoIntervalo, kmEsperado, diffPctEsperado: Math.round(diffPctEsperado),
     });

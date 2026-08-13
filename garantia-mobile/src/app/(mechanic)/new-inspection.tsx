@@ -8,14 +8,6 @@ import { FotoBotao } from '../../components/FotoBotao';
 import { CampoData } from '../../components/CampoData';
 import { Foto } from '../../lib/foto';
 
-const ROTULO: Record<string, string> = {
-  dianteiro_esquerdo: 'Pneu 1',
-  dianteiro_direito: 'Pneu 2',
-  traseiro_esquerdo: 'Pneu 3',
-  traseiro_direito: 'Pneu 4',
-  estepe: 'Estepe',
-};
-
 const OPCOES = Array.from({ length: 85 }, (_, i) => Number((1.6 + i * 0.1).toFixed(1)));
 
 const NENHUM_PROBLEMA = 'nenhum';
@@ -41,6 +33,7 @@ const ESTADOS: { chave: string; rotulo: string }[] = [
 
 type PneuRev = {
   posicao: string;
+  numero: number;
   jaRevisado: boolean;
   profundidadeSulco: number | '';
   estado: string;
@@ -60,6 +53,7 @@ export default function NewInspection() {
   const [placa, setPlaca] = useState('');
   const [buscando, setBuscando] = useState(false);
   const [garantia, setGarantia] = useState<any>(null);
+  const [garantiasEncontradas, setGarantiasEncontradas] = useState<any[]>([]);
   const [km, setKm] = useState('');
   const [mecanico, setMecanico] = useState('');
   const [fOdo, setFOdo] = useState<Foto>(null);
@@ -71,37 +65,45 @@ export default function NewInspection() {
   const [oleoKm, setOleoKm] = useState('');
   const [fEtiq, setFEtiq] = useState<Foto>(null);
 
+  const selecionarGarantia = (selecionada: any) => {
+    setGarantia(selecionada);
+    setSemEtiquetaOleo(!!selecionada.veiculo?.semEtiquetaOleo);
+    setOleoData('');
+    setOleoKm('');
+    setFEtiq(null);
+    setPneus((selecionada.pneus || []).filter((p: any) => !p.cancelada).map((p: any, indice: number) => ({
+      posicao: p.posicao,
+      numero: Number(p.numero) || indice + 1,
+      jaRevisado: !!p.jaRevisado,
+      profundidadeSulco: '',
+      estado: 'bom',
+      arrancamentoBorracha: false,
+      dotLido: '',
+      fotoEtiquetaInterna: null,
+      fotoDot: null,
+      fotoBandaDireita: null,
+      fotoBandaEsquerda: null,
+      problemas: [],
+      observacoes: '',
+      recomendacao: '',
+    })));
+    setKm('');
+  };
+
   const buscar = async () => {
     const alvo = placa.toUpperCase().replace(/[^A-Z0-9]/g, '');
     if (alvo.length !== 7) return Alert.alert('Ops', 'Digite a placa completa (7 caracteres).');
     setBuscando(true);
     setGarantia(null);
+    setGarantiasEncontradas([]);
     try {
       const r = await api<any>(`/api/garantia/garantias/por-placa?placa=${alvo}`);
       if (!r.encontrada) {
         Alert.alert('Nada encontrado', 'Nenhuma garantia em andamento pra essa placa.');
       } else {
-        setGarantia(r.garantia);
-        setSemEtiquetaOleo(!!r.garantia.veiculo?.semEtiquetaOleo);
-        setOleoData('');
-        setOleoKm('');
-        setFEtiq(null);
-        setPneus((r.garantia.pneus || []).filter((p: any) => !p.cancelada).map((p: any) => ({
-          posicao: p.posicao,
-          jaRevisado: !!p.jaRevisado,
-          profundidadeSulco: '',
-          estado: 'bom',
-          arrancamentoBorracha: false,
-          dotLido: '',
-          fotoEtiquetaInterna: null,
-          fotoDot: null,
-          fotoBandaDireita: null,
-          fotoBandaEsquerda: null,
-          problemas: [],
-          observacoes: '',
-          recomendacao: '',
-        })));
-        setKm('');
+        const lista = Array.isArray(r.garantias) ? r.garantias : [r.garantia];
+        setGarantiasEncontradas(lista);
+        if (lista.length === 1) selecionarGarantia(lista[0]);
       }
     } catch (e: any) {
       Alert.alert('Erro', e?.message);
@@ -133,7 +135,7 @@ export default function NewInspection() {
 
     for (let i = 0; i < pneus.length; i++) {
       const p = pneus[i];
-      const nomePneu = ROTULO[p.posicao] || String(i + 1);
+      const nomePneu = `Pneu ${p.numero}`;
       if (p.problemas.length === 0) return Alert.alert('Checklist obrigatorio', `Marque o checklist de problemas do ${nomePneu} (use "Nenhum problema encontrado" se estiver tudo certo).`);
       if (p.dotLido.length !== 4) return Alert.alert('DOT obrigatorio', `Digite os 4 digitos do DOT do ${nomePneu} (alem da foto).`);
       if (!p.jaRevisado && !p.fotoEtiquetaInterna?.base64) return Alert.alert('Foto obrigatoria', `Tire a foto da etiqueta interna do ${nomePneu} - e a 1a revisao desse pneu.`);
@@ -198,6 +200,19 @@ export default function NewInspection() {
               {buscando ? <ActivityIndicator color="#fff" size="small" /> : <Search size={16} color="#fff" />}
             </TouchableOpacity>
           </View>
+          {garantiasEncontradas.length > 1 && (
+            <View style={{ marginTop: 10 }}>
+              <Text style={s.lbl}>Escolha qual compra de pneus será revisada</Text>
+              {garantiasEncontradas.map((g) => (
+                <TouchableOpacity key={g.id} style={[s.compra, garantia?.id === g.id && s.compraOn]} onPress={() => selecionarGarantia(g)}>
+                  <Text style={[s.compraTitulo, garantia?.id === g.id && s.compraTituloOn]}>
+                    Compra de {new Date(g.criadoEm).toLocaleDateString('pt-BR')} • {Number(g.kmInicial).toLocaleString('pt-BR')} km
+                  </Text>
+                  <Text style={s.ajuda}>{(g.pneus || []).map((p: any, i: number) => `Pneu ${p.numero || i + 1}: ${[p.medida, p.modelo].filter(Boolean).join(' ')}`).join(' • ')}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          )}
           {garantia && <Text style={s.ok}>OK {garantia.cliente?.nome} - {garantia.veiculo?.marca} {garantia.veiculo?.modelo} (cobertura ate {garantia.kmMaximo} km)</Text>}
         </View>
 
@@ -226,7 +241,7 @@ export default function NewInspection() {
 
             {pneus.map((p, i) => (
               <View key={p.posicao} style={s.card}>
-                <Text style={s.cardTitle}>{ROTULO[p.posicao] || p.posicao}</Text>
+                <Text style={s.cardTitle}>Pneu {p.numero}</Text>
                 <Text style={s.lbl}>Profundidade do sulco (mm)</Text>
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginBottom: 8 }}>
                   {OPCOES.map((v) => (
@@ -301,6 +316,10 @@ const s = StyleSheet.create({
   input: { backgroundColor: '#f8fafc', borderWidth: 1, borderColor: 'rgba(0,0,0,0.06)', borderRadius: 9, paddingHorizontal: 11, paddingVertical: 10, fontSize: 13, color: '#0f172a', marginBottom: 8 },
   btnMini: { backgroundColor: '#0ea5e9', borderRadius: 9, width: 46, alignItems: 'center', justifyContent: 'center' },
   ok: { color: '#16a34a', fontSize: 12, marginTop: 8, fontWeight: '600' },
+  compra: { borderWidth: 1, borderColor: '#e2e8f0', borderRadius: 10, padding: 10, marginTop: 7, backgroundColor: '#f8fafc' },
+  compraOn: { borderColor: '#0ea5e9', backgroundColor: '#e0f2fe' },
+  compraTitulo: { fontSize: 12.5, fontWeight: '800', color: '#334155' },
+  compraTituloOn: { color: '#0369a1' },
   chip: { paddingHorizontal: 12, paddingVertical: 7, borderRadius: 999, borderWidth: 1, borderColor: '#cbd5e1', marginRight: 6 },
   chipOn: { backgroundColor: '#0ea5e9', borderColor: '#0ea5e9' },
   chipT: { fontSize: 13, color: '#475569', fontWeight: '600' },

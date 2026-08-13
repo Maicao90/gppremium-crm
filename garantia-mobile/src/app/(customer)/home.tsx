@@ -148,7 +148,9 @@ export default function CustomerHome() {
               <Text style={s.km}>{fmtKm(km)} de {fmtKm(g.kmMaximo)} km</Text>
               <View style={s.barra}><View style={[s.barraFill, { width: `${prog}%` }]} /></View>
               <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                <Text style={s.pneusInfo}>{(g.pneus || []).length} pneu(s) • 1 cadastro + {(g.revisoes || []).length} revisão(ões)</Text>
+                <Text style={s.pneusInfo}>
+                  {(g.pneus || []).map((p: any, i: number) => `Pneu ${p.numero || i + 1}`).join(' e ')} • compra em {fmtData(g.criadoEm || g.dataInicio)} • {(g.revisoes || []).length} revisão(ões)
+                </Text>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                   <Text style={s.verMais}>ver detalhes</Text>
                   <ChevronRight size={16} color="#0ea5e9" />
@@ -215,26 +217,26 @@ function GarantiaDetalhe({ aberta, onAbrirPneu }: { aberta: any; onAbrirPneu: (p
         <Text style={s.detLinha}>KM atual do carro: {fmtKm(aberta.veiculo?.kmAtual)}</Text>
       </View>
 
-      <Text style={s.secao}>1º cadastro / ativação</Text>
+      <Text style={s.secao}>Cadastro / ativação desta compra</Text>
       <View style={s.card}>
-        <Text style={s.pneuPos}>Dados do primeiro cadastro</Text>
+        <Text style={s.pneuPos}>Dados do cadastro desta compra</Text>
         <Text style={s.detLinha}>Cadastro feito em {fmtData(aberta.criadoEm || aberta.dataInicio) || fmtData(aberta.dataInicio)}</Text>
         {dadosCadastro ? <Text style={s.detMuted}>{dadosCadastro}</Text> : null}
         <Text style={s.detLinha}>KM do cadastro: {fmtKm(aberta.kmInicial)} km</Text>
         {fotoCadastro ? <Image source={{ uri: fotoUrl(fotoCadastro) }} style={[s.foto, { marginTop: 10 }]} resizeMode="cover" /> : null}
       </View>
 
-      <Text style={s.secao}>Pneus do primeiro cadastro</Text>
-      <Text style={s.detMutedBloco}>Estes são os pneus cadastrados na ativação da garantia.</Text>
+      <Text style={s.secao}>Pneus desta compra</Text>
+      <Text style={s.detMutedBloco}>Estes são os pneus cadastrados na ativação desta compra.</Text>
       {(aberta.pneus || []).map((p: any, pIndex: number) => (
         <TouchableOpacity
           key={p.id}
           style={[s.card, p.cancelada && { borderColor: '#e11d48', borderWidth: 1 }]}
           activeOpacity={0.85}
-          onPress={() => onAbrirPneu({ ...p, numeroPneu: pIndex + 1, revisoes })}
+          onPress={() => onAbrirPneu({ ...p, numeroPneu: p.numero || pIndex + 1, revisoes })}
         >
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-            <Text style={s.pneuPos}>Pneu {pIndex + 1}</Text>
+            <Text style={s.pneuPos}>Pneu {p.numero || pIndex + 1}</Text>
             {p.cancelada ? <Text style={s.canc}>garantia cancelada</Text> : <ChevronRight size={16} color="#0ea5e9" />}
           </View>
           <Text style={s.detMuted}>Posicao no carro: {ROTULO_POS[p.posicao] || p.posicao}</Text>
@@ -277,10 +279,11 @@ function GarantiaDetalhe({ aberta, onAbrirPneu }: { aberta: any; onAbrirPneu: (p
             )}
             {(r.pneus || []).map((rp: any) => {
               const pneuIndex = (aberta.pneus || []).findIndex((p: any) => (rp.pneuId && p.id === rp.pneuId) || p.posicao === rp.posicao);
+              const numeroPneu = pneuIndex >= 0 ? (aberta.pneus[pneuIndex].numero || pneuIndex + 1) : '-';
               return (
                 <View key={rp.id} style={s.revPneu}>
                   <View>
-                    <Text style={s.revPneuPos}>Pneu {pneuIndex >= 0 ? pneuIndex + 1 : '-'}</Text>
+                    <Text style={s.revPneuPos}>Pneu {numeroPneu}</Text>
                     <Text style={s.detMuted}>DOT lido {rp.dotLido || '-'}</Text>
                   </View>
                   <Text style={s.revPneuSulco}>sulco {String(rp.profundidadeSulco).replace('.', ',')} mm</Text>
@@ -302,7 +305,7 @@ function PneuDetalhe({ pneu }: { pneu: any }) {
 
   return (
     <ScrollView contentContainerStyle={{ padding: 18 }}>
-      <Text style={s.secao}>Dados do primeiro cadastro</Text>
+      <Text style={s.secao}>Dados do cadastro deste pneu</Text>
       <View style={s.card}>
         <Text style={s.detLinha}>{[pneu.marca, pneu.modelo, pneu.medida].filter(Boolean).join(' ') || '-'}</Text>
         <Text style={s.detMuted}>DOT {pneu.dot || '-'} • Série {pneu.codigoSerie || '-'}</Text>
@@ -311,7 +314,7 @@ function PneuDetalhe({ pneu }: { pneu: any }) {
 
       {[pneu.fotoUrl, pneu.fotoLateralUrl, pneu.fotoBandaUrl].some(Boolean) && (
         <>
-          <Text style={s.secao}>Fotos do primeiro cadastro</Text>
+          <Text style={s.secao}>Fotos do cadastro deste pneu</Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {[pneu.fotoUrl, pneu.fotoLateralUrl, pneu.fotoBandaUrl].filter(Boolean).map((u: any, i: number) => (
               <Image key={i} source={{ uri: fotoUrl(u) }} style={s.foto} resizeMode="cover" />

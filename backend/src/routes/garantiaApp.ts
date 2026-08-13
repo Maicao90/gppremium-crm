@@ -17,6 +17,25 @@ const ordenarPneus = <T extends { posicao: string }>(pneus: T[]): T[] => (
   [...pneus].sort((a, b) => POSICOES.indexOf(a.posicao) - POSICOES.indexOf(b.posicao))
 );
 
+type GarantiaNumeravel = { id: string; veiculoId: string; criadoEm: Date };
+type PneuNumeravel = { id: string; garantiaId: string; posicao: string; criadoEm: Date };
+
+const criarMapaNumerosPneus = <G extends GarantiaNumeravel, P extends PneuNumeravel>(garantias: G[], pneus: P[]): Map<string, number> => {
+  const garantiasPorVeiculo: Record<string, G[]> = {};
+  const pneusPorGarantia: Record<string, P[]> = {};
+  garantias.forEach((g) => { (garantiasPorVeiculo[g.veiculoId] = garantiasPorVeiculo[g.veiculoId] || []).push(g); });
+  pneus.forEach((p) => { (pneusPorGarantia[p.garantiaId] = pneusPorGarantia[p.garantiaId] || []).push(p); });
+
+  const numeros = new Map<string, number>();
+  Object.values(garantiasPorVeiculo).forEach((lista) => {
+    let numero = 1;
+    lista
+      .sort((a, b) => a.criadoEm.getTime() - b.criadoEm.getTime() || a.id.localeCompare(b.id))
+      .forEach((g) => ordenarPneus(pneusPorGarantia[g.id] || []).forEach((p) => numeros.set(p.id, numero++)));
+  });
+  return numeros;
+};
+
 function cpfValido(cpf: string): boolean {
   const d = soDigitos(cpf);
   if (d.length !== 11 || /^(\d)\1{10}$/.test(d)) return false;
@@ -112,6 +131,7 @@ router.get('/cliente/me', requireCliente, async (req, res) => {
     const veiPorId = Object.fromEntries(veiculos.map((v) => [v.id, v]));
     const pneusPorGar: Record<string, typeof pneus> = {};
     pneus.forEach((p) => { (pneusPorGar[p.garantiaId] = pneusPorGar[p.garantiaId] || []).push(p); });
+    const numerosPneus = criarMapaNumerosPneus(garantias, pneus);
     const revPneusPorRev: Record<string, typeof revPneus> = {};
     revPneus.forEach((p) => { (revPneusPorRev[p.revisaoId] = revPneusPorRev[p.revisaoId] || []).push(p); });
     const revPorGar: Record<string, any[]> = {};
@@ -130,7 +150,7 @@ router.get('/cliente/me', requireCliente, async (req, res) => {
       garantias: garantias.map((g) => ({
         ...g,
         veiculo: veiPorId[g.veiculoId] || null,
-        pneus: ordenarPneus(pneusPorGar[g.id] || []),
+        pneus: ordenarPneus(pneusPorGar[g.id] || []).map((p) => ({ ...p, numero: numerosPneus.get(p.id) || 1 })),
         revisoes: revPorGar[g.id] || [],
         lojaCadastro: g.lojaId ? (lojaPorId[g.lojaId] || null) : null,
         mecanicoCadastro: g.criadoPorId ? (usuarioPorId[g.criadoPorId]?.nome || '') : '',

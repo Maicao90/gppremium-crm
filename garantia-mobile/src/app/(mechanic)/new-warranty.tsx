@@ -93,6 +93,9 @@ export default function NewWarranty() {
   const [fEtiq, setFEtiq] = useState<Foto>(null);
   const [pneus, setPneus] = useState<PneuForm[]>([]);
   const [salvando, setSalvando] = useState(false);
+  const veiculoSelecionado = veiculosCadastrados.find((v) => v.id === veiculoEscolhido);
+  const numeroInicialPneus = veiculoEscolhido === 'novo' ? 1 : Number(veiculoSelecionado?.proximoNumeroPneu || 1);
+  const numeroPneu = (indice: number) => numeroInicialPneus + indice;
 
   const togglePosicao = (key: string) => setPneus((ps) => {
     if (ps.some((p) => p.posicao === key)) return ps.filter((p) => p.posicao !== key);
@@ -150,9 +153,9 @@ export default function NewWarranty() {
     for (let i = 0; i < pneus.length; i += 1) {
       const p = pneus[i];
       const nome = rotuloPosicao(p.posicao);
-      if (!p.medida || !p.modelo) return Alert.alert('Dados do pneu', `Selecione a medida e o modelo do Pneu ${i + 1}.`);
-      if (!p.foto?.base64) return Alert.alert('Foto obrigatoria', `Tire a foto do Pneu ${i + 1} (${nome}).`);
-      if (!p.fotoEtiqueta?.base64) return Alert.alert('Foto obrigatoria', `Tire a foto da etiqueta do Pneu ${i + 1} (${nome}).`);
+      if (!p.medida || !p.modelo) return Alert.alert('Dados do pneu', `Selecione a medida e o modelo do Pneu ${numeroPneu(i)}.`);
+      if (!p.foto?.base64) return Alert.alert('Foto obrigatoria', `Tire a foto do Pneu ${numeroPneu(i)} (${nome}).`);
+      if (!p.fotoEtiqueta?.base64) return Alert.alert('Foto obrigatoria', `Tire a foto da etiqueta do Pneu ${numeroPneu(i)} (${nome}).`);
     }
 
     setSalvando(true);
@@ -228,12 +231,11 @@ export default function NewWarranty() {
             {veiculosCadastrados.map((v) => (
               <TouchableOpacity
                 key={v.id}
-                style={[s.veiculoOpcao, veiculoEscolhido === v.id && s.veiculoOpcaoOn, v.garantiaEmAndamento && s.veiculoOpcaoOff]}
-                onPress={() => !v.garantiaEmAndamento && escolherVeiculo(v)}
-                disabled={v.garantiaEmAndamento}
+                style={[s.veiculoOpcao, veiculoEscolhido === v.id && s.veiculoOpcaoOn]}
+                onPress={() => escolherVeiculo(v)}
               >
                 <Text style={[s.veiculoOpcaoTitulo, veiculoEscolhido === v.id && s.veiculoOpcaoTituloOn]}>{v.placa} • {[v.marca, v.modelo].filter(Boolean).join(' ')}</Text>
-                <Text style={s.ajuda}>{v.garantiaEmAndamento ? 'Já possui garantia em andamento' : 'Selecionar este carro'}</Text>
+                <Text style={s.ajuda}>{v.garantiasEmAndamento ? `${v.garantiasEmAndamento} garantia(s) ativa(s) • nova compra começa no Pneu ${v.proximoNumeroPneu || 1}` : 'Selecionar este carro • começa no Pneu 1'}</Text>
               </TouchableOpacity>
             ))}
           </View>
@@ -287,7 +289,7 @@ export default function NewWarranty() {
 
         {pneus.map((p, i) => (
           <View key={p.posicao} style={s.card}>
-            <Text style={s.cardTitle}>Pneu {i + 1}</Text>
+            <Text style={s.cardTitle}>Pneu {numeroPneu(i)}</Text>
             <Text style={s.ajuda}>Posicao no carro: {rotuloPosicao(p.posicao)}</Text>
             <SeletorOpcao
               label="Medida"
