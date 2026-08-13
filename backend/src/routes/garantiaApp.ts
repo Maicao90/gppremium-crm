@@ -157,7 +157,14 @@ router.get('/cliente/me', requireCliente, async (req, res) => {
       })),
       notificacoes: notificacoes.map((n) => {
         const garantia = garantias.find((g) => g.id === n.garantiaId);
-        return { ...n, veiculo: garantia ? (veiPorId[garantia.veiculoId] || null) : null };
+        const veiculo = garantia ? (veiPorId[garantia.veiculoId] || null) : null;
+        const identificacao = veiculo
+          ? `${[veiculo.marca, veiculo.modelo].filter(Boolean).join(' ') || 'Veículo'} • placa ${veiculo.placa}`
+          : '';
+        return {
+          ...n,
+          mensagem: identificacao ? `${n.mensagem}\n\nVeículo: ${identificacao}` : n.mensagem,
+        };
       }),
     });
   } catch (e) { erro(res, e); }

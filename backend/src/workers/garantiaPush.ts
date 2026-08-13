@@ -87,12 +87,12 @@ export async function dispararPushDevidos(): Promise<void> {
       if (!c || !c.pushToken) continue; // sem app: fica pro envio manual no painel
       const veiculo = veiculoPorGarantia[n.garantiaId];
       const identificacao = veiculo
-        ? `${[veiculo.marca, veiculo.modelo].filter(Boolean).join(' ') || 'Veiculo'} • placa ${veiculo.placa}`
+        ? `${[veiculo.marca, veiculo.modelo].filter(Boolean).join(' ') || 'Veículo'} • placa ${veiculo.placa}`
         : '';
       mensagens.push({
         to: c.pushToken,
         title: TITULO[n.tipo] || 'GP Premium',
-        body: identificacao ? `${n.mensagem}\nVeiculo: ${identificacao}` : n.mensagem,
+        body: identificacao ? `${n.mensagem}\nVeículo: ${identificacao}` : n.mensagem,
         data: { notificacaoId: n.id, tipo: n.tipo },
       });
       idsParaMarcar.push(n.id);
