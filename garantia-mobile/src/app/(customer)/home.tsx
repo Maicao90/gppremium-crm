@@ -198,11 +198,7 @@ function GarantiaDetalhe({ aberta, onAbrirPneu }: { aberta: any; onAbrirPneu: (p
     aberta.lojaCadastro?.nome ? `Loja: ${aberta.lojaCadastro.nome}` : null,
     aberta.mecanicoCadastro ? `Mecânico: ${aberta.mecanicoCadastro}` : null,
   ].filter(Boolean).join(' • ');
-  const fotosCadastro = [
-    aberta.cadastroFotoVeiculoUrl || aberta.veiculo?.fotoUrl,
-    aberta.cadastroFotoOdometroUrl || aberta.veiculo?.fotoOdometroUrl,
-    aberta.cadastroEtiquetaOleoUrl,
-  ].filter(Boolean);
+  const fotoCadastro = aberta.cadastroFotoVeiculoUrl || aberta.veiculo?.fotoUrl;
 
   return (
     <ScrollView contentContainerStyle={{ padding: 18 }}>
@@ -225,13 +221,7 @@ function GarantiaDetalhe({ aberta, onAbrirPneu }: { aberta: any; onAbrirPneu: (p
         <Text style={s.detLinha}>Cadastro feito em {fmtData(aberta.criadoEm || aberta.dataInicio) || fmtData(aberta.dataInicio)}</Text>
         {dadosCadastro ? <Text style={s.detMuted}>{dadosCadastro}</Text> : null}
         <Text style={s.detLinha}>KM do cadastro: {fmtKm(aberta.kmInicial)} km</Text>
-        {aberta.cadastroOleoData ? <Text style={s.detLinha}>Data da etiqueta de óleo: {fmtData(aberta.cadastroOleoData)}</Text> : null}
-        {aberta.cadastroOleoKm ? <Text style={s.detLinha}>KM da etiqueta no cadastro: {fmtKm(aberta.cadastroOleoKm)} km</Text> : null}
-        {fotosCadastro.length > 0 && (
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginTop: 10 }}>
-            {fotosCadastro.map((u: string, i: number) => <Image key={`${u}-${i}`} source={{ uri: fotoUrl(u) }} style={s.foto} resizeMode="cover" />)}
-          </ScrollView>
-        )}
+        {fotoCadastro ? <Image source={{ uri: fotoUrl(fotoCadastro) }} style={[s.foto, { marginTop: 10 }]} resizeMode="cover" /> : null}
       </View>
 
       <Text style={s.secao}>Pneus do primeiro cadastro</Text>
@@ -256,7 +246,7 @@ function GarantiaDetalhe({ aberta, onAbrirPneu }: { aberta: any; onAbrirPneu: (p
       <Text style={s.secao}>Revisões técnicas após a ativação ({revisoes.length})</Text>
       {revisoes.length === 0 && <Text style={s.detMuted}>Nenhuma revisão registrada ainda.</Text>}
       {revisoes.map((r: any, idx: number) => {
-        const numeroRevisao = revisoes.length - idx + 1;
+        const numeroRevisao = revisoes.length - idx;
         const historicoAnterior = idx > 0;
         return (
           <View key={r.id} style={[s.card, r.status === 'reprovada' && { borderColor: '#e11d48', borderWidth: 1 }]}>
@@ -279,18 +269,10 @@ function GarantiaDetalhe({ aberta, onAbrirPneu }: { aberta: any; onAbrirPneu: (p
             <Text style={s.detMuted}>
               {[r.loja?.nome ? `Loja: ${r.loja.nome}` : null, r.mecanico ? `Mecânico: ${r.mecanico}` : null].filter(Boolean).join(' • ') || 'Loja e mecânico não informados'}
             </Text>
-            {([r.fotoOdometroUrl, r.etiquetaOleoUrl].some(Boolean) || r.oleoData || r.oleoKm) && (
+            {r.fotoOdometroUrl && (
               <View style={s.dadosRevisao}>
                 <Text style={s.revPneuPos}>Dados do veículo na revisão</Text>
-                {r.oleoData ? <Text style={s.detMuted}>Data da etiqueta de óleo: {fmtData(r.oleoData)}</Text> : null}
-                {r.oleoKm ? <Text style={s.detMuted}>KM da etiqueta: {fmtKm(r.oleoKm)} km</Text> : null}
-                {[r.fotoOdometroUrl, r.etiquetaOleoUrl].some(Boolean) && (
-                  <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginTop: 8 }}>
-                    {[r.fotoOdometroUrl, r.etiquetaOleoUrl].filter(Boolean).map((u: string, i: number) => (
-                      <Image key={`${u}-${i}`} source={{ uri: fotoUrl(u) }} style={s.foto} resizeMode="cover" />
-                    ))}
-                  </ScrollView>
-                )}
+                <Image source={{ uri: fotoUrl(r.fotoOdometroUrl) }} style={[s.foto, { marginTop: 8 }]} resizeMode="cover" />
               </View>
             )}
             {(r.pneus || []).map((rp: any) => {
@@ -342,7 +324,7 @@ function PneuDetalhe({ pneu }: { pneu: any }) {
       {historico.length === 0 && <Text style={s.detMuted}>Este pneu ainda não passou por revisão.</Text>}
       {historico.map(({ r, rp }: any, idx: number) => {
         const probs = parseProblemas(rp.problemas).map((k: string) => ROTULO_PROB[k] || k);
-        const numeroRevisao = historico.length - idx + 1;
+        const numeroRevisao = historico.length - idx;
         return (
           <View key={rp.id} style={s.card}>
             <Text style={s.pneuPos}>{numeroRevisao}ª revisão{idx > 0 ? ' • Histórico anterior' : ''}</Text>
