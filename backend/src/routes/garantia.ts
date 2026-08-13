@@ -272,8 +272,28 @@ router.get('/clientes/busca', async (req, res) => {
     if (!cpfValido(cpf)) return res.status(400).json({ error: 'CPF inválido.' });
     const cliente = await prisma.garantiaCliente.findUnique({ where: { cpf } });
     if (!cliente) return res.json({ encontrado: false });
-    const veiculo = await prisma.garantiaVeiculo.findFirst({ where: { clienteId: cliente.id }, orderBy: { criadoEm: 'desc' } });
-    res.json({ encontrado: true, cliente, veiculo });
+    const veiculos = await prisma.garantiaVeiculo.findMany({ where: { clienteId: cliente.id }, orderBy: { criadoEm: 'desc' } });
+    const garantiasEmAndamento = veiculos.length ? await prisma.garantia.findMany({
+      where: {
+        veiculoId: { in: veiculos.map((v) => v.id) },
+        status: { in: ['pendente', 'em_analise', 'ativa', 'atencao'] },
+      },
+      select: { veiculoId: true },
+    }) : [];
+    const idsComGarantia = new Set(garantiasEmAndamento.map((g) => g.veiculoId));
+    const veiculosOut = veiculos.map((v) => ({ ...v, garantiaEmAndamento: idsComGarantia.has(v.id) }));
+    res.json({
+      encontrado: true,
+      cliente: {
+        id: cliente.id,
+        nome: cliente.nome,
+        telefone: cliente.telefone,
+        email: cliente.email,
+        nascimento: cliente.nascimento,
+      },
+      veiculos: veiculosOut,
+      veiculo: veiculosOut[0] || null,
+    });
   } catch (e) { erro(res, e); }
 });
 

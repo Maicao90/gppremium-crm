@@ -47,6 +47,8 @@ export default function NewWarranty() {
   const [buscando, setBuscando] = useState(false);
   const [cli, setCli] = useState({ nome: '', telefone: '', email: '' });
   const [vei, setVei] = useState({ placa: '', marca: '', modelo: '', ano: '', km: '' });
+  const [veiculosCadastrados, setVeiculosCadastrados] = useState<any[]>([]);
+  const [veiculoEscolhido, setVeiculoEscolhido] = useState('novo');
   const [oleo, setOleo] = useState({ data: '', km: '', sem: false });
   const [fVeic, setFVeic] = useState<Foto>(null);
   const [fOdo, setFOdo] = useState<Foto>(null);
@@ -60,6 +62,21 @@ export default function NewWarranty() {
     return POSICOES.map((pos) => comNovo.find((p) => p.posicao === pos.key)).filter(Boolean) as PneuForm[];
   });
 
+  const escolherVeiculo = (veiculo: any | null) => {
+    setVeiculoEscolhido(veiculo?.id || 'novo');
+    setVei(veiculo ? {
+      placa: veiculo.placa || '',
+      marca: veiculo.marca || '',
+      modelo: veiculo.modelo || '',
+      ano: String(veiculo.ano || ''),
+      km: '',
+    } : { placa: '', marca: '', modelo: '', ano: '', km: '' });
+    setOleo({ data: '', km: '', sem: false });
+    setFVeic(null);
+    setFOdo(null);
+    setFEtiq(null);
+  };
+
   const buscar = async () => {
     if (soDigitos(cpf).length !== 11) return Alert.alert('Ops', 'Digite o CPF completo.');
     setBuscando(true);
@@ -67,11 +84,15 @@ export default function NewWarranty() {
       const r = await api<any>(`/api/garantia/clientes/busca?cpf=${soDigitos(cpf)}`);
       if (r.encontrado) {
         setCli({ nome: r.cliente.nome, telefone: r.cliente.telefone, email: r.cliente.email });
-        if (r.veiculo) {
-          setVei((v) => ({ ...v, placa: r.veiculo.placa, marca: r.veiculo.marca, modelo: r.veiculo.modelo, ano: String(r.veiculo.ano || '') }));
-        }
-        Alert.alert('Cliente encontrado', 'Dados preenchidos. Confira e informe o KM atual.');
+        const lista = Array.isArray(r.veiculos) ? r.veiculos : (r.veiculo ? [r.veiculo] : []);
+        setVeiculosCadastrados(lista);
+        escolherVeiculo(null);
+        Alert.alert('Cliente encontrado', lista.length
+          ? 'Dados preenchidos. Escolha um carro cadastrado ou cadastre outro carro.'
+          : 'Dados preenchidos. Cadastre o carro desta garantia.');
       } else {
+        setVeiculosCadastrados([]);
+        escolherVeiculo(null);
         Alert.alert('Cliente novo', 'CPF ainda nao cadastrado. Preencha os dados.');
       }
     } catch (e: any) {
@@ -155,8 +176,30 @@ export default function NewWarranty() {
           <TextInput style={s.input} placeholder="Telefone (WhatsApp)" placeholderTextColor="#94a3b8" keyboardType="phone-pad" value={cli.telefone} onChangeText={(v) => setCli({ ...cli, telefone: v })} />
         </View>
 
+        {veiculosCadastrados.length > 0 && (
+          <View style={s.card}>
+            <Text style={s.cardTitle}>Escolha o carro desta garantia</Text>
+            <Text style={s.ajuda}>Use um carro já cadastrado ou cadastre outro carro para o mesmo CPF.</Text>
+            <TouchableOpacity style={[s.veiculoOpcao, veiculoEscolhido === 'novo' && s.veiculoOpcaoOn]} onPress={() => escolherVeiculo(null)}>
+              <Text style={[s.veiculoOpcaoTitulo, veiculoEscolhido === 'novo' && s.veiculoOpcaoTituloOn]}>Cadastrar outro carro</Text>
+              <Text style={s.ajuda}>Nova placa para este cliente</Text>
+            </TouchableOpacity>
+            {veiculosCadastrados.map((v) => (
+              <TouchableOpacity
+                key={v.id}
+                style={[s.veiculoOpcao, veiculoEscolhido === v.id && s.veiculoOpcaoOn, v.garantiaEmAndamento && s.veiculoOpcaoOff]}
+                onPress={() => !v.garantiaEmAndamento && escolherVeiculo(v)}
+                disabled={v.garantiaEmAndamento}
+              >
+                <Text style={[s.veiculoOpcaoTitulo, veiculoEscolhido === v.id && s.veiculoOpcaoTituloOn]}>{v.placa} • {[v.marca, v.modelo].filter(Boolean).join(' ')}</Text>
+                <Text style={s.ajuda}>{v.garantiaEmAndamento ? 'Já possui garantia em andamento' : 'Selecionar este carro'}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        )}
+
         <View style={s.card}>
-          <Text style={s.cardTitle}>Veiculo</Text>
+          <Text style={s.cardTitle}>{veiculoEscolhido === 'novo' ? 'Novo veículo' : 'Veículo selecionado'}</Text>
           <TextInput style={s.input} placeholder="Placa" placeholderTextColor="#94a3b8" autoCapitalize="characters" value={vei.placa} onChangeText={(v) => setVei({ ...vei, placa: v.toUpperCase() })} />
           <View style={{ flexDirection: 'row', gap: 8 }}>
             <TextInput style={[s.input, { flex: 1 }]} placeholder="Marca" placeholderTextColor="#94a3b8" value={vei.marca} onChangeText={(v) => setVei({ ...vei, marca: v })} />
@@ -230,6 +273,11 @@ const s = StyleSheet.create({
   scroll: { padding: 16 },
   card: { backgroundColor: '#fff', borderRadius: 14, padding: 16, marginBottom: 12, borderWidth: 1, borderColor: 'rgba(0,0,0,0.04)' },
   cardTitle: { fontSize: 14, fontWeight: '800', color: '#0f172a', marginBottom: 10 },
+  veiculoOpcao: { borderWidth: 1, borderColor: '#e2e8f0', borderRadius: 12, padding: 12, marginTop: 8, backgroundColor: '#f8fafc' },
+  veiculoOpcaoOn: { borderColor: '#0ea5e9', backgroundColor: '#e0f2fe' },
+  veiculoOpcaoOff: { opacity: 0.55 },
+  veiculoOpcaoTitulo: { fontSize: 13, fontWeight: '800', color: '#334155' },
+  veiculoOpcaoTituloOn: { color: '#0369a1' },
   input: { backgroundColor: '#f8fafc', borderWidth: 1, borderColor: 'rgba(0,0,0,0.06)', borderRadius: 9, paddingHorizontal: 11, paddingVertical: 10, fontSize: 13, color: '#0f172a', marginBottom: 8 },
   btnMini: { backgroundColor: '#0ea5e9', borderRadius: 9, width: 46, alignItems: 'center', justifyContent: 'center', marginBottom: 8 },
   checkRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 8 },
