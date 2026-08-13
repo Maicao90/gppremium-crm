@@ -151,23 +151,23 @@ model Empresa {
 }
 
 model Loja {
-  id            String     @id @default(uuid())
-  company_id    String
-  empresa       Empresa    @relation(fields: [company_id], references: [id], onDelete: Cascade)
-  store_name    String     @default("")
-  city          String     @default("")
-  state         String     @default("")
-  whatsapp      String     @default("")
-  telefone_fixo String     @default("")
-  site          String     @default("")
-  instagram     String     @default("")
-  manager_name  String     @default("")
-  notes         String     @default("")
+  id                  String     @id @default(uuid())
+  company_id          String
+  empresa             Empresa    @relation(fields: [company_id], references: [id], onDelete: Cascade)
+  store_name          String     @default("")
+  city                String     @default("")
+  state               String     @default("")
+  whatsapp            String     @default("")
+  telefone_fixo       String     @default("")
+  site                String     @default("")
+  instagram           String     @default("")
+  manager_name        String     @default("")
+  notes               String     @default("")
   // Loja credenciada no programa Garantia 50k: só credenciada (ou master) pode
   // cadastrar garantia e fazer revisão. Ligado/desligado por loja na tela de Lojas.
-  credenciadaGarantia Boolean @default(false)
-  created_at    DateTime   @default(now())
-  campanhas     Campanha[]
+  credenciadaGarantia Boolean    @default(false)
+  created_at          DateTime   @default(now())
+  campanhas           Campanha[]
 }
 
 model Campanha {
@@ -321,13 +321,13 @@ model DisparoContato {
 // e cada operador tinha que anexar de novo) e o limite diário só existia no navegador —
 // duas abas abertas furavam o teto sem o servidor perceber.
 model DisparoCampanha {
-  id          String   @id @default(uuid())
-  storeId     String   @unique
-  fotoUrl     String? // arte enviada junto do texto (em /midias/disparo/)
-  fotoNome    String? // nome do arquivo original, só pra exibir no painel
-  limiteDia   Int      @default(30) // teto de envios por dia, valendo no SERVIDOR
+  id           String   @id @default(uuid())
+  storeId      String   @unique
+  fotoUrl      String? // arte enviada junto do texto (em /midias/disparo/)
+  fotoNome     String? // nome do arquivo original, só pra exibir no painel
+  limiteDia    Int      @default(30) // teto de envios por dia, valendo no SERVIDOR
   atualizadoEm DateTime @updatedAt
-  criadoEm    DateTime @default(now())
+  criadoEm     DateTime @default(now())
 }
 
 // ===== Garantia 50.000 KM (módulo "aplicativo", importado do protótipo GPPREMIUMGARANTIA50K) =====
@@ -351,41 +351,48 @@ model GarantiaCliente {
 }
 
 model GarantiaVeiculo {
-  id              String   @id @default(uuid())
-  clienteId       String
-  placa           String   @unique // maiúsculas sem hífen (Mercosul ou padrão antigo)
-  marca           String   @default("")
-  modelo          String   @default("")
-  ano             Int      @default(0)
-  kmAtual         Int      @default(0) // atualizado a cada revisão
-  fotoUrl         String? // foto geral do veículo (em /midias/garantia/)
-  fotoOdometroUrl String?
+  id                 String   @id @default(uuid())
+  clienteId          String
+  placa              String   @unique // maiúsculas sem hífen (Mercosul ou padrão antigo)
+  marca              String   @default("")
+  modelo             String   @default("")
+  ano                Int      @default(0)
+  kmAtual            Int      @default(0) // atualizado a cada revisão
+  fotoUrl            String? // foto geral do veículo (em /midias/garantia/)
+  fotoOdometroUrl    String?
   // Etiqueta de troca de óleo — base do cálculo de km/dia (motor de notificação).
   // Se o veículo não tem etiqueta, semEtiquetaOleo=true e a próxima revisão é agendada
   // pelo mesmo nº de dias da revisão anterior (regra do plano).
-  oleoData        String   @default("") // YYYY-MM-DD da última troca de óleo
-  oleoKm          Int      @default(0) // km do carro na última troca de óleo
-  oleoProximaTrocaKm Int?  // km que a PRÓPRIA ETIQUETA indica pra próxima troca (lido do adesivo, não calculado)
-  semEtiquetaOleo Boolean  @default(false)
-  etiquetaOleoUrl String? // foto da etiqueta de óleo
-  kmPorDia        Float    @default(0) // média calculada (recalculada a cada revisão)
-  criadoEm        DateTime @default(now())
+  oleoData           String   @default("") // YYYY-MM-DD da última troca de óleo
+  oleoKm             Int      @default(0) // km do carro na última troca de óleo
+  oleoProximaTrocaKm Int? // km que a PRÓPRIA ETIQUETA indica pra próxima troca (lido do adesivo, não calculado)
+  semEtiquetaOleo    Boolean  @default(false)
+  etiquetaOleoUrl    String? // foto da etiqueta de óleo
+  kmPorDia           Float    @default(0) // média calculada (recalculada a cada revisão)
+  criadoEm           DateTime @default(now())
 }
 
 model Garantia {
-  id            String   @id @default(uuid())
-  clienteId     String
-  veiculoId     String
-  status        String   @default("pendente") // pendente, em_analise, ativa, atencao, reprovada, cancelada, expirada
-  kmInicial     Int
-  kmMaximo      Int // kmInicial + 50000
-  dataInicio    String // YYYY-MM-DD
-  dataExpiracao String // dataInicio + 2 anos
-  dotDivergente Boolean  @default(false) // alguma revisão leu um DOT diferente do cadastrado
-  criadoPorId   String? // Usuario do painel que ativou (campo solto, padrão do projeto)
-  lojaId        String? // loja credenciada que VENDEU/ativou (escopo: a loja só vê as suas). Null = master
-  criadoEm      DateTime @default(now())
-  atualizadoEm  DateTime @updatedAt
+  id                      String   @id @default(uuid())
+  clienteId               String
+  veiculoId               String
+  status                  String   @default("pendente") // pendente, em_analise, ativa, atencao, reprovada, cancelada, expirada
+  kmInicial               Int
+  kmMaximo                Int // kmInicial + 50000
+  dataInicio              String // YYYY-MM-DD
+  dataExpiracao           String // dataInicio + 2 anos
+  // Cópia imutável dos dados/fotos da ativação. O veículo recebe dados novos nas
+  // revisões, então o primeiro cadastro precisa do próprio registro histórico.
+  cadastroOleoData        String   @default("")
+  cadastroOleoKm          Int      @default(0)
+  cadastroFotoVeiculoUrl  String?
+  cadastroFotoOdometroUrl String?
+  cadastroEtiquetaOleoUrl String?
+  dotDivergente           Boolean  @default(false) // alguma revisão leu um DOT diferente do cadastrado
+  criadoPorId             String? // Usuario do painel que ativou (campo solto, padrão do projeto)
+  lojaId                  String? // loja credenciada que VENDEU/ativou (escopo: a loja só vê as suas). Null = master
+  criadoEm                DateTime @default(now())
+  atualizadoEm            DateTime @updatedAt
 }
 
 model GarantiaPneu {
@@ -421,6 +428,8 @@ model GarantiaRevisao {
   observacoes      String   @default("")
   fotoOdometroUrl  String?
   etiquetaOleoUrl  String? // foto da etiqueta de óleo na revisão
+  oleoData         String   @default("") // data lida na etiqueta desta revisão
+  oleoKm           Int      @default(0) // km lido na etiqueta desta revisão
   // Odômetro suspeito: o km informado é MENOR que o da revisão/ativação anterior
   // (odômetro andou pra trás = possível adulteração) → alerta pro analista.
   odometroSuspeito Boolean  @default(false)
@@ -430,23 +439,23 @@ model GarantiaRevisao {
 }
 
 model GarantiaRevisaoPneu {
-  id                   String   @id @default(uuid())
-  revisaoId            String
-  pneuId               String? // GarantiaPneu correspondente (null se a posição não bateu com nenhum)
-  posicao              String
+  id                     String   @id @default(uuid())
+  revisaoId              String
+  pneuId                 String? // GarantiaPneu correspondente (null se a posição não bateu com nenhum)
+  posicao                String
   // Profundidade do sulco (menor medida), campo selecionável 1.6–10.0 (regra do plano).
-  profundidadeSulco    Float    @default(0)
-  sulcoExterno         Float    @default(0) // mm (detalhe opcional)
-  sulcoCentral         Float    @default(0)
-  sulcoInterno         Float    @default(0)
-  estado               String   @default("bom") // excelente, bom, regular, ruim, trocar
+  profundidadeSulco      Float    @default(0)
+  sulcoExterno           Float    @default(0) // mm (detalhe opcional)
+  sulcoCentral           Float    @default(0)
+  sulcoInterno           Float    @default(0)
+  estado                 String   @default("bom") // excelente, bom, regular, ruim, trocar
   // Flag de FRAUDE: marcas de tração/arrancamento de pedaços de borracha na banda.
   // Marcada → cancela a garantia DESTE pneu automaticamente (regra do plano).
-  arrancamentoBorracha Boolean  @default(false)
-  problemas            String   @default("[]") // JSON array de outros problemas
-  dotLido              String   @default("") // DOT visto na hora (comparado com o cadastrado)
-  observacoes          String   @default("")
-  recomendacao         String   @default("")
+  arrancamentoBorracha   Boolean  @default(false)
+  problemas              String   @default("[]") // JSON array de outros problemas
+  dotLido                String   @default("") // DOT visto na hora (comparado com o cadastrado)
+  observacoes            String   @default("")
+  recomendacao           String   @default("")
   // Etiqueta INTERNA do pneu — só obrigatória na 1ª revisão de CADA pneu (o pneu não
   // muda de identidade entre revisões, então documentar de novo toda vez é redundante).
   // "1ª revisão desse pneu" é calculado no backend: nunca apareceu antes num
@@ -481,6 +490,8 @@ model GarantiaNotificacao {
   agendadaPara String // YYYY-MM-DD (dia em que deve ser enviada)
   enviada      Boolean   @default(false)
   enviadaEm    DateTime?
+  lidaNoApp    Boolean   @default(false)
+  lidaNoAppEm  DateTime?
   criadoEm     DateTime  @default(now())
 }
 

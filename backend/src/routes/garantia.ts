@@ -244,8 +244,14 @@ router.get('/garantias', async (req, res) => {
     const clientes = await prisma.garantiaCliente.findMany({ where: { id: { in: garantias.map((g) => g.clienteId) } } });
     const veiculos = await prisma.garantiaVeiculo.findMany({ where: { id: { in: garantias.map((g) => g.veiculoId) } } });
     const pneus = await prisma.garantiaPneu.findMany({ where: { garantiaId: { in: garantias.map((g) => g.id) } } });
+    const lojaIds = [...new Set(garantias.map((g) => g.lojaId).filter(Boolean) as string[])];
+    const usuarioIds = [...new Set(garantias.map((g) => g.criadoPorId).filter(Boolean) as string[])];
+    const lojas = lojaIds.length ? await prisma.loja.findMany({ where: { id: { in: lojaIds } }, select: { id: true, store_name: true } }) : [];
+    const usuarios = usuarioIds.length ? await prisma.usuario.findMany({ where: { id: { in: usuarioIds } }, select: { id: true, nome: true } }) : [];
     const cliPorId = Object.fromEntries(clientes.map((c) => [c.id, c]));
     const veiPorId = Object.fromEntries(veiculos.map((v) => [v.id, v]));
+    const lojaPorId = Object.fromEntries(lojas.map((l) => [l.id, { id: l.id, nome: l.store_name }]));
+    const usuarioPorId = Object.fromEntries(usuarios.map((u) => [u.id, u.nome]));
     const pneusPorGar: Record<string, typeof pneus> = {};
     pneus.forEach((p) => { (pneusPorGar[p.garantiaId] = pneusPorGar[p.garantiaId] || []).push(p); });
     res.json(garantias.map((g) => ({
@@ -253,6 +259,8 @@ router.get('/garantias', async (req, res) => {
       cliente: cliPorId[g.clienteId] || null,
       veiculo: veiPorId[g.veiculoId] || null,
       pneus: pneusPorGar[g.id] || [],
+      lojaCadastro: g.lojaId ? (lojaPorId[g.lojaId] || null) : null,
+      mecanicoCadastro: g.criadoPorId ? (usuarioPorId[g.criadoPorId] || '') : '',
     })));
   } catch (e) { erro(res, e); }
 });
@@ -461,6 +469,11 @@ router.post('/garantias', async (req, res) => {
         kmMaximo: km + cfg.garantiaKm,
         dataInicio: inicio,
         dataExpiracao: exp.toISOString().slice(0, 10),
+        cadastroOleoData: semEtiquetaOleo ? '' : oleoData,
+        cadastroOleoKm: semEtiquetaOleo ? 0 : oleoKm,
+        cadastroFotoVeiculoUrl: fotoUrl,
+        cadastroFotoOdometroUrl: fotoOdometroUrl,
+        cadastroEtiquetaOleoUrl: etiquetaOleoUrl,
         criadoPorId: req.user?.sub || null,
         lojaId: criador?.lojaId || null,
       },
@@ -687,6 +700,8 @@ router.post('/revisoes', async (req, res) => {
         status: foraDoIntervalo ? 'reprovada' : 'pendente',
         mecanico: String(b.mecanico || '').trim(),
         observacoes: String(b.observacoes || '').trim(),
+        oleoData: semEtiquetaOleo ? '' : String(b.oleoData),
+        oleoKm: semEtiquetaOleo ? 0 : Number(b.oleoKm),
         odometroSuspeito,
         ...(fotoOdometroUrl ? { fotoOdometroUrl } : {}),
         ...(etiquetaOleoUrl ? { etiquetaOleoUrl } : {}),

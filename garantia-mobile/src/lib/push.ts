@@ -25,10 +25,10 @@ async function garantirPermissao(): Promise<boolean> {
 
 // Mostra notificações LOCAIS na tela do celular (funciona no Expo Go, diferente do push
 // remoto). Usado pra o cliente ver os avisos pendentes aparecerem quando abre o app.
-export async function mostrarLocais(notifs: { id: string; mensagem: string; enviada?: boolean }[]): Promise<void> {
+export async function mostrarLocais(notifs: { id: string; mensagem: string; lidaNoApp?: boolean }[]): Promise<void> {
   try {
     if (!(await garantirPermissao())) return;
-    for (const n of notifs.filter((x) => !x.enviada)) {
+    for (const n of notifs.filter((x) => !x.lidaNoApp)) {
       await Notifications.scheduleNotificationAsync({
         content: { title: 'GP Premium 🛞', body: n.mensagem, data: { id: n.id } },
         trigger: null, // imediata

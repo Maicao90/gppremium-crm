@@ -97,6 +97,13 @@ router.get('/cliente/me', requireCliente, async (req, res) => {
     const revisoes = await prisma.garantiaRevisao.findMany({ where: { garantiaId: { in: garantias.map((g) => g.id) } }, orderBy: { criadoEm: 'desc' } });
     const revPneus = await prisma.garantiaRevisaoPneu.findMany({ where: { revisaoId: { in: revisoes.map((r) => r.id) } } });
     const notificacoes = await prisma.garantiaNotificacao.findMany({ where: { clienteId }, orderBy: { criadoEm: 'desc' }, take: 50 });
+    const lojaIds = [...new Set([
+      ...garantias.map((g) => g.lojaId).filter(Boolean),
+      ...revisoes.map((r) => r.lojaId).filter(Boolean),
+    ] as string[])];
+    const usuarioIds = [...new Set(garantias.map((g) => g.criadoPorId).filter(Boolean) as string[])];
+    const lojas = lojaIds.length ? await prisma.loja.findMany({ where: { id: { in: lojaIds } }, select: { id: true, store_name: true } }) : [];
+    const usuarios = usuarioIds.length ? await prisma.usuario.findMany({ where: { id: { in: usuarioIds } }, select: { id: true, nome: true } }) : [];
 
     const veiPorId = Object.fromEntries(veiculos.map((v) => [v.id, v]));
     const pneusPorGar: Record<string, typeof pneus> = {};
@@ -104,7 +111,15 @@ router.get('/cliente/me', requireCliente, async (req, res) => {
     const revPneusPorRev: Record<string, typeof revPneus> = {};
     revPneus.forEach((p) => { (revPneusPorRev[p.revisaoId] = revPneusPorRev[p.revisaoId] || []).push(p); });
     const revPorGar: Record<string, any[]> = {};
-    revisoes.forEach((r) => { (revPorGar[r.garantiaId] = revPorGar[r.garantiaId] || []).push({ ...r, pneus: revPneusPorRev[r.id] || [] }); });
+    const lojaPorId = Object.fromEntries(lojas.map((l) => [l.id, { id: l.id, nome: l.store_name }]));
+    const usuarioPorId = Object.fromEntries(usuarios.map((u) => [u.id, u]));
+    revisoes.forEach((r) => {
+      (revPorGar[r.garantiaId] = revPorGar[r.garantiaId] || []).push({
+        ...r,
+        pneus: revPneusPorRev[r.id] || [],
+        loja: r.lojaId ? (lojaPorId[r.lojaId] || null) : null,
+      });
+    });
 
     res.json({
       cliente: clienteOut(cliente),
@@ -113,6 +128,8 @@ router.get('/cliente/me', requireCliente, async (req, res) => {
         veiculo: veiPorId[g.veiculoId] || null,
         pneus: pneusPorGar[g.id] || [],
         revisoes: revPorGar[g.id] || [],
+        lojaCadastro: g.lojaId ? (lojaPorId[g.lojaId] || null) : null,
+        mecanicoCadastro: g.criadoPorId ? (usuarioPorId[g.criadoPorId]?.nome || '') : '',
       })),
       notificacoes,
     });
@@ -129,13 +146,13 @@ router.post('/cliente/push-token', requireCliente, async (req, res) => {
   } catch (e) { erro(res, e); }
 });
 
-// Marca uma notificação como lida/enviada (o cliente viu no app).
+// Marca apenas como lida no app. "Enviada" é reservado ao resultado do push.
 router.post('/cliente/notificacoes/:id/lida', requireCliente, async (req, res) => {
   try {
     const clienteId = (req as any).clienteId as string;
     const n = await prisma.garantiaNotificacao.findUnique({ where: { id: String(req.params.id) } });
     if (!n || n.clienteId !== clienteId) return res.status(404).json({ error: 'Notificação não encontrada.' });
-    await prisma.garantiaNotificacao.update({ where: { id: n.id }, data: { enviada: true, enviadaEm: new Date() } });
+    await prisma.garantiaNotificacao.update({ where: { id: n.id }, data: { lidaNoApp: true, lidaNoAppEm: new Date() } });
     res.json({ ok: true });
   } catch (e) { erro(res, e); }
 });

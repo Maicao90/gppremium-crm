@@ -25,8 +25,8 @@ export default function Notifications() {
       <ScrollView contentContainerStyle={s.scroll} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={async () => { setRefreshing(true); await carregar(); setRefreshing(false); }} />}>
         {lista.length === 0 && <View style={s.vazio}><Bell size={36} color="#cbd5e1" /><Text style={s.vazioT}>Sem notificações.</Text></View>}
         {lista.map((n) => (
-          <TouchableOpacity key={n.id} style={[s.card, !n.enviada && s.cardNova]} onPress={() => marcarLida(n.id)} activeOpacity={0.8}>
-            {!n.enviada && <View style={s.dot} />}
+          <TouchableOpacity key={n.id} style={[s.card, !n.lidaNoApp && s.cardNova]} onPress={() => marcarLida(n.id)} activeOpacity={0.8}>
+            {!n.lidaNoApp && <View style={s.dot} />}
             <Text style={s.msg}>{n.mensagem}</Text>
             <Text style={s.data}>{new Date(n.criadoEm).toLocaleDateString('pt-BR')}</Text>
           </TouchableOpacity>
