@@ -141,6 +141,9 @@ async function validarFoto(base64: any, rotulo: string): Promise<string | null> 
 }
 
 const POSICOES = ['dianteiro_esquerdo', 'dianteiro_direito', 'traseiro_esquerdo', 'traseiro_direito', 'estepe'];
+const ordenarPneus = <T extends { posicao: string }>(pneus: T[]): T[] => (
+  [...pneus].sort((a, b) => POSICOES.indexOf(a.posicao) - POSICOES.indexOf(b.posicao))
+);
 const ROTULO_POSICAO: Record<string, string> = {
   dianteiro_esquerdo: 'dianteiro esquerdo', dianteiro_direito: 'dianteiro direito',
   traseiro_esquerdo: 'traseiro esquerdo', traseiro_direito: 'traseiro direito', estepe: 'estepe',
@@ -258,7 +261,7 @@ router.get('/garantias', async (req, res) => {
       ...g,
       cliente: cliPorId[g.clienteId] || null,
       veiculo: veiPorId[g.veiculoId] || null,
-      pneus: pneusPorGar[g.id] || [],
+      pneus: ordenarPneus(pneusPorGar[g.id] || []),
       lojaCadastro: g.lojaId ? (lojaPorId[g.lojaId] || null) : null,
       mecanicoCadastro: g.criadoPorId ? (usuarioPorId[g.criadoPorId] || '') : '',
     })));
@@ -360,7 +363,7 @@ router.get('/garantias/por-placa', async (req, res) => {
     });
     if (!garantia) return res.json({ encontrada: false });
     const cliente = await prisma.garantiaCliente.findUnique({ where: { id: garantia.clienteId } });
-    const pneus = await prisma.garantiaPneu.findMany({ where: { garantiaId: garantia.id } });
+    const pneus = ordenarPneus(await prisma.garantiaPneu.findMany({ where: { garantiaId: garantia.id } }));
     // Marca quais pneus JÁ passaram por alguma revisão antes — o app usa isso pra saber
     // se pede a foto da etiqueta interna (só na 1ª revisão de cada pneu) ou não.
     const idsJaRevisados = new Set(
@@ -629,7 +632,7 @@ router.post('/revisoes', async (req, res) => {
     if (pneusIn.length === 0) return res.status(400).json({ error: 'Informe os dados de pelo menos 1 pneu.' });
 
     const veiculo = await prisma.garantiaVeiculo.findUnique({ where: { id: garantia.veiculoId } });
-    const pneusGar = await prisma.garantiaPneu.findMany({ where: { garantiaId: garantia.id } });
+    const pneusGar = ordenarPneus(await prisma.garantiaPneu.findMany({ where: { garantiaId: garantia.id } }));
     const pneuPorPosicao = Object.fromEntries(pneusGar.map((p) => [p.posicao, p]));
     // "1ª revisão desse pneu": nunca apareceu antes em nenhum GarantiaRevisaoPneu. O pneu
     // não muda de identidade entre revisões, então só pede a etiqueta interna uma vez.

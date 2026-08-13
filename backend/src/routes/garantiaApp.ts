@@ -12,6 +12,10 @@ import { assinarTokenCliente, verificarToken } from '../auth/jwt';
 const router = Router();
 const erro = (res: any, e: any) => res.status(500).json({ error: e?.message || 'Erro' });
 const soDigitos = (s: string) => String(s || '').replace(/\D/g, '');
+const POSICOES = ['dianteiro_esquerdo', 'dianteiro_direito', 'traseiro_esquerdo', 'traseiro_direito', 'estepe'];
+const ordenarPneus = <T extends { posicao: string }>(pneus: T[]): T[] => (
+  [...pneus].sort((a, b) => POSICOES.indexOf(a.posicao) - POSICOES.indexOf(b.posicao))
+);
 
 function cpfValido(cpf: string): boolean {
   const d = soDigitos(cpf);
@@ -126,7 +130,7 @@ router.get('/cliente/me', requireCliente, async (req, res) => {
       garantias: garantias.map((g) => ({
         ...g,
         veiculo: veiPorId[g.veiculoId] || null,
-        pneus: pneusPorGar[g.id] || [],
+        pneus: ordenarPneus(pneusPorGar[g.id] || []),
         revisoes: revPorGar[g.id] || [],
         lojaCadastro: g.lojaId ? (lojaPorId[g.lojaId] || null) : null,
         mecanicoCadastro: g.criadoPorId ? (usuarioPorId[g.criadoPorId]?.nome || '') : '',
