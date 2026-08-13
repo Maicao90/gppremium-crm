@@ -198,7 +198,7 @@ export default function CustomerHome() {
                   )}
 
                   {/* Histórico nas revisões */}
-                  <Text style={s.secao}>Histórico nas revisões</Text>
+                  <Text style={s.secao}>Histórico anterior das revisões</Text>
                   {(() => {
                     const hist = (pneuAberto.revisoes || [])
                       .map((r: any) => ({ r, rp: (r.pneus || []).find((x: any) => x.posicao === pneuAberto.posicao) }))

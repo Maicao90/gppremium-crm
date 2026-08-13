@@ -11,9 +11,6 @@ import { Foto } from '../../lib/foto';
 const soDigitos = (s: string) => s.replace(/\D/g, '');
 const fmtCPF = (s: string) => soDigitos(s).slice(0, 11).replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d{1,2})$/, '$1-$2');
 
-// O cliente pode comprar de 1 a 5 pneus (nem todo mundo troca os 4) — o mecânico marca
-// QUAIS posições foram compradas e só essas viram cartão pra preencher. Antes a tela
-// exigia os 4 sempre, travando quem comprou 2.
 const POSICOES = [
   { key: 'dianteiro_esquerdo', label: 'Dianteiro esquerdo' },
   { key: 'dianteiro_direito', label: 'Dianteiro direito' },
@@ -21,9 +18,28 @@ const POSICOES = [
   { key: 'traseiro_direito', label: 'Traseiro direito' },
   { key: 'estepe', label: 'Estepe' },
 ];
+
 const rotuloPosicao = (key: string) => POSICOES.find((p) => p.key === key)?.label || key;
-type PneuForm = { posicao: string; marca: string; medida: string; dot: string; codigoSerie: string; foto: Foto; fotoEtiqueta: Foto };
-const novoPneu = (posicao: string): PneuForm => ({ posicao, marca: 'GP Premium', medida: '', dot: '', codigoSerie: '', foto: null, fotoEtiqueta: null });
+
+type PneuForm = {
+  posicao: string;
+  marca: string;
+  medida: string;
+  dot: string;
+  codigoSerie: string;
+  foto: Foto;
+  fotoEtiqueta: Foto;
+};
+
+const novoPneu = (posicao: string): PneuForm => ({
+  posicao,
+  marca: 'GP Premium',
+  medida: '',
+  dot: '',
+  codigoSerie: '',
+  foto: null,
+  fotoEtiqueta: null,
+});
 
 export default function NewWarranty() {
   const router = useRouter();
@@ -31,19 +47,15 @@ export default function NewWarranty() {
   const [buscando, setBuscando] = useState(false);
   const [cli, setCli] = useState({ nome: '', telefone: '', email: '' });
   const [vei, setVei] = useState({ placa: '', marca: '', modelo: '', ano: '', km: '' });
-  const [oleo, setOleo] = useState({ data: '', km: '', proximaTrocaKm: '', sem: false });
+  const [oleo, setOleo] = useState({ data: '', km: '', sem: false });
   const [fVeic, setFVeic] = useState<Foto>(null);
   const [fOdo, setFOdo] = useState<Foto>(null);
   const [fEtiq, setFEtiq] = useState<Foto>(null);
   const [pneus, setPneus] = useState<PneuForm[]>([]);
   const [salvando, setSalvando] = useState(false);
 
-  // Liga/desliga uma posição. Ao ligar cria o cartão daquele pneu; ao desligar joga fora
-  // o que já tinha sido preenchido nele (inclusive as fotos) — é o que o mecânico espera
-  // ao dizer "esse aqui o cliente não comprou".
   const togglePosicao = (key: string) => setPneus((ps) => {
     if (ps.some((p) => p.posicao === key)) return ps.filter((p) => p.posicao !== key);
-    // Mantém sempre na ordem das POSICOES, não na ordem em que foi clicado.
     const comNovo = [...ps, novoPneu(key)];
     return POSICOES.map((pos) => comNovo.find((p) => p.posicao === pos.key)).filter(Boolean) as PneuForm[];
   });
@@ -55,12 +67,16 @@ export default function NewWarranty() {
       const r = await api<any>(`/api/garantia/clientes/busca?cpf=${soDigitos(cpf)}`);
       if (r.encontrado) {
         setCli({ nome: r.cliente.nome, telefone: r.cliente.telefone, email: r.cliente.email });
-        if (r.veiculo) setVei((v) => ({ ...v, placa: r.veiculo.placa, marca: r.veiculo.marca, modelo: r.veiculo.modelo, ano: String(r.veiculo.ano || '') }));
+        if (r.veiculo) {
+          setVei((v) => ({ ...v, placa: r.veiculo.placa, marca: r.veiculo.marca, modelo: r.veiculo.modelo, ano: String(r.veiculo.ano || '') }));
+        }
         Alert.alert('Cliente encontrado', 'Dados preenchidos. Confira e informe o KM atual.');
       } else {
-        Alert.alert('Cliente novo', 'CPF ainda não cadastrado — preencha os dados.');
+        Alert.alert('Cliente novo', 'CPF ainda nao cadastrado. Preencha os dados.');
       }
-    } catch (e: any) { Alert.alert('Erro', e?.message); }
+    } catch (e: any) {
+      Alert.alert('Erro', e?.message);
+    }
     setBuscando(false);
   };
 
@@ -68,14 +84,16 @@ export default function NewWarranty() {
 
   const salvar = async () => {
     if (!cli.nome.trim()) return Alert.alert('Ops', 'Informe o nome do cliente.');
-    if (soDigitos(vei.placa).length + vei.placa.replace(/[^A-Za-z]/g, '').length < 7) { /* validação leve */ }
+    if (soDigitos(vei.placa).length + vei.placa.replace(/[^A-Za-z]/g, '').length < 7) { /* validacao leve */ }
     if (!vei.placa.trim() || vei.km === '') return Alert.alert('Ops', 'Informe placa e KM atual.');
     if (pneus.length === 0) return Alert.alert('Ops', 'Marque quais pneus o cliente comprou.');
+
     for (const p of pneus) {
       const nome = rotuloPosicao(p.posicao);
-      if (!p.foto?.base64) return Alert.alert('Foto obrigatória', `Tire a foto do pneu ${nome}.`);
-      if (!p.fotoEtiqueta?.base64) return Alert.alert('Foto obrigatória', `Tire a foto da etiqueta do pneu ${nome}.`);
+      if (!p.foto?.base64) return Alert.alert('Foto obrigatoria', `Tire a foto do pneu ${nome}.`);
+      if (!p.fotoEtiqueta?.base64) return Alert.alert('Foto obrigatoria', `Tire a foto da etiqueta do pneu ${nome}.`);
     }
+
     setSalvando(true);
     try {
       const r = await api<any>('/api/garantia/garantias', {
@@ -83,20 +101,36 @@ export default function NewWarranty() {
         body: {
           cliente: { ...cli, cpf: soDigitos(cpf) },
           veiculo: {
-            placa: vei.placa, marca: vei.marca, modelo: vei.modelo, ano: vei.ano, km: vei.km,
-            semEtiquetaOleo: oleo.sem, oleoData: oleo.data, oleoKm: oleo.km, oleoProximaTrocaKm: oleo.proximaTrocaKm,
-            fotoBase64: fVeic?.base64 || null, fotoOdometroBase64: fOdo?.base64 || null, etiquetaOleoBase64: fEtiq?.base64 || null,
+            placa: vei.placa,
+            marca: vei.marca,
+            modelo: vei.modelo,
+            ano: vei.ano,
+            km: vei.km,
+            semEtiquetaOleo: oleo.sem,
+            oleoData: oleo.data,
+            oleoKm: oleo.km,
+            fotoBase64: fVeic?.base64 || null,
+            fotoOdometroBase64: fOdo?.base64 || null,
+            etiquetaOleoBase64: fEtiq?.base64 || null,
           },
           pneus: pneus.map((p) => ({
-            posicao: p.posicao, marca: p.marca, medida: p.medida, dot: p.dot, codigoSerie: p.codigoSerie,
-            fotoBase64: p.fotoEtiqueta?.base64 || null, fotoLateralBase64: p.foto?.base64 || null,
+            posicao: p.posicao,
+            marca: p.marca,
+            medida: p.medida,
+            dot: p.dot,
+            codigoSerie: p.codigoSerie,
+            fotoBase64: p.fotoEtiqueta?.base64 || null,
+            fotoLateralBase64: p.foto?.base64 || null,
           })),
         },
       });
-      Alert.alert('Garantia ativada!', `Nasce como pendente pra auditoria.${r.proximaRevisaoEm ? `\nPróxima revisão prevista: ${r.proximaRevisaoEm}.` : ''}`, [
+
+      Alert.alert('Garantia ativada!', `Nasce como pendente pra auditoria.${r.proximaRevisaoEm ? `\nProxima revisao prevista: ${r.proximaRevisaoEm}.` : ''}`, [
         { text: 'OK', onPress: () => router.back() },
       ]);
-    } catch (e: any) { Alert.alert('Não foi possível ativar', e?.message || 'Tente novamente.'); }
+    } catch (e: any) {
+      Alert.alert('Nao foi possivel ativar', e?.message || 'Tente novamente.');
+    }
     setSalvando(false);
   };
 
@@ -107,21 +141,22 @@ export default function NewWarranty() {
         <Text style={s.topTitle}>Ativar Garantia</Text>
         <View style={{ width: 22 }} />
       </View>
+
       <ScrollView contentContainerStyle={s.scroll} keyboardShouldPersistTaps="handled" automaticallyAdjustKeyboardInsets keyboardDismissMode="interactive">
-        {/* CPF */}
         <View style={s.card}>
           <Text style={s.cardTitle}>Cliente</Text>
           <View style={{ flexDirection: 'row', gap: 8 }}>
             <TextInput style={[s.input, { flex: 1 }]} placeholder="CPF" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={fmtCPF(cpf)} onChangeText={setCpf} />
-            <TouchableOpacity style={s.btnMini} onPress={buscar} disabled={buscando}>{buscando ? <ActivityIndicator color="#fff" size="small" /> : <Search size={16} color="#fff" />}</TouchableOpacity>
+            <TouchableOpacity style={s.btnMini} onPress={buscar} disabled={buscando}>
+              {buscando ? <ActivityIndicator color="#fff" size="small" /> : <Search size={16} color="#fff" />}
+            </TouchableOpacity>
           </View>
           <TextInput style={s.input} placeholder="Nome completo" placeholderTextColor="#94a3b8" value={cli.nome} onChangeText={(v) => setCli({ ...cli, nome: v })} />
           <TextInput style={s.input} placeholder="Telefone (WhatsApp)" placeholderTextColor="#94a3b8" keyboardType="phone-pad" value={cli.telefone} onChangeText={(v) => setCli({ ...cli, telefone: v })} />
         </View>
 
-        {/* Veículo */}
         <View style={s.card}>
-          <Text style={s.cardTitle}>Veículo</Text>
+          <Text style={s.cardTitle}>Veiculo</Text>
           <TextInput style={s.input} placeholder="Placa" placeholderTextColor="#94a3b8" autoCapitalize="characters" value={vei.placa} onChangeText={(v) => setVei({ ...vei, placa: v.toUpperCase() })} />
           <View style={{ flexDirection: 'row', gap: 8 }}>
             <TextInput style={[s.input, { flex: 1 }]} placeholder="Marca" placeholderTextColor="#94a3b8" value={vei.marca} onChangeText={(v) => setVei({ ...vei, marca: v })} />
@@ -131,31 +166,28 @@ export default function NewWarranty() {
             <TextInput style={[s.input, { flex: 1 }]} placeholder="Ano" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={vei.ano} onChangeText={(v) => setVei({ ...vei, ano: v })} />
             <TextInput style={[s.input, { flex: 1 }]} placeholder="KM atual" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={vei.km} onChangeText={(v) => setVei({ ...vei, km: v })} />
           </View>
-          <FotoBotao label="Foto do veículo" valor={fVeic} onChange={setFVeic} />
-          <FotoBotao label="Foto do odômetro" valor={fOdo} onChange={setFOdo} />
+          <FotoBotao label="Foto do veiculo" valor={fVeic} onChange={setFVeic} />
+          <FotoBotao label="Foto do odometro" valor={fOdo} onChange={setFOdo} />
         </View>
 
-        {/* Etiqueta de óleo */}
         <View style={s.card}>
-          <Text style={s.cardTitle}>Etiqueta de óleo</Text>
+          <Text style={s.cardTitle}>Etiqueta de oleo</Text>
           <TouchableOpacity style={s.checkRow} onPress={() => setOleo({ ...oleo, sem: !oleo.sem })}>
             <View style={[s.check, oleo.sem && s.checkOn]} />
-            <Text style={s.checkTxt}>Veículo não tem etiqueta de óleo</Text>
+            <Text style={s.checkTxt}>Veiculo nao tem etiqueta de oleo</Text>
           </TouchableOpacity>
           {!oleo.sem && (
             <>
-              <CampoData label="Data da última troca" valor={oleo.data} onChange={(v) => setOleo({ ...oleo, data: v })} />
-              <TextInput style={s.input} placeholder="KM na última troca" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={oleo.km} onChangeText={(v) => setOleo({ ...oleo, km: v })} />
-              <TextInput style={s.input} placeholder="KM da próxima troca (o que a etiqueta indica)" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={oleo.proximaTrocaKm} onChangeText={(v) => setOleo({ ...oleo, proximaTrocaKm: v })} />
-              <FotoBotao label="Foto da etiqueta de óleo" valor={fEtiq} onChange={setFEtiq} />
+              <CampoData label="Data da ultima troca" valor={oleo.data} onChange={(v) => setOleo({ ...oleo, data: v })} />
+              <TextInput style={s.input} placeholder="KM na ultima troca" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={oleo.km} onChangeText={(v) => setOleo({ ...oleo, km: v })} />
+              <FotoBotao label="Foto da etiqueta de oleo" valor={fEtiq} onChange={setFEtiq} />
             </>
           )}
         </View>
 
-        {/* Quais pneus o cliente comprou (nem sempre são os 4) */}
         <View style={s.card}>
           <Text style={s.cardTitle}>Pneus comprados</Text>
-          <Text style={s.ajuda}>Marque só as posições que receberam pneu novo.</Text>
+          <Text style={s.ajuda}>Marque so as posicoes que receberam pneu novo.</Text>
           <View style={s.wrap}>
             {POSICOES.map((pos) => {
               const marcado = pneus.some((p) => p.posicao === pos.key);
@@ -169,7 +201,6 @@ export default function NewWarranty() {
           <Text style={s.ajuda}>{pneus.length === 0 ? 'Nenhum pneu marcado ainda.' : `${pneus.length} pneu(s) selecionado(s).`}</Text>
         </View>
 
-        {/* Pneus */}
         {pneus.map((p, i) => (
           <View key={p.posicao} style={s.card}>
             <Text style={s.cardTitle}>{rotuloPosicao(p.posicao)}</Text>
@@ -177,7 +208,7 @@ export default function NewWarranty() {
               <TextInput style={[s.input, { flex: 1 }]} placeholder="Medida (205/55 R16)" placeholderTextColor="#94a3b8" value={p.medida} onChangeText={(v) => setPneu(i, 'medida', v)} />
               <TextInput style={[s.input, { width: 90 }]} placeholder="DOT" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={p.dot} onChangeText={(v) => setPneu(i, 'dot', soDigitos(v).slice(0, 4))} />
             </View>
-            <TextInput style={s.input} placeholder="Nº de série" placeholderTextColor="#94a3b8" value={p.codigoSerie} onChangeText={(v) => setPneu(i, 'codigoSerie', v)} />
+            <TextInput style={s.input} placeholder="No de serie" placeholderTextColor="#94a3b8" value={p.codigoSerie} onChangeText={(v) => setPneu(i, 'codigoSerie', v)} />
             <FotoBotao label="Foto do pneu" valor={p.foto} onChange={(f) => setPneu(i, 'foto', f)} />
             <FotoBotao label="Foto da etiqueta do pneu" valor={p.fotoEtiqueta} onChange={(f) => setPneu(i, 'fotoEtiqueta', f)} />
           </View>

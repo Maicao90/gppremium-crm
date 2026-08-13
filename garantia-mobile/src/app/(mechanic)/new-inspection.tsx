@@ -8,13 +8,16 @@ import { FotoBotao } from '../../components/FotoBotao';
 import { CampoData } from '../../components/CampoData';
 import { Foto } from '../../lib/foto';
 
-const ROTULO: Record<string, string> = { dianteiro_esquerdo: 'Pneu 1', dianteiro_direito: 'Pneu 2', traseiro_esquerdo: 'Pneu 3', traseiro_direito: 'Pneu 4', estepe: 'Estepe' };
-// Profundidade selecionável 1,6 a 10,0
+const ROTULO: Record<string, string> = {
+  dianteiro_esquerdo: 'Pneu 1',
+  dianteiro_direito: 'Pneu 2',
+  traseiro_esquerdo: 'Pneu 3',
+  traseiro_direito: 'Pneu 4',
+  estepe: 'Estepe',
+};
+
 const OPCOES = Array.from({ length: 85 }, (_, i) => Number((1.6 + i * 0.1).toFixed(1)));
 
-// Checklist de problemas por pneu — mesmos códigos que o painel do CRM lê. "nenhum" é
-// especial: marca que o mecânico REALMENTE revisou e não achou nada (obrigatório marcar
-// algo — nem que seja isso — pra não deixar passar sem olhar).
 const NENHUM_PROBLEMA = 'nenhum';
 const PROBLEMAS: { chave: string; rotulo: string }[] = [
   { chave: NENHUM_PROBLEMA, rotulo: 'Nenhum problema encontrado' },
@@ -23,22 +26,33 @@ const PROBLEMAS: { chave: string; rotulo: string }[] = [
   { chave: 'desbalanceamento', rotulo: 'Desbalanceamento' },
   { chave: 'borracha_rasgada', rotulo: 'Borracha rasgada' },
   { chave: 'corte_lateral', rotulo: 'Corte lateral' },
-  { chave: 'bolha', rotulo: 'Bolha / deformação' },
+  { chave: 'bolha', rotulo: 'Bolha / deformacao' },
   { chave: 'furo', rotulo: 'Furo / reparo' },
-  { chave: 'pressao_incorreta', rotulo: 'Pressão incorreta' },
+  { chave: 'pressao_incorreta', rotulo: 'Pressao incorreta' },
 ];
+
 const ESTADOS: { chave: string; rotulo: string }[] = [
-  { chave: 'excelente', rotulo: 'Excelente' }, { chave: 'bom', rotulo: 'Bom' }, { chave: 'regular', rotulo: 'Regular' }, { chave: 'ruim', rotulo: 'Ruim' }, { chave: 'trocar', rotulo: 'Trocar' },
+  { chave: 'excelente', rotulo: 'Excelente' },
+  { chave: 'bom', rotulo: 'Bom' },
+  { chave: 'regular', rotulo: 'Regular' },
+  { chave: 'ruim', rotulo: 'Ruim' },
+  { chave: 'trocar', rotulo: 'Trocar' },
 ];
 
 type PneuRev = {
   posicao: string;
-  // Se esse pneu específico JÁ passou por alguma revisão antes (vem do backend em
-  // /garantias/por-placa) — só quando for a 1ª vez que pede a foto da etiqueta interna.
   jaRevisado: boolean;
-  profundidadeSulco: number | ''; estado: string; arrancamentoBorracha: boolean; dotLido: string;
-  fotoEtiquetaInterna: Foto; fotoDot: Foto; fotoBandaDireita: Foto; fotoBandaEsquerda: Foto;
-  problemas: string[]; observacoes: string; recomendacao: string;
+  profundidadeSulco: number | '';
+  estado: string;
+  arrancamentoBorracha: boolean;
+  dotLido: string;
+  fotoEtiquetaInterna: Foto;
+  fotoDot: Foto;
+  fotoBandaDireita: Foto;
+  fotoBandaEsquerda: Foto;
+  problemas: string[];
+  observacoes: string;
+  recomendacao: string;
 };
 
 export default function NewInspection() {
@@ -52,40 +66,51 @@ export default function NewInspection() {
   const [obsGeral, setObsGeral] = useState('');
   const [pneus, setPneus] = useState<PneuRev[]>([]);
   const [salvando, setSalvando] = useState(false);
-  // Etiqueta de óleo — igual na ativação, mas AGORA obrigatória em toda revisão: é essa
-  // data/km que vira a nova referência pro cálculo de km/dia da próxima notificação.
-  // "semEtiqueta" vem do cadastro do veículo (decidido lá na ativação, não muda aqui).
   const [semEtiquetaOleo, setSemEtiquetaOleo] = useState(false);
   const [oleoData, setOleoData] = useState('');
   const [oleoKm, setOleoKm] = useState('');
-  const [oleoProximaTrocaKm, setOleoProximaTrocaKm] = useState('');
   const [fEtiq, setFEtiq] = useState<Foto>(null);
 
   const buscar = async () => {
     const alvo = placa.toUpperCase().replace(/[^A-Z0-9]/g, '');
     if (alvo.length !== 7) return Alert.alert('Ops', 'Digite a placa completa (7 caracteres).');
-    setBuscando(true); setGarantia(null);
+    setBuscando(true);
+    setGarantia(null);
     try {
       const r = await api<any>(`/api/garantia/garantias/por-placa?placa=${alvo}`);
-      if (!r.encontrada) { Alert.alert('Nada encontrado', 'Nenhuma garantia em andamento pra essa placa.'); }
-      else {
+      if (!r.encontrada) {
+        Alert.alert('Nada encontrado', 'Nenhuma garantia em andamento pra essa placa.');
+      } else {
         setGarantia(r.garantia);
         setSemEtiquetaOleo(!!r.garantia.veiculo?.semEtiquetaOleo);
-        setOleoData(''); setOleoKm(''); setFEtiq(null);
+        setOleoData('');
+        setOleoKm('');
+        setFEtiq(null);
         setPneus((r.garantia.pneus || []).filter((p: any) => !p.cancelada).map((p: any) => ({
-          posicao: p.posicao, jaRevisado: !!p.jaRevisado, profundidadeSulco: '', estado: 'bom', arrancamentoBorracha: false, dotLido: '',
-          fotoEtiquetaInterna: null, fotoDot: null, fotoBandaDireita: null, fotoBandaEsquerda: null,
-          problemas: [], observacoes: '', recomendacao: '',
+          posicao: p.posicao,
+          jaRevisado: !!p.jaRevisado,
+          profundidadeSulco: '',
+          estado: 'bom',
+          arrancamentoBorracha: false,
+          dotLido: '',
+          fotoEtiquetaInterna: null,
+          fotoDot: null,
+          fotoBandaDireita: null,
+          fotoBandaEsquerda: null,
+          problemas: [],
+          observacoes: '',
+          recomendacao: '',
         })));
         setKm('');
       }
-    } catch (e: any) { Alert.alert('Erro', e?.message); }
+    } catch (e: any) {
+      Alert.alert('Erro', e?.message);
+    }
     setBuscando(false);
   };
 
   const setPneu = (i: number, k: string, v: any) => setPneus((ps) => ps.map((p, j) => (j === i ? { ...p, [k]: v } : p)));
-  // "Nenhum problema" é exclusivo: marcar ele limpa qualquer outro selecionado, e marcar
-  // qualquer outro problema tira o "nenhum" (não faz sentido os dois juntos).
+
   const toggleProb = (i: number, chave: string) => setPneus((ps) => ps.map((p, j) => {
     if (j !== i) return p;
     if (chave === NENHUM_PROBLEMA) {
@@ -96,35 +121,48 @@ export default function NewInspection() {
   }));
 
   const salvar = async () => {
-    if (km === '') return Alert.alert('Ops', 'Informe o KM da revisão.');
-    if (!mecanico.trim()) return Alert.alert('Ops', 'Informe o nome do mecânico responsável (obrigatório).');
+    if (km === '') return Alert.alert('Ops', 'Informe o KM da revisao.');
+    if (!mecanico.trim()) return Alert.alert('Ops', 'Informe o nome do mecanico responsavel (obrigatorio).');
     if (pneus.some((p) => p.profundidadeSulco === '')) return Alert.alert('Ops', 'Selecione a profundidade do sulco de todos os pneus.');
-    if (!fOdo?.base64) return Alert.alert('Foto obrigatória', 'Tire a foto do odômetro.');
+    if (!fOdo?.base64) return Alert.alert('Foto obrigatoria', 'Tire a foto do odometro.');
     if (!semEtiquetaOleo) {
-      if (!oleoData) return Alert.alert('Ops', 'Informe a data da etiqueta de óleo.');
-      if (!oleoKm) return Alert.alert('Ops', 'Informe o km da etiqueta de óleo.');
-      if (!fEtiq?.base64) return Alert.alert('Foto obrigatória', 'Tire a foto da etiqueta de óleo.');
+      if (!oleoData) return Alert.alert('Ops', 'Informe a data da etiqueta de oleo.');
+      if (!oleoKm) return Alert.alert('Ops', 'Informe o km da etiqueta de oleo.');
+      if (!fEtiq?.base64) return Alert.alert('Foto obrigatoria', 'Tire a foto da etiqueta de oleo.');
     }
+
     for (let i = 0; i < pneus.length; i++) {
       const p = pneus[i];
-      const nomePneu = ROTULO[p.posicao] || i + 1;
-      if (p.problemas.length === 0) return Alert.alert('Checklist obrigatório', `Marque o checklist de problemas do ${nomePneu} (use "Nenhum problema encontrado" se estiver tudo certo).`);
-      if (p.dotLido.length !== 4) return Alert.alert('DOT obrigatório', `Digite os 4 dígitos do DOT do ${nomePneu} (além da foto).`);
-      if (!p.jaRevisado && !p.fotoEtiquetaInterna?.base64) return Alert.alert('Foto obrigatória', `Tire a foto da etiqueta interna do ${nomePneu} — é a 1ª revisão desse pneu.`);
-      const falta = !p.fotoDot?.base64 ? 'DOT junto com o pneu' : !p.fotoBandaDireita?.base64 ? 'banda — ombro direito' : !p.fotoBandaEsquerda?.base64 ? 'banda — ombro esquerdo' : '';
-      if (falta) return Alert.alert('Foto obrigatória', `Tire a foto "${falta}" do ${nomePneu}.`);
+      const nomePneu = ROTULO[p.posicao] || String(i + 1);
+      if (p.problemas.length === 0) return Alert.alert('Checklist obrigatorio', `Marque o checklist de problemas do ${nomePneu} (use "Nenhum problema encontrado" se estiver tudo certo).`);
+      if (p.dotLido.length !== 4) return Alert.alert('DOT obrigatorio', `Digite os 4 digitos do DOT do ${nomePneu} (alem da foto).`);
+      if (!p.jaRevisado && !p.fotoEtiquetaInterna?.base64) return Alert.alert('Foto obrigatoria', `Tire a foto da etiqueta interna do ${nomePneu} - e a 1a revisao desse pneu.`);
+      const falta = !p.fotoDot?.base64 ? 'DOT junto com o pneu' : !p.fotoBandaDireita?.base64 ? 'banda - ombro direito' : !p.fotoBandaEsquerda?.base64 ? 'banda - ombro esquerdo' : '';
+      if (falta) return Alert.alert('Foto obrigatoria', `Tire a foto "${falta}" do ${nomePneu}.`);
     }
+
     setSalvando(true);
     try {
       const r = await api<any>('/api/garantia/revisoes', {
         method: 'POST',
         body: {
-          garantiaId: garantia.id, km: Number(km), mecanico, observacoes: obsGeral, fotoOdometroBase64: fOdo?.base64 || null,
-          oleoData, oleoKm, oleoProximaTrocaKm, etiquetaOleoBase64: fEtiq?.base64 || null,
+          garantiaId: garantia.id,
+          km: Number(km),
+          mecanico,
+          observacoes: obsGeral,
+          fotoOdometroBase64: fOdo?.base64 || null,
+          oleoData,
+          oleoKm,
+          etiquetaOleoBase64: fEtiq?.base64 || null,
           pneus: pneus.map((p) => ({
-            posicao: p.posicao, profundidadeSulco: Number(p.profundidadeSulco) || 0, estado: p.estado,
-            arrancamentoBorracha: p.arrancamentoBorracha, dotLido: p.dotLido, problemas: p.problemas,
-            observacoes: p.observacoes, recomendacao: p.recomendacao,
+            posicao: p.posicao,
+            profundidadeSulco: Number(p.profundidadeSulco) || 0,
+            estado: p.estado,
+            arrancamentoBorracha: p.arrancamentoBorracha,
+            dotLido: p.dotLido,
+            problemas: p.problemas,
+            observacoes: p.observacoes,
+            recomendacao: p.recomendacao,
             fotoEtiquetaInternaBase64: p.fotoEtiquetaInterna?.base64 || null,
             fotoDotBase64: p.fotoDot?.base64 || null,
             fotoBandaDireitaBase64: p.fotoBandaDireita?.base64 || null,
@@ -132,47 +170,56 @@ export default function NewInspection() {
           })),
         },
       });
-      let msg = 'Revisão registrada!';
-      if (r.pneusCancelados?.length) msg += `\n⛔ Garantia cancelada (arrancamento) no(s) pneu(s): ${r.pneusCancelados.join(', ')}.`;
-      if (r.odometroSuspeito) msg += '\n⚠ Odômetro suspeito — foi pra análise.';
+
+      let msg = 'Revisao registrada!';
+      if (r.pneusCancelados?.length) msg += `\nGarantia cancelada (arrancamento) no(s) pneu(s): ${r.pneusCancelados.join(', ')}.`;
+      if (r.odometroSuspeito) msg += '\nOdometro suspeito - foi pra analise.';
       Alert.alert('Pronto', msg, [{ text: 'OK', onPress: () => router.back() }]);
-    } catch (e: any) { Alert.alert('Não foi possível salvar', e?.message); }
+    } catch (e: any) {
+      Alert.alert('Nao foi possivel salvar', e?.message);
+    }
     setSalvando(false);
   };
 
   return (
     <SafeAreaView style={s.container}>
-      <View style={s.top}><TouchableOpacity onPress={() => router.back()}><ArrowLeft size={22} color="#0f172a" /></TouchableOpacity><Text style={s.topTitle}>Nova Revisão</Text><View style={{ width: 22 }} /></View>
+      <View style={s.top}>
+        <TouchableOpacity onPress={() => router.back()}><ArrowLeft size={22} color="#0f172a" /></TouchableOpacity>
+        <Text style={s.topTitle}>Nova Revisao</Text>
+        <View style={{ width: 22 }} />
+      </View>
+
       <ScrollView contentContainerStyle={s.scroll} keyboardShouldPersistTaps="handled" automaticallyAdjustKeyboardInsets keyboardDismissMode="interactive">
         <View style={s.card}>
-          <Text style={s.cardTitle}>Buscar veículo</Text>
+          <Text style={s.cardTitle}>Buscar veiculo</Text>
           <View style={{ flexDirection: 'row', gap: 8 }}>
             <TextInput style={[s.input, { flex: 1 }]} placeholder="Placa" placeholderTextColor="#94a3b8" autoCapitalize="characters" value={placa} onChangeText={(v) => setPlaca(v.toUpperCase())} />
-            <TouchableOpacity style={s.btnMini} onPress={buscar} disabled={buscando}>{buscando ? <ActivityIndicator color="#fff" size="small" /> : <Search size={16} color="#fff" />}</TouchableOpacity>
+            <TouchableOpacity style={s.btnMini} onPress={buscar} disabled={buscando}>
+              {buscando ? <ActivityIndicator color="#fff" size="small" /> : <Search size={16} color="#fff" />}
+            </TouchableOpacity>
           </View>
-          {garantia && <Text style={s.ok}>✓ {garantia.cliente?.nome} — {garantia.veiculo?.marca} {garantia.veiculo?.modelo} (cobertura até {garantia.kmMaximo} km)</Text>}
+          {garantia && <Text style={s.ok}>OK {garantia.cliente?.nome} - {garantia.veiculo?.marca} {garantia.veiculo?.modelo} (cobertura ate {garantia.kmMaximo} km)</Text>}
         </View>
 
         {garantia && (
           <>
             <View style={s.card}>
-              <TextInput style={s.input} placeholder="KM da revisão" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={km} onChangeText={setKm} />
-              <TextInput style={s.input} placeholder="Mecânico responsável" placeholderTextColor="#94a3b8" value={mecanico} onChangeText={setMecanico} />
-              <TextInput style={[s.input, { minHeight: 60, textAlignVertical: 'top' }]} placeholder="Observações gerais da revisão (opcional)" placeholderTextColor="#94a3b8" multiline value={obsGeral} onChangeText={setObsGeral} />
-              <FotoBotao label="Foto do odômetro" valor={fOdo} onChange={setFOdo} />
+              <TextInput style={s.input} placeholder="KM da revisao" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={km} onChangeText={setKm} />
+              <TextInput style={s.input} placeholder="Mecanico responsavel" placeholderTextColor="#94a3b8" value={mecanico} onChangeText={setMecanico} />
+              <TextInput style={[s.input, { minHeight: 60, textAlignVertical: 'top' }]} placeholder="Observacoes gerais da revisao (opcional)" placeholderTextColor="#94a3b8" multiline value={obsGeral} onChangeText={setObsGeral} />
+              <FotoBotao label="Foto do odometro" valor={fOdo} onChange={setFOdo} />
             </View>
 
             <View style={s.card}>
-              <Text style={s.cardTitle}>Etiqueta de óleo</Text>
+              <Text style={s.cardTitle}>Etiqueta de oleo</Text>
               {semEtiquetaOleo ? (
-                <Text style={s.ajuda}>Este veículo foi cadastrado sem etiqueta de óleo — nada a preencher aqui.</Text>
+                <Text style={s.ajuda}>Este veiculo foi cadastrado sem etiqueta de oleo. Nada a preencher aqui.</Text>
               ) : (
                 <>
-                  <Text style={s.ajuda}>Confira a etiqueta atual do carro — se trocou o óleo desde a última vez, é essa data/km novos que valem daqui pra frente.</Text>
+                  <Text style={s.ajuda}>Confira a etiqueta atual do carro. Se trocou o oleo desde a ultima vez, e essa data/km novos que valem daqui pra frente.</Text>
                   <CampoData label="Data da etiqueta" valor={oleoData} onChange={setOleoData} />
                   <TextInput style={s.input} placeholder="KM da etiqueta" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={oleoKm} onChangeText={(v) => setOleoKm(v.replace(/\D/g, ''))} />
-                  <TextInput style={s.input} placeholder="KM da próxima troca (o que a etiqueta indica)" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={oleoProximaTrocaKm} onChangeText={(v) => setOleoProximaTrocaKm(v.replace(/\D/g, ''))} />
-                  <FotoBotao label="Foto da etiqueta de óleo" valor={fEtiq} onChange={setFEtiq} />
+                  <FotoBotao label="Foto da etiqueta de oleo" valor={fEtiq} onChange={setFEtiq} />
                 </>
               )}
             </View>
@@ -188,6 +235,7 @@ export default function NewInspection() {
                     </TouchableOpacity>
                   ))}
                 </ScrollView>
+
                 <Text style={s.lbl}>Estado do pneu</Text>
                 <View style={s.wrap}>
                   {ESTADOS.map((e) => (
@@ -197,14 +245,14 @@ export default function NewInspection() {
                   ))}
                 </View>
 
-                <TextInput style={s.input} placeholder="DOT lido (4 dígitos, obrigatório)" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={p.dotLido} onChangeText={(v) => setPneu(i, 'dotLido', v.replace(/\D/g, '').slice(0, 4))} />
+                <TextInput style={s.input} placeholder="DOT lido (4 digitos, obrigatorio)" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={p.dotLido} onChangeText={(v) => setPneu(i, 'dotLido', v.replace(/\D/g, '').slice(0, 4))} />
 
                 <TouchableOpacity style={[s.arr, p.arrancamentoBorracha && s.arrOn]} onPress={() => setPneu(i, 'arrancamentoBorracha', !p.arrancamentoBorracha)}>
                   <AlertTriangle size={15} color={p.arrancamentoBorracha ? '#e11d48' : '#94a3b8'} />
                   <Text style={[s.arrT, p.arrancamentoBorracha && { color: '#e11d48' }]}>Arrancamento de borracha (cancela este pneu)</Text>
                 </TouchableOpacity>
 
-                <Text style={[s.lbl, { marginTop: 4 }]}>Problemas encontrados (obrigatório marcar algo)</Text>
+                <Text style={[s.lbl, { marginTop: 4 }]}>Problemas encontrados (obrigatorio marcar algo)</Text>
                 <View style={s.wrap}>
                   {PROBLEMAS.map((pr) => {
                     const marcado = p.problemas.includes(pr.chave);
@@ -217,21 +265,21 @@ export default function NewInspection() {
                   })}
                 </View>
 
-                <TextInput style={[s.input, { marginTop: 8 }]} placeholder="Observações deste pneu (opcional)" placeholderTextColor="#94a3b8" value={p.observacoes} onChangeText={(v) => setPneu(i, 'observacoes', v)} />
-                <TextInput style={s.input} placeholder="Recomendação (ex.: fazer alinhamento)" placeholderTextColor="#94a3b8" value={p.recomendacao} onChangeText={(v) => setPneu(i, 'recomendacao', v)} />
+                <TextInput style={[s.input, { marginTop: 8 }]} placeholder="Observacoes deste pneu (opcional)" placeholderTextColor="#94a3b8" value={p.observacoes} onChangeText={(v) => setPneu(i, 'observacoes', v)} />
+                <TextInput style={s.input} placeholder="Recomendacao (ex.: fazer alinhamento)" placeholderTextColor="#94a3b8" value={p.recomendacao} onChangeText={(v) => setPneu(i, 'recomendacao', v)} />
 
-                <Text style={[s.lbl, { marginTop: 4 }]}>{p.jaRevisado ? '3 fotos obrigatórias (nítidas)' : '4 fotos obrigatórias (nítidas) — 1ª revisão deste pneu'}</Text>
+                <Text style={[s.lbl, { marginTop: 4 }]}>{p.jaRevisado ? '3 fotos obrigatorias (nitidas)' : '4 fotos obrigatorias (nitidas) - 1a revisao deste pneu'}</Text>
                 {!p.jaRevisado && (
                   <FotoBotao label="Etiqueta interna do pneu" valor={p.fotoEtiquetaInterna} onChange={(f) => setPneu(i, 'fotoEtiquetaInterna', f)} />
                 )}
                 <FotoBotao label="DOT junto com o pneu" valor={p.fotoDot} onChange={(f) => setPneu(i, 'fotoDot', f)} />
-                <FotoBotao label="Banda — ombro direito, com o profundímetro" valor={p.fotoBandaDireita} onChange={(f) => setPneu(i, 'fotoBandaDireita', f)} />
-                <FotoBotao label="Banda — ombro esquerdo, com o profundímetro" valor={p.fotoBandaEsquerda} onChange={(f) => setPneu(i, 'fotoBandaEsquerda', f)} />
+                <FotoBotao label="Banda - ombro direito, com o profundimetro" valor={p.fotoBandaDireita} onChange={(f) => setPneu(i, 'fotoBandaDireita', f)} />
+                <FotoBotao label="Banda - ombro esquerdo, com o profundimetro" valor={p.fotoBandaEsquerda} onChange={(f) => setPneu(i, 'fotoBandaEsquerda', f)} />
               </View>
             ))}
 
             <TouchableOpacity style={s.btn} onPress={salvar} disabled={salvando} activeOpacity={0.85}>
-              {salvando ? <ActivityIndicator color="#fff" /> : <><Wrench size={18} color="#fff" /><Text style={s.btnText}>REGISTRAR REVISÃO</Text></>}
+              {salvando ? <ActivityIndicator color="#fff" /> : <><Wrench size={18} color="#fff" /><Text style={s.btnText}>REGISTRAR REVISAO</Text></>}
             </TouchableOpacity>
             <View style={{ height: 30 }} />
           </>
