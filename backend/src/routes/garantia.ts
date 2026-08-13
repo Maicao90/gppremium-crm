@@ -900,7 +900,12 @@ router.get('/notificacoes', async (req, res) => {
     }
     const notifs = await prisma.garantiaNotificacao.findMany({ where, orderBy: { agendadaPara: 'asc' }, take: 200 });
     const clientes = await prisma.garantiaCliente.findMany({ where: { id: { in: notifs.map((n) => n.clienteId) } } });
-    const cliPorId = Object.fromEntries(clientes.map((c) => [c.id, c]));
+    const cliPorId = Object.fromEntries(clientes.map((c) => [c.id, {
+      id: c.id,
+      nome: c.nome,
+      telefone: c.telefone,
+      appInstalado: Boolean(c.pushToken),
+    }]));
     res.json(notifs.map((n) => ({ ...n, cliente: cliPorId[n.clienteId] || null })));
   } catch (e) { erro(res, e); }
 });
