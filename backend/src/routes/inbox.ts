@@ -243,19 +243,18 @@ router.get('/metricas-diarias', async (req, res) => {
         ORDER BY "chatJid", "timestamp" DESC
       ),
       clientes_reais AS (
-        SELECT c.dia, c."chatJid"
+        SELECT c.dia, c."chatJid", c.respondeu AS respondido
         FROM conversas c
         LEFT JOIN nomes n ON n."chatJid" = c."chatJid"
         LEFT JOIN numeros nr ON nr."chatJid" = c."chatJid"
-        WHERE c.recebeu AND c.respondeu
+        WHERE c.recebeu
           AND c."chatJid" NOT IN ('162474519199930@lid', '125095301365845@lid')
           AND COALESCE(nr.numero, '') NOT IN ('556196233237', '556199241570')
           AND LOWER(COALESCE(n."chatNome", '')) !~ '(auto[ -]?pe[cç]as|loja.*pe[cç]as|casa.*pe[cç]as|distribuidora.*pe[cç]as|auto mec[aâ]nica|mec[aâ]nica automotiva)'
       )
       SELECT to_char(dia, 'YYYY-MM-DD') AS dia,
-             COUNT(*)::int AS clientes,
              COUNT(*)::int AS contatos,
-             COUNT(*)::int AS respondidos
+             COUNT(*) FILTER (WHERE respondido)::int AS respondidos
       FROM clientes_reais
       GROUP BY dia
       ORDER BY dia DESC
