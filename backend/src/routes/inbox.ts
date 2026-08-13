@@ -200,11 +200,9 @@ router.get('/conversas', async (req, res) => {
   }
 });
 
-// Métricas diárias do WhatsApp: quantas PESSOAS (contatos distintos) chegaram por dia
-// e, dessas, quantas foram RESPONDIDAS. "Chegou" = mandou ao menos 1 mensagem recebida
-// (fromMe=false) no dia. "Respondido" = esse contato recebeu ao menos 1 resposta nossa
-// (fromMe=true) do dia da chegada em diante. Dia no fuso de São Paulo (não UTC), pra
-// bater com o dia real do atendente. Escopo: mesma conexão efetiva da Caixa de Entrada.
+// Clientes conversados por dia: só conta quando houve mensagem recebida E resposta da
+// equipe no mesmo dia. Contatos internos, fornecedores de peças, grupos e mensagens de
+// sistema ficam fora. Como a consulta parte do histórico, a correção vale retroativamente.
 router.get('/metricas-diarias', async (req, res) => {
   try {
     const usuarioIdOriginal = String(req.query.usuarioId || '');
@@ -212,31 +210,53 @@ router.get('/metricas-diarias', async (req, res) => {
     if (!(await permiteAtendente(req, res, usuarioIdOriginal))) return;
     const usuarioId = await resolverConexaoEfetiva(usuarioIdOriginal);
     const dias = Math.max(1, Math.min(180, Number(req.query.dias) || 30));
-    // Recorte pelos últimos N dias (no fuso local). Faz a conta em SQL, agrupando por dia.
+    // Recorte pelos últimos N dias no fuso local. Danúbia e Charles são contatos internos
+    // conhecidos desta operação; os números reais evitam depender do nome salvo no WhatsApp.
     const linhas: any[] = await prisma.$queryRaw`
-      WITH inbound AS (
-        SELECT "chatJid",
-               date_trunc('day', ("timestamp" AT TIME ZONE 'UTC' AT TIME ZONE 'America/Sao_Paulo')) AS dia,
-               MIN("timestamp") AS primeiro
+      WITH mensagens_validas AS (
+        SELECT "chatJid", "fromMe", "timestamp", "chatNome", "numeroReal",
+               date_trunc('day', ("timestamp" AT TIME ZONE 'UTC' AT TIME ZONE 'America/Sao_Paulo')) AS dia
         FROM "Mensagem"
         WHERE "usuarioId" = ${usuarioId}
-          AND "fromMe" = false
           AND ("timestamp" AT TIME ZONE 'UTC' AT TIME ZONE 'America/Sao_Paulo') >= (now() AT TIME ZONE 'America/Sao_Paulo') - (${dias} || ' days')::interval
-        GROUP BY "chatJid", 2
+          AND "chatJid" NOT LIKE '%@g.us'
+          AND "chatJid" NOT LIKE '%@broadcast'
+          AND NOT ("tipo" = 'outro' AND ("midiaUrl" IS NULL OR "midiaUrl" = '') AND "texto" IN ('', 'protocolMessage'))
       ),
-      marcado AS (
-        SELECT i.dia,
-               EXISTS (
-                 SELECT 1 FROM "Mensagem" m
-                 WHERE m."usuarioId" = ${usuarioId} AND m."chatJid" = i."chatJid"
-                   AND m."fromMe" = true AND m."timestamp" >= i.primeiro
-               ) AS respondeu
-        FROM inbound i
+      conversas AS (
+        SELECT "chatJid", dia,
+               BOOL_OR("fromMe" = false) AS recebeu,
+               BOOL_OR("fromMe" = true) AS respondeu
+        FROM mensagens_validas
+        GROUP BY "chatJid", dia
+      ),
+      nomes AS (
+        SELECT DISTINCT ON ("chatJid") "chatJid", "chatNome"
+        FROM mensagens_validas
+        WHERE "chatNome" <> ''
+        ORDER BY "chatJid", "timestamp" DESC
+      ),
+      numeros AS (
+        SELECT DISTINCT ON ("chatJid") "chatJid", regexp_replace(COALESCE("numeroReal", ''), '\D', '', 'g') AS numero
+        FROM mensagens_validas
+        WHERE "numeroReal" IS NOT NULL AND "numeroReal" <> ''
+        ORDER BY "chatJid", "timestamp" DESC
+      ),
+      clientes_reais AS (
+        SELECT c.dia, c."chatJid"
+        FROM conversas c
+        LEFT JOIN nomes n ON n."chatJid" = c."chatJid"
+        LEFT JOIN numeros nr ON nr."chatJid" = c."chatJid"
+        WHERE c.recebeu AND c.respondeu
+          AND c."chatJid" NOT IN ('162474519199930@lid', '125095301365845@lid')
+          AND COALESCE(nr.numero, '') NOT IN ('556196233237', '556199241570')
+          AND LOWER(COALESCE(n."chatNome", '')) !~ '(auto[ -]?pe[cç]as|loja.*pe[cç]as|casa.*pe[cç]as|distribuidora.*pe[cç]as|auto mec[aâ]nica|mec[aâ]nica automotiva)'
       )
       SELECT to_char(dia, 'YYYY-MM-DD') AS dia,
+             COUNT(*)::int AS clientes,
              COUNT(*)::int AS contatos,
-             COUNT(*) FILTER (WHERE respondeu)::int AS respondidos
-      FROM marcado
+             COUNT(*)::int AS respondidos
+      FROM clientes_reais
       GROUP BY dia
       ORDER BY dia DESC
     `;
