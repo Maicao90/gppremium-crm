@@ -911,8 +911,10 @@ router.post('/config', requireMaster, async (req, res) => {
 router.get('/notificacoes', async (req, res) => {
   try {
     const esc = await escopoGarantia(req);
-    const soPendentes = String(req.query.pendentes || '') === '1';
-    const where: any = soPendentes ? { enviada: false, agendadaPara: { lte: hojeStr() } } : {};
+    // Sempre devolve o histórico completo, inclusive futuras. Clientes com o painel
+    // antigo ainda chamam ?pendentes=1; ignorar esse filtro faz a agenda aparecer sem
+    // depender de limpar o cache do navegador.
+    const where: any = {};
     // Loja só vê notificações das garantias dela.
     if (!esc.master) {
       const ids = (await prisma.garantia.findMany({ where: whereEscopo(esc), select: { id: true } })).map((g) => g.id);
@@ -920,13 +922,27 @@ router.get('/notificacoes', async (req, res) => {
     }
     const notifs = await prisma.garantiaNotificacao.findMany({ where, orderBy: { agendadaPara: 'asc' }, take: 200 });
     const clientes = await prisma.garantiaCliente.findMany({ where: { id: { in: notifs.map((n) => n.clienteId) } } });
+    const garantiaIds = [...new Set(notifs.map((n) => n.garantiaId).filter(Boolean))];
+    const garantiasNotif = garantiaIds.length
+      ? await prisma.garantia.findMany({ where: { id: { in: garantiaIds } }, select: { id: true, veiculoId: true } })
+      : [];
+    const veiculoIds = [...new Set(garantiasNotif.map((g) => g.veiculoId))];
+    const veiculosNotif = veiculoIds.length
+      ? await prisma.garantiaVeiculo.findMany({ where: { id: { in: veiculoIds } }, select: { id: true, placa: true, marca: true, modelo: true } })
+      : [];
+    const veiculoPorId = Object.fromEntries(veiculosNotif.map((v) => [v.id, v]));
+    const veiculoPorGarantia = Object.fromEntries(garantiasNotif.map((g) => [g.id, veiculoPorId[g.veiculoId] || null]));
     const cliPorId = Object.fromEntries(clientes.map((c) => [c.id, {
       id: c.id,
       nome: c.nome,
       telefone: c.telefone,
       appInstalado: Boolean(c.pushToken),
     }]));
-    res.json(notifs.map((n) => ({ ...n, cliente: cliPorId[n.clienteId] || null })));
+    res.json(notifs.map((n) => ({
+      ...n,
+      cliente: cliPorId[n.clienteId] || null,
+      veiculo: veiculoPorGarantia[n.garantiaId] || null,
+    })));
   } catch (e) { erro(res, e); }
 });
 router.post('/notificacoes/:id/enviada', async (req, res) => {

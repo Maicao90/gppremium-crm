@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, ActivityIndicator, Alert } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, ActivityIndicator, Alert, Modal } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
-import { ArrowLeft, Search } from 'lucide-react-native';
+import { ArrowLeft, ChevronDown, Search, X } from 'lucide-react-native';
 import { api } from '../../lib/api';
 import { FotoBotao } from '../../components/FotoBotao';
 import { CampoData } from '../../components/CampoData';
 import { Foto } from '../../lib/foto';
+import { MEDIDAS_PNEUS, modelosDaMedida } from '../../data/catalogoPneus';
 
 const soDigitos = (s: string) => s.replace(/\D/g, '');
 const fmtCPF = (s: string) => soDigitos(s).slice(0, 11).replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d{1,2})$/, '$1-$2');
@@ -24,6 +25,7 @@ const rotuloPosicao = (key: string) => POSICOES.find((p) => p.key === key)?.labe
 type PneuForm = {
   posicao: string;
   marca: string;
+  modelo: string;
   medida: string;
   dot: string;
   codigoSerie: string;
@@ -34,12 +36,48 @@ type PneuForm = {
 const novoPneu = (posicao: string): PneuForm => ({
   posicao,
   marca: 'GP Premium',
+  modelo: '',
   medida: '',
   dot: '',
   codigoSerie: '',
   foto: null,
   fotoEtiqueta: null,
 });
+
+function SeletorOpcao({ label, valor, opcoes, placeholder, onChange, disabled = false }: {
+  label: string;
+  valor: string;
+  opcoes: readonly string[];
+  placeholder: string;
+  onChange: (valor: string) => void;
+  disabled?: boolean;
+}) {
+  const [aberto, setAberto] = useState(false);
+  return (
+    <>
+      <Text style={s.campoLabel}>{label}</Text>
+      <TouchableOpacity style={[s.seletor, disabled && s.seletorOff]} disabled={disabled} onPress={() => setAberto(true)}>
+        <Text style={[s.seletorTexto, !valor && s.seletorPlaceholder]}>{valor || placeholder}</Text>
+        <ChevronDown size={18} color="#64748b" />
+      </TouchableOpacity>
+      <Modal visible={aberto} animationType="slide" onRequestClose={() => setAberto(false)}>
+        <SafeAreaView style={s.container}>
+          <View style={s.top}>
+            <Text style={s.topTitle}>{label}</Text>
+            <TouchableOpacity onPress={() => setAberto(false)}><X size={23} color="#0f172a" /></TouchableOpacity>
+          </View>
+          <ScrollView contentContainerStyle={s.listaOpcoes}>
+            {opcoes.map((opcao) => (
+              <TouchableOpacity key={opcao} style={[s.opcao, valor === opcao && s.opcaoOn]} onPress={() => { onChange(opcao); setAberto(false); }}>
+                <Text style={[s.opcaoTexto, valor === opcao && s.opcaoTextoOn]}>{opcao}</Text>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+        </SafeAreaView>
+      </Modal>
+    </>
+  );
+}
 
 export default function NewWarranty() {
   const router = useRouter();
@@ -109,10 +147,12 @@ export default function NewWarranty() {
     if (!vei.placa.trim() || vei.km === '') return Alert.alert('Ops', 'Informe placa e KM atual.');
     if (pneus.length === 0) return Alert.alert('Ops', 'Marque quais pneus o cliente comprou.');
 
-    for (const p of pneus) {
+    for (let i = 0; i < pneus.length; i += 1) {
+      const p = pneus[i];
       const nome = rotuloPosicao(p.posicao);
-      if (!p.foto?.base64) return Alert.alert('Foto obrigatoria', `Tire a foto do pneu ${nome}.`);
-      if (!p.fotoEtiqueta?.base64) return Alert.alert('Foto obrigatoria', `Tire a foto da etiqueta do pneu ${nome}.`);
+      if (!p.medida || !p.modelo) return Alert.alert('Dados do pneu', `Selecione a medida e o modelo do Pneu ${i + 1}.`);
+      if (!p.foto?.base64) return Alert.alert('Foto obrigatoria', `Tire a foto do Pneu ${i + 1} (${nome}).`);
+      if (!p.fotoEtiqueta?.base64) return Alert.alert('Foto obrigatoria', `Tire a foto da etiqueta do Pneu ${i + 1} (${nome}).`);
     }
 
     setSalvando(true);
@@ -137,6 +177,7 @@ export default function NewWarranty() {
           pneus: pneus.map((p) => ({
             posicao: p.posicao,
             marca: p.marca,
+            modelo: p.modelo,
             medida: p.medida,
             dot: p.dot,
             codigoSerie: p.codigoSerie,
@@ -246,11 +287,30 @@ export default function NewWarranty() {
 
         {pneus.map((p, i) => (
           <View key={p.posicao} style={s.card}>
-            <Text style={s.cardTitle}>{rotuloPosicao(p.posicao)}</Text>
-            <View style={{ flexDirection: 'row', gap: 8 }}>
-              <TextInput style={[s.input, { flex: 1 }]} placeholder="Medida (205/55 R16)" placeholderTextColor="#94a3b8" value={p.medida} onChangeText={(v) => setPneu(i, 'medida', v)} />
-              <TextInput style={[s.input, { width: 90 }]} placeholder="DOT" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={p.dot} onChangeText={(v) => setPneu(i, 'dot', soDigitos(v).slice(0, 4))} />
-            </View>
+            <Text style={s.cardTitle}>Pneu {i + 1}</Text>
+            <Text style={s.ajuda}>Posicao no carro: {rotuloPosicao(p.posicao)}</Text>
+            <SeletorOpcao
+              label="Medida"
+              valor={p.medida}
+              opcoes={MEDIDAS_PNEUS}
+              placeholder="Selecione a medida"
+              onChange={(medida) => {
+                const modelos = modelosDaMedida(medida);
+                setPneus((ps) => ps.map((item, j) => j === i
+                  ? { ...item, medida, modelo: modelos.includes(item.modelo) ? item.modelo : '' }
+                  : item));
+              }}
+            />
+            <SeletorOpcao
+              label="Modelo"
+              valor={p.modelo}
+              opcoes={modelosDaMedida(p.medida)}
+              placeholder={p.medida ? 'Selecione o modelo' : 'Selecione primeiro a medida'}
+              onChange={(modelo) => setPneu(i, 'modelo', modelo)}
+              disabled={!p.medida}
+            />
+            <Text style={s.campoLabel}>DOT</Text>
+            <TextInput style={s.input} placeholder="4 digitos" placeholderTextColor="#94a3b8" keyboardType="number-pad" value={p.dot} onChangeText={(v) => setPneu(i, 'dot', soDigitos(v).slice(0, 4))} />
             <TextInput style={s.input} placeholder="No de serie" placeholderTextColor="#94a3b8" value={p.codigoSerie} onChangeText={(v) => setPneu(i, 'codigoSerie', v)} />
             <FotoBotao label="Foto do pneu" valor={p.foto} onChange={(f) => setPneu(i, 'foto', f)} />
             <FotoBotao label="Foto da etiqueta do pneu" valor={p.fotoEtiqueta} onChange={(f) => setPneu(i, 'fotoEtiqueta', f)} />
@@ -278,6 +338,16 @@ const s = StyleSheet.create({
   veiculoOpcaoOff: { opacity: 0.55 },
   veiculoOpcaoTitulo: { fontSize: 13, fontWeight: '800', color: '#334155' },
   veiculoOpcaoTituloOn: { color: '#0369a1' },
+  campoLabel: { fontSize: 12, fontWeight: '700', color: '#475569', marginBottom: 5 },
+  seletor: { minHeight: 44, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#f8fafc', borderWidth: 1, borderColor: 'rgba(0,0,0,0.08)', borderRadius: 9, paddingHorizontal: 11, marginBottom: 10 },
+  seletorOff: { opacity: 0.55 },
+  seletorTexto: { flex: 1, fontSize: 13, color: '#0f172a' },
+  seletorPlaceholder: { color: '#94a3b8' },
+  listaOpcoes: { padding: 16, gap: 8 },
+  opcao: { minHeight: 48, justifyContent: 'center', borderRadius: 11, paddingHorizontal: 14, backgroundColor: '#fff', borderWidth: 1, borderColor: '#e2e8f0' },
+  opcaoOn: { borderColor: '#0ea5e9', backgroundColor: '#e0f2fe' },
+  opcaoTexto: { fontSize: 14, fontWeight: '700', color: '#334155' },
+  opcaoTextoOn: { color: '#0369a1' },
   input: { backgroundColor: '#f8fafc', borderWidth: 1, borderColor: 'rgba(0,0,0,0.06)', borderRadius: 9, paddingHorizontal: 11, paddingVertical: 10, fontSize: 13, color: '#0f172a', marginBottom: 8 },
   btnMini: { backgroundColor: '#0ea5e9', borderRadius: 9, width: 46, alignItems: 'center', justifyContent: 'center', marginBottom: 8 },
   checkRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 8 },

@@ -69,13 +69,32 @@ export async function dispararPushDevidos(): Promise<void> {
 
     const clientes = await prisma.garantiaCliente.findMany({ where: { id: { in: devidas.map((n) => n.clienteId) } } });
     const cliPorId = Object.fromEntries(clientes.map((c) => [c.id, c]));
+    const garantiaIds = [...new Set(devidas.map((n) => n.garantiaId).filter(Boolean))];
+    const garantias = garantiaIds.length
+      ? await prisma.garantia.findMany({ where: { id: { in: garantiaIds } }, select: { id: true, veiculoId: true } })
+      : [];
+    const veiculoIds = [...new Set(garantias.map((g) => g.veiculoId))];
+    const veiculos = veiculoIds.length
+      ? await prisma.garantiaVeiculo.findMany({ where: { id: { in: veiculoIds } }, select: { id: true, placa: true, marca: true, modelo: true } })
+      : [];
+    const veiculoPorId = Object.fromEntries(veiculos.map((v) => [v.id, v]));
+    const veiculoPorGarantia = Object.fromEntries(garantias.map((g) => [g.id, veiculoPorId[g.veiculoId] || null]));
 
     const mensagens: { to: string; title: string; body: string; data: any }[] = [];
     const idsParaMarcar: string[] = [];
     for (const n of devidas) {
       const c = cliPorId[n.clienteId];
       if (!c || !c.pushToken) continue; // sem app: fica pro envio manual no painel
-      mensagens.push({ to: c.pushToken, title: TITULO[n.tipo] || 'GP Premium', body: n.mensagem, data: { notificacaoId: n.id, tipo: n.tipo } });
+      const veiculo = veiculoPorGarantia[n.garantiaId];
+      const identificacao = veiculo
+        ? `${[veiculo.marca, veiculo.modelo].filter(Boolean).join(' ') || 'Veiculo'} • placa ${veiculo.placa}`
+        : '';
+      mensagens.push({
+        to: c.pushToken,
+        title: TITULO[n.tipo] || 'GP Premium',
+        body: identificacao ? `${n.mensagem}\nVeiculo: ${identificacao}` : n.mensagem,
+        data: { notificacaoId: n.id, tipo: n.tipo },
+      });
       idsParaMarcar.push(n.id);
     }
     if (mensagens.length === 0) return;

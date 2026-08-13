@@ -37,10 +37,10 @@ const STATUS: Record<string, { label: string; cor: string }> = {
 };
 
 const ROTULO_POS: Record<string, string> = {
-  dianteiro_esquerdo: 'Pneu 1',
-  dianteiro_direito: 'Pneu 2',
-  traseiro_esquerdo: 'Pneu 3',
-  traseiro_direito: 'Pneu 4',
+  dianteiro_esquerdo: 'Dianteiro esquerdo',
+  dianteiro_direito: 'Dianteiro direito',
+  traseiro_esquerdo: 'Traseiro esquerdo',
+  traseiro_direito: 'Traseiro direito',
   estepe: 'Estepe',
 };
 
@@ -176,7 +176,7 @@ export default function CustomerHome() {
           <Modal visible={!!pneuAberto} animationType="slide" onRequestClose={() => setPneuAberto(null)}>
             <SafeAreaView style={s.container}>
               <View style={s.modalTop}>
-                <Text style={s.modalTitle}>{pneuAberto ? (ROTULO_POS[pneuAberto.posicao] || pneuAberto.posicao) : 'Pneu'}</Text>
+                <Text style={s.modalTitle}>{pneuAberto ? `Pneu ${pneuAberto.numeroPneu}` : 'Pneu'}</Text>
                 <TouchableOpacity onPress={() => setPneuAberto(null)}><X size={24} color="#0f172a" /></TouchableOpacity>
               </View>
               {pneuAberto && (
@@ -236,17 +236,18 @@ function GarantiaDetalhe({ aberta, onAbrirPneu }: { aberta: any; onAbrirPneu: (p
 
       <Text style={s.secao}>Pneus do primeiro cadastro</Text>
       <Text style={s.detMutedBloco}>Estes são os pneus cadastrados na ativação da garantia.</Text>
-      {(aberta.pneus || []).map((p: any) => (
+      {(aberta.pneus || []).map((p: any, pIndex: number) => (
         <TouchableOpacity
           key={p.id}
           style={[s.card, p.cancelada && { borderColor: '#e11d48', borderWidth: 1 }]}
           activeOpacity={0.85}
-          onPress={() => onAbrirPneu({ ...p, revisoes })}
+          onPress={() => onAbrirPneu({ ...p, numeroPneu: pIndex + 1, revisoes })}
         >
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-            <Text style={s.pneuPos}>{ROTULO_POS[p.posicao] || p.posicao}</Text>
+            <Text style={s.pneuPos}>Pneu {pIndex + 1}</Text>
             {p.cancelada ? <Text style={s.canc}>garantia cancelada</Text> : <ChevronRight size={16} color="#0ea5e9" />}
           </View>
+          <Text style={s.detMuted}>Posicao no carro: {ROTULO_POS[p.posicao] || p.posicao}</Text>
           <Text style={s.detLinha}>{[p.marca, p.modelo, p.medida].filter(Boolean).join(' ') || '-'}</Text>
           <Text style={s.detMuted}>DOT {p.dot || '-'} • Série {p.codigoSerie || '-'} • toque para ver detalhes</Text>
         </TouchableOpacity>
@@ -292,15 +293,18 @@ function GarantiaDetalhe({ aberta, onAbrirPneu }: { aberta: any; onAbrirPneu: (p
                 )}
               </View>
             )}
-            {(r.pneus || []).map((rp: any) => (
-              <View key={rp.id} style={s.revPneu}>
-                <View>
-                  <Text style={s.revPneuPos}>{ROTULO_POS[rp.posicao] || rp.posicao}</Text>
-                  <Text style={s.detMuted}>DOT lido {rp.dotLido || '-'}</Text>
+            {(r.pneus || []).map((rp: any) => {
+              const pneuIndex = (aberta.pneus || []).findIndex((p: any) => (rp.pneuId && p.id === rp.pneuId) || p.posicao === rp.posicao);
+              return (
+                <View key={rp.id} style={s.revPneu}>
+                  <View>
+                    <Text style={s.revPneuPos}>Pneu {pneuIndex >= 0 ? pneuIndex + 1 : '-'}</Text>
+                    <Text style={s.detMuted}>DOT lido {rp.dotLido || '-'}</Text>
+                  </View>
+                  <Text style={s.revPneuSulco}>sulco {String(rp.profundidadeSulco).replace('.', ',')} mm</Text>
                 </View>
-                <Text style={s.revPneuSulco}>sulco {String(rp.profundidadeSulco).replace('.', ',')} mm</Text>
-              </View>
-            ))}
+              );
+            })}
           </View>
         );
       })}
@@ -311,7 +315,7 @@ function GarantiaDetalhe({ aberta, onAbrirPneu }: { aberta: any; onAbrirPneu: (p
 
 function PneuDetalhe({ pneu }: { pneu: any }) {
   const historico = (pneu.revisoes || [])
-    .map((r: any) => ({ r, rp: (r.pneus || []).find((x: any) => x.posicao === pneu.posicao) }))
+    .map((r: any) => ({ r, rp: (r.pneus || []).find((x: any) => (x.pneuId && x.pneuId === pneu.id) || x.posicao === pneu.posicao) }))
     .filter((item: any) => item.rp);
 
   return (

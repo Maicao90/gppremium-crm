@@ -131,7 +131,10 @@ router.get('/cliente/me', requireCliente, async (req, res) => {
         lojaCadastro: g.lojaId ? (lojaPorId[g.lojaId] || null) : null,
         mecanicoCadastro: g.criadoPorId ? (usuarioPorId[g.criadoPorId]?.nome || '') : '',
       })),
-      notificacoes,
+      notificacoes: notificacoes.map((n) => {
+        const garantia = garantias.find((g) => g.id === n.garantiaId);
+        return { ...n, veiculo: garantia ? (veiPorId[garantia.veiculoId] || null) : null };
+      }),
     });
   } catch (e) { erro(res, e); }
 });

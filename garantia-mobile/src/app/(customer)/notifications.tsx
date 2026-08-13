@@ -27,6 +27,7 @@ export default function Notifications() {
         {lista.map((n) => (
           <TouchableOpacity key={n.id} style={[s.card, !n.lidaNoApp && s.cardNova]} onPress={() => marcarLida(n.id)} activeOpacity={0.8}>
             {!n.lidaNoApp && <View style={s.dot} />}
+            {n.veiculo && <Text style={s.carro}>{[n.veiculo.marca, n.veiculo.modelo].filter(Boolean).join(' ')} • {n.veiculo.placa}</Text>}
             <Text style={s.msg}>{n.mensagem}</Text>
             <Text style={s.data}>{new Date(n.criadoEm).toLocaleDateString('pt-BR')}</Text>
           </TouchableOpacity>
@@ -46,6 +47,7 @@ const s = StyleSheet.create({
   card: { backgroundColor: '#fff', borderRadius: 12, padding: 16, marginBottom: 10, borderWidth: 1, borderColor: 'rgba(0,0,0,0.04)' },
   cardNova: { borderColor: 'rgba(14,165,233,0.4)', backgroundColor: 'rgba(14,165,233,0.04)' },
   dot: { position: 'absolute', top: 14, right: 14, width: 8, height: 8, borderRadius: 4, backgroundColor: '#0ea5e9' },
+  carro: { fontSize: 12, color: '#0369a1', fontWeight: '800', marginBottom: 6, paddingRight: 12 },
   msg: { fontSize: 13, color: '#0f172a', lineHeight: 19 },
   data: { fontSize: 11, color: '#94a3b8', marginTop: 8 },
 });
