@@ -1,6 +1,7 @@
 import { Router } from 'express';
+import { Prisma } from '@prisma/client';
 import { prisma } from '../server';
-import { resolverConexaoEfetiva } from '../workers/whatsappService';
+import { numerosDasSessoesAtivas, resolverConexaoEfetiva } from '../workers/whatsappService';
 import { ehEscopado, idsAtendentesDaLoja } from '../auth/escopoLoja';
 
 const router = Router();
@@ -200,9 +201,8 @@ router.get('/conversas', async (req, res) => {
   }
 });
 
-// Clientes conversados por dia: só conta quando houve mensagem recebida E resposta da
-// equipe no mesmo dia. Contatos internos, fornecedores de peças, grupos e mensagens de
-// sistema ficam fora. Como a consulta parte do histórico, a correção vale retroativamente.
+// Clientes que chamaram por dia. Conversas antigas contam novamente quando o cliente
+// retorna; equipe, fornecedores de pecas, grupos e mensagens de sistema ficam fora.
 router.get('/metricas-diarias', async (req, res) => {
   try {
     const usuarioIdOriginal = String(req.query.usuarioId || '');
@@ -210,8 +210,28 @@ router.get('/metricas-diarias', async (req, res) => {
     if (!(await permiteAtendente(req, res, usuarioIdOriginal))) return;
     const usuarioId = await resolverConexaoEfetiva(usuarioIdOriginal);
     const dias = Math.max(1, Math.min(180, Number(req.query.dias) || 30));
-    // Recorte pelos últimos N dias no fuso local. Danúbia e Charles são contatos internos
-    // conhecidos desta operação; os números reais evitam depender do nome salvo no WhatsApp.
+    const apenasDigitos = (valor: unknown) => String(valor || '').replace(/\D/g, '');
+    const variantesTelefone = (valor: unknown): string[] => {
+      const numero = apenasDigitos(valor);
+      if (!numero) return [];
+      return numero.length === 10 || numero.length === 11 ? [numero, `55${numero}`] : [numero];
+    };
+    const lojas = await prisma.loja.findMany({ select: { whatsapp: true, telefone_fixo: true } });
+    const numerosInternos = new Set<string>([
+      // Contatos internos conhecidos que nao sao necessariamente uma sessao do CRM.
+      '556196233237',
+      '556199241570',
+      ...numerosDasSessoesAtivas().flatMap(variantesTelefone),
+      ...lojas.flatMap((loja) => [
+        ...variantesTelefone(loja.whatsapp),
+        ...variantesTelefone(loja.telefone_fixo),
+      ]),
+    ]);
+    const filtroNumerosInternos = Prisma.sql`
+      AND COALESCE(nr.numero, '') NOT IN (${Prisma.join([...numerosInternos])})
+    `;
+    // Recorte no fuso local; a lista interna combina sessoes Baileys, telefones das
+    // lojas e os contatos internos conhecidos, valendo tambem para os dias anteriores.
     const linhas: any[] = await prisma.$queryRaw`
       WITH mensagens_validas AS (
         SELECT "chatJid", "fromMe", "timestamp", "chatNome", "numeroReal",
@@ -243,19 +263,26 @@ router.get('/metricas-diarias', async (req, res) => {
         ORDER BY "chatJid", "timestamp" DESC
       ),
       clientes_reais AS (
-        SELECT c.dia, c."chatJid", c.respondeu AS respondido
+        SELECT c.dia,
+               COALESCE(NULLIF(nr.numero, ''), c."chatJid") AS contato,
+               c.respondeu AS respondido
         FROM conversas c
         LEFT JOIN nomes n ON n."chatJid" = c."chatJid"
         LEFT JOIN numeros nr ON nr."chatJid" = c."chatJid"
         WHERE c.recebeu
           AND c."chatJid" NOT IN ('162474519199930@lid', '125095301365845@lid')
-          AND COALESCE(nr.numero, '') NOT IN ('556196233237', '556199241570')
-          AND LOWER(COALESCE(n."chatNome", '')) !~ '(auto[ -]?pe[cç]as|loja.*pe[cç]as|casa.*pe[cç]as|distribuidora.*pe[cç]as|auto mec[aâ]nica|mec[aâ]nica automotiva)'
+          ${filtroNumerosInternos}
+          AND LOWER(COALESCE(n."chatNome", '')) !~ '(pe[cç]as|fornecedor|distribuidora|auto mec[aâ]nica|mec[aâ]nica automotiva)'
+      ),
+      clientes_unicos AS (
+        SELECT dia, contato, BOOL_OR(respondido) AS respondido
+        FROM clientes_reais
+        GROUP BY dia, contato
       )
       SELECT to_char(dia, 'YYYY-MM-DD') AS dia,
              COUNT(*)::int AS contatos,
              COUNT(*) FILTER (WHERE respondido)::int AS respondidos
-      FROM clientes_reais
+      FROM clientes_unicos
       GROUP BY dia
       ORDER BY dia DESC
     `;

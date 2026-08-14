@@ -140,6 +140,16 @@ function numeroDaSessao(sock: WASocket | undefined): string {
   return (semDevice.split('@')[0] ?? semDevice) || '';
 }
 
+// Impede que numeros da propria equipe sejam contabilizados como clientes.
+export function numerosDasSessoesAtivas(): string[] {
+  const numeros = new Set<string>();
+  sessions.forEach((sock) => {
+    const numero = numeroDaSessao(sock).replace(/\D/g, '');
+    if (numero) numeros.add(numero);
+  });
+  return [...numeros];
+}
+
 // Usuários com sessão CONECTADA no MESMO telefone (inclui o próprio). Existe porque
 // 2 atendentes podem parear cada um a própria sessão no MESMO chip (ex.: Ana e Marina)
 // — toda mensagem chega em dobro e as travas por usuarioId não se enxergavam.
