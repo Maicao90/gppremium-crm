@@ -24,6 +24,7 @@ import disparoRouter from './routes/disparo';
 import garantiaRouter from './routes/garantia';
 import garantiaAppRouter from './routes/garantiaApp';
 import { seedAnuncios } from './seedAnuncios';
+import { seedStoresAndUsers } from './seedStoresAndUsers';
 import { initGarantiaPush } from './workers/garantiaPush';
 import { paginaLinkPublica } from './middlewares/paginaLinkPublica';
 import { initSyncAds } from './integracoes/syncService';
@@ -123,6 +124,7 @@ async function iniciarCoreDoSistema() {
     await seedAdmin();
     await migrarSenhas();
     await ensureMaster();
+    await seedStoresAndUsers();
     await seedAnuncios();
   } catch (err) {
     console.error('[Core] Erro ao iniciar core:', err);
