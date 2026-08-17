@@ -4,7 +4,20 @@ import qrcodeTerminal from 'qrcode-terminal';
 import qrcode from 'qrcode';
 import path from 'path';
 import fs from 'fs';
-import { io, prisma } from '../server';
+import { cloudManager } from '../cloudManager';
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new Proxy({} as PrismaClient, {
+  get(target, prop) {
+    return cloudManager.getPrisma()[prop as keyof PrismaClient];
+  }
+});
+
+const io = new Proxy({} as any, {
+  get(target, prop) {
+    return require('../server').io[prop];
+  }
+});
 import { agendarRespostaBotIA, pausarConversaBotIA } from './botAtendimentoService';
 
 // Pasta onde as mídias recebidas são salvas (servida estaticamente em /midias)
