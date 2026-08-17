@@ -104,6 +104,11 @@ cloudManager.initializeFailover().then(({ ativo }) => {
 // Servir arquivos estáticos da pasta public/ (admin.html, admin/index.html, etc.)
 app.use(express.static(path.join(__dirname, '../public')));
 
+// Rota raiz (redireciona para o painel principal admin.html)
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/admin.html'));
+});
+
 // Rota explícita para o painel admin principal
 app.get('/admin.html', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/admin.html'));
