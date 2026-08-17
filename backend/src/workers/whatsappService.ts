@@ -13,11 +13,9 @@ const prisma = new Proxy({} as PrismaClient, {
   }
 });
 
-const io = new Proxy({} as any, {
-  get(target, prop) {
-    return require('../server').io[prop];
-  }
-});
+function getIo() {
+  return require('../server').io;
+}
 import { agendarRespostaBotIA, pausarConversaBotIA } from './botAtendimentoService';
 
 // Pasta onde as mídias recebidas são salvas (servida estaticamente em /midias)
@@ -292,7 +290,7 @@ async function enviarParteBotIA(usuarioId: string, chatJid: string, numeroReal: 
           numeroReal: numeroReal || null,
         },
       });
-      io.to(usuarioId).emit('NOVA_MENSAGEM', salva);
+      getIo().to(usuarioId).emit('NOVA_MENSAGEM', salva);
       return true;
     } catch (e) {
       console.error('[Bot IA] Falha ao enviar parte:', (e as any)?.message || e);
@@ -671,7 +669,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
     try {
       const code = await sock.requestPairingCode(numeroPareamento);
       pairingCodes.set(usuarioId, code);
-      io.to(usuarioId).emit('WHATSAPP_PAIRING_CODE', code);
+      getIo().to(usuarioId).emit('WHATSAPP_PAIRING_CODE', code);
       console.log(`[Baileys] Código de pareamento gerado para o usuário ${usuarioId} (via ${origem}).`);
     } catch (e: any) {
       // Libera pra tentar de novo no próximo QR/fallback (falha costuma ser socket ainda subindo)
@@ -699,7 +697,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
         latestQR.set(usuarioId, qrBase64);
         connectedUsers.delete(usuarioId);
         // Emite o QR Code apenas para a sala do usuário específico
-        io.to(usuarioId).emit('WHATSAPP_QR_CODE', qrBase64);
+        getIo().to(usuarioId).emit('WHATSAPP_QR_CODE', qrBase64);
 
         // Atualiza status no banco
         await prisma.usuario.update({
@@ -735,7 +733,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
         // mortas do disco para que um QR Code novo e limpo seja gerado na próxima conexão.
         console.log(`[Baileys] Aparelho REMOVIDO pelo celular (usuário ${usuarioId}). Limpando credenciais e aguardando novo QR Code.`);
         // Logout de verdade: AGORA sim avisa a extensão para mostrar a tela de pareamento.
-        io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false });
+        getIo().to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false });
         latestQR.delete(usuarioId);
         try {
           const fs = require('fs');
@@ -767,7 +765,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
       latestQR.delete(usuarioId);
       pairingCodes.delete(usuarioId);
       pausados.delete(usuarioId);
-      io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: true });
+      getIo().to(usuarioId).emit('WHATSAPP_STATUS', { conectado: true });
 
       // Mantém o dispositivo web como "offline" para NÃO roubar as notificações do celular.
       // Assim as mensagens recebidas continuam aparecendo normalmente no telefone da pessoa.
@@ -898,7 +896,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
                 numeroReal: numeroReal || null
               }
             });
-            io.to(usuarioId).emit('NOVA_MENSAGEM', salva);
+            getIo().to(usuarioId).emit('NOVA_MENSAGEM', salva);
           } catch (e: any) {
             console.error('[Inbox] Erro ao salvar mensagem:', e?.message);
           }
@@ -1013,7 +1011,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
               numeroReal: numeroRecep || null
             }
           });
-          io.to(usuarioId).emit('NOVA_MENSAGEM', salvaAuto);
+          getIo().to(usuarioId).emit('NOVA_MENSAGEM', salvaAuto);
         } catch (e) { console.error('[Inbox] Erro ao salvar auto-resposta na inbox:', (e as any)?.message); }
       } catch (e) {
         console.error("Erro ao enviar auto-reply:", e);
@@ -1195,7 +1193,7 @@ export async function enviarMensagemInbox(usuarioId: string, jid: string, texto:
       const salva = await prisma.mensagem.create({
         data: { usuarioId, chatJid: jid, chatNome: '', fromMe: true, texto: textoFinal, tipo: 'texto', waId, enviadoPorId: enviadoPorId || null }
       });
-      io.to(usuarioId).emit('NOVA_MENSAGEM', salva);
+      getIo().to(usuarioId).emit('NOVA_MENSAGEM', salva);
     } catch (e) {
       console.error('[Inbox] Erro ao salvar mensagem enviada:', e);
     }
@@ -1237,7 +1235,7 @@ export async function enviarMidiaInbox(usuarioId: string, jid: string, base64: s
     const salva = await prisma.mensagem.create({
       data: { usuarioId, chatJid: jid, chatNome: '', fromMe: true, texto: legenda || '', tipo, midiaUrl, waId, enviadoPorId: enviadoPorId || null }
     });
-    io.to(usuarioId).emit('NOVA_MENSAGEM', salva);
+    getIo().to(usuarioId).emit('NOVA_MENSAGEM', salva);
     return true;
   } catch (e) {
     console.error('[Inbox] Erro ao enviar mídia:', e);
@@ -1262,7 +1260,7 @@ export async function logoutWhatsApp(usuarioId: string) {
   }
 
   await prisma.usuario.update({ where: { id: usuarioId }, data: { whatsappConectado: false } }).catch(()=>{});
-  io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false });
+  getIo().to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false });
 }
 
 // PAUSA a conexão de um atendente: derruba o socket, para de gerar QR e de
@@ -1277,7 +1275,7 @@ export async function pausarWhatsApp(usuarioId: string) {
   // Persiste no banco: sem isso, um restart do servidor esquecia a pausa (o Set
   // é só memória) e o vigia voltava a gerar QR sozinho minutos depois.
   await prisma.usuario.update({ where: { id: usuarioId }, data: { whatsappPausado: true } }).catch(() => {});
-  io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false, pausado: true });
+  getIo().to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false, pausado: true });
   console.log(`[Baileys] Conexão do usuário ${usuarioId} PAUSADA.`);
 }
 

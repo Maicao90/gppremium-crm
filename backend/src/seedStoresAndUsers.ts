@@ -68,7 +68,7 @@ export async function seedStoresAndUsers() {
       const userExists = await prisma.usuario.findUnique({ where: { id: userId } });
       if (!userExists) {
         const storeName = storeKeys[(index - 1) % storeKeys.length] || 'Loja Padrao';
-        const storeId = lojasCriadas[storeName] || defaultLojaId;
+        const storeId = lojasCriadas[storeName] || defaultLojaId || null;
 
         await prisma.usuario.create({
           data: {
