@@ -154,6 +154,8 @@ model ContaAnuncio {
   plataforma     String   @default("google")
   saldo          Float    @default(0)
   gastoDia       Float    @default(0)
+  gastoMes       Float    @default(0)
+  depositoMes    Float    @default(0)
   limiteAlerta   Float    @default(0)
   ultimoDepValor Float    @default(0)
   ultimoDepData  String   @default("")

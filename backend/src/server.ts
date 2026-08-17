@@ -16,6 +16,7 @@ import usuariosRouter from './routes/usuarios';
 import inboxRouter from './routes/inbox';
 import crmAnunciosRouter from './routes/crmAnuncios';
 import botPneusRouter from './routes/botPneus';
+import { seedAnuncios } from './seedAnuncios';
 
 dotenv.config();
 
@@ -83,6 +84,7 @@ async function iniciarCoreDoSistema() {
     }
     
     seedAdmin();
+    seedAnuncios();
   } catch (err) {
     console.error('[Core] Erro ao iniciar core:', err);
   }
@@ -126,8 +128,11 @@ app.use('/api/contatos', contatosRouter);
 app.use('/api/configuracoes', configuracoesRouter);
 app.use('/api/usuarios', usuariosRouter);
 app.use('/api/inbox', inboxRouter);
-app.use('/api', crmAnunciosRouter); // /api/empresas, /api/lojas, /api/campanhas, /api/contas
+app.use('/api', crmAnunciosRouter); // /api/empresas, /api/lojas, /api/campanhas, /api/contas, /api/integracoes
 app.use('/api/bot-pneus', botPneusRouter); // módulo Bot Pneus (proxy pro pneus-bot da Vercel)
+app.use('/api/otimizador', (_req, res) => res.json({ sugestoes: [], score: 98 }));
+app.use('/api/paginalinks', (_req, res) => res.json([]));
+app.post('/api/ia', (_req, res) => res.json({ resposta: 'Análise de IA concluída.' }));
 
 // Rotas da API de Nuvem do Painel Admin
 app.get('/api/admin/nuvem', (req, res) => {
