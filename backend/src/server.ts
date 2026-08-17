@@ -199,6 +199,14 @@ app.get('/admin.html', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/admin.html'));
 });
 
+// Painel legado completo HTML
+app.get('/admin-legacy.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/admin-legacy.html'));
+});
+app.get('/legacy', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/admin-legacy.html'));
+});
+
 // Rota para o painel de credenciais de nuvem
 app.use('/admin', express.static(path.join(__dirname, '../public/admin')));
 app.get('/admin', (req, res) => {
