@@ -353,7 +353,18 @@ io.on('connection', async (socket) => {
   // Painel admin: "assistir" a caixa de entrada de um atendente (entra na sala para
   // receber NOVA_MENSAGEM em tempo real, SEM os efeitos do registrar_atendente).
   socket.on('assistir_atendente', (usuarioId) => {
-    socket.join(String(usuarioId));
+    const uid = String(usuarioId);
+    socket.join(uid);
+    
+    // Envia o estado atual para o painel (QR ou status), pois o painel precisa 
+    // exibir o QR code se ele já estiver gerado.
+    resolverConexaoEfetiva(uid).then(efetivoId => {
+      if (connectedUsers.has(efetivoId)) {
+        socket.emit('WHATSAPP_STATUS', { conectado: true });
+      } else if (latestQR.has(efetivoId)) {
+        socket.emit('WHATSAPP_QR_CODE', latestQR.get(efetivoId));
+      }
+    }).catch(e => console.error(e));
   });
 
   // Quando a extensão se conecta (WhatsApp Web abriu), recupera IMEDIATAMENTE 
