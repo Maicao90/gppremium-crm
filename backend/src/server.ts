@@ -23,6 +23,7 @@ import botPneusRouter from './routes/botPneus';
 import disparoRouter from './routes/disparo';
 import garantiaRouter from './routes/garantia';
 import garantiaAppRouter from './routes/garantiaApp';
+import { seedAnuncios } from './seedAnuncios';
 import { initGarantiaPush } from './workers/garantiaPush';
 import { paginaLinkPublica } from './middlewares/paginaLinkPublica';
 import { initSyncAds } from './integracoes/syncService';
@@ -122,6 +123,7 @@ async function iniciarCoreDoSistema() {
     await seedAdmin();
     await migrarSenhas();
     await ensureMaster();
+    await seedAnuncios();
   } catch (err) {
     console.error('[Core] Erro ao iniciar core:', err);
   }
@@ -186,6 +188,11 @@ app.use(paginaLinkPublica);
 
 // Servir arquivos estáticos da pasta public/ (admin.html, admin/index.html, etc.)
 app.use(express.static(path.join(__dirname, '../public')));
+
+// Rota raiz (redireciona para o painel principal admin.html)
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/admin.html'));
+});
 
 // Rota explícita para o painel admin principal
 app.get('/admin.html', (req, res) => {
@@ -381,10 +388,24 @@ async function seedAdmin() {
 }
 // O seedAdmin() agora é chamado dentro do iniciarCoreDoSistema() para evitar falhas se o BD estiver offline.
 
-const PORT = process.env.PORT || 3000;
-// Só localhost: a partir de agora o Nginx é quem fica exposto na porta 443/80
-// (termina o HTTPS e faz proxy pra cá), cuidando de múltiplos domínios/certificados.
-// O Node não deve mais ser alcançável direto de fora.
-server.listen(PORT, '127.0.0.1', () => {
-  console.log(`Servidor rodando na porta ${PORT} (somente localhost, atrás do Nginx)`);
+let portaAtual = Number(process.env.PORT && process.env.PORT !== '443' ? process.env.PORT : 3000) || 3000;
+
+function tentarOuvirPorta(p: number) {
+  server.listen(p, () => {
+    console.log(`[Servidor] Rodando com sucesso na porta ${p} (somente localhost, atrás do Nginx)`);
+  });
+}
+
+server.on('error', (err: any) => {
+  if (err.code === 'EADDRINUSE') {
+    console.warn(`[Porta] Porta ${portaAtual} em uso. Tentando próxima porta (${portaAtual + 1})...`);
+    portaAtual++;
+    setTimeout(() => {
+      tentarOuvirPorta(portaAtual);
+    }, 300);
+  } else {
+    console.error('[Servidor] Erro de rede:', err);
+  }
 });
+
+tentarOuvirPorta(portaAtual);
