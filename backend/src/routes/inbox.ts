@@ -171,6 +171,11 @@ router.get('/conversas', async (req, res) => {
     let contatosNomes: Map<string, string> = new Map();
     try { contatosNomes = require('../workers/whatsappService').contatosNomes; } catch (e) {}
 
+    const avatarsDir = path.join(__dirname, '../../public/midias/avatars');
+    try { fs.mkdirSync(avatarsDir, { recursive: true }); } catch (e) {}
+
+    const pendentesFoto: string[] = [];
+
     conversas.forEach((c: any) => {
       const numReal = mapaNumeros[c.chatJid] || (String(c.chatJid).includes('@lid') ? '' : String(c.chatJid).split('@')[0]);
       c.numeroReal = numReal;
@@ -184,7 +189,27 @@ router.get('/conversas', async (req, res) => {
       const atId = donoPorChat[c.chatJid] ?? null;
       c.atendenteId = atId;
       c.atendenteNome = atId ? (nomePorIdU[atId] ?? null) : null;
+
+      // Foto de perfil espelhada localmente no CRM
+      const cleanJid = (c.chatJid || '').replace(/[^a-zA-Z0-9]/g, '_');
+      const arqFoto = path.join(avatarsDir, `${cleanJid}.jpg`);
+      if (fs.existsSync(arqFoto)) {
+        c.fotoUrl = `/midias/avatars/${cleanJid}.jpg`;
+      } else {
+        c.fotoUrl = null;
+        if (pendentesFoto.length < 60) pendentesFoto.push(c.chatJid);
+      }
     });
+
+    // Puxa as fotos em background para os chats que ainda não têm avatar local
+    if (pendentesFoto.length > 0) {
+      const { baixarFotoPerfilLocal } = require('../workers/whatsappService');
+      pendentesFoto.forEach((jid, idx) => {
+        setTimeout(() => {
+          baixarFotoPerfilLocal(usuarioId, jid).catch(() => {});
+        }, idx * 250);
+      });
+    }
 
     // Ordena por mais recente
     conversas.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());

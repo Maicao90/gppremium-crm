@@ -391,7 +391,7 @@ let vigiaIniciado = false;
 function iniciarVigiaConexao() {
   if (vigiaIniciado) return;
   vigiaIniciado = true;
-  setInterval(() => {
+  const checarSessoes = () => {
     try {
       const dir = path.join(__dirname, '../../../prisma');
       if (!fs.existsSync(dir)) return;
@@ -416,7 +416,11 @@ function iniciarVigiaConexao() {
         }
       }
     } catch (e) {}
-  }, 60000);
+  };
+
+  // Roda imediatamente no boot após 1 segundo e depois a cada 10 segundos
+  setTimeout(checarSessoes, 1000);
+  setInterval(checarSessoes, 10000);
 }
 iniciarVigiaConexao();
 
@@ -1349,10 +1353,28 @@ export async function gerarCodigoPareamento(usuarioId: string, numero: string): 
   throw new Error('Não foi possível gerar o código agora. Tente novamente em alguns segundos.');
 }
 
-// ── FOTO DE PERFIL DO CONTATO ──────────────────────────────────────
+// ── FOTO DE PERFIL DO CONTATO ESPELHADA NO CRM ──────────────────────
+const AVATARS_DIR = path.join(MIDIAS_DIR, 'avatars');
+try { fs.mkdirSync(AVATARS_DIR, { recursive: true }); } catch (e) {}
+
 const cacheFotosPerfil = new Map<string, { url: string | null; expira: number }>();
 
-export async function obterFotoPerfil(usuarioId: string, jid: string): Promise<string | null> {
+export async function baixarFotoPerfilLocal(usuarioId: string, jid: string): Promise<string | null> {
+  if (!jid) return null;
+  const cleanJid = jid.replace(/[^a-zA-Z0-9]/g, '_');
+  const arq = path.join(AVATARS_DIR, `${cleanJid}.jpg`);
+  const relUrl = `/midias/avatars/${cleanJid}.jpg`;
+
+  try {
+    if (fs.existsSync(arq)) {
+      const stat = fs.statSync(arq);
+      // Se tiver menos de 7 dias, usa o local direto
+      if (Date.now() - stat.mtimeMs < 7 * 24 * 60 * 60 * 1000) {
+        return relUrl;
+      }
+    }
+  } catch {}
+
   const chave = `${usuarioId}:${jid}`;
   const emCache = cacheFotosPerfil.get(chave);
   if (emCache && emCache.expira > Date.now()) {
@@ -1360,20 +1382,33 @@ export async function obterFotoPerfil(usuarioId: string, jid: string): Promise<s
   }
 
   const sock = sessions.get(usuarioId);
-  if (!sock) return null;
+  if (!sock) return fs.existsSync(arq) ? relUrl : null;
 
   try {
-    const url = await sock.profilePictureUrl(jid, 'image');
-    cacheFotosPerfil.set(chave, { url: url || null, expira: Date.now() + 24 * 60 * 60 * 1000 });
-    return url || null;
-  } catch {
+    let url: string | undefined;
     try {
-      const urlPreview = await sock.profilePictureUrl(jid, 'preview');
-      cacheFotosPerfil.set(chave, { url: urlPreview || null, expira: Date.now() + 24 * 60 * 60 * 1000 });
-      return urlPreview || null;
+      url = await sock.profilePictureUrl(jid, 'image');
     } catch {
-      cacheFotosPerfil.set(chave, { url: null, expira: Date.now() + 2 * 60 * 60 * 1000 });
-      return null;
+      try {
+        url = await sock.profilePictureUrl(jid, 'preview');
+      } catch {}
     }
-  }
+
+    if (url && typeof url === 'string' && url.startsWith('http')) {
+      const resp = await fetch(url);
+      if (resp.ok) {
+        const buffer = Buffer.from(await resp.arrayBuffer());
+        fs.writeFileSync(arq, buffer);
+        cacheFotosPerfil.set(chave, { url: relUrl, expira: Date.now() + 7 * 24 * 60 * 60 * 1000 });
+        return relUrl;
+      }
+    }
+  } catch {}
+
+  cacheFotosPerfil.set(chave, { url: fs.existsSync(arq) ? relUrl : null, expira: Date.now() + 2 * 60 * 60 * 1000 });
+  return fs.existsSync(arq) ? relUrl : null;
+}
+
+export async function obterFotoPerfil(usuarioId: string, jid: string): Promise<string | null> {
+  return baixarFotoPerfilLocal(usuarioId, jid);
 }
