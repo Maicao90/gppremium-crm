@@ -22,9 +22,9 @@ import {
   Store as StoreIcon,
   MessageSquare
 } from 'lucide-react';
-import { api, soNumero } from './atendimento/api';
-import { API_BASE } from './apiBase';
-import { useAppContext } from './context/AppContext';
+import { api, soNumero } from '../atendimento/api';
+import { API_BASE } from '../apiBase';
+import { useAppContext } from '../context/AppContext';
 
 export const Disparo = () => {
   const { selectedStoreId, data: appContextData } = useAppContext();
