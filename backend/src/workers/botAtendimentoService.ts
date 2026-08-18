@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { prisma } from '../server';
+import { TABELA_PRECOS_GP, buscarPrecoPorMedida } from '../data/tabelaPrecos';
 
 type EnviarParte = (texto: string, tempoDigitacaoMs: number) => Promise<boolean>;
 
@@ -54,6 +55,41 @@ async function conversaContinuaAtual(usuarioId: string, chatJid: string, waId: s
   return !estado?.pausadoAte || estado.pausadoAte.getTime() <= Date.now();
 }
 
+async function processarAgendamentoAutomatico(usuarioId: string, chatJid: string, texto: string) {
+  try {
+    const match = /\[AGENDAR_VISITA:\s*([^\]]+)\]/i.exec(texto);
+    if (!match || !match[1]) return;
+
+    const payloadStr = String(match[1]);
+    const dataMatch = /data="([^"]+)"/i.exec(payloadStr) || /data=([^,\s]+)/i.exec(payloadStr);
+    const lojaMatch = /loja="([^"]+)"/i.exec(payloadStr) || /loja=([^,\s]+)/i.exec(payloadStr);
+    const servicoMatch = /servico="([^"]+)"/i.exec(payloadStr) || /servico=([^,\s]+)/i.exec(payloadStr);
+    const clienteMatch = /cliente="([^"]+)"/i.exec(payloadStr) || /cliente=([^,\s]+)/i.exec(payloadStr);
+
+    const dataStr = dataMatch && dataMatch[1] ? dataMatch[1] : '';
+    const dataAgendamento = dataStr ? new Date(dataStr) : new Date(Date.now() + 24 * 60 * 60 * 1000);
+    const clienteNome = clienteMatch && clienteMatch[1] ? clienteMatch[1] : 'Cliente WhatsApp';
+    const servicoNome = servicoMatch && servicoMatch[1] ? servicoMatch[1] : 'Visita/Montagem';
+    const lojaNome = lojaMatch && lojaMatch[1] ? lojaMatch[1] : 'Loja';
+    const numeroLimpo = chatJid.replace(/[^0-9]/g, '');
+
+    await prisma.agendamento.create({
+      data: {
+        cliente: clienteNome,
+        numero: numeroLimpo,
+        mensagem: `Agendamento automático IA: ${servicoNome} (${lojaNome})`,
+        enviarEm: isNaN(dataAgendamento.getTime()) ? new Date(Date.now() + 24 * 60 * 60 * 1000) : dataAgendamento,
+        criadoPorId: usuarioId,
+        status: 'pendente',
+      },
+    });
+
+    console.log(`[Bot IA] ✅ Agendamento automático criado com sucesso para ${clienteNome} (${numeroLimpo})`);
+  } catch (err) {
+    console.error('[Bot IA] Erro ao criar agendamento automático:', err);
+  }
+}
+
 async function executar(params: AgendarBotParams, versao: number) {
   const key = chave(params.usuarioId, params.chatJid);
   if (versoes.get(key) !== versao) return;
@@ -61,7 +97,7 @@ async function executar(params: AgendarBotParams, versao: number) {
   try {
     const usuario = await prisma.usuario.findUnique({
       where: { id: params.usuarioId },
-      select: { botIaAtivo: true },
+      select: { botIaAtivo: true, nome: true, lojaId: true },
     });
     if (!usuario?.botIaAtivo || !(await conversaContinuaAtual(params.usuarioId, params.chatJid, params.waId))) return;
 
@@ -78,6 +114,11 @@ async function executar(params: AgendarBotParams, versao: number) {
     const ultima = [...historico].reverse().find((m: any) => !m.fromMe);
     const midia = midiaDaUltima(ultima);
 
+    // Carrega dados dinâmicos das lojas ativas no PostgreSQL
+    const lojas = await prisma.loja.findMany({
+      select: { nome: true, endereco: true, cidade: true, whatsapp: true },
+    });
+
     const base = process.env.PNEUS_BOT_URL || 'https://pneus-bot.vercel.app';
     const token = process.env.PNEUS_BOT_TOKEN || '';
     const fetchGlobal: any = (globalThis as any).fetch;
@@ -93,7 +134,26 @@ async function executar(params: AgendarBotParams, versao: number) {
       const r = await fetchGlobal(`${base}/api/bridge`, {
         method: 'POST',
         headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages, ...midia }),
+        body: JSON.stringify({
+          messages,
+          ...midia,
+          lojas,
+          tabelaPrecos: TABELA_PRECOS_GP,
+          config: {
+            temperature: 0.35,
+            persona: 'Josi - Vendedora Consultiva Especialista GP Premium',
+            regras: [
+              'Preços e parcelamentos estritamente fiéis à tabela GP Premium (TAB. 7)',
+              'Se o cliente perguntar qualquer parcelamento (1x até 10x), informe o valor exato da parcela da tabela',
+              'Oferecer 5% de desconto no pagamento à vista (PIX ou Dinheiro) para fechamento imediato',
+              'Promoção Compre 3 e Leve 4 válida para 195/65R15 e 225/45R17',
+              'Para 1 ou 2 pneus em itens Compre 3 Leve 4, conceder até 10% de desconto',
+              'Garantia de 50.000 KM com montagem e balanceamento cortesia na loja',
+              'Emitir [AGENDAR_VISITA: data="YYYY-MM-DD HH:mm", loja="...", servico="...", cliente="..."] quando o cliente confirmar dia e hora',
+              'Emitir [TRANSFERIR_HUMANO] se o cliente solicitar falar com atendente humano ou negociação fora da tabela',
+            ],
+          },
+        }),
         signal: controller.signal,
       });
       resposta = await r.json().catch(() => null);
@@ -104,8 +164,21 @@ async function executar(params: AgendarBotParams, versao: number) {
 
     let partes = Array.isArray(resposta?.partes) ? resposta.partes.map(String).slice(0, 4) : [];
     const transferir = partes.some((p: string) => p.includes('[TRANSFERIR_HUMANO]'));
+
+    // Processa agendamento se presente
+    for (const p of partes) {
+      if (p.includes('[AGENDAR_VISITA')) {
+        await processarAgendamentoAutomatico(params.usuarioId, params.chatJid, p);
+      }
+    }
+
     partes = partes
-      .map((p: string) => p.replace(/\[TRANSFERIR_HUMANO\]/g, '').trim())
+      .map((p: string) =>
+        p
+          .replace(/\[TRANSFERIR_HUMANO\]/g, '')
+          .replace(/\[AGENDAR_VISITA:[^\]]+\]/gi, '')
+          .trim()
+      )
       .filter(Boolean);
     if (!partes.length) return;
 

@@ -1,4 +1,6 @@
 import { Router } from 'express';
+import fs from 'fs';
+import path from 'path';
 import { Prisma } from '@prisma/client';
 import { prisma } from '../server';
 import { numerosDasSessoesAtivas, resolverConexaoEfetiva } from '../workers/whatsappService';
@@ -177,6 +179,7 @@ router.get('/conversas', async (req, res) => {
     const pendentesFoto: string[] = [];
 
     conversas.forEach((c: any) => {
+      c.ultimaMsg = c.texto || '';
       const numReal = mapaNumeros[c.chatJid] || (String(c.chatJid).includes('@lid') ? '' : String(c.chatJid).split('@')[0]);
       c.numeroReal = numReal;
       // Nome: msgs recebidas (pushName) > contato salvo (por número) > contatos em memória.

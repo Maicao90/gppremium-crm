@@ -23,6 +23,8 @@ import botPneusRouter from './routes/botPneus';
 import disparoRouter from './routes/disparo';
 import garantiaRouter from './routes/garantia';
 import garantiaAppRouter from './routes/garantiaApp';
+import olxRouter from './routes/olx';
+import { iniciarMonitorOlx } from './workers/olxWorker';
 import { seedAnuncios } from './seedAnuncios';
 import { seedStoresAndUsers } from './seedStoresAndUsers';
 import { initGarantiaPush } from './workers/garantiaPush';
@@ -106,6 +108,7 @@ async function iniciarCoreDoSistema() {
     initWorker();
     initSyncAds(); // sincronização periódica de Google Ads / Meta Ads
     initGarantiaPush(); // envio de push das notificações de garantia (cliente com app)
+    iniciarMonitorOlx(); // monitor e watchdog de anúncios e chat da OLX
     
     // Restaura do banco quem estava PAUSADO antes deste restart (senão o vigia
     // reconecta sozinho e gera QR infinito de contas que pedimos pra não mexer).
@@ -253,6 +256,7 @@ app.use('/api/otimizador', requireAuth, requireModulo('otimizador'), otimizadorA
 app.use('/api/disparo', requireAuth, requireModulo('at-disparo'), disparoRouter); // Disparo manual WhatsApp (Direcional)
 app.use('/api/garantia', requireAuth, requireModulo('garantia50k'), garantiaRouter); // Garantia 50.000 KM (painel + app do mecânico, login CRM)
 app.use('/api/garantia-app', garantiaAppRouter); // App do CLIENTE final (auth própria por CPF+senha, cada rota se protege)
+app.use('/api/olx', olxRouter); // Módulo OLX: Anúncios, Watchdog e Chat Integrado
 
 // Rotas da API de Nuvem do Painel Admin
 app.get('/api/admin/nuvem', (req, res) => {
