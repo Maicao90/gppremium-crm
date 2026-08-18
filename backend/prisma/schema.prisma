@@ -430,13 +430,18 @@ model OlxMensagem {
 // e cada operador tinha que anexar de novo) e o limite diário só existia no navegador —
 // duas abas abertas furavam o teto sem o servidor perceber.
 model DisparoCampanha {
-  id           String   @id @default(uuid())
-  storeId      String   @unique
-  fotoUrl      String? // arte enviada junto do texto (em /midias/disparo/)
-  fotoNome     String? // nome do arquivo original, só pra exibir no painel
-  limiteDia    Int      @default(30) // teto de envios por dia, valendo no SERVIDOR
-  atualizadoEm DateTime @updatedAt
-  criadoEm     DateTime @default(now())
+  id              String    @id @default(uuid())
+  storeId         String    @unique
+  fotoUrl         String? // arte enviada junto do texto (em /midias/disparo/)
+  fotoNome        String? // nome do arquivo original, só pra exibir no painel
+  limiteDia       Int       @default(30) // teto de envios por dia (ex: 30 por dia)
+  autoDisparo     Boolean   @default(true) // automação ativa
+  horaInicio      String    @default("08:00") // início da janela diária de disparo (08:00)
+  horaFim         String    @default("17:00") // fim da janela diária de disparo (17:00)
+  mensagemPadrao  String?   // template de mensagem padrão para novos envios
+  ultimoDisparoEm DateTime? // registro do último disparo automático enviado
+  atualizadoEm    DateTime  @updatedAt
+  criadoEm        DateTime  @default(now())
 }
 
 // ===== Garantia 50.000 KM (módulo "aplicativo", importado do protótipo GPPREMIUMGARANTIA50K) =====

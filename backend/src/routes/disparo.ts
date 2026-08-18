@@ -80,48 +80,96 @@ router.get('/campanha', async (req, res) => {
     const c = await campanhaDaLoja(storeId);
     const inicio = new Date(); inicio.setHours(0, 0, 0, 0);
     const enviadosHoje = await prisma.disparoContato.count({ where: { storeId, enviadoEm: { gte: inicio } } });
-    res.json({ fotoUrl: c.fotoUrl, fotoNome: c.fotoNome, limiteDia: c.limiteDia, enviadosHoje });
+    const totalPendentes = await prisma.disparoContato.count({ where: { storeId, contatado: false, tel: { not: '' } } });
+    const totalContatos = await prisma.disparoContato.count({ where: { storeId } });
+
+    res.json({
+      fotoUrl: c.fotoUrl,
+      fotoNome: c.fotoNome,
+      limiteDia: c.limiteDia,
+      autoDisparo: c.autoDisparo,
+      horaInicio: c.horaInicio || '08:00',
+      horaFim: c.horaFim || '17:00',
+      mensagemPadrao: c.mensagemPadrao || '',
+      ultimoDisparoEm: c.ultimoDisparoEm,
+      enviadosHoje,
+      totalPendentes,
+      totalContatos,
+    });
   } catch (e) { erro(res, e); }
 });
 
-// Define/troca a arte da campanha (uma vez, vale pra todos os disparos daquela loja).
-router.post('/campanha/foto', async (req, res) => {
+// Configuração completa do robô de disparo automático (ativação, horários, limite, mensagem padrão)
+router.post('/campanha/configuracao', async (req, res) => {
   try {
     const storeId = String(req.body?.storeId || '');
     if (!storeId) return res.status(400).json({ error: 'storeId obrigatório' });
-    const c = await campanhaDaLoja(storeId);
+    await campanhaDaLoja(storeId);
 
-    // Sem fotoBase64 = pedido pra REMOVER a arte atual.
-    if (!req.body?.fotoBase64) {
-      if (c.fotoUrl) { try { fs.unlinkSync(path.join(__dirname, '../../public', c.fotoUrl)); } catch { /* noop */ } }
-      const zerada = await prisma.disparoCampanha.update({ where: { storeId }, data: { fotoUrl: null, fotoNome: null } });
-      return res.json({ fotoUrl: zerada.fotoUrl, fotoNome: zerada.fotoNome, limiteDia: zerada.limiteDia });
+    const dataToUpdate: any = {};
+    if (req.body.autoDisparo !== undefined) dataToUpdate.autoDisparo = Boolean(req.body.autoDisparo);
+    if (req.body.limiteDia !== undefined) dataToUpdate.limiteDia = Math.max(1, Math.min(500, Number(req.body.limiteDia) || 30));
+    if (req.body.horaInicio !== undefined) dataToUpdate.horaInicio = String(req.body.horaInicio || '08:00');
+    if (req.body.horaFim !== undefined) dataToUpdate.horaFim = String(req.body.horaFim || '17:00');
+    if (req.body.mensagemPadrao !== undefined) dataToUpdate.mensagemPadrao = String(req.body.mensagemPadrao || '');
+
+    const c = await prisma.disparoCampanha.update({
+      where: { storeId },
+      data: dataToUpdate,
+    });
+
+    res.json(c);
+  } catch (e) { erro(res, e); }
+});
+
+// Importação em lote de contatos para a loja
+router.post('/importar', async (req, res) => {
+  try {
+    const storeId = String(req.body?.storeId || '');
+    const contatos = Array.isArray(req.body?.contatos) ? req.body.contatos : [];
+    if (!storeId || !contatos.length) return res.status(400).json({ error: 'storeId e lista de contatos são obrigatórios' });
+
+    let inseridos = 0;
+    for (const item of contatos) {
+      const telBruto = String(item.tel || item.telefone || item.numero || '').replace(/\D/g, '');
+      if (!telBruto) continue;
+      const telFinal = telBruto.length === 10 || telBruto.length === 11 ? `55${telBruto}` : telBruto;
+      const nome = String(item.nome || item.cliente || telFinal).trim();
+      const valor = Number(item.valor) || 0;
+      const segmento = String(item.segmento || '').trim();
+      const servicos = String(item.servicos || '').trim();
+      const mensagemBase = String(item.mensagem || item.mensagemBase || '').trim();
+
+      await prisma.disparoContato.create({
+        data: {
+          storeId,
+          nome,
+          tel: telFinal,
+          telDisp: item.telDisp || telFinal,
+          valor,
+          segmento,
+          servicos,
+          mensagemBase,
+          contatado: false,
+        }
+      });
+      inseridos++;
     }
 
-    let salvo;
-    try { salvo = salvarFotoDisparo(String(req.body.fotoBase64)); }
-    catch { return res.status(400).json({ error: 'Não consegui ler a imagem. Tente outro arquivo.' }); }
-
-    // Apaga a arte anterior pra não acumular lixo no disco a cada troca de campanha.
-    if (c.fotoUrl) { try { fs.unlinkSync(path.join(__dirname, '../../public', c.fotoUrl)); } catch { /* noop */ } }
-
-    const atualizada = await prisma.disparoCampanha.update({
-      where: { storeId },
-      data: { fotoUrl: salvo.caminho, fotoNome: String(req.body?.fotoNome || '').slice(0, 200) || null },
-    });
-    res.json({ fotoUrl: atualizada.fotoUrl, fotoNome: atualizada.fotoNome, limiteDia: atualizada.limiteDia });
+    res.json({ ok: true, total: inseridos });
   } catch (e) { erro(res, e); }
 });
 
-// Ajusta o teto diário da loja (padrão 30).
-router.post('/campanha/limite', async (req, res) => {
+// Resetar status de contatado para todos os contatos da loja (re-inicia a campanha)
+router.post('/campanha/resetar-contatados', async (req, res) => {
   try {
     const storeId = String(req.body?.storeId || '');
     if (!storeId) return res.status(400).json({ error: 'storeId obrigatório' });
-    const limiteDia = Math.max(1, Math.min(500, Number(req.body?.limiteDia) || 30));
-    await campanhaDaLoja(storeId);
-    const c = await prisma.disparoCampanha.update({ where: { storeId }, data: { limiteDia } });
-    res.json({ limiteDia: c.limiteDia });
+    const result = await prisma.disparoContato.updateMany({
+      where: { storeId },
+      data: { contatado: false, contatadoEm: null, enviadoEm: null }
+    });
+    res.json({ ok: true, resetados: result.count });
   } catch (e) { erro(res, e); }
 });
 

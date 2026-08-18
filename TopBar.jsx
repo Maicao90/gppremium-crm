@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { useAppContext } from '../context/AppContext';
 import { useAuth } from '../context/AuthContext';
-import { SlidersHorizontal, ChevronDown, Menu, LogOut } from 'lucide-react';
+import { SlidersHorizontal, ChevronDown, Menu, LogOut, Store as StoreIcon } from 'lucide-react';
 import { FiltroSelect } from './FiltroSelect';
 
-// Telas que realmente usam os filtros de anúncios (empresa/loja/período)
-const VIEWS_COM_FILTRO = ['dashboard', 'campaigns'];
+// Telas que utilizam os seletores de loja/empresa/período
+const VIEWS_COM_FILTRO = ['dashboard', 'campaigns', 'at-inbox', 'at-dashboard', 'at-atendentes', 'contas', 'olx-anuncios', 'olx-chat'];
+
 const TITULOS = {
   dashboard: 'Dashboard Geral',
   companies: 'Empresas',
@@ -73,19 +74,33 @@ export const TopBar = ({ onMenu }) => {
     { value: 'last_month', label: 'Mês passado' },
   ];
 
+  const lojaAtualNome = selectedStoreId === 'all' 
+    ? 'Todas as Lojas' 
+    : (data.stores || []).find((s) => s.id === selectedStoreId)?.store_name || 'Loja Selecionada';
+
   return (
-    <header className="topbar">
+    <header className="topbar" style={{ background: 'rgba(10, 15, 28, 0.85)', backdropFilter: 'blur(16px)', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
       <div className="flex items-center gap-3">
         <button
           type="button"
-          className="menu-toggle"
+          className="menu-toggle icon-btn"
           onClick={onMenu}
           aria-label="Abrir menu de navegação"
+          style={{ width: 38, height: 38, borderRadius: 10 }}
         >
-          <Menu size={22} />
+          <Menu size={20} />
         </button>
 
-        <h2 className="topbar-title">{TITULOS[currentView] || 'Painel de Controle'}</h2>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <h2 className="topbar-title" style={{ fontSize: '1.2rem', fontWeight: 800, margin: 0, letterSpacing: '-0.02em', background: 'linear-gradient(135deg, #FFFFFF 60%, #94A3B8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            {TITULOS[currentView] || 'Painel de Controle'}
+          </h2>
+          {selectedStoreId !== 'all' && (
+            <span style={{ fontSize: '0.72rem', color: '#E8252C', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 4, marginTop: 1 }}>
+              <span className="live-dot" style={{ width: 6, height: 6, backgroundColor: '#E8252C' }} /> {lojaAtualNome}
+            </span>
+          )}
+        </div>
       </div>
 
       <div className="flex items-center gap-3">
@@ -93,17 +108,28 @@ export const TopBar = ({ onMenu }) => {
           <>
             <button
               type="button"
-              className={`filtros-toggle ${aberto ? 'is-open' : ''}`}
+              className={`filtros-toggle btn ${aberto ? 'is-open' : ''}`}
               onClick={() => setAberto(!aberto)}
               title="Filtros de período e lojas"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 6,
+                padding: '0.45rem 0.85rem',
+                borderRadius: 10,
+                fontSize: '0.84rem',
+                background: aberto ? 'rgba(232, 37, 44, 0.14)' : 'rgba(255, 255, 255, 0.05)',
+                border: aberto ? '1px solid rgba(232, 37, 44, 0.35)' : '1px solid rgba(255, 255, 255, 0.08)',
+                color: aberto ? '#FFFFFF' : 'var(--text-secondary)',
+              }}
             >
-              <SlidersHorizontal size={15} />
+              <SlidersHorizontal size={14} />
               <span>Filtros</span>
-              <ChevronDown size={14} className="chev" />
+              <ChevronDown size={13} className="chev" style={{ transform: aberto ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s ease' }} />
             </button>
 
             {aberto && (
-              <div className="topbar-filtros animate-fade-in">
+              <div className="topbar-filtros animate-fade-in" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
                 <FiltroSelect
                   value={selectedCompanyId}
                   options={empresasOpt}
@@ -114,45 +140,51 @@ export const TopBar = ({ onMenu }) => {
                   options={lojasOpt}
                   onChange={setSelectedStoreId}
                 />
-                <FiltroSelect
-                  value={selectedPlatform}
-                  options={plataformasOpt}
-                  onChange={setSelectedPlatform}
-                />
-                <FiltroSelect
-                  value={selectedPeriod}
-                  options={periodosOpt}
-                  onChange={setSelectedPeriod}
-                />
+                {['dashboard', 'campaigns', 'otimizador'].includes(currentView) && (
+                  <>
+                    <FiltroSelect
+                      value={selectedPlatform}
+                      options={plataformasOpt}
+                      onChange={setSelectedPlatform}
+                    />
+                    <FiltroSelect
+                      value={selectedPeriod}
+                      options={periodosOpt}
+                      onChange={setSelectedPeriod}
+                    />
+                  </>
+                )}
               </div>
             )}
           </>
         )}
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, paddingLeft: 8, borderLeft: '1px solid var(--panel-border)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, paddingLeft: 12, borderLeft: '1px solid rgba(255, 255, 255, 0.08)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
             <div
               style={{
-                width: 34,
-                height: 34,
+                width: 36,
+                height: 36,
                 borderRadius: '50%',
-                background: 'linear-gradient(135deg, #22C55E, #16A34A)',
-                color: '#0B1911',
+                background: 'linear-gradient(135deg, #E8252C, #B91C22)',
+                color: '#FFFFFF',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontWeight: 700,
-                fontSize: '0.82rem',
+                fontWeight: 800,
+                fontSize: '0.85rem',
+                boxShadow: '0 0 14px rgba(232, 37, 44, 0.35)',
+                border: '2px solid rgba(255, 255, 255, 0.15)',
               }}
             >
               {iniciais(usuario?.nome)}
             </div>
 
             <div className="topbar-user-name" style={{ display: 'flex', flexDirection: 'column' }}>
-              <strong style={{ fontSize: '0.84rem', color: 'var(--text-primary)', lineHeight: 1.2 }}>
+              <strong style={{ fontSize: '0.86rem', color: '#FFFFFF', lineHeight: 1.2, fontWeight: 700 }}>
                 {usuario?.nome || 'Usuário'}
               </strong>
-              <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+              <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 600 }}>
                 {roleLabel(usuario?.role)}
               </span>
             </div>
@@ -161,7 +193,7 @@ export const TopBar = ({ onMenu }) => {
           <button
             type="button"
             className="icon-btn"
-            style={{ width: 34, height: 34 }}
+            style={{ width: 36, height: 36, borderRadius: 10, background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.25)', color: '#EF4444' }}
             onClick={logout}
             title="Sair da conta"
           >
@@ -172,3 +204,4 @@ export const TopBar = ({ onMenu }) => {
     </header>
   );
 };
+

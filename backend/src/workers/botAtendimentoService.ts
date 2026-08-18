@@ -115,9 +115,16 @@ async function executar(params: AgendarBotParams, versao: number) {
     const midia = midiaDaUltima(ultima);
 
     // Carrega dados dinâmicos das lojas ativas no PostgreSQL
-    const lojas = await prisma.loja.findMany({
-      select: { nome: true, endereco: true, cidade: true, whatsapp: true },
+    const lojasBrutas = await prisma.loja.findMany({
+      select: { store_name: true, city: true, state: true, whatsapp: true, telefone_fixo: true },
     });
+    const lojas = lojasBrutas.map((l) => ({
+      nome: l.store_name,
+      cidade: l.city,
+      estado: l.state,
+      whatsapp: l.whatsapp,
+      telefone_fixo: l.telefone_fixo,
+    }));
 
     const base = process.env.PNEUS_BOT_URL || 'https://pneus-bot.vercel.app';
     const token = process.env.PNEUS_BOT_TOKEN || '';
@@ -140,17 +147,18 @@ async function executar(params: AgendarBotParams, versao: number) {
           lojas,
           tabelaPrecos: TABELA_PRECOS_GP,
           config: {
-            temperature: 0.35,
-            persona: 'Josi - Vendedora Consultiva Especialista GP Premium',
+            temperature: 0.3,
+            persona: 'Josi - Consultora de Vendas Especialista GP Premium Pneus',
             regras: [
-              'Preços e parcelamentos estritamente fiéis à tabela GP Premium (TAB. 7)',
-              'Se o cliente perguntar qualquer parcelamento (1x até 10x), informe o valor exato da parcela da tabela',
+              'Preços e parcelamentos 100% fiéis à tabela GP Premium oficial',
+              'Se o cliente perguntar qualquer parcelamento (1x até 10x), informe o valor exato da parcela com centavos da tabela sem arredondar',
               'Oferecer 5% de desconto no pagamento à vista (PIX ou Dinheiro) para fechamento imediato',
               'Promoção Compre 3 e Leve 4 válida para 195/65R15 e 225/45R17',
               'Para 1 ou 2 pneus em itens Compre 3 Leve 4, conceder até 10% de desconto',
-              'Garantia de 50.000 KM com montagem e balanceamento cortesia na loja',
-              'Emitir [AGENDAR_VISITA: data="YYYY-MM-DD HH:mm", loja="...", servico="...", cliente="..."] quando o cliente confirmar dia e hora',
-              'Emitir [TRANSFERIR_HUMANO] se o cliente solicitar falar com atendente humano ou negociação fora da tabela',
+              'Garantia oficial de 50.000 KM com montagem, bicos e balanceamento cortesia na loja',
+              'Respostas humanizadas, dinâmicas e diretas no formato WhatsApp (mensagens curtas e claras)',
+              'Emitir [AGENDAR_VISITA: data="YYYY-MM-DD HH:mm", loja="...", servico="...", cliente="..."] quando o cliente confirmar dia e hora para montagem ou visita',
+              'Emitir [TRANSFERIR_HUMANO] se o cliente solicitar expressamente falar com atendente humano ou pedir negociação fora da tabela oficial',
             ],
           },
         }),

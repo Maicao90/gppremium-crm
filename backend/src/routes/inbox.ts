@@ -326,24 +326,37 @@ router.get('/mensagens', async (req, res) => {
   try {
     const usuarioIdOriginal = String(req.query.usuarioId || '');
     const jid = String(req.query.jid || '');
-    if (!usuarioIdOriginal || !jid) return res.json([]);
-    if (!(await permiteAtendente(req, res, usuarioIdOriginal))) return;
-    const usuarioId = await resolverConexaoEfetiva(usuarioIdOriginal);
+    if (!jid) return res.json([]);
+    if (usuarioIdOriginal && !(await permiteAtendente(req, res, usuarioIdOriginal))) return;
 
-    // Busca as MAIS RECENTES (desc + take) e inverte pra ordem de exibição (asc).
-    // Bug antigo: orderBy asc + take trazia as 300 mais ANTIGAS, fixas pra sempre —
-    // numa conversa com mais de 300 mensagens, as novas nunca apareciam (janela
-    // congelada no passado, nunca deslizava).
-    const recentes = await prisma.mensagem.findMany({
-      where: {
-        usuarioId,
-        chatJid: jid,
-        // Esconde o ruído de sistema ("outro" vazio/protocolMessage sem mídia)
-        NOT: { tipo: 'outro', midiaUrl: null, texto: { in: ['', 'protocolMessage'] } }
-      },
-      orderBy: { timestamp: 'desc' },
-      take: 300
-    });
+    let usuarioId = usuarioIdOriginal ? await resolverConexaoEfetiva(usuarioIdOriginal) : '';
+
+    // Busca as mensagens da conversa pelo usuarioId efetivo
+    let recentes: any[] = [];
+    if (usuarioId) {
+      recentes = await prisma.mensagem.findMany({
+        where: {
+          usuarioId,
+          chatJid: jid,
+          NOT: { tipo: 'outro', midiaUrl: null, texto: { in: ['', 'protocolMessage'] } }
+        },
+        orderBy: { timestamp: 'desc' },
+        take: 300
+      });
+    }
+
+    // Fallback: se não encontrou mensagens para este usuarioId específico (ex.: número compartilhado ou troca de loja recente), busca direto pelo chatJid
+    if (recentes.length === 0) {
+      recentes = await prisma.mensagem.findMany({
+        where: {
+          chatJid: jid,
+          NOT: { tipo: 'outro', midiaUrl: null, texto: { in: ['', 'protocolMessage'] } }
+        },
+        orderBy: { timestamp: 'desc' },
+        take: 300
+      });
+    }
+
     res.json(recentes.reverse());
   } catch (e) {
     console.error('Erro ao buscar mensagens:', e);

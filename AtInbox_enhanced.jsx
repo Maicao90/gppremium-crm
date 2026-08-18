@@ -1,8 +1,9 @@
 import { useState, useEffect, useLayoutEffect, useRef, Fragment, memo } from 'react';
-import { Send, RefreshCw, Search, MessageSquare, AlertTriangle, Calendar, X, Plus, ArrowLeft, BarChart3, CheckCheck, Clock, Image as ImageIcon } from 'lucide-react';
+import { Send, RefreshCw, Search, MessageSquare, AlertTriangle, Calendar, X, Plus, ArrowLeft, BarChart3, CheckCheck, Clock, Image as ImageIcon, Store as StoreIcon, Smartphone, Users } from 'lucide-react';
 import { api, soNumero } from '../atendimento/api';
 import { API_BASE } from '../apiBase';
 import { Modal } from '../components/Modal';
+import { useAppContext } from '../context/AppContext';
 
 // Parser seguro de datas que NUNCA retorna "Invalid Date"
 const parseDate = (t) => {
@@ -119,8 +120,8 @@ const ContactAvatar = memo(function ContactAvatar({ nome, jid, usuarioId, fotoUr
           borderRadius: '50%',
           objectFit: 'cover',
           flexShrink: 0,
-          boxShadow: '0 2px 6px rgba(0,0,0,0.25)',
-          border: '1px solid rgba(255,255,255,0.1)',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
+          border: '2px solid rgba(255,255,255,0.12)',
           cursor: onClick ? 'pointer' : 'default',
           transition: 'transform 0.15s ease',
         }}
@@ -146,7 +147,8 @@ const ContactAvatar = memo(function ContactAvatar({ nome, jid, usuarioId, fotoUr
         fontWeight: 700,
         fontSize: size > 40 ? '0.88rem' : '0.8rem',
         flexShrink: 0,
-        boxShadow: '0 2px 6px rgba(0,0,0,0.25)',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
+        border: '1px solid rgba(255,255,255,0.15)',
         cursor: onClick ? 'pointer' : 'default',
         transition: 'transform 0.15s ease',
       }}
@@ -307,12 +309,14 @@ function Conteudo({ m, onAbrirMidia }) {
 }
 
 export const AtInbox = () => {
+  const { selectedStoreId, setSelectedStoreId, data: appContextData } = useAppContext();
   const [atendentes, setAtendentes] = useState([]);
   const [usuarioId, setUsuarioId] = useState('');
   const [lojaSel, setLojaSel] = useState('');
   const [filtroAtendente, setFiltroAtendente] = useState('');
   const [opcoesAtendentes, setOpcoesAtendentes] = useState([]);
   const [conversas, setConversas] = useState([]);
+  const [carregandoConversas, setCarregandoConversas] = useState(false);
   const [ativa, setAtiva] = useState(null);
   const [mensagens, setMensagens] = useState([]);
   const [carregandoMsgs, setCarregandoMsgs] = useState(false);
@@ -333,64 +337,145 @@ export const AtInbox = () => {
   const listaRef = useRef(null);
   const chatAnteriorRef = useRef(null);
 
-  useEffect(() => {
-    api('/api/usuarios').then((us) => {
-      setAtendentes(us);
-      let escolhido = null;
-      try {
-        const salvo = localStorage.getItem('gp_inbox_usuario');
-        if (salvo) { escolhido = us.find((u) => u.id === salvo); localStorage.removeItem('gp_inbox_usuario'); }
-      } catch { /* noop */ }
-      const soAtendentes = us.filter((u) => {
-        if (u.role === 'gerente' || u.role === 'admin' || u.role === 'master') return false;
-        let mods = [];
-        try { mods = JSON.parse(u.modulosPermitidos || '[]'); } catch { mods = []; }
-        return !(Array.isArray(mods) && mods.length > 0 && !mods.some((m) => String(m).startsWith('at-')));
-      });
-      const inicial = escolhido || soAtendentes.find((u) => u.whatsappConectado) || soAtendentes[0];
-      if (inicial) { setUsuarioId(inicial.id); setLojaSel(inicial.lojaId || '__sem_loja__'); }
-    }).catch((e) => setErro(e.message));
-  }, []);
-
   const lojaDe = (u) => (u?.lojaId || '__sem_loja__');
 
-  const ehCaixaDeAtendimento = (u) => {
-    if (!u) return false;
-    // Administradores globais e sistema não entram como caixas de atendimento
-    if (u.role === 'admin' || u.role === 'master') return false;
-    let mods = [];
-    try { mods = JSON.parse(u.modulosPermitidos || '[]'); } catch { mods = []; }
-    if (Array.isArray(mods) && mods.length > 0 && !mods.some((m) => String(m).startsWith('at-') || m === 'at-inbox')) return false;
-    return true;
-  };
-  const atendentesInbox = atendentes.filter(ehCaixaDeAtendimento);
+  // Carregamento inicial de usuários e lojas
+  useEffect(() => {
+    setCarregandoConversas(true);
+    api('/api/usuarios').then((us) => {
+      const listaUsers = Array.isArray(us) ? us : [];
+      setAtendentes(listaUsers);
 
+      // Descobre a loja inicial baseada no selectedStoreId do AppContext ou localStorage
+      let lojaInicial = '';
+      if (selectedStoreId && selectedStoreId !== 'all') {
+        lojaInicial = selectedStoreId;
+      } else {
+        try {
+          const salvoLoja = localStorage.getItem('gp_inbox_loja');
+          if (salvoLoja) lojaInicial = salvoLoja;
+        } catch { /* noop */ }
+      }
+
+      // Função inteligente para escolher o atendente mais relevante da loja
+      const encontrarMelhorAtendente = (lista) => {
+        if (!lista || lista.length === 0) return null;
+        // 1. Conectado E com mensagens reais
+        const c1 = lista.find((u) => u.whatsappConectado && (u.totalMensagens || 0) > 0);
+        if (c1) return c1;
+        // 2. Com mensagens reais
+        const c2 = lista.find((u) => (u.totalMensagens || 0) > 0);
+        if (c2) return c2;
+        // 3. Conectado
+        const c3 = lista.find((u) => u.whatsappConectado);
+        if (c3) return c3;
+        // 4. Primeiro da lista
+        return lista[0];
+      };
+
+      // Usuários candidatos a atendimento
+      const candidatos = listaUsers.filter((u) => u.role !== 'admin' && u.role !== 'master');
+      const comLoja = lojaInicial ? candidatos.filter((u) => lojaDe(u) === lojaInicial) : candidatos;
+      
+      const inicial = encontrarMelhorAtendente(comLoja) || encontrarMelhorAtendente(candidatos) || candidatos[0];
+
+      if (inicial) {
+        const ljId = lojaDe(inicial);
+        setLojaSel(ljId);
+        setUsuarioId(inicial.id);
+        if (selectedStoreId !== ljId && ljId !== '__sem_loja__') {
+          setSelectedStoreId(ljId);
+        }
+      } else {
+        setCarregandoConversas(false);
+      }
+    }).catch((e) => {
+      setErro(e.message || 'Erro ao carregar atendentes');
+      setCarregandoConversas(false);
+    });
+  }, []);
+
+  // Lista unificada e robusta de lojas (combina lojas do AppContext + lojas dos atendentes)
   const lojas = (() => {
     const m = new Map();
-    atendentesInbox.forEach((u) => {
-      const id = lojaDe(u);
-      if (!m.has(id)) m.set(id, { id, nome: u.lojaNome || (u.lojaId ? 'Loja sem nome' : 'Sem loja definida'), donos: new Set() });
-      if (u.whatsappConectado) m.get(id).donos.add(u.whatsappDonoId || u.id);
+    (appContextData.stores || []).forEach((s) => {
+      m.set(s.id, { id: s.id, nome: s.store_name, numeros: 0, temConectado: false });
     });
-    return [...m.values()]
-      .map((l) => ({ id: l.id, nome: l.nome, numeros: l.donos.size }))
-      .sort((a, b) => a.nome.localeCompare(b.nome));
+    atendentes.forEach((u) => {
+      const id = lojaDe(u);
+      if (!m.has(id)) {
+        m.set(id, { id, nome: u.lojaNome || (u.lojaId ? 'Loja sem nome' : 'Sem loja definida'), numeros: 0, temConectado: false });
+      }
+      const item = m.get(id);
+      if (u.whatsappConectado) {
+        item.temConectado = true;
+        item.numeros += 1;
+      }
+    });
+    return [...m.values()].sort((a, b) => a.nome.localeCompare(b.nome));
   })();
-  const atendentesDaLoja = lojaSel ? atendentesInbox.filter((u) => lojaDe(u) === lojaSel) : atendentesInbox;
 
-  const trocarLoja = (novaLojaId) => {
+  const atendentesDaLoja = lojaSel ? atendentes.filter((u) => lojaDe(u) === lojaSel) : atendentes;
+  const atendenteAtivo = atendentes.find((u) => u.id === usuarioId);
+
+  // Sincronização quando o TopBar muda a loja global (selectedStoreId)
+  useEffect(() => {
+    if (selectedStoreId && selectedStoreId !== 'all' && selectedStoreId !== lojaSel) {
+      trocarLoja(selectedStoreId, false);
+    }
+  }, [selectedStoreId]);
+
+  // Função central e à prova de falhas para trocar de loja instantaneamente
+  const trocarLoja = (novaLojaId, atualizarContexto = true) => {
     setLojaSel(novaLojaId);
-    const daLoja = atendentesInbox.filter((u) => lojaDe(u) === novaLojaId);
-    const alvo = daLoja.find((u) => u.whatsappConectado) || daLoja[0];
-    if (alvo) setUsuarioId(alvo.id);
+    try { localStorage.setItem('gp_inbox_loja', novaLojaId); } catch { /* noop */ }
+    if (atualizarContexto && novaLojaId !== '__sem_loja__') {
+      setSelectedStoreId(novaLojaId);
+    }
+
+    // Limpeza imediata do chat ativo anterior para evitar mensagens cruzadas
+    setAtiva(null);
+    setMensagens([]);
+    setFiltroAtendente('');
+    setOpcoesAtendentes([]);
+    setCarregandoConversas(true);
+
+    const daLoja = atendentes.filter((u) => lojaDe(u) === novaLojaId);
+    
+    // Escolhe o atendente conectado ou com histórico de mensagens
+    const alvo = daLoja.find((u) => u.whatsappConectado && (u.totalMensagens || 0) > 0)
+      || daLoja.find((u) => (u.totalMensagens || 0) > 0)
+      || daLoja.find((u) => u.whatsappConectado)
+      || daLoja[0];
+
+    if (alvo) {
+      setUsuarioId(alvo.id);
+      carregarConversas(alvo.id, '');
+      carregarAgenda(alvo.id);
+    } else {
+      // Loja sem nenhum atendente configurado
+      setUsuarioId('');
+      setConversas([]);
+      setCarregandoConversas(false);
+    }
+  };
+
+  const trocarAtendente = (novoUid) => {
+    setUsuarioId(novoUid);
+    setAtiva(null);
+    setMensagens([]);
+    setFiltroAtendente('');
+    setCarregandoConversas(true);
+    carregarConversas(novoUid, '');
+    carregarAgenda(novoUid);
   };
 
   const donoEfetivo = (u) => (u && (u.whatsappDonoId || u.id)) || '';
-  const selecionado = atendentes.find((u) => u.id === usuarioId);
-  const equipe = selecionado ? atendentes.filter((u) => donoEfetivo(u) === donoEfetivo(selecionado)) : [];
+  const equipe = atendenteAtivo ? atendentes.filter((u) => donoEfetivo(u) === donoEfetivo(atendenteAtivo)) : [];
   const compartilhada = equipe.length > 1;
   const outroDetectado = opcoesAtendentes.some((o) => o.id !== usuarioId);
   const mostrarFiltro = compartilhada || outroDetectado || filtroAtendente !== '';
+
   const opcoesFiltro = (() => {
     const m = new Map();
     if (compartilhada) equipe.forEach((u) => m.set(u.id, u.nome));
@@ -399,7 +484,11 @@ export const AtInbox = () => {
   })();
 
   const carregarConversas = async (uid, filtro) => {
-    if (!uid) return;
+    if (!uid) {
+      setConversas([]);
+      setCarregandoConversas(false);
+      return;
+    }
     const extra = filtro ? `&atendenteId=${encodeURIComponent(filtro)}` : '';
     try {
       const lista = await api(`/api/inbox/conversas?usuarioId=${uid}${extra}`);
@@ -410,25 +499,32 @@ export const AtInbox = () => {
         lista.forEach((c) => { if (c.atendenteId) vistos.set(c.atendenteId, c.atendenteNome || 'Atendente'); });
         setOpcoesAtendentes([...vistos.entries()].map(([id, nome]) => ({ id, nome })));
       }
-    } catch (e) { setErro(e.message); }
+    } catch (e) {
+      setErro(e.message || 'Erro ao buscar conversas');
+      setConversas([]);
+    } finally {
+      setCarregandoConversas(false);
+    }
   };
+
   const carregarAgenda = async (uid) => {
     if (!uid) return;
     try { setAgenda(await api(`/api/agendamentos?criadoPorId=${uid}`)); } catch { /* noop */ }
   };
 
+  // Efeito para recarregar quando o filtro por atendente muda
   useEffect(() => {
-    carregarAgenda(usuarioId); setAtiva(null); setMensagens([]); setOpcoesAtendentes([]);
-    setFiltroAtendente('');
-  }, [usuarioId]);
-  useEffect(() => { carregarConversas(usuarioId, filtroAtendente); }, [usuarioId, filtroAtendente]);
+    if (usuarioId) {
+      carregarConversas(usuarioId, filtroAtendente);
+    }
+  }, [filtroAtendente]);
 
   const numAtiva = ativa ? soNumero(ativa.numeroReal || ativa.chatJid) : '';
   const agendaContato = agenda.filter((a) => soNumero(a.numero) === numAtiva);
 
   const criarAgendamento = async (e) => {
     e.preventDefault();
-    if (!ativa || !formAg.mensagem.trim() || !formAg.enviarEm) return;
+    if (!ativa || !formAg.mensagem.trim() || !formAg.enviarEm || !usuarioId) return;
     setSalvandoAg(true);
     try {
       await api('/api/agendamentos', { method: 'POST', body: JSON.stringify({
@@ -441,51 +537,60 @@ export const AtInbox = () => {
       }) });
       setFormAg({ mensagem: '', enviarEm: '', cancelar: true });
       await carregarAgenda(usuarioId);
+      setShowAgenda(false);
     } catch (err) { alert(err.message || 'Falha ao agendar.'); }
     setSalvandoAg(false);
   };
 
   const abrir = async (c) => {
+    if (!c || !c.chatJid) return;
     setAtiva(c);
     setCarregandoMsgs(true);
+    setErro('');
     try {
-      const msgs = await api(`/api/inbox/mensagens?usuarioId=${usuarioId}&jid=${encodeURIComponent(c.chatJid)}`);
+      const uidAlvo = c.atendenteId || c.usuarioId || usuarioId;
+      const msgs = await api(`/api/inbox/mensagens?usuarioId=${encodeURIComponent(uidAlvo || '')}&jid=${encodeURIComponent(c.chatJid)}`);
       setMensagens(Array.isArray(msgs) ? msgs : []);
     } catch (e) { 
-      setErro(e.message); 
+      console.error('Erro ao abrir conversa:', e);
+      setErro(e.message || 'Erro ao carregar mensagens'); 
+      setMensagens([]);
     } finally {
       setCarregandoMsgs(false);
     }
   };
 
+  // Polling automático da conversa aberta
   useEffect(() => {
-    if (!ativa) return;
+    if (!ativa || !ativa.chatJid) return;
     const id = setInterval(async () => {
       try {
-        const novas = await api(`/api/inbox/mensagens?usuarioId=${usuarioId}&jid=${encodeURIComponent(ativa.chatJid)}`);
+        const uidAlvo = ativa.atendenteId || ativa.usuarioId || usuarioId;
+        const novas = await api(`/api/inbox/mensagens?usuarioId=${encodeURIComponent(uidAlvo || '')}&jid=${encodeURIComponent(ativa.chatJid)}`);
         if (Array.isArray(novas)) {
           setMensagens((atual) => {
             const igual = atual.length === novas.length && atual[atual.length - 1]?.id === novas[novas.length - 1]?.id;
             return igual ? atual : novas;
           });
         }
-        carregarConversas(usuarioId, filtroAtendente);
       } catch { /* noop */ }
-    }, 5000);
+    }, 4000);
     return () => clearInterval(id);
-  }, [ativa, usuarioId, filtroAtendente]);
+  }, [ativa?.chatJid, usuarioId]);
 
+  // Polling automático da lista de conversas
   useEffect(() => {
     if (!usuarioId) return;
-    const id = setInterval(() => { carregarConversas(usuarioId, filtroAtendente); }, 10000);
+    const id = setInterval(() => { carregarConversas(usuarioId, filtroAtendente); }, 8000);
     return () => clearInterval(id);
   }, [usuarioId, filtroAtendente]);
 
+  // Auto-scroll para o fim da conversa
   useLayoutEffect(() => {
     const trocouDeConversa = chatAnteriorRef.current !== ativa?.chatJid;
     chatAnteriorRef.current = ativa?.chatJid;
     const el = listaRef.current;
-    const pertoDoFim = !el || (el.scrollHeight - el.scrollTop - el.clientHeight < 120);
+    const pertoDoFim = !el || (el.scrollHeight - el.scrollTop - el.clientHeight < 140);
     if (trocouDeConversa || pertoDoFim) {
       fimRef.current?.scrollIntoView({ behavior: trocouDeConversa ? 'auto' : 'smooth' });
     }
@@ -503,7 +608,7 @@ export const AtInbox = () => {
   const enviar = async (e) => {
     e.preventDefault();
     const t = texto.trim();
-    if (!t || !ativa) return;
+    if (!t || !ativa || !usuarioId) return;
     setEnviando(true);
     try {
       await api('/api/inbox/enviar', { method: 'POST', body: JSON.stringify({ usuarioId, jid: ativa.chatJid, texto: t }) });
@@ -515,128 +620,202 @@ export const AtInbox = () => {
   };
 
   const filtradas = conversas.filter((c) =>
-    `${c.chatNome} ${c.numeroReal}`.toLowerCase().includes(busca.toLowerCase().trim()));
+    `${c.chatNome || ''} ${c.numeroReal || ''} ${c.chatJid || ''}`.toLowerCase().includes(busca.toLowerCase().trim()));
 
   return (
-    <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', height: 'calc(100vh - 100px)', overflow: 'hidden' }}>
-      {/* Top Header com controles integrados */}
-      <div className="page-header" style={{ marginBottom: '0.6rem', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 10 }}>
-        <div>
-          <h1 style={{ fontSize: '1.35rem', margin: 0, fontWeight: 700 }}>Caixa de Entrada</h1>
-          <p className="muted-hint" style={{ margin: 0, fontSize: '0.8rem' }}>Atendimento WhatsApp em tempo real</p>
+    <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', height: 'calc(100vh - 95px)', overflow: 'hidden' }}>
+      {/* Top Header com controles integrados e visual ultra-moderno */}
+      <div className="page-header" style={{ marginBottom: '0.75rem', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ width: 40, height: 40, borderRadius: 12, background: 'linear-gradient(135deg, rgba(232,37,44,0.18), rgba(232,37,44,0.06))', border: '1px solid rgba(232,37,44,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <MessageSquare size={20} style={{ color: '#E8252C' }} />
+          </div>
+          <div>
+            <h1 style={{ fontSize: '1.35rem', margin: 0, fontWeight: 800, letterSpacing: '-0.02em' }}>Caixa de Entrada</h1>
+            <p className="muted-hint" style={{ margin: 0, fontSize: '0.78rem', color: '#94A3B8' }}>WhatsApp em tempo real por loja e atendente</p>
+          </div>
         </div>
 
         <div className="flex items-center gap-2" style={{ flexWrap: 'wrap' }}>
-          {lojas.length > 1 && (
+          {/* Seletor de Loja */}
+          <div style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}>
+            <StoreIcon size={14} style={{ position: 'absolute', left: 10, color: '#E8252C', pointerEvents: 'none' }} />
             <select
               className="input-field"
-              style={{ width: 'auto', minWidth: 160, padding: '0.35rem 0.7rem', fontSize: '0.82rem', fontWeight: 600 }}
+              style={{
+                width: 'auto',
+                minWidth: 180,
+                paddingLeft: 30,
+                paddingRight: 24,
+                paddingTop: '0.45rem',
+                paddingBottom: '0.45rem',
+                fontSize: '0.84rem',
+                fontWeight: 700,
+                background: 'rgba(19, 31, 56, 0.9)',
+                borderColor: 'rgba(232, 37, 44, 0.35)',
+                borderRadius: 10,
+              }}
               value={lojaSel}
               onChange={(e) => trocarLoja(e.target.value)}
-              title="Escolha a loja"
+              title="Escolha a loja física"
             >
               {lojas.map((l) => (
-                <option key={l.id} value={l.id}>🏪 {l.nome}{l.numeros > 1 ? ` (${l.numeros})` : ''}</option>
+                <option key={l.id} value={l.id}>
+                  {l.temConectado ? '🟢' : '⚪'} {l.nome}{l.numeros > 1 ? ` (${l.numeros} chats)` : ''}
+                </option>
               ))}
             </select>
-          )}
+          </div>
 
-          <select
-            className="input-field"
-            style={{ width: 'auto', minWidth: 170, padding: '0.35rem 0.7rem', fontSize: '0.82rem', fontWeight: 600 }}
-            value={usuarioId}
-            onChange={(e) => setUsuarioId(e.target.value)}
-            disabled={atendentesDaLoja.length <= 1}
-            title={atendentesDaLoja.length > 1 ? 'Escolha qual número desta loja' : 'Esta loja tem um número só'}
-          >
-            {atendentesDaLoja.map((u) => (
-              <option key={u.id} value={u.id}>
-                {u.whatsappConectado ? '🟢' : '⚪'} {u.nome}
-              </option>
-            ))}
-          </select>
+          {/* Seletor de Atendente / Número */}
+          <div style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}>
+            <Smartphone size={14} style={{ position: 'absolute', left: 10, color: '#94A3B8', pointerEvents: 'none' }} />
+            <select
+              className="input-field"
+              style={{
+                width: 'auto',
+                minWidth: 180,
+                paddingLeft: 30,
+                paddingRight: 24,
+                paddingTop: '0.45rem',
+                paddingBottom: '0.45rem',
+                fontSize: '0.84rem',
+                fontWeight: 600,
+                background: 'rgba(19, 31, 56, 0.8)',
+                borderRadius: 10,
+              }}
+              value={usuarioId}
+              onChange={(e) => trocarAtendente(e.target.value)}
+              disabled={atendentesDaLoja.length <= 1}
+              title={atendentesDaLoja.length > 1 ? 'Escolha qual número/atendente desta loja' : 'Número principal desta loja'}
+            >
+              {atendentesDaLoja.length === 0 ? (
+                <option value="">Sem atendente cadastrado</option>
+              ) : (
+                atendentesDaLoja.map((u) => (
+                  <option key={u.id} value={u.id}>
+                    {u.whatsappConectado ? '🟢' : '⚪'} {u.nome}
+                  </option>
+                ))
+              )}
+            </select>
+          </div>
 
           <button
-            className="btn btn-outline"
-            style={{ padding: '0.35rem 0.75rem', display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: '0.82rem' }}
+            className="btn btn-secondary"
+            style={{ padding: '0.45rem 0.85rem', display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: '0.82rem', borderRadius: 10 }}
             onClick={abrirMetricas}
             disabled={!usuarioId}
             title="Ver métricas dos últimos 30 dias"
           >
-            <BarChart3 size={14} /> Métricas
+            <BarChart3 size={15} /> Métricas
           </button>
 
           <button
             className="icon-btn"
-            style={{ width: 34, height: 34 }}
+            style={{ width: 36, height: 36, borderRadius: 10 }}
             onClick={() => carregarConversas(usuarioId, filtroAtendente)}
-            title="Atualizar conversas"
+            title="Atualizar conversas da loja selecionada"
           >
-            <RefreshCw size={14} />
+            <RefreshCw size={15} className={carregandoConversas ? 'spin' : ''} />
           </button>
         </div>
       </div>
 
       {erro && (
-        <div className="owner-banner mb-2" style={{ flexShrink: 0, background: 'rgba(232,37,44,0.08)', border: '1px solid rgba(232,37,44,0.25)', padding: '0.5rem 0.9rem' }}>
+        <div className="owner-banner mb-2" style={{ flexShrink: 0, background: 'rgba(232,37,44,0.08)', border: '1px solid rgba(232,37,44,0.25)', padding: '0.5rem 0.9rem', borderRadius: 10 }}>
           <AlertTriangle size={15} style={{ color: 'var(--danger-color)' }} />
           <span style={{ fontSize: '0.85rem' }}>{erro}</span>
         </div>
       )}
 
-      {/* Caixa de Entrada Principal (Layout Dividido e Travado) */}
+      {/* Caixa de Entrada Principal (Layout Dividido, Glassmorphism & Travado) */}
       <div
-        className={`card glass-panel inbox-shell ${ativa ? 'chat-open' : ''}`}
+        className={`card inbox-shell ${ativa ? 'chat-open' : ''}`}
         style={{
           padding: 0,
           display: 'grid',
-          gridTemplateColumns: '360px 1fr',
+          gridTemplateColumns: '370px 1fr',
           flex: 1,
           minHeight: 0,
           height: '100%',
-          borderRadius: 14,
+          borderRadius: 16,
           overflow: 'hidden',
-          border: '1px solid var(--panel-border)',
+          background: '#0a0f1d',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+          boxShadow: '0 12px 40px rgba(0, 0, 0, 0.45)',
         }}
       >
         {/* Painel Esquerdo: Lista de Conversas com Header Sólido */}
-        <div className="inbox-list" style={{ borderRight: '1px solid var(--panel-border)', display: 'flex', flexDirection: 'column', background: 'var(--panel-bg)', overflow: 'hidden', height: '100%' }}>
-          {/* Barra de Busca e Filtro */}
-          <div style={{ flexShrink: 0, padding: '10px 12px', borderBottom: '1px solid var(--panel-border)', background: 'var(--panel-bg-2)', zIndex: 5 }}>
+        <div className="inbox-list" style={{ borderRight: '1px solid rgba(255, 255, 255, 0.08)', display: 'flex', flexDirection: 'column', background: '#0e1628', overflow: 'hidden', height: '100%' }}>
+          {/* Barra de Busca e Filtro de Atendente */}
+          <div style={{ flexShrink: 0, padding: '12px 14px', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', background: '#121c33', zIndex: 5 }}>
             <div style={{ position: 'relative' }}>
-              <Search size={14} style={{ position: 'absolute', left: 10, top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
+              <Search size={15} style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }} />
               <input
                 className="input-field"
-                style={{ paddingLeft: 34, borderRadius: 10, fontSize: '0.82rem', background: 'var(--panel-bg)' }}
-                placeholder="Buscar cliente ou telefone…"
+                style={{ paddingLeft: 36, paddingRight: 32, borderRadius: 10, fontSize: '0.84rem', background: '#0b1120', border: '1px solid rgba(255, 255, 255, 0.1)' }}
+                placeholder="Buscar cliente, número ou mensagem…"
                 value={busca}
                 onChange={(e) => setBusca(e.target.value)}
               />
+              {busca && (
+                <button
+                  onClick={() => setBusca('')}
+                  style={{ position: 'absolute', right: 10, top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+                >
+                  <X size={14} />
+                </button>
+              )}
             </div>
+
             {mostrarFiltro && (
-              <select
-                className="input-field"
-                style={{ marginTop: 6, borderRadius: 8, fontSize: '0.78rem', padding: '0.3rem 0.6rem', background: 'var(--panel-bg)' }}
-                value={filtroAtendente}
-                onChange={(e) => setFiltroAtendente(e.target.value)}
-                title="Filtre pelas conversas de cada atendente deste número"
-              >
-                <option value="">Todas as conversas do número</option>
-                {opcoesFiltro.map((u) => <option key={u.id} value={u.id}>Só {u.nome}</option>)}
-                <option value="sem">Sem atendente atribuído</option>
-              </select>
+              <div style={{ marginTop: 8 }}>
+                <select
+                  className="input-field"
+                  style={{ borderRadius: 8, fontSize: '0.78rem', padding: '0.35rem 0.65rem', background: '#0b1120', border: '1px solid rgba(255, 255, 255, 0.1)', fontWeight: 600 }}
+                  value={filtroAtendente}
+                  onChange={(e) => setFiltroAtendente(e.target.value)}
+                  title="Filtre pelas conversas de cada atendente deste número"
+                >
+                  <option value="">👥 Todas as conversas do número</option>
+                  {opcoesFiltro.map((u) => <option key={u.id} value={u.id}>👤 Só {u.nome}</option>)}
+                  <option value="sem">⚪ Sem atendente atribuído</option>
+                </select>
+              </div>
             )}
           </div>
 
           {/* Lista de Conversas com Scroll Limpo */}
           <div style={{ flex: 1, minHeight: 0, overflowY: 'auto' }}>
-            {filtradas.length === 0 && (
-              <div style={{ padding: 24, textAlign: 'center', color: 'var(--text-muted)' }}>
-                <MessageSquare size={28} style={{ margin: '0 auto 8px', opacity: 0.4 }} />
-                <p style={{ fontSize: '0.85rem', margin: 0 }}>Nenhuma conversa encontrada.</p>
+            {carregandoConversas && (
+              <div style={{ padding: 24, textAlign: 'center', color: '#94a3b8', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}>
+                <div className="skeleton-loading" style={{ width: '90%', height: 50, marginBottom: 8 }} />
+                <div className="skeleton-loading" style={{ width: '90%', height: 50, marginBottom: 8 }} />
+                <div className="skeleton-loading" style={{ width: '90%', height: 50 }} />
+                <span style={{ fontSize: '0.82rem', marginTop: 4 }}>Sincronizando conversas da loja…</span>
               </div>
             )}
-            {filtradas.map((c) => {
+
+            {!carregandoConversas && filtradas.length === 0 && (
+              <div style={{ padding: 32, textAlign: 'center', color: '#94a3b8' }}>
+                <div style={{ width: 56, height: 56, borderRadius: '50%', background: 'rgba(255,255,255,0.04)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px' }}>
+                  <MessageSquare size={24} style={{ color: '#64748b' }} />
+                </div>
+                <h4 style={{ fontSize: '0.95rem', color: '#FFFFFF', margin: '0 0 4px 0', fontWeight: 700 }}>
+                  {busca ? 'Nenhum resultado' : 'Nenhuma conversa ativa'}
+                </h4>
+                <p style={{ fontSize: '0.8rem', margin: 0, color: '#64748b', maxWidth: 240, marginInline: 'auto' }}>
+                  {busca 
+                    ? 'Tente buscar por outro termo ou limpe a busca.' 
+                    : atendenteAtivo?.whatsappConectado 
+                    ? 'Aguardando novas mensagens de clientes desta loja.'
+                    : 'O WhatsApp desta loja está desconectado no momento.'}
+                </p>
+              </div>
+            )}
+
+            {!carregandoConversas && filtradas.map((c) => {
               const selecionada = ativa?.chatJid === c.chatJid;
               const semAtendente = mostrarFiltro && !c.atendenteNome;
               const dataMsg = c.timestamp || c.ultimaMsgData || c.atualizadoEm;
@@ -645,7 +824,7 @@ export const AtInbox = () => {
                 <button
                   key={c.chatJid}
                   onClick={() => abrir(c)}
-                  className={`link-cell inbox-item ${selecionada ? 'inbox-item-active' : ''} ${semAtendente ? 'inbox-item-unassigned' : ''}`}
+                  className={`link-cell inbox-item ${selecionada ? 'inbox-item-active' : ''}`}
                   style={{
                     width: '100%',
                     padding: '12px 14px',
@@ -655,7 +834,9 @@ export const AtInbox = () => {
                     gap: 12,
                     textAlign: 'left',
                     cursor: 'pointer',
-                    background: selecionada ? 'rgba(59,130,246,0.14)' : 'transparent',
+                    background: selecionada ? 'rgba(232,37,44,0.14)' : 'transparent',
+                    borderLeft: selecionada ? '3px solid #E8252C' : '3px solid transparent',
+                    transition: 'all 0.15s ease',
                   }}
                 >
                   {/* Avatar com Foto Real do WhatsApp */}
@@ -664,23 +845,24 @@ export const AtInbox = () => {
                     jid={c.chatJid}
                     usuarioId={usuarioId}
                     fotoUrl={c.fotoUrl}
-                    size={42}
+                    size={44}
                     onClick={(avData) => setPerfilPopup({ ...avData, numero: c.numeroReal || c.chatJid })}
                   />
 
                   {/* Informações da conversa */}
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 2 }}>
-                      <strong style={{ fontSize: '0.9rem', color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                      <strong style={{ fontSize: '0.9rem', color: selecionada ? '#FFFFFF' : '#f1f5f9', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', fontWeight: selecionada ? 700 : 600 }}>
                         {c.chatNome || c.numeroReal || 'Cliente'}
                       </strong>
-                      <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', flexShrink: 0, marginLeft: 6 }}>
+                      <span style={{ fontSize: '0.72rem', color: '#64748b', flexShrink: 0, marginLeft: 6, fontWeight: 500 }}>
                         {dataPrevia(dataMsg)}
                       </span>
                     </div>
 
-                    <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', opacity: 0.85 }}>
-                      {c.texto || c.ultimaMsg || c.numeroReal || 'Conversa iniciada'}
+                    <div style={{ fontSize: '0.78rem', color: '#94a3b8', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', opacity: 0.85, display: 'flex', alignItems: 'center', gap: 4 }}>
+                      {c.fromMe && <CheckCheck size={13} style={{ color: '#60a5fa', flexShrink: 0 }} />}
+                      <span>{c.texto || c.ultimaMsg || c.numeroReal || 'Conversa iniciada'}</span>
                     </div>
 
                     {mostrarFiltro && (
@@ -703,15 +885,19 @@ export const AtInbox = () => {
           </div>
         </div>
 
-        {/* Painel Direito: Janela de Conversa Ativa (GP Navy Dark Premium) */}
-        <div className="inbox-thread" style={{ display: 'flex', flexDirection: 'column', height: '100%', background: '#0b101e', backgroundImage: 'radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)', backgroundSize: '18px 18px', overflow: 'hidden' }}>
+        {/* Painel Direito: Janela de Conversa Ativa */}
+        <div className="inbox-thread" style={{ display: 'flex', flexDirection: 'column', height: '100%', background: '#080d1a', backgroundImage: 'radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px)', backgroundSize: '20px 20px', overflow: 'hidden' }}>
           {!ativa ? (
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 24, textAlign: 'center', color: '#94a3b8', background: '#0d1424' }}>
-              <div style={{ width: 68, height: 68, borderRadius: '50%', background: 'rgba(232,37,44,0.12)', border: '1px solid rgba(232,37,44,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                <MessageSquare size={32} style={{ color: '#E8252C' }} />
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 24, textAlign: 'center', color: '#94a3b8', background: '#070c18' }}>
+              <div style={{ width: 72, height: 72, borderRadius: '50%', background: 'linear-gradient(135deg, rgba(232,37,44,0.15), rgba(232,37,44,0.04))', border: '1px solid rgba(232,37,44,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                <MessageSquare size={34} style={{ color: '#E8252C' }} />
               </div>
-              <h3 style={{ fontSize: '1.2rem', color: '#f8fafc', margin: '0 0 6px 0', fontWeight: 700 }}>Nenhuma conversa selecionada</h3>
-              <p style={{ fontSize: '0.88rem', maxWidth: 340, margin: 0, color: '#94a3b8' }}>Escolha um cliente na lista à esquerda para ler o histórico completo e responder em tempo real.</p>
+              <h3 style={{ fontSize: '1.25rem', color: '#f8fafc', margin: '0 0 6px 0', fontWeight: 800, letterSpacing: '-0.02em' }}>
+                Nenhuma conversa selecionada
+              </h3>
+              <p style={{ fontSize: '0.88rem', maxWidth: 360, margin: 0, color: '#64748b', lineHeight: 1.5 }}>
+                Escolha um cliente na lista à esquerda para acompanhar o histórico completo e responder em tempo real.
+              </p>
             </div>
           ) : (
             <>
@@ -721,7 +907,7 @@ export const AtInbox = () => {
                   flexShrink: 0,
                   padding: '12px 18px',
                   borderBottom: '1px solid rgba(255,255,255,0.08)',
-                  background: '#10192e',
+                  background: '#0d1527',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
@@ -738,15 +924,15 @@ export const AtInbox = () => {
                     jid={ativa.chatJid}
                     usuarioId={usuarioId}
                     fotoUrl={ativa.fotoUrl}
-                    size={42}
+                    size={44}
                     onClick={(avData) => setPerfilPopup({ ...avData, numero: numAtiva || ativa.chatJid })}
                   />
 
                   <div style={{ minWidth: 0 }}>
-                    <strong style={{ fontSize: '1rem', color: '#f8fafc', display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                    <strong style={{ fontSize: '1rem', color: '#FFFFFF', display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', fontWeight: 700 }}>
                       {ativa.chatNome || numAtiva}
                     </strong>
-                    <span style={{ fontSize: '0.8rem', color: '#94a3b8', fontWeight: 500 }}>
+                    <span style={{ fontSize: '0.78rem', color: '#94a3b8', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                       📱 {numAtiva} {ativa.atendenteNome ? `· Atendido por ${ativa.atendenteNome}` : ''}
                     </span>
                   </div>
@@ -754,10 +940,10 @@ export const AtInbox = () => {
 
                 <button
                   className="btn btn-secondary"
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '6px 14px', fontSize: '0.82rem', background: '#1e293b', border: '1px solid rgba(255,255,255,0.1)', color: '#f8fafc' }}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '7px 14px', fontSize: '0.82rem', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', color: '#f8fafc', borderRadius: 10 }}
                   onClick={() => setShowAgenda(true)}
                 >
-                  <Calendar size={14} /> Agendamentos{agendaContato.length ? ` (${agendaContato.length})` : ''}
+                  <Calendar size={14} style={{ color: '#E8252C' }} /> Agendamentos{agendaContato.length ? ` (${agendaContato.length})` : ''}
                 </button>
               </div>
 
@@ -768,20 +954,20 @@ export const AtInbox = () => {
                   flex: 1,
                   minHeight: 0,
                   overflowY: 'auto',
-                  padding: '16px 20px',
+                  padding: '18px 22px',
                   display: 'flex',
                   flexDirection: 'column',
                   gap: 10,
                 }}
               >
                 {carregandoMsgs && (
-                  <div style={{ alignSelf: 'center', margin: 'auto', padding: '10px 18px', background: '#1e293b', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 20, color: '#cbd5e1', fontSize: '0.86rem', display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <div style={{ alignSelf: 'center', margin: 'auto', padding: '10px 20px', background: '#121c33', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 20, color: '#cbd5e1', fontSize: '0.86rem', display: 'flex', alignItems: 'center', gap: 8 }}>
                     <Clock size={15} /> Carregando mensagens…
                   </div>
                 )}
 
                 {!carregandoMsgs && mensagens.length === 0 && (
-                  <div style={{ alignSelf: 'center', margin: 'auto', padding: 24, textAlign: 'center', background: '#131d33', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 16, maxWidth: 320 }}>
+                  <div style={{ alignSelf: 'center', margin: 'auto', padding: 24, textAlign: 'center', background: '#0e1628', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 16, maxWidth: 320 }}>
                     <MessageSquare size={28} style={{ color: '#E8252C', margin: '0 auto 8px' }} />
                     <p style={{ margin: 0, fontSize: '0.88rem', color: '#94a3b8' }}>Nenhuma mensagem registrada nesta conversa.</p>
                   </div>
@@ -794,7 +980,7 @@ export const AtInbox = () => {
                   const mudouDia = !dataAnt || !dataAtual || !mesmoDia(dataAnt, dataAtual);
 
                   return (
-                    <Fragment key={m.id}>
+                    <Fragment key={m.id || i}>
                       {mudouDia && (
                         <div
                           style={{
@@ -802,11 +988,12 @@ export const AtInbox = () => {
                             fontSize: '0.72rem',
                             fontWeight: 700,
                             color: '#94a3b8',
-                            background: '#131d33',
+                            background: '#10192e',
                             border: '1px solid rgba(255,255,255,0.08)',
                             borderRadius: 20,
                             padding: '4px 14px',
                             margin: '8px 0',
+                            letterSpacing: '0.02em',
                           }}
                         >
                           {rotuloDia(m.timestamp)}
@@ -817,14 +1004,14 @@ export const AtInbox = () => {
                         style={{
                           maxWidth: '75%',
                           alignSelf: m.fromMe ? 'flex-end' : 'flex-start',
-                          background: m.fromMe ? 'linear-gradient(135deg, #1d4ed8, #1e3a8a)' : '#1e293b',
+                          background: m.fromMe ? 'linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%)' : '#141f36',
                           color: '#ffffff',
-                          border: m.fromMe ? '1px solid rgba(59,130,246,0.3)' : '1px solid rgba(255,255,255,0.08)',
+                          border: m.fromMe ? '1px solid rgba(59,130,246,0.35)' : '1px solid rgba(255,255,255,0.08)',
                           padding: '10px 14px',
-                          borderRadius: m.fromMe ? '14px 14px 2px 14px' : '14px 14px 14px 2px',
+                          borderRadius: m.fromMe ? '16px 16px 2px 16px' : '16px 16px 16px 2px',
                           fontSize: '0.92rem',
                           lineHeight: 1.5,
-                          boxShadow: '0 2px 6px rgba(0,0,0,0.25)',
+                          boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
                           wordBreak: 'break-word',
                         }}
                       >
@@ -833,14 +1020,14 @@ export const AtInbox = () => {
                           title={dataAtual ? dataAtual.toLocaleString('pt-BR') : ''}
                           style={{
                             fontSize: '0.68rem',
-                            color: m.fromMe ? '#bfdbfe' : '#94a3b8',
+                            color: m.fromMe ? '#bfdbfe' : '#64748b',
                             textAlign: 'right',
                             marginTop: 4,
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'flex-end',
                             gap: 4,
-                            fontWeight: 500,
+                            fontWeight: 600,
                           }}
                         >
                           {hora(m.timestamp)}
@@ -861,9 +1048,9 @@ export const AtInbox = () => {
                   display: 'flex',
                   alignItems: 'center',
                   gap: 10,
-                  padding: '12px 18px',
+                  padding: '14px 20px',
                   borderTop: '1px solid rgba(255,255,255,0.08)',
-                  background: '#10192e',
+                  background: '#0d1527',
                 }}
               >
                 <input
@@ -871,13 +1058,13 @@ export const AtInbox = () => {
                   style={{
                     flex: 1,
                     borderRadius: 24,
-                    padding: '0.7rem 1.2rem',
+                    padding: '0.72rem 1.3rem',
                     fontSize: '0.92rem',
-                    background: '#1e293b',
+                    background: '#141f36',
                     color: '#ffffff',
                     border: '1px solid rgba(255,255,255,0.12)',
                   }}
-                  placeholder="Digite uma mensagem para responder…"
+                  placeholder="Digite uma mensagem para responder o cliente…"
                   value={texto}
                   onChange={(e) => setTexto(e.target.value)}
                 />
@@ -894,6 +1081,7 @@ export const AtInbox = () => {
                     justifyContent: 'center',
                     flexShrink: 0,
                     background: '#E8252C',
+                    boxShadow: '0 0 16px rgba(232,37,44,0.4)',
                   }}
                   disabled={enviando || !texto.trim()}
                 >
@@ -905,7 +1093,7 @@ export const AtInbox = () => {
         </div>
       </div>
 
-      {/* Modal de Mídia Popup (Fotos, Vídeos, Documentos da Conversa) */}
+      {/* Modal de Mídia Popup */}
       {midiaPopup && (
         <div
           style={{
@@ -926,7 +1114,7 @@ export const AtInbox = () => {
               position: 'relative',
               maxWidth: '92vw',
               maxHeight: '92vh',
-              background: 'rgba(15, 23, 42, 0.95)',
+              background: 'rgba(14, 22, 38, 0.98)',
               border: '1px solid rgba(255, 255, 255, 0.15)',
               borderRadius: 16,
               padding: 16,
@@ -939,7 +1127,7 @@ export const AtInbox = () => {
           >
             <button
               onClick={() => setMidiaPopup(null)}
-              title="Fechar (ESC)"
+              title="Fechar"
               style={{
                 position: 'absolute',
                 top: -12,
@@ -947,7 +1135,7 @@ export const AtInbox = () => {
                 width: 36,
                 height: 36,
                 borderRadius: '50%',
-                background: '#ef4444',
+                background: '#E8252C',
                 color: '#fff',
                 border: 'none',
                 cursor: 'pointer',
@@ -1059,7 +1247,7 @@ export const AtInbox = () => {
               position: 'relative',
               width: '100%',
               maxWidth: 380,
-              background: 'rgba(15, 23, 42, 0.98)',
+              background: '#0e1628',
               border: '1px solid rgba(255, 255, 255, 0.15)',
               borderRadius: 20,
               padding: 26,
@@ -1073,7 +1261,7 @@ export const AtInbox = () => {
           >
             <button
               onClick={() => setPerfilPopup(null)}
-              title="Fechar (ESC)"
+              title="Fechar"
               style={{
                 position: 'absolute',
                 top: 14,
@@ -1151,63 +1339,65 @@ export const AtInbox = () => {
         </div>
       )}
 
-      {/* Modal de agendamentos do contato */}
+      {/* Modal de Agendamentos do Contato */}
       {showAgenda && ativa && (
-        <div onClick={() => setShowAgenda(false)} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: 16 }}>
-          <div onClick={(e) => e.stopPropagation()} className="card" style={{ width: '100%', maxWidth: 460, maxHeight: '85vh', overflowY: 'auto' }}>
+        <div onClick={() => setShowAgenda(false)} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(6px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: 16 }}>
+          <div onClick={(e) => e.stopPropagation()} className="card" style={{ width: '100%', maxWidth: 480, maxHeight: '85vh', overflowY: 'auto', background: '#0e1628', border: '1px solid rgba(255,255,255,0.12)' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
-              <h3 style={{ margin: 0, color: 'var(--text-primary)' }}>Agendamentos do Cliente</h3>
+              <h3 style={{ margin: 0, color: '#FFFFFF', fontWeight: 700 }}>Agendamentos do Cliente</h3>
               <button className="icon-btn" onClick={() => setShowAgenda(false)}><X size={18} /></button>
             </div>
-            <p className="entity-stat-label" style={{ marginTop: 0 }}>{ativa.chatNome || numAtiva} · {numAtiva}</p>
+            <p className="entity-stat-label" style={{ marginTop: 0, color: '#94a3b8' }}>{ativa.chatNome || numAtiva} · {numAtiva}</p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 8, margin: '12px 0' }}>
-              {agendaContato.length === 0 && <p className="muted-hint" style={{ margin: 0 }}>Nenhum agendamento ativo.</p>}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8, margin: '14px 0' }}>
+              {agendaContato.length === 0 && <p className="muted-hint" style={{ margin: 0 }}>Nenhum agendamento ativo para este contato.</p>}
               {agendaContato.map((a) => {
                 const dataAg = parseDate(a.enviarEm);
                 return (
-                  <div key={a.id} style={{ border: '1px solid var(--panel-border)', borderRadius: 8, padding: 10, background: 'var(--panel-bg-2)' }}>
+                  <div key={a.id} style={{ border: '1px solid rgba(255,255,255,0.08)', borderRadius: 10, padding: 12, background: '#141f36' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8 }}>
-                      <strong style={{ fontSize: '0.82rem', color: 'var(--accent-color)' }}>
+                      <strong style={{ fontSize: '0.84rem', color: '#E8252C' }}>
                         {dataAg ? dataAg.toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : ''}
                       </strong>
-                      <span className="entity-stat-label" style={{ textTransform: 'capitalize' }}>{a.status}</span>
+                      <span className="entity-stat-label" style={{ textTransform: 'capitalize', color: '#38bdf8' }}>{a.status}</span>
                     </div>
-                    <div style={{ fontSize: '0.85rem', color: 'var(--text-primary)', marginTop: 4, whiteSpace: 'pre-wrap' }}>{a.mensagem}</div>
+                    <div style={{ fontSize: '0.86rem', color: '#FFFFFF', marginTop: 6, whiteSpace: 'pre-wrap' }}>{a.mensagem}</div>
                   </div>
                 );
               })}
             </div>
 
-            <form onSubmit={criarAgendamento} style={{ borderTop: '1px solid var(--panel-border)', paddingTop: 12, display: 'flex', flexDirection: 'column', gap: 8 }}>
-              <strong style={{ fontSize: '0.85rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: 6 }}><Plus size={15} /> Novo agendamento</strong>
-              <textarea className="input-field" rows={3} placeholder="Mensagem a enviar…" value={formAg.mensagem} onChange={(e) => setFormAg({ ...formAg, mensagem: e.target.value })} style={{ resize: 'vertical' }} />
-              <label className="entity-stat-label">Enviar em
+            <form onSubmit={criarAgendamento} style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 14, display: 'flex', flexDirection: 'column', gap: 10 }}>
+              <strong style={{ fontSize: '0.88rem', color: '#FFFFFF', display: 'flex', alignItems: 'center', gap: 6 }}><Plus size={15} /> Novo agendamento</strong>
+              <textarea className="input-field" rows={3} placeholder="Mensagem a enviar para o cliente…" value={formAg.mensagem} onChange={(e) => setFormAg({ ...formAg, mensagem: e.target.value })} style={{ resize: 'vertical' }} />
+              <label className="entity-stat-label" style={{ color: '#94a3b8' }}>Data e Horário de Envio
                 <input className="input-field" type="datetime-local" value={formAg.enviarEm} onChange={(e) => setFormAg({ ...formAg, enviarEm: e.target.value })} style={{ marginTop: 4 }} />
               </label>
-              <label style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.82rem', color: 'var(--text-secondary)' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.82rem', color: '#cbd5e1', cursor: 'pointer' }}>
                 <input type="checkbox" checked={formAg.cancelar} onChange={(e) => setFormAg({ ...formAg, cancelar: e.target.checked })} />
-                Cancelar se o cliente responder antes
+                Cancelar envio automaticamente se o cliente responder antes
               </label>
-              <button type="submit" className="btn btn-primary" disabled={salvandoAg || !formAg.mensagem.trim() || !formAg.enviarEm}>{salvandoAg ? 'Agendando…' : 'Agendar'}</button>
+              <button type="submit" className="btn btn-primary" style={{ marginTop: 4 }} disabled={salvandoAg || !formAg.mensagem.trim() || !formAg.enviarEm}>
+                {salvandoAg ? 'Agendando…' : 'Salvar Agendamento'}
+              </button>
             </form>
           </div>
         </div>
       )}
 
       {/* Modal de Métricas */}
-      <Modal open={showMetricas} title="Clientes por dia" subtitle={selecionado ? selecionado.nome : ''} onClose={() => setShowMetricas(false)} width={640}>
-        <p className="muted-hint" style={{ marginBottom: 12 }}>
-          <strong>Chegaram</strong>: clientes diferentes que enviaram mensagem. <strong>Respondidos</strong>: contatos que tiveram resposta da equipe no mesmo dia (últimos 30 dias).
+      <Modal open={showMetricas} title="Clientes por Dia (Últimos 30 Dias)" subtitle={atendenteAtivo ? atendenteAtivo.nome : ''} onClose={() => setShowMetricas(false)} width={640}>
+        <p className="muted-hint" style={{ marginBottom: 14 }}>
+          <strong>Chegaram</strong>: clientes diferentes que enviaram mensagem. <strong>Respondidos</strong>: contatos que tiveram resposta da equipe no mesmo dia.
         </p>
         {carregandoMetricas ? (
-          <div className="empty-state">Carregando…</div>
+          <div className="empty-state">Carregando métricas…</div>
         ) : metricas.length === 0 ? (
           <div className="empty-state"><BarChart3 size={32} style={{ opacity: 0.5 }} /><p>Sem dados no período.</p></div>
         ) : (
           <div className="table-wrap">
             <table className="data-table">
-              <thead><tr><th>Dia</th><th style={{ textAlign: 'right' }}>Chegaram</th><th style={{ textAlign: 'right' }}>Respondidos</th><th style={{ textAlign: 'right' }}>%</th></tr></thead>
+              <thead><tr><th>Dia</th><th style={{ textAlign: 'right' }}>Chegaram</th><th style={{ textAlign: 'right' }}>Respondidos</th><th style={{ textAlign: 'right' }}>Conversão</th></tr></thead>
               <tbody>
                 {metricas.map((m) => {
                   const chegaram = m.contatos ?? 0;
@@ -1216,8 +1406,8 @@ export const AtInbox = () => {
                   return (
                     <tr key={m.dia}>
                       <td>{rotuloDiaMetrica(m.dia)}</td>
-                      <td style={{ textAlign: 'right', fontWeight: 700, color: 'var(--text-primary)' }}>{chegaram}</td>
-                      <td style={{ textAlign: 'right', fontWeight: 700, color: 'var(--text-primary)' }}>{respondidos}</td>
+                      <td style={{ textAlign: 'right', fontWeight: 700, color: '#FFFFFF' }}>{chegaram}</td>
+                      <td style={{ textAlign: 'right', fontWeight: 700, color: '#FFFFFF' }}>{respondidos}</td>
                       <td style={{ textAlign: 'right', fontWeight: 700, color: percentual >= 80 ? 'var(--success-color)' : 'var(--warning-color)' }}>{percentual}%</td>
                     </tr>
                   );

@@ -4,29 +4,33 @@
    100% COMPLETO E RESPONSIVO PARA TODAS AS RESOLUÇÕES E MONITORES
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
   /* === Cores Oficiais da Logo GP Premium === */
   --red-gp: #E8252C;
   --red-gp-dark: #C81E24;
-  --red-gp-hover: #D01F25;
-  --red-gp-glow: rgba(232, 37, 44, 0.35);
+  --red-gp-hover: #FF333B;
+  --red-gp-glow: rgba(232, 37, 44, 0.45);
   
-  --navy: #141A21;
-  --navy-700: #0F141A;
-  --navy-600: #1C252E;
+  --navy: #0d1527;
+  --navy-700: #070b14;
+  --navy-600: #131f38;
   
-  --brand-gradient: linear-gradient(135deg, #E8252C 0%, #C81E24 100%);
-  --brand-gradient-hover: linear-gradient(135deg, #F0353C 0%, #D82228 100%);
+  --brand-gradient: linear-gradient(135deg, #E8252C 0%, #B91C22 100%);
+  --brand-gradient-hover: linear-gradient(135deg, #FF333B 0%, #D82228 100%);
+  --brand-gradient-glow: linear-gradient(135deg, rgba(232, 37, 44, 0.25) 0%, rgba(200, 30, 36, 0.08) 100%);
 
-  /* Superfícies & Backgrounds (Dark Slate Profundo & Limpo) */
-  --bg-color: #0F141C;
-  --bg-soft: #161D26;
-  --panel-bg: #161D26;
-  --panel-bg-2: #1E2734;
-  --panel-border: rgba(255, 255, 255, 0.08);
-  --panel-border-strong: rgba(255, 255, 255, 0.16);
+  /* Superfícies & Backgrounds (Dark Profundo, Limpo & Moderno) */
+  --bg-color: #080c16;
+  --bg-soft: #0e1526;
+  --panel-bg: rgba(14, 22, 38, 0.88);
+  --panel-bg-solid: #0e1626;
+  --panel-bg-2: #141f36;
+  --panel-bg-3: #1b2947;
+  --panel-border: rgba(255, 255, 255, 0.09);
+  --panel-border-strong: rgba(255, 255, 255, 0.18);
+  --panel-border-glow: rgba(232, 37, 44, 0.35);
 
   /* Textos de Alto Contraste (Legibilidade Impecável) */
   --text-primary: #FFFFFF;
@@ -35,31 +39,31 @@
 
   /* Acentos da Plataforma */
   --accent-color: #E8252C;       /* Acento principal = Vermelho da Logo */
-  --accent-2: #C28348;           /* Destaque secundário = Ouro/Âmbar */
-  --accent-hover: #D01F25;
+  --accent-2: #F59E0B;           /* Destaque secundário = Âmbar */
+  --accent-hover: #FF333B;
   --danger-color: #EF4444;
   --success-color: #10B981;
   --warning-color: #F59E0B;
   --cyan: #38BDF8;
 
-  --glass-bg: rgba(22, 29, 38, 0.94);
-  --glass-border: rgba(255, 255, 255, 0.09);
-  --ring: 0 0 0 3px rgba(232, 37, 44, 0.28);
-  --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.35), 0 0 2px 0 rgba(255, 255, 255, 0.05);
-  --card-shadow-hover: 0 10px 30px -4px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(232, 37, 44, 0.3);
+  --glass-bg: rgba(14, 22, 38, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.10);
+  --ring: 0 0 0 3px rgba(232, 37, 44, 0.35);
+  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.07);
+  --card-shadow-hover: 0 14px 40px 0 rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(232, 37, 44, 0.4);
 
   /* Sidebar */
-  --sidebar-bg: #0D1219;
-  --sidebar-bg-2: #090D12;
+  --sidebar-bg: #070b13;
+  --sidebar-bg-2: #05080f;
   --sidebar-text: #94A3B8;
   --sidebar-text-strong: #FFFFFF;
-  --sidebar-border: rgba(255, 255, 255, 0.07);
+  --sidebar-border: rgba(255, 255, 255, 0.08);
 
   --sidebar-width: 268px;
   --header-height: 70px;
 
-  --font-body: 'Public Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Outfit', 'Public Sans', sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
@@ -79,13 +83,55 @@ body {
   font-family: var(--font-body);
   background-color: var(--bg-color);
   background-image:
-    radial-gradient(1000px circle at 100% 0%, rgba(232, 37, 44, 0.035), transparent 45%),
-    radial-gradient(900px circle at 0% 100%, rgba(20, 30, 50, 0.5), transparent 45%);
+    radial-gradient(1200px circle at 100% 0%, rgba(232, 37, 44, 0.05), transparent 50%),
+    radial-gradient(1000px circle at 0% 100%, rgba(13, 21, 39, 0.7), transparent 50%);
   background-attachment: fixed;
   color: var(--text-primary);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* Animações e Efeitos Modernos */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.15); }
+}
+
+@keyframes livePulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10B981;
+  display: inline-block;
+  animation: livePulse 2s infinite;
+}
+
+.skeleton-loading {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 25%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.03) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
 }
 
 ::selection {

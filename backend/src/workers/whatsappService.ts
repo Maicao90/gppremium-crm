@@ -1359,7 +1359,7 @@ try { fs.mkdirSync(AVATARS_DIR, { recursive: true }); } catch (e) {}
 
 const cacheFotosPerfil = new Map<string, { url: string | null; expira: number }>();
 
-export async function baixarFotoPerfilLocal(usuarioId: string, jid: string): Promise<string | null> {
+export async function baixarFotoPerfilLocal(usuarioIdOriginal: string, jid: string): Promise<string | null> {
   if (!jid) return null;
   const cleanJid = jid.replace(/[^a-zA-Z0-9]/g, '_');
   const arq = path.join(AVATARS_DIR, `${cleanJid}.jpg`);
@@ -1375,32 +1375,48 @@ export async function baixarFotoPerfilLocal(usuarioId: string, jid: string): Pro
     }
   } catch {}
 
-  const chave = `${usuarioId}:${jid}`;
+  const efetivoId = await resolverConexaoEfetiva(usuarioIdOriginal);
+  const chave = `${efetivoId}:${jid}`;
   const emCache = cacheFotosPerfil.get(chave);
   if (emCache && emCache.expira > Date.now()) {
     return emCache.url;
   }
 
-  const sock = sessions.get(usuarioId);
+  const sock = sessions.get(efetivoId);
   if (!sock) return fs.existsSync(arq) ? relUrl : null;
 
   try {
+    // Timeout de 2.5s para não travar o loop de eventos
+    const buscarComTimeout = async (tipo: 'image' | 'preview') => {
+      return Promise.race([
+        sock.profilePictureUrl(jid, tipo),
+        new Promise<undefined>((_, reject) => setTimeout(() => reject(new Error('timeout')), 2500))
+      ]);
+    };
+
     let url: string | undefined;
     try {
-      url = await sock.profilePictureUrl(jid, 'image');
+      url = await buscarComTimeout('image');
     } catch {
       try {
-        url = await sock.profilePictureUrl(jid, 'preview');
+        url = await buscarComTimeout('preview');
       } catch {}
     }
 
     if (url && typeof url === 'string' && url.startsWith('http')) {
-      const resp = await fetch(url);
-      if (resp.ok) {
-        const buffer = Buffer.from(await resp.arrayBuffer());
-        fs.writeFileSync(arq, buffer);
-        cacheFotosPerfil.set(chave, { url: relUrl, expira: Date.now() + 7 * 24 * 60 * 60 * 1000 });
-        return relUrl;
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 3000);
+      try {
+        const resp = await fetch(url, { signal: controller.signal });
+        clearTimeout(timeoutId);
+        if (resp.ok) {
+          const buffer = Buffer.from(await resp.arrayBuffer());
+          fs.writeFileSync(arq, buffer);
+          cacheFotosPerfil.set(chave, { url: relUrl, expira: Date.now() + 7 * 24 * 60 * 60 * 1000 });
+          return relUrl;
+        }
+      } catch {
+        clearTimeout(timeoutId);
       }
     }
   } catch {}

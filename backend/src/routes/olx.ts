@@ -1,9 +1,58 @@
 import { Router } from 'express';
+import fs from 'fs';
+import path from 'path';
 import { prisma } from '../server';
 import { requireAuth } from '../middlewares/requireAuth';
 import { verificarIntegridadeAnuncio, sincronizarChatOlx, enviarMensagemOlx } from '../workers/olxWorker';
 
 const router = Router();
+
+const MIDIAS_OLX_DIR = path.join(__dirname, '../../public/midias/olx');
+const EXT_POR_MIME: Record<string, string> = {
+  'image/jpeg': 'jpg',
+  'image/jpg': 'jpg',
+  'image/png': 'png',
+  'image/webp': 'webp',
+  'image/gif': 'gif',
+};
+const TAMANHO_MAX_BYTES = 15 * 1024 * 1024; // 15MB
+
+// ── Upload Direto de Foto de Anúncio OLX (Sem depender de links) ──
+router.post('/upload-foto', requireAuth, async (req: any, res) => {
+  try {
+    const { base64, mimetype, nomeOriginal } = req.body;
+    if (!base64) {
+      return res.status(400).json({ error: 'Envie a imagem em base64.' });
+    }
+
+    const mime = String(mimetype || 'image/jpeg').toLowerCase();
+    const ext = EXT_POR_MIME[mime] || 'jpg';
+
+    // Remove eventual prefixo "data:image/...;base64,"
+    const limpo = String(base64).replace(/^data:image\/[a-zA-Z+]+;base64,/, '');
+    const buffer = Buffer.from(limpo, 'base64');
+
+    if (buffer.length > TAMANHO_MAX_BYTES) {
+      return res.status(400).json({ error: 'Imagem muito grande (máximo 15MB por foto).' });
+    }
+
+    fs.mkdirSync(MIDIAS_OLX_DIR, { recursive: true });
+    const slug = (nomeOriginal || 'foto').toLowerCase().replace(/[^a-z0-9]/g, '_').slice(0, 20);
+    const nomeArquivo = `olx_${Date.now()}_${Math.floor(Math.random() * 100000)}_${slug}.${ext}`;
+    const caminhoCompleto = path.join(MIDIAS_OLX_DIR, nomeArquivo);
+
+    fs.writeFileSync(caminhoCompleto, buffer);
+
+    res.status(201).json({
+      success: true,
+      url: `/midias/olx/${nomeArquivo}`,
+      nome: nomeArquivo,
+    });
+  } catch (e: any) {
+    console.error('Erro no upload de foto OLX:', e);
+    res.status(500).json({ error: e.message || 'Erro ao processar imagem.' });
+  }
+});
 
 // ── Resumo Geral de Métricas OLX ──
 router.get('/resumo', requireAuth, async (req: any, res) => {

@@ -127,14 +127,24 @@ router.get('/', async (req, res) => {
     const lojaNomePorId: Record<string, string> = {};
     lojas.forEach((l) => { lojaNomePorId[l.id] = l.store_name; });
 
+    // Contagem de mensagens por usuário para priorizar atendentes reais
+    const contagensMsgs = await prisma.mensagem.groupBy({
+      by: ['usuarioId'],
+      _count: { id: true },
+    });
+    const mapaMsgCount: Record<string, number> = {};
+    contagensMsgs.forEach((cm) => { mapaMsgCount[cm.usuarioId] = cm._count.id; });
+
     const comCompartilhamento = usuarios.map((u) => {
       const lojaNome = u.lojaId ? (lojaNomePorId[u.lojaId] || null) : null;
+      const totalMensagens = mapaMsgCount[u.id] || (u.whatsappDonoId ? mapaMsgCount[u.whatsappDonoId] || 0 : 0);
       if (u.whatsappDonoId) {
         // Quem compartilha nunca tem whatsappConectado atualizado no próprio registro
         // (a sessão real nunca é dele) — usa o status ATUAL do dono em memória.
         return {
           ...u,
           lojaNome,
+          totalMensagens,
           whatsappConectado: connectedUsers.has(u.whatsappDonoId) || u.whatsappConectado,
           whatsappDonoNome: nomesPorId[u.whatsappDonoId] || null
         };
@@ -142,6 +152,7 @@ router.get('/', async (req, res) => {
       return {
         ...u,
         lojaNome,
+        totalMensagens,
         whatsappConectado: connectedUsers.has(u.id) || u.whatsappConectado,
         whatsappDonoNome: null
       };

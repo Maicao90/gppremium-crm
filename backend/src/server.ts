@@ -8,6 +8,7 @@ import { PrismaClient } from '@prisma/client';
 import dotenv from 'dotenv';
 import path from 'path';
 import { initWorker } from './workers/agendaWorker';
+import { initDisparoWorker } from './workers/disparoWorker';
 import { connectToWhatsApp, latestQR, connectedUsers, carregarPausadosDoBanco, resolverConexaoEfetiva } from './workers/whatsappService';
 import agendamentosRouter from './routes/agendamentos';
 import contatosRouter from './routes/contatos';
@@ -106,6 +107,7 @@ async function iniciarCoreDoSistema() {
     coreIniciado = true;
     console.log('[Core] Iniciando workers principais...');
     initWorker();
+    initDisparoWorker(); // robô de disparo automático inteligente (30/dia entre 08:00 e 17:00)
     initSyncAds(); // sincronização periódica de Google Ads / Meta Ads
     initGarantiaPush(); // envio de push das notificações de garantia (cliente com app)
     iniciarMonitorOlx(); // monitor e watchdog de anúncios e chat da OLX
