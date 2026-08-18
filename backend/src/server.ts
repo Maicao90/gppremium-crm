@@ -188,17 +188,21 @@ cloudManager.initializeFailover().then(({ ativo }) => {
 // comportamento atual continua 100% intacto.
 app.use(paginaLinkPublica);
 
-// Servir arquivos estáticos da pasta public/ (admin.html, admin/index.html, etc.)
-app.use(express.static(path.join(__dirname, '../public')));
+// Servir arquivos estáticos da pasta public/ com no-cache para HTML
+app.use(express.static(path.join(__dirname, '../public'), {
+  setHeaders: (res, pathUrl) => {
+    if (pathUrl.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
+    }
+  }
+}));
 
-// Rota raiz (redireciona para o painel principal admin.html)
+// Rota raiz (redireciona para o painel principal em /anuncios/)
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/admin.html'));
-});
-
-// Rota explícita para o painel admin principal
-app.get('/admin.html', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/admin.html'));
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.redirect('/anuncios/');
 });
 
 // Painel legado completo HTML
@@ -209,10 +213,16 @@ app.get('/legacy', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/admin-legacy.html'));
 });
 
-// Rota para o painel de credenciais de nuvem
-app.use('/admin', express.static(path.join(__dirname, '../public/admin')));
-app.get('/admin', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/admin/index.html'));
+// Rota para o painel de credenciais de nuvem (redirecionado para o novo painel)
+app.use('/admin', (req, res) => res.redirect('/anuncios/'));
+app.get('/admin.html', (req, res) => res.redirect('/anuncios/'));
+
+// SPA Fallback para o novo painel em /anuncios/ (com no-cache para garantir atualização imediata)
+app.get(/^\/anuncios(\/.*)?$/, (req, res) => {
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
+  res.sendFile(path.join(__dirname, '../public/anuncios/index.html'));
 });
 
 // Rotas de API
