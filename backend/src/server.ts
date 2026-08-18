@@ -425,7 +425,7 @@ async function seedAdmin() {
 }
 // O seedAdmin() agora é chamado dentro do iniciarCoreDoSistema() para evitar falhas se o BD estiver offline.
 
-let portaAtual = Number(process.env.PORT && process.env.PORT !== '443' ? process.env.PORT : 3000) || 3000;
+let portaAtual = Number(process.env.PORT && process.env.PORT !== '443' ? process.env.PORT : 3001) || 3001;
 
 function tentarOuvirPorta(p: number) {
   server.listen(p, () => {
