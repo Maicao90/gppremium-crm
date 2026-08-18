@@ -135,11 +135,16 @@ router.get('/', async (req, res) => {
         return {
           ...u,
           lojaNome,
-          whatsappConectado: connectedUsers.has(u.whatsappDonoId),
+          whatsappConectado: connectedUsers.has(u.whatsappDonoId) || u.whatsappConectado,
           whatsappDonoNome: nomesPorId[u.whatsappDonoId] || null
         };
       }
-      return { ...u, lojaNome, whatsappDonoNome: null };
+      return {
+        ...u,
+        lojaNome,
+        whatsappConectado: connectedUsers.has(u.id) || u.whatsappConectado,
+        whatsappDonoNome: null
+      };
     });
     res.json(comCompartilhamento);
   } catch (error) {
