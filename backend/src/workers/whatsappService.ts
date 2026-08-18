@@ -1348,3 +1348,32 @@ export async function gerarCodigoPareamento(usuarioId: string, numero: string): 
   }
   throw new Error('Não foi possível gerar o código agora. Tente novamente em alguns segundos.');
 }
+
+// ── FOTO DE PERFIL DO CONTATO ──────────────────────────────────────
+const cacheFotosPerfil = new Map<string, { url: string | null; expira: number }>();
+
+export async function obterFotoPerfil(usuarioId: string, jid: string): Promise<string | null> {
+  const chave = `${usuarioId}:${jid}`;
+  const emCache = cacheFotosPerfil.get(chave);
+  if (emCache && emCache.expira > Date.now()) {
+    return emCache.url;
+  }
+
+  const sock = sessions.get(usuarioId);
+  if (!sock) return null;
+
+  try {
+    const url = await sock.profilePictureUrl(jid, 'image');
+    cacheFotosPerfil.set(chave, { url: url || null, expira: Date.now() + 24 * 60 * 60 * 1000 });
+    return url || null;
+  } catch {
+    try {
+      const urlPreview = await sock.profilePictureUrl(jid, 'preview');
+      cacheFotosPerfil.set(chave, { url: urlPreview || null, expira: Date.now() + 24 * 60 * 60 * 1000 });
+      return urlPreview || null;
+    } catch {
+      cacheFotosPerfil.set(chave, { url: null, expira: Date.now() + 2 * 60 * 60 * 1000 });
+      return null;
+    }
+  }
+}

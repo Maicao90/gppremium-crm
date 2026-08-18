@@ -397,4 +397,20 @@ router.delete('/templates/:id', async (req, res) => {
   }
 });
 
+// Foto de perfil do contato via Baileys
+router.get('/foto-perfil', async (req, res) => {
+  try {
+    const usuarioIdOriginal = String(req.query.usuarioId || '');
+    const jid = String(req.query.jid || '');
+    if (!usuarioIdOriginal || !jid) return res.status(400).json({ error: 'Parâmetros ausentes' });
+
+    const usuarioId = await resolverConexaoEfetiva(usuarioIdOriginal);
+    const { obterFotoPerfil } = require('../workers/whatsappService');
+    const fotoUrl = await obterFotoPerfil(usuarioId, jid);
+    res.json({ fotoUrl });
+  } catch (e) {
+    res.json({ fotoUrl: null });
+  }
+});
+
 export default router;
