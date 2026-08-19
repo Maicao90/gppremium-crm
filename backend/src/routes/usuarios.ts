@@ -196,7 +196,18 @@ router.get('/metricas', requireAuth, async (req, res) => {
     const nomesPorId: Record<string, string> = {};
     usuarios.forEach((u) => { nomesPorId[u.id] = u.nome; });
 
-    const metricas = usuarios.map(u => {
+    // Mecânico não atende WhatsApp — ele só usa o aplicativo da Garantia. Aparecia na
+    // lista porque o `role` dele é 'operador' igual ao do vendedor; o que separa os
+    // dois é o módulo (garantia50k e nenhum de atendimento). Fora daqui, ele poluía o
+    // "Top Atendentes" com zero conversa e zero agendamento.
+    const ehMecanico = (u: { role: string; modulosPermitidos: string }) => {
+      if (u.role !== 'operador') return false;
+      let mods: string[] = [];
+      try { const a = JSON.parse(u.modulosPermitidos || '[]'); mods = Array.isArray(a) ? a : []; } catch { mods = []; }
+      return mods.length > 0 && mods.includes('garantia50k') && !mods.some((m) => String(m).startsWith('at-'));
+    };
+
+    const metricas = usuarios.filter((u) => !ehMecanico(u)).map(u => {
       const total = u.agendamentos.length;
       const enviados = u.agendamentos.filter(a => a.status === 'enviado').length;
       const pendentes = u.agendamentos.filter(a => a.status === 'pendente').length;
