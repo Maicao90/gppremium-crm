@@ -165,6 +165,9 @@ const obterBotaoEnviarGeometrico = (): HTMLElement | null => {
     'footer button[aria-label="Enviar"]',
     'footer button[aria-label="Send"]',
     'footer span[data-icon="send"]',
+    // Nome novo do ícone no WhatsApp Web (era "send"). O curinga cobre as duas
+    // gerações e as próximas variações do mesmo prefixo.
+    'footer span[data-icon*="send"]',
     '[data-testid="send"]',
   ]
   for (const s of SELS) {
@@ -1216,12 +1219,27 @@ const WhatsAppCRM = () => {
       if (!target || typeof target.closest !== 'function') return
       
       const btnNode = target.closest('button') || target.closest('[role="button"]') || target
+
+      // O WhatsApp Web troca esses seletores de tempos em tempos — já renomeou o ícone
+      // de "send" para "wds-ic-send-filled". Quando a detecção não acompanha, o clique
+      // passa batido e a mensagem sai SEM a assinatura do vendedor. Por isso aqui a
+      // checagem é ampla: testid antigo, qualquer data-icon que contenha "send", e o
+      // aria-label do botão nos dois idiomas.
+      const temIconeSend = (el: Element | null) => {
+        if (!el) return false
+        if (el.matches?.('span[data-icon*="send"]')) return true
+        return !!el.querySelector?.('span[data-icon*="send"]')
+      }
+      const rotulo = (btnNode.getAttribute?.('aria-label') || '').toLowerCase()
       const isSendBtn =
         !!btnNode.closest('[data-testid="compose-btn-send"]') ||
         !!btnNode.closest('[data-testid="send"]') ||
-        !!btnNode.querySelector('span[data-icon="send"]') ||
-        !!(target.tagName.toLowerCase() === 'span' && target.getAttribute('data-icon') === 'send') ||
-        !!target.closest('span[data-icon="send"]')
+        temIconeSend(btnNode) ||
+        temIconeSend(target) ||
+        !!target.closest('span[data-icon*="send"]') ||
+        // Só vale como "enviar" se estiver na barra de digitação (footer), pra não
+        // confundir com outros botões da tela que tenham rótulo parecido.
+        (!!btnNode.closest('footer') && (rotulo === 'enviar' || rotulo === 'send'))
 
       if (isSendBtn) {
         const usarAssinaturaManual = localStorage.getItem("crm_usar_assinatura_manual") === "true"
