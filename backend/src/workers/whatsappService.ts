@@ -554,6 +554,10 @@ function jaPareado(authDir: string): boolean {
   }
 }
 
+// Quantos ciclos de QR sem ninguém parear antes de desistir e pausar. Cada ciclo é
+// um QR novo (~20s de validade), então 3 dá cerca de 1 minuto de janela pra escanear.
+const MAX_QR_SEM_PAREAR = 3;
+
 // Quantas reconexões seguidas falharam por usuário. Zera assim que a conexão abre.
 // Serve para espaçar as tentativas em vez de martelar de 2 em 2 segundos para sempre.
 const tentativasReconexao = new Map<string, number>();
@@ -796,6 +800,23 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
         }).catch(() => {});
         const tentativa = (tentativasReconexao.get(usuarioId) || 0) + 1;
         tentativasReconexao.set(usuarioId, tentativa);
+
+        // TRAVA DO PAREAMENTO INFINITO.
+        // Número que nunca foi pareado não tem credencial pra retomar: cada tentativa
+        // gera um QR novo, ninguém escaneia, o QR expira em ~20s e o ciclo recomeça.
+        // Isso rendia 3.552 pedidos de pareamento por dia (≈400 por conta), e é o que
+        // faz o WhatsApp responder "Não foi possível conectar o dispositivo" justo na
+        // hora em que a pessoa vai escanear de verdade.
+        // Damos uma janela curta (MAX_QR_SEM_PAREAR ciclos ≈ 1 min) e paramos. Volta a
+        // tentar só quando alguém pedir a conexão de propósito, pelo painel/extensão.
+        if (!jaPareado(authDir) && tentativa > MAX_QR_SEM_PAREAR) {
+          console.warn(`[Baileys] Usuário ${usuarioId} não pareou em ${MAX_QR_SEM_PAREAR} tentativas. PAUSANDO para não queimar a conta no WhatsApp. Peça a conexão de novo pelo painel quando for escanear.`);
+          pausados.add(usuarioId);
+          tentativasReconexao.delete(usuarioId);
+          latestQR.delete(usuarioId);
+          return;
+        }
+
         const espera = esperaReconexao(tentativa);
         console.log(`[Baileys] Reconectando usuário ${usuarioId} em ${espera / 1000}s (tentativa ${tentativa}).`);
         setTimeout(() => connectToWhatsApp(usuarioId).catch(err => console.error("Erro no retry:", err)), espera);
