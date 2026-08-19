@@ -539,6 +539,32 @@ export const pairingCodes = new Map<string, string>();
 // evitando a enxurrada de QR Codes na tela do atendente.
 export const pausados = new Set<string>();
 
+// Este número JÁ foi pareado alguma vez? O Baileys grava `registered: true` no
+// creds.json assim que o pareamento conclui. Serve pra distinguir "precisa ler o QR
+// pela primeira vez" de "já é pareado e só teve uma queda passageira".
+function jaPareado(authDir: string): boolean {
+  try {
+    const fs = require('fs');
+    const arq = path.join(authDir, 'creds.json');
+    if (!fs.existsSync(arq)) return false;
+    const creds = JSON.parse(fs.readFileSync(arq, 'utf8'));
+    return creds?.registered === true;
+  } catch {
+    return false; // na dúvida, trata como não pareado (mostra o QR)
+  }
+}
+
+// Quantas reconexões seguidas falharam por usuário. Zera assim que a conexão abre.
+// Serve para espaçar as tentativas em vez de martelar de 2 em 2 segundos para sempre.
+const tentativasReconexao = new Map<string, number>();
+
+// Espera antes de tentar de novo: 2s, 4s, 8s, 16s, 32s, 60s (teto).
+// Sem isso, uma sessão que não consegue subir fica batendo no servidor do WhatsApp
+// indefinidamente — foi o que gerou ~1.900 quedas por hora na madrugada.
+function esperaReconexao(tentativa: number): number {
+  return Math.min(2000 * 2 ** Math.max(0, tentativa - 1), 60000);
+}
+
 // Resolve a conexão EFETIVA de um usuário: se ele COMPARTILHA o WhatsApp de outro
 // atendente (whatsappDonoId preenchido), retorna o ID do DONO — é a sessão Baileys
 // dele que deve ser usada para conectar/enviar/consultar. Caso contrário, retorna o
@@ -686,7 +712,16 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
         latestQR.set(usuarioId, qrBase64);
         connectedUsers.delete(usuarioId);
         // Emite o QR Code apenas para a sala do usuário específico
-        io.to(usuarioId).emit('WHATSAPP_QR_CODE', qrBase64);
+        // Só EMPURRA o QR pra tela de quem ainda NÃO pareou. A extensão trata
+        // WHATSAPP_QR_CODE como "bloqueia tudo e mostra o QR em tela cheia"; num
+        // número já pareado, um QR passageiro (queda de rede, churn de reconexão)
+        // arrancava o atendente do meio do atendimento sem motivo. Para esses, o QR
+        // fica só no cache — quem quiser reparear pede pelo painel.
+        if (!jaPareado(authDir)) {
+          io.to(usuarioId).emit('WHATSAPP_QR_CODE', qrBase64);
+        } else {
+          console.log(`[Baileys] QR ignorado na tela do usuário ${usuarioId} (número já pareado) — só guardado no cache.`);
+        }
 
         // Atualiza status no banco
         await prisma.usuario.update({
@@ -736,6 +771,22 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
           where: { id: usuarioId },
           data: { whatsappConectado: false }
         }).catch(() => {});
+      } else if (statusCode === DisconnectReason.connectionReplaced) {
+        // 440 = OUTRO aparelho assumiu esta mesma conta do WhatsApp. Voltar em 2s
+        // derruba o outro lado, que volta e derruba a gente — briga infinita (chegou
+        // a 669 quedas em 3h num único número). Então espera 5 minutos: tempo de o
+        // outro aparelho se acomodar. Ainda tenta de novo sozinho, só que sem brigar.
+        //
+        // NÃO emite WHATSAPP_STATUS:false aqui — isso joga a tela de bloqueio de tela
+        // cheia com QR na cara do atendente no meio do atendimento. Só o logout de
+        // verdade (código 401, aparelho removido) avisa a extensão.
+        console.warn(`[Baileys] Conexão SUBSTITUÍDA por outro aparelho (usuário ${usuarioId}). Nova tentativa em 5 min para não brigar pela sessão.`);
+        tentativasReconexao.delete(usuarioId);
+        await prisma.usuario.update({
+          where: { id: usuarioId },
+          data: { whatsappConectado: false }
+        }).catch(() => {});
+        setTimeout(() => connectToWhatsApp(usuarioId).catch(err => console.error("Erro no retry:", err)), 5 * 60 * 1000);
       } else {
         // Inclui o código 515 (restartRequired) que o Baileys dispara logo após escanear o QR,
         // além de quedas de internet / erros internos. Em todos esses casos é preciso recriar o socket.
@@ -743,8 +794,11 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
           where: { id: usuarioId },
           data: { whatsappConectado: false }
         }).catch(() => {});
-        console.log(`[Baileys] Reconectando usuário ${usuarioId} em 2 segundos...`);
-        setTimeout(() => connectToWhatsApp(usuarioId).catch(err => console.error("Erro no retry:", err)), 2000);
+        const tentativa = (tentativasReconexao.get(usuarioId) || 0) + 1;
+        tentativasReconexao.set(usuarioId, tentativa);
+        const espera = esperaReconexao(tentativa);
+        console.log(`[Baileys] Reconectando usuário ${usuarioId} em ${espera / 1000}s (tentativa ${tentativa}).`);
+        setTimeout(() => connectToWhatsApp(usuarioId).catch(err => console.error("Erro no retry:", err)), espera);
       }
     } else if (connection === 'open') {
       console.log(`[Baileys] Conexão aberta com sucesso! Servidor pronto para disparos do usuário ${usuarioId}.`);
@@ -754,6 +808,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
       latestQR.delete(usuarioId);
       pairingCodes.delete(usuarioId);
       pausados.delete(usuarioId);
+      tentativasReconexao.delete(usuarioId); // conectou: zera o recuo progressivo
       io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: true });
 
       // Mantém o dispositivo web como "offline" para NÃO roubar as notificações do celular.
