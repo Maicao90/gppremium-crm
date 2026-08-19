@@ -8,11 +8,13 @@ import { PrismaClient } from '@prisma/client';
 import dotenv from 'dotenv';
 import path from 'path';
 import { initWorker } from './workers/agendaWorker';
+import { initDisparoWorker } from './workers/disparoWorker';
 import { connectToWhatsApp, latestQR, connectedUsers, carregarPausadosDoBanco, resolverConexaoEfetiva } from './workers/whatsappService';
 import agendamentosRouter from './routes/agendamentos';
 import contatosRouter from './routes/contatos';
 import configuracoesRouter from './routes/configuracoes';
 import usuariosRouter from './routes/usuarios';
+import dashboardRouter from './routes/dashboard';
 import inboxRouter from './routes/inbox';
 import iaRouter from './routes/ia';
 import crmAnunciosRouter from './routes/crmAnuncios';
@@ -23,6 +25,10 @@ import botPneusRouter from './routes/botPneus';
 import disparoRouter from './routes/disparo';
 import garantiaRouter from './routes/garantia';
 import garantiaAppRouter from './routes/garantiaApp';
+import olxRouter from './routes/olx';
+import { iniciarMonitorOlx } from './workers/olxWorker';
+import { seedAnuncios } from './seedAnuncios';
+import { seedStoresAndUsers } from './seedStoresAndUsers';
 import { initGarantiaPush } from './workers/garantiaPush';
 import { paginaLinkPublica } from './middlewares/paginaLinkPublica';
 import { initSyncAds } from './integracoes/syncService';
@@ -102,8 +108,10 @@ async function iniciarCoreDoSistema() {
     coreIniciado = true;
     console.log('[Core] Iniciando workers principais...');
     initWorker();
+    initDisparoWorker(); // robô de disparo automático inteligente (30/dia entre 08:00 e 17:00)
     initSyncAds(); // sincronização periódica de Google Ads / Meta Ads
     initGarantiaPush(); // envio de push das notificações de garantia (cliente com app)
+    iniciarMonitorOlx(); // monitor e watchdog de anúncios e chat da OLX
     
     // Restaura do banco quem estava PAUSADO antes deste restart (senão o vigia
     // reconecta sozinho e gera QR infinito de contas que pedimos pra não mexer).
@@ -122,6 +130,8 @@ async function iniciarCoreDoSistema() {
     await seedAdmin();
     await migrarSenhas();
     await ensureMaster();
+    await seedStoresAndUsers();
+    await seedAnuncios();
   } catch (err) {
     console.error('[Core] Erro ao iniciar core:', err);
   }
@@ -184,18 +194,41 @@ cloudManager.initializeFailover().then(({ ativo }) => {
 // comportamento atual continua 100% intacto.
 app.use(paginaLinkPublica);
 
-// Servir arquivos estáticos da pasta public/ (admin.html, admin/index.html, etc.)
-app.use(express.static(path.join(__dirname, '../public')));
+// Servir arquivos estáticos da pasta public/ com no-cache para HTML
+app.use(express.static(path.join(__dirname, '../public'), {
+  setHeaders: (res, pathUrl) => {
+    if (pathUrl.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
+    }
+  }
+}));
 
-// Rota explícita para o painel admin principal
-app.get('/admin.html', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/admin.html'));
+// Rota raiz (redireciona para o painel principal em /anuncios/)
+app.get('/', (req, res) => {
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.redirect('/anuncios/');
 });
 
-// Rota para o painel de credenciais de nuvem
-app.use('/admin', express.static(path.join(__dirname, '../public/admin')));
-app.get('/admin', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/admin/index.html'));
+// Painel legado completo HTML
+app.get('/admin-legacy.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/admin-legacy.html'));
+});
+app.get('/legacy', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/admin-legacy.html'));
+});
+
+// Rota para o painel de credenciais de nuvem (redirecionado para o novo painel)
+app.use('/admin', (req, res) => res.redirect('/anuncios/'));
+app.get('/admin.html', (req, res) => res.redirect('/anuncios/'));
+
+// SPA Fallback para o novo painel em /anuncios/ (com no-cache para garantir atualização imediata)
+app.get(/^\/anuncios(\/.*)?$/, (req, res) => {
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
+  res.sendFile(path.join(__dirname, '../public/anuncios/index.html'));
 });
 
 // Rotas de API
@@ -207,6 +240,7 @@ app.use('/api/contatos', authWhatsapp, contatosRouter);
 app.use('/api/configuracoes', configuracoesRouter);
 // login é público; as escritas de usuário exigem master (requireMaster dentro do router).
 app.use('/api/usuarios', authOpcional, usuariosRouter);
+app.use('/api/dashboard', authOpcional, dashboardRouter);
 app.use('/api/inbox', authWhatsapp, inboxRouter);
 // Bot Pneus (Charles) — proxy pro pneus-bot da Vercel.
 // ⚠️ VAZAMENTO CORRIGIDO 03/08/2026: esta rota subia com `authWhatsapp`, que só exige
@@ -226,6 +260,7 @@ app.use('/api/otimizador', requireAuth, requireModulo('otimizador'), otimizadorA
 app.use('/api/disparo', requireAuth, requireModulo('at-disparo'), disparoRouter); // Disparo manual WhatsApp (Direcional)
 app.use('/api/garantia', requireAuth, requireModulo('garantia50k'), garantiaRouter); // Garantia 50.000 KM (painel + app do mecânico, login CRM)
 app.use('/api/garantia-app', garantiaAppRouter); // App do CLIENTE final (auth própria por CPF+senha, cada rota se protege)
+app.use('/api/olx', olxRouter); // Módulo OLX: Anúncios, Watchdog e Chat Integrado
 
 // Rotas da API de Nuvem do Painel Admin
 app.get('/api/admin/nuvem', (req, res) => {
@@ -336,7 +371,18 @@ io.on('connection', async (socket) => {
   // Painel admin: "assistir" a caixa de entrada de um atendente (entra na sala para
   // receber NOVA_MENSAGEM em tempo real, SEM os efeitos do registrar_atendente).
   socket.on('assistir_atendente', (usuarioId) => {
-    socket.join(String(usuarioId));
+    const uid = String(usuarioId);
+    socket.join(uid);
+    
+    // Envia o estado atual para o painel (QR ou status), pois o painel precisa 
+    // exibir o QR code se ele já estiver gerado.
+    resolverConexaoEfetiva(uid).then(efetivoId => {
+      if (connectedUsers.has(efetivoId)) {
+        socket.emit('WHATSAPP_STATUS', { conectado: true });
+      } else if (latestQR.has(efetivoId)) {
+        socket.emit('WHATSAPP_QR_CODE', latestQR.get(efetivoId));
+      }
+    }).catch(e => console.error(e));
   });
 
   // Quando a extensão se conecta (WhatsApp Web abriu), recupera IMEDIATAMENTE 
@@ -381,10 +427,24 @@ async function seedAdmin() {
 }
 // O seedAdmin() agora é chamado dentro do iniciarCoreDoSistema() para evitar falhas se o BD estiver offline.
 
-const PORT = process.env.PORT || 3000;
-// Só localhost: a partir de agora o Nginx é quem fica exposto na porta 443/80
-// (termina o HTTPS e faz proxy pra cá), cuidando de múltiplos domínios/certificados.
-// O Node não deve mais ser alcançável direto de fora.
-server.listen(PORT, '127.0.0.1', () => {
-  console.log(`Servidor rodando na porta ${PORT} (somente localhost, atrás do Nginx)`);
+let portaAtual = Number(process.env.PORT && process.env.PORT !== '443' ? process.env.PORT : 3001) || 3001;
+
+function tentarOuvirPorta(p: number) {
+  server.listen(p, () => {
+    console.log(`[Servidor] Rodando com sucesso na porta ${p} (somente localhost, atrás do Nginx)`);
+  });
+}
+
+server.on('error', (err: any) => {
+  if (err.code === 'EADDRINUSE') {
+    console.warn(`[Porta] Porta ${portaAtual} em uso. Tentando próxima porta (${portaAtual + 1})...`);
+    portaAtual++;
+    setTimeout(() => {
+      tentarOuvirPorta(portaAtual);
+    }, 300);
+  } else {
+    console.error('[Servidor] Erro de rede:', err);
+  }
 });
+
+tentarOuvirPorta(portaAtual);
