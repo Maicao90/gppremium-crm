@@ -1,4 +1,6 @@
 import { Router } from 'express';
+import fs from 'fs';
+import path from 'path';
 import { Prisma } from '@prisma/client';
 import { prisma } from '../server';
 import { numerosDasSessoesAtivas, resolverConexaoEfetiva } from '../workers/whatsappService';
@@ -171,7 +173,13 @@ router.get('/conversas', async (req, res) => {
     let contatosNomes: Map<string, string> = new Map();
     try { contatosNomes = require('../workers/whatsappService').contatosNomes; } catch (e) {}
 
+    const avatarsDir = path.join(__dirname, '../../public/midias/avatars');
+    try { fs.mkdirSync(avatarsDir, { recursive: true }); } catch (e) {}
+
+    const pendentesFoto: string[] = [];
+
     conversas.forEach((c: any) => {
+      c.ultimaMsg = c.texto || '';
       const numReal = mapaNumeros[c.chatJid] || (String(c.chatJid).includes('@lid') ? '' : String(c.chatJid).split('@')[0]);
       c.numeroReal = numReal;
       // Nome: msgs recebidas (pushName) > contato salvo (por número) > contatos em memória.
@@ -184,7 +192,27 @@ router.get('/conversas', async (req, res) => {
       const atId = donoPorChat[c.chatJid] ?? null;
       c.atendenteId = atId;
       c.atendenteNome = atId ? (nomePorIdU[atId] ?? null) : null;
+
+      // Foto de perfil espelhada localmente no CRM
+      const cleanJid = (c.chatJid || '').replace(/[^a-zA-Z0-9]/g, '_');
+      const arqFoto = path.join(avatarsDir, `${cleanJid}.jpg`);
+      if (fs.existsSync(arqFoto)) {
+        c.fotoUrl = `/midias/avatars/${cleanJid}.jpg`;
+      } else {
+        c.fotoUrl = null;
+        if (pendentesFoto.length < 60) pendentesFoto.push(c.chatJid);
+      }
     });
+
+    // Puxa as fotos em background para os chats que ainda não têm avatar local
+    if (pendentesFoto.length > 0) {
+      const { baixarFotoPerfilLocal } = require('../workers/whatsappService');
+      pendentesFoto.forEach((jid, idx) => {
+        setTimeout(() => {
+          baixarFotoPerfilLocal(usuarioId, jid).catch(() => {});
+        }, idx * 250);
+      });
+    }
 
     // Ordena por mais recente
     conversas.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
@@ -298,24 +326,37 @@ router.get('/mensagens', async (req, res) => {
   try {
     const usuarioIdOriginal = String(req.query.usuarioId || '');
     const jid = String(req.query.jid || '');
-    if (!usuarioIdOriginal || !jid) return res.json([]);
-    if (!(await permiteAtendente(req, res, usuarioIdOriginal))) return;
-    const usuarioId = await resolverConexaoEfetiva(usuarioIdOriginal);
+    if (!jid) return res.json([]);
+    if (usuarioIdOriginal && !(await permiteAtendente(req, res, usuarioIdOriginal))) return;
 
-    // Busca as MAIS RECENTES (desc + take) e inverte pra ordem de exibição (asc).
-    // Bug antigo: orderBy asc + take trazia as 300 mais ANTIGAS, fixas pra sempre —
-    // numa conversa com mais de 300 mensagens, as novas nunca apareciam (janela
-    // congelada no passado, nunca deslizava).
-    const recentes = await prisma.mensagem.findMany({
-      where: {
-        usuarioId,
-        chatJid: jid,
-        // Esconde o ruído de sistema ("outro" vazio/protocolMessage sem mídia)
-        NOT: { tipo: 'outro', midiaUrl: null, texto: { in: ['', 'protocolMessage'] } }
-      },
-      orderBy: { timestamp: 'desc' },
-      take: 300
-    });
+    let usuarioId = usuarioIdOriginal ? await resolverConexaoEfetiva(usuarioIdOriginal) : '';
+
+    // Busca as mensagens da conversa pelo usuarioId efetivo
+    let recentes: any[] = [];
+    if (usuarioId) {
+      recentes = await prisma.mensagem.findMany({
+        where: {
+          usuarioId,
+          chatJid: jid,
+          NOT: { tipo: 'outro', midiaUrl: null, texto: { in: ['', 'protocolMessage'] } }
+        },
+        orderBy: { timestamp: 'desc' },
+        take: 300
+      });
+    }
+
+    // Fallback: se não encontrou mensagens para este usuarioId específico (ex.: número compartilhado ou troca de loja recente), busca direto pelo chatJid
+    if (recentes.length === 0) {
+      recentes = await prisma.mensagem.findMany({
+        where: {
+          chatJid: jid,
+          NOT: { tipo: 'outro', midiaUrl: null, texto: { in: ['', 'protocolMessage'] } }
+        },
+        orderBy: { timestamp: 'desc' },
+        take: 300
+      });
+    }
+
     res.json(recentes.reverse());
   } catch (e) {
     console.error('Erro ao buscar mensagens:', e);
@@ -394,6 +435,22 @@ router.delete('/templates/:id', async (req, res) => {
     res.sendStatus(204);
   } catch (e) {
     res.status(500).json({ error: 'Erro ao excluir template' });
+  }
+});
+
+// Foto de perfil do contato via Baileys
+router.get('/foto-perfil', async (req, res) => {
+  try {
+    const usuarioIdOriginal = String(req.query.usuarioId || '');
+    const jid = String(req.query.jid || '');
+    if (!usuarioIdOriginal || !jid) return res.status(400).json({ error: 'Parâmetros ausentes' });
+
+    const usuarioId = await resolverConexaoEfetiva(usuarioIdOriginal);
+    const { obterFotoPerfil } = require('../workers/whatsappService');
+    const fotoUrl = await obterFotoPerfil(usuarioId, jid);
+    res.json({ fotoUrl });
+  } catch (e) {
+    res.json({ fotoUrl: null });
   }
 });
 
