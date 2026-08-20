@@ -9,7 +9,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { initWorker } from './workers/agendaWorker';
 import { initDisparoWorker } from './workers/disparoWorker';
-import { connectToWhatsApp, latestQR, connectedUsers, carregarPausadosDoBanco, resolverConexaoEfetiva } from './workers/whatsappService';
+import { connectToWhatsApp, latestQR, connectedUsers, carregarPausadosDoBanco, resolverConexaoEfetiva, liberarParaPareamento } from './workers/whatsappService';
 import agendamentosRouter from './routes/agendamentos';
 import contatosRouter from './routes/contatos';
 import configuracoesRouter from './routes/configuracoes';
@@ -361,6 +361,13 @@ io.on('connection', async (socket) => {
       console.log(`[Socket] Reenviando QR Code pendente para o atendente ${efetivoId}.`);
       socket.emit('WHATSAPP_QR_CODE', latestQR.get(efetivoId));
     }
+
+    // Abrir a extensão É um pedido humano de conexão: tira a conexão da pausa antes de
+    // tentar. Sem isto, a trava criada pra parar o loop automático de QR bloqueava
+    // também a pessoa que estava com o celular na mão — não entrava nem por QR nem por
+    // código. A trava segue valendo pro que ela existe: parar o ciclo de QR que ninguém
+    // escaneia, que queimava a cota de pareamento da conta no WhatsApp.
+    liberarParaPareamento(efetivoId);
 
     // Garante que o WhatsApp está conectado ou em processo de conexão para o DONO da
     // conexão efetiva. (Se não houver sessão, cria uma nova e o QR fluirá para a sala

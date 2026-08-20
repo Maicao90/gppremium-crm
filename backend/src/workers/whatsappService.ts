@@ -1382,6 +1382,24 @@ export async function pausarWhatsApp(usuarioId: string) {
   console.log(`[Baileys] Conexão do usuário ${usuarioId} PAUSADA.`);
 }
 
+/**
+ * Alguém PEDIU pra conectar (abriu a extensão, vai ler o QR ou digitar o código).
+ * Tira da pausa e zera a contagem de QR, abrindo uma janela nova pra parear.
+ *
+ * Existe porque a trava do QR infinito passou a bloquear também o pedido humano: a
+ * pessoa ficava com o celular na mão e não entrava nem por QR nem por código. A trava
+ * segue valendo pro caso dela — o ciclo automático de QR que ninguém escaneia.
+ *
+ * NÃO mexe no banco de propósito: pausa feita na mão pelo painel é outra coisa e
+ * continua valendo até alguém retomar de lá.
+ */
+export function liberarParaPareamento(usuarioId: string): void {
+  if (!pausados.has(usuarioId) && !qrsSemParear.has(usuarioId)) return;
+  pausados.delete(usuarioId);
+  qrsSemParear.delete(usuarioId);
+  console.log(`[Baileys] Pedido de conexão do usuário ${usuarioId} — liberado para parear.`);
+}
+
 // RETOMA a conexão de um atendente pausado e tenta conectar de novo.
 export async function retomarWhatsApp(usuarioId: string) {
   pausados.delete(usuarioId);
