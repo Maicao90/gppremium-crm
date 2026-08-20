@@ -631,10 +631,23 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
     return;
   }
 
-  // Evita criar múltiplas instâncias para o mesmo usuário se já estiver rodando
+  // Evita criar múltiplas instâncias para o mesmo usuário se já estiver rodando.
+  //
+  // MAS: "existe no mapa" não quer dizer "está viva". Quando a sessão morre sem avisar
+  // (rede caiu, o WhatsApp fechou do outro lado), o objeto fica no mapa como fantasma e
+  // esta guarda recusava toda tentativa nova — o atendente pedia conexão, recebia de
+  // volta o QR VELHO do cache, escaneava e dava erro, pra sempre. Foi o que travou o
+  // Diogo. Então: se não está de fato conectada, joga a antiga fora e cria uma nova.
   if (sessions.has(usuarioId)) {
-    console.log(`[Baileys] Sessão já existe para o usuário ${usuarioId}. Ignorando recriação.`);
-    return;
+    const viva = connectedUsers.has(usuarioId);
+    if (viva) {
+      console.log(`[Baileys] Sessão já existe (e está conectada) para o usuário ${usuarioId}. Ignorando recriação.`);
+      return;
+    }
+    console.warn(`[Baileys] Sessão do usuário ${usuarioId} existe no mapa mas NÃO está conectada — descartando a antiga para criar uma nova.`);
+    try { sessions.get(usuarioId)?.end(undefined as any); } catch { /* já pode estar morta */ }
+    sessions.delete(usuarioId);
+    latestQR.delete(usuarioId); // não reenviar QR velho: expirado, dá erro ao escanear
   }
 
   const authDir = path.join(__dirname, `../../../prisma/auth_info_baileys_${usuarioId}`);
@@ -749,8 +762,13 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
 
       try {
         const qrBase64 = await qrcode.toDataURL(qr);
-        // Guarda o QR no cache para reenviar a quem conectar depois
+        // Guarda o QR no cache para reenviar a quem conectar depois.
+        // O QR do WhatsApp vale ~20s. Passado isso ele é lixo: escanear dá erro. Então
+        // some do cache sozinho, pra ninguém receber um QR morto ao abrir a extensão.
         latestQR.set(usuarioId, qrBase64);
+        setTimeout(() => {
+          if (latestQR.get(usuarioId) === qrBase64) latestQR.delete(usuarioId);
+        }, 25_000);
         connectedUsers.delete(usuarioId);
 
         // Só EMPURRA o QR pra tela de quem ainda NÃO pareou. A extensão trata
