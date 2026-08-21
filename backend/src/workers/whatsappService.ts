@@ -245,6 +245,14 @@ const waIdsRecentes = new Set<string>();
 const waIdsBotIA = new Set<string>();
 const chatsBotEnviando = new Set<string>();
 const filasEnvioBotIA = new Map<string, Promise<unknown>>();
+interface MidiaBotIA {
+  tipo: 'video';
+  caminho?: string;
+  url?: string;
+  legenda?: string;
+  nome?: string;
+}
+
 function lembrarWaId(id?: string | null) {
   if (!id) return;
   waIdsRecentes.add(id);
@@ -261,6 +269,43 @@ function lembrarWaIdBotIA(id?: string | null) {
     const maisAntigo = waIdsBotIA.values().next().value;
     if (maisAntigo) waIdsBotIA.delete(maisAntigo);
   }
+}
+
+async function carregarMidiaBotIA(midia: MidiaBotIA): Promise<{ buffer: Buffer; midiaUrl: string | null; nomeArquivo: string }> {
+  if (midia.url) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    try {
+      const resp = await fetch(midia.url, { signal: controller.signal });
+      if (!resp.ok) throw new Error(`download ${resp.status}`);
+      const buffer = Buffer.from(await resp.arrayBuffer());
+      const nomeArquivo = (() => {
+        try {
+          return new URL(midia.url!).pathname.split('/').pop() || 'video.mp4';
+        } catch {
+          return 'video.mp4';
+        }
+      })();
+      return { buffer, midiaUrl: null, nomeArquivo };
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
+
+  const caminhoOriginal = String(midia.caminho || '').trim();
+  if (!caminhoOriginal) throw new Error('video sem caminho/url');
+
+  const publicRoot = path.resolve(__dirname, '../../public');
+  const absoluto = path.isAbsolute(caminhoOriginal)
+    ? path.resolve(caminhoOriginal)
+    : path.resolve(publicRoot, caminhoOriginal.replace(/^[/\\]+/, ''));
+  if (!fs.existsSync(absoluto)) throw new Error(`arquivo nao encontrado: ${caminhoOriginal}`);
+
+  const buffer = fs.readFileSync(absoluto);
+  const midiaUrl = absoluto.startsWith(publicRoot + path.sep)
+    ? '/' + path.relative(publicRoot, absoluto).replace(/\\/g, '/')
+    : null;
+  return { buffer, midiaUrl, nomeArquivo: path.basename(absoluto) || 'video.mp4' };
 }
 
 async function enviarParteBotIA(usuarioId: string, chatJid: string, numeroReal: string, texto: string, tempoDigitacaoMs: number): Promise<boolean> {
@@ -294,6 +339,63 @@ async function enviarParteBotIA(usuarioId: string, chatJid: string, numeroReal: 
       return true;
     } catch (e) {
       console.error('[Bot IA] Falha ao enviar parte:', (e as any)?.message || e);
+      return false;
+    } finally {
+      setTimeout(() => chatsBotEnviando.delete(key), 5000).unref?.();
+    }
+  });
+  filasEnvioBotIA.set(usuarioId, atual);
+  atual.finally(() => {
+    if (filasEnvioBotIA.get(usuarioId) === atual) filasEnvioBotIA.delete(usuarioId);
+  });
+  return atual as Promise<boolean>;
+}
+
+async function enviarMidiaBotIA(usuarioId: string, chatJid: string, numeroReal: string, midia: MidiaBotIA, tempoDigitacaoMs: number): Promise<boolean> {
+  const anterior = filasEnvioBotIA.get(usuarioId) || Promise.resolve();
+  const atual = anterior.catch(() => {}).then(async () => {
+    const sock = sessions.get(usuarioId);
+    if (!sock) return false;
+    const key = `${usuarioId}:${chatJid}`;
+    chatsBotEnviando.add(key);
+    try {
+      const carregada = await carregarMidiaBotIA(midia);
+      await sock.sendPresenceUpdate('composing', chatJid).catch(() => {});
+      await delay(tempoDigitacaoMs);
+
+      const conteudo: any = { video: carregada.buffer };
+      if (midia.legenda?.trim()) conteudo.caption = midia.legenda.trim();
+      const enviada = await sock.sendMessage(chatJid, conteudo);
+      await sock.sendPresenceUpdate('unavailable').catch(() => {});
+
+      const waId = enviada?.key?.id || null;
+      lembrarWaId(waId);
+      lembrarWaIdBotIA(waId);
+
+      let midiaUrl = carregada.midiaUrl;
+      if (!midiaUrl) {
+        const nome = `out_${(waId || 'm').replace(/[^a-zA-Z0-9]/g, '')}_${Math.floor(Math.random() * 1000000)}.mp4`;
+        fs.writeFileSync(path.join(MIDIAS_DIR, nome), carregada.buffer);
+        midiaUrl = `/midias/${nome}`;
+      }
+
+      const salva = await prisma.mensagem.create({
+        data: {
+          usuarioId,
+          chatJid,
+          chatNome: '',
+          fromMe: true,
+          texto: midia.legenda || '',
+          tipo: 'video',
+          midiaUrl,
+          waId,
+          numeroReal: numeroReal || null,
+        },
+      });
+      getIo().to(usuarioId).emit('NOVA_MENSAGEM', salva);
+      return true;
+    } catch (e) {
+      console.error('[Bot IA] Falha ao enviar video:', (e as any)?.message || e);
       return false;
     } finally {
       setTimeout(() => chatsBotEnviando.delete(key), 5000).unref?.();
@@ -571,7 +673,12 @@ export async function resolverConexaoEfetiva(usuarioId: string): Promise<string>
   return usuarioId;
 }
 
-export async function connectToWhatsApp(usuarioId: string, socketId?: string, numeroPareamento?: string) {
+export async function connectToWhatsApp(
+  usuarioId: string,
+  socketId?: string,
+  numeroPareamento?: string,
+  permitirQrNovo = false,
+) {
   if (!usuarioId) return;
 
   // COMPARTILHAMENTO: quem compartilha o WhatsApp de outro atendente NÃO pode ter
@@ -606,6 +713,15 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
   const authDir = path.join(__dirname, `../../../prisma/auth_info_baileys_${usuarioId}`);
   const { state, saveCreds } = await useMultiFileAuthState(authDir);
 
+  // Conta sem credenciais registradas só entra em fluxo de pareamento quando um
+  // humano pedir explicitamente (QR pelo CRM ou código de pareamento). Isso evita
+  // QR aparecendo sozinho no boot/vigia e reduz o risco de rate-limit.
+  const jaRegistrado = !!(state.creds && (state.creds as any).registered);
+  if (!jaRegistrado && !numeroPareamento && !permitirQrNovo) {
+    console.log(`[Baileys] Usuário ${usuarioId} sem sessão registrada — aguardando solicitação manual de QR/código.`);
+    return;
+  }
+
   // BUG conhecido do Baileys 7.0.0-rc13 (issue #2679): a versão do WA Web EMBUTIDA
   // está velha e o telefone RECUSA o vínculo ("Não foi possível conectar o aparelho")
   // no QR e no código. Fix: buscar a versão atual com fetchLatestWaWebVersion e passar
@@ -617,8 +733,6 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
   // rejeita o vínculo (428 antes do QR valer -> loop 408 -> 401; issue #2677 do
   // Baileys, mesma rc13). Sessões JÁ registradas mantêm a identidade antiga pra
   // não arriscar as lojas conectadas.
-  const jaRegistrado = !!(state.creds && (state.creds as any).registered);
-
   const configSocket: any = {
     auth: state,
     printQRInTerminal: false,
@@ -937,6 +1051,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
           chatJid: remoteJid,
           waId: msg.key.id,
           enviarParte: (texto, tempo) => enviarParteBotIA(usuarioId, remoteJid, numeroRecep, texto, tempo),
+          enviarVideo: (video, tempo) => enviarMidiaBotIA(usuarioId, remoteJid, numeroRecep, video as MidiaBotIA, tempo),
         });
         return;
       }
@@ -1291,6 +1406,11 @@ export async function retomarWhatsApp(usuarioId: string) {
   await connectToWhatsApp(usuarioId).catch(() => {});
 }
 
+// Compatibilidade com pontos antigos do backend que ainda importam este nome.
+export async function liberarParaPareamento(usuarioId: string) {
+  await retomarWhatsApp(usuarioId);
+}
+
 // Carrega do banco quem estava pausado ANTES do restart, repovoando o Set em
 // memória. Chamado uma vez no boot do servidor (server.ts).
 export async function carregarPausadosDoBanco() {
@@ -1351,6 +1471,37 @@ export async function gerarCodigoPareamento(usuarioId: string, numero: string): 
     await new Promise((r) => setTimeout(r, 400));
   }
   throw new Error('Não foi possível gerar o código agora. Tente novamente em alguns segundos.');
+}
+
+// Gera um QR Code de pareamento SOB DEMANDA para o CRM. Limpa qualquer sessão/credencial
+// morta antes de iniciar e espera o primeiro QR válido subir.
+export async function gerarQrCodePareamento(usuarioId: string): Promise<string> {
+  if (connectedUsers.has(usuarioId)) {
+    throw new Error('Este atendente já está com o WhatsApp conectado.');
+  }
+
+  pausados.add(usuarioId);
+
+  const antigo = sessions.get(usuarioId);
+  if (antigo) { try { antigo.end(undefined as any); } catch (e) {} }
+  sessions.delete(usuarioId);
+  latestQR.delete(usuarioId);
+  pairingCodes.delete(usuarioId);
+
+  try {
+    const dir = path.join(__dirname, `../../../prisma/auth_info_baileys_${usuarioId}`);
+    if (fs.existsSync(dir)) fs.rmSync(dir, { recursive: true, force: true });
+  } catch (e) {}
+
+  await new Promise((r) => setTimeout(r, 2500));
+  await connectToWhatsApp(usuarioId, undefined, undefined, true);
+
+  for (let i = 0; i < 40; i++) {
+    const qr = latestQR.get(usuarioId);
+    if (qr) return qr;
+    await new Promise((r) => setTimeout(r, 500));
+  }
+  throw new Error('Não foi possível gerar o QR agora. Tente novamente em alguns segundos.');
 }
 
 // ── FOTO DE PERFIL DO CONTATO ESPELHADA NO CRM ──────────────────────

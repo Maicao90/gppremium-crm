@@ -6,7 +6,7 @@ export const MODULOS = [
 export type ModuloId = typeof MODULOS[number];
 
 // Atalho: modulos do "gerente" (so WhatsApp).
-export const MODULOS_GERENTE: ModuloId[] = ['at-dashboard', 'at-atendentes', 'at-inbox'];
+export const MODULOS_GERENTE: ModuloId[] = ['at-dashboard', 'at-atendentes', 'at-inbox', 'at-botpneus'];
 
 // Roles que enxergam tudo (ignoram modulosPermitidos e escopo de loja).
 export const ROLES_MASTER = ['master', 'admin'];

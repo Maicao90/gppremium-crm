@@ -212,7 +212,17 @@ router.get('/metricas', requireAuth, async (req, res) => {
     const nomesPorId: Record<string, string> = {};
     usuarios.forEach((u) => { nomesPorId[u.id] = u.nome; });
 
-    const metricas = usuarios.map(u => {
+    // Mecânico não atende WhatsApp — ele só usa o aplicativo da Garantia. Aparecia no
+    // "Top Atendentes" com zero conversa porque o `role` dele é 'operador', igual ao do
+    // vendedor; o que separa os dois é o módulo (garantia50k e nenhum de atendimento).
+    const ehMecanico = (u: { role: string; modulosPermitidos: string }) => {
+      if (u.role !== 'operador') return false;
+      let mods: string[] = [];
+      try { const a = JSON.parse(u.modulosPermitidos || '[]'); mods = Array.isArray(a) ? a : []; } catch { mods = []; }
+      return mods.length > 0 && mods.includes('garantia50k') && !mods.some((m) => String(m).startsWith('at-'));
+    };
+
+    const metricas = usuarios.filter((u) => !ehMecanico(u)).map(u => {
       const total = u.agendamentos.length;
       const enviados = u.agendamentos.filter(a => a.status === 'enviado').length;
       const pendentes = u.agendamentos.filter(a => a.status === 'pendente').length;
@@ -423,6 +433,26 @@ router.post('/:id/codigo-pareamento', requireAuth, requireMaster, async (req, re
   } catch (error: any) {
     console.error('Erro ao gerar código de pareamento:', error?.message);
     res.status(400).json({ error: error?.message || 'Erro ao gerar código de pareamento.' });
+  }
+});
+
+// Gerar QR CODE de pareamento sob demanda pelo CRM. Diferente do fluxo antigo da
+// extensão, aqui só sobe QR quando alguém clicar no botão do painel.
+router.post('/:id/qr-code', requireAuth, requireMaster, async (req, res) => {
+  try {
+    const id = String(req.params.id);
+    const usuario = await prisma.usuario.findUnique({ where: { id } });
+    if (!usuario) return res.status(404).json({ error: 'Atendente não encontrado.' });
+    if (usuario.whatsappDonoId) {
+      const dono = await prisma.usuario.findUnique({ where: { id: usuario.whatsappDonoId } });
+      return res.status(400).json({ error: `Este atendente compartilha o WhatsApp de ${dono?.nome || 'outro atendente'}. Gere o QR para ${dono?.nome || 'o dono da conexão'} em vez disso.` });
+    }
+    const { gerarQrCodePareamento } = require('../workers/whatsappService');
+    const qrCode = await gerarQrCodePareamento(id);
+    res.json({ qrCode });
+  } catch (error: any) {
+    console.error('Erro ao gerar QR Code de pareamento:', error?.message);
+    res.status(400).json({ error: error?.message || 'Erro ao gerar o QR Code de pareamento.' });
   }
 });
 
