@@ -400,7 +400,7 @@ function iniciarVigiaConexao() {
         const uid = s.replace('auth_info_baileys_', '');
         // Tem credencial salva, mas não está conectado NEM conectando → ressuscita.
         // (Pula quem está pausado, para não ficar gerando QR de conta travada.)
-        if (uid && !sessions.has(uid) && !connectedUsers.has(uid) && !pausados.has(uid)) {
+        if (uid && !sessions.has(uid) && !connectedUsers.has(uid) && !pausados.has(uid) && !travaQR.has(uid)) {
           // SÓ ressuscita sessão REGISTRADA (creds.registered = true). Sessão sem
           // registro ressuscitada vira LOOP ETERNO de QR que ninguém escaneia —
           // isso alimenta o rate-limit do WhatsApp contra o IP da VPS e atrapalha
@@ -577,6 +577,13 @@ const MAX_QR_SEM_PAREAR = 3;
 // ou quando alguém pede a conexão de propósito.
 const qrsSemParear = new Map<string, number>();
 
+// Trava do QR infinito. SEPARADA do `pausados` de propósito: aquele guarda a pausa
+// MANUAL do admin e a preparação de pareamento por código, e apagar tudo junto anulava
+// a decisão do admin sem ele saber (o painel continuava dizendo "pausado" enquanto a
+// conta voltava a gerar QR). Esta aqui é só a trava automática, e é a única que o
+// pedido humano de conexão pode desfazer.
+const travaQR = new Set<string>();
+
 // Quantas reconexões seguidas falharam por usuário. Zera assim que a conexão abre.
 // Serve para espaçar as tentativas em vez de martelar de 2 em 2 segundos para sempre.
 const tentativasReconexao = new Map<string, number>();
@@ -628,6 +635,13 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
   // com o pareamento (a "corrida" que contaminava a sessão).
   if (pausados.has(usuarioId) && !numeroPareamento) {
     console.log(`[Baileys] Conexão do usuário ${usuarioId} está PAUSADA. Ignorando.`);
+    return;
+  }
+
+  // Trava do QR infinito (automática). Só o pedido humano de conexão a desfaz — e ele
+  // já chamou liberarParaPareamento() antes de chegar aqui.
+  if (travaQR.has(usuarioId) && !numeroPareamento) {
+    console.log(`[Baileys] Conexão do usuário ${usuarioId} está na trava do QR (ninguém pareou). Ignorando reconexão automática.`);
     return;
   }
 
@@ -747,7 +761,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
       qrsSemParear.set(usuarioId, qrs);
       if (qrs > MAX_QR_SEM_PAREAR) {
         console.warn(`[Baileys] ${MAX_QR_SEM_PAREAR} QR Codes sem ninguém parear (usuário ${usuarioId}). PAUSANDO para não queimar a conta no WhatsApp. Peça a conexão de novo pelo painel na hora de escanear.`);
-        pausados.add(usuarioId);
+        travaQR.add(usuarioId);
         qrsSemParear.delete(usuarioId);
         latestQR.delete(usuarioId);
         sessions.delete(usuarioId);
@@ -866,7 +880,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
         // tentar só quando alguém pedir a conexão de propósito, pelo painel/extensão.
         if (!jaPareado(authDir) && tentativa > MAX_QR_SEM_PAREAR) {
           console.warn(`[Baileys] Usuário ${usuarioId} não pareou em ${MAX_QR_SEM_PAREAR} tentativas. PAUSANDO para não queimar a conta no WhatsApp. Peça a conexão de novo pelo painel quando for escanear.`);
-          pausados.add(usuarioId);
+          travaQR.add(usuarioId);
           tentativasReconexao.delete(usuarioId);
           latestQR.delete(usuarioId);
           return;
@@ -884,6 +898,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
       latestQR.delete(usuarioId);
       pairingCodes.delete(usuarioId);
       pausados.delete(usuarioId);
+      travaQR.delete(usuarioId);            // conectou: trava do QR nao faz mais sentido
       tentativasReconexao.delete(usuarioId); // conectou: zera o recuo progressivo
       qrsSemParear.delete(usuarioId);        // conectou: zera a contagem de QR
       getIo().to(usuarioId).emit('WHATSAPP_STATUS', { conectado: true });
@@ -1412,8 +1427,11 @@ export async function pausarWhatsApp(usuarioId: string) {
  * continua valendo até alguém retomar de lá.
  */
 export function liberarParaPareamento(usuarioId: string): void {
-  if (!pausados.has(usuarioId) && !qrsSemParear.has(usuarioId)) return;
-  pausados.delete(usuarioId);
+  // Limpa APENAS a trava automática. A pausa manual do admin (pausados) fica de pé —
+  // ela é uma decisão dele, não um efeito colateral, e desfazer sem ele saber deixava o
+  // painel dizendo "pausado" enquanto a conta voltava a gerar QR.
+  if (!travaQR.has(usuarioId) && !qrsSemParear.has(usuarioId)) return;
+  travaQR.delete(usuarioId);
   qrsSemParear.delete(usuarioId);
   console.log(`[Baileys] Pedido de conexão do usuário ${usuarioId} — liberado para parear.`);
 }
@@ -1421,6 +1439,7 @@ export function liberarParaPareamento(usuarioId: string): void {
 // RETOMA a conexão de um atendente pausado e tenta conectar de novo.
 export async function retomarWhatsApp(usuarioId: string) {
   pausados.delete(usuarioId);
+  travaQR.delete(usuarioId);
   qrsSemParear.delete(usuarioId); // pedido intencional: abre uma nova janela pra escanear
   await prisma.usuario.update({ where: { id: usuarioId }, data: { whatsappPausado: false } }).catch(() => {});
   console.log(`[Baileys] Conexão do usuário ${usuarioId} RETOMADA.`);
