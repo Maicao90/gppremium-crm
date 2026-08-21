@@ -1,0 +1,1 @@
+export { Disparo } from '../Disparo';

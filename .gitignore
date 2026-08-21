@@ -19,6 +19,25 @@ tsconfig.tsbuildinfo
 .env.development.local
 .env.test.local
 .env.production.local
+secrets/
+.secrets/
+**/.secrets/
+*CONFIDENCIAL*
+
+# Scripts temporários de diagnóstico local
+inspect_*.js
+check_*.js
+test_*.js
+clean_*.js
+deactivate_*.js
+disconnect_*.js
+apply_*.js
+analyze_*.js
+sync_*.js
+verify_*.js
+migrar_*.js
+restore_*.js
+full_inspection.js
 
 # Banco de Dados Local (SQLite)
 *.db

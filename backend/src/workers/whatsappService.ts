@@ -245,6 +245,14 @@ const waIdsRecentes = new Set<string>();
 const waIdsBotIA = new Set<string>();
 const chatsBotEnviando = new Set<string>();
 const filasEnvioBotIA = new Map<string, Promise<unknown>>();
+interface MidiaBotIA {
+  tipo: 'video';
+  caminho?: string;
+  url?: string;
+  legenda?: string;
+  nome?: string;
+}
+
 function lembrarWaId(id?: string | null) {
   if (!id) return;
   waIdsRecentes.add(id);
@@ -261,6 +269,43 @@ function lembrarWaIdBotIA(id?: string | null) {
     const maisAntigo = waIdsBotIA.values().next().value;
     if (maisAntigo) waIdsBotIA.delete(maisAntigo);
   }
+}
+
+async function carregarMidiaBotIA(midia: MidiaBotIA): Promise<{ buffer: Buffer; midiaUrl: string | null; nomeArquivo: string }> {
+  if (midia.url) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    try {
+      const resp = await fetch(midia.url, { signal: controller.signal });
+      if (!resp.ok) throw new Error(`download ${resp.status}`);
+      const buffer = Buffer.from(await resp.arrayBuffer());
+      const nomeArquivo = (() => {
+        try {
+          return new URL(midia.url!).pathname.split('/').pop() || 'video.mp4';
+        } catch {
+          return 'video.mp4';
+        }
+      })();
+      return { buffer, midiaUrl: null, nomeArquivo };
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
+
+  const caminhoOriginal = String(midia.caminho || '').trim();
+  if (!caminhoOriginal) throw new Error('video sem caminho/url');
+
+  const publicRoot = path.resolve(__dirname, '../../public');
+  const absoluto = path.isAbsolute(caminhoOriginal)
+    ? path.resolve(caminhoOriginal)
+    : path.resolve(publicRoot, caminhoOriginal.replace(/^[/\\]+/, ''));
+  if (!fs.existsSync(absoluto)) throw new Error(`arquivo nao encontrado: ${caminhoOriginal}`);
+
+  const buffer = fs.readFileSync(absoluto);
+  const midiaUrl = absoluto.startsWith(publicRoot + path.sep)
+    ? '/' + path.relative(publicRoot, absoluto).replace(/\\/g, '/')
+    : null;
+  return { buffer, midiaUrl, nomeArquivo: path.basename(absoluto) || 'video.mp4' };
 }
 
 async function enviarParteBotIA(usuarioId: string, chatJid: string, numeroReal: string, texto: string, tempoDigitacaoMs: number): Promise<boolean> {
@@ -294,6 +339,63 @@ async function enviarParteBotIA(usuarioId: string, chatJid: string, numeroReal: 
       return true;
     } catch (e) {
       console.error('[Bot IA] Falha ao enviar parte:', (e as any)?.message || e);
+      return false;
+    } finally {
+      setTimeout(() => chatsBotEnviando.delete(key), 5000).unref?.();
+    }
+  });
+  filasEnvioBotIA.set(usuarioId, atual);
+  atual.finally(() => {
+    if (filasEnvioBotIA.get(usuarioId) === atual) filasEnvioBotIA.delete(usuarioId);
+  });
+  return atual as Promise<boolean>;
+}
+
+async function enviarMidiaBotIA(usuarioId: string, chatJid: string, numeroReal: string, midia: MidiaBotIA, tempoDigitacaoMs: number): Promise<boolean> {
+  const anterior = filasEnvioBotIA.get(usuarioId) || Promise.resolve();
+  const atual = anterior.catch(() => {}).then(async () => {
+    const sock = sessions.get(usuarioId);
+    if (!sock) return false;
+    const key = `${usuarioId}:${chatJid}`;
+    chatsBotEnviando.add(key);
+    try {
+      const carregada = await carregarMidiaBotIA(midia);
+      await sock.sendPresenceUpdate('composing', chatJid).catch(() => {});
+      await delay(tempoDigitacaoMs);
+
+      const conteudo: any = { video: carregada.buffer };
+      if (midia.legenda?.trim()) conteudo.caption = midia.legenda.trim();
+      const enviada = await sock.sendMessage(chatJid, conteudo);
+      await sock.sendPresenceUpdate('unavailable').catch(() => {});
+
+      const waId = enviada?.key?.id || null;
+      lembrarWaId(waId);
+      lembrarWaIdBotIA(waId);
+
+      let midiaUrl = carregada.midiaUrl;
+      if (!midiaUrl) {
+        const nome = `out_${(waId || 'm').replace(/[^a-zA-Z0-9]/g, '')}_${Math.floor(Math.random() * 1000000)}.mp4`;
+        fs.writeFileSync(path.join(MIDIAS_DIR, nome), carregada.buffer);
+        midiaUrl = `/midias/${nome}`;
+      }
+
+      const salva = await prisma.mensagem.create({
+        data: {
+          usuarioId,
+          chatJid,
+          chatNome: '',
+          fromMe: true,
+          texto: midia.legenda || '',
+          tipo: 'video',
+          midiaUrl,
+          waId,
+          numeroReal: numeroReal || null,
+        },
+      });
+      getIo().to(usuarioId).emit('NOVA_MENSAGEM', salva);
+      return true;
+    } catch (e) {
+      console.error('[Bot IA] Falha ao enviar video:', (e as any)?.message || e);
       return false;
     } finally {
       setTimeout(() => chatsBotEnviando.delete(key), 5000).unref?.();
@@ -400,7 +502,7 @@ function iniciarVigiaConexao() {
         const uid = s.replace('auth_info_baileys_', '');
         // Tem credencial salva, mas não está conectado NEM conectando → ressuscita.
         // (Pula quem está pausado, para não ficar gerando QR de conta travada.)
-        if (uid && !sessions.has(uid) && !connectedUsers.has(uid) && !pausados.has(uid) && !travaQR.has(uid)) {
+        if (uid && !sessions.has(uid) && !connectedUsers.has(uid) && !pausados.has(uid)) {
           // SÓ ressuscita sessão REGISTRADA (creds.registered = true). Sessão sem
           // registro ressuscitada vira LOOP ETERNO de QR que ninguém escaneia —
           // isso alimenta o rate-limit do WhatsApp contra o IP da VPS e atrapalha
@@ -554,47 +656,6 @@ export const pairingCodes = new Map<string, string>();
 // evitando a enxurrada de QR Codes na tela do atendente.
 export const pausados = new Set<string>();
 
-// Este número JÁ foi pareado alguma vez? O Baileys grava `registered: true` no
-// creds.json assim que o pareamento conclui. Serve pra distinguir "precisa ler o QR
-// pela primeira vez" de "já é pareado e só teve uma queda passageira".
-function jaPareado(authDir: string): boolean {
-  try {
-    const fs = require('fs');
-    const arq = path.join(authDir, 'creds.json');
-    if (!fs.existsSync(arq)) return false;
-    const creds = JSON.parse(fs.readFileSync(arq, 'utf8'));
-    return creds?.registered === true;
-  } catch {
-    return false; // na dúvida, trata como não pareado (mostra o QR)
-  }
-}
-
-// Quantos ciclos de QR sem ninguém parear antes de desistir e pausar. Cada ciclo é
-// um QR novo (~20s de validade), então 3 dá cerca de 1 minuto de janela pra escanear.
-const MAX_QR_SEM_PAREAR = 3;
-
-// Quantos QR Codes já mostramos a este usuário sem ninguém parear. Zera quando conecta
-// ou quando alguém pede a conexão de propósito.
-const qrsSemParear = new Map<string, number>();
-
-// Trava do QR infinito. SEPARADA do `pausados` de propósito: aquele guarda a pausa
-// MANUAL do admin e a preparação de pareamento por código, e apagar tudo junto anulava
-// a decisão do admin sem ele saber (o painel continuava dizendo "pausado" enquanto a
-// conta voltava a gerar QR). Esta aqui é só a trava automática, e é a única que o
-// pedido humano de conexão pode desfazer.
-const travaQR = new Set<string>();
-
-// Quantas reconexões seguidas falharam por usuário. Zera assim que a conexão abre.
-// Serve para espaçar as tentativas em vez de martelar de 2 em 2 segundos para sempre.
-const tentativasReconexao = new Map<string, number>();
-
-// Espera antes de tentar de novo: 2s, 4s, 8s, 16s, 32s, 60s (teto).
-// Sem isso, uma sessão que não consegue subir fica batendo no servidor do WhatsApp
-// indefinidamente — foi o que gerou ~1.900 quedas por hora na madrugada.
-function esperaReconexao(tentativa: number): number {
-  return Math.min(2000 * 2 ** Math.max(0, tentativa - 1), 60000);
-}
-
 // Resolve a conexão EFETIVA de um usuário: se ele COMPARTILHA o WhatsApp de outro
 // atendente (whatsappDonoId preenchido), retorna o ID do DONO — é a sessão Baileys
 // dele que deve ser usada para conectar/enviar/consultar. Caso contrário, retorna o
@@ -638,30 +699,10 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
     return;
   }
 
-  // Trava do QR infinito (automática). Só o pedido humano de conexão a desfaz — e ele
-  // já chamou liberarParaPareamento() antes de chegar aqui.
-  if (travaQR.has(usuarioId) && !numeroPareamento) {
-    console.log(`[Baileys] Conexão do usuário ${usuarioId} está na trava do QR (ninguém pareou). Ignorando reconexão automática.`);
-    return;
-  }
-
-  // Evita criar múltiplas instâncias para o mesmo usuário se já estiver rodando.
-  //
-  // MAS: "existe no mapa" não quer dizer "está viva". Quando a sessão morre sem avisar
-  // (rede caiu, o WhatsApp fechou do outro lado), o objeto fica no mapa como fantasma e
-  // esta guarda recusava toda tentativa nova — o atendente pedia conexão, recebia de
-  // volta o QR VELHO do cache, escaneava e dava erro, pra sempre. Foi o que travou o
-  // Diogo. Então: se não está de fato conectada, joga a antiga fora e cria uma nova.
+  // Evita criar múltiplas instâncias para o mesmo usuário se já estiver rodando
   if (sessions.has(usuarioId)) {
-    const viva = connectedUsers.has(usuarioId);
-    if (viva) {
-      console.log(`[Baileys] Sessão já existe (e está conectada) para o usuário ${usuarioId}. Ignorando recriação.`);
-      return;
-    }
-    console.warn(`[Baileys] Sessão do usuário ${usuarioId} existe no mapa mas NÃO está conectada — descartando a antiga para criar uma nova.`);
-    try { sessions.get(usuarioId)?.end(undefined as any); } catch { /* já pode estar morta */ }
-    sessions.delete(usuarioId);
-    latestQR.delete(usuarioId); // não reenviar QR velho: expirado, dá erro ao escanear
+    console.log(`[Baileys] Sessão já existe para o usuário ${usuarioId}. Ignorando recriação.`);
+    return;
   }
 
   const authDir = path.join(__dirname, `../../../prisma/auth_info_baileys_${usuarioId}`);
@@ -750,25 +791,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
     const { connection, lastDisconnect, qr } = update;
     
     if (qr) {
-      // TRAVA DO PAREAMENTO INFINITO.
-      // O Baileys emite um QR NOVO a cada ~20s dentro da MESMA conexão enquanto espera
-      // alguém escanear — sem nunca fechar. Para um número que ninguém vai parear, isso
-      // vira um pedido de pareamento a cada 20s, para sempre: rendia 3.552 pedidos por
-      // dia (~400 por conta). É o que faz o WhatsApp responder "Não foi possível
-      // conectar o dispositivo" justo quando a pessoa vai escanear de verdade.
-      // Damos uma janela curta e desligamos; volta só quando alguém pedir de propósito.
-      const qrs = (qrsSemParear.get(usuarioId) || 0) + 1;
-      qrsSemParear.set(usuarioId, qrs);
-      if (qrs > MAX_QR_SEM_PAREAR) {
-        console.warn(`[Baileys] ${MAX_QR_SEM_PAREAR} QR Codes sem ninguém parear (usuário ${usuarioId}). PAUSANDO para não queimar a conta no WhatsApp. Peça a conexão de novo pelo painel na hora de escanear.`);
-        travaQR.add(usuarioId);
-        qrsSemParear.delete(usuarioId);
-        latestQR.delete(usuarioId);
-        sessions.delete(usuarioId);
-        try { sock.end(undefined as any); } catch { /* socket já pode ter caído */ }
-        return;
-      }
-      console.log(`\n[Baileys] QR Code gerado para o usuário ${usuarioId} (${qrs}/${MAX_QR_SEM_PAREAR})`);
+      console.log(`\n[Baileys] QR Code gerado para o usuário ${usuarioId}`);
 
       // Modo pareamento por código: o 1º QR prova que o socket está PRONTO —
       // este é o momento certo de pedir o código (o timer é só fallback).
@@ -776,25 +799,11 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
 
       try {
         const qrBase64 = await qrcode.toDataURL(qr);
-        // Guarda o QR no cache para reenviar a quem conectar depois.
-        // O QR do WhatsApp vale ~20s. Passado isso ele é lixo: escanear dá erro. Então
-        // some do cache sozinho, pra ninguém receber um QR morto ao abrir a extensão.
+        // Guarda o QR no cache para reenviar a quem conectar depois
         latestQR.set(usuarioId, qrBase64);
-        setTimeout(() => {
-          if (latestQR.get(usuarioId) === qrBase64) latestQR.delete(usuarioId);
-        }, 25_000);
         connectedUsers.delete(usuarioId);
-
-        // Só EMPURRA o QR pra tela de quem ainda NÃO pareou. A extensão trata
-        // WHATSAPP_QR_CODE como "bloqueia tudo e mostra o QR em tela cheia"; num
-        // número já pareado, um QR passageiro (queda de rede, churn de reconexão)
-        // arrancava o atendente do meio do atendimento sem motivo. Para esses, o QR
-        // fica só no cache — quem quiser reparear pede pelo painel.
-        if (!jaPareado(authDir)) {
-          getIo().to(usuarioId).emit('WHATSAPP_QR_CODE', qrBase64);
-        } else {
-          console.log(`[Baileys] QR ignorado na tela do usuário ${usuarioId} (número já pareado) — só guardado no cache.`);
-        }
+        // Emite o QR Code apenas para a sala do usuário específico
+        getIo().to(usuarioId).emit('WHATSAPP_QR_CODE', qrBase64);
 
         // Atualiza status no banco
         await prisma.usuario.update({
@@ -844,22 +853,6 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
           where: { id: usuarioId },
           data: { whatsappConectado: false }
         }).catch(() => {});
-      } else if (statusCode === DisconnectReason.connectionReplaced) {
-        // 440 = OUTRO aparelho assumiu esta mesma conta do WhatsApp. Voltar em 2s
-        // derruba o outro lado, que volta e derruba a gente — briga infinita (chegou
-        // a 669 quedas em 3h num único número). Então espera 5 minutos: tempo de o
-        // outro aparelho se acomodar. Ainda tenta de novo sozinho, só que sem brigar.
-        //
-        // NÃO emite WHATSAPP_STATUS:false aqui — isso joga a tela de bloqueio de tela
-        // cheia com QR na cara do atendente no meio do atendimento. Só o logout de
-        // verdade (código 401, aparelho removido) avisa a extensão.
-        console.warn(`[Baileys] Conexão SUBSTITUÍDA por outro aparelho (usuário ${usuarioId}). Nova tentativa em 5 min para não brigar pela sessão.`);
-        tentativasReconexao.delete(usuarioId);
-        await prisma.usuario.update({
-          where: { id: usuarioId },
-          data: { whatsappConectado: false }
-        }).catch(() => {});
-        setTimeout(() => connectToWhatsApp(usuarioId).catch(err => console.error("Erro no retry:", err)), 5 * 60 * 1000);
       } else {
         // Inclui o código 515 (restartRequired) que o Baileys dispara logo após escanear o QR,
         // além de quedas de internet / erros internos. Em todos esses casos é preciso recriar o socket.
@@ -867,28 +860,8 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
           where: { id: usuarioId },
           data: { whatsappConectado: false }
         }).catch(() => {});
-        const tentativa = (tentativasReconexao.get(usuarioId) || 0) + 1;
-        tentativasReconexao.set(usuarioId, tentativa);
-
-        // TRAVA DO PAREAMENTO INFINITO.
-        // Número que nunca foi pareado não tem credencial pra retomar: cada tentativa
-        // gera um QR novo, ninguém escaneia, o QR expira em ~20s e o ciclo recomeça.
-        // Isso rendia 3.552 pedidos de pareamento por dia (≈400 por conta), e é o que
-        // faz o WhatsApp responder "Não foi possível conectar o dispositivo" justo na
-        // hora em que a pessoa vai escanear de verdade.
-        // Damos uma janela curta (MAX_QR_SEM_PAREAR ciclos ≈ 1 min) e paramos. Volta a
-        // tentar só quando alguém pedir a conexão de propósito, pelo painel/extensão.
-        if (!jaPareado(authDir) && tentativa > MAX_QR_SEM_PAREAR) {
-          console.warn(`[Baileys] Usuário ${usuarioId} não pareou em ${MAX_QR_SEM_PAREAR} tentativas. PAUSANDO para não queimar a conta no WhatsApp. Peça a conexão de novo pelo painel quando for escanear.`);
-          travaQR.add(usuarioId);
-          tentativasReconexao.delete(usuarioId);
-          latestQR.delete(usuarioId);
-          return;
-        }
-
-        const espera = esperaReconexao(tentativa);
-        console.log(`[Baileys] Reconectando usuário ${usuarioId} em ${espera / 1000}s (tentativa ${tentativa}).`);
-        setTimeout(() => connectToWhatsApp(usuarioId).catch(err => console.error("Erro no retry:", err)), espera);
+        console.log(`[Baileys] Reconectando usuário ${usuarioId} em 2 segundos...`);
+        setTimeout(() => connectToWhatsApp(usuarioId).catch(err => console.error("Erro no retry:", err)), 2000);
       }
     } else if (connection === 'open') {
       console.log(`[Baileys] Conexão aberta com sucesso! Servidor pronto para disparos do usuário ${usuarioId}.`);
@@ -898,9 +871,6 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
       latestQR.delete(usuarioId);
       pairingCodes.delete(usuarioId);
       pausados.delete(usuarioId);
-      travaQR.delete(usuarioId);            // conectou: trava do QR nao faz mais sentido
-      tentativasReconexao.delete(usuarioId); // conectou: zera o recuo progressivo
-      qrsSemParear.delete(usuarioId);        // conectou: zera a contagem de QR
       getIo().to(usuarioId).emit('WHATSAPP_STATUS', { conectado: true });
 
       // Mantém o dispositivo web como "offline" para NÃO roubar as notificações do celular.
@@ -1069,6 +1039,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
           chatJid: remoteJid,
           waId: msg.key.id,
           enviarParte: (texto, tempo) => enviarParteBotIA(usuarioId, remoteJid, numeroRecep, texto, tempo),
+          enviarVideo: (video, tempo) => enviarMidiaBotIA(usuarioId, remoteJid, numeroRecep, video as MidiaBotIA, tempo),
         });
         return;
       }
@@ -1415,35 +1386,17 @@ export async function pausarWhatsApp(usuarioId: string) {
   console.log(`[Baileys] Conexão do usuário ${usuarioId} PAUSADA.`);
 }
 
-/**
- * Alguém PEDIU pra conectar (abriu a extensão, vai ler o QR ou digitar o código).
- * Tira da pausa e zera a contagem de QR, abrindo uma janela nova pra parear.
- *
- * Existe porque a trava do QR infinito passou a bloquear também o pedido humano: a
- * pessoa ficava com o celular na mão e não entrava nem por QR nem por código. A trava
- * segue valendo pro caso dela — o ciclo automático de QR que ninguém escaneia.
- *
- * NÃO mexe no banco de propósito: pausa feita na mão pelo painel é outra coisa e
- * continua valendo até alguém retomar de lá.
- */
-export function liberarParaPareamento(usuarioId: string): void {
-  // Limpa APENAS a trava automática. A pausa manual do admin (pausados) fica de pé —
-  // ela é uma decisão dele, não um efeito colateral, e desfazer sem ele saber deixava o
-  // painel dizendo "pausado" enquanto a conta voltava a gerar QR.
-  if (!travaQR.has(usuarioId) && !qrsSemParear.has(usuarioId)) return;
-  travaQR.delete(usuarioId);
-  qrsSemParear.delete(usuarioId);
-  console.log(`[Baileys] Pedido de conexão do usuário ${usuarioId} — liberado para parear.`);
-}
-
 // RETOMA a conexão de um atendente pausado e tenta conectar de novo.
 export async function retomarWhatsApp(usuarioId: string) {
   pausados.delete(usuarioId);
-  travaQR.delete(usuarioId);
-  qrsSemParear.delete(usuarioId); // pedido intencional: abre uma nova janela pra escanear
   await prisma.usuario.update({ where: { id: usuarioId }, data: { whatsappPausado: false } }).catch(() => {});
   console.log(`[Baileys] Conexão do usuário ${usuarioId} RETOMADA.`);
   await connectToWhatsApp(usuarioId).catch(() => {});
+}
+
+// Compatibilidade com pontos antigos do backend que ainda importam este nome.
+export async function liberarParaPareamento(usuarioId: string) {
+  await retomarWhatsApp(usuarioId);
 }
 
 // Carrega do banco quem estava pausado ANTES do restart, repovoando o Set em
@@ -1514,45 +1467,6 @@ try { fs.mkdirSync(AVATARS_DIR, { recursive: true }); } catch (e) {}
 
 const cacheFotosPerfil = new Map<string, { url: string | null; expira: number }>();
 
-// Quem já está sendo baixado agora — evita o mesmo contato ser buscado várias vezes
-// em paralelo quando a lista inteira aparece de uma vez na tela.
-const baixandoAgora = new Set<string>();
-
-/**
- * RESPOSTA IMEDIATA da foto de perfil: devolve o que já está no disco e NUNCA espera
- * o WhatsApp. Se não tiver, dispara o download em segundo plano e responde null.
- *
- * Por que isso importa: a Caixa de Entrada pede uma foto POR CONTATO. Com a busca
- * dentro da requisição, cada uma levava de 26 a 42 segundos, ocupavam as 6 conexões
- * que o navegador permite por domínio, e a busca das MENSAGENS não conseguia sequer
- * sair da fila — a conversa ficava "Carregando mensagens…" pra sempre.
- */
-export function fotoPerfilImediata(usuarioIdOriginal: string, jid: string): string | null {
-  if (!jid) return null;
-  const cleanJid = jid.replace(/[^a-zA-Z0-9]/g, '_');
-  const arq = path.join(AVATARS_DIR, `${cleanJid}.jpg`);
-  const relUrl = `/midias/avatars/${cleanJid}.jpg`;
-
-  let temNoDisco = false;
-  try { temNoDisco = fs.existsSync(arq); } catch { /* disco indisponível */ }
-
-  // Busca em segundo plano quando falta (ou está velha). O usuário vê a foto na
-  // próxima vez que abrir a tela, sem nunca esperar por ela agora.
-  let precisaAtualizar = !temNoDisco;
-  if (temNoDisco) {
-    try { precisaAtualizar = Date.now() - fs.statSync(arq).mtimeMs >= 7 * 24 * 60 * 60 * 1000; } catch { precisaAtualizar = false; }
-  }
-  const chaveFila = `${usuarioIdOriginal}:${jid}`;
-  if (precisaAtualizar && !baixandoAgora.has(chaveFila)) {
-    baixandoAgora.add(chaveFila);
-    baixarFotoPerfilLocal(usuarioIdOriginal, jid)
-      .catch(() => {})
-      .finally(() => baixandoAgora.delete(chaveFila));
-  }
-
-  return temNoDisco ? relUrl : null;
-}
-
 export async function baixarFotoPerfilLocal(usuarioIdOriginal: string, jid: string): Promise<string | null> {
   if (!jid) return null;
   const cleanJid = jid.replace(/[^a-zA-Z0-9]/g, '_');
@@ -1579,37 +1493,22 @@ export async function baixarFotoPerfilLocal(usuarioIdOriginal: string, jid: stri
   const sock = sessions.get(efetivoId);
   if (!sock) return fs.existsSync(arq) ? relUrl : null;
 
-  // O WhatsApp passou a identificar o contato por "@lid" (formato de privacidade) em
-  // vez do número. Pedir a foto usando o @lid não resolve: voltava null e o contato
-  // ficava só com as iniciais coloridas. Como guardamos o número real de cada conversa,
-  // montamos aqui o identificador antigo e tentamos por ele também.
-  const candidatos: string[] = [jid];
-  if (jid.endsWith('@lid')) {
-    try {
-      const msg = await prisma.mensagem.findFirst({
-        where: { chatJid: jid, numeroReal: { not: null } },
-        select: { numeroReal: true },
-        orderBy: { timestamp: 'desc' },
-      });
-      const num = String(msg?.numeroReal || '').replace(/\D/g, '');
-      if (num) candidatos.push(`${num}@s.whatsapp.net`);
-    } catch { /* sem número real no banco: segue só com o @lid */ }
-  }
-
   try {
     // Timeout de 2.5s para não travar o loop de eventos
-    const buscarComTimeout = async (alvo: string, tipo: 'image' | 'preview') => {
+    const buscarComTimeout = async (tipo: 'image' | 'preview') => {
       return Promise.race([
-        sock.profilePictureUrl(alvo, tipo),
+        sock.profilePictureUrl(jid, tipo),
         new Promise<undefined>((_, reject) => setTimeout(() => reject(new Error('timeout')), 2500))
       ]);
     };
 
     let url: string | undefined;
-    for (const alvo of candidatos) {
-      try { url = await buscarComTimeout(alvo, 'image'); } catch { /* tenta o preview */ }
-      if (!url) { try { url = await buscarComTimeout(alvo, 'preview'); } catch { /* tenta o próximo candidato */ } }
-      if (url) break;
+    try {
+      url = await buscarComTimeout('image');
+    } catch {
+      try {
+        url = await buscarComTimeout('preview');
+      } catch {}
     }
 
     if (url && typeof url === 'string' && url.startsWith('http')) {
@@ -1635,7 +1534,5 @@ export async function baixarFotoPerfilLocal(usuarioIdOriginal: string, jid: stri
 }
 
 export async function obterFotoPerfil(usuarioId: string, jid: string): Promise<string | null> {
-  // Responde na hora com o que já existe no disco. O download, quando falta, roda em
-  // segundo plano — a tela não pode ficar presa esperando o WhatsApp responder.
-  return fotoPerfilImediata(usuarioId, jid);
+  return baixarFotoPerfilLocal(usuarioId, jid);
 }

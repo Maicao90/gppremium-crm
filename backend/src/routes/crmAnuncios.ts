@@ -6,10 +6,14 @@ const router = Router();
 const comCpl = (c: any) => ({ ...c, cpl: c.leads > 0 ? c.spend / c.leads : 0 });
 const contaOut = (c: any) => ({
   id: c.id, nome: c.nome, plataforma: c.plataforma, saldo: c.saldo,
-  gastoDia: c.gastoDia, limiteAlerta: c.limiteAlerta,
+  gastoDia: c.gastoDia,
+  gastoMes: c.gastoMes ?? (c.gastoDia * 30),
+  depositoMes: c.depositoMes ?? c.ultimoDepValor,
+  limiteAlerta: c.limiteAlerta,
   ultimoDeposito: { valor: c.ultimoDepValor, data: c.ultimoDepData },
   // Preenchido quando a conta é alimentada automaticamente por uma ConexaoAds
   conexaoId: c.conexao_id || null,
+  storeId: c.storeId || c.store_id || null,
 });
 const contaIn = (b: any) => ({
   nome: b.nome || '', plataforma: b.plataforma || 'google',

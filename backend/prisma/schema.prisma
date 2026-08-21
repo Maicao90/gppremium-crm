@@ -290,6 +290,8 @@ model ContaAnuncio {
   plataforma     String   @default("google")
   saldo          Float    @default(0)
   gastoDia       Float    @default(0)
+  gastoMes       Float    @default(0)
+  depositoMes    Float    @default(0)
   limiteAlerta   Float    @default(0)
   ultimoDepValor Float    @default(0)
   ultimoDepData  String   @default("")
@@ -336,18 +338,110 @@ model DisparoContato {
   criadoEm     DateTime  @default(now())
 }
 
+// ── Módulo OLX: Anúncios, Monitor de Status e Chat Integrado ──
+
+model OlxConta {
+  id              String       @id @default(uuid())
+  nome            String       @default("") // Ex: "OLX - Feirão dos Pneus"
+  email           String       @default("")
+  lojaId          String? // Loja associada no CRM
+  companyId       String?
+  clientId        String? // Credenciais da API da OLX (se houver)
+  clientSecret    String?
+  accessToken     String?
+  refreshToken    String?
+  tokenExpiresAt  DateTime?
+  statusConexao   String       @default("ativo") // ativo, desconectado, erro
+  ultimoErro      String?
+  anuncios        OlxAnuncio[]
+  conversas       OlxConversa[]
+  criadoEm        DateTime     @default(now())
+  atualizadoEm    DateTime     @updatedAt
+}
+
+model OlxAnuncio {
+  id              String        @id @default(uuid())
+  contaId         String?
+  conta           OlxConta?     @relation(fields: [contaId], references: [id], onDelete: SetNull)
+  lojaId          String? // Loja associada
+  olxAdId         String? // ID do anúncio na OLX (ex: "123456789")
+  titulo          String
+  descricao       String        @default("")
+  preco           Float         @default(0)
+  categoria       String        @default("pneus_rodas") // pneus_rodas, pecas_autos, servicos, outro
+  tipoItem        String        @default("novo") // novo, usado
+  fotos           String        @default("[]") // JSON array de URLs das fotos
+  cep             String        @default("")
+  telefone        String        @default("")
+  linkOlx         String? // URL pública do anúncio na OLX
+  status          String        @default("ativo") // ativo, inativo, pendente, expirado, removido
+  motivoRemocao   String? // Motivo detectado (ex: "Anúncio expirou", "Removido pela moderação", "Link 404")
+  visualizacoes   Int           @default(0)
+  chatsTotal      Int           @default(0)
+  publicadoEm     DateTime?
+  expiraEm        DateTime?
+  ultimaChecagem  DateTime?     @default(now())
+  conversas       OlxConversa[]
+  criadoEm        DateTime      @default(now())
+  atualizadoEm    DateTime      @updatedAt
+
+  @@index([lojaId])
+  @@index([status])
+}
+
+model OlxConversa {
+  id              String        @id @default(uuid())
+  contaId         String?
+  conta           OlxConta?     @relation(fields: [contaId], references: [id], onDelete: SetNull)
+  anuncioId       String?
+  anuncio         OlxAnuncio?   @relation(fields: [anuncioId], references: [id], onDelete: SetNull)
+  olxChatId       String? // ID do chat na OLX
+  compradorNome   String        @default("Interessado OLX")
+  compradorId     String?
+  ultimaMsg       String        @default("")
+  ultimaMsgData   DateTime      @default(now())
+  naoLidas        Int           @default(0)
+  atendenteId     String? // Último atendente que respondeu
+  mensagens       OlxMensagem[]
+  criadoEm        DateTime      @default(now())
+  atualizadoEm    DateTime      @updatedAt
+
+  @@index([contaId])
+  @@index([anuncioId])
+}
+
+model OlxMensagem {
+  id           String      @id @default(uuid())
+  conversaId   String
+  conversa     OlxConversa @relation(fields: [conversaId], references: [id], onDelete: Cascade)
+  olxMsgId     String?
+  fromMe       Boolean     @default(false) // true = nossa resposta; false = mensagem do comprador
+  texto        String      @default("")
+  midiaUrl     String?
+  tipo         String      @default("texto") // texto, imagem, documento
+  enviadoPorId String? // ID do atendente logado no CRM que mandou a resposta
+  timestamp    DateTime    @default(now())
+
+  @@index([conversaId])
+}
+
 // Configuração da CAMPANHA de disparo de cada loja: a arte que vai junto do texto e o
 // teto de envios por dia. Antes a foto vivia só na memória da aba (sumia ao recarregar,
 // e cada operador tinha que anexar de novo) e o limite diário só existia no navegador —
 // duas abas abertas furavam o teto sem o servidor perceber.
 model DisparoCampanha {
-  id           String   @id @default(uuid())
-  storeId      String   @unique
-  fotoUrl      String? // arte enviada junto do texto (em /midias/disparo/)
-  fotoNome     String? // nome do arquivo original, só pra exibir no painel
-  limiteDia    Int      @default(30) // teto de envios por dia, valendo no SERVIDOR
-  atualizadoEm DateTime @updatedAt
-  criadoEm     DateTime @default(now())
+  id              String    @id @default(uuid())
+  storeId         String    @unique
+  fotoUrl         String? // arte enviada junto do texto (em /midias/disparo/)
+  fotoNome        String? // nome do arquivo original, só pra exibir no painel
+  limiteDia       Int       @default(30) // teto de envios por dia (ex: 30 por dia)
+  autoDisparo     Boolean   @default(true) // automação ativa
+  horaInicio      String    @default("08:00") // início da janela diária de disparo (08:00)
+  horaFim         String    @default("17:00") // fim da janela diária de disparo (17:00)
+  mensagemPadrao  String?   // template de mensagem padrão para novos envios
+  ultimoDisparoEm DateTime? // registro do último disparo automático enviado
+  atualizadoEm    DateTime  @updatedAt
+  criadoEm        DateTime  @default(now())
 }
 
 // ===== Garantia 50.000 KM (módulo "aplicativo", importado do protótipo GPPREMIUMGARANTIA50K) =====
