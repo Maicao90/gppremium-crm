@@ -172,10 +172,18 @@ function usuariosComSessaoNoMesmoNumero(usuarioId: string, meuNumero: string): s
   return [...ids];
 }
 
+interface LatestQrPayload {
+  qrCode: string;
+  generatedAt: number;
+  expiresAt: number;
+}
+
 // Guarda o QR Code mais recente (base64) de cada usuário enquanto ele ainda não escaneou.
 // Serve para REENVIAR o QR a uma extensão que conecta DEPOIS do QR ter sido gerado
 // (ex.: QR gerado no boot da VPS, antes do navegador da pessoa estar aberto).
-export const latestQR = new Map<string, string>();
+// O QR do WhatsApp expira rápido; por isso carregamos também timestamps para a tela
+// nunca reapresentar um QR morto como se ainda fosse válido.
+export const latestQR = new Map<string, LatestQrPayload>();
 
 // Conjunto de usuários com a conexão realmente ABERTA (autenticada e pronta).
 export const connectedUsers = new Set<string>();
@@ -673,7 +681,12 @@ export async function resolverConexaoEfetiva(usuarioId: string): Promise<string>
   return usuarioId;
 }
 
-export async function connectToWhatsApp(usuarioId: string, socketId?: string, numeroPareamento?: string) {
+export async function connectToWhatsApp(
+  usuarioId: string,
+  socketId?: string,
+  numeroPareamento?: string,
+  permitirQrNovo = false,
+) {
   if (!usuarioId) return;
 
   // COMPARTILHAMENTO: quem compartilha o WhatsApp de outro atendente NÃO pode ter
@@ -694,7 +707,7 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
   // código (numeroPareamento presente) sempre passa — é uma ação intencional, e a
   // pausa serve justamente para BLOQUEAR as reconexões automáticas que competiam
   // com o pareamento (a "corrida" que contaminava a sessão).
-  if (pausados.has(usuarioId) && !numeroPareamento) {
+  if (pausados.has(usuarioId) && !numeroPareamento && !permitirQrNovo) {
     console.log(`[Baileys] Conexão do usuário ${usuarioId} está PAUSADA. Ignorando.`);
     return;
   }
@@ -708,6 +721,15 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
   const authDir = path.join(__dirname, `../../../prisma/auth_info_baileys_${usuarioId}`);
   const { state, saveCreds } = await useMultiFileAuthState(authDir);
 
+  // Conta sem credenciais registradas só entra em fluxo de pareamento quando um
+  // humano pedir explicitamente (QR pelo CRM ou código de pareamento). Isso evita
+  // QR aparecendo sozinho no boot/vigia e reduz o risco de rate-limit.
+  const jaRegistrado = !!(state.creds && (state.creds as any).registered);
+  if (!jaRegistrado && !numeroPareamento && !permitirQrNovo) {
+    console.log(`[Baileys] Usuário ${usuarioId} sem sessão registrada — aguardando solicitação manual de QR/código.`);
+    return;
+  }
+
   // BUG conhecido do Baileys 7.0.0-rc13 (issue #2679): a versão do WA Web EMBUTIDA
   // está velha e o telefone RECUSA o vínculo ("Não foi possível conectar o aparelho")
   // no QR e no código. Fix: buscar a versão atual com fetchLatestWaWebVersion e passar
@@ -719,8 +741,6 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
   // rejeita o vínculo (428 antes do QR valer -> loop 408 -> 401; issue #2677 do
   // Baileys, mesma rc13). Sessões JÁ registradas mantêm a identidade antiga pra
   // não arriscar as lojas conectadas.
-  const jaRegistrado = !!(state.creds && (state.creds as any).registered);
-
   const configSocket: any = {
     auth: state,
     printQRInTerminal: false,
@@ -799,11 +819,18 @@ export async function connectToWhatsApp(usuarioId: string, socketId?: string, nu
 
       try {
         const qrBase64 = await qrcode.toDataURL(qr);
+        const agora = Date.now();
+        const qrPayload: LatestQrPayload = {
+          qrCode: qrBase64,
+          generatedAt: agora,
+          // Janela curta proposital: melhor forçar QR novo do que deixar QR velho na tela.
+          expiresAt: agora + 45_000,
+        };
         // Guarda o QR no cache para reenviar a quem conectar depois
-        latestQR.set(usuarioId, qrBase64);
+        latestQR.set(usuarioId, qrPayload);
         connectedUsers.delete(usuarioId);
         // Emite o QR Code apenas para a sala do usuário específico
-        getIo().to(usuarioId).emit('WHATSAPP_QR_CODE', qrBase64);
+        getIo().to(usuarioId).emit('WHATSAPP_QR_CODE', qrPayload);
 
         // Atualiza status no banco
         await prisma.usuario.update({
@@ -1391,7 +1418,10 @@ export async function retomarWhatsApp(usuarioId: string) {
   pausados.delete(usuarioId);
   await prisma.usuario.update({ where: { id: usuarioId }, data: { whatsappPausado: false } }).catch(() => {});
   console.log(`[Baileys] Conexão do usuário ${usuarioId} RETOMADA.`);
-  await connectToWhatsApp(usuarioId).catch(() => {});
+  // permitirQrNovo:true — sem isso, quem nunca pareou (state.creds.registered
+  // ausente) cai direto no "aguardando solicitação manual de QR/código" e NADA é
+  // gerado: nem QR, nem código. Retomar É o pedido manual; tem que valer.
+  await connectToWhatsApp(usuarioId, undefined, undefined, true).catch(() => {});
 }
 
 // Compatibilidade com pontos antigos do backend que ainda importam este nome.
@@ -1459,6 +1489,37 @@ export async function gerarCodigoPareamento(usuarioId: string, numero: string): 
     await new Promise((r) => setTimeout(r, 400));
   }
   throw new Error('Não foi possível gerar o código agora. Tente novamente em alguns segundos.');
+}
+
+// Gera um QR Code de pareamento SOB DEMANDA para o CRM. Limpa qualquer sessão/credencial
+// morta antes de iniciar e espera o primeiro QR válido subir.
+export async function gerarQrCodePareamento(usuarioId: string): Promise<string> {
+  if (connectedUsers.has(usuarioId)) {
+    throw new Error('Este atendente já está com o WhatsApp conectado.');
+  }
+
+  pausados.add(usuarioId);
+
+  const antigo = sessions.get(usuarioId);
+  if (antigo) { try { antigo.end(undefined as any); } catch (e) {} }
+  sessions.delete(usuarioId);
+  latestQR.delete(usuarioId);
+  pairingCodes.delete(usuarioId);
+
+  try {
+    const dir = path.join(__dirname, `../../../prisma/auth_info_baileys_${usuarioId}`);
+    if (fs.existsSync(dir)) fs.rmSync(dir, { recursive: true, force: true });
+  } catch (e) {}
+
+  await new Promise((r) => setTimeout(r, 2500));
+  await connectToWhatsApp(usuarioId, undefined, undefined, true);
+
+  for (let i = 0; i < 40; i++) {
+    const qr = latestQR.get(usuarioId);
+    if (qr && qr.expiresAt > Date.now()) return qr.qrCode;
+    await new Promise((r) => setTimeout(r, 500));
+  }
+  throw new Error('Não foi possível gerar o QR agora. Tente novamente em alguns segundos.');
 }
 
 // ── FOTO DE PERFIL DO CONTATO ESPELHADA NO CRM ──────────────────────
