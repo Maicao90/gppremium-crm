@@ -188,6 +188,15 @@ const obterBotaoEnviarGeometrico = (): HTMLElement | null => {
   const sorted = botoes
     .map(el => ({ el, rect: el.getBoundingClientRect() }))
     .filter(item => item.rect.width > 0 && item.rect.height > 0)
+    // Exclui o botão de MICROFONE (grava áudio) — ele ocupa a MESMA posição do "enviar"
+    // assim que a caixa de texto esvazia. Sem esse filtro, o fallback geométrico às vezes
+    // pegava ele por engano e abria gravação de áudio sozinho (achado 26/08).
+    .filter(item => {
+      const rotulo = (item.el.getAttribute('aria-label') || '').toLowerCase()
+      const temIconeMic = !!item.el.querySelector('span[data-icon="ptt"], span[data-icon*="mic"]')
+      const ehMic = rotulo.includes('gravar') || rotulo.includes('voice') || rotulo.includes('mic') || temIconeMic
+      return !ehMic
+    })
     .sort((a, b) => b.rect.left - a.rect.left)
 
   if (sorted.length > 0) {
@@ -341,6 +350,12 @@ const WhatsAppCRM = () => {
   }
 
   // Envia a lista completa de contatos extraida para a API de sincronizacao em lote no backend
+  // Números (só dígitos) já confirmados no servidor — evita reenviar a lista inteira
+  // de contatos (milhares) a cada varredura de 8s; só o que é genuinamente novo entra
+  // no POST. Sem isso, TODO usuário com a extensão aberta ficava resincronizando o
+  // contato inteiro sem parar, o dia todo (achado em 25/08 investigando QR travado).
+  const contatosSincronizadosRef = React.useRef<Set<string>>(new Set())
+
   const sincronizarContatosComServidor = async (contatos: any[]) => {
     if (!contatos || contatos.length === 0) return
     const usuarioId = getUsuarioIdAtual() || usuarioLogado?.id
@@ -358,6 +373,10 @@ const WhatsAppCRM = () => {
       if (res.ok) {
         const result = await res.json()
         console.log(`[CRM] Sincronização concluída com sucesso! ${result.count} contatos sincronizados no SQLite.`)
+        contatos.forEach((c) => {
+          const num = String(c?.numero || '').replace(/\D/g, '')
+          if (num) contatosSincronizadosRef.current.add(num)
+        })
       } else {
         console.error("[CRM] Falha ao sincronizar contatos com o backend:", res.statusText)
       }
@@ -380,6 +399,10 @@ const WhatsAppCRM = () => {
         if (Array.isArray(contatos)) {
           salvarContatosCache(contatos)
           setContatosRecentes(contatos)
+          contatos.forEach((c: any) => {
+            const num = String(c?.numero || '').replace(/\D/g, '')
+            if (num) contatosSincronizadosRef.current.add(num)
+          })
           console.log(`[CRM] ${contatos.length} contatos carregados da base do servidor.`);
         }
       }
@@ -414,16 +437,21 @@ const WhatsAppCRM = () => {
 
   // AUTO-RECUPERAÇÃO da tela de bloqueio: enquanto o CRM estiver "trancado"
   // (backendConectado === false) mas houver atendente logado, a cada 5s a extensão
-  // (1) re-registra no socket e (2) pergunta ao servidor, por REST, se o WhatsApp
-  // deste atendente já está conectado — se estiver, destranca na hora, sem depender
-  // de o push do socket ter chegado. Assim, uma queda/volta do servidor NUNCA deixa
-  // o atendente preso: ele volta sozinho. Só roda enquanto bloqueado (não polla à toa).
+  // pergunta ao servidor, por REST, se o WhatsApp deste atendente já está conectado —
+  // se estiver, destranca na hora, sem depender de o push do socket ter chegado. Assim,
+  // uma queda/volta do servidor NUNCA deixa o atendente preso: ele volta sozinho.
+  // Só roda enquanto bloqueado (não polla à toa).
+  //
+  // NÃO re-emitir "registrar_atendente" aqui: reconexão real de socket já é tratada
+  // pelo socket.on("connect") mais abaixo. Reemitir a cada 5s aqui fazia o servidor
+  // reenviar um WHATSAPP_QR_CODE novo (resetando a <img>, QR nunca terminava de
+  // carregar) e re-sincronizar milhares de contatos a cada ciclo — travava quem
+  // estava só esperando escanear o QR (caso da Josy, 25/08).
   React.useEffect(() => {
     if (backendConectado || !usuarioLogado || !usuarioLogado.id) return
     let cancelado = false
     const tentarReconectar = async () => {
       try {
-        if (socket.connected) socket.emit("registrar_atendente", usuarioLogado.id)
         const res = await fetch("https://crm.nailacademyprofissional.com/api/usuarios")
         if (!res.ok) return
         const lista = await res.json()
@@ -543,6 +571,7 @@ const WhatsAppCRM = () => {
       if (localStorage.getItem("crm_nome_atendente") === null) {
         localStorage.setItem("crm_nome_atendente", data.nome)
       }
+      // Liga a assinatura manual SÓ na primeira vez (padrão). Depois respeita a caixinha.
       if (localStorage.getItem("crm_usar_assinatura_manual") === null) {
         localStorage.setItem("crm_usar_assinatura_manual", "true")
       }
@@ -657,7 +686,10 @@ const WhatsAppCRM = () => {
     })
 
     socket.on("WHATSAPP_QR_CODE", (qrData) => {
-      setQrCodeBackend(qrData)
+      // Backend manda um objeto { qrCode, generatedAt, expiresAt } (janela de validade do QR),
+      // mas versões antigas mandavam a string base64 direto — aceita os dois formatos.
+      const qrImagem = typeof qrData === "string" ? qrData : (qrData && qrData.qrCode) || null
+      setQrCodeBackend(qrImagem)
       setBackendConectado(false)
     })
 
@@ -1004,12 +1036,19 @@ const WhatsAppCRM = () => {
       solicitarExtracaoContatos()
     }, 1800000)
 
-    // Varredura de contatos periódica visual (pane-side) a cada 8 segundos
+    // Varredura de contatos periódica visual (pane-side) a cada 8 segundos.
+    // obterContatosRecentes() devolve o cache INTEIRO (milhares de contatos), não só
+    // o que mudou — por isso filtramos aqui pra só sincronizar quem ainda não foi
+    // confirmado no servidor. Antes disso, reenviava a lista inteira a cada ciclo,
+    // pra todo mundo com a extensão aberta, sem parar (achado em 25/08).
     const intervalContatos = setInterval(() => {
       const visiveis = obterContatosRecentes()
-      // Sincroniza qualquer novo contato capturado visualmente imediatamente
-      if (visiveis.length > 0) {
-        sincronizarContatosComServidor(visiveis)
+      const novos = visiveis.filter((c: any) => {
+        const num = String(c?.numero || '').replace(/\D/g, '')
+        return num && !contatosSincronizadosRef.current.has(num)
+      })
+      if (novos.length > 0) {
+        sincronizarContatosComServidor(novos)
       }
     }, 8000)
 
@@ -1083,7 +1122,18 @@ const WhatsAppCRM = () => {
         btn.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window }))
         btn.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window }))
         btn.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }))
-        setTimeout(() => { try { btn.click() } catch (_) {} }, 100)
+        // Só tenta de novo em 100ms se o envio de fato NÃO aconteceu (caixa ainda tem
+        // texto). Antes, clicava de novo cegamente numa referência de botão antiga — se o
+        // envio já tinha funcionado, aquele mesmo lugar já virou o ícone de MICROFONE, e o
+        // clique fantasma abria gravação de áudio sozinho (achado 26/08).
+        setTimeout(() => {
+          const inputAinda = obterCampoTexto()
+          const aindaTemTexto = !!(inputAinda && (inputAinda.textContent || '').trim())
+          if (aindaTemTexto) {
+            const btnFresco = obterBotaoEnviarGeometrico()
+            try { btnFresco?.click() } catch (_) {}
+          }
+        }, 100)
       } else {
         // Fallback supremo: se não localizou o botão de enviar, simula a tecla Enter física no editor Lexical!
         const inputEl = obterCampoTexto()
@@ -1100,6 +1150,12 @@ const WhatsAppCRM = () => {
         }
       }
     }
+
+    // Evita que os eventos SINTÉTICOS disparados pelo próprio clicarEnviar() (mousedown/
+    // mouseup/click de novo, e o fallback 100ms depois) sejam interpretados como um NOVO
+    // Enter/clique do vendedor — sem essa trava, cada re-entrada injetava a assinatura de
+    // novo (achado 26/08: nome do vendedor repetindo várias vezes na mensagem).
+    let assinaturaEmAndamento = false
 
     const handleKeyDown = (e: KeyboardEvent) => {
       // 1. Interceptação de atalhos rápidos (/) ao pressionar Espaço ou Enter
@@ -1185,7 +1241,7 @@ const WhatsAppCRM = () => {
           !target.closest('#side') &&
           !target.closest('[data-testid="chat-list-search"]')
 
-        if (isComposeBox && !(window as any).crm_robo_enviando) {
+        if (isComposeBox && !(window as any).crm_robo_enviando && !assinaturaEmAndamento) {
           const usarAssinaturaManual = localStorage.getItem("crm_usar_assinatura_manual") === "true"
           const nomeAtendente = localStorage.getItem("crm_nome_atendente") || ""
           console.log("[GP-Assinatura] Enter detectado. Configs:", { usarAssinaturaManual, nomeAtendente, texto: target.textContent });
@@ -1199,6 +1255,9 @@ const WhatsAppCRM = () => {
               e.preventDefault()
               e.stopPropagation()
               console.log("[GP-Assinatura] Injetando assinatura manual via Enter...");
+
+              assinaturaEmAndamento = true
+              setTimeout(() => { assinaturaEmAndamento = false }, 900)
 
               // Direciona a injeção do Lexical para o nó de parágrafo <p> interno (onde fica o cursor real)
               const targetNode = target.querySelector('p') || target
@@ -1247,7 +1306,7 @@ const WhatsAppCRM = () => {
         const inputEl = obterCampoTexto()
         console.log("[GP-Assinatura] Clique no botão de enviar detectado. Configs:", { usarAssinaturaManual, nomeAtendente });
 
-        if (usarAssinaturaManual && nomeAtendente && inputEl && !(window as any).crm_robo_enviando) {
+        if (usarAssinaturaManual && nomeAtendente && inputEl && !(window as any).crm_robo_enviando && !assinaturaEmAndamento) {
           const textoAtualRaw = (inputEl.textContent || "").replace(/[\u200b\u200c\u200d\ufeff\u00a0]/g, "")
           const prefixo = `*${nomeAtendente}:*\n`
 
@@ -1256,6 +1315,9 @@ const WhatsAppCRM = () => {
             e.stopPropagation()
             e.stopImmediatePropagation()
             console.log("[GP-Assinatura] Injetando assinatura manual via Clique...");
+
+            assinaturaEmAndamento = true
+            setTimeout(() => { assinaturaEmAndamento = false }, 900)
 
             // Direciona a injeção do Lexical para o nó de parágrafo <p> interno (onde fica o cursor real)
             const targetNode = inputEl.querySelector('p') || inputEl
