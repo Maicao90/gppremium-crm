@@ -10,6 +10,7 @@ import path from 'path';
 import { initWorker } from './workers/agendaWorker';
 import { initDisparoWorker } from './workers/disparoWorker';
 import { connectToWhatsApp, latestQR, connectedUsers, carregarPausadosDoBanco, resolverConexaoEfetiva } from './workers/whatsappService';
+import { marcarPresencaExtensao } from './services/presencaExtensao';
 import agendamentosRouter from './routes/agendamentos';
 import contatosRouter from './routes/contatos';
 import configuracoesRouter from './routes/configuracoes';
@@ -21,6 +22,7 @@ import integracoesRouter from './routes/integracoes';
 import paginaLinksRouter from './routes/paginaLinks';
 import otimizadorAdsRouter from './routes/otimizadorAds';
 import botPneusRouter from './routes/botPneus';
+import dashboardRouter from './routes/dashboard';
 import disparoRouter from './routes/disparo';
 import garantiaRouter from './routes/garantia';
 import garantiaAppRouter from './routes/garantiaApp';
@@ -39,6 +41,7 @@ import { hashSenha } from './auth/senha';
 dotenv.config();
 
 const app = express();
+app.set('etag', false); // API dinamica: sem isso, respostas identicas viram 304 sem corpo e o front confunde com erro
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
@@ -119,8 +122,12 @@ async function iniciarCoreDoSistema() {
     // Inicia a conexão do WhatsApp para todos os usuários que estão ativos e possivelmente conectados
     try {
       const usuarios = await prisma.usuario.findMany({ where: { ativo: true } });
+      let atraso = 0;
       for (const user of usuarios) {
-        connectToWhatsApp(user.id).catch(err => console.error(`[Baileys] Erro ao iniciar WhatsApp para ${user.id}:`, err));
+        setTimeout(() => {
+          connectToWhatsApp(user.id, undefined, undefined, true).catch(err => console.error(`[Baileys] Erro ao iniciar WhatsApp para ${user.id}:`, err));
+        }, atraso).unref?.();
+        atraso += 700;
       }
     } catch (err) {
       console.error('[Core] Erro ao carregar usuários para iniciar o WhatsApp:', err);
@@ -249,6 +256,7 @@ app.use('/api/inbox', authWhatsapp, inboxRouter);
 // Era a única rota sensível do painel sem requireModulo. Agora segue o mesmo padrão
 // das outras (disparo, garantia): exige login E o módulo do Bot Pneus.
 app.use('/api/bot-pneus', requireAuth, requireModulo('at-botpneus'), botPneusRouter);
+app.use('/api/dashboard', requireAuth, requireModulo('dashboard'), dashboardRouter);
 // Ferramentas 100% do painel de anúncios: enforce no servidor (gerente sem esses módulos → 403).
 app.use('/api/ia', requireAuth, requireModulo('assistant'), iaRouter); // Assistente IA (Claude)
 app.use('/api/integracoes', requireAuth, requireAnyModulo(['dashboard', 'otimizador']), integracoesRouter); // Google/Meta Ads
@@ -334,6 +342,7 @@ io.on('connection', async (socket) => {
   // Registra atendente ativo no socket conectado
   socket.on('registrar_atendente', async (usuarioId) => {
     const uid = String(usuarioId);
+    marcarPresencaExtensao(uid);
     console.log(`[Socket] Atendente ${uid} registrado no socket ${socket.id}`);
     usuariosConectados.set(socket.id, uid);
 
@@ -360,10 +369,11 @@ io.on('connection', async (socket) => {
       socket.emit('WHATSAPP_QR_CODE', latestQR.get(efetivoId));
     }
 
-    // Garante que o WhatsApp está conectado ou em processo de conexão para o DONO da
-    // conexão efetiva. (Se não houver sessão, cria uma nova e o QR fluirá para a sala
-    // onde a extensão já está — inclusive quem compartilha, que também entrou nela acima.)
-    connectToWhatsApp(efetivoId, socket.id).catch(err => console.error(`[Baileys] Erro crítico ao conectar WhatsApp do usuário ${efetivoId}:`, err));
+    // Fluxo da EXTENSÃO: se este atendente ainda não tem sessão registrada, o QR deve
+    // nascer automaticamente aqui. O bloqueio "aguardando conexão com o servidor" na
+    // extensão depende disso; deixar somente no fluxo manual do painel faz parceiros
+    // externos e contas novas ficarem travados sem nunca receber QR.
+    connectToWhatsApp(efetivoId, socket.id, undefined, true).catch(err => console.error(`[Baileys] Erro crítico ao conectar WhatsApp do usuário ${efetivoId}:`, err));
   });
 
   // Painel admin: "assistir" a caixa de entrada de um atendente (entra na sala para

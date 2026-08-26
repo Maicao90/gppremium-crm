@@ -1,15 +1,37 @@
 import fs from 'fs';
 import path from 'path';
 import { prisma } from '../server';
-import { TABELA_PRECOS_GP, buscarPrecoPorMedida } from '../data/tabelaPrecos';
+
+// O texto da resposta (IA + tabela deterministica de preco) agora vem de um servico
+// SEPARADO (bot-service, porta 3010) — de proposito. Antes, tudo isso rodava dentro
+// deste mesmo processo (whatsapp-crm), e qualquer ajuste de prompt/logica do robo
+// exigia reiniciar o processo INTEIRO, derrubando as conexoes de WhatsApp de TODOS os
+// atendentes (mesmo quem nao usa robo nenhum). Corrigido em 25-26/08/2026: reiniciar
+// o bot-service nunca mais afeta uma sessao de WhatsApp conectada.
+const BOT_SERVICE_URL = process.env.BOT_SERVICE_URL || 'http://127.0.0.1:3010';
 
 type EnviarParte = (texto: string, tempoDigitacaoMs: number) => Promise<boolean>;
+type EnviarVideo = (video: VideoBotIA, tempoDigitacaoMs: number) => Promise<boolean>;
+
+interface VideoBotIA {
+  tipo: 'video';
+  caminho?: string;
+  url?: string;
+  legenda?: string;
+  nome?: string;
+}
 
 interface AgendarBotParams {
   usuarioId: string;
   chatJid: string;
   waId: string;
   enviarParte: EnviarParte;
+  enviarVideo: EnviarVideo;
+}
+
+interface RespostaBotService {
+  partes: string[];
+  deterministico: boolean;
 }
 
 const timers = new Map<string, NodeJS.Timeout>();
@@ -40,6 +62,77 @@ function midiaDaUltima(mensagem: any): { imagem?: any; audio?: any } {
     console.error('[Bot IA] Falha ao preparar midia:', (e as any)?.message);
     return {};
   }
+}
+
+function extrairCampoTag(payload: string, campo: string): string | undefined {
+  const quoted = new RegExp(`${campo}\\s*=\\s*"([^"]+)"`, 'i').exec(payload);
+  if (quoted?.[1]) return quoted[1].trim();
+  const simple = new RegExp(`${campo}\\s*=\\s*([^,\\]\\s]+)`, 'i').exec(payload);
+  if (simple?.[1]) return simple[1].trim();
+  return undefined;
+}
+
+function extrairVideosDoTexto(texto: string): VideoBotIA[] {
+  const tags = [...texto.matchAll(/\[(?:ENVIAR_VIDEO|VIDEO):\s*([^\]]+)\]/gi)];
+  const videos: VideoBotIA[] = [];
+
+  for (const tag of tags) {
+    const payload = String(tag[1] || '').trim();
+    if (!payload) continue;
+
+    const caminho = extrairCampoTag(payload, 'caminho') || extrairCampoTag(payload, 'arquivo');
+    const url = extrairCampoTag(payload, 'url');
+    const legenda = extrairCampoTag(payload, 'legenda');
+    const nome = extrairCampoTag(payload, 'nome');
+    const slug = extrairCampoTag(payload, 'slug');
+    const brutoSemChaves = payload.includes('=') ? '' : payload.replace(/^"|"$/g, '').trim();
+
+    const video: VideoBotIA = { tipo: 'video' };
+    if (url) video.url = url;
+    else if (caminho) video.caminho = caminho;
+    else if (slug) video.caminho = `/midias/bot-videos/${slug.replace(/^[/\\]+/, '')}.mp4`;
+    else if (brutoSemChaves) video.caminho = brutoSemChaves.endsWith('.mp4')
+      ? brutoSemChaves
+      : `/midias/bot-videos/${brutoSemChaves.replace(/^[/\\]+/, '')}.mp4`;
+
+    if (legenda) video.legenda = legenda;
+    if (nome) video.nome = nome;
+
+    if (video.url || video.caminho) videos.push(video);
+  }
+
+  return videos;
+}
+
+function limparTagsEspeciais(texto: string): string {
+  return texto
+    .replace(/\[TRANSFERIR_HUMANO\]/g, '')
+    .replace(/\[AGENDAR_VISITA:[^\]]+\]/gi, '')
+    .replace(/\[(?:ENVIAR_VIDEO|VIDEO):[^\]]+\]/gi, '')
+    .trim();
+}
+
+async function gerarRespostaViaBotService(args: {
+  messages: Array<{ role: 'user' | 'assistant'; content: string }>;
+  imagem?: any;
+  audio?: any;
+  lojas: Array<{ nome: string | null; cidade: string | null; estado: string | null; whatsapp: string | null; telefone_fixo: string | null }>;
+  ultimosTextosCliente: string;
+}): Promise<RespostaBotService> {
+  const resposta = await fetch(`${BOT_SERVICE_URL}/gerar-resposta`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(args),
+    signal: AbortSignal.timeout(60_000),
+  });
+  const body = await resposta.json().catch(() => null);
+  if (!resposta.ok) {
+    throw new Error(`bot-service ${resposta.status}: ${body?.error || 'resposta invalida'}`);
+  }
+  return {
+    partes: Array.isArray(body?.partes) ? body.partes.map(String) : [],
+    deterministico: !!body?.deterministico,
+  };
 }
 
 async function conversaContinuaAtual(usuarioId: string, chatJid: string, waId: string): Promise<boolean> {
@@ -107,14 +200,19 @@ async function executar(params: AgendarBotParams, versao: number) {
       take: 40,
     });
     historico.reverse();
-    const messages = historico.map((m: any) => ({
+    const messages: Array<{ role: 'user' | 'assistant'; content: string }> = historico.map((m: any) => ({
       role: m.fromMe ? 'assistant' : 'user',
       content: String(m.texto || (m.tipo === 'imagem' ? '[imagem enviada]' : m.tipo === 'audio' ? '[audio enviado]' : `[${m.tipo}]`)),
     }));
     const ultima = [...historico].reverse().find((m: any) => !m.fromMe);
+    const ultimosTextosCliente = historico
+      .filter((m: any) => !m.fromMe)
+      .slice(-4)
+      .map((m: any) => String(m.texto || ''))
+      .filter(Boolean)
+      .join('\n');
     const midia = midiaDaUltima(ultima);
 
-    // Carrega dados dinâmicos das lojas ativas no PostgreSQL
     const lojasBrutas = await prisma.loja.findMany({
       select: { store_name: true, city: true, state: true, whatsapp: true, telefone_fixo: true },
     });
@@ -126,51 +224,39 @@ async function executar(params: AgendarBotParams, versao: number) {
       telefone_fixo: l.telefone_fixo,
     }));
 
-    const base = process.env.PNEUS_BOT_URL || 'https://pneus-bot.vercel.app';
-    const token = process.env.PNEUS_BOT_TOKEN || '';
-    const fetchGlobal: any = (globalThis as any).fetch;
-    if (!token || !fetchGlobal) {
-      console.error('[Bot IA] PNEUS_BOT_URL/TOKEN ou fetch nao configurado.');
+    const resposta = await gerarRespostaViaBotService({
+      messages,
+      ...midia,
+      lojas,
+      ultimosTextosCliente,
+    });
+
+    if (resposta.deterministico && resposta.partes.length) {
+      // Cada parte vai como mensagem SEPARADA (achado 25/08: preco tem que ser gradual,
+      // nunca a vista + parcelamento + desconto colados numa unica mensagem).
+      for (const parte of resposta.partes) {
+        const textoLimpo = parte.trim();
+        if (!textoLimpo) continue;
+        const enviada = await params.enviarParte(textoLimpo.slice(0, 3500), tempoDigitacao(textoLimpo));
+        if (!enviada) return;
+      }
+      await prisma.botConversa.upsert({
+        where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
+        create: {
+          usuarioId: params.usuarioId,
+          chatJid: params.chatJid,
+          ultimoInboundWaId: params.waId,
+          ultimaRespostaEm: new Date(),
+        },
+        update: {
+          ultimoInboundWaId: params.waId,
+          ultimaRespostaEm: new Date(),
+        },
+      });
       return;
     }
 
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 55_000);
-    let resposta: any;
-    try {
-      const r = await fetchGlobal(`${base}/api/bridge`, {
-        method: 'POST',
-        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          messages,
-          ...midia,
-          lojas,
-          tabelaPrecos: TABELA_PRECOS_GP,
-          config: {
-            temperature: 0.3,
-            persona: 'Josi - Consultora de Vendas Especialista GP Premium Pneus',
-            regras: [
-              'Preços e parcelamentos 100% fiéis à tabela GP Premium oficial',
-              'Se o cliente perguntar qualquer parcelamento (1x até 10x), informe o valor exato da parcela com centavos da tabela sem arredondar',
-              'Oferecer 5% de desconto no pagamento à vista (PIX ou Dinheiro) para fechamento imediato',
-              'Promoção Compre 3 e Leve 4 válida para 195/65R15 e 225/45R17',
-              'Para 1 ou 2 pneus em itens Compre 3 Leve 4, conceder até 10% de desconto',
-              'Garantia oficial de 50.000 KM com montagem, bicos e balanceamento cortesia na loja',
-              'Respostas humanizadas, dinâmicas e diretas no formato WhatsApp (mensagens curtas e claras)',
-              'Emitir [AGENDAR_VISITA: data="YYYY-MM-DD HH:mm", loja="...", servico="...", cliente="..."] quando o cliente confirmar dia e hora para montagem ou visita',
-              'Emitir [TRANSFERIR_HUMANO] se o cliente solicitar expressamente falar com atendente humano ou pedir negociação fora da tabela oficial',
-            ],
-          },
-        }),
-        signal: controller.signal,
-      });
-      resposta = await r.json().catch(() => null);
-      if (!r.ok) throw new Error(`bridge ${r.status}: ${resposta?.error || 'resposta invalida'}`);
-    } finally {
-      clearTimeout(timeout);
-    }
-
-    let partes = Array.isArray(resposta?.partes) ? resposta.partes.map(String).slice(0, 4) : [];
+    const partes = resposta.partes.slice(0, 4);
     const transferir = partes.some((p: string) => p.includes('[TRANSFERIR_HUMANO]'));
 
     // Processa agendamento se presente
@@ -180,20 +266,43 @@ async function executar(params: AgendarBotParams, versao: number) {
       }
     }
 
-    partes = partes
-      .map((p: string) =>
-        p
-          .replace(/\[TRANSFERIR_HUMANO\]/g, '')
-          .replace(/\[AGENDAR_VISITA:[^\]]+\]/gi, '')
-          .trim()
-      )
-      .filter(Boolean);
-    if (!partes.length) return;
+    const haConteudoUtil = partes.some((p: string) => limparTagsEspeciais(p) || extrairVideosDoTexto(p).length > 0);
+    if (!haConteudoUtil) return;
 
     for (const parte of partes) {
       if (versoes.get(key) !== versao || !(await conversaContinuaAtual(params.usuarioId, params.chatJid, params.waId))) return;
-      const enviada = await params.enviarParte(parte.slice(0, 3500), tempoDigitacao(parte));
-      if (!enviada) return;
+      const videos = extrairVideosDoTexto(parte);
+      const textoLimpo = limparTagsEspeciais(parte).slice(0, 3500);
+
+      if (!videos.length) {
+        if (!textoLimpo) continue;
+        const enviada = await params.enviarParte(textoLimpo, tempoDigitacao(textoLimpo));
+        if (!enviada) return;
+        continue;
+      }
+
+      const primeiroVideo = videos[0];
+      const usarTextoComoLegenda = videos.length === 1 && !!textoLimpo && !!primeiroVideo && !primeiroVideo.legenda;
+      if (textoLimpo && !usarTextoComoLegenda) {
+        const enviada = await params.enviarParte(textoLimpo, tempoDigitacao(textoLimpo));
+        if (!enviada) return;
+      }
+
+      for (let i = 0; i < videos.length; i++) {
+        if (versoes.get(key) !== versao || !(await conversaContinuaAtual(params.usuarioId, params.chatJid, params.waId))) return;
+        const atualVideo = videos[i];
+        if (!atualVideo) continue;
+        const video: VideoBotIA = {
+          tipo: 'video',
+          ...(atualVideo.caminho ? { caminho: atualVideo.caminho } : {}),
+          ...(atualVideo.url ? { url: atualVideo.url } : {}),
+          ...(atualVideo.legenda ? { legenda: atualVideo.legenda } : {}),
+          ...(atualVideo.nome ? { nome: atualVideo.nome } : {}),
+        };
+        if (usarTextoComoLegenda && i === 0) video.legenda = textoLimpo;
+        const enviada = await params.enviarVideo(video, tempoDigitacao(video.legenda || textoLimpo || 'video'));
+        if (!enviada) return;
+      }
     }
 
     await prisma.botConversa.upsert({
@@ -203,12 +312,12 @@ async function executar(params: AgendarBotParams, versao: number) {
         chatJid: params.chatJid,
         ultimoInboundWaId: params.waId,
         ultimaRespostaEm: new Date(),
-        ...(transferir ? { pausadoAte: new Date(Date.now() + 24 * 60 * 60 * 1000), motivoPausa: 'transferencia_humana' } : {}),
+        ...(transferir ? { pausadoAte: new Date(Date.now() + 120 * 60 * 1000), motivoPausa: 'transferencia_humana' } : {}),
       },
       update: {
         ultimoInboundWaId: params.waId,
         ultimaRespostaEm: new Date(),
-        ...(transferir ? { pausadoAte: new Date(Date.now() + 24 * 60 * 60 * 1000), motivoPausa: 'transferencia_humana' } : {}),
+        ...(transferir ? { pausadoAte: new Date(Date.now() + 120 * 60 * 1000), motivoPausa: 'transferencia_humana' } : {}),
       },
     });
   } catch (e) {

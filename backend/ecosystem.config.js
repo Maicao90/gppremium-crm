@@ -26,6 +26,30 @@ module.exports = {
       // Reinicia até 10 vezes em caso de falha
       max_restarts: 10,
       restart_delay: 3000
+    },
+    {
+      // Servico ISOLADO do robo (so decide o TEXTO da resposta). Roda separado de
+      // proposito: reload/crash aqui NUNCA afeta as conexoes de WhatsApp dos atendentes
+      // (achado e corrigido em 25-26/08/2026 — antes, qualquer ajuste de bot derrubava
+      // TODO MUNDO porque era o mesmo processo).
+      name: 'bot-service',
+      script: 'src/bot-service/server.ts',
+      interpreter: 'ts-node',
+      interpreter_args: '--prefer-ts-exts --project tsconfig.json',
+      cwd: '/root/whatsapp-crm/backend',
+      env: {
+        NODE_ENV: 'production',
+        BOT_SERVICE_PORT: 3010
+      },
+      autorestart: true,
+      watch: false,
+      max_memory_restart: '300M',
+      out_file: '/root/whatsapp-crm/logs/bot-service.log',
+      error_file: '/root/whatsapp-crm/logs/bot-service-error.log',
+      merge_logs: true,
+      log_date_format: 'YYYY-MM-DD HH:mm:ss',
+      max_restarts: 10,
+      restart_delay: 3000
     }
   ]
 };

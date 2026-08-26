@@ -20,6 +20,23 @@ export interface ItemPreco {
   portaria?: number;
 }
 
+export interface MatchPreco {
+  medidaConsultada: string;
+  itens: ItemPreco[];
+}
+
+export interface AnaliseConsultaPreco {
+  medidasDetectadas: string[];
+  matchesExatos: MatchPreco[];
+  ambiguas: MatchPreco[];
+  semResultado: string[];
+}
+
+export interface RespostaDeterministicaPreco {
+  partes: string[];
+  usouTabela: boolean;
+}
+
 export const TABELA_PRECOS_GP: ItemPreco[] = [
   // ─── PASSEIO ───
   {
@@ -538,4 +555,232 @@ export function buscarPrecoPorMedida(textoBusca: string): ItemPreco[] {
     const itemNorm = item.medida.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
     return itemNorm.includes(norm) || norm.includes(itemNorm);
   });
+}
+
+function normalizarMedida(valor: string): string {
+  return String(valor || '').replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+}
+
+export function encontrarPrecosExatosPorMedida(medida: string): ItemPreco[] {
+  const alvo = normalizarMedida(medida);
+  if (!alvo) return [];
+  return TABELA_PRECOS_GP.filter((item) => normalizarMedida(item.medida) === alvo);
+}
+
+export function extrairMedidasDoTexto(texto: string): string[] {
+  const base = String(texto || '').toUpperCase();
+  const achadas = new Set<string>();
+  const regex = /\b(\d{3})\s*\/\s*(\d{2})\s*(?:\/|\s*)\s*(R|ARO)?\s*(\d{2})\b/g;
+  let match: RegExpExecArray | null = null;
+  while ((match = regex.exec(base))) {
+    achadas.add(`${match[1]}/${match[2]}/${match[4]}`);
+  }
+  return [...achadas];
+}
+
+export function analisarConsultaPreco(texto: string): AnaliseConsultaPreco {
+  const medidasDetectadas = extrairMedidasDoTexto(texto);
+  const matchesExatos: MatchPreco[] = [];
+  const ambiguas: MatchPreco[] = [];
+  const semResultado: string[] = [];
+
+  for (const medida of medidasDetectadas) {
+    const itens = encontrarPrecosExatosPorMedida(medida);
+    if (!itens.length) {
+      semResultado.push(medida);
+      continue;
+    }
+    const payload = { medidaConsultada: medida, itens };
+    if (itens.length === 1) matchesExatos.push(payload);
+    else ambiguas.push(payload);
+  }
+
+  return { medidasDetectadas, matchesExatos, ambiguas, semResultado };
+}
+
+function brl(valor: number): string {
+  return valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function detectarParcelaSolicitada(texto: string): number | null {
+  const base = String(texto || '').toLowerCase();
+  const match = /(?:^|\s)(10|[1-9])\s*x(?:\s|$)/.exec(base);
+  if (!match) return null;
+  const n = Number(match[1]);
+  return n >= 1 && n <= 10 ? n : null;
+}
+
+function detectarQuantidade(texto: string): number | null {
+  const base = String(texto || '').toLowerCase();
+  const comUnidade = /\b(\d{1,2})\s*(pneus?|unidades?|und\.?|jogo\s+de)\b/i.exec(base);
+  if (comUnidade && comUnidade[1]) {
+    const n = Number(comUnidade[1]);
+    if (n >= 1 && n <= 8) return n;
+  }
+  const osN = /\bos\s+(\d{1,2})\b/i.exec(base);
+  if (osN && osN[1]) {
+    const n = Number(osN[1]);
+    if (n >= 1 && n <= 8) return n;
+  }
+  return null;
+}
+
+function detectarPedidoDePreco(texto: string): boolean {
+  const base = String(texto || '').toLowerCase();
+  return [
+    'preco', 'preço', 'valor', 'quanto', 'avista', 'à vista', 'pix', 'dinheiro',
+    'parcela', 'parcelado', 'parcelamento', 'x sem juros', 'cotacao', 'cotação',
+  ].some((token) => base.includes(token));
+}
+
+function detectarSaudacaoSemPedido(texto: string): boolean {
+  const base = String(texto || '').trim().toLowerCase();
+  return ['oi', 'ola', 'olá', 'bom dia', 'boa tarde', 'boa noite'].includes(base);
+}
+
+function resumoPromocional(item: ItemPreco): string[] {
+  const linhas: string[] = [];
+  if (item.promocao) linhas.push('Esse item esta em promocao.');
+  if (item.compre3Leve4) {
+    linhas.push('Participa da campanha compre 3 e leve 4.');
+    linhas.push('Para venda de 1 ou 2 pneus desse item, pode conceder ate 10% de desconto.');
+  }
+  return linhas;
+}
+
+function linhaParcelamento(item: ItemPreco, parcelaSolicitada: number | null): string {
+  if (parcelaSolicitada) {
+    const chave = `x${parcelaSolicitada}` as keyof ItemPreco['parcelado'];
+    return `${parcelaSolicitada}x de R$ ${brl(item.parcelado[chave])}`;
+  }
+  return `1x R$ ${brl(item.parcelado.x1)} | 2x R$ ${brl(item.parcelado.x2)} | 3x R$ ${brl(item.parcelado.x3)} | 4x R$ ${brl(item.parcelado.x4)} | 5x R$ ${brl(item.parcelado.x5)} | 6x R$ ${brl(item.parcelado.x6)} | 7x R$ ${brl(item.parcelado.x7)} | 8x R$ ${brl(item.parcelado.x8)} | 9x R$ ${brl(item.parcelado.x9)} | 10x R$ ${brl(item.parcelado.x10)}`;
+}
+
+function primeiroModelo(modelo: string): string {
+  return (modelo.split('/')[0] ?? modelo).trim();
+}
+
+// Preco se revela em ETAPAS (achado 25/08): sem numero de parcela pedido, so mostra
+// a vista + 1 modelo (nunca a tabela inteira de 1x-10x junto). So quando o cliente
+// pede uma parcela especifica (ex.: "10x") que mostra o valor daquela parcela — e o
+// desconto a vista vem numa PARTE SEPARADA, nunca colado no mesmo bloco.
+function montarPartesPreco(item: ItemPreco, parcelaSolicitada: number | null, quantidade: number | null): string[] {
+  const modeloUnico = primeiroModelo(item.modelo);
+  const qtd = quantidade && quantidade > 1 ? quantidade : 1;
+  const prefixoQtd = qtd > 1 ? `${qtd} unidades ` : '';
+  if (!parcelaSolicitada) {
+    const linhas = [
+      `${item.medida} - ${modeloUnico}`,
+      `${prefixoQtd}A vista: R$ ${brl(item.aVista * qtd)}`,
+      ...resumoPromocional(item),
+    ];
+    return [linhas.join('\n')];
+  }
+  const chave = `x${parcelaSolicitada}` as keyof ItemPreco['parcelado'];
+  const valorParcela = item.parcelado[chave] * qtd;
+  const total = valorParcela * parcelaSolicitada;
+  const parte1 = [
+    `${item.medida} - ${modeloUnico}${qtd > 1 ? ` (${qtd} unidades)` : ''}`,
+    `Em ${parcelaSolicitada}x fica R$ ${brl(valorParcela)} cada, total de R$ ${brl(total)}.`,
+  ].join('\n');
+  const parte2 = 'Pagamento a vista no PIX ou dinheiro permite trabalhar 5% de desconto para fechamento imediato.';
+  return [parte1, parte2];
+}
+
+export function resumirItemPreco(item: ItemPreco): string {
+  const flags = [
+    item.promocao ? 'PROMOCAO' : '',
+    item.compre3Leve4 ? 'COMPRE_3_LEVE_4' : '',
+  ].filter(Boolean);
+  const parcelas = Object.entries(item.parcelado)
+    .map(([chave, valor]) => `${chave.toUpperCase()}=R$ ${brl(Number(valor))}`)
+    .join(' | ');
+  return [
+    `${item.medida} :: ${item.modelo}`,
+    `A_VISTA=R$ ${brl(item.aVista)}`,
+    parcelas,
+    flags.length ? `FLAGS=${flags.join(',')}` : '',
+  ].filter(Boolean).join(' :: ');
+}
+
+export function montarBriefingComercialDeterministico(texto: string): string {
+  const analise = analisarConsultaPreco(texto);
+  if (!analise.medidasDetectadas.length) {
+    return [
+      'CONTEXTO_COMERCIAL_LOCAL:',
+      'Nenhuma medida detectada com seguranca na ultima mensagem.',
+      'Se o cliente pedir preco sem medida, peca a medida exata do pneu antes de cotar.',
+    ].join('\n');
+  }
+
+  const linhas: string[] = ['CONTEXTO_COMERCIAL_LOCAL:'];
+
+  if (analise.matchesExatos.length) {
+    linhas.push('MEDIDAS_COM_COTACAO_SEGURA:');
+    for (const match of analise.matchesExatos) {
+      linhas.push(`- ${match.medidaConsultada}`);
+      for (const item of match.itens) linhas.push(`  - ${resumirItemPreco(item)}`);
+    }
+  }
+
+  if (analise.ambiguas.length) {
+    linhas.push('MEDIDAS_AMBIGUAS_NAO_COTAR_ANTES_DE_CONFIRMAR_MODELO:');
+    for (const match of analise.ambiguas) {
+      linhas.push(`- ${match.medidaConsultada}`);
+      for (const item of match.itens) linhas.push(`  - ${resumirItemPreco(item)}`);
+    }
+  }
+
+  if (analise.semResultado.length) {
+    linhas.push(`SEM_RESULTADO_LOCAL: ${analise.semResultado.join(', ')}`);
+  }
+
+  linhas.push('REGRAS_LOCAIS_OBRIGATORIAS:');
+  linhas.push('- Nunca inventar preco, parcela, promocao ou modelo fora desta base.');
+  linhas.push('- Se houver mais de um modelo para a mesma medida, perguntar qual modelo ou uso do cliente antes de passar preco.');
+  linhas.push('- Ignorar completamente portaria.');
+  return linhas.join('\n');
+}
+
+export function montarRespostaDeterministicaPreco(texto: string, textoGatilho?: string): RespostaDeterministicaPreco | null {
+  if (!texto || detectarSaudacaoSemPedido(texto)) return null;
+  const analise = analisarConsultaPreco(texto);
+  const parcelaSolicitada = detectarParcelaSolicitada(texto);
+  const quantidade = detectarQuantidade(texto);
+  // O GATILHO (decidir SE e pedido de preco) usa so a mensagem ATUAL do cliente (textoGatilho),
+  // nunca a janela de varias mensagens — senao uma medida mencionada 2-3 mensagens atras
+  // "contamina" qualquer pergunta seguinte sem relacao (achado 26/08: cliente perguntou
+  // "e remold?" e o robo respondeu preco de novo, porque a janela ainda continha a medida
+  // de uma pergunta anterior). So mencionar medida/carro tambem nao conta como pedido de
+  // preco (achado 25/08) — isso cai na IA, que confirma medida/modelo sem jogar preco de cara.
+  const gatilho = textoGatilho ?? texto;
+  const pediuPreco = detectarPedidoDePreco(gatilho);
+
+  if (!pediuPreco) return null;
+
+  if (analise.ambiguas.length) {
+    const linhas = ['Pra eu te passar o valor certinho sem risco de erro, preciso confirmar o modelo/uso dessas medidas:'];
+    for (const match of analise.ambiguas) {
+      linhas.push(`- ${match.medidaConsultada}: ${match.itens.map((item) => item.modelo).join(' | ')}`);
+    }
+    linhas.push('Se preferir, me fala o carro, uso do pneu ou o modelo desejado que eu te passo a cotacao certa.');
+    return { partes: [linhas.join('\n')], usouTabela: true };
+  }
+
+  if (analise.matchesExatos.length) {
+    const partes: string[] = [];
+    for (const match of analise.matchesExatos) {
+      for (const item of match.itens) partes.push(...montarPartesPreco(item, parcelaSolicitada, quantidade));
+    }
+    return { partes, usouTabela: true };
+  }
+
+  if (analise.semResultado.length) {
+    return {
+      partes: [`Nao encontrei na tabela oficial a medida ${analise.semResultado.join(', ')}. Se quiser, me manda a medida exatamente como esta no pneu que eu confiro certinho pra voce.`],
+      usouTabela: true,
+    };
+  }
+
+  return null;
 }

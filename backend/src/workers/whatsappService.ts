@@ -172,10 +172,18 @@ function usuariosComSessaoNoMesmoNumero(usuarioId: string, meuNumero: string): s
   return [...ids];
 }
 
+interface LatestQrPayload {
+  qrCode: string;
+  generatedAt: number;
+  expiresAt: number;
+}
+
 // Guarda o QR Code mais recente (base64) de cada usuário enquanto ele ainda não escaneou.
 // Serve para REENVIAR o QR a uma extensão que conecta DEPOIS do QR ter sido gerado
 // (ex.: QR gerado no boot da VPS, antes do navegador da pessoa estar aberto).
-export const latestQR = new Map<string, string>();
+// O QR do WhatsApp expira rápido; por isso carregamos também timestamps para a tela
+// nunca reapresentar um QR morto como se ainda fosse válido.
+export const latestQR = new Map<string, LatestQrPayload>();
 
 // Conjunto de usuários com a conexão realmente ABERTA (autenticada e pronta).
 export const connectedUsers = new Set<string>();
@@ -308,11 +316,29 @@ async function carregarMidiaBotIA(midia: MidiaBotIA): Promise<{ buffer: Buffer; 
   return { buffer, midiaUrl, nomeArquivo: path.basename(absoluto) || 'video.mp4' };
 }
 
+// Achado 26/08: durante um blip de reconexao (ex.: erro 440 "conflict" oscilando),
+// sessions.get(usuarioId) fica momentaneamente undefined por alguns segundos. Antes,
+// enviarParteBotIA/enviarMidiaBotIA desistiam na hora, em silencio (sem log nenhum),
+// e a resposta do robo era perdida pra sempre (o debounce so dispara 1x por rajada de
+// mensagens do cliente; sem nova mensagem, nao ha nova tentativa). Agora esperamos o
+// socket voltar por ate ~10s (janela observada dos blips reais) antes de desistir.
+async function aguardarSocketBotIA(usuarioId: string, tentativas = 4, intervaloMs = 2500): Promise<any> {
+  for (let i = 0; i < tentativas; i++) {
+    const sock = sessions.get(usuarioId);
+    if (sock) return sock;
+    if (i < tentativas - 1) await delay(intervaloMs);
+  }
+  return null;
+}
+
 async function enviarParteBotIA(usuarioId: string, chatJid: string, numeroReal: string, texto: string, tempoDigitacaoMs: number): Promise<boolean> {
   const anterior = filasEnvioBotIA.get(usuarioId) || Promise.resolve();
   const atual = anterior.catch(() => {}).then(async () => {
-    const sock = sessions.get(usuarioId);
-    if (!sock) return false;
+    const sock = await aguardarSocketBotIA(usuarioId);
+    if (!sock) {
+      console.error(`[Bot IA] Sem conexao WhatsApp ativa para ${usuarioId} (chat ${chatJid}) apos varias tentativas — resposta NAO enviada.`);
+      return false;
+    }
     const key = `${usuarioId}:${chatJid}`;
     chatsBotEnviando.add(key);
     try {
@@ -333,6 +359,10 @@ async function enviarParteBotIA(usuarioId: string, chatJid: string, numeroReal: 
           tipo: 'texto',
           waId,
           numeroReal: numeroReal || null,
+          // Marca que foi o ROBO que mandou (nao um atendente humano) — sentinela 'bot' em vez
+          // de um usuarioId real. O painel usa isso pra rotular "Robo" em vez de "Atendente"
+          // (achado 26/08 — painel mostrava toda mensagem automatica como atendente).
+          enviadoPorId: 'bot',
         },
       });
       getIo().to(usuarioId).emit('NOVA_MENSAGEM', salva);
@@ -354,8 +384,11 @@ async function enviarParteBotIA(usuarioId: string, chatJid: string, numeroReal: 
 async function enviarMidiaBotIA(usuarioId: string, chatJid: string, numeroReal: string, midia: MidiaBotIA, tempoDigitacaoMs: number): Promise<boolean> {
   const anterior = filasEnvioBotIA.get(usuarioId) || Promise.resolve();
   const atual = anterior.catch(() => {}).then(async () => {
-    const sock = sessions.get(usuarioId);
-    if (!sock) return false;
+    const sock = await aguardarSocketBotIA(usuarioId);
+    if (!sock) {
+      console.error(`[Bot IA] Sem conexao WhatsApp ativa para ${usuarioId} (chat ${chatJid}) apos varias tentativas — resposta NAO enviada.`);
+      return false;
+    }
     const key = `${usuarioId}:${chatJid}`;
     chatsBotEnviando.add(key);
     try {
@@ -390,6 +423,7 @@ async function enviarMidiaBotIA(usuarioId: string, chatJid: string, numeroReal: 
           midiaUrl,
           waId,
           numeroReal: numeroReal || null,
+          enviadoPorId: 'bot', // marca que foi o ROBO (video), nao atendente humano
         },
       });
       getIo().to(usuarioId).emit('NOVA_MENSAGEM', salva);
@@ -699,7 +733,7 @@ export async function connectToWhatsApp(
   // código (numeroPareamento presente) sempre passa — é uma ação intencional, e a
   // pausa serve justamente para BLOQUEAR as reconexões automáticas que competiam
   // com o pareamento (a "corrida" que contaminava a sessão).
-  if (pausados.has(usuarioId) && !numeroPareamento) {
+  if (pausados.has(usuarioId) && !numeroPareamento && !permitirQrNovo) {
     console.log(`[Baileys] Conexão do usuário ${usuarioId} está PAUSADA. Ignorando.`);
     return;
   }
@@ -811,11 +845,18 @@ export async function connectToWhatsApp(
 
       try {
         const qrBase64 = await qrcode.toDataURL(qr);
+        const agora = Date.now();
+        const qrPayload: LatestQrPayload = {
+          qrCode: qrBase64,
+          generatedAt: agora,
+          // Janela curta proposital: melhor forçar QR novo do que deixar QR velho na tela.
+          expiresAt: agora + 45_000,
+        };
         // Guarda o QR no cache para reenviar a quem conectar depois
-        latestQR.set(usuarioId, qrBase64);
+        latestQR.set(usuarioId, qrPayload);
         connectedUsers.delete(usuarioId);
         // Emite o QR Code apenas para a sala do usuário específico
-        getIo().to(usuarioId).emit('WHATSAPP_QR_CODE', qrBase64);
+        getIo().to(usuarioId).emit('WHATSAPP_QR_CODE', qrPayload);
 
         // Atualiza status no banco
         await prisma.usuario.update({
@@ -873,7 +914,12 @@ export async function connectToWhatsApp(
           data: { whatsappConectado: false }
         }).catch(() => {});
         console.log(`[Baileys] Reconectando usuário ${usuarioId} em 2 segundos...`);
-        setTimeout(() => connectToWhatsApp(usuarioId).catch(err => console.error("Erro no retry:", err)), 2000);
+        // Se tem código de pareamento pendente, esse retry é a MESMA tentativa de
+        // pareamento continuando (restart código 515 é normal no meio do processo) —
+        // precisa permitirQrNovo:true pra furar a própria pausa que o pareamento criou,
+        // senão o pareamento nunca completa (achado 25/08, caso da Borracharia).
+        const eraPareamentoEmAndamento = pairingCodes.has(usuarioId);
+        setTimeout(() => connectToWhatsApp(usuarioId, undefined, undefined, eraPareamentoEmAndamento).catch(err => console.error("Erro no retry:", err)), 2000);
       }
     } else if (connection === 'open') {
       console.log(`[Baileys] Conexão aberta com sucesso! Servidor pronto para disparos do usuário ${usuarioId}.`);
@@ -931,7 +977,10 @@ export async function connectToWhatsApp(
       if (!msg || !msg.message || !msg.key) return;
 
       const remoteJid = msg.key.remoteJid;
-      if (!remoteJid || remoteJid.includes('@g.us') || remoteJid.includes('status@broadcast')) return; // ignorar grupos e status
+      // Achado 26/08: '@newsletter' (canais do WhatsApp) passava batido — so @g.us (grupo
+      // classico) e status@broadcast eram bloqueados. O robo respondia dentro de um canal,
+      // que nao e conversa privada com cliente nenhum.
+      if (!remoteJid || remoteJid.includes('@g.us') || remoteJid.includes('status@broadcast') || remoteJid.includes('@newsletter')) return; // ignorar grupos, canais e status
 
       const numero = remoteJid.split('@')[0];
       if (!numero) return;
@@ -1403,7 +1452,10 @@ export async function retomarWhatsApp(usuarioId: string) {
   pausados.delete(usuarioId);
   await prisma.usuario.update({ where: { id: usuarioId }, data: { whatsappPausado: false } }).catch(() => {});
   console.log(`[Baileys] Conexão do usuário ${usuarioId} RETOMADA.`);
-  await connectToWhatsApp(usuarioId).catch(() => {});
+  // permitirQrNovo:true — sem isso, quem nunca pareou (state.creds.registered
+  // ausente) cai direto no "aguardando solicitação manual de QR/código" e NADA é
+  // gerado: nem QR, nem código. Retomar É o pedido manual; tem que valer.
+  await connectToWhatsApp(usuarioId, undefined, undefined, true).catch(() => {});
 }
 
 // Compatibilidade com pontos antigos do backend que ainda importam este nome.
@@ -1498,7 +1550,7 @@ export async function gerarQrCodePareamento(usuarioId: string): Promise<string> 
 
   for (let i = 0; i < 40; i++) {
     const qr = latestQR.get(usuarioId);
-    if (qr) return qr;
+    if (qr && qr.expiresAt > Date.now()) return qr.qrCode;
     await new Promise((r) => setTimeout(r, 500));
   }
   throw new Error('Não foi possível gerar o QR agora. Tente novamente em alguns segundos.');
