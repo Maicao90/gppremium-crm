@@ -207,7 +207,10 @@ async function executar(params: AgendarBotParams, versao: number) {
     const ultima = [...historico].reverse().find((m: any) => !m.fromMe);
     const ultimosTextosCliente = historico
       .filter((m: any) => !m.fromMe)
-      .slice(-4)
+      // Achado 27/08: 4 mensagens era pouco pra negociacao longa (medida/quantidade
+      // confirmadas 6+ mensagens atras "somem" da janela, e o preco cai pra IA calcular
+      // de cabeca em vez de usar a tabela — risco real de errar conta de dinheiro).
+      .slice(-15)
       .map((m: any) => String(m.texto || ''))
       .filter(Boolean)
       .join('\n');

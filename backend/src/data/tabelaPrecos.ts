@@ -604,7 +604,11 @@ function brl(valor: number): string {
 
 function detectarParcelaSolicitada(texto: string): number | null {
   const base = String(texto || '').toLowerCase();
-  const match = /(?:^|\s)(10|[1-9])\s*x(?:\s|$)/.exec(base);
+  // Achado 27/08: antes exigia espaco ou fim-de-string logo apos o "x" (ex.: "10x "),
+  // entao "10x?" ou "10x!" (pontuacao colada, super comum em WhatsApp) nao batia e a
+  // parcela pedida nunca era detectada. Agora aceita qualquer coisa que NAO seja letra/numero
+  // logo depois (ou fim da string).
+  const match = /(?:^|\s)(10|[1-9])\s*x(?![a-z0-9])/.exec(base);
   if (!match) return null;
   const n = Number(match[1]);
   return n >= 1 && n <= 10 ? n : null;
@@ -630,7 +634,11 @@ function detectarPedidoDePreco(texto: string): boolean {
   return [
     'preco', 'preço', 'valor', 'quanto', 'avista', 'à vista', 'pix', 'dinheiro',
     'parcela', 'parcelado', 'parcelamento', 'x sem juros', 'cotacao', 'cotação',
-  ].some((token) => base.includes(token));
+  ].some((token) => base.includes(token))
+    // Achado 27/08: resposta so com "10x", "em 10x" etc (sem nenhuma das palavras acima)
+    // tambem conta como pedido de preco — e um numero de parcela isolado so faz sentido
+    // como resposta a "quantas vezes quer parcelar", tem que cair na conta garantida.
+    || detectarParcelaSolicitada(base) !== null;
 }
 
 function detectarSaudacaoSemPedido(texto: string): boolean {
@@ -672,13 +680,20 @@ function montarPartesPreco(item: ItemPreco, parcelaSolicitada: number | null, qu
     const linhas = [
       `${item.medida} - ${modeloUnico}`,
       `${prefixoQtd}A vista: R$ ${brl(item.aVista * qtd)}`,
+      'Parcelamos em ate 10x.',
       ...resumoPromocional(item),
     ];
     return [linhas.join('\n')];
   }
+  // Achado 27/08: item.parcelado[x_N] ja e o TOTAL pra financiar em N vezes (nao o
+  // valor de cada parcela) — confirmado pelo padrao da tabela inteira: os valores
+  // sobem aos poucos conforme N cresce (x1=244,31 ... x10=268,18 pro GP-7 165/70/14),
+  // exatamente como um financiamento de verdade (mais parcelas = mais juros total).
+  // O codigo antigo tratava x_N como "valor de cada parcela" e multiplicava de novo
+  // por N, inflando o total em ate 6x (ex.: 1 pneu de R$239 virava R$1.545 em 6x).
   const chave = `x${parcelaSolicitada}` as keyof ItemPreco['parcelado'];
-  const valorParcela = item.parcelado[chave] * qtd;
-  const total = valorParcela * parcelaSolicitada;
+  const total = item.parcelado[chave] * qtd;
+  const valorParcela = total / parcelaSolicitada;
   const parte1 = [
     `${item.medida} - ${modeloUnico}${qtd > 1 ? ` (${qtd} unidades)` : ''}`,
     `Em ${parcelaSolicitada}x fica R$ ${brl(valorParcela)} cada, total de R$ ${brl(total)}.`,
@@ -692,8 +707,10 @@ export function resumirItemPreco(item: ItemPreco): string {
     item.promocao ? 'PROMOCAO' : '',
     item.compre3Leve4 ? 'COMPRE_3_LEVE_4' : '',
   ].filter(Boolean);
+  // Cada XN e o TOTAL pra financiar em N vezes (nao o valor de cada parcela) —
+  // deixado explicito aqui pra IA nunca multiplicar de novo por N (achado 27/08).
   const parcelas = Object.entries(item.parcelado)
-    .map(([chave, valor]) => `${chave.toUpperCase()}=R$ ${brl(Number(valor))}`)
+    .map(([chave, valor]) => `${chave.toUpperCase()}_TOTAL=R$ ${brl(Number(valor))} (cada parcela = total/${chave.replace('x', '')})`)
     .join(' | ');
   return [
     `${item.medida} :: ${item.modelo}`,
