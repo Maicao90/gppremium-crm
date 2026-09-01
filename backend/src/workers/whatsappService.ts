@@ -540,6 +540,18 @@ const ultimaAutoMem = new Map<string, number>();
 // Pega os casos raros em que a sessão morre SEM disparar o evento 'close' (congelamento
 // silencioso) ou em que um retry falhou. Reconecta sozinho — sem precisar de QR novo.
 let vigiaIniciado = false;
+// Uma sessao esta PAREADA quando ja tem identidade da conta (creds.me.id) —
+// gravada tanto no pareamento por QR quanto por codigo. NAO use creds.registered:
+// o Baileys so marca esse flag no fluxo de CODIGO, entao toda conta pareada por QR
+// ficava eternamente "nao registrada" e era barrada da reconexao automatica
+// (achado 01/09 — era por isso que as sessoes so ficavam de pe com o PC do
+// atendente ligado).
+function sessaoJaPareada(creds: any): boolean {
+  if (!creds) return false;
+  if (creds.registered) return true;
+  return !!(creds.me && creds.me.id);
+}
+
 function iniciarVigiaConexao() {
   if (vigiaIniciado) return;
   vigiaIniciado = true;
@@ -560,7 +572,7 @@ function iniciarVigiaConexao() {
           let registrada = false;
           try {
             const creds = JSON.parse(fs.readFileSync(path.join(dir, s, 'creds.json'), 'utf8'));
-            registrada = !!(creds && creds.registered);
+            registrada = sessaoJaPareada(creds);
           } catch (e) { registrada = false; }
           if (!registrada) continue;
           console.log(`[Baileys][Vigia] Sessão de ${uid} caída — reconectando automaticamente...`);
@@ -848,7 +860,7 @@ export async function connectToWhatsApp(
   // Conta sem credenciais registradas só entra em fluxo de pareamento quando um
   // humano pedir explicitamente (QR pelo CRM ou código de pareamento). Isso evita
   // QR aparecendo sozinho no boot/vigia e reduz o risco de rate-limit.
-  const jaRegistrado = !!(state.creds && (state.creds as any).registered);
+  const jaRegistrado = sessaoJaPareada(state.creds as any);
   if (!jaRegistrado && !numeroPareamento && !permitirQrNovo) {
     console.log(`[Baileys] Usuário ${usuarioId} sem sessão registrada — aguardando solicitação manual de QR/código.`);
     return;
