@@ -1,0 +1,656 @@
+import { makeWASocket, useMultiFileAuthState, DisconnectReason, Browsers, delay, WASocket, proto, downloadMediaMessage } from '@whiskeysockets/baileys';
+import { Boom } from '@hapi/boom';
+import qrcodeTerminal from 'qrcode-terminal';
+import qrcode from 'qrcode';
+import path from 'path';
+import fs from 'fs';
+import { io, prisma } from '../server';
+
+// Pasta onde as mídias recebidas são salvas (servida estaticamente em /midias)
+const MIDIAS_DIR = path.join(__dirname, '../../public/midias');
+try { fs.mkdirSync(MIDIAS_DIR, { recursive: true }); } catch (e) {}
+const EXT_POR_TIPO: Record<string, string> = { imagem: 'jpg', video: 'mp4', audio: 'ogg', documento: 'bin', figurinha: 'webp' };
+
+// Baixa a mídia de uma mensagem e salva em /public/midias, retornando a URL pública.
+async function baixarMidia(sock: any, msg: any, tipo: string, waId: string): Promise<string | null> {
+  try {
+    const buffer = await downloadMediaMessage(msg, 'buffer', {}, { logger: console as any, reuploadRequest: sock.updateMediaMessage });
+    if (!buffer) return null;
+    const ext = EXT_POR_TIPO[tipo] || 'bin';
+    const nome = `${(waId || 'm').replace(/[^a-zA-Z0-9]/g, '')}_${Math.floor(Math.random() * 1000000)}.${ext}`;
+    fs.writeFileSync(path.join(MIDIAS_DIR, nome), buffer as Buffer);
+    return `/midias/${nome}`;
+  } catch (e) {
+    console.error('[Inbox] Erro ao baixar mídia:', (e as any)?.message);
+    return null;
+  }
+}
+
+// Detecta se a mensagem veio de um ANÚNCIO (Click-to-WhatsApp). Retorna o externalAdReply.
+function getAnuncio(message: any): any {
+  if (!message) return null;
+  for (const key of Object.keys(message)) {
+    const ci = message[key] && message[key].contextInfo;
+    if (ci && ci.externalAdReply) return ci.externalAdReply;
+  }
+  return null;
+}
+
+// Salva a miniatura (foto) do anúncio e retorna a URL pública.
+async function salvarFotoAnuncio(adReply: any): Promise<string | null> {
+  try {
+    let buffer: Buffer | null = null;
+    if (adReply.thumbnail && adReply.thumbnail.length) {
+      buffer = Buffer.from(adReply.thumbnail);
+    } else if (adReply.thumbnailUrl) {
+      const resp = await fetch(adReply.thumbnailUrl);
+      if (resp.ok) buffer = Buffer.from(await resp.arrayBuffer());
+    }
+    if (!buffer) return null;
+    const nome = `ad_${Math.floor(Math.random() * 1000000000)}.jpg`;
+    fs.writeFileSync(path.join(MIDIAS_DIR, nome), buffer);
+    return `/midias/${nome}`;
+  } catch (e) {
+    console.error('[Inbox] Erro ao salvar foto do anúncio:', (e as any)?.message);
+    return null;
+  }
+}
+
+// Resolve o número de telefone REAL do contato. O WhatsApp agora usa @lid (um ID interno
+// que esconde o número), então buscamos o PN: 1) o alternativo na própria mensagem;
+// 2) o mapeamento LID->PN que o Baileys mantém. Retorna só os dígitos (sem @dominio).
+async function resolverNumeroReal(sock: any, msg: any, remoteJid: string): Promise<string> {
+  if (!remoteJid || !remoteJid.includes('@lid')) return (remoteJid || '').split('@')[0] || '';
+  const alt = msg?.key?.remoteJidAlt || msg?.key?.participantPn || msg?.key?.participantAlt;
+  if (alt && typeof alt === 'string' && alt.includes('@')) return alt.split('@')[0] || '';
+  try {
+    const lm = sock?.signalRepository?.lidMapping;
+    if (lm && typeof lm.getPNForLID === 'function') {
+      const pn = await lm.getPNForLID(remoteJid);
+      if (pn && typeof pn === 'string' && pn.includes('@')) return pn.split('@')[0] || '';
+    }
+  } catch (e) {}
+  return '';
+}
+
+// Preenche o número real dos chats @lid já existentes no banco (roda quando a sessão conecta).
+async function backfillNumerosReais(usuarioId: string, sock: any) {
+  try {
+    const chats: any[] = await prisma.$queryRaw`
+      SELECT DISTINCT "chatJid" FROM "Mensagem"
+      WHERE "usuarioId" = ${usuarioId} AND "chatJid" LIKE '%@lid'
+      AND ("numeroReal" IS NULL OR "numeroReal" = '')
+    `;
+    let resolvidos = 0;
+    for (const ch of chats) {
+      const num = await resolverNumeroRealPorJid(sock, ch.chatJid);
+      if (num) {
+        await prisma.mensagem.updateMany({ where: { usuarioId, chatJid: ch.chatJid }, data: { numeroReal: num } });
+        resolvidos++;
+      }
+    }
+    if (resolvidos > 0) console.log(`[Inbox] Backfill: ${resolvidos} contato(s) @lid resolvidos para número real (usuário ${usuarioId}).`);
+  } catch (e) { console.error('[Inbox] Erro no backfill de números:', (e as any)?.message); }
+}
+
+// Resolve o número real de um JID @lid avulso (sem mensagem em mãos), usando só o mapeamento.
+async function resolverNumeroRealPorJid(sock: any, jid: string): Promise<string> {
+  if (!jid || !jid.includes('@lid')) return (jid || '').split('@')[0] || '';
+  try {
+    const lm = sock?.signalRepository?.lidMapping;
+    if (lm && typeof lm.getPNForLID === 'function') {
+      const pn = await lm.getPNForLID(jid);
+      if (pn && typeof pn === 'string' && pn.includes('@')) return pn.split('@')[0] || '';
+    }
+  } catch (e) {}
+  return '';
+}
+
+// Mapa para guardar as sessões ativas por usuário
+export const sessions = new Map<string, WASocket>();
+
+// Guarda o QR Code mais recente (base64) de cada usuário enquanto ele ainda não escaneou.
+// Serve para REENVIAR o QR a uma extensão que conecta DEPOIS do QR ter sido gerado
+// (ex.: QR gerado no boot da VPS, antes do navegador da pessoa estar aberto).
+export const latestQR = new Map<string, string>();
+
+// Conjunto de usuários com a conexão realmente ABERTA (autenticada e pronta).
+export const connectedUsers = new Set<string>();
+
+// Nomes de contatos (jid -> nome), preenchido pelos eventos de contatos do WhatsApp.
+// Usado para mostrar o NOME do contato na Caixa de Entrada em vez do número/ID interno.
+export const contatosNomes = new Map<string, string>();
+function registrarNomeContato(jid?: string | null, nome?: string | null) {
+  if (jid && nome && String(nome).trim()) contatosNomes.set(jid, String(nome).trim());
+}
+
+// IDs de mensagens já salvas pelo envio da Caixa de Entrada (evita duplicar se o
+// evento messages.upsert também disparar para a mesma mensagem que nós enviamos).
+const waIdsRecentes = new Set<string>();
+function lembrarWaId(id?: string | null) {
+  if (!id) return;
+  waIdsRecentes.add(id);
+  if (waIdsRecentes.size > 3000) {
+    const maisAntigo = waIdsRecentes.values().next().value;
+    if (maisAntigo) waIdsRecentes.delete(maisAntigo);
+  }
+}
+
+// ─── MENSAGENS APAGADAS ───────────────────────────────────────────────────
+// Guarda em memória as mensagens recebidas (id -> conteúdo), para que, quando o
+// cliente APAGAR uma mensagem, ainda tenhamos o texto original para mostrar.
+// Limitado para não crescer infinito (LRU simples: descarta as mais antigas).
+const MAX_MENSAGENS_ARMAZENADAS = 4000;
+const mensagensRecentes = new Map<string, { usuarioId: string; numero: string; nome: string; texto: string; timestamp: number }>();
+
+function armazenarMensagemRecente(id: string, dados: { usuarioId: string; numero: string; nome: string; texto: string; timestamp: number }) {
+  mensagensRecentes.set(id, dados);
+  if (mensagensRecentes.size > MAX_MENSAGENS_ARMAZENADAS) {
+    const maisAntiga = mensagensRecentes.keys().next().value;
+    if (maisAntiga) mensagensRecentes.delete(maisAntiga);
+  }
+}
+
+// Extrai o texto de uma mensagem do WhatsApp (cobre os tipos mais comuns)
+function extrairTextoMensagem(message: any): string | null {
+  if (!message) return null;
+  return message.conversation
+    || message.extendedTextMessage?.text
+    || message.imageMessage?.caption
+    || message.videoMessage?.caption
+    || message.documentMessage?.caption
+    || null;
+}
+
+// Identifica o tipo da mensagem (para a Caixa de Entrada)
+function tipoMensagem(message: any): string {
+  if (!message) return 'outro';
+  if (message.conversation || message.extendedTextMessage) return 'texto';
+  if (message.imageMessage) return 'imagem';
+  if (message.videoMessage) return 'video';
+  if (message.audioMessage) return 'audio';
+  if (message.documentMessage) return 'documento';
+  if (message.stickerMessage) return 'figurinha';
+  return 'outro';
+}
+
+// ─── AUTO-RESPOSTA POR "SILÊNCIO" ───
+// A saudação só sai quando a conversa estava PARADA: se houve qualquer troca de
+// mensagem com o contato nas últimas AUTO_REPLY_SILENCIO_HORAS, não envia.
+// Quem conversa todo dia nunca recebe; quem sumiu 2+ dias recebe de novo.
+// Trava extra: nunca mais de 1 por contato a cada 24h (sobrevive a reinícios via banco).
+const SILENCIO_HORAS = Number(process.env.AUTO_REPLY_SILENCIO_HORAS || 48);
+const TRAVA_24H_MS = 24 * 60 * 60 * 1000;
+// Memória rápida: última auto-resposta por contato (evita rajada entre mensagens seguidas)
+const ultimaAutoMem = new Map<string, number>();
+
+export async function connectToWhatsApp(usuarioId: string, socketId?: string) {
+  if (!usuarioId) return;
+
+  // Evita criar múltiplas instâncias para o mesmo usuário se já estiver rodando
+  if (sessions.has(usuarioId)) {
+    console.log(`[Baileys] Sessão já existe para o usuário ${usuarioId}. Ignorando recriação.`);
+    return;
+  }
+
+  const authDir = path.join(__dirname, `../../../prisma/auth_info_baileys_${usuarioId}`);
+  const { state, saveCreds } = await useMultiFileAuthState(authDir);
+
+  const sock = makeWASocket({
+    auth: state,
+    printQRInTerminal: false,
+    browser: Browsers.windows('Desktop'),
+    syncFullHistory: false,
+    // Mantém a conexão viva 24/7 na VPS: envia pings periódicos ao WhatsApp.
+    // Sem isso a conexão pode "congelar em silêncio" sem disparar o evento de queda.
+    keepAliveIntervalMs: 30000,
+    connectTimeoutMs: 60000,
+    retryRequestDelayMs: 2000,
+    // Não marca o aparelho como "online" ao conectar — evita roubar as notificações do celular.
+    markOnlineOnConnect: false
+  });
+
+  // Salva a instância no mapa
+  sessions.set(usuarioId, sock);
+
+  sock.ev.on('connection.update', async (update) => {
+    const { connection, lastDisconnect, qr } = update;
+    
+    if (qr) {
+      console.log(`\n[Baileys] QR Code gerado para o usuário ${usuarioId}`);
+      
+      try {
+        const qrBase64 = await qrcode.toDataURL(qr);
+        // Guarda o QR no cache para reenviar a quem conectar depois
+        latestQR.set(usuarioId, qrBase64);
+        connectedUsers.delete(usuarioId);
+        // Emite o QR Code apenas para a sala do usuário específico
+        io.to(usuarioId).emit('WHATSAPP_QR_CODE', qrBase64);
+
+        // Atualiza status no banco
+        await prisma.usuario.update({
+          where: { id: usuarioId },
+          data: { whatsappConectado: false }
+        });
+      } catch (err) {
+        console.error(`[Baileys] Erro ao gerar Base64 do QR para usuário ${usuarioId}:`, err);
+      }
+    }
+
+    if (connection === 'close') {
+      const statusCode = (lastDisconnect?.error as Boom)?.output?.statusCode;
+      const isLoggedOut = statusCode === DisconnectReason.loggedOut;
+
+      console.log(`[Baileys] Conexão fechada (Usuário ${usuarioId}). Código: ${statusCode}. Motivo:`, lastDisconnect?.error, 'Deslogado:', isLoggedOut);
+
+      io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false });
+
+      connectedUsers.delete(usuarioId);
+
+      // CRÍTICO: sempre remove o socket morto do mapa antes de qualquer decisão.
+      // Sem isso, o `if (sessions.has(usuarioId)) return` no topo de connectToWhatsApp
+      // faz a reconexão virar um no-op e a sessão morre para sempre.
+      sessions.delete(usuarioId);
+
+      if (isLoggedOut) {
+        // ÚNICO caso que para de vez: o usuário REMOVEU o aparelho em "Aparelhos conectados"
+        // no celular. O WhatsApp invalida a sessão (código 401), então apagamos as credenciais
+        // mortas do disco para que um QR Code novo e limpo seja gerado na próxima conexão.
+        console.log(`[Baileys] Aparelho REMOVIDO pelo celular (usuário ${usuarioId}). Limpando credenciais e aguardando novo QR Code.`);
+        latestQR.delete(usuarioId);
+        try {
+          const fs = require('fs');
+          if (fs.existsSync(authDir)) {
+            fs.rmSync(authDir, { recursive: true, force: true });
+          }
+        } catch (e) {
+          console.error(`[Baileys] Erro ao limpar credenciais do usuário ${usuarioId}:`, e);
+        }
+        await prisma.usuario.update({
+          where: { id: usuarioId },
+          data: { whatsappConectado: false }
+        }).catch(() => {});
+      } else {
+        // Inclui o código 515 (restartRequired) que o Baileys dispara logo após escanear o QR,
+        // além de quedas de internet / erros internos. Em todos esses casos é preciso recriar o socket.
+        await prisma.usuario.update({
+          where: { id: usuarioId },
+          data: { whatsappConectado: false }
+        }).catch(() => {});
+        console.log(`[Baileys] Reconectando usuário ${usuarioId} em 5 segundos...`);
+        setTimeout(() => connectToWhatsApp(usuarioId).catch(err => console.error("Erro no retry:", err)), 5000);
+      }
+    } else if (connection === 'open') {
+      console.log(`[Baileys] Conexão aberta com sucesso! Servidor pronto para disparos do usuário ${usuarioId}.`);
+      // Conectou: não há mais QR pendente e o usuário entra na lista de conectados.
+      connectedUsers.add(usuarioId);
+      latestQR.delete(usuarioId);
+      io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: true });
+
+      // Mantém o dispositivo web como "offline" para NÃO roubar as notificações do celular.
+      // Assim as mensagens recebidas continuam aparecendo normalmente no telefone da pessoa.
+      sock.sendPresenceUpdate('unavailable').catch(() => {});
+      
+      await prisma.usuario.update({
+        where: { id: usuarioId },
+        data: { whatsappConectado: true }
+      }).catch(() => {});
+
+      // Resolve os números reais dos chats @lid existentes (o mapeamento LID->PN já carregou).
+      setTimeout(() => { backfillNumerosReais(usuarioId, sock).catch(() => {}); }, 8000);
+    }
+  });
+
+  sock.ev.on('creds.update', saveCreds);
+
+  // Captura os nomes dos contatos para mostrar na Caixa de Entrada (em vez do número/@lid)
+  sock.ev.on('contacts.upsert', (contatos: any[]) => {
+    for (const c of contatos || []) registrarNomeContato(c.id, c.name || c.notify || c.verifiedName);
+  });
+  sock.ev.on('contacts.update', (contatos: any[]) => {
+    for (const c of contatos || []) registrarNomeContato(c.id, c.name || c.notify || c.verifiedName);
+  });
+
+  // Mensagens recebidas: detecta APAGADAS, armazena e faz auto-resposta
+  sock.ev.on('messages.upsert', async (m) => {
+    try {
+      // APENAS processar se for uma mensagem chegando (notify)
+      if (m.type !== 'notify') return;
+
+      const msg = m.messages[0];
+      if (!msg || !msg.message || !msg.key) return;
+
+      const remoteJid = msg.key.remoteJid;
+      if (!remoteJid || remoteJid.includes('@g.us') || remoteJid.includes('status@broadcast')) return; // ignorar grupos e status
+
+      const numero = remoteJid.split('@')[0];
+      if (!numero) return;
+
+      // ─── 1. MENSAGEM APAGADA (REVOKE) ───
+      // Quando o cliente apaga uma mensagem, o WhatsApp envia um protocolMessage REVOKE
+      // apontando para o id da original. Recuperamos o texto guardado e avisamos a extensão.
+      const protocolMsg = msg.message.protocolMessage;
+      if (protocolMsg && protocolMsg.type === proto.Message.ProtocolMessage.Type.REVOKE) {
+        const idApagado = protocolMsg.key?.id || undefined;
+        const original = idApagado ? mensagensRecentes.get(idApagado) : undefined;
+        if (original) {
+          console.log(`[Baileys] 🗑️ ${original.nome || original.numero} apagou: "${original.texto}"`);
+          io.to(usuarioId).emit('MENSAGEM_APAGADA', {
+            numero: original.numero,
+            nome: original.nome,
+            texto: original.texto,
+            recebidaEm: original.timestamp,
+            apagadaEm: Date.now()
+          });
+        } else {
+          console.log(`[Baileys] 🗑️ ${numero} apagou uma mensagem (conteúdo não estava em cache).`);
+          io.to(usuarioId).emit('MENSAGEM_APAGADA', {
+            numero,
+            nome: msg.pushName || '',
+            texto: null,
+            recebidaEm: null,
+            apagadaEm: Date.now()
+          });
+        }
+        // Caixa de Entrada: marca a mensagem como apagada (mantém visível, riscada no painel)
+        if (idApagado) {
+          try {
+            const r = await prisma.mensagem.updateMany({ where: { usuarioId, waId: idApagado }, data: { apagada: true } });
+            if (r.count > 0) io.to(usuarioId).emit('MENSAGEM_APAGADA_INBOX', { usuarioId, chatJid: remoteJid, waId: idApagado });
+          } catch (e) { console.error('[Inbox] Erro ao marcar mensagem apagada:', (e as any)?.message); }
+        }
+        return;
+      }
+
+      // ─── CAIXA DE ENTRADA: salva a mensagem (recebida E enviada) e avisa o painel ───
+      const _tipoMsg = tipoMensagem(msg.message);
+      const _textoMsg = extrairTextoMensagem(msg.message) || '';
+      const _anuncio = getAnuncio(msg.message); // mensagem vinda de anúncio (Click-to-WhatsApp)
+      // Pula se já salvamos esta mensagem pelo envio da Caixa de Entrada (evita duplicar)
+      if ((_textoMsg || _tipoMsg !== 'texto' || _anuncio) && !(msg.key.id && waIdsRecentes.has(msg.key.id))) {
+        (async () => {
+          let midiaUrl: string | null = null;
+          let textoSalvar = _textoMsg;
+          let tipoSalvar = _tipoMsg;
+          if (_anuncio) {
+            // Veio de anúncio: salva a FOTO do anúncio e rotula a mensagem
+            midiaUrl = await salvarFotoAnuncio(_anuncio);
+            if (midiaUrl) tipoSalvar = 'imagem';
+            const titulo = _anuncio.title || _anuncio.body || 'Anúncio';
+            textoSalvar = `📢 [Anúncio] ${titulo}` + (_textoMsg ? `\n\n${_textoMsg}` : '');
+          } else if (_tipoMsg !== 'texto') {
+            midiaUrl = await baixarMidia(sock, msg, _tipoMsg, msg.key.id || '');
+          }
+          // Resolve o número REAL do contato (mesmo quando o chat é @lid)
+          const numeroReal = await resolverNumeroReal(sock, msg, remoteJid);
+          try {
+            const salva = await prisma.mensagem.create({
+              data: {
+                usuarioId,
+                chatJid: remoteJid,
+                // pushName só vale para mensagens RECEBIDAS (é o nome do contato). Nas ENVIADAS,
+                // o pushName é o NOSSO próprio nome — então usamos só o contato salvo (ou vazio).
+                chatNome: msg.key.fromMe
+                  ? (contatosNomes.get(remoteJid) || '')
+                  : (msg.pushName || contatosNomes.get(remoteJid) || ''),
+                fromMe: !!msg.key.fromMe,
+                texto: textoSalvar,
+                tipo: tipoSalvar,
+                midiaUrl,
+                waId: msg.key.id || null,
+                numeroReal: numeroReal || null
+              }
+            });
+            io.to(usuarioId).emit('NOVA_MENSAGEM', salva);
+          } catch (e: any) {
+            console.error('[Inbox] Erro ao salvar mensagem:', e?.message);
+          }
+        })();
+      }
+
+      // Daqui pra frente só interessam mensagens RECEBIDAS (não as enviadas por nós)
+      if (msg.key.fromMe) return;
+
+      // ─── 2. ARMAZENA a mensagem recebida (para o caso de ser apagada depois) ───
+      const textoRecebido = extrairTextoMensagem(msg.message);
+      if (textoRecebido && msg.key.id) {
+        armazenarMensagemRecente(msg.key.id, {
+          usuarioId,
+          numero,
+          nome: msg.pushName || '',
+          texto: textoRecebido,
+          timestamp: Date.now()
+        });
+      }
+
+      // ─── 3. AUTO-RESPOSTA (recepção) — regra de SILÊNCIO (não é mais "1x para sempre") ───
+      const numeroRecep = (await resolverNumeroReal(sock, msg, remoteJid)) || numero;
+      // Considera TODAS as formas que o contato pode ter sido salvo (número real OU @lid cru)
+      const chavesDedup = Array.from(new Set([numeroRecep, numero].filter(Boolean)));
+      const memKeys = chavesDedup.map(k => `${usuarioId}_${k}`);
+
+      // Trava rápida em memória: já saiu auto-resposta pra esse contato nas últimas 24h?
+      const agoraMs = Date.now();
+      if (memKeys.some(mk => (ultimaAutoMem.get(mk) || 0) > agoraMs - TRAVA_24H_MS)) return;
+
+      const usuario = await prisma.usuario.findUnique({ where: { id: usuarioId } });
+      if (!usuario || !usuario.autoRespostaAtiva || !usuario.autoRespostaMensagem) return;
+
+      try {
+        // Conversa recente? Qualquer mensagem (enviada OU recebida) dentro da janela de
+        // silêncio bloqueia a saudação — ignorando a mensagem que acabou de chegar.
+        const desde = new Date(agoraMs - SILENCIO_HORAS * 60 * 60 * 1000);
+        const conversaRecente = await prisma.mensagem.findFirst({
+          where: {
+            usuarioId,
+            OR: [{ chatJid: remoteJid }, { numeroReal: { in: chavesDedup } }],
+            timestamp: { gte: desde },
+            NOT: { waId: msg.key.id || '___sem_id___' }
+          }
+        });
+        if (conversaRecente) return;
+
+        // Trava persistente (sobrevive a reinício): última auto-resposta < 24h?
+        const ultimaAuto = await prisma.autoReplyHistory.findFirst({
+          where: { usuarioId, numero: { in: chavesDedup } },
+          orderBy: { criadoEm: 'desc' }
+        });
+        if (ultimaAuto && ultimaAuto.criadoEm.getTime() > agoraMs - TRAVA_24H_MS) {
+          memKeys.forEach(mk => ultimaAutoMem.set(mk, ultimaAuto.criadoEm.getTime()));
+          return;
+        }
+
+        // Registra ANTES de enviar (contra corridas/reinícios)
+        await prisma.autoReplyHistory.upsert({
+          where: { usuarioId_numero: { usuarioId, numero: numeroRecep } },
+          update: { criadoEm: new Date() },
+          create: { usuarioId, numero: numeroRecep }
+        });
+      } catch (e: any) {
+        // Banco indisponível → NÃO envia (antes, o erro deixava enviar repetido).
+        console.error('[Baileys] Auto-resposta pulada por erro no banco:', e?.message);
+        return;
+      }
+      memKeys.forEach(mk => ultimaAutoMem.set(mk, agoraMs));
+      console.log(`[Baileys] Enviando auto-resposta (silêncio > ${SILENCIO_HORAS}h) para ${numeroRecep} (Usuário: ${usuarioId})`);
+
+      try {
+        const enviadaAuto = await sock.sendMessage(remoteJid, { text: usuario.autoRespostaMensagem });
+        // Mostra a recepção também na Caixa de Entrada do painel (o sendMessage não dispara captura)
+        try {
+          const waIdAuto = enviadaAuto?.key?.id || null;
+          lembrarWaId(waIdAuto);
+          const salvaAuto = await prisma.mensagem.create({
+            data: {
+              usuarioId, chatJid: remoteJid, chatNome: '', fromMe: true,
+              texto: usuario.autoRespostaMensagem, tipo: 'texto', waId: waIdAuto,
+              numeroReal: numeroRecep || null
+            }
+          });
+          io.to(usuarioId).emit('NOVA_MENSAGEM', salvaAuto);
+        } catch (e) { console.error('[Inbox] Erro ao salvar auto-resposta na inbox:', (e as any)?.message); }
+      } catch (e) {
+        console.error("Erro ao enviar auto-reply:", e);
+        // Se falhar o envio, libera para tentar de novo depois (memória + banco)
+        memKeys.forEach(mk => ultimaAutoMem.delete(mk));
+        await prisma.autoReplyHistory.delete({ where: { usuarioId_numero: { usuarioId, numero: numeroRecep } } }).catch(() => {});
+      }
+
+    } catch (err) {
+      console.error(`[Baileys] Erro no processamento de auto-resposta (Usuário: ${usuarioId}):`, err);
+    }
+  });
+}
+
+// Função usada pelo worker para enviar mensagens diretamente simulando ser humano
+export async function enviarMensagem(usuarioId: string, numero: string, mensagem: string): Promise<boolean> {
+  const sock = sessions.get(usuarioId);
+  
+  if (!sock) {
+    console.error(`[Baileys] Falha: WhatsApp não está conectado para o usuário ${usuarioId}!`);
+    return false;
+  }
+
+  try {
+    // Se já vier um JID completo (ex.: @lid, @s.whatsapp.net, @c.us), usa direto — assim
+    // o agendamento entrega para QUALQUER contato (igual o chat da Caixa de Entrada).
+    const jid = numero.includes('@') ? numero.replace('@c.us', '@s.whatsapp.net') : `${numero}@s.whatsapp.net`;
+    
+    // 1. Simula que a pessoa entrou no chat e está online
+    await sock.sendPresenceUpdate('available', jid);
+    await delay(1000);
+    
+    // 2. Simula que a pessoa está "Digitando..."
+    console.log(`[Baileys] Simulando "Digitando..." para ${numero} (Usuário: ${usuarioId})`);
+    await sock.sendPresenceUpdate('composing', jid);
+    
+    // Atraso artificial de 3 a 5 segundos enquanto "digita"
+    const tempoDigitacao = Math.floor(Math.random() * 2000) + 3000;
+    await delay(tempoDigitacao);
+    
+    // Para de aparecer "digitando"
+    await sock.sendPresenceUpdate('paused', jid);
+
+    // 3. Envia a mensagem
+    await sock.sendMessage(jid, { text: mensagem });
+    console.log(`[Baileys] 🚀 Mensagem enviada com sucesso para ${numero} pelo usuário ${usuarioId}`);
+
+    // 4. CRÍTICO: volta a presença para "offline" (unavailable).
+    // Se o web ficar marcado como "online", o WhatsApp passa a entregar as mensagens
+    // RECEBIDAS apenas no web, e elas "somem" do celular. Liberar a presença aqui
+    // devolve as notificações ao telefone da pessoa.
+    await sock.sendPresenceUpdate('unavailable').catch(() => {});
+    return true;
+  } catch (error) {
+    console.error(`[Baileys] ❌ Erro ao enviar mensagem para ${numero} pelo usuário ${usuarioId}:`, error);
+    return false;
+  }
+}
+
+// Envia uma mensagem pela Caixa de Entrada (resposta interativa a um JID específico).
+// Mais rápida que enviarMensagem (sem o delay longo de "digitando"), porque é o
+// atendente conversando em tempo real, não um disparo em massa.
+export async function enviarMensagemInbox(usuarioId: string, jid: string, texto: string): Promise<boolean> {
+  const sock = sessions.get(usuarioId);
+  if (!sock) {
+    console.error(`[Inbox] WhatsApp não conectado para o usuário ${usuarioId}.`);
+    return false;
+  }
+  // Assinatura do PAINEL CRM (separada da extensão). Regras:
+  //  - assinaturaPainel definida e não-vazia  -> usa ela: *assinatura:* texto
+  //  - assinaturaPainel definida e vazia ("")  -> sem assinatura
+  //  - assinaturaPainel não definida (null)    -> padrão: *nome do atendente:* texto
+  let textoFinal = texto;
+  try {
+    const u = await prisma.usuario.findUnique({ where: { id: usuarioId } });
+    if (u) {
+      if (u.assinaturaPainel !== null && u.assinaturaPainel !== undefined) {
+        const a = String(u.assinaturaPainel).trim();
+        textoFinal = a ? `*${a}*\n${texto}` : texto;
+      } else if (u.nome) {
+        textoFinal = `*${u.nome}*\n${texto}`;
+      }
+    }
+  } catch (e) {}
+
+  try {
+    await sock.sendPresenceUpdate('composing', jid).catch(() => {});
+    await delay(700);
+    const enviada = await sock.sendMessage(jid, { text: textoFinal });
+    // volta a "offline" para não roubar as notificações do celular
+    await sock.sendPresenceUpdate('unavailable').catch(() => {});
+
+    // Guarda a mensagem ENVIADA e avisa o painel na hora. (O sock.sendMessage nem sempre
+    // dispara messages.upsert para as nossas próprias mensagens, então salvamos aqui.)
+    try {
+      const waId = enviada?.key?.id || null;
+      lembrarWaId(waId);
+      const salva = await prisma.mensagem.create({
+        data: { usuarioId, chatJid: jid, chatNome: '', fromMe: true, texto: textoFinal, tipo: 'texto', waId }
+      });
+      io.to(usuarioId).emit('NOVA_MENSAGEM', salva);
+    } catch (e) {
+      console.error('[Inbox] Erro ao salvar mensagem enviada:', e);
+    }
+    return true;
+  } catch (e) {
+    console.error('[Inbox] Erro ao enviar mensagem:', e);
+    return false;
+  }
+}
+
+// Envia uma MÍDIA (foto, vídeo, áudio ou documento) pela Caixa de Entrada.
+export async function enviarMidiaInbox(usuarioId: string, jid: string, base64: string, mimetype: string, tipo: string, legenda?: string): Promise<boolean> {
+  const sock = sessions.get(usuarioId);
+  if (!sock) {
+    console.error(`[Inbox] WhatsApp não conectado para o usuário ${usuarioId}.`);
+    return false;
+  }
+  try {
+    const buffer = Buffer.from(base64, 'base64');
+    let conteudo: any;
+    if (tipo === 'imagem') conteudo = { image: buffer, caption: legenda || undefined };
+    else if (tipo === 'video') conteudo = { video: buffer, caption: legenda || undefined };
+    else if (tipo === 'audio') conteudo = { audio: buffer, mimetype: 'audio/ogg; codecs=opus', ptt: true };
+    else conteudo = { document: buffer, mimetype: mimetype || 'application/octet-stream', fileName: 'arquivo' };
+
+    await sock.sendPresenceUpdate('composing', jid).catch(() => {});
+    const enviada = await sock.sendMessage(jid, conteudo);
+    await sock.sendPresenceUpdate('unavailable').catch(() => {});
+
+    // Salva a mídia localmente para exibir no painel
+    const ext = EXT_POR_TIPO[tipo] || 'bin';
+    const nome = `out_${(enviada?.key?.id || 'm').replace(/[^a-zA-Z0-9]/g, '')}_${Math.floor(Math.random() * 1000000)}.${ext}`;
+    let midiaUrl: string | null = null;
+    try { fs.writeFileSync(path.join(MIDIAS_DIR, nome), buffer); midiaUrl = `/midias/${nome}`; } catch (e) {}
+
+    const waId = enviada?.key?.id || null;
+    lembrarWaId(waId);
+    const salva = await prisma.mensagem.create({
+      data: { usuarioId, chatJid: jid, chatNome: '', fromMe: true, texto: legenda || '', tipo, midiaUrl, waId }
+    });
+    io.to(usuarioId).emit('NOVA_MENSAGEM', salva);
+    return true;
+  } catch (e) {
+    console.error('[Inbox] Erro ao enviar mídia:', e);
+    return false;
+  }
+}
+
+// Função para deslogar e limpar sessão do usuário
+export async function logoutWhatsApp(usuarioId: string) {
+  const sock = sessions.get(usuarioId);
+  if (sock) {
+    try { await sock.logout(); } catch (e) {}
+    sessions.delete(usuarioId);
+  }
+
+  const fs = require('fs');
+  const dir = path.join(__dirname, `../../../prisma/auth_info_baileys_${usuarioId}`);
+  if (fs.existsSync(dir)) {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+
+  await prisma.usuario.update({ where: { id: usuarioId }, data: { whatsappConectado: false } }).catch(()=>{});
+  io.to(usuarioId).emit('WHATSAPP_STATUS', { conectado: false });
+}

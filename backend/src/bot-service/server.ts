@@ -56,6 +56,43 @@ function parsearRespostaBot(payload: string): RespostaBotBridge {
   return { partes: [texto.slice(0, 3500)] };
 }
 
+// Transcreve audio do cliente (WhatsApp manda em audio/ogg). A API de "responses" nao
+// aceita ogg como input_file — devolvia 400 e o cliente que mandou audio ficava sem
+// resposta nenhuma (achado 01/09). Aqui usamos a rota de transcricao, que aceita ogg,
+// e injetamos o texto na conversa. Se a transcricao falhar, devolve null e o fluxo
+// segue pedindo pro cliente repetir por escrito — nunca derruba a resposta inteira.
+async function transcreverAudio(apiKey: string, base64: string, mime: string): Promise<string | null> {
+  try {
+    const buffer = Buffer.from(base64, 'base64');
+    const extensao = String(mime).includes('mp4') || String(mime).includes('m4a') ? 'm4a'
+      : String(mime).includes('mpeg') || String(mime).includes('mp3') ? 'mp3'
+      : String(mime).includes('wav') ? 'wav'
+      : 'ogg';
+    const form = new FormData();
+    form.append('file', new Blob([buffer], { type: mime || 'audio/ogg' }), `audio-cliente.${extensao}`);
+    form.append('model', process.env.OPENAI_MODEL_AUDIO || 'whisper-1');
+    form.append('language', 'pt');
+
+    const r = await fetch('https://api.openai.com/v1/audio/transcriptions', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${apiKey}` },
+      body: form,
+      signal: AbortSignal.timeout(45_000),
+    });
+    if (!r.ok) {
+      const detalhe = await r.text().catch(() => '');
+      console.error('[BotService] Falha ao transcrever audio:', r.status, detalhe.slice(0, 200));
+      return null;
+    }
+    const dados: any = await r.json().catch(() => null);
+    const texto = String(dados?.text || '').trim();
+    return texto || null;
+  } catch (e: any) {
+    console.error('[BotService] Erro ao transcrever audio:', e?.message || e);
+    return null;
+  }
+}
+
 async function gerarRespostaViaOpenAI(args: {
   messages: Array<{ role: 'user' | 'assistant'; content: string }>;
   imagem?: any;
@@ -125,13 +162,23 @@ async function gerarRespostaViaOpenAI(args: {
   }
 
   if (args.audio?.base64 && args.audio?.mime) {
-    input.push({
-      role: 'user',
-      content: [
-        { type: 'input_text', text: 'Contexto extra: o cliente enviou um audio agora. Se nao for possivel entender o audio, peça para ele repetir em texto de forma natural.' },
-        { type: 'input_file', filename: 'audio-cliente.ogg', file_data: `data:${args.audio.mime};base64,${args.audio.base64}` },
-      ],
-    });
+    // Transcreve primeiro (a API de responses rejeita ogg como arquivo) e manda o TEXTO.
+    const transcricao = await transcreverAudio(apiKey, args.audio.base64, args.audio.mime);
+    if (transcricao) {
+      input.push({
+        role: 'user',
+        content: [
+          { type: 'input_text', text: `O cliente mandou um audio agora. Transcricao do que ele falou: "${transcricao.slice(0, 1200)}". Responda ao conteudo do audio normalmente, como se ele tivesse escrito isso — NAO comente que era audio nem que voce transcreveu.` },
+        ],
+      });
+    } else {
+      input.push({
+        role: 'user',
+        content: [
+          { type: 'input_text', text: 'O cliente mandou um audio agora, mas nao foi possivel entender o conteudo. Peça de forma natural e educada pra ele repetir por escrito.' },
+        ],
+      });
+    }
   }
 
   const resposta = await fetch('https://api.openai.com/v1/responses', {

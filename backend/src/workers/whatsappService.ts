@@ -322,6 +322,22 @@ async function carregarMidiaBotIA(midia: MidiaBotIA): Promise<{ buffer: Buffer; 
 // e a resposta do robo era perdida pra sempre (o debounce so dispara 1x por rajada de
 // mensagens do cliente; sem nova mensagem, nao ha nova tentativa). Agora esperamos o
 // socket voltar por ate ~10s (janela observada dos blips reais) antes de desistir.
+// Achado 01/09: a fila de envio do robo (filasEnvioBotIA) encadeia TODOS os envios de
+// uma conta. Se um sock.sendMessage ficar pendurado (socket morto durante um erro 440,
+// por exemplo), a promise nunca resolve e TUDO que vier depois fica preso atras dela —
+// o robo para de responder a conta inteira, sem erro nenhum no log. Foi exatamente o
+// que aconteceu: 67 minutos sem uma unica resposta, em todas as conversas.
+// Este limite garante que um envio travado falha e LIBERA a fila.
+function comLimiteDeTempo<T>(promessa: Promise<T>, ms: number, oQue: string): Promise<T> {
+  return new Promise<T>((resolve, reject) => {
+    const t = setTimeout(() => reject(new Error(`timeout de ${ms}ms em ${oQue}`)), ms);
+    promessa.then(
+      (v) => { clearTimeout(t); resolve(v); },
+      (e) => { clearTimeout(t); reject(e); },
+    );
+  });
+}
+
 async function aguardarSocketBotIA(usuarioId: string, tentativas = 4, intervaloMs = 2500): Promise<any> {
   for (let i = 0; i < tentativas; i++) {
     const sock = sessions.get(usuarioId);
@@ -342,10 +358,10 @@ async function enviarParteBotIA(usuarioId: string, chatJid: string, numeroReal: 
     const key = `${usuarioId}:${chatJid}`;
     chatsBotEnviando.add(key);
     try {
-      await sock.sendPresenceUpdate('composing', chatJid).catch(() => {});
+      await comLimiteDeTempo(sock.sendPresenceUpdate('composing', chatJid), 10_000, 'presence').catch(() => {});
       await delay(tempoDigitacaoMs);
-      const enviada = await sock.sendMessage(chatJid, { text: texto });
-      await sock.sendPresenceUpdate('unavailable').catch(() => {});
+      const enviada = await comLimiteDeTempo<any>(sock.sendMessage(chatJid, { text: texto }), 45_000, 'sendMessage(texto)');
+      await comLimiteDeTempo(sock.sendPresenceUpdate('unavailable'), 10_000, 'presence').catch(() => {});
       const waId = enviada?.key?.id || null;
       lembrarWaId(waId);
       lembrarWaIdBotIA(waId);
@@ -393,13 +409,13 @@ async function enviarMidiaBotIA(usuarioId: string, chatJid: string, numeroReal: 
     chatsBotEnviando.add(key);
     try {
       const carregada = await carregarMidiaBotIA(midia);
-      await sock.sendPresenceUpdate('composing', chatJid).catch(() => {});
+      await comLimiteDeTempo(sock.sendPresenceUpdate('composing', chatJid), 10_000, 'presence').catch(() => {});
       await delay(tempoDigitacaoMs);
 
       const conteudo: any = { video: carregada.buffer };
       if (midia.legenda?.trim()) conteudo.caption = midia.legenda.trim();
-      const enviada = await sock.sendMessage(chatJid, conteudo);
-      await sock.sendPresenceUpdate('unavailable').catch(() => {});
+      const enviada = await comLimiteDeTempo<any>(sock.sendMessage(chatJid, conteudo), 90_000, 'sendMessage(midia)');
+      await comLimiteDeTempo(sock.sendPresenceUpdate('unavailable'), 10_000, 'presence').catch(() => {});
 
       const waId = enviada?.key?.id || null;
       lembrarWaId(waId);
@@ -559,6 +575,88 @@ function iniciarVigiaConexao() {
   setInterval(checarSessoes, 10000);
 }
 iniciarVigiaConexao();
+
+// VIGIA DE RESPOSTAS PENDENTES (01/09) — o papel do robo e responder TODO MUNDO.
+// O fluxo normal responde alguns segundos depois de cada mensagem que chega. Mas se
+// naquele exato momento algo atrapalhar (WhatsApp oscilando, robo pausado por engano,
+// o servico do robo fora do ar), a resposta se perde e o cliente fica esperando pra
+// sempre — so voltaria a ser atendido se escrevesse de novo. Caso real: um cliente
+// mandou 5 mensagens seguidas e ficou sem NENHUMA resposta.
+// Esta varredura roda de tempos em tempos, acha as conversas em que o CLIENTE falou por
+// ultimo e o robo nao respondeu, e aciona o robo pra elas.
+const tentativasResposta = new Map<string, number>(); // waId -> quantas vezes tentamos
+let vigiaRespostasIniciado = false;
+function iniciarVigiaRespostasPendentes() {
+  if (vigiaRespostasIniciado) return;
+  vigiaRespostasIniciado = true;
+
+  const varrer = async () => {
+    try {
+      const contasBot = await prisma.usuario.findMany({
+        where: { ativo: true, botIaAtivo: true },
+        select: { id: true },
+      });
+      if (!contasBot.length) return;
+
+      const agora = Date.now();
+      // Janela: mensagens com mais de 60s (o fluxo normal ja teve tempo de agir) e
+      // menos de 6h (nao ressuscita conversa velha do nada).
+      const limiteNovo = new Date(agora - 60 * 1000);
+      const limiteVelho = new Date(agora - 6 * 60 * 60 * 1000);
+
+      for (const conta of contasBot) {
+        if (!sessions.has(conta.id) && !connectedUsers.has(conta.id)) continue; // sem WhatsApp, nao adianta
+
+        const recentes = await prisma.mensagem.findMany({
+          where: { usuarioId: conta.id, timestamp: { gte: limiteVelho } },
+          orderBy: { timestamp: 'desc' },
+          take: 500,
+          select: { chatJid: true, fromMe: true, waId: true, timestamp: true },
+        });
+
+        // Ultima mensagem de cada conversa.
+        const ultimaPorChat = new Map<string, typeof recentes[number]>();
+        for (const m of recentes) {
+          if (!ultimaPorChat.has(m.chatJid)) ultimaPorChat.set(m.chatJid, m);
+        }
+
+        for (const [chatJid, ultima] of ultimaPorChat.entries()) {
+          if (ultima.fromMe) continue;                       // ja respondida
+          if (ultima.timestamp > limiteNovo) continue;       // fresca: o fluxo normal cuida
+          if (!ultima.waId) continue;
+          if (chatJid.includes('@g.us') || chatJid.includes('@newsletter') || chatJid.includes('status@broadcast')) continue;
+
+          const estado = await prisma.botConversa.findUnique({
+            where: { usuarioId_chatJid: { usuarioId: conta.id, chatJid } },
+            select: { pausadoAte: true, ultimaRespostaEm: true },
+          });
+          // Pausa de verdade (humano assumiu) continua sendo respeitada.
+          if (estado?.pausadoAte && estado.pausadoAte.getTime() > agora) continue;
+          // Ja respondemos DEPOIS dessa mensagem? entao esta em dia.
+          if (estado?.ultimaRespostaEm && estado.ultimaRespostaEm >= ultima.timestamp) continue;
+
+          const tentativas = tentativasResposta.get(ultima.waId) || 0;
+          if (tentativas >= 2) continue; // nao insiste pra sempre na mesma mensagem
+          tentativasResposta.set(ultima.waId, tentativas + 1);
+          if (tentativasResposta.size > 500) {
+            // limpeza simples pra nao crescer sem fim
+            const primeira = tentativasResposta.keys().next().value;
+            if (primeira) tentativasResposta.delete(primeira);
+          }
+
+          console.log(`[Bot IA][Vigia] Conversa ${chatJid} ficou sem resposta — acionando o robo.`);
+          await dispararRespostaBotAgora(conta.id, chatJid).catch(() => {});
+        }
+      }
+    } catch (e: any) {
+      console.error('[Bot IA][Vigia] Erro na varredura:', e?.message || e);
+    }
+  };
+
+  setTimeout(() => { varrer().catch(() => {}); }, 30_000).unref?.();
+  setInterval(() => { varrer().catch(() => {}); }, 90_000).unref?.();
+}
+iniciarVigiaRespostasPendentes();
 
 // ─── LEMBRETE DE AGENDAMENTOS (no WhatsApp do PRÓPRIO atendente) ───
 // No expediente, manda um lembrete pro número do próprio atendente (conversa
@@ -989,7 +1087,11 @@ export async function connectToWhatsApp(
       // Nao pausa quando o proprio bot esta enviando as bolhas dele.
       if (msg.key.fromMe && !waIdsBotIA.has(msg.key.id || '') && !chatsBotEnviando.has(`${usuarioId}:${remoteJid}`)) {
         const cfgBot = await prisma.usuario.findUnique({ where: { id: usuarioId }, select: { botIaAtivo: true } }).catch(() => null);
-        if (cfgBot?.botIaAtivo) await pausarConversaBotIA(usuarioId, remoteJid).catch(() => {});
+        // Marcado como 'eco_externo': e uma mensagem de saida que NAO foi o nosso robo.
+        // Pode ser um atendente digitando no celular/extensao (ai pausar e certo) OU o eco
+        // de um sistema externo escrevendo no mesmo numero (ai pausar silencia o robo a toa).
+        // Contas com botIaPausaManualMin = 0 ignoram essa pausa — ver pausarConversaBotIA.
+        if (cfgBot?.botIaAtivo) await pausarConversaBotIA(usuarioId, remoteJid, undefined, 'eco_externo').catch(() => {});
       }
 
       // Enriquece a agenda com o NOME (pushName) de quem manda mensagem — assim a busca
@@ -1302,7 +1404,7 @@ export async function enviarMensagem(
     // Se o web ficar marcado como "online", o WhatsApp passa a entregar as mensagens
     // RECEBIDAS apenas no web, e elas "somem" do celular. Liberar a presença aqui
     // devolve as notificações ao telefone da pessoa.
-    await sock.sendPresenceUpdate('unavailable').catch(() => {});
+    await comLimiteDeTempo(sock.sendPresenceUpdate('unavailable'), 10_000, 'presence').catch(() => {});
     return true;
   } catch (error) {
     console.error(`[Baileys] ❌ Erro ao enviar mensagem para ${numero} pelo usuário ${usuarioId}:`, error);
@@ -1313,6 +1415,42 @@ export async function enviarMensagem(
 // Envia uma mensagem pela Caixa de Entrada (resposta interativa a um JID específico).
 // Mais rápida que enviarMensagem (sem o delay longo de "digitando"), porque é o
 // atendente conversando em tempo real, não um disparo em massa.
+// Dispara o ROBO pra responder uma conversa AGORA, sob demanda (acao do painel).
+// Reaproveita exatamente o mesmo caminho das respostas automaticas — inclusive a
+// marcacao 'bot', a quebra em varias mensagens e as regras de preco. Criado em 01/09,
+// quando conversas ficaram sem resposta por causa de uma pausa indevida e nao havia
+// jeito de mandar o robo retomar sem o cliente escrever de novo.
+export async function dispararRespostaBotAgora(usuarioId: string, chatJid: string): Promise<boolean> {
+  const efetivoId = await resolverConexaoEfetiva(usuarioId);
+  const sock = sessions.get(efetivoId);
+  if (!sock) {
+    console.error(`[Bot IA] responderAgora: WhatsApp nao conectado (${efetivoId}).`);
+    return false;
+  }
+
+  // Precisa da ultima mensagem RECEBIDA — e ela que o robo vai responder.
+  const ultimaEntrada = await prisma.mensagem.findFirst({
+    where: { usuarioId, chatJid, fromMe: false },
+    orderBy: { timestamp: 'desc' },
+    select: { waId: true, numeroReal: true },
+  });
+  if (!ultimaEntrada?.waId) {
+    console.error(`[Bot IA] responderAgora: nenhuma mensagem do cliente em ${chatJid}.`);
+    return false;
+  }
+
+  const numeroReal = ultimaEntrada.numeroReal || chatJid.split('@')[0] || '';
+  await agendarRespostaBotIA({
+    usuarioId,
+    chatJid,
+    waId: ultimaEntrada.waId,
+    enviarParte: (texto, tempo) => enviarParteBotIA(efetivoId, chatJid, numeroReal, texto, tempo),
+    enviarVideo: (video, tempo) => enviarMidiaBotIA(efetivoId, chatJid, numeroReal, video as MidiaBotIA, tempo),
+  });
+  console.log(`[Bot IA] responderAgora: robo acionado para ${chatJid}.`);
+  return true;
+}
+
 export async function enviarMensagemInbox(usuarioId: string, jid: string, texto: string, enviadoPorId?: string): Promise<boolean> {
   const sock = sessions.get(usuarioId);
   if (!sock) {
@@ -1351,7 +1489,7 @@ export async function enviarMensagemInbox(usuarioId: string, jid: string, texto:
     await delay(700);
     const enviada = await sock.sendMessage(jid, { text: textoFinal });
     // volta a "offline" para não roubar as notificações do celular
-    await sock.sendPresenceUpdate('unavailable').catch(() => {});
+    await comLimiteDeTempo(sock.sendPresenceUpdate('unavailable'), 10_000, 'presence').catch(() => {});
 
     // Guarda a mensagem ENVIADA e avisa o painel na hora. (O sock.sendMessage nem sempre
     // dispara messages.upsert para as nossas próprias mensagens, então salvamos aqui.)
@@ -1390,7 +1528,7 @@ export async function enviarMidiaInbox(usuarioId: string, jid: string, base64: s
 
     await sock.sendPresenceUpdate('composing', jid).catch(() => {});
     const enviada = await sock.sendMessage(jid, conteudo);
-    await sock.sendPresenceUpdate('unavailable').catch(() => {});
+    await comLimiteDeTempo(sock.sendPresenceUpdate('unavailable'), 10_000, 'presence').catch(() => {});
 
     // Salva a mídia localmente para exibir no painel
     const ext = EXT_POR_TIPO[tipo] || 'bin';

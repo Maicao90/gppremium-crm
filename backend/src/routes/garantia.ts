@@ -7,6 +7,7 @@ import { prisma } from '../server';
 import { requireMaster } from '../middlewares/requireModulo';
 import { ehMaster } from '../auth/modulos';
 import { dispararPushDevidos } from '../workers/garantiaPush';
+import { conferirSenha } from '../auth/senha';
 
 // Dispara o envio de push AGORA em vez de esperar o próximo ciclo do worker (até 30min).
 // Fire-and-forget (não trava a resposta da rota nem falha ela se o Expo cair) — o
@@ -390,6 +391,110 @@ router.post('/clientes/:id/liberar-senha', requireMaster, async (req, res) => {
     if (!cliente) return res.status(404).json({ error: 'Cliente não encontrado.' });
     await prisma.garantiaCliente.update({ where: { id: cliente.id }, data: { senha: '' } });
     res.json({ ok: true, nome: cliente.nome, aviso: 'O cliente pode entrar no app com o CPF e definir uma senha nova.' });
+  } catch (e) { erro(res, e); }
+});
+
+// Ficha completa de um cliente: dados, garantias e revisões. Serve pro painel mostrar
+// tudo sobre a pessoa numa tela só, sem caçar em vários lugares.
+router.get('/clientes/:id', requireMaster, async (req, res) => {
+  try {
+    const c = await prisma.garantiaCliente.findUnique({ where: { id: String(req.params.id) } });
+    if (!c) return res.status(404).json({ error: 'Cliente não encontrado.' });
+
+    // O schema não declara relações do Prisma aqui (clienteId/veiculoId/lojaId são
+    // campos soltos), então busca cada parte e junta na mão.
+    const garantias = await prisma.garantia.findMany({
+      where: { clienteId: c.id },
+      orderBy: { criadoEm: 'desc' },
+    });
+    const veiculos = garantias.length
+      ? await prisma.garantiaVeiculo.findMany({ where: { id: { in: garantias.map((g) => g.veiculoId) } } })
+      : [];
+    const idsLoja = garantias.map((g) => g.lojaId).filter((x): x is string => !!x);
+    const lojas = idsLoja.length
+      ? await prisma.loja.findMany({ where: { id: { in: idsLoja } }, select: { id: true, nome: true } })
+      : [];
+    const vPorId: Record<string, any> = Object.fromEntries(veiculos.map((v) => [v.id, v]));
+    const lPorId: Record<string, string> = Object.fromEntries(lojas.map((l) => [l.id, l.nome]));
+
+    res.json({
+      id: c.id,
+      nome: c.nome,
+      cpf: c.cpf,
+      telefone: c.telefone,
+      email: c.email,
+      criadoEm: c.criadoEm,
+      temSenha: !!c.senha,          // nunca devolve a senha nem o hash
+      appInstalado: !!c.pushToken,
+      garantias: garantias.map((g) => {
+        const v = vPorId[g.veiculoId];
+        return {
+          id: g.id,
+          status: g.status,
+          criadoEm: g.criadoEm,
+          loja: g.lojaId ? (lPorId[g.lojaId] || null) : null,
+          placa: v?.placa || null,
+          veiculo: v ? `${v.marca || ''} ${v.modelo || ''}`.trim() || null : null,
+        };
+      }),
+    });
+  } catch (e) { erro(res, e); }
+});
+
+// Corrige os dados de contato do cliente (nome escrito errado, telefone trocado).
+// O CPF NÃO muda por aqui: ele é a chave de login no app e o que amarra a garantia à
+// pessoa — trocar por engano transferiria a garantia pra outro CPF sem ninguém ver.
+router.put('/clientes/:id', requireMaster, async (req, res) => {
+  try {
+    const c = await prisma.garantiaCliente.findUnique({ where: { id: String(req.params.id) } });
+    if (!c) return res.status(404).json({ error: 'Cliente não encontrado.' });
+
+    const nome = String(req.body?.nome ?? c.nome).trim();
+    if (!nome) return res.status(400).json({ error: 'O nome não pode ficar vazio.' });
+    const telefone = req.body?.telefone === undefined ? c.telefone : String(req.body.telefone).replace(/\D/g, '');
+    const email = req.body?.email === undefined ? c.email : String(req.body.email).trim();
+
+    const atualizado = await prisma.garantiaCliente.update({
+      where: { id: c.id },
+      // telefone/email são String com default "" no schema (não aceitam nulo).
+      data: { nome, telefone: telefone || '', email: email || '' },
+    });
+    res.json({ ok: true, nome: atualizado.nome });
+  } catch (e) { erro(res, e); }
+});
+
+// Exclui um cliente do aplicativo. Exige a SENHA de quem está no painel: é destrutivo e
+// leva junto as garantias, revisões e fotos dele — o histórico some de vez.
+router.delete('/clientes/:id', requireMaster, async (req, res) => {
+  try {
+    const senha = String((req.body as any)?.senha || '');
+    if (!senha) return res.status(400).json({ error: 'Digite sua senha do painel para confirmar.' });
+
+    const eu = await prisma.usuario.findUnique({ where: { id: String((req as any).user?.sub || '') } });
+    if (!eu || !(await conferirSenha(senha, eu.senha))) {
+      return res.status(401).json({ error: 'Senha incorreta.' });
+    }
+
+    const c = await prisma.garantiaCliente.findUnique({ where: { id: String(req.params.id) } });
+    if (!c) return res.status(404).json({ error: 'Cliente não encontrado.' });
+
+    // Apaga de dentro pra fora, respeitando as amarrações entre as tabelas.
+    const garantias = await prisma.garantia.findMany({ where: { clienteId: c.id }, select: { id: true } });
+    const ids = garantias.map((g) => g.id);
+    if (ids.length) {
+      const revs = await prisma.garantiaRevisao.findMany({ where: { garantiaId: { in: ids } }, select: { id: true } });
+      const revIds = revs.map((r) => r.id);
+      if (revIds.length) await prisma.garantiaRevisaoPneu.deleteMany({ where: { revisaoId: { in: revIds } } });
+      await prisma.garantiaRevisao.deleteMany({ where: { garantiaId: { in: ids } } });
+      await prisma.garantiaPneu.deleteMany({ where: { garantiaId: { in: ids } } });
+      await prisma.garantiaNotificacao.deleteMany({ where: { garantiaId: { in: ids } } }).catch(() => {});
+      await prisma.garantia.deleteMany({ where: { id: { in: ids } } });
+    }
+    await prisma.garantiaVeiculo.deleteMany({ where: { clienteId: c.id } }).catch(() => {});
+    await prisma.garantiaCliente.delete({ where: { id: c.id } });
+
+    console.warn(`[Garantia] Cliente EXCLUÍDO: ${c.nome} (CPF ${c.cpf}) por ${eu.nome} — ${ids.length} garantia(s) junto.`);
+    res.json({ ok: true, nome: c.nome, garantiasRemovidas: ids.length });
   } catch (e) { erro(res, e); }
 });
 

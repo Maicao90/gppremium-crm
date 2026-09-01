@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { Router } from 'express';
 import { prisma } from '../server';
-import { enviarMensagemInbox, enviarMidiaInbox, resolverConexaoEfetiva } from '../workers/whatsappService';
+import { enviarMensagemInbox, enviarMidiaInbox, resolverConexaoEfetiva, dispararRespostaBotAgora } from '../workers/whatsappService';
 import { lerBotPneusConfig, salvarBotPneusConfig } from '../services/botPneusConfig';
 
 const router = Router();
@@ -52,9 +52,25 @@ async function usuarioIdsPermitidos(req: any): Promise<string[]> {
     select: { id: true, botIaAtivo: true, whatsappDonoId: true },
   });
   if (!eu) return [];
-  const ids = [eu.id];
-  if (eu.whatsappDonoId) ids.push(eu.whatsappDonoId);
-  return ids;
+
+  // Se a propria conta roda o robo, mostra as conversas dela (e da conta dona, quando
+  // ela compartilha o WhatsApp de outra).
+  if (eu.botIaAtivo) {
+    const ids = [eu.id];
+    if (eu.whatsappDonoId) ids.push(eu.whatsappDonoId);
+    return ids;
+  }
+
+  // Achado 01/09: quem tem o modulo do robo liberado mas NAO roda o robo (ex.: a josy,
+  // que e de outra loja e so gerencia o atendimento do robo) via as conversas da
+  // PROPRIA caixa de entrada aqui dentro, em vez das conversas do robo. Este modulo e
+  // exclusivo do robo, e o acesso a ele ja e controlado por modulosPermitidos — entao
+  // aqui devolvemos as contas que de fato rodam o robo.
+  const contasComBot = await prisma.usuario.findMany({
+    where: { ativo: true, botIaAtivo: true },
+    select: { id: true },
+  });
+  return contasComBot.map((u) => u.id);
 }
 
 async function usuariosBotIds(): Promise<Set<string>> {
@@ -151,6 +167,41 @@ router.get('/resumo', async (req, res) => {
     });
     const pausas = new Map(estados.map((e) => [`${e.usuarioId}::${e.chatJid}`, e]));
 
+    // NOME do contato (mesma cascata da Caixa de Entrada): mensagem RECEBIDA mais
+    // recente que tenha pushName > contato salvo do atendente (por numero) >
+    // agenda em memoria do Baileys. Achado 01/09: antes usava so o chatNome da
+    // ULTIMA mensagem — quando a ultima era NOSSA, vinha vazio e a lista exibia o
+    // numero cru no lugar do nome.
+    const mapaNomes: Record<string, string> = {};
+    for (const msg of mensagens) {
+      if (msg.fromMe) continue;
+      const nome = String(msg.chatNome || '').trim();
+      if (!nome) continue;
+      const chave = `${msg.usuarioId}::${msg.chatJid}`;
+      if (!mapaNomes[chave]) mapaNomes[chave] = nome; // mensagens ja vem em ordem desc
+    }
+
+    const mapaContatoNome: Record<string, string> = {};
+    try {
+      const salvos = await prisma.contato.findMany({
+        where: { usuarioId: { in: permitidos } },
+        select: { numero: true, nome: true },
+      });
+      salvos.forEach((ct: any) => {
+        if (ct.numero && ct.nome) mapaContatoNome[String(ct.numero).replace(/\D/g, '')] = ct.nome;
+      });
+    } catch (e) { /* sem contatos salvos: segue com as outras fontes */ }
+
+    let contatosNomes: Map<string, string> = new Map();
+    try { contatosNomes = require('../workers/whatsappService').contatosNomes; } catch (e) { /* opcional */ }
+
+    // FOTO de perfil: reaproveita os avatares que a Caixa de Entrada ja espelha
+    // localmente. Se ainda nao existir, agenda o download em background (sem
+    // travar a resposta) — igual ao inbox.
+    const avatarsDir = path.join(__dirname, '../../public/midias/avatars');
+    try { fs.mkdirSync(avatarsDir, { recursive: true }); } catch (e) { /* ja existe */ }
+    const pendentesFoto: Array<{ usuarioId: string; chatJid: string }> = [];
+
     const agrupado = new Map<string, any[]>();
     for (const msg of mensagens) {
       const key = `${msg.usuarioId}::${msg.chatJid}`;
@@ -168,9 +219,26 @@ router.get('/resumo', async (req, res) => {
       const medida = extrairMedida(ordenadas.filter((m) => !m.fromMe).map((m) => m.texto || '').join('\n'));
       const estado = pausas.get(key);
       const botPausado = !!(estado?.pausadoAte && estado.pausadoAte.getTime() > Date.now());
+      const numeroLimpo = String(numero || '').replace(/\D/g, '');
+      const nomeResolvido =
+        mapaNomes[key]
+        || (numeroLimpo && mapaContatoNome[numeroLimpo] ? mapaContatoNome[numeroLimpo] : '')
+        || (contatosNomes.has(chatJid) ? String(contatosNomes.get(chatJid) || '') : '')
+        || String(ultima?.chatNome || '').trim();
+
+      const cleanJid = String(chatJid || '').replace(/[^a-zA-Z0-9]/g, '_');
+      const arqFoto = path.join(avatarsDir, `${cleanJid}.jpg`);
+      let fotoUrl: string | null = null;
+      if (fs.existsSync(arqFoto)) {
+        fotoUrl = `/midias/avatars/${cleanJid}.jpg`;
+      } else if (pendentesFoto.length < 60) {
+        pendentesFoto.push({ usuarioId: String(usuarioId || ''), chatJid });
+      }
+
       return {
         id: key,
-        nome: ultima?.chatNome || numero || 'Sem nome',
+        nome: nomeResolvido || numero || 'Sem nome',
+        fotoUrl,
         telefone: numero,
         medida,
         modeloRecomendado: '',
@@ -185,6 +253,18 @@ router.get('/resumo', async (req, res) => {
         },
       };
     }).sort((a, b) => +new Date(b.ultimaMsgEm || 0) - +new Date(a.ultimaMsgEm || 0));
+
+    // Puxa em background as fotos que ainda nao estao espelhadas (nao bloqueia a resposta).
+    if (pendentesFoto.length > 0) {
+      try {
+        const { baixarFotoPerfilLocal } = require('../workers/whatsappService');
+        pendentesFoto.forEach((item, idx) => {
+          setTimeout(() => {
+            baixarFotoPerfilLocal(item.usuarioId, item.chatJid).catch(() => {});
+          }, idx * 250).unref?.();
+        });
+      } catch (e) { /* worker indisponivel: a lista funciona sem foto */ }
+    }
 
     const hojeIso = new Date().toISOString().slice(0, 10);
     const kpis = {
@@ -325,6 +405,20 @@ router.post('/acao', async (req, res) => {
       });
       const contato = await contatoAtual(alvo.usuarioId, alvo.chatJid);
       return res.json({ ok: true, contato });
+    }
+
+    // Faz o ROBO responder esta conversa agora, sob demanda. Util quando a conversa
+    // ficou sem resposta (ex.: o robo estava pausado por engano) — em vez de o humano
+    // digitar, o proprio robo assume de novo, usando o mesmo fluxo de sempre.
+    if (action === 'responderAgora') {
+      // Tira qualquer pausa que esteja segurando o robo nessa conversa.
+      await prisma.botConversa.updateMany({
+        where: { usuarioId: alvo.usuarioId, chatJid: alvo.chatJid },
+        data: { pausadoAte: null, motivoPausa: null },
+      });
+      const ok = await dispararRespostaBotAgora(alvo.usuarioId, alvo.chatJid);
+      if (!ok) return res.status(503).json({ error: 'Nao foi possivel acionar o robo (WhatsApp desconectado ou sem mensagem do cliente).' });
+      return res.json({ ok: true });
     }
 
     if (action === 'enviar') {

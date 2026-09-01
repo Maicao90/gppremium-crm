@@ -14,7 +14,7 @@ export interface TokenPayload {
 export const assinarToken = (p: TokenPayload): string => {
   const s = segredo();
   if (!s) throw new Error('JWT_SECRET não configurado no servidor.');
-  return jwt.sign(p, s, { expiresIn: '12h' });
+  return jwt.sign(p, s, { expiresIn: '30d' });
 };
 
 // Token do CLIENTE do app de Garantia (não é usuário do CRM). role='cliente',

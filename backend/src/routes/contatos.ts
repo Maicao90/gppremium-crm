@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { prisma } from '../server';
+import { marcarPresencaExtensao } from '../services/presencaExtensao';
 
 const router = Router();
 
@@ -32,6 +33,8 @@ router.post('/sincronizar', async (req, res) => {
     if (!Array.isArray(contatos)) {
       return res.status(400).json({ error: 'Formato inválido. "contatos" deve ser um array.' });
     }
+
+    marcarPresencaExtensao(usuarioId);
 
     console.log(`[Backend] Sincronizando ${contatos.length} contatos do usuário ${usuarioId}...`);
 

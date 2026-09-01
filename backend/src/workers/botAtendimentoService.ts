@@ -361,6 +361,17 @@ export async function pausarConversaBotIA(usuarioId: string, chatJid: string, mi
     select: { botIaAtivo: true, botIaPausaManualMin: true },
   });
   if (!usuario?.botIaAtivo) return;
+
+  // Achado 01/09: em contas onde o ROBO E O UNICO ATENDENTE, qualquer mensagem de saida
+  // que nao veio do proprio robo (ex.: o eco de um sistema externo que escreve no mesmo
+  // numero) caia na trava "uma pessoa assumiu" e silenciava o robo por 2h — matando ate a
+  // resposta que ja estava agendada. Resultado real: clientes (Eraldo, Osmano) ficaram sem
+  // NENHUMA resposta. Convencao: botIaPausaManualMin = 0 significa "nunca pause sozinho por
+  // eco". A pausa pedida de proposito (painel, botoes 1h/4h/∞) continua funcionando porque
+  // passa 'minutos' explicito ou vem das rotas do painel.
+  if (motivo === 'eco_externo' && (usuario.botIaPausaManualMin ?? 120) === 0) {
+    return;
+  }
   const key = chave(usuarioId, chatJid);
   const timer = timers.get(key);
   if (timer) clearTimeout(timer);

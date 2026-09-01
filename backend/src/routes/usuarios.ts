@@ -8,6 +8,7 @@ import { requireMaster } from '../middlewares/requireModulo';
 import { requireAuth } from '../middlewares/requireAuth';
 import { lojaDoUsuario } from '../auth/escopoLoja';
 import { cancelarBotDoUsuario } from '../workers/botAtendimentoService';
+import { extensaoEstaOnline } from '../services/presencaExtensao';
 
 const router = Router();
 
@@ -138,14 +139,20 @@ router.get('/', async (req, res) => {
     const comCompartilhamento = usuarios.map((u) => {
       const lojaNome = u.lojaId ? (lojaNomePorId[u.lojaId] || null) : null;
       const totalMensagens = mapaMsgCount[u.id] || (u.whatsappDonoId ? mapaMsgCount[u.whatsappDonoId] || 0 : 0);
+      const extensaoOnline = extensaoEstaOnline(u.id);
       if (u.whatsappDonoId) {
         // Quem compartilha nunca tem whatsappConectado atualizado no próprio registro
-        // (a sessão real nunca é dele) — usa o status ATUAL do dono em memória.
+        // (a sessão real nunca é dele) — usa somente o status ATUAL do dono em memória.
+        // Não mistura com o campo salvo no banco, porque ele pode ficar "true" mesmo
+        // com a sessão Baileys já caída, e isso deixa a Caixa de Entrada verde sem
+        // mensagens novas chegando.
         return {
           ...u,
           lojaNome,
           totalMensagens,
-          whatsappConectado: connectedUsers.has(u.whatsappDonoId) || u.whatsappConectado,
+          whatsappConectado: connectedUsers.has(u.whatsappDonoId),
+          whatsappServidorConectado: connectedUsers.has(u.whatsappDonoId),
+          extensaoOnline,
           whatsappDonoNome: nomesPorId[u.whatsappDonoId] || null
         };
       }
@@ -153,7 +160,9 @@ router.get('/', async (req, res) => {
         ...u,
         lojaNome,
         totalMensagens,
-        whatsappConectado: connectedUsers.has(u.id) || u.whatsappConectado,
+        whatsappConectado: connectedUsers.has(u.id),
+        whatsappServidorConectado: connectedUsers.has(u.id),
+        extensaoOnline,
         whatsappDonoNome: null
       };
     });
@@ -212,17 +221,7 @@ router.get('/metricas', requireAuth, async (req, res) => {
     const nomesPorId: Record<string, string> = {};
     usuarios.forEach((u) => { nomesPorId[u.id] = u.nome; });
 
-    // Mecânico não atende WhatsApp — ele só usa o aplicativo da Garantia. Aparecia no
-    // "Top Atendentes" com zero conversa porque o `role` dele é 'operador', igual ao do
-    // vendedor; o que separa os dois é o módulo (garantia50k e nenhum de atendimento).
-    const ehMecanico = (u: { role: string; modulosPermitidos: string }) => {
-      if (u.role !== 'operador') return false;
-      let mods: string[] = [];
-      try { const a = JSON.parse(u.modulosPermitidos || '[]'); mods = Array.isArray(a) ? a : []; } catch { mods = []; }
-      return mods.length > 0 && mods.includes('garantia50k') && !mods.some((m) => String(m).startsWith('at-'));
-    };
-
-    const metricas = usuarios.filter((u) => !ehMecanico(u)).map(u => {
+    const metricas = usuarios.map(u => {
       const total = u.agendamentos.length;
       const enviados = u.agendamentos.filter(a => a.status === 'enviado').length;
       const pendentes = u.agendamentos.filter(a => a.status === 'pendente').length;
@@ -433,6 +432,23 @@ router.post('/:id/codigo-pareamento', requireAuth, requireMaster, async (req, re
   } catch (error: any) {
     console.error('Erro ao gerar código de pareamento:', error?.message);
     res.status(400).json({ error: error?.message || 'Erro ao gerar código de pareamento.' });
+  }
+});
+
+router.post('/me/qr-code', requireAuth, async (req, res) => {
+  try {
+    const id = String(req.user!.sub);
+    const usuario = await prisma.usuario.findUnique({ where: { id } });
+    if (!usuario || !usuario.ativo) return res.status(404).json({ error: 'Conta não encontrada.' });
+    if (usuario.whatsappDonoId) {
+      return res.status(400).json({ error: 'Sua conta compartilha o WhatsApp de outra pessoa — não é possível conectar uma conexão própria.' });
+    }
+    const { gerarQrCodePareamento } = require('../workers/whatsappService');
+    const qrCode = await gerarQrCodePareamento(id);
+    res.json({ qrCode });
+  } catch (error: any) {
+    console.error('Erro ao gerar QR Code de pareamento (self-service):', error?.message);
+    res.status(400).json({ error: error?.message || 'Erro ao gerar o QR Code de pareamento.' });
   }
 });
 

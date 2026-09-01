@@ -1,10 +1,10 @@
 // ============================================================================
-// ROTA /api/ia — cérebro REAL do Assistente IA (API da Anthropic / Claude)
+// ROTA /api/ia — cérebro REAL do Assistente IA (Anthropic ou OpenAI)
 //
 // POST /api/ia  body: { pergunta: string, historico?: [{papel:'usuario'|'ia', texto:string}] }
 //   → { resposta: string }
 //
-// - Lê ANTHROPIC_API_KEY do .env (dotenv já é carregado no server.ts).
+// - Lê ANTHROPIC_API_KEY ou OPENAI_API_KEY do .env (dotenv já é carregado no server.ts).
 //   Sem chave → HTTP 503 { error: 'ia_nao_configurada' } (o front cai no motor local).
 // - Monta um CONTEXTO compacto com dados reais do banco (campanhas, lojas,
 //   contas, agendamentos, atendentes, mensagens e métricas diárias) e injeta
@@ -18,6 +18,7 @@ const router = Router();
 
 // Modelo padrão (pode ser trocado via ANTHROPIC_MODEL no .env)
 const MODELO_PADRAO = 'claude-haiku-4-5-20251001';
+const MODELO_OPENAI_PADRAO = 'gpt-5-mini';
 
 // Limite de tamanho do contexto injetado no system prompt (~4000 caracteres)
 const LIMITE_CONTEXTO = 4000;
@@ -162,6 +163,20 @@ async function montarContexto(): Promise<string> {
   return contexto;
 }
 
+function detectarFornecedor() {
+  const anthropicKey = process.env.ANTHROPIC_API_KEY?.trim();
+  if (anthropicKey) {
+    return { provider: 'anthropic' as const, apiKey: anthropicKey };
+  }
+
+  const openaiKey = process.env.OPENAI_API_KEY?.trim();
+  if (openaiKey) {
+    return { provider: 'openai' as const, apiKey: openaiKey };
+  }
+
+  return null;
+}
+
 // ── Rota principal ──────────────────────────────────────────────────────────
 router.post('/', async (req, res) => {
   try {
@@ -171,10 +186,10 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: 'pergunta_obrigatoria', detalhe: 'Envie { pergunta: string } no corpo da requisição.' });
     }
 
-    const KEY = process.env.ANTHROPIC_API_KEY;
-    if (!KEY) {
+    const fornecedor = detectarFornecedor();
+    if (!fornecedor) {
       // IA real não ativada: o front mostra aviso amigável e usa o motor local.
-      return res.status(503).json({ error: 'ia_nao_configurada', detalhe: 'Defina ANTHROPIC_API_KEY no arquivo .env do servidor.' });
+      return res.status(503).json({ error: 'ia_nao_configurada', detalhe: 'Defina ANTHROPIC_API_KEY ou OPENAI_API_KEY no arquivo .env do servidor.' });
     }
 
     // Contexto com dados reais do CRM (cada bloco tem fallback próprio)
@@ -198,27 +213,48 @@ router.post('/', async (req, res) => {
     while (messages.length && messages[0]?.role === 'assistant') messages.shift();
     messages.push({ role: 'user', content: pergunta.slice(0, 4000) });
 
-    // Chamada à API da Anthropic (fetch nativo do Node 20; sem dependências novas)
+    // Chamada à API do provedor configurado (fetch nativo do Node 20; sem dependências novas)
     let resposta: Response;
     try {
-      resposta = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: {
-          'x-api-key': KEY,
-          'anthropic-version': '2023-06-01',
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify({
-          model: process.env.ANTHROPIC_MODEL || MODELO_PADRAO,
-          max_tokens: 1000,
-          system: systemPrompt,
-          messages,
-        }),
-        signal: AbortSignal.timeout(60_000), // evita requisição pendurada
-      });
+      if (fornecedor.provider === 'anthropic') {
+        resposta = await fetch('https://api.anthropic.com/v1/messages', {
+          method: 'POST',
+          headers: {
+            'x-api-key': fornecedor.apiKey,
+            'anthropic-version': '2023-06-01',
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify({
+            model: process.env.ANTHROPIC_MODEL || MODELO_PADRAO,
+            max_tokens: 1000,
+            system: systemPrompt,
+            messages,
+          }),
+          signal: AbortSignal.timeout(60_000),
+        });
+      } else {
+        resposta = await fetch('https://api.openai.com/v1/responses', {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${fornecedor.apiKey}`,
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify({
+            model: process.env.OPENAI_MODEL || MODELO_OPENAI_PADRAO,
+            input: [
+              { role: 'system', content: [{ type: 'input_text', text: systemPrompt }] },
+              ...messages.map((m) => ({
+                role: m.role,
+                content: [{ type: 'input_text', text: m.content }],
+              })),
+            ],
+          }),
+          signal: AbortSignal.timeout(60_000),
+        });
+      }
     } catch {
       // Erro de rede/timeout antes de obter resposta (nunca logamos a chave)
-      console.error('[IA] Falha de rede ao chamar a API da Anthropic.');
+      console.error(`[IA] Falha de rede ao chamar a API de ${fornecedor.provider}.`);
       return res.status(502).json({ error: 'ia_erro', detalhe: 'Não consegui conectar ao serviço de IA. Verifique a internet do servidor e tente de novo.' });
     }
 
@@ -231,13 +267,17 @@ router.post('/', async (req, res) => {
       } catch { /* corpo não-JSON */ }
 
       // Log de diagnóstico: só status + mensagem da API (NUNCA a chave)
-      console.error(`[IA] Erro da API Anthropic (HTTP ${resposta.status}): ${msgApi}`);
+      console.error(`[IA] Erro da API ${fornecedor.provider} (HTTP ${resposta.status}): ${msgApi}`);
 
       let amigavel = 'A IA não conseguiu responder agora. Tente novamente em instantes.';
       if (resposta.status === 401) {
-        amigavel = 'Chave da IA inválida. Confira a ANTHROPIC_API_KEY no .env do servidor.';
-      } else if (resposta.status === 400 && /credit/i.test(msgApi)) {
-        amigavel = 'Sem créditos na conta Anthropic. Adicione créditos em console.anthropic.com e tente de novo.';
+        amigavel = fornecedor.provider === 'anthropic'
+          ? 'Chave da IA inválida. Confira a ANTHROPIC_API_KEY no .env do servidor.'
+          : 'Chave da IA inválida. Confira a OPENAI_API_KEY no .env do servidor.';
+      } else if (resposta.status === 400 && /credit|insufficient/i.test(msgApi)) {
+        amigavel = fornecedor.provider === 'anthropic'
+          ? 'Sem créditos na conta Anthropic. Adicione créditos em console.anthropic.com e tente de novo.'
+          : 'Sem créditos ou sem saldo suficiente na conta OpenAI. Confira o billing e tente de novo.';
       } else if (resposta.status === 429) {
         amigavel = 'Muitas perguntas em sequência. Aguarde alguns segundos e tente novamente.';
       } else if (resposta.status === 529 || resposta.status >= 500) {
@@ -249,10 +289,20 @@ router.post('/', async (req, res) => {
     }
 
     const dados: any = await resposta.json();
-    // A resposta vem como lista de blocos; concatenamos os blocos de texto
-    const texto = Array.isArray(dados?.content)
-      ? dados.content.filter((b: any) => b?.type === 'text').map((b: any) => b.text).join('\n').trim()
-      : '';
+    const texto = fornecedor.provider === 'anthropic'
+      ? (Array.isArray(dados?.content)
+        ? dados.content.filter((b: any) => b?.type === 'text').map((b: any) => b.text).join('\n').trim()
+        : '')
+      : (typeof dados?.output_text === 'string'
+        ? dados.output_text.trim()
+        : Array.isArray(dados?.output)
+          ? dados.output
+              .flatMap((item: any) => Array.isArray(item?.content) ? item.content : [])
+              .filter((part: any) => part?.type === 'output_text')
+              .map((part: any) => part.text || '')
+              .join('\n')
+              .trim()
+          : '');
 
     if (!texto) {
       return res.status(502).json({ error: 'ia_erro', detalhe: 'A IA retornou uma resposta vazia. Tente novamente.' });

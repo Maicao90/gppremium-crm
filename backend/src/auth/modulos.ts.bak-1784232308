@@ -1,0 +1,13 @@
+// Ids de modulo do painel (batem com os do frontend em crm-de-anuncios/src/config/modulos.js).
+export const MODULOS = [
+  'dashboard', 'stores', 'contas', 'linkbio', 'otimizador', 'meta-campanhas',
+  'at-dashboard', 'at-atendentes', 'at-inbox', 'assistant', 'settings',
+] as const;
+export type ModuloId = typeof MODULOS[number];
+
+// Atalho: modulos do "gerente" (so WhatsApp).
+export const MODULOS_GERENTE: ModuloId[] = ['at-dashboard', 'at-atendentes', 'at-inbox'];
+
+// Roles que enxergam tudo (ignoram modulosPermitidos e escopo de loja).
+export const ROLES_MASTER = ['master', 'admin'];
+export const ehMaster = (role: string): boolean => ROLES_MASTER.includes(role);
