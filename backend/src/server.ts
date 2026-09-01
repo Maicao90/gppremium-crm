@@ -373,7 +373,18 @@ io.on('connection', async (socket) => {
     // nascer automaticamente aqui. O bloqueio "aguardando conexão com o servidor" na
     // extensão depende disso; deixar somente no fluxo manual do painel faz parceiros
     // externos e contas novas ficarem travados sem nunca receber QR.
-    connectToWhatsApp(efetivoId, socket.id, undefined, true).catch(err => console.error(`[Baileys] Erro crítico ao conectar WhatsApp do usuário ${efetivoId}:`, err));
+    // Achado 01/09: essa chamada era INCONDICIONAL — toda vez que a extensao
+    // (re)carregava no navegador (F5, PC saindo do modo espera, etc.), o servidor
+    // tentava conectar de novo MESMO com o usuario ja conectado. Quase sempre o
+    // guard interno do connectToWhatsApp ("sessao ja existe") pegava e vinha um
+    // no-op, mas em pelo menos 2 casos reais (Alan e Ana Paula, 01/09) essa segunda
+    // tentativa venceu a corrida e abriu uma conexao concorrente — o WhatsApp viu
+    // dois "aparelhos" disputando a mesma sessao e derrubou uma com erro 440
+    // (conflict/replaced), as vezes apagando a sessao de vez. Agora so tenta
+    // conectar quando a pessoa realmente NAO esta conectada.
+    if (!connectedUsers.has(efetivoId)) {
+      connectToWhatsApp(efetivoId, socket.id, undefined, true).catch(err => console.error(`[Baileys] Erro crítico ao conectar WhatsApp do usuário ${efetivoId}:`, err));
+    }
   });
 
   // Painel admin: "assistir" a caixa de entrada de um atendente (entra na sala para
