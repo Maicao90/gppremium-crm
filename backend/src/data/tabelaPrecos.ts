@@ -567,17 +567,59 @@ export function encontrarPrecosExatosPorMedida(medida: string): ItemPreco[] {
   return TABELA_PRECOS_GP.filter((item) => normalizarMedida(item.medida) === alvo);
 }
 
+// Cliente escreve (e FALA, quando vira transcricao de audio) a medida de mil jeitos.
+// Achado 01/09: "175/60-14" nao era reconhecido e o robo pedia a medida de novo ate
+// o cliente desistir. Aqui a gente normaliza tudo pra um formato so antes de procurar.
+// Cliente escreve (e FALA, quando vira transcricao de audio) a medida de mil jeitos.
+// Achado 01/09: "175/60-14" nao era reconhecido e o robo pedia a medida de novo ate
+// o cliente desistir. Aqui normalizamos tudo pra um formato so antes de procurar.
+// ATENCAO A ORDEM: as expressoes COMPOSTAS ("sessenta e cinco") tem que ser trocadas
+// ANTES das simples ("sessenta"), senao "sessenta e cinco" vira "60 e cinco".
+function normalizarTextoMedida(texto: string): string {
+  let t = String(texto || '').toUpperCase();
+  const trocas: Array<[RegExp, string]> = [
+    // centenas por extenso (primeiro as compostas)
+    [/\bCENTO E SESSENTA E CINCO\b/g, '165'],
+    [/\bCENTO E SETENTA E CINCO\b/g, '175'],
+    [/\bCENTO E OITENTA E CINCO\b/g, '185'],
+    [/\bCENTO E NOVENTA E CINCO\b/g, '195'],
+    [/\bDUZENTOS E VINTE E CINCO\b/g, '225'],
+    [/\bDUZENTOS E QUINZE\b/g, '215'],
+    [/\bDUZENTOS E CINCO\b/g, '205'],
+    // dezenas COMPOSTAS antes das simples
+    [/\bCINQUENTA E CINCO\b/g, '55'],
+    [/\bCINCOENTA E CINCO\b/g, '55'],
+    [/\bSESSENTA E CINCO\b/g, '65'],
+    [/\bSETENTA E CINCO\b/g, '75'],
+    // dezenas simples
+    [/\bCINQUENTA\b/g, '50'],
+    [/\bCINCOENTA\b/g, '50'],
+    [/\bSESSENTA\b/g, '60'],
+    [/\bSETENTA\b/g, '70'],
+    // aros por extenso
+    [/\bTREZE\b/g, '13'],
+    [/\bQUATORZE\b/g, '14'],
+    [/\bCATORZE\b/g, '14'],
+    [/\bQUINZE\b/g, '15'],
+    [/\bDEZESSEIS\b/g, '16'],
+    [/\bDEZESSETE\b/g, '17'],
+    [/\bDEZOITO\b/g, '18'],
+    // separadores falados viram barra
+    [/\b(POR|BARRA|TRACO)\b/g, '/'],
+  ];
+  for (const [de, para] of trocas) t = t.replace(de, para);
+  return t.replace(/\s+/g, ' ');
+}
+
 export function extrairMedidasDoTexto(texto: string): string[] {
-  const base = String(texto || '').toUpperCase();
+  const base = normalizarTextoMedida(texto);
   const achadas = new Set<string>();
-  // Achado 01/09 numa conversa real: o cliente escreveu "175/60-14" (com HIFEN) e o
-  // robo nao reconheceu como medida — ficou pedindo a medida de novo, mesmo ele ja
-  // tendo mandado, e o cliente desistiu ("Ok obrigado"). Gente escreve medida de
-  // varios jeitos: 175/60/14, 175/60-14, 175/60 14, 175/60 R14. Todos valem.
-  const regex = /\b(\d{3})\s*[\/\-\s]\s*(\d{2})\s*(?:[\/\-]|\s*)\s*(R|ARO)?\s*(\d{2})\b/g;
+  // Aceita: 175/60/14, 175/60-14, 175/60 14, 175/60 R14, 175/60 ARO 14,
+  // 175 60 14, 175.60.14, 175,60,14, 175x60x14 — e as versoes vindas de audio.
+  const regex = /\b(\d{3})\s*[\/\-\s.,X]\s*(\d{2})\s*[\/\-\s.,X]*\s*(?:R|ARO)?\s*(\d{2})\b/g;
   let match: RegExpExecArray | null = null;
   while ((match = regex.exec(base))) {
-    achadas.add(`${match[1]}/${match[2]}/${match[4]}`);
+    achadas.add(`${match[1]}/${match[2]}/${match[3]}`);
   }
   return [...achadas];
 }
@@ -782,18 +824,36 @@ export function montarBriefingComercialDeterministico(texto: string): string {
     // 165/70/13 (aro 13, que nao entra na roda dele) — sendo que a tabela tem SEIS
     // medidas de aro 14. Agora mandamos junto as opcoes reais do mesmo aro, com preco.
     for (const medidaSemMatch of analise.semResultado) {
-      const aro = String(medidaSemMatch).split('/').pop();
+      const partesPedida = String(medidaSemMatch).split('/');
+      const larguraPedida = partesPedida[0];
+      const aro = partesPedida[2];
       if (!aro) continue;
+
       const mesmoAro = TABELA_PRECOS_GP.filter((item) => {
-        const partes = String(item.medida || '').split('/');
-        return partes.length === 3 && partes[2] === aro;
+        const p = String(item.medida || '').split('/');
+        return p.length === 3 && p[2] === aro;
       });
       if (!mesmoAro.length) {
         linhas.push(`- Nao existe NENHUMA medida de aro ${aro} na tabela: seja honesto e diga que pra roda dele a loja nao tem opcao.`);
         continue;
       }
-      linhas.push(`ALTERNATIVAS_MESMO_ARO_${aro} (servem na roda do cliente — ofereca a mais adequada ao caso dele, com preco):`);
-      for (const item of mesmoAro) linhas.push(`  - ${resumirItemPreco(item)}`);
+
+      // Achado 01/09: o cliente pediu 175/60/14 e o robo ofereceu SO a 175/65/14,
+      // deixando de fora a 175/70/14 — que tambem e 175 de largura no aro 14 e serve
+      // igual. Aqui separamos os EQUIVALENTES DIRETOS (mesma largura + mesmo aro, so
+      // muda o perfil) das demais opcoes do mesmo aro, pra ele oferecer todas as que
+      // realmente servem.
+      const equivalentes = mesmoAro.filter((item) => String(item.medida).split('/')[0] === larguraPedida);
+      const outrasDoAro = mesmoAro.filter((item) => String(item.medida).split('/')[0] !== larguraPedida);
+
+      if (equivalentes.length) {
+        linhas.push(`EQUIVALENTES_DIRETOS_DE_${medidaSemMatch} (mesma largura ${larguraPedida} e mesmo aro ${aro} — so muda o perfil, serve no carro dele: OFERECA TODAS ESTAS):`);
+        for (const item of equivalentes) linhas.push(`  - ${resumirItemPreco(item)}`);
+      }
+      if (outrasDoAro.length) {
+        linhas.push(`OUTRAS_DO_ARO_${aro} (entram na roda dele, mas com largura diferente — ofereca so se nao houver equivalente direto ou se ele pedir mais opcoes):`);
+        for (const item of outrasDoAro) linhas.push(`  - ${resumirItemPreco(item)}`);
+      }
     }
   }
 
