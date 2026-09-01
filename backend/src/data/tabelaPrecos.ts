@@ -570,7 +570,11 @@ export function encontrarPrecosExatosPorMedida(medida: string): ItemPreco[] {
 export function extrairMedidasDoTexto(texto: string): string[] {
   const base = String(texto || '').toUpperCase();
   const achadas = new Set<string>();
-  const regex = /\b(\d{3})\s*\/\s*(\d{2})\s*(?:\/|\s*)\s*(R|ARO)?\s*(\d{2})\b/g;
+  // Achado 01/09 numa conversa real: o cliente escreveu "175/60-14" (com HIFEN) e o
+  // robo nao reconheceu como medida — ficou pedindo a medida de novo, mesmo ele ja
+  // tendo mandado, e o cliente desistiu ("Ok obrigado"). Gente escreve medida de
+  // varios jeitos: 175/60/14, 175/60-14, 175/60 14, 175/60 R14. Todos valem.
+  const regex = /\b(\d{3})\s*[\/\-\s]\s*(\d{2})\s*(?:[\/\-]|\s*)\s*(R|ARO)?\s*(\d{2})\b/g;
   let match: RegExpExecArray | null = null;
   while ((match = regex.exec(base))) {
     achadas.add(`${match[1]}/${match[2]}/${match[4]}`);
