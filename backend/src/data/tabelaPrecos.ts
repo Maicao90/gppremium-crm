@@ -724,6 +724,26 @@ export function resumirItemPreco(item: ItemPreco): string {
   ].filter(Boolean).join(' :: ');
 }
 
+// O robo precisa SEMPRE saber o que a loja tem — nao so quando a medida bate.
+// Antes, numa conversa sem match ele nao recebia nada do catalogo e chutava de
+// memoria (chegou a oferecer aro 13 pra cliente de aro 14). Agora vai junto, em
+// toda resposta, a lista completa agrupada por ARO — compacta, so as medidas.
+function catalogoPorAro(): string {
+  const porAro = new Map<string, string[]>();
+  for (const item of TABELA_PRECOS_GP) {
+    const partes = String(item.medida || '').split('/');
+    if (partes.length !== 3) continue;
+    const aro = partes[2];
+    if (!aro) continue;
+    if (!porAro.has(aro)) porAro.set(aro, []);
+    const lista = porAro.get(aro)!;
+    if (!lista.includes(item.medida)) lista.push(item.medida);
+  }
+  const aros = [...porAro.keys()].sort((a, b) => Number(a) - Number(b));
+  const partes = aros.map((aro) => `aro ${aro}: ${porAro.get(aro)!.join(', ')}`);
+  return `CATALOGO_COMPLETO_DA_LOJA (todas as medidas que a loja vende, agrupadas por ARO — use isto pra saber o que temos e oferecer SO o que serve na roda do cliente):\n  ${partes.join('\n  ')}`;
+}
+
 export function montarBriefingComercialDeterministico(texto: string): string {
   const analise = analisarConsultaPreco(texto);
   if (!analise.medidasDetectadas.length) {
@@ -731,6 +751,7 @@ export function montarBriefingComercialDeterministico(texto: string): string {
       'CONTEXTO_COMERCIAL_LOCAL:',
       'Nenhuma medida detectada com seguranca na ultima mensagem.',
       'Se o cliente pedir preco sem medida, peca a medida exata do pneu antes de cotar.',
+      catalogoPorAro(),
     ].join('\n');
   }
 
@@ -754,8 +775,29 @@ export function montarBriefingComercialDeterministico(texto: string): string {
 
   if (analise.semResultado.length) {
     linhas.push(`SEM_RESULTADO_LOCAL: ${analise.semResultado.join(', ')}`);
+
+    // Achado 01/09 (conversa real perdida): quando a medida exata nao existia, o robo
+    // recebia SO o "SEM_RESULTADO_LOCAL" e ficava sem saber o que a loja tem no MESMO
+    // ARO. Resultado: disse "a gente nao tem" pra um cliente de aro 14 e ainda ofereceu
+    // 165/70/13 (aro 13, que nao entra na roda dele) — sendo que a tabela tem SEIS
+    // medidas de aro 14. Agora mandamos junto as opcoes reais do mesmo aro, com preco.
+    for (const medidaSemMatch of analise.semResultado) {
+      const aro = String(medidaSemMatch).split('/').pop();
+      if (!aro) continue;
+      const mesmoAro = TABELA_PRECOS_GP.filter((item) => {
+        const partes = String(item.medida || '').split('/');
+        return partes.length === 3 && partes[2] === aro;
+      });
+      if (!mesmoAro.length) {
+        linhas.push(`- Nao existe NENHUMA medida de aro ${aro} na tabela: seja honesto e diga que pra roda dele a loja nao tem opcao.`);
+        continue;
+      }
+      linhas.push(`ALTERNATIVAS_MESMO_ARO_${aro} (servem na roda do cliente — ofereca a mais adequada ao caso dele, com preco):`);
+      for (const item of mesmoAro) linhas.push(`  - ${resumirItemPreco(item)}`);
+    }
   }
 
+  linhas.push(catalogoPorAro());
   linhas.push('REGRAS_LOCAIS_OBRIGATORIAS:');
   linhas.push('- Nunca inventar preco, parcela, promocao ou modelo fora desta base.');
   linhas.push('- Se houver mais de um modelo para a mesma medida, perguntar qual modelo ou uso do cliente antes de passar preco.');
