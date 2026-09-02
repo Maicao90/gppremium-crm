@@ -468,17 +468,23 @@ router.post('/acao', async (req, res) => {
       if (!msg || msg.usuarioId !== alvo.usuarioId || msg.chatJid !== alvo.chatJid) {
         return res.status(404).json({ error: 'Mensagem nao encontrada nesta conversa.' });
       }
-      if (!msg.fromMe) {
-        return res.status(400).json({ error: 'So da pra apagar para todos as mensagens que a loja enviou.' });
+      // O WhatsApp NAO permite apagar no aparelho do cliente uma mensagem que ELE
+      // mandou — isso e limite da plataforma, nao do sistema. Entao, pra mensagem do
+      // cliente, a gente tira so do painel e avisa o que aconteceu de verdade, sem
+      // dar a entender que sumiu do celular dele.
+      const somenteDoPainel = !msg.fromMe;
+
+      if (!somenteDoPainel) {
+        if (!msg.waId) {
+          return res.status(400).json({ error: 'Essa mensagem nao tem identificador do WhatsApp — nao da pra apagar la.' });
+        }
+        const ok = await apagarMensagemParaTodos(alvo.usuarioId, alvo.chatJid, msg.waId, true);
+        if (!ok) return res.status(503).json({ error: 'Nao consegui apagar no WhatsApp (sem conexao ou fora do prazo que o WhatsApp permite).' });
       }
-      if (!msg.waId) {
-        return res.status(400).json({ error: 'Essa mensagem nao tem identificador do WhatsApp — nao da pra apagar la.' });
-      }
-      const ok = await apagarMensagemParaTodos(alvo.usuarioId, alvo.chatJid, msg.waId, true);
-      if (!ok) return res.status(503).json({ error: 'Nao consegui apagar no WhatsApp (sem conexao ou fora do prazo que o WhatsApp permite).' });
-      // Só sai do painel depois que o WhatsApp confirmou, pra tela nao mentir.
+
+      // So sai do painel depois que o WhatsApp confirmou, pra tela nao mentir.
       await prisma.mensagem.delete({ where: { id: msg.id } }).catch(() => {});
-      return res.json({ ok: true });
+      return res.json({ ok: true, somenteDoPainel });
     }
 
     if (action === 'enviar') {
