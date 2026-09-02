@@ -783,7 +783,9 @@ function montarPartesPreco(item: ItemPreco, parcelaSolicitada: number | null, qu
     : '';
   if (!parcelaSolicitada) {
     const linhas = [
-      `${item.medida} - ${modeloUnico}`,
+      // O cliente quer MEDIDA e PRECO — nome de modelo (GP-1, GP-7) so confunde e nao
+      // ajuda a decidir. Pedido do dono da loja em 02/09.
+      `${item.medida}`,
       `${prefixoQtd}A vista: R$ ${brl(item.aVista * cobradas)}`,
       ...(avisoLeve4 ? [avisoLeve4] : []),
       'Parcelamos em ate 10x.',
@@ -801,7 +803,7 @@ function montarPartesPreco(item: ItemPreco, parcelaSolicitada: number | null, qu
   const total = item.parcelado[chave] * cobradas;
   const valorParcela = total / parcelaSolicitada;
   const parte1 = [
-    `${item.medida} - ${modeloUnico}${qtd > 1 ? ` (${qtd} unidades)` : ''}`,
+    `${item.medida}${qtd > 1 ? ` (${qtd} unidades)` : ''}`,
     `Em ${parcelaSolicitada}x fica R$ ${brl(valorParcela)} cada, total de R$ ${brl(total)}.`,
   ].join('\n');
   const parte2 = 'Pagamento a vista no PIX ou dinheiro permite trabalhar 5% de desconto para fechamento imediato.';
@@ -900,7 +902,7 @@ export function montarBriefingComercialDeterministico(texto: string): string {
   }
 
   if (analise.ambiguas.length) {
-    linhas.push('MEDIDAS_AMBIGUAS_NAO_COTAR_ANTES_DE_CONFIRMAR_MODELO:');
+    linhas.push('MEDIDAS_COM_MAIS_DE_UM_PRECO (escolha UMA pelo uso que o cliente ja descreveu e passe so ela, sem citar nome de modelo; so pergunte o carro-uso se ele ainda nao tiver dito):');
     for (const match of analise.ambiguas) {
       linhas.push(`- ${match.medidaConsultada}`);
       for (const item of match.itens) linhas.push(`  - ${resumirItemPreco(item)}`);
@@ -973,14 +975,13 @@ export function montarRespostaDeterministicaPreco(texto: string, textoGatilho?: 
 
   if (!pediuPreco) return null;
 
-  if (analise.ambiguas.length) {
-    const linhas = ['Pra eu te passar o valor certinho sem risco de erro, preciso confirmar o modelo/uso dessas medidas:'];
-    for (const match of analise.ambiguas) {
-      linhas.push(`- ${match.medidaConsultada}: ${match.itens.map((item) => item.modelo).join(' | ')}`);
-    }
-    linhas.push('Se preferir, me fala o carro, uso do pneu ou o modelo desejado que eu te passo a cotacao certa.');
-    return { partes: [linhas.join('\n')], usouTabela: true };
-  }
+  // Achado 02/09: quando a mesma medida tem precos diferentes, este caminho automatico
+  // respondia sozinho perguntando "qual e o carro e como voce usa?" — mesmo quando o
+  // cliente JA tinha dito que era uma Kombi de carga duas mensagens antes. Ele so olha
+  // a ultima mensagem, nao a conversa. Agora devolve null e deixa a IA responder: ela
+  // le o historico inteiro, ja recebe as opcoes com preco no briefing e escolhe a certa
+  // pelo uso que o cliente descreveu — sem reperguntar o que ele ja falou.
+  if (analise.ambiguas.length) return null;
 
   if (analise.matchesExatos.length) {
     const partes: string[] = [];
