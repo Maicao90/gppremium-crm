@@ -10,7 +10,7 @@ import {
   montarBriefingComercialDeterministico,
   montarRespostaDeterministicaPreco,
 } from '../data/tabelaPrecos';
-import { precosForaDaTabela } from '../data/precoGuard';
+import { precosForaDaTabela, valoresEmReais } from '../data/precoGuard';
 import { lerBotPneusConfig, montarPromptAtendimentoBot } from '../services/botPneusConfig';
 
 dotenv.config();
@@ -206,6 +206,20 @@ async function gerarRespostaViaOpenAI(args: {
 
 app.get('/health', (_req, res) => res.json({ ok: true }));
 
+// O robo precisa saber QUE DIA E HOJE pra agendar remarketing ("dia 10", "semana que
+// vem", "quando eu receber"). Sem isso ele chutava a data ou nem conseguia agendar.
+// Tudo em horario de Brasilia, que e como a loja e o cliente pensam.
+function contextoDeData(): string {
+  const agora = new Date();
+  const fmt = (opts: Intl.DateTimeFormatOptions) => new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', ...opts }).format(agora);
+  const diaSemana = fmt({ weekday: 'long' });
+  const dataLonga = fmt({ day: '2-digit', month: 'long', year: 'numeric' });
+  const hora = fmt({ hour: '2-digit', minute: '2-digit' });
+  // formato AAAA-MM-DD, que e o que a marca [LEMBRAR] espera
+  const iso = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit' }).format(agora);
+  return `DATA_DE_HOJE: hoje e ${diaSemana}, ${dataLonga} (${iso}), e agora sao ${hora} no horario de Brasilia. Use isso pra calcular qualquer data que o cliente citar ("dia 10", "semana que vem", "amanha") e pra montar a data da marca [LEMBRAR] no formato AAAA-MM-DD HH:MM.`;
+}
+
 app.post('/gerar-resposta', async (req, res) => {
   try {
     const { messages, imagem, audio, lojas, ultimosTextosCliente } = req.body || {};
@@ -224,6 +238,24 @@ app.post('/gerar-resposta', async (req, res) => {
       : null;
     const gatilho = String(ultimaDoCliente?.content ?? textosCliente);
     const briefingComercial = montarBriefingComercialDeterministico(textosCliente);
+
+    // COERENCIA DE PRECO NA MESMA CONVERSA (achado 02/09, caso real do Elan): a
+    // atendente ja tinha passado um preco e o robo, na sequencia, passou OUTRO valor
+    // pra mesma coisa. Pro cliente isso parece enganacao e queima a loja. Aqui a gente
+    // varre o que JA foi dito nesta conversa (pelo robo, pela atendente ou por
+    // qualquer canal) e avisa o robo pra nao se contradizer.
+    const jaFalados = valoresEmReais(
+      (Array.isArray(messages) ? messages : [])
+        .filter((m: any) => m && m.role === 'assistant')
+        .map((m: any) => String(m.content || ''))
+        .join(' ')
+    );
+    const avisoData = '\n' + contextoDeData();
+    const avisoCoerencia = jaFalados.length
+      ? '\nPRECOS_JA_PASSADOS_NESTA_CONVERSA: ' +
+        jaFalados.map((v) => 'R$ ' + v.replace('.', ',')).join(', ') +
+        '. Esses valores JA foram ditos ao cliente nesta conversa (por voce ou por um atendente). NAO passe valor diferente pra mesma coisa — o cliente vai achar que a loja mudou o preco. Se o valor que voce ia dizer nao bate com o que ja foi dito, MANTENHA o que ja foi passado. Se o cliente perguntar de novo, repita o MESMO valor. So mude se o pedido dele mudou (quantidade, medida ou forma de pagamento diferente) — e nesse caso deixe explicito o que mudou.'
+      : '';
     const respostaDeterministica = montarRespostaDeterministicaPreco(textosCliente, gatilho);
 
     if (respostaDeterministica?.usouTabela && respostaDeterministica.partes.length) {
@@ -235,7 +267,7 @@ app.post('/gerar-resposta', async (req, res) => {
       imagem,
       audio,
       lojas: Array.isArray(lojas) ? lojas : [],
-      briefingComercial,
+      briefingComercial: briefingComercial + avisoData + avisoCoerencia,
     });
 
 

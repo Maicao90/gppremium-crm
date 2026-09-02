@@ -1466,6 +1466,31 @@ export async function dispararRespostaBotAgora(usuarioId: string, chatJid: strin
 // Apaga uma mensagem PARA TODOS no WhatsApp — o mesmo "apagar para todos" do app.
 // Some do aparelho do cliente tambem. So funciona em mensagem que a LOJA enviou e
 // dentro da janela que o WhatsApp permite; fora disso o proprio WhatsApp ignora.
+// Edita uma mensagem JA ENVIADA, igual ao "editar" do WhatsApp. O texto novo troca
+// o antigo no aparelho do cliente e o app mostra a marca de editada. Regras que sao
+// do WhatsApp, nao nossas: so mensagem de TEXTO, so as que a loja enviou, e so
+// dentro de ~15 minutos. Fora disso o proprio WhatsApp recusa.
+export async function editarMensagemWhatsApp(usuarioId: string, chatJid: string, waId: string, textoNovo: string): Promise<boolean> {
+  const efetivoId = await resolverConexaoEfetiva(usuarioId);
+  const sock = sessions.get(efetivoId);
+  if (!sock) {
+    console.error(`[Editar] WhatsApp nao conectado (${efetivoId}).`);
+    return false;
+  }
+  try {
+    const enviada = await (sock as any).sendMessage(chatJid, {
+      text: textoNovo,
+      edit: { remoteJid: chatJid, fromMe: true, id: waId, participant: undefined },
+    });
+    lembrarWaId(enviada?.key?.id);
+    console.log(`[Editar] Mensagem ${waId} editada em ${chatJid}.`);
+    return true;
+  } catch (e: any) {
+    console.error('[Editar] Falha ao editar no WhatsApp:', e?.message || e);
+    return false;
+  }
+}
+
 export async function apagarMensagemParaTodos(usuarioId: string, chatJid: string, waId: string, fromMe: boolean): Promise<boolean> {
   const efetivoId = await resolverConexaoEfetiva(usuarioId);
   const sock = sessions.get(efetivoId);
@@ -1506,7 +1531,12 @@ export async function enviarMensagemInbox(usuarioId: string, jid: string, texto:
     let u = await prisma.usuario.findUnique({ where: { id: usuarioId } });
     if (enviadoPorId && enviadoPorId !== usuarioId) {
       const remetente = await prisma.usuario.findUnique({ where: { id: enviadoPorId } });
-      if (remetente && remetente.role === 'gerente') u = remetente;
+      // Achado 02/09: a josy respondeu pelo painel numa conexao que nao e dela e a
+      // mensagem saiu assinada "*Borracharia*" (o nome da CONEXAO), nao o nome de
+      // quem escreveu. Quem atende tem que assinar com o proprio nome — o cliente
+      // precisa saber com quem esta falando. Master/admin seguem assinando como o
+      // dono da conexao, que e o comportamento antigo e intencional.
+      if (remetente && remetente.role !== 'master' && remetente.role !== 'admin') u = remetente;
     }
     if (u) {
       if (u.assinaturaPainel !== null && u.assinaturaPainel !== undefined) {

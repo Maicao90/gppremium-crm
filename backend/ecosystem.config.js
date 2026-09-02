@@ -43,7 +43,7 @@ module.exports = {
       },
       autorestart: true,
       watch: false,
-      max_memory_restart: '300M',
+      max_memory_restart: '700M',
       out_file: '/root/whatsapp-crm/logs/bot-service.log',
       error_file: '/root/whatsapp-crm/logs/bot-service-error.log',
       merge_logs: true,

@@ -615,22 +615,50 @@ function normalizarTextoMedida(texto: string): string {
 // Achado 01/09: nesses casos o robo so pedia a medida completa de novo, em vez de
 // olhar a tabela e dizer "no aro 14 com perfil 70 a gente tem 175/70/14 e 185/70/14,
 // qual bate com o seu?". Aqui achamos os candidatos reais da tabela.
+// Cliente manda medida pela METADE o tempo todo, e de todo jeito:
+//   "14/70"   -> aro + perfil, falta a largura
+//   "175.70"  -> largura + perfil, falta o aro   (caso real 02/09)
+//   "175 14"  -> largura + aro, falta o perfil
+// Achado 01-02/09: em todos esses o robo so repetia "me manda a medida completa".
+// Agora a gente cruza o pedaco com a tabela e ja oferece os candidatos reais.
 export function medidasParciais(texto: string): string[] {
   const base = normalizarTextoMedida(texto);
   // Se ja da pra ler a medida inteira, isso aqui nao e necessario.
   if (extrairMedidasDoTexto(texto).length) return [];
-  const numeros = (base.match(/\b\d{2,3}\b/g) || []).map((n) => n);
+
+  // Monta os valores validos a partir da propria tabela, pra nunca ficar defasado.
+  const larguras = new Set<string>();
+  const perfis = new Set<string>();
+  const aros = new Set<string>();
+  for (const item of TABELA_PRECOS_GP) {
+    const p = String(item.medida || '').split('/');
+    if (p.length !== 3) continue;
+    larguras.add(p[0]!);
+    perfis.add(p[1]!);
+    aros.add(p[2]!);
+  }
+
+  const numeros = base.match(/\b\d{2,3}\b/g) || [];
   if (numeros.length < 2) return [];
-  const aros = numeros.filter((n) => ['13', '14', '15', '16', '17', '18'].includes(n));
-  const perfis = numeros.filter((n) => ['35', '40', '45', '50', '55', '60', '65', '70', '75'].includes(n));
-  if (!aros.length || !perfis.length) return [];
+  const temLargura = numeros.filter((n) => larguras.has(n));
+  const temPerfil = numeros.filter((n) => perfis.has(n));
+  const temAro = numeros.filter((n) => aros.has(n));
+
+  // Precisa de pelo menos DUAS das tres partes pra valer a pena sugerir.
+  const partesConhecidas = [temLargura.length > 0, temPerfil.length > 0, temAro.length > 0].filter(Boolean).length;
+  if (partesConhecidas < 2) return [];
+
   const achadas = new Set<string>();
   for (const item of TABELA_PRECOS_GP) {
     const p = String(item.medida || '').split('/');
     if (p.length !== 3) continue;
-    if (aros.includes(p[2]!) && perfis.includes(p[1]!)) achadas.add(item.medida);
+    const bateLargura = !temLargura.length || temLargura.includes(p[0]!);
+    const batePerfil = !temPerfil.length || temPerfil.includes(p[1]!);
+    const bateAro = !temAro.length || temAro.includes(p[2]!);
+    if (bateLargura && batePerfil && bateAro) achadas.add(item.medida);
   }
-  return [...achadas];
+  // Se sobrou a tabela inteira, o palpite nao ajuda em nada.
+  return achadas.size && achadas.size <= 8 ? [...achadas] : [];
 }
 
 export function extrairMedidasDoTexto(texto: string): string[] {

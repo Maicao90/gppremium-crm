@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { Router } from 'express';
 import { prisma } from '../server';
-import { enviarMensagemInbox, enviarMidiaInbox, resolverConexaoEfetiva, apagarMensagemParaTodos, dispararRespostaBotAgora } from '../workers/whatsappService';
+import { enviarMensagemInbox, enviarMidiaInbox, resolverConexaoEfetiva, apagarMensagemParaTodos, editarMensagemWhatsApp, dispararRespostaBotAgora } from '../workers/whatsappService';
 import { lerBotPneusConfig, salvarBotPneusConfig } from '../services/botPneusConfig';
 
 const router = Router();
@@ -423,6 +423,41 @@ router.post('/acao', async (req, res) => {
     }
 
     // Apagar PARA TODOS, igual no WhatsApp. Some do aparelho do cliente tambem.
+    // Editar mensagem ja enviada, igual no WhatsApp.
+    if (action === 'editar') {
+      const mensagemId = String(req.body?.mensagemId || '');
+      const textoNovo = String(req.body?.texto || '').trim();
+      if (!mensagemId) return res.status(400).json({ error: 'Mensagem invalida.' });
+      if (!textoNovo) return res.status(400).json({ error: 'O texto novo nao pode ficar vazio.' });
+      const msg = await prisma.mensagem.findUnique({
+        where: { id: mensagemId },
+        select: { id: true, waId: true, fromMe: true, usuarioId: true, chatJid: true, tipo: true, timestamp: true },
+      });
+      if (!msg || msg.usuarioId !== alvo.usuarioId || msg.chatJid !== alvo.chatJid) {
+        return res.status(404).json({ error: 'Mensagem nao encontrada nesta conversa.' });
+      }
+      if (!msg.fromMe) {
+        return res.status(400).json({ error: 'So da pra editar as mensagens que a loja enviou.' });
+      }
+      if (msg.tipo !== 'texto') {
+        return res.status(400).json({ error: 'O WhatsApp so permite editar mensagem de texto.' });
+      }
+      if (!msg.waId) {
+        return res.status(400).json({ error: 'Essa mensagem nao tem identificador do WhatsApp — nao da pra editar la.' });
+      }
+      // O WhatsApp so aceita edicao ate ~15 min. Avisa antes de tentar, pra dar um
+      // erro que a pessoa entende em vez de uma falha seca do WhatsApp.
+      const minutos = (Date.now() - msg.timestamp.getTime()) / 60000;
+      if (minutos > 15) {
+        return res.status(400).json({ error: 'O WhatsApp so deixa editar ate 15 minutos depois do envio. Essa ja passou do prazo.' });
+      }
+      const ok = await editarMensagemWhatsApp(alvo.usuarioId, alvo.chatJid, msg.waId, textoNovo);
+      if (!ok) return res.status(503).json({ error: 'Nao consegui editar no WhatsApp (sem conexao ou o WhatsApp recusou).' });
+      // So atualiza o painel depois que o WhatsApp confirmou, pra tela nao mentir.
+      await prisma.mensagem.update({ where: { id: msg.id }, data: { texto: textoNovo } }).catch(() => {});
+      return res.json({ ok: true, texto: textoNovo });
+    }
+
     if (action === 'apagar') {
       const mensagemId = String(req.body?.mensagemId || '');
       if (!mensagemId) return res.status(400).json({ error: 'Mensagem invalida.' });

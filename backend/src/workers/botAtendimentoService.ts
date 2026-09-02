@@ -108,6 +108,7 @@ function limparTagsEspeciais(texto: string): string {
   return texto
     .replace(/\[TRANSFERIR_HUMANO\]/g, '')
     .replace(/\[AGENDAR_VISITA:[^\]]+\]/gi, '')
+    .replace(/\[LEMBRAR:[^\]]+\]/gi, '')
     .replace(/\[(?:ENVIAR_VIDEO|VIDEO):[^\]]+\]/gi, '')
     .trim();
 }
@@ -146,6 +147,78 @@ async function conversaContinuaAtual(usuarioId: string, chatJid: string, waId: s
   ]);
   if (!ultimaEntrada || ultimaEntrada.waId !== waId) return false;
   return !estado?.pausadoAte || estado.pausadoAte.getTime() <= Date.now();
+}
+
+// REMARKETING (02/09). Quando o cliente diz que volta depois — "dia 10 eu passo ai",
+// "quando eu receber", "semana que vem" — a conversa morria ali e o lead esfriava.
+// Agora o robo agenda ele mesmo uma mensagem pra aquela data, com um texto que ELE
+// escreve entendendo o contexto (a medida que o cliente queria, o preco ja passado,
+// o que ficou combinado). Se o cliente responder antes, o agendamento se cancela
+// sozinho (cancelarSeResponder), pra ninguem levar cobranca desnecessaria.
+async function processarRemarketing(usuarioId: string, chatJid: string, texto: string, nomeCliente?: string) {
+  try {
+    const match = /\[LEMBRAR:\s*([^\]]+)\]/i.exec(texto);
+    if (!match || !match[1]) return;
+
+    const payload = String(match[1]);
+    const dataMatch = /data="([^"]+)"/i.exec(payload);
+    const textoMatch = /texto="([^"]+)"/i.exec(payload);
+    if (!dataMatch || !dataMatch[1] || !textoMatch || !textoMatch[1]) {
+      console.error('[Remarketing] Tag [LEMBRAR] sem data ou sem texto — ignorada:', payload.slice(0, 120));
+      return;
+    }
+
+    // A data vem no horario de Brasilia (o robo raciocina nele). Sem o fuso explicito
+    // o Node interpretaria como UTC e a mensagem sairia 3 horas antes do combinado.
+    const bruto = String(dataMatch[1]).trim().replace(' ', 'T');
+    const comFuso = /[Zz]|[+-]\d{2}:\d{2}$/.test(bruto) ? bruto : bruto + '-03:00';
+    const quando = new Date(comFuso);
+    if (isNaN(quando.getTime())) {
+      console.error('[Remarketing] Data invalida:', dataMatch[1]);
+      return;
+    }
+
+    const agora = Date.now();
+    const limite = agora + 60 * 24 * 60 * 60 * 1000; // 60 dias
+    if (quando.getTime() < agora + 10 * 60 * 1000) {
+      console.error('[Remarketing] Data no passado ou perto demais, ignorada:', quando.toISOString());
+      return;
+    }
+    if (quando.getTime() > limite) {
+      console.error('[Remarketing] Data longe demais (>60 dias), ignorada:', quando.toISOString());
+      return;
+    }
+
+    const numeroLimpo = chatJid.replace(/[^0-9]/g, '');
+
+    // Uma conversa nao pode acumular varios lembretes: se ja existe um pendente pra
+    // esse numero, troca a data/texto em vez de criar outro (senao o cliente recebe
+    // a mesma cobranca 3 vezes — ja aconteceu spam real por falta de trava assim).
+    const jaExiste = await prisma.agendamento.findFirst({
+      where: { numero: numeroLimpo, criadoPorId: usuarioId, status: 'pendente' },
+      select: { id: true },
+    });
+
+    const dados = {
+      cliente: nomeCliente || 'Cliente WhatsApp',
+      numero: numeroLimpo,
+      mensagem: String(textoMatch[1]).slice(0, 1200),
+      enviarEm: quando,
+      criadoPorId: usuarioId,
+      status: 'pendente',
+      cancelarSeResponder: true,
+    };
+
+    if (jaExiste) {
+      await prisma.agendamento.update({ where: { id: jaExiste.id }, data: dados });
+      console.log(`[Remarketing] Lembrete de ${numeroLimpo} REMARCADO para ${quando.toISOString()}.`);
+    } else {
+      await prisma.agendamento.create({ data: dados });
+      console.log(`[Remarketing] Lembrete criado para ${numeroLimpo} em ${quando.toISOString()}.`);
+    }
+  } catch (err: any) {
+    console.error('[Remarketing] Erro ao agendar:', err?.message || err);
+  }
 }
 
 async function processarAgendamentoAutomatico(usuarioId: string, chatJid: string, texto: string) {
@@ -264,6 +337,10 @@ async function executar(params: AgendarBotParams, versao: number) {
 
     // Processa agendamento se presente
     for (const p of partes) {
+      // Remarketing: o robo agenda o proprio retorno quando o cliente adia.
+      if (p.includes('[LEMBRAR')) {
+        await processarRemarketing(params.usuarioId, params.chatJid, p).catch(() => {});
+      }
       if (p.includes('[AGENDAR_VISITA')) {
         await processarAgendamentoAutomatico(params.usuarioId, params.chatJid, p);
       }
