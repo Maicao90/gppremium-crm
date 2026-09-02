@@ -37,8 +37,24 @@ export interface RespostaDeterministicaPreco {
   usouTabela: boolean;
 }
 
+// TABELA OFICIAL DE PRECOS — gerada da planilha do dono da loja em 02/09/2026
+// (Tabela_de_Precos_Pneus_Organizada.xlsx).
+//
+// NAO edite valor aqui na mao. Se o preco mudar, peca a planilha nova e gere de
+// novo: e ela a fonte da verdade. A conferencia anterior achou 13 itens com preco
+// errado, 11 faltando e 10 sobrando — inclusive 175/65/14 e 175/70/14 com os
+// precos TROCADOS entre si, e um 235/75/15 R$50 abaixo do real.
+//
+// Cada xN e o TOTAL a financiar em N vezes (nao o valor de cada parcela) — o valor
+// de cada parcela e xN / N.
+//
+// Linhas com o mesmo preco e medida foram juntadas num item so, com os modelos
+// separados por " / " (ex.: 195/65/15 GP-1 e GP-7 sao a mesma cotacao). Assim o robo
+// nao pergunta "qual modelo?" quando o valor e igual de qualquer jeito.
+//
+// Os RECAPES no fim nao vem da planilha — sao produto proprio da loja, mantidos
+// como estavam.
 export const TABELA_PRECOS_GP: ItemPreco[] = [
-  // ─── PASSEIO ───
   {
     medida: '165/70/13',
     modelo: 'GP-7',
@@ -62,8 +78,8 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     modelo: 'GP-1 / GP-7 / GP-400',
     categoria: 'passeio',
     promocao: true,
-    aVista: 239.00,
-    parcelado: { x1: 244.31, x2: 246.96, x3: 249.61, x4: 252.26, x5: 254.92, x6: 257.57, x7: 260.22, x8: 262.88, x9: 265.53, x10: 268.18 },
+    aVista: 269.00,
+    parcelado: { x1: 274.97, x2: 277.96, x3: 280.94, x4: 283.93, x5: 286.92, x6: 289.90, x7: 292.89, x8: 295.87, x9: 298.86, x10: 301.34 },
     portaria: 30.00
   },
   {
@@ -71,8 +87,8 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     modelo: 'GP-1 / GP-7',
     categoria: 'passeio',
     promocao: true,
-    aVista: 269.00,
-    parcelado: { x1: 274.97, x2: 277.96, x3: 280.94, x4: 283.93, x5: 286.92, x6: 289.90, x7: 292.89, x8: 295.87, x9: 298.86, x10: 301.34 },
+    aVista: 249.00,
+    parcelado: { x1: 254.53, x2: 257.29, x3: 260.06, x4: 262.82, x5: 265.58, x6: 268.35, x7: 271.11, x8: 273.88, x9: 276.64, x10: 279.40 },
     portaria: 30.00
   },
   {
@@ -80,26 +96,25 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     modelo: 'GP-1 / GP-7 / ATR',
     categoria: 'passeio',
     promocao: true,
-    aVista: 249.00,
-    parcelado: { x1: 254.53, x2: 257.29, x3: 260.06, x4: 262.82, x5: 265.58, x6: 268.35, x7: 271.11, x8: 273.88, x9: 276.64, x10: 279.40 },
+    aVista: 279.00,
+    parcelado: { x1: 285.19, x2: 288.29, x3: 291.39, x4: 294.48, x5: 297.58, x6: 300.68, x7: 303.78, x8: 306.87, x9: 309.97, x10: 313.07 },
     portaria: 30.00
   },
   {
     medida: '185/60/14',
     modelo: 'GP-1',
     categoria: 'passeio',
-    promocao: true,
-    aVista: 289.00,
-    parcelado: { x1: 295.42, x2: 298.62, x3: 301.83, x4: 305.04, x5: 308.25, x6: 311.46, x7: 314.66, x8: 317.87, x9: 321.08, x10: 324.29 },
-    portaria: 30.00
-  },
-  {
-    medida: '185/65/14',
-    modelo: 'GP-1',
-    categoria: 'passeio',
     aVista: 289.00,
     parcelado: { x1: 295.42, x2: 298.62, x3: 301.83, x4: 305.04, x5: 308.25, x6: 311.46, x7: 314.66, x8: 317.87, x9: 321.08, x10: 324.29 },
     portaria: 0.00
+  },
+  {
+    medida: '185/65/14',
+    modelo: 'GP-1 / GP-7',
+    categoria: 'passeio',
+    aVista: 289.00,
+    parcelado: { x1: 295.42, x2: 298.62, x3: 301.83, x4: 305.04, x5: 308.25, x6: 311.46, x7: 314.66, x8: 317.87, x9: 321.08, x10: 324.29 },
+    portaria: 30.00
   },
   {
     medida: '185/70/14',
@@ -137,7 +152,7 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
   },
   {
     medida: '195/60/15',
-    modelo: 'GP-1',
+    modelo: 'GP-1 / GP-7',
     categoria: 'passeio',
     aVista: 289.00,
     parcelado: { x1: 295.42, x2: 298.62, x3: 301.83, x4: 305.04, x5: 308.25, x6: 311.46, x7: 314.66, x8: 317.87, x9: 321.08, x10: 324.29 },
@@ -153,8 +168,8 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     portaria: 20.00
   },
   {
-    medida: '195/60/15',
-    modelo: 'GP-7',
+    medida: '205/60/15',
+    modelo: 'GP-1',
     categoria: 'passeio',
     aVista: 289.00,
     parcelado: { x1: 295.42, x2: 298.62, x3: 301.83, x4: 305.04, x5: 308.25, x6: 311.46, x7: 314.66, x8: 317.87, x9: 321.08, x10: 324.29 },
@@ -162,7 +177,7 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
   },
   {
     medida: '205/60/15',
-    modelo: 'GP-1',
+    modelo: 'ADVENTURE ATR',
     categoria: 'passeio',
     aVista: 319.00,
     parcelado: { x1: 326.08, x2: 329.62, x3: 333.16, x4: 336.70, x5: 340.25, x6: 343.79, x7: 347.33, x8: 350.87, x9: 354.41, x10: 357.95 },
@@ -178,15 +193,7 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
   },
   {
     medida: '205/70/15',
-    modelo: 'ADVENTURE A/T',
-    categoria: 'passeio',
-    aVista: 349.00,
-    parcelado: { x1: 356.75, x2: 360.62, x3: 364.50, x4: 368.37, x5: 372.24, x6: 376.12, x7: 379.99, x8: 383.87, x9: 387.74, x10: 391.51 },
-    portaria: 30.00
-  },
-  {
-    medida: '205/70/15',
-    modelo: 'ADVENTURE ATR',
+    modelo: 'ADVENTURE A/T / ADVENTURE ATR',
     categoria: 'passeio',
     aVista: 349.00,
     parcelado: { x1: 356.75, x2: 360.62, x3: 364.50, x4: 368.37, x5: 372.24, x6: 376.12, x7: 379.99, x8: 383.87, x9: 387.74, x10: 391.51 },
@@ -206,7 +213,7 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     categoria: 'passeio',
     promocao: true,
     aVista: 259.00,
-    parcelado: { x1: 264.75, x2: 267.62, x3: 270.50, x4: 273.37, x5: 276.25, x6: 279.12, x7: 282.00, x8: 284.87, x9: 287.75, x10: 290.52 },
+    parcelado: { x1: 264.75, x2: 267.62, x3: 270.50, x4: 273.37, x5: 276.25, x6: 279.12, x7: 282.00, x8: 284.87, x9: 287.75, x10: 290.62 },
     portaria: 20.00
   },
   {
@@ -219,15 +226,7 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
   },
   {
     medida: '205/60/16',
-    modelo: 'ADVENTURE ATR',
-    categoria: 'passeio',
-    aVista: 329.00,
-    parcelado: { x1: 336.30, x2: 339.96, x3: 343.61, x4: 347.26, x5: 350.91, x6: 354.56, x7: 358.22, x8: 361.87, x9: 365.52, x10: 369.17 },
-    portaria: 20.00
-  },
-  {
-    medida: '205/60/16',
-    modelo: 'GP-700',
+    modelo: 'ADVENTURE ATR / GP-700',
     categoria: 'passeio',
     aVista: 329.00,
     parcelado: { x1: 336.30, x2: 339.96, x3: 343.61, x4: 347.26, x5: 350.91, x6: 354.56, x7: 358.22, x8: 361.87, x9: 365.52, x10: 369.17 },
@@ -261,6 +260,7 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     medida: '215/55/17',
     modelo: 'GP-4',
     categoria: 'passeio',
+    compre3Leve4: true,
     aVista: 394.90,
     parcelado: { x1: 403.67, x2: 408.05, x3: 412.43, x4: 416.82, x5: 421.20, x6: 425.58, x7: 429.97, x8: 434.35, x9: 438.73, x10: 443.12 },
     portaria: 20.00
@@ -269,7 +269,6 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     medida: '225/45/17',
     modelo: 'GP-7',
     categoria: 'passeio',
-    compre3Leve4: true,
     aVista: 339.00,
     parcelado: { x1: 346.53, x2: 350.29, x3: 354.05, x4: 357.81, x5: 361.58, x6: 365.34, x7: 369.10, x8: 372.87, x9: 376.63, x10: 380.39 },
     portaria: 20.00
@@ -290,8 +289,6 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     parcelado: { x1: 612.30, x2: 618.95, x3: 625.60, x4: 632.24, x5: 638.89, x6: 645.54, x7: 652.19, x8: 658.84, x9: 665.49, x10: 672.14 },
     portaria: 20.00
   },
-
-  // ─── SUV / DRIFT ───
   {
     medida: '255/35/18',
     modelo: 'GP-3 DRIFT',
@@ -306,14 +303,14 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     categoria: 'suv',
     aVista: 1180.00,
     parcelado: { x1: 1206.20, x2: 1219.29, x3: 1232.39, x4: 1245.49, x5: 1258.59, x6: 1271.69, x7: 1284.78, x8: 1297.88, x9: 1310.98, x10: 1324.08 },
-    portaria: 20.00
+    portaria: 0.00
   },
   {
     medida: '215/60/17',
     modelo: 'ADVENTURE VERDE',
     categoria: 'suv',
     aVista: 359.00,
-    parcelado: { x1: 366.97, x2: 370.95, x3: 374.94, x4: 378.92, x5: 382.91, x6: 386.89, x7: 390.88, x8: 394.86, x9: 398.85, x10: 402.33 },
+    parcelado: { x1: 366.97, x2: 370.95, x3: 374.94, x4: 378.92, x5: 382.91, x6: 386.89, x7: 390.88, x8: 394.86, x9: 398.85, x10: 402.83 },
     portaria: 20.00
   },
   {
@@ -333,7 +330,7 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     portaria: 20.00
   },
   {
-    medida: '225/60/18',
+    medida: '225/55/18',
     modelo: 'ADVENTURE VERDE',
     categoria: 'suv',
     aVista: 399.00,
@@ -341,18 +338,16 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     portaria: 20.00
   },
   {
-    medida: '225/55/18',
+    medida: '225/60/18',
     modelo: 'ADVENTURE H/T',
-    categoria: 'suv',
+    categoria: 'pickup',
     aVista: 449.00,
-    parcelado: { x1: 458.97, x2: 463.95, x3: 468.94, x4: 473.92, x5: 478.90, x6: 483.89, x7: 488.87, x8: 493.86, x9: 498.84, x10: 503.32 },
+    parcelado: { x1: 458.97, x2: 463.95, x3: 468.94, x4: 473.92, x5: 478.90, x6: 483.89, x7: 488.87, x8: 493.86, x9: 498.84, x10: 503.82 },
     portaria: 20.00
   },
-
-  // ─── VAN ───
   {
     medida: '205/70/15',
-    modelo: 'CARGO DUROMAX',
+    modelo: 'CARGO DURAMAX',
     categoria: 'van',
     aVista: 429.00,
     parcelado: { x1: 438.52, x2: 443.29, x3: 448.05, x4: 452.81, x5: 457.57, x6: 462.33, x7: 467.10, x8: 471.86, x9: 476.62, x10: 481.38 },
@@ -360,45 +355,43 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
   },
   {
     medida: '205/75/16',
-    modelo: 'CARGO DUROMAX',
+    modelo: 'CARGO DURAMAX',
     categoria: 'van',
     aVista: 439.00,
-    parcelado: { x1: 448.75, x2: 453.62, x3: 458.49, x4: 463.36, x5: 468.24, x6: 473.11, x7: 477.98, x8: 482.86, x9: 487.73, x10: 492.50 },
+    parcelado: { x1: 448.75, x2: 453.62, x3: 458.49, x4: 463.36, x5: 468.24, x6: 473.11, x7: 477.98, x8: 482.86, x9: 487.73, x10: 492.60 },
     portaria: 30.00
   },
   {
     medida: '225/65/16',
-    modelo: 'CARGO DUROMAX',
+    modelo: 'CARGO DURAMAX',
     categoria: 'van',
     aVista: 449.00,
-    parcelado: { x1: 458.97, x2: 463.95, x3: 468.94, x4: 473.92, x5: 478.90, x6: 483.89, x7: 488.87, x8: 493.86, x9: 498.84, x10: 503.32 },
+    parcelado: { x1: 458.97, x2: 463.95, x3: 468.94, x4: 473.92, x5: 478.90, x6: 483.89, x7: 488.87, x8: 493.86, x9: 498.84, x10: 503.82 },
     portaria: 30.00
   },
   {
     medida: '225/75/16',
-    modelo: 'CARGO DUROMAX',
+    modelo: 'CARGO DURAMAX',
     categoria: 'van',
-    aVista: 459.00,
-    parcelado: { x1: 469.41, x2: 474.49, x3: 479.57, x4: 484.65, x5: 489.73, x6: 493.81, x7: 498.89, x8: 503.97, x9: 509.05, x10: 514.13 },
+    aVista: 469.00,
+    parcelado: { x1: 479.41, x2: 484.62, x3: 489.82, x4: 495.03, x5: 500.24, x6: 505.44, x7: 510.65, x8: 515.85, x9: 521.06, x10: 526.26 },
     portaria: 30.00
   },
-
-  // ─── PICK-UP ───
   {
     medida: '235/75/15',
     modelo: 'ADVENTURE A/T',
     categoria: 'pickup',
-    aVista: 439.00,
-    parcelado: { x1: 448.75, x2: 453.62, x3: 458.49, x4: 463.36, x5: 468.24, x6: 473.11, x7: 477.98, x8: 482.86, x9: 487.73, x10: 492.50 },
-    portaria: 30.00
+    aVista: 489.00,
+    parcelado: { x1: 499.86, x2: 505.28, x3: 510.71, x4: 516.14, x5: 521.57, x6: 527.00, x7: 532.42, x8: 537.85, x9: 543.28, x10: 548.71 },
+    portaria: 50.00
   },
   {
     medida: '235/70/16',
     modelo: 'ADVENTURE ATR',
     categoria: 'pickup',
-    aVista: 459.00,
-    parcelado: { x1: 469.41, x2: 474.49, x3: 479.57, x4: 484.65, x5: 489.73, x6: 493.81, x7: 498.89, x8: 503.97, x9: 509.05, x10: 514.13 },
-    portaria: 30.00
+    aVista: 469.00,
+    parcelado: { x1: 479.41, x2: 484.62, x3: 489.82, x4: 495.03, x5: 500.24, x6: 505.44, x7: 510.65, x8: 515.85, x9: 521.06, x10: 526.26 },
+    portaria: 50.00
   },
   {
     medida: '235/70/16',
@@ -421,8 +414,8 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     modelo: 'BRUTUS T/A',
     categoria: 'pickup',
     aVista: 539.00,
-    parcelado: { x1: 550.97, x2: 556.95, x3: 562.93, x4: 568.91, x5: 574.90, x6: 580.88, x7: 586.86, x8: 592.85, x9: 598.83, x10: 604.31 },
-    portaria: 50.00
+    parcelado: { x1: 550.97, x2: 556.95, x3: 562.93, x4: 568.91, x5: 574.90, x6: 580.88, x7: 586.86, x8: 592.85, x9: 598.83, x10: 604.81 },
+    portaria: 0.00
   },
   {
     medida: '265/70/16',
@@ -476,8 +469,8 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     medida: '265/60/18',
     modelo: 'ADVENTURE H/T',
     categoria: 'pickup',
-    aVista: 549.00,
-    parcelado: { x1: 561.19, x2: 567.28, x3: 573.38, x4: 579.47, x5: 585.56, x6: 591.66, x7: 597.75, x8: 603.85, x9: 609.94, x10: 616.03 },
+    aVista: 559.00,
+    parcelado: { x1: 571.41, x2: 577.61, x3: 583.82, x4: 590.02, x5: 596.23, x6: 602.43, x7: 608.64, x8: 614.84, x9: 621.05, x10: 627.25 },
     portaria: 30.00
   },
   {
@@ -496,8 +489,6 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     parcelado: { x1: 612.30, x2: 618.95, x3: 625.60, x4: 632.24, x5: 638.89, x6: 645.54, x7: 652.19, x8: 658.84, x9: 665.49, x10: 672.14 },
     portaria: 30.00
   },
-
-  // ─── RECAPE / CARCAÇA ───
   {
     medida: 'Aro 13',
     modelo: 'Recape / Carcaça',
@@ -769,7 +760,11 @@ function linhaParcelamento(item: ItemPreco, parcelaSolicitada: number | null): s
 }
 
 function primeiroModelo(modelo: string): string {
-  return (modelo.split('/')[0] ?? modelo).trim();
+  // Separa em ' / ' COM espacos: varios modelos tem barra no proprio nome
+  // (ADVENTURE A/T, BRUTUS T/A, ADVENTURE H/T). Cortando em qualquer '/', o robo
+  // dizia 'ADVENTURE A' pro cliente — nome de produto que nao existe (achado 02/09).
+  const partes = modelo.split(' / ');
+  return (partes[0] ?? modelo).trim();
 }
 
 // Preco se revela em ETAPAS (achado 25/08): sem numero de parcela pedido, so mostra
