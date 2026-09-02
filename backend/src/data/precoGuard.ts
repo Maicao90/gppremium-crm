@@ -20,6 +20,12 @@ import { TABELA_PRECOS_GP, ItemPreco, extrairMedidasDoTexto } from './tabelaPrec
 
 const QTD_MAX = 10; // ninguem cota mais que 10 pneus por conversa
 
+// Servicos que a loja cobra e que NAO estao na tabela de pneus. Sem isso a trava
+// barrava valores legitimos: em teste, o robo tentou responder "balanceamento R$25,00
+// por roda" e foi bloqueado, deixando o cliente sem resposta (achado 02/09).
+// Alinhamento nao entra aqui de proposito: a loja NAO faz esse servico.
+const PRECOS_DE_SERVICO = [25.0];
+
 function cent(n: number): string {
   return (Math.round(n * 100) / 100).toFixed(2);
 }
@@ -78,6 +84,11 @@ export function precosForaDaTabela(partes: string[], contexto: string): string[]
 
   const medidas = extrairMedidasDoTexto(contexto);
   const permitidos = new Set<string>();
+
+  // servicos (balanceamento) e os multiplos por roda: 1 a 6 rodas
+  for (const preco of PRECOS_DE_SERVICO) {
+    for (let rodas = 1; rodas <= 6; rodas++) permitidos.add(cent(preco * rodas));
+  }
 
   // Recape sempre vale: e a opcao barata e nao tem medida no nome.
   for (const item of TABELA_PRECOS_GP) {
