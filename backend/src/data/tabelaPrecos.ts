@@ -806,8 +806,11 @@ function montarPartesPreco(item: ItemPreco, parcelaSolicitada: number | null, qu
     `${item.medida}${qtd > 1 ? ` (${qtd} unidades)` : ''}`,
     `Em ${parcelaSolicitada}x fica R$ ${brl(valorParcela)} cada, total de R$ ${brl(total)}.`,
   ].join('\n');
-  const parte2 = 'Pagamento a vista no PIX ou dinheiro permite trabalhar 5% de desconto para fechamento imediato.';
-  return [parte1, parte2];
+  // Achado 02/09: aqui saia sozinha a frase do desconto de 5%, sem ninguem perguntar.
+  // Duas coisas erradas nisso: (a) o desconto e so em DINHEIRO, nao no PIX, e (b) dar
+  // desconto de graca a quem nao pediu joga margem fora. Agora o desconto so aparece
+  // se o cliente perguntar — a regra esta no prompt.
+  return [parte1];
 }
 
 export function resumirItemPreco(item: ItemPreco): string {
@@ -823,7 +826,7 @@ export function resumirItemPreco(item: ItemPreco): string {
   return [
     `${item.medida} :: ${item.modelo}`,
     `A_VISTA=R$ ${brl(item.aVista)}`,
-    `A_VISTA_PIX_5PCT=R$ ${brl(Math.round(item.aVista * 0.95 * 100) / 100)} (a vista no PIX/dinheiro, ja com os 5% de desconto)`,
+    `A_VISTA_DINHEIRO_5PCT=R$ ${brl(Math.round(item.aVista * 0.95 * 100) / 100)} (a vista EM DINHEIRO, ja com os 5% — NAO vale pra PIX; so cite se o cliente perguntar de desconto)`,
     parcelas,
     flags.length ? `FLAGS=${flags.join(',')}` : '',
   ].filter(Boolean).join(' :: ');
