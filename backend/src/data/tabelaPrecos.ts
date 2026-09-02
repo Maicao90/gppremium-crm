@@ -692,14 +692,22 @@ function detectarSaudacaoSemPedido(texto: string): boolean {
   return ['oi', 'ola', 'olá', 'bom dia', 'boa tarde', 'boa noite'].includes(base);
 }
 
+// Achado 01/09: a linha "pode conceder ate 10% de desconto" e ORIENTACAO INTERNA de
+// venda e estava sendo mandada PRO CLIENTE junto com o preco. Nunca mais.
 function resumoPromocional(item: ItemPreco): string[] {
   const linhas: string[] = [];
   if (item.promocao) linhas.push('Esse item esta em promocao.');
-  if (item.compre3Leve4) {
-    linhas.push('Participa da campanha compre 3 e leve 4.');
-    linhas.push('Para venda de 1 ou 2 pneus desse item, pode conceder ate 10% de desconto.');
-  }
+  if (item.compre3Leve4) linhas.push('Esse pneu esta na campanha COMPRE 3 E LEVE 4 — levando 4, voce paga so 3.');
   return linhas;
+}
+
+// Quantas unidades o cliente REALMENTE paga. Na campanha "compre 3 e leve 4", a cada
+// 4 pneus um sai de graca. Achado 01/09: o sistema cobrava 4x328,90 = R$1.315,60 num
+// item da campanha, quando o certo era 3x328,90 = R$986,70 — R$328,90 a mais no
+// bolso do cliente, num preco que o robo manda sozinho no WhatsApp.
+function unidadesCobradas(item: ItemPreco, quantidade: number): number {
+  if (!item.compre3Leve4 || quantidade < 4) return quantidade;
+  return quantidade - Math.floor(quantidade / 4);
 }
 
 function linhaParcelamento(item: ItemPreco, parcelaSolicitada: number | null): string {
@@ -722,10 +730,17 @@ function montarPartesPreco(item: ItemPreco, parcelaSolicitada: number | null, qu
   const modeloUnico = primeiroModelo(item.modelo);
   const qtd = quantidade && quantidade > 1 ? quantidade : 1;
   const prefixoQtd = qtd > 1 ? `${qtd} unidades ` : '';
+  // Na campanha "compre 3 e leve 4" o cliente leva 4 e paga 3 (achado 01/09: o robo
+  // estava cobrando as 4 unidades, R$328,90 a mais num pedido de 195/65/15).
+  const cobradas = unidadesCobradas(item, qtd);
+  const avisoLeve4 = cobradas < qtd
+    ? `Voce leva ${qtd} e paga so ${cobradas} (campanha compre 3 e leve 4).`
+    : '';
   if (!parcelaSolicitada) {
     const linhas = [
       `${item.medida} - ${modeloUnico}`,
-      `${prefixoQtd}A vista: R$ ${brl(item.aVista * qtd)}`,
+      `${prefixoQtd}A vista: R$ ${brl(item.aVista * cobradas)}`,
+      ...(avisoLeve4 ? [avisoLeve4] : []),
       'Parcelamos em ate 10x.',
       ...resumoPromocional(item),
     ];
@@ -738,7 +753,7 @@ function montarPartesPreco(item: ItemPreco, parcelaSolicitada: number | null, qu
   // O codigo antigo tratava x_N como "valor de cada parcela" e multiplicava de novo
   // por N, inflando o total em ate 6x (ex.: 1 pneu de R$239 virava R$1.545 em 6x).
   const chave = `x${parcelaSolicitada}` as keyof ItemPreco['parcelado'];
-  const total = item.parcelado[chave] * qtd;
+  const total = item.parcelado[chave] * cobradas;
   const valorParcela = total / parcelaSolicitada;
   const parte1 = [
     `${item.medida} - ${modeloUnico}${qtd > 1 ? ` (${qtd} unidades)` : ''}`,

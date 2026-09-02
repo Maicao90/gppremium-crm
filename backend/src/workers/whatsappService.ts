@@ -1523,6 +1523,35 @@ export async function enviarMensagemInbox(usuarioId: string, jid: string, texto:
 }
 
 // Envia uma MÍDIA (foto, vídeo, áudio ou documento) pela Caixa de Entrada.
+// O navegador grava audio em WEBM/Opus (Chrome no Windows), mas o WhatsApp so toca
+// audio de voz (ptt) em OGG/Opus. O codigo antigo mandava o webm cru rotulado como
+// "audio/ogg" — o WhatsApp aceitava a mensagem mas o audio nao tocava (achado 01/09).
+// Aqui convertemos de verdade com ffmpeg antes de enviar. Se a conversao falhar,
+// devolvemos null e o chamador avisa em vez de mandar um audio quebrado.
+async function converterParaOpus(buffer: Buffer): Promise<Buffer | null> {
+  const { spawn } = require('child_process');
+  return new Promise((resolve) => {
+    try {
+      const ff = spawn('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-i', 'pipe:0', '-vn', '-c:a', 'libopus', '-b:a', '32k', '-ar', '48000', '-ac', '1', '-f', 'ogg', 'pipe:1']);
+      const partes: Buffer[] = [];
+      let erro = '';
+      ff.stdout.on('data', (d: Buffer) => partes.push(d));
+      ff.stderr.on('data', (d: Buffer) => { erro += d.toString(); });
+      ff.on('error', (e: any) => { console.error('[Midia] ffmpeg indisponivel:', e?.message); resolve(null); });
+      ff.on('close', (code: number) => {
+        if (code !== 0 || !partes.length) {
+          console.error('[Midia] Falha ao converter audio (ffmpeg saiu com', code, '):', erro.slice(0, 300));
+          resolve(null);
+          return;
+        }
+        resolve(Buffer.concat(partes));
+      });
+      ff.stdin.on('error', () => {});
+      ff.stdin.end(buffer);
+    } catch (e: any) { console.error('[Midia] Erro ao chamar ffmpeg:', e?.message); resolve(null); }
+  });
+}
+
 export async function enviarMidiaInbox(usuarioId: string, jid: string, base64: string, mimetype: string, tipo: string, legenda?: string, enviadoPorId?: string): Promise<boolean> {
   const sock = sessions.get(usuarioId);
   if (!sock) {
@@ -1535,7 +1564,15 @@ export async function enviarMidiaInbox(usuarioId: string, jid: string, base64: s
     let conteudo: any;
     if (tipo === 'imagem') conteudo = { image: buffer, caption: legenda || undefined };
     else if (tipo === 'video') conteudo = { video: buffer, caption: legenda || undefined };
-    else if (tipo === 'audio') conteudo = { audio: buffer, mimetype: 'audio/ogg; codecs=opus', ptt: true };
+    else if (tipo === 'audio') {
+      // Converte pra OGG/Opus de verdade — sem isso o audio chega mudo no WhatsApp.
+      const opus = await converterParaOpus(buffer);
+      if (!opus) {
+        console.error('[Midia] Audio nao pode ser convertido — envio cancelado.');
+        return false;
+      }
+      conteudo = { audio: opus, mimetype: 'audio/ogg; codecs=opus', ptt: true };
+    }
     else conteudo = { document: buffer, mimetype: mimetype || 'application/octet-stream', fileName: 'arquivo' };
 
     await sock.sendPresenceUpdate('composing', jid).catch(() => {});
