@@ -611,6 +611,28 @@ function normalizarTextoMedida(texto: string): string {
   return t.replace(/\s+/g, ' ');
 }
 
+// Cliente manda medida pela METADE o tempo todo ("14/70", "aro 14 perfil 70", "70 14").
+// Achado 01/09: nesses casos o robo so pedia a medida completa de novo, em vez de
+// olhar a tabela e dizer "no aro 14 com perfil 70 a gente tem 175/70/14 e 185/70/14,
+// qual bate com o seu?". Aqui achamos os candidatos reais da tabela.
+export function medidasParciais(texto: string): string[] {
+  const base = normalizarTextoMedida(texto);
+  // Se ja da pra ler a medida inteira, isso aqui nao e necessario.
+  if (extrairMedidasDoTexto(texto).length) return [];
+  const numeros = (base.match(/\b\d{2,3}\b/g) || []).map((n) => n);
+  if (numeros.length < 2) return [];
+  const aros = numeros.filter((n) => ['13', '14', '15', '16', '17', '18'].includes(n));
+  const perfis = numeros.filter((n) => ['35', '40', '45', '50', '55', '60', '65', '70', '75'].includes(n));
+  if (!aros.length || !perfis.length) return [];
+  const achadas = new Set<string>();
+  for (const item of TABELA_PRECOS_GP) {
+    const p = String(item.medida || '').split('/');
+    if (p.length !== 3) continue;
+    if (aros.includes(p[2]!) && perfis.includes(p[1]!)) achadas.add(item.medida);
+  }
+  return [...achadas];
+}
+
 export function extrairMedidasDoTexto(texto: string): string[] {
   const base = normalizarTextoMedida(texto);
   const achadas = new Set<string>();
@@ -785,11 +807,25 @@ export function resumirItemPreco(item: ItemPreco): string {
 // Antes, numa conversa sem match ele nao recebia nada do catalogo e chutava de
 // memoria (chegou a oferecer aro 13 pra cliente de aro 14). Agora vai junto, em
 // toda resposta, a lista completa agrupada por ARO — compacta, so as medidas.
+// O robo precisa SEMPRE saber o que a loja tem — nao so quando a medida bate.
+// Inclui tambem os RECAPES (achado 01/09: 6 itens de recape, bem mais baratos que o
+// pneu novo — R$110 no aro 13 contra R$239 —, eram INVISIVEIS pro robo porque o nome
+// deles ("Aro 13", "Suv", "Vans"...) nao tem formato de medida. Cliente que achava
+// caro ia embora sem nunca ouvir a opcao mais barata da loja).
+// O robo precisa SEMPRE saber o que a loja tem — nao so quando a medida bate.
+// Inclui tambem os RECAPES (achado 01/09: 6 itens de recape, bem mais baratos que o
+// pneu novo — R$110 no aro 13 contra R$239 —, eram INVISIVEIS pro robo porque o nome
+// deles ("Aro 13", "Suv", "Vans"...) nao tem formato de medida. Cliente que achava
+// caro ia embora sem nunca ouvir a opcao mais barata da loja).
 function catalogoPorAro(): string {
   const porAro = new Map<string, string[]>();
+  const recapes: string[] = [];
   for (const item of TABELA_PRECOS_GP) {
     const partes = String(item.medida || '').split('/');
-    if (partes.length !== 3) continue;
+    if (partes.length !== 3) {
+      if (String(item.categoria || '') === 'recape') recapes.push(`${item.medida}: R$ ${brl(item.aVista)} a vista`);
+      continue;
+    }
     const aro = partes[2];
     if (!aro) continue;
     if (!porAro.has(aro)) porAro.set(aro, []);
@@ -797,19 +833,36 @@ function catalogoPorAro(): string {
     if (!lista.includes(item.medida)) lista.push(item.medida);
   }
   const aros = [...porAro.keys()].sort((a, b) => Number(a) - Number(b));
-  const partes = aros.map((aro) => `aro ${aro}: ${porAro.get(aro)!.join(', ')}`);
-  return `CATALOGO_COMPLETO_DA_LOJA (todas as medidas que a loja vende, agrupadas por ARO — use isto pra saber o que temos e oferecer SO o que serve na roda do cliente):\n  ${partes.join('\n  ')}`;
+  const linhasAro = aros.map((aro) => `  aro ${aro}: ${porAro.get(aro)!.join(', ')}`);
+  const blocos: string[] = [
+    'CATALOGO_COMPLETO_DA_LOJA (medidas de pneu NOVO que a loja vende, por ARO — use pra saber o que temos e oferecer SO o que serve na roda do cliente):',
+    linhasAro.join('\n'),
+  ];
+  if (recapes.length) {
+    blocos.push('RECAPE_DISPONIVEL (pneu recapado — BEM mais barato que o novo. Ofereca quando o cliente reclamar do preco, disser que esta caro ou pedir a opcao mais em conta. Deixe claro que e recape, nunca venda como novo):');
+    blocos.push(recapes.map((r) => '  ' + r).join('\n'));
+  }
+  return blocos.join('\n');
 }
 
 export function montarBriefingComercialDeterministico(texto: string): string {
   const analise = analisarConsultaPreco(texto);
   if (!analise.medidasDetectadas.length) {
-    return [
+    // Achado 01/09: cliente mandou "14/70" (aro + perfil, sem a largura). O robo so
+    // pedia a medida completa de novo. Agora a gente procura na tabela o que casa com
+    // esse pedaco e ja oferece os candidatos reais, em vez de empurrar a pergunta.
+    const parciais = medidasParciais(texto);
+    const base = [
       'CONTEXTO_COMERCIAL_LOCAL:',
-      'Nenhuma medida detectada com seguranca na ultima mensagem.',
-      'Se o cliente pedir preco sem medida, peca a medida exata do pneu antes de cotar.',
-      catalogoPorAro(),
-    ].join('\n');
+      'Nenhuma medida completa detectada na ultima mensagem.',
+    ];
+    if (parciais.length) {
+      base.push(`MEDIDA_INCOMPLETA — o cliente deu so um pedaco da medida. Na nossa tabela, o que casa com esse pedaco e: ${parciais.join(', ')}. Ofereca ESTAS opcoes e peca pra ele confirmar qual bate com o pneu dele, em vez de so pedir a medida completa de novo.`);
+    } else {
+      base.push('Se o cliente pedir preco sem medida, peca a medida exata do pneu antes de cotar.');
+    }
+    base.push(catalogoPorAro());
+    return base.join('\n');
   }
 
   const linhas: string[] = ['CONTEXTO_COMERCIAL_LOCAL:'];
