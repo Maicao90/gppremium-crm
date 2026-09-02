@@ -89,8 +89,8 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     modelo: 'GP-1',
     categoria: 'passeio',
     promocao: true,
-    aVista: 279.00,
-    parcelado: { x1: 285.19, x2: 288.29, x3: 291.39, x4: 294.48, x5: 297.58, x6: 300.68, x7: 303.78, x8: 306.87, x9: 309.97, x10: 313.07 },
+    aVista: 289.00,
+    parcelado: { x1: 295.42, x2: 298.62, x3: 301.83, x4: 305.04, x5: 308.25, x6: 311.46, x7: 314.66, x8: 317.87, x9: 321.08, x10: 324.29 },
     portaria: 30.00
   },
   {
