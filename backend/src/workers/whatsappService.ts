@@ -1530,26 +1530,29 @@ export async function enviarMensagemInbox(usuarioId: string, jid: string, texto:
   try {
     const dono = await prisma.usuario.findUnique({ where: { id: usuarioId } });
 
+    // Quem de fato escreveu. Quando e uma PESSOA diferente do dono da conexao, ela
+    // assina com o proprio nome — o cliente precisa saber com quem esta falando.
+    let remetente = null as typeof dono;
+    if (enviadoPorId && enviadoPorId !== usuarioId) {
+      remetente = await prisma.usuario.findUnique({ where: { id: enviadoPorId } });
+    }
+    const respondeuOutraPessoa = !!remetente && remetente.role !== 'master' && remetente.role !== 'admin';
+
     // Achado 02/09: assinaturaPainel = "" (vazia, nao nula) no DONO DA CONEXAO quer
-    // dizer "este numero nao assina nada" — e isso vale pra qualquer pessoa que
-    // responder por ele. Na Borracharia as mensagens saiam com "*Borracharia*" na
-    // frente, que e o nome da conexao e nao ajuda o cliente em nada.
+    // dizer "este numero nao assina sozinho". Serve pro numero do robo, onde
+    // "*Borracharia*" na frente de cada mensagem so poluia. MAS quando uma pessoa
+    // assume a conversa, ela assina com o nome dela mesmo assim — senao o cliente
+    // nao percebe que passou a falar com um humano.
     const numeroNaoAssina = dono?.assinaturaPainel !== null && dono?.assinaturaPainel !== undefined && String(dono.assinaturaPainel).trim() === '';
 
-    if (!numeroNaoAssina) {
-      let u = dono;
-      if (enviadoPorId && enviadoPorId !== usuarioId) {
-        const remetente = await prisma.usuario.findUnique({ where: { id: enviadoPorId } });
-        // Quem atende assina com o proprio nome — o cliente precisa saber com quem
-        // esta falando. Master/admin seguem assinando como o dono da conexao.
-        if (remetente && remetente.role !== 'master' && remetente.role !== 'admin') u = remetente;
-      }
+    if (!numeroNaoAssina || respondeuOutraPessoa) {
+      const u = respondeuOutraPessoa ? remetente : dono;
       if (u) {
         if (u.assinaturaPainel !== null && u.assinaturaPainel !== undefined) {
           const a = String(u.assinaturaPainel).trim();
           textoFinal = a ? `*${a}*\n${texto}` : texto;
         } else if (u.nome) {
-          textoFinal = `*${u.nome}*\n${texto}`;
+          textoFinal = `*${String(u.nome).trim()}*\n${texto}`;
         }
       }
     }
