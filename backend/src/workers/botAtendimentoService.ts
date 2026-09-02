@@ -109,6 +109,7 @@ function limparTagsEspeciais(texto: string): string {
     .replace(/\[TRANSFERIR_HUMANO\]/g, '')
     .replace(/\[AGENDAR_VISITA:[^\]]+\]/gi, '')
     .replace(/\[LEMBRAR:[^\]]+\]/gi, '')
+    .replace(/\[NAO_E_CLIENTE\]/gi, '')
     .replace(/\[(?:ENVIAR_VIDEO|VIDEO):[^\]]+\]/gi, '')
     .trim();
 }
@@ -261,6 +262,27 @@ async function processarAgendamentoAutomatico(usuarioId: string, chatJid: string
 // nossa de novo — dezenas de mensagens no mesmo minuto, virando spam de verdade no
 // WhatsApp (risco de bloqueio do numero). Nenhum cliente humano manda 8 mensagens em
 // 5 minutos exigindo resposta, entao esse ritmo so acontece em loop de robo.
+// LISTA DE QUEM O ROBO NAO ATENDE (02/09). Fornecedor, parceiro, numero interno,
+// outro sistema — gente com quem a loja conversa mas que NAO e cliente. Caso real: o
+// robo entrou na negociacao com o fornecedor Pneus GP Premium e comecou a passar os
+// precos de VAREJO da loja no meio de uma conversa de ATACADO. As mensagens continuam
+// aparecendo no painel normalmente — o robo so nao responde sozinho.
+// O arquivo e lido a cada mensagem, entao dá pra incluir/remover numero sem reiniciar.
+const CAMINHO_NAO_ATENDER = path.join(__dirname, '../../data/bot-nao-atender.json');
+
+function naoAtender(chatJid: string): boolean {
+  try {
+    if (!fs.existsSync(CAMINHO_NAO_ATENDER)) return false;
+    const cfg = JSON.parse(fs.readFileSync(CAMINHO_NAO_ATENDER, 'utf8'));
+    const lista: string[] = Array.isArray(cfg?.numeros) ? cfg.numeros : [];
+    const alvo = String(chatJid || '').replace(/[^0-9]/g, '');
+    if (!alvo) return false;
+    return lista.some((n) => { const limpo = String(n).replace(/[^0-9]/g, ''); return limpo.length >= 6 && alvo.includes(limpo); });
+  } catch (e) {
+    return false; // lista quebrada nao pode derrubar o atendimento
+  }
+}
+
 const LIMITE_RESPOSTAS_JANELA = 8;
 const JANELA_ANTI_LOOP_MS = 5 * 60 * 1000;
 
@@ -285,6 +307,12 @@ async function executar(params: AgendarBotParams, versao: number) {
 
     // Se a gente ja respondeu demais nessa conversa em pouco tempo, e loop: pausa e
     // deixa um humano olhar, em vez de continuar alimentando a troca automatica.
+    // Fornecedor/parceiro/sistema: registra no painel, mas nao responde.
+    if (naoAtender(params.chatJid)) {
+      console.log(`[Bot IA] ${params.chatJid} esta na lista de nao-atender — deixando pros humanos.`);
+      return;
+    }
+
     if (await ritmoDeLoop(params.usuarioId, params.chatJid)) {
       console.error(`[Bot IA][Anti-loop] ${params.chatJid}: ${LIMITE_RESPOSTAS_JANELA}+ respostas em 5 min — parece conversa com outro robo. Pausando 12h.`);
       await prisma.botConversa.upsert({
@@ -362,6 +390,22 @@ async function executar(params: AgendarBotParams, versao: number) {
 
     const partes = resposta.partes.slice(0, 4);
     const transferir = partes.some((p: string) => p.includes('[TRANSFERIR_HUMANO]'));
+
+    // O ROBO DECIDIU QUE NAO E CLIENTE (02/09). Ele atende o WhatsApp da loja, e nesse
+    // numero tambem chega fornecedor, parceiro, colega e ate outro sistema automatico.
+    // Caso real: entrou na negociacao com o fornecedor Pneus GP Premium e passou os
+    // precos de VAREJO da loja no meio de uma conversa de ATACADO — alem de baguncar a
+    // negociacao, expos a margem da loja. Agora ele mesmo reconhece e fica quieto: a
+    // conversa continua aparecendo no painel, so nao recebe resposta automatica.
+    if (partes.some((p: string) => p.includes('[NAO_E_CLIENTE]'))) {
+      console.log(`[Bot IA] ${params.chatJid}: o robo identificou que NAO e um cliente — nao vai responder e a conversa fica pros humanos.`);
+      await prisma.botConversa.upsert({
+        where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
+        create: { usuarioId: params.usuarioId, chatJid: params.chatJid, pausadoAte: new Date(Date.now() + 24 * 60 * 60 * 1000), motivoPausa: 'nao_e_cliente' },
+        update: { pausadoAte: new Date(Date.now() + 24 * 60 * 60 * 1000), motivoPausa: 'nao_e_cliente' },
+      }).catch(() => {});
+      return;
+    }
 
     // Processa agendamento se presente
     for (const p of partes) {
@@ -474,8 +518,12 @@ export async function pausarConversaBotIA(usuarioId: string, chatJid: string, mi
   // NENHUMA resposta. Convencao: botIaPausaManualMin = 0 significa "nunca pause sozinho por
   // eco". A pausa pedida de proposito (painel, botoes 1h/4h/∞) continua funcionando porque
   // passa 'minutos' explicito ou vem das rotas do painel.
+  // Eco (alguem digitou fora do painel: celular, extensao, ou um sistema externo no
+  // mesmo numero). Antes isso pausava o robo por 2h e ele sumia; depois eu fiz nao
+  // pausar nada, e ai ele passou a interromper a atendente no meio da conversa.
+  // Meio-termo: pausa CURTA. Da espaco pra pessoa terminar sem sumir com o robo.
   if (motivo === 'eco_externo' && (usuario.botIaPausaManualMin ?? 120) === 0) {
-    return;
+    minutos = 10;
   }
   const key = chave(usuarioId, chatJid);
   const timer = timers.get(key);
