@@ -1463,6 +1463,28 @@ export async function dispararRespostaBotAgora(usuarioId: string, chatJid: strin
   return true;
 }
 
+// Apaga uma mensagem PARA TODOS no WhatsApp — o mesmo "apagar para todos" do app.
+// Some do aparelho do cliente tambem. So funciona em mensagem que a LOJA enviou e
+// dentro da janela que o WhatsApp permite; fora disso o proprio WhatsApp ignora.
+export async function apagarMensagemParaTodos(usuarioId: string, chatJid: string, waId: string, fromMe: boolean): Promise<boolean> {
+  const efetivoId = await resolverConexaoEfetiva(usuarioId);
+  const sock = sessions.get(efetivoId);
+  if (!sock) {
+    console.error(`[Apagar] WhatsApp nao conectado (${efetivoId}).`);
+    return false;
+  }
+  try {
+    await (sock as any).sendMessage(chatJid, {
+      delete: { remoteJid: chatJid, fromMe, id: waId, participant: undefined },
+    });
+    console.log(`[Apagar] Mensagem ${waId} apagada para todos em ${chatJid}.`);
+    return true;
+  } catch (e: any) {
+    console.error('[Apagar] Falha ao apagar no WhatsApp:', e?.message || e);
+    return false;
+  }
+}
+
 export async function enviarMensagemInbox(usuarioId: string, jid: string, texto: string, enviadoPorId?: string): Promise<boolean> {
   const sock = sessions.get(usuarioId);
   if (!sock) {

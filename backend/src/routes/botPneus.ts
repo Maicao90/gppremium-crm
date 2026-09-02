@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { Router } from 'express';
 import { prisma } from '../server';
-import { enviarMensagemInbox, enviarMidiaInbox, resolverConexaoEfetiva, dispararRespostaBotAgora } from '../workers/whatsappService';
+import { enviarMensagemInbox, enviarMidiaInbox, resolverConexaoEfetiva, apagarMensagemParaTodos, dispararRespostaBotAgora } from '../workers/whatsappService';
 import { lerBotPneusConfig, salvarBotPneusConfig } from '../services/botPneusConfig';
 
 const router = Router();
@@ -294,6 +294,7 @@ router.get('/conversa/:id', async (req, res) => {
       mensagens: mensagens.map((m) => ({
         id: m.id,
         direcao: m.fromMe ? 'SAIDA' : 'ENTRADA',
+        waId: m.waId,
         tipo: m.tipo,
         conteudo: m.texto || (m.tipo === 'imagem' ? '[imagem]' : m.tipo === 'audio' ? '[audio]' : ''),
         autor: m.fromMe ? (m.enviadoPorId === 'bot' ? '🤖 Robô' : 'ATENDENTE') : 'CLIENTE',
@@ -418,6 +419,30 @@ router.post('/acao', async (req, res) => {
       });
       const ok = await dispararRespostaBotAgora(alvo.usuarioId, alvo.chatJid);
       if (!ok) return res.status(503).json({ error: 'Nao foi possivel acionar o robo (WhatsApp desconectado ou sem mensagem do cliente).' });
+      return res.json({ ok: true });
+    }
+
+    // Apagar PARA TODOS, igual no WhatsApp. Some do aparelho do cliente tambem.
+    if (action === 'apagar') {
+      const mensagemId = String(req.body?.mensagemId || '');
+      if (!mensagemId) return res.status(400).json({ error: 'Mensagem invalida.' });
+      const msg = await prisma.mensagem.findUnique({
+        where: { id: mensagemId },
+        select: { id: true, waId: true, fromMe: true, usuarioId: true, chatJid: true },
+      });
+      if (!msg || msg.usuarioId !== alvo.usuarioId || msg.chatJid !== alvo.chatJid) {
+        return res.status(404).json({ error: 'Mensagem nao encontrada nesta conversa.' });
+      }
+      if (!msg.fromMe) {
+        return res.status(400).json({ error: 'So da pra apagar para todos as mensagens que a loja enviou.' });
+      }
+      if (!msg.waId) {
+        return res.status(400).json({ error: 'Essa mensagem nao tem identificador do WhatsApp — nao da pra apagar la.' });
+      }
+      const ok = await apagarMensagemParaTodos(alvo.usuarioId, alvo.chatJid, msg.waId, true);
+      if (!ok) return res.status(503).json({ error: 'Nao consegui apagar no WhatsApp (sem conexao ou fora do prazo que o WhatsApp permite).' });
+      // Só sai do painel depois que o WhatsApp confirmou, pra tela nao mentir.
+      await prisma.mensagem.delete({ where: { id: msg.id } }).catch(() => {});
       return res.json({ ok: true });
     }
 
