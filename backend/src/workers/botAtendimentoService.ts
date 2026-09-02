@@ -256,6 +256,22 @@ async function processarAgendamentoAutomatico(usuarioId: string, chatJid: string
   }
 }
 
+// TRAVA ANTI-LOOP (02/09). Caso real: o numero da loja acabou conversando com OUTRO
+// assistente de IA. Cada resposta nossa disparava uma resposta dele, que disparava a
+// nossa de novo — dezenas de mensagens no mesmo minuto, virando spam de verdade no
+// WhatsApp (risco de bloqueio do numero). Nenhum cliente humano manda 8 mensagens em
+// 5 minutos exigindo resposta, entao esse ritmo so acontece em loop de robo.
+const LIMITE_RESPOSTAS_JANELA = 8;
+const JANELA_ANTI_LOOP_MS = 5 * 60 * 1000;
+
+async function ritmoDeLoop(usuarioId: string, chatJid: string): Promise<boolean> {
+  const desde = new Date(Date.now() - JANELA_ANTI_LOOP_MS);
+  const nossas = await prisma.mensagem.count({
+    where: { usuarioId, chatJid, fromMe: true, enviadoPorId: 'bot', timestamp: { gte: desde } },
+  });
+  return nossas >= LIMITE_RESPOSTAS_JANELA;
+}
+
 async function executar(params: AgendarBotParams, versao: number) {
   const key = chave(params.usuarioId, params.chatJid);
   if (versoes.get(key) !== versao) return;
@@ -266,6 +282,18 @@ async function executar(params: AgendarBotParams, versao: number) {
       select: { botIaAtivo: true, nome: true, lojaId: true },
     });
     if (!usuario?.botIaAtivo || !(await conversaContinuaAtual(params.usuarioId, params.chatJid, params.waId))) return;
+
+    // Se a gente ja respondeu demais nessa conversa em pouco tempo, e loop: pausa e
+    // deixa um humano olhar, em vez de continuar alimentando a troca automatica.
+    if (await ritmoDeLoop(params.usuarioId, params.chatJid)) {
+      console.error(`[Bot IA][Anti-loop] ${params.chatJid}: ${LIMITE_RESPOSTAS_JANELA}+ respostas em 5 min — parece conversa com outro robo. Pausando 12h.`);
+      await prisma.botConversa.upsert({
+        where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
+        create: { usuarioId: params.usuarioId, chatJid: params.chatJid, pausadoAte: new Date(Date.now() + 12 * 60 * 60 * 1000), motivoPausa: 'anti_loop' },
+        update: { pausadoAte: new Date(Date.now() + 12 * 60 * 60 * 1000), motivoPausa: 'anti_loop' },
+      }).catch(() => {});
+      return;
+    }
 
     const historico = await prisma.mensagem.findMany({
       where: { usuarioId: params.usuarioId, chatJid: params.chatJid },
