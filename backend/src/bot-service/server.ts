@@ -10,6 +10,7 @@ import {
   montarBriefingComercialDeterministico,
   montarRespostaDeterministicaPreco,
 } from '../data/tabelaPrecos';
+import { precosForaDaTabela } from '../data/precoGuard';
 import { lerBotPneusConfig, montarPromptAtendimentoBot } from '../services/botPneusConfig';
 
 dotenv.config();
@@ -237,7 +238,46 @@ app.post('/gerar-resposta', async (req, res) => {
       briefingComercial,
     });
 
-    res.json({ partes: resposta.partes, deterministico: false });
+
+    // TRAVA DE PRECO: a IA escreveu o texto com as proprias palavras. Antes de mandar
+    // pro cliente, confere se todo valor em R$ citado existe no briefing (que vem da
+    // tabela). Se ela inventou ou errou uma conta, tenta UMA vez avisando do erro;
+    // se insistir, responde sem preco em vez de mandar valor errado no WhatsApp.
+    let partesFinais = resposta.partes;
+    const invalidos = precosForaDaTabela(partesFinais, textosCliente);
+    if (invalidos.length) {
+      console.error(
+        '[BotService][TRAVA DE PRECO] A IA citou valor(es) que nao estao na tabela:',
+        invalidos.join(', '),
+        '| resposta recusada, tentando de novo.'
+      );
+      const segunda = await gerarRespostaViaOpenAI({
+        messages,
+        imagem,
+        audio,
+        lojas: Array.isArray(lojas) ? lojas : [],
+        briefingComercial:
+          briefingComercial +
+          '\nATENCAO: na tentativa anterior voce escreveu um valor que NAO existe na tabela (' +
+          invalidos.join(', ') +
+          '). NUNCA invente nem calcule preco de cabeca. Use SOMENTE os valores exatos que aparecem acima. Se nao houver preco aqui pra situacao, responda SEM citar valor nenhum e peca a medida.',
+      });
+      const aindaInvalidos = precosForaDaTabela(segunda.partes, textosCliente);
+      if (aindaInvalidos.length) {
+        console.error(
+          '[BotService][TRAVA DE PRECO] Segunda tentativa tambem errou:',
+          aindaInvalidos.join(', '),
+          '| respondendo sem preco.'
+        );
+        partesFinais = [
+          'Pra eu te passar o valor certinho sem risco de errar, me confirma a medida exata que esta escrita no flanco do pneu (ex.: 175/65/14)?',
+        ];
+      } else {
+        partesFinais = segunda.partes;
+      }
+    }
+
+    res.json({ partes: partesFinais, deterministico: false });
   } catch (e: any) {
     console.error('[BotService] Erro em /gerar-resposta:', e?.message || e);
     res.status(500).json({ error: e?.message || 'Erro interno no bot-service.' });

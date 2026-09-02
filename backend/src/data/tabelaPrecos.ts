@@ -798,6 +798,7 @@ export function resumirItemPreco(item: ItemPreco): string {
   return [
     `${item.medida} :: ${item.modelo}`,
     `A_VISTA=R$ ${brl(item.aVista)}`,
+    `A_VISTA_PIX_5PCT=R$ ${brl(Math.round(item.aVista * 0.95 * 100) / 100)} (a vista no PIX/dinheiro, ja com os 5% de desconto)`,
     parcelas,
     flags.length ? `FLAGS=${flags.join(',')}` : '',
   ].filter(Boolean).join(' :: ');
