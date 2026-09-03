@@ -539,6 +539,83 @@ const ultimaAutoMem = new Map<string, number>();
 // A cada 60s, garante que TODO atendente com credenciais salvas tenha uma sessão ativa.
 // Pega os casos raros em que a sessão morre SEM disparar o evento 'close' (congelamento
 // silencioso) ou em que um retry falhou. Reconecta sozinho — sem precisar de QR novo.
+// ESPERA PROGRESSIVA ENTRE RECONEXOES (03/09).
+// Antes o retry era fixo em 2 segundos, pra sempre. Quando o WhatsApp recusa a
+// conexao (conflito de sessao, 428, 440), isso vira uma tempestade: em 02/09 uma
+// conta acumulou 11.157 quedas e outra 4.391 no mesmo dia. Pior: essa insistencia
+// aciona o limitador do WhatsApp contra o IP da VPS, entao a tentativa numero 5.000
+// tem MENOS chance de sucesso que a primeira — o remedio virava a doenca.
+// Agora a espera dobra a cada falha seguida (2s, 4s, 8s... ate 5 min) e volta pro
+// inicio assim que conecta. Quem cai por um soluco de rede volta em 2s como antes;
+// quem esta sendo recusado de verdade para de martelar.
+// BACKUP DAS CREDENCIAIS (03/09). A conta da Borracharia parou de conectar porque o
+// creds.json ficou com 0 BYTES — o arquivo zerou (provavelmente uma escrita
+// interrompida) e sem ele os 6.894 arquivos de chave viram lixo: so resta parear de
+// novo, com a loja sem WhatsApp ate alguem perceber.
+// Aqui a gente guarda uma copia boa toda vez que a conexao abre, e restaura sozinho
+// se encontrar o arquivo vazio na proxima tentativa.
+function caminhoAuth(usuarioId: string): string {
+  return path.join(__dirname, '../../../prisma', 'auth_info_baileys_' + usuarioId);
+}
+
+function salvarBackupCredenciais(usuarioId: string): void {
+  try {
+    const origem = path.join(caminhoAuth(usuarioId), 'creds.json');
+    if (!fs.existsSync(origem)) return;
+    const conteudo = fs.readFileSync(origem, 'utf8');
+    // so guarda se estiver realmente valido — backup de arquivo quebrado nao serve
+    if (!conteudo.trim()) return;
+    const dados = JSON.parse(conteudo);
+    if (!dados || !dados.me || !dados.me.id) return;
+    fs.writeFileSync(origem + '.backup', conteudo, 'utf8');
+  } catch (e) { /* backup e melhor-esforco, nunca pode derrubar a conexao */ }
+}
+
+function protegerCredenciais(usuarioId: string): void {
+  try {
+    const dir = caminhoAuth(usuarioId);
+    const arq = path.join(dir, 'creds.json');
+    const bkp = arq + '.backup';
+    if (!fs.existsSync(arq) || !fs.existsSync(bkp)) return;
+    const atual = fs.readFileSync(arq, 'utf8');
+    let valido = false;
+    try { const d = JSON.parse(atual); valido = !!(d && d.me && d.me.id); } catch (e) { valido = false; }
+    if (valido) return;
+    const copia = fs.readFileSync(bkp, 'utf8');
+    const d2 = JSON.parse(copia);
+    if (!d2 || !d2.me || !d2.me.id) return;
+    fs.writeFileSync(arq, copia, 'utf8');
+    console.log(`[Baileys] creds.json do usuário ${usuarioId} estava vazio/corrompido — restaurado do backup.`);
+  } catch (e) { /* idem */ }
+}
+
+const tentativasReconexao = new Map<string, number>();
+const timersEstabilidade = new Map<string, NodeJS.Timeout>();
+
+// So considera a conexao "boa" depois que ela AGUENTA 60s de pe. Sem isso o contador
+// zerava a cada abertura — e numa conta em conflito, que abre e cai em seguida, a
+// espera nunca saia de 2s (o caso do Diogo: 11.157 quedas em um dia, sempre
+// "tentativa 1").
+function marcarConexaoEstavel(usuarioId: string): void {
+  const anterior = timersEstabilidade.get(usuarioId);
+  if (anterior) clearTimeout(anterior);
+  const t = setTimeout(() => {
+    tentativasReconexao.delete(usuarioId);
+    timersEstabilidade.delete(usuarioId);
+  }, 60_000);
+  t.unref?.();
+  timersEstabilidade.set(usuarioId, t);
+}
+
+function esperaReconexao(usuarioId: string): number {
+  const n = (tentativasReconexao.get(usuarioId) || 0) + 1;
+  tentativasReconexao.set(usuarioId, n);
+  const base = Math.min(2000 * Math.pow(2, n - 1), 5 * 60 * 1000);
+  // jitter de ate 30%: se varias contas caem juntas (ex.: queda de rede da VPS), elas
+  // nao voltam todas no mesmo milissegundo criando um pico de conexoes.
+  return Math.round(base * (1 + Math.random() * 0.3));
+}
+
 let vigiaIniciado = false;
 // Uma sessao esta PAREADA quando ja tem identidade da conta (creds.me.id) —
 // gravada tanto no pareamento por QR quanto por codigo. NAO use creds.registered:
@@ -1023,16 +1100,19 @@ export async function connectToWhatsApp(
           where: { id: usuarioId },
           data: { whatsappConectado: false }
         }).catch(() => {});
-        console.log(`[Baileys] Reconectando usuário ${usuarioId} em 2 segundos...`);
+        const espera = esperaReconexao(usuarioId);
+        console.log(`[Baileys] Reconectando usuário ${usuarioId} em ${Math.round(espera / 1000)}s (tentativa ${tentativasReconexao.get(usuarioId)}).`);
         // Se tem código de pareamento pendente, esse retry é a MESMA tentativa de
         // pareamento continuando (restart código 515 é normal no meio do processo) —
         // precisa permitirQrNovo:true pra furar a própria pausa que o pareamento criou,
         // senão o pareamento nunca completa (achado 25/08, caso da Borracharia).
         const eraPareamentoEmAndamento = pairingCodes.has(usuarioId);
-        setTimeout(() => connectToWhatsApp(usuarioId, undefined, undefined, eraPareamentoEmAndamento).catch(err => console.error("Erro no retry:", err)), 2000);
+        setTimeout(() => connectToWhatsApp(usuarioId, undefined, undefined, eraPareamentoEmAndamento).catch(err => console.error("Erro no retry:", err)), espera);
       }
     } else if (connection === 'open') {
       console.log(`[Baileys] Conexão aberta com sucesso! Servidor pronto para disparos do usuário ${usuarioId}.`);
+      marcarConexaoEstavel(usuarioId); // so zera a espera se aguentar 60s conectado
+      salvarBackupCredenciais(usuarioId); // guarda uma copia boa das credenciais
       // Conectou: não há mais QR nem código de pareamento pendentes. Sai da pausa
       // (se estava pausado para o pareamento) para as reconexões automáticas voltarem.
       connectedUsers.add(usuarioId);
