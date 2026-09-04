@@ -297,7 +297,13 @@ router.get('/conversa/:id', async (req, res) => {
         waId: m.waId,
         tipo: m.tipo,
         conteudo: m.texto || (m.tipo === 'imagem' ? '[imagem]' : m.tipo === 'audio' ? '[audio]' : ''),
-        autor: m.fromMe ? (m.enviadoPorId === 'bot' ? '🤖 Robô' : 'ATENDENTE') : 'CLIENTE',
+        // Achado 04/09: toda mensagem fromMe que NAO era do robo virava "ATENDENTE" no
+        // painel — inclusive as que tem enviadoPorId NULO (nem robo, nem ninguem logado no
+        // painel; ex.: mensagens tipo "ja conectei voce com nossa equipe" que aparecem
+        // nesse numero sem passar pelo nosso sistema). Isso enganava quem le a conversa,
+        // fazendo mensagem de ORIGEM DESCONHECIDA parecer que foi um atendente de verdade.
+        // Agora so vira "ATENDENTE" quando realmente tem um usuario do painel por tras.
+        autor: m.fromMe ? (m.enviadoPorId === 'bot' ? '🤖 Robô' : m.enviadoPorId ? 'ATENDENTE' : '❓ Origem não identificada') : 'CLIENTE',
         criadoEm: m.timestamp.toISOString(),
         temMidia: !!m.midiaUrl,
       })),
