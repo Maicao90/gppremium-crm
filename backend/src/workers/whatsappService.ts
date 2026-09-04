@@ -1704,16 +1704,21 @@ export async function enviarMidiaInbox(usuarioId: string, jid: string, base64: s
   try {
     const buffer = Buffer.from(base64, 'base64');
     let conteudo: any;
+    // Guarda o audio JA CONVERTIDO fora do if, pra reusar quando salvar no disco
+    // logo abaixo — achado 04/09: o disco salvava o buffer CRU (webm do navegador)
+    // com extensao .ogg, deixando nosso proprio historico com o container errado,
+    // mesmo o audio de fato ENVIADO ao cliente estando certo.
+    let audioConvertido: Buffer | null = null;
     if (tipo === 'imagem') conteudo = { image: buffer, caption: legenda || undefined };
     else if (tipo === 'video') conteudo = { video: buffer, caption: legenda || undefined };
     else if (tipo === 'audio') {
       // Converte pra OGG/Opus de verdade — sem isso o audio chega mudo no WhatsApp.
-      const opus = await converterParaOpus(buffer);
-      if (!opus) {
+      audioConvertido = await converterParaOpus(buffer);
+      if (!audioConvertido) {
         console.error('[Midia] Audio nao pode ser convertido — envio cancelado.');
         return false;
       }
-      conteudo = { audio: opus, mimetype: 'audio/ogg; codecs=opus', ptt: true };
+      conteudo = { audio: audioConvertido, mimetype: 'audio/ogg; codecs=opus', ptt: true };
     }
     else conteudo = { document: buffer, mimetype: mimetype || 'application/octet-stream', fileName: 'arquivo' };
 
@@ -1725,7 +1730,10 @@ export async function enviarMidiaInbox(usuarioId: string, jid: string, base64: s
     const ext = EXT_POR_TIPO[tipo] || 'bin';
     const nome = `out_${(enviada?.key?.id || 'm').replace(/[^a-zA-Z0-9]/g, '')}_${Math.floor(Math.random() * 1000000)}.${ext}`;
     let midiaUrl: string | null = null;
-    try { fs.writeFileSync(path.join(MIDIAS_DIR, nome), buffer); midiaUrl = `/midias/${nome}`; } catch (e) {}
+    // Pra audio, salva o buffer JA CONVERTIDO que foi de fato transmitido — nao o webm
+    // cru do navegador (a variavel "buffer" original).
+    const bufferParaSalvar = tipo === 'audio' && audioConvertido ? audioConvertido : buffer;
+    try { fs.writeFileSync(path.join(MIDIAS_DIR, nome), bufferParaSalvar); midiaUrl = `/midias/${nome}`; } catch (e) {}
 
     const waId = enviada?.key?.id || null;
     lembrarWaId(waId);
