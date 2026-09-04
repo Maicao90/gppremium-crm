@@ -15,6 +15,10 @@ const DIAS_SYNC = 90;
 const INTERVALO_SYNC_MS = 6 * 60 * 60 * 1000;
 // Primeira rodada: 90s após o boot (dá tempo do banco/workers subirem)
 const ATRASO_INICIAL_MS = 90 * 1000;
+// Saldo/gasto do dia (04/09, pedido do dono da loja): roda SEPARADO da sync pesada de
+// campanhas, e bem mais rápido — é 1 chamada leve por conta, não 90 dias de métricas.
+const INTERVALO_SALDO_MS = 60 * 1000;
+const ATRASO_INICIAL_SALDO_MS = 15 * 1000;
 
 export interface ResultadoSync {
   ok: boolean;
@@ -181,6 +185,62 @@ export async function sincronizarConexao(conexaoId: string): Promise<ResultadoSy
   }
 }
 
+// Atualiza SO saldo/gasto do dia de uma conexao — chamada leve (1 requisicao na
+// plataforma), pensada pra rodar com frequencia alta sem pesar na API nem no banco.
+async function atualizarSaldoConexao(conexaoId: string): Promise<void> {
+  const conexao = await prisma.conexaoAds.findUnique({ where: { id: conexaoId } });
+  if (!conexao) return;
+
+  let credenciais: any = {};
+  try {
+    credenciais = JSON.parse(conexao.credenciais || '{}') || {};
+  } catch {
+    return; // credenciais corrompidas: a sync pesada de 6h ja registra esse erro
+  }
+
+  try {
+    const info: SaldoConta = conexao.plataforma === 'meta'
+      ? await metaAds.buscarSaldoConta(credenciais)
+      : await googleAds.buscarSaldoConta(credenciais);
+
+    const gastoDia = Math.round(info.gastoDia * 100) / 100;
+    const existente = await prisma.contaAnuncio.findFirst({ where: { conexao_id: conexao.id } });
+    if (existente) {
+      const dados: { gastoDia: number; saldo?: number } = { gastoDia };
+      if (info.saldo !== null) dados.saldo = Math.round(info.saldo * 100) / 100;
+      await prisma.contaAnuncio.update({ where: { id: existente.id }, data: dados });
+    } else {
+      await prisma.contaAnuncio.create({
+        data: {
+          nome: conexao.nome || (conexao.plataforma === 'meta' ? 'Conta Meta' : 'Conta Google'),
+          plataforma: conexao.plataforma === 'meta' ? 'meta' : 'google',
+          gastoDia,
+          saldo: info.saldo !== null ? Math.round(info.saldo * 100) / 100 : 0,
+          conexao_id: conexao.id,
+        },
+      });
+    }
+  } catch (e: any) {
+    // Silencioso de proposito: essa rodada e frequente, entao um erro passageiro (rate
+    // limit, instabilidade da plataforma) nao pode virar log toda hora. Erro persistente
+    // continua visivel via ultimoErro, atualizado pela sync pesada de 6h.
+  }
+}
+
+async function atualizarTodosSaldos() {
+  try {
+    const conexoes = await prisma.conexaoAds.findMany({ where: { ativo: true }, select: { id: true } });
+    if (conexoes.length === 0) return;
+    // Em serie, uma de cada vez: evita disparar N requisicoes simultaneas por minuto
+    // contra o Meta/Google (cada conta e leve, mas juntas isso soma rate limit).
+    for (const c of conexoes) {
+      await atualizarSaldoConexao(c.id).catch(() => {});
+    }
+  } catch (e) {
+    console.error('[SyncAds] Erro ao listar conexões para atualizar saldo:', e);
+  }
+}
+
 // Sincroniza todas as conexões ATIVAS, em série (uma por vez), com try/catch
 // por conexão — uma conta com problema não derruba as demais.
 async function sincronizarTodasAtivas() {
@@ -222,4 +282,13 @@ export function initSyncAds() {
   setInterval(() => {
     sincronizarTodasAtivas().catch((e) => console.error('[SyncAds] Erro na rodada periódica:', e));
   }, INTERVALO_SYNC_MS);
+
+  // Saldo/gasto do dia: roda a cada 1 minuto, independente da sync pesada de campanhas.
+  console.log('[SyncAds] Atualização de saldo iniciada (a cada 1 minuto)');
+  setTimeout(() => {
+    atualizarTodosSaldos().catch((e) => console.error('[SyncAds] Erro na 1ª atualização de saldo:', e));
+  }, ATRASO_INICIAL_SALDO_MS);
+  setInterval(() => {
+    atualizarTodosSaldos().catch((e) => console.error('[SyncAds] Erro na atualização de saldo:', e));
+  }, INTERVALO_SALDO_MS);
 }

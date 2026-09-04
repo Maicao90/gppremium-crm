@@ -298,7 +298,11 @@ model ContaAnuncio {
   created_at     DateTime @default(now())
   // Vínculo com a ConexaoAds que alimenta esta conta automaticamente (saldo/gasto do dia).
   // Null = conta gerenciada manualmente na tela "Saldos das Contas".
-  conexao_id     String?
+  // @unique (04/09): sem isso, duas linhas podiam apontar pro mesmo conexao_id — o sync
+  // usava findFirst() e atualizava sempre a mesma linha ao acaso, deixando a outra com
+  // dado antigo/errado (achado real: 6 linhas "Google Ads" mostravam saldo do META,
+  // porque compartilhavam o conexao_id da conexao Meta daquela loja).
+  conexao_id     String? @unique
 }
 
 // Histórico de depósitos de uma ContaAnuncio. Cada "Registrar depósito" no painel vira
