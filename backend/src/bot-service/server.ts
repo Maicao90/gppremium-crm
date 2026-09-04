@@ -11,6 +11,7 @@ import {
   montarRespostaDeterministicaPreco,
 } from '../data/tabelaPrecos';
 import { precosForaDaTabela, valoresEmReais } from '../data/precoGuard';
+import { prometeuTransferenciaFalsa } from '../data/comportamentoGuard';
 import { lerBotPneusConfig, montarPromptAtendimentoBot } from '../services/botPneusConfig';
 
 dotenv.config();
@@ -306,6 +307,31 @@ app.post('/gerar-resposta', async (req, res) => {
         ];
       } else {
         partesFinais = segunda.partes;
+      }
+    }
+
+
+    // TRAVA DE COMPORTAMENTO: erros graves que uma regra em texto no prompt nao
+    // consegue garantir 100% (o prompt ja passa de 30 mil caracteres). Confere padroes
+    // conhecidos de promessa vazia (ex.: "vou te transferir para o Fulano") — achado
+    // real 03/09. Mesma estrategia da trava de preco: tenta de novo avisando do erro;
+    // se insistir, cai numa resposta segura.
+    if (prometeuTransferenciaFalsa(partesFinais)) {
+      console.error('[BotService][TRAVA DE COMPORTAMENTO] A IA prometeu uma transferencia que nao pode cumprir — tentando de novo.');
+      const segundaTentativa = await gerarRespostaViaOpenAI({
+        messages,
+        imagem,
+        audio,
+        lojas: Array.isArray(lojas) ? lojas : [],
+        briefingComercial:
+          briefingComercial +
+          '\nATENCAO: na tentativa anterior voce prometeu transferir a conversa pra uma pessoa especifica — voce NAO TEM esse mecanismo e essa promessa e vazia. Reconheca o pedido sem prometer transferencia (\'anotado, vou avisar por aqui\') e continue ajudando com o que voce sabe.',
+      });
+      if (!prometeuTransferenciaFalsa(segundaTentativa.partes)) {
+        partesFinais = segundaTentativa.partes;
+      } else {
+        console.error('[BotService][TRAVA DE COMPORTAMENTO] Segunda tentativa tambem prometeu transferencia — usando resposta segura.');
+        partesFinais = ['Anotado — vou avisar aqui pra alguem da loja te dar atenção. Enquanto isso, posso te ajudar com medida, preço ou endereço, se quiser.'];
       }
     }
 
