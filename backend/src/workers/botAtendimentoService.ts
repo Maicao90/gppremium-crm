@@ -109,7 +109,6 @@ function limparTagsEspeciais(texto: string): string {
     .replace(/\[TRANSFERIR_HUMANO\]/g, '')
     .replace(/\[AGENDAR_VISITA:[^\]]+\]/gi, '')
     .replace(/\[LEMBRAR:[^\]]+\]/gi, '')
-    .replace(/\[NAO_E_CLIENTE\]/gi, '')
     .replace(/\[(?:ENVIAR_VIDEO|VIDEO):[^\]]+\]/gi, '')
     .trim();
 }
@@ -391,21 +390,6 @@ async function executar(params: AgendarBotParams, versao: number) {
     const partes = resposta.partes.slice(0, 4);
     const transferir = partes.some((p: string) => p.includes('[TRANSFERIR_HUMANO]'));
 
-    // O ROBO DECIDIU QUE NAO E CLIENTE (02/09). Ele atende o WhatsApp da loja, e nesse
-    // numero tambem chega fornecedor, parceiro, colega e ate outro sistema automatico.
-    // Caso real: entrou na negociacao com o fornecedor Pneus GP Premium e passou os
-    // precos de VAREJO da loja no meio de uma conversa de ATACADO — alem de baguncar a
-    // negociacao, expos a margem da loja. Agora ele mesmo reconhece e fica quieto: a
-    // conversa continua aparecendo no painel, so nao recebe resposta automatica.
-    if (partes.some((p: string) => p.includes('[NAO_E_CLIENTE]'))) {
-      console.log(`[Bot IA] ${params.chatJid}: o robo identificou que NAO e um cliente — nao vai responder e a conversa fica pros humanos.`);
-      await prisma.botConversa.upsert({
-        where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
-        create: { usuarioId: params.usuarioId, chatJid: params.chatJid, pausadoAte: new Date(Date.now() + 24 * 60 * 60 * 1000), motivoPausa: 'nao_e_cliente' },
-        update: { pausadoAte: new Date(Date.now() + 24 * 60 * 60 * 1000), motivoPausa: 'nao_e_cliente' },
-      }).catch(() => {});
-      return;
-    }
 
     // Processa agendamento se presente
     for (const p of partes) {
