@@ -10,8 +10,22 @@ import { prisma } from '../server';
 // o bot-service nunca mais afeta uma sessao de WhatsApp conectada.
 const BOT_SERVICE_URL = process.env.BOT_SERVICE_URL || 'http://127.0.0.1:3010';
 
+// Coordenadas da loja pra mandar como pino nativo do WhatsApp (05/09). Lidas do mesmo
+// arquivo de config do bot, direto — sem depender de reiniciar nada pra atualizar.
+const CAMINHO_CONFIG_BOT = path.join(__dirname, '../../data/bot-pneus-config.json');
+function lerLocalizacaoLoja(): { lat: number; lng: number; nome: string; endereco: string } | null {
+  try {
+    const cfg = JSON.parse(fs.readFileSync(CAMINHO_CONFIG_BOT, 'utf8'));
+    const lat = Number(cfg.LOCALIZACAO_LAT);
+    const lng = Number(cfg.LOCALIZACAO_LNG);
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+    return { lat, lng, nome: String(cfg.NOME_LOJA || 'Loja'), endereco: String(cfg.LOCALIZACAO || '') };
+  } catch { return null; }
+}
+
 type EnviarParte = (texto: string, tempoDigitacaoMs: number) => Promise<boolean>;
 type EnviarVideo = (video: VideoBotIA, tempoDigitacaoMs: number) => Promise<boolean>;
+type EnviarLocalizacao = (lat: number, lng: number, nome: string, endereco: string) => Promise<boolean>;
 
 interface VideoBotIA {
   tipo: 'video';
@@ -27,6 +41,7 @@ interface AgendarBotParams {
   waId: string;
   enviarParte: EnviarParte;
   enviarVideo: EnviarVideo;
+  enviarLocalizacao: EnviarLocalizacao;
 }
 
 interface RespostaBotService {
@@ -110,6 +125,7 @@ function limparTagsEspeciais(texto: string): string {
     .replace(/\[AGENDAR_VISITA:[^\]]+\]/gi, '')
     .replace(/\[LEMBRAR:[^\]]+\]/gi, '')
     .replace(/\[(?:ENVIAR_VIDEO|VIDEO):[^\]]+\]/gi, '')
+    .replace(/\[ENVIAR_LOCALIZACAO\]/gi, '')
     .trim();
 }
 
@@ -399,6 +415,14 @@ async function executar(params: AgendarBotParams, versao: number) {
       }
       if (p.includes('[AGENDAR_VISITA')) {
         await processarAgendamentoAutomatico(params.usuarioId, params.chatJid, p);
+      }
+      if (p.includes('[ENVIAR_LOCALIZACAO]')) {
+        const loc = lerLocalizacaoLoja();
+        if (loc) {
+          await params.enviarLocalizacao(loc.lat, loc.lng, loc.nome, loc.endereco).catch(() => {});
+        } else {
+          console.error('[Bot IA] [ENVIAR_LOCALIZACAO] pedido mas LOCALIZACAO_LAT/LNG nao configurados.');
+        }
       }
     }
 

@@ -662,6 +662,14 @@ export function extrairMedidasDoTexto(texto: string): string[] {
   while ((match = regex.exec(base))) {
     achadas.add(`${match[1]}/${match[2]}/${match[3]}`);
   }
+  // ARO ANTES DA MEDIDA (05/09, achado real): cliente escreve "aro 16 205/55" — o aro
+  // ANTES da largura/perfil, ordem que o regex principal nao cobre (ele so aceita aro
+  // DEPOIS: "205/55 aro 16", "205/55/16"). Segunda passada so pra esse formato.
+  const regexAroAntes = /\bARO\s*(\d{2})\D{1,6}?(\d{3})\s*[\/\-\s.,X]\s*(\d{2})\b/g;
+  let match2: RegExpExecArray | null = null;
+  while ((match2 = regexAroAntes.exec(base))) {
+    achadas.add(`${match2[2]}/${match2[3]}/${match2[1]}`);
+  }
   return [...achadas];
 }
 
@@ -725,7 +733,12 @@ function detectarPedidoDePreco(texto: string): boolean {
     // Achado 27/08: resposta so com "10x", "em 10x" etc (sem nenhuma das palavras acima)
     // tambem conta como pedido de preco — e um numero de parcela isolado so faz sentido
     // como resposta a "quantas vezes quer parcelar", tem que cair na conta garantida.
-    || detectarParcelaSolicitada(base) !== null;
+    || detectarParcelaSolicitada(base) !== null
+    // Achado 05/09: dar a medida SOZINHA ja e pedido de preco — ninguem manda a
+    // medida do pneu numa borracharia por curiosidade. Sem isso, uma frase tipo
+    // "Pneus aro 16 205/55" (sem a palavra "quanto"/"valor") caia no caminho da IA
+    // em vez do caminho garantido, saindo sem negrito e com a medida mal formatada.
+    || extrairMedidasDoTexto(texto).length > 0;
 }
 
 function detectarSaudacaoSemPedido(texto: string): boolean {
@@ -782,16 +795,22 @@ function montarPartesPreco(item: ItemPreco, parcelaSolicitada: number | null, qu
     ? `Voce leva ${qtd} e paga so ${cobradas} (campanha compre 3 e leve 4).`
     : '';
   if (!parcelaSolicitada) {
-    const linhas = [
-      // O cliente quer MEDIDA e PRECO — nome de modelo (GP-1, GP-7) so confunde e nao
-      // ajuda a decidir. Pedido do dono da loja em 02/09.
-      `${item.medida}`,
-      `${prefixoQtd}A vista: R$ ${brl(item.aVista * cobradas)}`,
-      ...(avisoLeve4 ? [avisoLeve4] : []),
-      'Parcelamos em ate 10x.',
-      ...resumoPromocional(item),
+    // MENSAGEM EM 2 BOLHAS (05/09, pedido do dono com exemplo exato): preco e
+    // parcelamento vem em mensagens SEPARADAS, do jeito que uma pessoa mandaria pelo
+    // WhatsApp — nunca tudo junto num bloco so. A marca "GP Premium" aparece (o que
+    // NAO aparece e o codigo interno do modelo, tipo GP-1/GP-7 — isso so confunde).
+    const ehPlural = cobradas > 1;
+    const sujeito = ehPlural ? `os ${cobradas} pneus` : 'o pneu';
+    const valorTotal = brl(item.aVista * cobradas);
+    const complementoTotal = ehPlural ? ' (valor total)' : '';
+    const partes: string[] = [
+      `Temos ${sujeito} *${item.medida}* da marca *GP Premium* está saindo por *R$ ${valorTotal} à vista*${complementoTotal}.`,
+      'Se preferir, você pode parcelar em até 10x no cartão!',
     ];
-    return [linhas.join('\n')];
+    if (avisoLeve4) partes.push(avisoLeve4);
+    const promo = resumoPromocional(item);
+    if (promo.length) partes.push(...promo);
+    return partes;
   }
   // Achado 27/08: item.parcelado[x_N] ja e o TOTAL pra financiar em N vezes (nao o
   // valor de cada parcela) — confirmado pelo padrao da tabela inteira: os valores

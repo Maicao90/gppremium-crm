@@ -397,6 +397,88 @@ async function enviarParteBotIA(usuarioId: string, chatJid: string, numeroReal: 
   return atual as Promise<boolean>;
 }
 
+// Envia a localizacao da loja como PINO NATIVO do WhatsApp (nao um link de texto) —
+// pedido do dono em 05/09, comparando com o que ia antes (so um link do Google Maps
+// digitado manualmente). Mesmo padrao de fila/presenca das outras funcoes do robo.
+// Foto da fachada da loja (05/09) — arquivo fixo, opcional. Se nao existir, o envio da
+// localizacao segue normal sem a foto (nao trava nada esperando um arquivo que falta).
+// Pra ativar: colocar o arquivo em data/fachada-loja.jpg no servidor.
+const CAMINHO_FOTO_FACHADA = path.join(__dirname, '../../data/fachada-loja.jpg');
+
+async function enviarLocalizacaoBotIA(usuarioId: string, chatJid: string, numeroReal: string, lat: number, lng: number, nome: string, endereco: string): Promise<boolean> {
+  const anterior = filasEnvioBotIA.get(usuarioId) || Promise.resolve();
+  const atual = anterior.catch(() => {}).then(async () => {
+    const sock = await aguardarSocketBotIA(usuarioId);
+    if (!sock) {
+      console.error(`[Bot IA] Sem conexao WhatsApp ativa para ${usuarioId} (chat ${chatJid}) — localizacao NAO enviada.`);
+      return false;
+    }
+    const key = `${usuarioId}:${chatJid}`;
+    chatsBotEnviando.add(key);
+    try {
+      await comLimiteDeTempo(sock.sendPresenceUpdate('composing', chatJid), 10_000, 'presence').catch(() => {});
+      await delay(700);
+      const enviada = await comLimiteDeTempo<any>(
+        sock.sendMessage(chatJid, { location: { degreesLatitude: lat, degreesLongitude: lng, name: nome, address: endereco } }),
+        45_000, 'sendMessage(localizacao)'
+      );
+      await comLimiteDeTempo(sock.sendPresenceUpdate('unavailable'), 10_000, 'presence').catch(() => {});
+      const waId = enviada?.key?.id || null;
+      lembrarWaId(waId);
+      lembrarWaIdBotIA(waId);
+      const salva = await prisma.mensagem.create({
+        data: {
+          usuarioId, chatJid, chatNome: '', fromMe: true,
+          texto: `${lat},${lng} — ${nome}`,
+          tipo: 'localizacao', waId, numeroReal: numeroReal || null, enviadoPorId: 'bot',
+        },
+      });
+      getIo().to(usuarioId).emit('NOVA_MENSAGEM', salva);
+
+      // Depois de mandar o pino, espera alguns segundos e sobe a foto da fachada —
+      // se o arquivo existir. Sem foto cadastrada, nao faz nada (nao quebra o fluxo).
+      if (fs.existsSync(CAMINHO_FOTO_FACHADA)) {
+        await delay(3000);
+        try {
+          const bufferFoto = fs.readFileSync(CAMINHO_FOTO_FACHADA);
+          await comLimiteDeTempo(sock.sendPresenceUpdate('composing', chatJid), 10_000, 'presence').catch(() => {});
+          await delay(500);
+          const enviadaFoto = await comLimiteDeTempo<any>(
+            sock.sendMessage(chatJid, { image: bufferFoto, caption: nome }),
+            60_000, 'sendMessage(foto fachada)'
+          );
+          await comLimiteDeTempo(sock.sendPresenceUpdate('unavailable'), 10_000, 'presence').catch(() => {});
+          const waIdFoto = enviadaFoto?.key?.id || null;
+          lembrarWaId(waIdFoto);
+          lembrarWaIdBotIA(waIdFoto);
+          const nomeArquivo = `out_${(waIdFoto || 'm').replace(/[^a-zA-Z0-9]/g, '')}_${Math.floor(Math.random() * 1000000)}.jpg`;
+          fs.writeFileSync(path.join(MIDIAS_DIR, nomeArquivo), bufferFoto);
+          const salvaFoto = await prisma.mensagem.create({
+            data: {
+              usuarioId, chatJid, chatNome: '', fromMe: true, texto: nome, tipo: 'imagem',
+              midiaUrl: `/midias/${nomeArquivo}`, waId: waIdFoto, numeroReal: numeroReal || null, enviadoPorId: 'bot',
+            },
+          });
+          getIo().to(usuarioId).emit('NOVA_MENSAGEM', salvaFoto);
+        } catch (e) {
+          console.error('[Bot IA] Falha ao enviar foto da fachada:', (e as any)?.message || e);
+        }
+      }
+      return true;
+    } catch (e) {
+      console.error('[Bot IA] Falha ao enviar localizacao:', (e as any)?.message || e);
+      return false;
+    } finally {
+      setTimeout(() => chatsBotEnviando.delete(key), 5000).unref?.();
+    }
+  });
+  filasEnvioBotIA.set(usuarioId, atual);
+  atual.finally(() => {
+    if (filasEnvioBotIA.get(usuarioId) === atual) filasEnvioBotIA.delete(usuarioId);
+  });
+  return atual as Promise<boolean>;
+}
+
 async function enviarMidiaBotIA(usuarioId: string, chatJid: string, numeroReal: string, midia: MidiaBotIA, tempoDigitacaoMs: number): Promise<boolean> {
   const anterior = filasEnvioBotIA.get(usuarioId) || Promise.resolve();
   const atual = anterior.catch(() => {}).then(async () => {
@@ -1295,6 +1377,7 @@ export async function connectToWhatsApp(
           waId: msg.key.id,
           enviarParte: (texto, tempo) => enviarParteBotIA(usuarioId, remoteJid, numeroRecep, texto, tempo),
           enviarVideo: (video, tempo) => enviarMidiaBotIA(usuarioId, remoteJid, numeroRecep, video as MidiaBotIA, tempo),
+          enviarLocalizacao: (lat, lng, nome, endereco) => enviarLocalizacaoBotIA(usuarioId, remoteJid, numeroRecep, lat, lng, nome, endereco),
         });
         return;
       }
@@ -1538,6 +1621,7 @@ export async function dispararRespostaBotAgora(usuarioId: string, chatJid: strin
     waId: ultimaEntrada.waId,
     enviarParte: (texto, tempo) => enviarParteBotIA(efetivoId, chatJid, numeroReal, texto, tempo),
     enviarVideo: (video, tempo) => enviarMidiaBotIA(efetivoId, chatJid, numeroReal, video as MidiaBotIA, tempo),
+    enviarLocalizacao: (lat, lng, nome, endereco) => enviarLocalizacaoBotIA(efetivoId, chatJid, numeroReal, lat, lng, nome, endereco),
   });
   console.log(`[Bot IA] responderAgora: robo acionado para ${chatJid}.`);
   return true;

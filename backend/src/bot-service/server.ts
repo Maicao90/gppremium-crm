@@ -157,7 +157,7 @@ async function gerarRespostaViaOpenAI(args: {
     input.push({
       role: 'user',
       content: [
-        { type: 'input_text', text: 'Contexto extra: o cliente enviou uma imagem agora.' },
+        { type: 'input_text', text: 'Contexto extra: o cliente enviou uma imagem agora. Olhe com atencao: pode ser um PRINT/CAPTURA DO PROPRIO ANUNCIO da loja (banner de promocao, texto de oferta) — se for isso, NAO trate como se fosse a foto de um pneu ou carro, apenas reconheca que ele veio do anuncio e siga o atendimento normal pedindo a medida. Pode tambem ser: foto do flanco de um pneu (contem a medida escrita, ex. 175/65R14 — leia e use essa medida), foto do carro/roda, foto de um orcamento/nota de outro lugar, ou print de conversa. Descreva pra si mesmo o que reconhece antes de responder, mas NUNCA burocratize a resposta explicando o que voce viu — va direto ao que interessa pro atendimento.' },
         { type: 'input_image', image_url: `data:${args.imagem.mime};base64,${args.imagem.base64}` },
       ],
     });
