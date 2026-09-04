@@ -1590,6 +1590,49 @@ export async function apagarMensagemParaTodos(usuarioId: string, chatJid: string
   }
 }
 
+// Achado 04/09 em conversa real: um atendente colou uma tabela de preco inteira numa
+// unica mensagem gigante, com espacamento estranho (texto copiado de planilha/PDF) —
+// chegou pro cliente como um muro de texto. O robo ja quebra as proprias respostas em
+// varias mensagens; agora o painel faz o mesmo pro que o ATENDENTE digita/cola.
+// So mexe em texto realmente longo — mensagem curta normal passa direto, sem split.
+const LIMITE_SEM_QUEBRAR = 320;
+const MAX_PARTES = 5; // trava contra colar um documento inteiro e virar spam
+
+function quebrarMensagemLonga(texto: string): string[] {
+  const limpo = String(texto || '').replace(/[ \t]+\n/g, '\n').trim();
+  if (limpo.length <= LIMITE_SEM_QUEBRAR && !/\n{2,}/.test(limpo)) return [limpo];
+
+  // 1) quebra primeiro nos paragrafos (linha em branco)
+  let partes = limpo.split(/\n{2,}/).map((p) => p.replace(/\s+/g, ' ').trim()).filter(Boolean);
+
+  // 2) qualquer parte que ainda ficou grande, quebra por frase (". ", "! ", "? ")
+  const resultado: string[] = [];
+  for (const parte of partes) {
+    if (parte.length <= LIMITE_SEM_QUEBRAR) { resultado.push(parte); continue; }
+    const frases = parte.split(/(?<=[.!?])\s+(?=[A-ZÀ-Ú0-9])/);
+    let atual = '';
+    for (const frase of frases) {
+      const tentativa = atual ? atual + ' ' + frase : frase;
+      if (tentativa.length > LIMITE_SEM_QUEBRAR && atual) {
+        resultado.push(atual.trim());
+        atual = frase;
+      } else {
+        atual = tentativa;
+      }
+    }
+    if (atual.trim()) resultado.push(atual.trim());
+  }
+
+  // 3) trava de seguranca: nunca manda mais que MAX_PARTES mensagens separadas —
+  //    junta o resto na ultima pra nao virar uma enxurrada.
+  if (resultado.length > MAX_PARTES) {
+    const inicio = resultado.slice(0, MAX_PARTES - 1);
+    const resto = resultado.slice(MAX_PARTES - 1).join(' ');
+    return [...inicio, resto];
+  }
+  return resultado.length ? resultado : [limpo];
+}
+
 export async function enviarMensagemInbox(usuarioId: string, jid: string, texto: string, enviadoPorId?: string): Promise<boolean> {
   const sock = sessions.get(usuarioId);
   if (!sock) {
@@ -1606,7 +1649,7 @@ export async function enviarMensagemInbox(usuarioId: string, jid: string, texto:
   // um GERENTE numa caixa compartilhada, assina com o nome DELE — não com o nome do dono
   // cujo número está sendo usado. Admin/master e demais papéis continuam assinando como
   // o dono da conexão (comportamento antigo, mantido de propósito).
-  let textoFinal = texto;
+  let prefixoAssinatura = ''; // vai so na PRIMEIRA parte, se a mensagem for quebrada
   try {
     const dono = await prisma.usuario.findUnique({ where: { id: usuarioId } });
 
@@ -1630,33 +1673,41 @@ export async function enviarMensagemInbox(usuarioId: string, jid: string, texto:
       if (u) {
         if (u.assinaturaPainel !== null && u.assinaturaPainel !== undefined) {
           const a = String(u.assinaturaPainel).trim();
-          textoFinal = a ? `*${a}*\n${texto}` : texto;
+          prefixoAssinatura = a ? `*${a}*\n` : '';
         } else if (u.nome) {
-          textoFinal = `*${String(u.nome).trim()}*\n${texto}`;
+          prefixoAssinatura = `*${String(u.nome).trim()}*\n`;
         }
       }
     }
   } catch (e) {}
 
   try {
-    await sock.sendPresenceUpdate('composing', jid).catch(() => {});
-    await delay(700);
-    const enviada = await sock.sendMessage(jid, { text: textoFinal });
+    // Achado 04/09: mensagem muito longa (ex.: atendente colando uma tabela de preco
+    // inteira) chegava pro cliente como um muro de texto so. Quebra em varias mensagens
+    // menores, do jeito que uma pessoa mandaria pelo WhatsApp de verdade.
+    const partes = quebrarMensagemLonga(texto);
+    let ultimaEnviada: any = null;
+    for (let i = 0; i < partes.length; i++) {
+      const textoParte = (i === 0 ? prefixoAssinatura : '') + partes[i];
+      await sock.sendPresenceUpdate('composing', jid).catch(() => {});
+      await delay(i === 0 ? 700 : 500 + Math.min(textoParte.length * 12, 1800));
+      const enviada = await sock.sendMessage(jid, { text: textoParte });
+      ultimaEnviada = enviada;
+
+      try {
+        const waId = enviada?.key?.id || null;
+        lembrarWaId(waId);
+        const salva = await prisma.mensagem.create({
+          data: { usuarioId, chatJid: jid, chatNome: '', fromMe: true, texto: textoParte, tipo: 'texto', waId, enviadoPorId: enviadoPorId || null }
+        });
+        getIo().to(usuarioId).emit('NOVA_MENSAGEM', salva);
+      } catch (e) {
+        console.error('[Inbox] Erro ao salvar mensagem enviada:', e);
+      }
+    }
+
     // volta a "offline" para não roubar as notificações do celular
     await comLimiteDeTempo(sock.sendPresenceUpdate('unavailable'), 10_000, 'presence').catch(() => {});
-
-    // Guarda a mensagem ENVIADA e avisa o painel na hora. (O sock.sendMessage nem sempre
-    // dispara messages.upsert para as nossas próprias mensagens, então salvamos aqui.)
-    try {
-      const waId = enviada?.key?.id || null;
-      lembrarWaId(waId);
-      const salva = await prisma.mensagem.create({
-        data: { usuarioId, chatJid: jid, chatNome: '', fromMe: true, texto: textoFinal, tipo: 'texto', waId, enviadoPorId: enviadoPorId || null }
-      });
-      getIo().to(usuarioId).emit('NOVA_MENSAGEM', salva);
-    } catch (e) {
-      console.error('[Inbox] Erro ao salvar mensagem enviada:', e);
-    }
     return true;
   } catch (e) {
     console.error('[Inbox] Erro ao enviar mensagem:', e);
