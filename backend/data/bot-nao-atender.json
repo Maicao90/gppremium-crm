@@ -1,12 +1,18 @@
 {
   "_comentario": [
-    "Numeros que o ROBO NUNCA deve atender. Use com parcimonia: o normal e o robo",
-    "atender todo mundo e a regra do prompt cuidar dos casos estranhos. Isto aqui e so",
-    "pra numero que comprovadamente NAO e cliente — outro sistema automatico, por",
-    "exemplo. As mensagens continuam aparecendo no painel; ele so nao responde sozinho."
+    "Numeros/nomes que o ROBO NUNCA deve atender. As mensagens continuam aparecendo no",
+    "painel normalmente — ele so nao responde sozinho, fica pros humanos.",
+    "numeros: numero exato (so digitos, com DDI/DDD).",
+    "nomes: padrao de texto (minusculo) que, se aparecer no nome do contato, bloqueia —",
+    "serve pra empresa/grupo inteiro (ex.: \"gwt global\" pega qualquer contato com isso no nome)."
   ],
   "numeros": [
     "17015557208",
-    "165332417282214"
+    "165332417282214",
+    "556193252620",
+    "556136012020"
+  ],
+  "nomes": [
+    "gwt global"
   ]
 }

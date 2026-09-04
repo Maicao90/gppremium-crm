@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { Router } from 'express';
 import { prisma } from '../server';
-import { enviarMensagemInbox, enviarMidiaInbox, resolverConexaoEfetiva, apagarMensagemParaTodos, editarMensagemWhatsApp, dispararRespostaBotAgora } from '../workers/whatsappService';
+import { enviarMensagemInbox, enviarMidiaInbox, resolverConexaoEfetiva, apagarMensagemParaTodos, editarMensagemWhatsApp, dispararRespostaBotAgora, enviarLocalizacaoManual } from '../workers/whatsappService';
 import { lerBotPneusConfig, salvarBotPneusConfig } from '../services/botPneusConfig';
 
 const router = Router();
@@ -491,6 +491,13 @@ router.post('/acao', async (req, res) => {
       // So sai do painel depois que o WhatsApp confirmou, pra tela nao mentir.
       await prisma.mensagem.delete({ where: { id: msg.id } }).catch(() => {});
       return res.json({ ok: true, somenteDoPainel });
+    }
+
+    // Manda a localizacao da loja pro cliente (pino nativo + link + foto se houver).
+    if (action === 'enviarLocalizacao') {
+      const ok = await enviarLocalizacaoManual(alvo.usuarioId, alvo.chatJid);
+      if (!ok) return res.status(503).json({ error: 'Nao consegui enviar a localizacao (sem conexao ou coordenadas nao configuradas).' });
+      return res.json({ ok: true });
     }
 
     if (action === 'enviar') {

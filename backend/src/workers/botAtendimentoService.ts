@@ -285,14 +285,34 @@ async function processarAgendamentoAutomatico(usuarioId: string, chatJid: string
 // O arquivo e lido a cada mensagem, entao dá pra incluir/remover numero sem reiniciar.
 const CAMINHO_NAO_ATENDER = path.join(__dirname, '../../data/bot-nao-atender.json');
 
-function naoAtender(chatJid: string): boolean {
+// Confere numero E nome (05/09: "qualquer pessoa que tiver GWT Global no nome" —
+// padrao de empresa, nao um numero especifico. Recebe o chatJid pra checar o numero
+// e busca o ultimo nome conhecido desse chat pra checar contra os padroes de nome.
+async function naoAtender(usuarioId: string, chatJid: string): Promise<boolean> {
   try {
     if (!fs.existsSync(CAMINHO_NAO_ATENDER)) return false;
     const cfg = JSON.parse(fs.readFileSync(CAMINHO_NAO_ATENDER, 'utf8'));
-    const lista: string[] = Array.isArray(cfg?.numeros) ? cfg.numeros : [];
+    const numeros: string[] = Array.isArray(cfg?.numeros) ? cfg.numeros : [];
+    const nomes: string[] = Array.isArray(cfg?.nomes) ? cfg.nomes : [];
+
     const alvo = String(chatJid || '').replace(/[^0-9]/g, '');
-    if (!alvo) return false;
-    return lista.some((n) => { const limpo = String(n).replace(/[^0-9]/g, ''); return limpo.length >= 6 && alvo.includes(limpo); });
+    if (alvo && numeros.some((n) => { const limpo = String(n).replace(/[^0-9]/g, ''); return limpo.length >= 6 && alvo.includes(limpo); })) {
+      return true;
+    }
+
+    if (nomes.length) {
+      const ultima = await prisma.mensagem.findFirst({
+        where: { usuarioId, chatJid, chatNome: { not: '' } },
+        orderBy: { timestamp: 'desc' },
+        select: { chatNome: true },
+      });
+      const nomeAtual = String(ultima?.chatNome || '').toLowerCase();
+      if (nomeAtual && nomes.some((padrao) => nomeAtual.includes(String(padrao).toLowerCase()))) {
+        return true;
+      }
+    }
+
+    return false;
   } catch (e) {
     return false; // lista quebrada nao pode derrubar o atendimento
   }
@@ -323,7 +343,7 @@ async function executar(params: AgendarBotParams, versao: number) {
     // Se a gente ja respondeu demais nessa conversa em pouco tempo, e loop: pausa e
     // deixa um humano olhar, em vez de continuar alimentando a troca automatica.
     // Fornecedor/parceiro/sistema: registra no painel, mas nao responde.
-    if (naoAtender(params.chatJid)) {
+    if (await naoAtender(params.usuarioId, params.chatJid)) {
       console.log(`[Bot IA] ${params.chatJid} esta na lista de nao-atender — deixando pros humanos.`);
       return;
     }

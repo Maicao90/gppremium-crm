@@ -405,6 +405,28 @@ async function enviarParteBotIA(usuarioId: string, chatJid: string, numeroReal: 
 // Pra ativar: colocar o arquivo em data/fachada-loja.jpg no servidor.
 const CAMINHO_FOTO_FACHADA = path.join(__dirname, '../../data/fachada-loja.jpg');
 
+// Disparo MANUAL da localizacao (05/09) — usado pelo painel/admin quando alguem pede
+// pra mandar a localizacao pra um contato especifico, fora do fluxo automatico da IA.
+// Le as coordenadas do mesmo config do bot.
+export async function enviarLocalizacaoManual(usuarioId: string, chatJid: string): Promise<boolean> {
+  try {
+    const cfg = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/bot-pneus-config.json'), 'utf8'));
+    const lat = Number(cfg.LOCALIZACAO_LAT);
+    const lng = Number(cfg.LOCALIZACAO_LNG);
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+      console.error('[Localizacao] LOCALIZACAO_LAT/LNG nao configurados.');
+      return false;
+    }
+    const nome = String(cfg.NOME_LOJA || 'Loja');
+    const endereco = String(cfg.LOCALIZACAO || '');
+    const numeroReal = chatJid.split('@')[0] || '';
+    return enviarLocalizacaoBotIA(usuarioId, chatJid, numeroReal, lat, lng, nome, endereco);
+  } catch (e: any) {
+    console.error('[Localizacao] Falha no disparo manual:', e?.message || e);
+    return false;
+  }
+}
+
 async function enviarLocalizacaoBotIA(usuarioId: string, chatJid: string, numeroReal: string, lat: number, lng: number, nome: string, endereco: string): Promise<boolean> {
   const anterior = filasEnvioBotIA.get(usuarioId) || Promise.resolve();
   const atual = anterior.catch(() => {}).then(async () => {

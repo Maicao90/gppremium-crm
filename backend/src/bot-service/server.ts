@@ -11,7 +11,7 @@ import {
   montarRespostaDeterministicaPreco,
 } from '../data/tabelaPrecos';
 import { precosForaDaTabela, valoresEmReais } from '../data/precoGuard';
-import { prometeuTransferenciaFalsa } from '../data/comportamentoGuard';
+import { prometeuTransferenciaFalsa, removerReperguntaPosPreco } from '../data/comportamentoGuard';
 import { lerBotPneusConfig, montarPromptAtendimentoBot } from '../services/botPneusConfig';
 
 dotenv.config();
@@ -334,6 +334,12 @@ app.post('/gerar-resposta', async (req, res) => {
         partesFinais = ['Anotado — vou avisar aqui pra alguem da loja te dar atenção. Enquanto isso, posso te ajudar com medida, preço ou endereço, se quiser.'];
       }
     }
+
+
+    // TRAVA DE COMPORTAMENTO 2 (04/09): corta cirurgicamente qualquer repescada de
+    // modelo/ano/marca preferida/servico adicional depois do preco — achado em 4
+    // conversas reais no mesmo dia mesmo com a regra explicita no prompt.
+    partesFinais = removerReperguntaPosPreco(partesFinais);
 
     res.json({ partes: partesFinais, deterministico: false });
   } catch (e: any) {
