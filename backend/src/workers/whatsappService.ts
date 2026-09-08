@@ -581,6 +581,42 @@ function armazenarMensagemRecente(id: string, dados: { usuarioId: string; numero
 // mensagens temporárias (ephemeral), visualização única (viewOnce), documento com
 // legenda e mensagem editada. Sem isso, um TEXTO normal de um contato com
 // "mensagens temporárias" ligadas era salvo como tipo "outro" (ilegível no painel).
+// Eco do "Assistente de IA" nativo do WhatsApp Business (Meta), que responde sozinho no
+// mesmo numero se apresentando como "Pneu Express" (nome que a loja nunca teve). Nao e
+// uma pessoa assumindo — tratar como tal pausava o nosso robo a conversa inteira, porque
+// a Meta responde em ~10s a CADA mensagem do cliente e cada eco renovava a pausa.
+// Achado 08/09 (chat do Augusto): 15 chats da Borracharia silenciados assim em 24h, e o
+// cliente ficou so com a resposta errada da Meta ("alguem te atendera em breve").
+// Fingerprint FORTE marca o chat; depois disso, mensagens no mesmo estilo tambem nao
+// pausam. Texto sem esse estilo (atendente humano digitando) continua pausando normal.
+const chatsComAgenteMeta = new Set<string>();
+const FINGERPRINT_META_FORTE: RegExp[] = [
+  /pneu\s*express/i,
+  /meta\s+business\s+agent/i,
+  /sou\s+o\s+assistente\s+da\s+\*/i,
+];
+const FINGERPRINT_META_FRACO: RegExp[] = [
+  /nossa\s+equipe/i,
+  /marca\s+preferida/i,
+  /servi[cç]os?\s+adicion/i,
+  /atender[aá]\s+em\s+breve/i,
+  /conectei\s+voc[eê]/i,
+  /(compartilhei|repassei|enviei)\s+.{0,40}equipe/i,
+  /j[aá]\s+conectei/i,
+  /2\s+anos\s+de\s+garantia/i,
+  /conferir\s+a\s+compatibilidade/i,
+]; 
+function ehEcoDoAgenteMeta(usuarioId: string, chatJid: string, texto: string): boolean {
+  const t = String(texto || '');
+  if (!t.trim()) return false;
+  const key = `${usuarioId}:${chatJid}`;
+  if (FINGERPRINT_META_FORTE.some((re) => re.test(t))) {
+    chatsComAgenteMeta.add(key);
+    return true;
+  }
+  return chatsComAgenteMeta.has(key) && FINGERPRINT_META_FRACO.some((re) => re.test(t));
+}
+
 function desembrulharMensagem(message: any): any {
   let m = message;
   for (let i = 0; i < 5 && m; i++) {
@@ -1287,7 +1323,17 @@ export async function connectToWhatsApp(
         // Pode ser um atendente digitando no celular/extensao (ai pausar e certo) OU o eco
         // de um sistema externo escrevendo no mesmo numero (ai pausar silencia o robo a toa).
         // Contas com botIaPausaManualMin = 0 ignoram essa pausa — ver pausarConversaBotIA.
-        if (cfgBot?.botIaAtivo) await pausarConversaBotIA(usuarioId, remoteJid, undefined, 'eco_externo').catch(() => {});
+        const textoEco = extrairTextoMensagem(desembrulharMensagem(msg.message)) || '';
+        if (cfgBot?.botIaAtivo) {
+          if (ehEcoDoAgenteMeta(usuarioId, remoteJid, textoEco)) {
+            console.log(`[Bot IA] Eco do assistente de IA da Meta em ${remoteJid} — NAO e humano assumindo, robo segue respondendo.`);
+            // Um eco anterior da Meta sem fingerprint pode ter pausado este chat por 10 min —
+            // desfaz SO essa pausa automatica (pausa manual do painel/transferencia fica intacta).
+            await prisma.botConversa.updateMany({ where: { usuarioId, chatJid: remoteJid, motivoPausa: 'eco_externo' }, data: { pausadoAte: null } }).catch(() => {});
+          } else {
+            await pausarConversaBotIA(usuarioId, remoteJid, undefined, 'eco_externo').catch(() => {});
+          }
+        }
       }
 
       // Enriquece a agenda com o NOME (pushName) de quem manda mensagem — assim a busca
