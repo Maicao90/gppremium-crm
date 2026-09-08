@@ -106,6 +106,21 @@ export function precosForaDaTabela(partes: string[], contexto: string): string[]
     for (const item of TABELA_PRECOS_GP) valoresDoItem(item, permitidos);
   }
 
+  // Total combinado pneus + balanceamento (08/09): "2 pneus a R$249 + balanceamento R$50
+  // = R$548". Sem isto a trava barrava a resposta CERTA (caso real: Augusto) e caia no
+  // fallback "me confirma a medida" — repetindo uma pergunta que o cliente ja tinha
+  // respondido. So combina totais A VISTA (nao parcelas) pra nao inflar o conjunto.
+  const itensEmJogo = TABELA_PRECOS_GP.filter((item) =>
+    String((item as any).categoria || '') === 'recape' || (medidas.length ? medidas.includes(item.medida) : true));
+  const servicos: number[] = [];
+  for (const preco of PRECOS_DE_SERVICO) for (let rodas = 1; rodas <= 6; rodas++) servicos.push(preco * rodas);
+  for (const item of itensEmJogo) {
+    for (let q = 1; q <= QTD_MAX; q++) {
+      const base = item.aVista * unidadesCobradasGuard(item, q);
+      for (const fator of [1, 0.95, 0.9]) for (const s of servicos) permitidos.add(cent(base * fator + s));
+    }
+  }
+
   // tolerancia de 1 centavo pra arredondamento de parcela
   return usados.filter((v) => {
     if (permitidos.has(v)) return false;
