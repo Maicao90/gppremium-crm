@@ -347,6 +347,30 @@ async function aguardarSocketBotIA(usuarioId: string, tentativas = 4, intervaloM
   return null;
 }
 
+// Envio com retentativa (08/09): durante um "conflict storm" (outra instancia disputando a
+// mesma sessao — milhares de 440 por dia na Borracharia), a conexao cai e reabre a cada
+// poucos segundos. Antes, um "Connection Closed" no meio do envio perdia a resposta do robo
+// pra sempre (caso real: Augusto, 08/09). Agora tenta de novo pegando a conexao NOVA, ate 3x.
+async function enviarTextoComRetentativa(sockInicial: any, usuarioId: string, chatJid: string, texto: string, tempoDigitacaoMs: number): Promise<any> {
+  let ultimoErro: any = null;
+  for (let tentativa = 1; tentativa <= 3; tentativa++) {
+    const sock = tentativa === 1 ? sockInicial : await aguardarSocketBotIA(usuarioId, 6, 2500);
+    if (!sock) { ultimoErro = new Error('sem conexao WhatsApp ativa'); continue; }
+    try {
+      await comLimiteDeTempo(sock.sendPresenceUpdate('composing', chatJid), 10_000, 'presence').catch(() => {});
+      await delay(tentativa === 1 ? tempoDigitacaoMs : Math.min(tempoDigitacaoMs, 1500));
+      const enviada = await comLimiteDeTempo<any>(sock.sendMessage(chatJid, { text: texto }), 45_000, 'sendMessage(texto)');
+      await comLimiteDeTempo(sock.sendPresenceUpdate('unavailable'), 10_000, 'presence').catch(() => {});
+      return enviada;
+    } catch (e) {
+      ultimoErro = e;
+      console.error(`[Bot IA] Falha ao enviar parte (tentativa ${tentativa}/3): ${(e as any)?.message || e}`);
+      if (tentativa < 3) await delay(4000);
+    }
+  }
+  throw ultimoErro || new Error('falha ao enviar');
+}
+
 async function enviarParteBotIA(usuarioId: string, chatJid: string, numeroReal: string, texto: string, tempoDigitacaoMs: number): Promise<boolean> {
   const anterior = filasEnvioBotIA.get(usuarioId) || Promise.resolve();
   const atual = anterior.catch(() => {}).then(async () => {
@@ -358,10 +382,7 @@ async function enviarParteBotIA(usuarioId: string, chatJid: string, numeroReal: 
     const key = `${usuarioId}:${chatJid}`;
     chatsBotEnviando.add(key);
     try {
-      await comLimiteDeTempo(sock.sendPresenceUpdate('composing', chatJid), 10_000, 'presence').catch(() => {});
-      await delay(tempoDigitacaoMs);
-      const enviada = await comLimiteDeTempo<any>(sock.sendMessage(chatJid, { text: texto }), 45_000, 'sendMessage(texto)');
-      await comLimiteDeTempo(sock.sendPresenceUpdate('unavailable'), 10_000, 'presence').catch(() => {});
+      const enviada = await enviarTextoComRetentativa(sock, usuarioId, chatJid, texto, tempoDigitacaoMs);
       const waId = enviada?.key?.id || null;
       lembrarWaId(waId);
       lembrarWaIdBotIA(waId);
