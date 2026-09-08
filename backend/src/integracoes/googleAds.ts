@@ -7,7 +7,7 @@ import { MetricaCampanhaDia, ResultadoTeste, SaldoConta, periodoDias } from './t
 // Se as chamadas começarem a falhar com erro de "version deprecated/sunset",
 // basta atualizar a constante abaixo para a versão vigente (ex.: 'v22').
 // Versões disponíveis: https://developers.google.com/google-ads/api/docs/release-notes
-export const GOOGLE_ADS_API_VERSION = 'v21';
+export const GOOGLE_ADS_API_VERSION = 'v22';
 
 // Credenciais esperadas para a plataforma 'google'
 // customerId = ID da conta Google Ads SÓ DÍGITOS (sem hífens); loginCustomerId = MCC (opcional)
