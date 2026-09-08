@@ -338,6 +338,14 @@ function comLimiteDeTempo<T>(promessa: Promise<T>, ms: number, oQue: string): Pr
   });
 }
 
+// Ultimo 440 (conflict) por sessao. Numa tempestade de conflitos (outra instancia disputando
+// a sessao), a conexao vive poucos segundos — entao o envio pula a simulacao de "digitando",
+// que so alonga o tempo em que a conexao precisa ficar viva (08/09).
+const ultimoConflitoEm = new Map<string, number>();
+function emTempestadeDeConflito(usuarioId: string): boolean {
+  return Date.now() - (ultimoConflitoEm.get(usuarioId) || 0) < 60_000;
+}
+
 async function aguardarSocketBotIA(usuarioId: string, tentativas = 4, intervaloMs = 2500): Promise<any> {
   for (let i = 0; i < tentativas; i++) {
     const sock = sessions.get(usuarioId);
@@ -358,7 +366,8 @@ async function enviarTextoComRetentativa(sockInicial: any, usuarioId: string, ch
     if (!sock) { ultimoErro = new Error('sem conexao WhatsApp ativa'); continue; }
     try {
       await comLimiteDeTempo(sock.sendPresenceUpdate('composing', chatJid), 10_000, 'presence').catch(() => {});
-      await delay(tentativa === 1 ? tempoDigitacaoMs : Math.min(tempoDigitacaoMs, 1500));
+      const delayParte = emTempestadeDeConflito(usuarioId) ? Math.min(tempoDigitacaoMs, 800) : (tentativa === 1 ? tempoDigitacaoMs : Math.min(tempoDigitacaoMs, 1500));
+      await delay(delayParte);
       const enviada = await comLimiteDeTempo<any>(sock.sendMessage(chatJid, { text: texto }), 45_000, 'sendMessage(texto)');
       await comLimiteDeTempo(sock.sendPresenceUpdate('unavailable'), 10_000, 'presence').catch(() => {});
       return enviada;
@@ -1221,6 +1230,7 @@ export async function connectToWhatsApp(
       const isLoggedOut = statusCode === DisconnectReason.loggedOut;
 
       console.log(`[Baileys] Conexão fechada (Usuário ${usuarioId}). Código: ${statusCode}. Motivo:`, lastDisconnect?.error, 'Deslogado:', isLoggedOut);
+      if (statusCode === 440) ultimoConflitoEm.set(usuarioId, Date.now());
 
       // NÃO avisa "desconectado" aqui em cima: o Baileys fecha e reabre a sessão o tempo
       // todo (código 515 pós-QR, churn de prekey, quedinhas de rede) e reconecta em 2s.
@@ -1692,7 +1702,9 @@ export async function enviarMensagem(
 // jeito de mandar o robo retomar sem o cliente escrever de novo.
 export async function dispararRespostaBotAgora(usuarioId: string, chatJid: string): Promise<boolean> {
   const efetivoId = await resolverConexaoEfetiva(usuarioId);
-  const sock = sessions.get(efetivoId);
+  // Espera ate ~60s por uma conexao (tempestade de conflitos abre janelas curtas) em vez
+  // de falhar na hora — o botao "Responder agora" do painel vinha falhando 14x seguidas.
+  const sock = await aguardarSocketBotIA(efetivoId, 12, 5000);
   if (!sock) {
     console.error(`[Bot IA] responderAgora: WhatsApp nao conectado (${efetivoId}).`);
     return false;
