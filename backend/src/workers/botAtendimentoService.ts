@@ -364,6 +364,10 @@ async function executar(params: AgendarBotParams, versao: number) {
       take: 40,
     });
     historico.reverse();
+    // Mensagens do Assistente de IA da Meta (enviadoPorId = meta_ai) NAO sao do nosso robo.
+    // Se entrassem no historico como "assistant", o robo herdaria "Pneu Express" e
+    // "conectei voce com a nossa equipe" como se tivesse dito isso (achado 08/09).
+    for (let i = historico.length - 1; i >= 0; i--) { if ((historico[i] as any).enviadoPorId === 'meta_ai') historico.splice(i, 1); }
     const messages: Array<{ role: 'user' | 'assistant'; content: string }> = historico.map((m: any) => ({
       role: m.fromMe ? 'assistant' : 'user',
       content: String(m.texto || (m.tipo === 'imagem' ? '[imagem enviada]' : m.tipo === 'audio' ? '[audio enviado]' : `[${m.tipo}]`)),

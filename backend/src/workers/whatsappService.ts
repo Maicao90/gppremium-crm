@@ -1317,6 +1317,10 @@ export async function connectToWhatsApp(
 
       // Uma mensagem enviada pelo celular ou painel significa que uma pessoa assumiu.
       // Nao pausa quando o proprio bot esta enviando as bolhas dele.
+      // Marcado quando a mensagem de saida e do Assistente de IA da Meta (nao do nosso robo,
+      // nem de atendente). Salvo como enviadoPorId = meta_ai: some do historico que o robo le
+      // e aparece rotulado no painel.
+      let ecoMetaAi = false;
       if (msg.key.fromMe && !waIdsBotIA.has(msg.key.id || '') && !chatsBotEnviando.has(`${usuarioId}:${remoteJid}`)) {
         const cfgBot = await prisma.usuario.findUnique({ where: { id: usuarioId }, select: { botIaAtivo: true } }).catch(() => null);
         // Marcado como 'eco_externo': e uma mensagem de saida que NAO foi o nosso robo.
@@ -1327,6 +1331,7 @@ export async function connectToWhatsApp(
         if (cfgBot?.botIaAtivo) {
           if (ehEcoDoAgenteMeta(usuarioId, remoteJid, textoEco)) {
             console.log(`[Bot IA] Eco do assistente de IA da Meta em ${remoteJid} — NAO e humano assumindo, robo segue respondendo.`);
+            ecoMetaAi = true;
             // Um eco anterior da Meta sem fingerprint pode ter pausado este chat por 10 min —
             // desfaz SO essa pausa automatica (pausa manual do painel/transferencia fica intacta).
             await prisma.botConversa.updateMany({ where: { usuarioId, chatJid: remoteJid, motivoPausa: 'eco_externo' }, data: { pausadoAte: null } }).catch(() => {});
@@ -1404,7 +1409,8 @@ export async function connectToWhatsApp(
                 tipo: tipoSalvar,
                 midiaUrl,
                 waId: msg.key.id || null,
-                numeroReal: numeroReal || null
+                numeroReal: numeroReal || null,
+                enviadoPorId: ecoMetaAi ? 'meta_ai' : null
               }
             });
             getIo().to(usuarioId).emit('NOVA_MENSAGEM', salva);

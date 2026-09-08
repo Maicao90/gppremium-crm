@@ -303,7 +303,11 @@ router.get('/conversa/:id', async (req, res) => {
         // nesse numero sem passar pelo nosso sistema). Isso enganava quem le a conversa,
         // fazendo mensagem de ORIGEM DESCONHECIDA parecer que foi um atendente de verdade.
         // Agora so vira "ATENDENTE" quando realmente tem um usuario do painel por tras.
-        autor: m.fromMe ? (m.enviadoPorId === 'bot' ? '🤖 Robô' : m.enviadoPorId ? 'ATENDENTE' : '❓ Origem não identificada') : 'CLIENTE',
+        autor: m.fromMe
+          ? (m.enviadoPorId === 'bot' ? '🤖 Robô'
+            : m.enviadoPorId === 'meta_ai' ? '⚠️ Assistente de IA da Meta (não é o nosso robô)'
+            : m.enviadoPorId ? 'ATENDENTE' : '❓ Origem não identificada')
+          : 'CLIENTE',
         criadoEm: m.timestamp.toISOString(),
         temMidia: !!m.midiaUrl,
       })),
