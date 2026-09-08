@@ -760,6 +760,10 @@ function protegerCredenciais(usuarioId: string): void {
 }
 
 const tentativasReconexao = new Map<string, number>();
+// UMA reconexao pendente por usuario (08/09). Antes, cada close agendava mais um timer e
+// varios podiam ficar pendentes; cada um criava um socket novo que derrubava o anterior com
+// 440 — cuja queda agendava outro timer. Corrente infinita, milhares de 440 por dia.
+const reconexoesPendentes = new Map<string, NodeJS.Timeout>();
 const timersEstabilidade = new Map<string, NodeJS.Timeout>();
 
 // So considera a conexao "boa" depois que ela AGUENTA 60s de pe. Sem isso o contador
@@ -1232,6 +1236,16 @@ export async function connectToWhatsApp(
       console.log(`[Baileys] Conexão fechada (Usuário ${usuarioId}). Código: ${statusCode}. Motivo:`, lastDisconnect?.error, 'Deslogado:', isLoggedOut);
       if (statusCode === 440) ultimoConflitoEm.set(usuarioId, Date.now());
 
+      // Socket ANTIGO fechando depois que um novo ja assumiu: ignora. Antes, o close do antigo
+      // apagava o socket NOVO do mapa (sessions.delete por usuarioId) e agendava mais uma
+      // reconexao — que criava outro socket, que derrubava o novo, e assim sem fim (08/09).
+      // Efeito colateral do bug: o socket vivo ficava FORA do mapa e sessions.get() dava vazio
+      // mesmo com "Conexão aberta com sucesso" no log — por isso os disparos falhavam.
+      if (sessions.get(usuarioId) !== sock) {
+        console.log(`[Baileys] Fechamento de socket antigo do usuário ${usuarioId} ignorado (já existe um socket mais novo).`);
+        return;
+      }
+
       // NÃO avisa "desconectado" aqui em cima: o Baileys fecha e reabre a sessão o tempo
       // todo (código 515 pós-QR, churn de prekey, quedinhas de rede) e reconecta em 2s.
       // Avisar false a cada ciclo fazia a extensão PISCAR a tela de bloqueio de tela cheia.
@@ -1278,9 +1292,23 @@ export async function connectToWhatsApp(
         // precisa permitirQrNovo:true pra furar a própria pausa que o pareamento criou,
         // senão o pareamento nunca completa (achado 25/08, caso da Borracharia).
         const eraPareamentoEmAndamento = pairingCodes.has(usuarioId);
-        setTimeout(() => connectToWhatsApp(usuarioId, undefined, undefined, eraPareamentoEmAndamento).catch(err => console.error("Erro no retry:", err)), espera);
+        const timerAnterior = reconexoesPendentes.get(usuarioId);
+        if (timerAnterior) clearTimeout(timerAnterior);
+        reconexoesPendentes.set(usuarioId, setTimeout(() => {
+          reconexoesPendentes.delete(usuarioId);
+          connectToWhatsApp(usuarioId, undefined, undefined, eraPareamentoEmAndamento).catch(err => console.error("Erro no retry:", err));
+        }, espera));
       }
     } else if (connection === 'open') {
+      if (sessions.get(usuarioId) !== sock) {
+        // Um socket que nao e mais o atual conseguiu abrir (corrida rara): encerra ele em
+        // silencio pra nao derrubar o atual com 440.
+        console.log(`[Baileys] Socket antigo do usuário ${usuarioId} abriu depois de substituído — encerrando ele.`);
+        try { sock.end(undefined as any); } catch {}
+        return;
+      }
+      const timerPendente = reconexoesPendentes.get(usuarioId);
+      if (timerPendente) { clearTimeout(timerPendente); reconexoesPendentes.delete(usuarioId); }
       console.log(`[Baileys] Conexão aberta com sucesso! Servidor pronto para disparos do usuário ${usuarioId}.`);
       marcarConexaoEstavel(usuarioId); // so zera a espera se aguentar 60s conectado
       salvarBackupCredenciais(usuarioId); // guarda uma copia boa das credenciais
