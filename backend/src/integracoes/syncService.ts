@@ -252,6 +252,12 @@ async function atualizarSaldoConexao(conexaoId: string): Promise<void> {
         },
       });
     }
+    // A leitura leve deu certo: limpa o ultimoErro da conexao. Sem isto o painel continuava
+    // dizendo "saldo indisponivel — cota esgotada" mesmo ja tendo o numero novo na tela,
+    // porque so a sync pesada (de 6 em 6 horas) limpava esse campo (achado 09/09).
+    if (conexao.ultimoErro) {
+      await prisma.conexaoAds.update({ where: { id: conexao.id }, data: { ultimoErro: null, ultimaSync: new Date() } }).catch(() => {});
+    }
   } catch (e: any) {
     registrarBloqueioGoogle(e);
     // Silencioso de proposito: essa rodada e frequente, entao um erro passageiro (rate
