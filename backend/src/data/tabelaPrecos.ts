@@ -1,7 +1,7 @@
 export interface ItemPreco {
   medida: string;
   modelo: string;
-  categoria: 'passeio' | 'suv' | 'van' | 'pickup' | 'recape';
+  categoria: 'passeio' | 'suv' | 'van' | 'pickup';
   promocao?: boolean;
   compre3Leve4?: boolean;
   aVista: number;
@@ -52,8 +52,8 @@ export interface RespostaDeterministicaPreco {
 // separados por " / " (ex.: 195/65/15 GP-1 e GP-7 sao a mesma cotacao). Assim o robo
 // nao pergunta "qual modelo?" quando o valor e igual de qualquer jeito.
 //
-// Os RECAPES no fim nao vem da planilha — sao produto proprio da loja, mantidos
-// como estavam.
+// 09/09: a loja NAO trabalha com recape. Existiam aqui 6 itens de recape que nunca
+// vieram da planilha oficial; foram removidos com todo o mecanismo que os oferecia.
 export const TABELA_PRECOS_GP: ItemPreco[] = [
   {
     medida: '165/70/13',
@@ -489,54 +489,6 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     parcelado: { x1: 612.30, x2: 618.95, x3: 625.60, x4: 632.24, x5: 638.89, x6: 645.54, x7: 652.19, x8: 658.84, x9: 665.49, x10: 672.14 },
     portaria: 30.00
   },
-  {
-    medida: 'Aro 13',
-    modelo: 'Recape / Carcaça',
-    categoria: 'recape',
-    aVista: 110.00,
-    parcelado: { x1: 112.44, x2: 113.66, x3: 114.88, x4: 116.11, x5: 117.33, x6: 118.55, x7: 119.77, x8: 120.99, x9: 122.21, x10: 123.43 },
-    portaria: 2.00
-  },
-  {
-    medida: 'Aro 14',
-    modelo: 'Recape / Carcaça',
-    categoria: 'recape',
-    aVista: 114.00,
-    parcelado: { x1: 116.53, x2: 117.80, x3: 119.06, x4: 120.33, x5: 121.59, x6: 122.86, x7: 124.12, x8: 125.39, x9: 126.65, x10: 127.92 },
-    portaria: 2.00
-  },
-  {
-    medida: 'Aro 15',
-    modelo: 'Recape / Carcaça',
-    categoria: 'recape',
-    aVista: 117.00,
-    parcelado: { x1: 119.60, x2: 120.90, x3: 122.19, x4: 123.49, x5: 124.79, x6: 126.09, x7: 127.39, x8: 128.69, x9: 129.99, x10: 131.29 },
-    portaria: 2.00
-  },
-  {
-    medida: 'Suv',
-    modelo: 'Recape / Carcaça',
-    categoria: 'recape',
-    aVista: 150.00,
-    parcelado: { x1: 153.33, x2: 155.00, x3: 156.66, x4: 158.33, x5: 159.99, x6: 161.66, x7: 163.32, x8: 164.99, x9: 166.65, x10: 168.32 },
-    portaria: 3.00
-  },
-  {
-    medida: 'Vans',
-    modelo: 'Recape / Carcaça',
-    categoria: 'recape',
-    aVista: 150.00,
-    parcelado: { x1: 153.33, x2: 155.00, x3: 156.66, x4: 158.33, x5: 159.99, x6: 161.66, x7: 163.32, x8: 164.99, x9: 166.65, x10: 168.32 },
-    portaria: 3.00
-  },
-  {
-    medida: 'Caminhonetes',
-    modelo: 'Recape / Carcaça',
-    categoria: 'recape',
-    aVista: 150.00,
-    parcelado: { x1: 153.55, x2: 155.00, x3: 156.66, x4: 158.33, x5: 170.66, x6: 172.43, x7: 174.21, x8: 175.98, x9: 177.76, x10: 179.54 },
-    portaria: 4.00
-  },
 ];
 
 export function buscarPrecoPorMedida(textoBusca: string): ItemPreco[] {
@@ -724,8 +676,16 @@ function detectarQuantidade(texto: string): number | null {
   return null;
 }
 
+// 09/09: "quanto" era casado por pedaco de texto, entao "ele aguenta ate quantos kg?"
+// virava pedido de PRECO e o robo respondia a cotacao — duas vezes seguidas, sem nunca
+// responder a pergunta. Estas sao perguntas TECNICAS: tem que ir pra IA, que le o
+// historico e responde o que foi perguntado de verdade.
+const PERGUNTA_TECNICA = /\bquant[oa]s?\s+(kg|quilos?|kilos?|lonas?|anos?|km|quil[oô]metros?|meses|libras?)\b|\bquant[oa]\s+(pesa|dura|aguenta|suporta|roda|carrega)\b|\baguenta\s+at[eé]\s+quant|\bsuporta\s+at[eé]\s+quant|\bcapacidade\s+de\s+carga\b/i;
+
 function detectarPedidoDePreco(texto: string): boolean {
   const base = String(texto || '').toLowerCase();
+  // Pergunta TECNICA (kg, lonas, durabilidade) nao e pedido de preco.
+  if (PERGUNTA_TECNICA.test(base)) return false;
   return [
     'preco', 'preço', 'valor', 'quanto', 'avista', 'à vista', 'pix', 'dinheiro',
     'parcela', 'parcelado', 'parcelamento', 'x sem juros', 'cotacao', 'cotação',
@@ -851,27 +811,11 @@ export function resumirItemPreco(item: ItemPreco): string {
   ].filter(Boolean).join(' :: ');
 }
 
-// O robo precisa SEMPRE saber o que a loja tem — nao so quando a medida bate.
-// Antes, numa conversa sem match ele nao recebia nada do catalogo e chutava de
-// memoria (chegou a oferecer aro 13 pra cliente de aro 14). Agora vai junto, em
-// toda resposta, a lista completa agrupada por ARO — compacta, so as medidas.
-// O robo precisa SEMPRE saber o que a loja tem — nao so quando a medida bate.
-// Inclui tambem os RECAPES (achado 01/09: 6 itens de recape, bem mais baratos que o
-// pneu novo — R$110 no aro 13 contra R$239 —, eram INVISIVEIS pro robo porque o nome
-// deles ("Aro 13", "Suv", "Vans"...) nao tem formato de medida. Cliente que achava
-// caro ia embora sem nunca ouvir a opcao mais barata da loja).
-// O robo precisa SEMPRE saber o que a loja tem — nao so quando a medida bate.
-// Inclui tambem os RECAPES (achado 01/09: 6 itens de recape, bem mais baratos que o
-// pneu novo — R$110 no aro 13 contra R$239 —, eram INVISIVEIS pro robo porque o nome
-// deles ("Aro 13", "Suv", "Vans"...) nao tem formato de medida. Cliente que achava
-// caro ia embora sem nunca ouvir a opcao mais barata da loja).
 function catalogoPorAro(): string {
   const porAro = new Map<string, string[]>();
-  const recapes: string[] = [];
   for (const item of TABELA_PRECOS_GP) {
     const partes = String(item.medida || '').split('/');
     if (partes.length !== 3) {
-      if (String(item.categoria || '') === 'recape') recapes.push(`${item.medida}: R$ ${brl(item.aVista)} a vista`);
       continue;
     }
     const aro = partes[2];
@@ -886,10 +830,6 @@ function catalogoPorAro(): string {
     'CATALOGO_COMPLETO_DA_LOJA (medidas de pneu NOVO que a loja vende, por ARO — use pra saber o que temos e oferecer SO o que serve na roda do cliente):',
     linhasAro.join('\n'),
   ];
-  if (recapes.length) {
-    blocos.push('RECAPE_DISPONIVEL (pneu recapado — BEM mais barato que o novo. Ofereca quando o cliente reclamar do preco, disser que esta caro ou pedir a opcao mais em conta. Deixe claro que e recape, nunca venda como novo):');
-    blocos.push(recapes.map((r) => '  ' + r).join('\n'));
-  }
   return blocos.join('\n');
 }
 
@@ -933,44 +873,6 @@ export function montarBriefingComercialDeterministico(texto: string): string {
 
   if (analise.semResultado.length) {
     linhas.push(`SEM_RESULTADO_LOCAL: ${analise.semResultado.join(', ')}`);
-
-    // Achado 01/09 (conversa real perdida): quando a medida exata nao existia, o robo
-    // recebia SO o "SEM_RESULTADO_LOCAL" e ficava sem saber o que a loja tem no MESMO
-    // ARO. Resultado: disse "a gente nao tem" pra um cliente de aro 14 e ainda ofereceu
-    // 165/70/13 (aro 13, que nao entra na roda dele) — sendo que a tabela tem SEIS
-    // medidas de aro 14. Agora mandamos junto as opcoes reais do mesmo aro, com preco.
-    for (const medidaSemMatch of analise.semResultado) {
-      const partesPedida = String(medidaSemMatch).split('/');
-      const larguraPedida = partesPedida[0];
-      const aro = partesPedida[2];
-      if (!aro) continue;
-
-      const mesmoAro = TABELA_PRECOS_GP.filter((item) => {
-        const p = String(item.medida || '').split('/');
-        return p.length === 3 && p[2] === aro;
-      });
-      if (!mesmoAro.length) {
-        linhas.push(`- Nao existe NENHUMA medida de aro ${aro} na tabela: seja honesto e diga que pra roda dele a loja nao tem opcao.`);
-        continue;
-      }
-
-      // Achado 01/09: o cliente pediu 175/60/14 e o robo ofereceu SO a 175/65/14,
-      // deixando de fora a 175/70/14 — que tambem e 175 de largura no aro 14 e serve
-      // igual. Aqui separamos os EQUIVALENTES DIRETOS (mesma largura + mesmo aro, so
-      // muda o perfil) das demais opcoes do mesmo aro, pra ele oferecer todas as que
-      // realmente servem.
-      const equivalentes = mesmoAro.filter((item) => String(item.medida).split('/')[0] === larguraPedida);
-      const outrasDoAro = mesmoAro.filter((item) => String(item.medida).split('/')[0] !== larguraPedida);
-
-      if (equivalentes.length) {
-        linhas.push(`EQUIVALENTES_DIRETOS_DE_${medidaSemMatch} (mesma largura ${larguraPedida} e mesmo aro ${aro} — so muda o perfil, serve no carro dele: OFERECA TODAS ESTAS):`);
-        for (const item of equivalentes) linhas.push(`  - ${resumirItemPreco(item)}`);
-      }
-      if (outrasDoAro.length) {
-        linhas.push(`OUTRAS_DO_ARO_${aro} (entram na roda dele, mas com largura diferente — ofereca so se nao houver equivalente direto ou se ele pedir mais opcoes):`);
-        for (const item of outrasDoAro) linhas.push(`  - ${resumirItemPreco(item)}`);
-      }
-    }
   }
 
   linhas.push(catalogoPorAro());
@@ -1013,12 +915,14 @@ export function montarRespostaDeterministicaPreco(texto: string, textoGatilho?: 
     return { partes, usouTabela: true };
   }
 
-  if (analise.semResultado.length) {
-    return {
-      partes: [`Nao encontrei na tabela oficial a medida ${analise.semResultado.join(', ')}. Se quiser, me manda a medida exatamente como esta no pneu que eu confiro certinho pra voce.`],
-      usouTabela: true,
-    };
-  }
+  // 09/09: aqui havia uma resposta pronta ("Nao encontrei na tabela oficial a medida X.
+  // Se quiser, me manda a medida exatamente como esta no pneu") que PEDIA A MEDIDA DE
+  // NOVO — justo a que o cliente acabou de mandar. Caso real (Paulo David, 08/09): a
+  // medida foi pedida 4x em 5 minutos, usando a propria medida dele como exemplo, e o
+  // cliente foi comprar em outro lugar. A frase ainda saia sem acento, denunciando robo.
+  // Agora devolve null: a IA assume, ja recebe SEM_RESULTADO_LOCAL + catalogo por aro no
+  // briefing, e consegue CONCLUIR (dizer que nao tem e oferecer a equivalente do mesmo aro).
+  if (analise.semResultado.length) return null;
 
   return null;
 }

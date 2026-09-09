@@ -11,7 +11,7 @@ import {
   montarRespostaDeterministicaPreco,
 } from '../data/tabelaPrecos';
 import { precosForaDaTabela, valoresEmReais } from '../data/precoGuard';
-import { prometeuTransferenciaFalsa, removerReperguntaPosPreco } from '../data/comportamentoGuard';
+import { prometeuTransferenciaFalsa, removerReperguntaPosPreco, removerRepeticaoRecente } from '../data/comportamentoGuard';
 import { lerBotPneusConfig, montarPromptAtendimentoBot } from '../services/botPneusConfig';
 
 dotenv.config();
@@ -340,6 +340,30 @@ app.post('/gerar-resposta', async (req, res) => {
     // modelo/ano/marca preferida/servico adicional depois do preco — achado em 4
     // conversas reais no mesmo dia mesmo com a regra explicita no prompt.
     partesFinais = removerReperguntaPosPreco(partesFinais);
+
+    // TRAVA DE COMPORTAMENTO 3 (09/09): nao repetir o que ja foi dito nesta conversa.
+    // Se sobrar nada, tenta de novo avisando; se ainda assim repetir, manda o que veio
+    // (ficar em silencio com o cliente esperando seria pior).
+    const jaDitas = (Array.isArray(messages) ? messages : [])
+      .filter((m: any) => m && m.role === 'assistant')
+      .map((m: any) => String(m.content || ''));
+    const semRepeticao = removerRepeticaoRecente(partesFinais, jaDitas);
+    if (semRepeticao.length) {
+      partesFinais = semRepeticao;
+    } else {
+      console.error('[BotService][TRAVA DE REPETICAO] A resposta era so repeticao do que ja foi dito — tentando de novo.');
+      const outra = await gerarRespostaViaOpenAI({
+        messages,
+        imagem,
+        audio,
+        lojas: Array.isArray(lojas) ? lojas : [],
+        briefingComercial:
+          briefingComercial +
+          '\nATENCAO: voce JA disse exatamente isso nesta conversa. Nao repita frase, pergunta nem lista que ja mandou. Avance: se ja tem a medida e o preco, chame pro fechamento (quando ele pode vir na loja). Se falta um dado essencial, faca UMA pergunta curta e diferente das anteriores.',
+      });
+      const limpa = removerRepeticaoRecente(outra.partes, jaDitas);
+      partesFinais = limpa.length ? limpa : outra.partes;
+    }
 
     res.json({ partes: partesFinais, deterministico: false });
   } catch (e: any) {

@@ -90,10 +90,9 @@ export function precosForaDaTabela(partes: string[], contexto: string): string[]
     for (let rodas = 1; rodas <= 6; rodas++) permitidos.add(cent(preco * rodas));
   }
 
-  // Recape sempre vale: e a opcao barata e nao tem medida no nome.
-  for (const item of TABELA_PRECOS_GP) {
-    if (String((item as any).categoria || '') === 'recape') valoresDoItem(item, permitidos);
-  }
+  // 09/09: a loja nao trabalha com recape (itens removidos da tabela). Antes os precos
+  // de recape entravam aqui como sempre-validos — a trava aceitava valor de um produto
+  // que a loja nao vende.
 
   if (medidas.length) {
     for (const item of TABELA_PRECOS_GP) {
@@ -101,7 +100,7 @@ export function precosForaDaTabela(partes: string[], contexto: string): string[]
     }
   } else {
     // Sem medida na conversa o robo nao deveria estar cotando. Nao barra tudo (pra nao
-    // travar respostas legitimas sobre recape ou servicos), mas aceita so o que sai da
+    // travar respostas legitimas sobre servicos), mas aceita so o que sai da
     // tabela inteira — que ja pega os casos mais grosseiros de valor inventado.
     for (const item of TABELA_PRECOS_GP) valoresDoItem(item, permitidos);
   }
@@ -111,7 +110,7 @@ export function precosForaDaTabela(partes: string[], contexto: string): string[]
   // fallback "me confirma a medida" — repetindo uma pergunta que o cliente ja tinha
   // respondido. So combina totais A VISTA (nao parcelas) pra nao inflar o conjunto.
   const itensEmJogo = TABELA_PRECOS_GP.filter((item) =>
-    String((item as any).categoria || '') === 'recape' || (medidas.length ? medidas.includes(item.medida) : true));
+    medidas.length ? medidas.includes(item.medida) : true);
   const servicos: number[] = [];
   for (const preco of PRECOS_DE_SERVICO) for (let rodas = 1; rodas <= 6; rodas++) servicos.push(preco * rodas);
   for (const item of itensEmJogo) {

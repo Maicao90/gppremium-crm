@@ -66,3 +66,41 @@ export function removerReperguntaPosPreco(partes: string[]): string[] {
   }
   return resultado;
 }
+
+// TRAVA 3 (09/09): repetir a MESMA mensagem palavra por palavra.
+// Achado nas conversas do dia: o Cesar recebeu o mesmo paragrafo de garantia, o mesmo
+// link de video e o mesmo "Quando voce consegue vir ate a loja?" duas vezes em 5
+// minutos; outro cliente recebeu a mesma frase as 13:55 e 13:56 sem ter dito nada no
+// meio. Regra em texto ("nao repita") nao segura — aqui a repeticao e cortada no codigo,
+// comparando com o que o robo JA disse nesta conversa.
+
+function normalizarParaComparar(texto: string): string {
+  return String(texto || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')   // tira acento
+    .replace(/[^a-z0-9]+/g, ' ')         // tira pontuacao/emoji
+    .trim();
+}
+
+/**
+ * Remove as partes que o robo JA mandou recentemente nesta conversa.
+ * So considera mensagens com algum corpo (>= 40 chars normalizados): confirmacoes
+ * curtas ("certo", "perfeito") podem repetir sem incomodar.
+ */
+export function removerRepeticaoRecente(partes: string[], jaDitas: string[]): string[] {
+  const recentes = new Set(
+    jaDitas
+      .slice(-8)
+      .map(normalizarParaComparar)
+      .filter((t) => t.length >= 40),
+  );
+  const saida: string[] = [];
+  for (const parte of partes) {
+    const norma = normalizarParaComparar(parte);
+    if (norma.length >= 40 && recentes.has(norma)) continue; // ja falou isso
+    saida.push(parte);
+    if (norma.length >= 40) recentes.add(norma); // nem repetir dentro do mesmo envio
+  }
+  return saida;
+}
