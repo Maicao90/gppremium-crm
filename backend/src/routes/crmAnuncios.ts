@@ -108,6 +108,24 @@ function limitesMes(mes: string): { de: string; ate: string } {
   const ultimoDia = new Date(ano, mesNum, 0).getDate();
   return { de: `${mes}-01`, ate: `${mes}-${String(ultimoDia).padStart(2, '0')}` };
 }
+// Status do saldo (09/09). Antes a tela deduzia "conta pos-paga" de saldo <= 0 — e isso
+// mentia quando o saldo simplesmente NAO PODE ser lido (ex.: cota do Google esgotada em
+// 08/09, saldo parado por mais de um dia aparecendo como pos-paga). Agora a origem do
+// numero vai junto, pra tela poder dizer o motivo em vez de inventar.
+function statusDoSaldo(conexao: any, saldo: number) {
+  if (conexao?.ultimoErro) {
+    const e = String(conexao.ultimoErro);
+    const cota = /exhaust|quota|cota/i.test(e);
+    const cred = /credenc|token|permission|incomplet/i.test(e);
+    const motivo = cota ? 'cota da API do Google esgotada — volta sozinho assim que o Google liberar'
+      : cred ? 'conexao com credencial incompleta ou sem permissao'
+      : e.slice(0, 140);
+    return { status: 'indisponivel', motivo, lidoEm: conexao.ultimaSync ?? null };
+  }
+  if (Number(saldo) > 0) return { status: 'ok', motivo: null, lidoEm: conexao?.ultimaSync ?? null };
+  return { status: 'sem_saldo', motivo: 'a plataforma nao informa saldo (conta pos-paga)', lidoEm: conexao?.ultimaSync ?? null };
+}
+
 const mesAtualStr = () => {
   const d = new Date();
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
@@ -119,10 +137,12 @@ router.get('/contas', async (_req, res) => {
     // de Google e Meta da mesma loja numa caixinha só.
     const [contas, conexoes] = await Promise.all([
       prisma.contaAnuncio.findMany({ orderBy: { created_at: 'asc' } }),
-      prisma.conexaoAds.findMany({ select: { id: true, store_id: true } }),
+      prisma.conexaoAds.findMany({ select: { id: true, store_id: true, ultimoErro: true, ultimaSync: true } }),
     ]);
     const storePorConexao: Record<string, string | null> = {};
     conexoes.forEach((cx) => { storePorConexao[cx.id] = cx.store_id ?? null; });
+  const conexaoPorId: Record<string, any> = {};
+  conexoes.forEach((cx: any) => { conexaoPorId[cx.id] = cx; });
 
     // Depósitos do MÊS ATUAL de cada conta (1 query pra todas, sem N+1) — assim o card
     // já nasce mostrando o total E o dia de cada depósito, sem precisar clicar nas
@@ -142,6 +162,7 @@ router.get('/contas', async (_req, res) => {
       ...contaOut(c),
       storeId: c.conexao_id ? (storePorConexao[c.conexao_id] ?? null) : null,
       depositoMesAtual: { mes: mesAtual, total: totalPorConta[c.id] || 0, depositos: depositosPorConta[c.id] || [] },
+      saldoInfo: statusDoSaldo(c.conexao_id ? conexaoPorId[c.conexao_id] : null, c.saldo),
     })));
   } catch (e) { erro(res, e); }
 });
