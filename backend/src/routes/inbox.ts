@@ -5,6 +5,7 @@ import { Prisma } from '@prisma/client';
 import { prisma } from '../server';
 import { numerosDasSessoesAtivas, resolverConexaoEfetiva } from '../workers/whatsappService';
 import { ehEscopado, idsAtendentesDaLoja } from '../auth/escopoLoja';
+import { ehMaster } from '../auth/modulos';
 
 const router = Router();
 
@@ -26,10 +27,31 @@ async function resolverEnviadoPorId(req: any, usuarioId: string, efetivoId: stri
   return enviadoPorId;
 }
 
-// Gerente logado só pode mexer no WhatsApp de atendentes da própria loja.
-// Retorna true se PODE seguir; se bloquear, já responde 403 e retorna false.
+// Quem pode abrir a Caixa de Entrada de QUAL atendente.
+// - master: qualquer um
+// - gerente: atendentes da propria loja
+// - operador: so acessa a PROPRIA caixa (ou a do dono do WhatsApp que ele compartilha)
+// - sem token (extensao): fluxo antigo, nao mexe
+//
+// 09/09: antes a funcao liberava TODO MUNDO que nao fosse gerente — inclusive operador.
+// Na pratica um atendente conseguia pedir ?usuarioId=<outro> e ler a caixa inteira do
+// colega. Foi o que apareceu com Daniel (Super Via) x Daniel Amaral (parceiro de seguro):
+// negocios diferentes, dados um do outro na mesma tela.
 async function permiteAtendente(req: any, res: any, usuarioId: string): Promise<boolean> {
-  if (!(await ehEscopado(req))) return true; // sem token (extensão) ou master → fluxo normal
+  const meuId = (req.user as any)?.sub;
+  if (!meuId) return true; // extensao sem token: fluxo antigo
+  const eu = await prisma.usuario.findUnique({
+    where: { id: String(meuId) },
+    select: { role: true, whatsappDonoId: true },
+  });
+  if (!eu) { res.status(403).json({ error: 'Sem acesso a este atendente.' }); return false; }
+  if (ehMaster(eu.role)) return true;
+  if (eu.role === 'operador') {
+    if (String(usuarioId) === String(meuId)) return true;
+    if (eu.whatsappDonoId && String(usuarioId) === String(eu.whatsappDonoId)) return true;
+    res.status(403).json({ error: 'Sem acesso a este atendente.' });
+    return false;
+  }
   const ids = (await idsAtendentesDaLoja(req)) || [];
   if (ids.includes(String(usuarioId))) return true;
   res.status(403).json({ error: 'Sem acesso a este atendente.' });
