@@ -42,12 +42,20 @@ router.get('/', async (req, res) => {
     if (criadoPorId && criadoPorId !== 'undefined' && criadoPorId !== 'null') {
       where.criadoPorId = String(criadoPorId);
     } else {
-      // 09/09: o parceiro TAMBEM aparece na listagem geral. Antes ele era escondido aqui,
-      // e o efeito pratico era grave: os agendamentos PENDENTES dele (mensagens que VAO ser
-      // enviadas pra cliente de verdade) ficavam invisiveis pro dono. Caso real: Daniel
-      // Amaral (parceiro, 154 agendamentos / 55 pendentes) sumia da tela, enquanto o Daniel
-      // da Super Via — outra pessoa, sem relacao — aparecia; parecia que os agendamentos
-      // tinham trocado de loja. A tela ja mostra o nome de quem criou (criadoPor).
+      // 09/09: o parceiro TAMBEM aparece na listagem geral (pro DONO). Antes ele era
+      // escondido aqui, e os agendamentos PENDENTES dele — mensagens que VAO ser enviadas
+      // pra cliente de verdade — ficavam invisiveis. Caso Daniel Amaral (154 agendamentos,
+      // 55 pendentes) sumindo da tela enquanto o Daniel da Super Via aparecia.
+      //
+      // MAS operador NAO e escopado (ehEscopado ignora role operador), entao sem esta trava
+      // ele recebia a lista de TODO MUNDO. Ao liberar o parceiro, o Daniel passou a ver os
+      // agendamentos do Daniel Amaral na area dele — dois negocios diferentes (pneu x seguro).
+      // Agora: operador so ve os proprios; gerente ve os da loja (abaixo); master ve tudo.
+      const meuId = (req.user as any)?.sub;
+      if (meuId) {
+        const eu = await prisma.usuario.findUnique({ where: { id: String(meuId) }, select: { role: true } });
+        if (eu && eu.role === 'operador') where.criadoPorId = String(meuId);
+      }
     }
 
     // Gerente logado só vê agendamentos dos atendentes da própria loja
