@@ -257,18 +257,29 @@ app.post('/gerar-resposta', async (req, res) => {
         jaFalados.map((v) => 'R$ ' + v.replace('.', ',')).join(', ') +
         '. Esses valores JA foram ditos ao cliente nesta conversa (por voce ou por um atendente). NAO passe valor diferente pra mesma coisa — o cliente vai achar que a loja mudou o preco. Se o valor que voce ia dizer nao bate com o que ja foi dito, MANTENHA o que ja foi passado. Se o cliente perguntar de novo, repita o MESMO valor. So mude se o pedido dele mudou (quantidade, medida ou forma de pagamento diferente) — e nesse caso deixe explicito o que mudou.'
       : '';
+    // 09/09 — A IA PASSA A RESPONDER TAMBEM AS COTACOES.
+    // Antes, quando a tabela batia, este caminho respondia com texto pronto e a IA NEM
+    // ERA CHAMADA: 187 das 579 respostas do robo desde 01/09 (32%) sairam assim. Esse
+    // texto pronto nao le a conversa — por isso respondia preco pra quem perguntou
+    // "aguenta quantos kg", pedia a medida que o cliente acabara de dar, e repetia a
+    // mesma frase minutos depois. Nao era falta de regra: era falta de leitura.
+    //
+    // Agora os numeros que a tabela calcularia vao pra IA como REFERENCIA CONFERIDA, e a
+    // IA escreve lendo o historico. A garantia do valor passa a ser a TRAVA DE PRECO logo
+    // abaixo (precosForaDaTabela), que ja recusa qualquer R$ que nao saia da tabela.
     const respostaDeterministica = montarRespostaDeterministicaPreco(textosCliente, gatilho);
-
-    if (respostaDeterministica?.usouTabela && respostaDeterministica.partes.length) {
-      return res.json({ partes: respostaDeterministica.partes, deterministico: true });
-    }
+    const referenciaPreco = respostaDeterministica?.partes?.length
+      ? '\nVALORES_EXATOS_PARA_ESTA_PERGUNTA (ja conferidos na tabela — use ESTES numeros, sem recalcular nada):\n'
+        + respostaDeterministica.partes.map((p) => '- ' + p).join('\n')
+        + '\nEscreva com suas palavras, respondendo o que o cliente REALMENTE perguntou e levando em conta o que ele ja disse na conversa. Se a pergunta dele nao for sobre preco, responda a pergunta dele e so cite valor se fizer sentido.'
+      : '';
 
     const resposta = await gerarRespostaViaOpenAI({
       messages,
       imagem,
       audio,
       lojas: Array.isArray(lojas) ? lojas : [],
-      briefingComercial: briefingComercial + avisoData + avisoCoerencia,
+      briefingComercial: briefingComercial + avisoData + avisoCoerencia + referenciaPreco,
     });
 
 
