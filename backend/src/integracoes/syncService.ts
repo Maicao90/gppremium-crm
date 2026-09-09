@@ -17,7 +17,14 @@ const INTERVALO_SYNC_MS = 6 * 60 * 60 * 1000;
 const ATRASO_INICIAL_MS = 90 * 1000;
 // Saldo/gasto do dia (04/09, pedido do dono da loja): roda SEPARADO da sync pesada de
 // campanhas, e bem mais rápido — é 1 chamada leve por conta, não 90 dias de métricas.
-const INTERVALO_SALDO_MS = 60 * 1000;
+// Saldo do META: a API aguenta ritmo alto, entao segue o pedido do dono (09/09): 15s.
+const INTERVALO_SALDO_META_MS = 15 * 1000;
+// Saldo do GOOGLE: o developer token esta no nivel "explorer access", cuja cota e do
+// TOKEN INTEIRO (nao por conta). O polling de 60s x 6 contas x 2 consultas dava ~17 mil
+// operacoes/dia e estourou a cota em 08/09 — resultado: saldo parado por mais de um dia.
+// A 10 min sao ~1,7 mil operacoes/dia, com folga pra sync pesada. Pra ir mais rapido que
+// isso e preciso o Google aprovar "Standard access" pro token (pedido no API Center).
+const INTERVALO_SALDO_GOOGLE_MS = 10 * 60 * 1000;
 const ATRASO_INICIAL_SALDO_MS = 15 * 1000;
 
 export interface ResultadoSync {
@@ -34,6 +41,12 @@ export async function sincronizarConexao(conexaoId: string): Promise<ResultadoSy
   try {
     conexao = await prisma.conexaoAds.findUnique({ where: { id: conexaoId } });
     if (!conexao) return { ok: false, campanhas: 0, detalhe: 'Conexão não encontrada' };
+
+    // A sync pesada tambem respeita o bloqueio de cota: sem isso ela batia 6x no Google
+    // durante a punicao e RENOVAVA o bloqueio a cada rodada (achado 09/09).
+    if (conexao.plataforma !== 'meta' && googleEstaBloqueado()) {
+      return { ok: false, campanhas: 0, detalhe: 'cota do Google esgotada — aguardando liberacao antes de tentar de novo' };
+    }
 
     // Credenciais ficam serializadas em JSON no banco
     let credenciais: any = {};
@@ -157,6 +170,7 @@ export async function sincronizarConexao(conexaoId: string): Promise<ResultadoSy
         avisos.push('plataforma não informa saldo (conta pós-paga) — saldo manual mantido, só o gasto do dia foi atualizado');
       }
     } catch (e: any) {
+      registrarBloqueioGoogle(e);
       avisos.push(`saldo da conta: ${e?.message || e}`);
     }
 
@@ -187,9 +201,27 @@ export async function sincronizarConexao(conexaoId: string): Promise<ResultadoSy
 
 // Atualiza SO saldo/gasto do dia de uma conexao — chamada leve (1 requisicao na
 // plataforma), pensada pra rodar com frequencia alta sem pesar na API nem no banco.
+// Quando o Google devolve 429 ele informa em quantos segundos podemos voltar. Respeitar
+// isso e o que faz a cota se recuperar — antes o worker ignorava e batia de novo em 60s.
+let googleBloqueadoAte = 0;
+function googleEstaBloqueado(): boolean {
+  return Date.now() < googleBloqueadoAte;
+}
+function registrarBloqueioGoogle(e: any): void {
+  if (!e?.cotaEsgotada) return;
+  const seg = Number(e.retryDelaySegundos) || 3600;
+  const ate = Date.now() + seg * 1000;
+  if (ate > googleBloqueadoAte) {
+    googleBloqueadoAte = ate;
+    console.error(`[SyncAds] Cota do Google esgotada — pausando chamadas por ${Math.round(seg / 60)} min (volta ${new Date(ate).toISOString()}).`);
+  }
+}
+
 async function atualizarSaldoConexao(conexaoId: string): Promise<void> {
   const conexao = await prisma.conexaoAds.findUnique({ where: { id: conexaoId } });
   if (!conexao) return;
+  // Cota do Google estourada: nem tenta (bater de novo so renova o bloqueio).
+  if (conexao.plataforma !== 'meta' && googleEstaBloqueado()) return;
 
   let credenciais: any = {};
   try {
@@ -221,15 +253,17 @@ async function atualizarSaldoConexao(conexaoId: string): Promise<void> {
       });
     }
   } catch (e: any) {
+    registrarBloqueioGoogle(e);
     // Silencioso de proposito: essa rodada e frequente, entao um erro passageiro (rate
     // limit, instabilidade da plataforma) nao pode virar log toda hora. Erro persistente
     // continua visivel via ultimoErro, atualizado pela sync pesada de 6h.
   }
 }
 
-async function atualizarTodosSaldos() {
+async function atualizarTodosSaldos(plataforma: 'meta' | 'google') {
   try {
-    const conexoes = await prisma.conexaoAds.findMany({ where: { ativo: true }, select: { id: true } });
+    if (plataforma === 'google' && googleEstaBloqueado()) return;
+    const conexoes = await prisma.conexaoAds.findMany({ where: { ativo: true, plataforma }, select: { id: true } });
     if (conexoes.length === 0) return;
     // Em serie, uma de cada vez: evita disparar N requisicoes simultaneas por minuto
     // contra o Meta/Google (cada conta e leve, mas juntas isso soma rate limit).
@@ -284,11 +318,15 @@ export function initSyncAds() {
   }, INTERVALO_SYNC_MS);
 
   // Saldo/gasto do dia: roda a cada 1 minuto, independente da sync pesada de campanhas.
-  console.log('[SyncAds] Atualização de saldo iniciada (a cada 1 minuto)');
+  console.log('[SyncAds] Saldo: Meta a cada 15s, Google a cada 10min (cota do token).');
   setTimeout(() => {
-    atualizarTodosSaldos().catch((e) => console.error('[SyncAds] Erro na 1ª atualização de saldo:', e));
+    atualizarTodosSaldos('meta').catch((e) => console.error('[SyncAds] Erro na 1a atualizacao de saldo (meta):', e));
+    atualizarTodosSaldos('google').catch((e) => console.error('[SyncAds] Erro na 1a atualizacao de saldo (google):', e));
   }, ATRASO_INICIAL_SALDO_MS);
   setInterval(() => {
-    atualizarTodosSaldos().catch((e) => console.error('[SyncAds] Erro na atualização de saldo:', e));
-  }, INTERVALO_SALDO_MS);
+    atualizarTodosSaldos('meta').catch((e) => console.error('[SyncAds] Erro na atualizacao de saldo (meta):', e));
+  }, INTERVALO_SALDO_META_MS);
+  setInterval(() => {
+    atualizarTodosSaldos('google').catch((e) => console.error('[SyncAds] Erro na atualizacao de saldo (google):', e));
+  }, INTERVALO_SALDO_GOOGLE_MS);
 }
