@@ -42,11 +42,12 @@ router.get('/', async (req, res) => {
     if (criadoPorId && criadoPorId !== 'undefined' && criadoPorId !== 'null') {
       where.criadoPorId = String(criadoPorId);
     } else {
-      // Listagem geral (sem um criadoPorId específico pedido) — parceiro da extensão
-      // não aparece aqui: some da lista de Agendamentos das Métricas/Disparo pra quem
-      // vê tudo (master). Quem pede o PRÓPRIO id explicitamente (parceiro ou não)
-      // continua vendo os agendamentos dele normalmente.
-      where.criadoPor = { externo: false };
+      // 09/09: o parceiro TAMBEM aparece na listagem geral. Antes ele era escondido aqui,
+      // e o efeito pratico era grave: os agendamentos PENDENTES dele (mensagens que VAO ser
+      // enviadas pra cliente de verdade) ficavam invisiveis pro dono. Caso real: Daniel
+      // Amaral (parceiro, 154 agendamentos / 55 pendentes) sumia da tela, enquanto o Daniel
+      // da Super Via — outra pessoa, sem relacao — aparecia; parecia que os agendamentos
+      // tinham trocado de loja. A tela ja mostra o nome de quem criou (criadoPor).
     }
 
     // Gerente logado só vê agendamentos dos atendentes da própria loja

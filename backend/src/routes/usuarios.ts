@@ -197,12 +197,11 @@ router.get('/metricas', requireAuth, async (req, res) => {
       dataInicio.setHours(0, 0, 0, 0);
     }
 
-    // Busca usuários ativos e inclui apenas os agendamentos do período selecionado.
-    // Gerente só vê as métricas dos atendentes da própria loja (papel/loja lidos do
-    // banco — imune a token velho de quem foi promovido a gerente após o login).
-    // externo:false — parceiro da extensão nunca aparece aqui, só no painel escondido
-    // de Parceiros (mesma regra da listagem normal de usuários, acima).
-    const whereU: any = { ativo: true, externo: false };
+    // 09/09: parceiro entra nas metricas. Ele estava fora daqui E da lista de agendamentos,
+    // entao o trabalho dele era invisivel pro dono (mesmo com dezenas de envios agendados).
+    // Continua fora da tela de Usuarios (equipe formal) — la a regra antiga faz sentido.
+    // O campo externo vai na resposta pra tela poder marcar quem e parceiro.
+    const whereU: any = { ativo: true };
     const ljMetricas = await lojaDoUsuario(req);
     if (ljMetricas) whereU.lojaId = ljMetricas;
     const usuarios = await prisma.usuario.findMany({
@@ -234,6 +233,7 @@ router.get('/metricas', requireAuth, async (req, res) => {
         nome: u.nome,
         email: u.email,
         role: u.role,
+        externo: !!u.externo,
         whatsappConectado,
         whatsappDonoId: u.whatsappDonoId ?? null,
         whatsappDonoNome: u.whatsappDonoId ? (nomesPorId[u.whatsappDonoId] || null) : null,
