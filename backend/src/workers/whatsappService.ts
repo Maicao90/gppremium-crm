@@ -621,6 +621,15 @@ function armazenarMensagemRecente(id: string, dados: { usuarioId: string; numero
 // pausam. Texto sem esse estilo (atendente humano digitando) continua pausando normal.
 const chatsComAgenteMeta = new Set<string>();
 const FINGERPRINT_META_FORTE: RegExp[] = [
+  // nossa equipe promovida a forte (09/09): sao frases que o nosso robo tem PROIBIDO
+  // dizer (nunca existe equipe por tras dele), entao numa mensagem de saida so pode ser
+  // a Meta. Antes eram so fracas (exigiam "Pneu Express" antes no mesmo chat) e 7 das 18
+  // mensagens de equipe de ontem escaparam sem rotulo.
+  /conectei\s+voc[eê]\s+(a|à|com)\s+(a\s+)?nossa\s+equipe/i,
+  /(compartilhei|enviei|repassei)\s+[^.]{0,60}(para|com)\s+(a\s+)?nossa\s+equipe/i,
+  /vou\s+conectar\s+voc[eê]\s+com\s+(a\s+)?nossa\s+equipe/i,
+  /nossa\s+equipe\s+para\s+(te\s+)?(passar|verificar|confirmar)/i,
+  /um\s+de\s+nossos\s+(consultores|especialistas)/i,
   /pneu\s*express/i,
   /meta\s+business\s+agent/i,
   /sou\s+o\s+assistente\s+da\s+\*/i,
