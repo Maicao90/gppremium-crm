@@ -9,6 +9,8 @@ import express from 'express';
 import {
   montarBriefingComercialDeterministico,
   montarRespostaDeterministicaPreco,
+  analisarConsultaPreco,
+  alternativasMesmoAro,
 } from '../data/tabelaPrecos';
 import { precosForaDaTabela, valoresEmReais } from '../data/precoGuard';
 import { prometeuTransferenciaFalsa, removerReperguntaPosPreco, removerRepeticaoRecente } from '../data/comportamentoGuard';
@@ -274,6 +276,15 @@ app.post('/gerar-resposta', async (req, res) => {
         + '\nEscreva com suas palavras, respondendo o que o cliente REALMENTE perguntou e levando em conta o que ele ja disse na conversa. Se a pergunta dele nao for sobre preco, responda a pergunta dele e so cite valor se fizer sentido.'
       : '';
 
+      // Fallback deterministico pra quando a medida realmente nao existe: em vez de pedir
+      // a medida de novo (o que virou loop real - Elvania, 10/09), oferece o que a loja
+      // TEM de verdade no mesmo aro. So usa isto se a IA falhar 2x citando preco invalido.
+      const semResultadoAgora = analisarConsultaPreco(gatilho).semResultado;
+      const alternativas = semResultadoAgora.length ? alternativasMesmoAro(semResultadoAgora[0] || '') : null;
+      const SEM_RESULTADO_FALLBACK = alternativas
+        ? `Essa medida a gente não tem, infelizmente. No mesmo aro eu tenho: ${alternativas}. Alguma dessas serve pra você?`
+        : 'Pra eu te passar o valor certinho sem risco de errar, me confirma a medida exata que esta escrita no flanco do pneu (ex.: 175/65/14)?';
+
     const resposta = await gerarRespostaViaOpenAI({
       messages,
       imagem,
@@ -313,9 +324,7 @@ app.post('/gerar-resposta', async (req, res) => {
           aindaInvalidos.join(', '),
           '| respondendo sem preco.'
         );
-        partesFinais = [
-          'Pra eu te passar o valor certinho sem risco de errar, me confirma a medida exata que esta escrita no flanco do pneu (ex.: 175/65/14)?',
-        ];
+        partesFinais = [SEM_RESULTADO_FALLBACK];
       } else {
         partesFinais = segunda.partes;
       }

@@ -625,6 +625,30 @@ export function extrairMedidasDoTexto(texto: string): string[] {
   return [...achadas];
 }
 
+// 09/09: fallback DETERMINISTICO pra quando a medida pedida nao existe. Achado real
+// (Elvania, 10/09): ela deu "225/70 aro 17" — extraido certinho, so que essa medida
+// genuinamente nao existe. O caminho ia pra IA com o catalogo do aro em maos, mas a IA
+// mesmo assim tentou inventar um preco (R$399 pro 225/70/17), a trava bloqueou 2x e
+// caiu num texto generico de "confirme a medida" — o MESMO loop que a correcao de
+// ontem tentava evitar, so que voltando por outra porta (a IA nao segue instrucao).
+// Esta funcao monta a resposta certa na mao, sem depender da IA se comportar: pega o
+// aro do que o cliente pediu e oferece ate 3 medidas REAIS que a loja tem nesse aro.
+export function alternativasMesmoAro(medidaPedida: string): string | null {
+  const aro = String(medidaPedida || '').split('/')[2];
+  if (!aro) return null;
+  const doAro = TABELA_PRECOS_GP.filter((i) => i.medida.endsWith('/' + aro) && i.medida !== medidaPedida);
+  if (!doAro.length) return null;
+  const vistas = new Set<string>();
+  const linhas: string[] = [];
+  for (const item of doAro) {
+    if (vistas.has(item.medida)) continue;
+    vistas.add(item.medida);
+    linhas.push(`${item.medida}: R$ ${brl(item.aVista)} à vista`);
+    if (linhas.length >= 3) break;
+  }
+  return linhas.length ? linhas.join('; ') : null;
+}
+
 export function analisarConsultaPreco(texto: string): AnaliseConsultaPreco {
   const medidasDetectadas = extrairMedidasDoTexto(texto);
   const matchesExatos: MatchPreco[] = [];
