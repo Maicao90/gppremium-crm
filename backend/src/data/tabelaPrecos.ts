@@ -768,7 +768,7 @@ function primeiroModelo(modelo: string): string {
 // a vista + 1 modelo (nunca a tabela inteira de 1x-10x junto). So quando o cliente
 // pede uma parcela especifica (ex.: "10x") que mostra o valor daquela parcela — e o
 // desconto a vista vem numa PARTE SEPARADA, nunca colado no mesmo bloco.
-function montarPartesPreco(item: ItemPreco, parcelaSolicitada: number | null, quantidade: number | null): string[] {
+export function montarPartesPreco(item: ItemPreco, parcelaSolicitada: number | null, quantidade: number | null): string[] {
   const modeloUnico = primeiroModelo(item.modelo);
   const qtd = quantidade && quantidade > 1 ? quantidade : 1;
   const prefixoQtd = qtd > 1 ? `${qtd} unidades ` : '';
