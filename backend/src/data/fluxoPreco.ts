@@ -45,7 +45,7 @@ export interface ResultadoDecisao {
 const PEDIR_MEDIDA_TEXTO = 'Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?';
 const SEM_ALTERNATIVA_FALLBACK = 'Pra eu te passar o valor certinho sem risco de errar, me confirma a medida exata que esta escrita no flanco do pneu (ex.: 175/65/14)?';
 
-function montarAcaoParaMedida(medida: string): { acao: AcaoPreco; novoEstado: EstadoPrecoFluxo; novosDados: DadosPrecoFluxo } {
+function montarAcaoParaMedida(medida: string): ResultadoDecisao {
   const itens = encontrarPrecosExatosPorMedida(medida);
   if (itens.length > 0) {
     // Achado 09/09 (SEJA DECISIVO): quando ha mais de um modelo pra mesma medida,
@@ -100,14 +100,44 @@ export function decidirAcaoPreco(
         };
       }
     }
+    // Fix pos-review ebbffe36 (gap de estado): cliente ja estava em
+    // medida_sem_match — a gente ja ofereceu alternativas REAIS do mesmo aro uma
+    // vez (dadosAtuais.aroSemMatch) — e manda outra pergunta de preco sem medida
+    // nova. Sem este bloco o codigo caia direto no reset generico abaixo,
+    // descartava o aroSemMatch e voltava a pedir a medida do zero, como se
+    // nenhuma alternativa tivesse sido oferecida — recorrencia leve do bug do
+    // Paulo David (cliente tem que se repetir / bot perde o fio). Re-oferece as
+    // MESMAS alternativas em vez de resetar o estado.
+    if (estadoAtual === 'medida_sem_match' && dadosAtuais.aroSemMatch) {
+      // Truque seguro: nenhum pneu real tem largura/perfil "0", entao
+      // "0/0/<aro>" nunca bate um item de verdade na tabela — alternativasMesmoAro
+      // so usa o 3o pedaco (o aro) pra filtrar, entao isso reaproveita a funcao
+      // pra listar de novo as alternativas reais desse aro sem duplicar logica.
+      const alternativas = alternativasMesmoAro(`0/0/${dadosAtuais.aroSemMatch}`);
+      if (alternativas) {
+        return {
+          acao: {
+            tipo: 'OFERECER_ALTERNATIVAS',
+            partes: [`No aro ${dadosAtuais.aroSemMatch} eu tenho: ${alternativas}. Alguma dessas serve pra você?`],
+          },
+          novoEstado: estadoAtual,
+          novosDados: dadosAtuais,
+        };
+      }
+      // Nao deveria acontecer (o aro so vira aroSemMatch se ja tinha alternativa
+      // na primeira vez), mas se a tabela mudou nesse meio-tempo e nao ha mais
+      // nada nesse aro, cai no reset generico abaixo em vez de travar.
+    }
     return {
       acao: { tipo: 'PEDIR_MEDIDA', partes: [PEDIR_MEDIDA_TEXTO] },
       novoEstado: 'aguardando_medida',
-      novosDados: dadosAtuais,
+      // aguardando_medida quer dizer "nada confirmado ainda" — nao arrasta
+      // medida/aroSemMatch velho pra um estado que promete um recomeco limpo.
+      novosDados: {},
     };
   }
 
-  if (intencao.intencao === 'RESPONDER_QUANTIDADE' && dadosAtuais.medida) {
+  if (intencao.intencao === 'RESPONDER_QUANTIDADE' && estadoAtual === 'preco_confirmado' && dadosAtuais.medida) {
     const itens = encontrarPrecosExatosPorMedida(dadosAtuais.medida);
     if (itens.length > 0) {
       return {
