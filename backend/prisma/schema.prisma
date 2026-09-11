@@ -68,9 +68,10 @@ model BotConversa {
   motivoPausa        String?
   // Fluxo deterministico de medida/preco (10/09). estadoPreco: sem_estado |
   // aguardando_medida | medida_sem_match | preco_confirmado. dadosPreco e JSON
-  // serializado (medida, precoUnitario, aroSemMatch, alternativasOferecidas) —
-  // guarda o que o fluxo ja decidiu, pra nao repetir pergunta nem inventar preco
-  // diferente se o cliente perguntar de novo depois.
+  // serializado (medida, aroSemMatch) — guarda o que o fluxo ja decidiu, pra nao
+  // repetir pergunta nem inventar preco diferente se o cliente perguntar de novo
+  // depois. Preco NUNCA fica salvo aqui — e sempre revalidado contra a tabela na
+  // hora de responder (evita responder um preco desatualizado ou inventado).
   estadoPreco        String?
   dadosPreco         String?
   atualizadoEm       DateTime  @updatedAt
