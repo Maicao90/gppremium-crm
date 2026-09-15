@@ -612,6 +612,15 @@ const WhatsAppCRM = () => {
       // Sem isso, a renovação silenciosa (a cada 6h) logaria a pessoa de volta sozinha
       // segundos depois de ela clicar em "Sair".
       localStorage.removeItem("crm_codigo_ativacao")
+      // 15/09: faltava limpar o crachá (crm_token). getTokenCrm() lê ele direto do
+      // localStorage pra assinar TODA chamada fetch/socket ao CRM — ficava valido (JWT
+      // dura 30 dias) e escondido no navegador mesmo depois do "Sair". Num computador
+      // compartilhado entre duas pessoas/negocios diferentes (ex.: Daniel x Daniel
+      // Amaral), isso e uma trava de identidade que deveria ter sumido no logout e nao
+      // sumia. Nao é a causa inteira da mistura de "meu pessoal" x "loja" (isso mora em
+      // crm_usuario_logado, que ja é limpo acima), mas é um resto de sessão que não devia
+      // sobreviver ao logout.
+      localStorage.removeItem("crm_token")
       setUsuarioLogado(null)
       setAgendamentos([])
     }
