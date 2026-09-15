@@ -45,13 +45,13 @@ export interface ResultadoDecisao {
 const PEDIR_MEDIDA_TEXTO = 'Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?';
 const SEM_ALTERNATIVA_FALLBACK = 'Pra eu te passar o valor certinho sem risco de errar, me confirma a medida exata que esta escrita no flanco do pneu (ex.: 175/65/14)?';
 
-function montarAcaoParaMedida(medida: string): ResultadoDecisao {
+function montarAcaoParaMedida(medida: string, quantidade: number | null = null): ResultadoDecisao {
   const itens = encontrarPrecosExatosPorMedida(medida);
   if (itens.length > 0) {
     // Achado 09/09 (SEJA DECISIVO): quando ha mais de um modelo pra mesma medida,
     // pega o primeiro em vez de perguntar — a loja ja escolhe por preco/uso.
     const item = itens[0]!;
-    const partes = montarPartesPreco(item, null, null);
+    const partes = montarPartesPreco(item, null, quantidade);
     return {
       acao: { tipo: 'CONFIRMAR_PRECO', partes },
       novoEstado: 'preco_confirmado',
@@ -86,7 +86,7 @@ export function decidirAcaoPreco(
   }
 
   if (intencao.intencao === 'DAR_MEDIDA' && intencao.medidaExtraida) {
-    return montarAcaoParaMedida(intencao.medidaExtraida);
+    return montarAcaoParaMedida(intencao.medidaExtraida, intencao.quantidadeExtraida);
   }
 
   if (intencao.intencao === 'PERGUNTAR_PRECO_SEM_MEDIDA') {
@@ -149,7 +149,7 @@ export function decidirAcaoPreco(
   }
 
   if (intencao.intencao === 'ESCOLHER_ALTERNATIVA' && estadoAtual === 'medida_sem_match' && intencao.escolhaAlternativa) {
-    return montarAcaoParaMedida(intencao.escolhaAlternativa);
+    return montarAcaoParaMedida(intencao.escolhaAlternativa, intencao.quantidadeExtraida);
   }
 
   // Intencao nao reconhecida dado o estado atual (ex.: RESPONDER_QUANTIDADE sem

@@ -100,5 +100,49 @@ function checar(nome: string, condicao: boolean, detalhe?: string) {
   checar('Sem medida: estado vira aguardando_medida', r.novoEstado === 'aguardando_medida');
 }
 
+// ===== Caso Stephanie (15/09, achado ao vivo apos Task 5, commit 2af2a8ad):
+// medida E quantidade na MESMA mensagem — montarAcaoParaMedida jogava a
+// quantidade fora (hardcoded montarPartesPreco(item, null, null)), entao o robo
+// cotava so o preco de 1 unidade mesmo quando o cliente ja tinha dito "quero 4"
+// junto com a medida. Mensagem real: "Aro 16 265x70 R Queria 4 pneu desse, qual
+// valor?" -> extrator acerta intencao=DAR_MEDIDA + medidaExtraida=265/70/16 +
+// quantidadeExtraida=4, mas a resposta saia so com R$559,00 (1 unidade) em vez
+// do total de 4. 265/70/16 tem 3 modelos (ATR/H-T/T-A) — montarAcaoParaMedida
+// pega itens[0] (ADVENTURE ATR, aVista=559.00), entao o total esperado pra 4
+// unidades e 4 x R$559,00 = R$2.236,00.
+{
+  const intencao: IntencaoExtraida = { intencao: 'DAR_MEDIDA', medidaExtraida: '265/70/16', quantidadeExtraida: 4, escolhaAlternativa: null };
+  const r = decidirAcaoPreco(intencao, 'sem_estado', {});
+  checar('Stephanie: CONFIRMAR_PRECO', r.acao.tipo === 'CONFIRMAR_PRECO');
+  // Ancora na frase real de montarPartesPreco pra quantidade>1 ("os N pneus"),
+  // igual ao teste de RESPONDER_QUANTIDADE acima — nao so em "R$" solto.
+  checar('Stephanie: resposta diz "os 4 pneus" (nao fica no singular "o pneu")', r.acao.tipo === 'CONFIRMAR_PRECO' && /os 4 pneus/.test(r.acao.partes.join(' ')));
+  // O bug era exatamente este: sem o fix, o total ficava R$ 559,00 (so 1
+  // unidade) em vez de 4x559 = R$ 2.236,00.
+  checar('Stephanie: preco TOTAL das 4 unidades (R$ 2.236,00), nao so a unidade (R$ 559,00)', r.acao.tipo === 'CONFIRMAR_PRECO' && /R\$ 2\.236,00/.test(r.acao.partes.join(' ')) && !/R\$ 559,00/.test(r.acao.partes.join(' ')));
+  checar('Stephanie: estado vira preco_confirmado com a medida certa', r.novoEstado === 'preco_confirmado' && r.novosDados.medida === '265/70/16');
+}
+
+// ===== ESCOLHER_ALTERNATIVA + quantidade na mesma mensagem: mesmo bug do caso
+// Stephanie, so que no segundo branch que tambem chama montarAcaoParaMedida
+// (cliente responde qual das alternativas oferecidas serve, ja dizendo quantos
+// quer, ex.: "pode ser essa de 205/50/17, quero 2") =====
+{
+  // 1o turno: medida inexistente no aro 17 -> oferece alternativas reais
+  // (a 1a da lista, por ordem da tabela, e 205/50/17 a R$339,00).
+  const intencaoMedida: IntencaoExtraida = { intencao: 'DAR_MEDIDA', medidaExtraida: '185/35/17', quantidadeExtraida: null, escolhaAlternativa: null };
+  const r1 = decidirAcaoPreco(intencaoMedida, 'sem_estado', {});
+  checar('Escolha+qtd: 1o turno realmente ofereceu 205/50/17 como alternativa', r1.acao.tipo === 'OFERECER_ALTERNATIVAS' && /205\/50\/17/.test(r1.acao.partes[0]!));
+
+  // 2o turno: cliente escolhe a alternativa E ja diz a quantidade junto.
+  const intencaoEscolha: IntencaoExtraida = { intencao: 'ESCOLHER_ALTERNATIVA', medidaExtraida: null, quantidadeExtraida: 2, escolhaAlternativa: '205/50/17' };
+  const r2 = decidirAcaoPreco(intencaoEscolha, r1.novoEstado, r1.novosDados);
+  checar('Escolha+qtd: CONFIRMAR_PRECO pra medida escolhida', r2.acao.tipo === 'CONFIRMAR_PRECO' && r2.novosDados.medida === '205/50/17');
+  checar('Escolha+qtd: resposta diz "os 2 pneus" (quantidade nao foi jogada fora)', r2.acao.tipo === 'CONFIRMAR_PRECO' && /os 2 pneus/.test(r2.acao.partes.join(' ')));
+  // 205/50/17 aVista=339,00 -> total de 2 unidades = R$ 678,00 (sem o fix ficaria
+  // R$ 339,00, so 1 unidade).
+  checar('Escolha+qtd: preco TOTAL das 2 unidades (R$ 678,00), nao so a unidade (R$ 339,00)', r2.acao.tipo === 'CONFIRMAR_PRECO' && /R\$ 678,00/.test(r2.acao.partes.join(' ')) && !/R\$ 339,00/.test(r2.acao.partes.join(' ')));
+}
+
 console.log(erros === 0 ? '\nTODOS OK' : '\n' + erros + ' ERRO(S)');
 process.exit(erros === 0 ? 0 : 1);
