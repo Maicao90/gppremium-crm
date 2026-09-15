@@ -270,10 +270,21 @@ app.post('/gerar-resposta', async (req, res) => {
     // IA escreve lendo o historico. A garantia do valor passa a ser a TRAVA DE PRECO logo
     // abaixo (precosForaDaTabela), que ja recusa qualquer R$ que nao saia da tabela.
     const respostaDeterministica = montarRespostaDeterministicaPreco(textosCliente, gatilho);
-    const referenciaPreco = respostaDeterministica?.partes?.length
+    const referenciaPrecoExata = respostaDeterministica?.partes?.length
       ? '\nVALORES_EXATOS_PARA_ESTA_PERGUNTA (ja conferidos na tabela — use ESTES numeros, sem recalcular nada):\n'
         + respostaDeterministica.partes.map((p) => '- ' + p).join('\n')
         + '\nEscreva com suas palavras, respondendo o que o cliente REALMENTE perguntou e levando em conta o que ele ja disse na conversa. Se a pergunta dele nao for sobre preco, responda a pergunta dele e so cite valor se fizer sentido.'
+      : '';
+    // Achado 15/09 (Stephanie, medida 265/70/16): quando a medida tem mais de um modelo e o
+    // cliente nunca descreveu uso/carro, a IA ficava sem NENHUMA referencia de preco pra esse
+    // caso e escolhia sozinha — errou pro modelo mais barato (H/T R$549) em vez do padrao real
+    // da loja (ATR R$559). Este segundo bloco existe SO pra cobrir esse buraco, com um preco
+    // de FALLBACK (nao mandato) — a redacao abaixo deixa explicito que a IA deve preferir as
+    // opcoes completas de MEDIDAS_COM_MAIS_DE_UM_PRECO sempre que o cliente ja tiver descrito
+    // o uso/carro em algum ponto da conversa (preserva o caso da Kombi, achado 02/09).
+    const referenciaPrecoPadraoAmbiguo = respostaDeterministica?.partesPadraoAmbiguo?.length
+      ? '\nVALOR_PADRAO_SE_MODELO_NAO_FOR_CONHECIDO (ha mais de um modelo pra esta medida — use ESTE preco SO SE o cliente NAO tiver dito em NENHUM momento da conversa qual e o uso/carro dele; se ele ja disse, escolha entre as opcoes completas listadas em MEDIDAS_COM_MAIS_DE_UM_PRECO a que realmente combina com o uso descrito, em vez deste padrao):\n'
+        + respostaDeterministica.partesPadraoAmbiguo.map((p) => '- ' + p).join('\n')
       : '';
 
       // Fallback deterministico pra quando a medida realmente nao existe: em vez de pedir
@@ -290,7 +301,7 @@ app.post('/gerar-resposta', async (req, res) => {
       imagem,
       audio,
       lojas: Array.isArray(lojas) ? lojas : [],
-      briefingComercial: briefingComercial + avisoData + avisoCoerencia + referenciaPreco,
+      briefingComercial: briefingComercial + avisoData + avisoCoerencia + referenciaPrecoExata + referenciaPrecoPadraoAmbiguo,
     });
 
 

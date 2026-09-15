@@ -34,6 +34,7 @@ export interface AnaliseConsultaPreco {
 
 export interface RespostaDeterministicaPreco {
   partes: string[];
+  partesPadraoAmbiguo: string[];
   usouTabela: boolean;
 }
 
@@ -926,17 +927,41 @@ export function montarRespostaDeterministicaPreco(texto: string, textoGatilho?: 
   // Achado 02/09: quando a mesma medida tem precos diferentes, este caminho automatico
   // respondia sozinho perguntando "qual e o carro e como voce usa?" — mesmo quando o
   // cliente JA tinha dito que era uma Kombi de carga duas mensagens antes. Ele so olha
-  // a ultima mensagem, nao a conversa. Agora devolve null e deixa a IA responder: ela
-  // le o historico inteiro, ja recebe as opcoes com preco no briefing e escolhe a certa
-  // pelo uso que o cliente descreveu — sem reperguntar o que ele ja falou.
-  if (analise.ambiguas.length) return null;
+  // a ultima mensagem, nao a conversa. Por isso medida ambigua nunca vira resposta EXATA
+  // e fechada (partes) igual medida certa — a IA sempre le o historico inteiro e pode
+  // escolher diferente do padrao abaixo quando o cliente ja descreveu o uso/carro.
+  //
+  // Achado 15/09 (Stephanie, medida 265/70/16): so devolver null pra TUDO em caso ambiguo
+  // (como era antes) deixava a IA escolhendo sozinha entre os modelos, sem nenhuma
+  // referencia de preco no briefing pra esse caso — e ela escolheu o mais barato
+  // (ADVENTURE H/T, R$549,00) em vez do padrao real da loja pra essa medida (ADVENTURE
+  // ATR, R$559,00, primeiro item na tabela). A funcionaria Josy corrigiu na hora, no mesmo
+  // chat. Isso repete o principio "SEJA DECISIVO" ja adotado em fluxoPreco.ts (09/09,
+  // reforma ainda nao em producao): quando ha mais de um modelo pra mesma medida, pega o
+  // primeiro da tabela em vez de perguntar — a loja ja escolhe por preco/uso ao ordenar os
+  // itens assim. Por isso agora montamos partesPadraoAmbiguo, SEPARADO de partes: e um
+  // padrao de baixa prioridade (fallback), nao uma resposta "exata e conferida" — o
+  // bot-service usa isso com uma instrucao explicita de que a IA deve IGNORAR este padrao
+  // e escolher entre as opcoes completas (MEDIDAS_COM_MAIS_DE_UM_PRECO no briefing, sem
+  // mudanca aqui) sempre que o cliente ja tiver descrito o uso/carro em algum ponto da
+  // conversa — preservando o caso da Kombi acima.
+  const partesPadraoAmbiguo: string[] = [];
+  for (const match of analise.ambiguas) {
+    const itemPadrao = match.itens[0];
+    if (!itemPadrao) continue;
+    partesPadraoAmbiguo.push(...montarPartesPreco(itemPadrao, parcelaSolicitada, quantidade));
+  }
 
   if (analise.matchesExatos.length) {
     const partes: string[] = [];
     for (const match of analise.matchesExatos) {
       for (const item of match.itens) partes.push(...montarPartesPreco(item, parcelaSolicitada, quantidade));
     }
-    return { partes, usouTabela: true };
+    return { partes, partesPadraoAmbiguo, usouTabela: true };
+  }
+
+  if (partesPadraoAmbiguo.length) {
+    return { partes: [], partesPadraoAmbiguo, usouTabela: false };
   }
 
   // 09/09: aqui havia uma resposta pronta ("Nao encontrei na tabela oficial a medida X.
