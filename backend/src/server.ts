@@ -12,6 +12,7 @@ import { initDisparoWorker } from './workers/disparoWorker';
 import { connectToWhatsApp, latestQR, connectedUsers, carregarPausadosDoBanco, resolverConexaoEfetiva } from './workers/whatsappService';
 import { marcarPresencaExtensao } from './services/presencaExtensao';
 import agendamentosRouter from './routes/agendamentos';
+import extensionLogsRouter from './routes/extensionLogs';
 import contatosRouter from './routes/contatos';
 import configuracoesRouter from './routes/configuracoes';
 import usuariosRouter from './routes/usuarios';
@@ -241,6 +242,7 @@ app.get(/^\/anuncios(\/.*)?$/, (req, res) => {
 // Rotas de WhatsApp/atendimento: authOpcional popula req.user quando há token
 // (gerente no painel → escopado por loja dentro dos handlers), MAS não bloqueia
 // quem chega sem token (a extensão dos atendentes continua funcionando igual).
+app.use('/api/extension-logs', extensionLogsRouter); // sem auth: extensao manda log antes de logar
 app.use('/api/agendamentos', authWhatsapp, agendamentosRouter);
 app.use('/api/contatos', authWhatsapp, contatosRouter);
 app.use('/api/configuracoes', configuracoesRouter);
@@ -340,9 +342,9 @@ io.on('connection', async (socket) => {
   console.log('Cliente conectado:', socket.id);
   
   // Registra atendente ativo no socket conectado
-  socket.on('registrar_atendente', async (usuarioId) => {
+  socket.on('registrar_atendente', async (usuarioId, versaoExtensao) => {
     const uid = String(usuarioId);
-    marcarPresencaExtensao(uid);
+    marcarPresencaExtensao(uid, versaoExtensao);
     console.log(`[Socket] Atendente ${uid} registrado no socket ${socket.id}`);
     usuariosConectados.set(socket.id, uid);
 

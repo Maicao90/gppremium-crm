@@ -9,7 +9,7 @@ import { requireAuth } from '../middlewares/requireAuth';
 import { ehMaster } from '../auth/modulos';
 import { lojaDoUsuario } from '../auth/escopoLoja';
 import { cancelarBotDoUsuario } from '../workers/botAtendimentoService';
-import { extensaoEstaOnline } from '../services/presencaExtensao';
+import { extensaoEstaOnline, obterVersaoExtensao } from '../services/presencaExtensao';
 
 const router = Router();
 
@@ -141,6 +141,7 @@ router.get('/', async (req, res) => {
       const lojaNome = u.lojaId ? (lojaNomePorId[u.lojaId] || null) : null;
       const totalMensagens = mapaMsgCount[u.id] || (u.whatsappDonoId ? mapaMsgCount[u.whatsappDonoId] || 0 : 0);
       const extensaoOnline = extensaoEstaOnline(u.id);
+      const extensaoVersao = obterVersaoExtensao(u.id);
       if (u.whatsappDonoId) {
         // Quem compartilha nunca tem whatsappConectado atualizado no próprio registro
         // (a sessão real nunca é dele) — usa somente o status ATUAL do dono em memória.
@@ -154,6 +155,7 @@ router.get('/', async (req, res) => {
           whatsappConectado: connectedUsers.has(u.whatsappDonoId),
           whatsappServidorConectado: connectedUsers.has(u.whatsappDonoId),
           extensaoOnline,
+          extensaoVersao,
           whatsappDonoNome: nomesPorId[u.whatsappDonoId] || null
         };
       }
@@ -164,6 +166,7 @@ router.get('/', async (req, res) => {
         whatsappConectado: connectedUsers.has(u.id),
         whatsappServidorConectado: connectedUsers.has(u.id),
         extensaoOnline,
+        extensaoVersao,
         whatsappDonoNome: null
       };
     });
