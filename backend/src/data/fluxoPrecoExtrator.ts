@@ -5,12 +5,37 @@ import { IntencaoExtraida, IntencaoTipo } from './fluxoPreco';
 // fixo (json_schema estrito) — nunca decide o que responder, nunca gera preco.
 // Ver docs/superpowers/specs/2026-09-10-fluxo-preco-deterministico-design.md.
 
+// ACHADO EMPIRICO (achado no review da Task 5, 15/09): com o gpt-5-mini em
+// json_schema estrito, usar os nomes REAIS da intencao ('DAR_MEDIDA',
+// 'PERGUNTAR_PRECO_SEM_MEDIDA', 'PERGUNTA_TECNICA' etc.) como os proprios
+// VALORES do enum faz o modelo classificar erroneamente mensagens de preco
+// puras e sem contexto (ex.: "quanto custa?") como PERGUNTA_TECNICA — de forma
+// reproduzivel, IGNORANDO qualquer instrucao/exemplo/ordem de decisao no
+// prompt (testado exaustivamente: instrucao minima, instrucao detalhada,
+// exemplos literais, reasoning effort alto, reordenar o enum — nada disso
+// mudou o resultado). Trocar os VALORES do enum por codigos neutros
+// (CAT_A..CAT_F), mantendo o significado so na description, resolveu 100%
+// nos testes (6/6 variantes, incluindo varias frases de preco diferentes).
+// O nome da propriedade ('intencao') nao influencia — so os valores do enum.
+// Por isso o enum abaixo usa codigos neutros, e a funcao mapeia de volta pro
+// IntencaoTipo real depois da resposta da API. NAO reverta pros nomes
+// descritivos sem re-testar — o bug volta.
+const CODIGO_PARA_INTENCAO: Record<string, IntencaoTipo> = {
+  CAT_A: 'DAR_MEDIDA',
+  CAT_B: 'PERGUNTAR_PRECO_SEM_MEDIDA',
+  CAT_C: 'RESPONDER_QUANTIDADE',
+  CAT_D: 'ESCOLHER_ALTERNATIVA',
+  CAT_E: 'PERGUNTA_TECNICA',
+  CAT_F: 'OUTRO_ASSUNTO',
+};
+
 const SCHEMA_EXTRACAO = {
   type: 'object',
   properties: {
     intencao: {
       type: 'string',
-      enum: ['DAR_MEDIDA', 'PERGUNTAR_PRECO_SEM_MEDIDA', 'RESPONDER_QUANTIDADE', 'ESCOLHER_ALTERNATIVA', 'PERGUNTA_TECNICA', 'OUTRO_ASSUNTO'],
+      enum: ['CAT_A', 'CAT_B', 'CAT_C', 'CAT_D', 'CAT_E', 'CAT_F'],
+      description: 'CAT_A = cliente informou a medida do pneu nesta mensagem (mesmo em formato estranho, tipo "16r 205 55" ou "225/70 aro 17"). CAT_B = pergunta de preco/valor SEM informar a medida nesta mensagem — inclui perguntas curtas e genericas tipo "quanto custa?", "qual o valor?", "quanto e?", "quanto fica?", "quanto ta?", "tem preco?", mesmo sem citar produto, medida ou qualquer outro detalhe; uma pergunta assim, pura e sem mais nada, e SEMPRE CAT_B. CAT_C = informou quantos pneus quer (numero de unidades), sem dar medida nova. CAT_D = esta escolhendo uma das opcoes de medida que JA foram oferecidas antes (contexto da conversa), mesmo so repetindo a medida escolhida. CAT_E = pergunta sobre uma caracteristica tecnica CONCRETA do produto que NAO e preco — exige que a mensagem cite algo especifico tipo capacidade de carga em kg, durabilidade, garantia, se e remold, material ou resistencia; sem essa caracteristica citada explicitamente, NUNCA e CAT_E, mesmo que a mensagem seja curta ou sem contexto. CAT_F = qualquer outra coisa (saudacao, agradecimento, pedir endereco, reclamacao, papo solto).',
     },
     medida_extraida: {
       type: ['string', 'null'],
@@ -29,16 +54,24 @@ const SCHEMA_EXTRACAO = {
   additionalProperties: false,
 };
 
+// IMPORTANTE: este texto NAO cita os nomes reais das intencoes (DAR_MEDIDA,
+// PERGUNTA_TECNICA etc.) de proposito — so os codigos neutros CAT_A..CAT_F,
+// que sao os mesmos usados no enum do schema. Ver comentario grande acima de
+// SCHEMA_EXTRACAO: citar os nomes descritivos aqui (mesmo so como explicacao,
+// sem serem o valor de saida) nao foi testado e e mais seguro evitar.
 const INSTRUCAO = [
-  'Voce classifica UMA mensagem de cliente de uma loja de pneus, pra um sistema que decide a resposta certa.',
-  'Categorias de intencao:',
-  '- DAR_MEDIDA: o cliente informou a medida do pneu (mesmo em formato estranho, tipo "16r 205 55" ou "225/70 aro 17").',
-  '- PERGUNTAR_PRECO_SEM_MEDIDA: pergunta de preco/valor SEM informar a medida nesta mensagem.',
-  '- RESPONDER_QUANTIDADE: informou quantos pneus quer (numero de unidades), sem dar medida nova.',
-  '- ESCOLHER_ALTERNATIVA: esta escolhendo uma das opcoes que JA foram oferecidas antes (contexto da conversa).',
-  '- PERGUNTA_TECNICA: pergunta sobre caracteristica do produto que NAO e preco (ex.: capacidade de carga em kg, durabilidade, garantia, se e remold).',
-  '- OUTRO_ASSUNTO: qualquer outra coisa (saudacao, agradecimento, pedir endereco, reclamacao, papo solto).',
-  'Na duvida entre PERGUNTA_TECNICA e as outras, prefira PERGUNTA_TECNICA — e mais seguro nao tratar como pedido de preco.',
+  'Voce classifica UMA mensagem de cliente de uma loja de pneus, pra um sistema que decide a resposta certa, usando os codigos CAT_A..CAT_F descritos no schema.',
+  'Siga esta ORDEM de verificacao e pare no PRIMEIRO item que bater — nao pule direto pra CAT_E nem trate falta de contexto como motivo pra escolher ela:',
+  '1. Existe uma lista de alternativas de medida JA oferecida no contexto da conversa (mensagem anterior do robo oferecendo mais de uma opcao), e nesta mensagem o cliente esta escolhendo uma delas — mesmo so repetindo a medida escolhida, tipo "pode ser essa de 205/55/17" ou so "205/55/17"? Se sim -> CAT_D (mesmo a mensagem contendo uma medida completa).',
+  '2. A mensagem contem uma medida completa de pneu (LARGURA/PERFIL/ARO, em qualquer formato/ordem, ex.: "16r 205 55" ou "225/70 aro 17") e o item anterior nao se aplica? Se sim -> CAT_A.',
+  '3. A mensagem so informa uma quantidade de pneus (numero de unidades), sem medida nova? Se sim -> CAT_C.',
+  '4. A mensagem cita ou pergunta EXPLICITAMENTE sobre uma caracteristica tecnica CONCRETA do produto — algo como capacidade de carga em kg, durabilidade, garantia, se e remold, material, resistencia? So marque este item se essa caracteristica especifica realmente aparecer na mensagem (nao vale so "a mensagem e curta" ou "nao tem produto citado" — isso sozinho NAO conta como caracteristica tecnica). Se bateu -> CAT_E.',
+  '5. A mensagem pergunta sobre preco/valor de qualquer forma — inclusive perguntas curtas e genericas tipo "quanto custa?", "qual o valor?", "quanto e?", "quanto fica?", "quanto ta?", "tem preco?", MESMO sem citar produto, medida ou qualquer outro detalhe? Se sim -> CAT_B. Isso e o resultado padrao pra pergunta de preco pura e sem contexto — se a mensagem tivesse uma caracteristica tecnica concreta, o item 4 ja teria capturado antes de chegar aqui.',
+  '6. Nenhum item acima bateu -> CAT_F (saudacao, agradecimento, pedir endereco, reclamacao, papo solto, etc.).',
+  'Exemplos de saida correta (formato exato esperado):',
+  'Mensagem "quanto custa?", contexto vazio -> {"intencao":"CAT_B","medida_extraida":null,"quantidade_extraida":null,"escolha_alternativa":null}',
+  'Mensagem "qual o valor?", contexto vazio -> {"intencao":"CAT_B","medida_extraida":null,"quantidade_extraida":null,"escolha_alternativa":null}',
+  'Mensagem "Ele aguenta até quantos kg", contexto com preco ja dado -> {"intencao":"CAT_E","medida_extraida":null,"quantidade_extraida":null,"escolha_alternativa":null}',
   'NUNCA calcule nem mencione preco — isso nao e sua tarefa, so classifique e extraia.',
 ].join('\n');
 
@@ -70,10 +103,10 @@ export async function extrairIntencaoPreco(
     const textoSaida = extrairTextoJson(body);
     if (!textoSaida) return null;
     const parsed = JSON.parse(textoSaida);
-    const intencoesValidas: IntencaoTipo[] = ['DAR_MEDIDA', 'PERGUNTAR_PRECO_SEM_MEDIDA', 'RESPONDER_QUANTIDADE', 'ESCOLHER_ALTERNATIVA', 'PERGUNTA_TECNICA', 'OUTRO_ASSUNTO'];
-    if (!intencoesValidas.includes(parsed.intencao)) return null;
+    const intencaoReal = CODIGO_PARA_INTENCAO[parsed.intencao];
+    if (!intencaoReal) return null;
     return {
-      intencao: parsed.intencao,
+      intencao: intencaoReal,
       medidaExtraida: typeof parsed.medida_extraida === 'string' ? parsed.medida_extraida : null,
       quantidadeExtraida: typeof parsed.quantidade_extraida === 'number' ? parsed.quantidade_extraida : null,
       escolhaAlternativa: typeof parsed.escolha_alternativa === 'string' ? parsed.escolha_alternativa : null,
