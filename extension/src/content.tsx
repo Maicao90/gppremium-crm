@@ -9,6 +9,18 @@ import Dashboard from "./components/Dashboard"
 import Configuracoes from "./components/Configuracoes"
 import MensagensRapidas from "./components/MensagensRapidas"
 
+// Versao instalada de verdade neste navegador (lida do manifest, nunca hardcoded) — usada
+// pra reportar ao servidor QUAL versao cada loja realmente esta rodando (achado 15/09: o
+// auto-update nunca chegou a ser checado por nenhum cliente real nos ultimos 14 dias de
+// log — sem isso, nao tinha como saber remotamente em qual versao alguem tava travado).
+const CRM_EXTENSAO_VERSAO = (() => {
+  try {
+    return chrome?.runtime?.getManifest?.()?.version || "desconhecida"
+  } catch {
+    return "desconhecida"
+  }
+})()
+
 // ═══ RELATOR DE CRASH GLOBAL ═══
 // Se QUALQUER erro derrubar a extensão (inclusive um crash de render do React — o
 // React 18 relança erros não-capturados pra window), manda o erro pro servidor pra
@@ -35,7 +47,7 @@ if (typeof window !== "undefined") {
     fetch("https://crm.nailacademyprofissional.com/api/extension-logs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ nivel: "info", escopo: "boot-crm", mensagem: "content.tsx CARREGOU no navegador (script rodando, build nao-minificado)" })
+      body: JSON.stringify({ nivel: "info", escopo: "boot-crm", mensagem: `content.tsx CARREGOU no navegador (versao ${CRM_EXTENSAO_VERSAO})`, versao: CRM_EXTENSAO_VERSAO })
     }).catch(() => {})
   } catch (e) {}
 }
@@ -420,7 +432,7 @@ const WhatsAppCRM = () => {
     let cancelado = false
     const tentarReconectar = async () => {
       try {
-        if (socket.connected) socket.emit("registrar_atendente", usuarioLogado.id)
+        if (socket.connected) socket.emit("registrar_atendente", usuarioLogado.id, CRM_EXTENSAO_VERSAO)
         const res = await fetch("https://crm.nailacademyprofissional.com/api/usuarios")
         if (!res.ok) return
         const lista = await res.json()
@@ -579,7 +591,7 @@ const WhatsAppCRM = () => {
       }
     }
     setUsuarioLogado(data)
-    socket.emit("registrar_atendente", data.id)
+    socket.emit("registrar_atendente", data.id, CRM_EXTENSAO_VERSAO)
     carregarAgendamentosDoServidor(data.id)
     carregarContatosDoServidor()
     setTimeout(() => solicitarExtracaoContatos(), 1500)
@@ -677,7 +689,7 @@ const WhatsAppCRM = () => {
       if (localStorage.getItem("crm_usar_assinatura_manual") === null) {
         localStorage.setItem("crm_usar_assinatura_manual", "true")
       }
-      socket.emit("registrar_atendente", usuarioLogado.id)
+      socket.emit("registrar_atendente", usuarioLogado.id, CRM_EXTENSAO_VERSAO)
       carregarAgendamentosDoServidor(usuarioLogado.id)
     } else {
       setAgendamentos([])
@@ -697,7 +709,7 @@ const WhatsAppCRM = () => {
       // tirando a extensão da tela de bloqueio sozinha assim que o servidor volta.
       const u = usuarioLogadoRef.current
       if (u && u.id) {
-        socket.emit("registrar_atendente", u.id)
+        socket.emit("registrar_atendente", u.id, CRM_EXTENSAO_VERSAO)
       }
     })
 
