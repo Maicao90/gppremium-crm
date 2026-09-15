@@ -282,8 +282,19 @@ app.post('/gerar-resposta', async (req, res) => {
     // de FALLBACK (nao mandato) — a redacao abaixo deixa explicito que a IA deve preferir as
     // opcoes completas de MEDIDAS_COM_MAIS_DE_UM_PRECO sempre que o cliente ja tiver descrito
     // o uso/carro em algum ponto da conversa (preserva o caso da Kombi, achado 02/09).
+    //
+    // Ajuste 15/09 (mesmo teste, reproduzido ao vivo): a mensagem real da Stephanie tinha
+    // "queria um custo beneficio acessivel" — SEM descrever veiculo/uso nenhum — e isso
+    // sozinho ja bastava pra IA abandonar o padrao e escolher o modelo mais barato (H/T),
+    // tratando "quero algo em conta" como se fosse "uso/carro descrito". Nao e: e so uma
+    // preferencia generica de preco, igual a de qualquer cliente. Por isso a frase abaixo
+    // agora deixa explicito que so uma descricao CONCRETA do veiculo ou de como ele vai ser
+    // usado (ex.: "e pra uma Kombi de carga", "uso urbano", "caminhonete de trabalho
+    // pesado") justifica trocar o padrao — pedir "preco bom", "algo em conta" ou "custo
+    // beneficio" sem mais contexto NAO conta, e o padrao (o modelo que a loja de fato
+    // recomenda pra essa medida) continua valendo.
     const referenciaPrecoPadraoAmbiguo = respostaDeterministica?.partesPadraoAmbiguo?.length
-      ? '\nVALOR_PADRAO_SE_MODELO_NAO_FOR_CONHECIDO (ha mais de um modelo pra esta medida — use ESTE preco SO SE o cliente NAO tiver dito em NENHUM momento da conversa qual e o uso/carro dele; se ele ja disse, escolha entre as opcoes completas listadas em MEDIDAS_COM_MAIS_DE_UM_PRECO a que realmente combina com o uso descrito, em vez deste padrao):\n'
+      ? '\nVALOR_PADRAO_SE_MODELO_NAO_FOR_CONHECIDO (ha mais de um modelo pra esta medida — este e o modelo que a LOJA recomenda por padrao pra quem nao especificou outro. Use ESTE preco A NAO SER que o cliente tenha descrito CONCRETAMENTE o veiculo dele ou como ele vai usar o pneu (ex.: tipo de carro, uso comercial/carga/urbano) em algum ponto da conversa — nesse caso, escolha entre as opcoes completas listadas em MEDIDAS_COM_MAIS_DE_UM_PRECO a que realmente combina com o uso descrito. Pedidos genericos de "preco bom", "algo em conta", "custo beneficio" ou "mais barato", SEM descrever veiculo/uso, NAO contam como uso descrito — continue usando ESTE padrao):\n'
         + respostaDeterministica.partesPadraoAmbiguo.map((p) => '- ' + p).join('\n')
       : '';
 
