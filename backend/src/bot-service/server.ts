@@ -8,13 +8,12 @@ import dotenv from 'dotenv';
 import express from 'express';
 import {
   montarBriefingComercialDeterministico,
-  montarRespostaDeterministicaPreco,
-  analisarConsultaPreco,
-  alternativasMesmoAro,
 } from '../data/tabelaPrecos';
 import { precosForaDaTabela, valoresEmReais } from '../data/precoGuard';
 import { prometeuTransferenciaFalsa, removerReperguntaPosPreco, removerRepeticaoRecente } from '../data/comportamentoGuard';
 import { lerBotPneusConfig, montarPromptAtendimentoBot } from '../services/botPneusConfig';
+import { decidirAcaoPreco, EstadoPrecoFluxo, DadosPrecoFluxo } from '../data/fluxoPreco';
+import { extrairIntencaoPreco, podeSerSobrePreco } from '../data/fluxoPrecoExtrator';
 
 dotenv.config();
 
@@ -226,6 +225,9 @@ function contextoDeData(): string {
 app.post('/gerar-resposta', async (req, res) => {
   try {
     const { messages, imagem, audio, lojas, ultimosTextosCliente } = req.body || {};
+    const estadoPrecoAtual: EstadoPrecoFluxo = (req.body?.estadoPreco as EstadoPrecoFluxo) || 'sem_estado';
+    let dadosPrecoAtuais: DadosPrecoFluxo = {};
+    try { dadosPrecoAtuais = JSON.parse(req.body?.dadosPreco || '{}'); } catch { dadosPrecoAtuais = {}; }
     if (!Array.isArray(messages)) {
       return res.status(400).json({ error: 'messages (array) e obrigatorio.' });
     }
@@ -240,6 +242,35 @@ app.post('/gerar-resposta', async (req, res) => {
       ? [...messages].reverse().find((m: any) => m?.role === 'user')
       : null;
     const gatilho = String(ultimaDoCliente?.content ?? textosCliente);
+
+    // FLUXO DETERMINISTICO DE PRECO (Camadas 1+2, Tasks 3-4, ligado aqui no Task 5). So
+    // roda se valer a pena chamar a IA extratora; se ela decidir que a mensagem e sobre
+    // medida/preco, a resposta sai 100% do codigo (motor + tabela) — nunca chega no
+    // caminho livre abaixo, que e onde a IA podia inventar numero ou escolher o modelo
+    // errado (ver commits 688b1eef/46b91911 do dia 15/09, agora supersedidos por isto
+    // pra qualquer caso que o fluxo abaixo decida tratar).
+    if (podeSerSobrePreco(gatilho, estadoPrecoAtual)) {
+      const apiKeyFluxo = process.env.OPENAI_API_KEY?.trim();
+      if (apiKeyFluxo) {
+        const contextoRecente = (Array.isArray(messages) ? messages : [])
+          .slice(-6)
+          .map((m: any) => `${m.role === 'user' ? 'CLIENTE' : 'ROBO'}: ${String(m.content || '').slice(0, 200)}`)
+          .join('\n');
+        const intencao = await extrairIntencaoPreco(gatilho, contextoRecente, apiKeyFluxo);
+        if (intencao) {
+          const decisao = decidirAcaoPreco(intencao, estadoPrecoAtual, dadosPrecoAtuais);
+          if (decisao.acao.tipo !== 'NADA') {
+            return res.json({
+              partes: decisao.acao.partes,
+              deterministico: true,
+              novoEstadoPreco: decisao.novoEstado,
+              novosDadosPreco: JSON.stringify(decisao.novosDados),
+            });
+          }
+        }
+      }
+    }
+
     const briefingComercial = montarBriefingComercialDeterministico(textosCliente);
 
     // COERENCIA DE PRECO NA MESMA CONVERSA (achado 02/09, caso real do Elan): a
@@ -259,60 +290,12 @@ app.post('/gerar-resposta', async (req, res) => {
         jaFalados.map((v) => 'R$ ' + v.replace('.', ',')).join(', ') +
         '. Esses valores JA foram ditos ao cliente nesta conversa (por voce ou por um atendente). NAO passe valor diferente pra mesma coisa — o cliente vai achar que a loja mudou o preco. Se o valor que voce ia dizer nao bate com o que ja foi dito, MANTENHA o que ja foi passado. Se o cliente perguntar de novo, repita o MESMO valor. So mude se o pedido dele mudou (quantidade, medida ou forma de pagamento diferente) — e nesse caso deixe explicito o que mudou.'
       : '';
-    // 09/09 — A IA PASSA A RESPONDER TAMBEM AS COTACOES.
-    // Antes, quando a tabela batia, este caminho respondia com texto pronto e a IA NEM
-    // ERA CHAMADA: 187 das 579 respostas do robo desde 01/09 (32%) sairam assim. Esse
-    // texto pronto nao le a conversa — por isso respondia preco pra quem perguntou
-    // "aguenta quantos kg", pedia a medida que o cliente acabara de dar, e repetia a
-    // mesma frase minutos depois. Nao era falta de regra: era falta de leitura.
-    //
-    // Agora os numeros que a tabela calcularia vao pra IA como REFERENCIA CONFERIDA, e a
-    // IA escreve lendo o historico. A garantia do valor passa a ser a TRAVA DE PRECO logo
-    // abaixo (precosForaDaTabela), que ja recusa qualquer R$ que nao saia da tabela.
-    const respostaDeterministica = montarRespostaDeterministicaPreco(textosCliente, gatilho);
-    const referenciaPrecoExata = respostaDeterministica?.partes?.length
-      ? '\nVALORES_EXATOS_PARA_ESTA_PERGUNTA (ja conferidos na tabela — use ESTES numeros, sem recalcular nada):\n'
-        + respostaDeterministica.partes.map((p) => '- ' + p).join('\n')
-        + '\nEscreva com suas palavras, respondendo o que o cliente REALMENTE perguntou e levando em conta o que ele ja disse na conversa. Se a pergunta dele nao for sobre preco, responda a pergunta dele e so cite valor se fizer sentido.'
-      : '';
-    // Achado 15/09 (Stephanie, medida 265/70/16): quando a medida tem mais de um modelo e o
-    // cliente nunca descreveu uso/carro, a IA ficava sem NENHUMA referencia de preco pra esse
-    // caso e escolhia sozinha — errou pro modelo mais barato (H/T R$549) em vez do padrao real
-    // da loja (ATR R$559). Este segundo bloco existe SO pra cobrir esse buraco, com um preco
-    // de FALLBACK (nao mandato) — a redacao abaixo deixa explicito que a IA deve preferir as
-    // opcoes completas de MEDIDAS_COM_MAIS_DE_UM_PRECO sempre que o cliente ja tiver descrito
-    // o uso/carro em algum ponto da conversa (preserva o caso da Kombi, achado 02/09).
-    //
-    // Ajuste 15/09 (mesmo teste, reproduzido ao vivo): a mensagem real da Stephanie tinha
-    // "queria um custo beneficio acessivel" — SEM descrever veiculo/uso nenhum — e isso
-    // sozinho ja bastava pra IA abandonar o padrao e escolher o modelo mais barato (H/T),
-    // tratando "quero algo em conta" como se fosse "uso/carro descrito". Nao e: e so uma
-    // preferencia generica de preco, igual a de qualquer cliente. Por isso a frase abaixo
-    // agora deixa explicito que so uma descricao CONCRETA do veiculo ou de como ele vai ser
-    // usado (ex.: "e pra uma Kombi de carga", "uso urbano", "caminhonete de trabalho
-    // pesado") justifica trocar o padrao — pedir "preco bom", "algo em conta" ou "custo
-    // beneficio" sem mais contexto NAO conta, e o padrao (o modelo que a loja de fato
-    // recomenda pra essa medida) continua valendo.
-    const referenciaPrecoPadraoAmbiguo = respostaDeterministica?.partesPadraoAmbiguo?.length
-      ? '\nVALOR_PADRAO_SE_MODELO_NAO_FOR_CONHECIDO (ha mais de um modelo pra esta medida — este e o modelo que a LOJA recomenda por padrao pra quem nao especificou outro. Use ESTE preco A NAO SER que o cliente tenha descrito CONCRETAMENTE o veiculo dele ou como ele vai usar o pneu (ex.: tipo de carro, uso comercial/carga/urbano) em algum ponto da conversa — nesse caso, escolha entre as opcoes completas listadas em MEDIDAS_COM_MAIS_DE_UM_PRECO a que realmente combina com o uso descrito. Pedidos genericos de "preco bom", "algo em conta", "custo beneficio" ou "mais barato", SEM descrever veiculo/uso, NAO contam como uso descrito — continue usando ESTE padrao):\n'
-        + respostaDeterministica.partesPadraoAmbiguo.map((p) => '- ' + p).join('\n')
-      : '';
-
-      // Fallback deterministico pra quando a medida realmente nao existe: em vez de pedir
-      // a medida de novo (o que virou loop real - Elvania, 10/09), oferece o que a loja
-      // TEM de verdade no mesmo aro. So usa isto se a IA falhar 2x citando preco invalido.
-      const semResultadoAgora = analisarConsultaPreco(gatilho).semResultado;
-      const alternativas = semResultadoAgora.length ? alternativasMesmoAro(semResultadoAgora[0] || '') : null;
-      const SEM_RESULTADO_FALLBACK = alternativas
-        ? `Essa medida a gente não tem, infelizmente. No mesmo aro eu tenho: ${alternativas}. Alguma dessas serve pra você?`
-        : 'Pra eu te passar o valor certinho sem risco de errar, me confirma a medida exata que esta escrita no flanco do pneu (ex.: 175/65/14)?';
-
     const resposta = await gerarRespostaViaOpenAI({
       messages,
       imagem,
       audio,
       lojas: Array.isArray(lojas) ? lojas : [],
-      briefingComercial: briefingComercial + avisoData + avisoCoerencia + referenciaPrecoExata + referenciaPrecoPadraoAmbiguo,
+      briefingComercial: briefingComercial + avisoData + avisoCoerencia,
     });
 
 
@@ -346,7 +329,7 @@ app.post('/gerar-resposta', async (req, res) => {
           aindaInvalidos.join(', '),
           '| respondendo sem preco.'
         );
-        partesFinais = [SEM_RESULTADO_FALLBACK];
+        partesFinais = ['Deixa eu confirmar uma coisa com você — pode repetir, por favor?'];
       } else {
         partesFinais = segunda.partes;
       }
@@ -407,7 +390,12 @@ app.post('/gerar-resposta', async (req, res) => {
       partesFinais = limpa.length ? limpa : outra.partes;
     }
 
-    res.json({ partes: partesFinais, deterministico: false });
+    res.json({
+      partes: partesFinais,
+      deterministico: false,
+      novoEstadoPreco: estadoPrecoAtual,
+      novosDadosPreco: JSON.stringify(dadosPrecoAtuais),
+    });
   } catch (e: any) {
     console.error('[BotService] Erro em /gerar-resposta:', e?.message || e);
     res.status(500).json({ error: e?.message || 'Erro interno no bot-service.' });

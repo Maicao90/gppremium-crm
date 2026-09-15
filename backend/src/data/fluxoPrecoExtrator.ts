@@ -106,10 +106,17 @@ function extrairTextoJson(payload: any): string | null {
 // Filtro barato (nao gasta chamada de IA em papo solto obviamente fora do assunto).
 // So retorna false quando tem certeza que NAO e sobre preco/medida — na duvida,
 // deixa passar pro extrator decidir (ele e mais confiavel que regex).
+// Fix pos-review Task 4: o design diz que depois do preco confirmado toda mensagem
+// nova ainda passa pela extratora (ex.: "tem algo mais em conta?" sem digito/keyword
+// nao pode escapar do fluxo). E medida falada por extenso via audio (ex.: "duzentos
+// e vinte e cinco setenta aro dezessete") tambem nao tem digito nem keyword de preco
+// — mas "aro"/"pneu(s)" sao praticamente exclusivos desse contexto (ver
+// normalizarTextoMedida em tabelaPrecos.ts, que existe justamente pra tratar essa
+// forma de entrada), entao entram como keyword de baixo risco de falso-positivo.
 export function podeSerSobrePreco(mensagem: string, estadoAtual: string): boolean {
-  if (estadoAtual === 'aguardando_medida' || estadoAtual === 'medida_sem_match') return true; // esperando resposta especifica
+  if (estadoAtual === 'aguardando_medida' || estadoAtual === 'medida_sem_match' || estadoAtual === 'preco_confirmado') return true; // esperando resposta especifica ou conversa ja em fluxo de preco
   const t = String(mensagem || '').toLowerCase();
   if (/\d/.test(t)) return true; // tem numero (pode ser medida ou quantidade)
-  if (/pre[cç]o|quanto|valor|vist[a-z]|parcel|cotar|cota[cç][aã]o/.test(t)) return true;
+  if (/pre[cç]o|quanto|valor|vist[a-z]|parcel|cotar|cota[cç][aã]o|\baro\b|\bpneus?\b/.test(t)) return true;
   return false;
 }
