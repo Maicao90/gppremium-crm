@@ -6,6 +6,7 @@ import { conferirSenha, hashSenha } from '../auth/senha';
 import { assinarToken } from '../auth/jwt';
 import { requireMaster } from '../middlewares/requireModulo';
 import { requireAuth } from '../middlewares/requireAuth';
+import { ehMaster } from '../auth/modulos';
 import { lojaDoUsuario } from '../auth/escopoLoja';
 import { cancelarBotDoUsuario } from '../workers/botAtendimentoService';
 import { extensaoEstaOnline } from '../services/presencaExtensao';
@@ -330,11 +331,25 @@ router.delete('/:id', requireMaster, async (req, res) => {
 });
 
 // Atualizar auto-resposta do atendente
-router.put('/:id/autoresposta', async (req, res) => {
+//
+// ⚠️ Achado no review de 15/09 (efeito colateral do fix do vazamento de hash de senha
+// no commit 6525149f, que corrigiu só a parte do hash e deixou esta rota pendente): não
+// tinha NENHUMA autenticação — qualquer um na internet, sem login nenhum, trocava a
+// auto-resposta (liga/desliga + texto) de QUALQUER atendente só sabendo o :id.
+// Hoje quem chama isso é só a extensão, em modo self-service (Configuracoes.tsx manda
+// sempre o PRÓPRIO usuarioLogado.id, nunca o de outra pessoa — o token vai sozinho, via
+// o monkey-patch de fetch em content.tsx). Por isso: requireAuth + só o dono da conta
+// (ou o master, mesma trava de sempre) pode mexer — dono errado leva 403, igual ao fix
+// de agendamentos.ts.
+router.put('/:id/autoresposta', requireAuth, async (req, res) => {
   try {
-    const { id } = req.params;
+    const id = String(req.params.id);
     const { autoRespostaAtiva, autoRespostaMensagem } = req.body;
-    
+
+    if (String(req.user!.sub) !== id && !ehMaster(req.user!.role)) {
+      return res.status(403).json({ error: 'Você só pode alterar a auto-resposta da própria conta.' });
+    }
+
     const usuarioAtualizado = await prisma.usuario.update({
       where: { id },
       data: {
