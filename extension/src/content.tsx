@@ -526,11 +526,45 @@ const WhatsAppCRM = () => {
     }
   }
 
+  // Detecta se este navegador JA esta logado como outra pessoa (id diferente do novo
+  // login). Achado 15/09: Daniel e Daniel Amaral (dois negocios diferentes) as vezes
+  // usam o MESMO computador; como a identidade fica em localStorage (por navegador, nao
+  // por pessoa), o login de um sobrescrevia silenciosamente a sessao do outro.
+  const identidadeAtualDivergeDeNovoLogin = (data: any): boolean => {
+    try {
+      const atualRaw = localStorage.getItem("crm_usuario_logado")
+      if (!atualRaw) return false
+      const atual = JSON.parse(atualRaw)
+      return !!(atual && atual.id && data && data.id && String(atual.id) !== String(data.id))
+    } catch {
+      return false
+    }
+  }
+
   // Aplica os dados de login (vindos de /login OU de /ativar-extensao — mesmo formato
   // de resposta) — o que TODO login precisa fazer: guardar usuário/token, reconectar o
   // socket, registrar o atendente e carregar a agenda dele. Extraído do handleLoginSubmit
   // pra não duplicar essa sequência na ativação por código.
-  const aplicarLogin = (data: any) => {
+  //
+  // opts.silencioso = true SO pra renovacao automatica de fundo (6h em 6h): ela NUNCA
+  // pode trocar de identidade sozinha sem ninguem confirmar nada — se outra pessoa
+  // logou neste navegador nesse meio tempo, so ignora e deixa a sessao dela como esta.
+  // Login/ativacao por codigo (acao explicita da pessoa) mostra confirmacao visivel
+  // em vez de trocar em silencio (achado 15/09, Daniel x Daniel Amaral).
+  const aplicarLogin = (data: any, opts: { silencioso?: boolean } = {}) => {
+    if (identidadeAtualDivergeDeNovoLogin(data)) {
+      if (opts.silencioso) return
+      let atual: any = null
+      try { atual = JSON.parse(localStorage.getItem("crm_usuario_logado") || "null") } catch {}
+      const trocar = confirm(
+        `Este navegador está conectado como ${atual?.nome || "outra pessoa"}. Trocar para ${data?.nome || "esta conta"} agora?`
+      )
+      if (!trocar) return
+      // Troca de identidade confirmada: limpa o cache pessoal do dono anterior
+      // (contatos sincronizados e atalhos rápidos) pra não vazar pra quem entra agora.
+      localStorage.removeItem("crm_contatos_acumulados")
+      localStorage.removeItem("crm_mensagens_rapidas")
+    }
     localStorage.setItem("crm_usuario_logado", JSON.stringify(data))
     if (data && data.token) {
       localStorage.setItem("crm_token", data.token)
@@ -596,7 +630,7 @@ const WhatsAppCRM = () => {
         const data = await res.json()
         // Código revogado: não insiste — limpa e deixa a tela de login normal aparecer.
         if (!res.ok) { localStorage.removeItem("crm_codigo_ativacao"); return }
-        aplicarLogin(data)
+        aplicarLogin(data, { silencioso: true })
       } catch { /* servidor fora do ar: tenta de novo no próximo ciclo, token atual segue valendo */ }
     }
     renovar()
@@ -621,6 +655,11 @@ const WhatsAppCRM = () => {
       // crm_usuario_logado, que ja é limpo acima), mas é um resto de sessão que não devia
       // sobreviver ao logout.
       localStorage.removeItem("crm_token")
+      // 15/09: cache pessoal (contatos sincronizados e atalhos rápidos) também não pode
+      // sobreviver ao logout num computador compartilhado — senão o próximo que logar
+      // ainda vê o que era do anterior, mesmo com a identidade já trocada corretamente.
+      localStorage.removeItem("crm_contatos_acumulados")
+      localStorage.removeItem("crm_mensagens_rapidas")
       setUsuarioLogado(null)
       setAgendamentos([])
     }

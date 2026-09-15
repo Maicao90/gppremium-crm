@@ -12,7 +12,19 @@ export default function Configuracoes({ onClose }) {
 
   const handleLogoutClick = () => {
     if (confirm(`Deseja realmente sair da conta de ${usuarioLogado?.nome}?`)) {
+      // 15/09: este logout (o do painel de Configurações) é uma função separada da do
+      // botão flutuante em content.tsx, e só limpava crm_usuario_logado — deixando
+      // crm_token (JWT válido por 30 dias), crm_codigo_ativacao (que a renovação
+      // automática de 6h em 6h usa pra logar de volta sozinha) e o cache pessoal
+      // (contatos, atalhos) intactos. Num computador compartilhado entre duas pessoas/
+      // negócios diferentes (ex.: Daniel x Daniel Amaral), isso deixava a sessão
+      // "vazando" mesmo depois do Sair por aqui. Alinhado com o logout de content.tsx.
       localStorage.removeItem("crm_usuario_logado")
+      localStorage.removeItem("crm_token")
+      localStorage.removeItem("crm_codigo_ativacao")
+      localStorage.removeItem("crm_nome_atendente")
+      localStorage.removeItem("crm_contatos_acumulados")
+      localStorage.removeItem("crm_mensagens_rapidas")
       setUsuarioLogado(null)
       window.location.reload()
     }
