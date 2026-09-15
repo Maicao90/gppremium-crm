@@ -5,6 +5,7 @@ import crypto from 'crypto';
 import { prisma, io } from '../server';
 import { ehEscopado, idsAtendentesDaLoja } from '../auth/escopoLoja';
 import { resolverNumeroContato } from '../utils/resolverNumeroContato';
+import { permiteAtendente } from './inbox';
 
 const router = Router();
 
@@ -40,6 +41,14 @@ router.get('/', async (req, res) => {
     const where: any = {};
 
     if (criadoPorId && criadoPorId !== 'undefined' && criadoPorId !== 'null') {
+      // 15/09: criadoPorId vindo do cliente era confiado CEGAMENTE — sem checar se quem
+      // está logado (req.user) tem permissão pra ver os agendamentos desse id. Qualquer
+      // operador autenticado conseguia ver os agendamentos de QUALQUER outro usuário só
+      // passando ?criadoPorId=<uuid> na URL — inclusive de um negócio diferente sharing o
+      // mesmo CRM (Daniel/Super Via x Daniel Amaral/seguro). Mesma trava do permiteAtendente
+      // (inbox.ts): dono do próprio id, whatsappDonoId compartilhado, master, ou atendente
+      // da própria loja (gerente) passam; senão 403 — nunca devolve dado de outro dono.
+      if (!(await permiteAtendente(req, res, String(criadoPorId)))) return;
       where.criadoPorId = String(criadoPorId);
     } else {
       // 09/09: o parceiro TAMBEM aparece na listagem geral (pro DONO). Antes ele era
@@ -87,6 +96,9 @@ router.get('/grafico', async (req, res) => {
     const where: any = { status: 'enviado', atualizadoEm: { gte: inicio } };
     const { criadoPorId } = req.query;
     if (criadoPorId && criadoPorId !== 'undefined' && criadoPorId !== 'null') {
+      // 15/09: mesma trava do GET / acima — criadoPorId do cliente não pode ser confiado
+      // sem checar se req.user tem permissão de ver os dados desse id (ver permiteAtendente).
+      if (!(await permiteAtendente(req, res, String(criadoPorId)))) return;
       where.criadoPorId = String(criadoPorId);
     }
     // Gerente só vê o gráfico dos atendentes da própria loja.

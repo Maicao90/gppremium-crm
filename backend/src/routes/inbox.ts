@@ -37,7 +37,7 @@ async function resolverEnviadoPorId(req: any, usuarioId: string, efetivoId: stri
 // Na pratica um atendente conseguia pedir ?usuarioId=<outro> e ler a caixa inteira do
 // colega. Foi o que apareceu com Daniel (Super Via) x Daniel Amaral (parceiro de seguro):
 // negocios diferentes, dados um do outro na mesma tela.
-async function permiteAtendente(req: any, res: any, usuarioId: string): Promise<boolean> {
+export async function permiteAtendente(req: any, res: any, usuarioId: string): Promise<boolean> {
   const meuId = (req.user as any)?.sub;
   if (!meuId) return true; // extensao sem token: fluxo antigo
   const eu = await prisma.usuario.findUnique({
