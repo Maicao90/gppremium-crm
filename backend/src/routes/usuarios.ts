@@ -343,7 +343,8 @@ router.put('/:id/autoresposta', async (req, res) => {
       }
     });
 
-    res.json(usuarioAtualizado);
+    const { senha: _senha, ...usuarioSemSenha } = usuarioAtualizado;
+    res.json(usuarioSemSenha);
   } catch (error) {
     console.error('Erro ao atualizar auto-resposta:', error);
     res.status(500).json({ error: 'Erro ao atualizar auto-resposta' });

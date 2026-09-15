@@ -75,7 +75,7 @@ router.get('/', async (req, res) => {
 
     const agendamentos = await prisma.agendamento.findMany({
       where,
-      include: { criadoPor: true },
+      include: { criadoPor: { select: { id: true, nome: true, email: true, role: true } } },
       orderBy: { enviarEm: 'asc' }
     });
     res.json(agendamentos);
