@@ -301,8 +301,21 @@ async function naoAtender(usuarioId: string, chatJid: string): Promise<boolean> 
     const numeros: string[] = Array.isArray(cfg?.numeros) ? cfg.numeros : [];
     const nomes: string[] = Array.isArray(cfg?.nomes) ? cfg.nomes : [];
 
+    // Achado 18/09: chatJid pode ser um @lid (id interno do WhatsApp, sem relacao
+    // numerica com o numero real) — comparar so o chatJid nunca batia com numero
+    // digitado na lista pra contatos assim. Busca tambem o numeroReal (ja resolvido
+    // e salvo nas mensagens desse chat) e confere os dois.
     const alvo = String(chatJid || '').replace(/[^0-9]/g, '');
-    if (alvo && numeros.some((n) => { const limpo = String(n).replace(/[^0-9]/g, ''); return limpo.length >= 6 && alvo.includes(limpo); })) {
+    let numeroRealAlvo = '';
+    if (chatJid.includes('@lid')) {
+      const msgComNumero = await prisma.mensagem.findFirst({
+        where: { usuarioId, chatJid, numeroReal: { not: null } },
+        orderBy: { timestamp: 'desc' },
+        select: { numeroReal: true },
+      });
+      numeroRealAlvo = String(msgComNumero?.numeroReal || '').replace(/[^0-9]/g, '');
+    }
+    if (numeros.some((n) => { const limpo = String(n).replace(/[^0-9]/g, ''); return limpo.length >= 6 && ((alvo && alvo.includes(limpo)) || (numeroRealAlvo && numeroRealAlvo.includes(limpo))); })) {
       return true;
     }
 
