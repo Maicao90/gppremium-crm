@@ -47,6 +47,8 @@ interface AgendarBotParams {
 interface RespostaBotService {
   partes: string[];
   deterministico: boolean;
+  novoEstadoPreco?: string;
+  novosDadosPreco?: string;
 }
 
 const timers = new Map<string, NodeJS.Timeout>();
@@ -135,6 +137,8 @@ async function gerarRespostaViaBotService(args: {
   audio?: any;
   lojas: Array<{ nome: string | null; cidade: string | null; estado: string | null; whatsapp: string | null; telefone_fixo: string | null }>;
   ultimosTextosCliente: string;
+  estadoPreco: string;
+  dadosPreco: string;
 }): Promise<RespostaBotService> {
   const resposta = await fetch(`${BOT_SERVICE_URL}/gerar-resposta`, {
     method: 'POST',
@@ -149,6 +153,8 @@ async function gerarRespostaViaBotService(args: {
   return {
     partes: Array.isArray(body?.partes) ? body.partes.map(String) : [],
     deterministico: !!body?.deterministico,
+    novoEstadoPreco: typeof body?.novoEstadoPreco === 'string' ? body.novoEstadoPreco : undefined,
+    novosDadosPreco: typeof body?.novosDadosPreco === 'string' ? body.novosDadosPreco : undefined,
   };
 }
 
@@ -358,6 +364,15 @@ async function executar(params: AgendarBotParams, versao: number) {
       return;
     }
 
+    // Estado do fluxo deterministico de medida/preco (Task 6): sem isso, cada
+    // mensagem chegava no bot-service como se fosse a PRIMEIRA da conversa —
+    // o fluxo nunca lembrava que ja tinha perguntado a medida ou ja tinha achado
+    // preco. Le o que ficou salvo da ultima vez pra mandar junto.
+    const estadoPrecoSalvo = await prisma.botConversa.findUnique({
+      where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
+      select: { estadoPreco: true, dadosPreco: true },
+    });
+
     const historico = await prisma.mensagem.findMany({
       where: { usuarioId: params.usuarioId, chatJid: params.chatJid },
       orderBy: { timestamp: 'desc' },
@@ -400,6 +415,8 @@ async function executar(params: AgendarBotParams, versao: number) {
       ...midia,
       lojas,
       ultimosTextosCliente,
+      estadoPreco: estadoPrecoSalvo?.estadoPreco || 'sem_estado',
+      dadosPreco: estadoPrecoSalvo?.dadosPreco || '{}',
     });
 
     if (resposta.deterministico && resposta.partes.length) {
@@ -418,10 +435,14 @@ async function executar(params: AgendarBotParams, versao: number) {
           chatJid: params.chatJid,
           ultimoInboundWaId: params.waId,
           ultimaRespostaEm: new Date(),
+          ...(resposta.novoEstadoPreco ? { estadoPreco: resposta.novoEstadoPreco } : {}),
+          ...(resposta.novosDadosPreco ? { dadosPreco: resposta.novosDadosPreco } : {}),
         },
         update: {
           ultimoInboundWaId: params.waId,
           ultimaRespostaEm: new Date(),
+          ...(resposta.novoEstadoPreco ? { estadoPreco: resposta.novoEstadoPreco } : {}),
+          ...(resposta.novosDadosPreco ? { dadosPreco: resposta.novosDadosPreco } : {}),
         },
       });
       return;
@@ -497,11 +518,15 @@ async function executar(params: AgendarBotParams, versao: number) {
         ultimoInboundWaId: params.waId,
         ultimaRespostaEm: new Date(),
         ...(transferir ? { pausadoAte: new Date(Date.now() + 120 * 60 * 1000), motivoPausa: 'transferencia_humana' } : {}),
+        ...(resposta.novoEstadoPreco ? { estadoPreco: resposta.novoEstadoPreco } : {}),
+        ...(resposta.novosDadosPreco ? { dadosPreco: resposta.novosDadosPreco } : {}),
       },
       update: {
         ultimoInboundWaId: params.waId,
         ultimaRespostaEm: new Date(),
         ...(transferir ? { pausadoAte: new Date(Date.now() + 120 * 60 * 1000), motivoPausa: 'transferencia_humana' } : {}),
+        ...(resposta.novoEstadoPreco ? { estadoPreco: resposta.novoEstadoPreco } : {}),
+        ...(resposta.novosDadosPreco ? { dadosPreco: resposta.novosDadosPreco } : {}),
       },
     });
   } catch (e) {
