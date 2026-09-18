@@ -80,6 +80,23 @@ async function carregarTextosFluxo(): Promise<Record<string, string[]>> {
   }
 }
 
+// Ha quantos minutos o pino de localizacao foi mandado NESTA conversa (pelo robo ou por um
+// atendente), olhando ate 12h atras. null = nao foi mandado (ou falha ao ler: na duvida deixa
+// mandar). Achado 18/09 (caso Marcia Lima): a IA livre repetia a marca [ENVIAR_LOCALIZACAO]
+// a cada resposta porque o cliente tinha perguntado o endereco antes — 3 pinos em 5 minutos.
+async function minutosDesdeUltimaLocalizacao(usuarioId: string, chatJid: string): Promise<number | null> {
+  try {
+    const ultima = await prisma.mensagem.findFirst({
+      where: { usuarioId, chatJid, fromMe: true, tipo: 'localizacao', timestamp: { gt: new Date(Date.now() - 12 * 60 * 60 * 1000) } },
+      orderBy: { timestamp: 'desc' },
+      select: { timestamp: true },
+    });
+    return ultima ? Math.max(0, Math.round((Date.now() - new Date(ultima.timestamp).getTime()) / 60000)) : null;
+  } catch {
+    return null;
+  }
+}
+
 async function dispararLocalizacaoDaLoja(params: AgendarBotParams) {
   const loc = lerLocalizacaoLoja();
   if (!loc) {
@@ -178,6 +195,7 @@ async function gerarRespostaViaBotService(args: {
   estadoPreco: string;
   dadosPreco: string;
   textosFluxo?: Record<string, string[]>;
+  minutosDesdeLocalizacao?: number | null;
 }): Promise<RespostaBotService> {
   const resposta = await fetch(`${BOT_SERVICE_URL}/gerar-resposta`, {
     method: 'POST',
@@ -501,6 +519,8 @@ async function executar(params: AgendarBotParams, versao: number) {
       telefone_fixo: l.telefone_fixo,
     }));
 
+    const minutosDesdeLocalizacao = await minutosDesdeUltimaLocalizacao(params.usuarioId, params.chatJid);
+
     const resposta = await gerarRespostaViaBotService({
       messages,
       ...midia,
@@ -509,6 +529,7 @@ async function executar(params: AgendarBotParams, versao: number) {
       estadoPreco: estadoPrecoSalvo?.estadoPreco || 'sem_estado',
       dadosPreco: estadoPrecoSalvo?.dadosPreco || '{}',
       textosFluxo: await carregarTextosFluxo(),
+      minutosDesdeLocalizacao,
     });
 
     if (resposta.deterministico && resposta.partes.length) {
@@ -546,6 +567,7 @@ async function executar(params: AgendarBotParams, versao: number) {
     const partes = resposta.partes.slice(0, 4);
 
     // Processa agendamento se presente
+    let pinDestaResposta = false;
     for (const p of partes) {
       // Remarketing: o robo agenda o proprio retorno quando o cliente adia.
       if (p.includes('[LEMBRAR')) {
@@ -555,7 +577,14 @@ async function executar(params: AgendarBotParams, versao: number) {
         await processarAgendamentoAutomatico(params.usuarioId, params.chatJid, p);
       }
       if (p.includes('[ENVIAR_LOCALIZACAO]')) {
-        await dispararLocalizacaoDaLoja(params);
+        // Trava de codigo: a IA livre NAO decide repetir o pino. So manda se ainda nao foi
+        // mandado nesta conversa e no maximo 1 vez por resposta.
+        if (minutosDesdeLocalizacao === null && !pinDestaResposta) {
+          pinDestaResposta = true;
+          await dispararLocalizacaoDaLoja(params);
+        } else {
+          console.log(`[Bot IA] pino de localizacao ja enviado nesta conversa (ha ${minutosDesdeLocalizacao ?? 0} min) — nao repete.`);
+        }
       }
     }
 

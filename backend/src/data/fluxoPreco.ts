@@ -82,6 +82,7 @@ export type TipoAcaoTexto =
   | 'RESPONDER_BALANCEAMENTO'
   | 'RESPONDER_ALINHAMENTO'
   | 'RESPONDER_OBJECAO'
+  | 'RESPONDER_LOCALIZACAO_REPETIDA'
   // Manda o texto E o chamador (botAtendimentoService) dispara o pino de localizacao real.
   | 'ENVIAR_LOCALIZACAO_FIXA';
 
@@ -97,6 +98,17 @@ export interface ResultadoDecisao {
   novoEstado: EstadoPrecoFluxo;
   novosDados: DadosPrecoFluxo;
 }
+
+// Fatos da conversa que quem tem banco (botAtendimentoService) sabe e este motor puro nao.
+export interface ContextoFluxo {
+  // Ha quantos minutos o pino de localizacao foi mandado nesta conversa (robo ou atendente),
+  // olhando ate 12h atras; null/ausente = ainda nao foi mandado.
+  minutosDesdeLocalizacao?: number | null;
+}
+
+// Pediu o endereco de novo dentro dessa janela: responde so em texto, nao manda o pino outra vez
+// (achado 18/09, caso Marcia Lima: 3 pinos em 5 minutos).
+const JANELA_PINO_REPETIDO_MIN = 30;
 
 const VALOR_BALANCEAMENTO_POR_RODA = 25;
 const PARCELAS_MAXIMAS = 10;
@@ -189,7 +201,8 @@ export function decidirAcaoPreco(
   intencao: IntencaoExtraida,
   estadoAtual: EstadoPrecoFluxo,
   dadosAtuais: DadosPrecoFluxo,
-  textos: TextosFluxo = {}
+  textos: TextosFluxo = {},
+  contexto: ContextoFluxo = {}
 ): ResultadoDecisao {
   const quantidadeConhecida = intencao.quantidadeExtraida ?? dadosAtuais.quantidade ?? null;
 
@@ -211,8 +224,13 @@ export function decidirAcaoPreco(
       return respostaTexto('RESPONDER_NOTA_FISCAL', textoFluxo(textos, 'nota_fiscal'), estadoAtual, dadosAtuais);
     case 'PERGUNTOU_ALINHAMENTO':
       return respostaTexto('RESPONDER_ALINHAMENTO', textoFluxo(textos, 'alinhamento'), estadoAtual, dadosAtuais);
-    case 'PEDIU_LOCALIZACAO':
+    case 'PEDIU_LOCALIZACAO': {
+      const minutos = contexto.minutosDesdeLocalizacao;
+      if (typeof minutos === 'number' && minutos < JANELA_PINO_REPETIDO_MIN) {
+        return respostaTexto('RESPONDER_LOCALIZACAO_REPETIDA', textoFluxo(textos, 'localizacao_repetida'), estadoAtual, dadosAtuais);
+      }
       return respostaTexto('ENVIAR_LOCALIZACAO_FIXA', textoFluxo(textos, 'localizacao'), estadoAtual, dadosAtuais);
+    }
     case 'OBJETOU_PRECO_OU_MARCA':
       return respostaTexto('RESPONDER_OBJECAO', textoFluxo(textos, 'objecao'), estadoAtual, dadosAtuais);
     case 'PERGUNTOU_PARCELAMENTO_GENERICO':

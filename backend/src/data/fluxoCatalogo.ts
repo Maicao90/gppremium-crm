@@ -209,6 +209,16 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     acao: 'Depois do texto, o sistema envia o pino de localização real da loja (mapa).',
   },
 
+  {
+    chave: 'localizacao_repetida',
+    grupo: 'loja',
+    titulo: 'Localização já enviada',
+    quando: 'O cliente pede o endereço de novo, e o pino da localização já foi mandado nesta conversa há menos de 30 minutos.',
+    exemplos: ['qual o endereço?', 'onde fica mesmo?'],
+    partes: ['Te mandei o pino da localização aqui em cima na conversa. A gente fica em frente ao posto de gasolina Pontão 24h Lunabel, em Novo Gama-GO.'],
+    acao: 'Só o texto: o pino NÃO é enviado de novo (o sistema nunca manda o pino repetido).',
+  },
+
   // ---------- Objecoes ----------
   {
     chave: 'objecao',

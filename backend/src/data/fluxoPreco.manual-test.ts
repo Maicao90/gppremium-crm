@@ -329,6 +329,24 @@ const ITEM_195_55_15 = encontrarPrecosExatosPorMedida('195/55/15')[0]!; // aVist
   checar('Localizacao: nao mexe no estado', r.novoEstado === 'preco_confirmado' && r.novosDados.medida === '195/55/15');
 }
 
+// ----- Localizacao repetida (caso Marcia Lima, 18/09: 3 pinos em 5 minutos) -----
+{
+  const ctx = (m: number | null) => ({ minutosDesdeLocalizacao: m });
+  const r1 = decidirAcaoPreco(intencaoDe('PEDIU_LOCALIZACAO'), 'preco_confirmado', { medida: '195/55/15' }, {}, ctx(null));
+  checar('Localizacao nunca enviada: manda o pino', r1.acao.tipo === 'ENVIAR_LOCALIZACAO_FIXA');
+  const r2 = decidirAcaoPreco(intencaoDe('PEDIU_LOCALIZACAO'), 'preco_confirmado', { medida: '195/55/15' }, {}, ctx(2));
+  checar('Pino mandado ha 2 min: NAO manda de novo, responde so em texto', r2.acao.tipo === 'RESPONDER_LOCALIZACAO_REPETIDA' && /pino da localização aqui em cima/i.test(textoDe(r2)) && /Pont[aã]o/.test(textoDe(r2)), textoDe(r2));
+  checar('Localizacao repetida: nao mexe no estado', r2.novoEstado === 'preco_confirmado' && r2.novosDados.medida === '195/55/15');
+  const r3 = decidirAcaoPreco(intencaoDe('PEDIU_LOCALIZACAO'), 'sem_estado', {}, {}, ctx(29));
+  checar('Pino mandado ha 29 min: ainda nao repete', r3.acao.tipo === 'RESPONDER_LOCALIZACAO_REPETIDA');
+  const r4 = decidirAcaoPreco(intencaoDe('PEDIU_LOCALIZACAO'), 'sem_estado', {}, {}, ctx(45));
+  checar('Pino mandado ha 45 min e o cliente pediu de novo: pode mandar', r4.acao.tipo === 'ENVIAR_LOCALIZACAO_FIXA');
+  const r5 = decidirAcaoPreco(intencaoDe('PEDIU_LOCALIZACAO'), 'sem_estado', {});
+  checar('Sem contexto (padrao): manda o pino', r5.acao.tipo === 'ENVIAR_LOCALIZACAO_FIXA');
+  const r6 = decidirAcaoPreco(intencaoDe('PEDIU_LOCALIZACAO'), 'sem_estado', {}, { localizacao_repetida: ['Editado pelo dono.'] }, ctx(1));
+  checar('Localizacao repetida: texto editavel pela tela Fluxo', textoDe(r6) === 'Editado pelo dono.');
+}
+
 // ----- Objecao de preco/marca: resposta propria (nao repete o bloco de preco) -----
 {
   const r = decidirAcaoPreco(intencaoDe('OBJETOU_PRECO_OU_MARCA'), 'preco_confirmado', { medida: '195/55/15' });
@@ -380,7 +398,7 @@ const ITEM_195_55_15 = encontrarPrecosExatosPorMedida('195/55/15')[0]!; // aVist
 {
   const chaves = CATALOGO_FLUXO.map((c) => c.chave);
   checar('Catalogo: chaves unicas', new Set(chaves).size === chaves.length);
-  const usadas = ['pedir_medida', 'sem_alternativa', 'remold', 'chines', 'juros', 'base_troca', 'compra_usado', 'nota_fiscal', 'alinhamento', 'localizacao', 'objecao', 'parcelamento_generico', 'parcelamento_maximo', 'desconto_pix', 'balanceamento', 'balanceamento_quantidade'];
+  const usadas = ['pedir_medida', 'sem_alternativa', 'remold', 'chines', 'juros', 'base_troca', 'compra_usado', 'nota_fiscal', 'alinhamento', 'localizacao', 'localizacao_repetida', 'objecao', 'parcelamento_generico', 'parcelamento_maximo', 'desconto_pix', 'balanceamento', 'balanceamento_quantidade'];
   checar('Catalogo: toda chave usada pelo motor existe e tem texto padrao', usadas.every((k) => (TEXTOS_PADRAO[k] || []).length > 0), usadas.filter((k) => !(TEXTOS_PADRAO[k] || []).length).join(','));
   const ruins = CATALOGO_FLUXO.filter((c) => c.partes && validarTextoFluxo(c.chave, c.partes).length > 0).map((c) => c.chave);
   checar('Catalogo: TODO texto padrao passa na propria validacao (nao tem "sem juros", tag, meta-texto)', ruins.length === 0, ruins.join(','));
