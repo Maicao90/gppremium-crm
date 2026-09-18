@@ -1520,6 +1520,11 @@ export async function connectToWhatsApp(
           enviarParte: (texto, tempo) => enviarParteBotIA(usuarioId, remoteJid, numeroRecep, texto, tempo),
           enviarVideo: (video, tempo) => enviarMidiaBotIA(usuarioId, remoteJid, numeroRecep, video as MidiaBotIA, tempo),
           enviarLocalizacao: (lat, lng, nome, endereco) => enviarLocalizacaoBotIA(usuarioId, remoteJid, numeroRecep, lat, lng, nome, endereco),
+          // Achado 18/09: usado so pra decidir o TAMANHO da espera do debounce
+          // (caso real do Gustavo Souza — imagem do anuncio sem medida na legenda
+          // pede mais tempo antes do bot responder).
+          ultimoTipo: _tipoMsg,
+          ultimoTextoTemMedida: /\d{3}\s*[\/\-]\s*\d{2}/.test(_textoMsg),
         });
         return;
       }

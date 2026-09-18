@@ -43,6 +43,11 @@ interface AgendarBotParams {
   enviarParte: EnviarParte;
   enviarVideo: EnviarVideo;
   enviarLocalizacao: EnviarLocalizacao;
+  // Tipo/conteudo da mensagem que disparou este agendamento (opcional — so quem
+  // ja calculou isso, hoje so o handler de mensagem recebida em whatsappService.ts,
+  // manda). Usado so pra decidir o TAMANHO da espera do debounce (achado 18/09).
+  ultimoTipo?: string;
+  ultimoTextoTemMedida?: boolean;
 }
 
 interface RespostaBotService {
@@ -427,6 +432,30 @@ async function executar(params: AgendarBotParams, versao: number) {
       .join('\n');
     const midia = midiaDaUltima(ultima);
 
+    // Guarda contra corrida (achado 18/09, caso real do Gustavo Souza — 556181084128):
+    // o cliente mandou a foto do anuncio e, 13,9s depois, a medida "225/45 17" numa
+    // mensagem SEPARADA. O timer disparado pela foto ja estava rodando quando a medida
+    // foi salva no banco, entao o historico lido acima nao a continha e o bot respondeu
+    // com a lista generica por aro. Se uma mensagem do cliente ja chegou DEPOIS do
+    // snapshot que acabamos de ler (mesmo que o agendamento dela ainda nao tenha
+    // disparado), nao responde agora com um retrato desatualizado — reagenda (o novo
+    // timer vai ler o historico de novo, ja com a mensagem nova dentro) e para por aqui.
+    const ultimaDoSnapshot = historico[historico.length - 1];
+    if (ultimaDoSnapshot) {
+      const novaMsgDepoisDoSnapshot = await prisma.mensagem.count({
+        where: {
+          usuarioId: params.usuarioId,
+          chatJid: params.chatJid,
+          fromMe: false,
+          timestamp: { gt: ultimaDoSnapshot.timestamp },
+        },
+      });
+      if (novaMsgDepoisDoSnapshot > 0) {
+        agendarRespostaBotIA(params).catch((e) => console.error('[Bot IA] reagendar (contexto desatualizado):', e));
+        return;
+      }
+    }
+
     const lojasBrutas = await prisma.loja.findMany({
       select: { store_name: true, city: true, state: true, whatsapp: true, telefone_fixo: true },
     });
@@ -579,8 +608,14 @@ export async function agendarRespostaBotIA(params: AgendarBotParams) {
     update: { ultimoInboundWaId: params.waId },
   });
 
-  // Agrupa a rajada natural do cliente antes de consultar a IA.
-  const espera = 5500 + Math.floor(Math.random() * 3000);
+  // Agrupa a rajada natural do cliente antes de consultar a IA. Quando a ultima
+  // mensagem e uma imagem sem medida no texto (cara de clique em anuncio — o cliente
+  // ainda vai olhar o flanco do pneu e digitar a medida), da mais tempo: nos casos
+  // reais levou entre 8 e 25s (achado 18/09, caso do Gustavo Souza).
+  const esperaMaiorAnuncioSemMedida = params.ultimoTipo === 'imagem' && !params.ultimoTextoTemMedida;
+  const espera = esperaMaiorAnuncioSemMedida
+    ? 12000 + Math.floor(Math.random() * 4000)
+    : 5500 + Math.floor(Math.random() * 3000);
   const timer = setTimeout(() => {
     timers.delete(key);
     executar(params, atual).catch((e) => console.error('[Bot IA] executar:', e));
