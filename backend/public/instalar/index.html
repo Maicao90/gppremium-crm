@@ -80,13 +80,6 @@
   .passo-texto { color: var(--texto-muted); font-size: 0.86rem; line-height: 1.5; margin: 0 0 10px; }
   .passo-texto strong { color: var(--texto); }
 
-  details {
-    background: var(--card); border: 1px solid var(--borda); border-radius: 16px;
-    padding: 16px 20px; margin-top: 20px;
-  }
-  summary { cursor: pointer; font-weight: 600; font-size: 0.9rem; }
-  details p { color: var(--texto-muted); font-size: 0.85rem; line-height: 1.6; }
-
   .rodape { text-align: center; color: var(--texto-muted); font-size: 0.78rem; margin-top: 32px; }
   .copiado { color: #22c55e; }
 </style>
@@ -120,55 +113,52 @@
     <div class="passo">
       <div class="passo-num">1</div>
       <div class="passo-corpo">
-        <p class="passo-titulo">Baixe e instale (automático)</p>
-        <p class="passo-texto">Clique no botão abaixo. O Windows vai perguntar se pode adicionar as informações ao registro — clique em <strong>"Sim"</strong>. Isso NÃO instala nenhum programa, só avisa o Chrome pra buscar a extensão sozinho.</p>
-        <a class="btn btn-primario" href="/ext/instalar-extensao-gp.reg" download>⬇️ Baixar instalador</a>
+        <p class="passo-titulo">Baixe a extensão</p>
+        <p class="passo-texto">Baixe o arquivo da extensão GP Premium CRM e, quando terminar, <strong>extraia o ZIP</strong> para uma pasta do computador.</p>
+        <a class="btn btn-primario" href="/ext/gp-premium-crm-1.0.24.zip" download="gp-premium-crm-1.0.24.zip">⬇️ Baixar extensão v1.0.24</a>
       </div>
     </div>
 
     <div class="passo">
       <div class="passo-num">2</div>
       <div class="passo-corpo">
-        <p class="passo-titulo">Feche o Chrome e abra de novo</p>
-        <p class="passo-texto">Feche <strong>todas</strong> as janelas do Google Chrome (não só uma aba) e abra ele de novo. A extensão aparece sozinha em alguns segundos — não precisa fazer mais nada nessa parte.</p>
+        <p class="passo-titulo">Abra as extensões do Chrome</p>
+        <p class="passo-texto">Digite <strong>chrome://extensions</strong> na barra de endereço do Google Chrome e pressione Enter.</p>
       </div>
     </div>
 
     <div class="passo">
       <div class="passo-num">3</div>
       <div class="passo-corpo">
-        <p class="passo-titulo">Abra o WhatsApp Web</p>
-        <p class="passo-texto">Vá em <strong>web.whatsapp.com</strong> e escaneie o QR Code com o WhatsApp do seu celular, como você já faz normalmente.</p>
-        <a class="btn btn-secundario" href="https://web.whatsapp.com" target="_blank" rel="noopener">Abrir WhatsApp Web</a>
+        <p class="passo-titulo">Ative o modo do desenvolvedor</p>
+        <p class="passo-texto">Na tela de extensões, ative o <strong>"Modo do desenvolvedor"</strong> no canto superior direito.</p>
       </div>
     </div>
 
     <div class="passo">
       <div class="passo-num">4</div>
       <div class="passo-corpo">
-        <p class="passo-titulo">Ative com o código</p>
-        <p class="passo-texto">Vai aparecer uma tela pedindo login. Clique em <strong>"Tenho um código de ativação"</strong> e cole o código lá em cima. Depois disso não precisa fazer login de novo, nunca mais.</p>
+        <p class="passo-titulo">Carregue a extensão</p>
+        <p class="passo-texto">Clique em <strong>"Carregar sem compactação"</strong> e escolha a pasta que você extraiu. Selecione a pasta onde está o arquivo <strong>manifest.json</strong>.</p>
       </div>
     </div>
 
     <div class="passo">
       <div class="passo-num">5</div>
       <div class="passo-corpo">
-        <p class="passo-titulo">Opcional: ativar "Agendar mensagem"</p>
-        <p class="passo-texto">Se você quiser <strong>agendar</strong> uma mensagem pra ser enviada mais tarde (mesmo com o computador desligado), tem mais um passo. Clique no ícone de <strong>⚙️ Configurações</strong> da extensão → seção <strong>"Agendamento"</strong> → coloque seu número e siga a instrução na tela. Se você só vai usar o dia a dia normal, pode pular esse passo.</p>
+        <p class="passo-titulo">Abra o WhatsApp Web</p>
+        <p class="passo-texto">Vá em <strong>web.whatsapp.com</strong>. A extensão GP Premium CRM aparecerá dentro do WhatsApp.</p>
+        <a class="btn btn-secundario" href="https://web.whatsapp.com" target="_blank" rel="noopener">Abrir WhatsApp Web</a>
       </div>
     </div>
 
-    <details>
-      <summary>Não é Windows, ou o passo 1 não funcionou?</summary>
-      <p>Baixe a extensão em formato de pasta e instale manualmente:</p>
-      <p>1) <a href="/ext/gppremium-extensao-manual.zip" style="color:#8ab4ff;" download>Baixe o arquivo .zip aqui</a> e extraia a pasta.<br>
-      2) No Chrome, digite <strong>chrome://extensions</strong> na barra de endereço.<br>
-      3) Ative o <strong>"Modo do desenvolvedor"</strong> (canto superior direito).<br>
-      4) Clique em <strong>"Carregar sem compactação"</strong> e escolha a pasta extraída.<br>
-      5) Siga os passos 3 e 4 acima normalmente.</p>
-      <p style="margin-top:10px;">⚠️ Esse jeito manual não atualiza sozinho — de vez em quando pode ser preciso repetir com uma pasta nova.</p>
-    </details>
+    <div class="passo">
+      <div class="passo-num">6</div>
+      <div class="passo-corpo">
+        <p class="passo-titulo">Ative com o código</p>
+        <p class="passo-texto">Na tela da extensão, clique em <strong>"Tenho um código de ativação"</strong>, cole o código mostrado no começo desta página e confirme.</p>
+      </div>
+    </div>
 
     <p class="rodape">Extensão oficial GP Premium · Se você não pediu isso, pode ignorar esta página.</p>
   </div>
