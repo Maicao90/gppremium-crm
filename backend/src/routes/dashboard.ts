@@ -54,7 +54,13 @@ router.get('/resumo', async (req, res) => {
     const lojaNomePorId: Record<string, string> = {};
     lojas.forEach((l) => { lojaNomePorId[l.id] = l.store_name; });
 
+    // Achado 18/09: contas administrativas/utilitarias (Administrador Master, Conta
+    // Demonstracao, conta pessoal do dev) nao tem loja vinculada e nunca vao ter WhatsApp
+    // conectado de proposito — apareciam aqui como se fossem "loja desconectada", o que nao
+    // fazia sentido ("Precisa de voce hoje" alertando pra contas que nunca vao conectar).
+    // So conta como alerta real quem esta de fato vinculado a uma loja.
     const whatsappCaidos = conexoesReais
+      .filter((u) => !!u.lojaId)
       .filter((u) => !connectedUsers.has(u.id))
       .map((u) => ({
         nome: u.nome,
