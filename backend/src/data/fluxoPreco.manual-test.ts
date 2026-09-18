@@ -144,5 +144,21 @@ function checar(nome: string, condicao: boolean, detalhe?: string) {
   checar('Escolha+qtd: preco TOTAL das 2 unidades (R$ 678,00), nao so a unidade (R$ 339,00)', r2.acao.tipo === 'CONFIRMAR_PRECO' && /R\$ 678,00/.test(r2.acao.partes.join(' ')) && !/R\$ 339,00/.test(r2.acao.partes.join(' ')));
 }
 
+// ===== Pergunta se é remold (18/09): confirma (nunca nega), cita os fatos certos, e
+// NUNCA mexe no estado/dados do fluxo de preco em andamento (mesmo tratamento de
+// PERGUNTA_TECNICA acima) =====
+{
+  const intencao: IntencaoExtraida = { intencao: 'PERGUNTOU_SE_E_REMOLD', medidaExtraida: null, quantidadeExtraida: null, escolhaAlternativa: null };
+  const r = decidirAcaoPreco(intencao, 'preco_confirmado', { medida: '215/65/16' });
+  const texto = r.acao.tipo === 'RESPONDER_REMOLD' ? r.acao.partes.join(' ') : '';
+  checar('Remold: RESPONDER_REMOLD', r.acao.tipo === 'RESPONDER_REMOLD');
+  checar('Remold: nao perde o estado/dados salvos (igual PERGUNTA_TECNICA)', r.novoEstado === 'preco_confirmado' && r.novosDados.medida === '215/65/16');
+  checar('Remold: confirma que e remold (nunca nega)', /remold/i.test(texto));
+  checar('Remold: cita borracha padrao europeu', /europeu/i.test(texto));
+  checar('Remold: cita garantia de 50 mil km', /50 mil/i.test(texto));
+  checar('Remold: cita dinheiro de volta', /dinheiro de volta/i.test(texto));
+  checar('Remold: NUNCA nega que e remold (guarda contra a framing antiga/falsa)', !/n[aã]o[,]?\s*n[aã]o é remold|nunca remold|pneu novo/i.test(texto));
+}
+
 console.log(erros === 0 ? '\nTODOS OK' : '\n' + erros + ' ERRO(S)');
 process.exit(erros === 0 ? 0 : 1);

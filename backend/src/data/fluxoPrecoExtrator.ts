@@ -27,6 +27,9 @@ const CODIGO_PARA_INTENCAO: Record<string, IntencaoTipo> = {
   CAT_D: 'ESCOLHER_ALTERNATIVA',
   CAT_E: 'PERGUNTA_TECNICA',
   CAT_F: 'OUTRO_ASSUNTO',
+  // CAT_G adicionado 18/09 (pergunta se e remold) — mesma logica de codigo opaco acima:
+  // NAO renomear pro nome real no enum/schema, so aqui no mapa de volta.
+  CAT_G: 'PERGUNTOU_SE_E_REMOLD',
 };
 
 const SCHEMA_EXTRACAO = {
@@ -34,8 +37,8 @@ const SCHEMA_EXTRACAO = {
   properties: {
     intencao: {
       type: 'string',
-      enum: ['CAT_A', 'CAT_B', 'CAT_C', 'CAT_D', 'CAT_E', 'CAT_F'],
-      description: 'CAT_A = cliente informou a medida do pneu nesta mensagem (mesmo em formato estranho, tipo "16r 205 55" ou "225/70 aro 17"). CAT_B = pergunta de preco/valor SEM informar a medida nesta mensagem — inclui perguntas curtas e genericas tipo "quanto custa?", "qual o valor?", "quanto e?", "quanto fica?", "quanto ta?", "tem preco?", mesmo sem citar produto, medida ou qualquer outro detalhe; uma pergunta assim, pura e sem mais nada, e SEMPRE CAT_B. CAT_C = informou quantos pneus quer (numero de unidades), sem dar medida nova. CAT_D = esta escolhendo uma das opcoes de medida que JA foram oferecidas antes (contexto da conversa), mesmo so repetindo a medida escolhida. CAT_E = pergunta sobre uma caracteristica tecnica CONCRETA do produto que NAO e preco — exige que a mensagem cite algo especifico tipo capacidade de carga em kg, durabilidade, garantia, se e remold, material ou resistencia; sem essa caracteristica citada explicitamente, NUNCA e CAT_E, mesmo que a mensagem seja curta ou sem contexto. CAT_F = qualquer outra coisa (saudacao, agradecimento, pedir endereco, reclamacao, papo solto).',
+      enum: ['CAT_A', 'CAT_B', 'CAT_C', 'CAT_D', 'CAT_E', 'CAT_F', 'CAT_G'],
+      description: 'CAT_A = cliente informou a medida do pneu nesta mensagem (mesmo em formato estranho, tipo "16r 205 55" ou "225/70 aro 17"). CAT_B = pergunta de preco/valor SEM informar a medida nesta mensagem — inclui perguntas curtas e genericas tipo "quanto custa?", "qual o valor?", "quanto e?", "quanto fica?", "quanto ta?", "tem preco?", mesmo sem citar produto, medida ou qualquer outro detalhe; uma pergunta assim, pura e sem mais nada, e SEMPRE CAT_B — MAS se a mensagem tambem desconfiar/perguntar sobre remold/procedencia, e CAT_G, nao CAT_B. CAT_C = informou quantos pneus quer (numero de unidades), sem dar medida nova. CAT_D = esta escolhendo uma das opcoes de medida que JA foram oferecidas antes (contexto da conversa), mesmo so repetindo a medida escolhida. CAT_E = pergunta sobre uma caracteristica tecnica CONCRETA do produto que NAO e preco e NAO e sobre remold/procedencia — exige que a mensagem cite algo especifico tipo capacidade de carga em kg, durabilidade, garantia, material ou resistencia; sem essa caracteristica citada explicitamente, NUNCA e CAT_E, mesmo que a mensagem seja curta ou sem contexto. CAT_F = qualquer outra coisa (saudacao, agradecimento, pedir endereco, reclamacao, papo solto). CAT_G = o cliente pergunta diretamente se o pneu e remold, recauchutado, recapado ou usado, OU desconfia/insinua isso de forma indireta (ex.: "por que e tao barato?", "isso e chines?", "e original mesmo?"), mesmo sem usar a palavra "remold" — isso e SEMPRE CAT_G, nunca CAT_E (que e so sobre capacidade/durabilidade/peso, sem nenhuma relacao com origem/procedencia do pneu) nem CAT_B (pergunta de preco pura, sem nenhuma desconfianca sobre remold/procedencia).',
     },
     medida_extraida: {
       type: ['string', 'null'],
@@ -55,23 +58,26 @@ const SCHEMA_EXTRACAO = {
 };
 
 // IMPORTANTE: este texto NAO cita os nomes reais das intencoes (DAR_MEDIDA,
-// PERGUNTA_TECNICA etc.) de proposito — so os codigos neutros CAT_A..CAT_F,
+// PERGUNTA_TECNICA etc.) de proposito — so os codigos neutros CAT_A..CAT_G,
 // que sao os mesmos usados no enum do schema. Ver comentario grande acima de
 // SCHEMA_EXTRACAO: citar os nomes descritivos aqui (mesmo so como explicacao,
 // sem serem o valor de saida) nao foi testado e e mais seguro evitar.
 const INSTRUCAO = [
-  'Voce classifica UMA mensagem de cliente de uma loja de pneus, pra um sistema que decide a resposta certa, usando os codigos CAT_A..CAT_F descritos no schema.',
+  'Voce classifica UMA mensagem de cliente de uma loja de pneus, pra um sistema que decide a resposta certa, usando os codigos CAT_A..CAT_G descritos no schema.',
   'Siga esta ORDEM de verificacao e pare no PRIMEIRO item que bater — nao pule direto pra CAT_E nem trate falta de contexto como motivo pra escolher ela:',
   '1. Existe uma lista de alternativas de medida JA oferecida no contexto da conversa (mensagem anterior do robo oferecendo mais de uma opcao), e nesta mensagem o cliente esta escolhendo uma delas — mesmo so repetindo a medida escolhida, tipo "pode ser essa de 205/55/17" ou so "205/55/17"? Se sim -> CAT_D (mesmo a mensagem contendo uma medida completa).',
   '2. A mensagem contem uma medida completa de pneu (LARGURA/PERFIL/ARO, em qualquer formato/ordem, ex.: "16r 205 55" ou "225/70 aro 17") e o item anterior nao se aplica? Se sim -> CAT_A.',
   '3. A mensagem so informa uma quantidade de pneus (numero de unidades), sem medida nova? Se sim -> CAT_C.',
-  '4. A mensagem cita ou pergunta EXPLICITAMENTE sobre uma caracteristica tecnica CONCRETA do produto — algo como capacidade de carga em kg, durabilidade, garantia, se e remold, material, resistencia? So marque este item se essa caracteristica especifica realmente aparecer na mensagem (nao vale so "a mensagem e curta" ou "nao tem produto citado" — isso sozinho NAO conta como caracteristica tecnica). Se bateu -> CAT_E.',
-  '5. A mensagem pergunta sobre preco/valor de qualquer forma — inclusive perguntas curtas e genericas tipo "quanto custa?", "qual o valor?", "quanto e?", "quanto fica?", "quanto ta?", "tem preco?", MESMO sem citar produto, medida ou qualquer outro detalhe? Se sim -> CAT_B. Isso e o resultado padrao pra pergunta de preco pura e sem contexto — se a mensagem tivesse uma caracteristica tecnica concreta, o item 4 ja teria capturado antes de chegar aqui.',
-  '6. Nenhum item acima bateu -> CAT_F (saudacao, agradecimento, pedir endereco, reclamacao, papo solto, etc.).',
+  '4. A mensagem pergunta diretamente se o pneu e remold, recauchutado, recapado, ou usado — OU desconfia/insinua isso de forma indireta, mesmo sem citar a palavra "remold" (ex.: "por que e tao barato?", "isso e chines?", "e original mesmo?", "e pneu de verdade?")? Se sim -> CAT_G. Isso vale mesmo que a mensagem tambem cite preco (ex.: "por que e tao barato?" e sobre desconfianca de procedencia, nao so preco) — a desconfianca sobre remold/procedencia sempre vence e vira CAT_G, nunca CAT_B nem CAT_E.',
+  '5. A mensagem cita ou pergunta EXPLICITAMENTE sobre uma caracteristica tecnica CONCRETA do produto, SEM nenhuma relacao com remold/procedencia — algo como capacidade de carga em kg, durabilidade, garantia, material, resistencia? So marque este item se essa caracteristica especifica realmente aparecer na mensagem (nao vale so "a mensagem e curta" ou "nao tem produto citado" — isso sozinho NAO conta como caracteristica tecnica). Se bateu -> CAT_E.',
+  '6. A mensagem pergunta sobre preco/valor de qualquer forma — inclusive perguntas curtas e genericas tipo "quanto custa?", "qual o valor?", "quanto e?", "quanto fica?", "quanto ta?", "tem preco?", MESMO sem citar produto, medida ou qualquer outro detalhe? Se sim -> CAT_B. Isso e o resultado padrao pra pergunta de preco pura e sem contexto — se a mensagem tivesse desconfianca sobre remold/procedencia ou uma caracteristica tecnica concreta, os itens 4 e 5 ja teriam capturado antes de chegar aqui.',
+  '7. Nenhum item acima bateu -> CAT_F (saudacao, agradecimento, pedir endereco, reclamacao, papo solto, etc.).',
   'Exemplos de saida correta (formato exato esperado):',
   'Mensagem "quanto custa?", contexto vazio -> {"intencao":"CAT_B","medida_extraida":null,"quantidade_extraida":null,"escolha_alternativa":null}',
   'Mensagem "qual o valor?", contexto vazio -> {"intencao":"CAT_B","medida_extraida":null,"quantidade_extraida":null,"escolha_alternativa":null}',
   'Mensagem "Ele aguenta até quantos kg", contexto com preco ja dado -> {"intencao":"CAT_E","medida_extraida":null,"quantidade_extraida":null,"escolha_alternativa":null}',
+  'Mensagem "é remold isso?", contexto vazio -> {"intencao":"CAT_G","medida_extraida":null,"quantidade_extraida":null,"escolha_alternativa":null}',
+  'Mensagem "por que é tão barato, é chinês?", contexto vazio -> {"intencao":"CAT_G","medida_extraida":null,"quantidade_extraida":null,"escolha_alternativa":null}',
   'NUNCA calcule nem mencione preco — isso nao e sua tarefa, so classifique e extraia.',
 ].join('\n');
 
@@ -151,5 +157,12 @@ export function podeSerSobrePreco(mensagem: string, estadoAtual: string): boolea
   const t = String(mensagem || '').toLowerCase();
   if (/\d/.test(t)) return true; // tem numero (pode ser medida ou quantidade)
   if (/pre[cç]o|quanto|valor|vist[a-z]|parcel|cotar|cota[cç][aã]o|\baro\b|\bpneus?\b/.test(t)) return true;
+  // Achado 18/09 (Task remold): uma pergunta de remold "fria" (ex.: "é remold isso?",
+  // sem nenhuma palavra de preco/aro/pneu e sem estado de fluxo em andamento) NAO batia
+  // em nenhum dos filtros acima e nunca chegava na IA extratora — o novo branch
+  // deterministico (PERGUNTOU_SE_E_REMOLD -> RESPONDER_REMOLD) simplesmente nunca era
+  // acionado pra esse caso, o mais comum na vida real. Sem esta linha, a UNICA coisa que
+  // trata essa pergunta e o texto solto em PROMPT_ATENDIMENTO (ver bot-pneus-config.json).
+  if (/remold|recauch|recap|chin[eê]s/.test(t)) return true;
   return false;
 }

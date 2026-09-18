@@ -21,6 +21,7 @@ export type IntencaoTipo =
   | 'RESPONDER_QUANTIDADE'
   | 'ESCOLHER_ALTERNATIVA'
   | 'PERGUNTA_TECNICA'
+  | 'PERGUNTOU_SE_E_REMOLD'
   | 'OUTRO_ASSUNTO';
 
 export interface IntencaoExtraida {
@@ -34,6 +35,7 @@ export type AcaoPreco =
   | { tipo: 'PEDIR_MEDIDA'; partes: string[] }
   | { tipo: 'CONFIRMAR_PRECO'; partes: string[] }
   | { tipo: 'OFERECER_ALTERNATIVAS'; partes: string[] }
+  | { tipo: 'RESPONDER_REMOLD'; partes: string[] }
   | { tipo: 'NADA' }; // sai do fluxo — cai no caminho de IA livre de hoje
 
 export interface ResultadoDecisao {
@@ -44,6 +46,15 @@ export interface ResultadoDecisao {
 
 const PEDIR_MEDIDA_TEXTO = 'Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?';
 const SEM_ALTERNATIVA_FALLBACK = 'Pra eu te passar o valor certinho sem risco de errar, me confirma a medida exata que esta escrita no flanco do pneu (ex.: 175/65/14)?';
+
+// Achado 18/09: o dono revelou que o pneu GP Premium É remold — a regra antiga (negar
+// e dizer "é novo") era falsa e ficou explicitamente proibida. Texto fixo (nunca gerado
+// pela IA) pra garantir que os fatos certos (garantia, borracha, o "não é remold comum")
+// saem sempre exatamente como o dono aprovou, sem depender da IA lembrar/seguir a regra.
+const RESPOSTA_REMOLD: string[] = [
+  'Vou ser sincero com você: sim, é remold — mas não é um remold comum. O GP Premium é feito com borracha padrão europeu e passa por controle rígido de qualidade.',
+  'A gente dá garantia de 50 mil km ou seu dinheiro de volta. Muitos clientes já aprovaram esse modelo.',
+];
 
 function montarAcaoParaMedida(medida: string, quantidade: number | null = null): ResultadoDecisao {
   const itens = encontrarPrecosExatosPorMedida(medida);
@@ -81,6 +92,14 @@ export function decidirAcaoPreco(
   estadoAtual: EstadoPrecoFluxo,
   dadosAtuais: DadosPrecoFluxo
 ): ResultadoDecisao {
+  // Checado ANTES de tudo (igual PERGUNTA_TECNICA/OUTRO_ASSUNTO): pergunta sobre remold
+  // pode vir em qualquer ponto da conversa de preco, independente do estado atual — e
+  // nao deve mexer nem no estado nem nos dados do fluxo de preco em andamento (mesmo
+  // tratamento que PERGUNTA_TECNICA da logo abaixo).
+  if (intencao.intencao === 'PERGUNTOU_SE_E_REMOLD') {
+    return { acao: { tipo: 'RESPONDER_REMOLD', partes: RESPOSTA_REMOLD }, novoEstado: estadoAtual, novosDados: dadosAtuais };
+  }
+
   if (intencao.intencao === 'PERGUNTA_TECNICA' || intencao.intencao === 'OUTRO_ASSUNTO') {
     return { acao: { tipo: 'NADA' }, novoEstado: estadoAtual, novosDados: dadosAtuais };
   }

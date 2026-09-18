@@ -22,6 +22,11 @@ const casos: { nome: string; msg: string; contexto: string; esperado: string; me
     esperado: 'ESCOLHER_ALTERNATIVA',
     escolhaEsperada: '205/55/17',
   },
+  // Task remold (18/09): pergunta direta e pergunta indireta/desconfiada precisam cair
+  // em PERGUNTOU_SE_E_REMOLD, nunca em PERGUNTA_TECNICA (durabilidade/kg/etc, sem
+  // relacao com procedencia) nem em OUTRO_ASSUNTO.
+  { nome: 'remold direto: "é remold isso?"', msg: 'é remold isso?', contexto: '', esperado: 'PERGUNTOU_SE_E_REMOLD' },
+  { nome: 'remold indireto: "por que é tão barato, é chinês?"', msg: 'por que é tão barato, é chinês?', contexto: '', esperado: 'PERGUNTOU_SE_E_REMOLD' },
 ];
 
 (async () => {
