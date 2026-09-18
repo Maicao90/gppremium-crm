@@ -2,6 +2,7 @@
 // quebraram em 09-10/09/2026. Fica no repo como regressao (unico jeito de saber
 // se uma mudanca futura na tabela ou no motor voltou a quebrar algum destes casos).
 import { decidirAcaoPreco, IntencaoExtraida, EstadoPrecoFluxo, DadosPrecoFluxo } from './fluxoPreco';
+import { encontrarPrecosExatosPorMedida, brl } from './tabelaPrecos';
 
 let erros = 0;
 function checar(nome: string, condicao: boolean, detalhe?: string) {
@@ -158,6 +159,196 @@ function checar(nome: string, condicao: boolean, detalhe?: string) {
   checar('Remold: cita garantia de 50 mil km', /50 mil/i.test(texto));
   checar('Remold: cita dinheiro de volta', /dinheiro de volta/i.test(texto));
   checar('Remold: NUNCA nega que e remold (guarda contra a framing antiga/falsa)', !/n[aã]o[,]?\s*n[aã]o é remold|nunca remold|pneu novo/i.test(texto));
+}
+
+// =====================================================================================
+// ATENDIMENTO COMPLETO (18/09): categorias novas. Helpers pra montar a intencao e ler
+// o texto da acao (so as acoes com `partes`).
+// =====================================================================================
+function intencaoDe(intencao: IntencaoExtraida['intencao'], extra: Partial<IntencaoExtraida> = {}): IntencaoExtraida {
+  return { intencao, medidaExtraida: null, quantidadeExtraida: null, escolhaAlternativa: null, parcelasExtraida: null, formaPagamentoExtraida: null, ...extra };
+}
+function textoDe(r: { acao: { tipo: string; partes?: string[] } }): string {
+  return (r.acao.partes || []).join(' ');
+}
+const ITEM_195_55_15 = encontrarPrecosExatosPorMedida('195/55/15')[0]!; // aVista 289,00, nao e compre3leve4
+
+// ----- Parcelamento generico: so "ate 10x", NUNCA valor em R$ -----
+{
+  const r = decidirAcaoPreco(intencaoDe('PERGUNTOU_PARCELAMENTO_GENERICO'), 'preco_confirmado', { medida: '195/55/15' });
+  checar('Parcelamento generico: acao certa', r.acao.tipo === 'RESPONDER_PARCELAMENTO_GENERICO');
+  checar('Parcelamento generico: diz ate 10x', /10x/.test(textoDe(r)));
+  checar('Parcelamento generico: NUNCA cita valor em R$', !/R\$/.test(textoDe(r)));
+  checar('Parcelamento generico: nao mexe no estado/dados', r.novoEstado === 'preco_confirmado' && r.novosDados.medida === '195/55/15');
+}
+
+// ----- Parcelamento especifico com medida ja confirmada: valor vem da tabela -----
+{
+  const r = decidirAcaoPreco(intencaoDe('PERGUNTOU_PARCELAMENTO_ESPECIFICO', { parcelasExtraida: 6 }), 'preco_confirmado', { medida: '195/55/15' });
+  const total = ITEM_195_55_15.parcelado.x6;
+  checar('Parcelamento especifico: acao certa', r.acao.tipo === 'RESPONDER_PARCELAMENTO_ESPECIFICO');
+  checar('Parcelamento especifico: valor de CADA parcela = total da tabela / 6', textoDe(r).includes(`R$ ${brl(total / 6)} cada`), textoDe(r));
+  checar('Parcelamento especifico: total bate com a tabela', textoDe(r).includes(`R$ ${brl(total)}`), textoDe(r));
+  checar('Parcelamento especifico: mantem preco_confirmado + medida', r.novoEstado === 'preco_confirmado' && r.novosDados.medida === '195/55/15');
+}
+
+// ----- Parcelamento especifico usa a QUANTIDADE ja confirmada (senao cotava 1 pneu so) -----
+{
+  const r1 = decidirAcaoPreco(intencaoDe('RESPONDER_QUANTIDADE', { quantidadeExtraida: 4 }), 'preco_confirmado', { medida: '195/55/15' });
+  checar('Quantidade fica guardada no estado', r1.novosDados.quantidade === 4);
+  const r2 = decidirAcaoPreco(intencaoDe('PERGUNTOU_PARCELAMENTO_ESPECIFICO', { parcelasExtraida: 6 }), r1.novoEstado, r1.novosDados);
+  const total4 = ITEM_195_55_15.parcelado.x6 * 4;
+  checar('Parcelamento com 4 pneus ja confirmados: total das 4 unidades', textoDe(r2).includes(`R$ ${brl(total4)}`) && /4 unidades/.test(textoDe(r2)), textoDe(r2));
+}
+
+// ----- Parcelamento especifico SEM medida: pede a medida e LEMBRA a pergunta -----
+{
+  const r1 = decidirAcaoPreco(intencaoDe('PERGUNTOU_PARCELAMENTO_ESPECIFICO', { parcelasExtraida: 6 }), 'sem_estado', {});
+  checar('Parcelamento sem medida: pede a medida', r1.acao.tipo === 'PEDIR_MEDIDA' && r1.novoEstado === 'aguardando_medida');
+  checar('Parcelamento sem medida: guarda a pergunta pendente (6x)', r1.novosDados.intencaoPendente === 'parcelamento_especifico' && r1.novosDados.parcelasPendentes === 6);
+  const r2 = decidirAcaoPreco(intencaoDe('DAR_MEDIDA', { medidaExtraida: '195/55/15' }), r1.novoEstado, r1.novosDados);
+  checar('Parcelamento pendente: quando a medida chega responde o 6x (nao so o preco a vista)', r2.acao.tipo === 'RESPONDER_PARCELAMENTO_ESPECIFICO' && textoDe(r2).includes(`R$ ${brl(ITEM_195_55_15.parcelado.x6 / 6)} cada`), textoDe(r2));
+  checar('Parcelamento pendente: tambem traz o preco a vista (cliente pode nem lembrar da pergunta)', textoDe(r2).includes(`R$ ${brl(ITEM_195_55_15.aVista)} à vista`), textoDe(r2));
+  checar('Parcelamento pendente: limpa a pendencia depois de responder', !r2.novosDados.intencaoPendente && !r2.novosDados.parcelasPendentes && r2.novosDados.medida === '195/55/15');
+}
+
+// ----- Parcelamento: medida + parcelas na MESMA mensagem -----
+{
+  const r = decidirAcaoPreco(intencaoDe('PERGUNTOU_PARCELAMENTO_ESPECIFICO', { parcelasExtraida: 3, medidaExtraida: '195/55/15' }), 'sem_estado', {});
+  checar('Parcelamento + medida na mesma msg: responde as 3 parcelas', r.acao.tipo === 'RESPONDER_PARCELAMENTO_ESPECIFICO' && textoDe(r).includes(`R$ ${brl(ITEM_195_55_15.parcelado.x3 / 3)} cada`), textoDe(r));
+}
+
+// ----- Parcelamento acima do maximo (10x) ou sem numero entendido: nunca inventa valor -----
+{
+  const r12 = decidirAcaoPreco(intencaoDe('PERGUNTOU_PARCELAMENTO_ESPECIFICO', { parcelasExtraida: 12 }), 'preco_confirmado', { medida: '195/55/15' });
+  checar('Parcelamento 12x: nao inventa valor, diz o maximo de 10x', !/R\$/.test(textoDe(r12)) && /10x/.test(textoDe(r12)));
+  const r0 = decidirAcaoPreco(intencaoDe('PERGUNTOU_PARCELAMENTO_ESPECIFICO', { parcelasExtraida: null }), 'preco_confirmado', { medida: '195/55/15' });
+  checar('Parcelamento sem numero entendido: cai na resposta generica (sem R$)', r0.acao.tipo === 'RESPONDER_PARCELAMENTO_GENERICO' && !/R\$/.test(textoDe(r0)));
+}
+
+// ----- "E sem juros?": confirma o jurinho, pergunta quantas vezes, chama pra loja; NUNCA diz "sem juros" -----
+{
+  const r = decidirAcaoPreco(intencaoDe('PERGUNTOU_SE_TEM_JUROS'), 'preco_confirmado', { medida: '195/55/15' });
+  const t = textoDe(r);
+  checar('Juros: acao certa', r.acao.tipo === 'RESPONDER_JUROS');
+  checar('Juros: admite o jurinho em cada parcela', /jurinho/i.test(t));
+  checar('Juros: pergunta em quantas vezes quer parcelar', /quantas vezes/i.test(t));
+  checar('Juros: convida pra negociar na loja', /loja/i.test(t) && /negociar/i.test(t));
+  checar('Juros: NUNCA afirma "sem juros"', !/sem juros/i.test(t));
+  checar('Juros: nao mexe no estado', r.novoEstado === 'preco_confirmado' && r.novosDados.medida === '195/55/15');
+}
+
+// ----- Desconto a vista: SO dinheiro, calculado da tabela (5%) -----
+{
+  const r = decidirAcaoPreco(intencaoDe('PERGUNTOU_DESCONTO_AVISTA'), 'preco_confirmado', { medida: '195/55/15' });
+  const t = textoDe(r);
+  checar('Desconto: acao certa', r.acao.tipo === 'RESPONDER_DESCONTO');
+  checar('Desconto: 5% sobre R$ 289,00 = R$ 274,55 (da tabela, nao estimativa)', /R\$ 274,55/.test(t) && /R\$ 289,00/.test(t), t);
+  checar('Desconto: fala em DINHEIRO', /dinheiro/i.test(t));
+  checar('Desconto: NUNCA promete desconto no PIX', !/pix/i.test(t));
+}
+{
+  const r1 = decidirAcaoPreco(intencaoDe('RESPONDER_QUANTIDADE', { quantidadeExtraida: 4 }), 'preco_confirmado', { medida: '195/55/15' });
+  const r = decidirAcaoPreco(intencaoDe('PERGUNTOU_DESCONTO_AVISTA', { formaPagamentoExtraida: 'dinheiro' }), r1.novoEstado, r1.novosDados);
+  checar('Desconto com 4 pneus: 5% sobre 4 x R$ 289,00 = R$ 1.098,20', /R\$ 1\.098,20/.test(textoDe(r)) && /R\$ 1\.156,00/.test(textoDe(r)), textoDe(r));
+}
+{
+  const r = decidirAcaoPreco(intencaoDe('PERGUNTOU_DESCONTO_AVISTA', { formaPagamentoExtraida: 'pix' }), 'preco_confirmado', { medida: '195/55/15' });
+  const t = textoDe(r);
+  checar('Desconto no PIX: esclarece que o desconto e so em dinheiro', r.acao.tipo === 'RESPONDER_DESCONTO' && /só pra pagamento em dinheiro/i.test(t) && /PIX não tem desconto/i.test(t), t);
+  checar('Desconto no PIX: nao muda estado/dados', r.novoEstado === 'preco_confirmado' && r.novosDados.medida === '195/55/15');
+}
+{
+  const r1 = decidirAcaoPreco(intencaoDe('PERGUNTOU_DESCONTO_AVISTA'), 'sem_estado', {});
+  checar('Desconto sem medida: pede a medida e guarda a pergunta', r1.acao.tipo === 'PEDIR_MEDIDA' && r1.novosDados.intencaoPendente === 'desconto_avista');
+  const r2 = decidirAcaoPreco(intencaoDe('DAR_MEDIDA', { medidaExtraida: '195/55/15' }), r1.novoEstado, r1.novosDados);
+  checar('Desconto pendente: quando a medida chega responde o desconto', r2.acao.tipo === 'RESPONDER_DESCONTO' && /R\$ 274,55/.test(textoDe(r2)), textoDe(r2));
+  checar('Desconto pendente: limpa a pendencia', !r2.novosDados.intencaoPendente && r2.novoEstado === 'preco_confirmado');
+}
+
+// ----- Pendencia sobrevive a medida inexistente + escolha de alternativa -----
+{
+  const r1 = decidirAcaoPreco(intencaoDe('PERGUNTOU_PARCELAMENTO_ESPECIFICO', { parcelasExtraida: 6 }), 'sem_estado', {});
+  const r2 = decidirAcaoPreco(intencaoDe('DAR_MEDIDA', { medidaExtraida: '185/35/17' }), r1.novoEstado, r1.novosDados);
+  checar('Pendencia + medida inexistente: oferece alternativas e mantem a pendencia', r2.acao.tipo === 'OFERECER_ALTERNATIVAS' && r2.novosDados.intencaoPendente === 'parcelamento_especifico' && r2.novosDados.parcelasPendentes === 6);
+  const r3 = decidirAcaoPreco(intencaoDe('ESCOLHER_ALTERNATIVA', { escolhaAlternativa: '205/50/17' }), r2.novoEstado, r2.novosDados);
+  checar('Pendencia + escolha de alternativa: responde o 6x da alternativa escolhida', r3.acao.tipo === 'RESPONDER_PARCELAMENTO_ESPECIFICO' && /6x fica R\$/.test(textoDe(r3)), textoDe(r3));
+}
+
+// ----- Repetir "quanto custa?" sem medida nao perde a pendencia -----
+{
+  const r1 = decidirAcaoPreco(intencaoDe('PERGUNTOU_DESCONTO_AVISTA'), 'sem_estado', {});
+  const r2 = decidirAcaoPreco(intencaoDe('PERGUNTAR_PRECO_SEM_MEDIDA'), r1.novoEstado, r1.novosDados);
+  checar('Pedir medida de novo: preserva a pendencia de desconto', r2.acao.tipo === 'PEDIR_MEDIDA' && r2.novosDados.intencaoPendente === 'desconto_avista');
+}
+
+// ----- Medida DIFERENTE da confirmada nao herda a quantidade do pneu anterior -----
+{
+  const r1 = decidirAcaoPreco(intencaoDe('RESPONDER_QUANTIDADE', { quantidadeExtraida: 4 }), 'preco_confirmado', { medida: '195/55/15' });
+  const r2 = decidirAcaoPreco(intencaoDe('DAR_MEDIDA', { medidaExtraida: '175/65/14' }), r1.novoEstado, r1.novosDados);
+  checar('Medida nova: NAO reaproveita a quantidade (4) da medida anterior', r2.acao.tipo === 'CONFIRMAR_PRECO' && !/4 pneus/.test(textoDe(r2)) && r2.novosDados.quantidade === undefined, textoDe(r2));
+}
+
+// ----- Chines: nega, categoria separada do remold -----
+{
+  const r = decidirAcaoPreco(intencaoDe('PERGUNTOU_SE_E_CHINES'), 'preco_confirmado', { medida: '195/55/15' });
+  const t = textoDe(r);
+  checar('Chines: acao certa (separada de remold)', r.acao.tipo === 'RESPONDER_CHINES');
+  checar('Chines: nega (nao trabalha com pneu chines)', /não trabalha/i.test(t) && /chinês/i.test(t));
+  checar('Chines: NAO confunde com a resposta de remold', !/remold/i.test(t));
+  checar('Chines: nao mexe no estado', r.novoEstado === 'preco_confirmado' && r.novosDados.medida === '195/55/15');
+}
+
+// ----- Base de troca / compra de usado / nota fiscal / alinhamento -----
+{
+  const troca = decidirAcaoPreco(intencaoDe('OFERECEU_BASE_TROCA'), 'sem_estado', {});
+  checar('Base de troca: recusa', troca.acao.tipo === 'RESPONDER_BASE_TROCA' && /não trabalha com base de troca/i.test(textoDe(troca)));
+  const usado = decidirAcaoPreco(intencaoDe('OFERECEU_VENDER_USADO'), 'sem_estado', {});
+  checar('Compra de usado: recusa', usado.acao.tipo === 'RESPONDER_COMPRA_USADO' && /não compra pneu usado/i.test(textoDe(usado)));
+  const nf = decidirAcaoPreco(intencaoDe('PERGUNTOU_NOTA_FISCAL'), 'sem_estado', {});
+  checar('Nota fiscal: confirma que SEMPRE emite', nf.acao.tipo === 'RESPONDER_NOTA_FISCAL' && /sempre emite nota fiscal/i.test(textoDe(nf)));
+  const alin = decidirAcaoPreco(intencaoDe('PERGUNTOU_ALINHAMENTO'), 'sem_estado', {});
+  checar('Alinhamento: nao faz, so balanceamento', alin.acao.tipo === 'RESPONDER_ALINHAMENTO' && /não faz alinhamento/i.test(textoDe(alin)) && /balanceamento/i.test(textoDe(alin)));
+}
+
+// ----- Balanceamento: R$25 por roda, multiplica pela quantidade quando ha -----
+{
+  const sem = decidirAcaoPreco(intencaoDe('PERGUNTOU_BALANCEAMENTO'), 'sem_estado', {});
+  checar('Balanceamento sem quantidade: R$ 25,00 por roda, sem multiplicar', sem.acao.tipo === 'RESPONDER_BALANCEAMENTO' && /R\$ 25,00 por roda/.test(textoDe(sem)) && !/no total/.test(textoDe(sem)), textoDe(sem));
+  const com = decidirAcaoPreco(intencaoDe('PERGUNTOU_BALANCEAMENTO', { quantidadeExtraida: 4 }), 'sem_estado', {});
+  checar('Balanceamento com 4 rodas na mensagem: R$ 100,00 no total', /R\$ 100,00 no total/.test(textoDe(com)), textoDe(com));
+  const guardada = decidirAcaoPreco(intencaoDe('PERGUNTOU_BALANCEAMENTO'), 'preco_confirmado', { medida: '195/55/15', quantidade: 2 });
+  checar('Balanceamento com quantidade ja confirmada (2): R$ 50,00 no total', /R\$ 50,00 no total/.test(textoDe(guardada)), textoDe(guardada));
+}
+
+// ----- Localizacao: texto + acao que faz o CODIGO disparar o pino real -----
+{
+  const r = decidirAcaoPreco(intencaoDe('PEDIU_LOCALIZACAO'), 'preco_confirmado', { medida: '195/55/15' });
+  checar('Localizacao: acao que dispara o pino', r.acao.tipo === 'ENVIAR_LOCALIZACAO_FIXA');
+  checar('Localizacao: nao mexe no estado', r.novoEstado === 'preco_confirmado' && r.novosDados.medida === '195/55/15');
+}
+
+// ----- Objecao de preco/marca: resposta propria (nao repete o bloco de preco) -----
+{
+  const r = decidirAcaoPreco(intencaoDe('OBJETOU_PRECO_OU_MARCA'), 'preco_confirmado', { medida: '195/55/15' });
+  const t = textoDe(r);
+  checar('Objecao: acao certa', r.acao.tipo === 'RESPONDER_OBJECAO');
+  checar('Objecao: NAO repete o bloco de preco (sem R$)', !/R\$/.test(t));
+  checar('Objecao: cita garantia de 50 mil km / dinheiro de volta', /50 mil km/.test(t) && /dinheiro de volta/i.test(t));
+  checar('Objecao: convida pra negociar na loja e oferece o parcelado', /loja/i.test(t) && /10x/.test(t));
+  checar('Objecao: nao mexe no estado', r.novoEstado === 'preco_confirmado' && r.novosDados.medida === '195/55/15');
+}
+
+// ----- Regra de escrita: nenhum texto fixo pode ser meta-comentario/instrucao -----
+{
+  const todas: IntencaoExtraida['intencao'][] = [
+    'PERGUNTOU_SE_E_REMOLD', 'PERGUNTOU_PARCELAMENTO_GENERICO', 'PERGUNTOU_SE_TEM_JUROS', 'PERGUNTOU_SE_E_CHINES',
+    'OFERECEU_BASE_TROCA', 'OFERECEU_VENDER_USADO', 'PERGUNTOU_NOTA_FISCAL', 'PERGUNTOU_BALANCEAMENTO',
+    'PERGUNTOU_ALINHAMENTO', 'PEDIU_LOCALIZACAO', 'OBJETOU_PRECO_OU_MARCA',
+  ];
+  const meta = /sugest[aã]o|copiar|voc[eê] pode (enviar|responder|dizer)|responda (que|com)|mensagem (para|pro) (o )?cliente|\bmodelo de mensagem\b/i;
+  const ruins = todas.filter((i) => meta.test(textoDe(decidirAcaoPreco(intencaoDe(i), 'sem_estado', {}))));
+  checar('Regra de escrita: nenhum texto fixo tem cara de meta-comentario/sugestao', ruins.length === 0, ruins.join(', '));
 }
 
 console.log(erros === 0 ? '\nTODOS OK' : '\n' + erros + ' ERRO(S)');

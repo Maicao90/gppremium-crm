@@ -670,7 +670,7 @@ export function analisarConsultaPreco(texto: string): AnaliseConsultaPreco {
   return { medidasDetectadas, matchesExatos, ambiguas, semResultado };
 }
 
-function brl(valor: number): string {
+export function brl(valor: number): string {
   return valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
@@ -817,6 +817,23 @@ export function montarPartesPreco(item: ItemPreco, parcelaSolicitada: number | n
   return [parte1];
 }
 
+// Desconto de 5% a vista e SOMENTE pra pagamento em DINHEIRO — PIX NAO tem desconto
+// (achado 18/09, dono da loja; o prompt antigo dizia "PIX ou dinheiro" e estava errado).
+// Numero sai sempre da tabela real (aVista x unidades cobradas), nunca de conta da IA.
+export function montarPartesDescontoAVista(item: ItemPreco, quantidade: number | null): string[] {
+  const qtd = quantidade && quantidade > 1 ? quantidade : 1;
+  const cobradas = unidadesCobradas(item, qtd);
+  const valorCheio = item.aVista * cobradas;
+  const valorComDesconto = Math.round(valorCheio * 0.95 * 100) / 100;
+  const partes: string[] = [
+    [
+      `${item.medida}${qtd > 1 ? ` (${qtd} unidades)` : ''}`,
+      `À vista em dinheiro sai com 5% de desconto: R$ ${brl(valorComDesconto)} (de R$ ${brl(valorCheio)}).`,
+    ].join('\n'),
+  ];
+  if (cobradas < qtd) partes.push(`Voce leva ${qtd} e paga so ${cobradas} (campanha compre 3 e leve 4).`);
+  return partes;
+}
 export function resumirItemPreco(item: ItemPreco): string {
   const flags = [
     item.promocao ? 'PROMOCAO' : '',

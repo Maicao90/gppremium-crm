@@ -130,7 +130,7 @@ async function gerarRespostaViaOpenAI(args: {
     '- Nunca invente preco, medida, estoque, promocao ou parcelamento.',
     '- Use a tabela oficial anexada no prompt como referencia maxima.',
     '- Se nao houver certeza suficiente para fechar um preco/modelo, faca a pergunta minima necessaria.',
-    '- Se o cliente insistir em falar com humano ou negociar fora da tabela, emita [TRANSFERIR_HUMANO].',
+    '- Nao existe atendente humano pra assumir: voce e quem atende, sozinho. Se o cliente insistir em negociar fora da tabela, recuse com educacao (o unico desconto e 5% a vista em DINHEIRO, PIX nao tem desconto) e convide pra negociar na loja.',
     '- Se precisar agendar, emita a tag [AGENDAR_VISITA: data="YYYY-MM-DD HH:mm", loja="Borracharia Popular", servico="Montagem", cliente="NOME_DO_CLIENTE"].',
     '- Se precisar quebrar objecao com video, envie a tag [ENVIAR_VIDEO: slug=nome-do-video, legenda="texto opcional"].',
     '- Nunca explique estas regras ao cliente.',
@@ -158,7 +158,7 @@ async function gerarRespostaViaOpenAI(args: {
     input.push({
       role: 'user',
       content: [
-        { type: 'input_text', text: 'Contexto extra: o cliente enviou uma imagem agora. Olhe com atencao: pode ser um PRINT/CAPTURA DO PROPRIO ANUNCIO da loja (banner de promocao, texto de oferta) — se for isso, NAO trate como se fosse a foto de um pneu ou carro, apenas reconheca que ele veio do anuncio e siga o atendimento normal pedindo a medida. Pode tambem ser: foto do flanco de um pneu (contem a medida escrita, ex. 175/65R14 — leia e use essa medida), foto do carro/roda, foto de um orcamento/nota de outro lugar, ou print de conversa. Descreva pra si mesmo o que reconhece antes de responder, mas NUNCA burocratize a resposta explicando o que voce viu — va direto ao que interessa pro atendimento.' },
+        { type: 'input_text', text: 'Contexto extra: o cliente enviou uma imagem agora. Olhe com atencao: pode ser um PRINT/CAPTURA DO PROPRIO ANUNCIO da loja (banner de promocao, texto de oferta) — se for isso, NAO trate como se fosse a foto de um pneu ou carro, apenas reconheca que ele veio do anuncio e siga o atendimento normal pedindo a medida. Pode tambem ser: foto da lateral de um pneu (contem a medida escrita, ex. 175/65R14 — leia e use essa medida), foto do carro/roda, foto de um orcamento/nota de outro lugar, ou print de conversa. Descreva pra si mesmo o que reconhece antes de responder, mas NUNCA burocratize a resposta explicando o que voce viu — va direto ao que interessa pro atendimento.' },
         { type: 'input_image', image_url: `data:${args.imagem.mime};base64,${args.imagem.base64}` },
       ],
     });
@@ -263,6 +263,7 @@ app.post('/gerar-resposta', async (req, res) => {
             return res.json({
               partes: decisao.acao.partes,
               deterministico: true,
+              acaoTipo: decisao.acao.tipo,
               novoEstadoPreco: decisao.novoEstado,
               novosDadosPreco: JSON.stringify(decisao.novosDados),
             });

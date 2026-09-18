@@ -55,6 +55,18 @@ interface RespostaBotService {
   deterministico: boolean;
   novoEstadoPreco?: string;
   novosDadosPreco?: string;
+  // Tipo da acao que o fluxo deterministico decidiu (ex.: 'ENVIAR_LOCALIZACAO_FIXA') — e o
+  // CODIGO, nao a IA, que decide disparar o pino de localizacao.
+  acaoTipo?: string;
+}
+
+async function dispararLocalizacaoDaLoja(params: AgendarBotParams) {
+  const loc = lerLocalizacaoLoja();
+  if (!loc) {
+    console.error('[Bot IA] localizacao pedida mas LOCALIZACAO_LAT/LNG nao configurados.');
+    return;
+  }
+  await params.enviarLocalizacao(loc.lat, loc.lng, loc.nome, loc.endereco).catch(() => {});
 }
 
 const timers = new Map<string, NodeJS.Timeout>();
@@ -159,6 +171,7 @@ async function gerarRespostaViaBotService(args: {
   return {
     partes: Array.isArray(body?.partes) ? body.partes.map(String) : [],
     deterministico: !!body?.deterministico,
+    acaoTipo: typeof body?.acaoTipo === 'string' ? body.acaoTipo : undefined,
     novoEstadoPreco: typeof body?.novoEstadoPreco === 'string' ? body.novoEstadoPreco : undefined,
     novosDadosPreco: typeof body?.novosDadosPreco === 'string' ? body.novosDadosPreco : undefined,
   };
@@ -485,6 +498,9 @@ async function executar(params: AgendarBotParams, versao: number) {
         const enviada = await params.enviarParte(textoLimpo.slice(0, 3500), tempoDigitacao(textoLimpo));
         if (!enviada) return;
       }
+      if (resposta.acaoTipo === 'ENVIAR_LOCALIZACAO_FIXA') {
+        await dispararLocalizacaoDaLoja(params);
+      }
       await prisma.botConversa.upsert({
         where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
         create: {
@@ -506,8 +522,6 @@ async function executar(params: AgendarBotParams, versao: number) {
     }
 
     const partes = resposta.partes.slice(0, 4);
-    const transferir = partes.some((p: string) => p.includes('[TRANSFERIR_HUMANO]'));
-
 
     // Processa agendamento se presente
     for (const p of partes) {
@@ -519,12 +533,7 @@ async function executar(params: AgendarBotParams, versao: number) {
         await processarAgendamentoAutomatico(params.usuarioId, params.chatJid, p);
       }
       if (p.includes('[ENVIAR_LOCALIZACAO]')) {
-        const loc = lerLocalizacaoLoja();
-        if (loc) {
-          await params.enviarLocalizacao(loc.lat, loc.lng, loc.nome, loc.endereco).catch(() => {});
-        } else {
-          console.error('[Bot IA] [ENVIAR_LOCALIZACAO] pedido mas LOCALIZACAO_LAT/LNG nao configurados.');
-        }
+        await dispararLocalizacaoDaLoja(params);
       }
     }
 
@@ -574,14 +583,12 @@ async function executar(params: AgendarBotParams, versao: number) {
         chatJid: params.chatJid,
         ultimoInboundWaId: params.waId,
         ultimaRespostaEm: new Date(),
-        ...(transferir ? { pausadoAte: new Date(Date.now() + 120 * 60 * 1000), motivoPausa: 'transferencia_humana' } : {}),
         ...(resposta.novoEstadoPreco ? { estadoPreco: resposta.novoEstadoPreco } : {}),
         ...(resposta.novosDadosPreco ? { dadosPreco: resposta.novosDadosPreco } : {}),
       },
       update: {
         ultimoInboundWaId: params.waId,
         ultimaRespostaEm: new Date(),
-        ...(transferir ? { pausadoAte: new Date(Date.now() + 120 * 60 * 1000), motivoPausa: 'transferencia_humana' } : {}),
         ...(resposta.novoEstadoPreco ? { estadoPreco: resposta.novoEstadoPreco } : {}),
         ...(resposta.novosDadosPreco ? { dadosPreco: resposta.novosDadosPreco } : {}),
       },
