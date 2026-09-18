@@ -629,3 +629,12 @@ model GarantiaSorteio {
   criadoPorId String?
   criadoEm    DateTime @default(now())
 }
+
+// Respostas do fluxo de atendimento editadas pelo dono (tela "Fluxo" do painel).
+// Guarda so a DIFERENCA do texto padrao (ver src/data/fluxoCatalogo.ts); sem linha = padrao.
+model FluxoResposta {
+  chave         String   @id
+  partes        String   // JSON: array de bolhas de WhatsApp
+  atualizadoPor String?
+  atualizadoEm  DateTime @updatedAt
+}

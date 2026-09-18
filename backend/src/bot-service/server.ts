@@ -14,6 +14,7 @@ import { prometeuTransferenciaFalsa, removerReperguntaPosPreco, removerRepeticao
 import { lerBotPneusConfig, montarPromptAtendimentoBot } from '../services/botPneusConfig';
 import { decidirAcaoPreco, EstadoPrecoFluxo, DadosPrecoFluxo } from '../data/fluxoPreco';
 import { extrairIntencaoPreco, podeSerSobrePreco } from '../data/fluxoPrecoExtrator';
+import { sanitizarTextosFluxo } from '../data/fluxoCatalogo';
 
 dotenv.config();
 
@@ -228,6 +229,9 @@ app.post('/gerar-resposta', async (req, res) => {
     const estadoPrecoAtual: EstadoPrecoFluxo = (req.body?.estadoPreco as EstadoPrecoFluxo) || 'sem_estado';
     let dadosPrecoAtuais: DadosPrecoFluxo = {};
     try { dadosPrecoAtuais = JSON.parse(req.body?.dadosPreco || '{}'); } catch { dadosPrecoAtuais = {}; }
+    // Respostas editadas pelo dono na tela "Fluxo" do painel (quem tem Prisma manda no payload;
+    // este servico e stateless). Sem edicao / payload invalido = texto padrao.
+    const textosFluxo = sanitizarTextosFluxo(req.body?.textosFluxo);
     if (!Array.isArray(messages)) {
       return res.status(400).json({ error: 'messages (array) e obrigatorio.' });
     }
@@ -258,7 +262,7 @@ app.post('/gerar-resposta', async (req, res) => {
           .join('\n');
         const intencao = await extrairIntencaoPreco(gatilho, contextoRecente, apiKeyFluxo);
         if (intencao) {
-          const decisao = decidirAcaoPreco(intencao, estadoPrecoAtual, dadosPrecoAtuais);
+          const decisao = decidirAcaoPreco(intencao, estadoPrecoAtual, dadosPrecoAtuais, textosFluxo);
           if (decisao.acao.tipo !== 'NADA') {
             return res.json({
               partes: decisao.acao.partes,

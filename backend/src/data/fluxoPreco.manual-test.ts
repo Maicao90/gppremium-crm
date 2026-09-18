@@ -3,6 +3,7 @@
 // se uma mudanca futura na tabela ou no motor voltou a quebrar algum destes casos).
 import { decidirAcaoPreco, IntencaoExtraida, EstadoPrecoFluxo, DadosPrecoFluxo } from './fluxoPreco';
 import { encontrarPrecosExatosPorMedida, brl } from './tabelaPrecos';
+import { CATALOGO_FLUXO, TEXTOS_PADRAO, textoFluxo, validarTextoFluxo, sanitizarTextosFluxo } from './fluxoCatalogo';
 
 let erros = 0;
 function checar(nome: string, condicao: boolean, detalhe?: string) {
@@ -349,6 +350,65 @@ const ITEM_195_55_15 = encontrarPrecosExatosPorMedida('195/55/15')[0]!; // aVist
   const meta = /sugest[aã]o|copiar|voc[eê] pode (enviar|responder|dizer)|responda (que|com)|mensagem (para|pro) (o )?cliente|\bmodelo de mensagem\b/i;
   const ruins = todas.filter((i) => meta.test(textoDe(decidirAcaoPreco(intencaoDe(i), 'sem_estado', {}))));
   checar('Regra de escrita: nenhum texto fixo tem cara de meta-comentario/sugestao', ruins.length === 0, ruins.join(', '));
+}
+
+// =====================================================================================
+// TELA "FLUXO" (18/09): textos editaveis pelo dono. O motor usa o texto editado quando
+// existe e o padrao do catalogo quando nao; numeros continuam vindo do codigo.
+// =====================================================================================
+{
+  const editado = { chines: ['Texto novo do dono sobre chinês.'] };
+  const r = decidirAcaoPreco(intencaoDe('PERGUNTOU_SE_E_CHINES'), 'sem_estado', {}, editado);
+  checar('Texto editado: o motor usa o texto do dono no lugar do padrao', r.acao.tipo === 'RESPONDER_CHINES' && textoDe(r) === 'Texto novo do dono sobre chinês.', textoDe(r));
+  const outra = decidirAcaoPreco(intencaoDe('PERGUNTOU_NOTA_FISCAL'), 'sem_estado', {}, editado);
+  checar('Texto editado: edicao de uma resposta nao afeta as outras', /sempre emite nota fiscal/i.test(textoDe(outra)));
+  const vazio = decidirAcaoPreco(intencaoDe('PERGUNTOU_SE_E_CHINES'), 'sem_estado', {}, { chines: [] });
+  checar('Texto editado vazio: cai no padrao (robo nunca fica mudo)', /não trabalha com pneu chinês/i.test(textoDe(vazio)));
+  const lixo = decidirAcaoPreco(intencaoDe('PERGUNTOU_SE_E_CHINES'), 'sem_estado', {}, { chines: ['ok', '   '] });
+  checar('Texto editado com bolha em branco: cai no padrao', /não trabalha com pneu chinês/i.test(textoDe(lixo)));
+
+  const pm = decidirAcaoPreco(intencaoDe('PERGUNTAR_PRECO_SEM_MEDIDA'), 'sem_estado', {}, { pedir_medida: ['Qual a medida do seu pneu?'] });
+  checar('Texto editado: "pedir medida" usa o texto do dono', pm.acao.tipo === 'PEDIR_MEDIDA' && textoDe(pm) === 'Qual a medida do seu pneu?');
+
+  const bal = decidirAcaoPreco(intencaoDe('PERGUNTOU_BALANCEAMENTO', { quantidadeExtraida: 4 }), 'sem_estado', {}, { balanceamento_quantidade: ['São {QTD} rodas: R$ {TOTAL} ({VALOR_RODA} cada).'] });
+  checar('Placeholders: {QTD} {TOTAL} {VALOR_RODA} preenchidos pelo CODIGO', textoDe(bal) === 'São 4 rodas: R$ 100,00 (25,00 cada).', textoDe(bal));
+  const balSem = decidirAcaoPreco(intencaoDe('PERGUNTOU_BALANCEAMENTO'), 'sem_estado', {}, { balanceamento: ['Custa R$ {VALOR_RODA} cada roda.'] });
+  checar('Placeholders: balanceamento sem quantidade usa o texto simples editado', textoDe(balSem) === 'Custa R$ 25,00 cada roda.', textoDe(balSem));
+}
+
+// ----- Integridade do catalogo (a tela e o robo dependem dele) -----
+{
+  const chaves = CATALOGO_FLUXO.map((c) => c.chave);
+  checar('Catalogo: chaves unicas', new Set(chaves).size === chaves.length);
+  const usadas = ['pedir_medida', 'sem_alternativa', 'remold', 'chines', 'juros', 'base_troca', 'compra_usado', 'nota_fiscal', 'alinhamento', 'localizacao', 'objecao', 'parcelamento_generico', 'parcelamento_maximo', 'desconto_pix', 'balanceamento', 'balanceamento_quantidade'];
+  checar('Catalogo: toda chave usada pelo motor existe e tem texto padrao', usadas.every((k) => (TEXTOS_PADRAO[k] || []).length > 0), usadas.filter((k) => !(TEXTOS_PADRAO[k] || []).length).join(','));
+  const ruins = CATALOGO_FLUXO.filter((c) => c.partes && validarTextoFluxo(c.chave, c.partes).length > 0).map((c) => c.chave);
+  checar('Catalogo: TODO texto padrao passa na propria validacao (nao tem "sem juros", tag, meta-texto)', ruins.length === 0, ruins.join(','));
+  checar('Catalogo: categoria calculada nao tem texto editavel', CATALOGO_FLUXO.filter((c) => c.calculado).every((c) => !c.partes));
+  checar('Catalogo: toda categoria tem gatilho e exemplos', CATALOGO_FLUXO.every((c) => c.quando && c.exemplos.length > 0));
+  checar('Catalogo: textoFluxo sem edicao devolve o padrao', textoFluxo(undefined, 'remold') === TEXTOS_PADRAO['remold']);
+}
+
+// ----- Validacao do que o dono digita na tela -----
+{
+  const v = (chave: string, partes: unknown) => validarTextoFluxo(chave, partes);
+  checar('Validacao: texto normal passa', v('nota_fiscal', ['Emitimos nota fiscal em todas as vendas.']).length === 0);
+  checar('Validacao: barra "sem juros" (parcelamento TEM juros)', v('parcelamento_generico', ['Parcelamos em 10x sem juros!']).length > 0);
+  checar('Validacao: barra tag de acao entre colchetes', v('nota_fiscal', ['Sim. [TRANSFERIR_HUMANO]']).length > 0);
+  checar('Validacao: barra texto com cara de sugestao/instrucao (incidente da Josy)', v('nota_fiscal', ['Aqui está uma sugestão de mensagem que você pode copiar e enviar']).length > 0);
+  checar('Validacao: barra placeholder que nao existe naquela resposta', v('nota_fiscal', ['Total {TOTAL}']).length > 0);
+  checar('Validacao: aceita placeholder que existe (balanceamento_quantidade)', v('balanceamento_quantidade', ['{QTD} rodas = R$ {TOTAL}']).length === 0);
+  checar('Validacao: barra lista vazia e bolha em branco', v('nota_fiscal', []).length > 0 && v('nota_fiscal', ['   ']).length > 0);
+  checar('Validacao: barra mais de 4 bolhas', v('nota_fiscal', ['a', 'b', 'c', 'd', 'e']).length > 0);
+  checar('Validacao: barra bolha gigante (>600 caracteres)', v('nota_fiscal', ['x'.repeat(601)]).length > 0);
+  checar('Validacao: categoria calculada / desconhecida nao e editavel', v('preco_medida', ['x']).length > 0 && v('nao_existe', ['x']).length > 0);
+}
+
+// ----- O que chega de fora no bot-service e limpo antes de usar -----
+{
+  const s = sanitizarTextosFluxo({ chines: ['ok'], nao_existe: ['x'], remold: 'texto solto', juros: [], nota_fiscal: ['a', 5], objecao: ['x'.repeat(700)], alinhamento: ['Não fazemos alinhamento.'] });
+  checar('Sanitizar: mantem so chave conhecida com array de texto valido', Object.keys(s).sort().join(',') === 'alinhamento,chines', Object.keys(s).join(','));
+  checar('Sanitizar: lixo/null/undefined viram mapa vazio', Object.keys(sanitizarTextosFluxo(null)).length === 0 && Object.keys(sanitizarTextosFluxo('x')).length === 0 && Object.keys(sanitizarTextosFluxo(undefined)).length === 0);
 }
 
 console.log(erros === 0 ? '\nTODOS OK' : '\n' + erros + ' ERRO(S)');

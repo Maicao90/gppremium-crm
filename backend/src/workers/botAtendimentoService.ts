@@ -60,6 +60,26 @@ interface RespostaBotService {
   acaoTipo?: string;
 }
 
+// Respostas do fluxo editadas pelo dono na tela "Fluxo" do painel (tabela FluxoResposta,
+// so a diferenca do texto padrao). Falha na leitura = sem edicao: o robo usa o texto padrao
+// e nunca deixa de responder por causa disso.
+async function carregarTextosFluxo(): Promise<Record<string, string[]>> {
+  try {
+    const linhas = await prisma.fluxoResposta.findMany({ select: { chave: true, partes: true } });
+    const saida: Record<string, string[]> = {};
+    for (const l of linhas) {
+      try {
+        const partes = JSON.parse(l.partes);
+        if (Array.isArray(partes)) saida[l.chave] = partes.map(String);
+      } catch { /* linha corrompida: ignora, usa o padrao */ }
+    }
+    return saida;
+  } catch (e) {
+    console.error('[Bot IA] falha ao ler FluxoResposta (usando textos padrao):', (e as any)?.message || e);
+    return {};
+  }
+}
+
 async function dispararLocalizacaoDaLoja(params: AgendarBotParams) {
   const loc = lerLocalizacaoLoja();
   if (!loc) {
@@ -157,6 +177,7 @@ async function gerarRespostaViaBotService(args: {
   ultimosTextosCliente: string;
   estadoPreco: string;
   dadosPreco: string;
+  textosFluxo?: Record<string, string[]>;
 }): Promise<RespostaBotService> {
   const resposta = await fetch(`${BOT_SERVICE_URL}/gerar-resposta`, {
     method: 'POST',
@@ -487,6 +508,7 @@ async function executar(params: AgendarBotParams, versao: number) {
       ultimosTextosCliente,
       estadoPreco: estadoPrecoSalvo?.estadoPreco || 'sem_estado',
       dadosPreco: estadoPrecoSalvo?.dadosPreco || '{}',
+      textosFluxo: await carregarTextosFluxo(),
     });
 
     if (resposta.deterministico && resposta.partes.length) {

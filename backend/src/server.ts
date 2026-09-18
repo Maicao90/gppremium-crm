@@ -23,6 +23,7 @@ import integracoesRouter from './routes/integracoes';
 import paginaLinksRouter from './routes/paginaLinks';
 import otimizadorAdsRouter from './routes/otimizadorAds';
 import botPneusRouter from './routes/botPneus';
+import fluxoRouter from './routes/fluxo';
 import dashboardRouter from './routes/dashboard';
 import disparoRouter from './routes/disparo';
 import garantiaRouter from './routes/garantia';
@@ -258,6 +259,7 @@ app.use('/api/inbox', authWhatsapp, inboxRouter);
 // Era a única rota sensível do painel sem requireModulo. Agora segue o mesmo padrão
 // das outras (disparo, garantia): exige login E o módulo do Bot Pneus.
 app.use('/api/bot-pneus', requireAuth, requireModulo('at-botpneus'), botPneusRouter);
+app.use('/api/fluxo', requireAuth, requireModulo('at-fluxo'), fluxoRouter); // Tela "Fluxo": mapa do atendimento + edicao dos textos
 app.use('/api/dashboard', requireAuth, requireModulo('dashboard'), dashboardRouter);
 // Ferramentas 100% do painel de anúncios: enforce no servidor (gerente sem esses módulos → 403).
 app.use('/api/ia', requireAuth, requireModulo('assistant'), iaRouter); // Assistente IA (Claude)
