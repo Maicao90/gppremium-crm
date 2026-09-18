@@ -1,7 +1,7 @@
 // Roda sem chamar IA nenhuma — so a logica pura. Cobre os casos reais que
 // quebraram em 09-10/09/2026. Fica no repo como regressao (unico jeito de saber
 // se uma mudanca futura na tabela ou no motor voltou a quebrar algum destes casos).
-import { decidirAcaoPreco, IntencaoExtraida, EstadoPrecoFluxo, DadosPrecoFluxo } from './fluxoPreco';
+import { decidirAcaoPreco, decidirSequenciaPreco, MARCADOR_PINO, IntencaoExtraida, EstadoPrecoFluxo, DadosPrecoFluxo } from './fluxoPreco';
 import { encontrarPrecosExatosPorMedida, brl } from './tabelaPrecos';
 import { CATALOGO_FLUXO, TEXTOS_PADRAO, textoFluxo, validarTextoFluxo, sanitizarTextosFluxo } from './fluxoCatalogo';
 
@@ -358,6 +358,83 @@ const ITEM_195_55_15 = encontrarPrecosExatosPorMedida('195/55/15')[0]!; // aVist
   checar('Objecao: nao mexe no estado', r.novoEstado === 'preco_confirmado' && r.novosDados.medida === '195/55/15');
 }
 
+// ----- Outra marca (Pirelli/Dunlop...): resposta fixa, sem falar mal de ninguem -----
+{
+  const r = decidirAcaoPreco(intencaoDe('PERGUNTOU_POR_OUTRA_MARCA'), 'preco_confirmado', { medida: '195/55/15' });
+  checar('Outra marca: resposta fixa (so GP Premium)', r.acao.tipo === 'RESPONDER_OUTRA_MARCA' && /só com o GP Premium/i.test(textoDe(r)) && /não temos outras marcas/i.test(textoDe(r)), textoDe(r));
+  checar('Outra marca: NUNCA fala mal de marca nenhuma', !/ruim|péssim|pior|não presta/i.test(textoDe(r)));
+  checar('Outra marca: nao mexe no estado', r.novoEstado === 'preco_confirmado' && r.novosDados.medida === '195/55/15');
+}
+
+// =====================================================================================
+// RAJADA (18/09, caso Marcia Lima): varias mensagens seguidas -> o robo responde TUDO, na ordem.
+// =====================================================================================
+{
+  const seq = (itens: IntencaoExtraida[], estado: EstadoPrecoFluxo = 'sem_estado', dados: DadosPrecoFluxo = {}, textos = {}, ctx = {}) => decidirSequenciaPreco(itens, estado, dados, textos, ctx);
+
+  // O caso real: preco de 2 pneus 175/70/14 + "pirelli ou dunlop?" + endereco
+  const marcia = seq([
+    intencaoDe('DAR_MEDIDA', { medidaExtraida: '175/70/14', quantidadeExtraida: 2 }),
+    intencaoDe('PERGUNTOU_POR_OUTRA_MARCA'),
+    intencaoDe('PEDIU_LOCALIZACAO'),
+  ]);
+  const t = marcia.partes.join(' | ');
+  const iPreco = marcia.partes.findIndex((p) => /os 2 pneus \*175\/70\/14\*/.test(p));
+  const iMarca = marcia.partes.findIndex((p) => /só com o GP Premium/.test(p));
+  const iLoc = marcia.partes.findIndex((p) => /Segue a nossa localização/.test(p));
+  const iPino = marcia.partes.indexOf(MARCADOR_PINO);
+  checar('Rajada Marcia: responde o PRECO dos 2 pneus', iPreco >= 0, t);
+  checar('Rajada Marcia: responde a pergunta da marca', iMarca >= 0, t);
+  checar('Rajada Marcia: manda a localizacao', iLoc >= 0 && iPino === iLoc + 1, t);
+  checar('Rajada Marcia: na ORDEM em que ele perguntou (preco -> marca -> endereco+pino)', iPreco < iMarca && iMarca < iLoc, t);
+  checar('Rajada Marcia: exatamente 1 pino', marcia.partes.filter((p) => p === MARCADOR_PINO).length === 1);
+  checar('Rajada Marcia: estado final = preco confirmado da medida dele, com a quantidade', marcia.novoEstado === 'preco_confirmado' && marcia.novosDados.medida === '175/70/14' && marcia.novosDados.quantidade === 2);
+  checar('Rajada Marcia: acao principal = a primeira que respondeu', marcia.acaoPrincipal === 'CONFIRMAR_PRECO');
+
+  // Estado encadeado: 1o assunto da a medida, 2o usa
+  const enc = seq([intencaoDe('DAR_MEDIDA', { medidaExtraida: '195/55/15' }), intencaoDe('PERGUNTOU_PARCELAMENTO_ESPECIFICO', { parcelasExtraida: 6 })]);
+  checar('Rajada: medida do 1o assunto vale pro 2o (preco e depois 6x, sem pedir a medida de novo)', /R\$ 289,00 à vista/.test(enc.partes.join(' ')) && new RegExp(`R\\$ ${brl(ITEM_195_55_15.parcelado.x6 / 6)} cada`).test(enc.partes.join(' ')) && !enc.partes.some((p) => /Poderia me informar a medida/.test(p)), enc.partes.join(' | '));
+
+  // Pergunta de preco sem medida + parcelamento sem medida: pede a medida UMA vez so, guarda a pergunta
+  const semMed = seq([intencaoDe('PERGUNTAR_PRECO_SEM_MEDIDA'), intencaoDe('PERGUNTOU_PARCELAMENTO_ESPECIFICO', { parcelasExtraida: 6 })]);
+  checar('Rajada: preco + parcelamento sem medida -> pede a medida 1 vez so (sem bolha repetida)', semMed.partes.filter((p) => /Poderia me informar a medida/.test(p)).length === 1 && semMed.partes.length === 1, semMed.partes.join(' | '));
+  checar('Rajada: e guarda a pergunta de 6x pra quando a medida chegar', semMed.novoEstado === 'aguardando_medida' && semMed.novosDados.intencaoPendente === 'parcelamento_especifico' && semMed.novosDados.parcelasPendentes === 6);
+
+  // Pino no maximo 1x, mesmo pedindo o endereco 2 vezes na mesma rajada
+  const doisEnderecos = seq([intencaoDe('PEDIU_LOCALIZACAO'), intencaoDe('PEDIU_LOCALIZACAO')]);
+  checar('Rajada: pedir o endereco 2x na mesma rajada manda o pino 1 vez', doisEnderecos.partes.filter((p) => p === MARCADOR_PINO).length === 1);
+
+  // Pino ja mandado ha pouco: nao repete, responde em texto
+  const pinoRecente = seq([intencaoDe('PEDIU_LOCALIZACAO')], 'sem_estado', {}, {}, { minutosDesdeLocalizacao: 3 });
+  checar('Rajada: pino ja mandado ha 3 min -> so texto, sem pino', !pinoRecente.partes.includes(MARCADOR_PINO) && /pino da localização aqui em cima/.test(pinoRecente.partes.join(' ')));
+
+  // Pergunta tecnica no meio: o codigo nao sabe responder -> sai do fluxo inteiro (IA livre responde a rajada toda)
+  const tecnica = seq([intencaoDe('DAR_MEDIDA', { medidaExtraida: '195/55/15' }), intencaoDe('PERGUNTA_TECNICA')]);
+  checar('Rajada: pergunta tecnica no meio -> NADA (IA livre cuida da rajada toda)', tecnica.acaoPrincipal === 'NADA' && tecnica.partes.length === 0 && tecnica.novoEstado === 'sem_estado');
+
+  // Papo solto e ignorado quando ha outro assunto; sozinho, sai do fluxo
+  const solto = seq([intencaoDe('OUTRO_ASSUNTO'), intencaoDe('PEDIU_LOCALIZACAO')]);
+  checar('Rajada: papo solto + endereco -> responde so o endereco', solto.acaoPrincipal === 'ENVIAR_LOCALIZACAO_FIXA' && solto.partes.length === 2);
+  checar('Rajada: so papo solto -> NADA', seq([intencaoDe('OUTRO_ASSUNTO')]).acaoPrincipal === 'NADA');
+  checar('Rajada: lista vazia -> NADA', seq([]).acaoPrincipal === 'NADA');
+
+  // Um assunto so continua igual ao de antes
+  const um = seq([intencaoDe('PERGUNTOU_NOTA_FISCAL')]);
+  checar('Rajada de 1 assunto = resposta do assunto', um.acaoPrincipal === 'RESPONDER_NOTA_FISCAL' && /sempre emite nota fiscal/i.test(um.partes.join(' ')));
+
+  // Limites: no maximo 4 assuntos e 8 bolhas
+  const muitos = seq(Array.from({ length: 6 }, () => intencaoDe('PERGUNTOU_SE_E_REMOLD')).concat([intencaoDe('PERGUNTOU_SE_E_CHINES')]));
+  checar('Rajada: assunto repetido nao duplica bolha', muitos.partes.filter((p) => /remold/i.test(p)).length === 1);
+  const cheio = seq([intencaoDe('PERGUNTOU_SE_E_REMOLD'), intencaoDe('PERGUNTOU_SE_E_CHINES'), intencaoDe('PERGUNTOU_SE_TEM_JUROS'), intencaoDe('OBJETOU_PRECO_OU_MARCA')]);
+  checar('Rajada: teto de 8 bolhas', cheio.partes.length <= 8 && cheio.partes.length >= 6, String(cheio.partes.length));
+  const passaDe4 = seq([intencaoDe('PERGUNTOU_NOTA_FISCAL'), intencaoDe('PERGUNTOU_ALINHAMENTO'), intencaoDe('OFERECEU_BASE_TROCA'), intencaoDe('OFERECEU_VENDER_USADO'), intencaoDe('PERGUNTOU_SE_E_CHINES')]);
+  checar('Rajada: so os 4 primeiros assuntos entram', !/chinês/i.test(passaDe4.partes.join(' ')) && passaDe4.partes.length === 4);
+
+  // Texto editado pelo dono vale dentro da rajada
+  const editado = seq([intencaoDe('PERGUNTOU_NOTA_FISCAL'), intencaoDe('PERGUNTOU_ALINHAMENTO')], 'sem_estado', {}, { alinhamento: ['Alinhamento a gente não faz.'] });
+  checar('Rajada: usa o texto editado na tela Fluxo', editado.partes.includes('Alinhamento a gente não faz.'));
+}
+
 // ----- Regra de escrita: nenhum texto fixo pode ser meta-comentario/instrucao -----
 {
   const todas: IntencaoExtraida['intencao'][] = [
@@ -398,7 +475,7 @@ const ITEM_195_55_15 = encontrarPrecosExatosPorMedida('195/55/15')[0]!; // aVist
 {
   const chaves = CATALOGO_FLUXO.map((c) => c.chave);
   checar('Catalogo: chaves unicas', new Set(chaves).size === chaves.length);
-  const usadas = ['pedir_medida', 'sem_alternativa', 'remold', 'chines', 'juros', 'base_troca', 'compra_usado', 'nota_fiscal', 'alinhamento', 'localizacao', 'localizacao_repetida', 'objecao', 'parcelamento_generico', 'parcelamento_maximo', 'desconto_pix', 'balanceamento', 'balanceamento_quantidade'];
+  const usadas = ['pedir_medida', 'sem_alternativa', 'remold', 'chines', 'juros', 'base_troca', 'compra_usado', 'nota_fiscal', 'alinhamento', 'localizacao', 'localizacao_repetida', 'outra_marca', 'objecao', 'parcelamento_generico', 'parcelamento_maximo', 'desconto_pix', 'balanceamento', 'balanceamento_quantidade'];
   checar('Catalogo: toda chave usada pelo motor existe e tem texto padrao', usadas.every((k) => (TEXTOS_PADRAO[k] || []).length > 0), usadas.filter((k) => !(TEXTOS_PADRAO[k] || []).length).join(','));
   const ruins = CATALOGO_FLUXO.filter((c) => c.partes && validarTextoFluxo(c.chave, c.partes).length > 0).map((c) => c.chave);
   checar('Catalogo: TODO texto padrao passa na propria validacao (nao tem "sem juros", tag, meta-texto)', ruins.length === 0, ruins.join(','));

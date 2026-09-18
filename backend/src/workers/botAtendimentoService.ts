@@ -48,6 +48,8 @@ interface AgendarBotParams {
   // manda). Usado so pra decidir o TAMANHO da espera do debounce (achado 18/09).
   ultimoTipo?: string;
   ultimoTextoTemMedida?: boolean;
+  // Quantas vezes esta rodada ja foi reagendada por chegar mensagem nova (trava contra ciclo).
+  reagendamentos?: number;
 }
 
 interface RespostaBotService {
@@ -216,18 +218,23 @@ async function gerarRespostaViaBotService(args: {
   };
 }
 
-async function conversaContinuaAtual(usuarioId: string, chatJid: string, waId: string): Promise<boolean> {
-  const [ultimaEntrada, estado] = await Promise.all([
-    prisma.mensagem.findFirst({
-      where: { usuarioId, chatJid, fromMe: false },
-      orderBy: { timestamp: 'desc' },
-      select: { waId: true },
-    }),
-    prisma.botConversa.findUnique({ where: { usuarioId_chatJid: { usuarioId, chatJid } } }),
-  ]);
-  if (!ultimaEntrada || ultimaEntrada.waId !== waId) return false;
+// A conversa esta liberada pro robo (nao ha pausa em vigor)? Achado 18/09 (caso Marcia Lima:
+// 4 mensagens em 1,5s ficaram ~10 min sem resposta): a checagem antiga exigia que o waId da
+// mensagem que AGENDOU fosse igual ao da mensagem mais nova do banco. Numa rajada as chamadas
+// de agendar nao chegam na ordem em que as mensagens chegaram (cada handler espera coisas
+// diferentes — resolver o numero real do @lid, gravar no banco), entao o timer que sobrevivia
+// era de uma mensagem mais velha, a checagem dava "nao e mais a atual" e o robo desistia em
+// silencio. Quem decide "esta resposta ficou velha" agora e a VERSAO do agendamento (cada nova
+// mensagem invalida a anterior), nao a igualdade de waId.
+async function conversaLiberada(usuarioId: string, chatJid: string): Promise<boolean> {
+  const estado = await prisma.botConversa.findUnique({
+    where: { usuarioId_chatJid: { usuarioId, chatJid } },
+    select: { pausadoAte: true },
+  });
   return !estado?.pausadoAte || estado.pausadoAte.getTime() <= Date.now();
 }
+
+const MAX_REAGENDAMENTOS_CONTEXTO = 3;
 
 // REMARKETING (02/09). Quando o cliente diz que volta depois — "dia 10 eu passo ai",
 // "quando eu receber", "semana que vem" — a conversa morria ali e o lead esfriava.
@@ -428,7 +435,11 @@ async function executar(params: AgendarBotParams, versao: number) {
       where: { id: params.usuarioId },
       select: { botIaAtivo: true, nome: true, lojaId: true },
     });
-    if (!usuario?.botIaAtivo || !(await conversaContinuaAtual(params.usuarioId, params.chatJid, params.waId))) return;
+    if (!usuario?.botIaAtivo) return;
+    if (!(await conversaLiberada(params.usuarioId, params.chatJid))) {
+      console.log(`[Bot IA] ${params.chatJid}: robo NAO respondeu — conversa pausada (pausa em vigor).`);
+      return;
+    }
 
     // Se a gente ja respondeu demais nessa conversa em pouco tempo, e loop: pausa e
     // deixa um humano olhar, em vez de continuar alimentando a troca automatica.
@@ -502,8 +513,17 @@ async function executar(params: AgendarBotParams, versao: number) {
           timestamp: { gt: ultimaDoSnapshot.timestamp },
         },
       });
-      if (novaMsgDepoisDoSnapshot > 0) {
-        agendarRespostaBotIA(params).catch((e) => console.error('[Bot IA] reagendar (contexto desatualizado):', e));
+      if (novaMsgDepoisDoSnapshot > 0 && (params.reagendamentos || 0) < MAX_REAGENDAMENTOS_CONTEXTO) {
+        // Reagenda apontando pra mensagem MAIS NOVA do cliente (nao pra que agendou esta rodada) —
+        // assim o novo timer sempre enxerga a rajada inteira.
+        const maisNova = await prisma.mensagem.findFirst({
+          where: { usuarioId: params.usuarioId, chatJid: params.chatJid, fromMe: false },
+          orderBy: { timestamp: 'desc' },
+          select: { waId: true },
+        });
+        console.log(`[Bot IA] ${params.chatJid}: chegou mensagem nova durante a leitura — reagendando (${(params.reagendamentos || 0) + 1}/${MAX_REAGENDAMENTOS_CONTEXTO}).`);
+        agendarRespostaBotIA({ ...params, waId: maisNova?.waId || params.waId, reagendamentos: (params.reagendamentos || 0) + 1 })
+          .catch((e) => console.error('[Bot IA] reagendar (contexto desatualizado):', e));
         return;
       }
     }
@@ -533,16 +553,28 @@ async function executar(params: AgendarBotParams, versao: number) {
     });
 
     if (resposta.deterministico && resposta.partes.length) {
+      // Chegou mensagem nova (ou pausa) enquanto o fluxo lia a rajada: esta resposta ficou velha.
+      // O novo agendamento vai ler a rajada COMPLETA (com a mensagem nova) e responder tudo junto.
+      if (versoes.get(key) !== versao || !(await conversaLiberada(params.usuarioId, params.chatJid))) {
+        console.log(`[Bot IA] ${params.chatJid}: resposta pronta descartada — chegou mensagem nova ou pausa; o novo ciclo responde tudo.`);
+        return;
+      }
       // Cada parte vai como mensagem SEPARADA (achado 25/08: preco tem que ser gradual,
       // nunca a vista + parcelamento + desconto colados numa unica mensagem).
+      // Depois de comecar, termina de mandar tudo (respostas do fluxo sao curtas e coerentes entre si).
       for (const parte of resposta.partes) {
         const textoLimpo = parte.trim();
         if (!textoLimpo) continue;
+        // O motor marca, na ordem certa, onde o pino da loja tem que sair (decisao do CODIGO).
+        if (textoLimpo === '[ENVIAR_LOCALIZACAO]') {
+          await dispararLocalizacaoDaLoja(params);
+          continue;
+        }
         const enviada = await params.enviarParte(textoLimpo.slice(0, 3500), tempoDigitacao(textoLimpo));
-        if (!enviada) return;
-      }
-      if (resposta.acaoTipo === 'ENVIAR_LOCALIZACAO_FIXA') {
-        await dispararLocalizacaoDaLoja(params);
+        if (!enviada) {
+          console.error(`[Bot IA] ${params.chatJid}: envio falhou no meio da resposta do fluxo.`);
+          return;
+        }
       }
       await prisma.botConversa.upsert({
         where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
@@ -592,7 +624,7 @@ async function executar(params: AgendarBotParams, versao: number) {
     if (!haConteudoUtil) return;
 
     for (const parte of partes) {
-      if (versoes.get(key) !== versao || !(await conversaContinuaAtual(params.usuarioId, params.chatJid, params.waId))) return;
+      if (versoes.get(key) !== versao || !(await conversaLiberada(params.usuarioId, params.chatJid))) return;
       const videos = extrairVideosDoTexto(parte);
       const textoLimpo = limparTagsEspeciais(parte).slice(0, 3500);
 
@@ -611,7 +643,7 @@ async function executar(params: AgendarBotParams, versao: number) {
       }
 
       for (let i = 0; i < videos.length; i++) {
-        if (versoes.get(key) !== versao || !(await conversaContinuaAtual(params.usuarioId, params.chatJid, params.waId))) return;
+        if (versoes.get(key) !== versao || !(await conversaLiberada(params.usuarioId, params.chatJid))) return;
         const atualVideo = videos[i];
         if (!atualVideo) continue;
         const video: VideoBotIA = {
@@ -655,16 +687,14 @@ async function executar(params: AgendarBotParams, versao: number) {
 
 export async function agendarRespostaBotIA(params: AgendarBotParams) {
   const key = chave(params.usuarioId, params.chatJid);
+  // Trocar versao + timer e tudo SINCRONO (nenhum await no meio). Antes o timer so era criado
+  // DEPOIS de esperar o banco: numa rajada de mensagens no mesmo instante, duas chamadas
+  // calculavam a mesma versao e deixavam timers "orfaos" vivos, e o timer da mensagem mais
+  // nova podia ser sobrescrito por um mais velho (achado 18/09, caso Marcia Lima).
   const atual = (versoes.get(key) || 0) + 1;
   versoes.set(key, atual);
   const anterior = timers.get(key);
   if (anterior) clearTimeout(anterior);
-
-  await prisma.botConversa.upsert({
-    where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
-    create: { usuarioId: params.usuarioId, chatJid: params.chatJid, ultimoInboundWaId: params.waId },
-    update: { ultimoInboundWaId: params.waId },
-  });
 
   // Agrupa a rajada natural do cliente antes de consultar a IA. Quando a ultima
   // mensagem e uma imagem sem medida no texto (cara de clique em anuncio — o cliente
@@ -675,11 +705,23 @@ export async function agendarRespostaBotIA(params: AgendarBotParams) {
     ? 12000 + Math.floor(Math.random() * 4000)
     : 5500 + Math.floor(Math.random() * 3000);
   const timer = setTimeout(() => {
-    timers.delete(key);
+    if (timers.get(key) === timer) timers.delete(key);
     executar(params, atual).catch((e) => console.error('[Bot IA] executar:', e));
   }, espera);
   timer.unref?.();
   timers.set(key, timer);
+
+  // Marca da ultima entrada (usada pelo painel/vigia). Depois do timer armado: se o banco
+  // falhar aqui a resposta continua agendada — so registra o erro.
+  try {
+    await prisma.botConversa.upsert({
+      where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
+      create: { usuarioId: params.usuarioId, chatJid: params.chatJid, ultimoInboundWaId: params.waId },
+      update: { ultimoInboundWaId: params.waId },
+    });
+  } catch (e) {
+    console.error(`[Bot IA] ${params.chatJid}: falha ao gravar BotConversa no agendamento (resposta segue agendada):`, (e as any)?.message || e);
+  }
 }
 
 export async function pausarConversaBotIA(usuarioId: string, chatJid: string, minutos?: number, motivo = 'atendimento_manual') {

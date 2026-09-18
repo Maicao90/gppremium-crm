@@ -12,8 +12,8 @@ import {
 import { precosForaDaTabela, valoresEmReais } from '../data/precoGuard';
 import { prometeuTransferenciaFalsa, removerReperguntaPosPreco, removerRepeticaoRecente } from '../data/comportamentoGuard';
 import { lerBotPneusConfig, montarPromptAtendimentoBot } from '../services/botPneusConfig';
-import { decidirAcaoPreco, EstadoPrecoFluxo, DadosPrecoFluxo } from '../data/fluxoPreco';
-import { extrairIntencaoPreco, podeSerSobrePreco } from '../data/fluxoPrecoExtrator';
+import { decidirSequenciaPreco, EstadoPrecoFluxo, DadosPrecoFluxo } from '../data/fluxoPreco';
+import { extrairIntencoesPreco, podeSerSobrePreco } from '../data/fluxoPrecoExtrator';
 import { sanitizarTextosFluxo } from '../data/fluxoCatalogo';
 
 dotenv.config();
@@ -223,6 +223,23 @@ function contextoDeData(): string {
   return `DATA_DE_HOJE: hoje e ${diaSemana}, ${dataLonga} (${iso}), e agora sao ${hora} no horario de Brasilia. Use isso pra calcular qualquer data que o cliente citar ("dia 10", "semana que vem", "amanha") e pra montar a data da marca [LEMBRAR] no formato AAAA-MM-DD HH:MM.`;
 }
 
+// Separa o "rabo" de mensagens do cliente que ainda nao foram respondidas (tudo depois da ultima
+// mensagem do robo/atendente) do resto da conversa. Legenda automatica de clique em anuncio
+// nao e pergunta e sai da rajada. Placeholder de midia sem texto ("[imagem enviada]") vira aviso:
+// o codigo nao sabe o que tem na foto/audio, entao a rajada vai pra IA livre.
+const LEGENDA_ANUNCIO = /^\s*📢\s*\[An[uú]ncio\]/i;
+const PLACEHOLDER_MIDIA = /^\[[^\]]+\]$/;
+function separarRajada(messages: any[]): { rajada: string[]; anteriores: any[]; temMidiaSemTexto: boolean } {
+  let inicio = messages.length;
+  while (inicio > 0 && messages[inicio - 1]?.role === 'user') inicio--;
+  const rabo = messages.slice(inicio).map((m) => String(m?.content ?? '').trim()).filter(Boolean);
+  // So conta quando a ULTIMA mensagem e a midia sem texto (igual ao comportamento anterior, que
+  // olhava a ultima); midia sem texto no meio da rajada apenas sai da lista.
+  const temMidiaSemTexto = rabo.length > 0 && PLACEHOLDER_MIDIA.test(rabo[rabo.length - 1] as string);
+  const uteis = rabo.filter((t) => !LEGENDA_ANUNCIO.test(t) && !PLACEHOLDER_MIDIA.test(t));
+  return { rajada: (uteis.length ? uteis : rabo).slice(-6), anteriores: messages.slice(0, inicio), temMidiaSemTexto };
+}
+
 app.post('/gerar-resposta', async (req, res) => {
   try {
     const { messages, imagem, audio, lojas, ultimosTextosCliente } = req.body || {};
@@ -247,7 +264,13 @@ app.post('/gerar-resposta', async (req, res) => {
     const ultimaDoCliente = Array.isArray(messages)
       ? [...messages].reverse().find((m: any) => m?.role === 'user')
       : null;
-    const gatilho = String(ultimaDoCliente?.content ?? textosCliente);
+    // RAJADA (18/09, caso Marcia Lima): o cliente manda varias mensagens seguidas ate o robo
+    // responder (preco, marca, endereco...). Antes so a ULTIMA era lida e o resto ficava sem
+    // resposta. Agora o fluxo le todas as mensagens do cliente que vieram DEPOIS da ultima
+    // resposta (robo ou atendente) e responde cada assunto. Mensagem ja respondida nunca entra
+    // (nao contamina — achado 26/08).
+    const { rajada, anteriores, temMidiaSemTexto } = separarRajada(messages);
+    const gatilho = rajada.length ? rajada.join('\n') : String(ultimaDoCliente?.content ?? textosCliente);
 
     // FLUXO DETERMINISTICO DE PRECO (Camadas 1+2, Tasks 3-4, ligado aqui no Task 5). So
     // roda se valer a pena chamar a IA extratora; se ela decidir que a mensagem e sobre
@@ -255,21 +278,22 @@ app.post('/gerar-resposta', async (req, res) => {
     // caminho livre abaixo, que e onde a IA podia inventar numero ou escolher o modelo
     // errado (ver commits 688b1eef/46b91911 do dia 15/09, agora supersedidos por isto
     // pra qualquer caso que o fluxo abaixo decida tratar).
-    if (podeSerSobrePreco(gatilho, estadoPrecoAtual)) {
+    // Foto/audio sem texto na rajada: o codigo nao ve o conteudo — deixa a IA livre (que ve/ouve).
+    if (!temMidiaSemTexto && podeSerSobrePreco(gatilho, estadoPrecoAtual)) {
       const apiKeyFluxo = process.env.OPENAI_API_KEY?.trim();
       if (apiKeyFluxo) {
-        const contextoRecente = (Array.isArray(messages) ? messages : [])
+        const contextoRecente = anteriores
           .slice(-6)
           .map((m: any) => `${m.role === 'user' ? 'CLIENTE' : 'ROBO'}: ${String(m.content || '').slice(0, 200)}`)
           .join('\n');
-        const intencao = await extrairIntencaoPreco(gatilho, contextoRecente, apiKeyFluxo);
-        if (intencao) {
-          const decisao = decidirAcaoPreco(intencao, estadoPrecoAtual, dadosPrecoAtuais, textosFluxo, { minutosDesdeLocalizacao });
-          if (decisao.acao.tipo !== 'NADA') {
+        const intencoes = await extrairIntencoesPreco(rajada.length ? rajada : [gatilho], contextoRecente, apiKeyFluxo);
+        if (intencoes) {
+          const decisao = decidirSequenciaPreco(intencoes, estadoPrecoAtual, dadosPrecoAtuais, textosFluxo, { minutosDesdeLocalizacao });
+          if (decisao.acaoPrincipal !== 'NADA') {
             return res.json({
-              partes: decisao.acao.partes,
+              partes: decisao.partes,
               deterministico: true,
-              acaoTipo: decisao.acao.tipo,
+              acaoTipo: decisao.acaoPrincipal,
               novoEstadoPreco: decisao.novoEstado,
               novosDadosPreco: JSON.stringify(decisao.novosDados),
             });

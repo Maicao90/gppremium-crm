@@ -1,7 +1,7 @@
 // Chama a OpenAI de verdade — precisa de OPENAI_API_KEY no ambiente (o processo
 // bot-service ja tem via dotenv; rodar este script de dentro da pasta backend).
 import 'dotenv/config';
-import { extrairIntencaoPreco } from './fluxoPrecoExtrator';
+import { extrairIntencaoPreco, extrairIntencoesPreco } from './fluxoPrecoExtrator';
 
 const apiKey = process.env.OPENAI_API_KEY?.trim();
 if (!apiKey) { console.log('SEM OPENAI_API_KEY — nao da pra rodar este teste'); process.exit(1); }
@@ -65,6 +65,58 @@ const casos: { nome: string; msg: string; contexto: string; esperado: string; me
   { nome: 'objecao: "vi mais barato em outro lugar"', msg: 'vi mais barato em outro lugar', contexto: 'ROBO: o pneu sai por R$289,00 à vista', esperado: 'OBJETOU_PRECO_OU_MARCA' },
   // Garantia / tecnica continua sendo tecnica
   { nome: 'tecnica: "qual a garantia?"', msg: 'qual a garantia?', contexto: 'ROBO: o pneu sai por R$289,00 à vista', esperado: 'PERGUNTA_TECNICA' },
+  // Outra marca (caso Marcia Lima, 18/09)
+  { nome: 'outra marca: "vc tem Pirelli ou Dunlop?"', msg: 'vc tem Pirelli ou Dunlop?', contexto: 'ROBO: o pneu sai por R$289,00 à vista', esperado: 'PERGUNTOU_POR_OUTRA_MARCA' },
+  { nome: 'outra marca real (com erro de digitacao): "Mais vc tem odulop oupireli"', msg: 'Mais vc tem odulop oupireli', contexto: 'ROBO: o pneu 175/70/14 sai por R$279,00 à vista', esperado: 'PERGUNTOU_POR_OUTRA_MARCA' },
+  { nome: 'outra marca: "tem michelin?"', msg: 'tem michelin?', contexto: '', esperado: 'PERGUNTOU_POR_OUTRA_MARCA' },
+];
+
+// ===== RAJADAS (18/09): varias mensagens seguidas -> lista de assuntos, na ordem =====
+const rajadas: { nome: string; msgs: string[]; contexto: string; esperado: string[]; exato?: boolean; conferir?: (itens: any[]) => string | null }[] = [
+  // ACHADO NO E2E (18/09): assuntos JA respondidos que estao so no contexto NUNCA podem virar item
+  // (senao o robo repetiria o preco, a marca e o PINO da localizacao a cada mensagem nova).
+  {
+    nome: 'contexto ja respondido (endereco+preco): mensagem nova "e em 6x?" -> so as parcelas',
+    msgs: ['e em 6x fica quanto?'],
+    contexto: 'CLIENTE: onde fica a loja?\nROBO: Segue a nossa localização:\nCLIENTE: quanto custa o 195/55/15?\nROBO: Temos o pneu 195/55/15 por R$ 289,00 à vista.',
+    esperado: ['PERGUNTOU_PARCELAMENTO_ESPECIFICO'],
+    exato: true,
+  },
+  {
+    nome: 'contexto = a rajada inteira da Marcia ja respondida: "e em 6x?" -> so as parcelas (sem repetir preco/marca/endereco)',
+    msgs: ['e em 6x fica quanto?'],
+    contexto: 'CLIENTE: Quanto e 2 pneus do gol g 5. 175 .70.AR 14 Pirelli ou dulop\nCLIENTE: Vc tem esses ai\nCLIENTE: Moro em Alexânia não vou coloca aí não só vou busca ai\nCLIENTE: Essa loja aí fica em qual endereço\nROBO: Temos os 2 pneus 175/70/14 da marca GP Premium saindo por R$ 558,00 à vista. Aqui a gente trabalha só com o GP Premium. Segue a nossa localização:',
+    esperado: ['PERGUNTOU_PARCELAMENTO_ESPECIFICO'],
+    exato: true,
+  },
+  {
+    nome: 'contexto ja respondido (remold + chines): "obrigado" -> papo solto',
+    msgs: ['obrigado'],
+    contexto: 'CLIENTE: é remold?\nROBO: Vou ser sincero com você: sim, é remold...\nCLIENTE: e é chinês?\nROBO: Não, a gente não trabalha com pneu chinês...',
+    esperado: ['OUTRO_ASSUNTO'],
+    exato: true,
+  },
+  {
+    nome: 'CASO REAL Marcia Lima (13:56, 18/09): preco+marca / "tem esses ai" / "moro em Alexânia" / endereco',
+    msgs: ['Quanto e 2 pneus do gol g 5.   175 .70.AR 14   \nPirelli ou  dulop', 'Vc tem esses ai', 'Moro em Alexânia não vou coloca aí não só vou busca ai', 'Essa loja aí fica em qual endereço'],
+    contexto: '',
+    esperado: ['DAR_MEDIDA', 'PERGUNTOU_POR_OUTRA_MARCA', 'PEDIU_LOCALIZACAO'],
+    conferir: (itens) => (itens[0].medidaExtraida === '175/70/14' && itens[0].quantidadeExtraida === 2 ? null : `1o item deveria ter medida 175/70/14 e quantidade 2: ${JSON.stringify(itens[0])}`),
+  },
+  { nome: 'saudacao + medida + parcelamento', msgs: ['boa tarde', 'quanto custa o 195/55/15?', 'e em 6x?'], contexto: '', esperado: ['DAR_MEDIDA', 'PERGUNTOU_PARCELAMENTO_ESPECIFICO'], conferir: (i) => (i[i.length - 1].parcelasExtraida === 6 ? null : 'faltou parcelas=6') },
+  { nome: 'so cumprimentos -> 1 item de papo solto', msgs: ['oi', 'tudo bem?'], contexto: '', esperado: ['OUTRO_ASSUNTO'] },
+  { nome: 'saudacao + preco sem medida', msgs: ['boa tarde', 'quanto custa?'], contexto: '', esperado: ['PERGUNTAR_PRECO_SEM_MEDIDA'] },
+  { nome: 'remold + nota fiscal', msgs: ['é remold?', 'e vocês dão nota fiscal?'], contexto: '', esperado: ['PERGUNTOU_SE_E_REMOLD', 'PERGUNTOU_NOTA_FISCAL'] },
+  { nome: 'balanceamento (4 pneus) + endereco', msgs: ['quanto é o balanceamento dos 4?', 'onde fica a loja'], contexto: '', esperado: ['PERGUNTOU_BALANCEAMENTO', 'PEDIU_LOCALIZACAO'], conferir: (i) => (i[0].quantidadeExtraida === 4 ? null : 'faltou quantidade 4') },
+  { nome: 'desconto + parcelamento generico', msgs: ['tem desconto à vista?', 'parcela também?'], contexto: 'ROBO: o pneu sai por R$289,00 à vista', esperado: ['PERGUNTOU_DESCONTO_AVISTA', 'PERGUNTOU_PARCELAMENTO_GENERICO'] },
+  { nome: 'mesmo assunto repetido nao duplica', msgs: ['onde fica a loja?', 'me manda a localização', 'qual o endereço?'], contexto: '', esperado: ['PEDIU_LOCALIZACAO'] },
+  { nome: 'preco + pergunta tecnica no meio (o codigo nao responde a tecnica)', msgs: ['quanto custa o 195/55/15?', 'ele aguenta quantos kg?'], contexto: '', esperado: ['DAR_MEDIDA', 'PERGUNTA_TECNICA'] },
+  {
+    nome: 'legenda do anuncio junto com a medida nao vira pergunta de preco',
+    msgs: ['📢 [Anúncio] Pneus a partir de R$ 239\n\nOlá! Posso ter mais informações sobre isso?', '175/65/14'],
+    contexto: '',
+    esperado: ['DAR_MEDIDA'],
+  },
 ];
 
 (async () => {
@@ -80,6 +132,20 @@ const casos: { nome: string; msg: string; contexto: string; esperado: string; me
       && (!c.formaEsperada || r.formaPagamentoExtraida === c.formaEsperada);
     if (!ok) erros++;
     console.log((ok ? 'OK   ' : 'ERRO ') + c.nome + ' -> ' + JSON.stringify(r));
+  }
+  // Rajadas: a lista esperada tem que aparecer NA ORDEM (pode haver no maximo 1 item a mais), sem repeticao.
+  for (const c of rajadas) {
+    const itens = await extrairIntencoesPreco(c.msgs, c.contexto, apiKey!);
+    const tipos = (itens || []).map((i) => i.intencao);
+    let k = 0;
+    for (const t of tipos) if (t === c.esperado[k]) k++;
+    const naOrdem = k === c.esperado.length;
+    const semRepetir = new Set(tipos).size === tipos.length;
+    const tamanhoOk = c.exato ? tipos.length === c.esperado.length : tipos.length <= c.esperado.length + 1;
+    const extra = itens && naOrdem && c.conferir ? c.conferir(itens) : null;
+    const ok = !!itens && naOrdem && semRepetir && tamanhoOk && !extra;
+    if (!ok) erros++;
+    console.log((ok ? 'OK   ' : 'ERRO ') + 'RAJADA ' + c.nome + ' -> ' + tipos.join(', ') + (extra ? ' | ' + extra : '') + (ok ? '' : ' | esperado: ' + c.esperado.join(', ')));
   }
   console.log(erros === 0 ? '\nTODOS OK' : '\n' + erros + ' ERRO(S)');
   process.exit(erros === 0 ? 0 : 1);

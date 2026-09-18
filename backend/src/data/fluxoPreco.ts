@@ -50,6 +50,7 @@ export type IntencaoTipo =
   | 'PERGUNTOU_SE_TEM_JUROS'
   | 'PERGUNTOU_DESCONTO_AVISTA'
   | 'PERGUNTOU_SE_E_CHINES'
+  | 'PERGUNTOU_POR_OUTRA_MARCA'
   | 'OFERECEU_BASE_TROCA'
   | 'OFERECEU_VENDER_USADO'
   | 'PERGUNTOU_NOTA_FISCAL'
@@ -83,6 +84,7 @@ export type TipoAcaoTexto =
   | 'RESPONDER_ALINHAMENTO'
   | 'RESPONDER_OBJECAO'
   | 'RESPONDER_LOCALIZACAO_REPETIDA'
+  | 'RESPONDER_OUTRA_MARCA'
   // Manda o texto E o chamador (botAtendimentoService) dispara o pino de localizacao real.
   | 'ENVIAR_LOCALIZACAO_FIXA';
 
@@ -109,6 +111,11 @@ export interface ContextoFluxo {
 // Pediu o endereco de novo dentro dessa janela: responde so em texto, nao manda o pino outra vez
 // (achado 18/09, caso Marcia Lima: 3 pinos em 5 minutos).
 const JANELA_PINO_REPETIDO_MIN = 30;
+
+// Marcador que o motor coloca DENTRO das partes, na posicao exata em que o pino da loja tem que
+// sair (depois do texto "Segue a nossa localizacao"). Quem envia (botAtendimentoService) troca
+// pelo envio real do pino. Fica em `partes` pra manter a ORDEM certa numa resposta com varios assuntos.
+export const MARCADOR_PINO = '[ENVIAR_LOCALIZACAO]';
 
 const VALOR_BALANCEAMENTO_POR_RODA = 25;
 const PARCELAS_MAXIMAS = 10;
@@ -191,6 +198,62 @@ function montarAcaoParaMedida(medida: string, textos: TextosFluxo, quantidade: n
   };
 }
 
+export interface ResultadoSequencia {
+  acaoPrincipal: AcaoPreco['tipo']; // tipo da 1a acao que respondeu; 'NADA' = sai do fluxo (cai na IA livre)
+  partes: string[];
+  novoEstado: EstadoPrecoFluxo;
+  novosDados: DadosPrecoFluxo;
+}
+
+const MAX_ASSUNTOS_POR_RAJADA = 4;
+const MAX_PARTES_POR_RAJADA = 8;
+
+/**
+ * RAJADA (18/09, caso Marcia Lima): o cliente manda varias mensagens seguidas (preco, marca,
+ * endereco...) e o robo tem que responder TUDO, na ordem em que ele perguntou — nao so a ultima.
+ * A IA extratora devolve a lista de assuntos; aqui o codigo passa por cada um com
+ * decidirAcaoPreco, encadeando o estado (a medida dada no 1o assunto vale pro 2o), junta as
+ * respostas na ordem e tira bolha repetida. Continua PURO.
+ *
+ * - Pergunta tecnica no meio da rajada: o codigo nao sabe responder -> sai do fluxo inteiro
+ *   (a IA livre, protegida pelas travas, responde a rajada toda).
+ * - Assunto sem resposta fixa (papo solto, agradecimento) e ignorado quando ha outro assunto.
+ * - O pino da localizacao sai no maximo 1 vez por rajada.
+ */
+export function decidirSequenciaPreco(
+  intencoes: IntencaoExtraida[],
+  estadoAtual: EstadoPrecoFluxo,
+  dadosAtuais: DadosPrecoFluxo,
+  textos: TextosFluxo = {},
+  contexto: ContextoFluxo = {}
+): ResultadoSequencia {
+  const saidaNada: ResultadoSequencia = { acaoPrincipal: 'NADA', partes: [], novoEstado: estadoAtual, novosDados: dadosAtuais };
+  const itens = intencoes.slice(0, MAX_ASSUNTOS_POR_RAJADA);
+  if (itens.length === 0 || itens.some((i) => i.intencao === 'PERGUNTA_TECNICA')) return saidaNada;
+
+  let estado = estadoAtual;
+  let dados = dadosAtuais;
+  const partes: string[] = [];
+  let acaoPrincipal: AcaoPreco['tipo'] = 'NADA';
+  let pinNaRajada = false;
+
+  for (const item of itens) {
+    if (item.intencao === 'PEDIU_LOCALIZACAO' && pinNaRajada) continue;
+    const r = decidirAcaoPreco(item, estado, dados, textos, contexto);
+    if (r.acao.tipo === 'NADA') continue;
+    if (acaoPrincipal === 'NADA') acaoPrincipal = r.acao.tipo;
+    if (r.acao.partes.includes(MARCADOR_PINO)) pinNaRajada = true;
+    for (const p of r.acao.partes) {
+      if (p === MARCADOR_PINO || !partes.includes(p)) partes.push(p);
+    }
+    estado = r.novoEstado;
+    dados = r.novosDados;
+  }
+
+  if (acaoPrincipal === 'NADA' || partes.length === 0) return saidaNada;
+  return { acaoPrincipal, partes: partes.slice(0, MAX_PARTES_POR_RAJADA), novoEstado: estado, novosDados: dados };
+}
+
 /**
  * Motor de decisao PURO — sem I/O, sem IA, 100% testavel sem rede.
  * Recebe a intencao ja extraida (pela IA, em fluxoPrecoExtrator.ts) + o estado
@@ -229,8 +292,10 @@ export function decidirAcaoPreco(
       if (typeof minutos === 'number' && minutos < JANELA_PINO_REPETIDO_MIN) {
         return respostaTexto('RESPONDER_LOCALIZACAO_REPETIDA', textoFluxo(textos, 'localizacao_repetida'), estadoAtual, dadosAtuais);
       }
-      return respostaTexto('ENVIAR_LOCALIZACAO_FIXA', textoFluxo(textos, 'localizacao'), estadoAtual, dadosAtuais);
+      return respostaTexto('ENVIAR_LOCALIZACAO_FIXA', [...textoFluxo(textos, 'localizacao'), MARCADOR_PINO], estadoAtual, dadosAtuais);
     }
+    case 'PERGUNTOU_POR_OUTRA_MARCA':
+      return respostaTexto('RESPONDER_OUTRA_MARCA', textoFluxo(textos, 'outra_marca'), estadoAtual, dadosAtuais);
     case 'OBJETOU_PRECO_OU_MARCA':
       return respostaTexto('RESPONDER_OBJECAO', textoFluxo(textos, 'objecao'), estadoAtual, dadosAtuais);
     case 'PERGUNTOU_PARCELAMENTO_GENERICO':

@@ -857,6 +857,9 @@ iniciarVigiaConexao();
 // Esta varredura roda de tempos em tempos, acha as conversas em que o CLIENTE falou por
 // ultimo e o robo nao respondeu, e aciona o robo pra elas.
 const tentativasResposta = new Map<string, number>(); // waId -> quantas vezes tentamos
+// Motivos pelos quais o vigia NAO acionou uma conversa parada ha 2+ min (logado 1x por mensagem+motivo).
+// Achado 18/09 (caso Marcia Lima): ficou ~10 min sem resposta e nao havia nenhum log dizendo por que.
+const motivosVigiaLogados = new Set<string>();
 let vigiaRespostasIniciado = false;
 function iniciarVigiaRespostasPendentes() {
   if (vigiaRespostasIniciado) return;
@@ -871,13 +874,17 @@ function iniciarVigiaRespostasPendentes() {
       if (!contasBot.length) return;
 
       const agora = Date.now();
-      // Janela: mensagens com mais de 60s (o fluxo normal ja teve tempo de agir) e
-      // menos de 6h (nao ressuscita conversa velha do nada).
+      // Janela: mensagens com mais de 60s (o fluxo normal ja teve tempo de agir: espera de
+      // 5,5-8,5s + resposta; menos que isso arrisca responder em dobro) e menos de 6h (nao
+      // ressuscita conversa velha do nada). Varredura a cada 45s: pior caso ~105s de espera.
       const limiteNovo = new Date(agora - 60 * 1000);
       const limiteVelho = new Date(agora - 6 * 60 * 60 * 1000);
 
       for (const conta of contasBot) {
-        if (!sessions.has(conta.id) && !connectedUsers.has(conta.id)) continue; // sem WhatsApp, nao adianta
+        // Sem WhatsApp conectado nao adianta. Confere tambem a conexao EFETIVA (conta que usa o
+        // WhatsApp de outra — whatsappDonoId), que e a que o robo realmente usa pra enviar.
+        const idConexao = await resolverConexaoEfetiva(conta.id).catch(() => conta.id);
+        if (!sessions.has(conta.id) && !connectedUsers.has(conta.id) && !sessions.has(idConexao) && !connectedUsers.has(idConexao)) continue;
 
         const recentes = await prisma.mensagem.findMany({
           where: { usuarioId: conta.id, timestamp: { gte: limiteVelho } },
@@ -900,15 +907,24 @@ function iniciarVigiaRespostasPendentes() {
 
           const estado = await prisma.botConversa.findUnique({
             where: { usuarioId_chatJid: { usuarioId: conta.id, chatJid } },
-            select: { pausadoAte: true, ultimaRespostaEm: true },
+            select: { pausadoAte: true, ultimaRespostaEm: true, motivoPausa: true },
           });
+          const idadeMs = agora - ultima.timestamp.getTime();
+          const registrarPulo = (motivo: string) => {
+            if (idadeMs < 2 * 60 * 1000) return;
+            const k = `${ultima.waId}|${motivo}`;
+            if (motivosVigiaLogados.has(k)) return;
+            if (motivosVigiaLogados.size > 500) motivosVigiaLogados.clear();
+            motivosVigiaLogados.add(k);
+            console.log(`[Bot IA][Vigia] ${chatJid} sem resposta ha ${Math.round(idadeMs / 1000)}s mas NAO acionado: ${motivo}.`);
+          };
           // Pausa de verdade (humano assumiu) continua sendo respeitada.
-          if (estado?.pausadoAte && estado.pausadoAte.getTime() > agora) continue;
+          if (estado?.pausadoAte && estado.pausadoAte.getTime() > agora) { registrarPulo(`conversa pausada (${estado.motivoPausa || 'sem motivo'}) ate ${estado.pausadoAte.toISOString()}`); continue; }
           // Ja respondemos DEPOIS dessa mensagem? entao esta em dia.
-          if (estado?.ultimaRespostaEm && estado.ultimaRespostaEm >= ultima.timestamp) continue;
+          if (estado?.ultimaRespostaEm && estado.ultimaRespostaEm >= ultima.timestamp) { registrarPulo('ja consta resposta do robo depois dela (ultimaRespostaEm)'); continue; }
 
           const tentativas = tentativasResposta.get(ultima.waId) || 0;
-          if (tentativas >= 2) continue; // nao insiste pra sempre na mesma mensagem
+          if (tentativas >= 4) { registrarPulo('ja tentou 4 vezes'); continue; } // nao insiste pra sempre na mesma mensagem
           tentativasResposta.set(ultima.waId, tentativas + 1);
           if (tentativasResposta.size > 500) {
             // limpeza simples pra nao crescer sem fim
@@ -926,7 +942,7 @@ function iniciarVigiaRespostasPendentes() {
   };
 
   setTimeout(() => { varrer().catch(() => {}); }, 30_000).unref?.();
-  setInterval(() => { varrer().catch(() => {}); }, 90_000).unref?.();
+  setInterval(() => { varrer().catch(() => {}); }, 45_000).unref?.();
 }
 iniciarVigiaRespostasPendentes();
 

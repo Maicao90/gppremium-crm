@@ -146,6 +146,15 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     ],
   },
 
+  {
+    chave: 'outra_marca',
+    grupo: 'produto',
+    titulo: 'Pergunta por outra marca',
+    quando: 'O cliente pergunta se a loja tem ou trabalha com outra marca de pneu (Pirelli, Dunlop, Michelin, Goodyear…).',
+    exemplos: ['vc tem Pirelli ou Dunlop?', 'tem Michelin?', 'trabalha com outras marcas?'],
+    partes: ['Aqui a gente trabalha só com o GP Premium — não temos outras marcas.'],
+  },
+
   // ---------- Servicos e politicas ----------
   {
     chave: 'balanceamento',
