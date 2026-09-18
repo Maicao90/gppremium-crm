@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { prisma } from '../server';
+import { decidirAntiLoop, JANELA_ECO_MS, MotivoAntiLoop } from '../data/comportamentoGuard';
 
 // O texto da resposta (IA + tabela deterministica de preco) agora vem de um servico
 // SEPARADO (bot-service, porta 3010) — de proposito. Antes, tudo isso rodava dentro
@@ -337,15 +338,28 @@ async function naoAtender(usuarioId: string, chatJid: string): Promise<boolean> 
   }
 }
 
-const LIMITE_RESPOSTAS_JANELA = 8;
+// Anti-loop (18/09): a logica de DECISAO (dois eixos: volume/turnos reais e
+// conteudo/eco+repeticao) mora em comportamentoGuard.ts (decidirAntiLoop) — la e
+// logica pura, sem import de banco/servidor, entao um teste standalone pode
+// cobrir sem efeito colateral nenhum. Aqui so busca no banco e delega.
 const JANELA_ANTI_LOOP_MS = 5 * 60 * 1000;
 
-async function ritmoDeLoop(usuarioId: string, chatJid: string): Promise<boolean> {
+async function ritmoDeLoop(usuarioId: string, chatJid: string): Promise<{ pausar: boolean; motivo: MotivoAntiLoop | null }> {
   const desde = new Date(Date.now() - JANELA_ANTI_LOOP_MS);
-  const nossas = await prisma.mensagem.count({
-    where: { usuarioId, chatJid, fromMe: true, enviadoPorId: 'bot', timestamp: { gte: desde } },
-  });
-  return nossas >= LIMITE_RESPOSTAS_JANELA;
+  const desdeComMargemEco = new Date(desde.getTime() - JANELA_ECO_MS);
+
+  const [mensagensCliente, respostasBotComMargem] = await Promise.all([
+    prisma.mensagem.findMany({
+      where: { usuarioId, chatJid, fromMe: false, timestamp: { gte: desde } },
+      select: { waId: true, texto: true, timestamp: true },
+    }),
+    prisma.mensagem.findMany({
+      where: { usuarioId, chatJid, fromMe: true, enviadoPorId: 'bot', timestamp: { gte: desdeComMargemEco } },
+      select: { texto: true, timestamp: true },
+    }),
+  ]);
+
+  return decidirAntiLoop(mensagensCliente, respostasBotComMargem, desde);
 }
 
 async function executar(params: AgendarBotParams, versao: number) {
@@ -367,12 +381,13 @@ async function executar(params: AgendarBotParams, versao: number) {
       return;
     }
 
-    if (await ritmoDeLoop(params.usuarioId, params.chatJid)) {
-      console.error(`[Bot IA][Anti-loop] ${params.chatJid}: ${LIMITE_RESPOSTAS_JANELA}+ respostas em 5 min — parece conversa com outro robo. Pausando 12h.`);
+    const ritmo = await ritmoDeLoop(params.usuarioId, params.chatJid);
+    if (ritmo.pausar) {
+      console.error(`[Bot IA][Anti-loop] ${params.chatJid}: motivo=${ritmo.motivo} — parece conversa com outro robo. Pausando 12h.`);
       await prisma.botConversa.upsert({
         where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
-        create: { usuarioId: params.usuarioId, chatJid: params.chatJid, pausadoAte: new Date(Date.now() + 12 * 60 * 60 * 1000), motivoPausa: 'anti_loop' },
-        update: { pausadoAte: new Date(Date.now() + 12 * 60 * 60 * 1000), motivoPausa: 'anti_loop' },
+        create: { usuarioId: params.usuarioId, chatJid: params.chatJid, pausadoAte: new Date(Date.now() + 12 * 60 * 60 * 1000), motivoPausa: ritmo.motivo || 'anti_loop' },
+        update: { pausadoAte: new Date(Date.now() + 12 * 60 * 60 * 1000), motivoPausa: ritmo.motivo || 'anti_loop' },
       }).catch(() => {});
       return;
     }

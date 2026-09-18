@@ -74,7 +74,7 @@ export function removerReperguntaPosPreco(partes: string[]): string[] {
 // meio. Regra em texto ("nao repita") nao segura — aqui a repeticao e cortada no codigo,
 // comparando com o que o robo JA disse nesta conversa.
 
-function normalizarParaComparar(texto: string): string {
+export function normalizarParaComparar(texto: string): string {
   return String(texto || '')
     .toLowerCase()
     .normalize('NFD')
@@ -103,4 +103,85 @@ export function removerRepeticaoRecente(partes: string[], jaDitas: string[]): st
     if (norma.length >= 40) recentes.add(norma); // nem repetir dentro do mesmo envio
   }
   return saida;
+}
+
+
+// TRAVA 4 (18/09): decisao de PAUSAR a conversa por anti-loop, junto (nao so cortar
+// bolha) — reusa a mesma normalizacao de texto da TRAVA 3 acima. Motivado pelo caso
+// real "Pwa" (5 falas reais do cliente geraram 9 bolhas do robo — a contagem antiga,
+// que contava BOLHA em vez de TURNO do cliente, quase pausou uma conversa legitima).
+// Fica aqui (nao em botAtendimentoService.ts) de proposito: e logica PURA, sem
+// import de banco/servidor, entao um teste standalone pode importar so isto sem
+// risco de disparar efeito colateral nenhum.
+//
+// Dois eixos independentes:
+// 1) VOLUME: mensagens DISTINTAS do cliente (waId unico) na janela — mede turno real
+//    de conversa, nao bolha do robo; serve de rede de seguranca pra loop nao-textual
+//    (ex.: troca de midia em circulo).
+// 2) CONTEUDO: pega a assinatura real de loop, independente de volume:
+//    a) ECO: o cliente "manda" de volta um texto que o proprio robo tinha acabado de
+//       mandar (eco de plataforma / bot do outro lado ecoando) — nao e cliente digitando.
+//    b) REPETICAO PROPRIA: o robo repete a mesma frase 3+ vezes entre as ultimas 6
+//       respostas — esta girando sem progredir a conversa, mesmo mudando de turno.
+// Repeticao de conteudo pausa NA HORA (prova direta de loop, nao espera volume alto);
+// volume fica como rede de seguranca pro que os dois sub-sinais de conteudo nao cobrem.
+export const JANELA_ECO_MS = 2 * 60 * 1000;
+const MIN_REPETICOES_PROPRIAS = 3;
+const QTD_RESPOSTAS_ANALISADAS = 6;
+const LIMITE_TURNOS_JANELA = 8;
+
+export interface MsgAntiLoop {
+  waId?: string | null;
+  texto: string;
+  timestamp: Date;
+}
+
+export type MotivoAntiLoop = 'anti_loop_eco' | 'anti_loop_repeticao' | 'anti_loop_volume';
+
+/**
+ * mensagensCliente: mensagens do cliente (fromMe:false) DENTRO da janela de 5min.
+ * respostasBotComMargem: respostas do robo (fromMe:true, enviadoPorId:'bot') desde
+ *   (inicio da janela de 5min - JANELA_ECO_MS), pra dar margem ao lookback do eco.
+ * desdeJanela: inicio da janela de 5min (filtra quais respostas do robo entram na
+ *   checagem de repeticao propria).
+ */
+export function decidirAntiLoop(
+  mensagensCliente: MsgAntiLoop[],
+  respostasBotComMargem: MsgAntiLoop[],
+  desdeJanela: Date,
+): { pausar: boolean; motivo: MotivoAntiLoop | null } {
+  // EIXO VOLUME: turnos reais do cliente (mensagens DISTINTAS por waId), nao bolhas do robo.
+  const turnosReais = new Set(mensagensCliente.filter((m) => m.waId).map((m) => m.waId)).size;
+
+  // EIXO CONTEUDO a) ECO: alguma mensagem do cliente, normalizada (>=40 chars), bate com
+  // uma resposta que o PROPRIO robo mandou nos JANELA_ECO_MS antes dela.
+  const eco = mensagensCliente.some((m) => {
+    const normCliente = normalizarParaComparar(m.texto);
+    if (normCliente.length < 40) return false;
+    const limiteEco = m.timestamp.getTime() - JANELA_ECO_MS;
+    return respostasBotComMargem.some((r) => {
+      const t = r.timestamp.getTime();
+      if (t >= m.timestamp.getTime() || t < limiteEco) return false;
+      return normalizarParaComparar(r.texto) === normCliente;
+    });
+  });
+
+  // EIXO CONTEUDO b) REPETICAO PROPRIA: entre as ultimas 6 respostas do robo na janela
+  // de 5min, 3+ iguais entre si (>=40 chars) = girando na mesma frase sem progredir.
+  const ultimasRespostas = respostasBotComMargem
+    .filter((r) => r.timestamp.getTime() >= desdeJanela.getTime())
+    .sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime())
+    .slice(0, QTD_RESPOSTAS_ANALISADAS);
+  const contagem = new Map<string, number>();
+  for (const r of ultimasRespostas) {
+    const norm = normalizarParaComparar(r.texto);
+    if (norm.length < 40) continue;
+    contagem.set(norm, (contagem.get(norm) || 0) + 1);
+  }
+  const repeticaoPropria = [...contagem.values()].some((n) => n >= MIN_REPETICOES_PROPRIAS);
+
+  if (eco) return { pausar: true, motivo: 'anti_loop_eco' };
+  if (repeticaoPropria) return { pausar: true, motivo: 'anti_loop_repeticao' };
+  if (turnosReais >= LIMITE_TURNOS_JANELA) return { pausar: true, motivo: 'anti_loop_volume' };
+  return { pausar: false, motivo: null };
 }
