@@ -9,7 +9,7 @@
 // pausar. Deliberadamente NAO importa nada de botAtendimentoService.ts/server.ts —
 // aquele import dispara o bootstrap inteiro do app (express.listen, connectToWhatsApp
 // etc) como efeito colateral, o que seria perigoso rodar so pra testar uma funcao pura.
-import { decidirAntiLoop, MsgAntiLoop } from './comportamentoGuard';
+import { decidirAntiLoop, MsgAntiLoop, removerPromessaDeFoto } from './comportamentoGuard';
 
 let erros = 0;
 function checar(nome: string, condicao: boolean, detalhe?: string) {
@@ -108,6 +108,20 @@ function bot(texto: string, offsetMsAntesDeAgora: number): MsgAntiLoop {
   const respostasBot: MsgAntiLoop[] = [bot('Ok', min(4)), bot('Ok', min(3)), bot('Ok', min(2)), bot('Ok', min(1))];
   const r = decidirAntiLoop(mensagensCliente, respostasBot, DESDE);
   checar('Confirmacoes curtas repetidas (<40 chars) NAO disparam anti_loop_repeticao', r.pausar === false, JSON.stringify(r));
+}
+
+// ===== Promessa de foto (caso real 19/09: "Foto" -> "Claro — segue foto do pneu..." e nao mandou nada) =====
+{
+  const f = (partes: string[]) => removerPromessaDeFoto(partes);
+  checar('Foto: "segue foto do pneu" e cortado', f(['Claro — segue foto do pneu 195/55/15 GP Premium.']).length === 0);
+  checar('Foto: "vou te mandar uma foto" e cortado', f(['Vou te mandar uma foto do pneu já já.']).length === 0);
+  checar('Foto: "te mando a foto" / "enviei a foto" cortados', f(['Te mando a foto agora']).length === 0 && f(['Enviei a foto acima']).length === 0);
+  checar('Foto: "Conseguiu ver a foto?" (pergunta sobre foto que nunca foi mandada) e cortado', f(['Oi! Conseguiu ver a foto?']).length === 0);
+  checar('Foto: preserva o resto da bolha (so a linha da promessa sai)', f(['O pneu 195/55/15 sai por R$ 289,00 à vista.\nSegue a foto do pneu:']).join('|') === 'O pneu 195/55/15 sai por R$ 289,00 à vista.');
+  checar('Foto: preserva outras bolhas normais', f(['Segue foto do pneu', 'Quando você consegue vir até a loja?']).join('|') === 'Quando você consegue vir até a loja?');
+  checar('Foto: texto sem foto passa intacto', f(['Temos o pneu 195/55/15 por R$ 289,00 à vista.']).length === 1);
+  checar('Foto: "segue a nossa localização" NAO e promessa de foto', f(['Segue a nossa localização:']).length === 1);
+  checar('Foto: "foto" em outro contexto (garantia/fotos do carro) nao e cortado', f(['Se quiser, traz uma foto do seu carro pra gente indicar.']).length === 1);
 }
 
 console.log(erros === 0 ? '\nTODOS OK' : '\n' + erros + ' ERRO(S)');

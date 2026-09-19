@@ -69,6 +69,22 @@ const casos: { nome: string; msg: string; contexto: string; esperado: string; me
   { nome: 'outra marca: "vc tem Pirelli ou Dunlop?"', msg: 'vc tem Pirelli ou Dunlop?', contexto: 'ROBO: o pneu sai por R$289,00 à vista', esperado: 'PERGUNTOU_POR_OUTRA_MARCA' },
   { nome: 'outra marca real (com erro de digitacao): "Mais vc tem odulop oupireli"', msg: 'Mais vc tem odulop oupireli', contexto: 'ROBO: o pneu 175/70/14 sai por R$279,00 à vista', esperado: 'PERGUNTOU_POR_OUTRA_MARCA' },
   { nome: 'outra marca: "tem michelin?"', msg: 'tem michelin?', contexto: '', esperado: 'PERGUNTOU_POR_OUTRA_MARCA' },
+  // Caso real 19/09 (conversa 7): "tem somente novos dele?" foi lido como OUTRA MARCA — e pergunta se o pneu e novo (remold)
+  { nome: 'REAL: "tem somente novos dele?" = pergunta se e novo -> remold', msg: 'tem somente novos dele?', contexto: 'CLIENTE: 205/55 aro 17\nROBO: Temos o pneu 205/55/17 da marca GP Premium por R$ 349,00 à vista.', esperado: 'PERGUNTOU_SE_E_REMOLD' },
+  { nome: 'novo: "esse pneu é novo?"', msg: 'esse pneu é novo?', contexto: 'ROBO: o pneu sai por R$289,00 à vista', esperado: 'PERGUNTOU_SE_E_REMOLD' },
+  { nome: 'novo: "é novo mesmo ou usado?"', msg: 'é novo mesmo ou usado?', contexto: '', esperado: 'PERGUNTOU_SE_E_REMOLD' },
+  // Caso real 18/09: "Ta aberto agora?" recebeu o PINO da localizacao (foi lido como pedido de endereco)
+  { nome: 'REAL: "Ta aberto agora?" -> horario (nao localizacao)', msg: 'Ta aberto agora?', contexto: 'CLIENTE: Eu quero\nROBO: Perfeito! Quando você consegue vir aqui na loja para fechar a compra?', esperado: 'PERGUNTOU_HORARIO' },
+  { nome: 'horario: "que horas vocês fecham?"', msg: 'que horas vocês fecham?', contexto: '', esperado: 'PERGUNTOU_HORARIO' },
+  { nome: 'horario: "qual o horário de funcionamento?"', msg: 'qual o horário de funcionamento?', contexto: '', esperado: 'PERGUNTOU_HORARIO' },
+  { nome: 'horario: "abre sábado?"', msg: 'abre sábado?', contexto: '', esperado: 'PERGUNTOU_HORARIO' },
+  // Caso real 19/09: "Foto" -> robo disse "segue foto" e nao mandou nada
+  { nome: 'REAL: "Foto" depois do preco -> pedido de foto', msg: 'Foto', contexto: 'CLIENTE: 195 55 15\nROBO: Temos o pneu 195/55/15 da marca GP Premium por R$ 289,00 à vista.', esperado: 'PEDIU_FOTO' },
+  { nome: 'foto: "manda foto do pneu"', msg: 'manda foto do pneu', contexto: '', esperado: 'PEDIU_FOTO' },
+  // Nao confundir: endereco continua endereco
+  { nome: 'endereco continua endereco: "qual o endereço de vocês?"', msg: 'qual o endereço de vocês?', contexto: '', esperado: 'PEDIU_LOCALIZACAO' },
+  // Caso real 18/09 (conversa 3): cliente recusa remold depois da explicacao
+  { nome: 'REAL: "Não amigo. Remold tô fora." depois da explicacao -> remold (a variante evita repetir)', msg: 'Não amigo. Remold tô fora.', contexto: 'CLIENTE: Não é remold certo?\nROBO: Vou ser sincero com você: sim, é remold — mas não é um remold comum...\nROBO: A gente dá garantia de 50 mil km ou seu dinheiro de volta.', esperado: 'PERGUNTOU_SE_E_REMOLD' },
 ];
 
 // ===== RAJADAS (18/09): varias mensagens seguidas -> lista de assuntos, na ordem =====

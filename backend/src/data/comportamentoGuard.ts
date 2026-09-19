@@ -67,6 +67,28 @@ export function removerReperguntaPosPreco(partes: string[]): string[] {
   return resultado;
 }
 
+// TRAVA 5 (19/09): o robo NAO envia foto de pneu e nunca pode dizer que vai enviar.
+// Caso real: cliente escreveu "Foto", o robo respondeu "Claro — segue foto do pneu..." sem mandar
+// nada e, mais tarde, perguntou "Conseguiu ver a foto?". Dono: "ele nem deve falar que vai mandar foto".
+const PADROES_PROMESSA_FOTO: RegExp[] = [
+  /segue\s+(a\s+|uma\s+|as\s+)?(foto|imagem)/i,
+  /(vou|posso|irei)\s+(te\s+)?(mandar|enviar|passar)\s+(a\s+|uma\s+|as\s+)?(foto|imagem)/i,
+  /(te\s+)?(mando|envio|passo|enviei|mandei)\s+(a\s+|uma\s+|as\s+)?(foto|imagem)/i,
+  /(conseguiu|viu)\s+(ver\s+)?(a\s+)?(foto|imagem)/i,
+  /foto\s+(do|desse|deste)\s+pneu\s*(:|segue|abaixo)/i,
+];
+
+/** Corta, linha por linha, qualquer trecho que prometa/anuncie o envio de foto. Preserva o resto. */
+export function removerPromessaDeFoto(partes: string[]): string[] {
+  const resultado: string[] = [];
+  for (const parte of partes) {
+    const linhasLimpas = parte.split(/\n+/).filter((linha) => !PADROES_PROMESSA_FOTO.some((re) => re.test(linha)));
+    const textoLimpo = linhasLimpas.join('\n').trim();
+    if (textoLimpo) resultado.push(textoLimpo);
+  }
+  return resultado;
+}
+
 // TRAVA 3 (09/09): repetir a MESMA mensagem palavra por palavra.
 // Achado nas conversas do dia: o Cesar recebeu o mesmo paragrafo de garantia, o mesmo
 // link de video e o mesmo "Quando voce consegue vir ate a loja?" duas vezes em 5

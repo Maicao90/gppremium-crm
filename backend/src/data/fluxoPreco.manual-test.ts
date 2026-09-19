@@ -3,7 +3,7 @@
 // se uma mudanca futura na tabela ou no motor voltou a quebrar algum destes casos).
 import { decidirAcaoPreco, decidirSequenciaPreco, MARCADOR_PINO, IntencaoExtraida, EstadoPrecoFluxo, DadosPrecoFluxo } from './fluxoPreco';
 import { encontrarPrecosExatosPorMedida, brl } from './tabelaPrecos';
-import { CATALOGO_FLUXO, TEXTOS_PADRAO, textoFluxo, validarTextoFluxo, sanitizarTextosFluxo } from './fluxoCatalogo';
+import { CATALOGO_FLUXO, TEXTOS_PADRAO, textoFluxo, validarTextoFluxo, sanitizarTextosFluxo, chavesJaRespondidas } from './fluxoCatalogo';
 
 let erros = 0;
 function checar(nome: string, condicao: boolean, detalhe?: string) {
@@ -358,6 +358,43 @@ const ITEM_195_55_15 = encontrarPrecosExatosPorMedida('195/55/15')[0]!; // aVist
   checar('Objecao: nao mexe no estado', r.novoEstado === 'preco_confirmado' && r.novosDados.medida === '195/55/15');
 }
 
+// ----- Cliente insiste no mesmo assunto (caso real 18/09: "Remold to fora" recebeu a MESMA explicacao) -----
+{
+  const remoldPadrao = TEXTOS_PADRAO['remold']!.join('\n');
+  const insist = TEXTOS_PADRAO['remold_insistencia']!.join('\n');
+  checar('Ja respondido: nada dito ainda -> []', chavesJaRespondidas(undefined, 'Oi, tudo bem?').length === 0);
+  checar('Ja respondido: robo ja explicou o remold -> ["remold"]', chavesJaRespondidas(undefined, 'Oi\n' + remoldPadrao).join() === 'remold');
+  checar('Ja respondido: explicou E ja mandou a variante -> as duas', chavesJaRespondidas(undefined, remoldPadrao + '\n' + insist).sort().join() === 'remold,remold_insistencia');
+  checar('Ja respondido: respeita texto EDITADO pelo dono', chavesJaRespondidas({ remold: ['Texto editado longo do dono sobre remold.'] }, 'x Texto editado longo do dono sobre remold. y').join() === 'remold');
+  const primeira = decidirAcaoPreco(intencaoDe('PERGUNTOU_SE_E_REMOLD'), 'preco_confirmado', { medida: '195/55/15' }, {}, { jaRespondidas: [] });
+  checar('Remold 1a vez: explicacao completa', /sim, é remold/i.test(textoDe(primeira)));
+  const segunda = decidirAcaoPreco(intencaoDe('PERGUNTOU_SE_E_REMOLD'), 'preco_confirmado', { medida: '195/55/15' }, {}, { jaRespondidas: ['remold'] });
+  checar('Remold 2a vez (cliente insiste): NAO repete a explicacao, usa a variante', segunda.acao.tipo === 'RESPONDER_REMOLD' && !/Vou ser sincero/.test(textoDe(segunda)) && /garantia de 50 mil km ou seu dinheiro de volta/.test(textoDe(segunda)) && /vem até a loja/.test(textoDe(segunda)), textoDe(segunda));
+  checar('Remold 2a vez: nao mexe no estado', segunda.novoEstado === 'preco_confirmado' && segunda.novosDados.medida === '195/55/15');
+  const terceira = decidirAcaoPreco(intencaoDe('PERGUNTOU_SE_E_REMOLD'), 'preco_confirmado', { medida: '195/55/15' }, {}, { jaRespondidas: ['remold', 'remold_insistencia'] });
+  checar('Remold 3a vez: nao repete de novo -> sai do fluxo (NADA)', terceira.acao.tipo === 'NADA' && terceira.novoEstado === 'preco_confirmado');
+  const obj2 = decidirAcaoPreco(intencaoDe('OBJETOU_PRECO_OU_MARCA'), 'preco_confirmado', { medida: '195/55/15' }, {}, { jaRespondidas: ['objecao'] });
+  checar('Objecao 2a vez: variante curta (sem repetir os argumentos)', obj2.acao.tipo === 'RESPONDER_OBJECAO' && !/controle de qualidade rígido/.test(textoDe(obj2)) && /negociar melhor/.test(textoDe(obj2)), textoDe(obj2));
+  const obj3 = decidirAcaoPreco(intencaoDe('OBJETOU_PRECO_OU_MARCA'), 'sem_estado', {}, {}, { jaRespondidas: ['objecao', 'objecao_repetida'] });
+  checar('Objecao 3a vez: sai do fluxo (NADA)', obj3.acao.tipo === 'NADA');
+  const noLote = decidirSequenciaPreco([intencaoDe('PERGUNTOU_SE_E_REMOLD'), intencaoDe('PERGUNTOU_NOTA_FISCAL')], 'sem_estado', {}, {}, { jaRespondidas: ['remold'] });
+  checar('Rajada com remold ja explicado: variante + nota fiscal', /Entendo sua preocupação/.test(noLote.partes.join(' ')) && /sempre emite nota fiscal/i.test(noLote.partes.join(' ')));
+  const soRemoldNada = decidirSequenciaPreco([intencaoDe('PERGUNTOU_SE_E_REMOLD')], 'sem_estado', {}, {}, { jaRespondidas: ['remold', 'remold_insistencia'] });
+  checar('Rajada so com remold ja dito 2x -> NADA', soRemoldNada.acaoPrincipal === 'NADA');
+}
+
+// ----- Horario (dono confirmou 19/09: seg-sex 8h-18h, sab 8h-12h) e pedido de foto -----
+{
+  const h = decidirAcaoPreco(intencaoDe('PERGUNTOU_HORARIO'), 'preco_confirmado', { medida: '195/55/15' });
+  checar('Horario: resposta fixa com o horario confirmado', h.acao.tipo === 'RESPONDER_HORARIO' && /segunda a sexta, das 8h às 18h/.test(textoDe(h)) && /sábados, das 8h às 12h/.test(textoDe(h)), textoDe(h));
+  checar('Horario: NAO manda o pino (o caso "Ta aberto agora?" recebeu localizacao)', !textoDe(h).includes('[ENVIAR_LOCALIZACAO]') && h.acao.tipo !== 'ENVIAR_LOCALIZACAO_FIXA');
+  checar('Horario: nao mexe no estado', h.novoEstado === 'preco_confirmado' && h.novosDados.medida === '195/55/15');
+  const f = decidirAcaoPreco(intencaoDe('PEDIU_FOTO'), 'preco_confirmado', { medida: '195/55/15' });
+  checar('Foto: chama pra ver o pneu na loja', f.acao.tipo === 'RESPONDER_FOTO' && /passar aqui na loja/i.test(textoDe(f)) && /Quando você consegue vir/.test(textoDe(f)), textoDe(f));
+  checar('Foto: NUNCA promete enviar foto (nem cita foto)', !/foto|imagem|\bsegue\b|\bmand(o|ar)\b|\benvi/i.test(textoDe(f)), textoDe(f));
+  checar('Foto: nao mexe no estado', f.novoEstado === 'preco_confirmado' && f.novosDados.medida === '195/55/15');
+}
+
 // ----- Outra marca (Pirelli/Dunlop...): resposta fixa, sem falar mal de ninguem -----
 {
   const r = decidirAcaoPreco(intencaoDe('PERGUNTOU_POR_OUTRA_MARCA'), 'preco_confirmado', { medida: '195/55/15' });
@@ -440,7 +477,7 @@ const ITEM_195_55_15 = encontrarPrecosExatosPorMedida('195/55/15')[0]!; // aVist
   const todas: IntencaoExtraida['intencao'][] = [
     'PERGUNTOU_SE_E_REMOLD', 'PERGUNTOU_PARCELAMENTO_GENERICO', 'PERGUNTOU_SE_TEM_JUROS', 'PERGUNTOU_SE_E_CHINES',
     'OFERECEU_BASE_TROCA', 'OFERECEU_VENDER_USADO', 'PERGUNTOU_NOTA_FISCAL', 'PERGUNTOU_BALANCEAMENTO',
-    'PERGUNTOU_ALINHAMENTO', 'PEDIU_LOCALIZACAO', 'OBJETOU_PRECO_OU_MARCA',
+    'PERGUNTOU_ALINHAMENTO', 'PEDIU_LOCALIZACAO', 'OBJETOU_PRECO_OU_MARCA', 'PERGUNTOU_HORARIO', 'PEDIU_FOTO', 'PERGUNTOU_POR_OUTRA_MARCA',
   ];
   const meta = /sugest[aã]o|copiar|voc[eê] pode (enviar|responder|dizer)|responda (que|com)|mensagem (para|pro) (o )?cliente|\bmodelo de mensagem\b/i;
   const ruins = todas.filter((i) => meta.test(textoDe(decidirAcaoPreco(intencaoDe(i), 'sem_estado', {}))));
@@ -475,7 +512,7 @@ const ITEM_195_55_15 = encontrarPrecosExatosPorMedida('195/55/15')[0]!; // aVist
 {
   const chaves = CATALOGO_FLUXO.map((c) => c.chave);
   checar('Catalogo: chaves unicas', new Set(chaves).size === chaves.length);
-  const usadas = ['pedir_medida', 'sem_alternativa', 'remold', 'chines', 'juros', 'base_troca', 'compra_usado', 'nota_fiscal', 'alinhamento', 'localizacao', 'localizacao_repetida', 'outra_marca', 'objecao', 'parcelamento_generico', 'parcelamento_maximo', 'desconto_pix', 'balanceamento', 'balanceamento_quantidade'];
+  const usadas = ['pedir_medida', 'sem_alternativa', 'remold', 'chines', 'juros', 'base_troca', 'compra_usado', 'nota_fiscal', 'alinhamento', 'localizacao', 'localizacao_repetida', 'horario', 'foto', 'outra_marca', 'remold_insistencia', 'objecao', 'objecao_repetida', 'parcelamento_generico', 'parcelamento_maximo', 'desconto_pix', 'balanceamento', 'balanceamento_quantidade'];
   checar('Catalogo: toda chave usada pelo motor existe e tem texto padrao', usadas.every((k) => (TEXTOS_PADRAO[k] || []).length > 0), usadas.filter((k) => !(TEXTOS_PADRAO[k] || []).length).join(','));
   const ruins = CATALOGO_FLUXO.filter((c) => c.partes && validarTextoFluxo(c.chave, c.partes).length > 0).map((c) => c.chave);
   checar('Catalogo: TODO texto padrao passa na propria validacao (nao tem "sem juros", tag, meta-texto)', ruins.length === 0, ruins.join(','));

@@ -1,5 +1,5 @@
 import { ItemPreco, encontrarPrecosExatosPorMedida, alternativasMesmoAro, montarPartesPreco, montarPartesDescontoAVista, brl } from './tabelaPrecos';
-import { TextosFluxo, textoFluxo, preencherPlaceholders } from './fluxoCatalogo';
+import { TextosFluxo, textoFluxo, preencherPlaceholders, VARIANTE_REPETICAO } from './fluxoCatalogo';
 
 // FLUXO DETERMINISTICO DE MEDIDA/PRECO (10/09).
 //
@@ -57,6 +57,8 @@ export type IntencaoTipo =
   | 'PERGUNTOU_BALANCEAMENTO'
   | 'PERGUNTOU_ALINHAMENTO'
   | 'PEDIU_LOCALIZACAO'
+  | 'PERGUNTOU_HORARIO'
+  | 'PEDIU_FOTO'
   | 'OBJETOU_PRECO_OU_MARCA'
   | 'OUTRO_ASSUNTO';
 
@@ -85,6 +87,8 @@ export type TipoAcaoTexto =
   | 'RESPONDER_OBJECAO'
   | 'RESPONDER_LOCALIZACAO_REPETIDA'
   | 'RESPONDER_OUTRA_MARCA'
+  | 'RESPONDER_HORARIO'
+  | 'RESPONDER_FOTO'
   // Manda o texto E o chamador (botAtendimentoService) dispara o pino de localizacao real.
   | 'ENVIAR_LOCALIZACAO_FIXA';
 
@@ -106,6 +110,18 @@ export interface ContextoFluxo {
   // Ha quantos minutos o pino de localizacao foi mandado nesta conversa (robo ou atendente),
   // olhando ate 12h atras; null/ausente = ainda nao foi mandado.
   minutosDesdeLocalizacao?: number | null;
+  // Chaves de resposta (e variantes) cujo texto o robo JA mandou ha pouco nesta conversa
+  // (ver chavesJaRespondidas em fluxoCatalogo.ts). Evita repetir a mesma explicacao palavra por palavra.
+  jaRespondidas?: string[];
+}
+
+// Texto da resposta, trocando pela variante quando o robo ja disse o mesmo ha pouco. null = ja disse a
+// versao normal E a variante: nao repete de novo, sai do fluxo (a IA livre, com as travas, segue a conversa).
+function textoSemRepetir(textos: TextosFluxo, chave: string, contexto: ContextoFluxo): string[] | null {
+  const variante = VARIANTE_REPETICAO[chave];
+  const ja = contexto.jaRespondidas || [];
+  if (variante && ja.includes(chave)) return ja.includes(variante) ? null : textoFluxo(textos, variante);
+  return textoFluxo(textos, chave);
 }
 
 // Pediu o endereco de novo dentro dessa janela: responde so em texto, nao manda o pino outra vez
@@ -273,8 +289,11 @@ export function decidirAcaoPreco(
   // atual, e (salvo as que dependem de medida) nao mexem no estado nem nos dados do fluxo
   // de preco em andamento — mesmo tratamento que PERGUNTA_TECNICA da logo depois.
   switch (intencao.intencao) {
-    case 'PERGUNTOU_SE_E_REMOLD':
-      return respostaTexto('RESPONDER_REMOLD', textoFluxo(textos, 'remold'), estadoAtual, dadosAtuais);
+    case 'PERGUNTOU_SE_E_REMOLD': {
+      const partes = textoSemRepetir(textos, 'remold', contexto);
+      if (!partes) return { acao: { tipo: 'NADA' }, novoEstado: estadoAtual, novosDados: dadosAtuais };
+      return respostaTexto('RESPONDER_REMOLD', partes, estadoAtual, dadosAtuais);
+    }
     case 'PERGUNTOU_SE_E_CHINES':
       return respostaTexto('RESPONDER_CHINES', textoFluxo(textos, 'chines'), estadoAtual, dadosAtuais);
     case 'PERGUNTOU_SE_TEM_JUROS':
@@ -296,8 +315,15 @@ export function decidirAcaoPreco(
     }
     case 'PERGUNTOU_POR_OUTRA_MARCA':
       return respostaTexto('RESPONDER_OUTRA_MARCA', textoFluxo(textos, 'outra_marca'), estadoAtual, dadosAtuais);
-    case 'OBJETOU_PRECO_OU_MARCA':
-      return respostaTexto('RESPONDER_OBJECAO', textoFluxo(textos, 'objecao'), estadoAtual, dadosAtuais);
+    case 'PERGUNTOU_HORARIO':
+      return respostaTexto('RESPONDER_HORARIO', textoFluxo(textos, 'horario'), estadoAtual, dadosAtuais);
+    case 'PEDIU_FOTO':
+      return respostaTexto('RESPONDER_FOTO', textoFluxo(textos, 'foto'), estadoAtual, dadosAtuais);
+    case 'OBJETOU_PRECO_OU_MARCA': {
+      const partes = textoSemRepetir(textos, 'objecao', contexto);
+      if (!partes) return { acao: { tipo: 'NADA' }, novoEstado: estadoAtual, novosDados: dadosAtuais };
+      return respostaTexto('RESPONDER_OBJECAO', partes, estadoAtual, dadosAtuais);
+    }
     case 'PERGUNTOU_PARCELAMENTO_GENERICO':
       return respostaTexto('RESPONDER_PARCELAMENTO_GENERICO', textoFluxo(textos, 'parcelamento_generico'), estadoAtual, dadosAtuais);
     case 'PERGUNTOU_BALANCEAMENTO': {

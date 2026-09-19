@@ -10,11 +10,11 @@ import {
   montarBriefingComercialDeterministico,
 } from '../data/tabelaPrecos';
 import { precosForaDaTabela, valoresEmReais } from '../data/precoGuard';
-import { prometeuTransferenciaFalsa, removerReperguntaPosPreco, removerRepeticaoRecente } from '../data/comportamentoGuard';
+import { prometeuTransferenciaFalsa, removerReperguntaPosPreco, removerRepeticaoRecente, removerPromessaDeFoto } from '../data/comportamentoGuard';
 import { lerBotPneusConfig, montarPromptAtendimentoBot } from '../services/botPneusConfig';
 import { decidirSequenciaPreco, EstadoPrecoFluxo, DadosPrecoFluxo } from '../data/fluxoPreco';
 import { extrairIntencoesPreco, podeSerSobrePreco } from '../data/fluxoPrecoExtrator';
-import { sanitizarTextosFluxo } from '../data/fluxoCatalogo';
+import { sanitizarTextosFluxo, chavesJaRespondidas, textoFluxo } from '../data/fluxoCatalogo';
 
 dotenv.config();
 
@@ -288,7 +288,11 @@ app.post('/gerar-resposta', async (req, res) => {
           .join('\n');
         const intencoes = await extrairIntencoesPreco(rajada.length ? rajada : [gatilho], contextoRecente, apiKeyFluxo);
         if (intencoes) {
-          const decisao = decidirSequenciaPreco(intencoes, estadoPrecoAtual, dadosPrecoAtuais, textosFluxo, { minutosDesdeLocalizacao });
+          // O que o robo (ou atendente) ja disse ha pouco: se o cliente insiste no mesmo assunto, a resposta
+          // troca pela variante em vez de repetir a explicacao palavra por palavra.
+          const textoRecenteDoRobo = anteriores.filter((m: any) => m?.role === 'assistant').slice(-12).map((m: any) => String(m?.content || '')).join('\n');
+          const jaRespondidas = chavesJaRespondidas(textosFluxo, textoRecenteDoRobo);
+          const decisao = decidirSequenciaPreco(intencoes, estadoPrecoAtual, dadosPrecoAtuais, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas });
           if (decisao.acaoPrincipal !== 'NADA') {
             return res.json({
               partes: decisao.partes,
@@ -396,6 +400,15 @@ app.post('/gerar-resposta', async (req, res) => {
     // modelo/ano/marca preferida/servico adicional depois do preco — achado em 4
     // conversas reais no mesmo dia mesmo com a regra explicita no prompt.
     partesFinais = removerReperguntaPosPreco(partesFinais);
+
+    // TRAVA DE COMPORTAMENTO 5 (19/09): o robo nao envia foto e nunca pode dizer que vai enviar
+    // ("segue foto do pneu" sem mandar nada). Corta a promessa; se sobrar nada, chama pra ver o
+    // pneu na loja (texto da categoria "foto", editavel na tela Fluxo).
+    const semPromessaDeFoto = removerPromessaDeFoto(partesFinais);
+    if (semPromessaDeFoto.join('\n') !== partesFinais.join('\n')) {
+      console.error('[BotService][TRAVA DE COMPORTAMENTO] A IA prometeu enviar foto — promessa cortada.');
+      partesFinais = semPromessaDeFoto.length ? semPromessaDeFoto : textoFluxo(textosFluxo, 'foto');
+    }
 
     // TRAVA DE COMPORTAMENTO 3 (09/09): nao repetir o que ja foi dito nesta conversa.
     // Se sobrar nada, tenta de novo avisando; se ainda assim repetir, manda o que veio

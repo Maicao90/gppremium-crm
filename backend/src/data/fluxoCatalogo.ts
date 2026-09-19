@@ -135,6 +135,17 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     ],
   },
   {
+    chave: 'remold_insistencia',
+    grupo: 'produto',
+    titulo: 'É remold? (cliente insiste ou recusa)',
+    quando: 'O cliente volta a falar de remold DEPOIS que o robô já explicou (ex.: "remold tô fora", "não vou arriscar"). Evita repetir a mesma explicação palavra por palavra.',
+    exemplos: ['remold tô fora', 'mas é remold mesmo?', 'não quero remold'],
+    partes: [
+      'Entendo sua preocupação. Por isso a gente oferece a garantia de 50 mil km ou seu dinheiro de volta.',
+      'Se quiser, vem até a loja ver o pneu de perto antes de decidir.',
+    ],
+  },
+  {
     chave: 'chines',
     grupo: 'produto',
     titulo: 'É pneu chinês?',
@@ -208,6 +219,7 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
   },
 
   // ---------- Loja ----------
+  // (localizacao e localizacao_repetida abaixo)
   {
     chave: 'localizacao',
     grupo: 'loja',
@@ -218,6 +230,22 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     acao: 'Depois do texto, o sistema envia o pino de localização real da loja (mapa).',
   },
 
+  {
+    chave: 'horario',
+    grupo: 'loja',
+    titulo: 'Horário de funcionamento',
+    quando: 'O cliente pergunta o horário, se está aberto agora, até que horas atende.',
+    exemplos: ['tá aberto agora?', 'que horas fecha?', 'qual o horário de funcionamento?'],
+    partes: ['A gente atende de segunda a sexta, das 8h às 18h, e aos sábados, das 8h às 12h.'],
+  },
+  {
+    chave: 'foto',
+    grupo: 'loja',
+    titulo: 'Cliente pede foto do pneu',
+    quando: 'O cliente pede foto/imagem do pneu. O robô NÃO manda foto e nunca diz que vai mandar — chama pra ver o pneu de perto na loja.',
+    exemplos: ['foto', 'manda foto do pneu', 'tem foto?'],
+    partes: ['Pra ver o pneu de perto, é só passar aqui na loja. Quando você consegue vir?'],
+  },
   {
     chave: 'localizacao_repetida',
     grupo: 'loja',
@@ -240,13 +268,32 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
       'Dá pra parcelar em até 10x também, e vindo até a loja a gente consegue negociar melhor. Quer que eu já te passe o valor parcelado?',
     ],
   },
+  {
+    chave: 'objecao_repetida',
+    grupo: 'objecao',
+    titulo: 'Reclamação de preço ou marca (cliente insiste)',
+    quando: 'O cliente volta a reclamar de preço/marca DEPOIS que o robô já respondeu a objeção. Evita repetir os mesmos argumentos.',
+    exemplos: ['continua caro', 'não gostei mesmo assim'],
+    partes: ['Entendo! Se quiser, vem até a loja ver o pneu de perto — pessoalmente a gente consegue negociar melhor.'],
+  },
 ];
+
+// Respostas que, se o robo JA mandou o mesmo texto ha pouco na conversa, trocam pela variante
+// (achado 18/09: cliente disse "remold to fora" e o robo repetiu a explicacao palavra por palavra).
+export const VARIANTE_REPETICAO: Record<string, string> = { remold: 'remold_insistencia', objecao: 'objecao_repetida' };
 
 export const TEXTOS_PADRAO: Record<string, string[]> = Object.fromEntries(
   CATALOGO_FLUXO.filter((c) => c.partes).map((c) => [c.chave, c.partes as string[]])
 );
 
 export type TextosFluxo = Record<string, string[]>;
+
+// Quais respostas (e variantes) o robo JA mandou nesta conversa: compara cada bolha (25+ caracteres)
+// do texto atual da resposta com o texto recente das mensagens do robo.
+export function chavesJaRespondidas(textos: TextosFluxo | undefined, textoRecenteDoRobo: string): string[] {
+  const chaves = Object.entries(VARIANTE_REPETICAO).flat();
+  return chaves.filter((chave) => textoFluxo(textos, chave).some((p) => p.length >= 25 && textoRecenteDoRobo.includes(p)));
+}
 
 export function categoriaPorChave(chave: string): CategoriaFluxo | undefined {
   return CATALOGO_FLUXO.find((c) => c.chave === chave);
