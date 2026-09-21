@@ -70,9 +70,14 @@ const casos: { nome: string; msg: string; contexto: string; esperado: string; me
   { nome: 'outra marca real (com erro de digitacao): "Mais vc tem odulop oupireli"', msg: 'Mais vc tem odulop oupireli', contexto: 'ROBO: o pneu 175/70/14 sai por R$279,00 à vista', esperado: 'PERGUNTOU_POR_OUTRA_MARCA' },
   { nome: 'outra marca: "tem michelin?"', msg: 'tem michelin?', contexto: '', esperado: 'PERGUNTOU_POR_OUTRA_MARCA' },
   // Caso real 19/09 (conversa 7): "tem somente novos dele?" foi lido como OUTRA MARCA — e pergunta se o pneu e novo (remold)
-  { nome: 'REAL: "tem somente novos dele?" = pergunta se e novo -> remold', msg: 'tem somente novos dele?', contexto: 'CLIENTE: 205/55 aro 17\nROBO: Temos o pneu 205/55/17 da marca GP Premium por R$ 349,00 à vista.', esperado: 'PERGUNTOU_SE_E_REMOLD' },
-  { nome: 'novo: "esse pneu é novo?"', msg: 'esse pneu é novo?', contexto: 'ROBO: o pneu sai por R$289,00 à vista', esperado: 'PERGUNTOU_SE_E_REMOLD' },
-  { nome: 'novo: "é novo mesmo ou usado?"', msg: 'é novo mesmo ou usado?', contexto: '', esperado: 'PERGUNTOU_SE_E_REMOLD' },
+  // (19/09, Maxwell: o robo confessou "sim, e remold" logo de cara pra quem so perguntou se e novo/meia-vida — o dono:
+  // "ele se precipitou". Pergunta de condicao = categoria propria, sem confissao na 1a vez.)
+  { nome: 'REAL: "tem somente novos dele?" = pergunta de condicao (novo?)', msg: 'tem somente novos dele?', contexto: 'CLIENTE: 205/55 aro 17\nROBO: Temos o pneu 205/55/17 da marca GP Premium por R$ 349,00 à vista.', esperado: 'PERGUNTOU_SE_E_NOVO' },
+  { nome: 'REAL Maxwell: "mas tem meia vida ou somente pneus novos?"', msg: 'mas tem meia vida ou somente pneus novos?', contexto: 'CLIENTE: tem somente novos dele?\nROBO: Aqui a gente trabalha só com o GP Premium — não temos outras marcas.', esperado: 'PERGUNTOU_SE_E_NOVO' },
+  { nome: 'novo: "esse pneu é novo?"', msg: 'esse pneu é novo?', contexto: 'ROBO: o pneu sai por R$289,00 à vista', esperado: 'PERGUNTOU_SE_E_NOVO' },
+  { nome: 'novo: "é novo mesmo ou usado?"', msg: 'é novo mesmo ou usado?', contexto: '', esperado: 'PERGUNTOU_SE_E_NOVO' },
+  { nome: 'citou a palavra remold -> continua remold: "esse pneu é remold ou novo?"', msg: 'esse pneu é remold ou novo?', contexto: '', esperado: 'PERGUNTOU_SE_E_REMOLD' },
+  { nome: 'citou recauchutado -> remold: "é recauchutado?"', msg: 'é recauchutado?', contexto: '', esperado: 'PERGUNTOU_SE_E_REMOLD' },
   // Caso real 18/09: "Ta aberto agora?" recebeu o PINO da localizacao (foi lido como pedido de endereco)
   { nome: 'REAL: "Ta aberto agora?" -> horario (nao localizacao)', msg: 'Ta aberto agora?', contexto: 'CLIENTE: Eu quero\nROBO: Perfeito! Quando você consegue vir aqui na loja para fechar a compra?', esperado: 'PERGUNTOU_HORARIO' },
   { nome: 'horario: "que horas vocês fecham?"', msg: 'que horas vocês fecham?', contexto: '', esperado: 'PERGUNTOU_HORARIO' },

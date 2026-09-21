@@ -638,3 +638,24 @@ model FluxoResposta {
   atualizadoPor String?
   atualizadoEm  DateTime @updatedAt
 }
+
+// Rastro de POR ONDE cada mensagem de cliente passou no fluxo do robo (fluxograma ao vivo da tela "Fluxo").
+// Guarda so 14 dias (limpeza em botAtendimentoService). Falha ao gravar aqui nunca atrapalha a resposta.
+model FluxoEvento {
+  id           String   @id @default(uuid())
+  criadoEm     DateTime @default(now())
+  usuarioId    String
+  chatJid      String
+  chatNome     String?
+  cliente      String   // mensagem(ns) do cliente que o robo leu (rajada), unidas por " / "
+  assuntos     String   // JSON: assuntos que a leitura separou
+  chaves       String   // JSON: blocos do fluxo que responderam
+  via          String   // 'fluxo' | 'ia_livre'
+  motivoLivre  String?
+  estadoAntes  String
+  estadoDepois String
+  partes       String   // JSON: bolhas enviadas
+
+  @@index([criadoEm])
+  @@index([usuarioId, criadoEm])
+}

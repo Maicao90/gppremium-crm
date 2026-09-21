@@ -60,6 +60,43 @@ interface RespostaBotService {
   // Tipo da acao que o fluxo deterministico decidiu (ex.: 'ENVIAR_LOCALIZACAO_FIXA') — e o
   // CODIGO, nao a IA, que decide disparar o pino de localizacao.
   acaoTipo?: string;
+  // Rastro do fluxo (fluxograma ao vivo do painel)
+  via?: string;
+  assuntos?: string[];
+  chaves?: string[];
+  motivoLivre?: string;
+  rajada?: string[];
+}
+
+// Registra POR ONDE a(s) mensagem(ns) do cliente passou no fluxo — alimenta o fluxograma ao vivo da tela
+// "Fluxo" do painel. Nunca pode atrapalhar a resposta: qualquer erro so vai pro log.
+async function registrarEventoFluxo(params: AgendarBotParams, resposta: RespostaBotService, estadoAntes: string, partesEnviadas: string[]) {
+  try {
+    const nome = await prisma.mensagem.findFirst({
+      where: { usuarioId: params.usuarioId, chatJid: params.chatJid, chatNome: { not: '' } },
+      orderBy: { timestamp: 'desc' },
+      select: { chatNome: true },
+    });
+    await prisma.fluxoEvento.create({
+      data: {
+        usuarioId: params.usuarioId,
+        chatJid: params.chatJid,
+        chatNome: nome?.chatNome || null,
+        cliente: (resposta.rajada || []).join(' / ').slice(0, 900),
+        assuntos: JSON.stringify(resposta.assuntos || []),
+        chaves: JSON.stringify(resposta.chaves || []),
+        via: resposta.via || (resposta.deterministico ? 'fluxo' : 'ia_livre'),
+        motivoLivre: resposta.motivoLivre || null,
+        estadoAntes,
+        estadoDepois: resposta.novoEstadoPreco || estadoAntes,
+        partes: JSON.stringify(partesEnviadas.map((p) => (p === '[ENVIAR_LOCALIZACAO]' ? '📍 (pino da localização)' : p.slice(0, 400)))),
+      },
+    });
+    // Limpeza: guarda 14 dias (tabela pequena, roda de vez em quando).
+    if (Math.random() < 0.01) await prisma.fluxoEvento.deleteMany({ where: { criadoEm: { lt: new Date(Date.now() - 14 * 24 * 3600 * 1000) } } });
+  } catch (e) {
+    console.error('[Bot IA] falha ao registrar o rastro do fluxo (a resposta foi enviada normalmente):', (e as any)?.message || e);
+  }
 }
 
 // Respostas do fluxo editadas pelo dono na tela "Fluxo" do painel (tabela FluxoResposta,
@@ -213,6 +250,11 @@ async function gerarRespostaViaBotService(args: {
     partes: Array.isArray(body?.partes) ? body.partes.map(String) : [],
     deterministico: !!body?.deterministico,
     acaoTipo: typeof body?.acaoTipo === 'string' ? body.acaoTipo : undefined,
+    via: typeof body?.via === 'string' ? body.via : undefined,
+    assuntos: Array.isArray(body?.assuntos) ? body.assuntos.map(String) : undefined,
+    chaves: Array.isArray(body?.chaves) ? body.chaves.map(String) : undefined,
+    motivoLivre: typeof body?.motivoLivre === 'string' ? body.motivoLivre : undefined,
+    rajada: Array.isArray(body?.rajada) ? body.rajada.map(String) : undefined,
     novoEstadoPreco: typeof body?.novoEstadoPreco === 'string' ? body.novoEstadoPreco : undefined,
     novosDadosPreco: typeof body?.novosDadosPreco === 'string' ? body.novosDadosPreco : undefined,
   };
@@ -593,6 +635,7 @@ async function executar(params: AgendarBotParams, versao: number) {
           ...(resposta.novosDadosPreco ? { dadosPreco: resposta.novosDadosPreco } : {}),
         },
       });
+      await registrarEventoFluxo(params, resposta, estadoPrecoSalvo?.estadoPreco || 'sem_estado', resposta.partes);
       return;
     }
 
@@ -676,6 +719,7 @@ async function executar(params: AgendarBotParams, versao: number) {
         ...(resposta.novosDadosPreco ? { dadosPreco: resposta.novosDadosPreco } : {}),
       },
     });
+    await registrarEventoFluxo(params, resposta, estadoPrecoSalvo?.estadoPreco || 'sem_estado', partes.map((p: string) => limparTagsEspeciais(p)).filter(Boolean));
   } catch (e) {
     console.error(`[Bot IA] Erro em ${params.usuarioId}/${params.chatJid}:`, (e as any)?.message || e);
   } finally {

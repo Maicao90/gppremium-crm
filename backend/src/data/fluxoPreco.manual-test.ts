@@ -383,6 +383,24 @@ const ITEM_195_55_15 = encontrarPrecosExatosPorMedida('195/55/15')[0]!; // aVist
   checar('Rajada so com remold ja dito 2x -> NADA', soRemoldNada.acaoPrincipal === 'NADA');
 }
 
+// ----- "E novo? / tem meia-vida?" (caso Maxwell 19/09: o robo se precipitou confessando remold) -----
+{
+  const ctxNovo = (ja: string[]) => ({ jaRespondidas: ja });
+  const c1 = decidirAcaoPreco(intencaoDe('PERGUNTOU_SE_E_NOVO'), 'preco_confirmado', { medida: '195/55/15' }, {}, ctxNovo([]));
+  checar('Condicao 1a vez: resposta de qualidade/garantia', c1.acao.tipo === 'RESPONDER_CONDICAO' && /borracha padrão europeu/.test(textoDe(c1)) && /50 mil km ou seu dinheiro de volta/.test(textoDe(c1)), textoDe(c1));
+  checar('Condicao 1a vez: NAO se precipita — nao confessa remold', !/remold|sincero/i.test(textoDe(c1)), textoDe(c1));
+  checar('Condicao 1a vez: NAO afirma que o pneu e novo', !/\b(é|e|são|sao) (um )?(pneu )?(novo|nova|novos)\b/i.test(textoDe(c1)) && !/pneu novo/i.test(textoDe(c1)), textoDe(c1));
+  checar('Condicao 1a vez: NAO nega meia-vida/remold (dodge honesto, nunca mentira — GP Premium E remold)', !/n[ãa]o (é|e|são|sao) (um )?(pneu )?(de )?(meia|remold|recap|usado)|nunca foi usado|sem uso/i.test(textoDe(c1)), textoDe(c1));
+  checar('Condicao 1a vez: nao mexe no estado', c1.novoEstado === 'preco_confirmado' && c1.novosDados.medida === '195/55/15');
+  const c2 = decidirAcaoPreco(intencaoDe('PERGUNTOU_SE_E_NOVO'), 'preco_confirmado', { medida: '195/55/15' }, {}, ctxNovo(['condicao']));
+  checar('Condicao 2a vez (cliente insiste): agora SIM a resposta honesta de remold', c2.acao.tipo === 'RESPONDER_CONDICAO' && /sim, é remold/i.test(textoDe(c2)) && /50 mil km ou seu dinheiro de volta/.test(textoDe(c2)), textoDe(c2));
+  const c3 = decidirAcaoPreco(intencaoDe('PERGUNTOU_SE_E_NOVO'), 'preco_confirmado', { medida: '195/55/15' }, {}, ctxNovo(['condicao', 'remold']));
+  checar('Condicao 3a vez: ja disse tudo -> sai do fluxo (NADA)', c3.acao.tipo === 'NADA');
+  const r = decidirAcaoPreco(intencaoDe('PERGUNTOU_SE_E_REMOLD'), 'sem_estado', {}, {}, ctxNovo(['condicao']));
+  checar('Pergunta DIRETA de remold depois da condicao: responde a confissao normal', /sim, é remold/i.test(textoDe(r)));
+  checar('chavesJaRespondidas: pitch da condicao ja dito -> ["condicao"]', chavesJaRespondidas(undefined, TEXTOS_PADRAO['condicao']!.join('\n')).includes('condicao'));
+}
+
 // ----- Horario (dono confirmou 19/09: seg-sex 8h-18h, sab 8h-12h) e pedido de foto -----
 {
   const h = decidirAcaoPreco(intencaoDe('PERGUNTOU_HORARIO'), 'preco_confirmado', { medida: '195/55/15' });
@@ -477,7 +495,7 @@ const ITEM_195_55_15 = encontrarPrecosExatosPorMedida('195/55/15')[0]!; // aVist
   const todas: IntencaoExtraida['intencao'][] = [
     'PERGUNTOU_SE_E_REMOLD', 'PERGUNTOU_PARCELAMENTO_GENERICO', 'PERGUNTOU_SE_TEM_JUROS', 'PERGUNTOU_SE_E_CHINES',
     'OFERECEU_BASE_TROCA', 'OFERECEU_VENDER_USADO', 'PERGUNTOU_NOTA_FISCAL', 'PERGUNTOU_BALANCEAMENTO',
-    'PERGUNTOU_ALINHAMENTO', 'PEDIU_LOCALIZACAO', 'OBJETOU_PRECO_OU_MARCA', 'PERGUNTOU_HORARIO', 'PEDIU_FOTO', 'PERGUNTOU_POR_OUTRA_MARCA',
+    'PERGUNTOU_ALINHAMENTO', 'PEDIU_LOCALIZACAO', 'OBJETOU_PRECO_OU_MARCA', 'PERGUNTOU_HORARIO', 'PEDIU_FOTO', 'PERGUNTOU_POR_OUTRA_MARCA', 'PERGUNTOU_SE_E_NOVO',
   ];
   const meta = /sugest[aã]o|copiar|voc[eê] pode (enviar|responder|dizer)|responda (que|com)|mensagem (para|pro) (o )?cliente|\bmodelo de mensagem\b/i;
   const ruins = todas.filter((i) => meta.test(textoDe(decidirAcaoPreco(intencaoDe(i), 'sem_estado', {}))));
@@ -512,7 +530,7 @@ const ITEM_195_55_15 = encontrarPrecosExatosPorMedida('195/55/15')[0]!; // aVist
 {
   const chaves = CATALOGO_FLUXO.map((c) => c.chave);
   checar('Catalogo: chaves unicas', new Set(chaves).size === chaves.length);
-  const usadas = ['pedir_medida', 'sem_alternativa', 'remold', 'chines', 'juros', 'base_troca', 'compra_usado', 'nota_fiscal', 'alinhamento', 'localizacao', 'localizacao_repetida', 'horario', 'foto', 'outra_marca', 'remold_insistencia', 'objecao', 'objecao_repetida', 'parcelamento_generico', 'parcelamento_maximo', 'desconto_pix', 'balanceamento', 'balanceamento_quantidade'];
+  const usadas = ['pedir_medida', 'sem_alternativa', 'remold', 'chines', 'juros', 'base_troca', 'compra_usado', 'nota_fiscal', 'alinhamento', 'localizacao', 'localizacao_repetida', 'horario', 'foto', 'condicao', 'outra_marca', 'remold_insistencia', 'objecao', 'objecao_repetida', 'parcelamento_generico', 'parcelamento_maximo', 'desconto_pix', 'balanceamento', 'balanceamento_quantidade'];
   checar('Catalogo: toda chave usada pelo motor existe e tem texto padrao', usadas.every((k) => (TEXTOS_PADRAO[k] || []).length > 0), usadas.filter((k) => !(TEXTOS_PADRAO[k] || []).length).join(','));
   const ruins = CATALOGO_FLUXO.filter((c) => c.partes && validarTextoFluxo(c.chave, c.partes).length > 0).map((c) => c.chave);
   checar('Catalogo: TODO texto padrao passa na propria validacao (nao tem "sem juros", tag, meta-texto)', ruins.length === 0, ruins.join(','));

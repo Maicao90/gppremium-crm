@@ -50,6 +50,7 @@ export type IntencaoTipo =
   | 'PERGUNTOU_SE_TEM_JUROS'
   | 'PERGUNTOU_DESCONTO_AVISTA'
   | 'PERGUNTOU_SE_E_CHINES'
+  | 'PERGUNTOU_SE_E_NOVO'
   | 'PERGUNTOU_POR_OUTRA_MARCA'
   | 'OFERECEU_BASE_TROCA'
   | 'OFERECEU_VENDER_USADO'
@@ -87,6 +88,7 @@ export type TipoAcaoTexto =
   | 'RESPONDER_OBJECAO'
   | 'RESPONDER_LOCALIZACAO_REPETIDA'
   | 'RESPONDER_OUTRA_MARCA'
+  | 'RESPONDER_CONDICAO'
   | 'RESPONDER_HORARIO'
   | 'RESPONDER_FOTO'
   // Manda o texto E o chamador (botAtendimentoService) dispara o pino de localizacao real.
@@ -103,6 +105,9 @@ export interface ResultadoDecisao {
   acao: AcaoPreco;
   novoEstado: EstadoPrecoFluxo;
   novosDados: DadosPrecoFluxo;
+  // Blocos do fluxo (chaves do catalogo, ex.: 'remold_insistencia', 'preco_medida') que produziram esta
+  // resposta. Alimenta o fluxograma ao vivo do painel: mostra POR ONDE a mensagem do cliente passou.
+  chaves?: string[];
 }
 
 // Fatos da conversa que quem tem banco (botAtendimentoService) sabe e este motor puro nao.
@@ -117,11 +122,11 @@ export interface ContextoFluxo {
 
 // Texto da resposta, trocando pela variante quando o robo ja disse o mesmo ha pouco. null = ja disse a
 // versao normal E a variante: nao repete de novo, sai do fluxo (a IA livre, com as travas, segue a conversa).
-function textoSemRepetir(textos: TextosFluxo, chave: string, contexto: ContextoFluxo): string[] | null {
+function textoSemRepetir(textos: TextosFluxo, chave: string, contexto: ContextoFluxo): { chave: string; partes: string[] } | null {
   const variante = VARIANTE_REPETICAO[chave];
   const ja = contexto.jaRespondidas || [];
-  if (variante && ja.includes(chave)) return ja.includes(variante) ? null : textoFluxo(textos, variante);
-  return textoFluxo(textos, chave);
+  if (variante && ja.includes(chave)) return ja.includes(variante) ? null : { chave: variante, partes: textoFluxo(textos, variante) };
+  return { chave, partes: textoFluxo(textos, chave) };
 }
 
 // Pediu o endereco de novo dentro dessa janela: responde so em texto, nao manda o pino outra vez
@@ -149,9 +154,12 @@ function quantidadeAplicavel(intencao: IntencaoExtraida, estadoAtual: EstadoPrec
   return dadosAtuais.quantidade ?? null;
 }
 
-function respostaTexto(tipo: TipoAcaoTexto, partes: string[], estadoAtual: EstadoPrecoFluxo, dadosAtuais: DadosPrecoFluxo): ResultadoDecisao {
-  return { acao: { tipo, partes }, novoEstado: estadoAtual, novosDados: dadosAtuais };
+function respostaTexto(tipo: TipoAcaoTexto, partes: string[], estadoAtual: EstadoPrecoFluxo, dadosAtuais: DadosPrecoFluxo, chave: string): ResultadoDecisao {
+  return { acao: { tipo, partes }, novoEstado: estadoAtual, novosDados: dadosAtuais, chaves: [chave] };
 }
+
+const SAI_DO_FLUXO = (estadoAtual: EstadoPrecoFluxo, dadosAtuais: DadosPrecoFluxo): ResultadoDecisao =>
+  ({ acao: { tipo: 'NADA' }, novoEstado: estadoAtual, novosDados: dadosAtuais, chaves: [] });
 
 function pedirMedida(dadosAtuais: DadosPrecoFluxo, textos: TextosFluxo, pedido?: PedidoEspecifico): ResultadoDecisao {
   // Reset de medida/aroSemMatch (estado promete recomeco limpo), mas guarda o pedido
@@ -162,7 +170,7 @@ function pedirMedida(dadosAtuais: DadosPrecoFluxo, textos: TextosFluxo, pedido?:
   if (tipoPedido) dados.intencaoPendente = tipoPedido;
   const parcelas = pedido?.tipo === 'parcelamento_especifico' ? pedido.parcelas : dadosAtuais.parcelasPendentes;
   if (tipoPedido === 'parcelamento_especifico' && parcelas) dados.parcelasPendentes = parcelas;
-  return { acao: { tipo: 'PEDIR_MEDIDA', partes: textoFluxo(textos, 'pedir_medida') }, novoEstado: 'aguardando_medida', novosDados: dados };
+  return { acao: { tipo: 'PEDIR_MEDIDA', partes: textoFluxo(textos, 'pedir_medida') }, novoEstado: 'aguardando_medida', novosDados: dados, chaves: ['pedir_medida'] };
 }
 
 function pedidoPendente(dados: DadosPrecoFluxo): PedidoEspecifico | undefined {
@@ -185,13 +193,13 @@ function montarAcaoParaMedida(medida: string, textos: TextosFluxo, quantidade: n
     const novosDados = dadosComQuantidade({ medida: item.medida }, quantidade);
     if (pedido?.tipo === 'parcelamento_especifico') {
       const partes = [...(comAvista ? montarPartesPreco(item, null, quantidade).slice(0, 1) : []), ...montarPartesPreco(item, pedido.parcelas, quantidade)];
-      return { acao: { tipo: 'RESPONDER_PARCELAMENTO_ESPECIFICO', partes }, novoEstado: 'preco_confirmado', novosDados };
+      return { acao: { tipo: 'RESPONDER_PARCELAMENTO_ESPECIFICO', partes }, novoEstado: 'preco_confirmado', novosDados, chaves: ['parcelamento_especifico'] };
     }
     if (pedido?.tipo === 'desconto_avista') {
-      return { acao: { tipo: 'RESPONDER_DESCONTO', partes: montarPartesDescontoAVista(item, quantidade) }, novoEstado: 'preco_confirmado', novosDados };
+      return { acao: { tipo: 'RESPONDER_DESCONTO', partes: montarPartesDescontoAVista(item, quantidade) }, novoEstado: 'preco_confirmado', novosDados, chaves: ['desconto_dinheiro'] };
     }
     const partes = montarPartesPreco(item, null, quantidade);
-    return { acao: { tipo: 'CONFIRMAR_PRECO', partes }, novoEstado: 'preco_confirmado', novosDados };
+    return { acao: { tipo: 'CONFIRMAR_PRECO', partes }, novoEstado: 'preco_confirmado', novosDados, chaves: ['preco_medida'] };
   }
   const aro = medida.split('/')[2] || '';
   const alternativas = alternativasMesmoAro(medida);
@@ -211,6 +219,7 @@ function montarAcaoParaMedida(medida: string, textos: TextosFluxo, quantidade: n
     acao: { tipo: 'OFERECER_ALTERNATIVAS', partes: partesSemMatch },
     novoEstado: alternativas ? 'medida_sem_match' : 'sem_estado',
     novosDados: dadosSemMatch,
+    chaves: [alternativas ? 'medida_inexistente' : 'sem_alternativa'],
   };
 }
 
@@ -219,6 +228,9 @@ export interface ResultadoSequencia {
   partes: string[];
   novoEstado: EstadoPrecoFluxo;
   novosDados: DadosPrecoFluxo;
+  // Assuntos que a IA leu na rajada (na ordem) e blocos do fluxo que responderam — pro fluxograma ao vivo.
+  assuntos: IntencaoTipo[];
+  chaves: string[];
 }
 
 const MAX_ASSUNTOS_POR_RAJADA = 4;
@@ -243,13 +255,15 @@ export function decidirSequenciaPreco(
   textos: TextosFluxo = {},
   contexto: ContextoFluxo = {}
 ): ResultadoSequencia {
-  const saidaNada: ResultadoSequencia = { acaoPrincipal: 'NADA', partes: [], novoEstado: estadoAtual, novosDados: dadosAtuais };
   const itens = intencoes.slice(0, MAX_ASSUNTOS_POR_RAJADA);
+  const assuntos = itens.map((i) => i.intencao);
+  const saidaNada: ResultadoSequencia = { acaoPrincipal: 'NADA', partes: [], novoEstado: estadoAtual, novosDados: dadosAtuais, assuntos, chaves: [] };
   if (itens.length === 0 || itens.some((i) => i.intencao === 'PERGUNTA_TECNICA')) return saidaNada;
 
   let estado = estadoAtual;
   let dados = dadosAtuais;
   const partes: string[] = [];
+  const chaves: string[] = [];
   let acaoPrincipal: AcaoPreco['tipo'] = 'NADA';
   let pinNaRajada = false;
 
@@ -262,12 +276,13 @@ export function decidirSequenciaPreco(
     for (const p of r.acao.partes) {
       if (p === MARCADOR_PINO || !partes.includes(p)) partes.push(p);
     }
+    for (const c of r.chaves || []) if (!chaves.includes(c)) chaves.push(c);
     estado = r.novoEstado;
     dados = r.novosDados;
   }
 
   if (acaoPrincipal === 'NADA' || partes.length === 0) return saidaNada;
-  return { acaoPrincipal, partes: partes.slice(0, MAX_PARTES_POR_RAJADA), novoEstado: estado, novosDados: dados };
+  return { acaoPrincipal, partes: partes.slice(0, MAX_PARTES_POR_RAJADA), novoEstado: estado, novosDados: dados, assuntos, chaves };
 }
 
 /**
@@ -290,62 +305,68 @@ export function decidirAcaoPreco(
   // de preco em andamento — mesmo tratamento que PERGUNTA_TECNICA da logo depois.
   switch (intencao.intencao) {
     case 'PERGUNTOU_SE_E_REMOLD': {
-      const partes = textoSemRepetir(textos, 'remold', contexto);
-      if (!partes) return { acao: { tipo: 'NADA' }, novoEstado: estadoAtual, novosDados: dadosAtuais };
-      return respostaTexto('RESPONDER_REMOLD', partes, estadoAtual, dadosAtuais);
+      const r = textoSemRepetir(textos, 'remold', contexto);
+      if (!r) return SAI_DO_FLUXO(estadoAtual, dadosAtuais);
+      return respostaTexto('RESPONDER_REMOLD', r.partes, estadoAtual, dadosAtuais, r.chave);
+    }
+    case 'PERGUNTOU_SE_E_NOVO': {
+      const r = textoSemRepetir(textos, 'condicao', contexto);
+      if (!r) return SAI_DO_FLUXO(estadoAtual, dadosAtuais);
+      return respostaTexto('RESPONDER_CONDICAO', r.partes, estadoAtual, dadosAtuais, r.chave);
     }
     case 'PERGUNTOU_SE_E_CHINES':
-      return respostaTexto('RESPONDER_CHINES', textoFluxo(textos, 'chines'), estadoAtual, dadosAtuais);
+      return respostaTexto('RESPONDER_CHINES', textoFluxo(textos, 'chines'), estadoAtual, dadosAtuais, 'chines');
     case 'PERGUNTOU_SE_TEM_JUROS':
-      return respostaTexto('RESPONDER_JUROS', textoFluxo(textos, 'juros'), estadoAtual, dadosAtuais);
+      return respostaTexto('RESPONDER_JUROS', textoFluxo(textos, 'juros'), estadoAtual, dadosAtuais, 'juros');
     case 'OFERECEU_BASE_TROCA':
-      return respostaTexto('RESPONDER_BASE_TROCA', textoFluxo(textos, 'base_troca'), estadoAtual, dadosAtuais);
+      return respostaTexto('RESPONDER_BASE_TROCA', textoFluxo(textos, 'base_troca'), estadoAtual, dadosAtuais, 'base_troca');
     case 'OFERECEU_VENDER_USADO':
-      return respostaTexto('RESPONDER_COMPRA_USADO', textoFluxo(textos, 'compra_usado'), estadoAtual, dadosAtuais);
+      return respostaTexto('RESPONDER_COMPRA_USADO', textoFluxo(textos, 'compra_usado'), estadoAtual, dadosAtuais, 'compra_usado');
     case 'PERGUNTOU_NOTA_FISCAL':
-      return respostaTexto('RESPONDER_NOTA_FISCAL', textoFluxo(textos, 'nota_fiscal'), estadoAtual, dadosAtuais);
+      return respostaTexto('RESPONDER_NOTA_FISCAL', textoFluxo(textos, 'nota_fiscal'), estadoAtual, dadosAtuais, 'nota_fiscal');
     case 'PERGUNTOU_ALINHAMENTO':
-      return respostaTexto('RESPONDER_ALINHAMENTO', textoFluxo(textos, 'alinhamento'), estadoAtual, dadosAtuais);
+      return respostaTexto('RESPONDER_ALINHAMENTO', textoFluxo(textos, 'alinhamento'), estadoAtual, dadosAtuais, 'alinhamento');
     case 'PEDIU_LOCALIZACAO': {
       const minutos = contexto.minutosDesdeLocalizacao;
       if (typeof minutos === 'number' && minutos < JANELA_PINO_REPETIDO_MIN) {
-        return respostaTexto('RESPONDER_LOCALIZACAO_REPETIDA', textoFluxo(textos, 'localizacao_repetida'), estadoAtual, dadosAtuais);
+        return respostaTexto('RESPONDER_LOCALIZACAO_REPETIDA', textoFluxo(textos, 'localizacao_repetida'), estadoAtual, dadosAtuais, 'localizacao_repetida');
       }
-      return respostaTexto('ENVIAR_LOCALIZACAO_FIXA', [...textoFluxo(textos, 'localizacao'), MARCADOR_PINO], estadoAtual, dadosAtuais);
+      return respostaTexto('ENVIAR_LOCALIZACAO_FIXA', [...textoFluxo(textos, 'localizacao'), MARCADOR_PINO], estadoAtual, dadosAtuais, 'localizacao');
     }
     case 'PERGUNTOU_POR_OUTRA_MARCA':
-      return respostaTexto('RESPONDER_OUTRA_MARCA', textoFluxo(textos, 'outra_marca'), estadoAtual, dadosAtuais);
+      return respostaTexto('RESPONDER_OUTRA_MARCA', textoFluxo(textos, 'outra_marca'), estadoAtual, dadosAtuais, 'outra_marca');
     case 'PERGUNTOU_HORARIO':
-      return respostaTexto('RESPONDER_HORARIO', textoFluxo(textos, 'horario'), estadoAtual, dadosAtuais);
+      return respostaTexto('RESPONDER_HORARIO', textoFluxo(textos, 'horario'), estadoAtual, dadosAtuais, 'horario');
     case 'PEDIU_FOTO':
-      return respostaTexto('RESPONDER_FOTO', textoFluxo(textos, 'foto'), estadoAtual, dadosAtuais);
+      return respostaTexto('RESPONDER_FOTO', textoFluxo(textos, 'foto'), estadoAtual, dadosAtuais, 'foto');
     case 'OBJETOU_PRECO_OU_MARCA': {
-      const partes = textoSemRepetir(textos, 'objecao', contexto);
-      if (!partes) return { acao: { tipo: 'NADA' }, novoEstado: estadoAtual, novosDados: dadosAtuais };
-      return respostaTexto('RESPONDER_OBJECAO', partes, estadoAtual, dadosAtuais);
+      const r = textoSemRepetir(textos, 'objecao', contexto);
+      if (!r) return SAI_DO_FLUXO(estadoAtual, dadosAtuais);
+      return respostaTexto('RESPONDER_OBJECAO', r.partes, estadoAtual, dadosAtuais, r.chave);
     }
     case 'PERGUNTOU_PARCELAMENTO_GENERICO':
-      return respostaTexto('RESPONDER_PARCELAMENTO_GENERICO', textoFluxo(textos, 'parcelamento_generico'), estadoAtual, dadosAtuais);
+      return respostaTexto('RESPONDER_PARCELAMENTO_GENERICO', textoFluxo(textos, 'parcelamento_generico'), estadoAtual, dadosAtuais, 'parcelamento_generico');
     case 'PERGUNTOU_BALANCEAMENTO': {
       const valorRoda = brl(VALOR_BALANCEAMENTO_POR_RODA);
-      const partes = quantidadeConhecida && quantidadeConhecida > 1
-        ? preencherPlaceholders(textoFluxo(textos, 'balanceamento_quantidade'), { VALOR_RODA: valorRoda, QTD: quantidadeConhecida, TOTAL: brl(VALOR_BALANCEAMENTO_POR_RODA * quantidadeConhecida) })
+      const comQtd = !!quantidadeConhecida && quantidadeConhecida > 1;
+      const partes = comQtd
+        ? preencherPlaceholders(textoFluxo(textos, 'balanceamento_quantidade'), { VALOR_RODA: valorRoda, QTD: quantidadeConhecida as number, TOTAL: brl(VALOR_BALANCEAMENTO_POR_RODA * (quantidadeConhecida as number)) })
         : preencherPlaceholders(textoFluxo(textos, 'balanceamento'), { VALOR_RODA: valorRoda });
-      return respostaTexto('RESPONDER_BALANCEAMENTO', partes, estadoAtual, dadosAtuais);
+      return respostaTexto('RESPONDER_BALANCEAMENTO', partes, estadoAtual, dadosAtuais, comQtd ? 'balanceamento_quantidade' : 'balanceamento');
     }
     case 'PERGUNTOU_PARCELAMENTO_ESPECIFICO': {
       const parcelas = intencao.parcelasExtraida;
       // Sem numero de parcelas entendido, ou pedindo mais que o maximo da tabela (10x):
       // nunca inventa valor — responde o que a loja realmente oferece.
-      if (!parcelas || parcelas < 1) return respostaTexto('RESPONDER_PARCELAMENTO_GENERICO', textoFluxo(textos, 'parcelamento_generico'), estadoAtual, dadosAtuais);
-      if (parcelas > PARCELAS_MAXIMAS) return respostaTexto('RESPONDER_PARCELAMENTO_GENERICO', textoFluxo(textos, 'parcelamento_maximo'), estadoAtual, dadosAtuais);
+      if (!parcelas || parcelas < 1) return respostaTexto('RESPONDER_PARCELAMENTO_GENERICO', textoFluxo(textos, 'parcelamento_generico'), estadoAtual, dadosAtuais, 'parcelamento_generico');
+      if (parcelas > PARCELAS_MAXIMAS) return respostaTexto('RESPONDER_PARCELAMENTO_GENERICO', textoFluxo(textos, 'parcelamento_maximo'), estadoAtual, dadosAtuais, 'parcelamento_maximo');
       const pedido: PedidoEspecifico = { tipo: 'parcelamento_especifico', parcelas };
       const medida = intencao.medidaExtraida || dadosAtuais.medida;
       if (!medida) return pedirMedida(dadosAtuais, textos, pedido);
       return montarAcaoParaMedida(medida, textos, quantidadeAplicavel(intencao, estadoAtual, dadosAtuais, medida), pedido);
     }
     case 'PERGUNTOU_DESCONTO_AVISTA': {
-      if (intencao.formaPagamentoExtraida === 'pix') return respostaTexto('RESPONDER_DESCONTO', textoFluxo(textos, 'desconto_pix'), estadoAtual, dadosAtuais);
+      if (intencao.formaPagamentoExtraida === 'pix') return respostaTexto('RESPONDER_DESCONTO', textoFluxo(textos, 'desconto_pix'), estadoAtual, dadosAtuais, 'desconto_pix');
       const pedido: PedidoEspecifico = { tipo: 'desconto_avista' };
       const medida = intencao.medidaExtraida || dadosAtuais.medida;
       if (!medida) return pedirMedida(dadosAtuais, textos, pedido);
@@ -356,7 +377,7 @@ export function decidirAcaoPreco(
   }
 
   if (intencao.intencao === 'PERGUNTA_TECNICA' || intencao.intencao === 'OUTRO_ASSUNTO') {
-    return { acao: { tipo: 'NADA' }, novoEstado: estadoAtual, novosDados: dadosAtuais };
+    return SAI_DO_FLUXO(estadoAtual, dadosAtuais);
   }
 
   if (intencao.intencao === 'DAR_MEDIDA' && intencao.medidaExtraida) {
@@ -373,6 +394,7 @@ export function decidirAcaoPreco(
           acao: { tipo: 'CONFIRMAR_PRECO', partes: montarPartesPreco(itens[0]!, null, quantidadeConhecida) },
           novoEstado: estadoAtual,
           novosDados: dadosComQuantidade(dadosAtuais, intencao.quantidadeExtraida),
+          chaves: ['preco_medida'],
         };
       }
     }
@@ -398,6 +420,7 @@ export function decidirAcaoPreco(
           },
           novoEstado: estadoAtual,
           novosDados: dadosAtuais,
+          chaves: ['medida_inexistente'],
         };
       }
       // Nao deveria acontecer (o aro so vira aroSemMatch se ja tinha alternativa
@@ -414,6 +437,7 @@ export function decidirAcaoPreco(
         acao: { tipo: 'CONFIRMAR_PRECO', partes: montarPartesPreco(itens[0]!, null, intencao.quantidadeExtraida) },
         novoEstado: 'preco_confirmado',
         novosDados: dadosComQuantidade(dadosAtuais, intencao.quantidadeExtraida),
+        chaves: ['preco_medida'],
       };
     }
   }
@@ -425,5 +449,5 @@ export function decidirAcaoPreco(
 
   // Intencao nao reconhecida dado o estado atual (ex.: RESPONDER_QUANTIDADE sem
   // medida salva) — sai do fluxo em vez de arriscar uma acao errada.
-  return { acao: { tipo: 'NADA' }, novoEstado: estadoAtual, novosDados: dadosAtuais };
+  return SAI_DO_FLUXO(estadoAtual, dadosAtuais);
 }

@@ -135,6 +135,17 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     ],
   },
   {
+    chave: 'condicao',
+    grupo: 'produto',
+    titulo: 'É novo? / tem meia-vida? (1ª vez)',
+    quando: 'O cliente pergunta se o pneu é novo, se só tem novos, ou se tem "meia-vida" (usado) — SEM falar a palavra remold. O robô não se precipita: responde com a qualidade e a garantia e não confessa remold de cara. Se o cliente perguntar de novo, aí vem a resposta honesta de remold.',
+    exemplos: ['é novo?', 'tem somente novos?', 'tem meia vida ou só pneu novo?'],
+    partes: [
+      'O GP Premium usa borracha padrão europeu e passa por um controle rígido de qualidade.',
+      'E tem garantia de 50 mil km ou seu dinheiro de volta. Se quiser, vem ver o pneu de perto aqui na loja.',
+    ],
+  },
+  {
     chave: 'remold_insistencia',
     grupo: 'produto',
     titulo: 'É remold? (cliente insiste ou recusa)',
@@ -280,7 +291,9 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
 
 // Respostas que, se o robo JA mandou o mesmo texto ha pouco na conversa, trocam pela variante
 // (achado 18/09: cliente disse "remold to fora" e o robo repetiu a explicacao palavra por palavra).
-export const VARIANTE_REPETICAO: Record<string, string> = { remold: 'remold_insistencia', objecao: 'objecao_repetida' };
+// condicao ("e novo?") -> na 2a vez a "variante" e a resposta honesta de remold: o robo nao se precipita
+// (19/09, caso Maxwell) mas tambem nunca sustenta a duvida do cliente sem responder de verdade.
+export const VARIANTE_REPETICAO: Record<string, string> = { remold: 'remold_insistencia', objecao: 'objecao_repetida', condicao: 'remold' };
 
 export const TEXTOS_PADRAO: Record<string, string[]> = Object.fromEntries(
   CATALOGO_FLUXO.filter((c) => c.partes).map((c) => [c.chave, c.partes as string[]])
@@ -291,7 +304,7 @@ export type TextosFluxo = Record<string, string[]>;
 // Quais respostas (e variantes) o robo JA mandou nesta conversa: compara cada bolha (25+ caracteres)
 // do texto atual da resposta com o texto recente das mensagens do robo.
 export function chavesJaRespondidas(textos: TextosFluxo | undefined, textoRecenteDoRobo: string): string[] {
-  const chaves = Object.entries(VARIANTE_REPETICAO).flat();
+  const chaves = [...new Set(Object.entries(VARIANTE_REPETICAO).flat())];
   return chaves.filter((chave) => textoFluxo(textos, chave).some((p) => p.length >= 25 && textoRecenteDoRobo.includes(p)));
 }
 

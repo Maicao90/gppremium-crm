@@ -279,8 +279,12 @@ app.post('/gerar-resposta', async (req, res) => {
     // errado (ver commits 688b1eef/46b91911 do dia 15/09, agora supersedidos por isto
     // pra qualquer caso que o fluxo abaixo decida tratar).
     // Foto/audio sem texto na rajada: o codigo nao ve o conteudo — deixa a IA livre (que ve/ouve).
+    // Rastro pro fluxograma ao vivo do painel: o que a IA leu e por que (se for o caso) caiu na IA livre.
+    let assuntosLidos: string[] = [];
+    let motivoLivre = temMidiaSemTexto ? 'midia_sem_texto' : 'filtro_nao_e_do_fluxo';
     if (!temMidiaSemTexto && podeSerSobrePreco(gatilho, estadoPrecoAtual)) {
       const apiKeyFluxo = process.env.OPENAI_API_KEY?.trim();
+      motivoLivre = apiKeyFluxo ? 'leitura_falhou' : 'sem_chave_openai';
       if (apiKeyFluxo) {
         const contextoRecente = anteriores
           .slice(-6)
@@ -293,6 +297,7 @@ app.post('/gerar-resposta', async (req, res) => {
           const textoRecenteDoRobo = anteriores.filter((m: any) => m?.role === 'assistant').slice(-12).map((m: any) => String(m?.content || '')).join('\n');
           const jaRespondidas = chavesJaRespondidas(textosFluxo, textoRecenteDoRobo);
           const decisao = decidirSequenciaPreco(intencoes, estadoPrecoAtual, dadosPrecoAtuais, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas });
+          assuntosLidos = decisao.assuntos;
           if (decisao.acaoPrincipal !== 'NADA') {
             return res.json({
               partes: decisao.partes,
@@ -300,10 +305,34 @@ app.post('/gerar-resposta', async (req, res) => {
               acaoTipo: decisao.acaoPrincipal,
               novoEstadoPreco: decisao.novoEstado,
               novosDadosPreco: JSON.stringify(decisao.novosDados),
+              // Rastro do fluxo (painel ao vivo)
+              via: 'fluxo',
+              assuntos: decisao.assuntos,
+              chaves: decisao.chaves,
+              rajada,
+              simulado: !!req.body?.simular,
             });
           }
+          motivoLivre = decisao.assuntos.includes('PERGUNTA_TECNICA') ? 'pergunta_tecnica' : 'assunto_sem_bloco';
         }
       }
+    }
+
+    // SIMULACAO (tela Fluxo do painel, "testar uma mensagem"): mostra o caminho SEM chamar a IA livre
+    // e sem enviar nada — so o que o fluxo decidiu.
+    if (req.body?.simular) {
+      return res.json({
+        partes: [],
+        deterministico: false,
+        novoEstadoPreco: estadoPrecoAtual,
+        novosDadosPreco: JSON.stringify(dadosPrecoAtuais),
+        via: 'ia_livre',
+        motivoLivre,
+        assuntos: assuntosLidos,
+        chaves: [],
+        rajada,
+        simulado: true,
+      });
     }
 
     const briefingComercial = montarBriefingComercialDeterministico(textosCliente);
@@ -439,6 +468,11 @@ app.post('/gerar-resposta', async (req, res) => {
       deterministico: false,
       novoEstadoPreco: estadoPrecoAtual,
       novosDadosPreco: JSON.stringify(dadosPrecoAtuais),
+      via: 'ia_livre',
+      motivoLivre,
+      assuntos: assuntosLidos,
+      chaves: [],
+      rajada,
     });
   } catch (e: any) {
     console.error('[BotService] Erro em /gerar-resposta:', e?.message || e);
