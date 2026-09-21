@@ -10,7 +10,7 @@ import {
   montarBriefingComercialDeterministico,
 } from '../data/tabelaPrecos';
 import { precosForaDaTabela, valoresEmReais } from '../data/precoGuard';
-import { prometeuTransferenciaFalsa, removerReperguntaPosPreco, removerRepeticaoRecente, removerPromessaDeFoto } from '../data/comportamentoGuard';
+import { prometeuTransferenciaFalsa, removerReperguntaPosPreco, removerRepeticaoRecente, removerPromessaDeFoto, removerHorarioNaoPedido, removerLocalizacaoRepetida, pareceAgradecimento } from '../data/comportamentoGuard';
 import { lerBotPneusConfig, montarPromptAtendimentoBot } from '../services/botPneusConfig';
 import { decidirSequenciaPreco, EstadoPrecoFluxo, DadosPrecoFluxo } from '../data/fluxoPreco';
 import { extrairIntencoesPreco, podeSerSobrePreco } from '../data/fluxoPrecoExtrator';
@@ -295,10 +295,19 @@ app.post('/gerar-resposta', async (req, res) => {
           // O que o robo (ou atendente) ja disse ha pouco: se o cliente insiste no mesmo assunto, a resposta
           // troca pela variante em vez de repetir a explicacao palavra por palavra.
           const textoRecenteDoRobo = anteriores.filter((m: any) => m?.role === 'assistant').slice(-12).map((m: any) => String(m?.content || '')).join('\n');
-          const jaRespondidas = chavesJaRespondidas(textosFluxo, textoRecenteDoRobo);
+          // O agradecimento so conta como "ja respondido" se foi uma das 3 ultimas mensagens do robo: um "Tranquilo!" de
+          // horas atras nao pode calar o robo diante de um "valeu" novo (revisao 21/09).
+          const ultimas3DoRobo = anteriores.filter((m: any) => m?.role === 'assistant').slice(-3).map((m: any) => String(m?.content || '')).join('\n');
+          const agradecimentoRecente = chavesJaRespondidas(textosFluxo, ultimas3DoRobo).includes('agradecimento');
+          const jaRespondidas = chavesJaRespondidas(textosFluxo, textoRecenteDoRobo).filter((c) => c !== 'agradecimento' || agradecimentoRecente);
           const decisao = decidirSequenciaPreco(intencoes, estadoPrecoAtual, dadosPrecoAtuais, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas });
           assuntosLidos = decisao.assuntos;
-          if (decisao.acaoPrincipal !== 'NADA') {
+          // Resposta de agradecimento (ou silencio de agradecimento) so vale se a mensagem for MESMO so agradecimento: com
+          // pergunta, dia/hora ou aviso de visita ("combinado, amanha 10h eu passo ai") a IA livre e quem responde
+          // (e quem cria o agendamento) — nunca calar nem mandar "Tranquilo!" por cima (revisao 21/09).
+          const soAgradecimento = decisao.acaoPrincipal === 'SILENCIO' || decisao.acaoPrincipal === 'RESPONDER_AGRADECIMENTO';
+          const naoEhSoAgradecer = soAgradecimento && rajada.some((t) => /\?|amanh|hoje|s[aá]bado|domingo|segunda|ter[cç]a|quarta|quinta|sexta|passo a[ií]|vou a[ií]|\d/i.test(t));
+          if (decisao.acaoPrincipal !== 'NADA' && !naoEhSoAgradecer) {
             return res.json({
               partes: decisao.partes,
               deterministico: true,
@@ -439,6 +448,34 @@ app.post('/gerar-resposta', async (req, res) => {
       partesFinais = semPromessaDeFoto.length ? semPromessaDeFoto : textoFluxo(textosFluxo, 'foto');
     }
 
+    // TRAVAS DE COMPORTAMENTO 6 e 7 (21/09, conversas reais de hoje). 6: nao cita o horario da loja quando o cliente so
+    // agradeceu/disse ok (a IA soltava "Nosso horario: ..." depois de todo "ok obrigado"). 7: o pino da localizacao
+    // ja foi mandado — tira "Segue nossa localizacao!" solto (o sistema ja barra o pino, sobrava so a frase).
+    // Audio/foto sem texto: o codigo nao sabe o que o cliente disse — a trava 6 nao mexe.
+    const clienteEscreveu = !temMidiaSemTexto && !audio?.base64;
+    const antesDasTravas67 = partesFinais.join('\n');
+    if (minutosDesdeLocalizacao !== null) partesFinais = removerLocalizacaoRepetida(partesFinais);
+    if (clienteEscreveu) partesFinais = removerHorarioNaoPedido(partesFinais, gatilho);
+    if (partesFinais.join('\n') !== antesDasTravas67) {
+      console.error('[BotService][TRAVA DE COMPORTAMENTO] Cortado horario nao pedido e/ou anuncio de pino repetido na resposta da IA livre.');
+      if (!partesFinais.length) {
+        // A resposta era so isso. Se o cliente so agradeceu: silencio. Se ele pediu/perguntou algo (ex.: mandou audio
+        // pedindo a localizacao de novo), nunca fica sem resposta: o texto fixo "localizacao_repetida" (revisao 21/09).
+        const respostaSegura = clienteEscreveu && pareceAgradecimento(gatilho) ? [] : textoFluxo(textosFluxo, 'localizacao_repetida');
+        return res.json({
+          partes: respostaSegura,
+          deterministico: false,
+          novoEstadoPreco: estadoPrecoAtual,
+          novosDadosPreco: JSON.stringify(dadosPrecoAtuais),
+          via: 'ia_livre',
+          motivoLivre: respostaSegura.length ? motivoLivre : 'cortada_pelas_travas',
+          assuntos: assuntosLidos,
+          chaves: [],
+          rajada,
+        });
+      }
+    }
+
     // TRAVA DE COMPORTAMENTO 3 (09/09): nao repetir o que ja foi dito nesta conversa.
     // Se sobrar nada, tenta de novo avisando; se ainda assim repetir, manda o que veio
     // (ficar em silencio com o cliente esperando seria pior).
@@ -459,8 +496,30 @@ app.post('/gerar-resposta', async (req, res) => {
           briefingComercial +
           '\nATENCAO: voce JA disse exatamente isso nesta conversa. Nao repita frase, pergunta nem lista que ja mandou. Avance: se ja tem a medida e o preco, chame pro fechamento (quando ele pode vir na loja). Se falta um dado essencial, faca UMA pergunta curta e diferente das anteriores.',
       });
-      const limpa = removerRepeticaoRecente(outra.partes, jaDitas);
-      partesFinais = limpa.length ? limpa : outra.partes;
+      // A segunda tentativa TAMBEM passa por todas as travas (preco, transferencia, repergunta, foto, pino, horario):
+      // antes ia direto pro cliente sem nenhuma (revisao 21/09). Se as travas a zerarem, fica em silencio: o cliente ja
+      // tinha recebido exatamente a resposta que a 1a tentativa repetiu.
+      let outraSegura = outra.partes;
+      if (prometeuTransferenciaFalsa(outraSegura) || precosForaDaTabela(outraSegura, textosCliente).length) outraSegura = [];
+      outraSegura = removerPromessaDeFoto(removerReperguntaPosPreco(outraSegura));
+      if (minutosDesdeLocalizacao !== null) outraSegura = removerLocalizacaoRepetida(outraSegura);
+      if (clienteEscreveu) outraSegura = removerHorarioNaoPedido(outraSegura, gatilho);
+      const limpa = removerRepeticaoRecente(outraSegura, jaDitas);
+      partesFinais = limpa.length ? limpa : outraSegura;
+      if (!partesFinais.length) {
+        console.error('[BotService][TRAVA DE REPETICAO] A segunda tentativa tambem foi cortada pelas travas — silencio (o cliente ja tinha essa resposta).');
+        return res.json({
+          partes: [],
+          deterministico: false,
+          novoEstadoPreco: estadoPrecoAtual,
+          novosDadosPreco: JSON.stringify(dadosPrecoAtuais),
+          via: 'ia_livre',
+          motivoLivre: 'cortada_pelas_travas',
+          assuntos: assuntosLidos,
+          chaves: [],
+          rajada,
+        });
+      }
     }
 
     res.json({

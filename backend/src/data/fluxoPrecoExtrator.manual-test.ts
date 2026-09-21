@@ -12,8 +12,19 @@ const casos: { nome: string; msg: string; contexto: string; esperado: string; me
   { nome: 'pergunta tecnica: "aguenta quantos kg"', msg: 'Ele aguenta até quantos kg', contexto: 'CLIENTE: quanto ta o 215/65/16\nROBO: R$349 a vista', esperado: 'PERGUNTA_TECNICA' },
   { nome: 'quantidade: "preciso de 4"', msg: 'preciso de 4', contexto: 'ROBO: o pneu 195/55/15 sai por R$289', esperado: 'RESPONDER_QUANTIDADE', quantidadeEsperada: 4 },
   // (era OUTRO_ASSUNTO ate 18/09 — agora "onde fica" e a categoria de localizacao)
-  { nome: 'outro assunto: "obrigado, vou pensar"', msg: 'obrigado, vou pensar', contexto: '', esperado: 'OUTRO_ASSUNTO' },
-  { nome: 'outro assunto: "bom dia"', msg: 'bom dia', contexto: '', esperado: 'OUTRO_ASSUNTO' },
+  // (era OUTRO_ASSUNTO ate 21/09 — agradecimento/despedida/"vou pensar" agora e categoria propria: responde 1 vez e cala)
+  { nome: 'agradecimento: "obrigado, vou pensar"', msg: 'obrigado, vou pensar', contexto: '', esperado: 'AGRADECEU_OU_ENCERROU' },
+  { nome: 'agradecimento: "OK obrigado" depois do pino (caso real Giovanio)', msg: 'OK obrigado', contexto: 'CLIENTE: Onde fica a loja de vcs\nROBO: Segue a nossa localização:', esperado: 'AGRADECEU_OU_ENCERROU' },
+  { nome: 'agradecimento: "Ok obrigado." depois do preco (caso real Belchior)', msg: 'Ok obrigado.', contexto: 'CLIENTE: Sem juros?\nROBO: Tem sim um jurinho em cada parcela.', esperado: 'AGRADECEU_OU_ENCERROU' },
+  { nome: 'agradecimento: "Blz"', msg: 'Blz', contexto: 'ROBO: o pneu 185/70/14 sai por R$289,00 à vista', esperado: 'AGRADECEU_OU_ENCERROU' },
+  { nome: 'agradecimento: "valeu"', msg: 'valeu', contexto: 'ROBO: o pneu 185/70/14 sai por R$289,00 à vista', esperado: 'AGRADECEU_OU_ENCERROU' },
+  { nome: 'agradecimento: "vou pensar e te falo"', msg: 'vou pensar e te falo', contexto: 'ROBO: o pneu 185/70/14 sai por R$289,00 à vista', esperado: 'AGRADECEU_OU_ENCERROU' },
+  { nome: 'agradecimento: "Mais, obrigado pela atenção" (caso real Juliano)', msg: 'Mais , obrigado pela atenção', contexto: 'CLIENTE: Fica onde ?\nROBO: Segue a nossa localização:', esperado: 'AGRADECEU_OU_ENCERROU' },
+  { nome: 'agradecimento COM pergunta: "ok, e em 6x fica quanto?" vale a pergunta (nao e agradecimento)', msg: 'ok, e em 6x fica quanto?', contexto: 'ROBO: o pneu 195/55/15 sai por R$289,00 à vista', esperado: 'PERGUNTOU_PARCELAMENTO_ESPECIFICO', parcelasEsperada: 6 },
+  { nome: 'agradecimento COM pergunta: "obrigado, vcs fazem balanceamento?" vale a pergunta', msg: 'obrigado, vcs fazem balanceamento?', contexto: 'ROBO: o pneu sai por R$289,00 à vista', esperado: 'PERGUNTOU_BALANCEAMENTO' },
+  { nome: 'outro assunto: "bom dia" (saudacao NAO e agradecimento)', msg: 'bom dia', contexto: '', esperado: 'OUTRO_ASSUNTO' },
+  { nome: 'outro assunto: "Tudo bem graças à Deus" (resposta a saudacao, caso real Carlos Gomes)', msg: 'Tudo bem graças à Deus', contexto: 'ROBO: Oi, tudo bem?\nROBO: Poderia me informar a medida do pneu ou o modelo do seu carro?', esperado: 'OUTRO_ASSUNTO' },
+  { nome: 'outro assunto: "fica contra mão mim" (informacao, nao pedido nem agradecimento)', msg: 'fica na contra mão pra mim', contexto: 'CLIENTE: Fica onde ?\nROBO: Segue a nossa localização:', esperado: 'OUTRO_ASSUNTO' },
   // Gap (a) do review da Task 4: preco sem medida e a pergunta mais comum na vida real.
   { nome: 'preco sem medida: "quanto custa?"', msg: 'quanto custa?', contexto: '', esperado: 'PERGUNTAR_PRECO_SEM_MEDIDA' },
   // Gap (b) do review da Task 4: cliente escolhendo uma das alternativas ja oferecidas.
@@ -111,12 +122,18 @@ const rajadas: { nome: string; msgs: string[]; contexto: string; esperado: strin
     exato: true,
   },
   {
-    nome: 'contexto ja respondido (remold + chines): "obrigado" -> papo solto',
+    nome: 'contexto ja respondido (remold + chines): "obrigado" -> agradecimento (e so isso)',
     msgs: ['obrigado'],
     contexto: 'CLIENTE: é remold?\nROBO: Vou ser sincero com você: sim, é remold...\nCLIENTE: e é chinês?\nROBO: Não, a gente não trabalha com pneu chinês...',
-    esperado: ['OUTRO_ASSUNTO'],
+    esperado: ['AGRADECEU_OU_ENCERROU'],
     exato: true,
   },
+  { nome: 'caso real Valentino: "Blz" + "Obrigado" -> UM agradecimento so', msgs: ['Blz', 'Obrigado'], contexto: 'ROBO: Temos o pneu 185/70/14 por R$ 289,00 à vista.', esperado: ['AGRADECEU_OU_ENCERROU'], exato: true },
+  // A extratora as vezes devolve o agradecimento como item extra junto de um pedido; nao e problema — o motor
+  // (decidirSequenciaPreco) descarta o agradecimento quando ha pedido de verdade (testado no teste do motor). Aqui so
+  // exigimos que o pedido apareca e que nao haja mais de 1 item alem dele.
+  { nome: 'pedido + "obrigado": o pedido aparece (agradecimento extra e descartado pelo motor)', msgs: ['quanto custa o 195/55/15?', 'obrigado'], contexto: '', esperado: ['DAR_MEDIDA'] },
+  { nome: 'endereco + "ok, obrigado": o endereco aparece (agradecimento extra e descartado pelo motor)', msgs: ['onde fica a loja?', 'ok obrigado'], contexto: '', esperado: ['PEDIU_LOCALIZACAO'] },
   {
     nome: 'CASO REAL Marcia Lima (13:56, 18/09): preco+marca / "tem esses ai" / "moro em Alexânia" / endereco',
     msgs: ['Quanto e 2 pneus do gol g 5.   175 .70.AR 14   \nPirelli ou  dulop', 'Vc tem esses ai', 'Moro em Alexânia não vou coloca aí não só vou busca ai', 'Essa loja aí fica em qual endereço'],

@@ -421,6 +421,52 @@ const ITEM_195_55_15 = encontrarPrecosExatosPorMedida('195/55/15')[0]!; // aVist
   checar('Outra marca: nao mexe no estado', r.novoEstado === 'preco_confirmado' && r.novosDados.medida === '195/55/15');
 }
 
+// ----- Agradecimento / "ok" / "vou pensar" (conversas reais de 21/09): responde UMA vez, depois silencio -----
+{
+  const a1 = decidirAcaoPreco(intencaoDe('AGRADECEU_OU_ENCERROU'), 'preco_confirmado', { medida: '195/55/15' });
+  checar('Agradecimento 1a vez: resposta fixa curta', a1.acao.tipo === 'RESPONDER_AGRADECIMENTO' && /Qualquer dúvida ou se quiser fechar/.test(textoDe(a1)), textoDe(a1));
+  checar('Agradecimento: NAO cita horario, endereco nem pergunta de fechamento por conta propria', !/hor[aá]rio|segunda|s[aá]bado|\d\s?h\b|endere|localiza|quando voc[eê] consegue/i.test(textoDe(a1)), textoDe(a1));
+  checar('Agradecimento: nao mexe no estado', a1.novoEstado === 'preco_confirmado' && a1.novosDados.medida === '195/55/15');
+  const a2 = decidirAcaoPreco(intencaoDe('AGRADECEU_OU_ENCERROU'), 'preco_confirmado', { medida: '195/55/15' }, {}, { jaRespondidas: ['agradecimento'] });
+  checar('Agradecimento 2a vez ("ok" e depois "obrigado"): SILENCIO decidido pelo codigo (nao NADA = IA livre)', a2.acao.tipo === 'SILENCIO' && textoDe(a2) === '');
+  const s2 = decidirSequenciaPreco([intencaoDe('AGRADECEU_OU_ENCERROU')], 'preco_confirmado', { medida: '195/55/15' }, {}, { jaRespondidas: ['agradecimento'] });
+  checar('Agradecimento repetido em sequencia: acaoPrincipal SILENCIO, sem partes (a IA livre NAO responde)', s2.acaoPrincipal === 'SILENCIO' && s2.partes.length === 0 && s2.chaves.includes('agradecimento'));
+  const s1 = decidirSequenciaPreco([intencaoDe('AGRADECEU_OU_ENCERROU')], 'preco_confirmado', { medida: '195/55/15' });
+  checar('Agradecimento 1a vez em sequencia: manda o texto', s1.acaoPrincipal === 'RESPONDER_AGRADECIMENTO' && s1.partes.length === 1);
+  const sMix = decidirSequenciaPreco([intencaoDe('DAR_MEDIDA', { medidaExtraida: '195/55/15' }), intencaoDe('AGRADECEU_OU_ENCERROU')], 'sem_estado', {});
+  checar('"Obrigado" junto com um pedido de verdade: responde so o pedido (nada de "Tranquilo!" depois do preco)', sMix.acaoPrincipal === 'CONFIRMAR_PRECO' && !sMix.partes.some((p) => /Tranquilo/.test(p)) && !sMix.chaves.includes('agradecimento'), sMix.partes.join(' | '));
+  const sSolto = decidirSequenciaPreco([intencaoDe('OUTRO_ASSUNTO'), intencaoDe('AGRADECEU_OU_ENCERROU')], 'preco_confirmado', { medida: '195/55/15' });
+  checar('Papo solto + "obrigado pela atencao" (caso real Juliano): continua sendo um agradecimento (nada de endereco)', sSolto.acaoPrincipal === 'RESPONDER_AGRADECIMENTO' && sSolto.partes.length === 1, sSolto.partes.join(' | '));
+  const sSolto2 = decidirSequenciaPreco([intencaoDe('OUTRO_ASSUNTO'), intencaoDe('AGRADECEU_OU_ENCERROU')], 'preco_confirmado', { medida: '195/55/15' }, {}, { jaRespondidas: ['agradecimento'] });
+  checar('Papo solto + agradecimento repetido: silencio', sSolto2.acaoPrincipal === 'SILENCIO' && sSolto2.partes.length === 0);
+  const sMix2 = decidirSequenciaPreco([intencaoDe('AGRADECEU_OU_ENCERROU'), intencaoDe('PERGUNTA_TECNICA')], 'preco_confirmado', { medida: '195/55/15' });
+  checar('"Obrigado" + pergunta tecnica: sai do fluxo (IA livre responde a tecnica)', sMix2.acaoPrincipal === 'NADA');
+  const editado = decidirAcaoPreco(intencaoDe('AGRADECEU_OU_ENCERROU'), 'sem_estado', {}, { agradecimento: ['Por nada, ta? Chama a gente quando quiser.'] });
+  checar('Agradecimento: respeita o texto EDITADO pelo dono', /Por nada, ta\?/.test(textoDe(editado)), textoDe(editado));
+  checar('chavesJaRespondidas: agradecimento ja dito ha pouco -> ["agradecimento"]', chavesJaRespondidas(undefined, 'Oi\n' + TEXTOS_PADRAO['agradecimento']!.join('\n')).includes('agradecimento'));
+  checar('chavesJaRespondidas: agradecimento EDITADO tambem e reconhecido', chavesJaRespondidas({ agradecimento: ['Por nada, ta? Chama a gente quando quiser.'] }, 'x Por nada, ta? Chama a gente quando quiser. y').includes('agradecimento'));
+}
+
+// ----- Pedir a medida de novo (caso Carlos Gomes 21/09: a mesma pergunta 3x em 40 s) -----
+{
+  const p1 = decidirAcaoPreco(intencaoDe('PERGUNTAR_PRECO_SEM_MEDIDA'), 'sem_estado', {});
+  checar('Pedir medida 1a vez: texto padrao', p1.acao.tipo === 'PEDIR_MEDIDA' && /Poderia me informar a medida/.test(textoDe(p1)) && p1.novoEstado === 'aguardando_medida', textoDe(p1));
+  const p2 = decidirAcaoPreco(intencaoDe('PERGUNTAR_PRECO_SEM_MEDIDA'), 'aguardando_medida', {}, {}, { jaRespondidas: ['pedir_medida'] });
+  checar('Pedir medida 2a vez: pede DE OUTRO JEITO (nao repete a frase)', p2.acao.tipo === 'PEDIR_MEDIDA' && /É só me passar a medida/.test(textoDe(p2)) && !/Poderia me informar/.test(textoDe(p2)) && p2.novoEstado === 'aguardando_medida', textoDe(p2));
+  checar('Pedir medida 2a vez: continua guardando o estado aguardando_medida', p2.novoEstado === 'aguardando_medida');
+  const p3 = decidirAcaoPreco(intencaoDe('PERGUNTAR_PRECO_SEM_MEDIDA'), 'aguardando_medida', {}, {}, { jaRespondidas: ['pedir_medida', 'pedir_medida_repetida'] });
+  checar('Pedir medida 3a vez: ja disse as duas -> sai do fluxo (IA livre segue, com as travas)', p3.acao.tipo === 'NADA' && p3.novoEstado === 'aguardando_medida');
+  const p4 = decidirAcaoPreco(intencaoDe('PERGUNTOU_PARCELAMENTO_ESPECIFICO', { parcelasExtraida: 6 }), 'aguardando_medida', {}, {}, { jaRespondidas: ['pedir_medida'] });
+  checar('Parcelamento sem medida, depois de ja ter pedido a medida: usa a variante e guarda a pergunta (6x)', /É só me passar a medida/.test(textoDe(p4)) && p4.novosDados.intencaoPendente === 'parcelamento_especifico' && p4.novosDados.parcelasPendentes === 6, textoDe(p4));
+  checar('chavesJaRespondidas: pedir_medida gravado com NEGRITO (*medida do pneu*, caso real 3 de 7 aberturas) tambem e reconhecido', chavesJaRespondidas(undefined, 'Oi, tudo bem?\nPoderia me informar a *medida do pneu* (ex.: 175/65/14) ou o *modelo do seu carro*?').includes('pedir_medida'));
+  checar('chavesJaRespondidas: reconhece sem se importar com maiuscula/pontuacao', chavesJaRespondidas(undefined, 'PODERIA ME INFORMAR A MEDIDA DO PNEU (EX: 175/65/14) OU O MODELO DO SEU CARRO').includes('pedir_medida'));
+  checar('chavesJaRespondidas: texto parecido mas DIFERENTE nao conta', !chavesJaRespondidas(undefined, 'Me passa a medida do pneu que eu te passo o valor').includes('pedir_medida'));
+  checar('chavesJaRespondidas: pedir_medida ja dito -> ["pedir_medida"]', chavesJaRespondidas(undefined, 'Oi\n' + TEXTOS_PADRAO['pedir_medida']!.join('\n')).join() === 'pedir_medida');
+  // Dar a medida depois de ja ter pedido 2x continua normal
+  const d = decidirAcaoPreco(intencaoDe('DAR_MEDIDA', { medidaExtraida: '195/55/15' }), 'aguardando_medida', {}, {}, { jaRespondidas: ['pedir_medida', 'pedir_medida_repetida'] });
+  checar('Depois de pedir a medida 2x, quando ele da a medida o preco sai normal', d.acao.tipo === 'CONFIRMAR_PRECO' && /R\$ 289,00 à vista/.test(textoDe(d)), textoDe(d));
+}
+
 // =====================================================================================
 // RAJADA (18/09, caso Marcia Lima): varias mensagens seguidas -> o robo responde TUDO, na ordem.
 // =====================================================================================

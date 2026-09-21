@@ -31,7 +31,7 @@ export const GRUPOS_FLUXO: Record<GrupoFluxo, { titulo: string; descricao: strin
   produto: { titulo: 'Sobre o pneu', descricao: 'Remold e desconfiança de procedência' },
   servicos: { titulo: 'Serviços e políticas', descricao: 'Balanceamento, alinhamento, troca, usado, nota fiscal' },
   loja: { titulo: 'Loja', descricao: 'Endereço e localização' },
-  objecao: { titulo: 'Objeções', descricao: 'Cliente reclama de preço ou marca' },
+  objecao: { titulo: 'Objeções e despedidas', descricao: 'Reclama de preço/marca, agradece ou diz que vai pensar' },
 };
 
 export const CATALOGO_FLUXO: CategoriaFluxo[] = [
@@ -287,13 +287,34 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     exemplos: ['continua caro', 'não gostei mesmo assim'],
     partes: ['Entendo! Se quiser, vem até a loja ver o pneu de perto — pessoalmente a gente consegue negociar melhor.'],
   },
+  {
+    chave: 'agradecimento',
+    grupo: 'objecao',
+    titulo: 'Agradece, diz "ok" ou que vai pensar',
+    quando: 'O cliente só agradece, confirma ("ok", "blz") ou se despede / diz que vai pensar, SEM pedir nada. O robô responde UMA vez; se o cliente repetir, fica em silêncio (não enche a conversa de mensagem) e nunca solta horário ou outro assunto por conta própria.',
+    exemplos: ['ok obrigado', 'blz', 'valeu', 'vou pensar e te falo'],
+    partes: ['Tranquilo! Qualquer dúvida ou se quiser fechar, é só me chamar por aqui.'],
+  },
+  {
+    chave: 'pedir_medida_repetida',
+    grupo: 'preco',
+    titulo: 'Pedir a medida (cliente não deu ainda)',
+    quando: 'O robô JÁ pediu a medida há pouco e o cliente pergunta preço de novo sem dar a medida. Evita repetir a mesma pergunta palavra por palavra.',
+    exemplos: ['e o valor?', 'quanto custa?', 'aro 14 o preço'],
+    partes: ['É só me passar a medida que está escrita na lateral do pneu (ex.: 175/65/14) ou o modelo do carro que eu já te passo o valor certinho.'],
+  },
 ];
 
 // Respostas que, se o robo JA mandou o mesmo texto ha pouco na conversa, trocam pela variante
 // (achado 18/09: cliente disse "remold to fora" e o robo repetiu a explicacao palavra por palavra).
 // condicao ("e novo?") -> na 2a vez a "variante" e a resposta honesta de remold: o robo nao se precipita
 // (19/09, caso Maxwell) mas tambem nunca sustenta a duvida do cliente sem responder de verdade.
-export const VARIANTE_REPETICAO: Record<string, string> = { remold: 'remold_insistencia', objecao: 'objecao_repetida', condicao: 'remold' };
+// pedir_medida ("quanto custa?" sem medida, de novo) -> na 2a vez pede de outro jeito (21/09, caso Carlos Gomes: 3 pedidos iguais em 40s).
+export const VARIANTE_REPETICAO: Record<string, string> = { remold: 'remold_insistencia', objecao: 'objecao_repetida', condicao: 'remold', pedir_medida: 'pedir_medida_repetida' };
+
+// Respostas que o robo manda UMA vez e, se o cliente repetir o gesto, NAO repete nem cai na IA livre: fica em
+// silencio (ex.: agradecimento — o cliente diz "ok" e "obrigado" em seguida; responder a cada um vira spam).
+export const SILENCIO_SE_REPETIR: string[] = ['agradecimento'];
 
 export const TEXTOS_PADRAO: Record<string, string[]> = Object.fromEntries(
   CATALOGO_FLUXO.filter((c) => c.partes).map((c) => [c.chave, c.partes as string[]])
@@ -301,11 +322,28 @@ export const TEXTOS_PADRAO: Record<string, string[]> = Object.fromEntries(
 
 export type TextosFluxo = Record<string, string[]>;
 
+// Compara sem se importar com negrito/italico do WhatsApp (*...*, _..._), maiuscula, acento, pontuacao e espacos:
+// a mesma pergunta as vezes sai gravada com asteriscos ("Poderia me informar a *medida do pneu*...", 3 de 7 aberturas
+// reais) e a comparacao exata nao a reconhecia (revisao 21/09).
+function normalizarParaBusca(texto: string): string {
+  return String(texto || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+
 // Quais respostas (e variantes) o robo JA mandou nesta conversa: compara cada bolha (25+ caracteres)
 // do texto atual da resposta com o texto recente das mensagens do robo.
 export function chavesJaRespondidas(textos: TextosFluxo | undefined, textoRecenteDoRobo: string): string[] {
-  const chaves = [...new Set(Object.entries(VARIANTE_REPETICAO).flat())];
-  return chaves.filter((chave) => textoFluxo(textos, chave).some((p) => p.length >= 25 && textoRecenteDoRobo.includes(p)));
+  const chaves = [...new Set([...Object.entries(VARIANTE_REPETICAO).flat(), ...SILENCIO_SE_REPETIR])];
+  const recente = ` ${normalizarParaBusca(textoRecenteDoRobo)} `;
+  return chaves.filter((chave) => textoFluxo(textos, chave).some((p) => {
+    if (p.length < 25) return false;
+    const n = normalizarParaBusca(p);
+    return n.length >= 20 && recente.includes(` ${n} `);
+  }));
 }
 
 export function categoriaPorChave(chave: string): CategoriaFluxo | undefined {

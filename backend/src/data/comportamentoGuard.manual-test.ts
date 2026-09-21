@@ -9,7 +9,7 @@
 // pausar. Deliberadamente NAO importa nada de botAtendimentoService.ts/server.ts —
 // aquele import dispara o bootstrap inteiro do app (express.listen, connectToWhatsApp
 // etc) como efeito colateral, o que seria perigoso rodar so pra testar uma funcao pura.
-import { decidirAntiLoop, MsgAntiLoop, removerPromessaDeFoto } from './comportamentoGuard';
+import { decidirAntiLoop, MsgAntiLoop, removerPromessaDeFoto, removerHorarioNaoPedido, removerLocalizacaoRepetida, pareceAgradecimento } from './comportamentoGuard';
 
 let erros = 0;
 function checar(nome: string, condicao: boolean, detalhe?: string) {
@@ -122,6 +122,57 @@ function bot(texto: string, offsetMsAntesDeAgora: number): MsgAntiLoop {
   checar('Foto: texto sem foto passa intacto', f(['Temos o pneu 195/55/15 por R$ 289,00 à vista.']).length === 1);
   checar('Foto: "segue a nossa localização" NAO e promessa de foto', f(['Segue a nossa localização:']).length === 1);
   checar('Foto: "foto" em outro contexto (garantia/fotos do carro) nao e cortado', f(['Se quiser, traz uma foto do seu carro pra gente indicar.']).length === 1);
+}
+
+// ===== Horario que a IA cita sozinho (casos reais de 21/09: depois de "OK obrigado" vinha "Nosso horario: ...") =====
+{
+  const h = (partes: string[], cliente: string) => removerHorarioNaoPedido(partes, cliente);
+  const real1 = ['Por nada! Quando você consegue passar aqui na loja?', 'Nosso horário é: Segunda a sexta, das 08h às 18h, e sábado, das 08h às 12h.'];
+  checar('Horario: cliente so agradeceu -> a bolha do horario e cortada, o resto fica', h(real1, 'OK obrigado').join('|') === 'Por nada! Quando você consegue passar aqui na loja?');
+  checar('Horario: "Horário: Segunda a sexta de 08h às 18h. Sábado de 08h às 12h." cortado', h(['Por nada! Qualquer coisa, aqui a gente está à disposição.', 'Horário: Segunda a sexta de 08h às 18h. Sábado de 08h às 12h.'], 'Blz\nObrigado').length === 1);
+  const misturada = h(['Se mudar de ideia, aqui a gente atende Segunda a Sexta das 08h às 18h e Sábado das 08h às 12h. Qualquer coisa, estou por aqui.'], 'Mais , obrigado pela atenção');
+  checar('Horario: frase misturada — corta so a frase do horario, guarda "Qualquer coisa, estou por aqui."', misturada.join('|') === 'Qualquer coisa, estou por aqui.', misturada.join('|'));
+  checar('Horario: cliente PERGUNTOU o horario -> intacto', h(real1, 'ta aberto agora?').join('|') === real1.join('|'));
+  checar('Horario: cliente falou de "sabado" -> intacto', h(real1, 'posso passar sabado?').join('|') === real1.join('|'));
+  checar('Horario: cliente perguntou "que horas" -> intacto', h(real1, 'que horas posso ir?').join('|') === real1.join('|'));
+  checar('Horario: cliente disse "amanha eu passo" -> intacto', h(real1, 'amanhã eu passo aí').join('|') === real1.join('|'));
+  checar('Horario: texto sem horario passa intacto', h(['Temos o pneu 195/55/15 por R$ 289,00 à vista.'], 'quanto custa').length === 1);
+  checar('Horario: pergunta "Quando voce consegue vir?" NAO e cortada (nao cita horario da loja)', h(['Quando você consegue vir até a loja?'], 'ok').length === 1);
+  checar('Horario: "vem ate as 18h" (so um horario, sem faixa) NAO e cortado', h(['Pode vir até as 18h.'], 'ok').length === 1);
+
+  // ---- Revisao adversarial 21/09: a trava NUNCA pode deixar mudo quem perguntou ----
+  const HORARIO_LOJA = 'A gente atende de segunda a sexta, das 08h às 18h, e sábado das 08h às 12h.';
+  for (const pergunta of ['vcs ficam ate q hrs?', 'vcs ficam ate que hr', 'vcs almocam?', 'posso ir depois do almoço?', 'vcs trabalham hj?', 'posso passar agora?', 'passo aí às 15h', 'vou passar na segunda', 'quinta às 10 eu passo aí', 'posso passar na sexta depois do almoço?', 'vcs tão aí segunda de manhã?', 'ok obrigado, e vcs abrem sábado?', 'obrigado, qual o horário?']) {
+    checar('Horario NAO corta quando o cliente perguntou/falou de horario-dia: "' + pergunta + '"', h([HORARIO_LOJA], pergunta).join('|') === HORARIO_LOJA);
+  }
+  checar('Horario: "Pode sim!" + horario para "posso ir depois do almoço?" — resposta inteira preservada', h(['Pode sim!', HORARIO_LOJA], 'posso ir depois do almoço?').length === 2);
+  checar('pareceAgradecimento: "ok obrigado" / "Blz" / "valeu" / "vou pensar e te falo" = sim', ['ok obrigado', 'Blz', 'valeu', 'vou pensar e te falo', 'Mais , obrigado pela atenção'].every((t) => pareceAgradecimento(t)));
+  checar('pareceAgradecimento: pergunta, horario ou dia = nao', ['ok, e em 6x?', 'obrigado, abrem sábado?', 'ok amanhã eu passo aí', 'quanto custa', 'boa tarde, obrigado'].every((t) => !pareceAgradecimento(t)));
+
+  // ---- Tags de acao nunca sao cortadas nem partidas ----
+  const agendar = h(['Combinado, quinta às 10h! A loja atende de segunda a sexta, das 08h às 18h [AGENDAR_VISITA: data="2026-09-24 10:00", loja="Borracharia Popular", servico="Montagem", cliente="Carlos"]'], 'ok obrigado');
+  checar('Tag [AGENDAR_VISITA] colada na frase do horario SOBREVIVE (o horario sai, a tag fica inteira)', agendar.length === 1 && /\[AGENDAR_VISITA: data="2026-09-24 10:00", loja="Borracharia Popular", servico="Montagem", cliente="Carlos"\]/.test(agendar[0]!) && !/segunda a sexta/.test(agendar[0]!) && /Combinado/.test(agendar[0]!), agendar.join('|'));
+  const lembrar = h(['Fechado, te aviso depois! [LEMBRAR: data="2026-09-30 09:00" texto="Oi! Ainda quer o pneu? A gente atende de segunda a sexta, das 08h às 18h."]'], 'depois eu vejo');
+  checar('Tag [LEMBRAR] com horario no texto NAO e partida (nada de pedaco cru indo pro cliente)', lembrar.length === 1 && /\[LEMBRAR: [^\]]*\]$/.test(lembrar[0]!) && (lembrar[0]!.match(/\[/g) || []).length === (lembrar[0]!.match(/\]/g) || []).length, lembrar.join('|'));
+  const soTag = h(['A gente atende de segunda a sexta, das 08h às 18h. [AGENDAR_VISITA: data="2026-09-24 10:00", loja="X", servico="Y", cliente="Z"]'], 'ok obrigado');
+  checar('Sobrando so a tag: a tag fica (e o horario sai)', soTag.length === 1 && /^\[AGENDAR_VISITA/.test(soTag[0]!), soTag.join('|'));
+}
+
+// ===== Pino da localizacao ja enviado (casos reais de 21/09: "Segue nossa localizacao!" solto, sem pino, 2x) =====
+{
+  const l = (partes: string[]) => removerLocalizacaoRepetida(partes);
+  checar('Pino repetido: "Segue nossa localização!" + marca -> some (a marca e o anuncio)', l(['Segue nossa localização! [ENVIAR_LOCALIZACAO]']).length === 0);
+  checar('Pino repetido: "Segue a nossa localização:" sem marca tambem some', l(['Segue a nossa localização:']).length === 0);
+  checar('Pino repetido: "Aqui está o endereço:" some', l(['Aqui está o endereço:']).length === 0);
+  checar('Pino repetido: bolha so com a marca some', l(['[ENVIAR_LOCALIZACAO]']).length === 0);
+  checar('Pino repetido: preserva o resto da bolha (pergunta de fechamento)', l(['Quando você consegue vir? Segue nossa localização! [ENVIAR_LOCALIZACAO]']).join('|') === 'Quando você consegue vir?');
+  checar('Pino repetido: preserva bolhas normais', l(['Quando você consegue vir até a loja?', 'Segue nossa localização!']).join('|') === 'Quando você consegue vir até a loja?');
+  checar('Pino repetido: texto com endereco de verdade (rua, numero) fica', l(['A gente fica na Rua das Flores, 123, em frente ao posto.']).length === 1);
+  const lp = l(['Segue nossa localização! [AGENDAR_VISITA: data="2026-09-24 10:00", loja="X", servico="Y", cliente="Z"]']);
+  checar('Pino repetido: tag de agendamento na mesma bolha SOBREVIVE (so o anuncio do pino sai)', lp.length === 1 && /^\[AGENDAR_VISITA: data="2026-09-24 10:00", loja="X", servico="Y", cliente="Z"\]$/.test(lp[0]!), lp.join('|'));
+  const lp2 = l(['Segue nossa localização [LEMBRAR: data="2026-09-30 09:00" texto="Oi! Ainda quer o pneu? A gente fica na Rua A, 1."]']);
+  checar('Pino repetido: [LEMBRAR] colada no anuncio NAO e partida', lp2.length === 1 && (lp2[0]!.match(/\[/g) || []).length === (lp2[0]!.match(/\]/g) || []).length, lp2.join('|'));
+  checar('Pino repetido: conversa sem localizacao passa intacta', l(['Temos o pneu por R$ 289,00 à vista.']).join('|') === 'Temos o pneu por R$ 289,00 à vista.');
 }
 
 console.log(erros === 0 ? '\nTODOS OK' : '\n' + erros + ' ERRO(S)');

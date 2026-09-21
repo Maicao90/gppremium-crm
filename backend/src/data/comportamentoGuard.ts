@@ -89,6 +89,78 @@ export function removerPromessaDeFoto(partes: string[]): string[] {
   return resultado;
 }
 
+// Marcas de ACAO que a IA livre escreve dentro do texto ([AGENDAR_VISITA: ...], [LEMBRAR: ...], video...). As travas 6 e 7
+// fatiam o texto por frase: sem proteger isso, cortavam a frase que carregava a tag (agendamento perdido) ou partiam
+// [LEMBRAR: ... texto="Oi! ..."] no meio, e o pedaco cru ia parar no WhatsApp do cliente (revisao 21/09).
+const TAG_DE_ACAO = /\[(?:AGENDAR_VISITA|LEMBRAR|ENVIAR_VIDEO|VIDEO|TRANSFERIR_HUMANO)[^\]]*\]/gi;
+function separarTags(parte: string): { texto: string; tags: string } {
+  const tags = (parte.match(TAG_DE_ACAO) || []).join(' ');
+  return { texto: parte.replace(TAG_DE_ACAO, ' ').replace(/[ \t]{2,}/g, ' ').trim(), tags };
+}
+function refazerParte(mantidas: string[], tags: string): string {
+  return [mantidas.join(' ').trim(), tags].filter(Boolean).join(' ');
+}
+
+// O cliente falou de horario, dia ou hora (ou de quando vai passar): ai o horario da loja e resposta, nao intromissao.
+const CLIENTE_FALOU_DE_HORARIO = /hor[aá]rio|horas?\b|\bhrs?\b|\bhs?\b|aberto|aberta|\babr(e|em|o)\b|\bfecha|funcion|atende|expediente|almo[cç]|agora|manh[aã]|s[aá]bado|domingo|feriado|segunda|ter[cç]a|quarta|quinta|sexta|\bhoje\b|\bhj\b|amanh[aã]|\bquando\b|\bdia\b|semana|\bcedo\b|\btarde\b|\bnoite\b|\d\s?h\b|\d\s?:\s?\d/i;
+
+// A mensagem do cliente e SO um agradecimento / "ok" / despedida (sem pergunta e sem falar de horario/dia).
+const PALAVRAS_DE_AGRADECIMENTO = /obrigad|brigad|valeu|vlw|agradec|\btchau\b|at[eé] (mais|logo)|\bblz\b|beleza|\bok\b|combinado|entendi|vou pensar|depois eu (vejo|falo)|\bfalou\b|\bflw\b/i;
+/** true = o cliente so agradeceu / disse ok / se despediu (sem pergunta, sem horario, sem dia). */
+export function pareceAgradecimento(textoDoCliente: string): boolean {
+  const t = String(textoDoCliente || '');
+  return PALAVRAS_DE_AGRADECIMENTO.test(t) && !/\?/.test(t) && !CLIENTE_FALOU_DE_HORARIO.test(t);
+}
+
+// TRAVA 6 (21/09): nao citar o HORARIO da loja quando o cliente so agradeceu/disse ok/se despediu.
+// Achado nas conversas reais de hoje: depois de "OK obrigado" o robo acrescentava sozinho "Nosso horario:
+// segunda a sexta, das 08h as 18h..." — o horario correto entrou no prompt em 19/09 e a IA passou a usa-lo
+// como assunto de despedida. Revisao adversarial (21/09): a versao inicial cortava o horario sempre que o
+// cliente nao usava uma lista fechada de palavras ("ate q hrs?", "posso ir depois do almoco?") e deixava o
+// cliente SEM RESPOSTA. Agora a trava so age quando a mensagem do cliente e SO agradecimento (pareceAgradecimento);
+// qualquer pergunta/horario/dia desliga a trava. Horario perguntado normalmente vem do fluxo (categoria "horario").
+const PADROES_HORARIO_DA_LOJA: RegExp[] = [
+  /\b(segunda|seg)\b[^.!?\n]{0,25}\b(sexta|sex)\b/i,
+  /\bs[aá]bados?\b[^.!?\n]{0,30}\d{1,2}\s?(h\b|:)/i,
+  /\b\d{1,2}\s?h(\s?\d{2})?\s*(as|às|a|-|até|ate)\s*\d{1,2}\s?h/i,
+  /\bnosso\s+hor[aá]rio\b/i,
+  /\bhor[aá]rio\s+de\s+funcionamento\b/i,
+];
+
+/** Corta as frases que citam o horario da loja quando o cliente so agradeceu. Preserva o resto (e as tags de acao). */
+export function removerHorarioNaoPedido(partes: string[], textoDoCliente: string): string[] {
+  if (!pareceAgradecimento(textoDoCliente)) return partes;
+  const resultado: string[] = [];
+  for (const parte of partes) {
+    const { texto, tags } = separarTags(parte);
+    const frases = texto.split(/(?<=[.!?])\s+|\n+/).filter((f) => f.trim());
+    const mantidas = frases.filter((f) => !PADROES_HORARIO_DA_LOJA.some((re) => re.test(f)));
+    if (mantidas.length === frases.length) { resultado.push(parte); continue; }
+    const refeita = refazerParte(mantidas, tags);
+    if (refeita) resultado.push(refeita);
+  }
+  return resultado;
+}
+
+// TRAVA 7 (21/09): o pino da localizacao ja foi mandado nesta conversa. A IA livre continuava escrevendo
+// "Segue nossa localizacao!" (+ a marca do pino, que o sistema ja barra) e o cliente recebia so a frase solta,
+// sem pino nenhum (achado em conversa real de hoje, 2x seguidas). Tira a marca e as frases que so anunciam o pino.
+const ANUNCIO_DE_PINO = /^\s*(segue|aqui\s+est[aá]|aqui\s+vai|olha|te\s+(mando|envio|passo)|vou\s+(te\s+)?(mandar|enviar|passar)|mando|envio)(?![a-zA-Z])[^.!?:\n]{0,40}\b(localiza[cç][aã]o|endere[cç]o|pino|mapa)\b[^.!?\n]{0,15}$/i;
+
+/** Remove a marca [ENVIAR_LOCALIZACAO] e as frases que apenas anunciam o pino (ex.: "Segue nossa localização!"). Preserva as tags de acao. */
+export function removerLocalizacaoRepetida(partes: string[]): string[] {
+  const resultado: string[] = [];
+  for (const parte of partes) {
+    const semMarca = parte.replace(/\[ENVIAR_LOCALIZACAO\]/gi, '').trim();
+    const { texto, tags } = separarTags(semMarca);
+    const frases = texto.split(/(?<=[.!?:])\s+|\n+/).filter((f) => f.trim());
+    const mantidas = frases.filter((f) => !ANUNCIO_DE_PINO.test(f.replace(/[.!:\s]+$/, '')));
+    const refeita = mantidas.length === frases.length ? semMarca : refazerParte(mantidas, tags);
+    if (refeita) resultado.push(refeita);
+  }
+  return resultado;
+}
+
 // TRAVA 3 (09/09): repetir a MESMA mensagem palavra por palavra.
 // Achado nas conversas do dia: o Cesar recebeu o mesmo paragrafo de garantia, o mesmo
 // link de video e o mesmo "Quando voce consegue vir ate a loja?" duas vezes em 5

@@ -61,6 +61,7 @@ export type IntencaoTipo =
   | 'PERGUNTOU_HORARIO'
   | 'PEDIU_FOTO'
   | 'OBJETOU_PRECO_OU_MARCA'
+  | 'AGRADECEU_OU_ENCERROU'
   | 'OUTRO_ASSUNTO';
 
 export interface IntencaoExtraida {
@@ -91,6 +92,10 @@ export type TipoAcaoTexto =
   | 'RESPONDER_CONDICAO'
   | 'RESPONDER_HORARIO'
   | 'RESPONDER_FOTO'
+  | 'RESPONDER_AGRADECIMENTO'
+  // O robo decidiu NAO responder (ex.: agradecimento repetido). E uma decisao do codigo, nao "sai do fluxo":
+  // a IA livre tambem NAO responde — partes vem vazio.
+  | 'SILENCIO'
   // Manda o texto E o chamador (botAtendimentoService) dispara o pino de localizacao real.
   | 'ENVIAR_LOCALIZACAO_FIXA';
 
@@ -161,7 +166,11 @@ function respostaTexto(tipo: TipoAcaoTexto, partes: string[], estadoAtual: Estad
 const SAI_DO_FLUXO = (estadoAtual: EstadoPrecoFluxo, dadosAtuais: DadosPrecoFluxo): ResultadoDecisao =>
   ({ acao: { tipo: 'NADA' }, novoEstado: estadoAtual, novosDados: dadosAtuais, chaves: [] });
 
-function pedirMedida(dadosAtuais: DadosPrecoFluxo, textos: TextosFluxo, pedido?: PedidoEspecifico): ResultadoDecisao {
+function pedirMedida(estadoAtual: EstadoPrecoFluxo, dadosAtuais: DadosPrecoFluxo, textos: TextosFluxo, contexto: ContextoFluxo, pedido?: PedidoEspecifico): ResultadoDecisao {
+  // Ja pediu a medida ha pouco: pede de outro jeito; se ate essa variante ja foi mandada, sai do fluxo
+  // (a IA livre, com as travas, segue) em vez de repetir a mesma frase pela 3a vez (21/09, caso Carlos Gomes).
+  const texto = textoSemRepetir(textos, 'pedir_medida', contexto);
+  if (!texto) return SAI_DO_FLUXO(estadoAtual, dadosAtuais);
   // Reset de medida/aroSemMatch (estado promete recomeco limpo), mas guarda o pedido
   // especifico e a quantidade — sao coisas que o cliente ja disse e nao devem se perder.
   const dados: DadosPrecoFluxo = {};
@@ -170,7 +179,7 @@ function pedirMedida(dadosAtuais: DadosPrecoFluxo, textos: TextosFluxo, pedido?:
   if (tipoPedido) dados.intencaoPendente = tipoPedido;
   const parcelas = pedido?.tipo === 'parcelamento_especifico' ? pedido.parcelas : dadosAtuais.parcelasPendentes;
   if (tipoPedido === 'parcelamento_especifico' && parcelas) dados.parcelasPendentes = parcelas;
-  return { acao: { tipo: 'PEDIR_MEDIDA', partes: textoFluxo(textos, 'pedir_medida') }, novoEstado: 'aguardando_medida', novosDados: dados, chaves: ['pedir_medida'] };
+  return { acao: { tipo: 'PEDIR_MEDIDA', partes: texto.partes }, novoEstado: 'aguardando_medida', novosDados: dados, chaves: [texto.chave] };
 }
 
 function pedidoPendente(dados: DadosPrecoFluxo): PedidoEspecifico | undefined {
@@ -255,10 +264,14 @@ export function decidirSequenciaPreco(
   textos: TextosFluxo = {},
   contexto: ContextoFluxo = {}
 ): ResultadoSequencia {
-  const itens = intencoes.slice(0, MAX_ASSUNTOS_POR_RAJADA);
-  const assuntos = itens.map((i) => i.intencao);
+  const itensLidos = intencoes.slice(0, MAX_ASSUNTOS_POR_RAJADA);
+  const assuntos = itensLidos.map((i) => i.intencao);
   const saidaNada: ResultadoSequencia = { acaoPrincipal: 'NADA', partes: [], novoEstado: estadoAtual, novosDados: dadosAtuais, assuntos, chaves: [] };
-  if (itens.length === 0 || itens.some((i) => i.intencao === 'PERGUNTA_TECNICA')) return saidaNada;
+  if (itensLidos.length === 0 || itensLidos.some((i) => i.intencao === 'PERGUNTA_TECNICA')) return saidaNada;
+  // "Obrigado" junto com um pedido de verdade nao vira resposta propria (a resposta ao pedido ja basta). Junto com
+  // so "papo solto" (ex.: "fica na contra mao pra mim" + "obrigado pela atencao") continua sendo um agradecimento.
+  const haPedidoDeVerdade = itensLidos.some((i) => i.intencao !== 'AGRADECEU_OU_ENCERROU' && i.intencao !== 'OUTRO_ASSUNTO');
+  const itens = haPedidoDeVerdade ? itensLidos.filter((i) => i.intencao !== 'AGRADECEU_OU_ENCERROU') : itensLidos;
 
   let estado = estadoAtual;
   let dados = dadosAtuais;
@@ -266,21 +279,25 @@ export function decidirSequenciaPreco(
   const chaves: string[] = [];
   let acaoPrincipal: AcaoPreco['tipo'] = 'NADA';
   let pinNaRajada = false;
+  let silencio = false;
 
   for (const item of itens) {
     if (item.intencao === 'PEDIU_LOCALIZACAO' && pinNaRajada) continue;
     const r = decidirAcaoPreco(item, estado, dados, textos, contexto);
     if (r.acao.tipo === 'NADA') continue;
+    for (const c of r.chaves || []) if (!chaves.includes(c)) chaves.push(c);
+    if (r.acao.tipo === 'SILENCIO') { silencio = true; continue; }
     if (acaoPrincipal === 'NADA') acaoPrincipal = r.acao.tipo;
     if (r.acao.partes.includes(MARCADOR_PINO)) pinNaRajada = true;
     for (const p of r.acao.partes) {
       if (p === MARCADOR_PINO || !partes.includes(p)) partes.push(p);
     }
-    for (const c of r.chaves || []) if (!chaves.includes(c)) chaves.push(c);
     estado = r.novoEstado;
     dados = r.novosDados;
   }
 
+  // So havia assunto pra ficar quieto (ex.: agradecimento repetido): o codigo decide o SILENCIO — a IA livre nao responde.
+  if (partes.length === 0 && silencio) return { acaoPrincipal: 'SILENCIO', partes: [], novoEstado: estadoAtual, novosDados: dadosAtuais, assuntos, chaves };
   if (acaoPrincipal === 'NADA' || partes.length === 0) return saidaNada;
   return { acaoPrincipal, partes: partes.slice(0, MAX_PARTES_POR_RAJADA), novoEstado: estado, novosDados: dados, assuntos, chaves };
 }
@@ -344,6 +361,12 @@ export function decidirAcaoPreco(
       if (!r) return SAI_DO_FLUXO(estadoAtual, dadosAtuais);
       return respostaTexto('RESPONDER_OBJECAO', r.partes, estadoAtual, dadosAtuais, r.chave);
     }
+    case 'AGRADECEU_OU_ENCERROU': {
+      // Responde UMA vez; se o cliente repete o gesto ("ok" e depois "obrigado"), o robo fica em silencio —
+      // nem repete nem cai na IA livre (que puxava horario/pergunta de fechamento por conta propria).
+      if ((contexto.jaRespondidas || []).includes('agradecimento')) return respostaTexto('SILENCIO', [], estadoAtual, dadosAtuais, 'agradecimento');
+      return respostaTexto('RESPONDER_AGRADECIMENTO', textoFluxo(textos, 'agradecimento'), estadoAtual, dadosAtuais, 'agradecimento');
+    }
     case 'PERGUNTOU_PARCELAMENTO_GENERICO':
       return respostaTexto('RESPONDER_PARCELAMENTO_GENERICO', textoFluxo(textos, 'parcelamento_generico'), estadoAtual, dadosAtuais, 'parcelamento_generico');
     case 'PERGUNTOU_BALANCEAMENTO': {
@@ -362,14 +385,14 @@ export function decidirAcaoPreco(
       if (parcelas > PARCELAS_MAXIMAS) return respostaTexto('RESPONDER_PARCELAMENTO_GENERICO', textoFluxo(textos, 'parcelamento_maximo'), estadoAtual, dadosAtuais, 'parcelamento_maximo');
       const pedido: PedidoEspecifico = { tipo: 'parcelamento_especifico', parcelas };
       const medida = intencao.medidaExtraida || dadosAtuais.medida;
-      if (!medida) return pedirMedida(dadosAtuais, textos, pedido);
+      if (!medida) return pedirMedida(estadoAtual, dadosAtuais, textos, contexto, pedido);
       return montarAcaoParaMedida(medida, textos, quantidadeAplicavel(intencao, estadoAtual, dadosAtuais, medida), pedido);
     }
     case 'PERGUNTOU_DESCONTO_AVISTA': {
       if (intencao.formaPagamentoExtraida === 'pix') return respostaTexto('RESPONDER_DESCONTO', textoFluxo(textos, 'desconto_pix'), estadoAtual, dadosAtuais, 'desconto_pix');
       const pedido: PedidoEspecifico = { tipo: 'desconto_avista' };
       const medida = intencao.medidaExtraida || dadosAtuais.medida;
-      if (!medida) return pedirMedida(dadosAtuais, textos, pedido);
+      if (!medida) return pedirMedida(estadoAtual, dadosAtuais, textos, contexto, pedido);
       return montarAcaoParaMedida(medida, textos, quantidadeAplicavel(intencao, estadoAtual, dadosAtuais, medida), pedido);
     }
     default:
@@ -427,7 +450,7 @@ export function decidirAcaoPreco(
       // na primeira vez), mas se a tabela mudou nesse meio-tempo e nao ha mais
       // nada nesse aro, cai no reset generico abaixo em vez de travar.
     }
-    return pedirMedida(dadosAtuais, textos);
+    return pedirMedida(estadoAtual, dadosAtuais, textos, contexto);
   }
 
   if (intencao.intencao === 'RESPONDER_QUANTIDADE' && estadoAtual === 'preco_confirmado' && dadosAtuais.medida) {
