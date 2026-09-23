@@ -51,6 +51,10 @@ model Usuario {
   // Código que a extensão troca por um token de acesso — dispensa e-mail/senha pro
   // parceiro externo. Só usuário externo tem; nulo pros funcionários normais.
   codigoAtivacao       String?            @unique
+  // Continua contando normal (nao mexe em dado nenhum, nao afeta login nem WhatsApp) mas
+  // some do card "Top Atendentes" e da lista de Agendamentos da tela de Metricas do painel —
+  // pedido do dono (23/09) pra nao ver um parceiro especifico ali. So afeta essa tela.
+  ocultoNasMetricas    Boolean            @default(false)
   agendamentos         Agendamento[]
   autoReplyHistories   AutoReplyHistory[]
   criadoEm             DateTime           @default(now())

@@ -238,6 +238,7 @@ router.get('/metricas', requireAuth, async (req, res) => {
         email: u.email,
         role: u.role,
         externo: !!u.externo,
+        ocultoNasMetricas: !!u.ocultoNasMetricas,
         whatsappConectado,
         whatsappDonoId: u.whatsappDonoId ?? null,
         whatsappDonoNome: u.whatsappDonoId ? (nomesPorId[u.whatsappDonoId] || null) : null,
@@ -609,7 +610,7 @@ router.get('/parceiros', requireAuth, requireMaster, async (_req, res) => {
   try {
     const parceiros = await prisma.usuario.findMany({
       where: { externo: true },
-      select: { id: true, nome: true, ativo: true, codigoAtivacao: true, whatsappConectado: true, criadoEm: true },
+      select: { id: true, nome: true, ativo: true, codigoAtivacao: true, whatsappConectado: true, ocultoNasMetricas: true, criadoEm: true },
       orderBy: { criadoEm: 'desc' },
     });
     res.json(parceiros);
@@ -692,6 +693,31 @@ router.post('/parceiros/:id/novo-codigo', requireAuth, requireMaster, async (req
     res.json({ codigoAtivacao: p.codigoAtivacao });
   } catch {
     res.status(500).json({ error: 'Erro ao gerar novo código.' });
+  }
+});
+
+// Esconde/mostra o parceiro na tela de Métricas do painel (Top Atendentes + lista de
+// Agendamentos) sem mexer no acesso dele — continua logado, continua usando a extensão
+// normalmente. Pedido do dono (23/09): "oculta o Daniel Amaral, não queremos ver ele ali".
+router.post('/parceiros/:id/ocultar-metricas', requireAuth, requireMaster, async (req, res) => {
+  try {
+    const id = String(req.params.id);
+    if (!(await acharParceiro(id))) return res.status(404).json({ error: 'Parceiro não encontrado.' });
+    const p = await prisma.usuario.update({ where: { id }, data: { ocultoNasMetricas: true } });
+    res.json({ ok: true, nome: p.nome, ocultoNasMetricas: true });
+  } catch {
+    res.status(500).json({ error: 'Erro ao ocultar das métricas.' });
+  }
+});
+
+router.post('/parceiros/:id/mostrar-metricas', requireAuth, requireMaster, async (req, res) => {
+  try {
+    const id = String(req.params.id);
+    if (!(await acharParceiro(id))) return res.status(404).json({ error: 'Parceiro não encontrado.' });
+    const p = await prisma.usuario.update({ where: { id }, data: { ocultoNasMetricas: false } });
+    res.json({ ok: true, nome: p.nome, ocultoNasMetricas: false });
+  } catch {
+    res.status(500).json({ error: 'Erro ao mostrar nas métricas.' });
   }
 });
 
