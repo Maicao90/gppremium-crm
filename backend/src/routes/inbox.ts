@@ -9,6 +9,34 @@ import { ehMaster } from '../auth/modulos';
 
 const router = Router();
 
+// ── Contatos que NÃO são cliente (equipe e fornecedores) ──
+// Uma regra só, usada nas métricas diárias (não contam como cliente) e no tempo de atendimento da
+// Caixa de Entrada (não ganham selo "esperando" — revisão 23/09: a Danúbia, contato interno, aparecia
+// "esperando 16 min" em vermelho, e a Auto Peças "esperando 21h50").
+const apenasDigitos = (valor: unknown) => String(valor || '').replace(/\D/g, '');
+const variantesTelefone = (valor: unknown): string[] => {
+  const numero = apenasDigitos(valor);
+  if (!numero) return [];
+  return numero.length === 10 || numero.length === 11 ? [numero, `55${numero}`] : [numero];
+};
+const JIDS_INTERNOS = ['162474519199930@lid', '125095301365845@lid'];
+// Nome de fornecedor (comparado em minúsculas).
+const PADRAO_FORNECEDOR = '(pe[cç]as|fornecedor|distribuidora|auto mec[aâ]nica|mec[aâ]nica automotiva)';
+const REGEX_FORNECEDOR = new RegExp(PADRAO_FORNECEDOR);
+async function numerosInternos(): Promise<Set<string>> {
+  const lojas = await prisma.loja.findMany({ select: { whatsapp: true, telefone_fixo: true } });
+  return new Set<string>([
+    // Contatos internos conhecidos que nao sao necessariamente uma sessao do CRM.
+    '556196233237',
+    '556199241570',
+    ...numerosDasSessoesAtivas().flatMap(variantesTelefone),
+    ...lojas.flatMap((loja) => [
+      ...variantesTelefone(loja.whatsapp),
+      ...variantesTelefone(loja.telefone_fixo),
+    ]),
+  ]);
+}
+
 // Quem de fato deve assinar a mensagem: por padrão é o atendente selecionado no seletor
 // da Caixa de Entrada (usuarioId), só diferente do dono da conexão (efetivoId) quando ele
 // está numa caixa COMPARTILHADA (comportamento antigo, vale pra admin/operador). EXCEÇÃO
@@ -78,6 +106,46 @@ router.get('/conversas', async (req, res) => {
         AND NOT (tipo = 'outro' AND ("midiaUrl" IS NULL OR "midiaUrl" = '') AND texto IN ('', 'protocolMessage'))
       ORDER BY "chatJid", "timestamp" DESC
     `;
+
+    // ── Tempo de atendimento por cliente (23/09, pedido do dono) ──
+    // A conversa vira BLOCOS alternados (cliente / loja). aguardandoDesde = início do bloco do
+    // cliente que ainda não teve resposta (o último bloco é do cliente); ultimaRespostaSeg = quanto
+    // o cliente esperou na resposta mais recente (início do bloco do cliente → início da resposta).
+    // Só últimos 30 dias (medido: 40-60 ms nas maiores caixas, 23 mil mensagens). Robô conta como loja.
+    const tempos: any[] = await prisma.$queryRaw`
+      WITH m AS (
+        SELECT "chatJid", "fromMe", "timestamp",
+               LAG("fromMe") OVER (PARTITION BY "chatJid" ORDER BY "timestamp") AS ant
+        FROM "Mensagem"
+        WHERE "usuarioId" = ${usuarioId}
+          AND "timestamp" > now() - interval '30 days'
+          AND NOT (tipo = 'outro' AND ("midiaUrl" IS NULL OR "midiaUrl" = '') AND texto IN ('', 'protocolMessage'))
+      ),
+      b AS (
+        SELECT "chatJid", "fromMe", "timestamp",
+               LAG("timestamp") OVER (PARTITION BY "chatJid" ORDER BY "timestamp") AS ini_anterior
+        FROM m WHERE ant IS DISTINCT FROM "fromMe"
+      ),
+      ultimo AS (
+        SELECT DISTINCT ON ("chatJid") "chatJid", "fromMe", "timestamp" FROM b ORDER BY "chatJid", "timestamp" DESC
+      ),
+      resp AS (
+        SELECT DISTINCT ON ("chatJid") "chatJid", EXTRACT(EPOCH FROM ("timestamp" - ini_anterior))::int AS seg
+        FROM b WHERE "fromMe" = true AND ini_anterior IS NOT NULL ORDER BY "chatJid", "timestamp" DESC
+      )
+      SELECT u."chatJid",
+             CASE WHEN u."fromMe" = false THEN u."timestamp" END AS aguardando_desde,
+             r.seg AS ultima_resposta_seg
+      FROM ultimo u LEFT JOIN resp r ON r."chatJid" = u."chatJid"
+    `;
+    const internos = await numerosInternos();
+    const mapaTempos: Record<string, { aguardandoDesde: Date | null; ultimaRespostaSeg: number | null }> = {};
+    tempos.forEach((t: any) => {
+      mapaTempos[t.chatJid] = {
+        aguardandoDesde: t.aguardando_desde || null,
+        ultimaRespostaSeg: t.ultima_resposta_seg == null ? null : Number(t.ultima_resposta_seg),
+      };
+    });
 
     // Melhor NOME de cada chat = a mensagem mais recente que TEM nome preenchido
     // (resolve o caso de a última mensagem ser nossa/sem pushName, mostrando o @lid).
@@ -214,6 +282,15 @@ router.get('/conversas', async (req, res) => {
       const atId = donoPorChat[c.chatJid] ?? null;
       c.atendenteId = atId;
       c.atendenteNome = atId ? (nomePorIdU[atId] ?? null) : null;
+      // Tempo de atendimento (ver consulta `tempos` acima). Equipe, fornecedor e grupo não são cliente
+      // esperando: ficam sem selo (mesma regra das métricas diárias).
+      const naoCliente = /@(g\.us|broadcast)$/.test(String(c.chatJid))
+        || JIDS_INTERNOS.includes(c.chatJid)
+        || (!!numReal && internos.has(apenasDigitos(numReal)))
+        || REGEX_FORNECEDOR.test(String(c.chatNome || '').toLowerCase());
+      c.naoCliente = naoCliente;
+      c.aguardandoDesde = naoCliente ? null : (mapaTempos[c.chatJid]?.aguardandoDesde ?? null);
+      c.ultimaRespostaSeg = naoCliente ? null : (mapaTempos[c.chatJid]?.ultimaRespostaSeg ?? null);
 
       // Foto de perfil espelhada localmente no CRM
       const cleanJid = (c.chatJid || '').replace(/[^a-zA-Z0-9]/g, '_');
@@ -260,25 +337,9 @@ router.get('/metricas-diarias', async (req, res) => {
     if (!(await permiteAtendente(req, res, usuarioIdOriginal))) return;
     const usuarioId = await resolverConexaoEfetiva(usuarioIdOriginal);
     const dias = Math.max(1, Math.min(180, Number(req.query.dias) || 30));
-    const apenasDigitos = (valor: unknown) => String(valor || '').replace(/\D/g, '');
-    const variantesTelefone = (valor: unknown): string[] => {
-      const numero = apenasDigitos(valor);
-      if (!numero) return [];
-      return numero.length === 10 || numero.length === 11 ? [numero, `55${numero}`] : [numero];
-    };
-    const lojas = await prisma.loja.findMany({ select: { whatsapp: true, telefone_fixo: true } });
-    const numerosInternos = new Set<string>([
-      // Contatos internos conhecidos que nao sao necessariamente uma sessao do CRM.
-      '556196233237',
-      '556199241570',
-      ...numerosDasSessoesAtivas().flatMap(variantesTelefone),
-      ...lojas.flatMap((loja) => [
-        ...variantesTelefone(loja.whatsapp),
-        ...variantesTelefone(loja.telefone_fixo),
-      ]),
-    ]);
+    const internos = await numerosInternos();
     const filtroNumerosInternos = Prisma.sql`
-      AND COALESCE(nr.numero, '') NOT IN (${Prisma.join([...numerosInternos])})
+      AND COALESCE(nr.numero, '') NOT IN (${Prisma.join([...internos])})
     `;
     // Recorte no fuso local; a lista interna combina sessoes Baileys, telefones das
     // lojas e os contatos internos conhecidos, valendo tambem para os dias anteriores.
@@ -320,9 +381,9 @@ router.get('/metricas-diarias', async (req, res) => {
         LEFT JOIN nomes n ON n."chatJid" = c."chatJid"
         LEFT JOIN numeros nr ON nr."chatJid" = c."chatJid"
         WHERE c.recebeu
-          AND c."chatJid" NOT IN ('162474519199930@lid', '125095301365845@lid')
+          AND c."chatJid" NOT IN (${Prisma.join(JIDS_INTERNOS)})
           ${filtroNumerosInternos}
-          AND LOWER(COALESCE(n."chatNome", '')) !~ '(pe[cç]as|fornecedor|distribuidora|auto mec[aâ]nica|mec[aâ]nica automotiva)'
+          AND LOWER(COALESCE(n."chatNome", '')) !~ ${PADRAO_FORNECEDOR}
       ),
       clientes_unicos AS (
         SELECT dia, contato, BOOL_OR(respondido) AS respondido
@@ -425,6 +486,39 @@ router.post('/enviar-midia', async (req, res) => {
   } catch (e) {
     console.error('Erro ao enviar mídia (inbox):', e);
     res.status(500).json({ error: 'Erro ao enviar mídia' });
+  }
+});
+
+// Bloquear/desbloquear um contato NO WHATSAPP da conta — o mesmo "Bloquear" do celular: o contato
+// não consegue mais mandar mensagem pra este número. Reversível (acao: 'desbloquear'). Só master.
+// 23/09, pedido do dono: fornecedor (Caroline Oliveira - Gwt Global) mandando lista de preço sem parar.
+// Baileys 7 bloqueia pelo LID + número; aceita o jid da conversa (@lid ou @s.whatsapp.net) ou o número.
+router.post('/bloquear', async (req, res) => {
+  try {
+    if (!ehMaster(String((req as any).user?.role || ''))) return res.status(403).json({ error: 'Só o administrador pode bloquear contatos.' });
+    const usuarioIdOriginal = String(req.body?.usuarioId || '');
+    const jidInformado = String(req.body?.jid || '').trim();
+    const digitos = apenasDigitos(req.body?.numero);
+    const bloquear = req.body?.acao !== 'desbloquear';
+    if (!usuarioIdOriginal || (!jidInformado && digitos.length < 10)) {
+      return res.status(400).json({ error: 'Informe usuarioId e o jid da conversa (ou o número).' });
+    }
+    if (/@(g\.us|broadcast|newsletter)$/.test(jidInformado)) return res.status(400).json({ error: 'Só dá pra bloquear contato, não grupo/canal.' });
+    const usuarioId = await resolverConexaoEfetiva(usuarioIdOriginal);
+    const { sessions } = require('../workers/whatsappService');
+    const sock = sessions.get(usuarioId);
+    if (!sock) return res.status(503).json({ error: 'O WhatsApp desta conta não está conectado.' });
+    const jid = jidInformado || `${digitos}@s.whatsapp.net`;
+    await sock.updateBlockStatus(jid, bloquear ? 'block' : 'unblock');
+    // Confere na lista de bloqueados do próprio WhatsApp (vem por LID ou por número).
+    const lista: string[] = ((await sock.fetchBlocklist().catch(() => [])) as any[]).filter(Boolean).map(String);
+    const chaves = [jid.split('@')[0], digitos].filter(Boolean);
+    const naLista = lista.some((j) => chaves.some((c) => j.startsWith(c + '@') || j.startsWith(c + ':')));
+    console.log(`[Inbox] ${bloquear ? 'BLOQUEADO' : 'desbloqueado'} ${jid}${digitos ? ' (' + digitos + ')' : ''} no WhatsApp de ${usuarioId} — na lista de bloqueados: ${naLista}`);
+    res.json({ ok: true, bloqueado: bloquear, confirmadoNoWhatsApp: bloquear ? naLista : !naLista, totalBloqueados: lista.length });
+  } catch (e: any) {
+    console.error('Erro ao bloquear contato no WhatsApp:', e?.message || e);
+    res.status(500).json({ error: 'Não foi possível bloquear no WhatsApp: ' + String(e?.message || 'erro desconhecido') });
   }
 });
 
