@@ -62,6 +62,9 @@ export type IntencaoTipo =
   | 'PEDIU_FOTO'
   | 'OBJETOU_PRECO_OU_MARCA'
   | 'AGRADECEU_OU_ENCERROU'
+  | 'OFERTA_DE_FORNECEDOR'
+  | 'PERGUNTOU_SE_E_NACIONAL'
+  | 'SO_SAUDACAO'
   | 'OUTRO_ASSUNTO';
 
 export interface IntencaoExtraida {
@@ -93,6 +96,8 @@ export type TipoAcaoTexto =
   | 'RESPONDER_HORARIO'
   | 'RESPONDER_FOTO'
   | 'RESPONDER_AGRADECIMENTO'
+  | 'RESPONDER_NACIONAL'
+  | 'RESPONDER_SAUDACAO'
   // O robo decidiu NAO responder (ex.: agradecimento repetido). E uma decisao do codigo, nao "sai do fluxo":
   // a IA livre tambem NAO responde — partes vem vazio.
   | 'SILENCIO'
@@ -123,6 +128,9 @@ export interface ContextoFluxo {
   // Chaves de resposta (e variantes) cujo texto o robo JA mandou ha pouco nesta conversa
   // (ver chavesJaRespondidas em fluxoCatalogo.ts). Evita repetir a mesma explicacao palavra por palavra.
   jaRespondidas?: string[];
+  // A loja (robo ou atendente) falou ha pouco (< 4h)? false = o cliente esta voltando depois de um tempo;
+  // ausente = nao informado (vale como "ha pouco", comportamento antigo).
+  lojaFalouHaPouco?: boolean;
 }
 
 // Texto da resposta, trocando pela variante quando o robo ja disse o mesmo ha pouco. null = ja disse a
@@ -143,8 +151,8 @@ const JANELA_PINO_REPETIDO_MIN = 30;
 // pelo envio real do pino. Fica em `partes` pra manter a ORDEM certa numa resposta com varios assuntos.
 export const MARCADOR_PINO = '[ENVIAR_LOCALIZACAO]';
 
-const VALOR_BALANCEAMENTO_POR_RODA = 25;
-const PARCELAS_MAXIMAS = 10;
+export const VALOR_BALANCEAMENTO_POR_RODA = 25;
+export const PARCELAS_MAXIMAS = 10;
 
 function dadosComQuantidade(dados: DadosPrecoFluxo, quantidade: number | null): DadosPrecoFluxo {
   return quantidade && quantidade > 0 ? { ...dados, quantidade } : dados;
@@ -267,11 +275,21 @@ export function decidirSequenciaPreco(
   const itensLidos = intencoes.slice(0, MAX_ASSUNTOS_POR_RAJADA);
   const assuntos = itensLidos.map((i) => i.intencao);
   const saidaNada: ResultadoSequencia = { acaoPrincipal: 'NADA', partes: [], novoEstado: estadoAtual, novosDados: dadosAtuais, assuntos, chaves: [] };
-  if (itensLidos.length === 0 || itensLidos.some((i) => i.intencao === 'PERGUNTA_TECNICA')) return saidaNada;
+  if (itensLidos.length === 0) return saidaNada;
+  // Fornecedor oferecendo pra loja: nada da rajada é respondido, nem medida/preço que ele citou (23/09).
+  if (itensLidos.some((i) => i.intencao === 'OFERTA_DE_FORNECEDOR')) {
+    return { acaoPrincipal: 'SILENCIO', partes: [], novoEstado: estadoAtual, novosDados: dadosAtuais, assuntos, chaves: ['fornecedor'] };
+  }
+  if (itensLidos.some((i) => i.intencao === 'PERGUNTA_TECNICA')) return saidaNada;
   // "Obrigado" junto com um pedido de verdade nao vira resposta propria (a resposta ao pedido ja basta). Junto com
   // so "papo solto" (ex.: "fica na contra mao pra mim" + "obrigado pela atencao") continua sendo um agradecimento.
-  const haPedidoDeVerdade = itensLidos.some((i) => i.intencao !== 'AGRADECEU_OU_ENCERROU' && i.intencao !== 'OUTRO_ASSUNTO');
-  const itens = haPedidoDeVerdade ? itensLidos.filter((i) => i.intencao !== 'AGRADECEU_OU_ENCERROU') : itensLidos;
+  // Cumprimento junto de qualquer outra coisa também não vira resposta própria (23/09).
+  const soGesto = (t: IntencaoTipo) => t === 'AGRADECEU_OU_ENCERROU' || t === 'SO_SAUDACAO' || t === 'OUTRO_ASSUNTO';
+  const haPedidoDeVerdade = itensLidos.some((i) => !soGesto(i.intencao));
+  // So cumprimentos ("oi" + "tudo bem?" em 2 mensagens): vira UM cumprimento.
+  const naoSaudacao = itensLidos.filter((i) => i.intencao !== 'SO_SAUDACAO');
+  const semSaudacao = naoSaudacao.length ? naoSaudacao : itensLidos.slice(0, 1);
+  const itens = haPedidoDeVerdade ? semSaudacao.filter((i) => i.intencao !== 'AGRADECEU_OU_ENCERROU') : semSaudacao;
 
   let estado = estadoAtual;
   let dados = dadosAtuais;
@@ -360,6 +378,30 @@ export function decidirAcaoPreco(
       const r = textoSemRepetir(textos, 'objecao', contexto);
       if (!r) return SAI_DO_FLUXO(estadoAtual, dadosAtuais);
       return respostaTexto('RESPONDER_OBJECAO', r.partes, estadoAtual, dadosAtuais, r.chave);
+    }
+    // Vendedor/fornecedor oferecendo pra loja (23/09, pedido do dono): o robo fica CALADO — a mensagem
+    // aparece no painel pra equipe decidir. Antes caia na IA livre, que pedia a medida pro fornecedor.
+    case 'OFERTA_DE_FORNECEDOR':
+      return respostaTexto('SILENCIO', [], estadoAtual, dadosAtuais, 'fornecedor');
+    // "É nacional?" (23/09, resposta confirmada pelo dono: feito no Brasil). Antes a IA livre inventava.
+    case 'PERGUNTOU_SE_E_NACIONAL':
+      return respostaTexto('RESPONDER_NACIONAL', textoFluxo(textos, 'nacional'), estadoAtual, dadosAtuais, 'nacional');
+    // Só cumprimento / legenda do anúncio (23/09). Antes a IA livre respondia "Oi, tudo bem? + medida".
+    // Primeiro contato: cumprimenta e pede a medida. Já pediu a medida e o cliente só respondeu o
+    // cumprimento ("tudo bem, graças a Deus"): pede a medida de outro jeito, sem cumprimentar de novo.
+    // Com a conversa andando: "Oi, tudo bem? Em que posso te ajudar?" uma vez; se repetir, silêncio.
+    case 'SO_SAUDACAO': {
+      const retorno = () => ((contexto.jaRespondidas || []).includes('saudacao_retorno')
+        ? respostaTexto('SILENCIO', [], estadoAtual, dadosAtuais, 'saudacao_retorno')
+        : respostaTexto('RESPONDER_SAUDACAO', textoFluxo(textos, 'saudacao_retorno'), estadoAtual, dadosAtuais, 'saudacao_retorno'));
+      if (estadoAtual !== 'sem_estado' && estadoAtual !== 'aguardando_medida') return retorno();
+      const pm = pedirMedida(estadoAtual, dadosAtuais, textos, contexto);
+      if (pm.acao.tipo !== 'PEDIR_MEDIDA') return retorno();
+      // Ja pediu a medida ha pouco (pelo fluxo ou pela IA, mesmo com a conversa ainda "sem estado"): nao cumprimenta
+      // de novo. Se o cliente esta voltando depois de horas, cumprimenta e pede de outro jeito.
+      const pediuHaPouco = estadoAtual === 'aguardando_medida' || (contexto.jaRespondidas || []).includes('pedir_medida');
+      if (pediuHaPouco && contexto.lojaFalouHaPouco !== false) return pm;
+      return { ...pm, acao: { tipo: 'PEDIR_MEDIDA', partes: [...textoFluxo(textos, 'saudacao'), ...pm.acao.partes] }, chaves: ['saudacao', ...(pm.chaves || [])] };
     }
     case 'AGRADECEU_OU_ENCERROU': {
       // Responde UMA vez; se o cliente repete o gesto ("ok" e depois "obrigado"), o robo fica em silencio —

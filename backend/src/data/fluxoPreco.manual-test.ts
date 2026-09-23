@@ -467,6 +467,55 @@ const ITEM_195_55_15 = encontrarPrecosExatosPorMedida('195/55/15')[0]!; // aVist
   checar('Depois de pedir a medida 2x, quando ele da a medida o preco sai normal', d.acao.tipo === 'CONFIRMAR_PRECO' && /R\$ 289,00 à vista/.test(textoDe(d)), textoDe(d));
 }
 
+// ----- Robo mais fechado (23/09): casos que ainda caiam na IA livre (conversas reais 21-23/09) -----
+{
+  // Fornecedor oferecendo pra loja (caso Imppar / Gwt Global): silencio, mesmo citando medida/preco
+  const f1 = decidirSequenciaPreco([intencaoDe('OFERTA_DE_FORNECEDOR')], 'sem_estado', {});
+  checar('Fornecedor: SILENCIO decidido pelo codigo (nao pede medida pro vendedor)', f1.acaoPrincipal === 'SILENCIO' && f1.partes.length === 0 && f1.chaves.join() === 'fornecedor', JSON.stringify(f1));
+  const f2 = decidirSequenciaPreco([intencaoDe('OFERTA_DE_FORNECEDOR'), intencaoDe('DAR_MEDIDA', { medidaExtraida: '195/55/15' })], 'sem_estado', {});
+  checar('Fornecedor mandando lista com medida: continua em silencio (nao cota o proprio preco pra ele)', f2.acaoPrincipal === 'SILENCIO' && f2.partes.length === 0 && f2.novoEstado === 'sem_estado');
+  const f3 = decidirSequenciaPreco([intencaoDe('OFERTA_DE_FORNECEDOR')], 'preco_confirmado', { medida: '195/55/15' });
+  checar('Fornecedor: nao mexe no estado da conversa', f3.novoEstado === 'preco_confirmado' && f3.novosDados.medida === '195/55/15');
+
+  // "É nacional?" (caso José Cantídio): resposta fixa, sem perguntar de volta nem inventar
+  const n1 = decidirAcaoPreco(intencaoDe('PERGUNTOU_SE_E_NACIONAL'), 'preco_confirmado', { medida: '195/55/15' });
+  checar('Nacional: resposta fixa "fabricado aqui no Brasil"', n1.acao.tipo === 'RESPONDER_NACIONAL' && /fabricado aqui no Brasil/.test(textoDe(n1)), textoDe(n1));
+  checar('Nacional: nao mexe no estado', n1.novoEstado === 'preco_confirmado' && n1.novosDados.medida === '195/55/15');
+  const n2 = decidirSequenciaPreco([intencaoDe('PERGUNTOU_SE_E_NACIONAL'), intencaoDe('PERGUNTOU_SE_E_REMOLD')], 'preco_confirmado', { medida: '195/55/15' });
+  checar('Nacional + remold na mesma rajada: responde os dois', /fabricado aqui no Brasil/.test(n2.partes.join(' ')) && /remold/i.test(n2.partes.join(' ')), n2.partes.join(' | '));
+
+  // So cumprimento / legenda do anuncio (casos José Cantídio e Elvison): "Oi, tudo bem?" + pedir a medida
+  const s1 = decidirSequenciaPreco([intencaoDe('SO_SAUDACAO')], 'sem_estado', {});
+  checar('Saudacao no inicio: cumprimenta e pede a medida', s1.acaoPrincipal === 'PEDIR_MEDIDA' && s1.partes[0] === 'Oi, tudo bem?' && /Poderia me informar a medida/.test(s1.partes[1] || '') && s1.novoEstado === 'aguardando_medida', s1.partes.join(' | '));
+  checar('Saudacao no inicio: chaves saudacao + pedir_medida (fluxograma ao vivo)', s1.chaves.includes('saudacao') && s1.chaves.includes('pedir_medida'), s1.chaves.join());
+  const s2 = decidirSequenciaPreco([intencaoDe('SO_SAUDACAO')], 'aguardando_medida', {}, {}, { jaRespondidas: ['pedir_medida'] });
+  checar('Cliente so respondeu o cumprimento depois do pedido de medida ("tudo bem, gracas a Deus"): pede de outro jeito, sem cumprimentar de novo', s2.partes.length === 1 && /É só me passar a medida/.test(s2.partes[0] || '') && s2.novoEstado === 'aguardando_medida', s2.partes.join(' | '));
+  const s3 = decidirSequenciaPreco([intencaoDe('SO_SAUDACAO')], 'preco_confirmado', { medida: '195/55/15' });
+  checar('Saudacao com a conversa andando: "Em que posso te ajudar?" (nao pede medida de novo)', s3.acaoPrincipal === 'RESPONDER_SAUDACAO' && /Em que posso te ajudar/.test(s3.partes.join(' ')) && s3.novoEstado === 'preco_confirmado', s3.partes.join(' | '));
+  const s4 = decidirSequenciaPreco([intencaoDe('SO_SAUDACAO')], 'preco_confirmado', { medida: '195/55/15' }, {}, { jaRespondidas: ['saudacao_retorno'] });
+  checar('Saudacao repetida com a conversa andando: silencio', s4.acaoPrincipal === 'SILENCIO' && s4.partes.length === 0);
+  const s5 = decidirSequenciaPreco([intencaoDe('SO_SAUDACAO'), intencaoDe('DAR_MEDIDA', { medidaExtraida: '195/55/15' })], 'sem_estado', {});
+  checar('Saudacao + medida na mesma rajada: responde so o preco (sem "Oi, tudo bem?" solto)', s5.acaoPrincipal === 'CONFIRMAR_PRECO' && !s5.partes.includes('Oi, tudo bem?') && !s5.chaves.includes('saudacao'), s5.partes.join(' | '));
+  const s6 = decidirSequenciaPreco([intencaoDe('SO_SAUDACAO'), intencaoDe('SO_SAUDACAO')], 'sem_estado', {});
+  checar('"oi" + "tudo bem?" em 2 mensagens: um cumprimento so', s6.partes.filter((p) => p === 'Oi, tudo bem?').length === 1, s6.partes.join(' | '));
+  const s7 = decidirSequenciaPreco([intencaoDe('SO_SAUDACAO')], 'sem_estado', {}, {}, { jaRespondidas: ['pedir_medida', 'pedir_medida_repetida'] });
+  checar('Saudacao quando ja pediu a medida 2x: nao pede de novo, so "Em que posso te ajudar?"', s7.acaoPrincipal === 'RESPONDER_SAUDACAO', s7.partes.join(' | '));
+  const s7b = decidirSequenciaPreco([intencaoDe('SO_SAUDACAO')], 'sem_estado', {}, {}, { jaRespondidas: ['pedir_medida'] });
+  checar('Saudacao com a medida ja pedida (pela IA, conversa ainda "sem estado"): nao cumprimenta de novo, pede de outro jeito', s7b.partes.length === 1 && /É só me passar a medida/.test(s7b.partes[0] || '') && !s7b.chaves.includes('saudacao'), s7b.partes.join(' | '));
+  checar('Nacional: o texto serve pra "é importado?" tambem (nao comeca com "Sim"/"Não")', !/^\s*(sim|n[aã]o)\b/i.test(textoDe(n1)), textoDe(n1));
+  const s7c = decidirSequenciaPreco([intencaoDe('SO_SAUDACAO')], 'aguardando_medida', {}, {}, { jaRespondidas: ['pedir_medida'], lojaFalouHaPouco: false });
+  checar('Cliente voltando horas depois com "bom dia" (medida pedida antes): cumprimenta e pede de outro jeito', s7c.partes[0] === 'Oi, tudo bem?' && /É só me passar a medida/.test(s7c.partes[1] || ''), s7c.partes.join(' | '));
+  const s8 = decidirSequenciaPreco([intencaoDe('SO_SAUDACAO')], 'sem_estado', {}, { saudacao: ['Olá! Seja bem-vindo à Popular Pneus.'] });
+  checar('Saudacao: respeita o texto EDITADO pelo dono', s8.partes[0] === 'Olá! Seja bem-vindo à Popular Pneus.', s8.partes.join(' | '));
+  checar('chavesJaRespondidas: saudacao_retorno ja dita -> reconhecida', chavesJaRespondidas(undefined, 'x\n' + TEXTOS_PADRAO['saudacao_retorno']!.join('\n')).includes('saudacao_retorno'));
+
+  // Catalogo: entradas de silencio nao tem texto editavel; as novas com texto tem padrao valido
+  const silencios = CATALOGO_FLUXO.filter((c) => c.silencio).map((c) => c.chave).sort().join();
+  checar('Catalogo: grupo "Quem o robo nao responde" com fornecedor, so_pontuacao e equipe_interna', silencios === 'equipe_interna,fornecedor,so_pontuacao', silencios);
+  checar('Catalogo: silencio nao tem texto editavel', CATALOGO_FLUXO.filter((c) => c.silencio).every((c) => !c.partes && !(c.chave in TEXTOS_PADRAO)));
+  checar('Catalogo: nacional/saudacao/saudacao_retorno tem texto padrao', ['nacional', 'saudacao', 'saudacao_retorno'].every((k) => (TEXTOS_PADRAO[k] || []).length > 0));
+}
+
 // =====================================================================================
 // RAJADA (18/09, caso Marcia Lima): varias mensagens seguidas -> o robo responde TUDO, na ordem.
 // =====================================================================================
@@ -542,6 +591,7 @@ const ITEM_195_55_15 = encontrarPrecosExatosPorMedida('195/55/15')[0]!; // aVist
     'PERGUNTOU_SE_E_REMOLD', 'PERGUNTOU_PARCELAMENTO_GENERICO', 'PERGUNTOU_SE_TEM_JUROS', 'PERGUNTOU_SE_E_CHINES',
     'OFERECEU_BASE_TROCA', 'OFERECEU_VENDER_USADO', 'PERGUNTOU_NOTA_FISCAL', 'PERGUNTOU_BALANCEAMENTO',
     'PERGUNTOU_ALINHAMENTO', 'PEDIU_LOCALIZACAO', 'OBJETOU_PRECO_OU_MARCA', 'PERGUNTOU_HORARIO', 'PEDIU_FOTO', 'PERGUNTOU_POR_OUTRA_MARCA', 'PERGUNTOU_SE_E_NOVO',
+    'PERGUNTOU_SE_E_NACIONAL', 'SO_SAUDACAO',
   ];
   const meta = /sugest[aã]o|copiar|voc[eê] pode (enviar|responder|dizer)|responda (que|com)|mensagem (para|pro) (o )?cliente|\bmodelo de mensagem\b/i;
   const ruins = todas.filter((i) => meta.test(textoDe(decidirAcaoPreco(intencaoDe(i), 'sem_estado', {}))));

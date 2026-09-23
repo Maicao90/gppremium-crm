@@ -11,7 +11,7 @@
 // REGRA DE ESCRITA de todo texto: voz direta do vendedor falando com o cliente — nunca
 // meta-comentario nem "sugestao pra copiar e enviar" (incidente real da Josy, 17/09).
 
-export type GrupoFluxo = 'preco' | 'pagamento' | 'produto' | 'servicos' | 'loja' | 'objecao';
+export type GrupoFluxo = 'preco' | 'pagamento' | 'produto' | 'servicos' | 'loja' | 'objecao' | 'filtro';
 
 export interface CategoriaFluxo {
   chave: string; // id estavel (chave no banco) — nao renomear depois de publicado
@@ -23,19 +23,38 @@ export interface CategoriaFluxo {
   placeholders?: string[]; // ex.: ['QTD', 'TOTAL'] — preenchidos pelo codigo
   calculado?: string; // como o texto e montado quando vem da tabela de precos
   acao?: string; // acao extra que o codigo dispara alem de mandar o texto
+  silencio?: boolean; // o codigo decide NAO responder (sem texto pra editar)
 }
 
 export const GRUPOS_FLUXO: Record<GrupoFluxo, { titulo: string; descricao: string }> = {
-  preco: { titulo: 'Medida e preço', descricao: 'Do "quanto custa?" até o preço confirmado' },
+  preco: { titulo: 'Medida e preço', descricao: 'Do "oi" e do "quanto custa?" até o preço confirmado' },
   pagamento: { titulo: 'Pagamento', descricao: 'Parcelamento, juros e desconto' },
-  produto: { titulo: 'Sobre o pneu', descricao: 'Remold e desconfiança de procedência' },
+  produto: { titulo: 'Sobre o pneu', descricao: 'Remold, chinês, nacional e desconfiança de procedência' },
   servicos: { titulo: 'Serviços e políticas', descricao: 'Balanceamento, alinhamento, troca, usado, nota fiscal' },
   loja: { titulo: 'Loja', descricao: 'Endereço e localização' },
-  objecao: { titulo: 'Objeções e despedidas', descricao: 'Reclama de preço/marca, agradece ou diz que vai pensar' },
+  objecao: { titulo: 'Objeções e despedidas', descricao: 'Reclama de preço/marca, agradece, diz que vai pensar ou que não tem interesse' },
+  filtro: { titulo: 'Quem o robô não responde', descricao: 'Fornecedor, equipe e mensagem vazia: o robô fica calado e a equipe vê no painel' },
 };
 
 export const CATALOGO_FLUXO: CategoriaFluxo[] = [
   // ---------- Medida e preco ----------
+  {
+    chave: 'saudacao',
+    grupo: 'preco',
+    titulo: 'Cliente só cumprimentou (início)',
+    quando: 'A mensagem é só um cumprimento ou a legenda automática do anúncio ("Olá! Posso ter mais informações sobre isso?") e ainda não tem preço na conversa. O robô cumprimenta e, na mesma resposta, pede a medida.',
+    exemplos: ['oi', 'bom dia', 'tudo bem?', 'Olá! Posso ter mais informações sobre isso?'],
+    partes: ['Oi, tudo bem?'],
+    acao: 'Logo depois vai a bolha de "Pedir a medida".',
+  },
+  {
+    chave: 'saudacao_retorno',
+    grupo: 'preco',
+    titulo: 'Cliente só cumprimentou (conversa já andando)',
+    quando: 'O cliente manda só "oi"/"bom dia" depois que o preço já foi passado. O robô responde UMA vez; se o cliente repetir, fica em silêncio.',
+    exemplos: ['oi', 'boa tarde', 'opa'],
+    partes: ['Oi, tudo bem? Em que posso te ajudar?'],
+  },
   {
     chave: 'pedir_medida',
     grupo: 'preco',
@@ -167,6 +186,14 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
       'O GP Premium é diferente: borracha padrão europeu e controle de qualidade rígido.',
     ],
   },
+  {
+    chave: 'nacional',
+    grupo: 'produto',
+    titulo: 'É nacional? / De onde vem?',
+    quando: 'O cliente pergunta se o pneu é nacional, importado ou de onde vem. O texto serve pras três perguntas (por isso não começa com "sim" nem "não").',
+    exemplos: ['é nacional?', 'sim mas é nacional', 'esse pneu é importado?', 'de onde vem esse pneu?'],
+    partes: ['O GP Premium é nacional: fabricado aqui no Brasil, com garantia de 50 mil km ou seu dinheiro de volta.'],
+  },
 
   {
     chave: 'outra_marca',
@@ -290,9 +317,9 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
   {
     chave: 'agradecimento',
     grupo: 'objecao',
-    titulo: 'Agradece, diz "ok" ou que vai pensar',
-    quando: 'O cliente só agradece, confirma ("ok", "blz") ou se despede / diz que vai pensar, SEM pedir nada. O robô responde UMA vez; se o cliente repetir, fica em silêncio (não enche a conversa de mensagem) e nunca solta horário ou outro assunto por conta própria.',
-    exemplos: ['ok obrigado', 'blz', 'valeu', 'vou pensar e te falo'],
+    titulo: 'Agradece, diz "ok", que vai pensar ou que não tem interesse',
+    quando: 'O cliente só agradece, confirma ("ok", "blz"), se despede, diz que vai pensar ou que não tem mais interesse, SEM pedir nada. O robô responde UMA vez; se o cliente repetir, fica em silêncio (não enche a conversa de mensagem) e nunca solta horário ou outro assunto por conta própria.',
+    exemplos: ['ok obrigado', 'blz', 'valeu', 'vou pensar e te falo', 'sem interesse', 'já comprei'],
     partes: ['Tranquilo! Qualquer dúvida ou se quiser fechar, é só me chamar por aqui.'],
   },
   {
@@ -302,6 +329,32 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     quando: 'O robô JÁ pediu a medida há pouco e o cliente pergunta preço de novo sem dar a medida. Evita repetir a mesma pergunta palavra por palavra.',
     exemplos: ['e o valor?', 'quanto custa?', 'aro 14 o preço'],
     partes: ['É só me passar a medida que está escrita na lateral do pneu (ex.: 175/65/14) ou o modelo do carro que eu já te passo o valor certinho.'],
+  },
+
+  // ---------- Quem o robo nao responde (o codigo decide o silencio) ----------
+  {
+    chave: 'fornecedor',
+    grupo: 'filtro',
+    titulo: 'Fornecedor oferecendo pra loja',
+    quando: 'Quem escreve é vendedor, importadora ou distribuidora oferecendo produto/cotação PRA LOJA (não é cliente comprando). O robô fica calado — nem pede medida — e a mensagem fica no painel pra equipe decidir.',
+    exemplos: ['Sou da importadora X, estou à disposição para cotações', 'segue nossa tabela de preços atualizada'],
+    silencio: true,
+  },
+  {
+    chave: 'so_pontuacao',
+    grupo: 'filtro',
+    titulo: 'Mensagem sem texto',
+    quando: 'A mensagem é só pontuação ou sinal ("." ou "!!"), sem palavra nem número. O robô não responde.',
+    exemplos: ['.', '..', '!'],
+    silencio: true,
+  },
+  {
+    chave: 'equipe_interna',
+    grupo: 'filtro',
+    titulo: 'Equipe, lojas e números bloqueados',
+    quando: 'Quem escreve é da equipe (ex.: Danúbia), outra loja do grupo, um fornecedor cadastrado ou um número da lista de bloqueio. O robô nem lê a mensagem.',
+    exemplos: ['Reforçando sobre a nova forma de solicitar reposição…'],
+    silencio: true,
   },
 ];
 
@@ -314,7 +367,7 @@ export const VARIANTE_REPETICAO: Record<string, string> = { remold: 'remold_insi
 
 // Respostas que o robo manda UMA vez e, se o cliente repetir o gesto, NAO repete nem cai na IA livre: fica em
 // silencio (ex.: agradecimento — o cliente diz "ok" e "obrigado" em seguida; responder a cada um vira spam).
-export const SILENCIO_SE_REPETIR: string[] = ['agradecimento'];
+export const SILENCIO_SE_REPETIR: string[] = ['agradecimento', 'saudacao_retorno'];
 
 export const TEXTOS_PADRAO: Record<string, string[]> = Object.fromEntries(
   CATALOGO_FLUXO.filter((c) => c.partes).map((c) => [c.chave, c.partes as string[]])

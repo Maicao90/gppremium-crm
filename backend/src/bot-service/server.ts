@@ -13,8 +13,8 @@ import { precosForaDaTabela, valoresEmReais } from '../data/precoGuard';
 import { prometeuTransferenciaFalsa, removerReperguntaPosPreco, removerRepeticaoRecente, removerPromessaDeFoto, removerHorarioNaoPedido, removerLocalizacaoRepetida, pareceAgradecimento } from '../data/comportamentoGuard';
 import { lerBotPneusConfig, montarPromptAtendimentoBot } from '../services/botPneusConfig';
 import { decidirSequenciaPreco, EstadoPrecoFluxo, DadosPrecoFluxo } from '../data/fluxoPreco';
-import { extrairIntencoesPreco, podeSerSobrePreco } from '../data/fluxoPrecoExtrator';
-import { sanitizarTextosFluxo, chavesJaRespondidas, textoFluxo } from '../data/fluxoCatalogo';
+import { extrairIntencoesPreco } from '../data/fluxoPrecoExtrator';
+import { sanitizarTextosFluxo, chavesJaRespondidas, textoFluxo, SILENCIO_SE_REPETIR } from '../data/fluxoCatalogo';
 
 dotenv.config();
 
@@ -229,16 +229,38 @@ function contextoDeData(): string {
 // o codigo nao sabe o que tem na foto/audio, entao a rajada vai pra IA livre.
 const LEGENDA_ANUNCIO = /^\s*📢\s*\[An[uú]ncio\]/i;
 const PLACEHOLDER_MIDIA = /^\[[^\]]+\]$/;
-function separarRajada(messages: any[]): { rajada: string[]; anteriores: any[]; temMidiaSemTexto: boolean } {
+// Frase que o proprio WhatsApp preenche no clique do anuncio (o cliente so aperta enviar).
+// Cobre as variantes reais ("Olá! Tenho interesse e queria mais informações, por favor." e 9 de 10 anuncios da
+// Super Via; "Oi, posso obter mais informações sobre isto?").
+const FRASE_PADRAO_ANUNCIO = /^((ol[aá]|oi)[!,.]?\s*)?(posso (ter|obter) mais informa[cç][oõ]es( sobre (isso|isto))?|tenho interesse( e queria mais informa[cç][oõ]es)?|quero (saber mais|mais informa[cç][oõ]es))(,?\s*por favor)?[.!?\s]*$/i;
+// So pontuacao/sinal: sem letra, numero, emoji nem "?" (o "?" sozinho e o cliente cobrando resposta).
+const SO_PONTUACAO = (t: string) => !!String(t || '').trim() && !/[\p{L}\p{N}\p{Extended_Pictographic}?]/u.test(String(t));
+// Mensagem de clique em anuncio: "📢 [Anúncio] <titulo do anuncio>\n\n<texto do cliente>". Se o cliente
+// escreveu algo proprio no lugar da frase padrao, o texto dele e pergunta de verdade e fica na rajada
+// (revisao 23/09: antes a mensagem inteira saia e a pergunta dele se perdia). O titulo do anuncio
+// ("Pneus a partir de R$ 239") nunca entra — nao e o cliente pedindo aquele preco.
+function textoProprioNoAnuncio(t: string): string {
+  if (!LEGENDA_ANUNCIO.test(t)) return t;
+  const resto = t.split('\n').slice(1).join('\n').trim();
+  return resto && !FRASE_PADRAO_ANUNCIO.test(resto) ? resto : '';
+}
+function separarRajada(messages: any[]): { rajada: string[]; rabo: string[]; anteriores: any[]; temMidiaSemTexto: boolean } {
   let inicio = messages.length;
   while (inicio > 0 && messages[inicio - 1]?.role === 'user') inicio--;
   const rabo = messages.slice(inicio).map((m) => String(m?.content ?? '').trim()).filter(Boolean);
   // So conta quando a ULTIMA mensagem e a midia sem texto (igual ao comportamento anterior, que
   // olhava a ultima); midia sem texto no meio da rajada apenas sai da lista.
   const temMidiaSemTexto = rabo.length > 0 && PLACEHOLDER_MIDIA.test(rabo[rabo.length - 1] as string);
-  const uteis = rabo.filter((t) => !LEGENDA_ANUNCIO.test(t) && !PLACEHOLDER_MIDIA.test(t));
-  return { rajada: (uteis.length ? uteis : rabo).slice(-6), anteriores: messages.slice(0, inicio), temMidiaSemTexto };
+  // Pontuacao solta ("." depois do clique no anuncio) tambem nao e assunto: sai, e se nao sobrar nada
+  // a rajada inteira (com a legenda) vai pra leitura — o clique no anuncio ainda merece o cumprimento.
+  // (a pontuacao e filtrada DEPOIS de tirar o titulo do anuncio: "📢 [Anúncio] X\n\n." tambem nao e assunto)
+  const uteis = rabo.filter((t) => !PLACEHOLDER_MIDIA.test(t)).map(textoProprioNoAnuncio).filter((t) => t && !SO_PONTUACAO(t));
+  return { rajada: (uteis.length ? uteis : rabo).slice(-6), rabo, anteriores: messages.slice(0, inicio), temMidiaSemTexto };
 }
+
+// Cumprimento/agradecimento repetido so vira silencio se a loja falou ha pouco: o cliente que volta
+// no dia seguinte e diz "bom dia" tem que ser respondido (revisao 23/09).
+const JANELA_SILENCIO_REPETIDO_MIN = 240;
 
 app.post('/gerar-resposta', async (req, res) => {
   try {
@@ -269,8 +291,16 @@ app.post('/gerar-resposta', async (req, res) => {
     // resposta. Agora o fluxo le todas as mensagens do cliente que vieram DEPOIS da ultima
     // resposta (robo ou atendente) e responde cada assunto. Mensagem ja respondida nunca entra
     // (nao contamina — achado 26/08).
-    const { rajada, anteriores, temMidiaSemTexto } = separarRajada(messages);
+    const { rajada, rabo, anteriores, temMidiaSemTexto } = separarRajada(messages);
     const gatilho = rajada.length ? rajada.join('\n') : String(ultimaDoCliente?.content ?? textosCliente);
+    // A ultima mensagem do cliente e uma FOTO (com legenda): o codigo nao enxerga a foto — que muitas vezes
+    // e a lateral do pneu, com a medida. Pedir a medida ou so cumprimentar por cima dela seria ignorar o que
+    // ele mandou; nesses casos a IA livre (que ve a imagem) responde (revisao 23/09).
+    // A mensagem de clique no anuncio e gravada como "imagem" (a miniatura do anuncio) — isso NAO e foto do
+    // cliente: sem esta exclusao todo lead de anuncio caia na IA livre (revisao 23/09 pegou em producao).
+    const temFoto = !!imagem && !LEGENDA_ANUNCIO.test(String(ultimaDoCliente?.content ?? ''));
+    // Ha quantos minutos a loja (robo ou atendente) mandou a ultima mensagem nesta conversa; null = nao informado.
+    const minutosDesdeUltimaDaLoja: number | null = typeof req.body?.minutosDesdeUltimaDaLoja === 'number' ? req.body.minutosDesdeUltimaDaLoja : null;
 
     // FLUXO DETERMINISTICO DE PRECO (Camadas 1+2, Tasks 3-4, ligado aqui no Task 5). So
     // roda se valer a pena chamar a IA extratora; se ela decidir que a mensagem e sobre
@@ -281,8 +311,28 @@ app.post('/gerar-resposta', async (req, res) => {
     // Foto/audio sem texto na rajada: o codigo nao ve o conteudo — deixa a IA livre (que ve/ouve).
     // Rastro pro fluxograma ao vivo do painel: o que a IA leu e por que (se for o caso) caiu na IA livre.
     let assuntosLidos: string[] = [];
-    let motivoLivre = temMidiaSemTexto ? 'midia_sem_texto' : 'filtro_nao_e_do_fluxo';
-    if (!temMidiaSemTexto && podeSerSobrePreco(gatilho, estadoPrecoAtual)) {
+    let motivoLivre = temMidiaSemTexto ? 'midia_sem_texto' : 'mensagem_vazia';
+    // Rajada so de pontuacao ("." / "!!"), sem letra, numero, emoji nem "?": o codigo decide nao responder
+    // (23/09: o cliente mandou "." e a IA livre respondeu "pode repetir, por favor?"). Olha a rajada INTEIRA
+    // (com legenda de anuncio e midia) — "." depois do clique no anuncio ou de uma foto nao e silencio.
+    const soPontuacao = !temMidiaSemTexto && !temFoto && rabo.length > 0 && rabo.every(SO_PONTUACAO);
+    if (soPontuacao) {
+      return res.json({
+        partes: [],
+        deterministico: true,
+        acaoTipo: 'SILENCIO',
+        novoEstadoPreco: estadoPrecoAtual,
+        novosDadosPreco: JSON.stringify(dadosPrecoAtuais),
+        via: 'fluxo',
+        assuntos: [],
+        chaves: ['so_pontuacao'],
+        rajada,
+        simulado: !!req.body?.simular,
+      });
+    }
+    // Toda mensagem com texto passa pela leitura (23/09, "mais fechado"): antes um filtro de palavras-chave
+    // (podeSerSobrePreco) mandava "oi", "é nacional?" e oferta de fornecedor direto pra IA livre.
+    if (!temMidiaSemTexto && gatilho.trim()) {
       const apiKeyFluxo = process.env.OPENAI_API_KEY?.trim();
       motivoLivre = apiKeyFluxo ? 'leitura_falhou' : 'sem_chave_openai';
       if (apiKeyFluxo) {
@@ -295,19 +345,29 @@ app.post('/gerar-resposta', async (req, res) => {
           // O que o robo (ou atendente) ja disse ha pouco: se o cliente insiste no mesmo assunto, a resposta
           // troca pela variante em vez de repetir a explicacao palavra por palavra.
           const textoRecenteDoRobo = anteriores.filter((m: any) => m?.role === 'assistant').slice(-12).map((m: any) => String(m?.content || '')).join('\n');
-          // O agradecimento so conta como "ja respondido" se foi uma das 3 ultimas mensagens do robo: um "Tranquilo!" de
-          // horas atras nao pode calar o robo diante de um "valeu" novo (revisao 21/09).
-          const ultimas3DoRobo = anteriores.filter((m: any) => m?.role === 'assistant').slice(-3).map((m: any) => String(m?.content || '')).join('\n');
-          const agradecimentoRecente = chavesJaRespondidas(textosFluxo, ultimas3DoRobo).includes('agradecimento');
-          const jaRespondidas = chavesJaRespondidas(textosFluxo, textoRecenteDoRobo).filter((c) => c !== 'agradecimento' || agradecimentoRecente);
-          const decisao = decidirSequenciaPreco(intencoes, estadoPrecoAtual, dadosPrecoAtuais, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas });
+          // Respostas que viram SILENCIO se repetidas (agradecimento, cumprimento) so contam como "ja respondidas" se
+          // foram a ULTIMA mensagem da loja E a loja falou ha menos de 4h: um "Tranquilo!" de horas atras nao pode
+          // calar o robo diante de um "valeu" novo (revisao 21/09), nem o cliente que volta no dia seguinte e diz
+          // "bom dia", nem o "bom dia" que responde a um lembrete mandado depois do cumprimento (revisao 23/09).
+          const ultimaDaLojaTexto = anteriores.filter((m: any) => m?.role === 'assistant').slice(-1).map((m: any) => String(m?.content || '')).join('\n');
+          const naUltimaDaLoja = chavesJaRespondidas(textosFluxo, ultimaDaLojaTexto);
+          const lojaFalouHaPouco = minutosDesdeUltimaDaLoja == null || minutosDesdeUltimaDaLoja < JANELA_SILENCIO_REPETIDO_MIN;
+          const jaRespondidas = chavesJaRespondidas(textosFluxo, textoRecenteDoRobo)
+            .filter((c) => !SILENCIO_SE_REPETIR.includes(c) || (lojaFalouHaPouco && naUltimaDaLoja.includes(c)));
+          const decisao = decidirSequenciaPreco(intencoes, estadoPrecoAtual, dadosPrecoAtuais, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas, lojaFalouHaPouco });
           assuntosLidos = decisao.assuntos;
           // Resposta de agradecimento (ou silencio de agradecimento) so vale se a mensagem for MESMO so agradecimento: com
           // pergunta, dia/hora ou aviso de visita ("combinado, amanha 10h eu passo ai") a IA livre e quem responde
           // (e quem cria o agendamento) — nunca calar nem mandar "Tranquilo!" por cima (revisao 21/09).
-          const soAgradecimento = decisao.acaoPrincipal === 'SILENCIO' || decisao.acaoPrincipal === 'RESPONDER_AGRADECIMENTO';
+          // Pelas chaves, nao pelo tipo: o silencio do FORNECEDOR tambem e 'SILENCIO' e nao pode ser desfeito
+          // so porque a oferta dele tem numero (lista de preco).
+          const soAgradecimento = (decisao.acaoPrincipal === 'SILENCIO' || decisao.acaoPrincipal === 'RESPONDER_AGRADECIMENTO')
+            && decisao.chaves.includes('agradecimento') && !decisao.chaves.includes('fornecedor');
           const naoEhSoAgradecer = soAgradecimento && rajada.some((t) => /\?|amanh|hoje|s[aá]bado|domingo|segunda|ter[cç]a|quarta|quinta|sexta|passo a[ií]|vou a[ií]|\d/i.test(t));
-          if (decisao.acaoPrincipal !== 'NADA' && !naoEhSoAgradecer) {
+          // Foto + "quanto custa?"/"boa tarde": pedir a medida ou so cumprimentar ignoraria a foto (ver temFoto).
+          // Pelas chaves: "é remold? quanto custa?" com foto tem acaoPrincipal RESPONDER_REMOLD mas tambem pede a medida.
+          const ignorariaAFoto = temFoto && decisao.chaves.some((c) => c.startsWith('pedir_medida') || c === 'saudacao' || c === 'saudacao_retorno');
+          if (decisao.acaoPrincipal !== 'NADA' && !naoEhSoAgradecer && !ignorariaAFoto) {
             return res.json({
               partes: decisao.partes,
               deterministico: true,
@@ -322,7 +382,7 @@ app.post('/gerar-resposta', async (req, res) => {
               simulado: !!req.body?.simular,
             });
           }
-          motivoLivre = decisao.assuntos.includes('PERGUNTA_TECNICA') ? 'pergunta_tecnica' : 'assunto_sem_bloco';
+          motivoLivre = ignorariaAFoto ? 'midia_sem_texto' : decisao.assuntos.includes('PERGUNTA_TECNICA') ? 'pergunta_tecnica' : 'assunto_sem_bloco';
         }
       }
     }
