@@ -370,7 +370,8 @@ io.on('connection', async (socket) => {
     } else if (latestQR.has(efetivoId)) {
       // Existe um QR pendente: reenvia na hora para esta extensão.
       console.log(`[Socket] Reenviando QR Code pendente para o atendente ${efetivoId}.`);
-      socket.emit('WHATSAPP_QR_CODE', latestQR.get(efetivoId));
+      // Só a imagem (data URL): a extensão faz <img src={qr}> — o objeto inteiro deixava o QR em BRANCO (24/09).
+      socket.emit('WHATSAPP_QR_CODE', latestQR.get(efetivoId)?.qrCode);
     }
 
     // Fluxo da EXTENSÃO: se este atendente ainda não tem sessão registrada, o QR deve
@@ -403,7 +404,7 @@ io.on('connection', async (socket) => {
       if (connectedUsers.has(efetivoId)) {
         socket.emit('WHATSAPP_STATUS', { conectado: true });
       } else if (latestQR.has(efetivoId)) {
-        socket.emit('WHATSAPP_QR_CODE', latestQR.get(efetivoId));
+        socket.emit('WHATSAPP_QR_CODE', latestQR.get(efetivoId)?.qrCode);
       }
     }).catch(e => console.error(e));
   });
