@@ -452,7 +452,10 @@ const WhatsAppCRM = () => {
   // por 12s CONTÍNUOS. Reconexões rápidas do Baileys (2s) nunca cruzam esse limite, então
   // a tela não pisca mais. Se reconectar antes dos 12s, o timer é zerado e nada aparece.
   React.useEffect(() => {
-    if (backendConectado || !usuarioLogado) {
+    // Parceiro de DEMONSTRAÇÃO (usuarioLogado.demo): nunca trava esperando o WhatsApp
+    // conectar no servidor — o objetivo dele é só mostrar a extensão funcionando, sem
+    // precisar de um número real pareado (pedido do dono, 23/09).
+    if (backendConectado || !usuarioLogado || usuarioLogado.demo) {
       setBloqueioVisivel(false)
       return
     }

@@ -610,7 +610,7 @@ router.get('/parceiros', requireAuth, requireMaster, async (_req, res) => {
   try {
     const parceiros = await prisma.usuario.findMany({
       where: { externo: true },
-      select: { id: true, nome: true, ativo: true, codigoAtivacao: true, whatsappConectado: true, ocultoNasMetricas: true, criadoEm: true },
+      select: { id: true, nome: true, ativo: true, codigoAtivacao: true, whatsappConectado: true, ocultoNasMetricas: true, demo: true, criadoEm: true },
       orderBy: { criadoEm: 'desc' },
     });
     res.json(parceiros);
@@ -624,6 +624,9 @@ router.post('/parceiros', requireAuth, requireMaster, async (req, res) => {
   try {
     const nome = String(req.body?.nome || '').trim();
     if (!nome) return res.status(400).json({ error: 'Dê um nome pra identificar o parceiro.' });
+    // demo:true = pra mostrar a extensão funcionando pra alguém sem WhatsApp real pareado
+    // (nunca mostra a tela de bloqueio/QR do Baileys). Opcional, default false.
+    const demo = req.body?.demo === true;
 
     // Placeholder de e-mail/senha só pra satisfazer o schema — ninguém usa: o acesso
     // deste usuário é exclusivamente pelo código, nunca por /login.
@@ -638,8 +641,9 @@ router.post('/parceiros', requireAuth, requireMaster, async (req, res) => {
         modulosPermitidos: JSON.stringify(['at-inbox']), // só Caixa de Entrada — nada além disso
         externo: true,
         codigoAtivacao,
+        demo,
       },
-      select: { id: true, nome: true, ativo: true, codigoAtivacao: true, whatsappConectado: true, criadoEm: true },
+      select: { id: true, nome: true, ativo: true, codigoAtivacao: true, whatsappConectado: true, demo: true, criadoEm: true },
     });
     res.status(201).json(parceiro);
   } catch (error) {
@@ -718,6 +722,31 @@ router.post('/parceiros/:id/mostrar-metricas', requireAuth, requireMaster, async
     res.json({ ok: true, nome: p.nome, ocultoNasMetricas: false });
   } catch {
     res.status(500).json({ error: 'Erro ao mostrar nas métricas.' });
+  }
+});
+
+// Modo demonstração: a extensão nunca mostra a tela de bloqueio/QR do Baileys pra esse
+// parceiro, mesmo sem WhatsApp conectado (pra mostrar a extensão funcionando sem precisar
+// parear um número real). Só muda esse campo — acesso e resto do comportamento intactos.
+router.post('/parceiros/:id/marcar-demo', requireAuth, requireMaster, async (req, res) => {
+  try {
+    const id = String(req.params.id);
+    if (!(await acharParceiro(id))) return res.status(404).json({ error: 'Parceiro não encontrado.' });
+    const p = await prisma.usuario.update({ where: { id }, data: { demo: true } });
+    res.json({ ok: true, nome: p.nome, demo: true });
+  } catch {
+    res.status(500).json({ error: 'Erro ao marcar como demonstração.' });
+  }
+});
+
+router.post('/parceiros/:id/desmarcar-demo', requireAuth, requireMaster, async (req, res) => {
+  try {
+    const id = String(req.params.id);
+    if (!(await acharParceiro(id))) return res.status(404).json({ error: 'Parceiro não encontrado.' });
+    const p = await prisma.usuario.update({ where: { id }, data: { demo: false } });
+    res.json({ ok: true, nome: p.nome, demo: false });
+  } catch {
+    res.status(500).json({ error: 'Erro ao desmarcar demonstração.' });
   }
 });
 

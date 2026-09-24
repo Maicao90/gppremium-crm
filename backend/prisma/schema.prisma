@@ -55,6 +55,10 @@ model Usuario {
   // some do card "Top Atendentes" e da lista de Agendamentos da tela de Metricas do painel —
   // pedido do dono (23/09) pra nao ver um parceiro especifico ali. So afeta essa tela.
   ocultoNasMetricas    Boolean            @default(false)
+  // Parceiro de DEMONSTRAÇÃO: a extensão nunca mostra a tela de bloqueio/QR do Baileys
+  // pra ele, mesmo sem WhatsApp conectado no servidor — só pra mostrar a extensão
+  // funcionando pra alguém sem precisar de um número real pareado (23/09).
+  demo                 Boolean            @default(false)
   agendamentos         Agendamento[]
   autoReplyHistories   AutoReplyHistory[]
   criadoEm             DateTime           @default(now())
