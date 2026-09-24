@@ -1,7 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import { prisma } from '../server';
-import { decidirAntiLoop, JANELA_ECO_MS, MotivoAntiLoop } from '../data/comportamentoGuard';
+import { decidirAntiLoop, JANELA_ECO_MS, MotivoAntiLoop, normalizarParaComparar } from '../data/comportamentoGuard';
+import { JIDS_INTERNOS, numerosInternos } from '../services/contatosInternos';
 
 // O texto da resposta (IA + tabela deterministica de preco) agora vem de um servico
 // SEPARADO (bot-service, porta 3010) — de proposito. Antes, tudo isso rodava dentro
@@ -136,6 +137,57 @@ async function minutosDesdeUltimaLocalizacao(usuarioId: string, chatJid: string)
   }
 }
 
+// A resposta que esta rodada vai mandar JA foi mandada (inteira) ha poucos segundos nesta conversa? Duas rodadas
+// do robo se atropelam quando o cliente escreve enquanto a anterior ainda esta mandando as bolhas (achado 21/09,
+// caso Carlos Gomes: "Poderia me informar a medida..." mandada 2x em 11s): a 2a rodada le a conversa antes de a
+// 1a terminar de gravar as bolhas e responde a mesma coisa. Compara so a resposta INTEIRA (todas as bolhas iguais
+// as ja enviadas): uma bolha repetida no meio de uma resposta nova — ex.: "Se preferir, parcele em ate 10x" depois do
+// preco de OUTRA medida — continua saindo normalmente. Falha ao ler = nao descarta (na duvida, responde).
+// `inicioDaRodada` = a mensagem do cliente mais antiga que esta rodada esta respondendo. So conta como duplicada uma
+// bolha gravada DEPOIS dela: uma bolha mais velha respondia OUTRA pergunta (o cliente que repete "quanto custa?" 40 s
+// depois da resposta tem que receber a resposta de novo — revisao 21/09), ja a do caso Carlos Gomes foi gravada logo
+// depois da mensagem que a 2a rodada ia responder.
+const JANELA_RESPOSTA_DUPLICADA_S = 90;
+async function respostaJaEnviadaHaPouco(usuarioId: string, chatJid: string, partes: string[], inicioDaRodada?: Date | null): Promise<boolean> {
+  try {
+    const novas = partes.map((p) => normalizarParaComparar(limparTagsEspeciais(p))).filter(Boolean);
+    if (!novas.length) return false;
+    const janela = Date.now() - JANELA_RESPOSTA_DUPLICADA_S * 1000;
+    const desde = new Date(Math.max(janela, inicioDaRodada ? inicioDaRodada.getTime() : 0));
+    const recentes = await prisma.mensagem.findMany({
+      where: { usuarioId, chatJid, fromMe: true, tipo: 'texto', timestamp: { gte: desde } },
+      select: { texto: true },
+    });
+    const jaEnviadas = new Set(recentes.map((r) => normalizarParaComparar(r.texto || '')).filter(Boolean));
+    return novas.every((n) => jaEnviadas.has(n));
+  } catch {
+    return false;
+  }
+}
+
+// Marca a conversa como tratada pelo robo (ultimaRespostaEm) mesmo sem mandar mensagem — o Vigia usa isso pra
+// saber que NAO precisa acionar o robo de novo.
+// `tratadaAte` = timestamp da ULTIMA mensagem do cliente que esta rodada leu: assim uma mensagem que chegou depois
+// continua aparecendo como "sem resposta" pro Vigia (com new Date() ela ficava escondida — revisao 21/09).
+// Nao mexe em estado nem em ultimoInboundWaId: no silencio nada mudou, e a rodada mais nova pode ja ter gravado os dela.
+async function marcarConversaTratada(params: AgendarBotParams, tratadaAte: Date) {
+  try {
+    // Nunca volta o relogio pra tras (ultimaRespostaEm pode ja ter sido gravado por uma resposta mais recente).
+    const atual = await prisma.botConversa.findUnique({
+      where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
+      select: { ultimaRespostaEm: true },
+    });
+    const valor = atual?.ultimaRespostaEm && atual.ultimaRespostaEm.getTime() > tratadaAte.getTime() ? atual.ultimaRespostaEm : tratadaAte;
+    await prisma.botConversa.upsert({
+      where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
+      create: { usuarioId: params.usuarioId, chatJid: params.chatJid, ultimoInboundWaId: params.waId, ultimaRespostaEm: valor },
+      update: { ultimaRespostaEm: valor },
+    });
+  } catch (e) {
+    console.error('[Bot IA] falha ao marcar a conversa como tratada (silencio):', (e as any)?.message || e);
+  }
+}
+
 async function dispararLocalizacaoDaLoja(params: AgendarBotParams) {
   const loc = lerLocalizacaoLoja();
   if (!loc) {
@@ -235,6 +287,7 @@ async function gerarRespostaViaBotService(args: {
   dadosPreco: string;
   textosFluxo?: Record<string, string[]>;
   minutosDesdeLocalizacao?: number | null;
+  minutosDesdeUltimaDaLoja?: number | null;
 }): Promise<RespostaBotService> {
   const resposta = await fetch(`${BOT_SERVICE_URL}/gerar-resposta`, {
     method: 'POST',
@@ -403,8 +456,11 @@ const CAMINHO_NAO_ATENDER = path.join(__dirname, '../../data/bot-nao-atender.jso
 // e busca o ultimo nome conhecido desse chat pra checar contra os padroes de nome.
 async function naoAtender(usuarioId: string, chatJid: string): Promise<boolean> {
   try {
-    if (!fs.existsSync(CAMINHO_NAO_ATENDER)) return false;
-    const cfg = JSON.parse(fs.readFileSync(CAMINHO_NAO_ATENDER, 'utf8'));
+    // Equipe e lojas do grupo: mesma lista das metricas e da Caixa de Entrada (contatosInternos.ts).
+    // 23/09: o robo respondeu um aviso interno da Danubia como se fosse cliente.
+    if (JIDS_INTERNOS.includes(chatJid)) return true;
+
+    const cfg = fs.existsSync(CAMINHO_NAO_ATENDER) ? JSON.parse(fs.readFileSync(CAMINHO_NAO_ATENDER, 'utf8')) : {};
     const numeros: string[] = Array.isArray(cfg?.numeros) ? cfg.numeros : [];
     const nomes: string[] = Array.isArray(cfg?.nomes) ? cfg.nomes : [];
 
@@ -412,31 +468,31 @@ async function naoAtender(usuarioId: string, chatJid: string): Promise<boolean> 
     // numerica com o numero real) — comparar so o chatJid nunca batia com numero
     // digitado na lista pra contatos assim. Busca tambem o numeroReal (ja resolvido
     // e salvo nas mensagens desse chat) e confere os dois.
-    const alvo = String(chatJid || '').replace(/[^0-9]/g, '');
-    let numeroRealAlvo = '';
-    if (chatJid.includes('@lid')) {
-      const msgComNumero = await prisma.mensagem.findFirst({
-        where: { usuarioId, chatJid, numeroReal: { not: null } },
-        orderBy: { timestamp: 'desc' },
-        select: { numeroReal: true },
-      });
-      numeroRealAlvo = String(msgComNumero?.numeroReal || '').replace(/[^0-9]/g, '');
-    }
-    if (numeros.some((n) => { const limpo = String(n).replace(/[^0-9]/g, ''); return limpo.length >= 6 && ((alvo && alvo.includes(limpo)) || (numeroRealAlvo && numeroRealAlvo.includes(limpo))); })) {
+    const alvo = String(chatJid || '').includes('@lid') ? '' : (String(chatJid || '').split('@')[0] || '').replace(/[^0-9]/g, '');
+    const msgComNumero = await prisma.mensagem.findFirst({
+      where: { usuarioId, chatJid, numeroReal: { not: null } },
+      orderBy: { timestamp: 'desc' },
+      select: { numeroReal: true },
+    });
+    // numeroReal as vezes vem com sufixo de aparelho ("556196233237:0"): so a parte antes do ":".
+    const numeroRealAlvo = (String(msgComNumero?.numeroReal || '').split(':')[0] || '').replace(/[^0-9]/g, '');
+    const alvoLista = String(chatJid || '').replace(/[^0-9]/g, '');
+    if (numeros.some((n) => { const limpo = String(n).replace(/[^0-9]/g, ''); return limpo.length >= 6 && ((alvoLista && alvoLista.includes(limpo)) || (numeroRealAlvo && numeroRealAlvo.includes(limpo))); })) {
       return true;
     }
 
-    if (nomes.length) {
-      const ultima = await prisma.mensagem.findFirst({
-        where: { usuarioId, chatJid, chatNome: { not: '' } },
-        orderBy: { timestamp: 'desc' },
-        select: { chatNome: true },
-      });
-      const nomeAtual = String(ultima?.chatNome || '').toLowerCase();
-      if (nomeAtual && nomes.some((padrao) => nomeAtual.includes(String(padrao).toLowerCase()))) {
-        return true;
-      }
-    }
+    const internos = await numerosInternos();
+    if ((alvo && internos.has(alvo)) || (numeroRealAlvo && internos.has(numeroRealAlvo))) return true;
+
+    const ultima = await prisma.mensagem.findFirst({
+      where: { usuarioId, chatJid, chatNome: { not: '' } },
+      orderBy: { timestamp: 'desc' },
+      select: { chatNome: true },
+    });
+    const nomeAtual = String(ultima?.chatNome || '').toLowerCase();
+    if (nomeAtual && nomes.some((padrao) => nomeAtual.includes(String(padrao).toLowerCase()))) return true;
+    // Nome com "peças"/"auto mecânica" NAO cala o robo: pode ser oficina comprando pneu. Fornecedor OFERECENDO
+    // e reconhecido pela leitura da mensagem (fluxo 'fornecedor', silencio decidido pelo codigo).
 
     return false;
   } catch (e) {
@@ -526,6 +582,15 @@ async function executar(params: AgendarBotParams, versao: number) {
       content: String(m.texto || (m.tipo === 'imagem' ? '[imagem enviada]' : m.tipo === 'audio' ? '[audio enviado]' : `[${m.tipo}]`)),
     }));
     const ultima = [...historico].reverse().find((m: any) => !m.fromMe);
+    // Mensagem do cliente mais antiga que esta rodada responde (o "rabo" de mensagens do cliente no fim da conversa,
+    // ignorando respostas do robo gravadas depois delas): base da checagem de resposta duplicada.
+    let inicioDaRodada: Date | null = null;
+    for (let i = historico.length - 1; i >= 0; i--) {
+      const m: any = historico[i];
+      if (m.fromMe) { if (inicioDaRodada) break; continue; }
+      inicioDaRodada = m.timestamp;
+    }
+    const ultimaDoClienteEm: Date = (ultima as any)?.timestamp || new Date();
     const ultimosTextosCliente = historico
       .filter((m: any) => !m.fromMe)
       // Achado 27/08: 4 mensagens era pouco pra negociacao longa (medida/quantidade
@@ -582,6 +647,12 @@ async function executar(params: AgendarBotParams, versao: number) {
     }));
 
     const minutosDesdeLocalizacao = await minutosDesdeUltimaLocalizacao(params.usuarioId, params.chatJid);
+    // Ha quanto tempo a loja (robo ou atendente) falou por ultimo: cumprimento/agradecimento repetido so vira
+    // silencio se a loja falou ha pouco — quem volta no dia seguinte e diz "bom dia" e respondido (revisao 23/09).
+    const ultimaDaLoja = [...historico].reverse().find((m: any) => m.fromMe);
+    const minutosDesdeUltimaDaLoja = ultimaDaLoja?.timestamp
+      ? Math.max(0, Math.round((Date.now() - new Date(ultimaDaLoja.timestamp).getTime()) / 60000))
+      : null;
 
     const resposta = await gerarRespostaViaBotService({
       messages,
@@ -592,6 +663,7 @@ async function executar(params: AgendarBotParams, versao: number) {
       dadosPreco: estadoPrecoSalvo?.dadosPreco || '{}',
       textosFluxo: await carregarTextosFluxo(),
       minutosDesdeLocalizacao,
+      minutosDesdeUltimaDaLoja,
     });
 
     if (resposta.deterministico && resposta.partes.length) {
@@ -599,6 +671,11 @@ async function executar(params: AgendarBotParams, versao: number) {
       // O novo agendamento vai ler a rajada COMPLETA (com a mensagem nova) e responder tudo junto.
       if (versoes.get(key) !== versao || !(await conversaLiberada(params.usuarioId, params.chatJid))) {
         console.log(`[Bot IA] ${params.chatJid}: resposta pronta descartada — chegou mensagem nova ou pausa; o novo ciclo responde tudo.`);
+        return;
+      }
+      // Outra rodada acabou de mandar exatamente isto (ver respostaJaEnviadaHaPouco): nao manda em dobro.
+      if (await respostaJaEnviadaHaPouco(params.usuarioId, params.chatJid, resposta.partes, inicioDaRodada)) {
+        console.log(`[Bot IA] ${params.chatJid}: resposta identica ja enviada ha menos de ${JANELA_RESPOSTA_DUPLICADA_S}s — nao repete.`);
         return;
       }
       // Cada parte vai como mensagem SEPARADA (achado 25/08: preco tem que ser gradual,
@@ -639,7 +716,24 @@ async function executar(params: AgendarBotParams, versao: number) {
       return;
     }
 
+    // O CODIGO decidiu ficar em silencio (ex.: agradecimento repetido). Registra que a conversa foi tratada
+    // (senao o Vigia acharia que o cliente ficou sem resposta e acionaria o robo de novo) e nao manda nada.
+    if (resposta.deterministico && resposta.acaoTipo === 'SILENCIO') {
+      // Chegou mensagem nova enquanto o robo decidia: a rodada nova cuida dela (nao esconde ela do Vigia).
+      if (versoes.get(key) !== versao) return;
+      await marcarConversaTratada(params, ultimaDoClienteEm);
+      await registrarEventoFluxo(params, resposta, estadoPrecoSalvo?.estadoPreco || 'sem_estado', []);
+      return;
+    }
+
     const partes = resposta.partes.slice(0, 4);
+
+    // Rodada anterior ja mandou exatamente isto (ver respostaJaEnviadaHaPouco). Resposta com marca de acao
+    // (agendar/lembrar/video) nao entra nesta checagem: la o efeito nao e so o texto.
+    if (!partes.some((p) => /\[(AGENDAR_VISITA|LEMBRAR|ENVIAR_VIDEO|VIDEO)/i.test(p)) && await respostaJaEnviadaHaPouco(params.usuarioId, params.chatJid, partes, inicioDaRodada)) {
+      console.log(`[Bot IA] ${params.chatJid}: resposta identica ja enviada ha menos de ${JANELA_RESPOSTA_DUPLICADA_S}s — nao repete.`);
+      return;
+    }
 
     // Processa agendamento se presente
     let pinDestaResposta = false;
@@ -664,7 +758,15 @@ async function executar(params: AgendarBotParams, versao: number) {
     }
 
     const haConteudoUtil = partes.some((p: string) => limparTagsEspeciais(p) || extrairVideosDoTexto(p).length > 0);
-    if (!haConteudoUtil) return;
+    if (!haConteudoUtil) {
+      // As travas do bot-service cortaram tudo (ex.: so horario nao pedido) — tambem e uma decisao de ficar quieto.
+      // Registra no rastro do painel ("O que a IA decidiu" mostra "a IA respondeu: nada — as travas cortaram").
+      if (resposta.motivoLivre === 'cortada_pelas_travas' && versoes.get(key) === versao) {
+        await marcarConversaTratada(params, ultimaDoClienteEm);
+        await registrarEventoFluxo(params, resposta, estadoPrecoSalvo?.estadoPreco || 'sem_estado', []);
+      }
+      return;
+    }
 
     for (const parte of partes) {
       if (versoes.get(key) !== versao || !(await conversaLiberada(params.usuarioId, params.chatJid))) return;

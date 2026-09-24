@@ -2,6 +2,11 @@ import { Router } from 'express';
 import { prisma } from '../server';
 import { ehMaster } from '../auth/modulos';
 import { CATALOGO_FLUXO, GRUPOS_FLUXO, categoriaPorChave, validarTextoFluxo } from '../data/fluxoCatalogo';
+import { TABELA_PRECOS_GP } from '../data/tabelaPrecos';
+import { VALOR_BALANCEAMENTO_POR_RODA, PARCELAS_MAXIMAS } from '../data/fluxoPreco';
+
+// O mesmo 5% de montarPartesDescontoAVista (tabelaPrecos.ts): desconto so a vista EM DINHEIRO (PIX nao tem).
+const DESCONTO_DINHEIRO_PCT = 5;
 
 // Tela "Fluxo" do painel: mostra o mapa do atendimento do robo (catalogo em
 // data/fluxoCatalogo.ts) e deixa o dono editar o TEXTO de cada resposta fixa.
@@ -115,6 +120,71 @@ router.get('/ao-vivo', async (req, res) => {
   } catch (e: any) {
     console.error('[Fluxo] GET /ao-vivo:', e?.message || e);
     res.status(500).json({ error: 'Não foi possível carregar o fluxo ao vivo.' });
+  }
+});
+
+// ---------- Tabela de precos que o robo usa (so leitura) ----------
+// A MESMA tabela do codigo (tabelaPrecos.ts, gerada da planilha do dono). Preco nao se edita pela tela:
+// muda a planilha e gera de novo. Aqui so mostra, com os valores ja calculados do jeito que o robo fala.
+const centavos = (v: number) => Math.round(v * 100) / 100;
+router.get('/precos', (_req, res) => {
+  const itens = TABELA_PRECOS_GP.map((i) => ({
+    medida: i.medida,
+    modelo: i.modelo,
+    categoria: i.categoria,
+    promocao: !!i.promocao,
+    compre3Leve4: !!i.compre3Leve4,
+    aVista: i.aVista,
+    dinheiro: centavos(i.aVista * (1 - DESCONTO_DINHEIRO_PCT / 100)),
+    parcelas: Object.entries(i.parcelado)
+      .map(([k, total]) => ({ n: Number(k.replace('x', '')), total: Number(total), parcela: centavos(Number(total) / Number(k.replace('x', ''))) }))
+      .sort((a, b) => a.n - b.n),
+  }));
+  res.json({
+    itens,
+    regras: { balanceamentoPorRoda: VALOR_BALANCEAMENTO_POR_RODA, descontoDinheiroPct: DESCONTO_DINHEIRO_PCT, parcelasMaximas: PARCELAS_MAXIMAS },
+    origem: 'Planilha do dono de 02/09/2026 (Tabela_de_Precos_Pneus_Organizada.xlsx)',
+  });
+});
+
+// ---------- O que a IA ainda decidiu sozinha ----------
+// Toda resposta que NAO saiu do fluxo (via 'ia_livre'), com o motivo: mostra o que ainda falta fechar em codigo.
+router.get('/ia-livre', async (req, res) => {
+  try {
+    const escopo = escopoUsuarios(req);
+    // O rastro (FluxoEvento) so guarda 14 dias (limpeza no botAtendimentoService).
+    const dias = Math.max(1, Math.min(14, Number(req.query.dias) || 7));
+    const desde = new Date(Date.now() - dias * 24 * 3600 * 1000);
+    const onde = { ...escopo, criadoEm: { gte: desde } };
+    const [porVia, motivos, livres] = await Promise.all([
+      prisma.fluxoEvento.groupBy({ by: ['via'], where: onde, _count: { _all: true } }),
+      prisma.fluxoEvento.groupBy({ by: ['motivoLivre'], where: { ...onde, via: 'ia_livre' }, _count: { _all: true } }),
+      prisma.fluxoEvento.findMany({ where: { ...onde, via: 'ia_livre' }, orderBy: { criadoEm: 'desc' }, take: 150 }),
+    ]);
+    const contagem: Record<string, number> = {};
+    for (const v of porVia) contagem[v.via] = v._count._all;
+    // Contagem por motivo de TODOS os eventos do periodo (a lista abaixo mostra so os 150 mais recentes).
+    const porMotivo: Record<string, number> = {};
+    for (const m of motivos) porMotivo[m.motivoLivre || 'outro'] = (porMotivo[m.motivoLivre || 'outro'] || 0) + m._count._all;
+    res.json({
+      dias,
+      porVia: contagem,
+      porMotivo,
+      totalLivres: contagem['ia_livre'] || 0,
+      eventos: livres.map((e) => ({
+        id: e.id,
+        quando: e.criadoEm.getTime(),
+        chat: nomeOuNumero(e.chatNome, e.chatJid),
+        cliente: e.cliente,
+        assuntos: jsonArray(e.assuntos),
+        motivoLivre: e.motivoLivre,
+        estadoAntes: e.estadoAntes,
+        partes: jsonArray(e.partes),
+      })),
+    });
+  } catch (e: any) {
+    console.error('[Fluxo] GET /ia-livre:', e?.message || e);
+    res.status(500).json({ error: 'Não foi possível carregar as decisões da IA.' });
   }
 });
 

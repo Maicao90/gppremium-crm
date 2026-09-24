@@ -3,39 +3,24 @@ import fs from 'fs';
 import path from 'path';
 import { Prisma } from '@prisma/client';
 import { prisma } from '../server';
-import { numerosDasSessoesAtivas, resolverConexaoEfetiva } from '../workers/whatsappService';
+import { resolverConexaoEfetiva } from '../workers/whatsappService';
 import { ehEscopado, idsAtendentesDaLoja } from '../auth/escopoLoja';
 import { ehMaster } from '../auth/modulos';
+import { apenasDigitos, JIDS_INTERNOS, PADRAO_FORNECEDOR, REGEX_FORNECEDOR, numerosInternos, inicioDasAutoRespostas, TAMANHO_INICIO_AUTO } from '../services/contatosInternos';
 
 const router = Router();
 
-// ── Contatos que NÃO são cliente (equipe e fornecedores) ──
-// Uma regra só, usada nas métricas diárias (não contam como cliente) e no tempo de atendimento da
-// Caixa de Entrada (não ganham selo "esperando" — revisão 23/09: a Danúbia, contato interno, aparecia
-// "esperando 16 min" em vermelho, e a Auto Peças "esperando 21h50").
-const apenasDigitos = (valor: unknown) => String(valor || '').replace(/\D/g, '');
-const variantesTelefone = (valor: unknown): string[] => {
-  const numero = apenasDigitos(valor);
-  if (!numero) return [];
-  return numero.length === 10 || numero.length === 11 ? [numero, `55${numero}`] : [numero];
-};
-const JIDS_INTERNOS = ['162474519199930@lid', '125095301365845@lid'];
-// Nome de fornecedor (comparado em minúsculas).
-const PADRAO_FORNECEDOR = '(pe[cç]as|fornecedor|distribuidora|auto mec[aâ]nica|mec[aâ]nica automotiva)';
-const REGEX_FORNECEDOR = new RegExp(PADRAO_FORNECEDOR);
-async function numerosInternos(): Promise<Set<string>> {
-  const lojas = await prisma.loja.findMany({ select: { whatsapp: true, telefone_fixo: true } });
-  return new Set<string>([
-    // Contatos internos conhecidos que nao sao necessariamente uma sessao do CRM.
-    '556196233237',
-    '556199241570',
-    ...numerosDasSessoesAtivas().flatMap(variantesTelefone),
-    ...lojas.flatMap((loja) => [
-      ...variantesTelefone(loja.whatsapp),
-      ...variantesTelefone(loja.telefone_fixo),
-    ]),
-  ]);
-}
+// ── Atendimento (23/09, pedido do dono: "a contagem e o tempo não fazem sentido") ──
+// Um ATENDIMENTO começa quando o cliente escreve depois de 7+ dias sem escrever (ou pela 1a vez) e conta
+// 1 vez só — quem conversa todo dia não vira "cliente novo" todo dia. A boas-vindas automática não é
+// resposta. Tempo = da 1a mensagem do atendimento até a 1a resposta de verdade, relógio corrido (noite conta).
+// Quem escreve em 6+ dias diferentes em 30 dias é contato FREQUENTE (parceiro/mecânico) e fica fora da contagem.
+const DIAS_NOVO_ATENDIMENTO = 7;
+const DIAS_CONTATO_FREQUENTE = 6;
+const INTERVALO_NOVO_ATENDIMENTO = Prisma.raw(`interval '${DIAS_NOVO_ATENDIMENTO} days'`);
+// SQL: a mensagem é a boas-vindas automática? (compara o começo do texto, espaços normalizados)
+const ehAutoResposta = (autos: string[]) =>
+  Prisma.sql`("fromMe" AND left(regexp_replace(btrim(COALESCE("texto", '')), '\\s+', ' ', 'g'), ${Prisma.raw(String(TAMANHO_INICIO_AUTO))}) = ANY(${autos}))`;
 
 // Quem de fato deve assinar a mensagem: por padrão é o atendente selecionado no seletor
 // da Caixa de Entrada (usuarioId), só diferente do dono da conexão (efetivoId) quando ele
@@ -107,43 +92,67 @@ router.get('/conversas', async (req, res) => {
       ORDER BY "chatJid", "timestamp" DESC
     `;
 
-    // ── Tempo de atendimento por cliente (23/09, pedido do dono) ──
-    // A conversa vira BLOCOS alternados (cliente / loja). aguardandoDesde = início do bloco do
-    // cliente que ainda não teve resposta (o último bloco é do cliente); ultimaRespostaSeg = quanto
-    // o cliente esperou na resposta mais recente (início do bloco do cliente → início da resposta).
-    // Só últimos 30 dias (medido: 40-60 ms nas maiores caixas, 23 mil mensagens). Robô conta como loja.
+    // ── Tempo de atendimento por cliente (23/09, pedido do dono; regra do atendimento lá em cima) ──
+    // inicioAtendimento = 1a mensagem do atendimento atual; primeiraRespostaSeg = até a 1a resposta de
+    // verdade (boas-vindas automática não conta), relógio corrido; aguardandoDesde = o cliente mandou
+    // mensagem e ainda ninguém respondeu (desde a 1a dessa sequência). Robô conta como loja.
+    // Janela de 38 dias = 30 + a folga pra saber se houve 7 dias sem o cliente escrever antes.
+    const autos = await inicioDasAutoRespostas();
     const tempos: any[] = await prisma.$queryRaw`
       WITH m AS (
         SELECT "chatJid", "fromMe", "timestamp",
-               LAG("fromMe") OVER (PARTITION BY "chatJid" ORDER BY "timestamp") AS ant
+               LAG("fromMe") OVER (PARTITION BY "chatJid" ORDER BY "timestamp") AS ant,
+               LAG("timestamp") OVER (PARTITION BY "chatJid", "fromMe" ORDER BY "timestamp") AS ant_mesmo_lado
         FROM "Mensagem"
         WHERE "usuarioId" = ${usuarioId}
-          AND "timestamp" > now() - interval '30 days'
+          AND "timestamp" > now() - interval '38 days'
           AND NOT (tipo = 'outro' AND ("midiaUrl" IS NULL OR "midiaUrl" = '') AND texto IN ('', 'protocolMessage'))
+          AND NOT ${ehAutoResposta(autos)}
       ),
-      b AS (
-        SELECT "chatJid", "fromMe", "timestamp",
-               LAG("timestamp") OVER (PARTITION BY "chatJid" ORDER BY "timestamp") AS ini_anterior
-        FROM m WHERE ant IS DISTINCT FROM "fromMe"
+      inicio AS (
+        -- Sem mensagem anterior do cliente DENTRO da janela so vale como inicio se sobram 8+ dias de janela antes
+        -- dela (senao o cliente pode ter escrito logo antes do corte e a "1a mensagem" seria o meio da conversa).
+        SELECT DISTINCT ON ("chatJid") "chatJid", "timestamp" AS inicio
+        FROM m
+        WHERE "fromMe" = false
+          AND ((ant_mesmo_lado IS NULL AND "timestamp" > now() - interval '30 days')
+               OR "timestamp" - ant_mesmo_lado >= ${INTERVALO_NOVO_ATENDIMENTO})
+        ORDER BY "chatJid", "timestamp" DESC
+      ),
+      primeira AS (
+        SELECT i."chatJid", MIN(m."timestamp") AS primeira_resp
+        FROM inicio i JOIN m ON m."chatJid" = i."chatJid" AND m."fromMe" = true AND m."timestamp" >= i.inicio
+        GROUP BY i."chatJid"
       ),
       ultimo AS (
-        SELECT DISTINCT ON ("chatJid") "chatJid", "fromMe", "timestamp" FROM b ORDER BY "chatJid", "timestamp" DESC
+        SELECT DISTINCT ON ("chatJid") "chatJid", "fromMe", "timestamp"
+        FROM m WHERE ant IS DISTINCT FROM "fromMe"
+        ORDER BY "chatJid", "timestamp" DESC
       ),
-      resp AS (
-        SELECT DISTINCT ON ("chatJid") "chatJid", EXTRACT(EPOCH FROM ("timestamp" - ini_anterior))::int AS seg
-        FROM b WHERE "fromMe" = true AND ini_anterior IS NOT NULL ORDER BY "chatJid", "timestamp" DESC
+      freq AS (
+        SELECT "chatJid",
+               COUNT(DISTINCT date_trunc('day', ("timestamp" AT TIME ZONE 'UTC' AT TIME ZONE 'America/Sao_Paulo')))::int AS dias
+        FROM m WHERE "fromMe" = false AND "timestamp" > now() - interval '30 days'
+        GROUP BY "chatJid"
       )
       SELECT u."chatJid",
              CASE WHEN u."fromMe" = false THEN u."timestamp" END AS aguardando_desde,
-             r.seg AS ultima_resposta_seg
-      FROM ultimo u LEFT JOIN resp r ON r."chatJid" = u."chatJid"
+             i.inicio AS inicio_atendimento,
+             EXTRACT(EPOCH FROM (p.primeira_resp - i.inicio))::int AS primeira_resposta_seg,
+             COALESCE(f.dias, 0) AS dias_escreveu
+      FROM ultimo u
+      LEFT JOIN inicio i ON i."chatJid" = u."chatJid"
+      LEFT JOIN primeira p ON p."chatJid" = u."chatJid"
+      LEFT JOIN freq f ON f."chatJid" = u."chatJid"
     `;
     const internos = await numerosInternos();
-    const mapaTempos: Record<string, { aguardandoDesde: Date | null; ultimaRespostaSeg: number | null }> = {};
+    const mapaTempos: Record<string, { aguardandoDesde: Date | null; inicioAtendimento: Date | null; primeiraRespostaSeg: number | null; frequente: boolean }> = {};
     tempos.forEach((t: any) => {
       mapaTempos[t.chatJid] = {
         aguardandoDesde: t.aguardando_desde || null,
-        ultimaRespostaSeg: t.ultima_resposta_seg == null ? null : Number(t.ultima_resposta_seg),
+        inicioAtendimento: t.inicio_atendimento || null,
+        primeiraRespostaSeg: t.primeira_resposta_seg == null ? null : Number(t.primeira_resposta_seg),
+        frequente: Number(t.dias_escreveu || 0) >= DIAS_CONTATO_FREQUENTE,
       };
     });
 
@@ -286,11 +295,15 @@ router.get('/conversas', async (req, res) => {
       // esperando: ficam sem selo (mesma regra das métricas diárias).
       const naoCliente = /@(g\.us|broadcast)$/.test(String(c.chatJid))
         || JIDS_INTERNOS.includes(c.chatJid)
-        || (!!numReal && internos.has(apenasDigitos(numReal)))
+        || (!!numReal && internos.has(apenasDigitos(String(numReal).split(':')[0]))) // "5561…:0" = sufixo de aparelho
         || REGEX_FORNECEDOR.test(String(c.chatNome || '').toLowerCase());
       c.naoCliente = naoCliente;
-      c.aguardandoDesde = naoCliente ? null : (mapaTempos[c.chatJid]?.aguardandoDesde ?? null);
-      c.ultimaRespostaSeg = naoCliente ? null : (mapaTempos[c.chatJid]?.ultimaRespostaSeg ?? null);
+      const tempo = naoCliente ? undefined : mapaTempos[c.chatJid];
+      c.aguardandoDesde = tempo?.aguardandoDesde ?? null;
+      c.inicioAtendimento = tempo?.inicioAtendimento ?? null;
+      c.primeiraRespostaSeg = tempo?.primeiraRespostaSeg ?? null;
+      // Frequente (6+ dias em 30): continua com o selo de espera, mas não conta nas métricas como cliente novo.
+      c.frequente = !!tempo?.frequente;
 
       // Foto de perfil espelhada localmente no CRM
       const cleanJid = (c.chatJid || '').replace(/[^a-zA-Z0-9]/g, '_');
@@ -328,8 +341,10 @@ router.get('/conversas', async (req, res) => {
   }
 });
 
-// Clientes que chamaram por dia. Conversas antigas contam novamente quando o cliente
-// retorna; equipe, fornecedores de pecas, grupos e mensagens de sistema ficam fora.
+// Clientes que chamaram por dia = ATENDIMENTOS que começaram no dia (regra lá em cima: 1 vez por
+// atendimento, volta a contar só depois de 7 dias sem o cliente escrever). Respondido = recebeu resposta
+// de verdade (a boas-vindas automática não conta). Fora: equipe, lojas, fornecedores, contatos frequentes
+// (6+ dias em 30), grupos e mensagens de sistema. mediana_primeira_resposta_seg = relógio corrido.
 router.get('/metricas-diarias', async (req, res) => {
   try {
     const usuarioIdOriginal = String(req.query.usuarioId || '');
@@ -338,62 +353,79 @@ router.get('/metricas-diarias', async (req, res) => {
     const usuarioId = await resolverConexaoEfetiva(usuarioIdOriginal);
     const dias = Math.max(1, Math.min(180, Number(req.query.dias) || 30));
     const internos = await numerosInternos();
-    const filtroNumerosInternos = Prisma.sql`
-      AND COALESCE(nr.numero, '') NOT IN (${Prisma.join([...internos])})
-    `;
-    // Recorte no fuso local; a lista interna combina sessoes Baileys, telefones das
-    // lojas e os contatos internos conhecidos, valendo tambem para os dias anteriores.
+    const autos = await inicioDasAutoRespostas();
+    // Busca 8 dias a mais que a janela (precisa ver se o cliente escreveu nos 7 dias antes de cada início) e
+    // nunca menos de 38 (a regra do contato frequente olha 30 dias, qualquer que seja o período pedido).
+    const janelaBusca = Prisma.raw(`interval '${Math.max(dias + 8, 38)} days'`);
     const linhas: any[] = await prisma.$queryRaw`
-      WITH mensagens_validas AS (
+      WITH m AS (
         SELECT "chatJid", "fromMe", "timestamp", "chatNome", "numeroReal",
-               date_trunc('day', ("timestamp" AT TIME ZONE 'UTC' AT TIME ZONE 'America/Sao_Paulo')) AS dia
+               LAG("timestamp") OVER (PARTITION BY "chatJid", "fromMe" ORDER BY "timestamp") AS ant_mesmo_lado
         FROM "Mensagem"
         WHERE "usuarioId" = ${usuarioId}
-          AND ("timestamp" AT TIME ZONE 'UTC' AT TIME ZONE 'America/Sao_Paulo') >= (now() AT TIME ZONE 'America/Sao_Paulo') - (${dias} || ' days')::interval
+          AND "timestamp" > now() - ${janelaBusca}
           AND "chatJid" NOT LIKE '%@g.us'
           AND "chatJid" NOT LIKE '%@broadcast'
           AND NOT ("tipo" = 'outro' AND ("midiaUrl" IS NULL OR "midiaUrl" = '') AND "texto" IN ('', 'protocolMessage'))
+          AND NOT ${ehAutoResposta(autos)}
       ),
-      conversas AS (
-        SELECT "chatJid", dia,
-               BOOL_OR("fromMe" = false) AS recebeu,
-               BOOL_OR("fromMe" = true) AS respondeu
-        FROM mensagens_validas
-        GROUP BY "chatJid", dia
+      inicios AS (
+        SELECT "chatJid", "timestamp" AS inicio,
+               LEAD("timestamp") OVER (PARTITION BY "chatJid" ORDER BY "timestamp") AS proximo
+        FROM m
+        WHERE "fromMe" = false
+          AND (ant_mesmo_lado IS NULL OR "timestamp" - ant_mesmo_lado >= ${INTERVALO_NOVO_ATENDIMENTO})
+      ),
+      atendimentos AS (
+        SELECT i."chatJid", i.inicio, MIN(r."timestamp") AS primeira_resp
+        FROM inicios i
+        LEFT JOIN m r ON r."chatJid" = i."chatJid" AND r."fromMe" = true
+                     AND r."timestamp" >= i.inicio AND (i.proximo IS NULL OR r."timestamp" < i.proximo)
+        WHERE (i.inicio AT TIME ZONE 'UTC' AT TIME ZONE 'America/Sao_Paulo') >= (now() AT TIME ZONE 'America/Sao_Paulo') - (${dias} || ' days')::interval
+        GROUP BY i."chatJid", i.inicio
       ),
       nomes AS (
         SELECT DISTINCT ON ("chatJid") "chatJid", "chatNome"
-        FROM mensagens_validas
+        FROM m
         WHERE "chatNome" <> ''
         ORDER BY "chatJid", "timestamp" DESC
       ),
       numeros AS (
-        SELECT DISTINCT ON ("chatJid") "chatJid", regexp_replace(COALESCE("numeroReal", ''), '\D', '', 'g') AS numero
-        FROM mensagens_validas
+        SELECT DISTINCT ON ("chatJid") "chatJid", regexp_replace(split_part(COALESCE("numeroReal", ''), ':', 1), '\\D', '', 'g') AS numero
+        FROM m
         WHERE "numeroReal" IS NOT NULL AND "numeroReal" <> ''
         ORDER BY "chatJid", "timestamp" DESC
       ),
-      clientes_reais AS (
-        SELECT c.dia,
-               COALESCE(NULLIF(nr.numero, ''), c."chatJid") AS contato,
-               c.respondeu AS respondido
-        FROM conversas c
-        LEFT JOIN nomes n ON n."chatJid" = c."chatJid"
-        LEFT JOIN numeros nr ON nr."chatJid" = c."chatJid"
-        WHERE c.recebeu
-          AND c."chatJid" NOT IN (${Prisma.join(JIDS_INTERNOS)})
-          ${filtroNumerosInternos}
-          AND LOWER(COALESCE(n."chatNome", '')) !~ ${PADRAO_FORNECEDOR}
+      frequentes AS (
+        SELECT "chatJid"
+        FROM m
+        WHERE "fromMe" = false AND "timestamp" > now() - interval '30 days'
+        GROUP BY "chatJid"
+        HAVING COUNT(DISTINCT date_trunc('day', ("timestamp" AT TIME ZONE 'UTC' AT TIME ZONE 'America/Sao_Paulo'))) >= ${DIAS_CONTATO_FREQUENTE}
       ),
-      clientes_unicos AS (
-        SELECT dia, contato, BOOL_OR(respondido) AS respondido
-        FROM clientes_reais
+      clientes AS (
+        SELECT date_trunc('day', (a.inicio AT TIME ZONE 'UTC' AT TIME ZONE 'America/Sao_Paulo')) AS dia,
+               COALESCE(NULLIF(nr.numero, ''), a."chatJid") AS contato,
+               a.primeira_resp IS NOT NULL AS respondido,
+               EXTRACT(EPOCH FROM (a.primeira_resp - a.inicio)) AS seg
+        FROM atendimentos a
+        LEFT JOIN nomes n ON n."chatJid" = a."chatJid"
+        LEFT JOIN numeros nr ON nr."chatJid" = a."chatJid"
+        WHERE a."chatJid" NOT IN (${Prisma.join(JIDS_INTERNOS)})
+          AND COALESCE(nr.numero, '') NOT IN (${Prisma.join([...internos])})
+          AND LOWER(COALESCE(n."chatNome", '')) !~ ${PADRAO_FORNECEDOR}
+          AND a."chatJid" NOT IN (SELECT "chatJid" FROM frequentes)
+      ),
+      unicos AS (
+        SELECT dia, contato, BOOL_OR(respondido) AS respondido, MIN(seg) AS seg
+        FROM clientes
         GROUP BY dia, contato
       )
       SELECT to_char(dia, 'YYYY-MM-DD') AS dia,
              COUNT(*)::int AS contatos,
-             COUNT(*) FILTER (WHERE respondido)::int AS respondidos
-      FROM clientes_unicos
+             COUNT(*) FILTER (WHERE respondido)::int AS respondidos,
+             (percentile_cont(0.5) WITHIN GROUP (ORDER BY seg))::int AS mediana_primeira_resposta_seg
+      FROM unicos
       GROUP BY dia
       ORDER BY dia DESC
     `;
