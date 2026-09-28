@@ -89,13 +89,13 @@ function renderPaginaLinkHTML(pagina: any, loja: any): string {
     align-items: center;
     text-align: center;
   }
-  .wrap-com-fundo {
-    margin: 1.5rem 0;
-    padding: 2rem 1.25rem 1.5rem;
-    border-radius: 20px;
-    background: rgba(0,0,0,0.38);
-    backdrop-filter: blur(6px);
+  /* Com imagem de fundo: sem caixa escura por cima (o dono quer o fundo limpo, 28/09).
+     A sombra no título e na bio é o que mantém o texto legível sobre partes claras da imagem. */
+  .wrap-com-fundo h1,
+  .wrap-com-fundo .bio {
+    text-shadow: 0 1px 3px rgba(0,0,0,0.85), 0 0 14px rgba(0,0,0,0.55);
   }
+  .wrap-com-fundo .bio { opacity: 1; }
   .avatar {
     width: 96px;
     height: 96px;
