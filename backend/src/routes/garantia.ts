@@ -1226,4 +1226,426 @@ router.get('/sorteios', async (_req, res) => {
   } catch (e) { erro(res, e); }
 });
 
+// ---------- Vistoria de entrada (app do mecânico) ----------
+// Registro de como o carro CHEGOU na oficina (km, painel, fotos, avarias, pneus, itens).
+// Vale pra QUALQUER carro, com ou sem Garantia 50k — por isso NÃO exige loja credenciada:
+// basta ter o módulo (o mount já garante) e ser master OU ter loja. Escopo igual ao das
+// garantias: master vê todas; loja só as dela. O cliente final não vê vistoria nenhuma.
+
+const PLACA_VISTORIA = /^[A-Z]{3}[0-9][A-Z0-9][0-9]{2}$/; // ABC1D23 (Mercosul) ou ABC1234
+// Corta ANTES de normalizar: placa gigante no corpo não vira cópia de MB na memória.
+const normalizarPlaca = (v: any) => String(v ?? '').slice(0, 32).toUpperCase().replace(/[^A-Z0-9]/g, '');
+const GARANTIA_EM_ANDAMENTO = ['pendente', 'em_analise', 'ativa', 'atencao'];
+// Chaves IGUAIS no app e no painel (contrato §3). Posições de pneu = POSICOES lá de cima.
+const VISTORIA_COMBUSTIVEL = ['reserva', '1/4', '1/2', '3/4', 'cheio'];
+const VISTORIA_LUZES = ['nenhuma', 'injecao', 'oleo', 'bateria', 'freio_abs', 'airbag', 'temperatura', 'outra'];
+const VISTORIA_AVARIAS = ['nenhuma', 'risco', 'amassado', 'vidro_trincado', 'farol_lanterna', 'retrovisor', 'outra'];
+const VISTORIA_ESTADOS_PNEU = ['bom', 'gasto', 'avariado'];
+const VISTORIA_ITENS = ['estepe', 'macaco', 'chave_roda', 'triangulo', 'documento', 'som', 'tapetes'];
+// As 6 fotos obrigatórias. Rótulo pensado pra ler bem em "Falta a foto do <rótulo>." e
+// nas mensagens do validarFoto ('A foto de "<rótulo>" está muito escura...').
+const FOTOS_VISTORIA = [
+  { campo: 'fotoOdometroBase64', rotulo: 'odômetro' },
+  { campo: 'fotoPainelBase64', rotulo: 'painel' },
+  { campo: 'fotoFrenteBase64', rotulo: 'carro (frente)' },
+  { campo: 'fotoTraseiraBase64', rotulo: 'carro (traseira)' },
+  { campo: 'fotoLadoEsquerdoBase64', rotulo: 'carro (lado esquerdo)' },
+  { campo: 'fotoLadoDireitoBase64', rotulo: 'carro (lado direito)' },
+];
+const MAX_FOTOS_AVARIA = 6;
+
+// Erro de validação do corpo da vistoria → vira 400 com a mensagem.
+class ErroVistoria extends Error {}
+
+// Texto livre: aceita string/número, tira espaços e corta no máximo (por caractere, sem
+// partir emoji no meio). Corta em max*2 unidades ANTES do Array.from (texto de 20 MB no
+// corpo virava uma lista de 20 milhões de caracteres na memória do CRM) — max*2 sempre
+// cobre max caracteres, mesmo só de emoji. Tira o caractere nulo (\u0000) e meio emoji solto
+// (surrogate sem par, ex. "\ud800"), que o banco recusa (virava erro 500 depois de gravar as
+// fotos).
+const textoVistoria = (v: any, max: number): string => (
+  typeof v === 'string' || typeof v === 'number'
+    ? Array.from(String(v).trim().slice(0, max * 2).replace(/\u0000/g, ''))
+      .filter((c) => !/^[\uD800-\uDFFF]$/.test(c)).slice(0, max).join('').trim()
+    : ''
+);
+
+// Lista de chaves conhecidas: ausente → []; chave desconhecida → 400; duplicatas somem.
+function listaDeChaves(v: any, permitidas: string[], campo: string): string[] {
+  if (v === undefined || v === null) return [];
+  if (!Array.isArray(v)) throw new ErroVistoria(`Item inválido: ${campo}`);
+  const out: string[] = [];
+  for (const k of v) {
+    if (typeof k !== 'string' || !permitidas.includes(k)) throw new ErroVistoria(`Item inválido: ${String(k).slice(0, 40)}`);
+    if (!out.includes(k)) out.push(k);
+  }
+  return out;
+}
+
+// Pneus { posicao: estado } — opcional. Posição sem estado (null/"") = não avaliada, fica
+// de fora; posição ou estado desconhecido → 400. Sai na ordem fixa das posições.
+function lerPneusVistoria(v: any): Record<string, string> {
+  if (v === undefined || v === null) return {};
+  if (typeof v !== 'object' || Array.isArray(v)) throw new ErroVistoria('Item inválido: pneus');
+  const lidos: Record<string, string> = {};
+  for (const [pos, est] of Object.entries(v)) {
+    if (!POSICOES.includes(pos)) throw new ErroVistoria(`Item inválido: ${pos.slice(0, 40)}`);
+    if (est === undefined || est === null || est === '') continue;
+    if (typeof est !== 'string' || !VISTORIA_ESTADOS_PNEU.includes(est)) throw new ErroVistoria(`Item inválido: ${String(est).slice(0, 40)}`);
+    lidos[pos] = est;
+  }
+  const out: Record<string, string> = {};
+  POSICOES.forEach((p) => { const est = lidos[p]; if (est) out[p] = est; });
+  return out;
+}
+
+// Largura/altura lidas do CABEÇALHO (PNG IHDR / JPEG SOFn), sem decodificar a imagem.
+// null = não é PNG nem JPEG (ou cabeçalho ilegível nos primeiros ~300 KB). `bits` = bits
+// por canal do PNG (no JPEG não é conferido, sai sempre 8).
+function dimensoesFotoVistoria(buf: Buffer): { tipo: 'png' | 'jpeg'; w: number; h: number; bits: number } | null {
+  if (buf.length >= 26 && buf.readUInt32BE(0) === 0x89504e47 && buf.readUInt32BE(4) === 0x0d0a1a0a
+    && buf.toString('latin1', 12, 16) === 'IHDR') {
+    return { tipo: 'png', w: buf.readUInt32BE(16), h: buf.readUInt32BE(20), bits: buf.readUInt8(24) };
+  }
+  if (buf.length >= 4 && buf[0] === 0xff && buf[1] === 0xd8) {
+    let i = 2;
+    while (i + 9 < buf.length) {
+      if (buf.readUInt8(i) !== 0xff) { i++; continue; }
+      const mk = buf.readUInt8(i + 1);
+      if (mk === 0xff) { i++; continue; } // byte de preenchimento
+      // SOF0..SOF15 (menos DHT C4, JPG C8, DAC CC): altura em +5, largura em +7.
+      if (mk >= 0xc0 && mk <= 0xcf && mk !== 0xc4 && mk !== 0xc8 && mk !== 0xcc) {
+        return { tipo: 'jpeg', w: buf.readUInt16BE(i + 7), h: buf.readUInt16BE(i + 5), bits: 8 };
+      }
+      if (mk === 0xd9 || mk === 0xda) return null; // fim/dados da imagem antes do SOF
+      if (mk === 0x01 || (mk >= 0xd0 && mk <= 0xd8)) { i += 2; continue; } // marcadores sem tamanho
+      const tam = buf.readUInt16BE(i + 2);
+      if (tam < 2) return null;
+      i += 2 + tam;
+    }
+  }
+  return null;
+}
+
+// Tipo e tamanho de CADA foto antes do validarFoto (Jimp) e do salvarFoto:
+// - só JPG/PNG: o salvarFoto usa o tipo declarado no data-URL como extensão, e
+//   "data:text/html" virava um .html servido no MESMO domínio do painel (script lendo o
+//   login do master). Sem prefixo o salvarFoto grava .jpg;
+// - no máximo 4096 px de lado (e PNG de até 8 bits): PNG pequeno de 5000x5000 pesava
+//   +148 MB no processo do CRM (o mesmo do WhatsApp, que reinicia ao passar de 1 GB).
+//   O app manda JPEG de 1280 px de largura, bem abaixo disso.
+const FOTO_VISTORIA_PREFIXO = /^data:image\/(jpeg|jpg|png);base64,/i;
+const FOTO_VISTORIA_MAX_LADO = 4096;
+function conferirFotoVistoria(v: any, rotulo: string): void {
+  const tipoErrado = `A foto de "${rotulo}" precisa ser JPG ou PNG. Tire de novo.`;
+  if (typeof v !== 'string') throw new ErroVistoria(tipoErrado);
+  let ini = 0;
+  if (/^data:/i.test(v)) {
+    const m = FOTO_VISTORIA_PREFIXO.exec(v);
+    if (!m) throw new ErroVistoria(tipoErrado);
+    ini = m[0].length;
+  }
+  const dim = dimensoesFotoVistoria(Buffer.from(v.slice(ini, ini + 400000), 'base64'));
+  if (!dim || !dim.w || !dim.h) throw new ErroVistoria(`Não consegui ler a foto de "${rotulo}". Tire de novo.`);
+  if (dim.w > FOTO_VISTORIA_MAX_LADO || dim.h > FOTO_VISTORIA_MAX_LADO || (dim.tipo === 'png' && dim.bits > 8)) {
+    throw new ErroVistoria(`A foto de "${rotulo}" está grande demais. Tire de novo.`);
+  }
+}
+
+// Valida o corpo INTEIRO (menos a qualidade das fotos, que é async e vem logo depois).
+// Não grava nada. Lança ErroVistoria com a mensagem pro mecânico.
+function lerVistoria(b: any) {
+  const placa = normalizarPlaca(b.placa);
+  if (!PLACA_VISTORIA.test(placa)) throw new ErroVistoria('Placa inválida.');
+
+  // km inteiro 0..2.000.000 — número ou texto só com dígitos (sem vazio/negativo/decimal).
+  const kmTxt = typeof b.km === 'number' ? String(b.km) : typeof b.km === 'string' ? b.km.trim() : '';
+  if (!/^\d{1,7}$/.test(kmTxt) || Number(kmTxt) > 2000000) throw new ErroVistoria('Informe o km do carro.');
+  const km = Number(kmTxt);
+
+  const combustivel = typeof b.combustivel === 'string' ? b.combustivel.trim() : '';
+  if (!VISTORIA_COMBUSTIVEL.includes(combustivel)) throw new ErroVistoria('Informe o nível de combustível.');
+
+  const luzesPainel = listaDeChaves(b.luzesPainel, VISTORIA_LUZES, 'luzesPainel');
+  if (luzesPainel.includes('nenhuma') && luzesPainel.length > 1) {
+    throw new ErroVistoria('Luzes do painel: "Nenhuma" não pode ser marcada junto com outra luz.');
+  }
+  const avarias = listaDeChaves(b.avarias, VISTORIA_AVARIAS, 'avarias');
+  if (avarias.includes('nenhuma') && avarias.length > 1) {
+    throw new ErroVistoria('Avarias: "Sem avaria" não pode ser marcado junto com outra avaria.');
+  }
+  const itens = listaDeChaves(b.itens, VISTORIA_ITENS, 'itens');
+  const pneus = lerPneusVistoria(b.pneus);
+
+  // idCliente (uuid do app): opcional; se vier, só letras/números/hífen, 8..64.
+  let idCliente: string | null = null;
+  if (b.idCliente !== undefined && b.idCliente !== null && b.idCliente !== '') {
+    if (typeof b.idCliente !== 'string' || !/^[A-Za-z0-9-]{8,64}$/.test(b.idCliente)) {
+      throw new ErroVistoria('Identificador do envio inválido. Feche e abra a vistoria de novo.');
+    }
+    idCliente = b.idCliente;
+  }
+
+  for (const f of FOTOS_VISTORIA) {
+    if (!b[f.campo]) throw new ErroVistoria(`Falta a foto do ${f.rotulo}.`);
+  }
+  const fotosAvariasIn: any[] = b.fotosAvariasBase64 === undefined || b.fotosAvariasBase64 === null ? [] : b.fotosAvariasBase64;
+  if (!Array.isArray(fotosAvariasIn)) throw new ErroVistoria('Fotos das avarias inválidas.');
+  if (fotosAvariasIn.length > MAX_FOTOS_AVARIA) throw new ErroVistoria(`Mande no máximo ${MAX_FOTOS_AVARIA} fotos de avaria.`);
+  fotosAvariasIn.forEach((f, i) => { if (!f) throw new ErroVistoria(`A foto da avaria ${i + 1} veio vazia. Tire de novo.`); });
+  // Tipo (só JPG/PNG) e tamanho pelo cabeçalho — barato, antes de decodificar qualquer foto.
+  FOTOS_VISTORIA.forEach((f) => conferirFotoVistoria(b[f.campo], f.rotulo));
+  fotosAvariasIn.forEach((f, i) => conferirFotoVistoria(f, `avaria ${i + 1}`));
+
+  return {
+    placa, km, combustivel, luzesPainel, avarias, itens, pneus, idCliente, fotosAvariasIn,
+    clienteNome: textoVistoria(b.clienteNome, 120),
+    clienteTelefone: soDigitos(typeof b.clienteTelefone === 'string' || typeof b.clienteTelefone === 'number' ? String(b.clienteTelefone).slice(0, 64) : '').slice(0, 13),
+    veiculo: textoVistoria(b.veiculo, 120),
+    pedidoCliente: textoVistoria(b.pedidoCliente, 1000),
+    avariasDescricao: textoVistoria(b.avariasDescricao, 1000),
+    objetoValor: b.objetoValor === true,
+    objetoValorDescricao: textoVistoria(b.objetoValorDescricao, 500),
+    observacoes: textoVistoria(b.observacoes, 2000),
+  };
+}
+
+// Qualidade das fotos EM SÉRIE (não Promise.all): a decodificação do Jimp é CPU pura
+// (não ganha nada em paralelo) e em série só 1 imagem fica na memória por vez — 12 fotos
+// de câmera decodificadas juntas pesariam centenas de MB no processo do CRM.
+async function primeiroErroFoto(fotos: { base64: any; rotulo: string }[]): Promise<string | null> {
+  for (const f of fotos) {
+    const e = await validarFoto(f.base64, f.rotulo);
+    if (e) return e;
+  }
+  return null;
+}
+
+// Apaga fotos que ESTA requisição acabou de gravar, quando a linha não chegou a ser criada
+// (corrida do idCliente ou erro no banco) — senão ficariam arquivos órfãos no disco.
+function apagarFotosDaVistoria(urls: string[]): void {
+  const dir = path.join(__dirname, '../../public/midias/garantia');
+  for (const u of urls) {
+    const nome = /^\/midias\/garantia\/([0-9a-f-]{36}\.[a-z0-9]{1,8})$/i.exec(u)?.[1];
+    if (!nome) continue;
+    try { fs.unlinkSync(path.join(dir, nome)); } catch { /* já não existe */ }
+  }
+}
+
+// Master ou conta com loja. Sem loja (e não master) → 403 e devolve null.
+async function escopoVistoria(req: any, res: any): Promise<{ master: boolean; lojaId: string | null } | null> {
+  const esc = await escopoGarantia(req);
+  if (!esc.master && (!esc.lojaId || esc.lojaId === '__sem_loja__')) {
+    res.status(403).json({ error: 'Sua conta não está ligada a uma loja.' });
+    return null;
+  }
+  return esc;
+}
+
+// Garantia EM ANDAMENTO mais recente da placa (sem escopo — qualquer loja atende qualquer
+// carro, mesma política do /garantias/por-placa). Expira as vencidas antes, como lá.
+async function garantiaEmAndamentoDaPlaca(placa: string) {
+  await expirarVencidas();
+  const veiculo = await prisma.garantiaVeiculo.findUnique({ where: { placa } });
+  if (!veiculo) return null;
+  const garantia = await prisma.garantia.findFirst({
+    where: { veiculoId: veiculo.id, status: { in: GARANTIA_EM_ANDAMENTO } },
+    orderBy: { criadoEm: 'desc' },
+  });
+  return garantia ? { garantia, veiculo } : null;
+}
+
+// Campos JSON guardados como texto → arrays/objeto de verdade na saída (JSON quebrado
+// cai em []/{} em vez de derrubar a lista inteira).
+const jsonLista = (s: string): unknown[] => { try { const v = JSON.parse(s); return Array.isArray(v) ? v : []; } catch { return []; } };
+const jsonObjeto = (s: string): Record<string, unknown> => {
+  try { const v = JSON.parse(s); return v && typeof v === 'object' && !Array.isArray(v) ? v : {}; } catch { return {}; }
+};
+function vistoriaSaida<T extends { luzesPainel: string; avarias: string; pneus: string; itens: string; fotosAvarias: string }>(v: T, lojaNome: string | null) {
+  return {
+    ...v,
+    luzesPainel: jsonLista(v.luzesPainel),
+    avarias: jsonLista(v.avarias),
+    pneus: jsonObjeto(v.pneus),
+    itens: jsonLista(v.itens),
+    fotosAvarias: jsonLista(v.fotosAvarias),
+    lojaNome,
+  };
+}
+
+// idCliente repetido: é o MESMO envio (duplo toque / reenvio após queda de rede) só se for
+// a mesma placa e da mesma conta/loja — aí devolve a vistoria já gravada (200, sem regravar
+// fotos). Se o idCliente bater com vistoria de outra placa/loja, não finge que salvou.
+function responderVistoriaExistente(
+  res: any,
+  ja: { id: string; garantiaId: string | null; criadoEm: Date; placa: string; criadoPorId: string | null; lojaId: string | null },
+  placa: string, esc: { master: boolean; lojaId: string | null }, uid: string,
+) {
+  const mesmoEnvio = ja.placa === placa && (esc.master || ja.criadoPorId === uid || (!!ja.lojaId && ja.lojaId === esc.lojaId));
+  if (!mesmoEnvio) {
+    return res.status(409).json({ error: 'Este envio conflita com outra vistoria. Feche e abra a vistoria de novo.' });
+  }
+  return res.status(200).json({ id: ja.id, garantiaId: ja.garantiaId, criadoEm: ja.criadoEm, duplicada: true });
+}
+
+// Registra uma vistoria. Valida TUDO (inclusive a qualidade das 6 fotos + avarias) ANTES
+// de gravar qualquer foto ou linha.
+router.post('/vistorias', async (req, res) => {
+  try {
+    const esc = await escopoVistoria(req, res);
+    if (!esc) return;
+    const uid = String(req.user?.sub || '');
+
+    let d: ReturnType<typeof lerVistoria>;
+    try {
+      d = lerVistoria(req.body || {});
+    } catch (e) {
+      if (e instanceof ErroVistoria) return res.status(400).json({ error: e.message });
+      throw e;
+    }
+    const b = req.body || {};
+
+    // Reenvio do mesmo formulário: responde com o que já está gravado, sem validar/gravar
+    // foto de novo.
+    if (d.idCliente) {
+      const ja = await prisma.garantiaVistoria.findUnique({ where: { idCliente: d.idCliente } });
+      if (ja) return responderVistoriaExistente(res, ja, d.placa, esc, uid);
+    }
+
+    const erroFoto = await primeiroErroFoto([
+      ...FOTOS_VISTORIA.map((f) => ({ base64: b[f.campo], rotulo: f.rotulo })),
+      ...d.fotosAvariasIn.map((f, i) => ({ base64: f, rotulo: `avaria ${i + 1}` })),
+    ]);
+    if (erroFoto) return res.status(400).json({ error: erroFoto });
+
+    const achada = await garantiaEmAndamentoDaPlaca(d.placa);
+    const eu = uid ? await prisma.usuario.findUnique({ where: { id: uid }, select: { nome: true, lojaId: true } }) : null;
+    // Loja carimbada: a da conta (no escopo); master sem loja → null.
+    const lojaId = esc.master ? (eu?.lojaId || null) : esc.lojaId;
+
+    // Daqui pra baixo grava. Se a linha não for criada, apaga as fotos desta requisição.
+    const salvas: string[] = [];
+    const salvar = (base64: any): string => {
+      const url = salvarFoto(base64);
+      if (!url) throw new Error('Não consegui salvar uma das fotos. Tente de novo.');
+      salvas.push(url);
+      return url;
+    };
+    try {
+      const fotoOdometroUrl = salvar(b.fotoOdometroBase64);
+      const fotoPainelUrl = salvar(b.fotoPainelBase64);
+      const fotoFrenteUrl = salvar(b.fotoFrenteBase64);
+      const fotoTraseiraUrl = salvar(b.fotoTraseiraBase64);
+      const fotoLadoEsquerdoUrl = salvar(b.fotoLadoEsquerdoBase64);
+      const fotoLadoDireitoUrl = salvar(b.fotoLadoDireitoBase64);
+      const fotosAvarias = d.fotosAvariasIn.map((f) => salvar(f));
+      const v = await prisma.garantiaVistoria.create({
+        data: {
+          idCliente: d.idCliente,
+          placa: d.placa,
+          garantiaId: achada?.garantia.id || null,
+          clienteNome: d.clienteNome,
+          clienteTelefone: d.clienteTelefone,
+          veiculo: d.veiculo,
+          pedidoCliente: d.pedidoCliente,
+          km: d.km,
+          combustivel: d.combustivel,
+          luzesPainel: JSON.stringify(d.luzesPainel),
+          avarias: JSON.stringify(d.avarias),
+          avariasDescricao: d.avariasDescricao,
+          pneus: JSON.stringify(d.pneus),
+          itens: JSON.stringify(d.itens),
+          objetoValor: d.objetoValor,
+          objetoValorDescricao: d.objetoValorDescricao,
+          observacoes: d.observacoes,
+          fotoOdometroUrl, fotoPainelUrl, fotoFrenteUrl, fotoTraseiraUrl, fotoLadoEsquerdoUrl, fotoLadoDireitoUrl,
+          fotosAvarias: JSON.stringify(fotosAvarias),
+          mecanico: eu?.nome || '',
+          criadoPorId: uid || null,
+          lojaId,
+        },
+      });
+      return res.status(201).json({ id: v.id, garantiaId: v.garantiaId, criadoEm: v.criadoEm });
+    } catch (e: any) {
+      apagarFotosDaVistoria(salvas);
+      // Corrida: dois envios do mesmo idCliente ao mesmo tempo — o 2º bate no @unique.
+      if (e?.code === 'P2002' && d.idCliente) {
+        const ja = await prisma.garantiaVistoria.findUnique({ where: { idCliente: d.idCliente } });
+        if (ja) return responderVistoriaExistente(res, ja, d.placa, esc, uid);
+      }
+      throw e;
+    }
+  } catch (e) { erro(res, e); }
+});
+
+// Lista (painel e app): master vê todas; loja só as dela. ?placa= filtro exato; ?limite=
+// padrão 100, máx 300. Loja carregada numa query só (sem N+1).
+router.get('/vistorias', async (req, res) => {
+  try {
+    const esc = await escopoVistoria(req, res);
+    if (!esc) return;
+    const where: any = { ...whereEscopo(esc) };
+    const placa = normalizarPlaca(req.query.placa);
+    if (placa) where.placa = placa;
+    const n = Math.floor(Number(req.query.limite));
+    const limite = Number.isFinite(n) && n >= 1 ? Math.min(300, n) : 100;
+    const vistorias = await prisma.garantiaVistoria.findMany({ where, orderBy: { criadoEm: 'desc' }, take: limite });
+    const lojaIds = [...new Set(vistorias.map((v) => v.lojaId).filter(Boolean) as string[])];
+    const lojas = lojaIds.length ? await prisma.loja.findMany({ where: { id: { in: lojaIds } }, select: { id: true, store_name: true } }) : [];
+    const lojaPorId: Record<string, string> = Object.fromEntries(lojas.map((l) => [l.id, l.store_name]));
+    res.json({ vistorias: vistorias.map((v) => vistoriaSaida(v, v.lojaId ? (lojaPorId[v.lojaId] ?? null) : null)) });
+  } catch (e) { erro(res, e); }
+});
+
+// Sugestão pra preencher o formulário quando o mecânico termina de digitar a placa.
+// `garantia` sem escopo (qualquer loja atende qualquer carro) mas só com os campos do
+// formulário; `ultimaVistoria` DENTRO do escopo (loja não vê cliente de outra loja).
+// Nome/telefone do cliente da GARANTIA só pra master ou loja CREDENCIADA (mesma política
+// do /garantias/por-placa); loja não credenciada recebe a garantia com cliente vazio (o
+// app ainda mostra "Tem garantia GP" + veículo).
+// Declarada ANTES de /vistorias/:id (senão "sugestao" viraria um :id).
+router.get('/vistorias/sugestao', async (req, res) => {
+  try {
+    const esc = await escopoVistoria(req, res);
+    if (!esc) return;
+    const placa = normalizarPlaca(req.query.placa);
+    if (!PLACA_VISTORIA.test(placa)) return res.status(400).json({ error: 'Placa inválida.' });
+
+    const achada = await garantiaEmAndamentoDaPlaca(placa);
+    let garantia: { id: string; status: string; clienteNome: string; clienteTelefone: string; veiculo: string } | null = null;
+    if (achada) {
+      const podeVerCliente = await ehCredenciada(req);
+      const cliente = podeVerCliente
+        ? await prisma.garantiaCliente.findUnique({ where: { id: achada.garantia.clienteId }, select: { nome: true, telefone: true } })
+        : null;
+      const v = achada.veiculo;
+      garantia = {
+        id: achada.garantia.id,
+        status: achada.garantia.status,
+        clienteNome: cliente?.nome || '',
+        clienteTelefone: soDigitos(cliente?.telefone || ''),
+        veiculo: [v.marca, v.modelo, v.ano > 0 ? String(v.ano) : ''].map((s) => String(s || '').trim()).filter(Boolean).join(' '),
+      };
+    }
+    const ultimaVistoria = await prisma.garantiaVistoria.findFirst({
+      where: { placa, ...whereEscopo(esc) },
+      orderBy: { criadoEm: 'desc' },
+      select: { clienteNome: true, clienteTelefone: true, veiculo: true, km: true, criadoEm: true },
+    });
+    res.json({ garantia, ultimaVistoria });
+  } catch (e) { erro(res, e); }
+});
+
+// Uma vistoria (mesmo formato de um item da lista). Fora do escopo ou inexistente → 404.
+router.get('/vistorias/:id', async (req, res) => {
+  try {
+    const esc = await escopoVistoria(req, res);
+    if (!esc) return;
+    const v = await prisma.garantiaVistoria.findFirst({ where: { id: String(req.params.id), ...whereEscopo(esc) } });
+    if (!v) return res.status(404).json({ error: 'Vistoria não encontrada.' });
+    const loja = v.lojaId ? await prisma.loja.findUnique({ where: { id: v.lojaId }, select: { store_name: true } }) : null;
+    res.json(vistoriaSaida(v, loja ? loja.store_name : null));
+  } catch (e) { erro(res, e); }
+});
+
 export default router;

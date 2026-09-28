@@ -638,6 +638,43 @@ model GarantiaSorteio {
   criadoEm    DateTime @default(now())
 }
 
+// Vistoria de ENTRADA do carro na oficina (app do mecânico). Vale pra QUALQUER carro,
+// com ou sem Garantia 50k; garantiaId fica preenchido se a placa tinha garantia em andamento.
+model GarantiaVistoria {
+  id                   String   @id @default(uuid())
+  idCliente            String?  @unique // uuid gerado no app — duplo toque/reenvio não duplica
+  placa                String   // maiúsculas, só letras/números (ABC1D23 / ABC1234)
+  garantiaId           String?
+  clienteNome          String   @default("")
+  clienteTelefone      String   @default("") // só dígitos
+  veiculo              String   @default("") // modelo/ano em texto livre
+  pedidoCliente        String   @default("") // o que o cliente pediu / reclamou
+  km                   Int
+  combustivel          String   // reserva | 1/4 | 1/2 | 3/4 | cheio
+  luzesPainel          String   @default("[]") // JSON array de chaves (ver §3)
+  avarias              String   @default("[]") // JSON array de chaves (ver §3)
+  avariasDescricao     String   @default("")
+  pneus                String   @default("{}") // JSON { posicao: estado }
+  itens                String   @default("[]") // JSON array: itens PRESENTES no carro
+  objetoValor          Boolean  @default(false)
+  objetoValorDescricao String   @default("")
+  observacoes          String   @default("")
+  fotoOdometroUrl      String
+  fotoPainelUrl        String
+  fotoFrenteUrl        String
+  fotoTraseiraUrl      String
+  fotoLadoEsquerdoUrl  String
+  fotoLadoDireitoUrl   String
+  fotosAvarias         String   @default("[]") // JSON array de URLs (/midias/garantia/...)
+  mecanico             String   @default("") // Usuario.nome de quem fez (no momento)
+  criadoPorId          String?
+  lojaId               String?
+  criadoEm             DateTime @default(now())
+
+  @@index([placa])
+  @@index([lojaId, criadoEm])
+}
+
 // Respostas do fluxo de atendimento editadas pelo dono (tela "Fluxo" do painel).
 // Guarda so a DIFERENCA do texto padrao (ver src/data/fluxoCatalogo.ts); sem linha = padrao.
 model FluxoResposta {
