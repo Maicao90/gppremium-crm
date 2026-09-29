@@ -1442,6 +1442,22 @@ async function escopoVistoria(req: any, res: any): Promise<{ master: boolean; lo
   return esc;
 }
 
+// FAZER vistoria (e a sugestão por placa, que só serve pro formulário) é só pra conta de
+// MECÂNICO — pedido do dono 29/09. Mesma regra do painel (AtAtendentes.ehMecanico): role
+// operador, com o módulo garantia50k e sem nenhum módulo de atendimento (at-*). Lê do banco,
+// não do token. VER as vistorias (lista/detalhe, painel) continua pra quem tem o módulo.
+const RECUSA_MECANICO = 'A vistoria de entrada é só pra conta de mecânico.';
+async function ehContaMecanico(req: any): Promise<boolean> {
+  const uid = req.user?.sub;
+  if (!uid) return false;
+  const u = await prisma.usuario.findUnique({ where: { id: String(uid) }, select: { role: true, modulosPermitidos: true } });
+  if (!u || u.role !== 'operador') return false;
+  let mods: unknown = [];
+  try { mods = JSON.parse(u.modulosPermitidos || '[]'); } catch { mods = []; }
+  if (!Array.isArray(mods)) return false;
+  return mods.includes('garantia50k') && !mods.some((m) => String(m).startsWith('at-'));
+}
+
 // Garantia EM ANDAMENTO mais recente da placa (sem escopo — qualquer loja atende qualquer
 // carro, mesma política do /garantias/por-placa). Expira as vencidas antes, como lá.
 async function garantiaEmAndamentoDaPlaca(placa: string) {
@@ -1494,6 +1510,7 @@ router.post('/vistorias', async (req, res) => {
   try {
     const esc = await escopoVistoria(req, res);
     if (!esc) return;
+    if (!(await ehContaMecanico(req))) return res.status(403).json({ error: RECUSA_MECANICO });
     const uid = String(req.user?.sub || '');
 
     let d: ReturnType<typeof lerVistoria>;
@@ -1608,6 +1625,7 @@ router.get('/vistorias/sugestao', async (req, res) => {
   try {
     const esc = await escopoVistoria(req, res);
     if (!esc) return;
+    if (!(await ehContaMecanico(req))) return res.status(403).json({ error: RECUSA_MECANICO });
     const placa = normalizarPlaca(req.query.placa);
     if (!PLACA_VISTORIA.test(placa)) return res.status(400).json({ error: 'Placa inválida.' });
 
