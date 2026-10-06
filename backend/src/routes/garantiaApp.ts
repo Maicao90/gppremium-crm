@@ -191,6 +191,28 @@ router.post('/cliente/notificacoes/:id/lida', requireCliente, async (req, res) =
   } catch (e) { erro(res, e); }
 });
 
+// ---------- Excluir a PRÓPRIA conta do app (exigência da App Store) ----------
+// Pede a senha de novo. Apaga o ACESSO e os dados pessoais do app (senha, token de push, e-mail,
+// nascimento). Não apaga a garantia nem as revisões: são registros do contrato com a loja
+// credenciada (nome, CPF e telefone ficam ligados a eles — a política de privacidade avisa).
+// Se a pessoa quiser usar o app de novo, o cadastro pelo CPF reaproveita o registro.
+router.post('/cliente/excluir-conta', requireCliente, async (req, res) => {
+  try {
+    const clienteId = (req as any).clienteId as string;
+    const senha = String(req.body?.senha || '');
+    const cliente = await prisma.garantiaCliente.findUnique({ where: { id: clienteId } });
+    if (!cliente) return res.status(404).json({ error: 'Conta não encontrada.' });
+    if (!cliente.senha || !(await conferirSenha(senha, cliente.senha))) {
+      return res.status(401).json({ error: 'Senha incorreta.' });
+    }
+    await prisma.garantiaCliente.update({
+      where: { id: clienteId },
+      data: { senha: '', pushToken: '', email: '', nascimento: '' },
+    });
+    res.json({ ok: true });
+  } catch (e) { erro(res, e); }
+});
+
 // ---------- Oficinas autorizadas (lojas do CRM) ----------
 router.get('/oficinas', async (_req, res) => {
   try {
