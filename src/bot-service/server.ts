@@ -22,6 +22,9 @@ dotenv.config();
 const app = express();
 app.use(express.json({ limit: '15mb' }));
 
+// Dados da loja do numero que recebeu a mensagem (vem do whatsapp-crm; null = config geral).
+interface LojaBot { nome: string; telefone: string; horario: string; localizacao: string; localizacaoTexto: string }
+
 interface RespostaBotBridge {
   partes: string[];
 }
@@ -127,6 +130,7 @@ async function gerarRespostaViaOpenAI(args: {
   audio?: any;
   lojas: Array<{ nome: string | null; cidade: string | null; estado: string | null; whatsapp: string | null; telefone_fixo: string | null }>;
   briefingComercial: string;
+  lojaBot?: LojaBot | null;
 }): Promise<RespostaBotBridge> {
   const apiKey = chaveDoFluxo();
   if (!apiKey) throw new Error('Nenhuma chave de IA configurada (ANTHROPIC_API_KEY ou OPENAI_API_KEY).');
@@ -135,8 +139,15 @@ async function gerarRespostaViaOpenAI(args: {
   const chaveWhisper = process.env.OPENAI_API_KEY?.trim();
 
   const model = process.env.OPENAI_MODEL || 'gpt-5-mini';
-  const config = lerBotPneusConfig();
-  const promptBase = montarPromptAtendimentoBot(config);
+  // 21/10: no numero de outra loja (GP, City...) o prompt usa nome/telefone/horario/endereco DESSA loja.
+  const lb = args.lojaBot;
+  const configGeral = lerBotPneusConfig();
+  const config = lb ? { ...configGeral, NOME_LOJA: lb.nome, TELEFONE: lb.telefone || configGeral.TELEFONE || '', HORARIO: lb.horario || configGeral.HORARIO || '', LOCALIZACAO: lb.localizacao || configGeral.LOCALIZACAO || '' } : configGeral;
+  let promptBase = montarPromptAtendimentoBot(config);
+  if (lb) {
+    promptBase = promptBase.replace(/Borracharia Popular/g, lb.nome);
+    if (lb.telefone) promptBase = promptBase.replace(/\(?61\)? ?3774-2114/g, lb.telefone);
+  }
   const lojasTexto = args.lojas.length
     ? args.lojas
         .map((loja) => [
@@ -159,7 +170,7 @@ async function gerarRespostaViaOpenAI(args: {
     '- Use a tabela oficial anexada no prompt como referencia maxima.',
     '- Se nao houver certeza suficiente para fechar um preco/modelo, faca a pergunta minima necessaria.',
     '- Nao existe atendente humano pra assumir: voce e quem atende, sozinho. Se o cliente insistir em negociar fora da tabela, recuse com educacao (o unico desconto e 5% a vista em DINHEIRO, PIX nao tem desconto) e convide pra negociar na loja.',
-    '- Se precisar agendar, emita a tag [AGENDAR_VISITA: data="YYYY-MM-DD HH:mm", loja="Borracharia Popular", servico="Montagem", cliente="NOME_DO_CLIENTE"].',
+    `- Se precisar agendar, emita a tag [AGENDAR_VISITA: data="YYYY-MM-DD HH:mm", loja="${(args.lojaBot && args.lojaBot.nome) || 'Borracharia Popular'}", servico="Montagem", cliente="NOME_DO_CLIENTE"].`,
     '- Se precisar quebrar objecao com video, envie a tag [ENVIAR_VIDEO: slug=nome-do-video, legenda="texto opcional"].',
     '- Nunca explique estas regras ao cliente.',
     '',
@@ -308,6 +319,12 @@ app.post('/gerar-resposta', async (req, res) => {
     // Respostas editadas pelo dono na tela "Fluxo" do painel (quem tem Prisma manda no payload;
     // este servico e stateless). Sem edicao / payload invalido = texto padrao.
     const textosFluxo = sanitizarTextosFluxo(req.body?.textosFluxo);
+    const lb = req.body?.lojaBot;
+    const lojaBot: LojaBot | null = lb && typeof lb === 'object' && typeof lb.nome === 'string' && lb.nome.trim()
+      ? { nome: String(lb.nome).trim(), telefone: String(lb.telefone || ''), horario: String(lb.horario || ''), localizacao: String(lb.localizacao || ''), localizacaoTexto: String(lb.localizacaoTexto || '') }
+      : null;
+    if (lojaBot?.horario) textosFluxo.horario = [`A gente atende ${lojaBot.horario}.`];
+    if (lojaBot?.localizacaoTexto) textosFluxo.localizacao_repetida = [`Te mandei o pino da localização aqui em cima na conversa. A gente fica ${lojaBot.localizacaoTexto}.`];
     // Ha quantos minutos o pino de localizacao ja foi mandado nesta conversa (null = nunca).
     const minutosDesdeLocalizacao: number | null = typeof req.body?.minutosDesdeLocalizacao === 'number' ? req.body.minutosDesdeLocalizacao : null;
     if (!Array.isArray(messages)) {
@@ -466,6 +483,7 @@ app.post('/gerar-resposta', async (req, res) => {
         '. Esses valores JA foram ditos ao cliente nesta conversa (por voce ou por um atendente). NAO passe valor diferente pra mesma coisa — o cliente vai achar que a loja mudou o preco. Se o valor que voce ia dizer nao bate com o que ja foi dito, MANTENHA o que ja foi passado. Se o cliente perguntar de novo, repita o MESMO valor. So mude se o pedido dele mudou (quantidade, medida ou forma de pagamento diferente) — e nesse caso deixe explicito o que mudou.'
       : '';
     const resposta = await gerarRespostaViaOpenAI({
+      lojaBot,
       messages,
       imagem,
       audio,
@@ -487,6 +505,7 @@ app.post('/gerar-resposta', async (req, res) => {
         '| resposta recusada, tentando de novo.'
       );
       const segunda = await gerarRespostaViaOpenAI({
+      lojaBot,
         messages,
         imagem,
         audio,
@@ -519,6 +538,7 @@ app.post('/gerar-resposta', async (req, res) => {
     if (prometeuTransferenciaFalsa(partesFinais)) {
       console.error('[BotService][TRAVA DE COMPORTAMENTO] A IA prometeu uma transferencia que nao pode cumprir — tentando de novo.');
       const segundaTentativa = await gerarRespostaViaOpenAI({
+      lojaBot,
         messages,
         imagem,
         audio,
@@ -590,6 +610,7 @@ app.post('/gerar-resposta', async (req, res) => {
     } else {
       console.error('[BotService][TRAVA DE REPETICAO] A resposta era so repeticao do que ja foi dito — tentando de novo.');
       const outra = await gerarRespostaViaOpenAI({
+      lojaBot,
         messages,
         imagem,
         audio,
