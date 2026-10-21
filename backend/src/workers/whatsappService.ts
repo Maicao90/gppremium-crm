@@ -16,7 +16,7 @@ const prisma = new Proxy({} as PrismaClient, {
 function getIo() {
   return require('../server').io;
 }
-import { agendarRespostaBotIA, pausarConversaBotIA } from './botAtendimentoService';
+import { agendarRespostaBotIA, pausarConversaBotIA, naoAtender } from './botAtendimentoService';
 import { configBotDaLoja, caminhoFotoFachada } from '../services/botLojas';
 
 // Pasta onde as mídias recebidas são salvas (servida estaticamente em /midias)
@@ -1016,6 +1016,96 @@ function iniciarVigiaRespostasPendentes() {
   setInterval(() => { varrer().catch(() => {}); }, 45_000).unref?.();
 }
 iniciarVigiaRespostasPendentes();
+
+// ─── REMARKETING DO ROBÔ (21/10) ───
+// A equipe da GP manda o emoji 🙋🏼‍♀️ na mão pra quem parou de responder (223 envios em 30 dias; 62% voltaram a
+// falar em 2 dias). O robô faz o mesmo nas lojas com REMARKETING ativo (bot-lojas.json): a LOJA falou por último,
+// o cliente está quieto há X horas (e há menos de N dias), no horário comercial — manda UMA vez por silêncio.
+// Não manda se: já mandou o emoji depois da última fala do cliente, cliente disse que desistiu/já comprou, conversa
+// pausada (atendente assumiu, pneu fora da tabela, anti-loop), lista de não-atender/equipe, ou já tem agendamento
+// pendente pra esse número. Trava de volume por hora.
+const REMARKETING_FECHOU = /(n[aã]o (quero|preciso|tenho interesse)|sem interesse|desist|j[aá] comprei|comprei em outr|n[aã]o vou querer|pode cancelar|n[aã]o precisa mais)/i;
+const remarketingEnvios = new Map<string, number[]>();
+let remarketingRodando = false;
+function minutosBR(hhmm: string): number { const m = /^(\d{1,2}):(\d{2})$/.exec(hhmm.trim()); return m ? Number(m[1]) * 60 + Number(m[2]) : -1; }
+function agoraMinutosBR(): number {
+  const hm = new Intl.DateTimeFormat('en-GB', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date());
+  const [h, mi] = hm.split(':').map(Number); return (h as number) * 60 + (mi as number);
+}
+function iniciarRemarketingRobo() {
+  const varrer = async () => {
+    if (remarketingRodando) return;
+    remarketingRodando = true;
+    try {
+      const contasBot = await prisma.usuario.findMany({ where: { ativo: true, botIaAtivo: true }, select: { id: true } });
+      for (const conta of contasBot) {
+        const cfg = await configBotDaLoja(conta.id);
+        const rm = cfg.REMARKETING;
+        if (!rm || !rm.ativo) continue;
+        const agoraMin = agoraMinutosBR();
+        if (agoraMin < minutosBR(rm.horaInicio) || agoraMin >= minutosBR(rm.horaFim)) continue;
+        const domingo = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Sao_Paulo', weekday: 'short' }).format(new Date()) === 'Sun';
+        if (domingo) continue;
+        if (!sessions.has(conta.id) && !connectedUsers.has(conta.id)) continue;
+
+        const agora = Date.now();
+        const silencioMs = rm.horasSemResposta * 3600_000;
+        const idadeMaxMs = rm.maxDias * 86400_000;
+        const envios = (remarketingEnvios.get(conta.id) || []).filter((t) => agora - t < 3600_000);
+        remarketingEnvios.set(conta.id, envios);
+        if (envios.length >= rm.maxPorHora) continue;
+
+        const msgs = await prisma.mensagem.findMany({
+          where: { usuarioId: conta.id, timestamp: { gte: new Date(agora - idadeMaxMs - 86400_000) } },
+          orderBy: { timestamp: 'desc' },
+          take: 3000,
+          select: { chatJid: true, fromMe: true, texto: true, timestamp: true, numeroReal: true, tipo: true },
+        });
+        const porChat = new Map<string, typeof msgs>();
+        for (const m of msgs) { const l = porChat.get(m.chatJid) || []; l.push(m); porChat.set(m.chatJid, l); }
+
+        for (const [chatJid, lista] of porChat.entries()) {
+          if (envios.length >= rm.maxPorHora) break;
+          if (chatJid.includes('@g.us') || chatJid.includes('@newsletter') || chatJid.includes('status@broadcast')) continue;
+          const ultima = lista[0];
+          if (!ultima || !ultima.fromMe) continue;                                   // a loja falou por ultimo
+          if (agora - ultima.timestamp.getTime() < silencioMs) continue;            // a loja falou ha pouco
+          const ultimaCliente = lista.find((m) => !m.fromMe);
+          if (!ultimaCliente) continue;                                             // cliente nunca falou (nao e lead)
+          const idade = agora - ultimaCliente.timestamp.getTime();
+          if (idade < silencioMs || idade > idadeMaxMs) continue;
+          if (lista.some((m) => m.fromMe && m.timestamp > ultimaCliente.timestamp && /🙋/.test(String(m.texto || '')))) continue; // ja puxou
+          if (REMARKETING_FECHOU.test(String(ultimaCliente.texto || ''))) continue;
+          const estado = await prisma.botConversa.findUnique({
+            where: { usuarioId_chatJid: { usuarioId: conta.id, chatJid } },
+            select: { pausadoAte: true },
+          }).catch(() => null);
+          if (estado?.pausadoAte && estado.pausadoAte.getTime() > agora) continue;
+          if (await naoAtender(conta.id, chatJid)) continue;
+          const numeroReal = String(lista.find((m) => m.numeroReal)?.numeroReal || '').split(':')[0] || '';
+          const digitos = (numeroReal || chatJid.split('@')[0] || '').replace(/\D/g, '');
+          if (digitos.length >= 8) {
+            const agendado = await prisma.agendamento.count({ where: { criadoPorId: conta.id, status: 'pendente', numero: { contains: digitos.slice(-8) } } }).catch(() => 0);
+            if (agendado > 0) continue;
+          }
+          const ok = await enviarParteBotIA(conta.id, chatJid, numeroReal, rm.mensagem, 1500 + Math.floor(Math.random() * 1500));
+          if (ok) {
+            envios.push(Date.now());
+            console.log(`[Remarketing] ${chatJid}: cliente quieto ha ${Math.round(idade / 3600_000)}h — mandei "${rm.mensagem}" (${envios.length}/${rm.maxPorHora} nesta hora).`);
+            await delay(20_000 + Math.floor(Math.random() * 40_000));
+          }
+        }
+      }
+    } catch (e: any) {
+      console.error('[Remarketing] erro na varredura:', e?.message || e);
+    } finally {
+      remarketingRodando = false;
+    }
+  };
+  setTimeout(() => { varrer().catch(() => {}); }, 90_000).unref?.();
+  setInterval(() => { varrer().catch(() => {}); }, 5 * 60_000).unref?.();
+}
+iniciarRemarketingRobo();
 
 // ─── LEMBRETE DE AGENDAMENTOS (no WhatsApp do PRÓPRIO atendente) ───
 // No expediente, manda um lembrete pro número do próprio atendente (conversa

@@ -519,7 +519,7 @@ const CAMINHO_NAO_ATENDER = path.join(__dirname, '../../data/bot-nao-atender.jso
 // Confere numero E nome (05/09: "qualquer pessoa que tiver GWT Global no nome" —
 // padrao de empresa, nao um numero especifico. Recebe o chatJid pra checar o numero
 // e busca o ultimo nome conhecido desse chat pra checar contra os padroes de nome.
-async function naoAtender(usuarioId: string, chatJid: string): Promise<boolean> {
+export async function naoAtender(usuarioId: string, chatJid: string): Promise<boolean> {
   try {
     // Equipe e lojas do grupo: mesma lista das metricas e da Caixa de Entrada (contatosInternos.ts).
     // 23/09: o robo respondeu um aviso interno da Danubia como se fosse cliente.
@@ -743,7 +743,9 @@ async function executar(params: AgendarBotParams, versao: number) {
     // 21/10 (GP): cliente pediu pneu que NAO esta na tabela. O robo so manda o audio "so um instante que vou
     // verificar", marca o chat com a etiqueta vermelha e para de responder nessa conversa: a atendente assume.
     const CHAVES_FORA_DA_LISTA = ['medida_inexistente', 'sem_alternativa'];
-    if (cfgLoja.ETIQUETA_FORA_DA_LISTA && resposta.deterministico && (resposta.chaves || []).some((c) => CHAVES_FORA_DA_LISTA.includes(c))) {
+    // + assuntos que ESTA loja passa pra equipe (City: servico de oficina, outra marca...): mesmo tratamento — o robo so diz
+    // que vai verificar (nunca fala de atendente), etiqueta e fica quieto; a atendente entra logo depois.
+    if (cfgLoja.ETIQUETA_FORA_DA_LISTA && resposta.deterministico && (resposta.chaves || []).some((c) => CHAVES_FORA_DA_LISTA.includes(c) || (cfgLoja.CHAVES_ATENDENTE || []).includes(c))) {
       if (versoes.get(key) !== versao || !(await conversaLiberada(params.usuarioId, params.chatJid))) return;
       const audioOk = await enviarAudioDoFluxo(params, 'so-um-instante-verificando', 'Só um instante que eu vou verificar aqui pra você, tá bem?');
       if (!audioOk) await params.enviarParte('Só um instante que eu vou verificar aqui pra você, tá bem?', tempoDigitacao('Só um instante'));

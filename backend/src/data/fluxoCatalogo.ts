@@ -222,6 +222,14 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     exemplos: ['tem a promoção compre 3 leve 4?', 'o leve 4 vale pra qual medida?', 'levando 4 eu pago 3?'],
     partes: ['A promoção existe e é válida para os pneus da marca GP Premium nas medidas 195/65/15 e 215/55/17.'],
   },
+  {
+    chave: 'servico_oficina',
+    grupo: 'loja',
+    titulo: 'Serviço de mecânica (freio, suspensão, óleo…)',
+    quando: 'O cliente pergunta de serviço de oficina que não é pneu, alinhamento nem balanceamento. Na loja que é oficina (ex.: City), troque o texto e o robô passa a conversa pra equipe.',
+    exemplos: ['vcs fazem freio?', 'quanto a troca de óleo?', 'olham suspensão?'],
+    partes: ['Aqui a gente trabalha só com pneus — serviço de mecânica não fazemos, não.'],
+  },
 
   {
     chave: 'outra_marca',

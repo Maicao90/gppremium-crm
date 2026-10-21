@@ -66,6 +66,7 @@ export type IntencaoTipo =
   | 'PERGUNTOU_SE_E_NACIONAL'
   | 'PERGUNTOU_GARANTIA'
   | 'PERGUNTOU_PROMOCAO_LEVE4'
+  | 'PERGUNTOU_SERVICO_OFICINA'
   | 'SO_SAUDACAO'
   | 'OUTRO_ASSUNTO';
 
@@ -101,6 +102,7 @@ export type TipoAcaoTexto =
   | 'RESPONDER_NACIONAL'
   | 'RESPONDER_GARANTIA'
   | 'RESPONDER_PROMOCAO_LEVE4'
+  | 'RESPONDER_SERVICO_OFICINA'
   | 'RESPONDER_SAUDACAO'
   // O robo decidiu NAO responder (ex.: agradecimento repetido). E uma decisao do codigo, nao "sai do fluxo":
   // a IA livre tambem NAO responde — partes vem vazio.
@@ -399,6 +401,10 @@ export function decidirAcaoPreco(
     // 21/10: promocao compre 3 e leve 4 — texto do dono (quais medidas valem).
     case 'PERGUNTOU_PROMOCAO_LEVE4':
       return respostaTexto('RESPONDER_PROMOCAO_LEVE4', textoFluxo(textos, 'promocao_leve4'), estadoAtual, dadosAtuais, 'promocao_leve4');
+
+    // 21/10: servico de mecanica (freio, suspensao, oleo...). Loja so de pneu diz que nao faz; oficina (City) chama a equipe.
+    case 'PERGUNTOU_SERVICO_OFICINA':
+      return respostaTexto('RESPONDER_SERVICO_OFICINA', textoFluxo(textos, 'servico_oficina'), estadoAtual, dadosAtuais, 'servico_oficina');
     // Só cumprimento / legenda do anúncio (23/09). Antes a IA livre respondia "Oi, tudo bem? + medida".
     // Primeiro contato: cumprimenta e pede a medida. Já pediu a medida e o cliente só respondeu o
     // cumprimento ("tudo bem, graças a Deus"): pede a medida de outro jeito, sem cumprimentar de novo.
