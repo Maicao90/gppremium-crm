@@ -5,6 +5,7 @@ import { decidirAntiLoop, JANELA_ECO_MS, MotivoAntiLoop, normalizarParaComparar 
 import { JIDS_INTERNOS, numerosInternos } from '../services/contatosInternos';
 import { transcricaoDoAudioFluxo } from '../data/fluxoCatalogo';
 import { configBotDaLoja, antesDoInicioDoRobo, caminhoFotoFachada } from '../services/botLojas';
+import { transcreverAudioLocal, transcricaoSalva, transcricaoLocalDisponivel } from '../services/transcricaoLocal';
 
 // O texto da resposta (IA + tabela deterministica de preco) agora vem de um servico
 // SEPARADO (bot-service, porta 3010) — de proposito. Antes, tudo isso rodava dentro
@@ -290,6 +291,31 @@ async function agendarLembretesVisita(params: AgendarBotParams, visita: { iso: s
 function tempoDigitacao(texto: string): number {
   const variacao = Math.floor(Math.random() * 900);
   return Math.min(6000, Math.max(1200, 700 + texto.length * 28 + variacao));
+}
+
+function arquivoDaMidia(mensagem: any): string | null {
+  if (!mensagem?.midiaUrl) return null;
+  const raiz = path.resolve(__dirname, '../../public');
+  const arquivo = path.resolve(raiz, String(mensagem.midiaUrl).replace(/^[/\\]+/, ''));
+  return arquivo.startsWith(raiz + path.sep) && fs.existsSync(arquivo) ? arquivo : null;
+}
+
+// Audio do cliente vira texto (21/10, whisper local — sem OpenAI). Os da rodada atual (depois da ultima
+// mensagem da loja) sao transcritos agora; os mais antigos so usam o texto se ja foi feito antes.
+// O texto entra no lugar do audio (so na memoria, o banco nao muda) e a mensagem fica marcada __transcrito.
+async function transcreverAudiosDoCliente(historico: any[], chatJid: string): Promise<void> {
+  if (!transcricaoLocalDisponivel()) return;
+  let ini = historico.length;
+  while (ini > 0 && !historico[ini - 1].fromMe) ini--;
+  for (let i = 0; i < historico.length; i++) {
+    const m = historico[i];
+    if (m.fromMe || m.tipo !== 'audio' || String(m.texto || '').trim()) continue;
+    const arquivo = arquivoDaMidia(m);
+    if (!arquivo) continue;
+    const texto = i >= ini ? await transcreverAudioLocal(arquivo) : transcricaoSalva(arquivo);
+    if (texto) { m.texto = texto; m.__transcrito = true; }
+    else if (i >= ini) console.log(`[Bot IA] ${chatJid}: audio do cliente sem transcricao — o robo pede pra escrever.`);
+  }
 }
 
 function midiaDaUltima(mensagem: any): { imagem?: any; audio?: any } {
@@ -712,6 +738,8 @@ async function executar(params: AgendarBotParams, versao: number) {
       take: 40,
     });
     historico.reverse();
+    await transcreverAudiosDoCliente(historico, params.chatJid);
+    if (versoes.get(key) !== versao) return; // chegou mensagem nova enquanto transcrevia: a rodada nova responde
     // Mensagens do Assistente de IA da Meta (enviadoPorId = meta_ai) NAO sao do nosso robo.
     // Se entrassem no historico como "assistant", o robo herdaria "Pneu Express" e
     // "conectei voce com a nossa equipe" como se tivesse dito isso (achado 08/09).
@@ -739,7 +767,8 @@ async function executar(params: AgendarBotParams, versao: number) {
       .map((m: any) => String(m.texto || ''))
       .filter(Boolean)
       .join('\n');
-    const midia = midiaDaUltima(ultima);
+    // Audio ja transcrito vai como TEXTO (acima); so foto (ou audio que nao deu pra transcrever) vai como midia.
+    const midia = (ultima as any)?.__transcrito ? {} : midiaDaUltima(ultima);
 
     // Curriculo / candidato a vaga: o robo nao responde e fica quieto nessa conversa por 7 dias (a equipe cuida).
     {

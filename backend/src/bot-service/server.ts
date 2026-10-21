@@ -139,7 +139,8 @@ async function gerarRespostaViaOpenAI(args: {
   if (!apiKey) throw new Error('Nenhuma chave de IA configurada (ANTHROPIC_API_KEY ou OPENAI_API_KEY).');
   const usarAnthropic = ehChaveAnthropic(apiKey);
   // Transcricao de audio do cliente continua no Whisper da OpenAI (a Anthropic nao transcreve audio).
-  const chaveWhisper = process.env.OPENAI_API_KEY?.trim();
+  // 21/10: o audio ja chega transcrito pelo whisper local (whatsapp-crm). OpenAI so se ligada de proposito.
+  const chaveWhisper = process.env.TRANSCRICAO_OPENAI === '1' ? process.env.OPENAI_API_KEY?.trim() : undefined;
 
   const model = process.env.OPENAI_MODEL || 'gpt-5-mini';
   // 21/10: no numero de outra loja (GP, City...) o prompt usa nome/telefone/horario/endereco DESSA loja.
