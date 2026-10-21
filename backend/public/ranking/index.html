@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Ranking da Campanha</title>
+<style>
+  :root { --bg:#0d1117; --card:#161b26; --linha:#232a38; --texto:#eef1f6; --suave:#8b94a8; --ouro:#f2b53a; --prata:#c9d1dc; --bronze:#d08a52; --verde:#2fbf71; --vermelho:#e8252c; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--texto); font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  .wrap { max-width:860px; margin:0 auto; padding:24px 16px 48px; }
+  h1 { font-size:1.45rem; margin:0 0 4px; }
+  .sub { color:var(--suave); font-size:.9rem; margin:0 0 18px; line-height:1.5; }
+  .regras { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; }
+  .chip { background:var(--card); border:1px solid var(--linha); border-radius:999px; padding:6px 12px; font-size:.82rem; color:var(--suave); }
+  .chip b { color:var(--texto); }
+  .podio { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:20px; }
+  .p { background:var(--card); border:1px solid var(--linha); border-radius:14px; padding:14px 12px; text-align:center; }
+  .p .pos { font-size:1.6rem; font-weight:800; }
+  .p .nome { font-weight:700; margin-top:4px; }
+  .p .loja { color:var(--suave); font-size:.78rem; }
+  .p .pts { font-size:1.35rem; font-weight:800; margin-top:6px; }
+  .p .premio { display:inline-block; margin-top:6px; padding:3px 10px; border-radius:999px; font-weight:700; font-size:.82rem; background:rgba(242,181,58,.14); color:var(--ouro); }
+  .p1 { border-color:rgba(242,181,58,.5); } .p1 .pos { color:var(--ouro); }
+  .p2 .pos { color:var(--prata); } .p3 .pos { color:var(--bronze); }
+  .lista { background:var(--card); border:1px solid var(--linha); border-radius:14px; overflow:hidden; }
+  .item { display:grid; grid-template-columns:42px 1fr auto; gap:10px; align-items:center; padding:12px 14px; border-top:1px solid var(--linha); }
+  .item:first-child { border-top:0; }
+  .num { font-weight:800; color:var(--suave); }
+  .quem b { display:block; }
+  .quem small { color:var(--suave); }
+  .det { color:var(--suave); font-size:.8rem; margin-top:4px; }
+  .det span { white-space:nowrap; margin-right:10px; }
+  .total { text-align:right; font-weight:800; font-size:1.2rem; color:var(--vermelho); }
+  .total small { display:block; font-weight:500; font-size:.72rem; color:var(--suave); }
+  .rodape { color:var(--suave); font-size:.8rem; margin-top:14px; text-align:center; }
+  .vazio { padding:30px; text-align:center; color:var(--suave); }
+  @media (max-width:560px) { .podio { grid-template-columns:1fr; } .p { display:grid; grid-template-columns:44px 1fr auto; text-align:left; align-items:center; gap:8px; } .p .pts, .p .premio { margin:0; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 id="titulo">Ranking da Campanha</h1>
+  <p class="sub" id="periodo">Carregando…</p>
+  <div class="regras" id="regras"></div>
+  <div class="podio" id="podio"></div>
+  <div class="lista" id="lista"></div>
+  <p class="rodape" id="rodape"></p>
+</div>
+<script>
+  const real = (v) => 'R$ ' + Number(v || 0).toLocaleString('pt-BR');
+  const dataBR = (iso) => iso.split('-').reverse().join('/');
+  const nomeBonito = (n) => String(n || '').trim().replace(/(^|[\s/])(\p{L})/gu, (m, a, b) => a + b.toUpperCase());
+  const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const det = (r) => `<span>📅 ${r.agendamentos} agend. = ${r.pontos.agendamentos} pts</span><span>📱 ${r.stories} stories = ${r.pontos.stories} pts</span><span>⭐ ${r.google} Google = ${r.pontos.google} pts</span>`;
+  fetch('dados.json?t=' + Date.now(), { cache: 'no-store' }).then((r) => r.json()).then((d) => {
+    document.getElementById('titulo').textContent = d.titulo || 'Ranking da Campanha';
+    document.getElementById('periodo').textContent = `Período: ${dataBR(d.de)} a ${dataBR(d.ate)} · Prêmios: 1º ${real(d.premios[0])} · 2º ${real(d.premios[1])} · 3º ${real(d.premios[2])}`;
+    document.getElementById('regras').innerHTML = `<span class="chip">Story = <b>${d.pesos.story} ponto</b></span><span class="chip">Avaliação no Google = <b>${d.pesos.google} pontos</b></span><span class="chip">Agendamento = <b>${d.pesos.agendamento} ponto</b> (1 por cliente por dia)</span>`;
+    const r = d.ranking || [];
+    if (!r.length) { document.getElementById('lista').innerHTML = '<div class="vazio">Ainda sem pontuação.</div>'; return; }
+    document.getElementById('podio').innerHTML = r.slice(0, 3).map((x, i) => `
+      <div class="p p${i + 1}"><div class="pos">${i + 1}º</div>
+        <div><div class="nome">${esc(nomeBonito(x.nome))}</div><div class="loja">${esc(x.loja)}</div></div>
+        <div><div class="pts">${x.total} pts</div>${x.total > 0 ? `<span class="premio">${real(d.premios[i])}</span>` : ''}</div></div>`).join('');
+    document.getElementById('lista').innerHTML = r.map((x, i) => `
+      <div class="item"><div class="num">${i + 1}º</div>
+        <div class="quem"><b>${esc(nomeBonito(x.nome))}</b><small>${esc(x.loja)}</small><div class="det">${det(x)}</div></div>
+        <div class="total">${x.total}<small>pontos</small></div></div>`).join('');
+    const at = new Date(d.atualizadoEm).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo', dateStyle: 'short', timeStyle: 'short' });
+    document.getElementById('rodape').textContent = `Atualizado em ${at} · o ranking é atualizado 1 vez por dia.`;
+  }).catch(() => { document.getElementById('periodo').textContent = 'Não foi possível carregar o ranking agora. Tente de novo em instantes.'; });
+</script>
+</body>
+</html>
