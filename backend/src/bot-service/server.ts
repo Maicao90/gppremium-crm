@@ -443,7 +443,8 @@ app.post('/gerar-resposta', async (req, res) => {
       if (apiKeyFluxo) {
         const contextoRecente = anteriores
           .slice(-6)
-          .map((m: any) => `${m.role === 'user' ? 'CLIENTE' : 'ROBO'}: ${String(m.content || '').slice(0, 200)}`)
+          // Orcamento/audio da atendente lido pelo robo (21/10) e comprido: cabe inteiro, senao as marcas somem.
+          .map((m: any) => { const t = String(m.content || ''); const daAtendente = /^\((foto que a atendente mandou|áudio da atendente)\)/.test(t); return `${m.role === 'user' ? 'CLIENTE' : daAtendente ? 'ATENDENTE' : 'ROBO'}: ${t.slice(0, daAtendente ? 900 : 200)}`; })
           .join('\n');
         const intencoes = await extrairIntencoesPreco(rajada.length ? rajada : [gatilho], contextoRecente, apiKeyFluxo);
         if (intencoes) {
