@@ -265,7 +265,8 @@ router.get('/conversas', async (req, res) => {
     const mapaContatoNome: Record<string, string> = {};
     try {
       const salvos = await prisma.contato.findMany({ where: { usuarioId }, select: { numero: true, nome: true } });
-      salvos.forEach((ct: any) => { if (ct.numero && ct.nome) mapaContatoNome[String(ct.numero).replace(/\D/g, '')] = ct.nome; });
+      // So nome de verdade: a extensao grava contato nao salvo com o proprio numero no lugar do nome.
+      salvos.forEach((ct: any) => { const nome = String(ct.nome || '').trim(); if (ct.numero && nome && /[^\d\s+()-]/.test(nome)) mapaContatoNome[String(ct.numero).replace(/\D/g, '')] = nome; });
     } catch (e) {}
 
     // Fallback: mapa de contatos do WhatsApp (em memória)
@@ -281,10 +282,12 @@ router.get('/conversas', async (req, res) => {
       c.ultimaMsg = c.texto || '';
       const numReal = mapaNumeros[c.chatJid] || (String(c.chatJid).includes('@lid') ? '' : String(c.chatJid).split('@')[0]);
       c.numeroReal = numReal;
-      // Nome: msgs recebidas (pushName) > contato salvo (por número) > contatos em memória.
+      // Nome: contato SALVO na agenda (por número) > msgs recebidas (pushName = nome do perfil) > contatos em memória.
+      // 21/10: antes o pushName vinha primeiro e o nome que a loja salvou no WhatsApp não aparecia.
       // NUNCA o nosso próprio nome.
-      c.chatNome = mapaNomes[c.chatJid]
-        || (numReal && mapaContatoNome[numReal.replace(/\D/g, '')] ? mapaContatoNome[numReal.replace(/\D/g, '')] : '')
+      const numLimpoNome = (String(numReal || '').split(':')[0] || '').replace(/\D/g, '');
+      c.chatNome = (numLimpoNome && mapaContatoNome[numLimpoNome] ? mapaContatoNome[numLimpoNome] : '')
+        || mapaNomes[c.chatJid]
         || (contatosNomes.has(c.chatJid) ? contatosNomes.get(c.chatJid) : '')
         || '';
       // Atendente responsável (última resposta atribuível)

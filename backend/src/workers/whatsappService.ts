@@ -1749,6 +1749,8 @@ export async function connectToWhatsApp(
         });
         return;
       }
+      // Lista "nao atender" (data/bot-nao-atender.json) vale tambem pra saudacao automatica (21/10, Getulio).
+      if (await naoAtender(usuarioId, remoteJid)) return;
       // Considera TODAS as formas que o contato pode ter sido salvo (número real OU @lid cru)
       const chavesDedup = Array.from(new Set([numeroRecep, numero].filter(Boolean)));
       const hojeBR = new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString().slice(0, 10);

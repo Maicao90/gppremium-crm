@@ -124,10 +124,15 @@ async function contatoAtual(usuarioId: string, chatJid: string) {
     .trim()
     .slice(0, 180);
   const numero = extrairNumeroDoJid(chatJid, ultimaComNumero?.numeroReal);
+  const salvo = numero
+    ? await prisma.contato.findUnique({ where: { usuarioId_numero: { usuarioId, numero: String(numero).replace(/\D/g, '') } }, select: { nome: true } }).catch(() => null)
+    : null;
+  const nomeSalvo = String(salvo?.nome || '').trim();
+  const nomePerfil = String(historico.slice().reverse().find((m) => !m.fromMe && String(m.chatNome || '').trim())?.chatNome || '').trim();
 
   return {
     id: `${usuarioId}::${chatJid}`,
-    nome: ultimaComNumero?.chatNome || numero || 'Sem nome',
+    nome: (/[^\d\s+()-]/.test(nomeSalvo) ? nomeSalvo : '') || nomePerfil || ultimaComNumero?.chatNome || numero || 'Sem nome',
     telefone: numero,
     medida,
     modeloRecomendado: '',
@@ -185,10 +190,16 @@ router.get('/resumo', async (req, res) => {
     try {
       const salvos = await prisma.contato.findMany({
         where: { usuarioId: { in: permitidos } },
-        select: { numero: true, nome: true },
+        select: { usuarioId: true, numero: true, nome: true },
       });
+      // So nome de verdade (a extensao grava contato nao salvo com o proprio numero no lugar do nome).
+      // Chave por atendente: cada um tem a sua agenda; sem o do atendente, vale o de qualquer outro.
       salvos.forEach((ct: any) => {
-        if (ct.numero && ct.nome) mapaContatoNome[String(ct.numero).replace(/\D/g, '')] = ct.nome;
+        const nome = String(ct.nome || '').trim();
+        if (!ct.numero || !nome || !/[^\d\s+()-]/.test(nome)) return;
+        const num = String(ct.numero).replace(/\D/g, '');
+        mapaContatoNome[`${ct.usuarioId}::${num}`] = nome;
+        if (!mapaContatoNome[num]) mapaContatoNome[num] = nome;
       });
     } catch (e) { /* sem contatos salvos: segue com as outras fontes */ }
 
@@ -220,9 +231,10 @@ router.get('/resumo', async (req, res) => {
       const estado = pausas.get(key);
       const botPausado = !!(estado?.pausadoAte && estado.pausadoAte.getTime() > Date.now());
       const numeroLimpo = String(numero || '').replace(/\D/g, '');
+      // 21/10: nome SALVO na agenda do WhatsApp primeiro; o do perfil (pushName) so se nao tiver salvo.
       const nomeResolvido =
-        mapaNomes[key]
-        || (numeroLimpo && mapaContatoNome[numeroLimpo] ? mapaContatoNome[numeroLimpo] : '')
+        (numeroLimpo && (mapaContatoNome[`${usuarioId}::${numeroLimpo}`] || mapaContatoNome[numeroLimpo]) || '')
+        || mapaNomes[key]
         || (contatosNomes.has(chatJid) ? String(contatosNomes.get(chatJid) || '') : '')
         || String(ultima?.chatNome || '').trim();
 

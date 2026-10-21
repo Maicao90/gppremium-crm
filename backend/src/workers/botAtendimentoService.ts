@@ -688,10 +688,11 @@ async function executar(params: AgendarBotParams, versao: number) {
     const ritmo = await ritmoDeLoop(params.usuarioId, params.chatJid);
     if (ritmo.pausar) {
       console.error(`[Bot IA][Anti-loop] ${params.chatJid}: motivo=${ritmo.motivo} — parece conversa com outro robo. Pausando 12h.`);
+      const pausaLoop = await pausaSemEncurtar(params.usuarioId, params.chatJid, 12 * 60, ritmo.motivo || 'anti_loop');
       await prisma.botConversa.upsert({
         where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
-        create: { usuarioId: params.usuarioId, chatJid: params.chatJid, pausadoAte: new Date(Date.now() + 12 * 60 * 60 * 1000), motivoPausa: ritmo.motivo || 'anti_loop' },
-        update: { pausadoAte: new Date(Date.now() + 12 * 60 * 60 * 1000), motivoPausa: ritmo.motivo || 'anti_loop' },
+        create: { usuarioId: params.usuarioId, chatJid: params.chatJid, ...pausaLoop },
+        update: pausaLoop,
       }).catch(() => {});
       return;
     }
@@ -747,10 +748,11 @@ async function executar(params: AgendarBotParams, versao: number) {
       const raboCliente = historico.slice(ini).map((m: any) => String(m.texto || ''));
       const pdfCurriculo = historico.slice(ini).some((m: any) => m.tipo === 'documento' && /curr/i.test(String(m.texto || '')));
       if (pdfCurriculo || ehCandidatoAVaga(raboCliente)) {
+        const pausaCv = await pausaSemEncurtar(params.usuarioId, params.chatJid, 7 * 24 * 60, 'curriculo');
         await prisma.botConversa.upsert({
           where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
-          create: { usuarioId: params.usuarioId, chatJid: params.chatJid, pausadoAte: new Date(Date.now() + 7 * 86400_000), motivoPausa: 'curriculo' },
-          update: { pausadoAte: new Date(Date.now() + 7 * 86400_000), motivoPausa: 'curriculo' },
+          create: { usuarioId: params.usuarioId, chatJid: params.chatJid, ...pausaCv },
+          update: pausaCv,
         }).catch(() => {});
         console.log(`[Bot IA] ${params.chatJid}: curriculo/vaga de emprego — robo nao responde (pausado 7 dias, equipe cuida).`);
         return;
@@ -833,10 +835,11 @@ async function executar(params: AgendarBotParams, versao: number) {
       if (!audioOk) await params.enviarParte('Só um instante que eu vou verificar aqui pra você, tá bem?', tempoDigitacao('Só um instante'));
       if (params.etiquetar) await params.etiquetar(cfgLoja.ETIQUETA_FORA_DA_LISTA).catch(() => false);
       const pausaMin = cfgLoja.PAUSA_FORA_DA_LISTA_MIN || 12 * 60;
+      const pausaFora = await pausaSemEncurtar(params.usuarioId, params.chatJid, pausaMin, 'fora_da_lista');
       await prisma.botConversa.upsert({
         where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
-        create: { usuarioId: params.usuarioId, chatJid: params.chatJid, ultimoInboundWaId: params.waId, ultimaRespostaEm: new Date(), pausadoAte: new Date(Date.now() + pausaMin * 60000), motivoPausa: 'fora_da_lista' },
-        update: { ultimoInboundWaId: params.waId, ultimaRespostaEm: new Date(), pausadoAte: new Date(Date.now() + pausaMin * 60000), motivoPausa: 'fora_da_lista' },
+        create: { usuarioId: params.usuarioId, chatJid: params.chatJid, ultimoInboundWaId: params.waId, ultimaRespostaEm: new Date(), ...pausaFora },
+        update: { ultimoInboundWaId: params.waId, ultimaRespostaEm: new Date(), ...pausaFora },
       }).catch(() => {});
       console.log(`[Bot IA] ${params.chatJid}: pneu fora da tabela — etiqueta "${cfgLoja.ETIQUETA_FORA_DA_LISTA.nome}" e robo pausado ${pausaMin} min (atendente assume).`);
       await registrarEventoFluxo(params, resposta, estadoPrecoSalvo?.estadoPreco || 'sem_estado', ['[ENVIAR_AUDIO:so-um-instante-verificando]', '(etiqueta: atendente assume)']);
@@ -1059,6 +1062,18 @@ export async function agendarRespostaBotIA(params: AgendarBotParams) {
   }
 }
 
+// Pausa automatica nunca encurta a que ja esta valendo (21/10: o ∞ do painel era sobrescrito pelos
+// 10 min de "atendente respondeu"). Devolve o pausadoAte/motivo que devem ficar gravados.
+async function pausaSemEncurtar(usuarioId: string, chatJid: string, minutos: number, motivo: string): Promise<{ pausadoAte: Date; motivoPausa: string }> {
+  const nova = new Date(Date.now() + minutos * 60 * 1000);
+  const atual = await prisma.botConversa.findUnique({
+    where: { usuarioId_chatJid: { usuarioId, chatJid } },
+    select: { pausadoAte: true, motivoPausa: true },
+  }).catch(() => null);
+  if (atual?.pausadoAte && atual.pausadoAte > nova) return { pausadoAte: atual.pausadoAte, motivoPausa: atual.motivoPausa || motivo };
+  return { pausadoAte: nova, motivoPausa: motivo };
+}
+
 export async function pausarConversaBotIA(usuarioId: string, chatJid: string, minutos?: number, motivo = 'atendimento_manual') {
   const usuario = await prisma.usuario.findUnique({
     where: { id: usuarioId },
@@ -1086,10 +1101,11 @@ export async function pausarConversaBotIA(usuarioId: string, chatJid: string, mi
   timers.delete(key);
   versoes.set(key, (versoes.get(key) || 0) + 1);
   const duracao = Math.max(5, minutos ?? usuario?.botIaPausaManualMin ?? 120);
+  const pausa = await pausaSemEncurtar(usuarioId, chatJid, duracao, motivo);
   await prisma.botConversa.upsert({
     where: { usuarioId_chatJid: { usuarioId, chatJid } },
-    create: { usuarioId, chatJid, pausadoAte: new Date(Date.now() + duracao * 60 * 1000), motivoPausa: motivo },
-    update: { pausadoAte: new Date(Date.now() + duracao * 60 * 1000), motivoPausa: motivo },
+    create: { usuarioId, chatJid, ...pausa },
+    update: pausa,
   });
 }
 
