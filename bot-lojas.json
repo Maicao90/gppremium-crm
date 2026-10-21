@@ -1,0 +1,15 @@
+{
+  "72213a6c-31c5-410d-a6b4-504dfd223e2f": {
+    "_loja": "GP Premium (numero da Josy, (61) 3601-2020)",
+    "NOME_LOJA": "Pneus GP Premium",
+    "TELEFONE": "(61) 3601-2020",
+    "LOCALIZACAO": "Pneus GP Premium\nAvenida Perimetral, Vila Guará, Luziânia-GO\nTelefone: (61) 3601-2020",
+    "LOCALIZACAO_TEXTO": "na Avenida Perimetral, na Vila Guará, em Luziânia-GO",
+    "LOCALIZACAO_LAT": -16.2334867,
+    "LOCALIZACAO_LNG": -47.9120936,
+    "FOTO_FACHADA": "gp-fachada.jpg",
+    "ROBO_INICIO": "10:30",
+    "ETIQUETA_FORA_DA_LISTA": { "id": "50", "nome": "Robô: ver pneu", "cor": 0 },
+    "PAUSA_FORA_DA_LISTA_MIN": 720
+  }
+}

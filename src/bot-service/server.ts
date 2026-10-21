@@ -8,6 +8,8 @@ import dotenv from 'dotenv';
 import express from 'express';
 import {
   montarBriefingComercialDeterministico,
+  extrairMedidasDoTexto,
+  encontrarPrecosExatosPorMedida,
 } from '../data/tabelaPrecos';
 import { precosForaDaTabela, valoresEmReais } from '../data/precoGuard';
 import { prometeuTransferenciaFalsa, removerReperguntaPosPreco, removerRepeticaoRecente, removerPromessaDeFoto, removerHorarioNaoPedido, removerLocalizacaoRepetida, pareceAgradecimento } from '../data/comportamentoGuard';
@@ -257,6 +259,26 @@ async function gerarRespostaViaOpenAI(args: {
 
 app.get('/health', (_req, res) => res.json({ ok: true }));
 
+// Medida que ja apareceu na conversa (mais recente primeiro). Cliente vale mais que a loja: o que a loja escreveu
+// pode ser lista de alternativas, entao da loja so conta quando a mensagem tem UMA medida so. Só medida que existe
+// na tabela (senao o robo cotaria algo que nao vende).
+function medidaDoHistorico(mensagens: any[]): string | null {
+  const valida = (m: string) => encontrarPrecosExatosPorMedida(m).length > 0;
+  for (let i = mensagens.length - 1; i >= 0; i--) {
+    const m = mensagens[i];
+    if (m?.role !== 'user') continue;
+    const achadas = extrairMedidasDoTexto(String(m?.content || '')).filter(valida);
+    if (achadas.length) return achadas[achadas.length - 1] as string;
+  }
+  for (let i = mensagens.length - 1; i >= 0; i--) {
+    const m = mensagens[i];
+    if (m?.role !== 'assistant') continue;
+    const achadas = extrairMedidasDoTexto(String(m?.content || '')).filter(valida);
+    if (achadas.length === 1) return achadas[0] as string;
+  }
+  return null;
+}
+
 // O robo precisa saber QUE DIA E HOJE pra agendar remarketing ("dia 10", "semana que
 // vem", "quando eu receber"). Sem isso ele chutava a data ou nem conseguia agendar.
 // Tudo em horario de Brasilia, que e como a loja e o cliente pensam.
@@ -408,7 +430,18 @@ app.post('/gerar-resposta', async (req, res) => {
           const lojaFalouHaPouco = minutosDesdeUltimaDaLoja == null || minutosDesdeUltimaDaLoja < JANELA_SILENCIO_REPETIDO_MIN;
           const jaRespondidas = chavesJaRespondidas(textosFluxo, textoRecenteDoRobo)
             .filter((c) => !SILENCIO_SE_REPETIR.includes(c) || (lojaFalouHaPouco && naUltimaDaLoja.includes(c)));
-          const decisao = decidirSequenciaPreco(intencoes, estadoPrecoAtual, dadosPrecoAtuais, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas, lojaFalouHaPouco });
+          // Cliente antigo (o robo nao tem estado dessa conversa): le a medida do historico antes de responder.
+          let estadoUsado = estadoPrecoAtual;
+          let dadosUsados = dadosPrecoAtuais;
+          if (!dadosPrecoAtuais.medida && (estadoPrecoAtual === 'sem_estado' || estadoPrecoAtual === 'aguardando_medida')) {
+            const medidaHistorico = medidaDoHistorico(anteriores);
+            if (medidaHistorico) {
+              estadoUsado = 'preco_confirmado';
+              dadosUsados = { ...dadosPrecoAtuais, medida: medidaHistorico };
+              console.log(`[BotService] medida ${medidaHistorico} lida do historico da conversa (nao pergunta de novo).`);
+            }
+          }
+          const decisao = decidirSequenciaPreco(intencoes, estadoUsado, dadosUsados, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas, lojaFalouHaPouco });
           assuntosLidos = decisao.assuntos;
           // Resposta de agradecimento (ou silencio de agradecimento) so vale se a mensagem for MESMO so agradecimento: com
           // pergunta, dia/hora ou aviso de visita ("combinado, amanha 10h eu passo ai") a IA livre e quem responde

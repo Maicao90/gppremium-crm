@@ -4,6 +4,11 @@ import { ehMaster } from '../auth/modulos';
 import { CATALOGO_FLUXO, GRUPOS_FLUXO, categoriaPorChave, validarTextoFluxo } from '../data/fluxoCatalogo';
 import { TABELA_PRECOS_GP } from '../data/tabelaPrecos';
 import { VALOR_BALANCEAMENTO_POR_RODA, PARCELAS_MAXIMAS } from '../data/fluxoPreco';
+import { lerConfigLojasBot, salvarConfigLojaBot, CAMPOS_CONFIG_LOJA } from '../services/botLojas';
+
+// Edicao de UMA loja: chave "loja:<lojaId>:<chave>" na mesma tabela (o padrao geral continua sem prefixo).
+const chaveDaLoja = (lojaId: string, chave: string) => `loja:${lojaId}:${chave}`;
+const lojaDaReq = (req: any): string => String(req.query?.lojaId || req.body?.lojaId || '').trim().replace(/[^a-zA-Z0-9-]/g, '');
 
 // O mesmo 5% de montarPartesDescontoAVista (tabelaPrecos.ts): desconto so a vista EM DINHEIRO (PIX nao tem).
 const DESCONTO_DINHEIRO_PCT = 5;
@@ -27,19 +32,36 @@ function lerPartes(json: string): string[] | null {
 
 router.get('/', async (req, res) => {
   try {
+    const lojaId = lojaDaReq(req);
     const linhas = await prisma.fluxoResposta.findMany();
     const porChave = new Map(linhas.map((l) => [l.chave, l]));
     const categorias = CATALOGO_FLUXO.map((c) => {
-      const edicao = c.partes ? porChave.get(c.chave) : undefined;
-      const editadas = edicao ? lerPartes(edicao.partes) : null;
+      const edicaoGeral = c.partes ? porChave.get(c.chave) : undefined;
+      const geral = edicaoGeral ? lerPartes(edicaoGeral.partes) : null;
+      const edicaoLoja = c.partes && lojaId ? porChave.get(chaveDaLoja(lojaId, c.chave)) : undefined;
+      const daLoja = edicaoLoja ? lerPartes(edicaoLoja.partes) : null;
+      const editadas = daLoja ?? geral;
+      const edicao = daLoja ? edicaoLoja : edicaoGeral;
       return {
         ...c,
         atual: c.partes ? (editadas ?? c.partes) : null,
-        personalizado: !!editadas,
+        // Na tela de uma loja, "personalizado" = esta loja tem texto proprio; o texto geral aparece como base.
+        personalizado: lojaId ? !!daLoja : !!geral,
+        personalizadoGeral: !!geral,
         atualizadoEm: editadas && edicao ? edicao.atualizadoEm : null,
       };
     });
-    res.json({ grupos: GRUPOS_FLUXO, categorias, podeEditar: ehMaster(String(req.user?.role || '')) });
+    const lojas = await prisma.loja.findMany({ select: { id: true, store_name: true }, orderBy: { store_name: 'asc' } });
+    const cfgLojas = lerConfigLojasBot();
+    res.json({
+      grupos: GRUPOS_FLUXO,
+      categorias,
+      podeEditar: ehMaster(String(req.user?.role || '')),
+      lojaId: lojaId || null,
+      lojas: lojas.map((l) => ({ id: l.id, nome: l.store_name, temConfig: !!cfgLojas[l.id] })),
+      configLoja: lojaId ? (cfgLojas[lojaId] || {}) : null,
+      camposConfigLoja: CAMPOS_CONFIG_LOJA,
+    });
   } catch (e: any) {
     console.error('[Fluxo] GET:', e?.message || e);
     res.status(500).json({ error: 'Não foi possível carregar o fluxo.' });
@@ -202,15 +224,27 @@ router.post('/simular', async (req, res) => {
     const estado = ['sem_estado', 'aguardando_medida', 'medida_sem_match', 'preco_confirmado'].includes(req.body?.estado) ? req.body.estado : 'sem_estado';
     const dados = req.body?.dados && typeof req.body.dados === 'object' ? req.body.dados : {};
 
+    const lojaId = lojaDaReq(req);
     const linhas = await prisma.fluxoResposta.findMany({ select: { chave: true, partes: true } });
     const textosFluxo: Record<string, string[]> = {};
-    for (const l of linhas) { const p = jsonArray(l.partes); if (p.length) textosFluxo[l.chave] = p; }
+    for (const l of linhas) { if (l.chave.startsWith('loja:')) continue; const p = jsonArray(l.partes); if (p.length) textosFluxo[l.chave] = p; }
+    if (lojaId) {
+      for (const l of linhas) {
+        const pref = `loja:${lojaId}:`;
+        if (!l.chave.startsWith(pref)) continue;
+        const p = jsonArray(l.partes); if (p.length) textosFluxo[l.chave.slice(pref.length)] = p;
+      }
+    }
+    const cfgLoja = lojaId ? lerConfigLojasBot()[lojaId] : null;
+    const lojaBot = cfgLoja && cfgLoja.NOME_LOJA
+      ? { nome: String(cfgLoja.NOME_LOJA), telefone: String(cfgLoja.TELEFONE || ''), horario: String(cfgLoja.HORARIO || ''), localizacao: String(cfgLoja.LOCALIZACAO || ''), localizacaoTexto: String(cfgLoja.LOCALIZACAO_TEXTO || '') }
+      : undefined;
 
     const messages = [...historico, ...mensagens.map((content) => ({ role: 'user', content }))];
     const r = await fetch(`${BOT_SERVICE_URL}/gerar-resposta`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages, lojas: [], ultimosTextosCliente: mensagens.join('\n'), estadoPreco: estado, dadosPreco: JSON.stringify(dados), textosFluxo, simular: true }),
+      body: JSON.stringify({ messages, lojas: [], ultimosTextosCliente: mensagens.join('\n'), estadoPreco: estado, dadosPreco: JSON.stringify(dados), textosFluxo, lojaBot, simular: true }),
       signal: AbortSignal.timeout(30_000),
     });
     const corpo: any = await r.json().catch(() => null);
@@ -219,6 +253,26 @@ router.post('/simular', async (req, res) => {
   } catch (e: any) {
     console.error('[Fluxo] POST /simular:', e?.message || e);
     res.status(500).json({ error: 'Não foi possível simular.' });
+  }
+});
+
+// Dados do robo de UMA loja (data/bot-lojas.json). Ler: quem ve o Fluxo. Salvar: so o administrador.
+router.get('/loja-config/:lojaId', (req, res) => {
+  const lojaId = String(req.params.lojaId || '').replace(/[^a-zA-Z0-9-]/g, '');
+  res.json({ lojaId, config: lerConfigLojasBot()[lojaId] || {}, campos: CAMPOS_CONFIG_LOJA });
+});
+router.put('/loja-config/:lojaId', async (req, res) => {
+  try {
+    if (!ehMaster(String(req.user?.role || ''))) return res.status(403).json({ error: 'Apenas o administrador pode editar os dados da loja.' });
+    const lojaId = String(req.params.lojaId || '').replace(/[^a-zA-Z0-9-]/g, '');
+    const loja = await prisma.loja.findUnique({ where: { id: lojaId }, select: { id: true } });
+    if (!loja) return res.status(404).json({ error: 'Loja não encontrada.' });
+    const r = salvarConfigLojaBot(lojaId, req.body?.config || {});
+    if (r.erro) return res.status(400).json({ error: r.erro });
+    res.json({ ok: true, config: r.config });
+  } catch (e: any) {
+    console.error('[Fluxo] PUT loja-config:', e?.message || e);
+    res.status(500).json({ error: 'Não foi possível salvar os dados da loja.' });
   }
 });
 
@@ -232,6 +286,24 @@ router.put('/:chave', async (req, res) => {
     const partes = Array.isArray(req.body?.partes) ? req.body.partes.map((p: unknown) => String(p ?? '').trim()) : req.body?.partes;
     const problemas = validarTextoFluxo(chave, partes);
     if (problemas.length) return res.status(400).json({ error: problemas.join(' '), problemas });
+
+    const lojaId = lojaDaReq(req);
+    if (lojaId) {
+      // Texto proprio desta loja. Igual ao que ela herdaria (geral editado ou padrao) = apaga o proprio.
+      const geral = await prisma.fluxoResposta.findUnique({ where: { chave } });
+      const herdado = (geral && lerPartes(geral.partes)) || cat.partes;
+      const k = chaveDaLoja(lojaId, chave);
+      if (JSON.stringify(partes) === JSON.stringify(herdado)) {
+        await prisma.fluxoResposta.deleteMany({ where: { chave: k } });
+        return res.json({ ok: true, personalizado: false, atual: herdado });
+      }
+      const linhaLoja = await prisma.fluxoResposta.upsert({
+        where: { chave: k },
+        create: { chave: k, partes: JSON.stringify(partes), atualizadoPor: req.user?.sub ?? null },
+        update: { partes: JSON.stringify(partes), atualizadoPor: req.user?.sub ?? null },
+      });
+      return res.json({ ok: true, personalizado: true, atual: partes, atualizadoEm: linhaLoja.atualizadoEm });
+    }
 
     // Igual ao padrao = sem edicao (nao deixa linha "personalizada" sem diferenca nenhuma).
     if (JSON.stringify(partes) === JSON.stringify(cat.partes)) {
@@ -256,6 +328,12 @@ router.delete('/:chave', async (req, res) => {
     const chave = String(req.params.chave || '');
     const cat = categoriaPorChave(chave);
     if (!cat || !cat.partes) return res.status(404).json({ error: 'Resposta não encontrada ou não editável.' });
+    const lojaId = lojaDaReq(req);
+    if (lojaId) {
+      await prisma.fluxoResposta.deleteMany({ where: { chave: chaveDaLoja(lojaId, chave) } });
+      const geral = await prisma.fluxoResposta.findUnique({ where: { chave } });
+      return res.json({ ok: true, personalizado: false, atual: (geral && lerPartes(geral.partes)) || cat.partes });
+    }
     await prisma.fluxoResposta.deleteMany({ where: { chave } });
     res.json({ ok: true, personalizado: false, atual: cat.partes });
   } catch (e: any) {

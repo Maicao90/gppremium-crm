@@ -114,17 +114,22 @@ async function registrarEventoFluxo(params: AgendarBotParams, resposta: Resposta
 // Respostas do fluxo editadas pelo dono na tela "Fluxo" do painel (tabela FluxoResposta,
 // so a diferenca do texto padrao). Falha na leitura = sem edicao: o robo usa o texto padrao
 // e nunca deixa de responder por causa disso.
-async function carregarTextosFluxo(): Promise<Record<string, string[]>> {
+async function carregarTextosFluxo(lojaId?: string | null): Promise<Record<string, string[]>> {
   try {
     const linhas = await prisma.fluxoResposta.findMany({ select: { chave: true, partes: true } });
     const saida: Record<string, string[]> = {};
+    const daLoja: Record<string, string[]> = {};
+    const pref = lojaId ? `loja:${lojaId}:` : null;
     for (const l of linhas) {
       try {
         const partes = JSON.parse(l.partes);
-        if (Array.isArray(partes)) saida[l.chave] = partes.map(String);
+        if (!Array.isArray(partes)) continue;
+        // 21/10: texto proprio da loja ("loja:<id>:<chave>") ganha do geral; texto de OUTRA loja nao entra.
+        if (l.chave.startsWith('loja:')) { if (pref && l.chave.startsWith(pref)) daLoja[l.chave.slice(pref.length)] = partes.map(String); continue; }
+        saida[l.chave] = partes.map(String);
       } catch { /* linha corrompida: ignora, usa o padrao */ }
     }
-    return saida;
+    return { ...saida, ...daLoja };
   } catch (e) {
     console.error('[Bot IA] falha ao ler FluxoResposta (usando textos padrao):', (e as any)?.message || e);
     return {};
@@ -729,7 +734,7 @@ async function executar(params: AgendarBotParams, versao: number) {
       ultimosTextosCliente,
       estadoPreco: estadoPrecoSalvo?.estadoPreco || 'sem_estado',
       dadosPreco: estadoPrecoSalvo?.dadosPreco || '{}',
-      textosFluxo: await carregarTextosFluxo(),
+      textosFluxo: await carregarTextosFluxo(cfgLoja.lojaId),
       lojaBot: cfgLoja.porLoja ? { nome: cfgLoja.NOME_LOJA, telefone: cfgLoja.TELEFONE, horario: cfgLoja.HORARIO, localizacao: cfgLoja.LOCALIZACAO, localizacaoTexto: cfgLoja.LOCALIZACAO_TEXTO || '' } : undefined,
       minutosDesdeLocalizacao,
       minutosDesdeUltimaDaLoja,

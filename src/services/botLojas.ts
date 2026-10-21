@@ -82,3 +82,46 @@ export function caminhoFotoFachada(cfg: ConfigBotLoja): string | undefined {
   const p = path.join(PASTA_DADOS_BOT, path.basename(cfg.FOTO_FACHADA));
   return fs.existsSync(p) ? p : undefined;
 }
+
+// ---------- edicao pelo painel (tela Fluxo) ----------
+export const CAMPOS_CONFIG_LOJA = [
+  { campo: 'NOME_LOJA', rotulo: 'Nome da loja (como o robô fala)', tipo: 'texto' },
+  { campo: 'TELEFONE', rotulo: 'Telefone', tipo: 'texto' },
+  { campo: 'HORARIO', rotulo: 'Horário (ex.: de segunda a sexta, das 8h às 18h, e aos sábados, das 8h às 12h)', tipo: 'texto' },
+  { campo: 'LOCALIZACAO', rotulo: 'Endereço que vai no pino do mapa', tipo: 'texto_longo' },
+  { campo: 'LOCALIZACAO_TEXTO', rotulo: 'Frase "a gente fica ..." (ex.: na Avenida Perimetral, em Luziânia-GO)', tipo: 'texto' },
+  { campo: 'LOCALIZACAO_LAT', rotulo: 'Latitude do pino', tipo: 'numero' },
+  { campo: 'LOCALIZACAO_LNG', rotulo: 'Longitude do pino', tipo: 'numero' },
+  { campo: 'ROBO_INICIO', rotulo: 'Robô começa a responder às (HH:MM; vazio = o dia todo)', tipo: 'hora' },
+  { campo: 'PAUSA_FORA_DA_LISTA_MIN', rotulo: 'Pneu fora da tabela: robô fica quieto por (minutos)', tipo: 'numero' },
+];
+
+export function lerConfigLojasBot(): Record<string, any> {
+  const j = lerJson(CAMINHO_LOJAS);
+  return j && typeof j === 'object' ? j : {};
+}
+
+export function salvarConfigLojaBot(lojaId: string, entrada: Record<string, unknown>): { config?: any; erro?: string } {
+  const todas = lerConfigLojasBot();
+  const atual = { ...(todas[lojaId] || {}) };
+  for (const { campo, tipo } of CAMPOS_CONFIG_LOJA) {
+    if (!(campo in entrada)) continue;
+    const v = entrada[campo];
+    if (v === null || v === undefined || String(v).trim() === '') { delete atual[campo]; continue; }
+    if (tipo === 'numero') {
+      const n = Number(String(v).replace(',', '.'));
+      if (!Number.isFinite(n)) return { erro: `Valor inválido em "${campo}".` };
+      atual[campo] = n;
+    } else if (tipo === 'hora') {
+      if (!/^([01]?\d|2[0-3]):[0-5]\d$/.test(String(v).trim())) return { erro: 'Horário de início no formato HH:MM (ex.: 10:30).' };
+      atual[campo] = String(v).trim();
+    } else {
+      atual[campo] = String(v).slice(0, 600);
+    }
+  }
+  todas[lojaId] = atual;
+  const tmp = CAMINHO_LOJAS + '.tmp';
+  fs.writeFileSync(tmp, JSON.stringify(todas, null, 2));
+  fs.renameSync(tmp, CAMINHO_LOJAS);
+  return { config: atual };
+}
