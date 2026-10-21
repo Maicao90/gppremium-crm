@@ -32,6 +32,8 @@ export interface ConfigBotLoja {
   // Assuntos que, nesta loja, a atendente assume: o robo responde o texto do assunto, etiqueta e fica quieto.
   CHAVES_ATENDENTE?: string[] | undefined;
   REMARKETING?: RemarketingLoja | undefined;
+  // Conversa que um atendente (pessoa) atendeu nas ultimas N horas e dele: o robo nao entra. 0 = desligado.
+  HUMANO_ASSUMIU_HORAS?: number | undefined;
 }
 
 // Remarketing: cliente parou de responder depois que a loja falou -> o robo puxa de volta (uma vez por silencio).
@@ -80,6 +82,7 @@ export async function configBotDaLoja(usuarioId: string): Promise<ConfigBotLoja>
     ETIQUETA_FORA_DA_LISTA: daLoja?.ETIQUETA_FORA_DA_LISTA?.id ? daLoja.ETIQUETA_FORA_DA_LISTA : undefined,
     PAUSA_FORA_DA_LISTA_MIN: num(daLoja?.PAUSA_FORA_DA_LISTA_MIN),
     CHAVES_ATENDENTE: Array.isArray(daLoja?.CHAVES_ATENDENTE) ? daLoja.CHAVES_ATENDENTE.map(String) : undefined,
+    HUMANO_ASSUMIU_HORAS: num(daLoja?.HUMANO_ASSUMIU_HORAS),
     REMARKETING: daLoja?.REMARKETING && typeof daLoja.REMARKETING === 'object' ? {
       ativo: daLoja.REMARKETING.ativo === true,
       mensagem: String(daLoja.REMARKETING.mensagem || '🙋🏼‍♀️'),
@@ -118,6 +121,7 @@ export const CAMPOS_CONFIG_LOJA = [
   { campo: 'LOCALIZACAO_LNG', rotulo: 'Longitude do pino', tipo: 'numero' },
   { campo: 'ROBO_INICIO', rotulo: 'Robô começa a responder às (HH:MM; vazio = o dia todo)', tipo: 'hora' },
   { campo: 'PAUSA_FORA_DA_LISTA_MIN', rotulo: 'Pneu fora da tabela: robô fica quieto por (minutos)', tipo: 'numero' },
+  { campo: 'HUMANO_ASSUMIU_HORAS', rotulo: 'Atendente já atendeu o cliente: robô não entra na conversa por (horas; padrão 12, 0 = desliga)', tipo: 'numero' },
 ];
 
 export function lerConfigLojasBot(): Record<string, any> {

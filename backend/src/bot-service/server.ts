@@ -50,23 +50,50 @@ function extrairTextoOpenAI(payload: any): string {
   return partes.join('\n').trim();
 }
 
+// Bolha com cara de codigo nunca vai pro cliente (21/10: um cliente recebeu "<invoke name=..." e o JSON cru).
+export const LIXO_TECNICO = /<\/?(invoke|parameter|function_calls|antml)|```|"partes"\s*:|^\s*[{[]/i;
+
+// Quebra de linha crua DENTRO de uma frase do JSON ("Desculpa!<enter>Aqui...") e invalida no JSON.parse:
+// escapa so o que esta dentro de aspas.
+function escaparQuebrasNasFrases(s: string): string {
+  let out = '', dentro = false, escape = false;
+  for (const ch of s) {
+    if (dentro && !escape && (ch === '\n' || ch === '\r')) { out += ch === '\n' ? '\\n' : ''; continue; }
+    if (ch === '"' && !escape) dentro = !dentro;
+    escape = ch === '\\' && !escape;
+    out += ch;
+  }
+  return out;
+}
+
 function parsearRespostaBot(payload: string): RespostaBotBridge {
-  let texto = String(payload || '').trim();
-  // Claude costuma embrulhar o JSON em ```json ... ``` — tira a cerca antes de ler.
-  texto = texto.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '').trim();
-  if (!texto) return { partes: [] };
-  try {
-    const parsed = JSON.parse(texto);
-    if (Array.isArray(parsed?.partes)) {
-      return {
-        partes: parsed.partes
-          .map((parte: any) => String(parte || '').trim())
-          .filter(Boolean)
-          .slice(0, 4),
-      };
+  const bruto = String(payload || '').trim();
+  if (!bruto) return { partes: [] };
+  const limpar = (lista: any[]) => lista.map((p) => String(p || '').trim()).filter((p) => p && !LIXO_TECNICO.test(p)).slice(0, 4);
+  const tentar = (s: string): string[] | null => {
+    for (const t of [s, escaparQuebrasNasFrases(s)]) {
+      try { const p = JSON.parse(t); if (Array.isArray(p?.partes)) return limpar(p.partes); } catch {}
     }
-  } catch {}
-  return { partes: [texto.slice(0, 3500)] };
+    return null;
+  };
+  // A IA as vezes escreve algo antes/depois do JSON (cerca ```json, "<invoke ...>"): acha o {"partes": ...} onde estiver.
+  const ini = bruto.search(/\{\s*"partes"\s*:/);
+  if (ini >= 0) {
+    const resto = bruto.slice(ini);
+    for (let fim = resto.lastIndexOf('}'); fim > 0; fim = resto.lastIndexOf('}', fim - 1)) {
+      const r = tentar(resto.slice(0, fim + 1));
+      if (r) return { partes: r };
+    }
+  }
+  const semCerca = bruto.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '').trim();
+  const r = tentar(semCerca);
+  if (r) return { partes: r };
+  // Texto puro (sem JSON) so passa se nao tiver cara de codigo.
+  if (LIXO_TECNICO.test(semCerca) || /[{}]/.test(semCerca)) {
+    console.error('[BotService] resposta da IA ilegivel — nada enviado:', bruto.slice(0, 300));
+    return { partes: [] };
+  }
+  return { partes: [semCerca.slice(0, 3500)] };
 }
 
 // Transcreve audio do cliente (WhatsApp manda em audio/ogg). A API de "responses" nao

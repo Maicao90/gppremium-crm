@@ -248,13 +248,23 @@ export function quebrarEmBolhas(texto: string): string[] {
   return bolhas;
 }
 
+// Trava final (21/10): nada com cara de codigo/JSON vai pro cliente, venha de onde vier.
+const BOLHA_DE_CODIGO = /<\/?(invoke|parameter|function_calls|antml)|```|"partes"\s*:/i;
+
 async function enviarEmBolhas(params: AgendarBotParams, texto: string): Promise<boolean> {
+  if (BOLHA_DE_CODIGO.test(texto)) {
+    console.error(`[Bot IA] ${params.chatJid}: resposta com cara de codigo BLOQUEADA (nao enviada): ${texto.slice(0, 160)}`);
+    return false;
+  }
   for (const bolha of quebrarEmBolhas(texto)) {
     const ok = await params.enviarParte(bolha, tempoDigitacao(bolha));
     if (!ok) return false;
   }
   return true;
 }
+
+// Mensagens que a loja manda sem ser uma pessoa atendendo: saudacao automatica do WhatsApp Business e o 🙋🏼‍♀️.
+const MSG_AUTOMATICA_DA_LOJA = /Seja bem-vindo\(a\)|^\s*🙋🏼‍♀️\s*$/;
 
 const REGEX_CANDIDATO = /(curr[ií]cul(o|um)|\bcv\b|contratando|vaga(s)? de (emprego|trabalho|auxiliar|mec[aâ]nic|vendedor|atendente|borracheir|motorista|estagi)|interesse (na|em uma|numa) vaga|(alguma|tem|h[aá]) vaga (de|pra|para) (emprego|trabalh)|fazer parte d[ae] (sua |vossa )?(empresa|equipe)|trabalhar (com voc[eê]s|a[ií] na|na (empresa|loja) de voc)|\bemprego\b)/i;
 export function ehCandidatoAVaga(textos: string[]): boolean {
@@ -744,6 +754,24 @@ async function executar(params: AgendarBotParams, versao: number) {
     // Se entrassem no historico como "assistant", o robo herdaria "Pneu Express" e
     // "conectei voce com a nossa equipe" como se tivesse dito isso (achado 08/09).
     for (let i = historico.length - 1; i >= 0; i--) { if ((historico[i] as any).enviadoPorId === 'meta_ai') historico.splice(i, 1); }
+
+    // 21/10 (caso Maurício): conversa que um ATENDENTE (pessoa) atendeu nas ultimas N horas e dele — o robo nao entra.
+    // O robo nao ve o orcamento em foto nem os audios da atendente: entrando, cotava outra marca e contradizia o que
+    // ela ofereceu. Nao contam: mensagem do robo, saudacao automatica do WhatsApp Business e o 🙋🏼‍♀️ de remarketing.
+    {
+      const horas = cfgLoja.HUMANO_ASSUMIU_HORAS ?? 12;
+      if (horas > 0) {
+        const desde = Date.now() - horas * 3600_000;
+        const humano = [...historico].reverse().find((m: any) => m.fromMe
+          && m.enviadoPorId !== 'bot' && m.enviadoPorId !== 'meta_ai'
+          && new Date(m.timestamp).getTime() >= desde
+          && !MSG_AUTOMATICA_DA_LOJA.test(String(m.texto || '')));
+        if (humano) {
+          console.log(`[Bot IA] ${params.chatJid}: atendente atendeu ${new Date((humano as any).timestamp).toISOString()} (< ${horas}h) — conversa e dela, robo nao entra.`);
+          return;
+        }
+      }
+    }
     const messages: Array<{ role: 'user' | 'assistant'; content: string }> = historico.map((m: any) => ({
       role: m.fromMe ? 'assistant' : 'user',
       content: String(m.texto || (m.tipo === 'imagem' ? '[imagem enviada]' : m.tipo === 'audio' ? '[audio enviado]' : `[${m.tipo}]`)),
