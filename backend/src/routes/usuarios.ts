@@ -423,6 +423,48 @@ router.post('/me/codigo-pareamento', requireAuth, async (req, res) => {
   }
 });
 
+// Exclusão da PRÓPRIA conta pelo app da Garantia (App Store, Guideline 5.1.1(v), 21/10): o revisor da
+// Apple entra com a conta de MECÂNICO e recusou o app 2x por não achar a exclusão (a do cliente já existia).
+// Só vale pra conta que vive só no app — perfil "Mecânico (app da Garantia)": operador, não parceiro, com o
+// módulo garantia50k e NENHUM módulo de atendimento (at-*). Conta usada no CRM (atendente, gerente, master)
+// não se apaga pelo app: um toque errado tiraria o WhatsApp/CRM da loja do ar.
+// Apaga os dados pessoais e o acesso (nome, e-mail, senha, módulos) e desativa; o que a loja registrou
+// (vistorias, garantias, revisões) continua sendo registro da loja. Senha errada = 400 (não 401: o app
+// trata 401 como sessão vencida e jogaria a pessoa pro login).
+router.post('/me/excluir-conta', requireAuth, async (req, res) => {
+  try {
+    const id = String(req.user!.sub);
+    const senha = String(req.body?.senha || '');
+    const usuario = await prisma.usuario.findUnique({ where: { id } });
+    if (!usuario || !usuario.ativo) return res.status(404).json({ error: 'Conta não encontrada.' });
+    if (!senha || !(await conferirSenha(senha, usuario.senha))) return res.status(400).json({ error: 'Senha incorreta.' });
+    const modulos = parseModulos(usuario.modulosPermitidos);
+    const contaDoApp = usuario.role === 'operador' && !usuario.externo
+      && modulos.includes('garantia50k') && !modulos.some((m) => m.startsWith('at-'));
+    if (!contaDoApp) {
+      return res.status(403).json({ error: 'Esta conta também é usada no CRM da loja. Para excluí-la, fale com o administrador da GP Premium.' });
+    }
+    await prisma.usuario.update({
+      where: { id },
+      data: {
+        ativo: false,
+        nome: 'Conta excluída',
+        email: `excluida-${id}@conta-excluida.invalid`,
+        senha: '',
+        modulosPermitidos: '[]',
+        lojaId: null,
+        assinaturaPainel: null,
+        codigoAtivacao: null,
+      },
+    });
+    console.log(`[Usuarios] Conta ${id} excluída pelo próprio usuário (app da Garantia).`);
+    res.json({ ok: true });
+  } catch (error: any) {
+    console.error('Erro ao excluir a própria conta:', error?.message || error);
+    res.status(500).json({ error: 'Não foi possível excluir agora. Tente de novo.' });
+  }
+});
+
 // Gerar CÓDIGO DE PAREAMENTO (8 dígitos) para conectar o WhatsApp sem QR.
 // Body: { numero: 'DDI+DDD+telefone' }. O atendente digita o código no WhatsApp
 // (Aparelhos conectados → Conectar com número de telefone).
