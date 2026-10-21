@@ -214,6 +214,14 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     partes: ['Os pneus GP Premium têm 2 anos de garantia e rodam 60 mil km.'],
     audio: { arquivo: 'garantia', modo: 'substitui' },
   },
+  {
+    chave: 'promocao_leve4',
+    grupo: 'produto',
+    titulo: 'Promoção compre 3 e leve 4',
+    quando: 'O cliente pergunta da promoção compre 3 e leve 4: se existe, se vale, em quais medidas.',
+    exemplos: ['tem a promoção compre 3 leve 4?', 'o leve 4 vale pra qual medida?', 'levando 4 eu pago 3?'],
+    partes: ['A promoção existe e é válida para os pneus da marca GP Premium nas medidas 195/65/15 e 215/55/17.'],
+  },
 
   {
     chave: 'outra_marca',
