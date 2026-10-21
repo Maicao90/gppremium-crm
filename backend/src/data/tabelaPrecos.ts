@@ -784,20 +784,21 @@ export function montarPartesPreco(item: ItemPreco, parcelaSolicitada: number | n
   // estava cobrando as 4 unidades, R$328,90 a mais num pedido de 195/65/15).
   const cobradas = unidadesCobradas(item, qtd);
   const avisoLeve4 = cobradas < qtd
-    ? `Voce leva ${qtd} e paga so ${cobradas} (campanha compre 3 e leve 4).`
+    ? `Você leva ${qtd} e paga só ${cobradas} (promoção compre 3 e leve 4).`
     : '';
   if (!parcelaSolicitada) {
     // MENSAGEM EM 2 BOLHAS (05/09, pedido do dono com exemplo exato): preco e
     // parcelamento vem em mensagens SEPARADAS, do jeito que uma pessoa mandaria pelo
     // WhatsApp — nunca tudo junto num bloco so. A marca "GP Premium" aparece (o que
     // NAO aparece e o codigo interno do modelo, tipo GP-1/GP-7 — isso so confunde).
-    const ehPlural = cobradas > 1;
-    const sujeito = ehPlural ? `os ${cobradas} pneus` : 'o pneu';
+    // 21/10: o sujeito e o que o cliente LEVA (4), nao o que paga (3) — antes saia "os 3 pneus" pra quem pediu 4.
+    const ehPlural = qtd > 1;
+    const sujeito = ehPlural ? `os ${qtd} pneus` : 'o pneu';
     const valorTotal = brl(item.aVista * cobradas);
     const complementoTotal = ehPlural ? ' (valor total)' : '';
     const partes: string[] = [
       ...destaquePromocao(item),
-      `Temos ${sujeito} *${item.medida}* da marca *GP Premium* está saindo por *R$ ${valorTotal} à vista*${complementoTotal}.`,
+      `Temos ${sujeito} *${item.medida}* da marca *GP Premium* ${ehPlural ? 'saem' : 'está saindo'} por *R$ ${valorTotal} à vista*${complementoTotal}.`,
       'Se preferir, você pode parcelar em até 10x no cartão!',
     ];
     if (avisoLeve4) partes.push(avisoLeve4);
