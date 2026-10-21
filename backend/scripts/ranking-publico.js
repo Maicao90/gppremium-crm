@@ -25,9 +25,10 @@ const diaBR = (t) => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_P
     // janela larga em UTC; o corte exato e pelo dia em Brasilia (diaBR), igual ao painel
     const ini = new Date(`${c.de}T00:00:00-03:00`);
     const fim = new Date(new Date(`${c.ate}T00:00:00-03:00`).getTime() + 86400000);
+    // Decisao do dono (21/10): todo agendamento PROGRAMADO (criado) no periodo, ja tenha saido ou nao; um por um.
     const ags = await prisma.agendamento.findMany({
       where: { criadoPorId: { in: todas }, status: { not: 'cancelado' }, criadoEm: { gte: ini, lt: fim } },
-      select: { criadoPorId: true, numero: true, criadoEm: true, observacoes: true },
+      select: { criadoPorId: true, status: true, criadoEm: true, enviarEm: true, observacoes: true },
     });
     const usuarios = await prisma.usuario.findMany({ where: { id: { in: ids } }, select: { id: true, nome: true, lojaId: true } });
     const lojas = await prisma.loja.findMany({ where: { id: { in: usuarios.map((u) => u.lojaId).filter(Boolean) } }, select: { id: true, store_name: true } });
@@ -35,19 +36,17 @@ const diaBR = (t) => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_P
 
     const linhas = ids.map((id) => {
       const contas = contasDe(id);
-      const unicos = new Set(ags
-        .filter((a) => contas.includes(a.criadoPorId) && !String(a.observacoes || '').includes('robo-'))
-        .map((a) => [String(a.numero || '').replace(/\D/g, ''), diaBR(a.criadoEm)])
-        .filter(([, dia]) => dia >= c.de && dia <= c.ate)
-        .map(([n, dia]) => n + '|' + dia));
+      const contados = ags.filter((a) => contas.includes(a.criadoPorId) && !String(a.observacoes || '').includes('robo-')
+        && diaBR(a.criadoEm) >= c.de && diaBR(a.criadoEm) <= c.ate);
+      const enviados = contados.filter((a) => a.status === 'enviado').length;
       const u = usuarios.find((x) => x.id === id);
       const stories = contas.reduce((t, k) => t + (Number(lanc[k]?.stories) || 0), 0);
       const google = contas.reduce((t, k) => t + (Number(lanc[k]?.google) || 0), 0);
-      const ag = unicos.size;
+      const ag = contados.length;
       return {
         nome: (c.nomes || {})[id] || String(u?.nome || lanc[id]?.nome || '').trim(),
         loja: nomeLoja[u?.lojaId] || '',
-        agendamentos: ag, stories, google,
+        agendamentos: ag, enviados, programados: ag - enviados, stories, google,
         pontos: { agendamentos: ag * pesos.agendamento, stories: stories * pesos.story, google: google * pesos.google },
         total: ag * pesos.agendamento + stories * pesos.story + google * pesos.google,
       };
