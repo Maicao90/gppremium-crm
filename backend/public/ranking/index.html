@@ -57,7 +57,7 @@
   fetch('dados.json?t=' + Date.now(), { cache: 'no-store' }).then((r) => r.json()).then((d) => {
     document.getElementById('titulo').textContent = d.titulo || 'Ranking da Campanha';
     document.getElementById('periodo').textContent = `Período: ${dataBR(d.de)} a ${dataBR(d.ate)} · Prêmios: 1º ${real(d.premios[0])} · 2º ${real(d.premios[1])} · 3º ${real(d.premios[2])}`;
-    document.getElementById('regras').innerHTML = `<span class="chip">Story = <b>${d.pesos.story} ponto</b></span><span class="chip">Avaliação no Google = <b>${d.pesos.google} pontos</b></span><span class="chip">Agendamento = <b>${d.pesos.agendamento} ponto</b> (1 por cliente por dia)</span>`;
+    document.getElementById('regras').innerHTML = `<span class="chip">Story = <b>${d.pesos.story} ponto</b></span><span class="chip">Avaliação no Google = <b>${d.pesos.google} pontos</b></span><span class="chip">Agendamento = <b>${d.pesos.agendamento} ponto</b> (cada um programado no período)</span>`;
     const r = d.ranking || [];
     if (!r.length) { document.getElementById('lista').innerHTML = '<div class="vazio">Ainda sem pontuação.</div>'; return; }
     document.getElementById('podio').innerHTML = r.slice(0, 3).map((x, i) => `
