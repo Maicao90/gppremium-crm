@@ -254,6 +254,11 @@ async function enviarEmBolhas(params: AgendarBotParams, texto: string): Promise<
   return true;
 }
 
+const REGEX_CANDIDATO = /(curr[ií]cul(o|um)|\bcv\b|contratando|vaga(s)? de (emprego|trabalho|auxiliar|mec[aâ]nic|vendedor|atendente|borracheir|motorista|estagi)|interesse (na|em uma|numa) vaga|(alguma|tem|h[aá]) vaga (de|pra|para) (emprego|trabalh)|fazer parte d[ae] (sua |vossa )?(empresa|equipe)|trabalhar (com voc[eê]s|a[ií] na|na (empresa|loja) de voc)|\bemprego\b)/i;
+export function ehCandidatoAVaga(textos: string[]): boolean {
+  return textos.some((t) => REGEX_CANDIDATO.test(String(t || '')));
+}
+
 function tempoDigitacao(texto: string): number {
   const variacao = Math.floor(Math.random() * 900);
   return Math.min(6000, Math.max(1200, 700 + texto.length * 28 + variacao));
@@ -705,6 +710,23 @@ async function executar(params: AgendarBotParams, versao: number) {
       .filter(Boolean)
       .join('\n');
     const midia = midiaDaUltima(ultima);
+
+    // Curriculo / candidato a vaga: o robo nao responde e fica quieto nessa conversa por 7 dias (a equipe cuida).
+    {
+      let ini = historico.length;
+      while (ini > 0 && !(historico[ini - 1] as any).fromMe) ini--;
+      const raboCliente = historico.slice(ini).map((m: any) => String(m.texto || ''));
+      const pdfCurriculo = historico.slice(ini).some((m: any) => m.tipo === 'documento' && /curr/i.test(String(m.texto || '')));
+      if (pdfCurriculo || ehCandidatoAVaga(raboCliente)) {
+        await prisma.botConversa.upsert({
+          where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
+          create: { usuarioId: params.usuarioId, chatJid: params.chatJid, pausadoAte: new Date(Date.now() + 7 * 86400_000), motivoPausa: 'curriculo' },
+          update: { pausadoAte: new Date(Date.now() + 7 * 86400_000), motivoPausa: 'curriculo' },
+        }).catch(() => {});
+        console.log(`[Bot IA] ${params.chatJid}: curriculo/vaga de emprego — robo nao responde (pausado 7 dias, equipe cuida).`);
+        return;
+      }
+    }
 
     // Guarda contra corrida (achado 18/09, caso real do Gustavo Souza — 556181084128):
     // o cliente mandou a foto do anuncio e, 13,9s depois, a medida "225/45 17" numa
