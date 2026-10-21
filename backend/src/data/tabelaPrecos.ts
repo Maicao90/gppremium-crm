@@ -733,6 +733,13 @@ function detectarSaudacaoSemPedido(texto: string): boolean {
 
 // Achado 01/09: a linha "pode conceder ate 10% de desconto" e ORIENTACAO INTERNA de
 // venda e estava sendo mandada PRO CLIENTE junto com o preco. Nunca mais.
+// Primeira bolha quando o pneu esta em promocao (vem ANTES do preco, pra chamar a atencao).
+function destaquePromocao(item: ItemPreco): string[] {
+  if (item.compre3Leve4) return ['🔥 Boa notícia: esse pneu está na promoção *COMPRE 3 E LEVE 4* — levando 4, você paga só 3!'];
+  if (item.promocao) return ['🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!'];
+  return [];
+}
+
 function resumoPromocional(item: ItemPreco): string[] {
   const linhas: string[] = [];
   if (item.promocao) linhas.push('Esse item esta em promocao.');
@@ -789,12 +796,13 @@ export function montarPartesPreco(item: ItemPreco, parcelaSolicitada: number | n
     const valorTotal = brl(item.aVista * cobradas);
     const complementoTotal = ehPlural ? ' (valor total)' : '';
     const partes: string[] = [
+      ...destaquePromocao(item),
       `Temos ${sujeito} *${item.medida}* da marca *GP Premium* está saindo por *R$ ${valorTotal} à vista*${complementoTotal}.`,
       'Se preferir, você pode parcelar em até 10x no cartão!',
     ];
     if (avisoLeve4) partes.push(avisoLeve4);
-    const promo = resumoPromocional(item);
-    if (promo.length) partes.push(...promo);
+    // Item do leve 4 e o cliente ainda nao pediu 4: mostra quanto ficam os 4 pagando 3 (empurra o pedido maior).
+    else if (item.compre3Leve4 && qtd < 4) partes.push(`Levando 4, você paga só 3: os 4 pneus saem por *R$ ${brl(item.aVista * 3)} à vista*.`);
     return partes;
   }
   // Achado 27/08: item.parcelado[x_N] ja e o TOTAL pra financiar em N vezes (nao o
@@ -814,7 +822,9 @@ export function montarPartesPreco(item: ItemPreco, parcelaSolicitada: number | n
   // Duas coisas erradas nisso: (a) o desconto e so em DINHEIRO, nao no PIX, e (b) dar
   // desconto de graca a quem nao pediu joga margem fora. Agora o desconto so aparece
   // se o cliente perguntar — a regra esta no prompt.
-  return [parte1];
+  return item.compre3Leve4 && qtd < 4
+    ? [parte1, 'Lembrando: esse pneu está na promoção *COMPRE 3 E LEVE 4* — levando 4, você paga só 3!']
+    : [parte1];
 }
 
 // Desconto de 5% a vista e SOMENTE pra pagamento em DINHEIRO — PIX NAO tem desconto
