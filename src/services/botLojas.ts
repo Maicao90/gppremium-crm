@@ -29,6 +29,20 @@ export interface ConfigBotLoja {
   ROBO_INICIO?: string | undefined;
   ETIQUETA_FORA_DA_LISTA?: EtiquetaBot | undefined;
   PAUSA_FORA_DA_LISTA_MIN?: number | undefined;
+  // Assuntos que, nesta loja, a atendente assume: o robo responde o texto do assunto, etiqueta e fica quieto.
+  CHAVES_ATENDENTE?: string[] | undefined;
+  REMARKETING?: RemarketingLoja | undefined;
+}
+
+// Remarketing: cliente parou de responder depois que a loja falou -> o robo puxa de volta (uma vez por silencio).
+export interface RemarketingLoja {
+  ativo: boolean;
+  mensagem: string;          // ex.: "🙋🏼‍♀️" (o que a equipe da GP manda na mao)
+  horasSemResposta: number;  // so depois de X horas sem o cliente responder (e sem a loja falar)
+  maxDias: number;           // nao ressuscita conversa mais velha que isso
+  horaInicio: string;        // "08:00" (Brasilia)
+  horaFim: string;           // "19:00"
+  maxPorHora: number;        // trava de volume (risco de bloqueio do numero)
 }
 
 function lerJson(caminho: string): any {
@@ -65,6 +79,16 @@ export async function configBotDaLoja(usuarioId: string): Promise<ConfigBotLoja>
     ROBO_INICIO: daLoja?.ROBO_INICIO ? String(daLoja.ROBO_INICIO) : undefined,
     ETIQUETA_FORA_DA_LISTA: daLoja?.ETIQUETA_FORA_DA_LISTA?.id ? daLoja.ETIQUETA_FORA_DA_LISTA : undefined,
     PAUSA_FORA_DA_LISTA_MIN: num(daLoja?.PAUSA_FORA_DA_LISTA_MIN),
+    CHAVES_ATENDENTE: Array.isArray(daLoja?.CHAVES_ATENDENTE) ? daLoja.CHAVES_ATENDENTE.map(String) : undefined,
+    REMARKETING: daLoja?.REMARKETING && typeof daLoja.REMARKETING === 'object' ? {
+      ativo: daLoja.REMARKETING.ativo === true,
+      mensagem: String(daLoja.REMARKETING.mensagem || '🙋🏼‍♀️'),
+      horasSemResposta: Number(daLoja.REMARKETING.horasSemResposta) > 0 ? Number(daLoja.REMARKETING.horasSemResposta) : 3,
+      maxDias: Number(daLoja.REMARKETING.maxDias) > 0 ? Number(daLoja.REMARKETING.maxDias) : 3,
+      horaInicio: String(daLoja.REMARKETING.horaInicio || '08:00'),
+      horaFim: String(daLoja.REMARKETING.horaFim || '19:00'),
+      maxPorHora: Number(daLoja.REMARKETING.maxPorHora) > 0 ? Number(daLoja.REMARKETING.maxPorHora) : 20,
+    } : undefined,
   };
 }
 
