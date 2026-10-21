@@ -3,6 +3,8 @@ import path from 'path';
 import { prisma } from '../server';
 import { decidirAntiLoop, JANELA_ECO_MS, MotivoAntiLoop, normalizarParaComparar } from '../data/comportamentoGuard';
 import { JIDS_INTERNOS, numerosInternos } from '../services/contatosInternos';
+import { transcricaoDoAudioFluxo } from '../data/fluxoCatalogo';
+import { configBotDaLoja, antesDoInicioDoRobo, caminhoFotoFachada } from '../services/botLojas';
 
 // O texto da resposta (IA + tabela deterministica de preco) agora vem de um servico
 // SEPARADO (bot-service, porta 3010) — de proposito. Antes, tudo isso rodava dentro
@@ -27,10 +29,12 @@ function lerLocalizacaoLoja(): { lat: number; lng: number; nome: string; enderec
 
 type EnviarParte = (texto: string, tempoDigitacaoMs: number) => Promise<boolean>;
 type EnviarVideo = (video: VideoBotIA, tempoDigitacaoMs: number) => Promise<boolean>;
-type EnviarLocalizacao = (lat: number, lng: number, nome: string, endereco: string) => Promise<boolean>;
+type EnviarLocalizacao = (lat: number, lng: number, nome: string, endereco: string, fotoFachada?: string) => Promise<boolean>;
+type Etiquetar = (etiqueta: { id: string; nome: string; cor?: number }) => Promise<boolean>;
 
 interface VideoBotIA {
-  tipo: 'video';
+  // 'audio' = mensagem de voz (PTT) gravada pelo dono; o envio fica em enviarMidiaBotIA (whatsappService.ts).
+  tipo: 'video' | 'audio';
   caminho?: string;
   url?: string;
   legenda?: string;
@@ -44,6 +48,8 @@ interface AgendarBotParams {
   enviarParte: EnviarParte;
   enviarVideo: EnviarVideo;
   enviarLocalizacao: EnviarLocalizacao;
+  // Etiqueta do WhatsApp Business no chat (opcional: quem nao manda, o robo so nao etiqueta).
+  etiquetar?: Etiquetar;
   // Tipo/conteudo da mensagem que disparou este agendamento (opcional — so quem
   // ja calculou isso, hoje so o handler de mensagem recebida em whatsappService.ts,
   // manda). Usado so pra decidir o TAMANHO da espera do debounce (achado 18/09).
@@ -90,7 +96,12 @@ async function registrarEventoFluxo(params: AgendarBotParams, resposta: Resposta
         motivoLivre: resposta.motivoLivre || null,
         estadoAntes,
         estadoDepois: resposta.novoEstadoPreco || estadoAntes,
-        partes: JSON.stringify(partesEnviadas.map((p) => (p === '[ENVIAR_LOCALIZACAO]' ? '📍 (pino da localização)' : p.slice(0, 400)))),
+        partes: JSON.stringify(partesEnviadas.map((p) => {
+          if (p === '[ENVIAR_LOCALIZACAO]') return '📍 (pino da localização)';
+          const audio = interpretarMarcadorAudio(p);
+          if (audio) return `🔊 (áudio: ${audio.arquivo})`;
+          return p.slice(0, 400);
+        })),
       },
     });
     // Limpeza: guarda 14 dias (tabela pequena, roda de vez em quando).
@@ -103,17 +114,22 @@ async function registrarEventoFluxo(params: AgendarBotParams, resposta: Resposta
 // Respostas do fluxo editadas pelo dono na tela "Fluxo" do painel (tabela FluxoResposta,
 // so a diferenca do texto padrao). Falha na leitura = sem edicao: o robo usa o texto padrao
 // e nunca deixa de responder por causa disso.
-async function carregarTextosFluxo(): Promise<Record<string, string[]>> {
+async function carregarTextosFluxo(lojaId?: string | null): Promise<Record<string, string[]>> {
   try {
     const linhas = await prisma.fluxoResposta.findMany({ select: { chave: true, partes: true } });
     const saida: Record<string, string[]> = {};
+    const daLoja: Record<string, string[]> = {};
+    const pref = lojaId ? `loja:${lojaId}:` : null;
     for (const l of linhas) {
       try {
         const partes = JSON.parse(l.partes);
-        if (Array.isArray(partes)) saida[l.chave] = partes.map(String);
+        if (!Array.isArray(partes)) continue;
+        // 21/10: texto proprio da loja ("loja:<id>:<chave>") ganha do geral; texto de OUTRA loja nao entra.
+        if (l.chave.startsWith('loja:')) { if (pref && l.chave.startsWith(pref)) daLoja[l.chave.slice(pref.length)] = partes.map(String); continue; }
+        saida[l.chave] = partes.map(String);
       } catch { /* linha corrompida: ignora, usa o padrao */ }
     }
-    return saida;
+    return { ...saida, ...daLoja };
   } catch (e) {
     console.error('[Bot IA] falha ao ler FluxoResposta (usando textos padrao):', (e as any)?.message || e);
     return {};
@@ -189,12 +205,17 @@ async function marcarConversaTratada(params: AgendarBotParams, tratadaAte: Date)
 }
 
 async function dispararLocalizacaoDaLoja(params: AgendarBotParams) {
-  const loc = lerLocalizacaoLoja();
+  // 21/10: pino e foto da LOJA do atendente (bot-lojas.json); sem bloco da loja, o config geral (como antes).
+  const cfgLoja = await configBotDaLoja(params.usuarioId);
+  const geral = lerLocalizacaoLoja();
+  const loc = cfgLoja.porLoja && Number.isFinite(cfgLoja.LOCALIZACAO_LAT) && Number.isFinite(cfgLoja.LOCALIZACAO_LNG)
+    ? { lat: cfgLoja.LOCALIZACAO_LAT as number, lng: cfgLoja.LOCALIZACAO_LNG as number, nome: cfgLoja.NOME_LOJA, endereco: cfgLoja.LOCALIZACAO, foto: caminhoFotoFachada(cfgLoja) }
+    : (geral ? { ...geral, foto: undefined as string | undefined } : null);
   if (!loc) {
     console.error('[Bot IA] localizacao pedida mas LOCALIZACAO_LAT/LNG nao configurados.');
     return;
   }
-  await params.enviarLocalizacao(loc.lat, loc.lng, loc.nome, loc.endereco).catch(() => {});
+  await params.enviarLocalizacao(loc.lat, loc.lng, loc.nome, loc.endereco, loc.foto).catch(() => {});
 }
 
 const timers = new Map<string, NodeJS.Timeout>();
@@ -267,8 +288,49 @@ function extrairVideosDoTexto(texto: string): VideoBotIA[] {
   return videos;
 }
 
+// AUDIO do fluxo (15/10): o motor coloca "[ENVIAR_AUDIO:arquivo]" (ou "[ENVIAR_AUDIO:arquivo!N]" = o audio
+// substitui as N partes de texto seguintes) nas partes da resposta. O nome so aceita [a-z0-9_-], entao o
+// caminho abaixo nunca sai de /midias/bot-audios/.
+function interpretarMarcadorAudio(parte: string): { arquivo: string; pular: number } | null {
+  const m = /^\[ENVIAR_AUDIO:([a-z0-9_-]+)(?:!(\d{1,2}))?\]$/i.exec(parte.trim());
+  if (!m || !m[1]) return null;
+  return { arquivo: m[1], pular: m[2] ? Math.min(parseInt(m[2], 10), 4) : 0 };
+}
+
+const PASTA_AUDIOS_BOT = path.join(__dirname, '../../public/midias/bot-audios');
+// Evita o mesmo audio duas vezes seguidas na mesma conversa (duas rodadas do robo se atropelando).
+const ultimoAudioNaConversa = new Map<string, { arquivo: string; em: number }>();
+const JANELA_AUDIO_REPETIDO_MS = 90_000;
+
+// Manda UM audio do fluxo como mensagem de voz. false = nao foi enviado (arquivo ausente, repetido ha pouco
+// ou falha): quem chama segue com o texto de reserva.
+async function enviarAudioDoFluxo(params: AgendarBotParams, arquivo: string, textoDoAudio: string): Promise<boolean> {
+  try {
+    const abs = path.join(PASTA_AUDIOS_BOT, `${arquivo}.ogg`);
+    if (!fs.existsSync(abs)) {
+      console.error(`[Bot IA] ${params.chatJid}: audio do fluxo "${arquivo}" nao encontrado em ${PASTA_AUDIOS_BOT} — vai o texto.`);
+      return false;
+    }
+    const k = chave(params.usuarioId, params.chatJid);
+    const anterior = ultimoAudioNaConversa.get(k);
+    if (anterior && anterior.arquivo === arquivo && Date.now() - anterior.em < JANELA_AUDIO_REPETIDO_MS) {
+      console.log(`[Bot IA] ${params.chatJid}: audio "${arquivo}" ja enviado ha menos de ${JANELA_AUDIO_REPETIDO_MS / 1000}s — nao repete.`);
+      return true; // ja foi: nao manda o texto de reserva tambem
+    }
+    const legenda = (textoDoAudio || transcricaoDoAudioFluxo(arquivo)).slice(0, 900);
+    const tempo = 2500 + Math.floor(Math.random() * 2000); // "gravando audio..." por alguns segundos
+    const enviado = await params.enviarVideo({ tipo: 'audio', caminho: `/midias/bot-audios/${arquivo}.ogg`, ...(legenda ? { legenda } : {}) }, tempo);
+    if (enviado) ultimoAudioNaConversa.set(k, { arquivo, em: Date.now() });
+    return !!enviado;
+  } catch (e) {
+    console.error(`[Bot IA] ${params.chatJid}: falha ao mandar o audio "${arquivo}":`, (e as any)?.message || e);
+    return false;
+  }
+}
+
 function limparTagsEspeciais(texto: string): string {
   return texto
+    .replace(/\[ENVIAR_AUDIO:[^\]]+\]/gi, '')
     .replace(/\[TRANSFERIR_HUMANO\]/g, '')
     .replace(/\[AGENDAR_VISITA:[^\]]+\]/gi, '')
     .replace(/\[LEMBRAR:[^\]]+\]/gi, '')
@@ -286,13 +348,16 @@ async function gerarRespostaViaBotService(args: {
   estadoPreco: string;
   dadosPreco: string;
   textosFluxo?: Record<string, string[]>;
+  lojaBot?: { nome: string; telefone: string; horario: string; localizacao: string; localizacaoTexto: string } | undefined;
   minutosDesdeLocalizacao?: number | null;
   minutosDesdeUltimaDaLoja?: number | null;
 }): Promise<RespostaBotService> {
   const resposta = await fetch(`${BOT_SERVICE_URL}/gerar-resposta`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(args),
+    // audioFluxo: este processo SABE enviar os audios do fluxo ([ENVIAR_AUDIO:...]). Sem esta marca (versao antiga
+    // daqui, ou o painel simulando) o bot-service tira os marcadores e devolve so o texto — nunca vaza marcador.
+    body: JSON.stringify({ ...args, audioFluxo: true }),
     signal: AbortSignal.timeout(60_000),
   });
   const body = await resposta.json().catch(() => null);
@@ -547,6 +612,14 @@ async function executar(params: AgendarBotParams, versao: number) {
       return;
     }
 
+    // 21/10: loja com ROBO_INICIO (ex.: GP 10:30) — antes desse horario quem responde sao as atendentes.
+    // O robo nao responde; quem ficar sem resposta e pego pelo Vigia depois do horario.
+    const cfgLoja = await configBotDaLoja(params.usuarioId);
+    if (antesDoInicioDoRobo(cfgLoja)) {
+      console.log(`[Bot IA] ${params.chatJid}: antes das ${cfgLoja.ROBO_INICIO} (${cfgLoja.NOME_LOJA}) — atendente responde, robo fica quieto.`);
+      return;
+    }
+
     const ritmo = await ritmoDeLoop(params.usuarioId, params.chatJid);
     if (ritmo.pausar) {
       console.error(`[Bot IA][Anti-loop] ${params.chatJid}: motivo=${ritmo.motivo} — parece conversa com outro robo. Pausando 12h.`);
@@ -661,10 +734,30 @@ async function executar(params: AgendarBotParams, versao: number) {
       ultimosTextosCliente,
       estadoPreco: estadoPrecoSalvo?.estadoPreco || 'sem_estado',
       dadosPreco: estadoPrecoSalvo?.dadosPreco || '{}',
-      textosFluxo: await carregarTextosFluxo(),
+      textosFluxo: await carregarTextosFluxo(cfgLoja.lojaId),
+      lojaBot: cfgLoja.porLoja ? { nome: cfgLoja.NOME_LOJA, telefone: cfgLoja.TELEFONE, horario: cfgLoja.HORARIO, localizacao: cfgLoja.LOCALIZACAO, localizacaoTexto: cfgLoja.LOCALIZACAO_TEXTO || '' } : undefined,
       minutosDesdeLocalizacao,
       minutosDesdeUltimaDaLoja,
     });
+
+    // 21/10 (GP): cliente pediu pneu que NAO esta na tabela. O robo so manda o audio "so um instante que vou
+    // verificar", marca o chat com a etiqueta vermelha e para de responder nessa conversa: a atendente assume.
+    const CHAVES_FORA_DA_LISTA = ['medida_inexistente', 'sem_alternativa'];
+    if (cfgLoja.ETIQUETA_FORA_DA_LISTA && resposta.deterministico && (resposta.chaves || []).some((c) => CHAVES_FORA_DA_LISTA.includes(c))) {
+      if (versoes.get(key) !== versao || !(await conversaLiberada(params.usuarioId, params.chatJid))) return;
+      const audioOk = await enviarAudioDoFluxo(params, 'so-um-instante-verificando', 'Só um instante que eu vou verificar aqui pra você, tá bem?');
+      if (!audioOk) await params.enviarParte('Só um instante que eu vou verificar aqui pra você, tá bem?', tempoDigitacao('Só um instante'));
+      if (params.etiquetar) await params.etiquetar(cfgLoja.ETIQUETA_FORA_DA_LISTA).catch(() => false);
+      const pausaMin = cfgLoja.PAUSA_FORA_DA_LISTA_MIN || 12 * 60;
+      await prisma.botConversa.upsert({
+        where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
+        create: { usuarioId: params.usuarioId, chatJid: params.chatJid, ultimoInboundWaId: params.waId, ultimaRespostaEm: new Date(), pausadoAte: new Date(Date.now() + pausaMin * 60000), motivoPausa: 'fora_da_lista' },
+        update: { ultimoInboundWaId: params.waId, ultimaRespostaEm: new Date(), pausadoAte: new Date(Date.now() + pausaMin * 60000), motivoPausa: 'fora_da_lista' },
+      }).catch(() => {});
+      console.log(`[Bot IA] ${params.chatJid}: pneu fora da tabela — etiqueta "${cfgLoja.ETIQUETA_FORA_DA_LISTA.nome}" e robo pausado ${pausaMin} min (atendente assume).`);
+      await registrarEventoFluxo(params, resposta, estadoPrecoSalvo?.estadoPreco || 'sem_estado', ['[ENVIAR_AUDIO:so-um-instante-verificando]', '(etiqueta: atendente assume)']);
+      return;
+    }
 
     if (resposta.deterministico && resposta.partes.length) {
       // Chegou mensagem nova (ou pausa) enquanto o fluxo lia a rajada: esta resposta ficou velha.
@@ -681,9 +774,20 @@ async function executar(params: AgendarBotParams, versao: number) {
       // Cada parte vai como mensagem SEPARADA (achado 25/08: preco tem que ser gradual,
       // nunca a vista + parcelamento + desconto colados numa unica mensagem).
       // Depois de comecar, termina de mandar tudo (respostas do fluxo sao curtas e coerentes entre si).
-      for (const parte of resposta.partes) {
+      for (let i = 0; i < resposta.partes.length; i++) {
+        const parte = resposta.partes[i] as string;
         const textoLimpo = parte.trim();
         if (!textoLimpo) continue;
+        // AUDIO gravado pelo dono (decisao do CODIGO, ver aplicarAudioFluxo): manda como mensagem de voz.
+        // "!N" = o audio substitui as N partes de texto seguintes — so pula se o audio foi mesmo enviado.
+        const audio = interpretarMarcadorAudio(textoLimpo);
+        if (audio) {
+          if (versoes.get(key) !== versao || !(await conversaLiberada(params.usuarioId, params.chatJid))) return;
+          const textoSubstituido = audio.pular > 0 ? resposta.partes.slice(i + 1, i + 1 + audio.pular).filter((p) => !interpretarMarcadorAudio(p)).join('\n') : '';
+          const audioEnviado = await enviarAudioDoFluxo(params, audio.arquivo, textoSubstituido);
+          if (audioEnviado && audio.pular > 0) i += audio.pular;
+          continue;
+        }
         // O motor marca, na ordem certa, onde o pino da loja tem que sair (decisao do CODIGO).
         if (textoLimpo === '[ENVIAR_LOCALIZACAO]') {
           await dispararLocalizacaoDaLoja(params);

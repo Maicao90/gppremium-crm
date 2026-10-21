@@ -17,6 +17,7 @@ function getIo() {
   return require('../server').io;
 }
 import { agendarRespostaBotIA, pausarConversaBotIA } from './botAtendimentoService';
+import { configBotDaLoja, caminhoFotoFachada } from '../services/botLojas';
 
 // Pasta onde as mídias recebidas são salvas (servida estaticamente em /midias)
 const MIDIAS_DIR = path.join(__dirname, '../../public/midias');
@@ -301,7 +302,8 @@ const waIdsBotIA = new Set<string>();
 const chatsBotEnviando = new Set<string>();
 const filasEnvioBotIA = new Map<string, Promise<unknown>>();
 interface MidiaBotIA {
-  tipo: 'video';
+  // 'audio' = mensagem de voz (PTT, ogg/opus) do fluxo do robo; `legenda` vira o texto/transcricao salvo na mensagem.
+  tipo: 'video' | 'audio';
   caminho?: string;
   url?: string;
   legenda?: string;
@@ -487,24 +489,42 @@ const CAMINHO_FOTO_FACHADA = path.join(__dirname, '../../data/fachada-loja.jpg')
 // Le as coordenadas do mesmo config do bot.
 export async function enviarLocalizacaoManual(usuarioId: string, chatJid: string): Promise<boolean> {
   try {
-    const cfg = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/bot-pneus-config.json'), 'utf8'));
+    // Loja do atendente (bot-lojas.json), senao o config geral do robo.
+    const cfg = await configBotDaLoja(usuarioId);
     const lat = Number(cfg.LOCALIZACAO_LAT);
     const lng = Number(cfg.LOCALIZACAO_LNG);
     if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
       console.error('[Localizacao] LOCALIZACAO_LAT/LNG nao configurados.');
       return false;
     }
-    const nome = String(cfg.NOME_LOJA || 'Loja');
-    const endereco = String(cfg.LOCALIZACAO || '');
     const numeroReal = chatJid.split('@')[0] || '';
-    return enviarLocalizacaoBotIA(usuarioId, chatJid, numeroReal, lat, lng, nome, endereco);
+    return enviarLocalizacaoBotIA(usuarioId, chatJid, numeroReal, lat, lng, cfg.NOME_LOJA, cfg.LOCALIZACAO, caminhoFotoFachada(cfg));
   } catch (e: any) {
     console.error('[Localizacao] Falha no disparo manual:', e?.message || e);
     return false;
   }
 }
 
-async function enviarLocalizacaoBotIA(usuarioId: string, chatJid: string, numeroReal: string, lat: number, lng: number, nome: string, endereco: string): Promise<boolean> {
+// Etiqueta do WhatsApp Business no chat (21/10): o robo marca a conversa pra atendente assumir (ex.: cliente
+// pediu pneu que nao esta na tabela). Cria a etiqueta da loja se ainda nao existir e aplica no chat. So funciona
+// em conta WhatsApp Business; falha aqui nunca derruba o atendimento.
+export async function etiquetarChatBotIA(usuarioId: string, chatJid: string, etiqueta: { id: string; nome: string; cor?: number }): Promise<boolean> {
+  try {
+    const sock: any = await aguardarSocketBotIA(usuarioId);
+    if (!sock || typeof sock.addChatLabel !== 'function') return false;
+    await comLimiteDeTempo(sock.addLabel(chatJid, { id: String(etiqueta.id), name: etiqueta.nome, color: Number.isFinite(etiqueta.cor) ? etiqueta.cor : 0, deleted: false }), 20_000, 'addLabel').catch((e: any) => console.error('[Bot IA] criar etiqueta:', e?.message || e));
+    await comLimiteDeTempo(sock.addChatLabel(chatJid, String(etiqueta.id)), 20_000, 'addChatLabel');
+    console.log(`[Bot IA] ${chatJid}: etiqueta "${etiqueta.nome}" aplicada.`);
+    return true;
+  } catch (e: any) {
+    console.error('[Bot IA] Falha ao etiquetar chat:', e?.message || e);
+    return false;
+  }
+}
+
+async function enviarLocalizacaoBotIA(usuarioId: string, chatJid: string, numeroReal: string, lat: number, lng: number, nome: string, endereco: string, fotoFachada?: string): Promise<boolean> {
+  // Foto da fachada DA LOJA do atendente (bot-lojas.json); sem ela, a foto geral antiga (se existir).
+  const caminhoFoto = fotoFachada || CAMINHO_FOTO_FACHADA;
   const anterior = filasEnvioBotIA.get(usuarioId) || Promise.resolve();
   const atual = anterior.catch(() => {}).then(async () => {
     const sock = await aguardarSocketBotIA(usuarioId);
@@ -536,10 +556,10 @@ async function enviarLocalizacaoBotIA(usuarioId: string, chatJid: string, numero
 
       // Depois de mandar o pino, espera alguns segundos e sobe a foto da fachada —
       // se o arquivo existir. Sem foto cadastrada, nao faz nada (nao quebra o fluxo).
-      if (fs.existsSync(CAMINHO_FOTO_FACHADA)) {
+      if (fs.existsSync(caminhoFoto)) {
         await delay(3000);
         try {
-          const bufferFoto = fs.readFileSync(CAMINHO_FOTO_FACHADA);
+          const bufferFoto = fs.readFileSync(caminhoFoto);
           await comLimiteDeTempo(sock.sendPresenceUpdate('composing', chatJid), 10_000, 'presence').catch(() => {});
           await delay(500);
           const enviadaFoto = await comLimiteDeTempo<any>(
@@ -589,12 +609,16 @@ async function enviarMidiaBotIA(usuarioId: string, chatJid: string, numeroReal: 
     const key = `${usuarioId}:${chatJid}`;
     chatsBotEnviando.add(key);
     try {
+      const ehAudio = midia.tipo === 'audio';
       const carregada = await carregarMidiaBotIA(midia);
-      await comLimiteDeTempo(sock.sendPresenceUpdate('composing', chatJid), 10_000, 'presence').catch(() => {});
+      // Audio: aparece "gravando audio..." (e nao "digitando...") antes de a mensagem de voz chegar.
+      await comLimiteDeTempo(sock.sendPresenceUpdate(ehAudio ? 'recording' : 'composing', chatJid), 10_000, 'presence').catch(() => {});
       await delay(tempoDigitacaoMs);
 
-      const conteudo: any = { video: carregada.buffer };
-      if (midia.legenda?.trim()) conteudo.caption = midia.legenda.trim();
+      const conteudo: any = ehAudio
+        ? { audio: carregada.buffer, mimetype: 'audio/ogg; codecs=opus', ptt: true }
+        : { video: carregada.buffer };
+      if (!ehAudio && midia.legenda?.trim()) conteudo.caption = midia.legenda.trim();
       const enviada = await comLimiteDeTempo<any>(sock.sendMessage(chatJid, conteudo), 90_000, 'sendMessage(midia)');
       await comLimiteDeTempo(sock.sendPresenceUpdate('unavailable'), 10_000, 'presence').catch(() => {});
 
@@ -616,7 +640,7 @@ async function enviarMidiaBotIA(usuarioId: string, chatJid: string, numeroReal: 
           chatNome: '',
           fromMe: true,
           texto: midia.legenda || '',
-          tipo: 'video',
+          tipo: ehAudio ? 'audio' : 'video',
           midiaUrl,
           waId,
           numeroReal: numeroReal || null,
@@ -1625,7 +1649,8 @@ export async function connectToWhatsApp(
           waId: msg.key.id,
           enviarParte: (texto, tempo) => enviarParteBotIA(usuarioId, remoteJid, numeroRecep, texto, tempo),
           enviarVideo: (video, tempo) => enviarMidiaBotIA(usuarioId, remoteJid, numeroRecep, video as MidiaBotIA, tempo),
-          enviarLocalizacao: (lat, lng, nome, endereco) => enviarLocalizacaoBotIA(usuarioId, remoteJid, numeroRecep, lat, lng, nome, endereco),
+          enviarLocalizacao: (lat, lng, nome, endereco, foto) => enviarLocalizacaoBotIA(usuarioId, remoteJid, numeroRecep, lat, lng, nome, endereco, foto),
+          etiquetar: (etiqueta) => etiquetarChatBotIA(usuarioId, remoteJid, etiqueta),
           // Achado 18/09: usado so pra decidir o TAMANHO da espera do debounce
           // (caso real do Gustavo Souza — imagem do anuncio sem medida na legenda
           // pede mais tempo antes do bot responder).
@@ -1876,7 +1901,8 @@ export async function dispararRespostaBotAgora(usuarioId: string, chatJid: strin
     waId: ultimaEntrada.waId,
     enviarParte: (texto, tempo) => enviarParteBotIA(efetivoId, chatJid, numeroReal, texto, tempo),
     enviarVideo: (video, tempo) => enviarMidiaBotIA(efetivoId, chatJid, numeroReal, video as MidiaBotIA, tempo),
-    enviarLocalizacao: (lat, lng, nome, endereco) => enviarLocalizacaoBotIA(efetivoId, chatJid, numeroReal, lat, lng, nome, endereco),
+    enviarLocalizacao: (lat, lng, nome, endereco, foto) => enviarLocalizacaoBotIA(efetivoId, chatJid, numeroReal, lat, lng, nome, endereco, foto),
+    etiquetar: (etiqueta) => etiquetarChatBotIA(efetivoId, chatJid, etiqueta),
   });
   console.log(`[Bot IA] responderAgora: robo acionado para ${chatJid}.`);
   return true;

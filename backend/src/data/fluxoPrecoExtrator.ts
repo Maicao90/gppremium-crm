@@ -1,4 +1,5 @@
 import { IntencaoExtraida, IntencaoTipo } from './fluxoPreco';
+import { ehChaveAnthropic, extrairEstruturadoAnthropic } from '../services/llmAnthropic';
 
 // CAMADA 1 do fluxo deterministico de preco (10/09). Unica funcao desta feature
 // que fala com a OpenAI. So EXTRAI o que o cliente quis dizer, em formulario
@@ -59,6 +60,10 @@ const CODIGO_PARA_INTENCAO: Record<string, IntencaoTipo> = {
   CAT_Y: 'OFERTA_DE_FORNECEDOR',
   CAT_Z: 'PERGUNTOU_SE_E_NACIONAL',
   CAT_AA: 'SO_SAUDACAO',
+  // CAT_AB adicionado 15/10 (garantia: audio do dono) — idem: nome real so aqui no mapa de volta.
+  CAT_AB: 'PERGUNTOU_GARANTIA',
+  // CAT_AC adicionado 21/10 (promocao compre 3 e leve 4).
+  CAT_AC: 'PERGUNTOU_PROMOCAO_LEVE4',
 };
 
 const SCHEMA_ITEM = {
@@ -66,8 +71,8 @@ const SCHEMA_ITEM = {
   properties: {
     intencao: {
       type: 'string',
-      enum: ['CAT_A', 'CAT_B', 'CAT_C', 'CAT_D', 'CAT_E', 'CAT_F', 'CAT_G', 'CAT_H', 'CAT_I', 'CAT_J', 'CAT_K', 'CAT_L', 'CAT_M', 'CAT_N', 'CAT_O', 'CAT_P', 'CAT_Q', 'CAT_R', 'CAT_S', 'CAT_T', 'CAT_U', 'CAT_V', 'CAT_W', 'CAT_X', 'CAT_Y', 'CAT_Z', 'CAT_AA'],
-      description: 'CAT_A = cliente informou a medida do pneu nesta mensagem (mesmo em formato estranho, tipo "16r 205 55" ou "225/70 aro 17"). CAT_B = pergunta de preco/valor SEM informar a medida nesta mensagem — inclui perguntas curtas e genericas tipo "quanto custa?", "qual o valor?", "quanto e?", "quanto fica?", "quanto ta?", "tem preco?", mesmo sem citar produto, medida ou qualquer outro detalhe; uma pergunta assim, pura e sem mais nada, e SEMPRE CAT_B — MAS se a mensagem tambem desconfiar/perguntar sobre remold/procedencia, e CAT_G, nao CAT_B. CAT_C = informou quantos pneus quer (numero de unidades), sem dar medida nova. CAT_D = esta escolhendo uma das opcoes de medida que JA foram oferecidas antes (contexto da conversa), mesmo so repetindo a medida escolhida. CAT_E = pergunta sobre uma caracteristica tecnica CONCRETA do produto que NAO e preco e NAO e sobre remold/procedencia — exige que a mensagem cite algo especifico tipo capacidade de carga em kg, durabilidade, garantia, material ou resistencia; sem essa caracteristica citada explicitamente, NUNCA e CAT_E, mesmo que a mensagem seja curta ou sem contexto. CAT_F = qualquer outra coisa (saudacao, reclamacao que nao seja de preco/marca, papo solto, informacao sobre a situacao dele) que NAO seja agradecimento/despedida (esses sao CAT_X). CAT_G = o cliente pergunta diretamente se o pneu e remold, recauchutado ou recapado, OU desconfia/insinua isso de forma indireta (ex.: "por que e tao barato?", "e original mesmo?", "e pneu de verdade?"), OU diz que nao quer remold ("remold to fora", "nao quero remold"), mesmo sem usar a palavra "remold" — isso e SEMPRE CAT_G, nunca CAT_E (que e so sobre capacidade/durabilidade/peso, sem nenhuma relacao com origem/procedencia do pneu) nem CAT_B (pergunta de preco pura, sem nenhuma desconfianca sobre remold/procedencia). CAT_H = pergunta se PARCELA / se da pra parcelar / se aceita cartao parcelado, SEM citar em quantas vezes ("parcela?", "da pra parcelar?", "tem parcelamento?"). CAT_I = pergunta o valor em um NUMERO ESPECIFICO de parcelas (ex.: "em 6x fica quanto?", "quanto fica em 10x?", "parcelando em 3 vezes?", inclusive com erro de digitacao tipo "passeando"/"passelar" no lugar de "parcelando") — preencha parcelas_extraida com esse numero. CAT_J = pergunta se o parcelamento e SEM JUROS ou se tem juros/acrescimo nas parcelas. CAT_K = pergunta se tem DESCONTO, pede desconto ou preco melhor, ou pergunta de desconto pagando a vista/em dinheiro/no pix ("a vista tem desconto?", "faz desconto?", "no pix tem desconto?", "no dinheiro fica quanto?") — preencha forma_pagamento_extraida quando ele citar dinheiro ou pix. CAT_L = pergunta EXPLICITAMENTE se o pneu e chines / de origem chinesa ("isso e chines?", "e pneu chines?") SEM perguntar tambem sobre remold, recauchutado ou por que e barato (se perguntar isso junto, e CAT_G). CAT_M = quer dar o pneu usado dele como parte do pagamento / base de troca / trocar o pneu velho por novo dando o velho de entrada. CAT_N = quer VENDER o pneu usado dele pra loja, ou pergunta se a loja COMPRA pneu usado (sem ser como parte do pagamento). CAT_O = pergunta sobre nota fiscal (se emite, se da nota, se tem nota). CAT_P = pergunta sobre balanceamento (se faz, quanto custa) — se citar quantos pneus/rodas, preencha quantidade_extraida. CAT_Q = pergunta sobre alinhamento (se faz, quanto custa). CAT_R = pede o endereco, a localizacao da loja, onde fica, ou pede pra mandar a localizacao / o pino do mapa. CAT_S = reclama que o preco esta caro, diz que achou mais barato em outro lugar, ou desqualifica a marca/qualidade ("essa marca nao presta", "ta muito caro"), SEM fazer nenhuma pergunta concreta nova na mesma mensagem (se tambem perguntar algo concreto tipo desconto ou parcelamento, vale a categoria da pergunta concreta). CAT_T = pergunta se a loja TEM ou trabalha com OUTRA marca de pneu — cita uma marca (Pirelli, Dunlop, Michelin, Goodyear, Bridgestone, Continental...) ou pergunta por "outras marcas" ("vc tem pirelli ou dunlop?", "tem michelin?", "trabalha com outras marcas?"). So vale quando o cliente CITA o nome de uma marca ou pergunta por "outras marcas": palavras como "dele", "desse", "novos" referindo-se ao pneu que ja esta na conversa NAO sao outra marca (ex.: "tem somente novos dele?" pergunta se o pneu e novo — isso e CAT_W). CAT_U = pergunta o HORARIO de funcionamento da loja, se esta aberta agora, ate que horas atende, se abre no sabado/domingo ("ta aberto agora?", "que horas fecha?", "qual o horario?"). CAT_V = pede FOTO ou imagem do pneu, ou pede pra ver o pneu por foto ("foto", "manda foto do pneu", "tem foto?", "me mostra o pneu"). CAT_W = pergunta se o pneu e NOVO, se so tem pneu novo, ou se tem "meia-vida" / usado / seminovo, SEM usar as palavras remold, recauchutado ou recapado ("e novo?", "tem somente novos?", "tem meia vida ou so pneus novos?", "pneu novo ou usado?", "e novo mesmo?"). CAT_X = a mensagem SO agradece, confirma que entendeu, se despede ou diz que vai pensar/decidir depois, SEM pedir nada e SEM nenhuma pergunta ("ok obrigado", "blz", "valeu", "beleza", "entendi", "combinado", "tchau", "vou pensar e te falo", "depois eu vejo", "mais tarde eu volto", "sem interesse", "nao quero mais", "desisti", "ja comprei"). Se a mesma mensagem tambem pedir ou perguntar qualquer coisa ("ok, e em 6x?"), vale a categoria do pedido, nunca CAT_X. CAT_Y = quem escreve NAO e cliente querendo comprar: e um VENDEDOR, FORNECEDOR, importadora, distribuidora, representante ou empresa OFERECENDO produtos, lista/tabela de precos, cotacao, catalogo ou parceria PARA A LOJA (ex.: "sou da importadora X, estou a disposicao pra cotacoes", uma lista de medidas com precos de outra marca oferecida pra loja revender). Cliente comparando preco ("vi mais barato em outra loja") NAO e CAT_Y (isso e CAT_S). CAT_Z = pergunta se o pneu e NACIONAL, fabricado no Brasil, importado, ou de onde ele vem / qual a origem ("e nacional?", "e feito no Brasil?", "e importado?", "de onde e esse pneu?") — vale mesmo que cite "chines" junto. CAT_AA = as mensagens SO cumprimentam ("oi", "ola", "bom dia", "boa tarde", "tudo bem?") e/ou sao so a legenda automatica de clique em anuncio ("📢 [Anúncio] ... Posso ter mais informações sobre isso?"), sem nenhuma pergunta ou pedido concreto.',
+      enum: ['CAT_A', 'CAT_B', 'CAT_C', 'CAT_D', 'CAT_E', 'CAT_F', 'CAT_G', 'CAT_H', 'CAT_I', 'CAT_J', 'CAT_K', 'CAT_L', 'CAT_M', 'CAT_N', 'CAT_O', 'CAT_P', 'CAT_Q', 'CAT_R', 'CAT_S', 'CAT_T', 'CAT_U', 'CAT_V', 'CAT_W', 'CAT_X', 'CAT_Y', 'CAT_Z', 'CAT_AA', 'CAT_AB', 'CAT_AC'],
+      description: 'CAT_A = cliente informou a medida do pneu nesta mensagem (mesmo em formato estranho, tipo "16r 205 55" ou "225/70 aro 17"). CAT_B = pergunta de preco/valor SEM informar a medida nesta mensagem — inclui perguntas curtas e genericas tipo "quanto custa?", "qual o valor?", "quanto e?", "quanto fica?", "quanto ta?", "tem preco?", mesmo sem citar produto, medida ou qualquer outro detalhe; uma pergunta assim, pura e sem mais nada, e SEMPRE CAT_B — MAS se a mensagem tambem desconfiar/perguntar sobre remold/procedencia, e CAT_G, nao CAT_B. CAT_C = informou quantos pneus quer (numero de unidades), sem dar medida nova. CAT_D = esta escolhendo uma das opcoes de medida que JA foram oferecidas antes (contexto da conversa), mesmo so repetindo a medida escolhida. CAT_E = pergunta sobre uma caracteristica tecnica CONCRETA do produto que NAO e preco e NAO e sobre remold/procedencia — exige que a mensagem cite algo especifico tipo capacidade de carga em kg, material ou resistencia (garantia e durabilidade em km/anos sao CAT_AB, nao CAT_E); sem essa caracteristica citada explicitamente, NUNCA e CAT_E, mesmo que a mensagem seja curta ou sem contexto. CAT_F = qualquer outra coisa (saudacao, reclamacao que nao seja de preco/marca, papo solto, informacao sobre a situacao dele) que NAO seja agradecimento/despedida (esses sao CAT_X). CAT_G = o cliente pergunta diretamente se o pneu e remold, recauchutado ou recapado, OU desconfia/insinua isso de forma indireta (ex.: "por que e tao barato?", "e original mesmo?", "e pneu de verdade?"), OU diz que nao quer remold ("remold to fora", "nao quero remold"), mesmo sem usar a palavra "remold" — isso e SEMPRE CAT_G, nunca CAT_E (que e so sobre capacidade/durabilidade/peso, sem nenhuma relacao com origem/procedencia do pneu) nem CAT_B (pergunta de preco pura, sem nenhuma desconfianca sobre remold/procedencia). CAT_H = pergunta se PARCELA / se da pra parcelar / se aceita cartao parcelado, SEM citar em quantas vezes ("parcela?", "da pra parcelar?", "tem parcelamento?"). CAT_I = pergunta o valor em um NUMERO ESPECIFICO de parcelas (ex.: "em 6x fica quanto?", "quanto fica em 10x?", "parcelando em 3 vezes?", inclusive com erro de digitacao tipo "passeando"/"passelar" no lugar de "parcelando") — preencha parcelas_extraida com esse numero. CAT_J = pergunta se o parcelamento e SEM JUROS ou se tem juros/acrescimo nas parcelas. CAT_K = pergunta se tem DESCONTO, pede desconto ou preco melhor, ou pergunta de desconto pagando a vista/em dinheiro/no pix ("a vista tem desconto?", "faz desconto?", "no pix tem desconto?", "no dinheiro fica quanto?") — preencha forma_pagamento_extraida quando ele citar dinheiro ou pix. CAT_L = pergunta EXPLICITAMENTE se o pneu e chines / de origem chinesa ("isso e chines?", "e pneu chines?") SEM perguntar tambem sobre remold, recauchutado ou por que e barato (se perguntar isso junto, e CAT_G). CAT_M = quer dar o pneu usado dele como parte do pagamento / base de troca / trocar o pneu velho por novo dando o velho de entrada. CAT_N = quer VENDER o pneu usado dele pra loja, ou pergunta se a loja COMPRA pneu usado (sem ser como parte do pagamento). CAT_O = pergunta sobre nota fiscal (se emite, se da nota, se tem nota). CAT_P = pergunta sobre balanceamento (se faz, quanto custa) — se citar quantos pneus/rodas, preencha quantidade_extraida. CAT_Q = pergunta sobre alinhamento (se faz, quanto custa). CAT_R = pede o endereco, a localizacao da loja, onde fica, ou pede pra mandar a localizacao / o pino do mapa. CAT_S = reclama que o preco esta caro, diz que achou mais barato em outro lugar, ou desqualifica a marca/qualidade ("essa marca nao presta", "ta muito caro"), SEM fazer nenhuma pergunta concreta nova na mesma mensagem (se tambem perguntar algo concreto tipo desconto ou parcelamento, vale a categoria da pergunta concreta). CAT_T = pergunta se a loja TEM ou trabalha com OUTRA marca de pneu — cita uma marca (Pirelli, Dunlop, Michelin, Goodyear, Bridgestone, Continental...) ou pergunta por "outras marcas" ("vc tem pirelli ou dunlop?", "tem michelin?", "trabalha com outras marcas?"). So vale quando o cliente CITA o nome de uma marca ou pergunta por "outras marcas": palavras como "dele", "desse", "novos" referindo-se ao pneu que ja esta na conversa NAO sao outra marca (ex.: "tem somente novos dele?" pergunta se o pneu e novo — isso e CAT_W). CAT_U = pergunta o HORARIO de funcionamento da loja, se esta aberta agora, ate que horas atende, se abre no sabado/domingo ("ta aberto agora?", "que horas fecha?", "qual o horario?"). CAT_V = pede FOTO ou imagem do pneu, ou pede pra ver o pneu por foto ("foto", "manda foto do pneu", "tem foto?", "me mostra o pneu"). CAT_W = pergunta se o pneu e NOVO, se so tem pneu novo, ou se tem "meia-vida" / usado / seminovo, SEM usar as palavras remold, recauchutado ou recapado ("e novo?", "tem somente novos?", "tem meia vida ou so pneus novos?", "pneu novo ou usado?", "e novo mesmo?"). CAT_X = a mensagem SO agradece, confirma que entendeu, se despede ou diz que vai pensar/decidir depois, SEM pedir nada e SEM nenhuma pergunta ("ok obrigado", "blz", "valeu", "beleza", "entendi", "combinado", "tchau", "vou pensar e te falo", "depois eu vejo", "mais tarde eu volto", "sem interesse", "nao quero mais", "desisti", "ja comprei"). Se a mesma mensagem tambem pedir ou perguntar qualquer coisa ("ok, e em 6x?"), vale a categoria do pedido, nunca CAT_X. CAT_Y = quem escreve NAO e cliente querendo comprar: e um VENDEDOR, FORNECEDOR, importadora, distribuidora, representante ou empresa OFERECENDO produtos, lista/tabela de precos, cotacao, catalogo ou parceria PARA A LOJA (ex.: "sou da importadora X, estou a disposicao pra cotacoes", uma lista de medidas com precos de outra marca oferecida pra loja revender). Cliente comparando preco ("vi mais barato em outra loja") NAO e CAT_Y (isso e CAT_S). CAT_Z = pergunta se o pneu e NACIONAL, fabricado no Brasil, importado, ou de onde ele vem / qual a origem ("e nacional?", "e feito no Brasil?", "e importado?", "de onde e esse pneu?") — vale mesmo que cite "chines" junto. CAT_AA = as mensagens SO cumprimentam ("oi", "ola", "bom dia", "boa tarde", "tudo bem?") e/ou sao so a legenda automatica de clique em anuncio ("📢 [Anúncio] ... Posso ter mais informações sobre isso?"), sem nenhuma pergunta ou pedido concreto. CAT_AB = pergunta sobre a GARANTIA do pneu: se tem garantia, de quanto tempo ou de quantos km e a garantia, como funciona a garantia, OU quantos km / quanto tempo o pneu dura ou roda ("qual a garantia?", "tem garantia?", "a garantia e de quanto tempo?", "quantos km roda esse pneu?", "dura quanto tempo?") — sem desconfiar de remold (isso e CAT_G). CAT_AC = pergunta sobre a promocao COMPRE 3 E LEVE 4 (se existe, se ainda vale, em quais medidas ou marcas vale, se levando 4 paga 3) — so pergunta sobre a promocao; se tambem deu medida, a medida vira outro item.',
     },
     medida_extraida: {
       type: ['string', 'null'],
@@ -121,7 +126,7 @@ const SAIDA = (...itens: string[]) => `{"itens":[${itens.join(',')}]}`;
 // CODIGO_PARA_INTENCAO: citar os nomes descritivos aqui (mesmo so como explicacao,
 // sem serem o valor de saida) nao foi testado e e mais seguro evitar.
 const INSTRUCAO = [
-  'Voce le as mensagens que UM cliente de uma loja de pneus mandou em sequencia (todas chegaram juntas, ainda sem resposta) e devolve a LISTA dos assuntos distintos que ele pediu ou disse, na ordem em que apareceram, usando os codigos CAT_A..CAT_AA descritos no schema.',
+  'Voce le as mensagens que UM cliente de uma loja de pneus mandou em sequencia (todas chegaram juntas, ainda sem resposta) e devolve a LISTA dos assuntos distintos que ele pediu ou disse, na ordem em que apareceram, usando os codigos CAT_A..CAT_AC descritos no schema.',
   'ANTES DE TUDO: se quem escreve e um VENDEDOR/FORNECEDOR/importadora/distribuidora/representante OFERECENDO produto, lista de precos, cotacao ou parceria PRA LOJA (nao e cliente querendo comprar), devolva UM item so, CAT_Y — mesmo que a mensagem tenha medidas e precos.',
   'REGRA MAIS IMPORTANTE: so gere itens para as mensagens sob "MENSAGENS DO CLIENTE A CLASSIFICAR". O "Contexto recente" serve APENAS pra entender referencias (ex.: "esses ai", "e em 6x?", "pode ser essa") — tudo o que aparece so no contexto JA FOI RESPONDIDO e NUNCA vira item. Exemplo: se o contexto tem o cliente perguntando o endereco e a loja ja respondendo, e a mensagem a classificar e "e em 6x fica quanto?", a lista tem UM item so (o das parcelas), nunca o endereco de novo.',
   'Regras da lista:',
@@ -151,6 +156,7 @@ const INSTRUCAO = [
   '15. Pede o endereco / a localizacao da loja / onde fica / pede pra mandar a localizacao? Se sim -> CAT_R.',
   '15b. Pergunta o horario de funcionamento / se a loja esta aberta agora / ate que horas atende? Se sim -> CAT_U.',
   '15c. Pede foto ou imagem do pneu (ou pede pra ver o pneu por foto)? Se sim -> CAT_V.',
+  '15d. Pergunta sobre a GARANTIA do pneu (se tem, de quanto tempo ou quantos km, como funciona) ou quantos km / quanto tempo o pneu dura ou roda, SEM desconfiar de remold? Se sim -> CAT_AB.',
   '16. Pergunta se a loja TEM ou trabalha com OUTRA marca de pneu (cita Pirelli, Dunlop, Michelin, Goodyear, Bridgestone... ou pergunta por "outras marcas")? Se sim -> CAT_T.',
   '17. Reclama que o preco esta caro, diz que achou mais barato em outro lugar, ou desqualifica a marca/qualidade, SEM fazer uma pergunta concreta nova? Se sim -> CAT_S.',
   '18. Cita ou pergunta EXPLICITAMENTE sobre uma caracteristica tecnica CONCRETA do produto, SEM nenhuma relacao com remold/procedencia — algo como capacidade de carga em kg, durabilidade, garantia, material, resistencia? So marque este passo se essa caracteristica especifica realmente aparecer (nao vale so "a mensagem e curta" ou "nao tem produto citado" — isso sozinho NAO conta como caracteristica tecnica). Se bateu -> CAT_E.',
@@ -186,6 +192,11 @@ const INSTRUCAO = [
   'Mensagem "PNEUS DE GWT 175/70 13 APLUS 189,56 185/60 14 APLUS 216,56 205/55 16 DOUBLESTAR 259,79 FRETE GRATIS ACIMA DE 4000,00", contexto vazio -> ' + SAIDA(ITEM('CAT_Y')),
   'Mensagem "vi mais barato em outra loja, 199 o 175/70/14", contexto com preco ja dado -> ' + SAIDA(ITEM('CAT_S')),
   'Mensagem "esse pneu é nacional?", contexto com preco ja dado -> ' + SAIDA(ITEM('CAT_Z')),
+  'Mensagem "qual a garantia desse pneu?", contexto com preco ja dado -> ' + SAIDA(ITEM('CAT_AB')),
+  'Mensagem "tem garantia?", contexto vazio -> ' + SAIDA(ITEM('CAT_AB')),
+  'Mensagem "essa promocao compre 3 leve 4 ainda vale?", contexto vazio -> ' + SAIDA(ITEM('CAT_AC')),
+  'Mensagem "o leve 4 pague 3 e pra qual medida?", contexto com preco ja dado -> ' + SAIDA(ITEM('CAT_AC')),
+  'Mensagem "quantos km roda esse pneu?", contexto com preco ja dado -> ' + SAIDA(ITEM('CAT_AB')),
   'Mensagem "sem interesse", contexto com preco ja dado -> ' + SAIDA(ITEM('CAT_X')),
   'Mensagem "ok obrigado", contexto com preco/endereco ja dado -> ' + SAIDA(ITEM('CAT_X')),
   'Mensagens 1) "blz" 2) "obrigado" -> ' + SAIDA(ITEM('CAT_X')),
@@ -220,11 +231,44 @@ export async function extrairIntencoesPreco(
   apiKey: string
 ): Promise<IntencaoExtraida[] | null> {
   try {
-    const model = process.env.OPENAI_MODEL || 'gpt-5-mini';
     const lista = mensagens.map((m) => String(m).slice(0, 500));
     const bloco = lista.length === 1
       ? `MENSAGEM DO CLIENTE A CLASSIFICAR:\n${lista[0]}`
       : `MENSAGENS DO CLIENTE A CLASSIFICAR (na ordem em que chegaram, todas ainda sem resposta):\n${lista.map((m, i) => `${i + 1}) ${m}`).join('\n')}`;
+    const textoUsuario = `Contexto recente da conversa, JA RESPONDIDO — serve so pra entender referencias, NAO classifique nada daqui (mais antiga primeiro):\n${contextoRecente.slice(0, 1500) || '(vazio)'}\n\n${bloco}`;
+    // Provedor Anthropic (chave sk-ant-): saida estruturada por tool use forcado, temperatura 0.
+    if (ehChaveAnthropic(apiKey)) {
+      const saida = await extrairEstruturadoAnthropic({
+        apiKey,
+        model: process.env.ANTHROPIC_MODEL_EXTRATOR || 'claude-haiku-5-5',
+        system: INSTRUCAO,
+        usuario: textoUsuario,
+        schema: SCHEMA_EXTRACAO,
+        nomeFerramenta: 'registrar_extracao',
+      });
+      const itensAnt = converterSaida(saida);
+      // SO_AGRADECIMENTO_COM_PERGUNTA: agradecimento + pergunta na mesma frase; a pergunta vale.
+      if (itensAnt && itensAnt.length === 1 && itensAnt[0]?.intencao === 'AGRADECEU_OU_ENCERROU' && lista.some((m) => m.includes('?'))) {
+        const semAgradecer = lista.map((m) => m.replace(/^\s*((muito\s+)?obrigad[oa]s?|brigad[oa]|valeu|vlw|blz|beleza|ok|show|top|certo|entendi)[\s,.!;:-]*/i, '').trim()).filter(Boolean);
+        if (semAgradecer.join(' ') !== lista.join(' ')) {
+          const bloco2 = semAgradecer.length === 1
+            ? `MENSAGEM DO CLIENTE A CLASSIFICAR:\n${semAgradecer[0]}`
+            : `MENSAGENS DO CLIENTE A CLASSIFICAR (na ordem em que chegaram, todas ainda sem resposta):\n${semAgradecer.map((m, i) => `${i + 1}) ${m}`).join('\n')}`;
+          const saida2 = await extrairEstruturadoAnthropic({
+            apiKey,
+            model: process.env.ANTHROPIC_MODEL_EXTRATOR || 'claude-haiku-5-5',
+            system: INSTRUCAO,
+            usuario: bloco2, // sem o contexto: com ele o modelo insistia em "agradecimento"
+            schema: SCHEMA_EXTRACAO,
+            nomeFerramenta: 'registrar_extracao',
+          });
+          const itens2 = converterSaida(saida2);
+          if (itens2 && itens2.some((i) => i.intencao !== 'AGRADECEU_OU_ENCERROU')) return itens2;
+        }
+      }
+      return itensAnt;
+    }
+    const model = process.env.OPENAI_MODEL || 'gpt-5-mini';
     // Esforco de raciocinio: classificar mensagem nao precisa "pensar" — medido em 18/09 com a rajada
     // real: padrao do modelo = 3-18s por chamada; minimal = 1-2s, mesma precisao. Configuravel por env
     // (FLUXO_EXTRATOR_EFFORT = minimal|low|medium|high|padrao; "padrao" nao manda o parametro).
@@ -237,7 +281,7 @@ export async function extrairIntencoesPreco(
         ...(comEsforco && esforco !== 'padrao' ? { reasoning: { effort: esforco } } : {}),
         input: [
           { role: 'system', content: [{ type: 'input_text', text: INSTRUCAO }] },
-          { role: 'user', content: [{ type: 'input_text', text: `Contexto recente da conversa, JA RESPONDIDO — serve so pra entender referencias, NAO classifique nada daqui (mais antiga primeiro):\n${contextoRecente.slice(0, 1500) || '(vazio)'}\n\n${bloco}` }] },
+          { role: 'user', content: [{ type: 'input_text', text: textoUsuario }] },
         ],
         text: { format: { type: 'json_schema', name: 'extracao_preco', strict: true, schema: SCHEMA_EXTRACAO } },
       }),
@@ -254,16 +298,19 @@ export async function extrairIntencoesPreco(
       console.error('[FluxoPreco][Extrator] Falha na API:', resp.status, body?.error?.message);
       return null;
     }
-    const textoSaida = extrairTextoJson(body);
-    if (!textoSaida) return null;
-    const parsed = JSON.parse(textoSaida);
-    if (!Array.isArray(parsed?.itens)) return null;
-    const itens = parsed.itens.map(converterItem).filter((i: IntencaoExtraida | null): i is IntencaoExtraida => !!i);
-    return itens.length ? itens : null;
+    return converterSaida(extrairTextoJson(body));
   } catch (e: any) {
     console.error('[FluxoPreco][Extrator] Erro:', e?.message || e);
     return null; // falha = trata como OUTRO_ASSUNTO no chamador (fail-safe, nunca trava o cliente)
   }
+}
+
+function converterSaida(textoSaida: string | null): IntencaoExtraida[] | null {
+  if (!textoSaida) return null;
+  const parsed = JSON.parse(textoSaida);
+  if (!Array.isArray(parsed?.itens)) return null;
+  const itens = parsed.itens.map(converterItem).filter((i: IntencaoExtraida | null): i is IntencaoExtraida => !!i);
+  return itens.length ? itens : null;
 }
 
 // Uma mensagem so -> o 1o assunto (mantido pros testes de classificacao de mensagem unica).

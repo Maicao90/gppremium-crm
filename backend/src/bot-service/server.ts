@@ -8,6 +8,8 @@ import dotenv from 'dotenv';
 import express from 'express';
 import {
   montarBriefingComercialDeterministico,
+  extrairMedidasDoTexto,
+  encontrarPrecosExatosPorMedida,
 } from '../data/tabelaPrecos';
 import { precosForaDaTabela, valoresEmReais } from '../data/precoGuard';
 import { prometeuTransferenciaFalsa, removerReperguntaPosPreco, removerRepeticaoRecente, removerPromessaDeFoto, removerHorarioNaoPedido, removerLocalizacaoRepetida, pareceAgradecimento } from '../data/comportamentoGuard';
@@ -15,11 +17,15 @@ import { lerBotPneusConfig, montarPromptAtendimentoBot } from '../services/botPn
 import { decidirSequenciaPreco, EstadoPrecoFluxo, DadosPrecoFluxo } from '../data/fluxoPreco';
 import { extrairIntencoesPreco } from '../data/fluxoPrecoExtrator';
 import { sanitizarTextosFluxo, chavesJaRespondidas, textoFluxo, SILENCIO_SE_REPETIR } from '../data/fluxoCatalogo';
+import { chaveDoFluxo, ehChaveAnthropic, gerarTextoAnthropic, MensagemAnthropic } from '../services/llmAnthropic';
 
 dotenv.config();
 
 const app = express();
 app.use(express.json({ limit: '15mb' }));
+
+// Dados da loja do numero que recebeu a mensagem (vem do whatsapp-crm; null = config geral).
+interface LojaBot { nome: string; telefone: string; horario: string; localizacao: string; localizacaoTexto: string }
 
 interface RespostaBotBridge {
   partes: string[];
@@ -44,7 +50,9 @@ function extrairTextoOpenAI(payload: any): string {
 }
 
 function parsearRespostaBot(payload: string): RespostaBotBridge {
-  const texto = String(payload || '').trim();
+  let texto = String(payload || '').trim();
+  // Claude costuma embrulhar o JSON em ```json ... ``` — tira a cerca antes de ler.
+  texto = texto.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '').trim();
   if (!texto) return { partes: [] };
   try {
     const parsed = JSON.parse(texto);
@@ -97,19 +105,51 @@ async function transcreverAudio(apiKey: string, base64: string, mime: string): P
   }
 }
 
+// Converte o `input` no formato da Responses API (OpenAI) pro formato de mensagens da Anthropic.
+// O system vai separado; a conversa tem que comecar por "user" e nao pode ter bloco de texto vazio.
+function paraMensagensAnthropic(input: any[]): MensagemAnthropic[] {
+  const saida: MensagemAnthropic[] = [];
+  for (const item of input) {
+    if (item?.role !== 'user' && item?.role !== 'assistant') continue;
+    const blocos: any[] = [];
+    for (const c of Array.isArray(item.content) ? item.content : []) {
+      if (c?.type === 'input_image') {
+        const m = /^data:([^;]+);base64,([\s\S]+)$/.exec(String(c.image_url || ''));
+        if (m) blocos.push({ type: 'image', source: { type: 'base64', media_type: m[1], data: m[2] } });
+      } else if (typeof c?.text === 'string' && c.text.trim()) {
+        blocos.push({ type: 'text', text: c.text });
+      }
+    }
+    if (blocos.length) saida.push({ role: item.role, content: blocos });
+  }
+  while (saida.length && saida[0]!.role !== 'user') saida.shift();
+  return saida;
+}
+
 async function gerarRespostaViaOpenAI(args: {
   messages: Array<{ role: 'user' | 'assistant'; content: string }>;
   imagem?: any;
   audio?: any;
   lojas: Array<{ nome: string | null; cidade: string | null; estado: string | null; whatsapp: string | null; telefone_fixo: string | null }>;
   briefingComercial: string;
+  lojaBot?: LojaBot | null;
 }): Promise<RespostaBotBridge> {
-  const apiKey = process.env.OPENAI_API_KEY?.trim();
-  if (!apiKey) throw new Error('OPENAI_API_KEY nao configurada.');
+  const apiKey = chaveDoFluxo();
+  if (!apiKey) throw new Error('Nenhuma chave de IA configurada (ANTHROPIC_API_KEY ou OPENAI_API_KEY).');
+  const usarAnthropic = ehChaveAnthropic(apiKey);
+  // Transcricao de audio do cliente continua no Whisper da OpenAI (a Anthropic nao transcreve audio).
+  const chaveWhisper = process.env.OPENAI_API_KEY?.trim();
 
   const model = process.env.OPENAI_MODEL || 'gpt-5-mini';
-  const config = lerBotPneusConfig();
-  const promptBase = montarPromptAtendimentoBot(config);
+  // 21/10: no numero de outra loja (GP, City...) o prompt usa nome/telefone/horario/endereco DESSA loja.
+  const lb = args.lojaBot;
+  const configGeral = lerBotPneusConfig();
+  const config = lb ? { ...configGeral, NOME_LOJA: lb.nome, TELEFONE: lb.telefone || configGeral.TELEFONE || '', HORARIO: lb.horario || configGeral.HORARIO || '', LOCALIZACAO: lb.localizacao || configGeral.LOCALIZACAO || '' } : configGeral;
+  let promptBase = montarPromptAtendimentoBot(config);
+  if (lb) {
+    promptBase = promptBase.replace(/Borracharia Popular/g, lb.nome);
+    if (lb.telefone) promptBase = promptBase.replace(/\(?61\)? ?3774-2114/g, lb.telefone);
+  }
   const lojasTexto = args.lojas.length
     ? args.lojas
         .map((loja) => [
@@ -132,7 +172,7 @@ async function gerarRespostaViaOpenAI(args: {
     '- Use a tabela oficial anexada no prompt como referencia maxima.',
     '- Se nao houver certeza suficiente para fechar um preco/modelo, faca a pergunta minima necessaria.',
     '- Nao existe atendente humano pra assumir: voce e quem atende, sozinho. Se o cliente insistir em negociar fora da tabela, recuse com educacao (o unico desconto e 5% a vista em DINHEIRO, PIX nao tem desconto) e convide pra negociar na loja.',
-    '- Se precisar agendar, emita a tag [AGENDAR_VISITA: data="YYYY-MM-DD HH:mm", loja="Borracharia Popular", servico="Montagem", cliente="NOME_DO_CLIENTE"].',
+    `- Se precisar agendar, emita a tag [AGENDAR_VISITA: data="YYYY-MM-DD HH:mm", loja="${(args.lojaBot && args.lojaBot.nome) || 'Borracharia Popular'}", servico="Montagem", cliente="NOME_DO_CLIENTE"].`,
     '- Se precisar quebrar objecao com video, envie a tag [ENVIAR_VIDEO: slug=nome-do-video, legenda="texto opcional"].',
     '- Nunca explique estas regras ao cliente.',
     '',
@@ -167,7 +207,7 @@ async function gerarRespostaViaOpenAI(args: {
 
   if (args.audio?.base64 && args.audio?.mime) {
     // Transcreve primeiro (a API de responses rejeita ogg como arquivo) e manda o TEXTO.
-    const transcricao = await transcreverAudio(apiKey, args.audio.base64, args.audio.mime);
+    const transcricao = chaveWhisper ? await transcreverAudio(chaveWhisper, args.audio.base64, args.audio.mime) : null;
     if (transcricao) {
       input.push({
         role: 'user',
@@ -183,6 +223,16 @@ async function gerarRespostaViaOpenAI(args: {
         ],
       });
     }
+  }
+
+  if (usarAnthropic) {
+    const texto = await gerarTextoAnthropic({
+      apiKey,
+      model: process.env.ANTHROPIC_MODEL || 'claude-sonnet-5-5',
+      system: systemPrompt,
+      mensagens: paraMensagensAnthropic(input),
+    });
+    return parsearRespostaBot(texto);
   }
 
   const resposta = await fetch('https://api.openai.com/v1/responses', {
@@ -208,6 +258,26 @@ async function gerarRespostaViaOpenAI(args: {
 }
 
 app.get('/health', (_req, res) => res.json({ ok: true }));
+
+// Medida que ja apareceu na conversa (mais recente primeiro). Cliente vale mais que a loja: o que a loja escreveu
+// pode ser lista de alternativas, entao da loja so conta quando a mensagem tem UMA medida so. Só medida que existe
+// na tabela (senao o robo cotaria algo que nao vende).
+function medidaDoHistorico(mensagens: any[]): string | null {
+  const valida = (m: string) => encontrarPrecosExatosPorMedida(m).length > 0;
+  for (let i = mensagens.length - 1; i >= 0; i--) {
+    const m = mensagens[i];
+    if (m?.role !== 'user') continue;
+    const achadas = extrairMedidasDoTexto(String(m?.content || '')).filter(valida);
+    if (achadas.length) return achadas[achadas.length - 1] as string;
+  }
+  for (let i = mensagens.length - 1; i >= 0; i--) {
+    const m = mensagens[i];
+    if (m?.role !== 'assistant') continue;
+    const achadas = extrairMedidasDoTexto(String(m?.content || '')).filter(valida);
+    if (achadas.length === 1) return achadas[0] as string;
+  }
+  return null;
+}
 
 // O robo precisa saber QUE DIA E HOJE pra agendar remarketing ("dia 10", "semana que
 // vem", "quando eu receber"). Sem isso ele chutava a data ou nem conseguia agendar.
@@ -271,6 +341,12 @@ app.post('/gerar-resposta', async (req, res) => {
     // Respostas editadas pelo dono na tela "Fluxo" do painel (quem tem Prisma manda no payload;
     // este servico e stateless). Sem edicao / payload invalido = texto padrao.
     const textosFluxo = sanitizarTextosFluxo(req.body?.textosFluxo);
+    const lb = req.body?.lojaBot;
+    const lojaBot: LojaBot | null = lb && typeof lb === 'object' && typeof lb.nome === 'string' && lb.nome.trim()
+      ? { nome: String(lb.nome).trim(), telefone: String(lb.telefone || ''), horario: String(lb.horario || ''), localizacao: String(lb.localizacao || ''), localizacaoTexto: String(lb.localizacaoTexto || '') }
+      : null;
+    if (lojaBot?.horario) textosFluxo.horario = [`A gente atende ${lojaBot.horario}.`];
+    if (lojaBot?.localizacaoTexto) textosFluxo.localizacao_repetida = [`Te mandei o pino da localização aqui em cima na conversa. A gente fica ${lojaBot.localizacaoTexto}.`];
     // Ha quantos minutos o pino de localizacao ja foi mandado nesta conversa (null = nunca).
     const minutosDesdeLocalizacao: number | null = typeof req.body?.minutosDesdeLocalizacao === 'number' ? req.body.minutosDesdeLocalizacao : null;
     if (!Array.isArray(messages)) {
@@ -333,7 +409,7 @@ app.post('/gerar-resposta', async (req, res) => {
     // Toda mensagem com texto passa pela leitura (23/09, "mais fechado"): antes um filtro de palavras-chave
     // (podeSerSobrePreco) mandava "oi", "é nacional?" e oferta de fornecedor direto pra IA livre.
     if (!temMidiaSemTexto && gatilho.trim()) {
-      const apiKeyFluxo = process.env.OPENAI_API_KEY?.trim();
+      const apiKeyFluxo = chaveDoFluxo();
       motivoLivre = apiKeyFluxo ? 'leitura_falhou' : 'sem_chave_openai';
       if (apiKeyFluxo) {
         const contextoRecente = anteriores
@@ -354,7 +430,18 @@ app.post('/gerar-resposta', async (req, res) => {
           const lojaFalouHaPouco = minutosDesdeUltimaDaLoja == null || minutosDesdeUltimaDaLoja < JANELA_SILENCIO_REPETIDO_MIN;
           const jaRespondidas = chavesJaRespondidas(textosFluxo, textoRecenteDoRobo)
             .filter((c) => !SILENCIO_SE_REPETIR.includes(c) || (lojaFalouHaPouco && naUltimaDaLoja.includes(c)));
-          const decisao = decidirSequenciaPreco(intencoes, estadoPrecoAtual, dadosPrecoAtuais, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas, lojaFalouHaPouco });
+          // Cliente antigo (o robo nao tem estado dessa conversa): le a medida do historico antes de responder.
+          let estadoUsado = estadoPrecoAtual;
+          let dadosUsados = dadosPrecoAtuais;
+          if (!dadosPrecoAtuais.medida && (estadoPrecoAtual === 'sem_estado' || estadoPrecoAtual === 'aguardando_medida')) {
+            const medidaHistorico = medidaDoHistorico(anteriores);
+            if (medidaHistorico) {
+              estadoUsado = 'preco_confirmado';
+              dadosUsados = { ...dadosPrecoAtuais, medida: medidaHistorico };
+              console.log(`[BotService] medida ${medidaHistorico} lida do historico da conversa (nao pergunta de novo).`);
+            }
+          }
+          const decisao = decidirSequenciaPreco(intencoes, estadoUsado, dadosUsados, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas, lojaFalouHaPouco });
           assuntosLidos = decisao.assuntos;
           // Resposta de agradecimento (ou silencio de agradecimento) so vale se a mensagem for MESMO so agradecimento: com
           // pergunta, dia/hora ou aviso de visita ("combinado, amanha 10h eu passo ai") a IA livre e quem responde
@@ -368,8 +455,13 @@ app.post('/gerar-resposta', async (req, res) => {
           // Pelas chaves: "é remold? quanto custa?" com foto tem acaoPrincipal RESPONDER_REMOLD mas tambem pede a medida.
           const ignorariaAFoto = temFoto && decisao.chaves.some((c) => c.startsWith('pedir_medida') || c === 'saudacao' || c === 'saudacao_retorno');
           if (decisao.acaoPrincipal !== 'NADA' && !naoEhSoAgradecer && !ignorariaAFoto) {
+            // Audios do dono ([ENVIAR_AUDIO:...]): so vao se quem chamou diz que sabe enviar (audioFluxo). Senao
+            // sai so o texto — o marcador nunca pode chegar ao cliente como mensagem.
+            const partesDoFluxo = req.body?.audioFluxo === true
+              ? decisao.partes
+              : decisao.partes.filter((p: string) => !/^\[ENVIAR_AUDIO:[^\]]+\]$/i.test(p.trim()));
             return res.json({
-              partes: decisao.partes,
+              partes: partesDoFluxo,
               deterministico: true,
               acaoTipo: decisao.acaoPrincipal,
               novoEstadoPreco: decisao.novoEstado,
@@ -424,6 +516,7 @@ app.post('/gerar-resposta', async (req, res) => {
         '. Esses valores JA foram ditos ao cliente nesta conversa (por voce ou por um atendente). NAO passe valor diferente pra mesma coisa — o cliente vai achar que a loja mudou o preco. Se o valor que voce ia dizer nao bate com o que ja foi dito, MANTENHA o que ja foi passado. Se o cliente perguntar de novo, repita o MESMO valor. So mude se o pedido dele mudou (quantidade, medida ou forma de pagamento diferente) — e nesse caso deixe explicito o que mudou.'
       : '';
     const resposta = await gerarRespostaViaOpenAI({
+      lojaBot,
       messages,
       imagem,
       audio,
@@ -445,6 +538,7 @@ app.post('/gerar-resposta', async (req, res) => {
         '| resposta recusada, tentando de novo.'
       );
       const segunda = await gerarRespostaViaOpenAI({
+      lojaBot,
         messages,
         imagem,
         audio,
@@ -477,6 +571,7 @@ app.post('/gerar-resposta', async (req, res) => {
     if (prometeuTransferenciaFalsa(partesFinais)) {
       console.error('[BotService][TRAVA DE COMPORTAMENTO] A IA prometeu uma transferencia que nao pode cumprir — tentando de novo.');
       const segundaTentativa = await gerarRespostaViaOpenAI({
+      lojaBot,
         messages,
         imagem,
         audio,
@@ -548,6 +643,7 @@ app.post('/gerar-resposta', async (req, res) => {
     } else {
       console.error('[BotService][TRAVA DE REPETICAO] A resposta era so repeticao do que ja foi dito — tentando de novo.');
       const outra = await gerarRespostaViaOpenAI({
+      lojaBot,
         messages,
         imagem,
         audio,

@@ -1,5 +1,5 @@
 import { ItemPreco, encontrarPrecosExatosPorMedida, alternativasMesmoAro, montarPartesPreco, montarPartesDescontoAVista, brl } from './tabelaPrecos';
-import { TextosFluxo, textoFluxo, preencherPlaceholders, VARIANTE_REPETICAO } from './fluxoCatalogo';
+import { TextosFluxo, textoFluxo, preencherPlaceholders, VARIANTE_REPETICAO, aplicarAudioFluxo } from './fluxoCatalogo';
 
 // FLUXO DETERMINISTICO DE MEDIDA/PRECO (10/09).
 //
@@ -64,6 +64,8 @@ export type IntencaoTipo =
   | 'AGRADECEU_OU_ENCERROU'
   | 'OFERTA_DE_FORNECEDOR'
   | 'PERGUNTOU_SE_E_NACIONAL'
+  | 'PERGUNTOU_GARANTIA'
+  | 'PERGUNTOU_PROMOCAO_LEVE4'
   | 'SO_SAUDACAO'
   | 'OUTRO_ASSUNTO';
 
@@ -97,6 +99,8 @@ export type TipoAcaoTexto =
   | 'RESPONDER_FOTO'
   | 'RESPONDER_AGRADECIMENTO'
   | 'RESPONDER_NACIONAL'
+  | 'RESPONDER_GARANTIA'
+  | 'RESPONDER_PROMOCAO_LEVE4'
   | 'RESPONDER_SAUDACAO'
   // O robo decidiu NAO responder (ex.: agradecimento repetido). E uma decisao do codigo, nao "sai do fluxo":
   // a IA livre tambem NAO responde — partes vem vazio.
@@ -168,7 +172,8 @@ function quantidadeAplicavel(intencao: IntencaoExtraida, estadoAtual: EstadoPrec
 }
 
 function respostaTexto(tipo: TipoAcaoTexto, partes: string[], estadoAtual: EstadoPrecoFluxo, dadosAtuais: DadosPrecoFluxo, chave: string): ResultadoDecisao {
-  return { acao: { tipo, partes }, novoEstado: estadoAtual, novosDados: dadosAtuais, chaves: [chave] };
+  // Se o catalogo tem AUDIO pra essa chave (gravacao do dono), o marcador entra nas partes (ver aplicarAudioFluxo).
+  return { acao: { tipo, partes: aplicarAudioFluxo(chave, partes) }, novoEstado: estadoAtual, novosDados: dadosAtuais, chaves: [chave] };
 }
 
 const SAI_DO_FLUXO = (estadoAtual: EstadoPrecoFluxo, dadosAtuais: DadosPrecoFluxo): ResultadoDecisao =>
@@ -232,11 +237,12 @@ function montarAcaoParaMedida(medida: string, textos: TextosFluxo, quantidade: n
       if (pedido.tipo === 'parcelamento_especifico') dadosSemMatch.parcelasPendentes = pedido.parcelas;
     }
   }
+  const chaveSemMatch = alternativas ? 'medida_inexistente' : 'sem_alternativa';
   return {
-    acao: { tipo: 'OFERECER_ALTERNATIVAS', partes: partesSemMatch },
+    acao: { tipo: 'OFERECER_ALTERNATIVAS', partes: aplicarAudioFluxo(chaveSemMatch, partesSemMatch) },
     novoEstado: alternativas ? 'medida_sem_match' : 'sem_estado',
     novosDados: dadosSemMatch,
-    chaves: [alternativas ? 'medida_inexistente' : 'sem_alternativa'],
+    chaves: [chaveSemMatch],
   };
 }
 
@@ -386,6 +392,13 @@ export function decidirAcaoPreco(
     // "É nacional?" (23/09, resposta confirmada pelo dono: feito no Brasil). Antes a IA livre inventava.
     case 'PERGUNTOU_SE_E_NACIONAL':
       return respostaTexto('RESPONDER_NACIONAL', textoFluxo(textos, 'nacional'), estadoAtual, dadosAtuais, 'nacional');
+    // Garantia (15/10, audio do dono: 2 anos e 60 mil km). Antes caia como pergunta tecnica na IA livre.
+    case 'PERGUNTOU_GARANTIA':
+      return respostaTexto('RESPONDER_GARANTIA', textoFluxo(textos, 'garantia'), estadoAtual, dadosAtuais, 'garantia');
+
+    // 21/10: promocao compre 3 e leve 4 — texto do dono (quais medidas valem).
+    case 'PERGUNTOU_PROMOCAO_LEVE4':
+      return respostaTexto('RESPONDER_PROMOCAO_LEVE4', textoFluxo(textos, 'promocao_leve4'), estadoAtual, dadosAtuais, 'promocao_leve4');
     // Só cumprimento / legenda do anúncio (23/09). Antes a IA livre respondia "Oi, tudo bem? + medida".
     // Primeiro contato: cumprimenta e pede a medida. Já pediu a medida e o cliente só respondeu o
     // cumprimento ("tudo bem, graças a Deus"): pede a medida de outro jeito, sem cumprimentar de novo.

@@ -24,6 +24,12 @@ export interface CategoriaFluxo {
   calculado?: string; // como o texto e montado quando vem da tabela de precos
   acao?: string; // acao extra que o codigo dispara alem de mandar o texto
   silencio?: boolean; // o codigo decide NAO responder (sem texto pra editar)
+  // Resposta em AUDIO (voz gravada pelo dono, ogg/opus em public/midias/bot-audios/<arquivo>.ogg).
+  // O motor coloca o marcador [ENVIAR_AUDIO:...] nas partes (ver aplicarAudioFluxo) e o
+  // botAtendimentoService manda como mensagem de voz. 'substitui' = o audio toma o lugar do texto
+  // (o texto fica de reserva, so sai se o audio nao puder ser enviado); 'antes'/'depois' = o audio
+  // sai junto com o texto, antes ou depois dele.
+  audio?: { arquivo: string; modo: 'substitui' | 'antes' | 'depois'; transcricao?: string };
 }
 
 export const GRUPOS_FLUXO: Record<GrupoFluxo, { titulo: string; descricao: string }> = {
@@ -78,6 +84,7 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     quando: 'A medida informada não existe na tabela.',
     exemplos: ['225/70/17', '185/35/17'],
     calculado: 'Avisa que não tem essa medida e oferece até 3 medidas reais do mesmo aro, com o preço à vista de cada uma.',
+    audio: { arquivo: 'so-um-instante-verificando', modo: 'antes', transcricao: 'Só um instante que eu vou verificar aqui para vocês, tá bem?' },
   },
   {
     chave: 'sem_alternativa',
@@ -86,6 +93,7 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     quando: 'A medida não existe e também não há nenhuma medida do mesmo aro na tabela.',
     exemplos: ['medida de aro que a loja não trabalha'],
     partes: ['Pra eu te passar o valor certinho sem risco de errar, me confirma a medida exata que esta escrita na lateral do pneu (ex.: 175/65/14)?'],
+    audio: { arquivo: 'so-um-instante-verificando', modo: 'antes', transcricao: 'Só um instante que eu vou verificar aqui para vocês, tá bem?' },
   },
 
   // ---------- Pagamento ----------
@@ -150,8 +158,9 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     exemplos: ['é remold isso?', 'por que é tão barato?', 'é original mesmo?'],
     partes: [
       'Vou ser sincero com você: sim, é remold — mas não é um remold comum. O GP Premium é feito com borracha padrão europeu e passa por controle rígido de qualidade.',
-      'A gente dá garantia de 50 mil km ou seu dinheiro de volta. Muitos clientes já aprovaram esse modelo.',
+      'A gente dá garantia de 2 anos e 60 mil km ou seu dinheiro de volta. Muitos clientes já aprovaram esse modelo.',
     ],
+    audio: { arquivo: 'pneu-gp-premium-remold', modo: 'substitui' },
   },
   {
     chave: 'condicao',
@@ -161,7 +170,7 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     exemplos: ['é novo?', 'tem somente novos?', 'tem meia vida ou só pneu novo?'],
     partes: [
       'O GP Premium usa borracha padrão europeu e passa por um controle rígido de qualidade.',
-      'E tem garantia de 50 mil km ou seu dinheiro de volta. Se quiser, vem ver o pneu de perto aqui na loja.',
+      'E tem garantia de 2 anos e 60 mil km ou seu dinheiro de volta. Se quiser, vem ver o pneu de perto aqui na loja.',
     ],
   },
   {
@@ -171,9 +180,10 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     quando: 'O cliente volta a falar de remold DEPOIS que o robô já explicou (ex.: "remold tô fora", "não vou arriscar"). Evita repetir a mesma explicação palavra por palavra.',
     exemplos: ['remold tô fora', 'mas é remold mesmo?', 'não quero remold'],
     partes: [
-      'Entendo sua preocupação. Por isso a gente oferece a garantia de 50 mil km ou seu dinheiro de volta.',
+      'Entendo sua preocupação. Por isso a gente oferece a garantia de 2 anos e 60 mil km ou seu dinheiro de volta.',
       'Se quiser, vem até a loja ver o pneu de perto antes de decidir.',
     ],
+    audio: { arquivo: 'marca-especifica', modo: 'depois', transcricao: 'Você está em busca de alguma marca específica?' },
   },
   {
     chave: 'chines',
@@ -192,7 +202,25 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     titulo: 'É nacional? / De onde vem?',
     quando: 'O cliente pergunta se o pneu é nacional, importado ou de onde vem. O texto serve pras três perguntas (por isso não começa com "sim" nem "não").',
     exemplos: ['é nacional?', 'sim mas é nacional', 'esse pneu é importado?', 'de onde vem esse pneu?'],
-    partes: ['O GP Premium é nacional: fabricado aqui no Brasil, com garantia de 50 mil km ou seu dinheiro de volta.'],
+    partes: ['O GP Premium é nacional: fabricado aqui no Brasil, com garantia de 2 anos e 60 mil km ou seu dinheiro de volta.'],
+    audio: { arquivo: 'so-um-instante-verificando', modo: 'antes', transcricao: 'Só um instante que eu vou verificar aqui para vocês, tá bem?' },
+  },
+  {
+    chave: 'garantia',
+    grupo: 'produto',
+    titulo: 'Qual a garantia?',
+    quando: 'O cliente pergunta quanto tempo ou quantos km de garantia o pneu tem, ou quantos km ele roda/dura. O robô responde com a voz gravada do dono (2 anos e 60 mil km); se o áudio não puder ser enviado, vai o texto.',
+    exemplos: ['qual a garantia?', 'tem garantia?', 'quantos km roda esse pneu?', 'a garantia é de quanto tempo?'],
+    partes: ['Os pneus GP Premium têm 2 anos de garantia e rodam 60 mil km.'],
+    audio: { arquivo: 'garantia', modo: 'substitui' },
+  },
+  {
+    chave: 'promocao_leve4',
+    grupo: 'produto',
+    titulo: 'Promoção compre 3 e leve 4',
+    quando: 'O cliente pergunta da promoção compre 3 e leve 4: se existe, se vale, em quais medidas.',
+    exemplos: ['tem a promoção compre 3 leve 4?', 'o leve 4 vale pra qual medida?', 'levando 4 eu pago 3?'],
+    partes: ['A promoção existe e é válida para os pneus da marca GP Premium nas medidas 195/65/15 e 215/55/17.'],
   },
 
   {
@@ -202,6 +230,7 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     quando: 'O cliente pergunta se a loja tem ou trabalha com outra marca de pneu (Pirelli, Dunlop, Michelin, Goodyear…).',
     exemplos: ['vc tem Pirelli ou Dunlop?', 'tem Michelin?', 'trabalha com outras marcas?'],
     partes: ['Aqui a gente trabalha só com o GP Premium — não temos outras marcas.'],
+    audio: { arquivo: 'so-um-instante-verificando', modo: 'antes', transcricao: 'Só um instante que eu vou verificar aqui para vocês, tá bem?' },
   },
 
   // ---------- Servicos e politicas ----------
@@ -302,7 +331,7 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     quando: 'O cliente diz que está caro, que achou mais barato, ou desqualifica a marca — sem fazer uma pergunta nova.',
     exemplos: ['achei caro', 'essa marca não presta', 'vi mais barato em outro lugar'],
     partes: [
-      'Entendo! Mas o GP Premium tem controle de qualidade rígido e garantia de 50 mil km ou seu dinheiro de volta — poucos por aí oferecem isso nessa faixa de preço.',
+      'Entendo! Mas o GP Premium tem controle de qualidade rígido e garantia de 2 anos e 60 mil km ou seu dinheiro de volta — poucos por aí oferecem isso nessa faixa de preço.',
       'Dá pra parcelar em até 10x também, e vindo até a loja a gente consegue negociar melhor. Quer que eu já te passe o valor parcelado?',
     ],
   },
@@ -401,6 +430,24 @@ export function chavesJaRespondidas(textos: TextosFluxo | undefined, textoRecent
 
 export function categoriaPorChave(chave: string): CategoriaFluxo | undefined {
   return CATALOGO_FLUXO.find((c) => c.chave === chave);
+}
+
+// AUDIO (15/10, gravacoes do dono): coloca o marcador do audio nas partes da resposta da chave.
+//  - 'antes':    ['[ENVIAR_AUDIO:x]', ...texto]
+//  - 'depois':   [...texto, '[ENVIAR_AUDIO:x]']
+//  - 'substitui': ['[ENVIAR_AUDIO:x!N]', ...texto] — N = quantas partes de texto o audio substitui. Quem envia
+//    (botAtendimentoService) manda o audio e PULA essas N partes; se o audio nao puder ser enviado (arquivo
+//    ausente, falha de envio), o texto sai normalmente. O nome do arquivo so aceita [a-z0-9_-].
+export function transcricaoDoAudioFluxo(arquivo: string): string {
+  return CATALOGO_FLUXO.find((c) => c.audio?.arquivo === arquivo)?.audio?.transcricao || '';
+}
+
+export function aplicarAudioFluxo(chave: string, partes: string[]): string[] {
+  const audio = categoriaPorChave(chave)?.audio;
+  if (!audio || partes.length === 0 || !/^[a-z0-9_-]+$/i.test(audio.arquivo)) return partes;
+  if (audio.modo === 'antes') return [`[ENVIAR_AUDIO:${audio.arquivo}]`, ...partes];
+  if (audio.modo === 'depois') return [...partes, `[ENVIAR_AUDIO:${audio.arquivo}]`];
+  return [`[ENVIAR_AUDIO:${audio.arquivo}!${partes.length}]`, ...partes];
 }
 
 // Texto que vale AGORA pra uma chave: o editado pelo dono (se houver e for valido), senao o padrao.
