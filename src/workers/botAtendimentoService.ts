@@ -223,6 +223,37 @@ const versoes = new Map<string, number>();
 
 const chave = (usuarioId: string, chatJid: string) => `${usuarioId}:${chatJid}`;
 
+// Bolha "natural": ate ~120 caracteres. Texto maior quebra em fim de frase (". ", "! ", "? " seguido de letra
+// maiuscula/emoji/asterisco) ou em linha em branco, juntando frases curtas na mesma bolha. Lista (linhas com
+// medida/preco) fica inteira. No maximo 4 bolhas por parte.
+export function quebrarEmBolhas(texto: string): string[] {
+  const t = String(texto || '').trim();
+  if (t.length <= 120) return t ? [t] : [];
+  if (/\n\s*[-•\d*]/.test(t) && !/\n\n/.test(t)) return [t];
+  const frases = t
+    .split(/\n{2,}/)
+    .flatMap((bloco) => bloco.split(/(?<=[.!?…])\s+(?=[A-ZÁÉÍÓÚÂÊÔÃÕÇ*🔥😊👍🙋])/u))
+    .map((x) => x.trim())
+    .filter(Boolean);
+  const bolhas: string[] = [];
+  let atual = '';
+  for (const fr of frases) {
+    if (atual && (atual.length + 1 + fr.length) > 120) { bolhas.push(atual); atual = fr; }
+    else atual = atual ? `${atual} ${fr}` : fr;
+  }
+  if (atual) bolhas.push(atual);
+  if (bolhas.length > 4) return [...bolhas.slice(0, 3), bolhas.slice(3).join(' ')];
+  return bolhas;
+}
+
+async function enviarEmBolhas(params: AgendarBotParams, texto: string): Promise<boolean> {
+  for (const bolha of quebrarEmBolhas(texto)) {
+    const ok = await params.enviarParte(bolha, tempoDigitacao(bolha));
+    if (!ok) return false;
+  }
+  return true;
+}
+
 function tempoDigitacao(texto: string): number {
   const variacao = Math.floor(Math.random() * 900);
   return Math.min(6000, Math.max(1200, 700 + texto.length * 28 + variacao));
@@ -795,7 +826,7 @@ async function executar(params: AgendarBotParams, versao: number) {
           await dispararLocalizacaoDaLoja(params);
           continue;
         }
-        const enviada = await params.enviarParte(textoLimpo.slice(0, 3500), tempoDigitacao(textoLimpo));
+        const enviada = await enviarEmBolhas(params, textoLimpo.slice(0, 3500));
         if (!enviada) {
           console.error(`[Bot IA] ${params.chatJid}: envio falhou no meio da resposta do fluxo.`);
           return;
@@ -881,7 +912,7 @@ async function executar(params: AgendarBotParams, versao: number) {
 
       if (!videos.length) {
         if (!textoLimpo) continue;
-        const enviada = await params.enviarParte(textoLimpo, tempoDigitacao(textoLimpo));
+        const enviada = await enviarEmBolhas(params, textoLimpo);
         if (!enviada) return;
         continue;
       }
@@ -889,7 +920,7 @@ async function executar(params: AgendarBotParams, versao: number) {
       const primeiroVideo = videos[0];
       const usarTextoComoLegenda = videos.length === 1 && !!textoLimpo && !!primeiroVideo && !primeiroVideo.legenda;
       if (textoLimpo && !usarTextoComoLegenda) {
-        const enviada = await params.enviarParte(textoLimpo, tempoDigitacao(textoLimpo));
+        const enviada = await enviarEmBolhas(params, textoLimpo);
         if (!enviada) return;
       }
 
