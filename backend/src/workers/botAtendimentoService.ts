@@ -748,8 +748,6 @@ async function executar(params: AgendarBotParams, versao: number) {
       take: 40,
     });
     historico.reverse();
-    await transcreverAudiosDoCliente(historico, params.chatJid);
-    if (versoes.get(key) !== versao) return; // chegou mensagem nova enquanto transcrevia: a rodada nova responde
     // Mensagens do Assistente de IA da Meta (enviadoPorId = meta_ai) NAO sao do nosso robo.
     // Se entrassem no historico como "assistant", o robo herdaria "Pneu Express" e
     // "conectei voce com a nossa equipe" como se tivesse dito isso (achado 08/09).
@@ -768,10 +766,16 @@ async function executar(params: AgendarBotParams, versao: number) {
           && !MSG_AUTOMATICA_DA_LOJA.test(String(m.texto || '')));
         if (humano) {
           console.log(`[Bot IA] ${params.chatJid}: atendente atendeu ${new Date((humano as any).timestamp).toISOString()} (< ${horas}h) — conversa e dela, robo nao entra.`);
+          const ultimaCliente = [...historico].reverse().find((m: any) => !m.fromMe) as any;
+          if (ultimaCliente?.timestamp) await marcarConversaTratada(params, new Date(ultimaCliente.timestamp)); // Vigia nao insiste
           return;
         }
       }
     }
+
+    // Audio do cliente vira texto (transcricao so depois de saber que o robo responde).
+    await transcreverAudiosDoCliente(historico, params.chatJid);
+    if (versoes.get(key) !== versao) return; // chegou mensagem nova enquanto transcrevia: a rodada nova responde
     const messages: Array<{ role: 'user' | 'assistant'; content: string }> = historico.map((m: any) => ({
       role: m.fromMe ? 'assistant' : 'user',
       content: String(m.texto || (m.tipo === 'imagem' ? '[imagem enviada]' : m.tipo === 'audio' ? '[audio enviado]' : `[${m.tipo}]`)),
