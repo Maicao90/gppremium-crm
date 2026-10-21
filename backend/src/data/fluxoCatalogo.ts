@@ -223,6 +223,23 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     partes: ['A promoção existe e é válida para os pneus da marca GP Premium nas medidas 195/65/15 e 215/55/17.'],
   },
   {
+    chave: 'visita_confirmada',
+    grupo: 'loja',
+    titulo: 'Cliente diz que vem (com dia)',
+    quando: 'O cliente diz que vem na loja num dia certo ("vou sábado", "amanhã eu passo aí"). O robô confirma e agenda sozinho os lembretes: na véspera (se faltar 2 dias ou mais) e no dia de manhã. {DIA} vira "amanhã", "no sábado (25/10)"...',
+    exemplos: ['vou passar aí sábado', 'amanhã cedo eu vou', 'dia 25 eu passo aí'],
+    placeholders: ['DIA'],
+    partes: ['Combinado! Fica anotado aqui: te espero {DIA} 😊', 'Qualquer coisa é só me chamar por aqui.'],
+  },
+  {
+    chave: 'visita_sem_dia',
+    grupo: 'loja',
+    titulo: 'Cliente diz que vem (sem dia certo)',
+    quando: 'O cliente diz que vem, mas sem dia certo ("semana que vem", "qualquer dia").',
+    exemplos: ['semana que vem eu passo aí', 'qualquer dia eu vou'],
+    partes: ['Combinado! Quando souber o dia, me avisa que eu já deixo anotado aqui 😊'],
+  },
+  {
     chave: 'servico_oficina',
     grupo: 'loja',
     titulo: 'Serviço de mecânica (freio, suspensão, óleo…)',

@@ -16,6 +16,7 @@ import { prometeuTransferenciaFalsa, removerReperguntaPosPreco, removerRepeticao
 import { lerBotPneusConfig, montarPromptAtendimentoBot } from '../services/botPneusConfig';
 import { decidirSequenciaPreco, EstadoPrecoFluxo, DadosPrecoFluxo } from '../data/fluxoPreco';
 import { extrairIntencoesPreco } from '../data/fluxoPrecoExtrator';
+import { resolverDiaVisita } from '../data/visita';
 import { sanitizarTextosFluxo, chavesJaRespondidas, textoFluxo, SILENCIO_SE_REPETIR } from '../data/fluxoCatalogo';
 import { chaveDoFluxo, ehChaveAnthropic, gerarTextoAnthropic, MensagemAnthropic } from '../services/llmAnthropic';
 
@@ -442,6 +443,15 @@ app.post('/gerar-resposta', async (req, res) => {
             }
           }
           const decisao = decidirSequenciaPreco(intencoes, estadoUsado, dadosUsados, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas, lojaFalouHaPouco });
+          // Visita: resolve o dia (data/visita.ts) e preenche {DIA}. Dia que nao se resolve vira o texto "sem dia".
+          let visita: { iso: string; rotulo: string; diasAte: number } | null = null;
+          if (decisao.chaves.includes('visita_confirmada')) {
+            visita = resolverDiaVisita(intencoes.find((i: any) => i.intencao === 'VAI_VIR_NA_LOJA')?.diaVisita);
+            const semDia = textoFluxo(textosFluxo, 'visita_sem_dia');
+            const comDia = textoFluxo(textosFluxo, 'visita_confirmada');
+            const ini = decisao.partes.findIndex((p: string) => p === comDia[0]);
+            if (ini >= 0) decisao.partes.splice(ini, comDia.length, ...(visita ? comDia.map((p) => p.replace(/\{DIA\}/g, (visita as any).rotulo)) : semDia));
+          }
           assuntosLidos = decisao.assuntos;
           // Resposta de agradecimento (ou silencio de agradecimento) so vale se a mensagem for MESMO so agradecimento: com
           // pergunta, dia/hora ou aviso de visita ("combinado, amanha 10h eu passo ai") a IA livre e quem responde
@@ -470,6 +480,8 @@ app.post('/gerar-resposta', async (req, res) => {
               via: 'fluxo',
               assuntos: decisao.assuntos,
               chaves: decisao.chaves,
+              // Dia da visita (cliente disse que vem): o whatsapp-crm agenda os lembretes (vespera e no dia).
+              visita,
               rajada,
               simulado: !!req.body?.simular,
             });
