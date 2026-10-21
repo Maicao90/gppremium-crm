@@ -73,6 +73,7 @@ interface RespostaBotService {
   chaves?: string[];
   motivoLivre?: string;
   rajada?: string[];
+  visita?: { iso: string; rotulo: string; diasAte: number } | undefined;
 }
 
 // Registra POR ONDE a(s) mensagem(ns) do cliente passou no fluxo — alimenta o fluxograma ao vivo da tela
@@ -259,6 +260,33 @@ export function ehCandidatoAVaga(textos: string[]): boolean {
   return textos.some((t) => REGEX_CANDIDATO.test(String(t || '')));
 }
 
+// Lembretes da visita (21/10): o cliente disse que vem num dia certo. Vespera 17h (se faltar 2+ dias) e no dia 8h30,
+// em nome do atendente dono do numero. Um lembrete por cliente: se ele remarcar, os pendentes antigos saem.
+// observacoes 'robo-visita' = criado pelo robo (fora da pontuacao das atendentes).
+async function agendarLembretesVisita(params: AgendarBotParams, visita: { iso: string; rotulo: string; diasAte: number }, nomeLoja: string) {
+  try {
+    const { horariosLembreteVisita } = await import('../data/visita');
+    const h = horariosLembreteVisita(visita);
+    if (!h.vespera && !h.noDia) return;
+    const msgNum = await prisma.mensagem.findFirst({ where: { usuarioId: params.usuarioId, chatJid: params.chatJid, numeroReal: { not: null } }, orderBy: { timestamp: 'desc' }, select: { numeroReal: true } });
+    const numero = (String(msgNum?.numeroReal || '').split(':')[0] || (params.chatJid.includes('@lid') ? '' : params.chatJid.split('@')[0]) || '').replace(/\D/g, '');
+    if (numero.length < 10) { console.error(`[Bot IA] ${params.chatJid}: visita confirmada mas sem numero real — lembrete nao agendado.`); return; }
+    const ultimaNome = await prisma.mensagem.findFirst({ where: { usuarioId: params.usuarioId, chatJid: params.chatJid, chatNome: { not: '' } }, orderBy: { timestamp: 'desc' }, select: { chatNome: true } });
+    const nomeCompleto = String(ultimaNome?.chatNome || '').trim();
+    const primeiro = /^[A-Za-zÀ-ÿ]{2,}/.test(nomeCompleto) ? (nomeCompleto.split(/\s+/)[0] || '') : '';
+    const nome = primeiro ? primeiro.charAt(0).toUpperCase() + primeiro.slice(1).toLowerCase() : '';
+    const cliente = nomeCompleto || numero;
+    await prisma.agendamento.deleteMany({ where: { criadoPorId: params.usuarioId, numero, status: 'pendente', observacoes: { contains: 'robo-visita' } } });
+    const criar = (enviarEm: Date, mensagem: string, cancelarSeResponder: boolean) =>
+      prisma.agendamento.create({ data: { cliente, numero, mensagem, enviarEm, criadoPorId: params.usuarioId, status: 'pendente', cancelarSeResponder, observacoes: `robo-visita ${visita.iso}` } });
+    if (h.vespera) await criar(h.vespera, `Oi${nome ? `, ${nome}` : ''}! Passando pra confirmar: amanhã a gente te espera aqui na ${nomeLoja} 😊 Tá confirmado?`, true);
+    if (h.noDia) await criar(h.noDia, `Bom dia${nome ? `, ${nome}` : ''}! Hoje é o dia 😊 Estamos te esperando aqui na ${nomeLoja}. Qualquer coisa é só me chamar!`, false);
+    console.log(`[Bot IA] ${params.chatJid}: visita ${visita.iso} — lembretes agendados (vespera: ${h.vespera ? 'sim' : 'nao'}, no dia: ${h.noDia ? 'sim' : 'nao'}).`);
+  } catch (e: any) {
+    console.error('[Bot IA] erro ao agendar lembretes da visita:', e?.message || e);
+  }
+}
+
 function tempoDigitacao(texto: string): number {
   const variacao = Math.floor(Math.random() * 900);
   return Math.min(6000, Math.max(1200, 700 + texto.length * 28 + variacao));
@@ -407,6 +435,7 @@ async function gerarRespostaViaBotService(args: {
     via: typeof body?.via === 'string' ? body.via : undefined,
     assuntos: Array.isArray(body?.assuntos) ? body.assuntos.map(String) : undefined,
     chaves: Array.isArray(body?.chaves) ? body.chaves.map(String) : undefined,
+    visita: body?.visita && typeof body.visita.iso === 'string' ? { iso: String(body.visita.iso), rotulo: String(body.visita.rotulo || ''), diasAte: Number(body.visita.diasAte) || 0 } : undefined,
     motivoLivre: typeof body?.motivoLivre === 'string' ? body.motivoLivre : undefined,
     rajada: Array.isArray(body?.rajada) ? body.rajada.map(String) : undefined,
     novoEstadoPreco: typeof body?.novoEstadoPreco === 'string' ? body.novoEstadoPreco : undefined,
@@ -872,6 +901,7 @@ async function executar(params: AgendarBotParams, versao: number) {
         },
       });
       await registrarEventoFluxo(params, resposta, estadoPrecoSalvo?.estadoPreco || 'sem_estado', resposta.partes);
+      if (resposta.visita) await agendarLembretesVisita(params, resposta.visita, cfgLoja.NOME_LOJA);
       return;
     }
 

@@ -67,6 +67,7 @@ export type IntencaoTipo =
   | 'PERGUNTOU_GARANTIA'
   | 'PERGUNTOU_PROMOCAO_LEVE4'
   | 'PERGUNTOU_SERVICO_OFICINA'
+  | 'VAI_VIR_NA_LOJA'
   | 'SO_SAUDACAO'
   | 'OUTRO_ASSUNTO';
 
@@ -77,6 +78,8 @@ export interface IntencaoExtraida {
   escolhaAlternativa: string | null;
   parcelasExtraida?: number | null;
   formaPagamentoExtraida?: 'dinheiro' | 'pix' | null;
+  // Dia que o cliente disse que vem na loja ('hoje', 'amanha', 'sabado', '25', '25/10'...). Ver data/visita.ts.
+  diaVisita?: string | null;
 }
 
 // Acoes cujo texto e 100% fixo (ou calculado direto da tabela) — o chamador so manda as partes.
@@ -103,6 +106,7 @@ export type TipoAcaoTexto =
   | 'RESPONDER_GARANTIA'
   | 'RESPONDER_PROMOCAO_LEVE4'
   | 'RESPONDER_SERVICO_OFICINA'
+  | 'CONFIRMAR_VISITA'
   | 'RESPONDER_SAUDACAO'
   // O robo decidiu NAO responder (ex.: agradecimento repetido). E uma decisao do codigo, nao "sai do fluxo":
   // a IA livre tambem NAO responde — partes vem vazio.
@@ -405,6 +409,12 @@ export function decidirAcaoPreco(
     // 21/10: servico de mecanica (freio, suspensao, oleo...). Loja so de pneu diz que nao faz; oficina (City) chama a equipe.
     case 'PERGUNTOU_SERVICO_OFICINA':
       return respostaTexto('RESPONDER_SERVICO_OFICINA', textoFluxo(textos, 'servico_oficina'), estadoAtual, dadosAtuais, 'servico_oficina');
+
+    // 21/10: cliente diz que vem na loja. Com dia: confirma ({DIA} o bot-service preenche) e o whatsapp-crm agenda os lembretes.
+    case 'VAI_VIR_NA_LOJA':
+      return intencao.diaVisita
+        ? respostaTexto('CONFIRMAR_VISITA', textoFluxo(textos, 'visita_confirmada'), estadoAtual, dadosAtuais, 'visita_confirmada')
+        : respostaTexto('CONFIRMAR_VISITA', textoFluxo(textos, 'visita_sem_dia'), estadoAtual, dadosAtuais, 'visita_sem_dia');
     // Só cumprimento / legenda do anúncio (23/09). Antes a IA livre respondia "Oi, tudo bem? + medida".
     // Primeiro contato: cumprimenta e pede a medida. Já pediu a medida e o cliente só respondeu o
     // cumprimento ("tudo bem, graças a Deus"): pede a medida de outro jeito, sem cumprimentar de novo.
