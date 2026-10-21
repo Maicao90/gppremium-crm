@@ -353,9 +353,11 @@ async function carregarMidiaBotIA(midia: MidiaBotIA): Promise<{ buffer: Buffer; 
   if (!caminhoOriginal) throw new Error('video sem caminho/url');
 
   const publicRoot = path.resolve(__dirname, '../../public');
-  const absoluto = path.isAbsolute(caminhoOriginal)
-    ? path.resolve(caminhoOriginal)
-    : path.resolve(publicRoot, caminhoOriginal.replace(/^[/\\]+/, ''));
+  // "/midias/bot-audios/x.ogg" e caminho do SITE (dentro de public/), nao da raiz do servidor (21/10: por isso os
+  // audios da Josy nunca sairam). Caminho absoluto de verdade so vale se o arquivo existir la.
+  const dentroDoPublic = path.resolve(publicRoot, caminhoOriginal.replace(/^[/\\]+/, ''));
+  const absoluto = path.isAbsolute(caminhoOriginal) && fs.existsSync(caminhoOriginal) ? path.resolve(caminhoOriginal) : dentroDoPublic;
+  if (absoluto === dentroDoPublic && !dentroDoPublic.startsWith(publicRoot + path.sep)) throw new Error(`caminho fora de public: ${caminhoOriginal}`);
   if (!fs.existsSync(absoluto)) throw new Error(`arquivo nao encontrado: ${caminhoOriginal}`);
 
   const buffer = fs.readFileSync(absoluto);

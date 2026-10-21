@@ -7,6 +7,13 @@ import { lerBotPneusConfig, salvarBotPneusConfig } from '../services/botPneusCon
 
 const router = Router();
 
+// Mandar mensagem/midia pelo painel pausa o robo 1h — mas nunca encurta uma pausa maior (o ∞ fica ∞). 21/10.
+async function pausaDoPainelSemEncurtar(usuarioId: string, chatJid: string): Promise<{ pausadoAte: Date; motivoPausa: string }> {
+  const umaHora = new Date(Date.now() + 60 * 60 * 1000);
+  const atual = await prisma.botConversa.findUnique({ where: { usuarioId_chatJid: { usuarioId, chatJid } }, select: { pausadoAte: true } }).catch(() => null);
+  return { pausadoAte: atual?.pausadoAte && atual.pausadoAte > umaHora ? atual.pausadoAte : umaHora, motivoPausa: 'atendimento_manual' };
+}
+
 type ReqUser = {
   sub?: string;
   role?: string;
@@ -531,10 +538,7 @@ router.post('/acao', async (req, res) => {
           pausadoAte: new Date(Date.now() + 60 * 60 * 1000),
           motivoPausa: 'atendimento_manual',
         },
-        update: {
-          pausadoAte: new Date(Date.now() + 60 * 60 * 1000),
-          motivoPausa: 'atendimento_manual',
-        },
+        update: await pausaDoPainelSemEncurtar(alvo.usuarioId, alvo.chatJid),
       });
       return res.json({ ok: true });
     }
@@ -556,10 +560,7 @@ router.post('/acao', async (req, res) => {
           pausadoAte: new Date(Date.now() + 60 * 60 * 1000),
           motivoPausa: 'atendimento_manual',
         },
-        update: {
-          pausadoAte: new Date(Date.now() + 60 * 60 * 1000),
-          motivoPausa: 'atendimento_manual',
-        },
+        update: await pausaDoPainelSemEncurtar(alvo.usuarioId, alvo.chatJid),
       });
       return res.json({ ok: true });
     }
