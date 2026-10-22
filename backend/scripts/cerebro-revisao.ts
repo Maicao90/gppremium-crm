@@ -54,6 +54,9 @@ Regras da loja que o robo deve seguir: so vende GP Premium (outra marca = "so um
 o GP Premium e remold de primeira linha com garantia de 2 anos e 60 mil km; servicos (alinhamento etc.) sao feitos na oficina da loja e o valor e combinado na loja.
 Para cada erro, sugira UM ensinamento curto pro robo: "situacao" (quando o cliente ...), "acao" (responder | atendente | silencio | orientar) e "resposta"
 (o texto exato que o robo deve mandar — paragrafos separados por linha em branco — ou, se acao=orientar, a orientacao). Nao sugira o que ja esta nos ENSINAMENTOS ATIVOS.
+IMPORTANTE: o ensinamento vale para TODOS os clientes. Escreva a "situacao" de forma GERAL (sem nome de cliente, sem medida, sem preco).
+Se a resposta certa depende da medida, do preco, da quantidade ou do parcelamento do cliente, use acao="orientar" (a IA calcula pela tabela) —
+NUNCA ponha preco, medida ou valor de parcela num texto fixo (acao="responder"). Texto fixo so para respostas que servem pra qualquer cliente.
 Se a conversa estiver boa, devolva lista vazia. No maximo 3 erros por conversa, os mais importantes.
 Responda SO com JSON: {"achados":[{"tipo":"preco|repetiu_pergunta|nao_entendeu|contradisse_atendente|atropelou_atendente|inventou|fora_de_contexto|sem_resposta|nao_era_cliente|outro","gravidade":"alta|media|baixa","resumo":"uma frase","mensagem_cliente":"trecho","resposta_robo":"trecho","sugestao":{"situacao":"...","acao":"responder","resposta":"..."}}]}`;
 
