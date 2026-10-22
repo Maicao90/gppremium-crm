@@ -17,6 +17,7 @@ import { lerBotPneusConfig, montarPromptAtendimentoBot } from '../services/botPn
 import { decidirSequenciaPreco, EstadoPrecoFluxo, DadosPrecoFluxo } from '../data/fluxoPreco';
 import { extrairIntencoesPreco } from '../data/fluxoPrecoExtrator';
 import { resolverDiaVisita } from '../data/visita';
+import { rotasCerebro, licoesAtivasDaLoja, casarLicao, partesDaLicao, registrarUso } from './cerebro';
 import { sanitizarTextosFluxo, chavesJaRespondidas, textoFluxo, SILENCIO_SE_REPETIR } from '../data/fluxoCatalogo';
 import { chaveDoFluxo, ehChaveAnthropic, gerarTextoAnthropic, MensagemAnthropic } from '../services/llmAnthropic';
 
@@ -24,6 +25,8 @@ dotenv.config();
 
 const app = express();
 app.use(express.json({ limit: '15mb' }));
+// Cerebro do robo (painel): ensinamentos do dono + revisao diaria das conversas. O nginx manda /api/cerebro pra ca.
+app.use('/api/cerebro', rotasCerebro(`http://127.0.0.1:${process.env.BOT_SERVICE_PORT || process.env.PORT || 3010}/gerar-resposta`));
 
 // Dados da loja do numero que recebeu a mensagem (vem do whatsapp-crm; null = config geral).
 interface LojaBot { nome: string; telefone: string; horario: string; localizacao: string; localizacaoTexto: string }
@@ -80,6 +83,12 @@ function parsearRespostaBot(payload: string): RespostaBotBridge {
     }
     return null;
   };
+  // A IA as vezes "chama uma ferramenta" em vez de escrever o JSON: <parameter name="partes">[...]</parameter> (22/10).
+  const noParametro = /<parameter\s+name="partes"\s*>([\s\S]*?)<\/parameter>/i.exec(bruto);
+  if (noParametro && noParametro[1]) {
+    const r = tentar(noParametro[1].trim()) || tentar(`{"partes":${noParametro[1].trim()}}`);
+    if (r && r.length) return { partes: r };
+  }
   // A IA as vezes escreve algo antes/depois do JSON (cerca ```json, "<invoke ...>"): acha o {"partes": ...} onde estiver.
   const ini = bruto.search(/\{\s*"partes"\s*:/);
   if (ini >= 0) {
@@ -464,9 +473,28 @@ app.post('/gerar-resposta', async (req, res) => {
         });
       }
     }
+    // CEREBRO (22/10): ensinamento do dono que casa com a mensagem vale ANTES do fluxo (o dono manda).
+    // responder = o texto dele; atendente = "so um instante" + etiqueta; silencio = nao responde; orientar = a IA segue a orientacao.
+    let instrucaoCerebro = '';
+    if (!temMidiaSemTexto && gatilho.trim()) {
+      const licoes = licoesAtivasDaLoja(lojaBot?.nome);
+      if (licoes.length) {
+        const ctx = anteriores.slice(-6).map((m: any) => `${m.role === 'user' ? 'CLIENTE' : 'LOJA'}: ${semExemplos(String(m.content || '')).slice(0, 300)}`).join('\n');
+        const l = await casarLicao(rajada.length ? rajada : [gatilho], ctx, licoes);
+        if (l) {
+          console.log(`[BotService][Cerebro] ensinamento ${l.id} (${l.acao}): ${l.situacao}`);
+          if (!req.body?.simular && !req.body?.teste) registrarUso(l.id);
+          const baseCerebro = { deterministico: true, novoEstadoPreco: estadoPrecoAtual, novosDadosPreco: JSON.stringify(dadosPrecoAtuais), via: 'cerebro', assuntos: [l.situacao], rajada, simulado: !!req.body?.simular, licao: { id: l.id, situacao: l.situacao, acao: l.acao } };
+          if (l.acao === 'responder') return res.json({ ...baseCerebro, partes: partesDaLicao(l), acaoTipo: 'CEREBRO', chaves: ['cerebro'] });
+          if (l.acao === 'silencio') return res.json({ ...baseCerebro, partes: [], acaoTipo: 'SILENCIO', chaves: ['cerebro_silencio'] });
+          if (l.acao === 'atendente') return res.json({ ...baseCerebro, partes: ['Só um instante que eu vou verificar aqui pra você, tá bem?'], acaoTipo: 'CEREBRO', chaves: ['sem_alternativa'] });
+          instrucaoCerebro = `\nORIENTACAO DO DONO DA LOJA PARA ESTA SITUACAO ("${l.situacao}") — siga a risca, acima das outras regras: ${l.resposta}`;
+        }
+      }
+    }
     // Toda mensagem com texto passa pela leitura (23/09, "mais fechado"): antes um filtro de palavras-chave
     // (podeSerSobrePreco) mandava "oi", "é nacional?" e oferta de fornecedor direto pra IA livre.
-    if (!temMidiaSemTexto && gatilho.trim()) {
+    if (!temMidiaSemTexto && gatilho.trim() && !instrucaoCerebro) {
       const apiKeyFluxo = chaveDoFluxo();
       motivoLivre = apiKeyFluxo ? 'leitura_falhou' : 'sem_chave_openai';
       if (apiKeyFluxo) {
@@ -599,7 +627,7 @@ app.post('/gerar-resposta', async (req, res) => {
       imagem,
       audio,
       lojas: Array.isArray(lojas) ? lojas : [],
-      briefingComercial: briefingComercial + avisoData + avisoCoerencia,
+      briefingComercial: briefingComercial + avisoData + avisoCoerencia + instrucaoCerebro,
     });
 
 
