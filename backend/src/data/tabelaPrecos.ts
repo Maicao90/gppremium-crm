@@ -519,7 +519,7 @@ export function encontrarPrecosExatosPorMedida(medida: string): ItemPreco[] {
 // o cliente desistir. Aqui normalizamos tudo pra um formato so antes de procurar.
 // ATENCAO A ORDEM: as expressoes COMPOSTAS ("sessenta e cinco") tem que ser trocadas
 // ANTES das simples ("sessenta"), senao "sessenta e cinco" vira "60 e cinco".
-function normalizarTextoMedida(texto: string): string {
+export function normalizarTextoMedida(texto: string): string {
   let t = String(texto || '').toUpperCase();
   const trocas: Array<[RegExp, string]> = [
     // centenas por extenso (primeiro as compostas)
