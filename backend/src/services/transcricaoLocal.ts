@@ -11,6 +11,8 @@ const CLI = process.env.WHISPER_CLI || '/opt/whisper.cpp/build/bin/whisper-cli';
 const MODELO = process.env.WHISPER_MODELO || '/opt/whisper-models/ggml-small-q5_1.bin';
 const PASTA = path.resolve(__dirname, '../../data/transcricoes');
 const LIMITE_MS = 120_000;
+// Vocabulario da loja pro whisper (22/10): medida falada sai "225/65/16" e nao "2, 2, 5, 6, 5, 16".
+const VOCABULARIO = 'Atendimento de loja de pneus no WhatsApp. Medidas como 175/70 aro 14, 185/65/15, 195/55/15, 205/55/16, 265/60/18. Pneu GP Premium, remold, alinhamento, balanceamento, à vista, Pix, cartão, parcelar em 10 vezes, Luziânia.';
 
 let fila: Promise<unknown> = Promise.resolve();
 
@@ -50,7 +52,7 @@ async function transcrever(arquivoAudio: string): Promise<string | null> {
     // (audio-ctx): metade do tempo, mesmo texto (testado com audios reais de clientes).
     const segundos = Math.max(0, (fs.statSync(wav).size - 44) / 32000);
     const ctx = segundos > 0 && segundos <= 28 ? Math.min(1500, Math.ceil((segundos / 30) * 1500) + 128) : 0;
-    const saida = await rodar('nice', ['-n', '15', CLI, '-m', MODELO, '-l', 'pt', '-t', '1', '-nt', '-np', '-ac', String(ctx), '-f', wav], LIMITE_MS);
+    const saida = await rodar('nice', ['-n', '15', CLI, '-m', MODELO, '-l', 'pt', '-t', '1', '-nt', '-np', '-ac', String(ctx), '--prompt', VOCABULARIO, '-f', wav], LIMITE_MS);
     const texto = limpar(saida);
     return texto.length >= 2 ? texto : null;
   } finally {

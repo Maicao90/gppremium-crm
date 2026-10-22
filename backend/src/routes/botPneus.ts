@@ -4,6 +4,7 @@ import { Router } from 'express';
 import { prisma } from '../server';
 import { enviarMensagemInbox, enviarMidiaInbox, resolverConexaoEfetiva, apagarMensagemParaTodos, editarMensagemWhatsApp, dispararRespostaBotAgora, enviarLocalizacaoManual } from '../workers/whatsappService';
 import { lerBotPneusConfig, salvarBotPneusConfig } from '../services/botPneusConfig';
+import { cancelarConversaBotIA } from '../workers/botAtendimentoService';
 
 const router = Router();
 
@@ -427,6 +428,8 @@ router.post('/acao', async (req, res) => {
       else if (modo === '4h') pausadoAte = new Date(Date.now() + 4 * 60 * 60 * 1000);
       else if (modo === 'manual') pausadoAte = new Date(Date.now() + 3650 * 24 * 60 * 60 * 1000);
       else if (modo === 'reativar') pausadoAte = null;
+      // Pausou: a resposta que o robo estava pra mandar nesta conversa nao sai mais (22/10).
+      if (pausadoAte) cancelarConversaBotIA(alvo.usuarioId, alvo.chatJid);
 
       await prisma.botConversa.upsert({
         where: { usuarioId_chatJid: { usuarioId: alvo.usuarioId, chatJid: alvo.chatJid } },

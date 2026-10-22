@@ -258,6 +258,11 @@ async function enviarEmBolhas(params: AgendarBotParams, texto: string): Promise<
     return false;
   }
   for (const bolha of quebrarEmBolhas(texto)) {
+    // A pausa pode ter sido dada no meio da resposta (painel ou atendente): confere antes de CADA bolha (22/10).
+    if (!(await conversaLiberada(params.usuarioId, params.chatJid))) {
+      console.log(`[Bot IA] ${params.chatJid}: conversa pausada no meio da resposta — parei de mandar.`);
+      return false;
+    }
     const ok = await params.enviarParte(bolha, tempoDigitacao(bolha));
     if (!ok) return false;
   }
@@ -267,7 +272,7 @@ async function enviarEmBolhas(params: AgendarBotParams, texto: string): Promise<
 // Mensagens que a loja manda sem ser uma pessoa atendendo: saudacao automatica do WhatsApp Business e o 🙋🏼‍♀️.
 const MSG_AUTOMATICA_DA_LOJA = /Seja bem-vindo\(a\)|^\s*🙋🏼‍♀️\s*$/;
 
-const REGEX_CANDIDATO = /(curr[ií]cul(o|um)|\bcv\b|contratando|vaga(s)? de (emprego|trabalho|auxiliar|mec[aâ]nic|vendedor|atendente|borracheir|motorista|estagi)|interesse (na|em uma|numa) vaga|(alguma|tem|h[aá]) vaga (de|pra|para) (emprego|trabalh)|fazer parte d[ae] (sua |vossa )?(empresa|equipe)|trabalhar (com voc[eê]s|a[ií] na|na (empresa|loja) de voc)|\bemprego\b)/i;
+const REGEX_CANDIDATO = /(curr[ií]cul(o|um)|\bcv\b|contratando|\bvagas?\s+(que|aberta|abertas|dispon[ií]ve(l|is)|na loja|a[ií](?![a-z]))|vaga(s)? de (emprego|trabalho|auxiliar|mec[aâ]nic|vendedor|atendente|borracheir|motorista|estagi)|interesse (na|em uma|numa) vaga|(alguma|tem|h[aá]) vaga (de|pra|para) (emprego|trabalh)|fazer parte d[ae] (sua |vossa )?(empresa|equipe)|trabalhar (com voc[eê]s|a[ií] na|na (empresa|loja) de voc)|\bemprego\b)/i;
 export function ehCandidatoAVaga(textos: string[]): boolean {
   return textos.some((t) => REGEX_CANDIDATO.test(String(t || '')));
 }
@@ -300,8 +305,18 @@ async function agendarLembretesVisita(params: AgendarBotParams, visita: { iso: s
 }
 
 function tempoDigitacao(texto: string): number {
-  const variacao = Math.floor(Math.random() * 900);
-  return Math.min(6000, Math.max(1200, 700 + texto.length * 28 + variacao));
+  // 22/10: digitava rapido demais. ~45 ms por letra, entre 2,5 e 9 s por bolha.
+  const variacao = Math.floor(Math.random() * 1500);
+  return Math.min(9000, Math.max(2500, 1000 + texto.length * 45 + variacao));
+}
+
+// Pausa dada no painel: cancela a resposta que estava agendada/pronta pra sair nesta conversa (22/10).
+export function cancelarConversaBotIA(usuarioId: string, chatJid: string) {
+  const key = chave(usuarioId, chatJid);
+  const t = timers.get(key);
+  if (t) clearTimeout(t);
+  timers.delete(key);
+  versoes.set(key, (versoes.get(key) || 0) + 1);
 }
 
 function arquivoDaMidia(mensagem: any): string | null {
@@ -1126,9 +1141,10 @@ export async function agendarRespostaBotIA(params: AgendarBotParams) {
   // ainda vai olhar o flanco do pneu e digitar a medida), da mais tempo: nos casos
   // reais levou entre 8 e 25s (achado 18/09, caso do Gustavo Souza).
   const esperaMaiorAnuncioSemMedida = params.ultimoTipo === 'imagem' && !params.ultimoTextoTemMedida;
+  // 22/10 (dono: "esta respondendo muito rapido"): ritmo de gente — 15 a 30 s antes de responder.
   const espera = esperaMaiorAnuncioSemMedida
-    ? 12000 + Math.floor(Math.random() * 4000)
-    : 5500 + Math.floor(Math.random() * 3000);
+    ? 20000 + Math.floor(Math.random() * 10000)
+    : 15000 + Math.floor(Math.random() * 15000);
   const timer = setTimeout(() => {
     if (timers.get(key) === timer) timers.delete(key);
     executar(params, atual).catch((e) => console.error('[Bot IA] executar:', e));
