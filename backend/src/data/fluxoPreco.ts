@@ -36,6 +36,15 @@ export interface DadosPrecoFluxo {
   quantidade?: number;
   intencaoPendente?: 'parcelamento_especifico' | 'desconto_avista';
   parcelasPendentes?: number;
+  // Modelo que o cliente escolheu/citou (ex.: 'BRUTUS') quando a medida tem mais de um (22/10).
+  modelo?: string;
+}
+
+// Medida com mais de um modelo: usa o que o cliente citou; senao o primeiro da tabela (decisivo, achado 09/09).
+export function escolherItem(itens: ItemPreco[], modelo?: string): ItemPreco {
+  const alvo = String(modelo || '').toUpperCase().replace(/\s+/g, '');
+  const achado = alvo ? itens.find((i) => i.modelo.toUpperCase().replace(/\s+/g, '').includes(alvo)) : undefined;
+  return (achado || itens[0]) as ItemPreco;
 }
 
 export type IntencaoTipo =
@@ -212,13 +221,13 @@ function pedidoPendente(dados: DadosPrecoFluxo): PedidoEspecifico | undefined {
 // `pedido` = o cliente perguntou parcelamento/desconto (agora, ou antes de dar a medida).
 // `comAvista` = inclui a linha do preco a vista antes da resposta especifica (usado quando
 // a pergunta ficou pendente: o cliente pode nem lembrar mais que perguntou).
-function montarAcaoParaMedida(medida: string, textos: TextosFluxo, quantidade: number | null = null, pedido?: PedidoEspecifico, comAvista = false): ResultadoDecisao {
+function montarAcaoParaMedida(medida: string, textos: TextosFluxo, quantidade: number | null = null, pedido?: PedidoEspecifico, comAvista = false, modelo?: string): ResultadoDecisao {
   const itens = encontrarPrecosExatosPorMedida(medida);
   if (itens.length > 0) {
-    // Achado 09/09 (SEJA DECISIVO): quando ha mais de um modelo pra mesma medida,
-    // pega o primeiro em vez de perguntar — a loja ja escolhe por preco/uso.
-    const item: ItemPreco = itens[0]!;
-    const novosDados = dadosComQuantidade({ medida: item.medida }, quantidade);
+    // Achado 09/09 (SEJA DECISIVO): quando ha mais de um modelo pra mesma medida, pega o que o cliente citou
+    // (22/10, caso Brutus) ou o primeiro — sem perguntar.
+    const item: ItemPreco = escolherItem(itens, modelo);
+    const novosDados = dadosComQuantidade({ medida: item.medida, ...(modelo ? { modelo } : {}) }, quantidade);
     if (pedido?.tipo === 'parcelamento_especifico') {
       const partes = [...(comAvista ? montarPartesPreco(item, null, quantidade).slice(0, 1) : []), ...montarPartesPreco(item, pedido.parcelas, quantidade)];
       return { acao: { tipo: 'RESPONDER_PARCELAMENTO_ESPECIFICO', partes }, novoEstado: 'preco_confirmado', novosDados, chaves: ['parcelamento_especifico'] };
@@ -457,14 +466,14 @@ export function decidirAcaoPreco(
       const pedido: PedidoEspecifico = { tipo: 'parcelamento_especifico', parcelas };
       const medida = intencao.medidaExtraida || dadosAtuais.medida;
       if (!medida) return pedirMedida(estadoAtual, dadosAtuais, textos, contexto, pedido);
-      return montarAcaoParaMedida(medida, textos, quantidadeAplicavel(intencao, estadoAtual, dadosAtuais, medida), pedido);
+      return montarAcaoParaMedida(medida, textos, quantidadeAplicavel(intencao, estadoAtual, dadosAtuais, medida), pedido, false, dadosAtuais.modelo);
     }
     case 'PERGUNTOU_DESCONTO_AVISTA': {
       if (intencao.formaPagamentoExtraida === 'pix') return respostaTexto('RESPONDER_DESCONTO', textoFluxo(textos, 'desconto_pix'), estadoAtual, dadosAtuais, 'desconto_pix');
       const pedido: PedidoEspecifico = { tipo: 'desconto_avista' };
       const medida = intencao.medidaExtraida || dadosAtuais.medida;
       if (!medida) return pedirMedida(estadoAtual, dadosAtuais, textos, contexto, pedido);
-      return montarAcaoParaMedida(medida, textos, quantidadeAplicavel(intencao, estadoAtual, dadosAtuais, medida), pedido);
+      return montarAcaoParaMedida(medida, textos, quantidadeAplicavel(intencao, estadoAtual, dadosAtuais, medida), pedido, false, dadosAtuais.modelo);
     }
     default:
       break;
@@ -477,7 +486,7 @@ export function decidirAcaoPreco(
   if (intencao.intencao === 'DAR_MEDIDA' && intencao.medidaExtraida) {
     // Se o cliente tinha perguntado parcelamento/desconto ANTES de dar a medida, responde ISSO.
     const pendente = pedidoPendente(dadosAtuais);
-    return montarAcaoParaMedida(intencao.medidaExtraida, textos, quantidadeAplicavel(intencao, estadoAtual, dadosAtuais, intencao.medidaExtraida), pendente, !!pendente);
+    return montarAcaoParaMedida(intencao.medidaExtraida, textos, quantidadeAplicavel(intencao, estadoAtual, dadosAtuais, intencao.medidaExtraida), pendente, !!pendente, dadosAtuais.modelo);
   }
 
   if (intencao.intencao === 'PERGUNTAR_PRECO_SEM_MEDIDA') {
@@ -485,7 +494,7 @@ export function decidirAcaoPreco(
       const itens = encontrarPrecosExatosPorMedida(dadosAtuais.medida);
       if (itens.length > 0) {
         return {
-          acao: { tipo: 'CONFIRMAR_PRECO', partes: montarPartesPreco(itens[0]!, null, quantidadeConhecida) },
+          acao: { tipo: 'CONFIRMAR_PRECO', partes: montarPartesPreco(escolherItem(itens, dadosAtuais.modelo), null, quantidadeConhecida) },
           novoEstado: estadoAtual,
           novosDados: dadosComQuantidade(dadosAtuais, intencao.quantidadeExtraida),
           chaves: ['preco_medida'],
@@ -528,7 +537,7 @@ export function decidirAcaoPreco(
     const itens = encontrarPrecosExatosPorMedida(dadosAtuais.medida);
     if (itens.length > 0) {
       return {
-        acao: { tipo: 'CONFIRMAR_PRECO', partes: montarPartesPreco(itens[0]!, null, intencao.quantidadeExtraida) },
+        acao: { tipo: 'CONFIRMAR_PRECO', partes: montarPartesPreco(escolherItem(itens, dadosAtuais.modelo), null, intencao.quantidadeExtraida) },
         novoEstado: 'preco_confirmado',
         novosDados: dadosComQuantidade(dadosAtuais, intencao.quantidadeExtraida),
         chaves: ['preco_medida'],
@@ -538,7 +547,7 @@ export function decidirAcaoPreco(
 
   if (intencao.intencao === 'ESCOLHER_ALTERNATIVA' && estadoAtual === 'medida_sem_match' && intencao.escolhaAlternativa) {
     const pendente = pedidoPendente(dadosAtuais);
-    return montarAcaoParaMedida(intencao.escolhaAlternativa, textos, quantidadeConhecida, pendente, !!pendente);
+    return montarAcaoParaMedida(intencao.escolhaAlternativa, textos, quantidadeConhecida, pendente, !!pendente, dadosAtuais.modelo);
   }
 
   // Intencao nao reconhecida dado o estado atual (ex.: RESPONDER_QUANTIDADE sem

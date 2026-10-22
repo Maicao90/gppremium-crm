@@ -72,7 +72,11 @@ function parsearRespostaBot(payload: string): RespostaBotBridge {
   const limpar = (lista: any[]) => lista.map((p) => String(p || '').trim()).filter((p) => p && !LIXO_TECNICO.test(p)).slice(0, 4);
   const tentar = (s: string): string[] | null => {
     for (const t of [s, escaparQuebrasNasFrases(s)]) {
-      try { const p = JSON.parse(t); if (Array.isArray(p?.partes)) return limpar(p.partes); } catch {}
+      try {
+        const p = JSON.parse(t);
+        if (Array.isArray(p?.partes)) return limpar(p.partes);
+        if (Array.isArray(p) && p.every((x: any) => typeof x === 'string')) return limpar(p); // ["...","..."] (22/10, caso Spin)
+      } catch {}
     }
     return null;
   };
@@ -291,18 +295,32 @@ app.get('/health', (_req, res) => res.json({ ok: true }));
 // Medida que ja apareceu na conversa (mais recente primeiro). Cliente vale mais que a loja: o que a loja escreveu
 // pode ser lista de alternativas, entao da loja so conta quando a mensagem tem UMA medida so. Só medida que existe
 // na tabela (senao o robo cotaria algo que nao vende).
+// "(ex.: 175/65/14)" na pergunta do robo NAO e medida de ninguem (22/10: virou "14 pneus 175/65/14").
+function semExemplos(texto: string): string {
+  return String(texto || '').replace(/\(\s*(ex|exemplo)\b[^)]*\)/gi, ' ').replace(/\b(ex|exemplo)\.?\s*:\s*[\d/ .,rR-]+/gi, ' ');
+}
+
+// Modelo citado pelo cliente (ou pelo anuncio que ele clicou): Brutus, ATR, H/T, A/T, Verde, Duramax, Drift, Zero.
+function modeloCitado(textos: string[]): string | undefined {
+  const t = textos.join('\n');
+  const regras: Array<[RegExp, string]> = [[/brutus/i, 'BRUTUS'], [/\batr\b/i, 'ATR'], [/\bh\s*\/\s*t\b|\bht\b/i, 'H/T'], [/\ba\s*\/\s*t\b/i, 'A/T'], [/\bverde\b/i, 'VERDE'], [/duramax|\bcargo\b/i, 'DURAMAX'], [/drift/i, 'DRIFT'], [/\bzero\b/i, 'ZERO']];
+  let achado: string | undefined;
+  for (const [re, nome] of regras) if (re.test(t)) achado = nome;
+  return achado;
+}
+
 function medidaDoHistorico(mensagens: any[]): string | null {
   const valida = (m: string) => encontrarPrecosExatosPorMedida(m).length > 0;
   for (let i = mensagens.length - 1; i >= 0; i--) {
     const m = mensagens[i];
     if (m?.role !== 'user') continue;
-    const achadas = extrairMedidasDoTexto(String(m?.content || '')).filter(valida);
+    const achadas = extrairMedidasDoTexto(semExemplos(String(m?.content || ''))).filter(valida);
     if (achadas.length) return achadas[achadas.length - 1] as string;
   }
   for (let i = mensagens.length - 1; i >= 0; i--) {
     const m = mensagens[i];
     if (m?.role !== 'assistant') continue;
-    const achadas = extrairMedidasDoTexto(String(m?.content || '')).filter(valida);
+    const achadas = extrairMedidasDoTexto(semExemplos(String(m?.content || ''))).filter(valida);
     if (achadas.length === 1) return achadas[0] as string;
   }
   return null;
@@ -435,6 +453,17 @@ app.post('/gerar-resposta', async (req, res) => {
         simulado: !!req.body?.simular,
       });
     }
+    // "14" / "aro 15" sozinho e sem medida conhecida = ARO (22/10: virava "14 pneus"). Pergunta o carro numa frase.
+    {
+      const soAro = /^\s*(aro\s*)?(1[2-9]|2[0-2])\s*\.?\s*$/i.exec(rajada.join(' ').trim());
+      if (soAro && !dadosPrecoAtuais.medida && !medidaDoHistorico(anteriores)) {
+        return res.json({
+          partes: [`Show, aro ${soAro[2]}! 👍`, 'Qual é o carro? Já te passo a medida certa e o valor.'],
+          deterministico: true, acaoTipo: 'PEDIR_CARRO', novoEstadoPreco: estadoPrecoAtual, novosDadosPreco: JSON.stringify(dadosPrecoAtuais),
+          via: 'fluxo', assuntos: ['INFORMOU_ARO'], chaves: ['aro_sem_medida'], rajada, simulado: !!req.body?.simular,
+        });
+      }
+    }
     // Toda mensagem com texto passa pela leitura (23/09, "mais fechado"): antes um filtro de palavras-chave
     // (podeSerSobrePreco) mandava "oi", "é nacional?" e oferta de fornecedor direto pra IA livre.
     if (!temMidiaSemTexto && gatilho.trim()) {
@@ -444,7 +473,7 @@ app.post('/gerar-resposta', async (req, res) => {
         const contextoRecente = anteriores
           .slice(-6)
           // Orcamento/audio da atendente lido pelo robo (21/10) e comprido: cabe inteiro, senao as marcas somem.
-          .map((m: any) => { const t = String(m.content || ''); const daAtendente = /^\((foto que a atendente mandou|áudio da atendente)\)/.test(t); return `${m.role === 'user' ? 'CLIENTE' : daAtendente ? 'ATENDENTE' : 'ROBO'}: ${t.slice(0, daAtendente ? 900 : 200)}`; })
+          .map((m: any) => { const t = semExemplos(String(m.content || '')); const daAtendente = /^\((foto que a atendente mandou|áudio da atendente)\)/.test(t); return `${m.role === 'user' ? 'CLIENTE' : daAtendente ? 'ATENDENTE' : 'ROBO'}: ${t.slice(0, daAtendente ? 900 : 200)}`; })
           .join('\n');
         const intencoes = await extrairIntencoesPreco(rajada.length ? rajada : [gatilho], contextoRecente, apiKeyFluxo);
         if (intencoes) {
@@ -463,6 +492,11 @@ app.post('/gerar-resposta', async (req, res) => {
           // Cliente antigo (o robo nao tem estado dessa conversa): le a medida do historico antes de responder.
           let estadoUsado = estadoPrecoAtual;
           let dadosUsados = dadosPrecoAtuais;
+          {
+            const textosCliente = [...anteriores.filter((m: any) => m?.role === 'user').slice(-6).map((m: any) => String(m?.content || '')), ...rajada];
+            const modelo = modeloCitado(textosCliente);
+            if (modelo && modelo !== dadosUsados.modelo) dadosUsados = { ...dadosUsados, modelo };
+          }
           if (!dadosPrecoAtuais.medida && (estadoPrecoAtual === 'sem_estado' || estadoPrecoAtual === 'aguardando_medida')) {
             const medidaHistorico = medidaDoHistorico(anteriores);
             if (medidaHistorico) {
@@ -471,7 +505,10 @@ app.post('/gerar-resposta', async (req, res) => {
               console.log(`[BotService] medida ${medidaHistorico} lida do historico da conversa (nao pergunta de novo).`);
             }
           }
-          const decisao = decidirSequenciaPreco(intencoes, estadoUsado, dadosUsados, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas, lojaFalouHaPouco });
+          // A rajada ja traz a medida ("qual o preco do aro 15?" + "185/60"): nao pede a medida antes do preco (22/10).
+          const temMedidaNaRajada = intencoes.some((i: any) => i.medidaExtraida || i.intencao === 'DAR_MEDIDA');
+          const intencoesUsadas = temMedidaNaRajada ? intencoes.filter((i: any) => i.intencao !== 'PERGUNTAR_PRECO_SEM_MEDIDA') : intencoes;
+          const decisao = decidirSequenciaPreco(intencoesUsadas.length ? intencoesUsadas : intencoes, estadoUsado, dadosUsados, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas, lojaFalouHaPouco });
           // Visita: resolve o dia (data/visita.ts) e preenche {DIA}. Dia que nao se resolve vira o texto "sem dia".
           let visita: { iso: string; rotulo: string; diasAte: number } | null = null;
           if (decisao.chaves.includes('visita_confirmada')) {

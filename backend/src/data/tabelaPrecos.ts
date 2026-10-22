@@ -764,6 +764,14 @@ function linhaParcelamento(item: ItemPreco, parcelaSolicitada: number | null): s
   return `1x R$ ${brl(item.parcelado.x1)} | 2x R$ ${brl(item.parcelado.x2)} | 3x R$ ${brl(item.parcelado.x3)} | 4x R$ ${brl(item.parcelado.x4)} | 5x R$ ${brl(item.parcelado.x5)} | 6x R$ ${brl(item.parcelado.x6)} | 7x R$ ${brl(item.parcelado.x7)} | 8x R$ ${brl(item.parcelado.x8)} | 9x R$ ${brl(item.parcelado.x9)} | 10x R$ ${brl(item.parcelado.x10)}`;
 }
 
+// Medida com mais de um modelo na tabela (ex.: 265/60/18 H/T, ATR, Brutus): o cliente precisa saber QUAL modelo
+// tem esse preco (22/10, caso Brutus). Codigo interno GP-1/GP-7 nao aparece.
+function modeloVisivel(item: ItemPreco): string {
+  if (TABELA_PRECOS_GP.filter((i) => i.medida === item.medida).length < 2) return '';
+  const nome = primeiroModelo(item.modelo);
+  return /^GP-/i.test(nome) ? '' : ` (modelo *${nome}*)`;
+}
+
 function primeiroModelo(modelo: string): string {
   // Separa em ' / ' COM espacos: varios modelos tem barra no proprio nome
   // (ADVENTURE A/T, BRUTUS T/A, ADVENTURE H/T). Cortando em qualquer '/', o robo
@@ -798,7 +806,7 @@ export function montarPartesPreco(item: ItemPreco, parcelaSolicitada: number | n
     const complementoTotal = ehPlural ? ' (valor total)' : '';
     const partes: string[] = [
       ...destaquePromocao(item),
-      `Temos ${sujeito} *${item.medida}* da marca *GP Premium* ${ehPlural ? 'saem' : 'está saindo'} por *R$ ${valorTotal} à vista*${complementoTotal}.`,
+      `Temos ${sujeito} *${item.medida}* da marca *GP Premium*${modeloVisivel(item)} ${ehPlural ? 'saem' : 'está saindo'} por *R$ ${valorTotal} à vista*${complementoTotal}.`,
       'Se preferir, você pode parcelar em até 10x no cartão!',
     ];
     if (avisoLeve4) partes.push(avisoLeve4);
