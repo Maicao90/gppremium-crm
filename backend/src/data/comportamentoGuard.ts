@@ -222,7 +222,9 @@ export function removerRepeticaoRecente(partes: string[], jaDitas: string[]): st
 export const JANELA_ECO_MS = 2 * 60 * 1000;
 const MIN_REPETICOES_PROPRIAS = 3;
 const QTD_RESPOSTAS_ANALISADAS = 6;
-const LIMITE_TURNOS_JANELA = 8;
+// 22/10: era 8 — cliente real digitando rapido (preco, local, remold, quantidade, "?", "obrigado")
+// bateu 8 em 5 min e ficou 12h pausado como "outro robo". Gente nao passa de ~15 mensagens em 5 min.
+const LIMITE_TURNOS_JANELA = 16;
 
 export interface MsgAntiLoop {
   waId?: string | null;

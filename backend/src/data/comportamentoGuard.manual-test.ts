@@ -85,18 +85,28 @@ function bot(texto: string, offsetMsAntesDeAgora: number): MsgAntiLoop {
   checar('Eco: motivo é anti_loop_eco', r.motivo === 'anti_loop_eco', JSON.stringify(r));
 }
 
-// ===== Volume como rede de seguranca: 8 turnos reais e distintos, sem eco/repeticao =====
+// ===== Caso real 22/10: cliente digitando rapido (8 mensagens em 5 min) NAO e robo =====
+{
+  const falas = ['Quanto ta o pneu 265 70/16', 'Qual local da loja', 'Nao e remolde ne?', 'Ok, bom saber',
+    'Acredito que precisarei de 2 ai entao divide pelo mesmo valor', '?', 'Obrigado pelas informacoes', 'Ola! Posso ter mais informacoes sobre isso?'];
+  const mensagensCliente: MsgAntiLoop[] = falas.map((f, i) => cliente(`wa-real${i}`, f, min(4) - seg(i * 30)));
+  const respostasBot: MsgAntiLoop[] = falas.map((_, i) => bot(`resposta ${i} do robo, cada uma diferente da outra, sem repetir nada`, min(4) - seg(i * 30) - seg(5)));
+  const r = decidirAntiLoop(mensagensCliente, respostasBot, DESDE);
+  checar('Volume: 8 mensagens de um cliente real em 5 min NAO pausa', r.pausar === false, JSON.stringify(r));
+}
+
+// ===== Volume como rede de seguranca: 16 turnos reais e distintos, sem eco/repeticao =====
 // Continua existindo pra pegar loop NAO-textual (ex.: troca de midia em circulo) que os
 // dois sub-sinais de conteudo nao cobrem.
 {
-  const mensagensCliente: MsgAntiLoop[] = Array.from({ length: 8 }, (_, i) =>
-    cliente(`wa-vol${i}`, `mensagem numero ${i} bem diferente das outras, sem repetir nada`, min(4) - seg(i * 20)),
+  const mensagensCliente: MsgAntiLoop[] = Array.from({ length: 16 }, (_, i) =>
+    cliente(`wa-vol${i}`, `mensagem numero ${i} bem diferente das outras, sem repetir nada`, min(4) - seg(i * 12)),
   );
-  const respostasBot: MsgAntiLoop[] = Array.from({ length: 8 }, (_, i) =>
-    bot(`resposta numero ${i} tambem diferente das outras, sem repetir nada`, min(4) - seg(i * 20) - seg(5)),
+  const respostasBot: MsgAntiLoop[] = Array.from({ length: 16 }, (_, i) =>
+    bot(`resposta numero ${i} tambem diferente das outras, sem repetir nada`, min(4) - seg(i * 12) - seg(5)),
   );
   const r = decidirAntiLoop(mensagensCliente, respostasBot, DESDE);
-  checar('Volume: 8 turnos DISTINTOS do cliente (sem eco/repeticao) — pausa pelo eixo de volume', r.pausar === true, JSON.stringify(r));
+  checar('Volume: 16 turnos DISTINTOS do cliente (sem eco/repeticao) — pausa pelo eixo de volume', r.pausar === true, JSON.stringify(r));
   checar('Volume: motivo é anti_loop_volume', r.motivo === 'anti_loop_volume', JSON.stringify(r));
 }
 
