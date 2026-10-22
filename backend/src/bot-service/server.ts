@@ -149,7 +149,18 @@ async function transcreverAudio(apiKey: string, base64: string, mime: string): P
 
 // Converte o `input` no formato da Responses API (OpenAI) pro formato de mensagens da Anthropic.
 // O system vai separado; a conversa tem que comecar por "user" e nao pode ter bloco de texto vazio.
-function paraMensagensAnthropic(input: any[]): MensagemAnthropic[] {
+// 22/10: o WhatsApp manda print (PNG) rotulado como foto (JPEG) e a Anthropic recusa a imagem com 400 — o
+// cliente ficava sem resposta. O tipo certo sai dos primeiros bytes do arquivo, nao do rotulo.
+function tipoRealDaImagem(base64: string, rotulo: string): string {
+  const inicio = base64.slice(0, 16);
+  if (inicio.startsWith('/9j/')) return 'image/jpeg';
+  if (inicio.startsWith('iVBORw0KGgo')) return 'image/png';
+  if (inicio.startsWith('R0lGOD')) return 'image/gif';
+  if (inicio.startsWith('UklGR')) return 'image/webp';
+  return rotulo;
+}
+
+export function paraMensagensAnthropic(input: any[]): MensagemAnthropic[] {
   const saida: MensagemAnthropic[] = [];
   for (const item of input) {
     if (item?.role !== 'user' && item?.role !== 'assistant') continue;
@@ -157,7 +168,7 @@ function paraMensagensAnthropic(input: any[]): MensagemAnthropic[] {
     for (const c of Array.isArray(item.content) ? item.content : []) {
       if (c?.type === 'input_image') {
         const m = /^data:([^;]+);base64,([\s\S]+)$/.exec(String(c.image_url || ''));
-        if (m) blocos.push({ type: 'image', source: { type: 'base64', media_type: m[1], data: m[2] } });
+        if (m) blocos.push({ type: 'image', source: { type: 'base64', media_type: tipoRealDaImagem(m[2]!, m[1]!), data: m[2]! } });
       } else if (typeof c?.text === 'string' && c.text.trim()) {
         blocos.push({ type: 'text', text: c.text });
       }
@@ -165,6 +176,12 @@ function paraMensagensAnthropic(input: any[]): MensagemAnthropic[] {
     if (blocos.length) saida.push({ role: item.role, content: blocos });
   }
   while (saida.length && saida[0]!.role !== 'user') saida.shift();
+  // 22/10: quando a loja (robo ou atendente) falou DEPOIS da ultima mensagem do cliente, a conversa termina em
+  // "assistant" e a Anthropic recusa com 400 ("does not support assistant message prefill") — o cliente ficava
+  // sem resposta. Fecha com uma nota do sistema: responde so o que ainda falta, ou nada.
+  if (saida.length && saida[saida.length - 1]!.role === 'assistant') {
+    saida.push({ role: 'user', content: [{ type: 'text', text: '(Nota do sistema, nao e o cliente: as mensagens da loja acima ja foram enviadas depois da ultima fala do cliente. Se ainda falta responder algo que o cliente perguntou, responda so isso, sem repetir o que a loja ja disse. Se nao falta nada, devolva {"partes": []}.)' }] });
+  }
   return saida;
 }
 
