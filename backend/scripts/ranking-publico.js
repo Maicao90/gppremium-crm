@@ -33,8 +33,9 @@ const diaBR = (t) => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_P
     const fim = new Date(new Date(`${c.ate}T00:00:00-03:00`).getTime() + 86400000);
     // Decisao do dono (21/10): todo agendamento PROGRAMADO (criado) no periodo, ja tenha saido ou nao; um por um.
     const ags = await prisma.agendamento.findMany({
-      where: { criadoPorId: { in: todas }, status: { not: 'cancelado' }, criadoEm: { gte: ini, lt: fim } },
-      select: { criadoPorId: true, status: true, criadoEm: true, enviarEm: true, observacoes: true },
+      // criados no periodo (atendente) OU do robo com envio no mes da campanha (23/10) — o corte fino e logo abaixo
+      where: { criadoPorId: { in: todas }, status: { not: 'cancelado' }, OR: [{ criadoEm: { gte: ini, lt: fim } }, { observacoes: { contains: 'robo-' } }] },
+      select: { criadoPorId: true, status: true, criadoEm: true, enviarEm: true, atualizadoEm: true, observacoes: true },
     });
     const usuarios = await prisma.usuario.findMany({ where: { id: { in: ids } }, select: { id: true, nome: true, lojaId: true } });
     const lojas = await prisma.loja.findMany({ where: { id: { in: usuarios.map((u) => u.lojaId).filter(Boolean) } }, select: { id: true, store_name: true } });
@@ -42,8 +43,13 @@ const diaBR = (t) => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_P
 
     const linhas = ids.map((id) => {
       const contas = contasDe(id);
-      const contados = ags.filter((a) => contas.includes(a.criadoPorId) && !String(a.observacoes || '').includes('robo-')
-        && diaBR(a.criadoEm) >= c.de && diaBR(a.criadoEm) <= c.ate);
+      // 23/10 (dono): do ROBO conta igual a tabela do mes (dia de envio dentro do mes da campanha); da atendente, dia criado.
+      const [ay, am] = c.ate.split('-').map(Number);
+      const fimDoMes = new Date(Date.UTC(ay, am, 0)).toISOString().slice(0, 10);
+      const diaEfetivo = (a) => diaBR(a.status === 'enviado' ? a.atualizadoEm : a.enviarEm);
+      const contados = ags.filter((a) => contas.includes(a.criadoPorId) && (String(a.observacoes || '').includes('robo-')
+        ? diaEfetivo(a) >= c.de && diaEfetivo(a) <= fimDoMes
+        : diaBR(a.criadoEm) >= c.de && diaBR(a.criadoEm) <= c.ate));
       const enviados = contados.filter((a) => a.status === 'enviado').length;
       const u = usuarios.find((x) => x.id === id);
       const stories = contas.reduce((t, k) => t + (Number(lanc[k]?.stories) || 0), 0);
