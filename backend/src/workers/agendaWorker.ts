@@ -269,7 +269,10 @@ export function initWorker() {
 
             // Envia a mensagem (humanizada + a função já adiciona o delay de "digitando")
             // pela sessão EFETIVA (do dono, se compartilhado; do próprio, senão).
-            const sucesso = await enviarMensagem(efetivoId, numeroEnvio, humanizarTexto(agendamento.mensagem), midia);
+            const textoEnvio = humanizarTexto(agendamento.mensagem);
+            // Agendamento do ROBO (retomada etc.): avisa que o eco dessa mensagem nao e atendente assumindo (23/10).
+            if (String(agendamento.observacoes || '').startsWith('robo-')) require('./whatsappService').lembrarTextoAgendadoDoRobo(textoEnvio);
+            const sucesso = await enviarMensagem(efetivoId, numeroEnvio, textoEnvio, midia);
 
             if (sucesso) {
               await prisma.agendamento.update({

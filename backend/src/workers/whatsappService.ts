@@ -299,6 +299,20 @@ async function persistirContatosBaileys(usuarioId: string, lista: any[]) {
 // evento messages.upsert também disparar para a mesma mensagem que nós enviamos).
 const waIdsRecentes = new Set<string>();
 const waIdsBotIA = new Set<string>();
+// 23/10: textos que o PROPRIO SISTEMA mandou por agendamento do robo (observacoes 'robo-...', ex.: retomada de
+// clientes). O eco dessas mensagens nao e "atendente assumiu": sem isto o robo ficava 10 min pausado e quem
+// respondia rapido a retomada esperava o vigia.
+const textosAgendadosDoRobo = new Map<string, number>();
+const normalizarEco = (t: string) => String(t || '').replace(/\s+/g, ' ').trim().toLowerCase();
+export function lembrarTextoAgendadoDoRobo(texto: string) {
+  const agora = Date.now();
+  for (const [k, t] of textosAgendadosDoRobo) if (agora - t > 10 * 60_000) textosAgendadosDoRobo.delete(k);
+  textosAgendadosDoRobo.set(normalizarEco(texto), agora);
+}
+function ehTextoAgendadoDoRobo(texto: string): boolean {
+  const t = textosAgendadosDoRobo.get(normalizarEco(texto));
+  return !!t && Date.now() - t < 10 * 60_000;
+}
 const chatsBotEnviando = new Set<string>();
 const filasEnvioBotIA = new Map<string, Promise<unknown>>();
 interface MidiaBotIA {
@@ -1618,7 +1632,9 @@ export async function connectToWhatsApp(
         // de um sistema externo escrevendo no mesmo numero (ai pausar silencia o robo a toa).
         // Contas com botIaPausaManualMin = 0 ignoram essa pausa — ver pausarConversaBotIA.
         const textoEco = extrairTextoMensagem(desembrulharMensagem(msg.message)) || '';
-        if (cfgBot?.botIaAtivo) {
+        if (cfgBot?.botIaAtivo && textoEco && ehTextoAgendadoDoRobo(textoEco)) {
+          console.log(`[Bot IA] ${remoteJid}: eco de agendamento do robo (retomada) — robo segue atendendo, sem pausa.`);
+        } else if (cfgBot?.botIaAtivo) {
           if (ehEcoDoAgenteMeta(usuarioId, remoteJid, textoEco)) {
             console.log(`[Bot IA] Eco do assistente de IA da Meta em ${remoteJid} — NAO e humano assumindo, robo segue respondendo.`);
             ecoMetaAi = true;
