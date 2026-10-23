@@ -14,6 +14,12 @@ const diaBR = (t) => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_P
   const prisma = new PrismaClient();
   try {
     const c = JSON.parse(fs.readFileSync(ARQ_CAMPANHA, 'utf8'));
+    // 23/10 (dono: "agendamentos tem que atualizar automatico"): com ateAutomatico, o fim do periodo e sempre HOJE
+    // (Brasilia) — os agendamentos programados ate agora entram sozinhos. Grava de volta pro painel ler o mesmo periodo.
+    if (c.ateAutomatico) {
+      const hoje = diaBR(Date.now());
+      if (c.ate !== hoje) { c.ate = hoje; fs.writeFileSync(ARQ_CAMPANHA, JSON.stringify(c, null, 1)); }
+    }
     const pesos = { story: 1, google: 3, agendamento: 1, ...(c.pontos || {}) };
     const juntar = c.juntar || {};
     const ocultar = new Set([...(c.ocultar || []), ...Object.keys(juntar)]);
