@@ -7,6 +7,7 @@ import { transcricaoDoAudioFluxo } from '../data/fluxoCatalogo';
 import { configBotDaLoja, antesDoInicioDoRobo, caminhoFotoFachada } from '../services/botLojas';
 import { transcreverAudioLocal, transcricaoSalva, transcricaoLocalDisponivel } from '../services/transcricaoLocal';
 import { lerImagem } from '../services/leituraImagem';
+import { decidirRetomadaForaDaLista, inicioDaPausaForaDaLista, MOTIVO_FORA_DA_LISTA } from '../data/retomadaForaDaLista';
 
 // O texto da resposta (IA + tabela deterministica de preco) agora vem de um servico
 // SEPARADO (bot-service, porta 3010) — de proposito. Antes, tudo isso rodava dentro
@@ -536,6 +537,41 @@ async function conversaLiberada(usuarioId: string, chatJid: string): Promise<boo
   return !estado?.pausadoAte || estado.pausadoAte.getTime() <= Date.now();
 }
 
+// 23/10: pausa 'fora_da_lista' ("so um instante" + etiqueta) e o cliente mandou depois uma medida que a loja TEM, sem
+// ninguem da loja ter escrito: o robo volta e cota (decisao em data/retomadaForaDaLista.ts). Qualquer outra pausa fica.
+// Tira a pausa so se ela ainda e exatamente a que foi lida (um clique no painel no meio do caminho ganha).
+async function retomarDepoisDoForaDaLista(params: AgendarBotParams): Promise<boolean> {
+  try {
+    const estado = await prisma.botConversa.findUnique({
+      where: { usuarioId_chatJid: { usuarioId: params.usuarioId, chatJid: params.chatJid } },
+      select: { pausadoAte: true, motivoPausa: true },
+    });
+    if (!estado?.pausadoAte || estado.motivoPausa !== MOTIVO_FORA_DA_LISTA) return false;
+    const cfgLoja = await configBotDaLoja(params.usuarioId);
+    const inicio = inicioDaPausaForaDaLista(estado.pausadoAte, cfgLoja.PAUSA_FORA_DA_LISTA_MIN || 12 * 60);
+    const mensagensDesdeAPausa = await prisma.mensagem.findMany({
+      where: { usuarioId: params.usuarioId, chatJid: params.chatJid, timestamp: { gte: inicio } },
+      orderBy: { timestamp: 'asc' },
+      select: { fromMe: true, enviadoPorId: true, texto: true, tipo: true, timestamp: true },
+    });
+    const decisao = decidirRetomadaForaDaLista({ pausadoAte: estado.pausadoAte, motivoPausa: estado.motivoPausa, agora: new Date(), mensagensDesdeAPausa });
+    if (!decisao.liberar) {
+      console.log(`[Bot IA] ${params.chatJid}: pausa fora_da_lista continua (${decisao.motivo}).`);
+      return false;
+    }
+    const tirou = await prisma.botConversa.updateMany({
+      where: { usuarioId: params.usuarioId, chatJid: params.chatJid, motivoPausa: MOTIVO_FORA_DA_LISTA, pausadoAte: estado.pausadoAte },
+      data: { pausadoAte: null, motivoPausa: null },
+    });
+    if (!tirou.count) return false;
+    console.log(`[Bot IA] ${params.chatJid}: cliente mandou ${decisao.medida} (tem na tabela) depois do "so um instante" e ninguem da loja escreveu — robo volta a responder.`);
+    return true;
+  } catch (e) {
+    console.error(`[Bot IA] ${params.chatJid}: falha ao conferir retomada do fora_da_lista (fica pausado):`, (e as any)?.message || e);
+    return false;
+  }
+}
+
 const MAX_REAGENDAMENTOS_CONTEXTO = 3;
 
 // REMARKETING (02/09). Quando o cliente diz que volta depois — "dia 10 eu passo ai",
@@ -741,7 +777,7 @@ async function executar(params: AgendarBotParams, versao: number) {
       select: { botIaAtivo: true, nome: true, lojaId: true },
     });
     if (!usuario?.botIaAtivo) return;
-    if (!(await conversaLiberada(params.usuarioId, params.chatJid))) {
+    if (!(await conversaLiberada(params.usuarioId, params.chatJid)) && !(await retomarDepoisDoForaDaLista(params))) {
       console.log(`[Bot IA] ${params.chatJid}: robo NAO respondeu — conversa pausada (pausa em vigor).`);
       return;
     }
