@@ -17,7 +17,8 @@ import { lerBotPneusConfig, montarPromptAtendimentoBot } from '../services/botPn
 import { decidirSequenciaPreco, EstadoPrecoFluxo, DadosPrecoFluxo } from '../data/fluxoPreco';
 import { extrairIntencoesPreco } from '../data/fluxoPrecoExtrator';
 import { resolverDiaVisita } from '../data/visita';
-import { juntarMedidaRecente, rajadaSoLarguraPerfil, partesPedirAro, medidasEscritasNaRajada, lojaAcabouDePerguntarAro } from '../data/medidaJuntada';
+import { juntarMedidaRecente, rajadaSoLarguraPerfil, partesPedirAro, medidasEscritasNaRajada, lojaAcabouDePerguntarAro, trocaDeAroDepoisDoPreco, partesPedirMedidaDoAro } from '../data/medidaJuntada';
+import { removerParcelamentoRepetidoEJustificativa } from '../data/travaPosOrcamento';
 import { rotasCerebro, licoesAtivasDaLoja, casarLicao, partesDaLicao, registrarUso } from './cerebro';
 import { sanitizarTextosFluxo, chavesJaRespondidas, textoFluxo, SILENCIO_SE_REPETIR } from '../data/fluxoCatalogo';
 import { chaveDoFluxo, ehChaveAnthropic, gerarTextoAnthropic, MensagemAnthropic } from '../services/llmAnthropic';
@@ -506,7 +507,7 @@ app.post('/gerar-resposta', async (req, res) => {
       partesMedida.aro = null;
       partesMedida.medida = null;
     }
-    const medidaJuntada = partesMedida.medida && partesMedida.daRajada ? partesMedida.medida : null;
+    let medidaJuntada = partesMedida.medida && partesMedida.daRajada ? partesMedida.medida : null;
     // Medidas inteiras que o cliente escreveu de fato na rajada (o que a leitura da IA "completou" nao conta).
     const medidasEscritas = medidasEscritasNaRajada(rajada);
     if (medidaJuntada) console.log(`[BotService] medida ${medidaJuntada} juntada de pedacos (${partesMedida.larguraPerfil} + aro ${partesMedida.aro}).`);
@@ -534,6 +535,31 @@ app.post('/gerar-resposta', async (req, res) => {
           partes: [`Show, aro ${soAro[2]}! 👍`, 'Qual é o carro? Já te passo a medida certa e o valor.'],
           deterministico: true, acaoTipo: 'PEDIR_CARRO', novoEstadoPreco: estadoPrecoAtual, novosDadosPreco: JSON.stringify(dadosPrecoAtuais),
           via: 'fluxo', assuntos: ['INFORMOU_ARO'], chaves: ['aro_sem_medida'], rajada, simulado: !!req.body?.simular,
+        });
+      }
+    }
+    // TROCA DE ARO DEPOIS DO PRECO (23/10): a loja cotou 185/65/15 e o cliente manda so "aro 16" / "e aro 16?" (a IA livre
+    // respondia "pode repetir, por favor?"). Mesma largura/perfil no aro novo: se a tabela tem, essa medida vai pro fluxo de
+    // preco como a medida juntada (cotada pela tabela); se nao tem, o codigo pede a medida completa mostrando o que tem no aro.
+    if (!medidaJuntada && !temFoto && !temMidiaSemTexto && !lojaAcabouDePerguntarAro(anteriores)) {
+      const lojaDeuPreco = anteriores.filter((m: any) => m?.role === 'assistant').slice(-6).some((m: any) => /R\$\s*\d/.test(String(m?.content ?? '')));
+      const medidaDosDados = dadosPrecoAtuais.medida && encontrarPrecosExatosPorMedida(dadosPrecoAtuais.medida).length ? dadosPrecoAtuais.medida : null;
+      const cotada = lojaDeuPreco ? (medidaDosDados || medidaDoHistorico(anteriores)) : null;
+      const troca = cotada ? trocaDeAroDepoisDoPreco(rajada, cotada) : null;
+      if (troca?.medida) {
+        console.log(`[BotService] troca de aro: ${cotada} cotada + "${rajada.join(' / ')}" -> ${troca.medida}.`);
+        medidaJuntada = troca.medida;
+        partesMedida.aro = troca.aro;
+      } else if (troca) {
+        console.log(`[BotService] troca de aro: ${cotada} cotada + "${rajada.join(' / ')}" -> ${troca.larguraPerfil}/${troca.aro} nao tem; pede a medida (${troca.opcoes.join(', ')}).`);
+        const dadosTroca: DadosPrecoFluxo = {};
+        if (dadosPrecoAtuais.quantidade) dadosTroca.quantidade = dadosPrecoAtuais.quantidade;
+        if (dadosPrecoAtuais.intencaoPendente) dadosTroca.intencaoPendente = dadosPrecoAtuais.intencaoPendente;
+        if (dadosPrecoAtuais.parcelasPendentes) dadosTroca.parcelasPendentes = dadosPrecoAtuais.parcelasPendentes;
+        return res.json({
+          partes: partesPedirMedidaDoAro(troca),
+          deterministico: true, acaoTipo: 'PEDIR_MEDIDA', novoEstadoPreco: 'aguardando_medida', novosDadosPreco: JSON.stringify(dadosTroca),
+          via: 'fluxo', assuntos: ['INFORMOU_ARO'], chaves: ['pedir_medida_do_aro'], rajada, simulado: !!req.body?.simular,
         });
       }
     }
@@ -910,6 +936,17 @@ app.post('/gerar-resposta', async (req, res) => {
           chaves: [],
           rajada,
         });
+      }
+    }
+
+    // TRAVA POS-ORCAMENTO (23/10, caso Marcelo Santos): tira, frase por frase, o "parcelar em ate 10x" que a loja ja disse
+    // nas ultimas mensagens e a justificativa de orcamento anterior ("O 175/65/14 que te passei antes e..."). Nunca zera a
+    // resposta: se nao sobrar nada, fica a 1a bolha original (data/travaPosOrcamento.ts).
+    {
+      const posOrcamento = removerParcelamentoRepetidoEJustificativa(partesFinais, anteriores, rajada);
+      if (posOrcamento.cortadas.length) {
+        console.error(`[BotService][TRAVA POS-ORCAMENTO] cortado: ${JSON.stringify(posOrcamento.cortadas)}`);
+        partesFinais = posOrcamento.partes;
       }
     }
 

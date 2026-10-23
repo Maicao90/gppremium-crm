@@ -152,3 +152,58 @@ export function partesPedirAro(larguraPerfil: string): string[] {
   const lista = aros.length === 0 ? '' : aros.length === 1 ? ` Na ${larguraPerfil} eu tenho aro ${aros[0]}.` : ` Na ${larguraPerfil} eu tenho aro ${aros.slice(0, -1).join(', aro ')} e aro ${aros[aros.length - 1]}.`;
   return [`Show, ${larguraPerfil}! 👍`, `Qual é o aro?${lista}`];
 }
+
+// TROCA DE ARO DEPOIS DO PRECO (23/10): a loja cotou 185/65/15 e o cliente manda so "aro 16" / "e aro 16?" /
+// "tem aro 16?". A IA livre respondia "pode repetir, por favor?". O pedido e a MESMA largura/perfil no aro novo.
+// Rajada que e SO o aro (com "e", "o", "no", "tem", "quanto fica"... em volta). Precisa da palavra "aro" (ou "r16"):
+// um "16" solto depois de um preco pode ser outra coisa.
+const RE_SO_TROCA_ARO = /^(?:(?:e|o|a|no|na|do|da|pro|pra|para|em|tem|teria|tens|vcs|voc[eê]s|voce|quanto|fica|sai|qual|valor|pre[cç]o)\s+)*(?:aro\s*|r\s?)(1[2-9]|2[0-2])(?:\s+(?:tem|tamb[eé]m|tem\s+tamb[eé]m|quanto\s+fica|quanto\s+sai|fica\s+quanto|sai\s+quanto))?\s*[?.!]*$/i;
+
+export function aroPedidoSozinho(rajada: string[]): string | null {
+  const t = rajada.map((r) => textoDoCliente(r)).filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
+  const m = RE_SO_TROCA_ARO.exec(t);
+  return m ? (m[1] as string) : null;
+}
+
+// Medidas da tabela naquele aro, as mais parecidas com a largura/perfil de referencia primeiro (no maximo `max`),
+// devolvidas na ordem crescente de medida.
+export function medidasDoAroParecidas(aro: string, larguraRef: number, perfilRef: number, max = 4): string[] {
+  const vistas = new Set<string>();
+  const doAro: Array<{ medida: string; dist: number; ordem: number }> = [];
+  TABELA_PRECOS_GP.forEach((item, ordem) => {
+    const p = String(item.medida || '').split('/');
+    if (p.length !== 3 || p[2] !== aro || vistas.has(item.medida)) return;
+    vistas.add(item.medida);
+    const dist = Math.abs(Number(p[0]) - larguraRef) / 10 + Math.abs(Number(p[1]) - perfilRef) / 5;
+    doAro.push({ medida: item.medida, dist, ordem });
+  });
+  return doAro
+    .sort((a, b) => a.dist - b.dist || a.ordem - b.ordem)
+    .slice(0, max)
+    .map((x) => x.medida)
+    .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));
+}
+
+export interface TrocaDeAro { aro: string; larguraPerfil: string; medida: string | null; opcoes: string[] }
+
+/**
+ * `medidaCotada` = medida que a loja acabou de cotar ("185/65/15"). Se a rajada e so outro aro:
+ * medida = mesma largura/perfil no aro novo, quando a tabela tem; senao opcoes = ate 4 medidas que a loja tem nesse aro.
+ * null = nao e troca de aro (rajada com outra coisa, mesmo aro, medida cotada invalida).
+ */
+export function trocaDeAroDepoisDoPreco(rajada: string[], medidaCotada: string): TrocaDeAro | null {
+  const aro = aroPedidoSozinho(rajada);
+  const p = String(medidaCotada || '').split('/');
+  if (!aro || p.length !== 3 || !p[0] || !p[1] || p[2] === aro) return null;
+  const larguraPerfil = `${p[0]}/${p[1]}`;
+  const candidata = `${larguraPerfil}/${aro}`;
+  if (TABELA_PRECOS_GP.some((i) => i.medida === candidata)) return { aro, larguraPerfil, medida: candidata, opcoes: [] };
+  return { aro, larguraPerfil, medida: null, opcoes: medidasDoAroParecidas(aro, Number(p[0]), Number(p[1])) };
+}
+
+// A loja nao tem a mesma largura/perfil no aro novo: diz isso e pede a medida completa, mostrando o que tem no aro.
+export function partesPedirMedidaDoAro(troca: TrocaDeAro): string[] {
+  const { aro, larguraPerfil, opcoes } = troca;
+  const lista = opcoes.length === 0 ? '' : opcoes.length === 1 ? ` No aro ${aro} eu tenho a ${opcoes[0]}.` : ` No aro ${aro} eu tenho ${opcoes.slice(0, -1).join(', ')} e ${opcoes[opcoes.length - 1]}.`;
+  return [`Na ${larguraPerfil} eu não tenho aro ${aro}.`, `Qual é a medida completa do seu pneu aro ${aro}?${lista}`];
+}
