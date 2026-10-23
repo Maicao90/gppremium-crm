@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 import { spawn } from 'child_process';
 import express from 'express';
 import jwt from 'jsonwebtoken';
@@ -14,6 +15,11 @@ const ARQ_LICOES = path.join(PASTA, 'licoes.json');
 const PASTA_REVISOES = path.join(PASTA, 'revisoes');
 const ARQ_TRAVA = path.join(PASTA, 'revisao-rodando.json');
 const ARQ_LOJAS = path.resolve(__dirname, '../../data/bot-lojas.json');
+// Aprendizado da Josy (22/10): propostas tiradas das conversas da atendente, cada uma esperando o dono aprovar.
+const ARQ_APRENDIZADO = path.join(PASTA, 'aprendizado-josy.json');
+// Audios: os da Josy ja estao em public/midias/<arquivo>.ogg; o worker so manda o que esta em public/midias/bot-audios/.
+const PASTA_MIDIAS = path.resolve(__dirname, '../../public/midias');
+const PASTA_AUDIOS_BOT = path.join(PASTA_MIDIAS, 'bot-audios');
 
 export type AcaoLicao = 'responder' | 'atendente' | 'silencio' | 'orientar';
 export interface Licao {
@@ -23,21 +29,30 @@ export interface Licao {
   resposta: string;          // texto (uma bolha por paragrafo) ou orientacao pra IA
   lojas: string[];           // ids de loja (bot-lojas.json); vazio = todas
   ativo: boolean;
-  origem: 'dono' | 'revisao';
+  origem: 'dono' | 'revisao' | 'josy';
   criadoEm: string;
   atualizadoEm: string;
   usos: number;
   ultimoUso?: string | undefined;
   ligadoA?: string | undefined; // no do "Mapa do cerebro" onde o dono ensinou (ex.: 'categoria:remold'); so pra desenhar
+  propostaJosy?: string | undefined; // id da proposta do "Aprendizado da Josy" que virou este ensinamento
+  audioJosy?: string | undefined;    // nome do audio em public/midias/bot-audios (sem .ogg), quando foi aprovado com audio
 }
 
 function lerJson<T>(arq: string, padrao: T): T {
   try { return JSON.parse(fs.readFileSync(arq, 'utf8')) as T; } catch { return padrao; }
 }
+// Escrita atomica: grava num temporario (nome unico) e renomeia — quem le nunca pega arquivo pela metade.
 function gravarJson(arq: string, dados: unknown) {
   fs.mkdirSync(path.dirname(arq), { recursive: true });
-  fs.writeFileSync(arq + '.tmp', JSON.stringify(dados, null, 2));
-  fs.renameSync(arq + '.tmp', arq);
+  const tmp = `${arq}.${process.pid}.${Date.now().toString(36)}.tmp`;
+  try {
+    fs.writeFileSync(tmp, JSON.stringify(dados, null, 2));
+    fs.renameSync(tmp, arq);
+  } catch (e) {
+    try { fs.unlinkSync(tmp); } catch { /* ja foi */ }
+    throw e;
+  }
 }
 
 export function lerLicoes(): Licao[] { return lerJson<Licao[]>(ARQ_LICOES, []); }
@@ -92,19 +107,30 @@ export async function casarLicao(mensagensCliente: string[], contexto: string, l
   } catch { return null; }
 }
 
+// Marcador de audio do robo ("[ENVIAR_AUDIO:nome]" ou "[ENVIAR_AUDIO:nome!N]"), igual ao do fluxo/worker.
+export const RE_MARCADOR_AUDIO = /^\[ENVIAR_AUDIO:[^\]]+\]$/i;
+const paragrafos = (t: string) => String(t || '').split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+
 // Bolhas da resposta ensinada: um paragrafo (linha em branco) = uma mensagem.
-export function partesDaLicao(l: Licao): string[] {
-  return l.resposta.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean).slice(0, 6);
+// comAudio = quem chamou sabe mandar audio (worker manda audioFluxo: true). Sem isso o marcador sai e fica so o
+// texto de reserva — o marcador nunca pode chegar ao cliente como mensagem (mesma regra do fluxo, server.ts).
+export function partesDaLicao(l: Licao, comAudio = false): string[] {
+  const partes = paragrafos(l.resposta).slice(0, 6);
+  return comAudio ? partes : partes.filter((p) => !RE_MARCADOR_AUDIO.test(p));
 }
 
 // ---------------- API do painel (/api/cerebro) ----------------
-type Usuario = { sub: string; role: string };
+type Usuario = { sub: string; role: string; nome?: string };
 function usuarioDoToken(req: express.Request): Usuario | null {
   const h = String(req.headers.authorization || '');
   const token = h.startsWith('Bearer ') ? h.slice(7) : '';
   const s = process.env.JWT_SECRET || '';
   if (!token || !s) return null;
-  try { const d: any = jwt.verify(token, s); return { sub: String(d.sub), role: String(d.role) }; } catch { return null; }
+  try {
+    const d: any = jwt.verify(token, s);
+    const nome = String(d.nome || d.name || d.email || '').trim();
+    return { sub: String(d.sub), role: String(d.role), ...(nome ? { nome } : {}) };
+  } catch { return null; }
 }
 const ehDono = (u: Usuario | null) => !!u && ['master', 'admin'].includes(u.role);
 
@@ -123,7 +149,7 @@ function revisaoRodando(): any {
   try { process.kill(Number(t.pid), 0); return t; } catch { return null; }
 }
 
-function novaLicao(dados: any, origem: 'dono' | 'revisao'): Licao | string {
+function novaLicao(dados: any, origem: Licao['origem']): Licao | string {
   const situacao = String(dados?.situacao || '').trim();
   const acao = String(dados?.acao || '') as AcaoLicao;
   const resposta = String(dados?.resposta || '').trim();
@@ -141,6 +167,119 @@ function novaLicao(dados: any, origem: 'dono' | 'revisao'): Licao | string {
   };
 }
 
+// ---------------- APRENDIZADO DA JOSY (22/10, pedido do dono) ----------------
+// Trocar a IA livre por respostas FIXAS do jeito que a atendente Josy atende, com os audios dela na hora certa.
+// A analise das conversas (/root/josy-analise/sintetizar.mjs) gera data/cerebro/aprendizado-josy.json com uma
+// PROPOSTA por situacao. Nada vale no robo sem o dono aprovar: aprovar vira ensinamento (origem 'josy'); com audio, o
+// audio dela e copiado pra public/midias/bot-audios/josy-<id>.ogg e a resposta comeca com [ENVIAR_AUDIO:josy-<id>!N]
+// (o audio substitui as N mensagens de texto seguintes, que ficam de reserva se o audio falhar).
+type StatusProposta = 'pendente' | 'aprovado' | 'ignorado';
+interface AudioJosy { midia: string; transcricao?: string; duracao?: number; vezesUsado?: number }
+interface PropostaJosy {
+  id: string; titulo?: string; quando?: string; frequencia?: number; taxaSucesso?: number | null; comoJosyFaz?: string;
+  exemplos?: Array<{ cliente?: string; loja?: string }>; frasesQueFuncionaram?: string[];
+  sugestao?: { situacao?: string; acao?: string; resposta?: string; lojas?: string[] };
+  ligadoA?: string | null; audios?: AudioJosy[]; status: StatusProposta;
+  decididoEm?: string; decididoPor?: string; licaoId?: string; audioEscolhido?: string | null;
+  [extra: string]: unknown;
+}
+interface ArquivoAprendizado { geradoEm?: string | null; conversasLidas?: number; propostas: PropostaJosy[]; [extra: string]: unknown }
+
+const RE_MIDIA_JOSY = /^\/midias\/([A-Za-z0-9_-]{1,120})\.ogg$/; // so /midias/<nome>.ogg: sem "..", sem subpasta
+const MAX_TEXTOS_COM_AUDIO = 4; // o worker pula no maximo 4 partes depois do audio (interpretarMarcadorAudio)
+const TAM_MAX_AUDIO = 16 * 1024 * 1024;
+
+function lerAprendizado(): { existe: boolean; dados: ArquivoAprendizado } {
+  if (!fs.existsSync(ARQ_APRENDIZADO)) return { existe: false, dados: { geradoEm: null, conversasLidas: 0, propostas: [] } };
+  const bruto = lerJson<any>(ARQ_APRENDIZADO, null);
+  const propostas: PropostaJosy[] = (Array.isArray(bruto?.propostas) ? bruto.propostas : [])
+    .filter((p: any) => p && typeof p.id === 'string' && p.id.trim())
+    .map((p: any) => ({ ...p, status: ['aprovado', 'ignorado'].includes(p.status) ? p.status : 'pendente' }));
+  return { existe: true, dados: { ...(bruto && typeof bruto === 'object' ? bruto : {}), propostas } };
+}
+function contagemAprendizado(propostas: PropostaJosy[]) {
+  const c = { total: propostas.length, pendente: 0, aprovado: 0, ignorado: 0 };
+  for (const p of propostas) c[p.status]++;
+  return c;
+}
+
+// Nome do audio no bot-audios: josy-<id sem acento, so [a-z0-9_-]> (o worker so aceita esses caracteres).
+// Se o nome ja for de um ensinamento de OUTRA proposta (ids diferentes so no acento), ganha um sufixo.
+function nomeDoAudioJosy(id: string): string {
+  const base = String(id).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9_-]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60);
+  const hash = crypto.createHash('sha1').update(id).digest('hex').slice(0, 6);
+  const nome = `josy-${base || hash}`;
+  const deOutra = lerLicoes().some((l) => l.audioJosy === nome && l.propostaJosy !== id);
+  return deOutra ? `${nome}-${hash}` : nome;
+}
+
+// Copia /midias/<x>.ogg -> /midias/bot-audios/<nome>.ogg (copia num temporario e renomeia). Devolve erro ou null.
+function copiarAudioJosy(midia: string, nome: string): string | null {
+  const m = RE_MIDIA_JOSY.exec(midia);
+  if (!m || !/^[a-z0-9_-]+$/.test(nome)) return 'Caminho de áudio inválido.';
+  let real: string;
+  try { real = fs.realpathSync(path.join(PASTA_MIDIAS, `${m[1]}.ogg`)); } catch { return 'Esse áudio não foi encontrado no servidor.'; }
+  // link simbolico apontando pra fora de public/midias nao passa
+  if (path.dirname(real) !== fs.realpathSync(PASTA_MIDIAS)) return 'Caminho de áudio inválido.';
+  const st = fs.statSync(real);
+  if (!st.isFile() || st.size < 200 || st.size > TAM_MAX_AUDIO) return 'Arquivo de áudio inválido.';
+  fs.mkdirSync(PASTA_AUDIOS_BOT, { recursive: true });
+  const destino = path.join(PASTA_AUDIOS_BOT, `${nome}.ogg`);
+  const tmp = `${destino}.${process.pid}.${Date.now().toString(36)}.tmp`;
+  try { fs.copyFileSync(real, tmp); fs.renameSync(tmp, destino); }
+  catch (e: any) { try { fs.unlinkSync(tmp); } catch { /* ja foi */ } return `Não foi possível copiar o áudio (${String(e?.message || e).slice(0, 80)}).`; }
+  return null;
+}
+
+// Aprovar (com ou sem audio) ou ignorar uma proposta. Devolve [status http, corpo].
+function decidirProposta(id: string, corpo: any, u: Usuario): [number, Record<string, unknown>] {
+  const { existe, dados } = lerAprendizado();
+  if (!existe) return [404, { error: 'Ainda não tem aprendizado da Josy.' }];
+  const p = dados.propostas.find((x) => x.id === id);
+  if (!p) return [404, { error: 'Proposta não encontrada.' }];
+  if (p.status !== 'pendente') return [409, { error: `Essa proposta já foi ${p.status === 'aprovado' ? 'aprovada' : 'ignorada'}.` }];
+  const decisao = String(corpo?.decisao || '');
+  let licao: Licao | null = null;
+  if (decisao === 'aprovar') {
+    const editado = corpo?.licao && typeof corpo.licao === 'object' ? corpo.licao : {};
+    const base: Record<string, any> = { ...(p.sugestao || {}), ligadoA: p.ligadoA || undefined };
+    for (const k of ['situacao', 'acao', 'resposta', 'lojas']) if (editado[k] !== undefined) base[k] = editado[k];
+    const audio = corpo?.audio == null || corpo.audio === '' ? null : String(corpo.audio);
+    let nomeAudio: string | null = null;
+    // marcador digitado/esquecido no texto nao vale: so o que o dono escolhe aqui vira audio
+    const textos = paragrafos(String(base.resposta || '')).filter((x) => !RE_MARCADOR_AUDIO.test(x));
+    if (audio) {
+      if (!RE_MIDIA_JOSY.test(audio)) return [400, { error: 'Caminho de áudio inválido.' }];
+      if (!(p.audios || []).some((a) => a?.midia === audio)) return [400, { error: 'Esse áudio não é desta proposta.' }];
+      if (base.acao !== 'responder') return [400, { error: 'Áudio só vai junto quando o robô responde com texto fixo (escolha "Responder com este texto").' }];
+      if (!textos.length) return [400, { error: 'Escreva o texto de reserva: ele vai se o áudio falhar.' }];
+      if (textos.length > MAX_TEXTOS_COM_AUDIO) return [400, { error: `Com áudio, no máximo ${MAX_TEXTOS_COM_AUDIO} mensagens de texto de reserva.` }];
+      nomeAudio = nomeDoAudioJosy(p.id);
+      base.resposta = [`[ENVIAR_AUDIO:${nomeAudio}!${textos.length}]`, ...textos].join('\n\n');
+    } else if (base.acao === 'responder') {
+      base.resposta = textos.join('\n\n');
+    }
+    if (String(base.resposta || '').length > 2000) return [400, { error: 'Texto muito comprido (máximo 2000 caracteres).' }];
+    const l = novaLicao(base, 'josy');
+    if (typeof l === 'string') return [400, { error: l }];
+    if (nomeAudio && audio) {
+      const erro = copiarAudioJosy(audio, nomeAudio);
+      if (erro) return [400, { error: erro }];
+      l.audioJosy = nomeAudio;
+    }
+    l.propostaJosy = p.id;
+    const todas = lerLicoes(); todas.push(l); salvarLicoes(todas);
+    licao = l;
+    Object.assign(p, { status: 'aprovado' as StatusProposta, licaoId: l.id, audioEscolhido: audio, acaoAprovada: l.acao, respostaAprovada: l.resposta });
+  } else if (decisao === 'ignorar') {
+    p.status = 'ignorado';
+  } else return [400, { error: 'Decisão inválida (aprovar ou ignorar).' }];
+  p.decididoEm = new Date().toISOString();
+  p.decididoPor = u.nome || u.sub;
+  gravarJson(ARQ_APRENDIZADO, dados);
+  return [200, { ok: true, proposta: p, ...(licao ? { licao } : {}) }];
+}
+
 // ---------------- MAPA DO CEREBRO (22/10, pedido do dono: "todo interativo, tipo com neuronios") ----------------
 // Neuronios = etapas do atendimento, blocos do fluxo (fluxoCatalogo), ensinamentos do dono e achados pendentes da
 // revisao. Sinapses = caminhos reais das conversas (bloco -> proximo bloco na mesma conversa), contados no rastro
@@ -149,12 +288,12 @@ function novaLicao(dados: any, origem: 'dono' | 'revisao'): Licao | string {
 const ARQ_LOG_BOT = process.env.CEREBRO_LOG_BOT || '/root/whatsapp-crm/logs/bot-service.log';
 const CACHE_USO_MS = 5 * 60 * 1000;
 
-type TipoNo = 'etapa' | 'categoria' | 'ensinamento' | 'achado';
+type TipoNo = 'etapa' | 'categoria' | 'ensinamento' | 'achado' | 'aprendizado';
 interface NoMapa {
   id: string; tipo: TipoNo; rotulo: string; descricao: string; usosHoje: number; usos7d: number; acao: string; ativo: boolean;
   etapa?: string; extra?: Record<string, unknown>;
 }
-interface LigacaoMapa { de: string; para: string; peso: number; tipo: 'etapa' | 'pertence' | 'caminho' | 'ensina' | 'achado' }
+interface LigacaoMapa { de: string; para: string; peso: number; tipo: 'etapa' | 'pertence' | 'caminho' | 'ensina' | 'achado' | 'aprendizado' }
 type Contagem = { hoje: number; d7: number };
 interface UsoMapa {
   fonte: 'rastro' | 'log' | 'nenhuma'; erro?: string; desde: string | null;
@@ -427,10 +566,28 @@ export async function montarMapa() {
     ligacoes.push({ de: alvo, para: `achado:${rev?.data}:${a.id}`, peso: 1, tipo: 'achado' });
   }
 
+  // propostas PENDENTES do aprendizado da Josy (mesmo padrao dos achados): ligadas ao bloco que a analise escolheu
+  // (ligadoA), senao ao mais parecido pelo texto, senao a IA livre (que e justamente o que elas vem substituir)
+  const aprendizado = lerAprendizado().dados.propostas;
+  for (const p of aprendizado.filter((x) => x.status === 'pendente').slice(0, 80)) {
+    const escolhido = p.ligadoA && idsValidos.has(p.ligadoA) ? p.ligadoA : null;
+    const peloTexto = escolhido ? null : parecido(`${p.titulo || ''} ${p.quando || ''} ${p.sugestao?.situacao || ''}`);
+    const alvo = escolhido || (peloTexto ? `categoria:${peloTexto}` : 'categoria:ia_livre');
+    const sug = p.sugestao;
+    nos.push({
+      id: `aprendizado:${p.id}`, tipo: 'aprendizado', rotulo: curto(p.titulo || p.id, 70), descricao: String(p.quando || ''),
+      acao: sug ? `${ROTULO_ACAO[String(sug.acao)] || sug.acao || ''}: ${sug.resposta || ''}` : '', ativo: true, usosHoje: 0, usos7d: 0,
+      etapa: nos.find((n) => n.id === alvo)?.etapa || 'atendente',
+      extra: { proposta: p, ligadoA: alvo, ligadoPor: escolhido ? 'proposta' : peloTexto ? 'texto' : 'nenhum' },
+    });
+    ligacoes.push({ de: alvo, para: `aprendizado:${p.id}`, peso: Math.max(1, Number(p.frequencia) || 1), tipo: 'aprendizado' });
+  }
+
   return {
     geradoEm: new Date().toISOString(),
     uso: { fonte: uso.fonte, erro: uso.erro || null, desde: uso.desde, mensagensHoje: uso.mensagens.hoje, mensagens7d: uso.mensagens.d7, viaFluxo: uso.viaFluxo, viaLivre: uso.viaLivre },
     revisao: rev ? { data: rev.data, pendentes: rev.achados.filter((x) => x?.status === 'pendente').length } : null,
+    aprendizado: contagemAprendizado(aprendizado),
     nos, ligacoes,
   };
 }
@@ -451,7 +608,25 @@ export function rotasCerebro(urlGerarResposta: string): express.Router {
   };
 
   r.get('/resumo', (_req, res) => {
-    res.json({ licoes: lerLicoes().sort((a, b) => b.atualizadoEm.localeCompare(a.atualizadoEm)), revisoes: revisoesDisponiveis(), lojas: lojasDoRobo(), rodando: revisaoRodando() });
+    res.json({ licoes: lerLicoes().sort((a, b) => b.atualizadoEm.localeCompare(a.atualizadoEm)), revisoes: revisoesDisponiveis(), lojas: lojasDoRobo(), rodando: revisaoRodando(), aprendizado: contagemAprendizado(lerAprendizado().dados.propostas) });
+  });
+
+  // Aprendizado da Josy: propostas pra aprovar uma a uma. Sem o arquivo ainda = lista vazia.
+  r.get('/aprendizado', (_req, res) => {
+    const { existe, dados } = lerAprendizado();
+    res.json({ ...dados, existe, contagem: contagemAprendizado(dados.propostas) });
+  });
+
+  // { decisao: 'aprovar' | 'ignorar', licao?: {situacao, acao, resposta, lojas}, audio?: '/midias/x.ogg' | null }
+  r.post('/aprendizado/:id', (req, res) => {
+    if (!soDono(req, res)) return;
+    try {
+      const [status, corpo] = decidirProposta(String(req.params.id), req.body, (req as any).usuario);
+      res.status(status).json(corpo);
+    } catch (e: any) {
+      console.error('[BotService][Cerebro] aprendizado:', e?.message || e);
+      res.status(500).json({ error: 'Não foi possível salvar a decisão.' });
+    }
   });
 
   // Mapa do cerebro (neuronios + sinapses). Quem ve o resumo ve o mapa; mexer continua so com master/admin.
@@ -535,7 +710,8 @@ export function rotasCerebro(urlGerarResposta: string): express.Router {
       const historico = Array.isArray(req.body?.historico) ? req.body.historico.slice(-8).map((h: any) => ({ role: h?.role === 'assistant' ? 'assistant' : 'user', content: String(h?.content || '').slice(0, 600) })) : [];
       const resp = await fetch(urlGerarResposta, {
         method: 'POST', headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ messages: [...historico, { role: 'user', content: mensagem }], lojaBot: loja ? { nome: loja.nome } : undefined, simular: false, teste: true }),
+        // audioFluxo: o teste mostra o marcador de audio (vira o player no painel); nada e enviado a ninguem
+        body: JSON.stringify({ messages: [...historico, { role: 'user', content: mensagem }], lojaBot: loja ? { nome: loja.nome } : undefined, simular: false, teste: true, audioFluxo: true }),
       }).then((x) => x.json());
       res.json({ partes: resp.partes || [], via: resp.via, chaves: resp.chaves || [], licao: resp.licao || null });
     } catch (e: any) {
