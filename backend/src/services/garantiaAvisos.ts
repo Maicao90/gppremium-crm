@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { prisma } from '../server';
-import { enviarEmailGarantia } from './garantiaEmail';
+import { enviarEmailGarantia, ConteudoEmail } from './garantiaEmail';
 
 // ===== Avisos automáticos da Garantia (push + e-mail) =====
 // Textos editáveis pelo master no painel (aba "Avisos automáticos"), guardados em
@@ -283,16 +283,55 @@ export async function criarAviso(params: {
       mensagem: montarMensagem(texto, { t: titulo, v: params.vistoriaId, e: aviso.email && futuro ? 1 : 0 }),
     },
   });
-  if (aviso.email && !futuro) emailParaCliente(params.clienteId, titulo, texto);
+  if (aviso.email && !futuro) {
+    const extras = await extrasDoEmail(params.tipo, params.ctx, params.vistoriaId).catch(() => ({}));
+    emailParaCliente(params.clienteId, titulo, texto, extras);
+  }
   return notif;
 }
 
+// ---------- Conteúdo extra do e-mail (quadro de informações e fotos) ----------
+const MIDIAS_BASE = (process.env.GARANTIA_MIDIAS_BASE || 'https://crm.nailacademyprofissional.com').replace(/\/+$/, '');
+const urlAbsoluta = (u: string | null | undefined) => (u && /^\/midias\//.test(u) ? MIDIAS_BASE + u : '');
+const FOTOS_VISTORIA: [string, string][] = [
+  ['fotoFrenteUrl', 'Frente'], ['fotoTraseiraUrl', 'Traseira'], ['fotoLadoEsquerdoUrl', 'Lado esquerdo'],
+  ['fotoLadoDireitoUrl', 'Lado direito'], ['fotoPainelUrl', 'Painel'], ['fotoOdometroUrl', 'Odômetro'],
+];
+type ExtrasEmail = Pick<ConteudoEmail, 'info' | 'fotos'>;
+
+async function extrasDoEmail(tipo: string, ctx: Contexto, vistoriaId?: string): Promise<ExtrasEmail> {
+  const veiculo = [ctx.veiculo, ctx.placa ? `placa ${placaFmt(ctx.placa)}` : ''].filter(Boolean).join(' · ');
+  const info: [string, string][] = [['Veículo', veiculo]];
+  if (tipo === 'garantia_cadastrada' || tipo === 'garantia_aprovada') {
+    info.push(['Cobertura', ctx.kmMaximo ? `até ${fmtKm(ctx.kmMaximo)} km ou 2 anos` : '60 mil km ou 2 anos']);
+    info.push(['Revisão', `a cada ${fmtKm(ctx.intervaloKm ?? 5000)} km`]);
+    info.push(['Loja', String(ctx.loja || '')]);
+  } else if (tipo === 'revisao_proxima' || tipo === 'revisao_aprovada') {
+    info.push(['Revisão', `a cada ${fmtKm(ctx.intervaloKm ?? 5000)} km`]);
+    if (ctx.kmMaximo) info.push(['Garantia até', `${fmtKm(ctx.kmMaximo)} km`]);
+  } else if (tipo === 'vistoria_entrada') {
+    info.push(['Oficina', String(ctx.loja || '')]);
+    if (ctx.km) info.push(['Km na entrada', `${fmtKm(ctx.km)} km`]);
+  }
+  if (tipo !== 'vistoria_entrada' || !vistoriaId) return { info };
+  const v: any = await prisma.garantiaVistoria.findUnique({ where: { id: vistoriaId } });
+  if (!v) return { info };
+  let avarias: string[] = [];
+  try { avarias = JSON.parse(v.fotosAvarias || '[]'); } catch { /* sem fotos extras */ }
+  const fotos = [
+    ...FOTOS_VISTORIA.map(([campo, rotulo]) => ({ rotulo, url: urlAbsoluta(v[campo]) })),
+    ...avarias.map((u, i) => ({ rotulo: v.combustivel ? `Avaria ${i + 1}` : `Foto ${i + 1}`, url: urlAbsoluta(String(u)) })),
+  ].filter((f) => f.url);
+  if (v.pedidoCliente) info.push(['Serviço', String(v.pedidoCliente)]);
+  return { info, fotos };
+}
+
 // E-mail fire-and-forget pro cliente (sem e-mail cadastrado → nada). Nunca lança.
-export function emailParaCliente(clienteId: string, titulo: string, texto: string): void {
+export function emailParaCliente(clienteId: string, titulo: string, texto: string, extras: ExtrasEmail = {}): void {
   (async () => {
     const c = await prisma.garantiaCliente.findUnique({ where: { id: clienteId }, select: { email: true } });
     if (!c?.email) return;
-    await enviarEmailGarantia({ para: c.email, assunto: titulo, titulo, texto });
+    await enviarEmailGarantia({ para: c.email, assunto: titulo, titulo, texto, ...extras });
   })().catch((e) => console.error('[garantiaAvisos] e-mail falhou:', e?.message));
 }
 
@@ -301,8 +340,23 @@ export function emailBoasVindas(cliente: { nome: string; email: string }): void 
   const aviso = getAviso('boas_vindas');
   if (!aviso || !aviso.ativo || !aviso.email || !cliente.email) return;
   const ctx = { nome: cliente.nome };
-  enviarEmailGarantia({ para: cliente.email, assunto: preencher(aviso.titulo, ctx), titulo: preencher(aviso.titulo, ctx), texto: preencher(aviso.mensagem, ctx) })
-    .catch((e) => console.error('[garantiaAvisos] boas-vindas falhou:', e?.message));
+  enviarEmailGarantia({
+    para: cliente.email, assunto: preencher(aviso.titulo, ctx), titulo: preencher(aviso.titulo, ctx), texto: preencher(aviso.mensagem, ctx),
+    info: [['Garantia', '60 mil km ou 2 anos'], ['Revisão', 'a cada 5.000 km, grátis numa loja GP Premium'], ['Login no app', 'CPF ou e-mail + sua senha']],
+  }).catch((e) => console.error('[garantiaAvisos] boas-vindas falhou:', e?.message));
+}
+
+// Confirmação depois que o cliente troca a senha (esqueci a senha).
+export function emailSenhaAlterada(cliente: { nome: string; email: string }): void {
+  if (!cliente.email) return;
+  const nome = primeiroNome(cliente.nome || '') || 'cliente';
+  enviarEmailGarantia({
+    para: cliente.email, assunto: 'Sua senha do app GP Premium foi alterada',
+    titulo: 'Senha alterada com sucesso ✅',
+    texto: `Olá ${nome}! A senha da sua conta no app GP Premium acabou de ser trocada. Agora é só entrar com seu CPF ou e-mail e a senha nova.`,
+    info: [['Quando', new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo', dateStyle: 'short', timeStyle: 'short' })]],
+    rodapeExtra: 'Não foi você? Procure uma loja GP Premium para proteger sua conta.',
+  }).catch((e) => console.error('[garantiaAvisos] senha alterada falhou:', e?.message));
 }
 
 // Chamado pelo worker: e-mails de avisos AGENDADOS que venceram (e=1 no cabeçalho). Tira o

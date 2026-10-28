@@ -3,7 +3,7 @@ import { prisma } from '../server';
 import { hashSenha, conferirSenha } from '../auth/senha';
 import { assinarTokenCliente, verificarToken } from '../auth/jwt';
 import crypto from 'crypto';
-import { notificacaoSaida, emailBoasVindas } from '../services/garantiaAvisos';
+import { notificacaoSaida, emailBoasVindas, emailSenhaAlterada } from '../services/garantiaAvisos';
 import { enviarEmailGarantia, emailConfigurado } from '../services/garantiaEmail';
 import { EM_ANDAMENTO, calendarioDoCarro } from '../services/garantiaCarro';
 import {
@@ -282,8 +282,8 @@ router.post('/cliente/esqueci-senha', async (req, res) => {
     enviarEmailGarantia({
       para: email,
       assunto: `${codigo} é o seu código GP Premium`,
-      titulo: 'Código para criar uma senha nova',
-      texto: `Olá ${nome}! Use o código abaixo no app Pneus GP Premium para criar uma senha nova. Ele vale por 15 minutos.`,
+      titulo: 'Seu código para criar uma senha nova',
+      texto: `Olá ${nome}! Recebemos um pedido para trocar a senha do seu app GP Premium.\n\nDigite o código abaixo no app. Ele vale por 15 minutos.`,
       destaque: codigo,
       rodapeExtra: 'Se não foi você que pediu, ignore este e-mail — sua senha continua a mesma.',
     }).catch(() => { /* enviarEmailGarantia já loga */ });
@@ -317,6 +317,7 @@ router.post('/cliente/redefinir-senha', async (req, res) => {
     const cliente = await prisma.garantiaCliente.findUnique({ where: { cpf } });
     if (!cliente) return res.status(400).json({ error: invalido });
     const atualizado = await prisma.garantiaCliente.update({ where: { id: cliente.id }, data: { senha: await hashSenha(senha) } });
+    emailSenhaAlterada({ nome: atualizado.nome, email: atualizado.email });
     res.json({ ok: true, token: assinarTokenCliente(atualizado.id), cliente: clienteOut(atualizado) });
   } catch (e) { erro(res, e); }
 });
