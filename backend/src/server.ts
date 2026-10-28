@@ -270,7 +270,12 @@ app.use('/api/otimizador', requireAuth, requireModulo('otimizador'), otimizadorA
 app.use('/api/disparo', requireAuth, requireModulo('at-disparo'), disparoRouter); // Disparo manual WhatsApp (Direcional)
 app.use('/api/garantia', requireAuth, requireModulo('garantia50k'), garantiaRouter); // Garantia 50.000 KM (painel + app do mecânico, login CRM)
 app.use('/api/garantia-app', garantiaAppRouter); // App do CLIENTE final (auth própria por CPF+senha, cada rota se protege)
-app.use('/api/olx', olxRouter); // Módulo OLX: Anúncios, Watchdog e Chat Integrado
+app.use('/api/olx', (req, res, next) => (req.path.startsWith('/webhook') ? next() : requireAuth(req, res, () => {
+  const mods: string[] = Array.isArray((req as any).user?.modulos) ? (req as any).user.modulos : [];
+  const papel = String((req as any).user?.role || '');
+  if (papel === 'admin' || mods.includes('olx-anuncios') || mods.includes('olx-chat')) return next();
+  return res.status(403).json({ error: 'Sem acesso ao módulo OLX.' });
+})), olxRouter); // Módulo OLX: Anúncios, Watchdog e Chat Integrado
 
 // Rotas da API de Nuvem do Painel Admin
 app.get('/api/admin/nuvem', (req, res) => {

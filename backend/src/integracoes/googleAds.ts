@@ -7,7 +7,7 @@ import { MetricaCampanhaDia, ResultadoTeste, SaldoConta, periodoDias } from './t
 // Se as chamadas começarem a falhar com erro de "version deprecated/sunset",
 // basta atualizar a constante abaixo para a versão vigente (ex.: 'v22').
 // Versões disponíveis: https://developers.google.com/google-ads/api/docs/release-notes
-export const GOOGLE_ADS_API_VERSION = 'v22';
+export const GOOGLE_ADS_API_VERSION = 'v26';
 
 // Credenciais esperadas para a plataforma 'google'
 // customerId = ID da conta Google Ads SÓ DÍGITOS (sem hífens); loginCustomerId = MCC (opcional)
@@ -87,7 +87,9 @@ export async function executarBusca(credenciais: CredenciaisGoogle, accessToken:
     const json: any = await resp.json().catch(() => ({}));
     if (!resp.ok) {
       // Erros da Google vêm em json.error.message (texto legível, sem tokens)
-      const erro: any = new Error(json?.error?.message || `Google Ads respondeu HTTP ${resp.status}`);
+      const codigo = json?.error?.details?.[0]?.errors?.[0]?.errorCode;
+      const codigoTxt = codigo ? ` [${Object.values(codigo).join(', ')}]` : '';
+      const erro: any = new Error((json?.error?.message || `Google Ads respondeu HTTP ${resp.status}`) + codigoTxt);
       // Cota estourada (429): o Google diz em quantos segundos podemos voltar. Sem isso o
       // worker seguia batendo a cada minuto e a cota NUNCA se recuperava (achado 09/09).
       if (resp.status === 429) {

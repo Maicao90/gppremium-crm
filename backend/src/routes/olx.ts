@@ -426,6 +426,9 @@ router.post('/contas', requireAuth, async (req: any, res) => {
 
 // ── Webhook da OLX para Notificações Instantâneas ──
 router.post('/webhook', async (req, res) => {
+  // Sem integração oficial com a OLX ainda: o webhook só aceita quem mandar o segredo do .env.
+  const segredo = process.env.OLX_WEBHOOK_SECRET || '';
+  if (!segredo || req.get('x-olx-secret') !== segredo) return res.status(404).json({ error: 'Não encontrado.' });
   try {
     const evento = req.body;
     console.log('[OLX Webhook] Evento recebido:', evento);
