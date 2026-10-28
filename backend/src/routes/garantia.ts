@@ -633,6 +633,9 @@ router.post('/garantias', async (req, res) => {
       validarFoto(vei.fotoBase64, 'veículo'),
       validarFoto(vei.fotoOdometroBase64, 'odômetro'),
       ...(Boolean(vei.semEtiquetaOleo) ? [] : [validarFoto(vei.etiquetaOleoBase64, 'etiqueta de óleo')]),
+      // Carro em cima da máquina/rampa de alinhamento (app 1.1.5+). Obrigatória no app;
+      // OPCIONAL aqui porque apps antigos não mandam — se vier, passa pela mesma trava.
+      validarFoto(vei.fotoAlinhamentoBase64, 'carro no alinhamento'),
       ...pneusIn.map((p, i) => validarFoto(p.fotoBase64, `pneu ${i + 1} (etiqueta)`)),
       ...pneusIn.map((p, i) => validarFoto(p.fotoLateralBase64, `pneu ${i + 1} (lateral)`)),
       ...pneusIn.map((p, i) => validarFoto(p.fotoBandaBase64, `pneu ${i + 1} (banda)`)),
@@ -682,6 +685,8 @@ router.post('/garantias', async (req, res) => {
     const fotoUrl = salvarFoto(vei.fotoBase64);
     const fotoOdometroUrl = salvarFoto(vei.fotoOdometroBase64);
     const etiquetaOleoUrl = salvarFoto(vei.etiquetaOleoBase64);
+    // Foto do alinhamento é DESTA compra (não do carro): fica só na garantia, não no veículo.
+    const fotoAlinhamentoUrl = salvarFoto(vei.fotoAlinhamentoBase64);
     const dadosVeiculo = {
       clienteId: cliente.id,
       marca: String(vei.marca || '').trim(),
@@ -721,6 +726,7 @@ router.post('/garantias', async (req, res) => {
         cadastroFotoVeiculoUrl: fotoUrl,
         cadastroFotoOdometroUrl: fotoOdometroUrl,
         cadastroEtiquetaOleoUrl: etiquetaOleoUrl,
+        cadastroFotoAlinhamentoUrl: fotoAlinhamentoUrl,
         criadoPorId: req.user?.sub || null,
         lojaId: criador?.lojaId || null,
       },
@@ -1426,7 +1432,7 @@ const FOTOS_VISTORIA = [
   { campo: 'fotoLadoEsquerdoBase64', rotulo: 'carro (lado esquerdo)' },
   { campo: 'fotoLadoDireitoBase64', rotulo: 'carro (lado direito)' },
 ];
-const MAX_FOTOS_AVARIA = 6;
+const MAX_FOTOS_AVARIA = 30; // dono 28/10: "quantas fotos quiser"
 
 // Vistoria RÁPIDA (pedido do dono 27/10): carro que só entrou e não ficou. Obrigatórios só a
 // placa e "o que foi feito / o que o cliente pediu" (vai em pedidoCliente); cliente, km,
@@ -1435,7 +1441,7 @@ const MAX_FOTOS_AVARIA = 6;
 // combustível (exigido aqui). As fotos opcionais vão em fotosAvarias; km não informado = 0 no
 // banco e null na saída. tipoDaVistoria() é a ÚNICA regra que decide o tipo de uma linha.
 const TIPOS_VISTORIA = ['completa', 'rapida'];
-const MAX_FOTOS_RAPIDA = 4;
+const MAX_FOTOS_RAPIDA = 30; // dono 28/10: "quantas fotos quiser" (teto só pra não estourar o envio)
 const tipoDaVistoria = (v: { combustivel: string }): 'completa' | 'rapida' => (v.combustivel ? 'completa' : 'rapida');
 // Legenda de cada foto "extra" (avarias na completa; fotos opcionais na rápida) nas mensagens.
 const rotuloFotoExtra = (tipo: string, i: number) => (tipo === 'rapida' ? `foto ${i + 1}` : `avaria ${i + 1}`);

@@ -522,6 +522,7 @@ model Garantia {
   cadastroFotoVeiculoUrl  String?
   cadastroFotoOdometroUrl String?
   cadastroEtiquetaOleoUrl String?
+  cadastroFotoAlinhamentoUrl String? // carro em cima da máquina/rampa de alinhamento (app 1.1.5+; null nas antigas)
   dotDivergente           Boolean  @default(false) // alguma revisão leu um DOT diferente do cadastrado
   criadoPorId             String? // Usuario do painel que ativou (campo solto, padrão do projeto)
   lojaId                  String? // loja credenciada que VENDEU/ativou (escopo: a loja só vê as suas). Null = master
