@@ -19,6 +19,9 @@ const CINZA_FRACO = '#6b7186';
 // Lojas do app (mesmo app pra cliente e mecânico).
 export const LINK_APP_IOS = process.env.GARANTIA_LINK_IOS || 'https://apps.apple.com/br/app/id6819748178';
 export const LINK_APP_ANDROID = process.env.GARANTIA_LINK_ANDROID || 'https://play.google.com/store/apps/details?id=com.gppremium.garantia';
+// Selos oficiais (Apple/Google, pt-BR) em PNG no nosso servidor — Gmail não mostra SVG.
+const SELO_APP_STORE = 'https://link.pneusgppremium.com.br/selo-app-store.png';
+const SELO_GOOGLE_PLAY = 'https://link.pneusgppremium.com.br/selo-google-play.png';
 
 let transporte: any = null;
 let avisouSemConfig = false;
@@ -97,8 +100,8 @@ const appHtml = () => `
 </td></tr>
 <tr><td style="padding:0 12px 18px;" align="center">
 <table role="presentation" cellpadding="0" cellspacing="0"><tr>
-<td style="padding:4px;"><a href="${esc(LINK_APP_IOS)}" target="_blank" style="display:inline-block;padding:9px 16px;background:#000000;color:#ffffff;border-radius:10px;text-decoration:none;text-align:left;line-height:1.2;"><span style="font-size:10px;color:#cfd2dc;">Baixar na</span><br><span style="font-size:15px;font-weight:700;">App Store</span></a></td>
-<td style="padding:4px;"><a href="${esc(LINK_APP_ANDROID)}" target="_blank" style="display:inline-block;padding:9px 16px;background:#000000;color:#ffffff;border-radius:10px;text-decoration:none;text-align:left;line-height:1.2;"><span style="font-size:10px;color:#cfd2dc;">Disponível no</span><br><span style="font-size:15px;font-weight:700;">Google Play</span></a></td>
+<td style="padding:4px;"><a href="${esc(LINK_APP_IOS)}" target="_blank" style="text-decoration:none;"><img src="${esc(SELO_APP_STORE)}" alt="Baixar na App Store" width="120" height="40" style="display:block;width:120px;height:40px;border:0;"></a></td>
+<td style="padding:4px;"><a href="${esc(LINK_APP_ANDROID)}" target="_blank" style="text-decoration:none;"><img src="${esc(SELO_GOOGLE_PLAY)}" alt="Disponível no Google Play" width="135" height="40" style="display:block;width:135px;height:40px;border:0;"></a></td>
 </tr></table>
 </td></tr>
 </table>
