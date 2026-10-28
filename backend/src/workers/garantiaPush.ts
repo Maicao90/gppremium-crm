@@ -1,4 +1,5 @@
 import { prisma } from '../server';
+import { lerMensagem, tituloDaNotificacao, enviarEmailsAgendadosDevidos } from '../services/garantiaAvisos';
 
 // ===== Motor de PUSH da Garantia 50k =====
 // A cada ciclo, pega as notificações do CLIENTE que já venceram o dia agendado, ainda
@@ -7,17 +8,13 @@ import { prisma } from '../server';
 // no painel pra envio manual por WhatsApp — os dois canais convivem.
 
 const EXPO_PUSH_URL = 'https://exp.host/--/api/v2/push/send';
-const TIPOS_CLIENTE = ['revisao_proxima', 'pneu_cancelado', 'garantia_expira', 'garantia_cancelada', 'garantia_aprovada', 'revisao_aprovada', 'aviso']; // odometro_suspeito é do analista, não vai pro cliente
+const TIPOS_CLIENTE = ['revisao_proxima', 'pneu_cancelado', 'garantia_expira', 'garantia_cancelada', 'garantia_aprovada', 'revisao_aprovada', 'aviso', 'garantia_cadastrada', 'vistoria_entrada']; // odometro_suspeito é do analista, não vai pro cliente
+// Título: o gravado no cabeçalho da mensagem (template do aviso, ver services/garantiaAvisos)
+// ou, em notificação antiga, o padrão do tipo.
 
-const TITULO: Record<string, string> = {
-  revisao_proxima: 'Revisão dos seus pneus GP Premium 🛞',
-  pneu_cancelado: 'Aviso sobre sua garantia GP Premium',
-  garantia_expira: 'Sua garantia GP Premium está terminando',
-  garantia_cancelada: 'Sua garantia GP Premium foi cancelada',
-  garantia_aprovada: 'Garantia aprovada! ✅',
-  revisao_aprovada: 'Revisão aprovada! ✅',
-  aviso: 'GP Premium 🛞',
-};
+// LABORATÓRIO (NODE_ENV=lab): não chama o Expo — finge 'ok' e só loga. O push de verdade
+// nunca sai do lab.
+const PUSH_SIMULADO = process.env.NODE_ENV === 'lab';
 
 const hojeStr = () => new Date().toISOString().slice(0, 10);
 let rodando = false;
@@ -30,6 +27,10 @@ type ResultadoPush = 'ok' | 'invalido' | 'falha';
 // indisponibilidade do Expo marcaria tudo como enviado e a notificação sumiria.
 async function enviarLote(mensagens: { to: string; title: string; body: string; data: any }[]): Promise<ResultadoPush[]> {
   const resultado: ResultadoPush[] = new Array(mensagens.length).fill('falha');
+  if (PUSH_SIMULADO) {
+    mensagens.forEach((m) => console.log('[garantiaPush] (lab, simulado)', JSON.stringify({ title: m.title, body: m.body, data: m.data })));
+    return resultado.fill('ok');
+  }
   for (let base = 0; base < mensagens.length; base += 100) {
     const lote = mensagens.slice(base, base + 100);
     try {
@@ -61,6 +62,8 @@ export async function dispararPushDevidos(): Promise<void> {
   if (rodando) return;
   rodando = true;
   try {
+    // E-mail de aviso AGENDADO que venceu hoje (ex.: revisao_proxima com e-mail ligado).
+    await enviarEmailsAgendadosDevidos().catch((e) => console.error('[garantiaPush] e-mails agendados:', e?.message));
     const devidas = await prisma.garantiaNotificacao.findMany({
       where: { enviada: false, agendadaPara: { lte: hojeStr() }, tipo: { in: TIPOS_CLIENTE } },
       take: 500,
@@ -85,15 +88,18 @@ export async function dispararPushDevidos(): Promise<void> {
     for (const n of devidas) {
       const c = cliPorId[n.clienteId];
       if (!c || !c.pushToken) continue; // sem app: fica pro envio manual no painel
-      const veiculo = veiculoPorGarantia[n.garantiaId];
+      const { texto, meta } = lerMensagem(n.mensagem);
+      // Aviso novo (com cabeçalho) já traz veículo/placa no próprio texto do template;
+      // notificação antiga continua ganhando a linha "Veículo: ...".
+      const veiculo = meta.t ? null : veiculoPorGarantia[n.garantiaId];
       const identificacao = veiculo
         ? `${[veiculo.marca, veiculo.modelo].filter(Boolean).join(' ') || 'Veículo'} • placa ${veiculo.placa}`
         : '';
       mensagens.push({
         to: c.pushToken,
-        title: TITULO[n.tipo] || 'GP Premium',
-        body: identificacao ? `${n.mensagem}\nVeículo: ${identificacao}` : n.mensagem,
-        data: { notificacaoId: n.id, tipo: n.tipo },
+        title: tituloDaNotificacao(n.tipo, n.mensagem),
+        body: identificacao ? `${texto}\nVeículo: ${identificacao}` : texto,
+        data: { notificacaoId: n.id, tipo: n.tipo, ...(meta.v ? { vistoriaId: meta.v } : {}) },
       });
       idsParaMarcar.push(n.id);
     }

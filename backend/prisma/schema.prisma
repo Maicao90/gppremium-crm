@@ -464,10 +464,10 @@ model DisparoCampanha {
   criadoEm        DateTime  @default(now())
 }
 
-// ===== Garantia 50.000 KM (módulo "aplicativo", importado do protótipo GPPREMIUMGARANTIA50K) =====
+// ===== Garantia 60.000 KM (módulo "aplicativo", importado do protótipo GPPREMIUMGARANTIA50K) =====
 // Fluxo: loja vende pneus → ativa a garantia pro cliente (nasce "pendente") → admin
 // audita e aprova/reprova → revisões periódicas registram sulcos e problemas por pneu.
-// Regras de negócio fixas: kmMaximo = kmInicial + 50000; dataExpiracao = início + 2 anos.
+// Regras de negócio: kmMaximo = kmInicial + garantiaKm (60000); revisão a cada 5000 km; dataExpiracao = início + 2 anos.
 
 model GarantiaCliente {
   id         String   @id @default(uuid())
@@ -512,7 +512,7 @@ model Garantia {
   veiculoId               String
   status                  String   @default("pendente") // pendente, em_analise, ativa, atencao, reprovada, cancelada, expirada
   kmInicial               Int
-  kmMaximo                Int // kmInicial + 50000
+  kmMaximo                Int // kmInicial + GarantiaConfig.garantiaKm (60000)
   dataInicio              String // YYYY-MM-DD
   dataExpiracao           String // dataInicio + 2 anos
   // Cópia imutável dos dados/fotos da ativação. O veículo recebe dados novos nas
@@ -607,8 +607,8 @@ model GarantiaRevisaoPneu {
 model GarantiaConfig {
   id                 String   @id @default("global")
   garantiaMeses      Int      @default(24) // duração da garantia (meses)
-  garantiaKm         Int      @default(50000) // durabilidade (km)
-  intervaloRevisaoKm Int      @default(10000) // revisão a cada X km
+  garantiaKm         Int      @default(60000) // durabilidade (km) — 60.000 desde 28/10 (era 50.000)
+  intervaloRevisaoKm Int      @default(5000) // revisão a cada X km — 5.000 desde 28/10 (12 revisões; era 10.000)
   atualizadoEm       DateTime @updatedAt
 }
 
