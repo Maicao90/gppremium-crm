@@ -39,6 +39,16 @@ export function transcricaoSalva(arquivoAudio: string): string | null {
   }
 }
 
+// Quase todas as palavras do texto estao no vocabulario do prompt (e ha pelo menos 3): o whisper "leu" o prompt.
+function semAcento(s: string): string { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+const PALAVRAS_VOCAB = new Set(semAcento(VOCABULARIO).split(/[^a-z0-9/]+/).filter(Boolean));
+export function ehEcoDoVocabulario(texto: string): boolean {
+  const palavras = semAcento(String(texto || '')).split(/[^a-z0-9/]+/).filter(Boolean);
+  if (palavras.length < 3) return false;
+  const doVocab = palavras.filter((p) => PALAVRAS_VOCAB.has(p)).length;
+  return doVocab / palavras.length >= 0.85;
+}
+
 // Limpa o que o whisper escreve quando nao ha fala ("[Música]", "(risos)") e espacos sobrando.
 function limpar(texto: string): string {
   return texto.replace(/\[[^\]]*\]|\([^)]*\)/g, ' ').replace(/\s+/g, ' ').trim();
@@ -53,7 +63,15 @@ async function transcrever(arquivoAudio: string): Promise<string | null> {
     const segundos = Math.max(0, (fs.statSync(wav).size - 44) / 32000);
     const ctx = segundos > 0 && segundos <= 28 ? Math.min(1500, Math.ceil((segundos / 30) * 1500) + 128) : 0;
     const saida = await rodar('nice', ['-n', '15', CLI, '-m', MODELO, '-l', 'pt', '-t', '1', '-nt', '-np', '-ac', String(ctx), '--prompt', VOCABULARIO, '-f', wav], LIMITE_MS);
-    const texto = limpar(saida);
+    let texto = limpar(saida);
+    // 27/10 (caso 556182063976): audio de 2 s "A gente fica localizado?" saiu "Pneu GP Premium, remold, alinhamento,
+    // balanceamento," — o whisper devolveu o PROPRIO vocabulario do --prompt e o robo mandou o audio do remold +
+    // alinhamento + balanceamento. Texto que e so pedaco do vocabulario = alucinacao: roda de novo SEM o prompt.
+    if (ehEcoDoVocabulario(texto)) {
+      console.log(`[Transcricao] ${path.basename(arquivoAudio)}: saiu o vocabulario do prompt ("${texto.slice(0, 80)}") — repetindo sem prompt.`);
+      const semPrompt = limpar(await rodar('nice', ['-n', '15', CLI, '-m', MODELO, '-l', 'pt', '-t', '1', '-nt', '-np', '-ac', String(ctx), '-f', wav], LIMITE_MS));
+      texto = semPrompt; // sem prompt nao ha o que ecoar: se ainda fala de remold/alinhamento, o cliente falou mesmo
+    }
     return texto.length >= 2 ? texto : null;
   } finally {
     fs.promises.unlink(wav).catch(() => {});

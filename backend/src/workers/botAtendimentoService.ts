@@ -273,7 +273,9 @@ async function enviarEmBolhas(params: AgendarBotParams, texto: string): Promise<
 // Mensagens que a loja manda sem ser uma pessoa atendendo: saudacao automatica do WhatsApp Business e o 🙋🏼‍♀️.
 const MSG_AUTOMATICA_DA_LOJA = /Seja bem-vindo\(a\)|^\s*🙋🏼‍♀️\s*$/;
 
-const REGEX_CANDIDATO = /(curr[ií]cul(o|um)|\bcv\b|contratando|\bvagas?\s+(que|aberta|abertas|dispon[ií]ve(l|is)|na loja|a[ií](?![a-z]))|vaga(s)? de (emprego|trabalho|auxiliar|mec[aâ]nic|vendedor|atendente|borracheir|motorista|estagi)|interesse (na|em uma|numa) vaga|(alguma|tem|h[aá]) vaga (de|pra|para) (emprego|trabalh)|fazer parte d[ae] (sua |vossa )?(empresa|equipe)|trabalhar (com voc[eê]s|a[ií] na|na (empresa|loja) de voc)|\bemprego\b)/i;
+// 28/10 (dono: "quem fala de currículo e processo seletivo não precisa de remarketing"): + candidatar, processo seletivo,
+// entrevista, "vaga para/do/no...", oportunidade de trabalho/emprego. Usado tambem no remarketing e nos lembretes.
+const REGEX_CANDIDATO = /(curr[ií]cul(o|um)|\bc\.v\.?\b|\bcv\b|contratando|candidat(ar|o|a|ei|ura)|processo seletivo|entrevista|oportunidade de (trabalho|emprego)|\bvagas?\s+(para|pra|do|da|no|na)\s+(o\s+|a\s+)?(departamento|setor|[aá]rea|financeiro|servi[cç]os|auxiliar|cargo|fun[cç][aã]o)|\bvagas?\s+(que|aberta|abertas|dispon[ií]ve(l|is)|na loja|a[ií](?![a-z]))|vaga(s)? de (emprego|trabalho|auxiliar|mec[aâ]nic|vendedor|atendente|borracheir|motorista|estagi)|interesse (na|em uma|numa) vaga|(alguma|tem|h[aá]) vaga (de|pra|para) (emprego|trabalh)|fazer parte d[ae] (sua |vossa )?(empresa|equipe)|trabalhar (com voc[eê]s|a[ií] na|na (empresa|loja) de voc)|\bemprego\b)/i;
 export function ehCandidatoAVaga(textos: string[]): boolean {
   return textos.some((t) => REGEX_CANDIDATO.test(String(t || '')));
 }
@@ -615,6 +617,15 @@ async function processarRemarketing(usuarioId: string, chatJid: string, texto: s
     }
 
     const numeroLimpo = chatJid.replace(/[^0-9]/g, '');
+
+    // 28/10 (dono): quem falou de curriculo/vaga/processo seletivo nao recebe lembrete do robo.
+    {
+      const recentes = await prisma.mensagem.findMany({ where: { usuarioId, chatJid }, orderBy: { timestamp: 'desc' }, take: 60, select: { texto: true } });
+      if (ehCandidatoAVaga(recentes.map((m) => String(m.texto || '')))) {
+        console.log(`[Remarketing] ${chatJid}: conversa de curriculo/vaga — lembrete NAO criado.`);
+        return;
+      }
+    }
 
     // Uma conversa nao pode acumular varios lembretes: se ja existe um pendente pra
     // esse numero, troca a data/texto em vez de criar outro (senao o cliente recebe
@@ -969,6 +980,13 @@ async function executar(params: AgendarBotParams, versao: number) {
     // que vai verificar (nunca fala de atendente), etiqueta e fica quieto; a atendente entra logo depois.
     if (cfgLoja.ETIQUETA_FORA_DA_LISTA && resposta.deterministico && (resposta.chaves || []).some((c) => CHAVES_FORA_DA_LISTA.includes(c) || (cfgLoja.CHAVES_ATENDENTE || []).includes(c))) {
       if (versoes.get(key) !== versao || !(await conversaLiberada(params.usuarioId, params.chatJid))) return;
+      // 27/10 (Valter Farias): orcamento com uma medida da tabela e outra que a loja nao tem — o preco da que tem vai antes.
+      const antesDoInstante: string[] = Array.isArray((resposta as any).partesAntesDoInstante) ? (resposta as any).partesAntesDoInstante : [];
+      for (const p of antesDoInstante.slice(0, 6)) {
+        const t = String(p || '').trim();
+        if (!t || /^\[[A-Z_]+(:[^\]]*)?\]$/.test(t)) continue;
+        if (!(await enviarEmBolhas(params, t.slice(0, 3500)))) return;
+      }
       const audioOk = await enviarAudioDoFluxo(params, 'so-um-instante-verificando', 'Só um instante que eu vou verificar aqui pra você, tá bem?');
       if (!audioOk) await params.enviarParte('Só um instante que eu vou verificar aqui pra você, tá bem?', tempoDigitacao('Só um instante'));
       if (params.etiquetar) await params.etiquetar(cfgLoja.ETIQUETA_FORA_DA_LISTA).catch(() => false);

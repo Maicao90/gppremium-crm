@@ -19,6 +19,7 @@ import { extrairIntencoesPreco } from '../data/fluxoPrecoExtrator';
 import { resolverDiaVisita } from '../data/visita';
 import { juntarMedidaRecente, rajadaSoLarguraPerfil, partesPedirAro, medidasEscritasNaRajada, lojaAcabouDePerguntarAro, trocaDeAroDepoisDoPreco, partesPedirMedidaDoAro } from '../data/medidaJuntada';
 import { removerParcelamentoRepetidoEJustificativa } from '../data/travaPosOrcamento';
+import { negritoDinheiro, removerParcelamentoNaoPedido, aroSemMedidaNaRajada, removerBolhasRepetidas, CHAVES_GESTO, ehCandidatoAVaga, negouRetomada } from '../data/travasJosy2810';
 import { rotasCerebro, licoesAtivasDaLoja, casarLicao, partesDaLicao, registrarUso } from './cerebro';
 import { sanitizarTextosFluxo, chavesJaRespondidas, textoFluxo, SILENCIO_SE_REPETIR } from '../data/fluxoCatalogo';
 import { chaveDoFluxo, ehChaveAnthropic, gerarTextoAnthropic, MensagemAnthropic } from '../services/llmAnthropic';
@@ -443,6 +444,61 @@ app.post('/gerar-resposta', async (req, res) => {
     // resposta (robo ou atendente) e responde cada assunto. Mensagem ja respondida nunca entra
     // (nao contamina — achado 26/08).
     const { rajada, rabo, anteriores, temMidiaSemTexto } = separarRajada(messages);
+    // PEDIDOS DA JOSY 27-28/10 (data/travasJosy2810.ts): toda resposta que sai daqui (fluxo, cerebro, IA livre) passa
+    // por: parcelamento so se o cliente pediu, sem bolha repetida (que nao seja preco) e "dinheiro" em negrito.
+    {
+      const ultimasDaLoja = anteriores.filter((m: any) => m?.role === 'assistant').map((m: any) => String(m?.content ?? ''));
+      const textosClientePos = [...anteriores.filter((m: any) => m?.role === 'user').slice(-3).map((m: any) => String(m?.content ?? '')), ...rajada];
+      const minutosLoja: number | null = typeof req.body?.minutosDesdeUltimaDaLoja === 'number' ? req.body.minutosDesdeUltimaDaLoja : null;
+      const lojaRecente = minutosLoja == null || minutosLoja < 240;
+      const temTexto = (ps: string[]) => ps.some((p) => !/^\[[A-Z_]+(:[^\]]*)?\]$/.test(String(p).trim()));
+      const jsonOriginal = res.json.bind(res);
+      (res as any).json = (body: any) => {
+        try {
+          if (body && Array.isArray(body.partes) && body.partes.length) {
+            const parc = removerParcelamentoNaoPedido(body.partes, textosClientePos);
+            if (parc.cortadas.length) console.log(`[BotService][Josy] parcelamento nao pedido cortado: ${JSON.stringify(parc.cortadas)}`);
+            let partes = parc.partes;
+            if (lojaRecente) {
+              const rep = removerBolhasRepetidas(partes, ultimasDaLoja);
+              if (rep.cortadas.length) {
+                if (temTexto(rep.partes)) partes = rep.partes;
+                else if (body.deterministico && Array.isArray(body.chaves) && body.chaves.length && body.chaves.every((c: string) => CHAVES_GESTO.includes(c))) {
+                  partes = [];
+                  body.acaoTipo = 'SILENCIO';
+                  body.chaves = [...body.chaves, 'sem_repetir'];
+                }
+                if (partes !== parc.partes) console.log(`[BotService][Josy] repeticao cortada: ${JSON.stringify(rep.cortadas)}`);
+              }
+            }
+            if (!temTexto(partes) && temTexto(body.partes) && body.acaoTipo !== 'SILENCIO') partes = body.partes; // nunca zera por engano
+            body.partes = partes.map(negritoDinheiro);
+          }
+          if (body && Array.isArray(body.partesAntesDoInstante)) {
+            body.partesAntesDoInstante = removerParcelamentoNaoPedido(body.partesAntesDoInstante, textosClientePos).partes.map(negritoDinheiro);
+          }
+        } catch (e: any) {
+          console.error('[BotService][Josy] pos-processamento falhou (resposta segue sem ele):', e?.message || e);
+        }
+        return jsonOriginal(body);
+      };
+    }
+    // Candidato a vaga / curriculo em QUALQUER mensagem recente do cliente: o robo nao entra (28/10, candidato que
+    // recebeu o 🙋 e depois "qual e o seu carro?"). O whatsapp-crm so olhava as mensagens novas.
+    {
+      const doCliente = messages.filter((m: any) => m?.role === 'user').slice(-15).map((m: any) => String(m?.content ?? ''));
+      if (ehCandidatoAVaga(doCliente)) {
+        console.log('[BotService] candidato a vaga na conversa — silencio (a equipe cuida).');
+        return res.json({ partes: [], deterministico: true, acaoTipo: 'SILENCIO', novoEstadoPreco: estadoPrecoAtual, novosDadosPreco: JSON.stringify(dadosPrecoAtuais), via: 'fluxo', assuntos: [], chaves: ['curriculo'], rajada, simulado: !!req.body?.simular });
+      }
+    }
+    // "Nao" respondendo a retomada ("...Ainda está precisando?"): agradece uma vez e para — nunca pede a medida (Lindomar 27/10).
+    {
+      const ultimaDaLojaRet = String([...anteriores].reverse().find((m: any) => m?.role === 'assistant')?.content || '');
+      if (negouRetomada(rajada, ultimaDaLojaRet)) {
+        return res.json({ partes: textoFluxo(textosFluxo, 'agradecimento'), deterministico: true, acaoTipo: 'RESPONDER_AGRADECIMENTO', novoEstadoPreco: estadoPrecoAtual, novosDadosPreco: JSON.stringify(dadosPrecoAtuais), via: 'fluxo', assuntos: ['AGRADECEU_OU_ENCERROU'], chaves: ['agradecimento', 'retomada_negada'], rajada, simulado: !!req.body?.simular });
+      }
+    }
     // 23/10 (retomada de clientes): "sim" / "quero" / "preciso" respondendo a mensagem de RETOMADA da loja
     // ("...os pneus 185/65/15. Ainda está precisando?") vale como se o cliente tivesse mandado essa medida -> preco
     // pela tabela. Sem isso a IA livre respondia "pode repetir, por favor?". Sem medida na retomada, segue normal.
@@ -530,9 +586,12 @@ app.post('/gerar-resposta', async (req, res) => {
     // "14" / "aro 15" sozinho e sem medida conhecida = ARO (22/10: virava "14 pneus"). Pergunta o carro numa frase.
     {
       const soAro = /^\s*(aro\s*)?(1[2-9]|2[0-2])\s*\.?\s*$/i.exec(rajada.join(' ').trim());
-      if (soAro && !medidaJuntada && !dadosPrecoAtuais.medida && !medidaDoHistorico(anteriores)) {
+      // 27/10 (Josy, "acho que não compensa responder assim"): "O pneu aro 14" + "Tá quanto?" e "Tudo bem" + "Aro 15"
+      // caiam na IA livre, que mandava a LISTA inteira do aro. Aro sozinho com cumprimento/pergunta de preco = pergunta o carro.
+      const aroDaRajada = soAro ? soAro[2] : (!temFoto && !temMidiaSemTexto ? aroSemMedidaNaRajada(rajada) : null);
+      if (aroDaRajada && !medidaJuntada && !dadosPrecoAtuais.medida && !medidaDoHistorico(anteriores)) {
         return res.json({
-          partes: [`Show, aro ${soAro[2]}! 👍`, 'Qual é o carro? Já te passo a medida certa e o valor.'],
+          partes: [`Show, aro ${aroDaRajada}! 👍`, 'Qual é o carro? Já te passo a medida certa e o valor.'],
           deterministico: true, acaoTipo: 'PEDIR_CARRO', novoEstadoPreco: estadoPrecoAtual, novosDadosPreco: JSON.stringify(dadosPrecoAtuais),
           via: 'fluxo', assuntos: ['INFORMOU_ARO'], chaves: ['aro_sem_medida'], rajada, simulado: !!req.body?.simular,
         });
@@ -566,7 +625,8 @@ app.post('/gerar-resposta', async (req, res) => {
     // CEREBRO (22/10): ensinamento do dono que casa com a mensagem vale ANTES do fluxo (o dono manda).
     // responder = o texto dele; atendente = "so um instante" + etiqueta; silencio = nao responde; orientar = a IA segue a orientacao.
     let instrucaoCerebro = '';
-    if (!temMidiaSemTexto && gatilho.trim()) {
+    // Sem mensagem nova do cliente (a loja ja falou depois da ultima dele): ensinamento nao casa com mensagem velha (28/10, monologo).
+    if (!temMidiaSemTexto && gatilho.trim() && rabo.length > 0) {
       const licoes = licoesAtivasDaLoja(lojaBot?.nome);
       if (licoes.length) {
         const ctx = anteriores.slice(-6).map((m: any) => `${m.role === 'user' ? 'CLIENTE' : 'LOJA'}: ${semExemplos(String(m.content || '')).slice(0, 300)}`).join('\n');
@@ -677,6 +737,22 @@ app.post('/gerar-resposta', async (req, res) => {
             console.log(`[BotService] leitura ${JSON.stringify(intencoes.map((i: any) => [i.intencao, i.medidaExtraida, i.escolhaAlternativa]))} -> ${JSON.stringify(ajustadas.map((i: any) => [i.intencao, i.medidaExtraida]))}`);
             intencoes.splice(0, intencoes.length, ...ajustadas);
           }
+          // 27/10 ("Poderia me informa valor do pneu" + "185/65/15" + "4 unidades" -> "Qual a medida dos pneus?"): a leitura
+          // perdeu a medida que o cliente ESCREVEU. Medida inteira da tabela escrita na rajada vira DAR_MEDIDA (com a quantidade).
+          // "Pergunta de preco" que ja veio COM a medida da tabela e cotacao (a leitura as vezes marca assim e o filtro abaixo
+          // descartava a unica intencao, caindo no "me passa a medida").
+          for (const i of intencoes as any[]) {
+            if (i.intencao === 'PERGUNTAR_PRECO_SEM_MEDIDA' && i.medidaExtraida && encontrarPrecosExatosPorMedida(String(i.medidaExtraida)).length) i.intencao = 'DAR_MEDIDA';
+          }
+          if (!medidaJuntada && !intencoes.some((i: any) => i.medidaExtraida)) {
+            const daTabela = medidasEscritas.filter((m) => encontrarPrecosExatosPorMedida(m).length);
+            if (daTabela.length === 1) {
+              const q = /\b(\d{1,2})\s*(unidades?|pneus?|pe[cç]as?|un)\b/i.exec(rajada.join(' '));
+              const qtd = q ? Number(q[1]) : null;
+              intencoes.push({ intencao: 'DAR_MEDIDA', medidaExtraida: daTabela[0], quantidadeExtraida: qtd && qtd > 0 && qtd <= 20 ? qtd : null, escolhaAlternativa: null } as any);
+              console.log(`[BotService] medida ${daTabela[0]} escrita na rajada e perdida pela leitura — cotando (qtd ${qtd ?? '-'}).`);
+            }
+          }
           // A rajada ja traz a medida ("qual o preco do aro 15?" + "185/60"): nao pede a medida antes do preco (22/10).
           const temMedidaNaRajada = intencoes.some((i: any) => i.medidaExtraida || i.intencao === 'DAR_MEDIDA');
           const intencoesUsadas = temMedidaNaRajada ? intencoes.filter((i: any) => i.intencao !== 'PERGUNTAR_PRECO_SEM_MEDIDA') : intencoes;
@@ -713,6 +789,26 @@ app.post('/gerar-resposta', async (req, res) => {
           // Foto + "quanto custa?"/"boa tarde": pedir a medida ou so cumprimentar ignoraria a foto (ver temFoto).
           // Pelas chaves: "é remold? quanto custa?" com foto tem acaoPrincipal RESPONDER_REMOLD mas tambem pede a medida.
           const ignorariaAFoto = temFoto && decisao.chaves.some((c) => c.startsWith('pedir_medida') || c === 'saudacao' || c === 'saudacao_retorno');
+          // MONOLOGO (28/10, Ubiratan 07:22): duas rodadas se atropelaram; a 2a leu a conversa ja terminando com a loja e
+          // respondeu de novo o "Aí sim" antigo ("Tranquilo! Qualquer dúvida..." logo depois de "Quer que eu separe?").
+          // Sem mensagem nova do cliente, gesto (agradecimento/cumprimento/pedir medida/visita) nao sai: silencio.
+          if (rabo.length === 0 && decisao.acaoPrincipal !== 'NADA' && decisao.chaves.length && decisao.chaves.every((c) => CHAVES_GESTO.includes(c))) {
+            console.log(`[BotService] sem mensagem nova do cliente e a resposta seria so gesto (${decisao.chaves.join(',')}) — silencio.`);
+            return res.json({ partes: [], deterministico: true, acaoTipo: 'SILENCIO', novoEstadoPreco: estadoPrecoAtual, novosDadosPreco: JSON.stringify(dadosPrecoAtuais), via: 'fluxo', assuntos: decisao.assuntos, chaves: ['sem_mensagem_nova'], rajada, simulado: !!req.body?.simular });
+          }
+          // ORCAMENTO COM UMA MEDIDA QUE A LOJA TEM E OUTRA QUE NAO TEM (27/10, Valter Farias: "4 pneus 185/65/14" + "2 pneus
+          // 225/65/18"): o whatsapp-crm troca a resposta inteira pelo "so um instante" (etiqueta + atendente) e o preco da medida
+          // que a loja TEM se perdia. Aqui sai, a parte, o preco das medidas da tabela pra ele mandar ANTES do "so um instante".
+          let partesAntesDoInstante: string[] | undefined;
+          if (decisao.chaves.some((c) => c === 'medida_inexistente' || c === 'sem_alternativa') && decisao.chaves.includes('preco_medida')) {
+            const temNaTabela = (i: any) => !(i.intencao === 'DAR_MEDIDA' || i.intencao === 'ESCOLHER_ALTERNATIVA') || (!!(i.medidaExtraida || i.escolhaAlternativa) && encontrarPrecosExatosPorMedida(String(i.medidaExtraida || i.escolhaAlternativa)).length > 0);
+            const soDaTabela = (intencoesUsadas.length ? intencoesUsadas : intencoes).filter(temNaTabela);
+            const parcial = decidirSequenciaPreco(soDaTabela, estadoUsado, dadosUsados, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas, lojaFalouHaPouco });
+            if (parcial.chaves.includes('preco_medida') && !parcial.chaves.some((c) => c === 'medida_inexistente' || c === 'sem_alternativa')) {
+              partesAntesDoInstante = parcial.partes.filter((p: string) => !/^\[ENVIAR_[A-Z_]+/i.test(p.trim()));
+              console.log(`[BotService] orcamento misto: preco das medidas da tabela vai antes do "so um instante" (${partesAntesDoInstante.length} bolhas).`);
+            }
+          }
           if (decisao.acaoPrincipal !== 'NADA' && !naoEhSoAgradecer && !ignorariaAFoto) {
             // Audios do dono ([ENVIAR_AUDIO:...]): so vao se quem chamou diz que sabe enviar (audioFluxo). Senao
             // sai so o texto — o marcador nunca pode chegar ao cliente como mensagem.
@@ -731,6 +827,7 @@ app.post('/gerar-resposta', async (req, res) => {
               chaves: decisao.chaves,
               // Dia da visita (cliente disse que vem): o whatsapp-crm agenda os lembretes (vespera e no dia).
               visita,
+              ...(partesAntesDoInstante ? { partesAntesDoInstante } : {}),
               rajada,
               simulado: !!req.body?.simular,
             });

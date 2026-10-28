@@ -16,7 +16,7 @@ const prisma = new Proxy({} as PrismaClient, {
 function getIo() {
   return require('../server').io;
 }
-import { agendarRespostaBotIA, pausarConversaBotIA, naoAtender } from './botAtendimentoService';
+import { agendarRespostaBotIA, pausarConversaBotIA, naoAtender, ehCandidatoAVaga } from './botAtendimentoService';
 import { configBotDaLoja, caminhoFotoFachada } from '../services/botLojas';
 
 // Pasta onde as mídias recebidas são salvas (servida estaticamente em /midias)
@@ -1075,7 +1075,7 @@ function iniciarRemarketingRobo() {
           where: { usuarioId: conta.id, timestamp: { gte: new Date(agora - idadeMaxMs - 86400_000) } },
           orderBy: { timestamp: 'desc' },
           take: 3000,
-          select: { chatJid: true, fromMe: true, texto: true, timestamp: true, numeroReal: true, tipo: true },
+          select: { chatJid: true, fromMe: true, texto: true, timestamp: true, numeroReal: true, tipo: true, enviadoPorId: true },
         });
         const porChat = new Map<string, typeof msgs>();
         for (const m of msgs) { const l = porChat.get(m.chatJid) || []; l.push(m); porChat.set(m.chatJid, l); }
@@ -1092,6 +1092,13 @@ function iniciarRemarketingRobo() {
           if (idade < silencioMs || idade > idadeMaxMs) continue;
           if (lista.some((m) => m.fromMe && m.timestamp > ultimaCliente.timestamp && /🙋/.test(String(m.texto || '')))) continue; // ja puxou
           if (REMARKETING_FECHOU.test(String(ultimaCliente.texto || ''))) continue;
+          // 27-28/10 (Josy + dono): (a) candidato a vaga / curriculo nunca recebe o 🙋 (candidato recebeu 28/10 08:05 e o robo
+          // ainda perguntou o carro); (b) conversa que a ATENDENTE atendeu e dela: se a ultima fala da loja (tirando o proprio
+          // 🙋 e a saudacao automatica) foi de uma pessoa, o robo nao puxa — casos Erisvaldo ("esta pausado, mas enviando a 🙋"),
+          // Marquel ("perguntou se e remold e foi a maozinha"), Rodrigues e a conversa interna com o dono.
+          if (ehCandidatoAVaga(lista.map((m) => String(m.texto || '')))) continue; // inclui a resposta da loja ("Os candidatos selecionados...")
+          const ultimaFalaDaLoja = lista.find((m) => m.fromMe && !/^\s*🙋/.test(String(m.texto || '')) && !/Seja bem-vindo\(a\)/.test(String(m.texto || '')));
+          if (rm.pularSeAtendenteFalou && ultimaFalaDaLoja && ultimaFalaDaLoja.enviadoPorId !== 'bot') continue;
           const estado = await prisma.botConversa.findUnique({
             where: { usuarioId_chatJid: { usuarioId: conta.id, chatJid } },
             select: { pausadoAte: true },

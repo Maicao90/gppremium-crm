@@ -847,7 +847,8 @@ export function montarPartesDescontoAVista(item: ItemPreco, quantidade: number |
   const partes: string[] = [
     [
       `${item.medida}${qtd > 1 ? ` (${qtd} unidades)` : ''}`,
-      `À vista em dinheiro sai com 5% de desconto: R$ ${brl(valorComDesconto)} (de R$ ${brl(valorCheio)}).`,
+      // 27/10 (Josy): "dinheiro" em negrito — o cliente le "a vista" e entende pix.
+      `À vista em *dinheiro* sai com 5% de desconto: R$ ${brl(valorComDesconto)} (de R$ ${brl(valorCheio)}).`,
     ].join('\n'),
   ];
   if (cobradas < qtd) partes.push(`Voce leva ${qtd} e paga so ${cobradas} (campanha compre 3 e leve 4).`);

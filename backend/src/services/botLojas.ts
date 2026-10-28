@@ -45,6 +45,9 @@ export interface RemarketingLoja {
   horaInicio: string;        // "08:00" (Brasilia)
   horaFim: string;           // "19:00"
   maxPorHora: number;        // trava de volume (risco de bloqueio do numero)
+  // 28/10 (Josy): conversa em que a ultima fala da loja foi da ATENDENTE e dela — o robo nao manda o emoji.
+  // false = volta ao comportamento antigo (puxa qualquer conversa parada). Padrao: true.
+  pularSeAtendenteFalou: boolean;
 }
 
 function lerJson(caminho: string): any {
@@ -91,6 +94,7 @@ export async function configBotDaLoja(usuarioId: string): Promise<ConfigBotLoja>
       horaInicio: String(daLoja.REMARKETING.horaInicio || '08:00'),
       horaFim: String(daLoja.REMARKETING.horaFim || '19:00'),
       maxPorHora: Number(daLoja.REMARKETING.maxPorHora) > 0 ? Number(daLoja.REMARKETING.maxPorHora) : 20,
+      pularSeAtendenteFalou: daLoja.REMARKETING.pularSeAtendenteFalou !== false,
     } : undefined,
   };
 }

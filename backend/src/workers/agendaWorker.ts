@@ -13,6 +13,25 @@ function apagarMidiaAgendamento(midiaUrl?: string | null) {
   } catch (e) { /* ignora */ }
 }
 
+// Lembrete automatico (robo-* / "Ainda está precisando?" / 🙋) pra contato que falou de curriculo/vaga nos ultimos 30 dias.
+const LEMBRETE_AUTOMATICO = /Ainda est[aá] precisando\?|🙋/;
+export async function ehLembreteDeCandidato(a: { criadoPorId: string; numero: string; mensagem: string; observacoes?: string | null }): Promise<boolean> {
+  try {
+    if (!String(a.observacoes || '').startsWith('robo-') && !LEMBRETE_AUTOMATICO.test(String(a.mensagem || ''))) return false;
+    const final8 = String(a.numero || '').replace(/\D/g, '').slice(-8);
+    if (final8.length < 8) return false;
+    const msgs = await prisma.mensagem.findMany({
+      where: { usuarioId: a.criadoPorId, timestamp: { gte: new Date(Date.now() - 30 * 86400_000) }, OR: [{ numeroReal: { contains: final8 } }, { chatJid: { contains: final8 } }] },
+      select: { texto: true }, orderBy: { timestamp: 'desc' }, take: 200,
+    });
+    const { ehCandidatoAVaga } = require('./botAtendimentoService');
+    return ehCandidatoAVaga(msgs.map((m: any) => String(m.texto || '')));
+  } catch (e: any) {
+    console.error('[Worker] checagem de curriculo falhou (agendamento segue):', e?.message || e);
+    return false;
+  }
+}
+
 // Função utilitária para verificar se a hora atual do sistema está no expediente configurado
 async function estaNoExpediente(agora: Date): Promise<boolean> {
   try {
@@ -239,6 +258,18 @@ export function initWorker() {
               await sleep(gap);
             }
             primeiroEnvioDoCiclo = false;
+
+            // 28/10 (dono: "para quem fala de currículo e processo seletivo não precisa fazer o remarketing"): lembrete
+            // AUTOMATICO (do robo ou o "Ainda está precisando?") pra quem veio falar de vaga/curriculo e cancelado na hora
+            // de enviar. Mensagem agendada a mao pela atendente (outro texto) continua saindo.
+            if (await ehLembreteDeCandidato(agendamento)) {
+              await prisma.agendamento.update({
+                where: { id: agendamento.id },
+                data: { status: 'cancelado', observacoes: `${agendamento.observacoes ? agendamento.observacoes + ' | ' : ''}cancelado: curriculo/vaga` },
+              });
+              console.log(`[Worker] Agendamento ${agendamento.id} (${agendamento.numero}) cancelado: contato de curriculo/vaga.`);
+              continue;
+            }
 
             await prisma.agendamento.update({
               where: { id: agendamento.id },
