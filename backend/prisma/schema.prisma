@@ -501,6 +501,8 @@ model GarantiaVeiculo {
   oleoKm             Int      @default(0) // km do carro na última troca de óleo
   oleoProximaTrocaKm Int? // km que a PRÓPRIA ETIQUETA indica pra próxima troca (lido do adesivo, não calculado)
   semEtiquetaOleo    Boolean  @default(false)
+  // Carro ELÉTRICO (app 1.1.6): não tem troca de óleo -> sempre semEtiquetaOleo=true e km digitado.
+  eletrico           Boolean  @default(false)
   etiquetaOleoUrl    String? // foto da etiqueta de óleo
   kmPorDia           Float    @default(0) // média calculada (recalculada a cada revisão)
   criadoEm           DateTime @default(now())

@@ -531,12 +531,18 @@ router.get('/cliente/vistorias/:id', requireCliente, async (req, res) => {
 });
 
 // ---------- Oficinas autorizadas (lojas do CRM) ----------
+// Aviso curto embaixo do nome da loja no app (1.1.6+). Por id da loja; editar aqui.
+// O nome continua o da loja — app antigo não lê `observacao` e só mostra o nome.
+const OBSERVACAO_OFICINA: Record<string, string> = {
+  '72213a6c-31c5-410d-a6b4-504dfd223e2f': 'Fábrica — apenas venda de pneus GP', // GP Premium
+};
 router.get('/oficinas', async (_req, res) => {
   try {
     const lojas = await prisma.loja.findMany({ orderBy: { store_name: 'asc' } });
     res.json(lojas.map((l) => ({
       id: l.id, nome: l.store_name, cidade: l.city, estado: l.state,
       telefone: l.whatsapp || l.telefone_fixo, instagram: l.instagram,
+      observacao: OBSERVACAO_OFICINA[l.id] || '',
     })));
   } catch (e) { erro(res, e); }
 });

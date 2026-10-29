@@ -565,8 +565,13 @@ router.get('/garantias/por-placa', async (req, res) => {
     );
     const pneusPorGarantia: Record<string, typeof pneus> = {};
     pneus.forEach((p) => { (pneusPorGarantia[p.garantiaId] = pneusPorGarantia[p.garantiaId] || []).push(p); });
+    // 1.1.6: nome da loja que vendeu cada compra (o mecânico confere a ativação na revisão).
+    const idsLojaVenda = [...new Set(garantias.map((g) => g.lojaId).filter(Boolean) as string[])];
+    const lojasVenda = idsLojaVenda.length ? await prisma.loja.findMany({ where: { id: { in: idsLojaVenda } }, select: { id: true, store_name: true } }) : [];
+    const nomeLojaVenda: Record<string, string> = Object.fromEntries(lojasVenda.map((l) => [l.id, l.store_name]));
     const garantiasOut = garantias.map((g) => ({
       ...g,
+      lojaNome: g.lojaId ? (nomeLojaVenda[g.lojaId] || null) : null,
       cliente,
       veiculo,
       pneus: ordenarPneus(pneusPorGarantia[g.id] || []).map((p) => ({
@@ -632,7 +637,7 @@ router.post('/garantias', async (req, res) => {
     const errosFoto = (await Promise.all([
       validarFoto(vei.fotoBase64, 'veículo'),
       validarFoto(vei.fotoOdometroBase64, 'odômetro'),
-      ...(Boolean(vei.semEtiquetaOleo) ? [] : [validarFoto(vei.etiquetaOleoBase64, 'etiqueta de óleo')]),
+      ...(Boolean(vei.semEtiquetaOleo) || Boolean(vei.eletrico) ? [] : [validarFoto(vei.etiquetaOleoBase64, 'etiqueta de óleo')]),
       // Carro em cima da máquina/rampa de alinhamento (app 1.1.5+). Obrigatória no app;
       // OPCIONAL aqui porque apps antigos não mandam — se vier, passa pela mesma trava.
       validarFoto(vei.fotoAlinhamentoBase64, 'carro no alinhamento'),
@@ -657,7 +662,13 @@ router.post('/garantias', async (req, res) => {
 
     // Etiqueta de óleo → base do cálculo de km/dia (motor de notificação). Só usa se
     // o operador NÃO marcou "sem etiqueta" e os dados forem coerentes.
-    const semEtiquetaOleo = Boolean(vei.semEtiquetaOleo);
+    // 1.1.6: carro ELÉTRICO não tem troca de óleo = tratado como "sem etiqueta" (lembrete
+    // pelo fallback de dias) e o km do odômetro tem que vir digitado.
+    const eletrico = Boolean(vei.eletrico);
+    if (eletrico && !(String(vei.km ?? '').trim() !== '' && km > 0)) {
+      return res.status(400).json({ error: 'Carro elétrico: digite o km do odômetro.' });
+    }
+    const semEtiquetaOleo = eletrico || Boolean(vei.semEtiquetaOleo);
     const oleoData = /^\d{4}-\d{2}-\d{2}$/.test(String(vei.oleoData || '')) ? String(vei.oleoData) : '';
     const oleoKm = Number(vei.oleoKm) || 0;
     // km que a PRÓPRIA ETIQUETA indica pra próxima troca (lido do adesivo) — informativo,
@@ -697,6 +708,8 @@ router.post('/garantias', async (req, res) => {
       oleoKm: semEtiquetaOleo ? 0 : oleoKm,
       oleoProximaTrocaKm: semEtiquetaOleo ? null : oleoProximaTrocaKm,
       semEtiquetaOleo,
+      // Só liga (app antigo não manda o campo e não pode desligar o de um carro já elétrico).
+      ...(eletrico ? { eletrico: true } : {}),
       kmPorDia,
       ...(fotoUrl ? { fotoUrl } : {}),
       ...(fotoOdometroUrl ? { fotoOdometroUrl } : {}),
@@ -980,7 +993,10 @@ router.post('/revisoes', async (req, res) => {
     // Etiqueta de óleo em TODA revisão (igual na ativação) — é essa data/km que vira a
     // NOVA referência pra calcular km/dia e agendar a próxima notificação. Só dispensa
     // quem já nasceu sem etiqueta.
-    const semEtiquetaOleo = Boolean(veiculo?.semEtiquetaOleo);
+    // 1.1.6: carro elétrico (do cadastro ou marcado agora na revisão) = sem etiqueta de óleo.
+    const marcouEletricoAgora = Boolean(b.eletrico) && !veiculo?.eletrico;
+    const eletrico = Boolean(veiculo?.eletrico) || Boolean(b.eletrico);
+    const semEtiquetaOleo = eletrico || Boolean(veiculo?.semEtiquetaOleo);
     if (!semEtiquetaOleo) {
       if (!/^\d{4}-\d{2}-\d{2}$/.test(String(b.oleoData || ''))) return res.status(400).json({ error: 'Informe a data da etiqueta de óleo (obrigatória).' });
       if (!Number.isFinite(Number(b.oleoKm)) || Number(b.oleoKm) <= 0) return res.status(400).json({ error: 'Informe o km da etiqueta de óleo (obrigatório).' });
@@ -1134,6 +1150,7 @@ router.post('/revisoes', async (req, res) => {
       where: { id: veiculoId },
       data: {
         kmAtual: km, kmPorDia,
+        ...(marcouEletricoAgora ? { eletrico: true, semEtiquetaOleo: true, oleoData: '', oleoKm: 0, oleoProximaTrocaKm: null } : {}),
         ...(semEtiquetaOleo ? {} : { oleoData: novaOleoData, oleoKm: novaOleoKm, oleoProximaTrocaKm: novaOleoProximaTrocaKm }),
         ...(etiquetaOleoUrl ? { etiquetaOleoUrl } : {}),
       },

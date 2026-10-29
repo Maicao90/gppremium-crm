@@ -6,6 +6,7 @@ import express from 'express';
 import jwt from 'jsonwebtoken';
 import { chaveDoFluxo, ehChaveAnthropic, extrairEstruturadoAnthropic } from '../services/llmAnthropic';
 import { CATALOGO_FLUXO, GRUPOS_FLUXO, CategoriaFluxo } from '../data/fluxoCatalogo';
+import { rotaLerFoto } from './lerFoto';
 
 // CEREBRO DO ROBO (22/10, pedido do dono): ensinamentos ("quando o cliente X, faca Y") que o dono escreve no painel
 // ou aprova a partir da revisao diaria das conversas (scripts/cerebro-revisao.ts). O robo so muda com aprovacao do
@@ -594,6 +595,9 @@ export async function montarMapa() {
 
 export function rotasCerebro(urlGerarResposta: string): express.Router {
   const r = express.Router();
+  // Leitura automática de DOT/odômetro pela foto (app GP Premium 1.1.6). Antes do bloqueio abaixo:
+  // vale pro mecânico (módulo garantia50k), não só pra quem mexe no cérebro. Ver lerFoto.ts.
+  r.post('/ler-foto', rotaLerFoto);
   r.use((req, res, next) => {
     const u = usuarioDoToken(req);
     if (!u) return res.status(401).json({ error: 'Não autenticado.' });
