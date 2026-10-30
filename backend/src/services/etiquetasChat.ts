@@ -5,7 +5,7 @@ import path from 'path';
 // etiqueta e criada ou colocada/tirada de uma conversa; aqui fica guardado em arquivo. Etiqueta aplicada ANTES desta versao
 // so aparece se a atendente mexer nela de novo.
 const ARQUIVO = path.resolve(__dirname, '../../data/etiquetas-chat.json');
-const NOME_VENDIDO = /vend|comprou|compra|fechou|fechad/i;
+const NOME_VENDIDO = /finalizad|vend|comprou|compra|fechou|fechad/i;
 
 // 30/10: o WhatsApp manda o codigo da etiqueta mesmo quando o nome nao chega. Na Josy a laranja de vendido e a 51 (conferido em 4 conversas de quem comprou).
 const IDS_VENDIDO: Record<string, string[]> = { "34268c16-7bed-400a-bf1e-a3d9e37d8774": ["51"] };
