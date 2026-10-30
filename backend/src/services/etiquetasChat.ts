@@ -7,6 +7,9 @@ import path from 'path';
 const ARQUIVO = path.resolve(__dirname, '../../data/etiquetas-chat.json');
 const NOME_VENDIDO = /vend|comprou|compra|fechou|fechad/i;
 
+// 30/10: o WhatsApp manda o codigo da etiqueta mesmo quando o nome nao chega. Na Josy a laranja de vendido e a 51 (conferido em 4 conversas de quem comprou).
+const IDS_VENDIDO: Record<string, string[]> = { "34268c16-7bed-400a-bf1e-a3d9e37d8774": ["51"] };
+
 type Conta = { etiquetas: Record<string, { nome: string; cor?: number }>; chats: Record<string, string[]> };
 let dados: Record<string, Conta> | null = null;
 
@@ -53,7 +56,7 @@ export function chatVendido(usuarioId: string, chatJid: string, numero?: string 
   const final8 = String(numero || '').replace(/\D/g, '').slice(-8);
   for (const [chat, ids] of Object.entries(c.chats)) {
     const mesmo = chat === chatJid || (final8.length === 8 && chat.split('@')[0]?.split(':')[0]?.endsWith(final8));
-    if (mesmo && ids.some((id) => NOME_VENDIDO.test(c.etiquetas[id]?.nome || ''))) return true;
+    if (mesmo && ids.some((id) => IDS_VENDIDO[usuarioId]?.includes(id) || NOME_VENDIDO.test(c.etiquetas[id]?.nome || ''))) return true;
   }
   return false;
 }

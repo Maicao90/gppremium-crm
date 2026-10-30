@@ -1096,6 +1096,8 @@ function iniciarRemarketingRobo() {
           // e a etiqueta de vendido que a atendente colocou no WhatsApp.
           if (lista.filter((m) => !m.fromMe).slice(0, 15).some((m) => REMARKETING_FECHOU.test(String(m.texto || '')))) continue;
           if (chatVendido(conta.id, chatJid, lista.find((m) => m.numeroReal)?.numeroReal)) continue;
+          // Loja ja pediu a avaliacao no Google = cliente comprou, mesmo sem etiqueta.
+          if (lista.some((m) => m.fromMe && /da\.gd\/gp-avaliar/.test(String(m.texto || '')))) continue;
           // 27-28/10 (Josy + dono): (a) candidato a vaga / curriculo nunca recebe o 🙋 (candidato recebeu 28/10 08:05 e o robo
           // ainda perguntou o carro); (b) conversa que a ATENDENTE atendeu e dela: se a ultima fala da loja (tirando o proprio
           // 🙋 e a saudacao automatica) foi de uma pessoa, o robo nao puxa — casos Erisvaldo ("esta pausado, mas enviando a 🙋"),
