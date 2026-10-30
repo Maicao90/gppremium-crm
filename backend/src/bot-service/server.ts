@@ -504,9 +504,12 @@ app.post('/gerar-resposta', async (req, res) => {
     // pela tabela. Sem isso a IA livre respondia "pode repetir, por favor?". Sem medida na retomada, segue normal.
     {
       const ultimaDaLoja = String([...anteriores].reverse().find((m: any) => m?.role === 'assistant')?.content || '');
-      const AFIRMATIVO = /^(sim|s|ss|sim sim|quero|quero sim|sim quero|preciso|preciso sim|sim preciso|ainda preciso|ainda estou precisando|t[oô] precisando|estou precisando|t[oô] sim|pode ser|pode|pode sim|manda|pode mandar|me passa|passa|claro|claro que sim|isso|opa|uhum|aham|yes|ok|blz|beleza|bora|tenho interesse|tenho sim)[\s!.,😊👍🙏]*$/i;
-      if (/Ainda está precisando\?/i.test(ultimaDaLoja) && rajada.length && rajada.every((t: string) => AFIRMATIVO.test(String(t).trim()))) {
-        const medidaRetomada = extrairMedidasDoTexto(ultimaDaLoja)[0];
+      const AFIRMATIVO = /^(sim|s|ss|sim sim|quero|quero sim|sim quero|preciso|preciso sim|sim preciso|ainda preciso|ainda estou precisando|t[oô] precisando|estou precisando|t[oô] sim|pode ser|pode|pode sim|manda|pode mandar|me passa|passa|claro|claro que sim|isso|opa|uhum|aham|yes|ok|blz|beleza|bora|vamos|vamos sim|tenho interesse|tenho sim)[\s!.,😊👍🙏]*$/i;
+      // 30/10 (Fernando De Jesus): "Bom dia" + "Vamos sim" a "Vamos seguir com o seu orçamento?" recebia a mesma pergunta de volta.
+      const CUMPRIMENTO = /^(bom dia|boa tarde|boa noite|oi|ol[aá]|opa)[\s!.,😊👍🙏]*$/i;
+      const respostaSemCumprimento = rajada.filter((t: string) => !CUMPRIMENTO.test(String(t).trim()));
+      if (/Ainda está precisando\?|Vamos seguir com o seu orçamento\?/i.test(ultimaDaLoja) && respostaSemCumprimento.length && respostaSemCumprimento.every((t: string) => AFIRMATIVO.test(String(t).trim()))) {
+        const medidaRetomada = extrairMedidasDoTexto(ultimaDaLoja)[0] || dadosPrecoAtuais.medida || medidaDoHistorico(anteriores);
         if (medidaRetomada) {
           console.log(`[BotService] retomada: "${rajada.join(' / ')}" -> medida ${medidaRetomada} da mensagem da loja`);
           rajada.splice(0, rajada.length, medidaRetomada);
@@ -627,10 +630,24 @@ app.post('/gerar-resposta', async (req, res) => {
     let instrucaoCerebro = '';
     // Sem mensagem nova do cliente (a loja ja falou depois da ultima dele): ensinamento nao casa com mensagem velha (28/10, monologo).
     if (!temMidiaSemTexto && gatilho.trim() && rabo.length > 0) {
-      const licoes = licoesAtivasDaLoja(lojaBot?.nome);
+      // 30/10: retomada automatica nao responde mensagem do cliente (Marcos deu o carro e recebeu "Ainda posso te ajudar?");
+      // pergunta de preco sem citar concorrente nao e "achou mais barato" ("Qual valor unidade").
+      const textoRajada = rajada.join(' ');
+      const perguntouPreco = /\b(qual|quanto|valor|pre[cç]o)\b/i.test(textoRajada);
+      const citouConcorrente = /barat|outr[ao]s? loja|internet|an[uú]ncio|concorr|mercado livre|magazine|or[cç]amentos/i.test(textoRajada);
+      const licoes = licoesAtivasDaLoja(lojaBot?.nome).filter((x) => !/n[aã]o responde [aà] pergunta/i.test(x.situacao) && !(perguntouPreco && !citouConcorrente && /mais barato/i.test(x.situacao)));
       if (licoes.length) {
         const ctx = anteriores.slice(-6).map((m: any) => `${m.role === 'user' ? 'CLIENTE' : 'LOJA'}: ${semExemplos(String(m.content || '')).slice(0, 300)}`).join('\n');
-        const l = await casarLicao(rajada.length ? rajada : [gatilho], ctx, licoes);
+        const casada = await casarLicao(rajada.length ? rajada : [gatilho], ctx, licoes);
+        // 30/10 (Ezilene mandou "215/55/17" e ouviu "me passa a medida"): medida da tabela na mensagem vale mais que ensinamento
+        // de texto — o preco sai do fluxo. "atendente" e "silencio" continuam valendo (ex.: pneu off-road vai pra atendente).
+        const medidaNaMensagem = [medidaJuntada, ...medidasEscritas].some((m) => !!m && encontrarPrecosExatosPorMedida(m).length > 0);
+        const textoFalado = medidaNaMensagem && (casada?.acao === 'responder' || casada?.acao === 'orientar');
+        // 30/10 (Consultor MS: 3x o mesmo audio da marca): ensinamento que a loja ja mandou nas ultimas mensagens nao repete.
+        const faladoAntes = anteriores.filter((m: any) => m?.role === 'assistant').slice(-8).map((m: any) => String(m?.content || ''));
+        const jaDita = casada?.acao === 'responder' && partesDaLicao(casada, false).some((p) => faladoAntes.includes(p));
+        const l = casada && !textoFalado && !jaDita ? casada : null;
+        if (casada && !l) console.log(`[BotService][Cerebro] ensinamento ${casada.id} nao usado (${textoFalado ? 'tem medida' : 'ja dito'}).`);
         if (l) {
           console.log(`[BotService][Cerebro] ensinamento ${l.id} (${l.acao}): ${l.situacao}`);
           if (!req.body?.simular && !req.body?.teste) registrarUso(l.id);
@@ -646,7 +663,9 @@ app.post('/gerar-resposta', async (req, res) => {
     }
     // Toda mensagem com texto passa pela leitura (23/09, "mais fechado"): antes um filtro de palavras-chave
     // (podeSerSobrePreco) mandava "oi", "é nacional?" e oferta de fornecedor direto pra IA livre.
-    if (!temMidiaSemTexto && gatilho.trim() && !instrucaoCerebro) {
+    // 30/10: ensinamento "orientar" nao pula mais a leitura (Aldo: "A vista tem desconto?" caiu na IA livre e ela negou o desconto
+    // em dinheiro). O fluxo responde o que tem bloco; a orientacao so vale pro que sobrar pra IA livre.
+    if (!temMidiaSemTexto && gatilho.trim()) {
       const apiKeyFluxo = chaveDoFluxo();
       motivoLivre = apiKeyFluxo ? 'leitura_falhou' : 'sem_chave_openai';
       if (apiKeyFluxo) {
@@ -815,6 +834,13 @@ app.post('/gerar-resposta', async (req, res) => {
             const partesDoFluxo = req.body?.audioFluxo === true
               ? decisao.partes
               : decisao.partes.filter((p: string) => !/^\[ENVIAR_AUDIO:[^\]]+\]$/i.test(p.trim()));
+            // 30/10 (dono: "nao convence o cliente a comprar"): o preco terminava seco, sem proximo passo. Preco puro ganha a
+            // pergunta que leva ao fechamento; o corte de repeticao (Josy 28/10) impede de sair duas vezes.
+            if (decisao.chaves.length === 1 && decisao.chaves[0] === 'preco_medida') {
+              partesDoFluxo.push((decisao.novosDados as any)?.quantidade
+                ? 'Quando você consegue passar aqui na loja pra gente fazer a troca?'
+                : 'Quantos pneus você vai precisar? A montagem é grátis na compra 😉');
+            }
             return res.json({
               partes: partesDoFluxo,
               deterministico: true,
@@ -951,6 +977,18 @@ app.post('/gerar-resposta', async (req, res) => {
     // modelo/ano/marca preferida/servico adicional depois do preco — achado em 4
     // conversas reais no mesmo dia mesmo com a regra explicita no prompt.
     partesFinais = removerReperguntaPosPreco(partesFinais);
+
+    // TRAVA DE COMPORTAMENTO 8 (30/10, dono: "pergunta o carro depois do cliente ja ter passado a medida"; Itamar e Lordes):
+    // com medida da tabela conhecida, a IA livre nao pergunta carro/uso — o preco sai da tabela.
+    {
+      const medidaConhecida = [dadosPrecoAtuais.medida, medidaDoHistorico(anteriores)].find((m) => !!m && encontrarPrecosExatosPorMedida(m).length > 0);
+      const PEDE_CARRO = /(qual|que)\s+(é\s+o\s+|e\s+o\s+)?(seu\s+)?(carro|ve[ií]culo)\b|em qual carro|modelo do (seu )?carro|na cidade, na estrada|mais na cidade/i;
+      if (medidaConhecida && partesFinais.some((p: string) => PEDE_CARRO.test(p))) {
+        const cotacao = decidirSequenciaPreco([{ intencao: 'DAR_MEDIDA', medidaExtraida: medidaConhecida, quantidadeExtraida: dadosPrecoAtuais.quantidade ?? null, escolhaAlternativa: null } as any], 'preco_confirmado', dadosPrecoAtuais, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas: [], lojaFalouHaPouco: true });
+        console.error(`[BotService][TRAVA DE COMPORTAMENTO] IA livre perguntou o carro com a medida ${medidaConhecida} ja conhecida — cotando pela tabela.`);
+        if (cotacao.partes.length) partesFinais = cotacao.partes;
+      }
+    }
 
     // TRAVA DE COMPORTAMENTO 5 (19/09): o robo nao envia foto e nunca pode dizer que vai enviar
     // ("segue foto do pneu" sem mandar nada). Corta a promessa; se sobrar nada, chama pra ver o

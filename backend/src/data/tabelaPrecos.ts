@@ -610,10 +610,17 @@ export function extrairMedidasDoTexto(texto: string): string[] {
   const achadas = new Set<string>();
   // Aceita: 175/60/14, 175/60-14, 175/60 14, 175/60 R14, 175/60 ARO 14,
   // 175 60 14, 175.60.14, 175,60,14, 175x60x14 — e as versoes vindas de audio.
-  const regex = /\b(\d{3})\s*[\/\-\s.,X]\s*(\d{2})\s*[\/\-\s.,X]*\s*(?:R|ARO)?\s*(\d{2})\b/g;
+  // 30/10: colada na palavra ("pneu185/65/14") e "205/50 roda 17" tambem valem.
+  const regex = /(?<!\d)(\d{3})\s*[\/\-\s.,X]\s*(\d{2})\s*[\/\-\s.,X]*\s*(?:R|ARO|RODA)?\s*(\d{2})\b/g;
   let match: RegExpExecArray | null = null;
   while ((match = regex.exec(base))) {
     achadas.add(`${match[1]}/${match[2]}/${match[3]}`);
+  }
+  // 30/10: tudo junto ("2656018") so vale se a mensagem e so isso e a tabela tem a medida (nao confunde com telefone).
+  const colada = /^\D{0,12}(\d{3})(\d{2})(\d{2})\D{0,12}$/.exec(base);
+  if (colada) {
+    const medida = `${colada[1]}/${colada[2]}/${colada[3]}`;
+    if (TABELA_PRECOS_GP.some((i) => i.medida === medida)) achadas.add(medida);
   }
   // ARO ANTES DA MEDIDA (05/09, achado real): cliente escreve "aro 16 205/55" — o aro
   // ANTES da largura/perfil, ordem que o regex principal nao cobre (ele so aceita aro

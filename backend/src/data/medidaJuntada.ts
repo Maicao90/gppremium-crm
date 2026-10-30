@@ -35,7 +35,7 @@ const RE_LP = new RegExp(`(?<![\\d$.,])${LP}\\s*[/\\\\\\-xX]\\s*${PERFIL}(?![\\d
 // "195/55" sozinho na mensagem (pode ter "pneu"/"medida" e pontuacao em volta).
 const RE_SO_LP = new RegExp(`^\\s*(?:(?:o|um|uma|pneu|pneus|medida|e|é|eh|:)\\s*)*${LP}\\s*[/\\\\\\-.,xX ]\\s*${PERFIL}\\s*[.!?]*\\s*$`, 'i');
 const ARO = '(1[2-9]|2[0-4])';
-const RE_ARO = new RegExp(`\\baro\\s*:?\\s*${ARO}\\b`, 'i');
+const RE_ARO = new RegExp(`\\b(?:aro|roda)\\s*:?\\s*${ARO}\\b`, 'i');
 const RE_ARO_R = new RegExp(`(?<![\\w$])r\\s?${ARO}\\b`, 'i');
 const RE_SO_NUMERO_ARO = new RegExp(`^\\s*(?:aro\\s*)?${ARO}\\s*[.!?]*\\s*$`, 'i');
 
