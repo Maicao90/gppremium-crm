@@ -658,8 +658,11 @@ app.post('/gerar-resposta', async (req, res) => {
         // 30/10 (Consultor MS: 3x o mesmo audio da marca): ensinamento que a loja ja mandou nas ultimas mensagens nao repete.
         const faladoAntes = anteriores.filter((m: any) => m?.role === 'assistant').slice(-8).map((m: any) => String(m?.content || ''));
         const jaDita = casada?.acao === 'responder' && partesDaLicao(casada, false).some((p) => faladoAntes.includes(p));
-        const l = casada && !textoFalado && !jaDita ? casada : null;
-        if (casada && !l) console.log(`[BotService][Cerebro] ensinamento ${casada.id} nao usado (${textoFalado ? 'tem medida' : 'ja dito'}).`);
+        // 30/10: silencio aprovado em lote ("a atendente ja esta conduzindo") nao cala cliente que perguntou algo de verdade.
+        const perguntaReal = /\?|\b(quanto|valor|pre[cç]o|medida|onde|aro|tem)\b|\d{3}/i.test(textoRajada);
+        const calariaPergunta = casada?.acao === 'silencio' && (casada as any).soSemPergunta === true && perguntaReal;
+        const l = casada && !textoFalado && !jaDita && !calariaPergunta ? casada : null;
+        if (casada && !l) console.log(`[BotService][Cerebro] ensinamento ${casada.id} nao usado (${textoFalado ? 'tem medida' : calariaPergunta ? 'cliente perguntou' : 'ja dito'}).`);
         if (l) {
           console.log(`[BotService][Cerebro] ensinamento ${l.id} (${l.acao}): ${l.situacao}`);
           if (!req.body?.simular && !req.body?.teste) registrarUso(l.id);
