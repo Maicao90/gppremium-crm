@@ -352,7 +352,7 @@ async function transcreverAudiosDoCliente(historico: any[], chatJid: string): Pr
       if (!doCliente && !audiosAtendente.includes(m)) continue;
       const arquivo = arquivoDaMidia(m);
       if (!arquivo) continue;
-      const texto = !doCliente || i >= ini ? await transcreverAudioLocal(arquivo) : transcricaoSalva(arquivo);
+      const texto = !doCliente || i >= ini ? await transcreverAudioLocal(arquivo, doCliente) : transcricaoSalva(arquivo);
       if (texto) { m.texto = doCliente ? texto : `(áudio da atendente) ${texto}`; m.__transcrito = true; }
       else if (doCliente && i >= ini) console.log(`[Bot IA] ${chatJid}: audio do cliente sem transcricao — o robo pede pra escrever.`);
     }
@@ -495,6 +495,7 @@ async function gerarRespostaViaBotService(args: {
   lojaBot?: { nome: string; telefone: string; horario: string; localizacao: string; localizacaoTexto: string } | undefined;
   minutosDesdeLocalizacao?: number | null;
   minutosDesdeUltimaDaLoja?: number | null;
+  audioNaRodada?: boolean;
 }): Promise<RespostaBotService> {
   const resposta = await fetch(`${BOT_SERVICE_URL}/gerar-resposta`, {
     method: 'POST',
@@ -971,6 +972,8 @@ async function executar(params: AgendarBotParams, versao: number) {
       lojaBot: cfgLoja.porLoja ? { nome: cfgLoja.NOME_LOJA, telefone: cfgLoja.TELEFONE, horario: cfgLoja.HORARIO, localizacao: cfgLoja.LOCALIZACAO, localizacaoTexto: cfgLoja.LOCALIZACAO_TEXTO || '' } : undefined,
       minutosDesdeLocalizacao,
       minutosDesdeUltimaDaLoja,
+      // 30/10: a mensagem nova do cliente veio de audio — medida ouvida e confirmada antes do preco.
+      audioNaRodada: (() => { const r = [...historico].reverse(); const f = r.findIndex((m: any) => m.fromMe); return (f < 0 ? r : r.slice(0, f)).some((m: any) => m.__transcrito); })(),
     });
 
     // 21/10 (GP): cliente pediu pneu que NAO esta na tabela. O robo so manda o audio "so um instante que vou

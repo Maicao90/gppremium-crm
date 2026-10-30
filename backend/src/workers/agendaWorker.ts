@@ -20,6 +20,8 @@ export async function ehLembreteDeCandidato(a: { criadoPorId: string; numero: st
     if (!String(a.observacoes || '').startsWith('robo-') && !LEMBRETE_AUTOMATICO.test(String(a.mensagem || ''))) return false;
     const final8 = String(a.numero || '').replace(/\D/g, '').slice(-8);
     if (final8.length < 8) return false;
+    // 30/10: etiqueta de vendido = lembrete automatico tambem nao sai.
+    if (require('../services/etiquetasChat').chatVendido(a.criadoPorId, '', final8)) return true;
     const msgs = await prisma.mensagem.findMany({
       where: { usuarioId: a.criadoPorId, timestamp: { gte: new Date(Date.now() - 30 * 86400_000) }, OR: [{ numeroReal: { contains: final8 } }, { chatJid: { contains: final8 } }] },
       select: { texto: true }, orderBy: { timestamp: 'desc' }, take: 200,

@@ -18,6 +18,7 @@ function getIo() {
 }
 import { agendarRespostaBotIA, pausarConversaBotIA, naoAtender, ehCandidatoAVaga } from './botAtendimentoService';
 import { configBotDaLoja, caminhoFotoFachada } from '../services/botLojas';
+import { registrarEtiqueta, registrarAssociacao, chatVendido } from '../services/etiquetasChat';
 
 // Pasta onde as mídias recebidas são salvas (servida estaticamente em /midias)
 const MIDIAS_DIR = path.join(__dirname, '../../public/midias');
@@ -1040,7 +1041,7 @@ iniciarVigiaRespostasPendentes();
 // Não manda se: já mandou o emoji depois da última fala do cliente, cliente disse que desistiu/já comprou, conversa
 // pausada (atendente assumiu, pneu fora da tabela, anti-loop), lista de não-atender/equipe, ou já tem agendamento
 // pendente pra esse número. Trava de volume por hora.
-const REMARKETING_FECHOU = /(n[aã]o (quero|preciso|tenho interesse)|sem interesse|desist|j[aá] comprei|comprei em outr|n[aã]o vou querer|pode cancelar|n[aã]o precisa mais)/i;
+const REMARKETING_FECHOU = /(n[aã]o (quero|preciso|tenho interesse)|sem interesse|desist|j[aá] (comprei|troquei|coloquei|resolvi|fiz a compra|realizei|fechei)|comprei (em|na|no) |n[aã]o vou querer|pode cancelar|n[aã]o precisa mais|momento n[aã]o|por enquanto n[aã]o|agora n[aã]o)/i;
 const remarketingEnvios = new Map<string, number[]>();
 let remarketingRodando = false;
 function minutosBR(hhmm: string): number { const m = /^(\d{1,2}):(\d{2})$/.exec(hhmm.trim()); return m ? Number(m[1]) * 60 + Number(m[2]) : -1; }
@@ -1091,7 +1092,10 @@ function iniciarRemarketingRobo() {
           const idade = agora - ultimaCliente.timestamp.getTime();
           if (idade < silencioMs || idade > idadeMaxMs) continue;
           if (lista.some((m) => m.fromMe && m.timestamp > ultimaCliente.timestamp && /🙋/.test(String(m.texto || '')))) continue; // ja puxou
-          if (REMARKETING_FECHOU.test(String(ultimaCliente.texto || ''))) continue;
+          // 30/10 (dono): olha as ultimas falas do cliente, nao so a ultima ("nao quero" seguido de "ok, obrigado" recebia a maozinha),
+          // e a etiqueta de vendido que a atendente colocou no WhatsApp.
+          if (lista.filter((m) => !m.fromMe).slice(0, 15).some((m) => REMARKETING_FECHOU.test(String(m.texto || '')))) continue;
+          if (chatVendido(conta.id, chatJid, lista.find((m) => m.numeroReal)?.numeroReal)) continue;
           // 27-28/10 (Josy + dono): (a) candidato a vaga / curriculo nunca recebe o 🙋 (candidato recebeu 28/10 08:05 e o robo
           // ainda perguntou o carro); (b) conversa que a ATENDENTE atendeu e dela: se a ultima fala da loja (tirando o proprio
           // 🙋 e a saudacao automatica) foi de uma pessoa, o robo nao puxa — casos Erisvaldo ("esta pausado, mas enviando a 🙋"),
@@ -1587,6 +1591,10 @@ export async function connectToWhatsApp(
   });
 
   sock.ev.on('creds.update', saveCreds);
+
+  // Etiquetas do WhatsApp Business (30/10): so le e guarda; nao muda nada na conexao nem no aparelho.
+  (sock.ev as any).on('labels.edit', (e: any) => { try { registrarEtiqueta(usuarioId, e); } catch (err: any) { console.error('[Etiquetas]', err?.message || err); } });
+  (sock.ev as any).on('labels.association', (e: any) => { try { registrarAssociacao(usuarioId, e); } catch (err: any) { console.error('[Etiquetas]', err?.message || err); } });
 
   // Captura os nomes dos contatos: mapa em memória (Caixa de Entrada) + tabela Contato
   // (busca do agendamento). O persistir roda em background pra não travar o evento.

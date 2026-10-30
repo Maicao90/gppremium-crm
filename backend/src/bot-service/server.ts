@@ -210,6 +210,11 @@ async function gerarRespostaViaOpenAI(args: {
   let promptBase = montarPromptAtendimentoBot(config);
   if (lb) {
     promptBase = promptBase.replace(/Borracharia Popular/g, lb.nome);
+    // 30/10: o prompt geral e da Borracharia (Novo Gama). Loja com config propria fala o proprio endereco e telefone
+    // (Itamar e Paulo Cesar ouviram Novo Gama da GP, que fica em Luziania).
+    if (lb.localizacaoTexto) promptBase = promptBase.replace(/em frente ao posto de gasolina Pont[aã]o 24h Lunabel,? Novo Gama-GO,? 520 - Lunabel/gi, String(lb.localizacaoTexto));
+    if (lb.telefone) promptBase = promptBase.replace(/61 3774-2114/g, String(lb.telefone));
+    if (/GP Premium/i.test(String(lb.nome))) promptBase = promptBase.replace(/- ALINHAMENTO:[^\n]*/, '- ALINHAMENTO: e feito aqui na nossa oficina; o valor e combinado direto com os meninos da oficina, aqui na loja. Nunca diga que a loja nao faz alinhamento.');
     if (lb.telefone) promptBase = promptBase.replace(/\(?61\)? ?3774-2114/g, lb.telefone);
   }
   const lojasTexto = args.lojas.length
@@ -499,16 +504,23 @@ app.post('/gerar-resposta', async (req, res) => {
         return res.json({ partes: textoFluxo(textosFluxo, 'agradecimento'), deterministico: true, acaoTipo: 'RESPONDER_AGRADECIMENTO', novoEstadoPreco: estadoPrecoAtual, novosDadosPreco: JSON.stringify(dadosPrecoAtuais), via: 'fluxo', assuntos: ['AGRADECEU_OU_ENCERROU'], chaves: ['agradecimento', 'retomada_negada'], rajada, simulado: !!req.body?.simular });
       }
     }
+    // 30/10: "nao" a confirmacao da medida ouvida no audio: pede escrita ou foto, nunca cota a medida errada.
+    {
+      const ultimaDaLojaConf = String([...anteriores].reverse().find((m: any) => m?.role === 'assistant')?.content || '');
+      if (/^Entendi \*?\d{3}\/\d{2}\/\d{2}\*?, é isso\?/.test(ultimaDaLojaConf) && rajada.length && rajada.every((t: string) => /^(n[aã]o+|nn|n|errado|n[aã]o [eé]( n[aã]o)?)[\s!.,]*$/i.test(String(t).trim()))) {
+        return res.json({ partes: ['Sem problema! Me manda a medida escrita ou uma foto da lateral do pneu, que eu te passo o valor certinho 😉'], deterministico: true, acaoTipo: 'PEDIR_MEDIDA', novoEstadoPreco: 'aguardando_medida', novosDadosPreco: JSON.stringify(dadosPrecoAtuais), via: 'fluxo', assuntos: ['MEDIDA_DE_AUDIO'], chaves: ['medida_audio_negada'], rajada, simulado: !!req.body?.simular });
+      }
+    }
     // 23/10 (retomada de clientes): "sim" / "quero" / "preciso" respondendo a mensagem de RETOMADA da loja
     // ("...os pneus 185/65/15. Ainda está precisando?") vale como se o cliente tivesse mandado essa medida -> preco
     // pela tabela. Sem isso a IA livre respondia "pode repetir, por favor?". Sem medida na retomada, segue normal.
     {
       const ultimaDaLoja = String([...anteriores].reverse().find((m: any) => m?.role === 'assistant')?.content || '');
-      const AFIRMATIVO = /^(sim|s|ss|sim sim|quero|quero sim|sim quero|preciso|preciso sim|sim preciso|ainda preciso|ainda estou precisando|t[oô] precisando|estou precisando|t[oô] sim|pode ser|pode|pode sim|manda|pode mandar|me passa|passa|claro|claro que sim|isso|opa|uhum|aham|yes|ok|blz|beleza|bora|vamos|vamos sim|tenho interesse|tenho sim)[\s!.,😊👍🙏]*$/i;
+      const AFIRMATIVO = /^(sim|s|ss|sim sim|quero|quero sim|sim quero|preciso|preciso sim|sim preciso|ainda preciso|ainda estou precisando|t[oô] precisando|estou precisando|t[oô] sim|pode ser|pode|pode sim|manda|pode mandar|me passa|passa|claro|claro que sim|isso|opa|uhum|aham|yes|ok|blz|beleza|bora|vamos|vamos sim|tenho interesse|tenho sim|[eé] isso|isso mesmo|exato|certo|correto|[eé] sim)[\s!.,😊👍🙏]*$/i;
       // 30/10 (Fernando De Jesus): "Bom dia" + "Vamos sim" a "Vamos seguir com o seu orçamento?" recebia a mesma pergunta de volta.
       const CUMPRIMENTO = /^(bom dia|boa tarde|boa noite|oi|ol[aá]|opa)[\s!.,😊👍🙏]*$/i;
       const respostaSemCumprimento = rajada.filter((t: string) => !CUMPRIMENTO.test(String(t).trim()));
-      if (/Ainda está precisando\?|Vamos seguir com o seu orçamento\?/i.test(ultimaDaLoja) && respostaSemCumprimento.length && respostaSemCumprimento.every((t: string) => AFIRMATIVO.test(String(t).trim()))) {
+      if (/Ainda está precisando\?|Vamos seguir com o seu orçamento\?|^Entendi \*?\d{3}\/\d{2}\/\d{2}\*?, é isso\?/i.test(ultimaDaLoja) && respostaSemCumprimento.length && respostaSemCumprimento.every((t: string) => AFIRMATIVO.test(String(t).trim()))) {
         const medidaRetomada = extrairMedidasDoTexto(ultimaDaLoja)[0] || dadosPrecoAtuais.medida || medidaDoHistorico(anteriores);
         if (medidaRetomada) {
           console.log(`[BotService] retomada: "${rajada.join(' / ')}" -> medida ${medidaRetomada} da mensagem da loja`);
@@ -623,6 +635,17 @@ app.post('/gerar-resposta', async (req, res) => {
           deterministico: true, acaoTipo: 'PEDIR_MEDIDA', novoEstadoPreco: 'aguardando_medida', novosDadosPreco: JSON.stringify(dadosTroca),
           via: 'fluxo', assuntos: ['INFORMOU_ARO'], chaves: ['pedir_medida_do_aro'], rajada, simulado: !!req.body?.simular,
         });
+      }
+    }
+    // 30/10 (dono: "passar as medidas que realmente foram pedidas"): medida que veio de AUDIO pode ter sido mal ouvida. Uma medida
+    // so = confirma antes do preco; a quantidade dita fica guardada pro preco sair certo depois do "sim".
+    if (req.body?.audioNaRodada === true && !temFoto) {
+      const ultimaLoja = String([...anteriores].reverse().find((m: any) => m?.role === 'assistant')?.content || '');
+      const doAudio = [...new Set([medidaJuntada, ...medidasEscritas].filter(Boolean))] as string[];
+      if (doAudio.length === 1 && doAudio[0] !== dadosPrecoAtuais.medida && !/é isso\?/.test(ultimaLoja)) {
+        const q = /\b(?:querer|quero|preciso de|levar?)\s+(\d{1,2})\b|\b(\d{1,2})\s*(?:unidades?|pneus?)\b/i.exec(rajada.join(' '));
+        const qtd = q ? Number(q[1] || q[2]) : 0;
+        return res.json({ partes: [`Entendi *${doAudio[0]}*, é isso?`], deterministico: true, acaoTipo: 'CONFIRMAR_MEDIDA', novoEstadoPreco: estadoPrecoAtual, novosDadosPreco: JSON.stringify({ ...dadosPrecoAtuais, ...(qtd > 0 && qtd <= 20 ? { quantidade: qtd } : {}) }), via: 'fluxo', assuntos: ['MEDIDA_DE_AUDIO'], chaves: ['confirmar_medida_audio'], rajada, simulado: !!req.body?.simular });
       }
     }
     // CEREBRO (22/10): ensinamento do dono que casa com a mensagem vale ANTES do fluxo (o dono manda).
