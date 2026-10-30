@@ -637,17 +637,6 @@ app.post('/gerar-resposta', async (req, res) => {
         });
       }
     }
-    // 30/10 (dono: "passar as medidas que realmente foram pedidas"): medida que veio de AUDIO pode ter sido mal ouvida. Uma medida
-    // so = confirma antes do preco; a quantidade dita fica guardada pro preco sair certo depois do "sim".
-    if (req.body?.audioNaRodada === true && !temFoto) {
-      const ultimaLoja = String([...anteriores].reverse().find((m: any) => m?.role === 'assistant')?.content || '');
-      const doAudio = [...new Set([medidaJuntada, ...medidasEscritas].filter(Boolean))] as string[];
-      if (doAudio.length === 1 && doAudio[0] !== dadosPrecoAtuais.medida && !/é isso\?/.test(ultimaLoja)) {
-        const q = /\b(?:querer|quero|preciso de|levar?)\s+(\d{1,2})\b|\b(\d{1,2})\s*(?:unidades?|pneus?)\b/i.exec(rajada.join(' '));
-        const qtd = q ? Number(q[1] || q[2]) : 0;
-        return res.json({ partes: [`Entendi *${doAudio[0]}*, é isso?`], deterministico: true, acaoTipo: 'CONFIRMAR_MEDIDA', novoEstadoPreco: estadoPrecoAtual, novosDadosPreco: JSON.stringify({ ...dadosPrecoAtuais, ...(qtd > 0 && qtd <= 20 ? { quantidade: qtd } : {}) }), via: 'fluxo', assuntos: ['MEDIDA_DE_AUDIO'], chaves: ['confirmar_medida_audio'], rajada, simulado: !!req.body?.simular });
-      }
-    }
     // CEREBRO (22/10): ensinamento do dono que casa com a mensagem vale ANTES do fluxo (o dono manda).
     // responder = o texto dele; atendente = "so um instante" + etiqueta; silencio = nao responde; orientar = a IA segue a orientacao.
     let instrucaoCerebro = '';
