@@ -214,6 +214,8 @@ async function gerarRespostaViaOpenAI(args: {
     // (Itamar e Paulo Cesar ouviram Novo Gama da GP, que fica em Luziania).
     if (lb.localizacaoTexto) promptBase = promptBase.replace(/em frente ao posto de gasolina Pont[aã]o 24h Lunabel,? Novo Gama-GO,? 520 - Lunabel/gi, String(lb.localizacaoTexto));
     if (lb.telefone) promptBase = promptBase.replace(/61 3774-2114/g, String(lb.telefone));
+    // 03/11 (dono): montagem por conta da loja SO no pneu GP Premium; outra marca a montagem e cobrada.
+    if (/GP Premium/i.test(String(lb.nome))) promptBase = promptBase.replace(/- MONTAGEM:[^\n]*/, '- MONTAGEM: por nossa conta SO na compra de pneu GP Premium. Pneu de outra marca: a montagem e cobrada, valor combinado com os meninos da oficina. Nunca diga que a montagem e gratis sem ser no GP Premium.');
     if (/GP Premium/i.test(String(lb.nome))) promptBase = promptBase.replace(/- ALINHAMENTO:[^\n]*/, '- ALINHAMENTO: e feito aqui na nossa oficina; o valor e combinado direto com os meninos da oficina, aqui na loja. Nunca diga que a loja nao faz alinhamento.');
     if (lb.telefone) promptBase = promptBase.replace(/\(?61\)? ?3774-2114/g, lb.telefone);
   }
@@ -854,7 +856,7 @@ app.post('/gerar-resposta', async (req, res) => {
             if (decisao.chaves.length === 1 && decisao.chaves[0] === 'preco_medida') {
               partesDoFluxo.push((decisao.novosDados as any)?.quantidade
                 ? 'Quando você consegue passar aqui na loja pra gente fazer a troca?'
-                : 'Quantos pneus você vai precisar? A montagem é grátis na compra 😉');
+                : 'Quantos pneus você vai precisar? A montagem do GP Premium é por nossa conta 😉');
             }
             return res.json({
               partes: partesDoFluxo,
