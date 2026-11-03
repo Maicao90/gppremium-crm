@@ -293,6 +293,17 @@ export function initWorker() {
               }
             }
 
+            // 03/11 (60 agendamentos "falhou"): a extensao salvou o codigo interno do WhatsApp (LID, 13-15 digitos, ex.:
+            // 3856964579359) no lugar do telefone. O telefone de verdade esta nas mensagens dessa conversa (numeroReal).
+            if (/^\d{13,15}$/.test(String(numeroEnvio)) && !String(numeroEnvio).startsWith("55")) {
+              const daConversa = await prisma.mensagem.findFirst({ where: { chatJid: `${numeroEnvio}@lid`, numeroReal: { not: null } }, orderBy: { timestamp: "desc" }, select: { numeroReal: true } }).catch(() => null);
+              const real = (String(daConversa?.numeroReal || "").split(":")[0] || "").replace(/\D/g, "");
+              if (real.length >= 12) {
+                console.log(`[Worker] Agendamento ${agendamento.id}: codigo interno ${numeroEnvio} -> telefone ${real}.`);
+                await prisma.agendamento.update({ where: { id: agendamento.id }, data: { numero: real } });
+                numeroEnvio = real;
+              }
+            }
             console.log(`[Worker] Disparando agendamento ${agendamento.id} para ${numeroEnvio} via Baileys (Simulando humano)...`);
 
             // Anexo de mídia (foto/vídeo/áudio/documento), se houver.
