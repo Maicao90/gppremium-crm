@@ -1903,8 +1903,17 @@ export async function enviarMensagem(
     // nunca marcamos "enviado" sem confirmar que dava pra entregar.
     if (!numero.includes('@')) {
       try {
-        const resultados = await sock.onWhatsApp(numero);
-        const info = resultados?.[0];
+        // 03/11 (18 agendamentos "nao tem WhatsApp"): celular antigo salvo sem o 9 (556184530202) e 55 repetido
+        // (5556193698335). Tenta o numero como veio e, se nao existir, as variantes corrigidas.
+        const candidatos = [numero];
+        let n = String(numero).replace(/\D/g, "");
+        if (/^5555\d{10,11}$/.test(n)) { n = n.slice(2); candidatos.push(n); }
+        if (/^55\d{2}[6-9]\d{7}$/.test(n)) candidatos.push(n.slice(0, 4) + "9" + n.slice(4));
+        let info: any = null;
+        for (const c of [...new Set(candidatos)]) {
+          const r = await sock.onWhatsApp(c);
+          if (r?.[0]?.exists) { info = r[0]; if (c !== numero) console.log(`[Baileys] Numero ${numero} corrigido para ${c}.`); break; }
+        }
         if (!info?.exists) {
           console.error(`[Baileys] ❌ Número ${numero} não tem WhatsApp — marcando como FALHA (não foi entregue).`);
           return false;
