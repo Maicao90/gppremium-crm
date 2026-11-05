@@ -490,6 +490,18 @@ app.post('/gerar-resposta', async (req, res) => {
         return jsonOriginal(body);
       };
     }
+    // 05/11 (dono: "se ele relutar manda vir ate a loja negociar pessoalmente"): depois de o robo ja ter dito
+    // "Nesse valor eu nao consigo", o cliente que insiste no preco e convidado pra negociar na loja.
+    {
+      const ultimasDaLoja = messages.filter((m: any) => m?.role === "assistant").slice(-6).map((m: any) => String(m?.content ?? ""));
+      const jaRecusou = ultimasDaLoja.some((t: string) => /Nesse valor eu n[aã]o consigo/i.test(t));
+      const insiste = /\b(faz|fazer|faria|consegue|deixa|sai|fecha|vende|pode ser)\b[^?]{0,30}\bpor\s*(r\$\s*)?(\d[\d.,]*|mil)\b|\b(baixa|abaixa|abaixar|baixar|melhora|melhorar|chora|desconto maior|mais desconto|menos que isso|[uú]ltim[oa] (pre[cç]o|proposta)|t[aá] caro|muito caro|mais barato)\b/i.test(rajada.join(" "));
+      if (jaRecusou && insiste) {
+        const onde = lojaBot?.localizacaoTexto ? ` A gente fica ${lojaBot.localizacaoTexto}.` : "";
+        console.log("[BotService] cliente insistiu no preco depois da recusa — convite pra negociar na loja.");
+        return res.json({ partes: [`Entendo! Então passa aqui na loja que pessoalmente a gente conversa e tenta chegar num acordo com você 😉${onde}`, "Quando você consegue vir?"], deterministico: true, acaoTipo: "NEGOCIAR_NA_LOJA", novoEstadoPreco: estadoPrecoAtual, novosDadosPreco: JSON.stringify(dadosPrecoAtuais), via: "fluxo", assuntos: ["NEGOCIAR"], chaves: ["negociar_na_loja"], rajada, simulado: !!req.body?.simular });
+      }
+    }
     // Candidato a vaga / curriculo em QUALQUER mensagem recente do cliente: o robo nao entra (28/10, candidato que
     // recebeu o 🙋 e depois "qual e o seu carro?"). O whatsapp-crm so olhava as mensagens novas.
     {
