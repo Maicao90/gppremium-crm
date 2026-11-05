@@ -1043,6 +1043,7 @@ iniciarVigiaRespostasPendentes();
 // pendente pra esse número. Trava de volume por hora.
 const REMARKETING_FECHOU = /(n[aã]o (quero|preciso|tenho interesse)|sem interesse|desist|j[aá] (comprei|troquei|coloquei|resolvi|fiz a compra|realizei|fechei)|comprei (em|na|no) |n[aã]o vou querer|pode cancelar|n[aã]o precisa mais|momento n[aã]o|por enquanto n[aã]o|agora n[aã]o)/i;
 const remarketingEnvios = new Map<string, number[]>();
+const MSG_NEGOCIAR_NA_LOJA = 'Se quiser, passa aqui na loja que pessoalmente a gente conversa sobre o valor e tenta chegar num acordo com você 😉';
 let remarketingRodando = false;
 function minutosBR(hhmm: string): number { const m = /^(\d{1,2}):(\d{2})$/.exec(hhmm.trim()); return m ? Number(m[1]) * 60 + Number(m[2]) : -1; }
 function agoraMinutosBR(): number {
@@ -1091,7 +1092,7 @@ function iniciarRemarketingRobo() {
           if (!ultimaCliente) continue;                                             // cliente nunca falou (nao e lead)
           const idade = agora - ultimaCliente.timestamp.getTime();
           if (idade < silencioMs || idade > idadeMaxMs) continue;
-          if (lista.some((m) => m.fromMe && m.timestamp > ultimaCliente.timestamp && /🙋/.test(String(m.texto || '')))) continue; // ja puxou
+          if (lista.some((m) => m.fromMe && m.timestamp > ultimaCliente.timestamp && (/🙋/.test(String(m.texto || '')) || m.texto === MSG_NEGOCIAR_NA_LOJA))) continue; // ja puxou
           // 30/10 (dono): olha as ultimas falas do cliente, nao so a ultima ("nao quero" seguido de "ok, obrigado" recebia a maozinha),
           // e a etiqueta de vendido que a atendente colocou no WhatsApp.
           if (lista.filter((m) => !m.fromMe).slice(0, 15).some((m) => REMARKETING_FECHOU.test(String(m.texto || '')))) continue;
@@ -1117,10 +1118,13 @@ function iniciarRemarketingRobo() {
             const agendado = await prisma.agendamento.count({ where: { criadoPorId: conta.id, status: 'pendente', numero: { contains: digitos.slice(-8) } } }).catch(() => 0);
             if (agendado > 0) continue;
           }
-          const ok = await enviarParteBotIA(conta.id, chatJid, numeroReal, rm.mensagem, 1500 + Math.floor(Math.random() * 1500));
+          // 05/11 (dono: "se passar o preco e ele nao responder manda vir ate a loja para negociar"): se a ultima fala da
+          // loja foi um preco, o puxao e o convite pra negociar pessoalmente, no lugar da maozinha.
+          const mensagemRm = ultimaFalaDaLoja && /R\$\s*\d/.test(String(ultimaFalaDaLoja.texto || '')) ? MSG_NEGOCIAR_NA_LOJA : rm.mensagem;
+          const ok = await enviarParteBotIA(conta.id, chatJid, numeroReal, mensagemRm, 1500 + Math.floor(Math.random() * 1500));
           if (ok) {
             envios.push(Date.now());
-            console.log(`[Remarketing] ${chatJid}: cliente quieto ha ${Math.round(idade / 3600_000)}h — mandei "${rm.mensagem}" (${envios.length}/${rm.maxPorHora} nesta hora).`);
+            console.log(`[Remarketing] ${chatJid}: cliente quieto ha ${Math.round(idade / 3600_000)}h — mandei "${mensagemRm}" (${envios.length}/${rm.maxPorHora} nesta hora).`);
             await delay(20_000 + Math.floor(Math.random() * 40_000));
           }
         }
