@@ -58,6 +58,8 @@ interface AgendarBotParams {
   // manda). Usado so pra decidir o TAMANHO da espera do debounce (achado 18/09).
   ultimoTipo?: string;
   ultimoTextoTemMedida?: boolean;
+  // Ultima mensagem e so um cumprimento ("Bom dia"): o cliente quase sempre manda a pergunta logo depois.
+  ultimoSoCumprimento?: boolean;
   // Quantas vezes esta rodada ja foi reagendada por chegar mensagem nova (trava contra ciclo).
   reagendamentos?: number;
 }
@@ -1199,7 +1201,11 @@ export async function agendarRespostaBotIA(params: AgendarBotParams) {
   // reais levou entre 8 e 25s (achado 18/09, caso do Gustavo Souza).
   const esperaMaiorAnuncioSemMedida = params.ultimoTipo === 'imagem' && !params.ultimoTextoTemMedida;
   // 22/10 (dono: "esta respondendo muito rapido"): ritmo de gente — 15 a 30 s antes de responder.
-  const espera = esperaMaiorAnuncioSemMedida
+  // 05/11 (dono: "robo tem que responder o que a pessoa perguntar"): "Bom dia" + 26 s depois "Eu ainda nao comprei
+  // as rodas 14" levou so "Vamos seguir com o seu orcamento?". So cumprimento espera mais, pra ler a pergunta junto.
+  const espera = params.ultimoSoCumprimento
+    ? 45000 + Math.floor(Math.random() * 15000)
+    : esperaMaiorAnuncioSemMedida
     ? 20000 + Math.floor(Math.random() * 10000)
     : 15000 + Math.floor(Math.random() * 15000);
   const timer = setTimeout(() => {

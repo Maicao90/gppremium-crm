@@ -1781,6 +1781,7 @@ export async function connectToWhatsApp(
           // pede mais tempo antes do bot responder).
           ultimoTipo: _tipoMsg,
           ultimoTextoTemMedida: /\d{3}\s*[\/\-]\s*\d{2}/.test(_textoMsg),
+          ultimoSoCumprimento: /^\s*(oi+e?|ol[aá]|opa|bom dia|boa tarde|boa noite|e a[ií]|tudo bem|tudo bom|blz|salve)[\s!.,?😊🙏👍]*$/i.test(_textoMsg),
         });
         return;
       }
