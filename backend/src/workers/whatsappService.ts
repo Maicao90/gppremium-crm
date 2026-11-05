@@ -1120,7 +1120,9 @@ function iniciarRemarketingRobo() {
           }
           // 05/11 (dono: "se passar o preco e ele nao responder manda vir ate a loja para negociar"): se a ultima fala da
           // loja foi um preco, o puxao e o convite pra negociar pessoalmente, no lugar da maozinha.
-          const mensagemRm = ultimaFalaDaLoja && /R\$\s*\d/.test(String(ultimaFalaDaLoja.texto || '')) ? MSG_NEGOCIAR_NA_LOJA : rm.mensagem;
+          // Olha todas as falas da loja depois da ultima do cliente: o preco costuma vir seguido de "Quantos pneus...?".
+          const passouPreco = lista.some((m) => m.fromMe && m.timestamp > ultimaCliente.timestamp && /R\$\s*\d/.test(String(m.texto || '')));
+          const mensagemRm = passouPreco ? MSG_NEGOCIAR_NA_LOJA : rm.mensagem;
           const ok = await enviarParteBotIA(conta.id, chatJid, numeroReal, mensagemRm, 1500 + Math.floor(Math.random() * 1500));
           if (ok) {
             envios.push(Date.now());
