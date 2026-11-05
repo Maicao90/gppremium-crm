@@ -851,6 +851,12 @@ app.post('/gerar-resposta', async (req, res) => {
             const partesDoFluxo = req.body?.audioFluxo === true
               ? decisao.partes
               : decisao.partes.filter((p: string) => !/^\[ENVIAR_AUDIO:[^\]]+\]$/i.test(p.trim()));
+            // 05/11 (dono: "robo tem que responder o que a pessoa perguntar"): "voce consegue fazer por mil reais os quatro"
+            // recebia so o desconto do dinheiro, sem dizer se aceitava o valor. Contraproposta ganha a resposta direta antes.
+            const contraproposta = /\b(faz|fazer|faria|consegue|deixa|deixar|sai|fecha|fechar|vende|vender|pode ser)\b[^?]{0,30}\bpor\s*(r\$\s*)?(\d[\d.,]*|mil|um mil)\b/i.test(rajada.join(" "));
+            if (contraproposta && partesDoFluxo.some((p: string) => /desconto|R\$/i.test(p)) && !partesDoFluxo.some((p: string) => /n[aã]o consigo/i.test(p))) {
+              partesDoFluxo.unshift("Nesse valor eu não consigo, mas o melhor preço que eu faço pra você é este 👇");
+            }
             // 30/10 (dono: "nao convence o cliente a comprar"): o preco terminava seco, sem proximo passo. Preco puro ganha a
             // pergunta que leva ao fechamento; o corte de repeticao (Josy 28/10) impede de sair duas vezes.
             if (decisao.chaves.length === 1 && decisao.chaves[0] === 'preco_medida') {
