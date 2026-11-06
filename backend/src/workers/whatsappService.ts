@@ -1501,6 +1501,67 @@ export async function connectToWhatsApp(
     } catch (e) { /* diagnóstico opcional; nunca derruba a conexão */ }
   }
 
+  // STATUS SEM ACK (Josy 04-06/11 — Baileys #2858 / PR #2866, ainda sem release): desde
+  // set/2026 o WhatsApp manda o status de alguns contatos como <status> no topo, e o rc13
+  // não tem handler pra ele. Sem ack o servidor fecha o stream ~50 min depois ("Stream
+  // Errored (ack)" class status) e reentrega o mesmo status na reconexão — a fila offline
+  // não termina e a conta fica "aberta" sem receber nada. Ack simples, sem código de erro
+  // (NACK deixa pendente). Mesmo formato do buildAckStanza do Baileys.
+  try {
+    let statusConfirmados = 0;
+    (sock.ws as any).on('CB:status', (node: any) => {
+      const a = node?.attrs || {};
+      if (!a.id) return;
+      const attrs: Record<string, string> = { id: a.id, class: 'status' };
+      if (a.from) attrs.to = a.from;
+      if (a.participant) attrs.participant = a.participant;
+      if (a.recipient) attrs.recipient = a.recipient;
+      if (a.type) attrs.type = a.type;
+      (sock as any).sendNode({ tag: 'ack', attrs }).catch(() => {});
+      statusConfirmados++;
+      if (statusConfirmados === 1 || statusConfirmados % 100 === 0) {
+        console.log(`[Baileys][Status] ${usuarioId}: ${statusConfirmados} <status> confirmado(s) nesta conexão${a.offline ? ' (offline)' : ''}.`);
+      }
+    });
+  } catch (e) { /* nunca derruba a conexão */ }
+
+  // OFFLINE EM LOTES (Baileys #2810): depois do offline_preview o rc13 pede UM offline_batch
+  // (100) e nunca pede o próximo. Com mais de 100 pendentes a entrega para e a conta fica
+  // conectada sem receber. Enquanto o <ib><offline> não chega, pede o próximo lote quando
+  // passam 5s sem chegar nada offline (máx. 50 pedidos). Conta normal recebe o <ib><offline>
+  // ~200ms depois do preview e nunca chega a pedir.
+  try {
+    let offlineConcluido = false;
+    let pedidosLote = 0;
+    let ultimoNoOffline = Date.now();
+    let timerLote: NodeJS.Timeout | null = null;
+    const pararLotes = () => { if (timerLote) { clearInterval(timerLote); timerLote = null; } };
+    (sock.ws as any).on('frame', (frame: any) => { if (frame?.attrs?.offline) ultimoNoOffline = Date.now(); });
+    (sock.ws as any).on('CB:ib,,offline', (node: any) => {
+      offlineConcluido = true;
+      pararLotes();
+      if (pedidosLote > 0) {
+        const qtd = (node?.content || []).find?.((c: any) => c?.tag === 'offline')?.attrs?.count;
+        console.log(`[Baileys][Offline] ${usuarioId}: fila offline concluída (${qtd ?? '?'}) depois de ${pedidosLote} pedido(s) extra de lote.`);
+      }
+    });
+    (sock.ws as any).on('CB:ib,,offline_preview', (node: any) => {
+      const prev = (node?.content || []).find?.((c: any) => c?.tag === 'offline_preview')?.attrs || {};
+      console.log(`[Baileys][Offline] ${usuarioId}: preview de pendentes ${JSON.stringify(prev)}`);
+      if (timerLote || offlineConcluido) return;
+      ultimoNoOffline = Date.now();
+      timerLote = setInterval(() => {
+        if (offlineConcluido || pedidosLote >= 50 || sessions.get(usuarioId) !== sock) { pararLotes(); return; }
+        if (Date.now() - ultimoNoOffline < 5000) return;
+        pedidosLote++;
+        ultimoNoOffline = Date.now();
+        console.log(`[Baileys][Offline] ${usuarioId}: fila offline parada — pedindo próximo lote (${pedidosLote}).`);
+        (sock as any).sendNode({ tag: 'ib', attrs: {}, content: [{ tag: 'offline_batch', attrs: { count: '100' } }] }).catch(() => pararLotes());
+      }, 1000);
+    });
+    (sock.ws as any).on('close', pararLotes);
+  } catch (e) { /* nunca derruba a conexão */ }
+
   // Salva a instância no mapa (e só agora libera a marca de "em andamento": daqui pra frente sessions.has vale)
   sessions.set(usuarioId, sock);
   conectandoAgora.delete(usuarioId);
