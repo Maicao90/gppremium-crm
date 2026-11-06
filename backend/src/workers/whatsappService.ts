@@ -1076,6 +1076,9 @@ function iniciarVigiaRecebimento() {
       where not m."fromMe" and m."chatJid" not like '%@g.us' and m.timestamp > now() - interval '7 days'
       group by 1, 2`;
     const agora = Date.now();
+    // Conta o silencio so a partir das 8h de hoje: a noite sem mensagem nao e pane.
+    const abertura = new Date(agora - 3 * 3600_000); abertura.setUTCHours(8, 0, 0, 0);
+    const aberturaUtc = abertura.getTime() + 3 * 3600_000;
     for (const l of linhas) {
       const uid = String(l.uid);
       const nome = String(l.nome || '').trim() || uid;
@@ -1083,7 +1086,7 @@ function iniciarVigiaRecebimento() {
       const mediaHora = Number(l.qtd7d) / (6 * 11); // ~6 dias úteis x 11h de loja
       const sock = sessions.get(uid);
       if (!sock || !connectedUsers.has(uid) || pausados.has(uid)) { contasSemReceber.delete(uid); continue; }
-      const silencioMin = (agora - ultima.getTime()) / 60_000;
+      const silencioMin = (agora - Math.max(ultima.getTime(), aberturaUtc)) / 60_000;
       if (mediaHora < VIGIA_RX_MIN_POR_HORA || silencioMin < VIGIA_RX_SILENCIO_MIN) {
         if (contasSemReceber.has(uid)) console.log(`[Vigia Recebimento] ${nome} (${uid}) voltou a receber (última ${ultima.toISOString()}).`);
         contasSemReceber.delete(uid);
