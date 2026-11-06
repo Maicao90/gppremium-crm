@@ -1119,6 +1119,7 @@ iniciarVigiaRecebimento();
 // pausada (atendente assumiu, pneu fora da tabela, anti-loop), lista de não-atender/equipe, ou já tem agendamento
 // pendente pra esse número. Trava de volume por hora.
 const REMARKETING_FECHOU = /(n[aã]o (quero|preciso|tenho interesse)|sem interesse|desist|j[aá] (comprei|troquei|coloquei|resolvi|fiz a compra|realizei|fechei)|comprei (em|na|no) |n[aã]o vou querer|pode cancelar|n[aã]o precisa mais|momento n[aã]o|por enquanto n[aã]o|agora n[aã]o)/i;
+const REMARKETING_SEM_A_MEDIDA = /n[aã]o (tem|temos|trabalha|trabalhamos)( com)? (essa|esta|a|esse|este) (medida|pneu)|n[aã]o temos (ela|essa)|fora do (nosso )?cat[aá]logo|n[aã]o (dispomos|temos) dess[ae]/i;
 const remarketingEnvios = new Map<string, number[]>();
 const MSG_NEGOCIAR_NA_LOJA = 'Se quiser, passa aqui na loja que pessoalmente a gente conversa sobre o valor e tenta chegar num acordo com você 😉';
 let remarketingRodando = false;
@@ -1199,6 +1200,10 @@ function iniciarRemarketingRobo() {
           // loja foi um preco, o puxao e o convite pra negociar pessoalmente, no lugar da maozinha.
           // Olha todas as falas da loja depois da ultima do cliente: o preco costuma vir seguido de "Quantos pneus...?".
           const passouPreco = lista.some((m) => m.fromMe && m.timestamp > ultimaCliente.timestamp && /R\$\s*\d/.test(String(m.texto || '')));
+          // 06/11 (Josy: "esta mandando 🙋 pro cliente — ele quer so 1 pneu do qual nao temos"): se a loja respondeu que NAO
+          // TEM a medida e nao passou preco de nenhuma outra, o puxao nao tem o que oferecer — nao manda.
+          const semAMedida = lista.some((m) => m.fromMe && m.timestamp > ultimaCliente.timestamp && REMARKETING_SEM_A_MEDIDA.test(String(m.texto || '')));
+          if (semAMedida && !passouPreco) continue;
           const mensagemRm = passouPreco ? MSG_NEGOCIAR_NA_LOJA : rm.mensagem;
           const ok = await enviarParteBotIA(conta.id, chatJid, numeroReal, mensagemRm, 1500 + Math.floor(Math.random() * 1500));
           if (ok) {
