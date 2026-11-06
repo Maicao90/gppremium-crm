@@ -377,6 +377,14 @@ export const CATALOGO_FLUXO: CategoriaFluxo[] = [
     partes: ['Tranquilo! Qualquer dúvida ou se quiser fechar, é só me chamar por aqui.'],
   },
   {
+    chave: 'agradecimento_atendente',
+    grupo: 'objecao',
+    titulo: 'Agradece numa conversa que a atendente assumiu',
+    quando: 'A atendente atendeu o cliente (a conversa fica dela por 12h) e ele fecha só agradecendo ou dizendo que vai olhar e entra em contato. O robô agradece UMA vez, só quando a atendente está há 10 min ou mais sem falar na conversa e o cliente não ficou esperando retorno ("fico no aguardo" — aí quem responde é ela).',
+    exemplos: ['obrigada vou olhar eu entro em contato com você', 'valeu, depois eu vejo', 'blz, obg'],
+    partes: ['Eu que agradeço! Fico no aguardo 😊'],
+  },
+  {
     chave: 'pedir_medida_repetida',
     grupo: 'preco',
     titulo: 'Pedir a medida (cliente não deu ainda)',

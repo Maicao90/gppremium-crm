@@ -1,9 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import { prisma } from '../server';
-import { decidirAntiLoop, JANELA_ECO_MS, MotivoAntiLoop, normalizarParaComparar } from '../data/comportamentoGuard';
+import { decidirAntiLoop, JANELA_ECO_MS, MotivoAntiLoop, normalizarParaComparar, pareceAgradecimento } from '../data/comportamentoGuard';
 import { JIDS_INTERNOS, numerosInternos } from '../services/contatosInternos';
-import { transcricaoDoAudioFluxo } from '../data/fluxoCatalogo';
+import { transcricaoDoAudioFluxo, textoFluxo } from '../data/fluxoCatalogo';
 import { configBotDaLoja, antesDoInicioDoRobo, caminhoFotoFachada } from '../services/botLojas';
 import { transcreverAudioLocal, transcricaoSalva, transcricaoLocalDisponivel } from '../services/transcricaoLocal';
 import { lerImagem } from '../services/leituraImagem';
@@ -274,6 +274,31 @@ async function enviarEmBolhas(params: AgendarBotParams, texto: string): Promise<
 
 // Mensagens que a loja manda sem ser uma pessoa atendendo: saudacao automatica do WhatsApp Business e o 🙋🏼‍♀️.
 const MSG_AUTOMATICA_DA_LOJA = /Seja bem-vindo\(a\)|^\s*🙋🏼‍♀️\s*$/;
+
+// 06/11 (dono): conversa que a atendente assumiu e o cliente fecha so agradecendo ("Obrigada vou olhar eu entro em
+// contato com voce") ficava sem resposta nenhuma. O robo agradece UMA vez — so quando a ultima fala nossa e da atendente
+// (o robo ainda nao falou depois dela), ela esta quieta ha 10+ min (nao atropela quem esta no meio do atendimento) e o
+// cliente NAO ficou esperando retorno ("fico no aguardo", "me avisa" = quem responde e ela). Texto no painel Fluxo.
+const DESPEDIDA_DO_CLIENTE = /obrigad|brigad|\bobg\b|\bobgd\b|\bobrg\b|grat[ao]\b|valeu|vlw|agradec|\btchau\b|at[eé] (mais|logo)|vou (olhar|ver|pensar|analisar|decidir)|entro em contato|te (chamo|aviso|falo|procuro)|depois eu (vejo|falo|passo|te chamo|volto)/i;
+const CLIENTE_ESPERA_RETORNO = /aguard|esperando|espero (o |a |seu |sua )?(retorno|resposta|contato)|me (avisa|chama|manda|passa|fala|retorna)|retorno/i;
+const ATENDENTE_QUIETA_MIN = 10;
+
+async function agradecerNaConversaDaAtendente(params: AgendarBotParams, historico: any[], humano: any, lojaId?: string | null): Promise<boolean> {
+  const ultimaNossa = [...historico].reverse().find((m: any) => m.fromMe);
+  if (ultimaNossa !== humano) return false;
+  if (Date.now() - new Date(humano.timestamp).getTime() < ATENDENTE_QUIETA_MIN * 60_000) return false;
+  const doCliente = historico.slice(historico.indexOf(humano) + 1).filter((m: any) => !m.fromMe);
+  if (!doCliente.length || doCliente.some((m: any) => m.tipo !== 'texto')) return false;
+  const texto = doCliente.map((m: any) => String(m.texto || '')).join(' ');
+  // "boa tarde" de despedida nao e "falou de horario" (pareceAgradecimento barra tarde/dia/hoje...).
+  const semCumprimento = texto.replace(/\b(bom dia|boa tarde|boa noite)\b/gi, ' ');
+  if (!pareceAgradecimento(semCumprimento) || !DESPEDIDA_DO_CLIENTE.test(texto) || CLIENTE_ESPERA_RETORNO.test(texto)) return false;
+  const partes = textoFluxo(await carregarTextosFluxo(lojaId), 'agradecimento_atendente');
+  if (!partes.length) return false;
+  console.log(`[Bot IA] ${params.chatJid}: conversa da atendente e o cliente so agradeceu ("${texto.slice(0, 60)}") — robo agradece uma vez.`);
+  for (const p of partes) { if (!(await enviarEmBolhas(params, p))) break; }
+  return true;
+}
 
 // 28/10 (dono: "quem fala de currículo e processo seletivo não precisa de remarketing"): + candidatar, processo seletivo,
 // entrevista, "vaga para/do/no...", oportunidade de trabalho/emprego. Usado tambem no remarketing e nos lembretes.
@@ -857,6 +882,7 @@ async function executar(params: AgendarBotParams, versao: number) {
           && !MSG_AUTOMATICA_DA_LOJA.test(String(m.texto || '')));
         if (humano) {
           console.log(`[Bot IA] ${params.chatJid}: atendente atendeu ${new Date((humano as any).timestamp).toISOString()} (< ${horas}h) — conversa e dela, robo nao entra.`);
+          await agradecerNaConversaDaAtendente(params, historico, humano, cfgLoja.lojaId).catch((e) => console.error('[Bot IA] falha no agradecimento da conversa da atendente:', (e as any)?.message || e));
           const ultimaCliente = [...historico].reverse().find((m: any) => !m.fromMe) as any;
           if (ultimaCliente?.timestamp) await marcarConversaTratada(params, new Date(ultimaCliente.timestamp)); // Vigia nao insiste
           return;
