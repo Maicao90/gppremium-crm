@@ -1034,6 +1034,80 @@ function iniciarVigiaRespostasPendentes() {
 }
 iniciarVigiaRespostasPendentes();
 
+// VIGIA DE RECEBIMENTO (06/11) — a conta pode ficar "Conexão aberta" e enviando normal, mas
+// SEM RECEBER nada (Josy: 04/11 11:38 → 05/11 12:29 e de novo 05/11 12:29 → 06/11). O painel
+// mostra conectado e o robô fica mudo porque nenhuma mensagem do cliente chega. A reconexão
+// automática (Stream Errored a cada ~50 min) NÃO resolve; só re-parear resolveu.
+// Aqui: em horário de loja, conta que costuma receber e está há VIGIA_RX_SILENCIO_MIN sem
+// nenhuma mensagem de cliente → 1) recicla o socket uma vez; 2) se continuar muda, avisa
+// (log + painel + WhatsApp pros números de ALERTA_RECEBIMENTO_NUMEROS, a cada 2h).
+const VIGIA_RX_SILENCIO_MIN = 40;
+const VIGIA_RX_MIN_POR_HORA = 4; // média de recebidas/h (7 dias, horário de loja) pra entrar na vigia
+export const contasSemReceber = new Map<string, { nome: string; desde: string; recicladoEm?: number; alertadoEm?: number }>();
+
+function horarioDeLojaBrasilia(): boolean {
+  const agora = new Date(Date.now() - 3 * 3600_000); // UTC-3
+  const h = agora.getUTCHours();
+  return agora.getUTCDay() !== 0 && h >= 8 && h < 19;
+}
+
+async function avisarContaSemReceber(uid: string, nome: string, desde: Date) {
+  const numeros = String(process.env.ALERTA_RECEBIMENTO_NUMEROS || '').split(',').map((s) => s.replace(/\D/g, '')).filter(Boolean);
+  const hhmm = new Date(desde.getTime() - 3 * 3600_000).toISOString().slice(11, 16);
+  const dia = new Date(desde.getTime() - 3 * 3600_000).toISOString().slice(8, 10) + '/' + new Date(desde.getTime() - 3 * 3600_000).toISOString().slice(5, 7);
+  const texto = `⚠️ CRM: o WhatsApp de ${nome} está conectado mas NÃO está recebendo mensagens desde ${dia} ${hhmm}. O robô não responde ninguém nesse número. Precisa reconectar o aparelho (gerar código novo).`;
+  getIo().emit('WHATSAPP_SEM_RECEBER', { usuarioId: uid, nome, desde: desde.toISOString() });
+  // Manda de outra conta conectada (a com problema também envia, mas usa ela só se não tiver outra).
+  const remetente = [...connectedUsers].find((u) => u !== uid && sessions.has(u) && !contasSemReceber.has(u)) || uid;
+  for (const n of numeros) {
+    await enviarMensagem(remetente, n, texto).catch(() => false);
+  }
+  console.log(`[Vigia Recebimento] ALERTA ${nome} (${uid}) sem receber desde ${desde.toISOString()} — avisado: ${numeros.length ? numeros.join(', ') : 'ninguém (ALERTA_RECEBIMENTO_NUMEROS vazio)'}.`);
+}
+
+function iniciarVigiaRecebimento() {
+  const varrer = async () => {
+    if (!horarioDeLojaBrasilia()) return;
+    const linhas: any[] = await prisma.$queryRaw`
+      select m."usuarioId" as uid, u.nome as nome,
+             max(m.timestamp) as ultima,
+             count(*) as qtd7d
+      from "Mensagem" m join "Usuario" u on u.id = m."usuarioId"
+      where not m."fromMe" and m."chatJid" not like '%@g.us' and m.timestamp > now() - interval '7 days'
+      group by 1, 2`;
+    const agora = Date.now();
+    for (const l of linhas) {
+      const uid = String(l.uid);
+      const nome = String(l.nome || '').trim() || uid;
+      const ultima = new Date(l.ultima);
+      const mediaHora = Number(l.qtd7d) / (6 * 11); // ~6 dias úteis x 11h de loja
+      const sock = sessions.get(uid);
+      if (!sock || !connectedUsers.has(uid) || pausados.has(uid)) { contasSemReceber.delete(uid); continue; }
+      const silencioMin = (agora - ultima.getTime()) / 60_000;
+      if (mediaHora < VIGIA_RX_MIN_POR_HORA || silencioMin < VIGIA_RX_SILENCIO_MIN) {
+        if (contasSemReceber.has(uid)) console.log(`[Vigia Recebimento] ${nome} (${uid}) voltou a receber (última ${ultima.toISOString()}).`);
+        contasSemReceber.delete(uid);
+        continue;
+      }
+      const est = contasSemReceber.get(uid) || { nome, desde: ultima.toISOString() };
+      contasSemReceber.set(uid, est);
+      if (!est.recicladoEm) {
+        est.recicladoEm = agora;
+        console.log(`[Vigia Recebimento] ${nome} (${uid}) há ${Math.round(silencioMin)} min sem receber (média ${mediaHora.toFixed(1)}/h) — reciclando a conexão.`);
+        try { sock.end(new Error('vigia-recebimento: conectado sem receber') as any); } catch {}
+        continue;
+      }
+      if (agora - est.recicladoEm < 25 * 60_000) continue; // dá tempo da reconexão trazer as mensagens
+      if (est.alertadoEm && agora - est.alertadoEm < 2 * 3600_000) continue;
+      est.alertadoEm = agora;
+      await avisarContaSemReceber(uid, nome, ultima);
+    }
+  };
+  setTimeout(() => { varrer().catch((e) => console.error('[Vigia Recebimento] erro:', e?.message || e)); }, 90_000).unref?.();
+  setInterval(() => { varrer().catch((e) => console.error('[Vigia Recebimento] erro:', e?.message || e)); }, 5 * 60_000).unref?.();
+}
+iniciarVigiaRecebimento();
+
 // ─── REMARKETING DO ROBÔ (21/10) ───
 // A equipe da GP manda o emoji 🙋🏼‍♀️ na mão pra quem parou de responder (223 envios em 30 dias; 62% voltaram a
 // falar em 2 dias). O robô faz o mesmo nas lojas com REMARKETING ativo (bot-lojas.json): a LOJA falou por último,
