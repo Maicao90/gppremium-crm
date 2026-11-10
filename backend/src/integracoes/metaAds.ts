@@ -195,6 +195,18 @@ export async function buscarMetricasDiarias(credenciais: CredenciaisMeta, dias =
   return metricas;
 }
 
+// "Saldo disponível (R$1.234,56 BRL)" -> 1234.56. Null quando a conta nao e pre-paga ou o texto nao traz o valor.
+function saldoPrePagoMeta(conta: any): number | null {
+  const fonte = conta?.funding_source_details;
+  if (!conta?.is_prepay_account && Number(fonte?.type) !== 20) return null;
+  const m = /R\$\s*([\d.,]+)/.exec(String(fonte?.display_string || ''));
+  if (!m) return null;
+  const bruto = m[1] as string;
+  const normal = bruto.lastIndexOf(',') > bruto.lastIndexOf('.') ? bruto.replace(/\./g, '').replace(',', '.') : bruto.replace(/,/g, '');
+  const valor = Number(normal);
+  return Number.isFinite(valor) ? Math.round(valor * 100) / 100 : null;
+}
+
 // Busca saldo e gasto do dia da CONTA (alimenta a tela "Saldos das Contas").
 // - saldo: spend_cap e amount_spent vêm em CENTAVOS; só há saldo calculável quando
 //   a conta tem limite de gastos (spend_cap > 0). Conta sem limite (pós-paga no
@@ -208,7 +220,7 @@ export async function buscarSaldoConta(credenciais: CredenciaisMeta): Promise<Sa
 
   // 1) Dados da conta: spend_cap / amount_spent (centavos) + moeda
   const paramsConta = new URLSearchParams({
-    fields: 'name,currency,amount_spent,spend_cap',
+    fields: 'name,currency,amount_spent,spend_cap,is_prepay_account,funding_source_details',
     access_token: credenciais.accessToken,
   });
   const jsonConta = await chamarGraph(`${GRAPH_BASE}/${conta}?${paramsConta.toString()}`);
@@ -216,7 +228,11 @@ export async function buscarSaldoConta(credenciais: CredenciaisMeta): Promise<Sa
   const spendCap = Number(jsonConta?.spend_cap ?? 0);
   const amountSpent = Number(jsonConta?.amount_spent ?? 0);
   // spend_cap = 0 (ou ausente) significa "sem limite de gastos" → saldo desconhecido
-  const saldo = spendCap > 0 ? Math.round(spendCap - amountSpent) / 100 : null;
+  // 10/11: conta PRE-PAGA (todas as do grupo GP): o saldo de verdade e o "Saldo disponivel (R$X BRL)" da forma de
+  // pagamento — spend_cap - amount_spent e o limite de gastos, nao o saldo (dava -0,01 em conta zerada e R$229 na
+  // Super Via, que tinha R$261).
+  const saldoPrePago = saldoPrePagoMeta(jsonConta);
+  const saldo = saldoPrePago !== null ? saldoPrePago : spendCap > 0 ? Math.round(spendCap - amountSpent) / 100 : null;
   const moeda = jsonConta?.currency ? String(jsonConta.currency) : undefined;
 
   // 2) Gasto de HOJE no nível da conta (insights sem level = conta inteira)

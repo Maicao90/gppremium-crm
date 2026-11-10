@@ -17,6 +17,7 @@ function getIo() {
   return require('../server').io;
 }
 import { agendarRespostaBotIA, pausarConversaBotIA, naoAtender, ehCandidatoAVaga } from './botAtendimentoService';
+import { ehSessaoCentral, tratarMensagemCentral } from '../central/comandos';
 import { configBotDaLoja, caminhoFotoFachada } from '../services/botLojas';
 import { registrarEtiqueta, registrarAssociacao, chatVendido } from '../services/etiquetasChat';
 
@@ -1781,6 +1782,13 @@ export async function connectToWhatsApp(
       // classico) e status@broadcast eram bloqueados. O robo respondia dentro de um canal,
       // que nao e conversa privada com cliente nenhum.
       if (!remoteJid || remoteJid.includes('@g.us') || remoteJid.includes('status@broadcast') || remoteJid.includes('@newsletter')) return; // ignorar grupos, canais e status
+
+      // Central de Trafego (10/11): o numero dedicado da central so conversa com os gestores — comando, sem robo,
+      // sem auto-resposta e sem Caixa de Entrada.
+      if (ehSessaoCentral(usuarioId)) {
+        if (!msg.key.fromMe) tratarMensagemCentral(usuarioId, msg).catch((e) => console.error('[Central] erro no comando:', (e as any)?.message || e));
+        return;
+      }
 
       const numero = remoteJid.split('@')[0];
       if (!numero) return;

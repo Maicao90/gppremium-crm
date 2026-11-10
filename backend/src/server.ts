@@ -30,6 +30,7 @@ import garantiaRouter from './routes/garantia';
 import garantiaAppRouter from './routes/garantiaApp';
 import olxRouter from './routes/olx';
 import { iniciarMonitorOlx } from './workers/olxWorker';
+import { iniciarCentralTrafego } from './central/comandos';
 import { seedAnuncios } from './seedAnuncios';
 import { seedStoresAndUsers } from './seedStoresAndUsers';
 import { initGarantiaPush } from './workers/garantiaPush';
@@ -113,6 +114,7 @@ async function iniciarCoreDoSistema() {
     console.log('[Core] Iniciando workers principais...');
     initWorker();
     initDisparoWorker(); // robô de disparo automático inteligente (30/dia entre 08:00 e 17:00)
+    iniciarCentralTrafego(); // Central de Trafego via WhatsApp (relatorio 8h, comandos, alertas de saldo)
     initSyncAds(); // sincronização periódica de Google Ads / Meta Ads
     initGarantiaPush(); // envio de push das notificações de garantia (cliente com app)
     iniciarMonitorOlx(); // monitor e watchdog de anúncios e chat da OLX
