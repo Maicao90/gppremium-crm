@@ -290,6 +290,12 @@ async function rodarRelatorioDiario() {
       registrarLog('relatorio_diario', { numero, dia: somarDias(hoje, -1), ok });
       if (ok) { const e = lerEstado(); e.relatorioDiario[numero] = hoje; gravarEstado(e); }
     }
+    // O relatorio ja traz a secao de alertas: conta em atencao/critico conta como avisada agora (o monitor nao
+    // repete o mesmo aviso minutos depois; so volta se piorar ou depois de repetirHoras).
+    const saldos = await saldosDasLojas(cfg);
+    const e = lerEstado();
+    for (const sd of saldos) if (sd.nivel === 'atencao' || sd.nivel === 'critico') e.alertas[sd.contaId] = { nivel: sd.nivel, enviadoEm: Date.now() };
+    gravarEstado(e);
   } catch (e: any) {
     console.error('[Central] erro no relatorio diario:', e?.message || e);
     registrarLog('erro', { etapa: 'relatorio_diario', erro: String(e?.message || e).slice(0, 200) });
