@@ -378,14 +378,16 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     parcelado: { x1: 479.41, x2: 484.62, x3: 489.82, x4: 495.03, x5: 500.24, x6: 505.44, x7: 510.65, x8: 515.85, x9: 521.06, x10: 526.26 },
     portaria: 30.00
   },
-  {
-    medida: '235/75/15',
-    modelo: 'ADVENTURE A/T',
-    categoria: 'pickup',
-    aVista: 489.00,
-    parcelado: { x1: 499.86, x2: 505.28, x3: 510.71, x4: 516.14, x5: 521.57, x6: 527.00, x7: 532.42, x8: 537.85, x9: 543.28, x10: 548.71 },
-    portaria: 50.00
-  },
+  // 10/11 (dono + Josy: "235/75/15 nao temos mais da GP"): fora da tabela — o cliente que pedir essa medida cai no
+  // "so um instante" + etiqueta "Robo: ver pneu" e a atendente assume. Voltando o estoque, e so descomentar.
+  // {
+  //   medida: '235/75/15',
+  //   modelo: 'ADVENTURE A/T',
+  //   categoria: 'pickup',
+  //   aVista: 489.00,
+  //   parcelado: { x1: 499.86, x2: 505.28, x3: 510.71, x4: 516.14, x5: 521.57, x6: 527.00, x7: 532.42, x8: 537.85, x9: 543.28, x10: 548.71 },
+  //   portaria: 50.00
+  // },
   {
     medida: '235/70/16',
     modelo: 'ADVENTURE ATR',
