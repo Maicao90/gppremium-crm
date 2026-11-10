@@ -79,6 +79,27 @@ async function conexoesDasLojas(lojas: LojaCentral[]): Promise<ConexaoLoja[]> {
   });
 }
 
+// ── Quais campanhas sao da LOJA ──
+// 10/11 (dono): so conta campanha de loja. As contas Meta das lojas tambem rodam low ticket ("Ou", "OU | SEMPRE
+// LIGADA", "PA"): na Meta a campanha tem que citar a loja no nome e nunca comecar com OU/PA. No Google as contas
+// sao so da loja (ex.: "[TE] PESQUISA" da Direcional): entra tudo, menos OU/PA.
+const LOW_TICKET = /^\s*(OU|PA)\b/;
+const semAcento = (t: string) => String(t || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase();
+function regexDaLoja(loja: LojaCentral): RegExp {
+  const n = semAcento(loja.nome);
+  if (n.includes('CITY')) return /\bCITY\b/;
+  if (n.includes('DIRECIONAL')) return /DIRECIONAL/;
+  if (n.includes('FEIRAO')) return /FEIRAO/;
+  if (n.includes('GP')) return /\bGP\b/;
+  if (n.includes('SUPER')) return /\bSUPER\b|\bSVIA\b/;
+  return new RegExp(`\\b${(n.split(/\s+/)[0] || n).replace(/[^A-Z0-9]/g, '')}\\b`);
+}
+export function campanhaDaLoja(nome: string, loja: LojaCentral, pl: Plataforma): boolean {
+  const n = semAcento(nome);
+  if (LOW_TICKET.test(n)) return false;
+  return pl === 'google' || regexDaLoja(loja).test(n);
+}
+
 // ── Resultados por loja e plataforma ──
 export interface ResultadoPlataforma { gasto: number; conversoes: number; disponivel: boolean; conectada: boolean }
 export interface ResultadoLoja {
@@ -92,13 +113,21 @@ export async function resultadosPorLoja(lojas: LojaCentral[], p: Periodo): Promi
   const conexoes = await conexoesDasLojas(lojas);
   const somas = conexoes.length
     ? await db().metricaDiaria.groupBy({
-      by: ['conexaoId'],
+      by: ['conexaoId', 'campanhaNome'],
       where: { conexaoId: { in: conexoes.map((c) => c.id) }, data: { gte: chaveDia(p.diaIni), lte: chaveDia(p.diaFim) } },
       _sum: { spend: true, leads: true },
     })
     : [];
   const somaPorConexao = new Map<string, { spend: number; leads: number }>();
-  for (const s of somas) somaPorConexao.set(s.conexaoId, { spend: Number(s._sum?.spend || 0), leads: Number(s._sum?.leads || 0) });
+  for (const s of somas) {
+    const c = conexoes.find((x) => x.id === s.conexaoId);
+    const loja = lojas.find((l) => l.id === c?.lojaId);
+    if (!c || !loja || !campanhaDaLoja(s.campanhaNome, loja, c.plataforma)) continue;
+    const atual = somaPorConexao.get(s.conexaoId) || { spend: 0, leads: 0 };
+    atual.spend += Number(s._sum?.spend || 0);
+    atual.leads += Number(s._sum?.leads || 0);
+    somaPorConexao.set(s.conexaoId, atual);
+  }
 
   let conversas: Map<string, number> | null = null;
   try { conversas = await conversasPorLoja(lojas, p); } catch (e) {
@@ -313,7 +342,7 @@ export async function campanhasAtivas(lojas: LojaCentral[], plataformas: Platafo
   for (const camp of campanhas) {
     const conexao = conexoes.find((c) => c.id === camp.conexao_id);
     const loja = lojas.find((l) => l.id === conexao?.lojaId);
-    if (!conexao || !loja) continue;
+    if (!conexao || !loja || !campanhaDaLoja(camp.name, loja, conexao.plataforma)) continue;
     const m = porCampanha.get(chave(conexao.id, String(camp.external_id || ''))) || {};
     saida.push({
       loja,
