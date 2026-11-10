@@ -22,6 +22,17 @@ import { removerParcelamentoRepetidoEJustificativa } from '../data/travaPosOrcam
 import { negritoDinheiro, removerParcelamentoNaoPedido, aroSemMedidaNaRajada, removerBolhasRepetidas, CHAVES_GESTO, ehCandidatoAVaga, negouRetomada } from '../data/travasJosy2810';
 import { rotasCerebro, licoesAtivasDaLoja, casarLicao, partesDaLicao, registrarUso } from './cerebro';
 import { sanitizarTextosFluxo, chavesJaRespondidas, textoFluxo, SILENCIO_SE_REPETIR } from '../data/fluxoCatalogo';
+
+// Atendente da loja (bot-lojas.json: NOME_ATENDENTE e ARTIGO_ATENDENTE), achada pelo NOME_LOJA que vem no payload.
+function atendenteDaLoja(nomeLoja: string): { nome: string; artigo: string } | null {
+  try {
+    const lojas = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, '../../data/bot-lojas.json'), 'utf8'));
+    for (const v of Object.values<any>(lojas || {})) {
+      if (v && v.NOME_LOJA === nomeLoja && v.NOME_ATENDENTE) return { nome: String(v.NOME_ATENDENTE), artigo: v.ARTIGO_ATENDENTE === 'a' ? 'a' : 'o' };
+    }
+  } catch { /* sem arquivo: segue o nome do config geral */ }
+  return null;
+}
 import { chaveDoFluxo, ehChaveAnthropic, gerarTextoAnthropic, MensagemAnthropic } from '../services/llmAnthropic';
 
 dotenv.config();
@@ -210,6 +221,15 @@ async function gerarRespostaViaOpenAI(args: {
   let promptBase = montarPromptAtendimentoBot(config);
   if (lb) {
     promptBase = promptBase.replace(/Borracharia Popular/g, lb.nome);
+    // 10/11 (dono): no numero da Josy quem atende e a Josy, nao o Charles. O prompt geral fala "Charles": loja com
+    // NOME_ATENDENTE no bot-lojas.json troca o nome (e o artigo: ARTIGO_ATENDENTE "a" = fala no feminino).
+    const atendente = atendenteDaLoja(lb.nome);
+    if (atendente) {
+      promptBase = promptBase
+        .replace(/\b([oO]) Charles\b/g, (_m: string, o: string) => `${o === 'O' ? atendente.artigo.toUpperCase() : atendente.artigo} ${atendente.nome}`)
+        .replace(/\bCharles\b/g, atendente.nome);
+      if (atendente.artigo === 'a') promptBase += `\n\nSeu nome e ${atendente.nome} e voce e mulher: fale sempre no feminino ("sou a ${atendente.nome}", "obrigada", "vendedora").`;
+    }
     // 30/10: o prompt geral e da Borracharia (Novo Gama). Loja com config propria fala o proprio endereco e telefone
     // (Itamar e Paulo Cesar ouviram Novo Gama da GP, que fica em Luziania).
     if (lb.localizacaoTexto) promptBase = promptBase.replace(/em frente ao posto de gasolina Pont[aã]o 24h Lunabel,? Novo Gama-GO,? 520 - Lunabel/gi, String(lb.localizacaoTexto));
