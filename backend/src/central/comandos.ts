@@ -69,12 +69,8 @@ async function enviarParaNumero(cfg: ConfigCentral, numero: string, blocos: stri
 const inicioDoMes = (dia: string) => dia.slice(0, 8) + '01';
 
 export async function montarRelatorioDiario(cfg: ConfigCentral, dia: string = somarDias(diaBR(), -1)): Promise<string[]> {
-  const [{ lojas }, saldos, deps] = await Promise.all([
-    resultadosPorLoja(cfg.lojas, periodo(dia)),
-    saldosDasLojas(cfg),
-    depositosDoPeriodo(cfg, lerEstado(), inicioDoMes(dia), diaBR()),
-  ]);
-  return relatorioGeral({ titulo: 'RELATÓRIO DIÁRIO', ini: dia, fim: dia, resultados: lojas, saldos, recargas: { deps, ini: inicioDoMes(dia), fim: diaBR() }, comMenu: true });
+  const [{ lojas }, saldos] = await Promise.all([resultadosPorLoja(cfg.lojas, periodo(dia)), saldosDasLojas(cfg)]);
+  return relatorioGeral({ titulo: 'RELATÓRIO DIÁRIO', ini: dia, fim: dia, resultados: lojas, saldos, comMenu: true });
 }
 
 async function relatorioHoje(cfg: ConfigCentral, lojas: LojaCentral[] = cfg.lojas): Promise<string[]> {

@@ -163,21 +163,27 @@ async function conversasPorLoja(lojas: LojaCentral[], p: Periodo): Promise<Map<s
   const numerosInternos = [...(await internos())];
   if (!numerosInternos.length) numerosInternos.push('__nenhum__');
   const jidsInternos = JIDS_INTERNOS().length ? JIDS_INTERNOS() : ['__nenhum__'];
-  const linhas: Array<{ usuarioId: string; n: number }> = await db().$queryRaw`
-    SELECT "usuarioId", COUNT(DISTINCT "chatJid")::int AS n
+  // Distinto por LOJA, nao por atendente: City, Direcional e Feirao tem 2 atendentes conectadas no MESMO numero
+  // (2 sessoes) e cada mensagem fica gravada 2 vezes — somar por atendente dobrava a conta (10/11: 389 x 249).
+  const linhas: Array<{ usuarioId: string; chatJid: string }> = await db().$queryRaw`
+    SELECT DISTINCT "usuarioId", "chatJid"
     FROM "Mensagem"
     WHERE "fromMe" = false
       AND "timestamp" >= ${p.inicio} AND "timestamp" < ${p.fim}
       AND "usuarioId" = ANY(${usuarios.map((u: any) => u.id)})
       AND "chatJid" NOT LIKE '%@g.us' AND "chatJid" NOT LIKE '%broadcast%' AND "chatJid" NOT LIKE '%@newsletter'
       AND NOT ("chatJid" = ANY(${jidsInternos}))
-      AND NOT (split_part(COALESCE("numeroReal", ''), ':', 1) = ANY(${numerosInternos}))
-    GROUP BY 1`;
+      AND NOT (split_part(COALESCE("numeroReal", ''), ':', 1) = ANY(${numerosInternos}))`;
   const lojaDoUsuario = new Map<string, string>(usuarios.map((u: any) => [u.id, u.lojaId]));
+  const chatsPorLoja = new Map<string, Set<string>>();
   for (const l of linhas) {
     const lojaId = lojaDoUsuario.get(l.usuarioId);
-    if (lojaId) porLoja.set(lojaId, (porLoja.get(lojaId) || 0) + Number(l.n));
+    if (!lojaId) continue;
+    const set = chatsPorLoja.get(lojaId) || new Set<string>();
+    set.add(l.chatJid);
+    chatsPorLoja.set(lojaId, set);
   }
+  for (const [lojaId, set] of chatsPorLoja) porLoja.set(lojaId, set.size);
   return porLoja;
 }
 
