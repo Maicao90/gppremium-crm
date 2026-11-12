@@ -297,7 +297,8 @@ export async function detectarDepositos(cfg: ConfigCentral, estado: EstadoCentra
     if (!contasComBase.has(s.contaId)) { contasComBase.add(s.contaId); continue; }
     if (anterior === undefined) continue;
     const aumento = arred(s.saldo - anterior);
-    if (aumento < 1) continue;
+    // 12/11: abaixo de R$10 e ajuste/credito do proprio Google (R$1,58, R$2,24...), nao recarga.
+    if (aumento < 10) continue;
     // Ja registrado a mao no mesmo dia com o mesmo valor (+-R$1): nao duplica.
     const manual = await db().deposito.findFirst({ where: { contaId: s.contaId, data: hoje, valor: { gte: aumento - 1, lte: aumento + 1 } } });
     if (manual) continue;

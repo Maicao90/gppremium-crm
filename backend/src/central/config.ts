@@ -13,6 +13,8 @@ export interface ConfigCentral {
   usuarioIdRemetente: string; // Usuario (sessao Baileys) dedicado: manda o relatorio e recebe os comandos
   numerosAutorizados: string[]; // so digitos, com DDI (ex.: 5561999999999) — so eles recebem e consultam
   horaRelatorio: string; // 'HH:MM' (Brasilia)
+  // 12/11 (dono): relatorio as 19h, com as campanhas ja pausadas = fechamento do PROPRIO dia ('hoje'). Padrao: 'ontem'.
+  relatorioDoDia?: 'hoje' | 'ontem';
   lojas: LojaCentral[]; // ordem do relatorio
   alertas: {
     diasAtencao: number; // autonomia abaixo disso = ATENCAO

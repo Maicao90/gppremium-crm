@@ -280,10 +280,11 @@ async function rodarRelatorioDiario() {
   if (!pendentes.length || !conectada(cfg)) return;
   enviandoDiario = true;
   try {
-    const blocos = await montarRelatorioDiario(cfg);
+    const diaDoRelatorio = cfg.relatorioDoDia === 'hoje' ? hoje : somarDias(hoje, -1);
+    const blocos = await montarRelatorioDiario(cfg, diaDoRelatorio);
     for (const numero of pendentes) {
       const ok = await enviarParaNumero(cfg, numero, blocos);
-      registrarLog('relatorio_diario', { numero, dia: somarDias(hoje, -1), ok });
+      registrarLog('relatorio_diario', { numero, dia: diaDoRelatorio, ok });
       if (ok) { const e = lerEstado(); e.relatorioDiario[numero] = hoje; gravarEstado(e); }
     }
     // O relatorio ja traz a secao de alertas: conta em atencao/critico conta como avisada agora (o monitor nao
