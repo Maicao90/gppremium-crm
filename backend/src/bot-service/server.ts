@@ -940,8 +940,29 @@ app.post('/gerar-resposta', async (req, res) => {
         const jaAgradeceu = chavesJaRespondidas(textosFluxo, textoRecente).includes('agradecimento');
         return res.json({ ...base, partes: jaAgradeceu ? [] : textoFluxo(textosFluxo, 'agradecimento'), acaoTipo: jaAgradeceu ? 'SILENCIO' : 'RESPONDER_AGRADECIMENTO', chaves: ['agradecimento'] });
       }
-      console.log(`[BotService] IA livre restrita (${lb.nome}): ${motivoLivre} em ${estadoPrecoAtual} — vai pra atendente.`);
-      return res.json({ ...base, partes: ['Só um instante que eu vou verificar aqui pra você, tá bem?'], acaoTipo: 'PASSAR_ATENDENTE', chaves: ['assunto_atendente'] });
+      // Abertura pedindo pneu sem medida ("quero um orçamento de pneus", "tem pneu pra Onix?") o extrator le como
+      // OUTRO_ASSUNTO; nao pode ir pra atendente (lead novo parado 12h). Sem carro citado: pede a medida (texto do fluxo).
+      // Com carro citado, ou se a medida ja foi pedida: IA livre descobre a medida pelo carro (mesmo caso do aguardando_medida).
+      const pedePneuNaAbertura = estadoPrecoAtual === 'sem_estado' && /\b(pneus?|or[çc]amentos?|aro|medida)\b/i.test(gatilho);
+      let liberaIaPeloCarro = false;
+      if (pedePneuNaAbertura) {
+        const citaCarro = /\b(pra|pro|para|do|da|meu|minha|carro|ve[ií]culo|modelo|ano)\b|\b(19|20)\d{2}\b/i.test(gatilho);
+        const textoRecente = anteriores.filter((m: any) => m?.role === 'assistant').slice(-6).map((m: any) => String(m?.content || '')).join('\n');
+        const jaPediuMedida = chavesJaRespondidas(textosFluxo, textoRecente).includes('pedir_medida');
+        if (citaCarro || jaPediuMedida) liberaIaPeloCarro = true;
+        else {
+          const cumprimenta = /^\s*(oi|ol[aá]|opa|bom dia|boa tarde|boa noite|e a[ií])(?![a-z])/i.test(gatilho) && !anteriores.some((m: any) => m?.role === 'assistant');
+          const dadosNovos: any = {};
+          if ((dadosPrecoAtuais as any)?.quantidade) dadosNovos.quantidade = (dadosPrecoAtuais as any).quantidade;
+          return res.json({ ...base, partes: [...(cumprimenta ? textoFluxo(textosFluxo, 'saudacao') : []), ...textoFluxo(textosFluxo, 'pedir_medida')],
+            acaoTipo: 'PEDIR_MEDIDA', novoEstadoPreco: 'aguardando_medida', novosDadosPreco: JSON.stringify(dadosNovos), chaves: cumprimenta ? ['saudacao', 'pedir_medida'] : ['pedir_medida'] });
+        }
+      }
+      if (!liberaIaPeloCarro) {
+        console.log(`[BotService] IA livre restrita (${lb.nome}): ${motivoLivre} em ${estadoPrecoAtual} — vai pra atendente.`);
+        return res.json({ ...base, partes: ['Só um instante que eu vou verificar aqui pra você, tá bem?'], acaoTipo: 'PASSAR_ATENDENTE', chaves: ['assunto_atendente'] });
+      }
+      console.log(`[BotService] IA livre restrita (${lb.nome}): pneu pelo carro na abertura — IA livre descobre a medida.`);
     }
 
     // SIMULACAO (tela Fluxo do painel, "testar uma mensagem"): mostra o caminho SEM chamar a IA livre
