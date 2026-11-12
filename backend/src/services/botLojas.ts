@@ -34,6 +34,9 @@ export interface ConfigBotLoja {
   REMARKETING?: RemarketingLoja | undefined;
   // Conversa que um atendente (pessoa) atendeu nas ultimas N horas e dele: o robo nao entra. 0 = desligado.
   HUMANO_ASSUMIU_HORAS?: number | undefined;
+  // 12/11: atendente e AJUDANTE do robo — quando o robo chamou por uma duvida (assunto_atendente), ela responde e o
+  // robo segue o mesmo fluxo (nao vale a regra das N horas). Pneu fora da tabela / outra marca: conversa continua dela.
+  ATENDENTE_AJUDANTE?: boolean | undefined;
 }
 
 // Remarketing: cliente parou de responder depois que a loja falou -> o robo puxa de volta (uma vez por silencio).
@@ -86,6 +89,7 @@ export async function configBotDaLoja(usuarioId: string): Promise<ConfigBotLoja>
     PAUSA_FORA_DA_LISTA_MIN: num(daLoja?.PAUSA_FORA_DA_LISTA_MIN),
     CHAVES_ATENDENTE: Array.isArray(daLoja?.CHAVES_ATENDENTE) ? daLoja.CHAVES_ATENDENTE.map(String) : undefined,
     HUMANO_ASSUMIU_HORAS: num(daLoja?.HUMANO_ASSUMIU_HORAS),
+    ATENDENTE_AJUDANTE: daLoja?.ATENDENTE_AJUDANTE === true,
     REMARKETING: daLoja?.REMARKETING && typeof daLoja.REMARKETING === 'object' ? {
       ativo: daLoja.REMARKETING.ativo === true,
       mensagem: String(daLoja.REMARKETING.mensagem || '🙋🏼‍♀️'),

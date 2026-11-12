@@ -602,6 +602,50 @@ async function retomarDepoisDoForaDaLista(params: AgendarBotParams): Promise<boo
   }
 }
 
+// 12/11 (dono: "a Josy e uma assistente, ela te ajuda caso voce nao saiba e entra no atendimento"). Loja com
+// ATENDENTE_AJUDANTE: quando o ROBO chamou a atendente por uma DUVIDA (chave 'assunto_atendente': pergunta que ele nao
+// sabe responder — "ja e instalado?", "aceita cartao?"), a resposta dela NAO tira a conversa do robo: ela responde, o robo
+// espera ela ficar quieta (pausa curta do eco) e segue o mesmo fluxo. Pneu fora da tabela / outra marca (ela vende algo
+// que o robo nao conhece; simulado: o robo voltaria pedindo a medida) continua como antes: a conversa e dela (N horas).
+const MARCA_CHAMOU_ATENDENTE = 'atendente assume'; // o "so um instante" grava '(etiqueta: atendente assume)' no FluxoEvento
+function ehChamadaPorDuvida(chavesJson: string): boolean {
+  let ch: unknown = [];
+  try { ch = JSON.parse(chavesJson || '[]'); } catch { return false; }
+  return Array.isArray(ch) && ch.includes('assunto_atendente')
+    && !ch.some((c) => c === 'medida_inexistente' || c === 'sem_alternativa' || c === 'outra_marca');
+}
+async function chamadasDoRoboDesde(usuarioId: string, chatJid: string, desde: Date) {
+  return prisma.fluxoEvento.findMany({
+    where: { usuarioId, chatJid, partes: { contains: MARCA_CHAMOU_ATENDENTE }, criadoEm: { gte: desde } },
+    orderBy: { criadoEm: 'asc' },
+    select: { criadoEm: true, chaves: true },
+  });
+}
+// Quem escreveu agora (eco) esta respondendo a duvida que o robo pediu? Vale a ULTIMA chamada do robo (ate 3 dias).
+async function atendenteRespondendoDuvidaDoRobo(usuarioId: string, chatJid: string): Promise<boolean> {
+  const cfgLoja = await configBotDaLoja(usuarioId);
+  if (!cfgLoja.ATENDENTE_AJUDANTE) return false;
+  const chamadas = await chamadasDoRoboDesde(usuarioId, chatJid, new Date(Date.now() - 3 * 24 * 3600_000));
+  const ultima = chamadas[chamadas.length - 1];
+  return !!ultima && ehChamadaPorDuvida(ultima.chaves);
+}
+// Regra das N horas: a atendente so entrou porque o robo chamou (por duvida) -> ela esta ajudando, o robo segue.
+// Precisa: a chamada mais recente ANTES da 1a fala dela na janela ser por duvida, e a ultima chamada tambem.
+async function atendenteAjudandoNaConversa(usuarioId: string, chatJid: string, historico: any[], desde: number): Promise<boolean> {
+  const cfgLoja = await configBotDaLoja(usuarioId);
+  if (!cfgLoja.ATENDENTE_AJUDANTE) return false;
+  const humanos = historico.filter((m: any) => m.fromMe && m.enviadoPorId !== 'bot' && m.enviadoPorId !== 'meta_ai'
+    && new Date(m.timestamp).getTime() >= desde && !MSG_AUTOMATICA_DA_LOJA.test(String(m.texto || '')));
+  if (!humanos.length) return false;
+  const primeiro = new Date(humanos[0].timestamp).getTime();
+  const chamadas = await chamadasDoRoboDesde(usuarioId, chatJid, new Date(primeiro - 3 * 24 * 3600_000));
+  const antes = chamadas.filter((c) => c.criadoEm.getTime() <= primeiro + 60_000).pop();
+  const ultima = chamadas[chamadas.length - 1];
+  const sim = !!antes && ehChamadaPorDuvida(antes.chaves) && !!ultima && ehChamadaPorDuvida(ultima.chaves);
+  if (sim) console.log(`[Bot IA] ${chatJid}: atendente entrou pra responder a duvida que o robo pediu — robo segue o mesmo fluxo.`);
+  return sim;
+}
+
 const MAX_REAGENDAMENTOS_CONTEXTO = 3;
 
 // REMARKETING (02/09). Quando o cliente diz que volta depois — "dia 10 eu passo ai",
@@ -880,7 +924,8 @@ async function executar(params: AgendarBotParams, versao: number) {
           && m.enviadoPorId !== 'bot' && m.enviadoPorId !== 'meta_ai'
           && new Date(m.timestamp).getTime() >= desde
           && !MSG_AUTOMATICA_DA_LOJA.test(String(m.texto || '')));
-        if (humano) {
+        const ajudando = humano ? await atendenteAjudandoNaConversa(params.usuarioId, params.chatJid, historico, desde).catch(() => false) : false;
+        if (humano && !ajudando) {
           console.log(`[Bot IA] ${params.chatJid}: atendente atendeu ${new Date((humano as any).timestamp).toISOString()} (< ${horas}h) — conversa e dela, robo nao entra.`);
           await agradecerNaConversaDaAtendente(params, historico, humano, cfgLoja.lojaId).catch((e) => console.error('[Bot IA] falha no agradecimento da conversa da atendente:', (e as any)?.message || e));
           const ultimaCliente = [...historico].reverse().find((m: any) => !m.fromMe) as any;
@@ -1293,7 +1338,14 @@ export async function pausarConversaBotIA(usuarioId: string, chatJid: string, mi
   timers.delete(key);
   versoes.set(key, (versoes.get(key) || 0) + 1);
   const duracao = Math.max(5, minutos ?? usuario?.botIaPausaManualMin ?? 120);
-  const pausa = await pausaSemEncurtar(usuarioId, chatJid, duracao, motivo);
+  let pausa = await pausaSemEncurtar(usuarioId, chatJid, duracao, motivo);
+  // 12/11: atendente respondendo a duvida que o robo pediu — troca a pausa longa do "so um instante" (fora_da_lista)
+  // pela curta do eco; quando ela fica quieta, o robo segue o fluxo (ver atendenteAjudandoNaConversa).
+  if (motivo === 'eco_externo' && pausa.motivoPausa === MOTIVO_FORA_DA_LISTA && await atendenteRespondendoDuvidaDoRobo(usuarioId, chatJid).catch(() => false)) {
+    const min = Math.min(duracao, 10);
+    pausa = { pausadoAte: new Date(Date.now() + min * 60_000), motivoPausa: 'eco_externo' };
+    console.log(`[Bot IA] ${chatJid}: atendente respondeu a duvida que o robo pediu — robo espera ${min} min sem ela escrever e segue o fluxo.`);
+  }
   await prisma.botConversa.upsert({
     where: { usuarioId_chatJid: { usuarioId, chatJid } },
     create: { usuarioId, chatJid, ...pausa },
