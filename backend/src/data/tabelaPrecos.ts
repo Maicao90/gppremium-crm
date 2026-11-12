@@ -94,7 +94,7 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
   },
   {
     medida: '175/70/14',
-    modelo: 'GP-1 / GP-7 / ATR',
+    modelo: 'GP-1 / GP-7',
     categoria: 'passeio',
     promocao: true,
     aVista: 279.00,
@@ -176,25 +176,27 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     parcelado: { x1: 295.42, x2: 298.62, x3: 301.83, x4: 305.04, x5: 308.25, x6: 311.46, x7: 314.66, x8: 317.87, x9: 321.08, x10: 324.29 },
     portaria: 20.00
   },
-  {
-    medida: '205/60/15',
-    modelo: 'ADVENTURE ATR',
-    categoria: 'passeio',
-    aVista: 319.00,
-    parcelado: { x1: 326.08, x2: 329.62, x3: 333.16, x4: 336.70, x5: 340.25, x6: 343.79, x7: 347.33, x8: 350.87, x9: 354.41, x10: 357.95 },
-    portaria: 20.00
-  },
-  {
-    medida: '205/65/15',
-    modelo: 'ADVENTURE ATR',
-    categoria: 'passeio',
-    aVista: 339.00,
-    parcelado: { x1: 346.53, x2: 350.29, x3: 354.05, x4: 357.81, x5: 361.58, x6: 365.34, x7: 369.10, x8: 372.87, x9: 376.63, x10: 380.39 },
-    portaria: 30.00
-  },
+  // 12/11 (dono: "o ATR nao tem"): ADVENTURE ATR sem estoque — fora da tabela (cliente vai pra atendente ou cai no outro modelo da medida).
+  // {
+  //   medida: '205/60/15',
+  //   modelo: 'ADVENTURE ATR',
+  //   categoria: 'passeio',
+  //   aVista: 319.00,
+  //   parcelado: { x1: 326.08, x2: 329.62, x3: 333.16, x4: 336.70, x5: 340.25, x6: 343.79, x7: 347.33, x8: 350.87, x9: 354.41, x10: 357.95 },
+  //   portaria: 20.00
+  // },
+  // 12/11 (dono: "o ATR nao tem"): ADVENTURE ATR sem estoque — fora da tabela (cliente vai pra atendente ou cai no outro modelo da medida).
+  // {
+  //   medida: '205/65/15',
+  //   modelo: 'ADVENTURE ATR',
+  //   categoria: 'passeio',
+  //   aVista: 339.00,
+  //   parcelado: { x1: 346.53, x2: 350.29, x3: 354.05, x4: 357.81, x5: 361.58, x6: 365.34, x7: 369.10, x8: 372.87, x9: 376.63, x10: 380.39 },
+  //   portaria: 30.00
+  // },
   {
     medida: '205/70/15',
-    modelo: 'ADVENTURE A/T / ADVENTURE ATR',
+    modelo: 'ADVENTURE A/T',
     categoria: 'passeio',
     aVista: 349.00,
     parcelado: { x1: 356.75, x2: 360.62, x3: 364.50, x4: 368.37, x5: 372.24, x6: 376.12, x7: 379.99, x8: 383.87, x9: 387.74, x10: 391.51 },
@@ -388,14 +390,15 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
   //   parcelado: { x1: 499.86, x2: 505.28, x3: 510.71, x4: 516.14, x5: 521.57, x6: 527.00, x7: 532.42, x8: 537.85, x9: 543.28, x10: 548.71 },
   //   portaria: 50.00
   // },
-  {
-    medida: '235/70/16',
-    modelo: 'ADVENTURE ATR',
-    categoria: 'pickup',
-    aVista: 469.00,
-    parcelado: { x1: 479.41, x2: 484.62, x3: 489.82, x4: 495.03, x5: 500.24, x6: 505.44, x7: 510.65, x8: 515.85, x9: 521.06, x10: 526.26 },
-    portaria: 50.00
-  },
+  // 12/11 (dono: "o ATR nao tem"): ADVENTURE ATR sem estoque — fora da tabela (cliente vai pra atendente ou cai no outro modelo da medida).
+  // {
+  //   medida: '235/70/16',
+  //   modelo: 'ADVENTURE ATR',
+  //   categoria: 'pickup',
+  //   aVista: 469.00,
+  //   parcelado: { x1: 479.41, x2: 484.62, x3: 489.82, x4: 495.03, x5: 500.24, x6: 505.44, x7: 510.65, x8: 515.85, x9: 521.06, x10: 526.26 },
+  //   portaria: 50.00
+  // },
   {
     medida: '235/70/16',
     modelo: 'BRUTUS T/A',
@@ -404,14 +407,15 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     parcelado: { x1: 499.86, x2: 505.28, x3: 510.71, x4: 516.14, x5: 521.57, x6: 527.00, x7: 532.42, x8: 537.85, x9: 543.28, x10: 548.71 },
     portaria: 50.00
   },
-  {
-    medida: '245/70/16',
-    modelo: 'ADVENTURE ATR',
-    categoria: 'pickup',
-    aVista: 479.00,
-    parcelado: { x1: 489.63, x2: 494.95, x3: 500.27, x4: 505.58, x5: 510.90, x6: 516.22, x7: 521.54, x8: 526.85, x9: 532.17, x10: 537.49 },
-    portaria: 40.00
-  },
+  // 12/11 (dono: "o ATR nao tem"): ADVENTURE ATR sem estoque — fora da tabela (cliente vai pra atendente ou cai no outro modelo da medida).
+  // {
+  //   medida: '245/70/16',
+  //   modelo: 'ADVENTURE ATR',
+  //   categoria: 'pickup',
+  //   aVista: 479.00,
+  //   parcelado: { x1: 489.63, x2: 494.95, x3: 500.27, x4: 505.58, x5: 510.90, x6: 516.22, x7: 521.54, x8: 526.85, x9: 532.17, x10: 537.49 },
+  //   portaria: 40.00
+  // },
   {
     medida: '255/70/16',
     modelo: 'BRUTUS T/A',
@@ -420,14 +424,15 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     parcelado: { x1: 550.97, x2: 556.95, x3: 562.93, x4: 568.91, x5: 574.90, x6: 580.88, x7: 586.86, x8: 592.85, x9: 598.83, x10: 604.81 },
     portaria: 0.00
   },
-  {
-    medida: '265/70/16',
-    modelo: 'ADVENTURE ATR',
-    categoria: 'pickup',
-    aVista: 559.00,
-    parcelado: { x1: 571.41, x2: 577.61, x3: 583.82, x4: 590.02, x5: 596.23, x6: 602.43, x7: 608.64, x8: 614.84, x9: 621.05, x10: 627.25 },
-    portaria: 50.00
-  },
+  // 12/11 (dono: "o ATR nao tem"): ADVENTURE ATR sem estoque — fora da tabela (cliente vai pra atendente ou cai no outro modelo da medida).
+  // {
+  //   medida: '265/70/16',
+  //   modelo: 'ADVENTURE ATR',
+  //   categoria: 'pickup',
+  //   aVista: 559.00,
+  //   parcelado: { x1: 571.41, x2: 577.61, x3: 583.82, x4: 590.02, x5: 596.23, x6: 602.43, x7: 608.64, x8: 614.84, x9: 621.05, x10: 627.25 },
+  //   portaria: 50.00
+  // },
   {
     medida: '265/70/16',
     modelo: 'ADVENTURE H/T',
@@ -444,14 +449,15 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     parcelado: { x1: 714.52, x2: 722.28, x3: 730.04, x4: 737.79, x5: 745.55, x6: 753.31, x7: 761.07, x8: 768.83, x9: 776.59, x10: 784.35 },
     portaria: 50.00
   },
-  {
-    medida: '265/65/17',
-    modelo: 'ADVENTURE ATR',
-    categoria: 'pickup',
-    aVista: 559.00,
-    parcelado: { x1: 571.41, x2: 577.61, x3: 583.82, x4: 590.02, x5: 596.23, x6: 602.43, x7: 608.64, x8: 614.84, x9: 621.05, x10: 627.25 },
-    portaria: 30.00
-  },
+  // 12/11 (dono: "o ATR nao tem"): ADVENTURE ATR sem estoque — fora da tabela (cliente vai pra atendente ou cai no outro modelo da medida).
+  // {
+  //   medida: '265/65/17',
+  //   modelo: 'ADVENTURE ATR',
+  //   categoria: 'pickup',
+  //   aVista: 559.00,
+  //   parcelado: { x1: 571.41, x2: 577.61, x3: 583.82, x4: 590.02, x5: 596.23, x6: 602.43, x7: 608.64, x8: 614.84, x9: 621.05, x10: 627.25 },
+  //   portaria: 30.00
+  // },
   {
     medida: '265/65/17',
     modelo: 'ADVENTURE H/T',
@@ -476,14 +482,15 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     parcelado: { x1: 571.41, x2: 577.61, x3: 583.82, x4: 590.02, x5: 596.23, x6: 602.43, x7: 608.64, x8: 614.84, x9: 621.05, x10: 627.25 },
     portaria: 30.00
   },
-  {
-    medida: '265/60/18',
-    modelo: 'ADVENTURE ATR',
-    categoria: 'pickup',
-    aVista: 549.00,
-    parcelado: { x1: 561.19, x2: 567.28, x3: 573.38, x4: 579.47, x5: 585.56, x6: 591.66, x7: 597.75, x8: 603.85, x9: 609.94, x10: 616.03 },
-    portaria: 30.00
-  },
+  // 12/11 (dono: "o ATR nao tem"): ADVENTURE ATR sem estoque — fora da tabela (cliente vai pra atendente ou cai no outro modelo da medida).
+  // {
+  //   medida: '265/60/18',
+  //   modelo: 'ADVENTURE ATR',
+  //   categoria: 'pickup',
+  //   aVista: 549.00,
+  //   parcelado: { x1: 561.19, x2: 567.28, x3: 573.38, x4: 579.47, x5: 585.56, x6: 591.66, x7: 597.75, x8: 603.85, x9: 609.94, x10: 616.03 },
+  //   portaria: 30.00
+  // },
   {
     medida: '265/60/18',
     modelo: 'BRUTUS T/A',

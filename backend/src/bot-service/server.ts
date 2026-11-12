@@ -24,6 +24,15 @@ import { rotasCerebro, licoesAtivasDaLoja, casarLicao, partesDaLicao, registrarU
 import { sanitizarTextosFluxo, chavesJaRespondidas, textoFluxo, SILENCIO_SE_REPETIR } from '../data/fluxoCatalogo';
 
 // Atendente da loja (bot-lojas.json: NOME_ATENDENTE e ARTIGO_ATENDENTE), achada pelo NOME_LOJA que vem no payload.
+// Loja com IA_LIVRE_RESTRITA no bot-lojas.json (achada pelo NOME_LOJA do payload).
+function iaLivreRestrita(nomeLoja?: string): boolean {
+  if (!nomeLoja) return false;
+  try {
+    const lojas = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, '../../data/bot-lojas.json'), 'utf8'));
+    return Object.values<any>(lojas || {}).some((v) => v && v.NOME_LOJA === nomeLoja && v.IA_LIVRE_RESTRITA === true);
+  } catch { return false; }
+}
+
 function atendenteDaLoja(nomeLoja: string): { nome: string; artigo: string } | null {
   try {
     const lojas = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, '../../data/bot-lojas.json'), 'utf8'));
@@ -916,6 +925,23 @@ app.post('/gerar-resposta', async (req, res) => {
           motivoLivre = ignorariaAFoto ? 'midia_sem_texto' : decisao.assuntos.includes('PERGUNTA_TECNICA') ? 'pergunta_tecnica' : 'assunto_sem_bloco';
         }
       }
+    }
+
+    // 12/11 (dono: "reduz bastante o fluxo de IA livre, a IA ta errando muito"): loja com IA_LIVRE_RESTRITA so deixa a
+    // IA livre responder quando 1) a loja pediu a medida/o carro e o cliente respondeu com outra coisa (descobrir a medida
+    // pelo carro: "Celta", "Versa 2017") ou 2) veio foto/audio (o codigo nao ve o conteudo). O resto (assunto sem bloco,
+    // pergunta tecnica, conversa depois do preco) vai pra atendente: "so um instante" + etiqueta + pausa — chave
+    // 'assunto_atendente' nas CHAVES_ATENDENTE da loja, tratada no whatsapp-crm. Despedida/agradecimento: so agradece.
+    if (lb && iaLivreRestrita(lb.nome) && !temFoto && motivoLivre !== 'midia_sem_texto' && estadoPrecoAtual !== 'aguardando_medida') {
+      const base = { deterministico: true, novoEstadoPreco: estadoPrecoAtual, novosDadosPreco: JSON.stringify(dadosPrecoAtuais), via: 'fluxo', assuntos: assuntosLidos, rajada, simulado: !!req.body?.simular };
+      if (!rabo.length) return res.json({ ...base, partes: [], acaoTipo: 'SILENCIO', chaves: ['sem_mensagem_nova'] });
+      if (pareceAgradecimento(gatilho)) {
+        const textoRecente = anteriores.filter((m: any) => m?.role === 'assistant').slice(-6).map((m: any) => String(m?.content || '')).join('\n');
+        const jaAgradeceu = chavesJaRespondidas(textosFluxo, textoRecente).includes('agradecimento');
+        return res.json({ ...base, partes: jaAgradeceu ? [] : textoFluxo(textosFluxo, 'agradecimento'), acaoTipo: jaAgradeceu ? 'SILENCIO' : 'RESPONDER_AGRADECIMENTO', chaves: ['agradecimento'] });
+      }
+      console.log(`[BotService] IA livre restrita (${lb.nome}): ${motivoLivre} em ${estadoPrecoAtual} — vai pra atendente.`);
+      return res.json({ ...base, partes: ['Só um instante que eu vou verificar aqui pra você, tá bem?'], acaoTipo: 'PASSAR_ATENDENTE', chaves: ['assunto_atendente'] });
     }
 
     // SIMULACAO (tela Fluxo do painel, "testar uma mensagem"): mostra o caminho SEM chamar a IA livre
