@@ -1185,6 +1185,15 @@ function iniciarRemarketingRobo() {
           if (ehCandidatoAVaga(lista.map((m) => String(m.texto || '')))) continue; // inclui a resposta da loja ("Os candidatos selecionados...")
           const ultimaFalaDaLoja = lista.find((m) => m.fromMe && !/^\s*🙋/.test(String(m.texto || '')) && !/Seja bem-vindo\(a\)/.test(String(m.texto || '')));
           if (rm.pularSeAtendenteFalou && ultimaFalaDaLoja && ultimaFalaDaLoja.enviadoPorId !== 'bot') continue;
+          // 13/11 (Josy 🤦): (a) conversa ENCERRADA — cliente "muito longe" / "ta bom, obrigada" e o robo ja se despediu
+          // ("Qualquer duvida... e so me chamar"): nao puxa. (b) conversa que o robo PASSOU pra atendente ("so um instante" +
+          // etiqueta "Robo: ver pneu") depois da ultima fala do cliente: e dela, o robo nao puxa (caso Infinity).
+          if (ultimaFalaDaLoja && /qualquer d[uú]vida.{0,40}s[oó] me chamar|fico no aguardo|ser[aá] uma satisfa[cç][aã]o receber|te esperamos/i.test(String(ultimaFalaDaLoja.texto || ''))) continue;
+          if (lista.filter((m) => !m.fromMe).slice(0, 3).some((m) => /muito longe|fica longe|t[aá] bom,? obrigad|ok,? obrigad/i.test(String(m.texto || '')))) continue;
+          const passouProAtendente = await prisma.fluxoEvento.count({
+            where: { usuarioId: conta.id, chatJid, partes: { contains: 'atendente assume' }, criadoEm: { gte: new Date(ultimaCliente.timestamp) } },
+          }).catch(() => 0);
+          if (passouProAtendente > 0) continue;
           const estado = await prisma.botConversa.findUnique({
             where: { usuarioId_chatJid: { usuarioId: conta.id, chatJid } },
             select: { pausadoAte: true },
