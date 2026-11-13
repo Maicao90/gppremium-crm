@@ -929,7 +929,16 @@ async function executar(params: AgendarBotParams, versao: number) {
           && new Date(m.timestamp).getTime() >= desde
           && !MSG_AUTOMATICA_DA_LOJA.test(String(m.texto || '')));
         const ajudando = humano ? await atendenteAjudandoNaConversa(params.usuarioId, params.chatJid, historico, desde).catch(() => false) : false;
+        // 13/11 (caso Evandro): cobertura de pergunta simples quando a atendente esta ocupada (quieta ha 10+ min).
+        let coberturaSimples = false;
         if (humano && !ajudando) {
+          const tHumano = new Date((humano as any).timestamp).getTime();
+          const doCliente = historico.filter((m: any) => !m.fromMe && new Date(m.timestamp).getTime() > tHumano).map((m: any) => String(m.texto || '')).join(' / ');
+          coberturaSimples = !!doCliente && Date.now() - tHumano >= 10 * 60_000
+            && /(onde (fica|[eé]|voc[eê]s ficam|vcs ficam)|localiza|endere[cç]o|qual (a )?cidade|hor[aá]rio|abre[m]?\b|fecha[m]?\b|funciona[m]?\b|aberto)/i.test(doCliente);
+          if (coberturaSimples) console.log(`[Bot IA] ${params.chatJid}: atendente quieta ha ${Math.round((Date.now() - tHumano) / 60000)} min e o cliente perguntou localizacao/horario — robo responde so isso.`);
+        }
+        if (humano && !ajudando && !coberturaSimples) {
           console.log(`[Bot IA] ${params.chatJid}: atendente atendeu ${new Date((humano as any).timestamp).toISOString()} (< ${horas}h) — conversa e dela, robo nao entra.`);
           await agradecerNaConversaDaAtendente(params, historico, humano, cfgLoja.lojaId).catch((e) => console.error('[Bot IA] falha no agradecimento da conversa da atendente:', (e as any)?.message || e));
           const ultimaCliente = [...historico].reverse().find((m: any) => !m.fromMe) as any;
