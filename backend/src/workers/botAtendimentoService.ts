@@ -641,7 +641,11 @@ async function atendenteAjudandoNaConversa(usuarioId: string, chatJid: string, h
   const chamadas = await chamadasDoRoboDesde(usuarioId, chatJid, new Date(primeiro - 3 * 24 * 3600_000));
   const antes = chamadas.filter((c) => c.criadoEm.getTime() <= primeiro + 60_000).pop();
   const ultima = chamadas[chamadas.length - 1];
-  const sim = !!antes && ehChamadaPorDuvida(antes.chaves) && !!ultima && ehChamadaPorDuvida(ultima.chaves);
+  // 13/11 (caso Agnaldo): o robo nao ouve audio nem ve foto da atendente — sem saber o que ela disse, nao volta por cima dela.
+  const humanosDepoisDaChamada = humanos.filter((m: any) => !ultima || new Date(m.timestamp).getTime() >= ultima.criadoEm.getTime() - 60_000);
+  const soTexto = humanosDepoisDaChamada.every((m: any) => !m.tipo || m.tipo === 'texto');
+  const sim = soTexto && !!antes && ehChamadaPorDuvida(antes.chaves) && !!ultima && ehChamadaPorDuvida(ultima.chaves);
+  if (!soTexto && antes) console.log(`[Bot IA] ${chatJid}: atendente respondeu por audio/foto (o robo nao sabe o que ela disse) — conversa fica com ela.`);
   if (sim) console.log(`[Bot IA] ${chatJid}: atendente entrou pra responder a duvida que o robo pediu — robo segue o mesmo fluxo.`);
   return sim;
 }
@@ -1344,7 +1348,7 @@ export async function pausarConversaBotIA(usuarioId: string, chatJid: string, mi
   if (motivo === 'eco_externo' && pausa.motivoPausa === MOTIVO_FORA_DA_LISTA && await atendenteRespondendoDuvidaDoRobo(usuarioId, chatJid).catch(() => false)) {
     const min = Math.min(duracao, 10);
     pausa = { pausadoAte: new Date(Date.now() + min * 60_000), motivoPausa: 'eco_externo' };
-    console.log(`[Bot IA] ${chatJid}: atendente respondeu a duvida que o robo pediu — robo espera ${min} min sem ela escrever e segue o fluxo.`);
+    console.log(`[Bot IA] ${chatJid}: atendente respondeu a duvida que o robo pediu — robo espera ${min} min sem ela escrever (se ela falou por audio/foto, a conversa fica com ela).`);
   }
   await prisma.botConversa.upsert({
     where: { usuarioId_chatJid: { usuarioId, chatJid } },
