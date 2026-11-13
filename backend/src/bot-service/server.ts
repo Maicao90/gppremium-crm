@@ -37,6 +37,8 @@ const BASE_TROCA_GP: Record<string, number> = { '165/70/14': 189, '185/65/15': 1
 const TEXTO_BASE_TROCA = 'Os valores do anúncio são à base de troca: o *165/70/14* sai por *R$ 189,00* e o *185/65/15* por *R$ 199,00*, deixando o seu pneu usado aqui na troca 😉';
 const NEGA_BASE_TROCA = /eram na base de troca|n[aã]o (trabalha|trabalhamos|fazemos|faz|aceita|aceitamos)( mais)? (com )?(a )?(base de troca|troca d[eo] pneu usado|pneu usado)/i;
 const CLIENTE_FALA_DE_TROCA = /base de troca|troca d[oe] (meu )?(pneu )?usado|deixar? (o )?(meu )?(pneu )?usado|\b189\b|\b199\b|propaganda|an[uú]ncio/i;
+const TEXTO_TROCA_NA_DESCRICAO = 'Está sim, na descrição do anúncio: os valores são à base de troca — o *165/70/14* por *R$ 189,00* e o *185/65/15* por *R$ 199,00*, deixando o seu pneu usado aqui na troca 😉';
+const DIZ_QUE_ANUNCIO_NAO_FALA = /(an[uú]ncio|propaganda|post|foto)[^?.!]{0,40}n[aã]o (fala|diz|tem|mostra|aparece|est[aá]|falou|dizia|tinha)|n[aã]o (fala|diz|tem|mostra|aparece|est[aá]|falou|dizia|tinha|vi)[^?.!]{0,40}(an[uú]ncio|propaganda|base de troca|troca)|onde (fala|diz|est[aá]) (que [eé] )?(a )?(base de )?troca/i;
 function aplicarBaseDeTroca(partes: string[], textoCliente: string, ditasAntes: string): string[] {
   let saida = partes.map((p) => (NEGA_BASE_TROCA.test(String(p)) ? TEXTO_BASE_TROCA : p));
   saida = saida.filter((p, i) => p !== TEXTO_BASE_TROCA || saida.indexOf(p) === i);
@@ -72,6 +74,12 @@ function guardaRespostaRestrita(body: any, messages: any[], textosFluxo: any): a
       if (FALA_VIR_NA_LOJA.test(t)) { if (jaLoja) return false; jaLoja = true; }
       return true;
     });
+    // 13/11 (dono): "no anuncio nao fala isso" -> esta na descricao do anuncio.
+    if (DIZ_QUE_ANUNCIO_NAO_FALA.test(textoCliente) && /troca/i.test(textoCliente + '\n' + ditasAntes)) {
+      const saida: any = { ...body, partes: [TEXTO_TROCA_NA_DESCRICAO], acaoTipo: 'RESPONDER_BASE_TROCA', chaves: ['base_troca_descricao'] };
+      for (const k of Object.keys(saida)) if (/audio/i.test(k)) delete saida[k];
+      return saida;
+    }
     const comTroca = aplicarBaseDeTroca(partes, textoCliente, ditasAntes);
     return comTroca.length === body.partes.length && comTroca.every((p, i) => p === body.partes[i]) ? body : { ...body, partes: comTroca };
   } catch { return body; }

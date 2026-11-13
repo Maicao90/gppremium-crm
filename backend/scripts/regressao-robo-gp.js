@@ -28,6 +28,8 @@ const casos = [
     ok: (j) => j.via === 'ia_livre' },
   { nome: '"voces fazem base de troca?" -> sim, nas 2 medidas do anuncio', msgs: [U('vocês fazem base de troca?')], ok: (j) => /base de troca/i.test((j.partes || []).join(' ')) && !/n[aã]o (trabalha|fazemos|aceita)/i.test((j.partes || []).join(' ')) },
   { nome: '185/65/15 cota normal + base de troca R$199', msgs: [U('valor do 185/65/15')], ok: (j) => /249/.test((j.partes || []).join(' ')) && /199/.test((j.partes || []).join(' ')) },
+  { nome: '"no anuncio nao fala de base de troca" -> esta na descricao', msgs: [A('Os valores do anúncio são à base de troca: o *165/70/14* sai por *R$ 189,00* e o *185/65/15* por *R$ 199,00*, deixando o seu pneu usado aqui na troca 😉'), U('mas no anúncio não fala isso de base de troca')],
+    ok: (j) => /descri[cç][aã]o do an[uú]ncio/i.test((j.partes || []).join(' ')) },
 ];
 (async () => {
   let falhas = 0;
