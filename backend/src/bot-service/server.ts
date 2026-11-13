@@ -113,6 +113,8 @@ function corrigirPerfilDigitado(t: string): string {
   });
 }
 
+const CARROS_BR = /\b(gol|uno|palio|celta|onix|hb ?20s?|fox|kwid|ka|fiesta|corsa|sandero|logan|prisma|cobalt|spin|strada|saveiro|hilux|s ?10|ranger|toro|compass|creta|kicks|renegade|voyage|polo|virtus|argo|mobi|cronos|siena|grand siena|civic|corolla|fit|city|etios|yaris|march|versa|tracker|ecosport|eco sport|duster|208|2008|207|206|c3|c4|up|fusca|parati|golf|jetta|t-?cross|nivus|hr-?v|wr-?v|captur|oroch|frontier|l ?200|amarok|sw4|pajero|tucson|ix35|sportage|cerato|i30|focus|meriva|zafira|astra|vectra|classic|agile|montana|idea|punto|doblo|fiorino|ducato|master|sprinter|clio|megane|picanto|soul|hb20x|tiggo|fluence|cruze|s-?10|montana|spacefox|crossfox|santana|celta|bravo|linea|weekend|courier|escort|sentra|livina|tiida|jimny|vitara|outlander|lancer|asx|kangoo|fluence|cerato|azera|elantra|i10|qq|jac|renault|chevrolet|fiat|volks|volkswagen|ford|toyota|honda|hyundai|nissan|peugeot|citroen|jeep|mitsubishi|kia)\b/i;
+
 // Loja com IA_LIVRE_RESTRITA no bot-lojas.json (achada pelo NOME_LOJA do payload).
 function iaLivreRestrita(nomeLoja?: string): boolean {
   if (!nomeLoja) return false;
@@ -1081,6 +1083,9 @@ app.post('/gerar-resposta', async (req, res) => {
           return res.json({ ...base, partes: [...(cumprimenta ? textoFluxo(textosFluxo, 'saudacao') : []), ...textoFluxo(textosFluxo, 'pedir_medida')],
             acaoTipo: 'PEDIR_MEDIDA', novoEstadoPreco: 'aguardando_medida', novosDadosPreco: JSON.stringify(dadosNovos), chaves: cumprimenta ? ['saudacao', 'pedir_medida'] : ['pedir_medida'] });
         }
+      }
+      if (!liberaIaPeloCarro && (estadoPrecoAtual === 'sem_estado' || estadoPrecoAtual === 'preco_confirmado') && (CARROS_BR.test(gatilho) || /\b(19[89]\d|20[0-2]\d)\b/.test(gatilho))) {
+        liberaIaPeloCarro = true; // carro citado: a IA descobre a medida pelo carro
       }
       if (!liberaIaPeloCarro) {
         console.log(`[BotService] IA livre restrita (${lb.nome}): ${motivoLivre} em ${estadoPrecoAtual} — vai pra atendente.`);

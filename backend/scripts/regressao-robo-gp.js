@@ -34,6 +34,8 @@ const casos = [
     ok: (j) => /Josy/.test((j.partes || []).join(' ')) && j.acaoTipo !== 'PASSAR_ATENDENTE' },
   { nome: '"Ta bom / voces abrem ai amanha" -> horario (nao "te esperamos")', msgs: [A('Temos o pneu *175/70/14* ... R$ 279,00'), U('Tá bom'), U('Boa tarde vocês abrem ai amanhã')], estado: 'preco_confirmado', dados: { medida: '175/70/14' },
     ok: (j) => j.acaoTipo === 'RESPONDER_HORARIO' && !/Combinado|esperamos/i.test((j.partes || []).join(' ')) },
+  { nome: '"Fox 2012" (sem estado) -> IA descobre a medida', msgs: [U('Fox 2012')], ok: (j) => j.via === 'ia_livre' },
+  { nome: '"Quero ainda comprar os meus ai / Hb20" -> IA descobre a medida', msgs: [U('Quero ainda comprar os meus ai'), U('Hb20')], ok: (j) => j.via === 'ia_livre' },
 ];
 (async () => {
   let falhas = 0;
