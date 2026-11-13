@@ -1087,6 +1087,9 @@ app.post('/gerar-resposta', async (req, res) => {
       if (!liberaIaPeloCarro && (estadoPrecoAtual === 'sem_estado' || estadoPrecoAtual === 'preco_confirmado') && (CARROS_BR.test(gatilho) || /\b(19[89]\d|20[0-2]\d)\b/.test(gatilho))) {
         liberaIaPeloCarro = true; // carro citado: a IA descobre a medida pelo carro
       }
+      // 13/11: so pneu de STEP vai pra atendente aqui; o resto a IA responde (com a guarda final).
+      const soStepVaiPraAtendente = /\b(step|estepe|stepe)\b/i.test(gatilho);
+      if (!soStepVaiPraAtendente) liberaIaPeloCarro = true;
       if (!liberaIaPeloCarro) {
         console.log(`[BotService] IA livre restrita (${lb.nome}): ${motivoLivre} em ${estadoPrecoAtual} — vai pra atendente.`);
         return res.json({ ...base, partes: ['Só um instante que eu vou verificar aqui pra você, tá bem?'], acaoTipo: 'PASSAR_ATENDENTE', chaves: ['assunto_atendente'] });
