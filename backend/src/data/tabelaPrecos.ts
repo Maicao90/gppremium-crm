@@ -449,15 +449,15 @@ export const TABELA_PRECOS_GP: ItemPreco[] = [
     parcelado: { x1: 714.52, x2: 722.28, x3: 730.04, x4: 737.79, x5: 745.55, x6: 753.31, x7: 761.07, x8: 768.83, x9: 776.59, x10: 784.35 },
     portaria: 50.00
   },
-  // 12/11 (dono: "o ATR nao tem"): ADVENTURE ATR sem estoque — fora da tabela (cliente vai pra atendente ou cai no outro modelo da medida).
-  // {
-  //   medida: '265/65/17',
-  //   modelo: 'ADVENTURE ATR',
-  //   categoria: 'pickup',
-  //   aVista: 559.00,
-  //   parcelado: { x1: 571.41, x2: 577.61, x3: 583.82, x4: 590.02, x5: 596.23, x6: 602.43, x7: 608.64, x8: 614.84, x9: 621.05, x10: 627.25 },
-  //   portaria: 30.00
-  // },
+  // 13/11 (Josy: "e valor normal R$559"): ATR 265/65/17 TEM — voltou.
+  {
+    medida: '265/65/17',
+    modelo: 'ADVENTURE ATR',
+    categoria: 'pickup',
+    aVista: 559.00,
+    parcelado: { x1: 571.41, x2: 577.61, x3: 583.82, x4: 590.02, x5: 596.23, x6: 602.43, x7: 608.64, x8: 614.84, x9: 621.05, x10: 627.25 },
+    portaria: 30.00
+  },
   {
     medida: '265/65/17',
     modelo: 'ADVENTURE H/T',

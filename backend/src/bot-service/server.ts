@@ -437,6 +437,15 @@ function separarRajada(messages: any[]): { rajada: string[]; rabo: string[]; ant
   // a rajada inteira (com a legenda) vai pra leitura — o clique no anuncio ainda merece o cumprimento.
   // (a pontuacao e filtrada DEPOIS de tirar o titulo do anuncio: "📢 [Anúncio] X\n\n." tambem nao e assunto)
   const uteis = rabo.filter((t) => !PLACEHOLDER_MIDIA.test(t)).map(textoProprioNoAnuncio).filter((t) => t && !SO_PONTUACAO(t));
+  // 13/11 (Josy: "perguntou onde fica a loja e saiu no audio vou verificar"): o cliente perguntou, o robo respondeu outra
+  // coisa (a pergunta chegou enquanto ele respondia) e o cliente mandou so "?". O "?" cobra a pergunta anterior: ela volta
+  // pra rajada (a ultima fala do cliente antes das respostas da loja).
+  if (uteis.length && uteis.every((t) => /^[\s?!.]*\?[\s?!.]*$/.test(t))) {
+    let k = inicio - 1;
+    while (k >= 0 && messages[k]?.role !== 'user') k--;
+    const anterior = k >= 0 ? textoProprioNoAnuncio(String(messages[k]?.content ?? '').trim()) : '';
+    if (anterior && !PLACEHOLDER_MIDIA.test(anterior) && !SO_PONTUACAO(anterior)) uteis.unshift(anterior);
+  }
   return { rajada: (uteis.length ? uteis : rabo).slice(-6), rabo, anteriores: messages.slice(0, inicio), temMidiaSemTexto };
 }
 
@@ -935,6 +944,11 @@ app.post('/gerar-resposta', async (req, res) => {
     if (lb && iaLivreRestrita(lb.nome) && !temFoto && motivoLivre !== 'midia_sem_texto' && estadoPrecoAtual !== 'aguardando_medida') {
       const base = { deterministico: true, novoEstadoPreco: estadoPrecoAtual, novosDadosPreco: JSON.stringify(dadosPrecoAtuais), via: 'fluxo', assuntos: assuntosLidos, rajada, simulado: !!req.body?.simular };
       if (!rabo.length) return res.json({ ...base, partes: [], acaoTipo: 'SILENCIO', chaves: ['sem_mensagem_nova'] });
+      // 13/11 (Josy: "o audio rsrs"): resposta automatica de empresa ("Infinity Visual agradece seu contato. Como posso
+      // ajudar?") nao e cliente falando: silencio, sem "so um instante" nem etiqueta.
+      if (/agradece (o )?seu contato|obrigad[oa] (pelo|por entrar em) contato|mensagem autom[aá]tica|em breve (retornaremos|responderemos|entraremos)|nosso hor[aá]rio de atendimento/i.test(gatilho)) {
+        return res.json({ ...base, partes: [], acaoTipo: 'SILENCIO', chaves: ['resposta_automatica'] });
+      }
       if (pareceAgradecimento(gatilho)) {
         const textoRecente = anteriores.filter((m: any) => m?.role === 'assistant').slice(-6).map((m: any) => String(m?.content || '')).join('\n');
         const jaAgradeceu = chavesJaRespondidas(textosFluxo, textoRecente).includes('agradecimento');
