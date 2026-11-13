@@ -24,6 +24,10 @@ const casos = [
   { nome: '205/65/15 acabou -> atendente (nao diz que acabou)', msgs: [U('valor do 205/65/15')], ok: (j) => (j.chaves || []).includes('medida_inexistente') },
   { nome: '"ja e instalado?" depois do preco -> atendente', msgs: [A(PRECO175), U('Esse valor já é instalado?')], estado: 'preco_confirmado', dados: { medida: '175/70/14' }, ok: (j) => j.acaoTipo === 'PASSAR_ATENDENTE' },
   { nome: '"Celta 2012" depois de pedir a medida -> IA descobre a medida', msgs: [U('quero orçamento'), A('Qual a medida dos pneus que você precisa hoje? Se não souber, me fala qual é o seu carro'), U('Celta 2012')], estado: 'aguardando_medida', ok: (j) => j.via === 'ia_livre' },
+  { nome: 'print do anuncio "eu vi essa propaganda": valores SAO a base de troca', msgs: [A('Temos o pneu *175/65/14* ... R$ 249,00'), U('Eu vi essa propaganda')], estado: 'preco_confirmado', dados: { medida: '175/65/14' }, imagem: { base64: 'AAAA', mime: 'image/jpeg' },
+    ok: (j) => j.via === 'ia_livre' },
+  { nome: '"voces fazem base de troca?" -> sim, nas 2 medidas do anuncio', msgs: [U('vocês fazem base de troca?')], ok: (j) => /base de troca/i.test((j.partes || []).join(' ')) && !/n[aã]o (trabalha|fazemos|aceita)/i.test((j.partes || []).join(' ')) },
+  { nome: '185/65/15 cota normal + base de troca R$199', msgs: [U('valor do 185/65/15')], ok: (j) => /249/.test((j.partes || []).join(' ')) && /199/.test((j.partes || []).join(' ')) },
 ];
 (async () => {
   let falhas = 0;

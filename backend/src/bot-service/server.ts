@@ -32,6 +32,25 @@ import { sanitizarTextosFluxo, chavesJaRespondidas, textoFluxo, SILENCIO_SE_REPE
 const ENCERRAMENTO = /^(ok+|okay|blz|beleza|t[aá] (bom|bem|certo)|certo|entendi|tranquilo|show|perfeito|obrigad[oa]|muito obrigad[oa]|obg|vlw|valeu|j[aá] comprei|j[aá] resolvi|n[aã]o (quero|preciso)( mais)?|por enquanto n[aã]o|deixa|depois eu (vejo|volto|passo))([\s,!.]*(obrigad[oa]|muito obrigad[oa]|obg|vlw|valeu|tchau|at[eé] mais|bom dia|boa tarde|boa noite))*[\s!.🙏👍😊🤗❤️]*$/iu;
 const FALA_GARANTIA = /garantia de 2 anos/i;
 const FALA_VIR_NA_LOJA = /(vem|venha|vindo|passar?) at[eé] a loja|pessoalmente a gente consegue negociar/i;
+// 3) BASE DE TROCA (13/11, anuncio "Pneu aro 14 e aro 15"): so nas medidas do anuncio, deixando o pneu usado na loja.
+const BASE_TROCA_GP: Record<string, number> = { '165/70/14': 189, '185/65/15': 199 };
+const TEXTO_BASE_TROCA = 'Os valores do anúncio são à base de troca: o *165/70/14* sai por *R$ 189,00* e o *185/65/15* por *R$ 199,00*, deixando o seu pneu usado aqui na troca 😉';
+const NEGA_BASE_TROCA = /eram na base de troca|n[aã]o (trabalha|trabalhamos|fazemos|faz|aceita|aceitamos)( mais)? (com )?(a )?(base de troca|troca d[eo] pneu usado|pneu usado)/i;
+const CLIENTE_FALA_DE_TROCA = /base de troca|troca d[oe] (meu )?(pneu )?usado|deixar? (o )?(meu )?(pneu )?usado|\b189\b|\b199\b|propaganda|an[uú]ncio/i;
+function aplicarBaseDeTroca(partes: string[], textoCliente: string, ditasAntes: string): string[] {
+  let saida = partes.map((p) => (NEGA_BASE_TROCA.test(String(p)) ? TEXTO_BASE_TROCA : p));
+  saida = saida.filter((p, i) => p !== TEXTO_BASE_TROCA || saida.indexOf(p) === i);
+  const tudo = saida.join('\n');
+  if (tudo.includes(TEXTO_BASE_TROCA) || ditasAntes.includes('deixando o seu pneu usado')) return saida;
+  for (const [medida, valor] of Object.entries(BASE_TROCA_GP)) {
+    if (new RegExp(medida.replace(/\//g, '\\/') + '\\*?.{0,80}R\\$', 'i').test(tudo)) {
+      saida.push(`Na *base de troca* (deixando o seu pneu usado aqui), o ${medida} sai por *R$ ${valor},00* cada.`);
+      return saida;
+    }
+  }
+  if (CLIENTE_FALA_DE_TROCA.test(textoCliente) && /troca|an[uú]ncio|propaganda/i.test(textoCliente + tudo)) saida.unshift(TEXTO_BASE_TROCA);
+  return saida;
+}
 function guardaRespostaRestrita(body: any, messages: any[], textosFluxo: any): any {
   try {
     if (!body || !Array.isArray(body.partes)) return body;
@@ -53,7 +72,8 @@ function guardaRespostaRestrita(body: any, messages: any[], textosFluxo: any): a
       if (FALA_VIR_NA_LOJA.test(t)) { if (jaLoja) return false; jaLoja = true; }
       return true;
     });
-    return partes.length === body.partes.length ? body : { ...body, partes };
+    const comTroca = aplicarBaseDeTroca(partes, textoCliente, ditasAntes);
+    return comTroca.length === body.partes.length && comTroca.every((p, i) => p === body.partes[i]) ? body : { ...body, partes: comTroca };
   } catch { return body; }
 }
 // 13/11 (caso "175/64 aro 14" -> "so um instante"): perfil fora do padrao (nao multiplo de 5) e erro de digitacao -> o mais proximo.
