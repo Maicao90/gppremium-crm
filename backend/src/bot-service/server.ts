@@ -874,7 +874,10 @@ app.post('/gerar-resposta', async (req, res) => {
           const naoEhSoAgradecer = soAgradecimento && rajada.some((t) => /\?|amanh|hoje|s[aá]bado|domingo|segunda|ter[cç]a|quarta|quinta|sexta|passo a[ií]|vou a[ií]|\d/i.test(t));
           // Foto + "quanto custa?"/"boa tarde": pedir a medida ou so cumprimentar ignoraria a foto (ver temFoto).
           // Pelas chaves: "é remold? quanto custa?" com foto tem acaoPrincipal RESPONDER_REMOLD mas tambem pede a medida.
-          const ignorariaAFoto = temFoto && decisao.chaves.some((c) => c.startsWith('pedir_medida') || c === 'saudacao' || c === 'saudacao_retorno');
+          // 13/11 (Josy: "pneus 13 e foi mensagem de 15"): foto + "qual valor / 04 pneus" sem medida escrita — o preco sairia da
+          // medida GUARDADA de outra conversa; a foto (do pneu do cliente) manda. Vai pra leitura da foto.
+          const cotariaMedidaVelha = temFoto && decisao.chaves.includes('preco_medida') && !rajada.some((t) => /\b\d{3}\s*[\/\-. x]\s*\d{2}\b/i.test(t));
+          const ignorariaAFoto = cotariaMedidaVelha || (temFoto && decisao.chaves.some((c) => c.startsWith('pedir_medida') || c === 'saudacao' || c === 'saudacao_retorno'));
           // MONOLOGO (28/10, Ubiratan 07:22): duas rodadas se atropelaram; a 2a leu a conversa ja terminando com a loja e
           // respondeu de novo o "Aí sim" antigo ("Tranquilo! Qualquer dúvida..." logo depois de "Quer que eu separe?").
           // Sem mensagem nova do cliente, gesto (agradecimento/cumprimento/pedir medida/visita) nao sai: silencio.
@@ -946,6 +949,18 @@ app.post('/gerar-resposta', async (req, res) => {
       if (!rabo.length) return res.json({ ...base, partes: [], acaoTipo: 'SILENCIO', chaves: ['sem_mensagem_nova'] });
       // 13/11 (Josy: "o audio rsrs"): resposta automatica de empresa ("Infinity Visual agradece seu contato. Como posso
       // ajudar?") nao e cliente falando: silencio, sem "so um instante" nem etiqueta.
+      // 13/11 (Josy: "mandou mensagem vou ver para voce, e foi so bom dia"): a ultima mensagem e so um cumprimento
+      // (a rajada pode trazer fala velha do cliente, de semanas atras) -> cumprimenta e pede a medida, nao vai pra atendente.
+      const ultimaLinha = String(rajada[rajada.length - 1] || gatilho).trim();
+      if (/^(oi+|ol[aá]|opa|bom dia|boa tarde|boa noite|e a[ií])[\s,!.]*(tudo (bem|bom|certo)|td bem|blz|beleza)?[\s?!.]*$/i.test(ultimaLinha)) {
+        const textoRecente = anteriores.filter((m: any) => m?.role === 'assistant').slice(-6).map((m: any) => String(m?.content || '')).join('\n');
+        if (estadoPrecoAtual === 'preco_confirmado') {
+          return res.json({ ...base, partes: textoFluxo(textosFluxo, 'saudacao_retorno'), acaoTipo: 'RESPONDER_SAUDACAO', chaves: ['saudacao_retorno'] });
+        }
+        const jaPediu = chavesJaRespondidas(textosFluxo, textoRecente).includes('pedir_medida');
+        return res.json({ ...base, partes: [...textoFluxo(textosFluxo, 'saudacao'), ...(jaPediu ? [] : textoFluxo(textosFluxo, 'pedir_medida'))],
+          acaoTipo: 'PEDIR_MEDIDA', novoEstadoPreco: 'aguardando_medida', chaves: jaPediu ? ['saudacao'] : ['saudacao', 'pedir_medida'] });
+      }
       if (/agradece (o )?seu contato|obrigad[oa] (pelo|por entrar em) contato|mensagem autom[aá]tica|em breve (retornaremos|responderemos|entraremos)|nosso hor[aá]rio de atendimento/i.test(gatilho)) {
         return res.json({ ...base, partes: [], acaoTipo: 'SILENCIO', chaves: ['resposta_automatica'] });
       }
