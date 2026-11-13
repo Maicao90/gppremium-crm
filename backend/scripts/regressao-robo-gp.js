@@ -30,6 +30,10 @@ const casos = [
   { nome: '185/65/15 cota normal + base de troca R$199', msgs: [U('valor do 185/65/15')], ok: (j) => /249/.test((j.partes || []).join(' ')) && /199/.test((j.partes || []).join(' ')) },
   { nome: '"no anuncio nao fala de base de troca" -> esta na descricao', msgs: [A('Os valores do anúncio são à base de troca: o *165/70/14* sai por *R$ 189,00* e o *185/65/15* por *R$ 199,00*, deixando o seu pneu usado aqui na troca 😉'), U('mas no anúncio não fala isso de base de troca')],
     ok: (j) => /descri[cç][aã]o do an[uú]ncio/i.test((j.partes || []).join(' ')) },
+  { nome: '"Atendente ? / Nome ?" -> responde o nome (Josy)', msgs: [A('Quando você consegue passar aqui na loja pra gente fazer a troca?'), U('Atendente ?'), U('Nome ?')], estado: 'preco_confirmado', dados: { medida: '175/70/14' },
+    ok: (j) => /Josy/.test((j.partes || []).join(' ')) && j.acaoTipo !== 'PASSAR_ATENDENTE' },
+  { nome: '"Ta bom / voces abrem ai amanha" -> horario (nao "te esperamos")', msgs: [A('Temos o pneu *175/70/14* ... R$ 279,00'), U('Tá bom'), U('Boa tarde vocês abrem ai amanhã')], estado: 'preco_confirmado', dados: { medida: '175/70/14' },
+    ok: (j) => j.acaoTipo === 'RESPONDER_HORARIO' && !/Combinado|esperamos/i.test((j.partes || []).join(' ')) },
 ];
 (async () => {
   let falhas = 0;

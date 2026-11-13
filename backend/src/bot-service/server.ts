@@ -53,7 +53,27 @@ function aplicarBaseDeTroca(partes: string[], textoCliente: string, ditasAntes: 
   if (CLIENTE_FALA_DE_TROCA.test(textoCliente) && /troca|an[uú]ncio|propaganda/i.test(textoCliente + tudo)) saida.unshift(TEXTO_BASE_TROCA);
   return saida;
 }
+// 4) PERGUNTOU O NOME ("Nome ?", "Atendente ?", "com quem falo?") -> responde o nome da atendente da loja.
+// 5) PERGUNTOU SE ABRE / HORARIO ("voces abrem amanha?") -> o horario, nunca "Combinado, te esperamos".
+const PERGUNTA_NOME = /(qual (e |é )?(o )?(seu|teu) nome|seu nome\s*\?|^\s*nome\s*[?:]|com quem (eu )?(falo|estou falando|to falando)|quem (est[aá] |ta )?(falando|atendendo|me atendendo)|^\s*atendente\s*\?)/im;
+const PERGUNTA_HORARIO = /(voc[eê]s |vcs |a loja )?(abre|abrem|abriu|funciona|funcionam|est[aã]o abert|t[aá] abert|fecha|fecham)\b[^\n]{0,40}(\?|amanh|hoje|s[aá]bado|domingo|feriado|segunda|que horas)|hor[aá]rio (de )?(atendimento|funcionamento)|at[eé] que horas/i;
+let nomeAtendenteGuarda = 'Josy';
 function guardaRespostaRestrita(body: any, messages: any[], textosFluxo: any): any {
+  try {
+    const listaG = Array.isArray(messages) ? messages : [];
+    const ultG = String([...listaG].reverse().find((m: any) => m?.role === 'user')?.content || '');
+    const semAudio = (o: any) => { for (const k of Object.keys(o)) if (/audio/i.test(k)) delete o[k]; return o; };
+    if (body && Array.isArray(body.partes) && PERGUNTA_NOME.test(ultG) && !body.partes.join(' ').includes(nomeAtendenteGuarda)) {
+      return semAudio({ ...body, partes: [`Aqui é a ${nomeAtendenteGuarda} 😊 Em que posso te ajudar?`], acaoTipo: 'RESPONDER_NOME', chaves: ['nome_atendente'] });
+    }
+    const textoHorario = (textoFluxo(textosFluxo, 'horario') || []).join(' ');
+    if (body && Array.isArray(body.partes) && PERGUNTA_HORARIO.test(ultG) && textoHorario && !body.partes.join(' ').includes(textoHorario.slice(0, 25))) {
+      return semAudio({ ...body, partes: textoFluxo(textosFluxo, 'horario'), acaoTipo: 'RESPONDER_HORARIO', chaves: ['horario'] });
+    }
+  } catch { /* segue a guarda normal */ }
+  return guardaRespostaRestritaBase(body, messages, textosFluxo);
+}
+function guardaRespostaRestritaBase(body: any, messages: any[], textosFluxo: any): any {
   try {
     if (!body || !Array.isArray(body.partes)) return body;
     const lista = Array.isArray(messages) ? messages : [];
@@ -533,6 +553,7 @@ app.post('/gerar-resposta', async (req, res) => {
     const textosFluxo = sanitizarTextosFluxo(req.body?.textosFluxo);
     const lb = req.body?.lojaBot;
     if (lb && iaLivreRestrita(lb.nome)) {
+      nomeAtendenteGuarda = atendenteDaLoja(lb.nome)?.nome || 'Josy';
       for (const m of Array.isArray(messages) ? messages : []) if (m?.role === 'user' && typeof m.content === 'string') m.content = corrigirPerfilDigitado(m.content);
       const jsonOriginal = res.json.bind(res);
       (res as any).json = (body: any) => jsonOriginal(guardaRespostaRestrita(body, messages, textosFluxo));
