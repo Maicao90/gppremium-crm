@@ -15,6 +15,9 @@ export interface ConfigCentral {
   horaRelatorio: string; // 'HH:MM' (Brasilia)
   // 12/11 (dono): relatorio as 19h, com as campanhas ja pausadas = fechamento do PROPRIO dia ('hoje'). Padrao: 'ontem'.
   relatorioDoDia?: 'hoje' | 'ontem';
+  // 13/11 (dono): gasto das campanhas OU/PA (low ticket nas contas das lojas) desde esse dia ('YYYY-MM-DD') volta pro
+  // saldo mostrado da loja, "como se nao tivesse sido gasto"; e fica fora do consumo medio. Vazio = saldo real.
+  devolverOuPaNoSaldoDesde?: string;
   lojas: LojaCentral[]; // ordem do relatorio
   alertas: {
     diasAtencao: number; // autonomia abaixo disso = ATENCAO

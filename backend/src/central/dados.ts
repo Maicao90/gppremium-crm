@@ -193,7 +193,8 @@ export interface SaldoConta {
   contaId: string;
   loja: LojaCentral;
   plataforma: Plataforma;
-  saldo: number | null; // null = nao verificavel
+  saldo: number | null; // null = nao verificavel. Saldo DA LOJA (real + OU/PA devolvido, ver devolverOuPaNoSaldoDesde)
+  saldoReal?: number | null; // saldo de verdade na conta (deteccao de deposito)
   mediaDiaria: number | null; // gasto medio dos ultimos 7 dias completos
   autonomiaDias: number | null;
   nivel: NivelSaldo;
@@ -208,12 +209,24 @@ export async function saldosDasLojas(cfg: ConfigCentral, hoje: string = diaBR())
   const contas = await db().contaAnuncio.findMany({ where: { conexao_id: { in: conexoes.map((c) => c.id) } } });
   const ini = somarDias(hoje, -7);
   const fim = somarDias(hoje, -1);
-  const gastos = await db().metricaDiaria.groupBy({
-    by: ['conexaoId'],
+  // 13/11 (dono): o que as campanhas OU/PA gastam conta "como se nao tivesse sido gasto" — fica fora do consumo medio
+  // e volta pro saldo mostrado (saldo da loja = saldo real + gasto OU/PA desde cfg.devolverOuPaNoSaldoDesde).
+  const ehOuPa = (nome: string) => LOW_TICKET.test(semAcento(nome));
+  const linhas7: any[] = await db().metricaDiaria.findMany({
     where: { conexaoId: { in: conexoes.map((c) => c.id) }, data: { gte: chaveDia(ini), lte: chaveDia(fim) } },
-    _sum: { spend: true },
+    select: { conexaoId: true, campanhaNome: true, spend: true },
   });
-  const gasto7 = new Map<string, number>(gastos.map((g: any) => [g.conexaoId, Number(g._sum?.spend || 0)]));
+  const gasto7 = new Map<string, number>();
+  for (const g of linhas7) gasto7.set(g.conexaoId, (gasto7.get(g.conexaoId) || 0) + (ehOuPa(g.campanhaNome) ? 0 : Number(g.spend || 0)));
+  const ouPaDevolvido = new Map<string, number>();
+  const desdeOuPa = String(cfg.devolverOuPaNoSaldoDesde || '');
+  if (/^\d{4}-\d{2}-\d{2}$/.test(desdeOuPa)) {
+    const linhasOuPa: any[] = await db().metricaDiaria.findMany({
+      where: { conexaoId: { in: conexoes.map((c) => c.id) }, data: { gte: chaveDia(desdeOuPa) } },
+      select: { conexaoId: true, campanhaNome: true, spend: true },
+    });
+    for (const g of linhasOuPa) if (ehOuPa(g.campanhaNome)) ouPaDevolvido.set(g.conexaoId, (ouPaDevolvido.get(g.conexaoId) || 0) + Number(g.spend || 0));
+  }
 
   const saida: SaldoConta[] = [];
   for (const loja of cfg.lojas) {
@@ -222,7 +235,8 @@ export async function saldosDasLojas(cfg: ConfigCentral, hoje: string = diaBR())
       if (!c) continue;
       const conta = contas.find((x: any) => x.conexao_id === c.id);
       if (!conta) continue;
-      const saldo = c.disponivel ? arred(Number(conta.saldo)) : null;
+      const saldoReal = c.disponivel ? arred(Number(conta.saldo)) : null;
+      const saldo = saldoReal !== null ? arred(saldoReal + (ouPaDevolvido.get(c.id) || 0)) : null;
       const media = gasto7.has(c.id) ? arred((gasto7.get(c.id) || 0) / 7) : null;
       const autonomia = saldo !== null && media && media > 0 ? Math.max(0, saldo) / media : null;
       const minimo = (cfg.alertas.saldoMinimo || {})[`${loja.id}:${pl}`] || {};
@@ -241,6 +255,7 @@ export async function saldosDasLojas(cfg: ConfigCentral, hoje: string = diaBR())
         loja,
         plataforma: pl,
         saldo,
+        saldoReal,
         mediaDiaria: media,
         autonomiaDias: autonomia !== null ? Math.round(autonomia * 10) / 10 : null,
         nivel,
@@ -291,12 +306,14 @@ export async function detectarDepositos(cfg: ConfigCentral, estado: EstadoCentra
   const hoje = diaBR();
   const novos: DepositoLinha[] = [];
   for (const s of saldos) {
-    if (s.saldo === null) continue;
+    // Deposito e lido no saldo REAL da conta (o mostrado inclui o OU/PA devolvido).
+    const real = s.saldoReal !== undefined ? s.saldoReal : s.saldo;
+    if (real === null) continue;
     const anterior = estado.saldos[s.contaId];
-    estado.saldos[s.contaId] = s.saldo;
+    estado.saldos[s.contaId] = real;
     if (!contasComBase.has(s.contaId)) { contasComBase.add(s.contaId); continue; }
     if (anterior === undefined) continue;
-    const aumento = arred(s.saldo - anterior);
+    const aumento = arred(real - anterior);
     // 12/11: abaixo de R$10 e ajuste/credito do proprio Google (R$1,58, R$2,24...), nao recarga.
     if (aumento < 10) continue;
     // Ja registrado a mao no mesmo dia com o mesmo valor (+-R$1): nao duplica.
