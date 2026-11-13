@@ -24,6 +24,47 @@ import { rotasCerebro, licoesAtivasDaLoja, casarLicao, partesDaLicao, registrarU
 import { sanitizarTextosFluxo, chavesJaRespondidas, textoFluxo, SILENCIO_SE_REPETIR } from '../data/fluxoCatalogo';
 
 // Atendente da loja (bot-lojas.json: NOME_ATENDENTE e ARTIGO_ATENDENTE), achada pelo NOME_LOJA que vem no payload.
+// ===== GUARDA FINAL (13/11) — loja com IA_LIVRE_RESTRITA =====
+// 1) ENCERROU VENCE: a ultima fala do cliente e so "ok obrigado" / "ja comprei" / "obrigado" (sem pergunta) -> o robo so
+//    agradece UMA vez (ou fica quieto). Nada de garantia, audio, "manda o orcamento" (casos 9665-7009 e "Ok obrigado").
+// 2) SEM REPETIR ARGUMENTO: "garantia de 2 anos" e "vem/vindo ate a loja" no maximo 1x por resposta, e a garantia nao
+//    volta se a loja ja falou dela na conversa (caso Agnaldo: 5 bolhas repetindo garantia e loja).
+const ENCERRAMENTO = /^(ok+|okay|blz|beleza|t[aá] (bom|bem|certo)|certo|entendi|tranquilo|show|perfeito|obrigad[oa]|muito obrigad[oa]|obg|vlw|valeu|j[aá] comprei|j[aá] resolvi|n[aã]o (quero|preciso)( mais)?|por enquanto n[aã]o|deixa|depois eu (vejo|volto|passo))([\s,!.]*(obrigad[oa]|muito obrigad[oa]|obg|vlw|valeu|tchau|at[eé] mais|bom dia|boa tarde|boa noite))*[\s!.🙏👍😊🤗❤️]*$/iu;
+const FALA_GARANTIA = /garantia de 2 anos/i;
+const FALA_VIR_NA_LOJA = /(vem|venha|vindo|passar?) at[eé] a loja|pessoalmente a gente consegue negociar/i;
+function guardaRespostaRestrita(body: any, messages: any[], textosFluxo: any): any {
+  try {
+    if (!body || !Array.isArray(body.partes)) return body;
+    const lista = Array.isArray(messages) ? messages : [];
+    const ultimaCliente = [...lista].reverse().find((m: any) => m?.role === 'user');
+    const textoCliente = String(ultimaCliente?.content || '').trim();
+    const ditasAntes = lista.filter((m: any) => m?.role === 'assistant').slice(-12).map((m: any) => String(m?.content || '')).join('\n');
+    if (textoCliente && !textoCliente.includes('?') && ENCERRAMENTO.test(textoCliente) && body.acaoTipo !== 'SILENCIO') {
+      const jaAgradeceu = chavesJaRespondidas(textosFluxo, ditasAntes).includes('agradecimento');
+      const saida: any = { ...body, partes: jaAgradeceu ? [] : textoFluxo(textosFluxo, 'agradecimento'), acaoTipo: jaAgradeceu ? 'SILENCIO' : 'RESPONDER_AGRADECIMENTO', chaves: ['encerrou_vence'] };
+      for (const k of Object.keys(saida)) if (/audio/i.test(k)) delete saida[k];
+      saida.partes = saida.partes.filter((p: string) => !/\[ENVIAR_AUDIO/i.test(String(p)));
+      return saida;
+    }
+    let jaGarantia = FALA_GARANTIA.test(ditasAntes), jaLoja = false;
+    const partes = body.partes.filter((p: any) => {
+      const t = String(p || '');
+      if (FALA_GARANTIA.test(t)) { if (jaGarantia) return false; jaGarantia = true; }
+      if (FALA_VIR_NA_LOJA.test(t)) { if (jaLoja) return false; jaLoja = true; }
+      return true;
+    });
+    return partes.length === body.partes.length ? body : { ...body, partes };
+  } catch { return body; }
+}
+// 13/11 (caso "175/64 aro 14" -> "so um instante"): perfil fora do padrao (nao multiplo de 5) e erro de digitacao -> o mais proximo.
+function corrigirPerfilDigitado(t: string): string {
+  return String(t || '').replace(/\b(1[3-9]\d|2[0-9]\d|3[0-3]\d)\s*\/\s*(\d{2})\b/g, (todo, larg, perf) => {
+    const p = Number(perf);
+    if (p % 5 === 0 || p < 25 || p > 85) return todo;
+    return `${larg}/${Math.round(p / 5) * 5}`;
+  });
+}
+
 // Loja com IA_LIVRE_RESTRITA no bot-lojas.json (achada pelo NOME_LOJA do payload).
 function iaLivreRestrita(nomeLoja?: string): boolean {
   if (!nomeLoja) return false;
@@ -463,6 +504,11 @@ app.post('/gerar-resposta', async (req, res) => {
     // este servico e stateless). Sem edicao / payload invalido = texto padrao.
     const textosFluxo = sanitizarTextosFluxo(req.body?.textosFluxo);
     const lb = req.body?.lojaBot;
+    if (lb && iaLivreRestrita(lb.nome)) {
+      for (const m of Array.isArray(messages) ? messages : []) if (m?.role === 'user' && typeof m.content === 'string') m.content = corrigirPerfilDigitado(m.content);
+      const jsonOriginal = res.json.bind(res);
+      (res as any).json = (body: any) => jsonOriginal(guardaRespostaRestrita(body, messages, textosFluxo));
+    }
     const lojaBot: LojaBot | null = lb && typeof lb === 'object' && typeof lb.nome === 'string' && lb.nome.trim()
       ? { nome: String(lb.nome).trim(), telefone: String(lb.telefone || ''), horario: String(lb.horario || ''), localizacao: String(lb.localizacao || ''), localizacaoTexto: String(lb.localizacaoTexto || '') }
       : null;
