@@ -12,7 +12,7 @@ const casos = [
   { nome: '"Bom dia" nao vai pra atendente', msgs: [A('*Josy:* a minha creio que não gostem kkkkk'), U('Uai pq ?'), U('Bom dia')],
     ok: (j) => j.acaoTipo !== 'PASSAR_ATENDENTE' },
   { nome: 'foto + "qual valor / 04 pneus" le a foto (nao cota medida velha)', msgs: [A('Temos o pneu *195/65/15* ... R$ 329,00'), U('Qual valor'), U('04 pneus')], estado: 'preco_confirmado', dados: { medida: '195/65/15' }, imagem: { base64: 'AAAA', mime: 'image/jpeg' },
-    ok: (j) => j.via === 'ia_livre' },
+    ok: (j) => j.via === 'ia_livre' || (j.chaves || []).includes('carro_medidas') },
   { nome: '"Ok obrigado" depois da objecao: so agradece, sem garantia', msgs: [A(PRECO175), U('Atacadao dos pneus esta mais em conta'), A('Entendo! Se quiser, vem até a loja ver o pneu de perto.'), U('Ok obrigado')], estado: 'preco_confirmado', dados: { medida: '175/70/14' },
     ok: (j) => !(j.partes || []).join(' ').match(/garantia|or[çc]amento/i) },
   { nome: 'objecao com garantia ja dita: garantia nao repete', msgs: [A(PRECO175), A(GAR), U('Achei mais barato em outro lugar, os pneus de vocês são remold né')], estado: 'preco_confirmado', dados: { medida: '175/70/14' },
@@ -24,9 +24,9 @@ const casos = [
   { nome: '205/65/15 acabou -> atendente (nao diz que acabou)', msgs: [U('valor do 205/65/15')], ok: (j) => (j.chaves || []).includes('medida_inexistente') },
   { nome: '"ja e instalado?" depois do preco -> robo responde (nao "vou verificar")', msgs: [A(PRECO175), U('Esse valor já é instalado?')], estado: 'preco_confirmado', dados: { medida: '175/70/14' }, ok: (j) => j.acaoTipo !== 'PASSAR_ATENDENTE' },
   { nome: 'pneu de step -> Josy responde', msgs: [A(PRECO175), U('vocês tem aquele step fininho?')], estado: 'preco_confirmado', dados: { medida: '175/70/14' }, ok: (j) => j.acaoTipo === 'PASSAR_ATENDENTE' || (j.chaves || []).some((c) => /atendente|inexistente|alternativa/.test(c)) },
-  { nome: '"Celta 2012" depois de pedir a medida -> IA descobre a medida', msgs: [U('quero orçamento'), A('Qual a medida dos pneus que você precisa hoje? Se não souber, me fala qual é o seu carro'), U('Celta 2012')], estado: 'aguardando_medida', ok: (j) => j.via === 'ia_livre' },
+  { nome: '"Celta 2012" depois de pedir a medida -> IA descobre a medida', msgs: [U('quero orçamento'), A('Qual a medida dos pneus que você precisa hoje? Se não souber, me fala qual é o seu carro'), U('Celta 2012')], estado: 'aguardando_medida', ok: (j) => j.via === 'ia_livre' || (j.chaves || []).includes('carro_medidas') },
   { nome: 'print do anuncio "eu vi essa propaganda": valores SAO a base de troca', msgs: [A('Temos o pneu *175/65/14* ... R$ 249,00'), U('Eu vi essa propaganda')], estado: 'preco_confirmado', dados: { medida: '175/65/14' }, imagem: { base64: 'AAAA', mime: 'image/jpeg' },
-    ok: (j) => j.via === 'ia_livre' },
+    ok: (j) => j.via === 'ia_livre' || (j.chaves || []).includes('carro_medidas') },
   { nome: '"voces fazem base de troca?" -> sim, nas 2 medidas do anuncio', msgs: [U('vocês fazem base de troca?')], ok: (j) => /base de troca/i.test((j.partes || []).join(' ')) && !/n[aã]o (trabalha|fazemos|aceita)/i.test((j.partes || []).join(' ')) },
   { nome: '185/65/15 cota normal + base de troca R$199', msgs: [U('valor do 185/65/15')], ok: (j) => /249/.test((j.partes || []).join(' ')) && /199/.test((j.partes || []).join(' ')) },
   { nome: '"no anuncio nao fala de base de troca" -> esta na descricao', msgs: [A('Os valores do anúncio são à base de troca: o *165/70/14* sai por *R$ 189,00* e o *185/65/15* por *R$ 199,00*, deixando o seu pneu usado aqui na troca 😉'), U('mas no anúncio não fala isso de base de troca')],
@@ -35,8 +35,8 @@ const casos = [
     ok: (j) => /Josy/.test((j.partes || []).join(' ')) && j.acaoTipo !== 'PASSAR_ATENDENTE' },
   { nome: '"Ta bom / voces abrem ai amanha" -> horario (nao "te esperamos")', msgs: [A('Temos o pneu *175/70/14* ... R$ 279,00'), U('Tá bom'), U('Boa tarde vocês abrem ai amanhã')], estado: 'preco_confirmado', dados: { medida: '175/70/14' },
     ok: (j) => j.acaoTipo === 'RESPONDER_HORARIO' && !/Combinado|esperamos/i.test((j.partes || []).join(' ')) },
-  { nome: '"Fox 2012" (sem estado) -> IA descobre a medida', msgs: [U('Fox 2012')], ok: (j) => j.via === 'ia_livre' },
-  { nome: '"Quero ainda comprar os meus ai / Hb20" -> IA descobre a medida', msgs: [U('Quero ainda comprar os meus ai'), U('Hb20')], ok: (j) => j.via === 'ia_livre' },
+  { nome: '"Fox 2012" (sem estado) -> IA descobre a medida', msgs: [U('Fox 2012')], ok: (j) => j.via === 'ia_livre' || (j.chaves || []).includes('carro_medidas') },
+  { nome: '"Quero ainda comprar os meus ai / Hb20" -> IA descobre a medida', msgs: [U('Quero ainda comprar os meus ai'), U('Hb20')], ok: (j) => j.via === 'ia_livre' || (j.chaves || []).includes('carro_medidas') },
 ];
 (async () => {
   let falhas = 0;
