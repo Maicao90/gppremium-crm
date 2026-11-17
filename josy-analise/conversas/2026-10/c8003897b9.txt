@@ -1,0 +1,27 @@
+CONVERSA c8003897b9 | contato: jaciara | 08/10/2026 19:42 até 09/10/2026 17:27 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[19:42] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[19:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:44] CLIENTE: 185/55R16
+--- 09/10/2026 (Fri) ---
+[08:35] LOJA: Bom dia!
+[08:41] CLIENTE: bom diaa
+[08:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:42] LOJA: [foto]
+[08:42] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:47] CLIENTE: ok
+[14:46] LOJA: Jaciara... temos aqui a pronta entrega 195/55/16 te atende?
+[16:20] CLIENTE: não
+[16:43] LOJA: Consegui um retorno da marca Wanli
+[16:43] LOJA: [foto]
+[16:43] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:27] LOJA: Eu vou encerrar seu atendimento para não encher seu whatsapp de mensagem, está bem! .                                                                                                                   Se precisar futuramente é só chamar.                                                                                                                                                                                                                                    Obrigada 👋🏻

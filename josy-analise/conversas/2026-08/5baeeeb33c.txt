@@ -1,0 +1,20 @@
+CONVERSA 5baeeeb33c | contato: Áureo | 19/08/2026 12:45 até 19/08/2026 13:13 | 8 msgs do cliente, 6 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[12:45] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Pneu 275 65 14 gt radial 2 unidades
+[12:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:45] CLIENTE: 275 65 14 radial gt
+[12:45] CLIENTE: 2 unidades
+[12:46] CLIENTE: Tenho um orçamento
+[12:46] CLIENTE: 2 PNEUS 175/65R14 CHAMPIRO ECO 82T GT RADIAL por $558,00 a vista ja montado, alinhado e balanceado instalados em loja a base de troca
+[13:10] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu me chamo Josi."  {audio:midias/3EB048CE465AD4EB9C1868_451819.ogg}
+[13:10] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB056591D0EFA01708242_552899.ogg}
+[13:11] CLIENTE: Isso
+[13:11] CLIENTE: Consegue um preço melhor do que o orçamento que te enviei
+[13:12] LOJA: [áudio] "Aqui o que eu tenho é o pneu da marca GP Premium, que ele está por apenas R$ 249,00 a unidade, se o seu pagamento for correspondente a Debit ou Pix. Serviços são cobrados à parte."  {audio:midias/3EB07AC923DADF5204D2AE_914313.ogg}
+[13:12] CLIENTE: Quero não obrigado
+[13:12] LOJA: [foto]
+[13:13] LOJA: Eu quem agradeço!

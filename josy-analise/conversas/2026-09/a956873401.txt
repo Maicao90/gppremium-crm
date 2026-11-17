@@ -1,0 +1,35 @@
+CONVERSA a956873401 | contato: Wander Richard Anadao | 04/09/2026 14:38 até 10/09/2026 14:53 | 12 msgs do cliente, 13 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[14:38] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso?
+[14:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:39] CLIENTE: Pneus 205/55/16
+[14:40] CLIENTE: Qual o valor
+[14:41] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Wender, eu tenho aqui o pneu da marca GP Premium, a unidade está por R$ 289,00, se o seu pagamento for no débito ou no Pix, tá? Nesse momento, eu só não tenho como mandar para você o orçamento, porque a minha internet caiu e eu não consigo acessar o sistema para ver as opções aqui, tá joia? Mas, de modo geral, a princípio eu tenho aí o GP Premium, débito e Pix ele é R$ 289,00. Você mora aqui em Luziânia mesmo?"  {audio:midias/A59052FE8D6A140C29845FA36A3471A7_781003.ogg}
+[14:46] CLIENTE: Vc fica aonde
+[14:46] CLIENTE: E remold
+[14:46] CLIENTE: Ou zero
+[14:47] LOJA: [áudio] "Nós fomos aqui de Luziânia, Goiás. Esse, no caso, é o pneu GP Premium, um pneu ecológico que nós fazemos. Ele entra na categoria de remodelagem Premium."  {audio:midias/A587E7729F054AC64867D9A0000C0D12_302400.ogg}
+[14:47] CLIENTE: Me manda uma foto dele
+[14:48] LOJA: [áudio] "Tá, só um minutinho que eu vou gravar um vídeo para você, tá bom?"  {audio:midias/A568F4536D3AAD0E3EAC715E2B717652_921884.ogg}
+[14:48] CLIENTE: Blz
+[14:54] LOJA: [vídeo]
+--- 10/09/2026 (Thu) ---
+[14:31] LOJA: [áudio] "Oi Wander, tudo bem com você?"  {audio:midias/3EB094808600BF47920969_44807.ogg}
+[14:31] LOJA: [vídeo]
+[14:32] LOJA: [vídeo]
+[14:42] CLIENTE: Opa
+[14:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:42] CLIENTE: Tudo bem
+[14:43] CLIENTE: Estou esperando resposta da agência aonde agente comprou o carro
+[14:43] LOJA: *Josy:*
+Sim, compreendo.
+[14:51] LOJA: [foto]
+[14:52] LOJA: [áudio] "Wander, no dia de hoje, eu também vou ter essas outras opções aí, que acabei de te encaminhar no orçamento de valor unitário, primeira coluna é o valor à vista, que é o menor preço, e seguem aí as opções de parcelamento em até 10 vezes, está bem? Eu vou encerrar o seu atendimento aqui por hora, justamente para não ficar enchendo o seu WhatsApp de mensagens, e eu vou te mandar também a nossa localização, pois se houver a possibilidade, você passa aqui na loja para conversarmos pessoalmente, está bem?"  {audio:midias/3EB01AAE95DB91568D3385_558313.ogg}
+[14:52] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:53] CLIENTE: Blz

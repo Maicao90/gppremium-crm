@@ -1,0 +1,9 @@
+
+# [marcelo#1] "2010" depois do preco 175/65/14 + parcelamento
+  via=ia_livre motivoLivre=assunto_sem_bloco chaves=[]
+  > Pro Gol 2010 a medida original mais comum é a *175/70/14*. Ela sai por *R$ 279,00 à vista* na marca *GP Premium*, e dá pra parcelar em até 10x no cartão. / Se o seu for a versão com 175/65/14, o valor de R$ 249,00 que te passei antes continua valendo pra ela.
+
+# [marcelo#2] "2010" depois do preco 175/65/14 + parcelamento
+  via=ia_livre motivoLivre=assunto_sem_bloco chaves=[]
+  > Pro Gol 2010, a medida original no aro 14 é a *175/70/14*. Ela da marca *GP Premium* sai por *R$ 279,00 à vista*, e esse é o valor certo pro seu carro, no lugar do que te passei antes.
+  > Se preferir, você pode parcelar em até 10x no cartão! Quantos pneus você precisa?

@@ -1,0 +1,48 @@
+CONVERSA f6654d8ace | contato: Fabio Martins | 03/09/2026 12:15 até 11/09/2026 15:30 | 9 msgs do cliente, 19 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[12:15] CLIENTE: Bom dia
+[12:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:15] CLIENTE: Estava precisando de pneus
+[12:15] CLIENTE: penel 225 55 r18
+[12:15] CLIENTE: Vc teria ?
+[12:15] CLIENTE: E valor
+[12:17] LOJA: *Josy:*
+Boa tarde...obrigada por aguardar.
+[12:17] LOJA: [foto]
+[12:17] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:19] LOJA: [áudio] "Boa tarde, tudo bem? E você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0EBD18AA427CADA98AC_949603.ogg}
+[12:33] CLIENTE: [áudio] "Boa Anubal Paraíso."
+[12:33] LOJA: [áudio] "Ah, sim. É próximo de nós?"  {audio:midias/3EB08D4E497AD0BD48B4B4_450903.ogg}
+[12:33] LOJA: [áudio] "Os senhores estão em busca de alguma marca específica ou essas opções que eu te encaminhei te atendem?"  {audio:midias/3EB06E488ED16606CA407B_23934.ogg}
+[12:33] CLIENTE: [áudio] "Não, não estou em busca de marca específica não. Esse pneu você consegue dar um desconto no Pix ou não?"
+[12:34] CLIENTE: [áudio] "Você teria forte, porque eu vi que você mandou 3 modelos, né?"
+[12:35] LOJA: *Josy:*
+	
+pneu 225/55/18 108/105s 8pr cf1100 comforser 👇🏻
+[12:35] LOJA: [foto]
+[12:36] LOJA: *Josy:*
+	
+pneu 225/55/18 98v vitality forceland 👇🏻
+[12:36] LOJA: [foto]
+[12:36] LOJA: *Josy:*
+Pneu GP Premium 225/55/18 👇🏻
+[12:36] LOJA: [foto]
+[12:37] CLIENTE: Este qual valor
+[12:39] LOJA: *Josy:*
+R$ 493,00 a unidade a vista o pneu da foto que você selecionou.
+--- 10/09/2026 (Thu) ---
+[16:42] LOJA: [áudio] "Oi Sábio, tudo bom?"  {audio:midias/3EB013A4EA23AC3C3FBC43_679772.ogg}
+[16:42] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[15:30] LOJA: [áudio] "Oi, Fábio. Tudo jóia? Eu tentei falar contigo aí, mas imagina que na correria você não tenha conseguido me responder? Eu vou encerrar o seu atendimento, tá, jóia? Justamente para não ficar enchendo o seu WhatsApp de mensagens e vou te encaminhar aqui a localização da nossa loja, que se houver a possibilidade, seja bem direto aqui para nós conversarmos, tudo jóia? Obrigada aí pela sua atenção e bom final de semana."  {audio:midias/3EB0897B24307120805F6E_715708.ogg}
+[15:30] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:30] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

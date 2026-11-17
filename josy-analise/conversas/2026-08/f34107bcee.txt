@@ -1,0 +1,15 @@
+CONVERSA f34107bcee | contato: Gustavo Nino | 19/08/2026 16:58 até 19/08/2026 17:05 | 7 msgs do cliente, 4 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[16:58] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[16:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:00] CLIENTE: Ta quanto o pneu
+[17:00] CLIENTE: Aro 13
+[17:00] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu me chamo Josi e eu tenho aqui a partir de R$ 269. Você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB078F469519C83F8F0D2_441582.ogg}
+[17:01] CLIENTE: 175/70R13
+[17:02] CLIENTE: Nossa não
+[17:02] CLIENTE: Pensei que era em Goiânia
+[17:02] LOJA: [áudio] "Ah, certo. Nós somos aqui de Luziânia."  {audio:midias/3EB095509CE8F344187CA2_88302.ogg}
+[17:03] CLIENTE: Obrigado
+[17:05] LOJA: Disponha!

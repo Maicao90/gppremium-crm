@@ -1,0 +1,9 @@
+CONVERSA 1134585d11 | contato: Clarissa Maria | 18/08/2026 09:07 até 18/08/2026 10:17 | 2 msgs do cliente, 3 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[09:07] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:08] CLIENTE: Pneu pirelli 205/50 R17
+[10:06] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu gostaria de saber se você reside aqui na cidade de Luziânia, Goiás."  {audio:midias/3EB0718D8881F3933BE401_553368.ogg}
+[10:17] LOJA: [áudio] "E somente Pirelli que te atende, moça?"  {audio:midias/3EB02B7463B4733BB82E94_885230.ogg}

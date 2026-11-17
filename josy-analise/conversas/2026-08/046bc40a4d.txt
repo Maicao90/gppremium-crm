@@ -1,0 +1,40 @@
+CONVERSA 046bc40a4d | contato: Micael ANTT Revenda de Semi novos | 26/08/2026 09:35 até 04/09/2026 08:59 | 8 msgs do cliente, 16 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[09:35] CLIENTE: Bom dia tudo bom?
+[09:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:36] LOJA: *Josy :*
+Bom dia, Micael...
+[09:36] LOJA: *Josy :*
+Como vai?
+[09:37] CLIENTE: Bem graças a Deus
+[09:37] LOJA: *Josy :*
+Fico feliz!
+[09:37] CLIENTE: 215/55/17
+[09:37] CLIENTE: [áudio] "Josi, quanto que tá saindo o pneu dessa medida, por favor?"
+[09:37] LOJA: *Josy :*
+Precisa de quantos?
+[09:37] CLIENTE: Os 4
+[09:38] LOJA: *Josy :*
+O GP Premium está na promoção compre 3 e leve 4
+[09:38] CLIENTE: Tem q ser primeira linha
+[09:38] LOJA: [foto]
+[09:38] CLIENTE: Pode ser importado
+[09:38] LOJA: *Josy :*
+Certo....
+[09:57] LOJA: [foto]
+[16:35] LOJA: [áudio] "Mikael, posso separar esses pneus importados aqui para você?"  {audio:midias/3EB0215AD34084B268425B_571625.ogg}
+--- 03/09/2026 (Thu) ---
+[17:18] CLIENTE: Boa tarde
+[17:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:19] LOJA: *Josy:*
+Boa tarde, jóia Micael!
+[17:19] LOJA: [áudio] "E Mikael, como é que você está?"  {audio:midias/3EB07B09D6BC361F3A731A_250599.ogg}
+[17:21] LOJA: [áudio] "O que você manda hoje, meu amigo? Fala comigo."  {audio:midias/3EB034BAAC241879A9F3B6_143736.ogg}
+--- 04/09/2026 (Fri) ---
+[08:56] LOJA: *Josy:*
+👀
+[08:59] LOJA: *Josy:*
+Bom dia!

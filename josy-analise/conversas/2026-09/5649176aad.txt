@@ -1,0 +1,50 @@
+CONVERSA 5649176aad | contato: Jorge Gomes | 07/09/2026 10:11 até 08/09/2026 17:16 | 8 msgs do cliente, 17 da loja, 0 do robô
+
+--- 07/09/2026 (Mon) ---
+[10:11] CLIENTE: Bom dia!
+
+Preço do pneu 
+175/60 R14.
+[10:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:13] CLIENTE: 175
+60 
+R 14
+--- 08/09/2026 (Tue) ---
+[09:18] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu sou a Josi. E essa opção do perfil 60, eu não disponho ele aqui à pronta entrega. Pode ser o perfil 65?"  {audio:midias/3EB0D2B91FFB01A7731628_79585.ogg}
+[09:19] LOJA: *Josy:*
+175/65/147, pode ser?
+[09:19] CLIENTE: [áudio] "Olá, bom dia. Não, mas não precisa de, assim, a pronta entrega, não. Não é por agora, não. Eu até tentei porque, Flá, se não tiver nos próximos dias, eu posso esperar uns dias aí. Se você puder encontrar, se tiver aí, né, nos próximos dias, eu espero. E esse 60 que eu te passei, esse 65, se você tiver, tem alguma diferença? Aí você me fala aí, mas de qualquer forma eu posso aguardar uns dias."
+[09:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:19] CLIENTE: [áudio] "E me passa o valor deles aí também, por favor."
+[09:20] LOJA: [foto]
+[09:20] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:20] LOJA: [áudio] "Eu preciso aguardar a resposta dos meus distribuidores. Assim que eles me responderem, eu te passo marca, preço e o prazo de entrega, que vai ser só por encomenda mesmo, tá bom?"  {audio:midias/3EB0F711E92461D0DF5D0E_345157.ogg}
+[10:11] LOJA: *Josy:*
+175/60/14 👇🏻
+[10:11] LOJA: [foto]
+[10:12] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:20] LOJA: [áudio] "Olá, tudo bem com você? Eu te encaminhei um orçamento aí e gostaria de saber se um 7565 te atende ou se prefere realizar a encomenda dos 60."  {audio:midias/3EB07294D2DB038F6C2FDB_221494.ogg}
+[10:22] CLIENTE: Oi, eu estou aguardando uma resposta.
+Assim q tiver eu tô aviso
+[10:22] CLIENTE: Obrigado
+[10:22] LOJA: *Josy:*
+Ah, sim!
+[10:23] LOJA: *Josy:*
+Você mora aqui em Luziânia-Go, mesmo?
+[10:23] CLIENTE: Sim
+[10:23] LOJA: *Josy:*
+Bacana!
+[10:25] LOJA: *Josy:*
+Olha...se te atender o pneu de R$ 249,00 , ainda consigo um desconto para pagamento em *dinheiro*  a unidade fica por R$ 235,00 e já instalamos.
+[16:40] LOJA: [áudio] "Senhor Jorge, eu vou fazer o seguinte, tá? Eu vi que você mora aqui em Luziânia, eu vou te mandar a nossa localização, pois se de repente o senhor achar interessante, né, estiver com disponibilidade de tempo, passa aqui na nossa loja, tá bom?"  {audio:midias/3EB08F6924DB3E313BF293_832367.ogg}
+[16:40] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:16] CLIENTE: Tá bom obrigado

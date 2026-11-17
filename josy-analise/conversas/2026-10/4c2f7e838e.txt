@@ -1,0 +1,8 @@
+CONVERSA 4c2f7e838e | contato: Fábio A Pinheiro - Comercial | 15/10/2026 12:56 até 15/10/2026 12:57 | 1 msgs do cliente, 2 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[12:56] CLIENTE: *Max PPL:*
+Boa tarde, nesse whatsapp eu ainda falo com Pneus?
+[12:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:57] LOJA: [áudio] "Oi Fábio, tudo jóia?"  {audio:midias/3EB073E2D30AFCB23A133B_602235.ogg}

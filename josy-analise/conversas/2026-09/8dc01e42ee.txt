@@ -1,0 +1,29 @@
+CONVERSA 8dc01e42ee | contato: Elvane | 19/09/2026 07:40 até 19/09/2026 08:59 | 7 msgs do cliente, 12 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[07:40] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[07:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:40] CLIENTE: 225 /17/65
+[07:41] CLIENTE: toro
+[07:41] CLIENTE: onde e sua loja
+[08:02] LOJA: *Josy:*
+Bom dia, somos de Luziania-Go e você?
+[08:53] CLIENTE: sou daqui  também
+[08:53] CLIENTE: local?
+[08:56] LOJA: Bom dia! Temos sim!
+[08:56] LOJA: [foto]
+[08:56] LOJA: *Josy:*
+No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:56] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi. Elvane, nossa loja, ela fica aqui na BR-040, vou te mandar a localização, está bem?"  {audio:midias/3EB0988E6676BF5F0BFBB6_75545.ogg}
+[08:56] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:56] LOJA: [foto]
+[08:57] CLIENTE: [áudio] "Ah, tá, não. Beleza, então. Obrigado, tá? Eu pensei que fosse aqui no centro."
+[08:59] LOJA: [áudio] "Mãe, mas é aqui pertinho."  {audio:midias/3EB081559FE3BB889C7D03_18591.ogg}
+[08:59] LOJA: [áudio] "E na compra dos pneus GP Premium, eu não cobro a montagem dos pneus."  {audio:midias/3EB01F8D6BC5D331266A43_749859.ogg}
+[08:59] LOJA: [áudio] "Fica aqui, ó, passando a Coca-Cola."  {audio:midias/3EB086B98DE40976E92762_17464.ogg}
+[08:59] LOJA: [áudio] "O senhor mora aonde especificamente? Que de repente eu posso ver o que eu consigo fazer para o senhor."  {audio:midias/3EB01684AB1375220029E6_130542.ogg}

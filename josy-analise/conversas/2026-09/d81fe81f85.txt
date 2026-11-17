@@ -1,0 +1,161 @@
+CONVERSA d81fe81f85 | contato: Matheus | 29/09/2026 11:13 até 30/09/2026 11:31 | 74 msgs do cliente, 57 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[11:13] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:14] CLIENTE: Fica em cristalina?
+[11:23] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Obrigada por aguardar, está bem? Eu me chamo Josi. Matheus, a nossa loja fica aqui em Luziânia, Goiás."  {audio:midias/3EB0EF4D2F6E91458166ED_234025.ogg}
+[11:23] CLIENTE: Certo
+[11:24] CLIENTE: [áudio] "Eu procuro o pneu 215-65, aro 16. Tu tem os valores pra me passar?"
+[11:26] LOJA: [áudio] "Pois temos aqui sim, a princípio eu tenho os pneus justamente da nossa marca, que é o GP Premium Cristalina e usa muito essa marca, tá? O pneu GP Premium, ele está para o pagamento à vista por apenas R$ 349,00 a unidade, tá? E eu vou te mandar aqui o orçamento com as opções de parcelamento que eu tenho, tá bom?"  {audio:midias/3EB06F1C8DAB6D75ADA261_166904.ogg}
+[11:26] CLIENTE: Por favor
+[11:26] CLIENTE: Me manda valor a vista
+[11:28] LOJA: [foto]
+[11:28] LOJA: *Josy:*
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:29] CLIENTE: Esse valor é montado?
+[11:29] LOJA: [áudio] "E uma observação, esse valor de R$ 349,00, ele é para débito e Pix. Se você conseguir trazer o dinheiro em espécie, eu consigo te dar um desconto. A unidade vai ficar por R$ 330,00, está bem?"  {audio:midias/3EB08D3E4B184CDBC84A9C_128543.ogg}
+[11:29] CLIENTE: Positivo
+[11:29] LOJA: [áudio] "Os pneus, eles já são colocados automaticamente, aí a parte nós negociamos o valor de balanceamento e alinhamento de direção, se realmente for necessário."  {audio:midias/3EB0EC17DD1292D03F5570_468561.ogg}
+[11:29] LOJA: *Josy:*
+215/65/16 GP Premium 👇🏻
+[11:29] LOJA: [foto]
+[11:29] CLIENTE: [áudio] "Então tu faz um orçamento para mim para colocar dois pneus montados. Eu quero dois pneus montados."
+[11:29] CLIENTE: [áudio] "E eu precisaria para hoje ainda, tá? Tem como me encaixar?"
+[11:29] LOJA: [áudio] "Qual que é o seu carro? Que eu vou ver aqui o valor do balanceamento das rodas para você."  {audio:midias/3EB0109438CA618436940E_687159.ogg}
+[11:30] CLIENTE: Oroch
+[11:30] LOJA: [áudio] "Não, você pode vir aqui que te atendo normalmente, tá? Que não fecha para o almoço, não."  {audio:midias/3EB015055877C2884892D5_381991.ogg}
+[11:30] CLIENTE: 2022
+[11:30] CLIENTE: [áudio] "Maravilha, eu só estou passando para a empresa aqui o orçamento, tá? Assim que eles aprovar eu já vou aí."
+[11:31] LOJA: *Josy:*
+Balanceamento R$ 35,00 por roda.
+[11:32] LOJA: *Josy:*
+Alinhamento se necessário R$ 120,00
+[11:37] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:37] LOJA: [foto]
+[11:37] CLIENTE: Shows
+[11:37] CLIENTE: Só deixa o pessoal me responder aqui
+[11:38] LOJA: *Josy:*
+Valores de serviços ainda podem ser negociaveis está bem!
+[11:40] CLIENTE: [áudio] "Imagina, eu ia trocar lá no Mato Grosso, só que não deu tempo. Eu acabei vindo para cá no final de semana e eles estão um pouco mais alto que lá."
+[12:00] LOJA: [áudio] "Sim, entendo perfeitamente, tá? Eu te mandei a localização, mas eu acho que ela deu uma falha, aí eu te mandei aqui a foto da frente da loja para você saber onde você está chegando, tá?"  {audio:midias/3EB09A0A3E35C74B4974EB_214586.ogg}
+[12:01] CLIENTE: Taa
+[12:42] CLIENTE: Você consegue o Pix pra mim
+[12:42] LOJA: *Josy:*
+Sim!
+[12:44] LOJA: [áudio] "Mateus, eu vou te encaminhar aqui o Pix referente ao pagamento dos pneus, tá? Pois os serviços, né, primeiro os meninos vão olhar para ver se realmente vai precisar fazer o alinhamento do seu carro, que aí você pode pagar aqui na hora sem problemas, tá? Fica até melhor."  {audio:midias/3EB0A30418AB50D53BE468_716871.ogg}
+[12:44] CLIENTE: Positivo
+[12:50] CLIENTE: Consegue me mandar o Pix por gentileza
+[12:50] CLIENTE: Vamos aproveitar o hipe
+[12:50] LOJA: *Josy:*
+Perdãp...
+[12:50] CLIENTE: Que eles querem pagar logo kkk
+[12:50] LOJA: *Josy:*
+24.289.955/0001-79
+[12:51] CLIENTE: Valor ?
+[12:51] LOJA: *Josy:*
+R$ 698,00
+[12:51] CLIENTE: Sem problemas querida hehehe
+[12:51] CLIENTE: Já to indo ai
+[13:05] LOJA: [áudio] "Combinado, Matheus."  {audio:midias/3EB094528346DD3072EAEE_412680.ogg}
+[13:37] CLIENTE: [documento]
+[13:38] CLIENTE: [áudio] "Moço, bora que eu vi que é em Luziânia. Eu perguntei se era em Pistalina."
+[13:40] CLIENTE: [áudio] "Tô saindo aqui de Cristalina, vou levar uma hora pra chegar aí mais ou menos. Vai dar certo, né?"
+[14:19] LOJA: *Josy:*
+Oiê
+[14:19] LOJA: *Josy:*
+Sim!
+[14:24] CLIENTE: [áudio] "Eu tava a caminho aí e meu pneu estourou aqui, parei numa borracharia. Tava uns 50 km do Luziânia. Vai demorar um pouquinho mais, gente."
+[14:26] LOJA: [áudio] "Meu Deus, rapaz! Mas aí dá tudo certo, tá bom?"  {audio:midias/3EB0649B6E25B842FE5F24_750577.ogg}
+[14:26] CLIENTE: Hhehehee
+[14:26] CLIENTE: Amém Josy
+[14:34] LOJA: *Josy:*
+Me informa seu CPF e os dados do seu endereço.
+[14:35] CLIENTE: [documento]
+[15:18] CLIENTE: [áudio] "Olha só, vê se você consegue me dar uma luz aqui. Eu tô aqui no posto 81, acho que ainda, uns 50 km de Luziânia, e de manhã tinha furado um pneu, né? E agora, quando eu ia indo aí na sua loja, o meu step também estragou, entendeu? Dei aqui, parei numa borracharia bem em frente, aqui lá do posto, e eles não têm nenhum pneu 16, entendeu? Aí estão querendo me cobrar 150 para trazer um pneu aí, mais 250 um pneu usado, entendeu? 400 já é um pneu. Aí eu falei com o meu chefe, ele autorizou trocar os dois aí na sua loja. Só que eu precisaria de algum jeito de ir até aí, entende? E aqui eles não estão querendo colaborar, não estão querendo me ajudar. Eles querem me vender pneu velho por 250, mais 150 para um rapaz, acho que é filho do dono, trazer aqui. Não sei se você tem uma luz para me dar."
+[15:19] CLIENTE: No caso, eu iria aí trocar os 4
+[15:20] LOJA: [áudio] "Matheus, a única divergência que eu tenho aqui é que eu não tenho carro para poder levar os pneus aí para ti. O meu BO é esse."  {audio:midias/3EB035414BA4112AB76AAE_414500.ogg}
+[15:21] CLIENTE: [áudio] "Pois é, pois é. Ah, coisa, não sei o que fazer. Porque é complicado."
+[15:21] CLIENTE: [áudio] "Aí eu tô empenhado aqui, não sei o que fazer, não tem o que fazer, né? E a empresa também tá certa, imagina? Gastar 700 reais em dois pneus usados, né? Dois pneus usados mais a vinda. Tá louco?"
+[15:21] LOJA: [figurinha]
+[15:21] CLIENTE: [áudio] "Tu não consegue, então, alguém para me trazer esses pneus, esses dois pneus aqui? Que daí já me ajuda e já estão pagos, né? Alguém que me traga esses dois pneus, eu coloco os dois aqui e já era."
+[15:22] CLIENTE: [áudio] "E aí talvez amanhã eu vou e já troco mais dois. Eu vou na loja e vocês balanceiam os quatro já e trocam mais os outros dois."
+[15:22] CLIENTE: [áudio] "Vê se alguém barato consegue trazer para mim, dá uma luz aí."
+[15:24] LOJA: [áudio] "Vou ver aqui, já te dou uma resposta, tá?"  {audio:midias/3EB02C1E578AC618D8DAAA_876421.ogg}
+[15:25] CLIENTE: Vê pra mim por gentileza
+[15:25] CLIENTE: Por que eu não conheço nada aqui na região
+[15:25] CLIENTE: Kkk
+[15:30] LOJA: [áudio] "Matheus, me manda a localização de onde você está."  {audio:midias/3EB04A381654ADB699FC4C_467363.ogg}
+[15:30] CLIENTE: [localização] -16.62242889404297,-47.74925994873047
+[15:35] CLIENTE: Vou mandar um motoboy buscar aí
+[15:36] CLIENTE: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:36] CLIENTE: [foto]
+[15:36] CLIENTE: Essa localização?
+[15:36] LOJA: [áudio] "Matheus, eu consegui aqui um Uber para entregar para você, porque na moto não vai dar certo de levar."  {audio:midias/A53758B5A1C2A2F7C38254C347F4A184_159147.ogg}
+[15:36] CLIENTE: Quanto
+[15:36] LOJA: [áudio] "Os pneus são grandes."  {audio:midias/A5AF490A589954D57A45FE99D537AF2B_775535.ogg}
+[15:37] LOJA: [áudio] "O rapaz falou que faz aqui por R$160,00."  {audio:midias/A543A00719DC00CDDF57B6B8382D7F4C_111172.ogg}
+[15:37] CLIENTE: Ok
+[15:37] CLIENTE: Manda vir
+[15:37] CLIENTE: Kkk
+[15:37] CLIENTE: Pode mandar ele vir estou esperando aqui
+[15:37] LOJA: [áudio] "Beleza, eu já chamei o Uber aqui."  {audio:midias/A55579281887457AEF3A9ECE9FC06E34_225534.ogg}
+[15:38] CLIENTE: Obrigado, me quebrou um baita galho kk
+[15:38] CLIENTE: [áudio] "Aí desse jeito eu vou conseguir, amanhã eu vou lá e troco mais 2, deixo com os 4 novos, né? Tá louco? Os caras queriam 700 reais para 2 pneus usados e trazer aqui, boto mais um pouquinho em cima, compro 2 novos aí contigo."
+[15:38] CLIENTE: Os cara se provalacem
+[15:50] LOJA: [áudio] "Agora o Uber está chegando, tá bom, Matheus?"  {audio:midias/3EB0175DC9AE6A9DA4F314_595478.ogg}
+[15:57] CLIENTE: Positivo
+[15:57] CLIENTE: Obrigadooo
+[16:00] CLIENTE: [áudio] "Que carro que é o Uber? Só pra mim cuidar a hora que ele chegar aqui."
+[16:01] LOJA: *Josy:*
+HB20 hatch branco
+[16:01] LOJA: *Josy:*
+Alyson o nome dwlw.
+[16:01] LOJA: *Josy:*
+Paasei seu contato para ele.
+[16:01] LOJA: *Josy:*
+Mas vou passar do dele para você também.
+[16:01] CLIENTE: Positivo
+[16:02] LOJA: *Josy:*
+61 9273-9802
+[16:04] CLIENTE: [figurinha]
+[16:04] CLIENTE: [figurinha]
+[17:50] LOJA: *Josy:*
+Deu tudo certo?
+[17:50] CLIENTE: Deu sim
+[17:50] CLIENTE: [áudio] "Voltei já para Pistalina, viu? Será que tem como amanhã ir lá fazer o balanceamento daí?"
+[17:50] LOJA: *Josy:*
+Eu estava com fila de espera aqui na loja, dia cheio
+[17:50] CLIENTE: Coisa boaaa
+[17:51] LOJA: [áudio] "Sim, pode vir sim, Matheus."  {audio:midias/3EB026414AFCEF6DE8B951_874100.ogg}
+[17:51] CLIENTE: Positivo
+--- 30/09/2026 (Wed) ---
+[09:35] CLIENTE: Oii
+[09:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:35] CLIENTE: Me manda o seu valor ai
+[10:02] LOJA: Oiê
+[10:02] LOJA: 698,00
+[10:03] LOJA: Estamos com instabilidade na internet, agora que vi sua mensagem
+[10:12] LOJA: *Josy:*
+24.289.955/0001-79
+[10:12] CLIENTE: [áudio] "Já tá na mão já, minha querida. Já passei lá onde você tinha passado, Pix, né? Já passei pra eles lá. Só tô esperando os comprovantes, tá? Tanto daqui quanto daí."
+[10:13] LOJA: [áudio] "Perfeito, Matheus. Desculpa aí que teve essa instabilidade na internet e rolou tudo aqui. Eu roteei do meu celular para poder ver se eu conseguia acompanhar tudo o que estava acontecendo aqui."  {audio:midias/3EB04DE9EA8E9F13B9B136_901129.ogg}
+[10:14] CLIENTE: Mas aqui tb tava kk
+[10:14] LOJA: *Josy:*
+Estamos vivendo em estado critico kkkk o que será de nós?
+[10:15] CLIENTE: Boa pergunta kkk a gente não tá vivendo, tá sobrevivendo kk
+[10:15] CLIENTE: [documento] ComprovanteSantander-1790774027.7045221.pdf
+[10:17] LOJA: *Josy:*
+totalmente modo sobrevivencia total
+[10:18] CLIENTE: Kkkk sim
+[11:25] LOJA: [áudio] "Oi, Matheus, tudo jóia? Matheus, tô passando apenas pra agradecer aí, tá, pela confiança na nossa empresa, por ter se deslocado até aqui, porque foi um rolê e tanto pra você, hein? Obrigada aí por tudo, tá, e que você tenha uma boa semana."  {audio:midias/3EB09DE5FB67D4DB1DCFA2_804387.ogg}
+[11:29] CLIENTE: [áudio] "Eu que agradeço, Josi, seu atendimento, sua paciência comigo também, e no final sempre tudo dá certo, tá bom? Grande abraço aí, sucesso, boas vedas!"
+[11:30] LOJA: [áudio] "Imagina, nossa, se todos os clientes fossem como você, gente, eu teria muito cabelo, porque, nossa, extremamente tranquilo o seu atendimento, deu tudo certo. Então, assim, foi muito na paz, realmente, que eu tenha mais clientes como você, porque não tá sendo fácil, viu, Matheus?"  {audio:midias/3EB07002077FBF33F86601_468879.ogg}
+[11:30] LOJA: [áudio] "Sucesso para você também, bom dia de trabalho, tá joia? Até mais!"  {audio:midias/3EB0297F671A0BF18901AD_848315.ogg}
+[11:31] CLIENTE: Grande abraço, até mais 😘
+[11:31] LOJA: [figurinha]

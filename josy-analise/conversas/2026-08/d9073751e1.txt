@@ -1,0 +1,21 @@
+CONVERSA d9073751e1 | contato: Mário | 20/08/2026 17:24 até 02/09/2026 18:18 | 2 msgs do cliente, 9 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[17:24] LOJA: Bia tarde, Mario!
+[17:24] LOJA: [foto]
+[17:41] CLIENTE: [áudio] "Meu patrão perguntou se vocês emitem a nota, que aí a empresa vai pagar o pneu e depois pode descontar do meu salário."
+[17:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:42] LOJA: Sim fazemos nota fiscal apresentar.
+--- 29/08/2026 (Sat) ---
+[11:05] LOJA: *Josy:*
+Bom dia, sr Mario...como vai?... O senhor passou aqui alguns dias atrás em busca de pneus para seu carro.
+[11:06] LOJA: *Josy:*
+Gostaria de saber se quer que eu reserve os pneus.
+[11:06] LOJA: *Josy:*
+Assim que possivel me de um retorno assim que puder, está bem!
+--- 02/09/2026 (Wed) ---
+[17:43] LOJA: [áudio] "Oi, Sr. Mário, tudo jóia? Há alguns dias o senhor passou aqui na nossa loja e queria muito saber se o senhor pretende seguir aqui com a negociação, né? Se o rapaz aí vai te ajudar na compra dos pneus, que nós já fazemos a instalação deles também, né?"  {audio:midias/3EB0587B5B56E3E524635F_186731.ogg}
+[18:18] CLIENTE: Eu não avisei eu resolvi colocar novo já foi instalado agradeço pela atenção
+[18:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

@@ -1,0 +1,33 @@
+CONVERSA f48c9c9fc3 | contato: Fontinele9️⃣9️⃣🚕🚖 | 17/09/2026 09:24 até 17/09/2026 09:53 | 6 msgs do cliente, 15 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[09:24] CLIENTE: Qual o valor do pneu Aro 14 175/75
+[09:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:26] LOJA: *Josy:*
+Bom dia!
+[09:26] LOJA: [foto]
+[09:27] LOJA: *Josy:*
+pneu 175/75/14 4pr 86t cf510 comforser R$ 300,00 a unidade a vista.
+[09:27] LOJA: *Josy:*
+pneu 175/70/14 GP Premium R$ 279,00 a unidade a vista.
+[09:29] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu sou a Josi e você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0EDD56171AC37CE089B_305643.ogg}
+[09:30] CLIENTE: J Ingá
+[09:30] CLIENTE: Seria pra retirada
+[09:30] LOJA: [áudio] "Assim, é pertinho de nós."  {audio:midias/3EB0F996DD94A40BF52677_700315.ogg}
+[09:30] LOJA: [áudio] "Excelente! Pode vir aqui retirar, não tem problema."  {audio:midias/3EB03495AD32DFC507605A_577060.ogg}
+[09:31] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:31] LOJA: [foto]
+[09:31] CLIENTE: [áudio] "Eles são remote ou eles são importados mesmo?"
+[09:32] CLIENTE: [áudio] "Vocês vêm pneu nacional também? O nacional não deve, geralmente o nacional não tem essa medida, né?"
+[09:32] LOJA: [áudio] "Esse chinês aí, ele é pneu novo."  {audio:midias/3EB0276D6F126F46E79C26_189300.ogg}
+[09:32] LOJA: [áudio] "Não, pneus nacionais não tem no perfil 75, justamente porque é uma opção que foi inventada, né? Quem criou justamente foram os importadores."  {audio:midias/3EB027802F72F970B0531C_6009.ogg}
+[09:33] CLIENTE: [áudio] "Mas se eles vendem o nacional aí, eu sou importado."
+[09:35] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:35] LOJA: [foto]
+[09:53] LOJA: *Josy:*
+Passa aqui na loja, assim que possivel. Está bem!

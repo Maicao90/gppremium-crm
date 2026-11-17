@@ -1,0 +1,187 @@
+{
+ "geradoEm": "2026-10-22T17:40:00.000Z",
+ "conversasLidas": 1921,
+ "propostas": [
+  {
+   "id": "pergunta_se_e_remold",
+   "titulo": "Cliente pergunta se é remold",
+   "quando": "O cliente vê o preço (ou o anúncio) e pergunta se o pneu é remold, recapado ou \"remolde\" antes de decidir.",
+   "frequencia": 312,
+   "respondidasPelaLoja": 287,
+   "taxaSucesso": 0.64,
+   "comoJosyFaz": "Ela confirma sem rodeio que é remold, mas já explica que é a linha premium da própria fábrica, com borracha padrão europeu. Na sequência emenda a garantia (2 anos e 60 mil km) e devolve a conversa com uma pergunta (\"qual é o carro?\" / \"quer que eu separe?\"). Quando manda áudio, o cliente costuma responder em menos de 10 minutos.",
+   "exemplos": [
+    { "cliente": "esse pneu é remold?", "loja": "É sim! É o GP Premium, remold de linha premium, borracha padrão europeu. Tem 2 anos de garantia e roda 60 mil km 😊" },
+    { "cliente": "é remolde ou novo?", "loja": "(áudio) explicou que é remodelagem premium da fábrica, com garantia de 2 anos e 60 mil km" },
+    { "cliente": "não quero remold, dá problema", "loja": "Entendo! O nosso é diferente do remold comum: controle de qualidade de fábrica e garantia de 2 anos ou dinheiro de volta." }
+   ],
+   "frasesQueFuncionaram": [
+    "É o pneu mais vendido que eu tenho, justamente pela qualidade",
+    "Tem garantia de 2 anos e roda 60 mil km tranquilamente",
+    "Se der qualquer problema dentro da garantia, a gente troca ou devolve o dinheiro",
+    "Quer que eu já separe pra você?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente perguntar se o pneu é remold, recapado ou se é novo",
+    "acao": "responder",
+    "resposta": "É sim! O GP Premium é remold de linha premium, feito na nossa fábrica com borracha padrão europeu e controle de qualidade 😊\n\nTem garantia de 2 anos e 60 mil km — se der qualquer problema, a gente troca ou devolve o dinheiro.",
+    "lojas": ["72213a6c-31c5-410d-a6b4-504dfd223e2f"]
+   },
+   "ligadoA": "categoria:remold",
+   "audios": [
+    { "midia": "/midias/3EB063BD2D9FB5B1A48B89_398454.ogg", "transcricao": "Esse, no caso, é um pneu ecológico que nós produzimos, tá? Ele vai entrar na categoria de remodelagem apenas por questão técnica. Entretanto, é o pneu mais vendido que eu tenho, justamente por conta da qualidade. Tem garantia de 2 anos e questão de quilometragem roda 60 mil km, tranquilamente.", "duracao": 17.9, "vezesUsado": 5 },
+    { "midia": "/midias/3EB05EBE7BE3D7FD1EB230_540563.ogg", "transcricao": "Olá, bom dia, tudo bem com você? Não vi aqui seu nome, mas enfim. Esse é um pneu ecológico que nós fazemos, tá? Ele vai entrar na categoria de remodelagem Premium, que não tem nada a ver com os pneus que são remoldes, tá? Ele é um pneu que tem 2 anos de garantia, com questão da quilometragem, roda 60 mil km.", "duracao": 23.2, "vezesUsado": 2 }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "pergunta_garantia",
+   "titulo": "Cliente pergunta quanto tempo de garantia",
+   "quando": "O cliente quer saber a garantia do pneu (tempo, quilometragem ou o que cobre).",
+   "frequencia": 198,
+   "respondidasPelaLoja": 181,
+   "taxaSucesso": 0.71,
+   "comoJosyFaz": "Responde curto e seguro: 2 anos e 60 mil km, \"assim como as grandes marcas\". Às vezes completa que roda ainda mais com o carro alinhado. Não entra em detalhe de cobertura a não ser que o cliente pergunte.",
+   "exemplos": [
+    { "cliente": "tem garantia? quanto tempo?", "loja": "Tem sim! 2 anos de garantia e roda 60 mil km 😉" },
+    { "cliente": "e se der bolha?", "loja": "Dentro da garantia a gente troca, é só trazer aqui na loja com a nota." }
+   ],
+   "frasesQueFuncionaram": [
+    "Roda 60 mil km, assim como as grandes marcas nacionais",
+    "Ainda mais se o seu carro estiver bem alinhado"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente perguntar quanto tempo de garantia o pneu tem",
+    "acao": "responder",
+    "resposta": "Tem sim! São 2 anos de garantia e ele roda 60 mil km, assim como as grandes marcas 😉",
+    "lojas": ["72213a6c-31c5-410d-a6b4-504dfd223e2f"]
+   },
+   "ligadoA": "categoria:garantia",
+   "audios": [
+    { "midia": "/midias/3EB000E1241DAA66BD2E2B_536245.ogg", "transcricao": "Os pneus tem 2 anos de garantia, rodam aí 60 mil km, assim como todo tipo de marca de pneu, tá? Ainda mais se o seu carro estiver bem alinhado.", "duracao": 9.6, "vezesUsado": 9 },
+    { "midia": "/midias/3EB06F7F9F5AFFF994A873_211916.ogg", "transcricao": "Garantia de 2 anos, roda 60 mil km tranquilamente.", "duracao": 4.2, "vezesUsado": 4 }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "pergunta_se_é_chinês",
+   "titulo": "Cliente pergunta se o pneu é chinês",
+   "quando": "O cliente pergunta se é chinês/importado ou compara com marca chinesa que viu em outro lugar.",
+   "frequencia": 64,
+   "respondidasPelaLoja": 58,
+   "taxaSucesso": 0.52,
+   "comoJosyFaz": "Diferencia os dois: o chinês é novo, o GP Premium é feito aqui com mais borracha. Explica o TWI (até onde o pneu pode rodar) pra mostrar que o chinês vem com menos borracha. Não fala mal de marca nenhuma pelo nome.",
+   "exemplos": [
+    { "cliente": "esse é chinês?", "loja": "Não, o GP Premium é fabricado aqui. O chinês que a gente tem é novo, mas vem com menos borracha." }
+   ],
+   "frasesQueFuncionaram": [
+    "O chinês é novo, mas vem com menos borracha",
+    "Dá uma olhada no TWI: é até onde o pneu pode ser usado"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente perguntar se o pneu é chinês ou importado",
+    "acao": "responder",
+    "resposta": "O GP Premium não é chinês: é fabricado aqui, com borracha padrão europeu 😊\n\nTambém trabalhamos com chinês novo, mas ele vem com menos borracha. Quer que eu te mostre as duas opções?",
+    "lojas": ["72213a6c-31c5-410d-a6b4-504dfd223e2f"]
+   },
+   "ligadoA": "categoria:chines",
+   "audios": [
+    { "midia": "/midias/3EB01768006C61D6F29367_755806.ogg", "transcricao": "O chinês é novo.", "duracao": 1.7, "vezesUsado": 3 }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "pergunta_parcelamento",
+   "titulo": "Cliente pergunta se parcela",
+   "quando": "O cliente pergunta se dá pra parcelar ou em quantas vezes, sem falar ainda de valor.",
+   "frequencia": 241,
+   "respondidasPelaLoja": 219,
+   "taxaSucesso": 0.58,
+   "comoJosyFaz": "Responde que parcela em até 10x no cartão e que o valor muda pouco. Quando já passou o preço, refaz a conta pela tabela; quando não, pede a medida antes. Nunca fala número de parcela sem a medida.",
+   "exemplos": [
+    { "cliente": "parcela?", "loja": "Parcelamos em até 10x no cartão! Qual a medida do seu pneu que eu já te passo certinho?" }
+   ],
+   "frasesQueFuncionaram": [
+    "O valor muda, mas você pode ver que é bem pouca coisa"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente perguntar se parcela ou em quantas vezes, sem ter a medida ainda",
+    "acao": "orientar",
+    "resposta": "Diga que parcelamos em até 10x no cartão e peça a medida do pneu pra passar o valor certinho pela tabela. Não escreva valor de parcela sem a medida.",
+    "lojas": ["72213a6c-31c5-410d-a6b4-504dfd223e2f"]
+   },
+   "ligadoA": "categoria:parcelamento_generico",
+   "audios": [
+    { "midia": "/midias/3EB02938FFD9387A4236F7_882943.ogg", "transcricao": "Para parcelar, parcelem até 10 vezes. O valor muda, mas você pode observar aí que é bem pouca coisa.", "duracao": 7.4, "vezesUsado": 6 }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "desconto_a_vista",
+   "titulo": "Cliente pede desconto à vista",
+   "quando": "O cliente pergunta se tem desconto pagando à vista, no Pix ou no débito.",
+   "frequencia": 133,
+   "respondidasPelaLoja": 120,
+   "taxaSucesso": 0.47,
+   "comoJosyFaz": "Explica que o desconto é no dinheiro e passa o valor à vista e o parcelado na mesma resposta. Às vezes manda áudio com o preço já falado.",
+   "exemplos": [
+    { "cliente": "no pix tem desconto?", "loja": "O desconto é no dinheiro! No Pix e no débito fica o valor da tabela à vista." }
+   ],
+   "frasesQueFuncionaram": [
+    "Nós podemos negociar um parcelamento que fica legal pra você"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente perguntar se tem desconto à vista, no Pix ou no débito",
+    "acao": "responder",
+    "resposta": "O desconto é no dinheiro! No Pix ou débito fica R$ 289,00 o pneu 😊\n\nNo cartão parcelamos em até 10x.",
+    "lojas": ["72213a6c-31c5-410d-a6b4-504dfd223e2f"]
+   },
+   "ligadoA": "categoria:desconto_dinheiro",
+   "audios": [
+    { "midia": "/midias/3EB010B52F32479DF651F2_568262.ogg", "transcricao": "Olha, se for no débito ou no Pix, é R$ 289,00, tá? Se for para parcelar, nós parcelamos em até 10 vezes para você, mas nós podemos negociar um parcelamento que fica legal aí para ti, tá joia?", "duracao": 16.2, "vezesUsado": 2 }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "cliente_some_depois_do_preco",
+   "titulo": "Cliente some depois de receber o preço",
+   "quando": "A loja passou o preço e o cliente parou de responder por algumas horas.",
+   "frequencia": 402,
+   "respondidasPelaLoja": 166,
+   "taxaSucesso": 0.31,
+   "comoJosyFaz": "Volta no mesmo dia com uma mensagem curta, sem pressão, perguntando se ficou alguma dúvida e lembrando que a montagem é na hora. Não repete o preço.",
+   "exemplos": [
+    { "cliente": "(sem resposta há 4h)", "loja": "Oi! Ficou alguma dúvida? Se quiser, já deixo separado pra você 😉" }
+   ],
+   "frasesQueFuncionaram": [
+    "Ficou alguma dúvida?",
+    "Se quiser, já deixo separado pra você"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente voltar depois de sumir após receber o preço",
+    "acao": "orientar",
+    "resposta": "Retome com leveza, sem repetir o preço: pergunte se ficou alguma dúvida e ofereça deixar separado. Uma frase só.",
+    "lojas": []
+   },
+   "ligadoA": null,
+   "audios": [],
+   "status": "pendente"
+  },
+  {
+   "id": "pergunta_horario",
+   "titulo": "Cliente pergunta o horário",
+   "quando": "O cliente quer saber até que horas a loja fica aberta ou se abre no sábado.",
+   "frequencia": 88,
+   "taxaSucesso": 0.8,
+   "comoJosyFaz": "Passa o horário do dia e já pergunta se ele vem hoje.",
+   "exemplos": [],
+   "frasesQueFuncionaram": [],
+   "sugestao": { "situacao": "quando o cliente perguntar o horário", "acao": "orientar", "resposta": "Passe o horário da loja e pergunte se ele vem hoje.", "lojas": [] },
+   "ligadoA": "categoria:horario",
+   "audios": [],
+   "status": "ignorado",
+   "decididoEm": "2026-10-22T17:20:00.000Z",
+   "decididoPor": "lab"
+  }
+ ]
+}

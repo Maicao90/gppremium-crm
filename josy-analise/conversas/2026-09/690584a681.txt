@@ -1,0 +1,32 @@
+CONVERSA 690584a681 | contato: Silas Platini | 20/09/2026 00:01 até 24/09/2026 12:31 | 6 msgs do cliente, 12 da loja, 0 do robô
+
+--- 20/09/2026 (Sun) ---
+[00:01] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[00:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[00:01] CLIENTE: 215/55 17
+--- 21/09/2026 (Mon) ---
+[08:17] LOJA: [áudio] "Olá Silas, bom dia, tudo bem com você?"  {audio:midias/3EB0FDF47BF127E1A45EFE_19172.ogg}
+[08:22] CLIENTE: Bom dia tudo sim
+[08:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:23] LOJA: [foto]
+[08:24] LOJA: *Josy:*
+No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:24] LOJA: *Josy:*
+Os pneus da marca GP Premium estão na promoção compre 3 e leve 4
+[08:25] LOJA: *Josy:*
+Exemplo digamos que seu pagamento seja a viista a  unidade  é  R$ 395,00 x 3 pneus = R$ 1.185,00 por esse preço você vai levar os 4
+[09:14] CLIENTE: A loja fica em Luziânia isso?
+[09:14] CLIENTE: Vou tentar ir na loja durante a semana 🙏🏽
+[09:14] LOJA: [áudio] "Silas, sim, nós somos aqui de Luziânia, a fábrica GP Premium na BR-040."  {audio:midias/3EB0FDEB47AD37A2D1F925_234842.ogg}
+[09:15] LOJA: [áudio] "Quer que eu te encaminhe a nossa localização?"  {audio:midias/3EB04823FEE176F53199D1_560166.ogg}
+[09:15] CLIENTE: Por favor 👍🏼
+[09:17] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:17] LOJA: [foto]
+--- 24/09/2026 (Thu) ---
+[12:31] LOJA: [áudio] "Oi Silas, tudo jóia? Nós nos falamos alguns dias atrás e eu gostaria de saber se você pretende seguir aqui com a negociação, se quer que a agenda sua vinda aqui para o sábado, né, e que eu imagino que seja um dia mais tranquilo para você. Me dá um retorno, por gentileza, está bem?"  {audio:midias/3EB0A67A5CA04740ECD553_925602.ogg}

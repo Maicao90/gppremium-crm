@@ -1,0 +1,25 @@
+CONVERSA da0446f709 | contato: William Abreu | 19/10/2026 09:39 até 20/10/2026 08:15 | 2 msgs do cliente, 11 da loja, 0 do robô
+
+--- 19/10/2026 (Mon) ---
+[09:39] LOJA: [foto]
+[09:39] LOJA: [foto]
+[09:39] LOJA: [foto]
+[09:41] CLIENTE: Qual o valor?
+[09:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:42] LOJA: [foto]
+[09:43] LOJA: *josy:*
+No dia de hoje temos os pneus da marca Comfforser a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:45] CLIENTE: Este pneu é remolde ou remodelado?
+[09:46] LOJA: *josy:*
+Não
+[15:20] LOJA: *Josy:*
+Vou te encaminhar a nossa localização , se possivel passa aqui!
+[15:20] LOJA: *Josy:*
+/l
+--- 20/10/2026 (Tue) ---
+[08:15] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:15] LOJA: [foto]

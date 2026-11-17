@@ -1,0 +1,21 @@
+CONVERSA b13d20d156 | contato: Diego Brandão | 09/10/2026 06:42 até 09/10/2026 17:32 | 4 msgs do cliente, 9 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[06:42] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[06:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[06:42] CLIENTE: Valor pra pneus aro 15
+[09:01] LOJA: Qual a medida dos pneus que você precisa hoje?
+[09:06] CLIENTE: 196/55
+[09:17] LOJA: Certo.
+[09:17] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:17] LOJA: [foto]
+[15:18] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Diogo? Eu sou a Josi. Posso separar alguma dessas opções para você?"  {audio:midias/3EB04856A4ABC8CCB5C60D_932867.ogg}
+[17:29] CLIENTE: Oii Josy ainda não tive como olhar .me desculpa,mais assim que eu ver direitinho eu te respondo ok
+[17:30] LOJA: Sem problemas... eu sei que é corrido!
+[17:30] LOJA: Na terça feira te mando um bom dia.
+[17:32] LOJA: Bom final de semana.

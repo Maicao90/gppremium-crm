@@ -1,0 +1,37 @@
+CONVERSA 73ba6f4644 | contato: Jaqson Borges | 21/09/2026 08:26 até 21/09/2026 08:42 | 13 msgs do cliente, 14 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[08:26] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[08:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:26] CLIENTE: Sim
+[08:26] LOJA: *Josy:*
+🙋🏼‍♀️
+[08:26] CLIENTE: 225/70/15 carga
+[08:26] CLIENTE: Valor marca garantia pôr favor
+[08:30] CLIENTE: ?
+[08:30] LOJA: *Josy:*
+Bom dia!
+[08:31] CLIENTE: Vc tem pneu carga
+[08:31] LOJA: ,*Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[08:31] CLIENTE: HR
+[08:31] LOJA: *Josy:*
+Pode ser o 205/75/15?
+[08:31] CLIENTE: Sim
+[08:32] LOJA: *Josy:*
+1 instante
+[08:32] LOJA: [foto]
+[08:32] LOJA: [áudio] "Oi, bom dia, tudo bem? No dia de hoje eu tenho as duas últimas unidades do pneu da marca HiFly, só que no orçamento é o valor unitário do pneu, então a unidade à vista está por R$ 444,00."  {audio:midias/3EB0451852FBDA126863FA_500405.ogg}
+[08:33] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0F6F6E40E4081F99225_442130.ogg}
+[08:33] CLIENTE: Tô Planaltina
+[08:33] CLIENTE: Tô peneu estouro
+[08:35] LOJA: *Josy:*
+Eu não atendendo essa região.
+[08:35] CLIENTE: [áudio] "Estou procurando uma loja em Planaltina pra poder comprar os pneus. Eu pesquisei aqui, né? Aí falou que era em Planaltina, mas é em Luziana, né?"
+[08:36] LOJA: [áudio] "Aqui é em Luziânia. Infelizmente, nós não atendemos essa região aí. Bom dia."  {audio:midias/3EB0F185A05D790A0FD6E4_278418.ogg}
+[08:38] CLIENTE: [áudio] "Obrigado, minha querida."
+[08:38] CLIENTE: [áudio] "Mano, não vai parar isso, só que agora o carro que eu tô precisando para os pneus tá, o carro tá em canaltia."
+[08:41] LOJA: [áudio] "Certo, entendo. Eu vou te mandar aqui a nossa localização, pois se houver a possibilidade, você passa aqui, tá bom? Obrigada, bom dia."  {audio:midias/3EB00ED4AA1C0500B4376C_422598.ogg}
+[08:42] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:42] LOJA: [foto]

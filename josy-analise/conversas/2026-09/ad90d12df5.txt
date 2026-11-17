@@ -1,0 +1,72 @@
+CONVERSA ad90d12df5 | contato: Christian Jezini | 10/09/2026 11:50 até 22/09/2026 15:27 | 20 msgs do cliente, 29 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[11:50] CLIENTE: Bom dia tudo bem ?
+[11:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:51] CLIENTE: 225/65/17
+[11:53] LOJA: *Josy:*
+Olá! Obrigada por aguardar.
+[11:53] LOJA: *Josy:*
+Temos sim!
+[11:53] LOJA: [foto]
+[11:53] LOJA: *Josy:*
+No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:53] CLIENTE: Acho que quando passei na br tinha uma promoção não tinha?
+[11:54] CLIENTE: É pneu mesmo né ? Não é Remold não ?
+[11:54] LOJA: *Josy:*
+Tem promoção sim! A promoção compre 3 e leve 4 é para pneus da marca GP Premium nas medidas 195/65/15 e 215/55/17
+[11:56] CLIENTE: Seria para uma captiva
+[11:56] LOJA: *Josy:*
+O GP Premium , é um pneu ecológico que nós produzimos, ele entra na categoria de remodelagem sim. Porém foge completamente da linha de remold convencional. Se quiser gravo um video...mando foto para ficar mais claro.
+[11:56] LOJA: *Josy:*
+225/65/17
+[11:57] CLIENTE: Esse adventure verde entra nessa categoria também ?
+[11:57] LOJA: *Josy:*
+É ele mesmo!
+[11:57] LOJA: *Josy:*
+O Outro é chines
+[11:57] CLIENTE: Pode me esclarecer por favor e passa em vistoria normal
+[11:57] CLIENTE: ?
+[11:57] LOJA: *Josy:*
+Claro!
+[11:57] LOJA: *Josy:*
+Posso mandar um video?
+[11:57] CLIENTE: Pode sim
+[11:58] LOJA: *Josy:*
+certo, vou gravar.
+[11:58] CLIENTE: Já tive algumas experiências ruins com remold em um outro carro
+[11:58] CLIENTE: Tem alguma garantia ou prazo ?
+[12:05] LOJA: *Josy:*
+Tem garantia de 2 anos!
+[12:10] LOJA: *Josy:*
+Obrigada por aguardar.
+[12:11] LOJA: [vídeo]
+[12:13] CLIENTE: Bacana na segunda vou ter que transferir o carro e esperando pingar aqui
+[12:13] CLIENTE: E passo aí
+[12:15] LOJA: [áudio] "Ai, só me desculpa aí, que eu falei que é a Maroc do meu pai. A Maroc é o carro que eu acabei de colocar os pneus ali, aí eu utilizo, né, na Maverick, os pneus que são de uma Fiat Toro, tem instalado aí o 225-6018, porque, como eu te disse, né, os pneus, eles são todos testados e aprovados pela Inmetri, e a Maverick é uma caminhonete, diga-se de passagem bem pesada, né, e eu utilizei tranquilamente."  {audio:midias/3EB0786BAAFCA52AD7953B_288990.ogg}
+[12:15] LOJA: [áudio] "Beleza, então, tá, Joia? Eu vou te mandar aqui a nossa localização, tudo bem?"  {audio:midias/3EB0C0B58ADFB483642DC2_640600.ogg}
+[12:16] CLIENTE: Fechado então
+[12:16] CLIENTE: Fica na br em Luziânia né ?
+[12:16] LOJA: [áudio] "Isso, isso mesmo, aqui na BR-040, do lado da Goiás Diesel e Hotel Goiás."  {audio:midias/3EB0FA2FD2ACA90C5B1CF7_740174.ogg}
+[12:16] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 12/09/2026 (Sat) ---
+[08:02] CLIENTE: Bom dia tudo bem ? Deixa eu te perguntar para esse de 399 tá a promoção de compre 3 e leve 4 ?
+[08:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:08] LOJA: [áudio] "Oi, Christian. Bom dia. A promoção Compre 3 e leve 4 é válida para os pneus da marca GT Premium nas medidas 195, 65, 15 e 215, 55, 17."  {audio:midias/A5595401F8AC760809DB7D6C22868115_133859.ogg}
+[08:09] CLIENTE: O 215/55/17 tá quanto ? Será que dá muita diferença ?
+[08:16] LOJA: [áudio] "Christian, qual que é o seu carro?"  {audio:midias/A5B3DCB4884A48BF77A0B97867465247_360125.ogg}
+[08:17] CLIENTE: Captiva
+[08:17] LOJA: [áudio] "Mas como você tá vindo aqui, a gente já verifica se dá certo."  {audio:midias/A5B51612DF3B86E16AA3AEAE6A5EA534_830492.ogg}
+[08:19] CLIENTE: Suv
+[08:24] LOJA: [áudio] "Não, Christian, então você não pode usar nem R$ 215,50, nem R$ 215,55. A medida aí pro seu carro realmente é R$ 225,65,17, tá bom? Não é recomendado colocar as opções menores, não."  {audio:midias/A53B42FFD6E3E4DCE5328CE5A3B09723_697977.ogg}
+[08:24] CLIENTE: Ta bom
+[10:34] LOJA: [áudio] "Oi Christian, você está a caminho?"  {audio:midias/A517817893198EDE29F4E3278400EB1F_289954.ogg}
+--- 22/09/2026 (Tue) ---
+[15:10] LOJA: [áudio] "Oi Christian, tudo jóia? Há um tempo atrás nós conversamos e você ficou de passar aqui na nossa loja, aí você sumiu, não nos falamos mais, como é que você está?"  {audio:midias/3EB0C98DB974B82CB58FE3_255177.ogg}
+[15:11] LOJA: [áudio] "E já instalou os pneus ou ainda não?"  {audio:midias/3EB0A2A82B6A1871957ACC_83518.ogg}
+[15:27] LOJA: [foto]

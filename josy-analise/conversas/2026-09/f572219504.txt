@@ -1,0 +1,27 @@
+CONVERSA f572219504 | contato: Geovanfla | 09/09/2026 21:38 até 10/09/2026 16:17 | 3 msgs do cliente, 10 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[21:38] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[21:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[21:39] CLIENTE: 185/65 aro 15
+--- 10/09/2026 (Thu) ---
+[08:10] LOJA: *Josy:*
+Bom dia!
+[08:11] LOJA: [foto]
+[08:11] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:16] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi e você mora aqui em Luziânia mesmo?"  {audio:midias/3EB08FC025242B0F81871D_856712.ogg}
+[14:54] LOJA: *Josy:*
+🙋🏼‍♀️
+[14:54] LOJA: [vídeo]
+[16:12] CLIENTE: Tô pesquisando
+[16:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:17] LOJA: [áudio] "Certo, Giovann. Então, vou fazer o seguinte, para não ficar enchendo seu WhatsApp de mensagens, eu vou encerrar o seu atendimento e vou te encaminhar a nossa localização, pois quando for o momento mais propício para você, passa aqui para nós conversarmos pessoalmente, está bem?"  {audio:midias/3EB07A3C9E513F19C80EDC_23817.ogg}
+[16:17] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

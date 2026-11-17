@@ -1,0 +1,19 @@
+CONVERSA 9530ffacef | contato: Marcio Moreira | 17/08/2026 14:35 até 18/08/2026 12:49 | 4 msgs do cliente, 8 da loja, 0 do robô
+
+--- 17/08/2026 (Mon) ---
+[14:35] LOJA: vamos dar continuidade ao seu atendimento?
+[17:56] LOJA: Oi!
+Vamos dar continuidade na sua negociação?
+Você mora aqui em Luziânia -Go?
+--- 18/08/2026 (Tue) ---
+[08:36] LOJA: 🙋🏼‍♀️
+[08:36] LOJA: [vídeo]
+[08:40] CLIENTE: Oi bom dia
+[08:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:40] CLIENTE: Estou esperando receber outros orçamentos pra decidir com menor preço e bemeficio
+[08:41] LOJA: Você é daqui de Luziania -Go?
+[08:59] CLIENTE: [áudio] "Não, não. Moro em Novo Gama. Moro aqui em Novo Gama. Mas tô todo final de semana em Luziânia."
+[10:06] LOJA: [áudio] "Ótimo! Então, eu vou deixar aqui na nossa conversa, perdão, a localização da nossa empresa, que se houver a possibilidade, você passa aqui para conversar nos pessoalmente, o que acha?"  {audio:midias/3EB079C660B3B9BC014C9A_13792.ogg}
+[10:06] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:49] CLIENTE: Sim assim que tiver um tempo aqui passo aí

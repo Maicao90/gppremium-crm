@@ -1,0 +1,10 @@
+CONVERSA 1a12e7d4d8 | contato: Cleverson | 21/09/2026 13:00 até 21/09/2026 13:01 | 4 msgs do cliente, 2 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[13:00] CLIENTE: Boa tarde
+[13:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:00] CLIENTE: Você trabalha com pneu 295?
+[13:00] CLIENTE: 295/80/22,5
+[13:01] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Não, nós não trabalhamos, Cleverson."  {audio:midias/3EB0B46A0C5EF2417AC08E_227177.ogg}
+[13:01] CLIENTE: Tá bem, obrigado

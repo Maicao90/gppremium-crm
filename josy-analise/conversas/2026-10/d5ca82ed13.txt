@@ -1,0 +1,36 @@
+CONVERSA d5ca82ed13 | contato: Marcos | 19/10/2026 09:41 até 19/10/2026 15:01 | 6 msgs do cliente, 13 da loja, 0 do robô
+
+--- 19/10/2026 (Mon) ---
+[09:41] CLIENTE: Bom dia
+[09:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:41] CLIENTE: 215/55 aro 17
+[09:43] LOJA: *josy:*
+Bom dia, Marcos... vou realizar seu orçamento.
+[09:46] LOJA: [foto]
+[09:47] LOJA: *josy:*
+No dia de hoje temos os pneus da marca  Comforser e GP Premium essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:48] LOJA: *josy:*
+O GP está em promoção, compre 3 e leve 4
+[09:48] LOJA: *josy:*
+Exemplo digamos que seu pagamento seja a vista a  unidade  é  R$ 395,00 x 3 pneus = R$ 1.185,00 por esse preço você vai levar os 4
+[09:48] CLIENTE: São pneus remold ?
+[09:49] LOJA: *Josy:*
+O GP é um remold premium, é o pneu mais vendido por conta da qualidade, tem 2 anos de garantia.
+[09:53] LOJA: *Josy:*
+Se quiser faço um video para você.
+[14:03] LOJA: *Josy:*
+Oiii
+[14:04] LOJA: *Josy:*
+Marcos...
+[14:41] LOJA: *Josy:*
+Quer que eu faço video para você?.
+[14:42] CLIENTE: Não obrigado
+[14:42] CLIENTE: Ainda estou fazendo uns orçamentos
+[14:53] LOJA: *Josy:*
+Bem, no orçamento também tem o pneu novo da Comforser...e sempre chegam outras marcas,
+[14:57] LOJA: *Josy:*
+Por ora vou encerrar seu atendimento para não ficar enchendo seu whatsapp de mensagem, caso precise é só chamar!
+[15:01] CLIENTE: Ok

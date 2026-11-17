@@ -1,0 +1,12 @@
+CONVERSA 5c19a6224f | contato: Kika Caixeta | 18/09/2026 14:55 até 18/09/2026 15:33 | 3 msgs do cliente, 4 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[14:55] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:55] CLIENTE: 700 16 militar
+[14:55] LOJA: *Josy:*
+Boa tarde, não tmos.
+[15:33] CLIENTE: Ok muito obrigado
+[15:33] LOJA: *Josy:*
+Disponha.

@@ -1,0 +1,47 @@
+CONVERSA 75faaf8467 | contato: Denis Souza | 16/09/2026 13:25 até 08/10/2026 08:34 | 12 msgs do cliente, 20 da loja, 0 do robô
+
+--- 16/09/2026 (Wed) ---
+[13:25] CLIENTE: Boa tarde
+[13:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:26] LOJA: *Josy:*
+Boa tarde!
+[13:26] CLIENTE: Aro 15
+[13:26] LOJA: *Josy:*
+Jóa, Denis!
+[13:26] CLIENTE: Para montana
+[13:27] CLIENTE: Perfil 65 ou 70
+[13:31] LOJA: *Josy:*
+185/65/15 te atende Denis?
+[13:34] CLIENTE: Quais modelos vcs tem?
+[13:37] LOJA: [foto]
+[13:37] LOJA: [áudio] "Pneus, no aro 15 tem 185-65-15, de 289 por 250 e 195-6015, que está por 289."  {audio:midias/3EB096A1AC9A20DE816B11_812443.ogg}
+[13:46] CLIENTE: A promoção de comprar 3 e ganhar um acabou?
+[13:49] LOJA: [áudio] "Não, não acabou não. A promoção é para a medida 195-6515 e 215-55-17."  {audio:midias/3EB0ECD73A176BCFE69650_514899.ogg}
+[13:51] CLIENTE: [áudio] "E qual o valor desse 1,95,65,15 que está na promoção?"
+[13:59] LOJA: [foto]
+[13:59] LOJA: *Josy:*
+Exemplo: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[17:29] LOJA: *Josy:*
+Oie..
+[17:29] LOJA: *Josy:*
+Posso reservar os pneus para você?
+--- 07/10/2026 (Wed) ---
+[09:00] CLIENTE: Bom dia
+[09:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:00] LOJA: [áudio] "Bom dia, Denis. Tudo jóia?"  {audio:midias/3EB044DFE1F28172617664_643519.ogg}
+[09:00] CLIENTE: Qual o valor do pneu 205/55/16
+[09:02] LOJA: [foto]
+[09:03] LOJA: *Josy:*
+Se o pagamento fo rem *dinheiro* dá para fazer a unidade por R$ 275,00
+--- 08/10/2026 (Thu) ---
+[08:31] CLIENTE: [áudio] "Bom dia, esse aí era um amigo meu que pediu pra ver preço, aí ele até já comprou, comprou lá na direcional, GP Premium que eu usei mesmo, só que foi lá na direcional. Eu também quero comprar uns, mas eu tô esperando receber aqui, vai ser lá pro mês que vem, eu tenho que comprar 4."
+[08:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:31] LOJA: [áudio] "Nossa, mas por que não fechou aqui comigo?"  {audio:midias/3EB03807D26534D057CC7A_759220.ogg}
+[08:32] LOJA: [áudio] "É que eu mando aqui o preço, mas tudo é negociável."  {audio:midias/3EB0D3EC9F4849FA826E32_314386.ogg}
+[08:32] LOJA: [áudio] "E aqui ainda é mais barato do que lá."  {audio:midias/3EB0D2729A322624D175F1_915259.ogg}
+[08:33] CLIENTE: [áudio] "Quando eu passei o preço, eu já tinha deixado o carro para arrumar lá na direcional, aí já tinha comprado o pneu e para fazer o serviço também de pensão que eu precisava."
+[08:33] LOJA: [áudio] "Entendo, Denis. Faz parte. Então, quando você for fazer a troca dos pneus para o seu carro, você pula aqui, tá bom?"  {audio:midias/3EB034D0383565B7D75CA8_561916.ogg}
+[08:34] CLIENTE: Início do mês eu falo com vc vou comprar 4

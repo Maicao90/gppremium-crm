@@ -1,0 +1,19 @@
+CONVERSA 1076055c68 | contato: …. | 01/09/2026 15:49 até 22/09/2026 15:36 | 2 msgs do cliente, 8 da loja, 0 do robô
+
+--- 01/09/2026 (Tue) ---
+[15:49] LOJA: *Josy:*
+Boa tarde!
+[15:49] LOJA: *Josy:*
+265/60/18 Brutus em *dinheiro* 569,00 cada
+--- 10/09/2026 (Thu) ---
+[16:19] LOJA: [áudio] "Oi, senhora Alex, tudo jóia? Há alguns dias atrás nós conversamos a respeito dos pneus 265, 60 e 18 brutos para sua caminhonete e gostaria de saber se a senhora ainda precisa dos pneus, né? Se gostaria de dar continuidade aqui na sua negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB059CD9E9DA409AFCDE2_435087.ogg}
+[16:29] CLIENTE: Oi boa tarde
+[16:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:29] CLIENTE: [áudio] "Eu vou dar um pulinho aí na loja, amanhã eu vou dar um pulinho aí e a gente termina de negociar."
+[16:30] LOJA: [áudio] "Ah, excelente, então."  {audio:midias/3EB0ECEBCB099FDEE2BA00_822782.ogg}
+[16:31] LOJA: [foto]
+--- 11/09/2026 (Fri) ---
+[15:22] LOJA: [áudio] "Oi Alex, vai conseguir vir ainda hoje?"  {audio:midias/3EB091387FE618173643DC_459164.ogg}
+--- 22/09/2026 (Tue) ---
+[15:36] LOJA: [áudio] "Vê, Alex, tudo, jóia! Passando para saber se você ainda precisa dos pneus."  {audio:midias/3EB000F6993A013655DD69_397218.ogg}

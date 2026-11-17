@@ -1,0 +1,19 @@
+CONVERSA c89025d766 | contato: Teodoro Batista | 08/10/2026 12:15 até 08/10/2026 12:40 | 7 msgs do cliente, 6 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[12:15] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[12:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:15] LOJA: 🙋🏼‍♀️
+[12:15] CLIENTE: Aonde é sua loja
+[12:16] LOJA: [áudio] "Pai Seu Teodoro, tudo jóia? Nós somos aqui de Luziânia, Goiás. E o Senhor?"  {audio:midias/3EB0D66BB30C93D702516E_511038.ogg}
+[12:16] CLIENTE: [áudio] "Olá, Sobradinho, Distrito Federal."
+[12:16] CLIENTE: [áudio] "Não tem uma filial aqui em Brasília?"
+[12:17] LOJA: [áudio] "Não, não temos, mas eu, para poder atender o entorno aí, tem uma borracharia que fica no novo Gama. Eu consigo mandar os pneus para essa borracharia, né? Claro, se eu tiver com a medida que o senhor precisa aqui, eu mando para essa borracharia, aí nós alinhamos direito aqui a forma que o senhor quer realizar o pagamento, o senhor pode ir lá, retirar e realizar o pagamento por lá mesmo. e nós só vamos alinhar aqui o passo a passo direito. Qual que é a medida de pneus que o senhor precisa?"  {audio:midias/3EB0009E0B31E596930FA7_671128.ogg}
+[12:24] LOJA: 🙋🏼‍♀️
+[12:35] CLIENTE: [áudio] "Oi, amor. Desculpa, é porque fica muito contramão que eu moro em Sobradinho. Se tivesse pelo menos na Asa Norte, aí eu ia dar um jeito. Eu precisaria de 1,95, 65, 15."
+[12:35] CLIENTE: [áudio] "Oi, minha querida, desculpa. É porque fica muito contramão para mim, no lado do Novo Gama, que eu moro em Sobradinho. Se estivesse na Asa Norte, aí já facilitava. O pneu que eu preciso é um 95-60-15."
+[12:36] LOJA: [áudio] "Ah, sim. Olha, seu Teodoro, aqui os pneus da nossa fábrica, eles estão por apenas R$ 289,00 à vista. Nossa loja fica aqui em Luziânia, eu não tenho nenhum parceiro aí na sua região para poder te atender, infelizmente."  {audio:midias/3EB0BBEB395FDB0351BFAC_722751.ogg}
+[12:40] CLIENTE: Valeu obrigado

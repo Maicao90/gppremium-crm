@@ -1,0 +1,18 @@
+CONVERSA 63291499d2 | contato: Saulo | 26/08/2026 10:06 até 26/08/2026 10:21 | 5 msgs do cliente, 5 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[10:06] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[10:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:12] CLIENTE: 215/60r16
+[10:15] LOJA: *Josy :*
+Bom dia!
+[10:15] LOJA: *Josy :*
+Você mora aqui em Luziânia-Go?
+[10:15] CLIENTE: Pensei que era Goiania
+[10:15] CLIENTE: Moro não
+[10:16] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Pois é, nós somos aqui de Luziânia."  {audio:midias/3EB0739FFAF89333C3CC03_695400.ogg}
+[10:16] CLIENTE: Não vi que era 61 o ddd
+[10:21] LOJA: [áudio] "Imagina, tranquilo."  {audio:midias/3EB0D4E1B7C4B31C369CFB_80332.ogg}

@@ -1,0 +1,17 @@
+CONVERSA 43cceafdd8 | contato: Flora Paisagismo | 30/09/2026 11:00 até 30/09/2026 15:34 | 3 msgs do cliente, 7 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[11:00] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:04] LOJA: [áudio] "Oi, bom dia, tudo bem?"  {audio:midias/A508D4F44848537143D2AE06DBE81D5E_274330.ogg}
+[11:07] LOJA: .*Josy:*
+🙋🏼‍♀️
+[11:14] CLIENTE: Vc me manda a localização
+[11:14] CLIENTE: Da loja
+[11:14] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:14] LOJA: [foto]
+[12:01] LOJA: [áudio] "Eu posso te ajudar em algo?"  {audio:midias/3EB06DD824D108DA5F2C5F_734785.ogg}
+[15:34] LOJA: *Josy:*
+🙋🏼‍♀️

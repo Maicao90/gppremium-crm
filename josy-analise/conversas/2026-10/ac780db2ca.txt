@@ -1,0 +1,21 @@
+CONVERSA ac780db2ca | contato: Jéssica Moreira | 07/10/2026 14:20 até 07/10/2026 17:34 | 7 msgs do cliente, 7 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[14:20] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:22] LOJA: *Josy:*
+🙋🏼‍♀️
+[14:58] CLIENTE: Oi josy
+[14:58] CLIENTE: [foto]
+[14:58] CLIENTE: Vc tem esse pneu aí?
+[15:01] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[15:01] LOJA: *Josy:*
+Mora aqui em Luziânia-Go
+[15:02] CLIENTE: Ixeee não. Não sabia que eram de Luziânia.
+[17:25] LOJA: [áudio] "Estamos um pouco longe, né?"  {audio:midias/3EB097B08A3969B3E0ED2A_11368.ogg}
+[17:25] LOJA: [áudio] "Pela sua mensagem, eu vi que estamos um pouco longe, não é, Jéssica?"  {audio:midias/3EB0FA7B52B76E1293F92F_522860.ogg}
+[17:25] LOJA: [áudio] "Você é de onde? De Brasília?"  {audio:midias/3EB0DBD121757D7FD90386_405998.ogg}
+[17:34] CLIENTE: Eu moro no noroeste
+[17:34] CLIENTE: Isso Brasília

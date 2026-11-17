@@ -1,0 +1,16 @@
+CONVERSA 343c2c5c5c | contato: Marco Aurélio | 30/09/2026 14:19 até 01/10/2026 14:28 | 5 msgs do cliente, 5 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[14:19] CLIENTE: Boa tarde
+[14:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:19] CLIENTE: Tem esse pneu aí Roadking 285/45 R21. ?
+[14:23] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu me chamo Josi e eu não disponho dessa opção aqui à pronta entrega. Marco, você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB03A209E31DCB27A649E_27828.ogg}
+[14:24] CLIENTE: Moro em cristalina
+[14:24] LOJA: [áudio] "Ah, sim, perfeitamente. Bem, de todo modo, eu não disponho dessa opção a pronta entrega, mas eu posso fazer uma cotação com os meus distribuidores, tá? Assim que eles me responderem, eu te informo direitinho o preço e o prazo de entrega."  {audio:midias/3EB039441E16222104472D_394672.ogg}
+[14:26] CLIENTE: Blz
+--- 01/10/2026 (Thu) ---
+[14:24] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Olha, muitíssimo obrigada por aguardar, pois eu estava buscando, de todas as formas, encontrar essa opção, mesmo que fosse de outra marca, mas por aqui está completamente em falta, Marco."  {audio:midias/3EB02C00E5F2F97D361E1D_725000.ogg}
+[14:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:28] CLIENTE: [áudio] "Olá, tudo bem? Boa tarde. Obrigado pela resposta. Eu acabei comprando uns hoje, tá bom? Obrigado."

@@ -1,0 +1,12 @@
+CONVERSA a773edefa3 | contato: Pedro braga Kassios | 19/08/2026 11:38 até 19/08/2026 11:50 | 3 msgs do cliente, 5 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[11:38] LOJA: Bom dia!
+[11:39] LOJA: Pode me enviar audio por gentileza.
+[11:39] CLIENTE: Vocês São de Montevidéu
+[11:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:39] CLIENTE: Goiás
+[11:39] LOJA: Somos de Luziania-Go
+[11:49] CLIENTE: Vocês não tem loja em montividiu?
+[11:50] LOJA: Não... não temos.

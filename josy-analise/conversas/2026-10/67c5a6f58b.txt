@@ -1,0 +1,46 @@
+CONVERSA 67c5a6f58b | contato: Olá | 16/10/2026 08:32 até 17/10/2026 09:18 | 18 msgs do cliente, 23 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[08:32] CLIENTE: Bom dia
+[08:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:32] CLIENTE: Tudo bem ?
+[08:33] CLIENTE: Estou precisando de dois pneus 185/60 r15
+[08:33] CLIENTE: Você está tendo? E quanto custa se sim.
+[08:35] LOJA: Bom dia, Felipe... temos sim! Inclusive o GP Premium acabou de entrar em oferta de R$ 289,00 por apenas R$ 249,00 a vista!
+[08:36] LOJA: [foto]
+[08:36] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:37] CLIENTE: E possível você fazer essa simulação com o valor dos dois ?
+[08:38] CLIENTE: P mim encaminhar p meu pai as condições dos parcelamentos dos dois pneus
+[08:39] LOJA: Sim, é posswivel!
+[08:40] LOJA: Me diga.
+[08:41] CLIENTE: Não eu só queria saber se tem como fazer com o valor dos dois somados 😅
+[08:43] LOJA: 😊
+[08:43] LOJA: 😊
+[08:44] LOJA: Só me dizer em quantas vezes rsrs
+[08:44] CLIENTE: A sim
+[08:45] CLIENTE: Pensei que dava p colocar nesse modelo de 1x a 10x
+[08:45] CLIENTE: Porq iria encaminhar p ele me dizer como ficaria melhor p ele
+[08:46] LOJA: [áudio] "Felipe, bom dia. No orçamento, a minha planilha não calcula com mais de uma opção, justamente por isso que ela vai no valor unitário. Mas se você me disser em quantas vezes que fica bom, eu passo aqui para você."  {audio:midias/3EB000FABFE7C99E68EE3F_163619.ogg}
+[08:46] CLIENTE: Entendo
+[08:47] LOJA: [áudio] "Ou se você me der um tempo, porque vai demorar um pouco, eu faço manual aqui para você."  {audio:midias/3EB04A320B4121B0662111_11501.ogg}
+[08:47] CLIENTE: Não não
+[08:47] CLIENTE: Vê p mim por gentileza de 3 e 4 vezes
+[08:50] LOJA: Em 3 X ficam 3 parcelas de R$ 173,33 total =  520,00
+[08:54] LOJA: Em 4 x ficam 4 parcelas  de R$ 131,10total = 525,64
+[08:55] CLIENTE: Josy muito obrigado, vou falar aqui com ele e logo mais entro em contato contigo
+[09:13] LOJA: Imagina...disponha!
+--- 17/10/2026 (Sat) ---
+[08:19] CLIENTE: Oi josy bom dia !
+[08:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:19] CLIENTE: Estou indo comprar os dois pneus, que conversamos ontem
+[08:20] LOJA: Bom dia!
+[08:20] LOJA: Perfeito!
+[08:20] LOJA: [foto]
+[08:20] CLIENTE: Ok 👍🏼
+[09:17] LOJA: Oiê!
+[09:17] LOJA: segue o link para avaliar.
+[09:17] LOJA: https://da.gd/gp-avaliar
+[09:18] CLIENTE: Ok 👍🏼
+[09:18] LOJA: Obrigada, Felipe!

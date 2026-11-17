@@ -1,0 +1,43 @@
+CONVERSA 737c844459 | contato: Darlan | 21/10/2026 10:13 até 21/10/2026 10:58 | 12 msgs do cliente, 7 da loja, 3 do robô
+
+--- 21/10/2026 (Wed) ---
+[10:13] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[10:13] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[10:13] CLIENTE: Darlan
+[10:13] CLIENTE: 225 55 R18
+[10:21] LOJA: [foto]
+[10:21] LOJA: Darlan, obrigada por aguardar.
+[10:21] LOJA: No dia de hoje temos essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:24] CLIENTE: Certo
+[10:24] CLIENTE: Vi aq
+[10:24] CLIENTE: Oq vc me diz a respeito desse último
+[10:24] CLIENTE: Valor de 399
+[10:24] CLIENTE: É bom esse pneu? Pois não conheço
+[10:24] LOJA: Já te falo.
+[10:25] CLIENTE: Pois preciso de 2
+[10:46] ROBÔ: Darlan, é um pneu muito bom! É da linha SUV da GP Premium, feito pra dar segurança e durabilidade no dia a dia. Ele tem garantia de 2 anos e 60 mil km ou seu dinheiro de volta.
+[10:46] ROBÔ: Pra 2 pneus 225/55/18, fica R$ 798 à vista (R$ 399 cada), já com a montagem grátis. Se preferir, dá pra parcelar em até 10x no cartão!
+[10:46] ROBÔ: Quando você consegue passar aqui na loja pra gente fazer a troca?
+[10:47] CLIENTE: Kkkkkk. Quando eu estava lendo vc apagou. 
+Não entendi
+[10:48] LOJA: [áudio] "Ai, nossa, desculpa. É que como teve queda aqui na internet, o WhatsApp ficou doidinho, aí começou a mandar mensagem que não era necessária. Desculpa, tá, Darlan?"  {audio:midias/3EB0AF1F107B13ABB8364E_268494.ogg}
+[10:49] CLIENTE: Tá bom. Fico no aguardo
+[10:52] LOJA: [vídeo]
+[10:58] CLIENTE: Deixa eu tirar algumas dúvidas com você.
+
+A respeito desses 2 anos de garantia. 
+Seria em qual situação?
+
+A respeito da troca?
+
+A respeito de alinhamento e balanceamento?

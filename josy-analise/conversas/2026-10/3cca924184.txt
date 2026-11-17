@@ -1,0 +1,20 @@
+CONVERSA 3cca924184 | contato: Fabio Alves | 02/10/2026 13:21 até 02/10/2026 14:46 | 9 msgs do cliente, 5 da loja, 0 do robô
+
+--- 02/10/2026 (Fri) ---
+[13:21] CLIENTE: Olá! Quero um orçamento de pneus.
+[13:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:21] CLIENTE: Ola,
+[13:21] CLIENTE: Boa tarde
+[13:23] CLIENTE: Quero cotar o pneu 225/45 R17 GP Premium.
+[13:24] CLIENTE: 2 unidades co. Melhor preço ok
+[14:21] LOJA: *Josy:*
+Boa tarde!
+[14:21] LOJA: *Josy:*
+obrigada por aguardar, Fabio!
+[14:21] LOJA: [áudio] "Oi Fábio, tudo jóia? Eu me chamo Josi e eu tenho aqui sim os pneus da marca GP Premium. Eles estão por apenas R$ 339,00 a unidade para o pagamento correspondente a Bébito e Pix também. Você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB0D9C6E256D2F3C3F21A_49270.ogg}
+[14:45] CLIENTE: Oi ,
+[14:45] CLIENTE: Eu sou de são Paulo
+[14:46] CLIENTE: Eu estou fazendo uma cotação, como eu vi  o cartaz aih com a propaganda, resolvi,perguntar
+[14:46] CLIENTE: Mas agradeço a vc josy
+[14:46] LOJA: [áudio] "Sim, compreendo perfeitamente."  {audio:midias/3EB02943159C85A0FF9FAA_627554.ogg}

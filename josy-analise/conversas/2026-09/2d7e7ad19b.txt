@@ -1,0 +1,25 @@
+CONVERSA 2d7e7ad19b | contato: Edson Silva | 07/09/2026 09:50 até 22/09/2026 16:05 | 2 msgs do cliente, 10 da loja, 0 do robô
+
+--- 07/09/2026 (Mon) ---
+[09:50] CLIENTE: Quero cotar o pneu 205/55 R16 GP Premium.
+[09:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:50] CLIENTE: 205 55 16
+--- 08/09/2026 (Tue) ---
+[09:17] LOJA: *Josy:*
+Bom dia!
+[09:17] LOJA: *Josy:*
+Obrigadsaz por aguardar!
+[09:18] LOJA: [foto]
+[09:18] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 11/09/2026 (Fri) ---
+[15:09] LOJA: [áudio] "Olá, tudo bem com você, Edson?"  {audio:midias/3EB0CCFE1BB624E2F4912E_34902.ogg}
+[15:10] LOJA: [vídeo]
+[15:19] LOJA: *Josy:*
+👀
+--- 22/09/2026 (Tue) ---
+[16:05] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

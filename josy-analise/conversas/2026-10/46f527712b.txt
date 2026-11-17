@@ -1,0 +1,21 @@
+CONVERSA 46f527712b | contato: 😍 | 01/10/2026 14:56 até 02/10/2026 09:50 | 2 msgs do cliente, 9 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[14:56] LOJA: *Josy:*
+Oi
+[14:56] LOJA: *Josy:*
+O senhor me ligou aqui
+[14:57] LOJA: *Josy:*
+São 2 pneus 185/60/15 certo?
+[15:01] CLIENTE: Oi boa tarde
+[15:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:01] CLIENTE: Já consegui Aki proximo
+[15:01] LOJA: [áudio] "Oi, boa tarde, tudo joia? O senhor me ligou aqui agora?"  {audio:midias/3EB069E795C1C2F7F45D7B_909532.ogg}
+--- 02/10/2026 (Fri) ---
+[09:44] LOJA: *Josy:*
+Bom dia!
+[09:49] LOJA: *Josy:*
+Obrigada, sr Francisco!
+[09:49] LOJA: *Josy:*
+deus te abençoe.

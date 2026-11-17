@@ -1,0 +1,23 @@
+CONVERSA 136ad532cc | contato: rodrigosmachado94 | 10/09/2026 12:32 até 22/09/2026 15:23 | 6 msgs do cliente, 9 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[12:32] CLIENTE: Boa tarde
+[12:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:32] CLIENTE: 175/70 r13
+[12:32] LOJA: [áudio] "Oi Rodrigo, tudo bom?"  {audio:midias/3EB07BAF8EB978E5A04344_971690.ogg}
+[12:33] LOJA: [foto]
+[12:33] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:33] CLIENTE: [áudio] "Olá, Júlio, tudo jóia? Como é que você está? De quanto que tá esses pneus aí pra mim?"
+[12:33] LOJA: [áudio] "Rodrigo, hoje eu tenho essas três opções de marcas aí, que são os pneus da Dunlop, da Goodyear e os GP Premium, que de 299, estou fazendo por 269 a vista."  {audio:midias/3EB02031335AC4EA326CE6_202089.ogg}
+[12:34] CLIENTE: [áudio] "Josi, comprando os 4, você não dá o descontinho aí não? Parcelando 4 vezes para mim?"
+[12:35] LOJA: [áudio] "Se for no Dinheiro em Espécie, eu consigo dar desconto."  {audio:midias/3EB0FE060F10B7051A0884_771365.ogg}
+[12:39] CLIENTE: Tá bom
+[12:41] LOJA: [áudio] "Deixa eu te falar, Rodrigo, o que eu posso fazer para poder te ajudar? O pneu GP Premium, em duas vezes, ele é R$ 277,96, certo? Eu faço esse valor para você de duas vezes, para você pagar nas quatro vezes sem juros, te ajuda?"  {audio:midias/3EB064D38CB506435E7693_569874.ogg}
+[12:48] CLIENTE: [áudio] "Semana que vem eu vou dar um pulo aí para nós negociar direitinho, pega esses quatro pneus, tá bom?"
+[12:49] LOJA: [áudio] "Com certeza absoluta, Rodrigo. Te espero."  {audio:midias/3EB0CB58A8294FAAF76DFD_743550.ogg}
+--- 22/09/2026 (Tue) ---
+[15:23] LOJA: [áudio] "Olá, Rodrigo! Tudo jóia? Já tem uns dias aí que nós conversamos. Quero saber que dia que você vem pra cá pra gente negociar os pneus aí pra ti."  {audio:midias/3EB068980B55806CEBF659_68563.ogg}

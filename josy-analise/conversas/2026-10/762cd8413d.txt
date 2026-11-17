@@ -1,0 +1,53 @@
+CONVERSA 762cd8413d | contato: KÁTIA MAIA | 03/10/2026 08:12 até 03/10/2026 11:12 | 8 msgs do cliente, 26 da loja, 0 do robô
+
+--- 03/10/2026 (Sat) ---
+[08:12] LOJA: *Josy:*
+Bom dia!
+[08:13] LOJA: *Josy:*
+205/60/16
+[08:23] CLIENTE: Vc tem 2
+[08:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:35] LOJA: *Josy:*
+Bom dia!
+[08:35] LOJA: *Josy:*
+Temos sos 2
+[08:36] CLIENTE: [áudio] "Josi, me passa novamente o preço à vista e o preço a prazo. Em quantas vezes vocês dividem?"
+[08:36] CLIENTE: [áudio] "Qual a marca do pneu mesmo?"
+[08:38] LOJA: [foto]
+[08:40] LOJA: *Josy:*
+Pneu da marca GP Premium
+[08:42] LOJA: *Josy:*
+* Balanceamento = 35,00 (por pneu)
+* Alinhamento = 120,00 (somente Alinhamento de Direção)
+[08:45] LOJA: *Josy:*
+Valores de serviços são completamente negociaveis.
+[08:45] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:46] LOJA: [foto]
+[08:46] LOJA: *Josy:*
+Ah, sim!
+[08:47] LOJA: *Josy:*
+Você me perguntou se o pagamento for em *dinheiro* tem desconto, e tem sim! Para *dinheiro* fisico a unidade fica por R$ 315,,00
+[08:47] LOJA: *Josy:*
+Tenho as 2 ultimas unidades
+[08:47] CLIENTE: Josy vc tem a foto do pneu?
+[08:47] CLIENTE: Pra eu ver se é o mesmo do meu carro?
+[08:48] LOJA: *Josy:*
+Esse aqui é modelo liso!
+[08:48] CLIENTE: Pix tbm tem?
+[08:48] LOJA: *Josy:*
+Somente em *dinheiro*
+[08:50] LOJA: [foto]
+[09:14] LOJA: *Josy:*
+Posso separar os pneus para vocês?
+[09:53] LOJA: Não consigo ouvir seu áudio
+[09:55] LOJA: [vídeo]
+[09:56] LOJA: Pneu novo, temos também ... quando me ligou estava sem sistema, e os pneus ficam lá nos fundos.
+[09:56] LOJA: [foto]
+[09:56] LOJA: *Josy:*
+Pneu da marca Wanli
+[09:57] LOJA: [foto]
+[09:57] LOJA: [foto]
+[10:44] CLIENTE: [áudio] "Oi, Josi. A gente não vai ficar com pneu, não. Deixa para a próxima, tá? Eu agradeço a sua atenção. Muito obrigada."
+[10:59] LOJA: [áudio] "Tudo bem. Eu mandei para vocês que eu até coloquei aqui que não estava dando para ouvir o áudio de vocês, tá? Deu instabilidade no WhatsApp. Aí eu apenas mandei justamente para poder dar continuidade, mas não tem problema. Bom final de semana para vocês."  {audio:midias/3EB0C573D95E83DB3AB8B3_576306.ogg}
+[11:12] CLIENTE: [áudio] "Obrigada, Josi. Para você também."

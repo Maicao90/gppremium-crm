@@ -1,0 +1,10 @@
+CONVERSA 51a5b3937a | contato: ROBERTO PÊGAS | 13/10/2026 12:51 até 13/10/2026 20:00 | 1 msgs do cliente, 5 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[12:51] LOJA: Bom dia, Roberto!
+[12:51] LOJA: Josy aqui falando....
+[12:51] LOJA: Se não for incomodo, pode avaliar o atnedimento no Google?
+[12:52] LOJA: https://da.gd/gp-avaliar
+[20:00] CLIENTE: Boa noite! Josy, posso sim
+[20:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

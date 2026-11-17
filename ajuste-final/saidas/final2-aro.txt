@@ -1,0 +1,105 @@
+
+# REAL 1a rodada: anuncio "Qual o valor do aro 16" + "195/55"
+  via=fluxo acao=CONFIRMAR_PRECO assuntos=["DAR_MEDIDA"] chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# REAL 2a rodada: "Aro 16" (195/55 na rodada anterior)
+  via=fluxo acao=CONFIRMAR_PRECO assuntos=["DAR_MEDIDA"] chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# (a) "195/55" -> robo -> "Aro 16" + "195/55"
+  via=fluxo acao=CONFIRMAR_PRECO assuntos=["DAR_MEDIDA"] chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# (a2) "195/55" -> robo pede aro -> "Aro 16"
+  via=fluxo acao=CONFIRMAR_PRECO assuntos=["DAR_MEDIDA"] chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# (b) "aro 16" -> robo pergunta carro -> "195/55"
+  via=fluxo acao=CONFIRMAR_PRECO assuntos=["DAR_MEDIDA"] chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# (b2) rajada "aro 16" + "195/55"
+  via=fluxo acao=CONFIRMAR_PRECO assuntos=["DAR_MEDIDA"] chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# (a3) "195/55" -> robo pede aro -> "aro 16 em 10x quanto fica?"
+  via=fluxo acao=RESPONDER_PARCELAMENTO_ESPECIFICO assuntos=["PERGUNTOU_PARCELAMENTO_ESPECIFICO"] chaves=["parcelamento_especifico"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 195/55/16
+Em 10x fica R$ 29,06 cada, total de R$ 290,62.
+
+# (c) "195/55" sozinho (primeira mensagem)
+  via=fluxo acao=PEDIR_ARO assuntos=["INFORMOU_LARGURA_PERFIL"] chaves=["pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# (c2) "195/55" depois da pergunta generica
+  via=fluxo acao=PEDIR_ARO assuntos=["INFORMOU_LARGURA_PERFIL"] chaves=["pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# (c3) "195/55" + "quanto custa?"
+  via=fluxo acao=PEDIR_MEDIDA assuntos=["PERGUNTAR_PRECO_SEM_MEDIDA","PERGUNTAR_PRECO_SEM_MEDIDA"] chaves=["pedir_medida","pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# (d) "195/55/16"
+  via=fluxo acao=CONFIRMAR_PRECO assuntos=["DAR_MEDIDA"] chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# (d2) "195 55 r16"
+  via=fluxo acao=CONFIRMAR_PRECO assuntos=["DAR_MEDIDA"] chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# (d3) "aro 16 205/55"
+  via=fluxo acao=CONFIRMAR_PRECO assuntos=["DAR_MEDIDA"] chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"205/55/16"}
+  > Temos o pneu *205/55/16* da marca *GP Premium* está saindo por *R$ 289,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# (e) so o carro "Pegeuot 208"
+  via=ia_livre acao=undefined assuntos=["OUTRO_ASSUNTO"] chaves=[] estado=aguardando_medida dados={}
+  > Temos o pneu *185/65/15* da marca *GP Premium* está saindo por *R$ 249,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+  > Se o seu for a versão aro 16, me avisa que eu te passo o valor dela.
+
+# (e2) so o carro "tenho um gol g5 2012"
+  via=ia_livre acao=undefined assuntos=["OUTRO_ASSUNTO"] chaves=[] estado=sem_estado dados={}
+  > Pro Gol G5 2012, a medida original mais comum é a *175/70/13*. Temos o pneu *175/70/13* da marca *GP Premium* está saindo por *R$ 269,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+  > Se o seu for a versão aro 15, me avisa que eu te passo o valor dela.
+
+# (e3) "aro 16" sozinho (sem pedaco antes) -> pergunta o carro
+  via=fluxo acao=PEDIR_CARRO assuntos=["INFORMOU_ARO"] chaves=["aro_sem_medida"] estado=aguardando_medida dados={}
+  > Show, aro 16! 👍
+  > Qual é o carro? Já te passo a medida certa e o valor.
+
+# (f) "195/55" de ONTEM (loja falou ha 20h) + hoje "aro 16"
+  via=fluxo acao=PEDIR_CARRO assuntos=["INFORMOU_ARO"] chaves=["aro_sem_medida"] estado=aguardando_medida dados={}
+  > Show, aro 16! 👍
+  > Qual é o carro? Já te passo a medida certa e o valor.
+
+# (f2) "195/55" antes de um preco ja dado (outro orcamento) + "aro 16"
+  via=fluxo acao=PEDIR_MEDIDA assuntos=["INFORMOU_ARO"] chaves=["pedir_medida_do_aro"] estado=aguardando_medida dados={}
+  > Na 185/65 eu não tenho aro 16.
+  > Qual é a medida completa do seu pneu aro 16? No aro 16 eu tenho 195/55/16, 205/55/16, 205/60/16 e 215/65/16.
+
+# (f3) "195/55" la atras (mais de 8 mensagens) + "aro 16"
+  via=fluxo acao=PEDIR_CARRO assuntos=["INFORMOU_ARO"] chaves=["aro_sem_medida"] estado=sem_estado dados={}
+  > Show, aro 16! 👍
+  > Qual é o carro? Já te passo a medida certa e o valor.

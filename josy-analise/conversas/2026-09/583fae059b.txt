@@ -1,0 +1,27 @@
+CONVERSA 583fae059b | contato: ALEXANDRE SOUSA | 04/09/2026 10:23 até 11/09/2026 17:51 | 3 msgs do cliente, 10 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[10:23] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Bom dia 
+Qual valor do pneu 175/e 75/13 ?
+[10:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:24] LOJA: *Josy:*
+Bom dia, no aro 13 teremos as seguintes opções:
+[10:25] LOJA: *Josy:*
+Pneu 175/75/13 85t cf510 comforser R$ 290,87 (debito/pix )                                                                Pneu 175/70/13 r1 Dunlop R$ 371,69 (débito/pix)
+Pneu 175/70/13 82t Kelly Goodyear R$ 357,66 (débito/pix)
+Pneu GP Premium em *oferta* R$ 269,00 (débito/pix) Ou R$ 252,00 em *dinheiro*
+[10:30] LOJA: [áudio] "Você mora aqui em Luziânia mesmo, Alexandre?"  {audio:midias/3EB00AFF45BF78D0742E76_164058.ogg}
+[10:51] CLIENTE: Moro em ocidental
+[15:18] LOJA: [áudio] "Oi Alexandre, boa tarde, tudo bem? Agora que eu estou conseguindo ver as mensagens do WhatsApp, porque teve queda aqui no nosso abastecimento de energia, é agora que restabeleceu. Ah, beleza, você mora até próximo a nós aqui, nós somos de Luziânia, se eu te encaminhar a localização, você consegue vir até aqui?"  {audio:midias/A513A3BF23CD0843C3CC011DADED6383_865749.ogg}
+[15:27] CLIENTE: Por agora não estou em Brasília
+[15:27] LOJA: [áudio] "Eu compreendo que não é agora. É apenas para que você saiba onde fica a nossa empresa e, precisando, você vem diretamente aqui. É somente isso."  {audio:midias/A5B13F03CC330A4ADFD3D43F289795A9_149370.ogg}
+--- 10/09/2026 (Thu) ---
+[17:14] LOJA: [áudio] "Oi Alexandre, tudo bom?"  {audio:midias/3EB0DE376F161AF7E894BD_641390.ogg}
+[17:14] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[17:51] LOJA: [áudio] "Oi Alexandre, tudo bom? Vi que você viu o vídeo que eu fiz para tentar conversar com você, mas imagino que na correria você não tenha conseguido me responder. Bem, eu vou encerrar aqui o seu atendimento, tá jóia? Justamente para não ficar enchendo o seu WhatsApp de mensagens, porque eu sei que acaba se tornando chato e inconveniente. Vou te mandar aqui a localização da nossa empresa, se houver a possibilidade você passa aqui, tá bem? Muitíssimo obrigada por sua atenção, bom final de semana."  {audio:midias/3EB057A69A5A24C05086B7_751134.ogg}
+[17:51] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

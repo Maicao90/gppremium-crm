@@ -1,0 +1,24 @@
+CONVERSA 11e1510491 | contato: Fabinho Ideal | 15/10/2026 11:15 até 15/10/2026 16:10 | 7 msgs do cliente, 14 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[11:15] CLIENTE: Boa tarde
+[11:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:15] CLIENTE: 255/60 19
+[11:26] LOJA: Bom dia!
+[11:26] LOJA: Temos sim!
+[11:26] LOJA: [foto]
+[11:29] CLIENTE: Tem outra marca ?
+[11:29] LOJA: [áudio] "Oi, bom dia, tudo bem com você? No dia de hoje somente essa."  {audio:midias/3EB0437ADFE0EFA2E7C66F_387488.ogg}
+[11:30] LOJA: [áudio] "Se vocês estiverem em busca de alguma marca específica, você me fala que eu verifico aqui com os meus distribuidores, está bem?"  {audio:midias/3EB0E56F60065AADF7B07C_570795.ogg}
+[11:30] CLIENTE: Ta joia
+[11:31] LOJA: Qual?
+[11:35] LOJA: Fabio...?
+[15:52] LOJA: Oi...
+[15:52] LOJA: Conseguiu ouvir meu áudio?
+[15:54] CLIENTE: [áudio] "Então, eu tô vendo aqui, desse aí você tem a foto dele? E no Pix, pra comprar os quatro, você consegue um preço melhor?"
+[16:03] LOJA: [áudio] "Fábio, com questão a preço, eles já estão realmente no preço final, tá? Então, não consigo mexer mais nele, não."  {audio:midias/3EB05236B5CD5FE7A8F8EC_941406.ogg}
+[16:03] LOJA: [foto]
+[16:04] LOJA: Jazin vou no estoque fisico para te mandar a fot real
+[16:04] CLIENTE: Ta joia
+[16:10] LOJA: [foto]

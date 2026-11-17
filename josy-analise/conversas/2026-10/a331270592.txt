@@ -1,0 +1,58 @@
+CONVERSA a331270592 | contato: Cibele Souza Souza | 20/10/2026 12:51 até 22/10/2026 09:39 | 12 msgs do cliente, 14 da loja, 14 do robô
+
+--- 20/10/2026 (Tue) ---
+[12:51] CLIENTE: 175/14
+[12:51] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[12:51] LOJA: *Josy:*
+65?
+[12:51] LOJA: *Josy:*
+70?
+[12:52] LOJA: *Josy:*
+🙋🏼‍♀️
+[12:59] LOJA: *Josy:*
+🙋🏼‍♀️
+[12:59] LOJA: *Josy:*
+Cibele...
+[16:01] CLIENTE: Oi
+[16:02] LOJA: OI, Cibele...
+[17:28] LOJA: Vou te mandar 175/65/14
+[17:28] LOJA: [foto]
+[17:28] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 21/10/2026 (Wed) ---
+[20:12] CLIENTE: Sim
+[20:12] ROBÔ: Tranquilo! Qualquer dúvida ou se quiser fechar, é só me chamar por aqui.
+[20:13] CLIENTE: Oi
+[20:13] ROBÔ: Oi, tudo bem? Em que posso te ajudar?
+[20:13] CLIENTE: O pneu nacional é bom
+[20:13] ROBÔ: [áudio — sem transcrição]
+[20:13] ROBÔ: O GP Premium é nacional: fabricado aqui no Brasil, com garantia de 2 anos e 60 mil km ou seu dinheiro de volta.
+[20:14] CLIENTE: Não abri o áudio
+[20:15] ROBÔ: Sem problema, te explico por aqui mesmo, por texto. 😊
+[20:15] ROBÔ: O pneu GP Premium tem garantia de 2 anos e 60 mil km ou seu dinheiro de volta, e muitos clientes já aprovaram.
+[20:15] ROBÔ: Quando você consegue passar aqui na loja pra ver o pneu de perto?
+[20:15] CLIENTE: 4 pneus
+[20:15] ROBÔ: 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+[20:15] ROBÔ: Temos os 4 pneus *175/65/14* da marca *GP Premium* saem por *R$ 996,00 à vista* (valor total).
+[20:15] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[20:15] CLIENTE: Onde é a loja
+[20:16] ROBÔ: Segue a nossa localização:
+[20:16] ROBÔ: [localização] -16.2334867,-47.9120936 — Pneus GP Premium
+[20:16] ROBÔ: [foto] Pneus GP Premium
+[20:16] CLIENTE: São novos ou remoldados
+[20:16] ROBÔ: [áudio — sem transcrição]
+[20:17] CLIENTE: [foto]
+[20:17] CLIENTE: N abre o áudio
+--- 22/10/2026 (Thu) ---
+[08:44] LOJA: Perdão... nosso whatsapp está com instabilidade.
+[08:45] LOJA: O unico que é remold é o ultimo, entretanto é de primeira linha, é o pneu mais vendido que tenho. Quer que eu grave 1 video para você ver?
+[09:11] CLIENTE: Remoldados n quero
+[09:14] LOJA: Você viu que no orçamento tem pneus novos!?
+[09:39] LOJA: 🙋🏼‍♀️

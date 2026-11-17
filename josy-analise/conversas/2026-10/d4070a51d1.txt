@@ -1,0 +1,28 @@
+CONVERSA d4070a51d1 | contato: Gilmar | 14/10/2026 07:06 até 15/10/2026 16:52 | 4 msgs do cliente, 15 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[07:06] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+Bom dia fica onde a loja de vocês?
+[07:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:41] LOJA: Bom dia, somos de Luziânia-Go e você?
+[13:16] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Gilmar? Você me perguntou aqui onde fica a nossa loja e depois você não deu continuidade aqui na nossa conversa. E aí, eu consigo te ajudar?"  {audio:midias/3EB05CA0AB0B0B16E5BA9A_282866.ogg}
+[13:19] CLIENTE: [áudio] "Moça, era a questão dos pneus da caminhoneta Hilux. Você está tendo ele nacional? Qual o valor e os melhores importados que você está tendo?"
+[13:21] LOJA: Preciso que me diga *qual a medida dos pneus que você precisa*
+[13:24] LOJA: Se souber qual é o aro já me ajuda muito!
+[13:38] CLIENTE: 265/60 18
+[16:57] LOJA: Obrigada por aguardar, Gilmar!
+[16:57] LOJA: [foto]
+[16:57] LOJA: No dia de hoje temos essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:59] LOJA: [foto]
+[17:54] LOJA: [áudio] "Seu Gilmar, os pneus que eu tenho aqui, no melhor preço, são os pneus da marca GP Premium. Eu vou ter eles no modelo ATR, a unidade está por 559, e no modelo Brutus por 599."  {audio:midias/3EB05423F6B81653D2CBFD_312067.ogg}
+[17:56] LOJA: [vídeo]
+[17:59] CLIENTE: [áudio] "Ah, moça, mas esses pneus são importados ou são nacionais, moça?"
+[18:04] LOJA: [vídeo]
+--- 15/10/2026 (Thu) ---
+[15:53] LOJA: Oi, Gilmar... vou te encaminhar a nossa localização, passa aqui para conversarmos pessoalmente!
+[15:53] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:52] LOJA: [foto]

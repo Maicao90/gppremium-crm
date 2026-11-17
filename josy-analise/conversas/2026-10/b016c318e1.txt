@@ -1,0 +1,50 @@
+CONVERSA b016c318e1 | contato: Afonso | 05/10/2026 15:28 até 14/10/2026 09:32 | 15 msgs do cliente, 24 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[15:28] LOJA: *Josy:*
+Boa tarde sr Afonso!
+[15:28] CLIENTE: Opa
+[15:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:28] CLIENTE: 265/60/18
+[15:45] LOJA: [áudio] "Vai ser afonso tudo jóia. Obrigada aí por aguardar."  {audio:midias/3EB02ED636CB14772F0114_5556.ogg}
+[15:46] CLIENTE: Valores
+[15:46] LOJA: [áudio] "Eu só estou montando aqui o seu orçamento, só um instantinho."  {audio:midias/3EB0EE7DAD80D6CA0E9EE1_50774.ogg}
+[15:47] LOJA: [foto]
+[15:47] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:48] LOJA: [áudio] "Vou te mandar as fotos dos pneus, tá? Aí, o orçamento, ele comporta apenas valor unitário."  {audio:midias/3EB04B2968A13747DE7EB5_550659.ogg}
+[15:49] LOJA: [foto]
+[15:50] LOJA: 265/60/18 GP Premium ATR 👇🏻
+[15:51] LOJA: [foto]
+[15:51] LOJA: [foto]
+[16:06] CLIENTE: [áudio] "Enjoso, qual a diferença desse Adventure ATR e esse Brutus TA? Qual a diferença?"
+[16:07] CLIENTE: [áudio] "Um é R$ 599, o outro R$ 559, não é isso? À vista? Vê qual a diferença dos dois aí."
+[16:08] LOJA: [áudio] "Isso, isso mesmo. O modelo ATR, ele é um modelo desenvolvido para asfalto e estrada de chão, tá? Então, ele é flex, digamos assim. Aí, ele é o de 559. Esse modelo bruto, esse borrachudo, ele é mais pra terra, tá? Então, assim, é questão de gosto da pessoa, realmente. Aqui na nossa caminhonete, nós utilizamos no modelo Brutus. Tem aqui um Amarok e é instalado esse pneu aí, né, ó."  {audio:midias/3EB0B5BF6D841AF3AA244B_635621.ogg}
+[16:09] CLIENTE: [áudio] "É porque eu uso mais aqui é asfalto, entendeu? Eu uso muito pouco chão, quase não uso chão, mas asfalto."
+[16:09] LOJA: [áudio] "Não, pode colocar esse modelo ATR aí que vai te atender super bem."  {audio:midias/3EB08054DCFFF2233D93A3_99252.ogg}
+[16:10] CLIENTE: [áudio] "Você falou que fica em Luziânia, né? Depois você me... me mandou a localização aí. Como que é? Comprando os... os quatro pneus. Alinhamento, balanceamento, é grátis, é? Como é que é aí? Me fala aí."
+[16:12] LOJA: [áudio] "Sim, estamos aqui de Luziânia, chamando a nossa localização, está bem?"  {audio:midias/3EB0D7577B5A63B4952547_843598.ogg}
+[16:23] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:30] LOJA: [foto]
+[16:40] LOJA: [vídeo]
+[16:50] CLIENTE: 👍🏻👏👏
+--- 14/10/2026 (Wed) ---
+[08:50] CLIENTE: Bom dia
+[08:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:51] CLIENTE: Comprando as pneus com vocês, ganha o balanceamento e alinhamento?
+[08:54] LOJA: [áudio] "Oi, Sr. Alfonso, bom dia, tudo bom? Não, os serviços, eles são cobrados à parte, tá joia? Mas assim, é tudo valor negociável."  {audio:midias/3EB08CD7791E710C2FC485_731753.ogg}
+[08:56] CLIENTE: [áudio] "Pois é, moço. Não, porque eu acho que é uns pneus. R$ 30,00 mais barato que é o seu, entendeu? Ou mais barato, ou mais caro que é o seu. Só que ganha alinhamento e balanceamento, Pistão Sul da Guatinga. Ou R$ 30,00, R$ 60,00, vai dar R$ 120,00. Eu não sei quanto que é alinhamento e balanceamento. Ou seja, vai ficar quase a mesma coisa de comprar aí, né?"
+[08:58] LOJA: [áudio] "Seu Afonso, essa estratégia de dizer que vão entregar, que ganha, alinhamento, balanceamento, é só justamente para poder chamar o cliente, porque não vai ser nada disso. Aqui, eu trabalho já há muitos anos no ramo. Ixi, o que eu sei de situações que viraram caso de polícia justamente por conta disso? Obrigado."  {audio:midias/3EB0A4A43ADF6B18668AF5_892858.ogg}
+[09:05] CLIENTE: Acredito
+[09:06] LOJA: Está vendo só!
+[09:07] CLIENTE: Vou mandar meu sobrinho ir aí
+[09:08] CLIENTE: Metade no dinheiro e o outro no pix.
+[09:09] CLIENTE: Vai ser o ATR premium
+[09:28] LOJA: Ok!
+[09:32] LOJA: [áudio] "Aí seu sobrinho já vai vir com a caminhonete, né?"  {audio:midias/3EB0330987F8014B521297_951153.ogg}
+[09:32] LOJA: [áudio] "Nós já colocamos esses pneus para o Senhor."  {audio:midias/3EB08A5106E30A44EB4FE5_536614.ogg}

@@ -1,0 +1,17 @@
+CONVERSA a074bd044a | contato: Aleksandro | 19/10/2026 13:48 até 21/10/2026 16:59 | 2 msgs do cliente, 5 da loja, 3 do robô
+
+--- 19/10/2026 (Mon) ---
+[13:48] LOJA: *Josy:*
+Boa tarde, sr Alecksandro!
+[13:48] LOJA: *Josy:*
+Ficamos combinados no pneu R$ 269,00
+[13:59] CLIENTE: Ok Josy obrigado
+[13:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 21/10/2026 (Wed) ---
+[12:51] ROBÔ: 🙋🏼‍♀️
+[13:07] LOJA: [áudio] "Alexandro, perdão, acabou que a mensagem foi errada aqui, tá bom?"  {audio:midias/3EB06EE5395C7872A2BEFC_128805.ogg}
+[13:47] CLIENTE: Ok
+[13:47] ROBÔ: Tranquilo! Qualquer dúvida ou se quiser fechar, é só me chamar por aqui.
+[16:51] ROBÔ: 🙋🏼‍♀️
+[16:59] LOJA: Perdão novamente...

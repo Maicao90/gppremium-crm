@@ -1,0 +1,220 @@
+CONVERSA 268d1a5b41 | contato: O Senhor E Meu Pastor !! | 23/09/2026 17:30 até 15/10/2026 13:09 | 77 msgs do cliente, 88 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[17:30] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[17:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:30] CLIENTE: 215/50/17
+[17:31] LOJA: *Josy:*
+Boa tarde, temo sim!
+[17:31] LOJA: [foto]
+[17:31] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:32] LOJA: *Josy:*
+Mora aqui em Luziânia, mesmo?
+[17:33] CLIENTE: Moro no Gama
+[17:33] LOJA: *Josy:*
+Ah, sim!
+[17:35] LOJA: *Josy:*
+Tem a possibilidade de vir até aqui?
+[17:35] CLIENTE: Que marca é esse chinês
+[17:36] LOJA: [foto] *Josy:*
+Esse aqui? Forceland
+[17:37] CLIENTE: Tem garantia?
+[17:39] LOJA: *Josy:*
+Sim, de 5 anos.
+[17:40] CLIENTE: Qual o menor preço vc consegue em quatro pneus?
+[17:41] LOJA: *Josy:*
+R$ 1.716,00 pagamento a vista.
+[17:43] CLIENTE: E parcelado em quatro vezes?
+[17:44] LOJA: *Josy:*
+R$ 1.568,00 você vai pagar 4 parcelas de R$ 392,00
+[17:46] CLIENTE: Tem como vc me mandar uma foto do pneu?
+--- 24/09/2026 (Thu) ---
+[08:09] LOJA: *Josy:*
+Bom dia!
+[08:09] LOJA: *Josy:*
+Tem sim!
+[08:12] LOJA: [foto]
+[08:12] LOJA: [foto]
+[08:12] LOJA: [foto]
+[11:45] LOJA: [áudio] "Olá, tudo bem? Eu sou a Josi e eu vou encerrar aqui o seu atendimento para não ficar enchendo seu WhatsApp de mensagens e vou aproveitar e vou te encaminhar a nossa localização, pois se houver a possibilidade, você passa aqui na nossa empresa para conversarmos pessoalmente, está bem?"  {audio:midias/3EB083DD7DC2EA0F2FA39F_971421.ogg}
+[11:45] LOJA: [áudio] "E aqui o nosso horário de atendimento é de segunda a sexta, de 8 às 18 e aos sábados de 8 até o meio-dia."  {audio:midias/3EB09E20CEDDAD3E341808_531173.ogg}
+[11:45] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:45] LOJA: [foto]
+[12:07] CLIENTE: Vou no sábado ok
+[12:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:07] LOJA: [áudio] "Qual é mesmo o seu nome?"  {audio:midias/3EB0477A40FBF005A4D9A8_38625.ogg}
+[12:16] CLIENTE: Jailton
+[12:17] LOJA: *Josy:*
+Te aguardo no sábado.
+[17:06] CLIENTE: Boa tarde
+[17:06] LOJA: [áudio] "Hoje é o Tom, boa tarde, tudo bom?"  {audio:midias/3EB072EA9C2A97AF5A9D9F_686621.ogg}
+[17:06] CLIENTE: Vamos fazer os quatro pneus por 1.400.00  ?
+[17:07] CLIENTE: Vou dar 400.00 de entrada e parcelar o restante em três vezes
+[17:07] LOJA: [áudio] "Jair, o Tom, como esses pneus importados, eu só tenho ele para repasse, o distribuidor ele já deixa no preço dele mesmo, sabe? Assim, eu não consigo fazer alterações."  {audio:midias/3EB0399FB20016582BBAF3_744231.ogg}
+[17:11] CLIENTE: Muito obrigado
+[17:11] LOJA: *Josy:*
+O pneu da promoção o de 329,00 não te atende?
+[17:12] LOJA: *Josy:*
+É a opção que eu mais vendo por conta da qualidade.
+[17:12] CLIENTE: Qual é a marca
+[17:12] LOJA: *Josy:*
+É o GP Premium
+[17:12] LOJA: *Josy:*
+2 anos de garantia.
+[17:12] CLIENTE: É bom ?
+[17:12] LOJA: *Josy:*
+Sim! muito bom!
+[17:13] CLIENTE: Me manda uma foto
+[17:13] LOJA: *Josy:*
+Sim!
+[17:13] LOJA: *Josy:*
+Me de só 1 onstante.
+[17:13] CLIENTE: Ok
+[17:20] LOJA: [foto]
+[17:20] LOJA: [foto]
+[17:20] LOJA: [foto]
+[17:21] LOJA: [foto]
+[17:24] CLIENTE: Parece que é bom né
+[17:24] LOJA: [áudio] "Sim, é sim. E reforço, é o pneu mais vendido que eu tenho, justamente por conta da qualidade."  {audio:midias/3EB00BE41095608ABC2C99_323342.ogg}
+[17:25] CLIENTE: Só que eu gostei mais do outro modelo!!
+[17:25] CLIENTE: Vê o que vc consegue fazer pra mim comprar o outro?
+[17:30] LOJA: *Josy:*
+386,00 x 4 = R$ 1.544,00 -R$ 400 = 1.144,00  você vai pagar 3 parcelas de R$ 381,33
+[17:31] CLIENTE: Vou aí amanhã ou no sábado e vou ver os dois modelos ok
+[17:31] LOJA: [áudio] "Perfeito, combinado, tá?"  {audio:midias/3EB0AB731F596DC713398C_693139.ogg}
+[17:31] LOJA: [áudio] "Eu acho que quando você estiver aqui, você vai gostar mais desse que eu te mandei a foto por agora. Tenho certeza."  {audio:midias/3EB0082247F3A4C2916B45_51147.ogg}
+[17:38] CLIENTE: Tbm acho!!
+[17:39] CLIENTE: [áudio] "Mas esse valor que você me passou de 329, ele já é montado, né? Já colocado no lugarzinho e eu vou precisar dos meus pneus, desses pneus antigos. Não tem problema não, né? Eu fiquei de dar para um amigo meu, ele que está querendo. Tá certo? Pode ser assim?"
+[17:40] LOJA: [áudio] "Não, aqui nós não trabalhamos como as outras empresas que a gente fica com os pneus da pessoa, não, tá? Você pode levar os seus pneus tranquilamente para sua casa."  {audio:midias/3EB00A038D89924E2FBAD5_957732.ogg}
+[17:40] CLIENTE: Ok
+--- 25/09/2026 (Fri) ---
+[11:25] LOJA: 🙋🏼‍♀️
+[11:25] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:26] LOJA: [foto]
+[16:16] LOJA: *Josy:*
+Oi... o senhor ainda vorá?
+[16:17] CLIENTE: Acho que só amanhã não consegui sair mais cedo?
+[16:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:17] CLIENTE: Do serviço
+[16:18] LOJA: *Josy:*
+Perfeito... é que ficamos sem internet, e agora que estou conseguindo falar com todos do whatsapp
+[16:18] CLIENTE: Amanhã vou bem cedinho
+[16:18] LOJA: *Josy:*
+Amanhã nosso horário de  atendimento amanhã é das 08:00 às 12, está bem!
+[16:18] CLIENTE: Ok
+--- 28/09/2026 (Mon) ---
+[10:59] CLIENTE: Bom dia
+[10:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:59] LOJA: *Josy:*
+Bom dia!
+[10:59] LOJA: *Josy:*
+Tudo bem?
+[11:00] CLIENTE: Vou só a tarde ok
+[11:00] LOJA: *Josy:*
+Sem problemas...como for melhor para o senhor.
+[11:00] CLIENTE: Obrigado
+[16:30] LOJA: *Josy:*
+Oi, sr Jailton...
+[16:31] LOJA: *Josy:*
+Vai conseguir vir?
+[16:33] CLIENTE: Infelizmente só na quarta feira
+[16:34] LOJA: *Josy:*
+Tranquilo...
+[16:35] CLIENTE: Pode reservar 4 pra mim ok
+[16:35] CLIENTE: Os de 329.00
+[16:35] LOJA: *Josy:*
+Pode deixar!
+--- 01/10/2026 (Thu) ---
+[07:49] CLIENTE: Bom dia José
+[07:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:49] CLIENTE: *Josy:*
+R$ 1.444,00 pagamento a vista.
+[07:50] CLIENTE: Vou dar 444.00 de entrada e o restante em três vezes pode ser ?
+[07:51] CLIENTE: [foto]
+[07:51] CLIENTE: Nesse !!
+[07:52] CLIENTE: Se vc fizer desse jeito vou aí trocar hoje ok
+[08:08] LOJA: *Josy:*
+Bom dia!
+[08:08] LOJA: *Josy:*
+Esse modelo esgotou ontem.
+[08:11] CLIENTE: Do outro vc ainda tem?
+[08:12] LOJA: *Josy:*
+Vou consultar aqui, um instante.
+[08:12] CLIENTE: [foto]
+[08:12] CLIENTE: [foto]
+[08:12] CLIENTE: [foto]
+[08:12] CLIENTE: [foto]
+[08:15] LOJA: *Josy:*
+Tem sim!
+[08:58] CLIENTE: Vou aí hoje ok
+[08:58] CLIENTE: Esse valor já é montado né
+[08:59] LOJA: *Josy:*
+Como for melhor para o senhor, stá bem!
+[09:00] LOJA: *Josy:*
+Os pneus são colocados, serviços de alinhamento...balanceamento etc...são cobrados a parte.
+[09:07] CLIENTE: Quanto fica o balanceamento e o alinhamento?
+[09:09] LOJA: [áudio] "Senhora Jailton, as minhas mensagens aqui do WhatsApp não estão carregando? Qual que é mesmo o seu carro?"  {audio:midias/3EB054994DB291C234E192_280570.ogg}
+[09:16] CLIENTE: Cruze
+[09:38] LOJA: *Josy:*
+* Balanceamento = 45,00 por roda
+* Alinhamento = 140,00 , mas fique tranquilo que são valores negociáveis.
+--- 09/10/2026 (Fri) ---
+[13:22] CLIENTE: Vou querer devolver os pneus
+[13:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:23] CLIENTE: Não quero pneu remolde não
+[13:24] CLIENTE: Deixei de comprar novo no Gama por 395.00
+[13:24] CLIENTE: Vc não me avisou que era remolde
+[13:25] CLIENTE: Se eu soubesse não teria comprado ok
+[13:25] CLIENTE: Terça feira vou aí
+[13:25] CLIENTE: Obrigado
+[13:46] LOJA: Boa tarde!
+[13:48] LOJA: Por dia eu atendo em média 30 pessoas e todas compram os pneus do mesmo que te vendi.
+[13:48] LOJA: Se os pneus que te vendi não tivessem um diferencial, não seriam os pneus mais vendidos que tenho.
+[13:49] LOJA: E não estou discutindo com o senhor apenas dando esclarecimento, devido ao fato de confundirem os nossos pneus com pneus que são remold de vredade.
+[13:50] LOJA: [vídeo]
+[13:50] CLIENTE: Pode ser maravilhoso mas vcs deveriam avisar aos clientes que é remolde
+[13:51] CLIENTE: Confundirem não pq eles são remolde está escrito no pneu
+[13:52] LOJA: Confundem sim! Pois são coisas completamente diferentes!
+[13:52] CLIENTE: Comprei  como novo
+[13:52] CLIENTE: Se está escrito no pneu que é remolde  pq não é novo
+[13:53] CLIENTE: Gostaria de devolver ok
+[13:53] CLIENTE: Ou se vc tiver novo eu pago a diferença ok
+[13:54] LOJA: Como disse não estou discutindo, e estou tentando fazer o senhor entende. Mas.. tudo bem!
+[13:54] LOJA: Vai estar chegando sim!
+[13:54] LOJA: Podemos negociar.
+[13:54] CLIENTE: Vc me avisa quando chegar o novo ok
+[13:55] CLIENTE: Que vou aí trocar
+[13:55] LOJA: Claro!
+[13:55] CLIENTE: Muito obrigado fico aguardando ok
+--- 14/10/2026 (Wed) ---
+[08:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:17] CLIENTE: [áudio] "Bom dia, Josi. Tudo bem? O Jailton, o rapaz que comprou os pneus com você aí. Você sabe mais ou menos que dia que vai chegar o pneu novo aí, pra gente poder trocar?"
+[08:17] LOJA: Bom dia, os pneus ainda não chegaram.
+[08:18] CLIENTE: Vc bj me avisa quando chegar?
+[08:18] LOJA: Conforme combinado, sim.
+[08:18] CLIENTE: Obrigado p
+--- 15/10/2026 (Thu) ---
+[13:05] LOJA: Boa tarde, sr Jailton! Chegaram pneus da marca Dunlp
+[13:05] LOJA: [foto]
+[13:06] CLIENTE: 760.00 cada um
+[13:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:06] LOJA: Em 4 x sim
+[13:07] CLIENTE: Desse valor eu não quero não!!
+[13:08] CLIENTE: Vou aí amanhã devolver os seu pneus
+[13:08] CLIENTE: Como ti falei deixei de comprar novo de 395.00
+[13:09] CLIENTE: Até esse valor eu fico mais que isso fica inviável pra mim ok

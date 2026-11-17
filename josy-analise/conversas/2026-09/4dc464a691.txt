@@ -1,0 +1,20 @@
+CONVERSA 4dc464a691 | contato: RSV | 12/09/2026 09:24 até 16/09/2026 12:06 | 6 msgs do cliente, 6 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[09:24] CLIENTE: Bom dia
+[09:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:24] CLIENTE: Qual valor pneu aro 15
+[09:26] CLIENTE: Aro 15
+185/65
+[09:31] CLIENTE: Quero cotar o pneu 195/65 R15 GP Premium.
+[09:39] CLIENTE: ?
+[09:45] LOJA: [áudio] "Obrigada por aguardar, está bem? É que eu estou em atendimento presencial e a loja está completamente cheia. Vou te mandar um áudio breve. O 195-65-15 está na promoção, compre 3 e leve 4. A unidade está por R$ 328,90. Já esse, eu falo por pagamento à vista. Então, R$ 328,90 vezes 3 pneus fica por R$ 987,00. Por esse preço, você vai levar os 4 pneus do 195-65-15. Você mora aqui em Luziânia?"  {audio:midias/A54E974424646798EB1239E830996995_280153.ogg}
+[09:46] LOJA: [áudio] "Já o 185-65-15, ele está por apenas R$ 249,00 a lista."  {audio:midias/A52FDA94940BDDF1C514C0C6250CF3AD_409291.ogg}
+--- 14/09/2026 (Mon) ---
+[11:12] CLIENTE: Certinho
+[11:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 16/09/2026 (Wed) ---
+[12:06] LOJA: [áudio] "Oi, Romário, tudo jóia? Nós conversamos aí no final de semana, né? Você disse até que trabalhar fora. E se você estiver por aqui nesse final de semana, dá um pulinho aqui na nossa loja para conversarmos pessoalmente, tá bom?"  {audio:midias/3EB039754A69CA4724172E_622786.ogg}
+[12:06] LOJA: [foto]

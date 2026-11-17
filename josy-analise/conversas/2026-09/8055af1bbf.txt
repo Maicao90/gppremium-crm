@@ -1,0 +1,13 @@
+CONVERSA 8055af1bbf | contato: Marcus Finotti | 05/09/2026 09:49 até 05/09/2026 09:50 | 2 msgs do cliente, 4 da loja, 0 do robô
+
+--- 05/09/2026 (Sat) ---
+[09:49] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[09:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:49] LOJA: *Josy:*
+🙋🏼‍♀️
+[09:50] CLIENTE: [áudio] "O pneu é 32 por 11.5, raio 15. Você tem pneu aí? Preferência usado, tá? Eu só preciso de um e o meu aqui tá tudo bom. É só porque teve um problema aqui numa balança e comeu o pneu lateral."
+[09:50] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Olha, eu não disponho dessa opção à pronta entrega. Ela é somente por encomenda. Eu consigo verificar o valor para você na terça-feira. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0451F2F4A44611D3EF9_269700.ogg}
+[09:50] LOJA: [áudio] "E não, não tenho usado."  {audio:midias/3EB0E6B3D03F0506E43F56_18984.ogg}

@@ -1,0 +1,25 @@
+CONVERSA f9092da1c6 | contato: Ronaldo Cesar Matias | 03/09/2026 12:27 até 03/09/2026 13:00 | 5 msgs do cliente, 9 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[12:27] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[12:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:28] CLIENTE: 17
+[12:29] LOJA: *Josy:*
+Claro! Para que eu possa gerar o orçamento para você, poderia me informar a *medida* do pneu que você precisa (ex: 205/50 R17)  😊
+[12:30] LOJA: *Josy:*
+🙋🏼‍♀️
+[12:32] LOJA: *Josy:*
+Se não souber a *medida* dos pneus me informa qual é seu carro, essa informação já me ajuda.
+[12:54] CLIENTE: [foto]
+[12:56] LOJA: [foto]
+[12:56] LOJA: *Josy:*
+Tenho as 2 ultimas unidades.
+[12:56] LOJA: *Josy:*
+Entretanto, no orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:57] CLIENTE: Ótimo
+[12:58] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? E você mora aqui em Luziânia mesmo, Ronaldo?"  {audio:midias/3EB0F89F4EA3503348BB5E_444252.ogg}
+[13:00] CLIENTE: [áudio] "Não, moro no Valparaíso. Estou fazendo uns orçamentos aí, mais do que os 4."
+[13:00] LOJA: [áudio] "Entendi."  {audio:midias/3EB0F0DA5E60325A85E9AA_928335.ogg}

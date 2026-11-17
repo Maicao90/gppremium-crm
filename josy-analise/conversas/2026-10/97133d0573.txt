@@ -1,0 +1,10 @@
+CONVERSA 97133d0573 | contato: Fernando Souza 🥰 | 15/10/2026 15:02 até 15/10/2026 15:04 | 1 msgs do cliente, 5 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[15:02] LOJA: Boa tarde, Fernando.
+[15:02] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:03] LOJA: [foto]
+[15:03] CLIENTE: 👍🏾
+[15:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:04] LOJA: [áudio] "Te esperamos, seu Fernando."  {audio:midias/3EB042F146D99DB2C11D72_179211.ogg}

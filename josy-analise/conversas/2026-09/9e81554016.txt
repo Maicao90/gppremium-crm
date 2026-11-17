@@ -1,0 +1,23 @@
+CONVERSA 9e81554016 | contato: Deus é Fiel 👊🏻💀🇧🇷 | 05/09/2026 05:58 até 05/09/2026 10:07 | 5 msgs do cliente, 9 da loja, 0 do robô
+
+--- 05/09/2026 (Sat) ---
+[05:58] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[05:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:34] LOJA: [áudio] "Olá, bom dia! Tudo bem com o senhor?"  {audio:midias/3EB05705C6D1427AE356D9_883897.ogg}
+[09:24] CLIENTE: [áudio] "Bom dia, tudo bem? Eu queria ver com você o orçamento do pneu 1857014. Valor e modelo."
+[09:33] LOJA: [áudio] "Os preços continuam os mesmos que nós conversamos lá em julho. E o senhor até havia dito pra mim que já tinha comprado?"  {audio:midias/3EB014B62A1C376B17EA89_969217.ogg}
+[09:34] CLIENTE: Gp
+[09:34] CLIENTE: Premium
+[09:34] LOJA: *Josy:*
+O senhor falou isso, lembra?
+[10:01] CLIENTE: [figurinha]
+[10:02] LOJA: *Josy:*
+rsrs
+[10:07] LOJA: [áudio] "Pois é, então é isso, eu tenho todas as opções que nós já conversamos, né, desde julho, tenho aqui as nossas conversas salvas, a sua observação a respeito do pneu GP Premium, enfim, aí o senhor que decide aí qual que é a melhor opção para o senhor, tá bom?"  {audio:midias/3EB0204EC1C159AE758B08_875275.ogg}
+[10:07] LOJA: [áudio] "E, mais uma vez, vou deixar registrada aqui a nossa localização, pois se houver a possibilidade, sobe em direto aqui na loja para nós conversarmos pessoalmente."  {audio:midias/3EB06F172EAE73AD73985E_448439.ogg}
+[10:07] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:07] LOJA: [foto]

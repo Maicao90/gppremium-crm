@@ -1,0 +1,20 @@
+CONVERSA 78d0c30424 | contato: Samuel Silva | 25/09/2026 17:42 até 25/09/2026 17:48 | 5 msgs do cliente, 9 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[17:42] CLIENTE: [áudio] "Boa tarde, tudo bem? Passei na rodovia e vi uns pneus de promoção seus aí."
+[17:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:43] LOJA: [áudio] "Oi, Samuel. Tudo bom? Sim, sim. Qual que é a medida dos pneus que você precisa?"  {audio:midias/3EB0D14FC7789078256CDA_832940.ogg}
+[17:43] CLIENTE: Joia
+[17:43] CLIENTE: 265/65/17
+[17:44] LOJA: [foto]
+[17:44] LOJA: [áudio] "Pneus da marca GP Premium, os pneus aqui da nossa empresa, eu tenho ele no modelo ATR e no modelo Drux, aí no orçamento está valor de apenas um pneu, tá? Na primeira colônia está o valor à vista e logo mais seguem as opções de parcelamento em até 10 vezes."  {audio:midias/3EB063EDED356E7470D614_662835.ogg}
+[17:46] CLIENTE: [áudio] "Esse valor é o preço final ou ainda tem um desconto, dependendo da quantidade que pegar?"
+[17:46] CLIENTE: [áudio] "Não são remolds, não, né? É. Nossa, vou usar a marca deles aí. Ou até é aquele mais cravudo, né, que tem mais borracha."
+[17:47] LOJA: [áudio] "São pneus ecológicos que nós fazemos. Sim, eles entrarão na categoria de remodelagem, só que linha Premium, que não tem nada a ver com os pneus que são remoldes convencionais. Justamente por isso são os pneus mais vendidos que eu tenho, com garantia de 2 anos."  {audio:midias/3EB0CF00ABB65B9C915EE9_597631.ogg}
+[17:48] LOJA: *Josy:*
+ATR 👇🏻
+[17:48] LOJA: [foto]
+[17:48] LOJA: *Josy:*
+Brutus👇🏻
+[17:48] LOJA: [foto]

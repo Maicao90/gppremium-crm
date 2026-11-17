@@ -1,0 +1,31 @@
+CONVERSA bd90cd7654 | contato: Aucione Costas Santos | 17/08/2026 15:44 até 18/08/2026 08:40 | 8 msgs do cliente, 17 da loja, 0 do robô
+
+--- 17/08/2026 (Mon) ---
+[15:44] CLIENTE: [foto] 📢 [Anúncio] Converse conosco
+
+Olá! Posso ter mais informações sobre isso?
+[15:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:44] CLIENTE: hrv 2016
+[15:44] LOJA: Boa tarde! qual a medida do pneu por gentileza?
+[16:09] LOJA: 🙋🏼‍♀️
+[16:12] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Eu sou a Josi. Só pode confirmar para mim, por gentileza, qual é a medida dos pneus que você está precisando?"  {audio:midias/3EB047E55A6DA65EE75AE8_536714.ogg}
+[16:12] CLIENTE: chegar em casa vejo
+[16:21] LOJA: Bem... por ora vou te encaminhar a opção da medida 215/55/17 , tenho aqui na promoção compre 3 e leve 4 , os pneus da marca GP Premium
+[16:21] LOJA: [foto]
+[16:22] LOJA: Na medida 215/55/17 se o  pagamento for a vista a  unidade  é  R$ 395,00 x 3 pneus = R$ 1.185,00 por esse preço você vai levar os 4!
+[17:32] CLIENTE: [foto]
+[17:32] CLIENTE: tem esse modelo ai
+[17:32] LOJA: Boa tarde! qual a medida do pneu por gentileza?
+[17:33] CLIENTE: [foto]
+[17:33] LOJA: De pneus chineses, teremos da marca Hifly
+[17:34] LOJA: [foto]
+[17:34] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:34] LOJA: Você mora a1qui em Luziânia-Go?
+[17:35] CLIENTE: ok
+[17:35] CLIENTE: Pensei que era aqui em ceilandia
+[17:44] LOJA: não, somo em luziania
+[17:44] LOJA: você não consegue vir aqui?
+--- 18/08/2026 (Tue) ---
+[08:40] LOJA: Bom dia! Bem... vou deixar aqui a nossa localização, se possivel, venha até nossa empresa. Será uma satisfação recebe-lo.
+[08:40] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

@@ -1,0 +1,18 @@
+CONVERSA dd0d36efe6 | contato: Oliveira | 22/10/2026 10:45 até 22/10/2026 10:49 | 5 msgs do cliente, 3 da loja, 3 do robô
+
+--- 22/10/2026 (Thu) ---
+[10:45] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento bom  dia ! 215/60/17. Valor?
+[10:46] ROBÔ: Temos o pneu *215/60/17* da marca *GP Premium* está saindo por *R$ 359,00 à vista*.
+[10:46] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[10:47] CLIENTE: Blza
+[10:47] ROBÔ: Tranquilo! Qualquer dúvida ou se quiser fechar, é só me chamar por aqui.
+[10:47] LOJA: [áudio] "Olá, tudo bem contigo? Vocês têm busca de alguma marca específica?"  {audio:midias/3EB017E7F1FD871733511F_982058.ogg}
+[10:47] CLIENTE: Não
+[10:48] CLIENTE: Só orçamento,  provavelmente vou trocar mês que vem
+[10:48] CLIENTE: Obrigado
+[10:49] LOJA: [foto]
+[10:49] LOJA: No dia de hoje temos  essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

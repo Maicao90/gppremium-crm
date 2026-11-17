@@ -1,0 +1,46 @@
+CONVERSA 5b1e0c59dd | contato: Nordestino | 29/09/2026 09:08 até 30/09/2026 09:23 | 14 msgs do cliente, 22 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[09:08] CLIENTE: Bom dia
+[09:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:09] LOJA: *Josy:*
+Bom dia! Como posso ajudar?
+[09:10] CLIENTE: Queria saber quanto está o pneu de vc
+[09:10] CLIENTE: 265/70
+[09:10] CLIENTE: Aro 16
+[09:10] LOJA: [foto]
+[09:11] LOJA: *Josy:*
+Prefere mensagem de áudio ou texto?
+[09:11] CLIENTE: Tanto faz
+[09:14] LOJA: [áudio] "Certo, perfeito. Bem, meu nome é Josi e no dia de hoje, no aro 16, no 265-70, eu tenho aqui o pneu da marca Conforce, que é um pneu importado, a unidade está por R$ 756,00, se o seu pagamento for no débito ou no Pix, já para parcelar, seguem as opções de parcelamento em até 10 vezes, tá? Também disponho aqui no aro 16, que medidas que possam te atender, são o 245-70-16 e o 255-70-16 no modelo Off-Road também. A unidade desse 255, ela está por apenas R$ 539,00, se o seu pagamento for no débito ou no Pix. Você é daqui de Luziânia mesmo?"  {audio:midias/3EB0081153D1D3150AC19E_666426.ogg}
+[09:16] CLIENTE: [áudio] "Olá, eu sou do Valparaíso. Então, esse off-road que você disse, é porque ele anda em estrada de terra e asfalto? Você tem como mandar o modelo para mim, por favor? Eu estava em 200 anos agora, passei na frente, eu vi a promoção lá, não sei qual pneu que era. Estou precisando colocar dois pneus no meu carro, na caminhonete que eu tenho."
+[09:18] LOJA: [áudio] "Sim, sim, realmente, tem uma placa ali na pista, promoção de pneu de caminhonete no aro 16, que está por R$ 479,00, que é a opção do 24570, pneu aqui da nossa marca, tá joia? Mas eu vou te mandar aqui a foto do 265 e do 255, tá joia? Só um minutinho."  {audio:midias/3EB0B96C67E7E3B6034D06_330613.ogg}
+[09:21] CLIENTE: [áudio] "E do 245 também, o que está na promoção, na verdade, muda o que? É a altura deles, é isso?"
+[09:21] LOJA: [áudio] "Não, não é a altura. Porque a altura, você pode observar que todos são 70. O que muda é a largura do pneu. Igual você está procurando o 265, aí o 245, é 2 cm estreito ao 265, tá? E o 255, 1 cm. Eu vou colocá-los aqui um lado a lado ao outro, para que você possa compreender, tá joia?"  {audio:midias/3EB094CCB744758F27E008_925986.ogg}
+[09:38] CLIENTE: [áudio] "Tá bom, você coloca então. Eu achava que era a altura, agora eu entendi o que você me explicou direitinho."
+[09:54] LOJA: [áudio] "E eu já vou te mandar as fotos aqui, tá? Já que tá um pouquinho corrido."  {audio:midias/3EB0D016D8C73836671AFF_791471.ogg}
+[10:04] LOJA: 🙋🏼‍♀️
+[10:05] LOJA: *Josy:*
+Obrigada por aguardar.
+[10:05] LOJA: [vídeo]
+[10:23] CLIENTE: [áudio] "Enquanto você divide esse pneu aí, vocês vivem como boleto, cartão, como é que funciona?"
+[10:30] LOJA: *Josy:*
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista correspondente a débito/pix  e logo mais seguem as condições de parcelamento em até 10 X  no cartão de crédito.
+[10:59] LOJA: [áudio] "Você é daqui de Luziânia mesmo?"  {audio:midias/3EB00794EB53BF3295E657_443778.ogg}
+[11:14] CLIENTE: [áudio] "Eu sou do Vapo Paraíso."
+[11:23] LOJA: [áudio] "Ah, é aqui pertinho."  {audio:midias/3EB034909CE79B6EEF1926_134935.ogg}
+[11:25] CLIENTE: [áudio] "Eles todos são remolde, né?"
+[11:25] CLIENTE: [áudio] "Então a diferença mesmo só vai ser a largura, né? Aí fica muito a critério."
+[11:27] LOJA: [áudio] "Somente o 245 e o 255, eles entrarão na categoria de remodelagem apenas por questão técnica, tá? Pois eles são pneus ecológicos que nós produzimos, eles são de primeira linha. São justamente os pneus mais vendidos que eu tenho por conta da qualidade. Tem garantia de 2 anos com questão a quilometragem. Se sua caminhonete estiver bem alinhadinha, mas tiver os pneus sempre bem calibrados, ele roda 60 mil, igual as demais marcas aí do mercado, tá?"  {audio:midias/3EB0C21DEAFE45E251C782_945075.ogg}
+[11:46] LOJA: [áudio] "E isso, é apenas a questão da largura. Você pode instalar aí, principalmente, o 255, que eu garanto que vai ficar muito bom na sua caminhonete, tá bom?"  {audio:midias/3EB0B33AC5ED13D3126AD1_565959.ogg}
+[11:46] LOJA: [áudio] "O que que eu te mando aqui é a nossa localização?"  {audio:midias/3EB06C7F4595140F484872_571009.ogg}
+[11:57] CLIENTE: [áudio] "Manda, por favor, sua localização aí. Eu vou ver o que eu faço."
+[12:01] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:01] LOJA: [foto]
+[12:01] LOJA: [áudio] "Aí eu mandei a localização para o senhor, tá? E a foto aqui da frente da loja pra ficar aparecendo bem bonitinha aí, tá, joia? Só tem uma coisa que eu tô vendo aqui, o senhor não me disse qual é o seu nome."  {audio:midias/3EB0CBC4883ED7138DA3E5_996662.ogg}
+[17:20] LOJA: [áudio] "Olá, boa tarde, tudo bem? O senhor só não disse aqui para mim qual era o seu nome mesmo. Então, o senhor vê aí, né, analisa a proposta que eu tinha e me dá um retorno, tá bom? Me diz se eu posso reservar os pneus aqui para o senhor."  {audio:midias/3EB05C6FF3B6719D79D4A0_732653.ogg}
+[18:04] CLIENTE: [áudio] "Boa tarde, me chamo Thiago. Amanhã vou dar um jeitinho de dar uma ida aí, tá? Vou ver se eu conseguir amanhã ou sexta-feira."
+--- 30/09/2026 (Wed) ---
+[09:23] LOJA: [áudio] "Perfeito, Thiago. Vamos nos falando aqui, está bem?"  {audio:midias/3EB09DE931BC47F13B17A1_208657.ogg}

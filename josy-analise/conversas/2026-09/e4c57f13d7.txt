@@ -1,0 +1,25 @@
+CONVERSA e4c57f13d7 | contato: Arthur | 08/09/2026 08:59 até 08/09/2026 11:11 | 7 msgs do cliente, 10 da loja, 0 do robô
+
+--- 08/09/2026 (Tue) ---
+[08:59] CLIENTE: Bom dia
+[08:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:59] CLIENTE: 170/75 R14
+[09:19] LOJA: *Josy:*
+Bom dia!
+[09:41] CLIENTE: Bom dia , quanto tá o pneu aro 14 ?
+[09:46] LOJA: *Josy:*
+Obrigada por aguardar!
+[09:46] LOJA: [foto]
+[09:46] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:02] LOJA: *Josy:*
+Te atende?
+[11:10] CLIENTE: Por enquanto tô só pesquisando os valores, mas caso eu precise eu retorno
+[11:10] CLIENTE: Obg pela atenção e o atendimento
+[11:10] LOJA: [áudio] "Imagina! Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB048C15FE8FE34AE6062_752780.ogg}
+[11:10] CLIENTE: Sim
+[11:11] LOJA: *Josy:*
+Faz, assim... se possível, venha até nossa loja, será uma satisfação recebe-lo aqui!
+[11:11] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6 *Josy:*
+[11:11] CLIENTE: Tudo bem , muito obrigado

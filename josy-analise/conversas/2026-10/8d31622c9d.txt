@@ -1,0 +1,22 @@
+CONVERSA 8d31622c9d | contato: Alex Smith | 21/10/2026 11:39 até 22/10/2026 08:06 | 3 msgs do cliente, 6 da loja, 5 do robô
+
+--- 21/10/2026 (Wed) ---
+[11:39] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[11:39] ROBÔ: Oi, tudo bem?
+[11:39] ROBÔ: Poderia me informar a *medida do pneu* (ex.: 175/65/14) ou o *modelo do seu carro*?
+[11:40] CLIENTE: 205/65/16
+[11:40] ROBÔ: Só um instante que eu vou verificar aqui pra você, tá bem?
+[11:45] LOJA: [foto]
+[11:46] LOJA: pneu 205/65/16 95h da marca  luistone
+[11:46] LOJA: Termos as 2 ultimas unidades, e está por R$ 483,00 a unidade a vista.
+[14:48] ROBÔ: 🙋🏼‍♀️
+[16:16] CLIENTE: Boa tarde qual valor do pneu 205/55/16
+[16:17] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:17] LOJA: [foto]
+[17:24] LOJA: [áudio] "Oi Alex, tudo bem? Eu te encaminhei um orçamento aí e gostaria de saber se você pretende seguir com a negociação? Você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB0CF93E63392C546398B_209071.ogg}
+--- 22/10/2026 (Thu) ---
+[08:06] ROBÔ: 🙋🏼‍♀️

@@ -1,0 +1,26 @@
+CONVERSA 1b92033e47 | contato: Bruno | 25/09/2026 20:39 até 26/09/2026 09:04 | 5 msgs do cliente, 9 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[20:39] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[20:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:41] CLIENTE: 185/65R15
+--- 26/09/2026 (Sat) ---
+[08:12] LOJA: [áudio] "Bom dia, Bruno. Tudo bom?"  {audio:midias/3EB0E7D578ED9BFE90A05F_101932.ogg}
+[08:12] LOJA: [foto]
+[08:12] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:02] CLIENTE: [áudio] "Bom dia, tudo bem? Josi, esse pneu GP1, ele é remold, é? Porque tá muito barato esse valor aí."
+[09:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:02] LOJA: [áudio] "Isso. Ele está na promoção. Ele é o pneu da nossa marca. Pneu com 2 anos de garantia. Ele é um pneu ecológico que nós produzimos. Ele entrará na categoria de remodelagem apenas por questão técnica mesmo. Se você quiser, eu faço um vídeo aqui para você poder ver a diferença dele."  {audio:midias/3EB071900FDE015FDA8043_879138.ogg}
+[09:03] LOJA: [áudio] "Ele está na oferta este mês de setembro. O preço normal dele é R$ 289,00. Este mês estamos com a promoção dele por R$ 249,00 a unidade."  {audio:midias/3EB08FF834DFF5539E3DA5_254980.ogg}
+[09:03] CLIENTE: [áudio] "É, não. Pneu remold não tenho interesse, não. É um pneu original mesmo. Esse pneu remold é muito perigoso. Eu rodo muito, então tem que ser um pneu original."
+[09:04] LOJA: [áudio] "Então, tem aí no orçamento todas as outras opções. Fica à vontade para escolher a qual mais interessar para você, tá joia?"  {audio:midias/3EB0DB5C88470397E3E6CE_338673.ogg}
+[09:04] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:04] CLIENTE: Ok! Muito obrigado

@@ -1,0 +1,17 @@
+CONVERSA 9fbc88f9fd | contato: FERREIRA | 08/09/2026 11:31 até 08/09/2026 14:18 | 7 msgs do cliente, 5 da loja, 0 do robô
+
+--- 08/09/2026 (Tue) ---
+[11:31] CLIENTE: Boa tarde Josi!
+[11:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:31] CLIENTE: Tudo na paz?
+[11:31] CLIENTE: [foto]
+[11:32] LOJA: [áudio] "Oi, senhor Adalto! Como é que o senhor está? Na paz, graças a Deus, e por aí?"  {audio:midias/3EB06E6AAA576225E6E5F1_249798.ogg}
+[11:32] CLIENTE: [áudio] "Oi, Josi. Tudo na paz aí? Pois é, Josi. Agora eu estou morando em Minas. Eu estou aqui no Braseiro, mas eu estou morando em Minas agora. Ficou mais longe. Esse pneu é do carro do meu filho. Está precisando de dois. Qual que é o menor preço desse aí? Essa numeração, Josi?"
+[11:53] LOJA: [áudio] "Oi, Sada Hilton. Obrigada por aguardar. Agora será mineiro? Ai, que massa. Olha, o pneu aqui da GP Premium dá para fazer a vista para o senhor de 289 por 250."  {audio:midias/3EB03187DD94E285B12B4E_108259.ogg}
+[12:02] CLIENTE: [áudio] "E aí, Josi? Então, Josi? Eu vou ver com o meu filho, eu tô achando que tá mais barato lá em Minas que o seu, viu? Eu vou ver com ele e te falo daqui para mais tarde, viu? Aí eu te aviso aí, Josi. Pois é, Josi. Mineiro, uai, né? Comedor de queijo."
+[12:10] LOJA: [áudio] "Ah, bom demais da conta. Pois é, o senhor sumiu, nunca mais apareceu. O senhor tinha falado uma vez que estava caçando umas pedras bonitas. Não sei se era azul. Azul que o senhor me mostrou nas fotos do seu celular. Eu lembro disso."  {audio:midias/3EB013B0D80FAA27CD8A03_973332.ogg}
+[12:21] CLIENTE: [áudio] "Beijos, então. Aí eu consegui as que eu tava procurando, as azul. Consegui umas verdes. Bonita. Aí deu tudo certo. É porque, às vezes, eu demoro, né, um pouco vir aqui. Já atendo o pessoal lá do Plano Piloto, as lojas de pedras. Aí, de vez em quando, eu venho atender eles. Aí, por isso que eu dei essa sumida. Mas tô aqui, firme e forte. Comendo queijo. Pão de queijo e queijo de Minas."
+[12:21] CLIENTE: [áudio] "Chamei o menino me falar aqui que eu te respondo aí, tá bom? Porque se der certo, dependendo do que ele falar, eu tô no Brasília, aí vai ter que passar na Luziana, aí eu passo aí, viu? Tô dependendo dele aqui me falar, tá jóia? Deus abençoe então. Obrigado, José."
+[14:18] LOJA: *Josy:*
+Tranquilo!

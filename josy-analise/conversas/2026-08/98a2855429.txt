@@ -1,0 +1,13 @@
+CONVERSA 98a2855429 | contato: Matheus Machado | 18/08/2026 22:47 até 19/08/2026 15:04 | 1 msgs do cliente, 6 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[22:47] CLIENTE: Quero cotar o pneu 175/70 R14 GP Premium.
+--- 19/08/2026 (Wed) ---
+[08:06] LOJA: Bom dia!
+[08:07] LOJA: [foto]
+[08:07] LOJA: O pneu da marca GP Premium está por apenas R$ 279,00 a unidade a vista.
+[08:07] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:04] LOJA: 🙋🏼‍♀️
+[15:04] LOJA: [vídeo]

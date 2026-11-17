@@ -1,0 +1,15 @@
+CONVERSA 110c55ddef | contato: Fretes 🇧🇷🇧🇷 | 03/10/2026 10:50 até 03/10/2026 10:58 | 1 msgs do cliente, 6 da loja, 0 do robô
+
+--- 03/10/2026 (Sat) ---
+[10:50] LOJA: *Josy:*
+Bom dia!
+[10:58] LOJA: *Josy:*
+Sr Bruno, segue sua nota fiscal!
+[10:58] LOJA: [documento]
+[10:58] LOJA: *Josy:*
+Bom final de semana!
+[10:58] CLIENTE: Obrigado
+[10:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:58] LOJA: *Josy:*
+E muito, obrigada.

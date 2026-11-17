@@ -1,0 +1,16 @@
+CONVERSA 33c03f6212 | contato: Filipe Damasceno | 19/10/2026 17:42 até 21/10/2026 12:47 | 2 msgs do cliente, 5 da loja, 1 do robô
+
+--- 19/10/2026 (Mon) ---
+[17:42] CLIENTE: Olá! Quero um orçamento de pneus.
+[17:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:42] CLIENTE: 185/65 R15
+[17:43] LOJA: [foto]
+[17:44] LOJA: *Josy:*
+No dia de hoje temos os pneus da marca  Maxzez e GP Premium essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 21/10/2026 (Wed) ---
+[09:46] LOJA: Bom dia, Filipe, vou encerrar seu atendimento, caso precise futuramente é só chamar, e se houver possiblidade, venha até nossa loja, será uma satisfação receber você aqui!
+[09:46] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:47] ROBÔ: 🙋🏼‍♀️

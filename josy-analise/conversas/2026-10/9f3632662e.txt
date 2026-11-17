@@ -1,0 +1,24 @@
+CONVERSA 9f3632662e | contato: Tony Madureira | 14/10/2026 14:58 até 14/10/2026 15:46 | 8 msgs do cliente, 8 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[14:58] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[14:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:58] CLIENTE: 115 50 17
+[14:58] CLIENTE: Qual a marca e valor
+[14:58] LOJA: ?
+[14:59] LOJA: [áudio] "Oi Toni, boa tarde, tudo bem com você? Me chamo Josi. E você pode, por gentileza, confirmar qual é essa medida que você está solicitando, pois eu particularmente desconheço."  {audio:midias/3EB0A06BC7D8043B568672_235849.ogg}
+[15:02] CLIENTE: 215 50 17
+[15:03] LOJA: Certo... precisa das 4 unidades? Está em busca de alguma marca especifica?
+[15:04] CLIENTE: Sim. Marcas mais conhecidas
+[15:05] CLIENTE: Bridgestone, firestone, pirelli, Michelin
+[15:05] CLIENTE: Goodyear
+[15:05] LOJA: Certo...
+[15:06] LOJA: Não dispomos dessa opções de marcas  a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[15:06] CLIENTE: Ok
+[15:46] LOJA: [foto]
+[15:46] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

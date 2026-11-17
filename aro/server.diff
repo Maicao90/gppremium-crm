@@ -1,0 +1,119 @@
+--- orig/server.ts	2026-10-22 11:46:45.390579200 -0300
++++ src/server.ts	2026-10-22 12:00:58.824101600 -0300
+@@ -17,6 +17,7 @@
+ import { decidirSequenciaPreco, EstadoPrecoFluxo, DadosPrecoFluxo } from '../data/fluxoPreco';
+ import { extrairIntencoesPreco } from '../data/fluxoPrecoExtrator';
+ import { resolverDiaVisita } from '../data/visita';
++import { juntarMedidaRecente, rajadaSoLarguraPerfil, partesPedirAro } from '../data/medidaJuntada';
+ import { rotasCerebro, licoesAtivasDaLoja, casarLicao, partesDaLicao, registrarUso } from './cerebro';
+ import { sanitizarTextosFluxo, chavesJaRespondidas, textoFluxo, SILENCIO_SE_REPETIR } from '../data/fluxoCatalogo';
+ import { chaveDoFluxo, ehChaveAnthropic, gerarTextoAnthropic, MensagemAnthropic } from '../services/llmAnthropic';
+@@ -462,10 +463,32 @@
+         simulado: !!req.body?.simular,
+       });
+     }
++    // MEDIDA EM PEDACOS (22/10, caso 556198132318): "195/55" numa mensagem e "aro 16" em outra (qualquer ordem)
++    // = 195/55/16. Junta das mensagens recentes do cliente (data/medidaJuntada.ts). `medidaJuntada` so vale quando
++    // o cliente acabou de mandar um dos pedacos (senao uma conversa qualquer depois re-cotaria a medida).
++    const partesMedida = juntarMedidaRecente(rajada, anteriores, minutosDesdeUltimaDaLoja);
++    const medidaJuntada = partesMedida.medida && partesMedida.daRajada ? partesMedida.medida : null;
++    if (medidaJuntada) console.log(`[BotService] medida ${medidaJuntada} juntada de pedacos (${partesMedida.larguraPerfil} + aro ${partesMedida.aro}).`);
++    // So "195/55" (sem aro em lugar nenhum da conversa recente): pede SO o aro, sem o texto generico com exemplo.
++    {
++      const lp = rajadaSoLarguraPerfil(rajada);
++      if (lp && !partesMedida.aro && !temFoto && !(dadosPrecoAtuais.medida || '').startsWith(`${lp}/`)) {
++        const dadosAro: DadosPrecoFluxo = {};
++        if (dadosPrecoAtuais.quantidade) dadosAro.quantidade = dadosPrecoAtuais.quantidade;
++        if (dadosPrecoAtuais.modelo) dadosAro.modelo = dadosPrecoAtuais.modelo;
++        if (dadosPrecoAtuais.intencaoPendente) dadosAro.intencaoPendente = dadosPrecoAtuais.intencaoPendente;
++        if (dadosPrecoAtuais.parcelasPendentes) dadosAro.parcelasPendentes = dadosPrecoAtuais.parcelasPendentes;
++        return res.json({
++          partes: partesPedirAro(lp),
++          deterministico: true, acaoTipo: 'PEDIR_ARO', novoEstadoPreco: 'aguardando_medida', novosDadosPreco: JSON.stringify(dadosAro),
++          via: 'fluxo', assuntos: ['INFORMOU_LARGURA_PERFIL'], chaves: ['pedir_aro'], rajada, simulado: !!req.body?.simular,
++        });
++      }
++    }
+     // "14" / "aro 15" sozinho e sem medida conhecida = ARO (22/10: virava "14 pneus"). Pergunta o carro numa frase.
+     {
+       const soAro = /^\s*(aro\s*)?(1[2-9]|2[0-2])\s*\.?\s*$/i.exec(rajada.join(' ').trim());
+-      if (soAro && !dadosPrecoAtuais.medida && !medidaDoHistorico(anteriores)) {
++      if (soAro && !medidaJuntada && !dadosPrecoAtuais.medida && !medidaDoHistorico(anteriores)) {
+         return res.json({
+           partes: [`Show, aro ${soAro[2]}! 👍`, 'Qual é o carro? Já te passo a medida certa e o valor.'],
+           deterministico: true, acaoTipo: 'PEDIR_CARRO', novoEstadoPreco: estadoPrecoAtual, novosDadosPreco: JSON.stringify(dadosPrecoAtuais),
+@@ -505,6 +528,16 @@
+           .join('\n');
+         const intencoes = await extrairIntencoesPreco(rajada.length ? rajada : [gatilho], contextoRecente, apiKeyFluxo);
+         if (intencoes) {
++          // A leitura as vezes devolve DAR_MEDIDA com a medida PELA METADE ("195/55"): o motor achava que era medida que a
++          // loja nao tem (GP: "so um instante" + etiqueta + pausa). Medida que nao e LARGURA/PERFIL/ARO vira "sem medida" (22/10).
++          for (const i of intencoes as any[]) {
++            if (!i.medidaExtraida) continue;
++            const m = /^\s*(\d{3})\s*\/\s*(\d{2})\s*\/?\s*R?\s*(\d{2})\s*$/i.exec(String(i.medidaExtraida));
++            if (m) { i.medidaExtraida = `${m[1]}/${m[2]}/${m[3]}`; continue; }
++            const soLarguraPerfil = /^\s*\d{3}\s*\/\s*\d{2}\b/.test(String(i.medidaExtraida));
++            i.medidaExtraida = null;
++            if (i.intencao === 'DAR_MEDIDA' && soLarguraPerfil) i.intencao = 'PERGUNTAR_PRECO_SEM_MEDIDA';
++          }
+           // O que o robo (ou atendente) ja disse ha pouco: se o cliente insiste no mesmo assunto, a resposta
+           // troca pela variante em vez de repetir a explicacao palavra por palavra.
+           const textoRecenteDoRobo = anteriores.filter((m: any) => m?.role === 'assistant').slice(-12).map((m: any) => String(m?.content || '')).join('\n');
+@@ -526,7 +559,9 @@
+             if (modelo && modelo !== dadosUsados.modelo) dadosUsados = { ...dadosUsados, modelo };
+           }
+           if (!dadosPrecoAtuais.medida && (estadoPrecoAtual === 'sem_estado' || estadoPrecoAtual === 'aguardando_medida')) {
+-            const medidaHistorico = medidaDoHistorico(anteriores);
++            // Pedacos recentes ("195/55" + "aro 16") valem antes de uma medida inteira mais antiga do historico.
++            const juntadaNaTabela = partesMedida.medida && encontrarPrecosExatosPorMedida(partesMedida.medida).length ? partesMedida.medida : null;
++            const medidaHistorico = juntadaNaTabela || medidaDoHistorico(anteriores);
+             if (medidaHistorico) {
+               estadoUsado = 'preco_confirmado';
+               dadosUsados = { ...dadosPrecoAtuais, medida: medidaHistorico };
+@@ -534,9 +569,46 @@
+             }
+           }
+           // A rajada ja traz a medida ("qual o preco do aro 15?" + "185/60"): nao pede a medida antes do preco (22/10).
++          // Medida juntada de pedacos (22/10): a leitura da IA ve cada mensagem sozinha e nao monta a medida — o codigo poe
++          // a medida nos assuntos de preco ("Qual o valor do aro 16" + "195/55" = preco do 195/55/16, nunca "me passa a medida").
++          if (medidaJuntada) {
++            const aroNum = Number(partesMedida.aro);
++            // Medida inteira que a leitura achou (ex.: dita por extenso) vale; pedaco ("195/55/null") nao.
++            const inteira = (m: unknown) => typeof m === 'string' && /^\d{3}\/\d{2}\/\d{2}$/.test(m.trim()) ? m.trim() : null;
++            const comMedida = (i: any) => ({ ...i, medidaExtraida: inteira(i.medidaExtraida) || medidaJuntada, escolhaAlternativa: null, quantidadeExtraida: i.quantidadeExtraida === aroNum ? null : i.quantidadeExtraida });
++            // "Aro 16" depois de "Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16." a leitura chama de ESCOLHER_ALTERNATIVA —
++            // so e escolha de verdade quando a loja ofereceu medidas que nao tinha (estado medida_sem_match).
++            const ehPreco = (t: string) => t === 'DAR_MEDIDA' || t === 'PERGUNTAR_PRECO_SEM_MEDIDA' || t === 'OUTRO_ASSUNTO' || t === 'RESPONDER_QUANTIDADE' || t === 'SO_SAUDACAO'
++              || (t === 'ESCOLHER_ALTERNATIVA' && estadoPrecoAtual !== 'medida_sem_match');
++            let jaPos = false;
++            const ajustadas: any[] = [];
++            for (const i of intencoes as any[]) {
++              if (ehPreco(i.intencao)) {
++                if (!jaPos) ajustadas.push({ ...comMedida(i), intencao: 'DAR_MEDIDA' });
++                jaPos = true;
++              } else if (i.intencao === 'PERGUNTOU_PARCELAMENTO_ESPECIFICO' || i.intencao === 'PERGUNTOU_DESCONTO_AVISTA') {
++                ajustadas.push(comMedida(i));
++                jaPos = true;
++              } else ajustadas.push(i);
++            }
++            if (!jaPos) ajustadas.unshift({ intencao: 'DAR_MEDIDA', medidaExtraida: medidaJuntada, quantidadeExtraida: null, escolhaAlternativa: null });
++            console.log(`[BotService] leitura ${JSON.stringify(intencoes.map((i: any) => [i.intencao, i.medidaExtraida, i.escolhaAlternativa]))} -> ${JSON.stringify(ajustadas.map((i: any) => [i.intencao, i.medidaExtraida]))}`);
++            intencoes.splice(0, intencoes.length, ...ajustadas);
++          }
+           const temMedidaNaRajada = intencoes.some((i: any) => i.medidaExtraida || i.intencao === 'DAR_MEDIDA');
+           const intencoesUsadas = temMedidaNaRajada ? intencoes.filter((i: any) => i.intencao !== 'PERGUNTAR_PRECO_SEM_MEDIDA') : intencoes;
+           const decisao = decidirSequenciaPreco(intencoesUsadas.length ? intencoesUsadas : intencoes, estadoUsado, dadosUsados, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas, lojaFalouHaPouco });
++          // So falta o aro (o cliente ja deu "195/55"): no lugar do pedido generico de medida, pede SO o aro.
++          if (partesMedida.larguraPerfil && !partesMedida.aro) {
++            for (const chave of ['pedir_medida', 'pedir_medida_repetida']) {
++              if (!decisao.chaves.includes(chave)) continue;
++              const generico = textoFluxo(textosFluxo, chave);
++              const ini = decisao.partes.findIndex((p: string) => p === generico[0]);
++              if (ini < 0) continue;
++              decisao.partes.splice(ini, generico.length, ...partesPedirAro(partesMedida.larguraPerfil));
++              decisao.chaves.push('pedir_aro');
++            }
++          }
+           // Visita: resolve o dia (data/visita.ts) e preenche {DIA}. Dia que nao se resolve vira o texto "sem dia".
+           let visita: { iso: string; rotulo: string; diasAte: number } | null = null;
+           if (decisao.chaves.includes('visita_confirmada')) {

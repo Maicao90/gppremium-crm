@@ -1,0 +1,33 @@
+CONVERSA f286e9d6cf | contato: Sergio | 17/09/2026 13:41 até 17/09/2026 16:24 | 12 msgs do cliente, 14 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[13:41] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:41] CLIENTE: Boa tarde
+[13:41] CLIENTE: 165 /70 /14AR
+[13:42] CLIENTE: 4 unidades
+[14:20] LOJA: [áudio] "Olá, tudo bem, Sérgio? Eu tenho aqui sim, a princípio, os pneus da marca GP Premium, que estão na promoção de 279 por apenas 239 a vista."  {audio:midias/3EB05D3C73E264682964A5_554298.ogg}
+[14:23] CLIENTE: [áudio] "Olá Jesus, fiquem com um concepto aqui."
+[14:23] LOJA: [áudio] "Nós somos aqui de Luziânia, Goiás. Você mora em que cidade?"  {audio:midias/3EB06FBD48161461480910_518824.ogg}
+[14:24] CLIENTE: [áudio] "Não, eu moro aqui no outro lado da cidade, aqui na Samabaya, fica meio longe, né? Pra gente ir aí pra ganhar esses pneus. Aqui do lado de Samabaya não tem nem uma filial, não?"
+[14:25] LOJA: [áudio] "Eita, que estamos um pouco longe. Novo Gama fica próximo a você, pois se você conseguir, eu posso enviar esses pneus para você para uma borracharia que me ajuda muito para atender as pessoas aí do entorno. Aí, se for do seu interesse, eu te encaminho."  {audio:midias/3EB08E36AB501B93A1CFCC_397670.ogg}
+[14:28] CLIENTE: [áudio] "Não, porque é o seguinte, deixa eu lhe falar, tu não quer, eu te dou o meu endereço que você manda lá pra casa, que eu mando instalar lá pra gente casa lá."
+[14:28] LOJA: [áudio] "Só que aí cobra frete para mandar."  {audio:midias/3EB0E729121AD0AFE6A65E_615926.ogg}
+[14:29] CLIENTE: Manda  foto dis pneus
+[14:34] LOJA: [áudio] "Manda o sim, me dá só um instante que eu vou buscar o pneu para poder tirar foto para ti."  {audio:midias/3EB0779DB23F71EB3A87B1_173018.ogg}
+[15:32] LOJA: [foto]
+[15:50] CLIENTE: [áudio] "Ele deitado para me ver direitinho, por gentileza."
+[15:55] LOJA: [foto]
+[15:56] CLIENTE: 165/70/14
+[15:57] LOJA: *Josy:*
+Perdão... peguei errado.
+[16:12] LOJA: [foto]
+[16:12] LOJA: [foto]
+[16:12] LOJA: [foto]
+[16:21] CLIENTE: Os pneus  sao remold
+[16:21] LOJA: *Josy:*
+Não entendi, o riso.
+[16:22] LOJA: *Josy:*
+Esse é sim, e é o pneu mais vendido que temos.
+[16:24] CLIENTE: Obrigado

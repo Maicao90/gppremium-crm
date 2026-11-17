@@ -1,0 +1,25 @@
+CONVERSA 1d8e8af07e | contato: Vitor Tiago | 08/09/2026 14:39 até 08/09/2026 16:37 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 08/09/2026 (Tue) ---
+[14:39] CLIENTE: Oi
+[14:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:40] CLIENTE: Pneu 175/65/14
+[14:42] LOJA: *Josy:*
+175/65/14 GP Premium está por R$ 249,00 valro para débito/pix
+[14:43] CLIENTE: [áudio] "Pra mim, quanto é que fica aí pra poder pegar 5 pneus dessa mesma medida à vista?"
+[14:44] LOJA: *Josy:*
+R$ 1.245,00
+[14:44] LOJA: [áudio] "Esse é o preço dos cinco pneus, que o valor dele, normal, é R$ 279,00. Aí estou fazendo por R$ 249,00 cada."  {audio:midias/3EB0F4BD2A927FCEBC0265_642955.ogg}
+[14:59] LOJA: *Josy:*
+Posso separar para você?
+[15:10] CLIENTE: Não, espera aí
+[15:20] LOJA: *Josy:*
+Ok
+[15:36] LOJA: [áudio] "Pai, Vitor, optou pelo 165-70?"  {audio:midias/3EB00642F4E71DF2925917_489094.ogg}
+[16:18] CLIENTE: [áudio] "Fala, Joyce. Pois é, rapaz, eu peguei logo ele aí porque eu tava barato e eu tô precisando logo pra salvar uma pessoa aqui, entendeu? O cara tava no preco. Esse meu carro é carro de aplicativo, o pneu estourou, cara. Vamos ver aí, eu tô vendo aí pra ver se eu compro pra dois carros, né? Por isso que eu preciso de 5 unidades, mas eu preciso de um preço mais em conta, entendeu?"
+[16:37] LOJA: *Josy:*
+Os mais em conta que temos
+[16:37] LOJA: [foto]
+[16:37] LOJA: *Josy:*
+Se for parcelar, vamos conversando para alinhar algo que fique bom.

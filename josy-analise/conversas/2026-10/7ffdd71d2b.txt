@@ -1,0 +1,15 @@
+CONVERSA 7ffdd71d2b | contato: ronaldopedraca15 | 05/10/2026 12:35 até 05/10/2026 14:42 | 2 msgs do cliente, 5 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[12:35] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:36] CLIENTE: 175.65.14
+[12:37] LOJA: [áudio] "Oi, Ronaldo. Bom dia. Tudo bem com você? Eu sou a Josi. E no dia de hoje, a princípio, eu tenho os pneus da marca GP Premium. A unidade está por apenas R$ 249,00 à vista. Você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB06590B610EAD21601A9_794780.ogg}
+[14:42] LOJA: [foto]
+[14:42] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:42] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

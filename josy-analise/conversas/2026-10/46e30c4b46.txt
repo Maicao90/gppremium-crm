@@ -1,0 +1,10 @@
+CONVERSA 46e30c4b46 | contato: Prof° Moisés De Oliveira | 07/10/2026 12:02 até 07/10/2026 12:24 | 2 msgs do cliente, 3 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[12:02] CLIENTE: Oi é do rodão
+[12:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:03] LOJA: *Josy:*
+Aqui é da pneus GP Premium, Luziânia-Go.
+[12:23] CLIENTE: Desculpa
+[12:24] LOJA: [áudio] "Imagina, o que é isso?"  {audio:midias/3EB0DB1CAEA260CE5BDE1D_329635.ogg}

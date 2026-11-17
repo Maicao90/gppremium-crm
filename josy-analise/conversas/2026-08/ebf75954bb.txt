@@ -1,0 +1,23 @@
+CONVERSA ebf75954bb | contato: Bueno Fotografia | 20/08/2026 11:04 até 26/08/2026 16:47 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[11:04] CLIENTE: Quero cotar o pneu 175/65 R14 GP Premium.
+[11:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:04] LOJA: Bom dia!
+[11:04] CLIENTE: como funciona vcs pegam pneus usados na base de troca ou somente venda
+[11:04] CLIENTE: e qual ta o valor essa medida
+[11:05] LOJA: Não é a base de troca. Estou realziando seu orçamento.
+[11:05] CLIENTE: certo
+[11:05] LOJA: [foto]
+[11:06] CLIENTE: e os remolds
+[11:26] LOJA: A unidade está por R$ 249,00 se o pagamento for no débito ou pix.
+[11:27] LOJA: Em dinheiro  R$ 237,00 cada
+--- 21/08/2026 (Fri) ---
+[09:33] LOJA: Bom dia... como vai?
+[09:33] LOJA: [áudio] "Oi, tudo bom com você? Ontem eu te encaminhei um orçamento e gostaria muito de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0DA6226C4E9D146EB54_273307.ogg}
+--- 26/08/2026 (Wed) ---
+[16:47] LOJA: *Josy:*
+Boa tarde, tudo bom? Vou encerrar seu atendimento para não encher seu whatsapp de mensagem.                                                                                                                   Se precisar futuramente é só chamar. Ou se possivel, venham até nossa loja.                                                                                                  Obrigada 👋🏻
+[16:47] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

@@ -1,0 +1,39 @@
+CONVERSA 100b120699 | contato: Rogério | 17/09/2026 08:58 até 17/09/2026 10:48 | 6 msgs do cliente, 14 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[08:58] CLIENTE: Olá! Quero um orçamento de pneus.
+[08:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:59] CLIENTE: Pneu 205 55 17
+[08:59] CLIENTE: Michelin e Continental. 
+Favor passar orçamento para 4 unidades
+[09:00] LOJA: *Josy:*
+Bom dia!
+[09:00] LOJA: *Josy:*
+Não dispomos dessas opções de marca a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[09:01] LOJA: *Josy:*
+Mora aqui em Luziânia-Go?
+[09:01] CLIENTE: Preciso urgente
+[09:02] LOJA: *Josy:*
+Não dispomos a pronta entrega.
+[09:03] CLIENTE: Obrigado
+[09:24] LOJA: [foto]
+[09:25] LOJA: *Josy:*
+Consegui um retorno da Michellin
+[09:25] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 200,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:28] LOJA: *Josy:*
+🙋🏼‍♀️
+[09:29] LOJA: [áudio] "Olá Rogério, bom dia, tudo bem? Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB09AB5D822BDA516F337_350183.ogg}
+[09:48] CLIENTE: Trabalho
+[09:51] LOJA: *Josy:*
+entendi...
+[10:48] LOJA: *Josy:*
+Oi... consegui retorno da Continental.
+[10:48] LOJA: [foto]
+[10:48] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 200,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

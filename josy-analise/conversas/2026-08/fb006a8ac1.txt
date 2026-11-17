@@ -1,0 +1,51 @@
+CONVERSA fb006a8ac1 | contato: Arlan Henrique | 31/08/2026 12:00 até 02/09/2026 15:59 | 17 msgs do cliente, 19 da loja, 0 do robô
+
+--- 31/08/2026 (Mon) ---
+[12:00] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:00] CLIENTE: [foto]
+[12:00] CLIENTE: Boa tarde
+[12:01] LOJA: *Josy:*
+Bom dia!
+[12:01] LOJA: *Josy:*
+Mora aqui em Luziânia-Go?
+[12:01] CLIENTE: Val paraíso
+[12:02] CLIENTE: Poderia passar os valores
+[12:02] CLIENTE: Seria duas unidades
+[12:04] LOJA: *Josy:*
+Certo... vou verificar para você.
+[12:09] LOJA: [áudio] "Olá, tudo bem com você? Eu sou a Josi. Olha, nessa medida específica, eu não tenho aqui a pronta entrega, tá? É pra qual carro?"  {audio:midias/3EB0724BE3B297AC984354_937534.ogg}
+[12:10] CLIENTE: [áudio] "Ah tá, entendi. Ah, teria que ser dessa mesma medida. Entendeu? Porque trocar só dois. É pra um traque."
+[12:11] LOJA: [áudio] "Certo. Pois bem, o 215 e 60, eles têm falta aqui para mim? E se chegar, vai ser daqui uns três dias úteis aproximadamente, mas vai ser somente através de encomenda. Aqui eu tenho a pronta entrega 215,65,16."  {audio:midias/3EB058A909615A9CD0C976_62183.ogg}
+[12:14] CLIENTE: [áudio] "Ah tá, entendi. Ok. Eu vou verificar aqui com o meu sogro, se ele vai esperar, se ele vai querer trocar. Porque a gente tá contando com o Steppe, que nem que ser pra hoje, entendeu? Eu vou ver com ele direitinho aqui. Qualquer coisa eu aviso vocês."
+[12:14] CLIENTE: [áudio] "Outra coisa, você poderia me passar o preço do pneu? Porque aí dependendo do preço, do valor, de repente a gente já aguarda, entendeu? Você consegue passar o valor pra mim do pneu?"
+[12:15] LOJA: [áudio] "Então, como não disponho dessa opção aqui a pronta entrega, eu solicitei uma cotação com os meus distribuidores. Assim que eles me responderem, eu te passo direitinho aqui, está bem?"  {audio:midias/3EB06A7CE9AAA4C079B7AF_436992.ogg}
+[12:15] LOJA: [áudio] "E vocês têm preferência somente por Bridgestone ou pode ser alguma outra opção?"  {audio:midias/3EB086415FAFC1BA643BD0_497602.ogg}
+[12:16] CLIENTE: [áudio] "Não, então, o pneu não é da Bridgestone, o pneu acho que é da Ecopia. Eu só não sei se é o mesmo fabricante, né? Tá, mas tudo bem, vou aguardar você responder."
+[12:17] CLIENTE: [áudio] "Só a gente ficou no áudio aqui. Acabei de ver, é o mesmo fabricante, Bridgestone. É, a preferência seria a mesma marca, por conta dos dois de trás, entendeu? Mas se tiver um mais barato aí, você pode me passar também."
+[12:53] LOJA: [áudio] "Então, Bridgestone é cópia. Eu só estou aguardando a resposta do fornecedor, tá?"  {audio:midias/3EB0400DCBD65C8E8BDED8_182396.ogg}
+[12:58] CLIENTE: Ta bom
+[12:58] CLIENTE: Obrigado
+[13:08] LOJA: [foto]
+[13:09] LOJA: [áudio] "Arlan, eu consegui aqui a resposta da Bridgestone, tá? Esse preço aí vai ser somente até hoje, e a unidade está por 834 reais, se o pagamento for no débito ou no Pix, e aí para parcelar tem as opções de parcelamento em até 10 vezes. O distribuidor solicita um pagamento calção de 300 reais, só para poder reservar as opções para vocês, e assim que os pneus chegarem aqui na nossa loja, eu informando vocês, vocês vêm cá para realizar o restante do pagamento, aí você analisa e me dá um retorno, por gentileza, que eu encerro os pedidos às 16 horas."  {audio:midias/3EB035D0BA800853485F71_934192.ogg}
+[13:17] CLIENTE: Obrigado vou ver com meu sogro
+[13:17] CLIENTE: Qualquer coisa aviso
+[13:18] LOJA: *Josy:*
+certo!
+--- 01/09/2026 (Tue) ---
+[14:59] LOJA: [áudio] "Oi, Luziânia. Tudo bom? Ontem nós conversamos aqui a respeito de uns pneus aí para o carro e eu gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB02F0B47113D9A2BFC5E_402140.ogg}
+[15:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:14] CLIENTE: [áudio] "Oi, tudo bem? Boa tarde. Desculpa um tente de retornado. O meu sogro optou por outra marca de pneu importado. Vocês trabalham com o importado também? Dessa mesma medida? Uns pneus importados, que seja um pouco mais barato? Aí eu consegui convencer ele de botar o pneu importado. Ele tava querendo colocar o pneu original do carro, só que tá muito caro, né? Então, 800 reais. E, se eu não me engano, os importados aí estavam sempre por 500, 400 reais, 490 e pouco. Aí, não sei se vocês trabalham também com o importado da mesma medida. Se você trabalhar, você pode me passar pelos meus valores, que eu vou passar pra ele aqui, que ele tá fazendo a pesquisa na internet pra ver qual é o melhor custo-benefício pra ele colocar no carro dele."
+[15:15] LOJA: [áudio] "Bem, por hora, até mesmo os importados acabaram. Igual eu te falei, nesse perfil 60, é muito difícil de achar."  {audio:midias/3EB06A3358623FB0E028C2_399284.ogg}
+[15:16] LOJA: [áudio] "Mas eu tento, ali, mais uma vez, com o distribuidor, ele me respondendo, eu te passo aqui, tá bom?"  {audio:midias/3EB05CA92F452870D01201_926527.ogg}
+[15:17] CLIENTE: Ok obrigado
+[16:15] LOJA: [foto]
+[16:15] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 02/09/2026 (Wed) ---
+[15:59] LOJA: *Josy:*
+Boa tarde, Arlan, como vai?  Para não ficar enchendo seu whatsapp de mensagem, vou encerrar seu atendimento por aqui.                                                                                                                                                                                                                                            Se precisar  futuramente é só chamar,  ou se possível, venham em nossa loja para conversar pessoalmente.                                                        Obrigada  👋🏻

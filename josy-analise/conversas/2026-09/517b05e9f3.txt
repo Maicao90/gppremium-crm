@@ -1,0 +1,31 @@
+CONVERSA 517b05e9f3 | contato: . | 11/09/2026 09:28 até 11/09/2026 11:34 | 7 msgs do cliente, 14 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[09:28] CLIENTE: Bom dia
+[09:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:28] CLIENTE: Tudo bem
+[09:28] CLIENTE: Vcs tem pneu 31x10 50/15
+[09:30] LOJA: *Josy:*
+Temos sim, Dyone...
+[09:30] LOJA: *Josy:*
+Vou te encaminhar o orçamento.
+[09:32] LOJA: [foto]
+[09:32] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:32] LOJA: [foto]
+[09:32] LOJA: [foto]
+[09:33] CLIENTE: Tem ele cravudo modelo ofroud
+[09:33] LOJA: *Josy:*
+É esse.
+[09:35] CLIENTE: [foto] Desse vcs n tem
+[10:31] LOJA: *Josy:*
+Estou aguardando a resposta do distribuidor está bem!
+[10:33] CLIENTE: Tá ok aguardo a resposta obrigado
+[11:27] LOJA: *Josy:*
+🙋🏼‍♀️
+[11:27] LOJA: [foto]
+[11:29] LOJA: [áudio] "Oi, Johnny, tudo bom? Johnny, eu consegui os pneus aqui da marca RT e a unidade está por R$ 1.330,00 se o seu pagamento for à vista. Aí, seguem as opções de parcelamento em até 10 vezes. Essa é uma opção que é somente através de encomenda, levam 3 dias úteis para chegar e o distribuidor solicita um pagamento calção de R$ 300,00 para poder reservar essa opção aí para você. Vou te mandar foto para ver se te atende, tá?"  {audio:midias/3EB08246DEDD4193625237_800218.ogg}
+[11:29] LOJA: [foto]
+[11:33] CLIENTE: Obrigado pela atenção mais tá muito caro vou ver si consigo mais em conta
+[11:34] LOJA: [áudio] "E o que eu te mandei, que eu tenho aqui a pronta entrega, não te atende."  {audio:midias/3EB0D8DFD4A95F5955428A_788117.ogg}

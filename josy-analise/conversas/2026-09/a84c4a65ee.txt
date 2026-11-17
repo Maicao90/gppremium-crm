@@ -1,0 +1,21 @@
+CONVERSA a84c4a65ee | contato: Reinaldo Costa Morais | 21/09/2026 08:23 até 21/09/2026 10:15 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[08:23] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.bom dia
+[08:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:24] CLIENTE: 205/60R16
+Versa 2019
+[08:25] CLIENTE: Trocar os 4
+A vista com desconto
+[08:25] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Você está aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB02158B436F17DF52AA8_825587.ogg}
+[08:25] CLIENTE: [áudio] "Bom dia, tudo bem? Não, eu sou de Unaí, só porque eu tô indo pra aí, aí eu tô pesquisando, tá? Ver se aí tá mais em conta do que aqui."
+[08:27] LOJA: [foto]
+[08:27] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:02] LOJA: [áudio] "Então, eu vou fazer o seguinte, eu vou te mandar a nossa localização, quando o senhor estiver vindo aqui para a nossa região, o senhor passa aqui na nossa empresa para nós conversarmos pessoalmente, tá bom?"  {audio:midias/3EB0D7FCCE9F4D32CB20C0_254127.ogg}
+[09:02] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:02] LOJA: [foto]
+[10:15] CLIENTE: Tem no gama ?

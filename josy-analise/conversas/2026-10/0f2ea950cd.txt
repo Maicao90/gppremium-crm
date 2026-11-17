@@ -1,0 +1,47 @@
+CONVERSA 0f2ea950cd | contato: . | 07/10/2026 16:36 até 08/10/2026 14:43 | 27 msgs do cliente, 12 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[16:36] CLIENTE: Boa tarde
+[16:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:36] CLIENTE: Tudo bem
+[16:36] CLIENTE: Pneu 195 50 16
+[16:36] CLIENTE: Teria ?
+[16:36] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Olha, eu não disponho dessa opção de medida que é pronta entregue. Você mora em Luziânia, Goiás?"  {audio:midias/3EB0615FF7AE69CEFC9AD8_35248.ogg}
+[16:38] CLIENTE: Sim
+[16:38] CLIENTE: Nossa oficina é aqui ao lado na br
+[16:38] CLIENTE: Temos cadastro com vcs
+[16:38] CLIENTE: Sob encomenda vc arruma né ?
+[16:39] LOJA: [áudio] "Isso, nós estamos aqui na BR-040. Sim, inclusive, eu já solicitei, quando eu vejo as medidas, eu já faço a solicitação para o meu departamento de compras verificar com os distribuidores, aí assim que eles me responderem, eu te faço direitinho, tá? E se vocês tiverem em busca de alguma marca específica, você me fala."  {audio:midias/3EB0ADA411FEE164F35C0F_638086.ogg}
+[16:41] CLIENTE: Blz 👍🏽
+[16:41] CLIENTE: Tranquilo
+[16:41] CLIENTE: Mt obrigado
+[16:41] CLIENTE: Vou aguardar
+[16:42] LOJA: [áudio] "Qual é o seu nome mesmo?"  {audio:midias/3EB0C5C32D3B45C770895F_566888.ogg}
+[16:44] CLIENTE: Luan Abreu Roriz
+[16:44] CLIENTE: [documento]
+[16:44] CLIENTE: [documento]
+[16:44] CLIENTE: [documento]
+[16:44] CLIENTE: [documento]
+[16:45] CLIENTE: Eu e meu irmão somos os donos da lince aqui na br
+[16:45] CLIENTE: Compramos com vcs aí sempre 👍🏽
+[16:46] LOJA: Ahhhh, sim!
+[16:46] LOJA: É que noss whatsapp vira e mexe passa por atualização e desconfirgura tudo.
+[16:57] CLIENTE: Tranquilo
+[16:57] CLIENTE: Fico no aguardo
+--- 08/10/2026 (Thu) ---
+[14:37] LOJA: [áudio] "Pendoan, tudo jóia!"  {audio:midias/3EB096AC5EEE4CB3E5F29C_602561.ogg}
+[14:37] LOJA: [áudio] "Eu consegui um retorno aqui."  {audio:midias/3EB0396EBA522F2B2DC432_968842.ogg}
+[14:37] LOJA: [foto]
+[14:37] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:42] CLIENTE: Boa tarde
+[14:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:42] CLIENTE: Tudo bem
+[14:42] CLIENTE: Beleza 👍🏽
+[14:42] CLIENTE: Vou fazer orçamento pro meu cliente aqui
+[14:43] CLIENTE: E te retorno depois se formos pedir
+[14:43] CLIENTE: Mt obrigado
+[14:43] LOJA: Perfeito, disponha!

@@ -1,0 +1,48 @@
+CONVERSA be3b58b29d | contato: Sylvercon Soluções Tecnológicas | 21/10/2026 08:46 até 22/10/2026 09:07 | 13 msgs do cliente, 22 da loja, 5 do robô
+
+--- 21/10/2026 (Wed) ---
+[08:46] CLIENTE: Bom dia
+[08:46] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[08:46] CLIENTE: Os senhores ainda tem aquele posto avançado na lunabel?
+[08:53] LOJA: Bom dia!
+[08:53] LOJA: Posto?
+[08:54] CLIENTE: É uma borracharia
+[08:55] LOJA: Ah, sim!
+[08:55] LOJA: Temos sim, Elton!
+[08:56] CLIENTE: Dirigindo
+[08:56] LOJA: Perdão...
+[08:56] LOJA: Qual a medida de pneus que voc~e rpecisa?
+[08:57] LOJA: Providencio para ti!
+[08:57] CLIENTE: 185 65 15
+[09:00] LOJA: Precisa de quantos?
+[09:00] CLIENTE: 1
+[09:01] LOJA: Consigo para você! Que horas quer passar por lá?
+[09:01] LOJA: Com questão ao valor de R$ 289,00 está por R$ 249,00 a vista!
+[09:01] LOJA: [foto]
+[09:01] CLIENTE: Ai lascou: dependo de corridas
+[09:01] LOJA: Entendo...
+[09:02] CLIENTE: Marcar horário fica complicado
+[09:02] LOJA: Vai me informando sua rotina, que ajeito para ti!
+[09:02] LOJA: Relaxa eu entendo...
+[09:02] CLIENTE: Esse é o posto avançado mais próximo de Brasília?
+[09:04] LOJA: Sim!
+[09:04] LOJA: No momento é!
+[09:07] CLIENTE: Como é o nome da borracharia?
+[09:11] LOJA: Borracharia Popular!
+[09:11] LOJA: [localização] -16.0680034,-48.0643739
+[09:12] LOJA: [áudio] "Chegando lá, é só falar com o Lázaro. Eu vou fazer o seguinte, eu vou pedir para ele, pelo menos, deixar um pneu reservado lá para vocês, tá bem?"  {audio:midias/3EB0F2D1CE369A87F4A67F_785764.ogg}
+[10:15] CLIENTE: Ok
+[10:45] ROBÔ: Tranquilo! Qualquer dúvida ou se quiser fechar, é só me chamar por aqui.
+[13:53] ROBÔ: 🙋🏼‍♀️
+[13:54] CLIENTE: Não consegui corrida pra ir lá hoje
+[13:54] CLIENTE: mas amanhã com certeza
+[13:54] ROBÔ: Combinado! Fica anotado aqui: te espero amanhã 😊
+[13:54] ROBÔ: Qualquer coisa é só me chamar por aqui.
+--- 22/10/2026 (Thu) ---
+[09:07] ROBÔ: 🙋🏼‍♀️

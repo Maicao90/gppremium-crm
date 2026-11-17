@@ -1,0 +1,25 @@
+CONVERSA 5ef737f643 | contato: Filho De Deus  | 08/09/2026 09:51 até 08/09/2026 10:05 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 08/09/2026 (Tue) ---
+[09:51] LOJA: *Josy:*
+Bom dia, como vai?
+[09:52] LOJA: *Josy:*
+Você deixou uns pneus aqui, para nós comprarmos.
+[09:52] LOJA: *Josy:*
+Eles foram aprovados. R$ 20,00 cada, totalizando R$ 80,00
+[09:53] CLIENTE: Opa bom dia
+[09:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:53] CLIENTE: Q bom
+[09:53] LOJA: *Josy:*
+Qual é seu pix?
+[09:53] CLIENTE: 86855824153
+[09:53] LOJA: *Josy:*
+Certo...
+[09:53] CLIENTE: Ronaldo da Silva
+[09:53] LOJA: *Josy:*
+Vou fazer seu pagamento.
+[09:56] LOJA: *Josy:*
+Perdão... as carcaças foram aprovadas R$ 10,00 cada... me confundi com as de suv
+[10:02] LOJA: [documento] SICOOB_2026_08_09_09_57_07_PIX.pdf
+[10:05] CLIENTE: Obrigada

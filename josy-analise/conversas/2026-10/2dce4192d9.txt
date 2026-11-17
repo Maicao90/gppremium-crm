@@ -1,0 +1,10 @@
+CONVERSA 2dce4192d9 | contato: Deus é Fiel | 01/10/2026 10:54 até 01/10/2026 11:16 | 4 msgs do cliente, 2 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[10:54] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:54] CLIENTE: Bom dia vc tem pneus apolo
+[10:54] CLIENTE: R295
+[11:01] LOJA: [áudio] "Oi, bom dia, tudo bem com você? Olha, infelizmente não trabalhamos com esses pneus."  {audio:midias/3EB0BF9D9981B029D42D5D_296783.ogg}
+[11:16] CLIENTE: Blz então obrigado

@@ -1,0 +1,79 @@
+CONVERSA 3eebd8e009 | contato: Eduardo | 17/09/2026 15:14 até 23/09/2026 14:18 | 24 msgs do cliente, 30 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[15:14] CLIENTE: Boa tarde
+[15:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:15] CLIENTE: 165/70
+[15:16] CLIENTE: É para um palio 98 1.0
+[15:20] LOJA: *Josy:*
+Aro 13 ou 14
+[15:22] LOJA: *Josy:*
+?
+[15:29] CLIENTE: É 14
+[15:30] LOJA: *Josy:*
+Pneu da marca GP Premium
+[15:30] LOJA: [foto]
+[15:30] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:31] LOJA: [áudio] "Olá, tudo bem? Eduardo, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB011A21DE257549D896A_258321.ogg}
+[15:31] CLIENTE: [áudio] "Olá, boa tarde. Sim, sim, sou aqui da região."
+[15:32] CLIENTE: [áudio] "Eu vim por um anúncio que dizia que a compra de um kit de pneus, os 4 pneus, ganhava um balanceamento também."
+[15:32] LOJA: [áudio] "Não, não é o balanceamento, é a montagem."  {audio:midias/3EB0F431BC75CAD32F118C_986968.ogg}
+[15:33] CLIENTE: [áudio] "Ah, sim. Eu queria saber quanto que fica, então, os 4 pneus e... é, os 4 pneus do kit, né?"
+[15:33] CLIENTE: [áudio] "É porque eu não consegui entender muito bem essa tabela que você me mandou aí."
+[15:34] LOJA: [áudio] "Certo, vou te explicar. Conforme eu digitei, no orçamento está o valor unitário do pneu. E na primeira coluna é o valor à vista. Então, um pneu para o pagamento no débito, ou Pix, está por R$ 239,00. Essa mesma unidade de pneu para parcelar em 10 vezes, cada um vai sair por R$ 268,00. Digamos que você queira parcelar os 4 pneus nas 10 vezes. Então, se um pneu é R$ 268,00, porque é valor unitário, vezes os 4 pneus, dá um total de R$ 1.072,00. Como você está parcelando em 10 vezes, você vai pagar 10 parcelas de R$ 107,20. E esses pneus já são instalados, está bem?"  {audio:midias/3EB0AF48C39A01855BBD47_304779.ogg}
+[15:34] LOJA: [áudio] "Caso você queira parcelar em menos vezes, você me informa que eu realizo o cálculo aqui para você, certinho?"  {audio:midias/3EB039A99E58A27F64F728_126697.ogg}
+[15:36] CLIENTE: [áudio] "Obrigado, viu? Eu vou ver aqui se eu vou parcelar. Aí, se você me manda a localização daí também, por favor."
+[15:36] LOJA: [áudio] "Claro, mando sim. Aí digamos que você quisesse realmente pagar no Pix, então as 4 unidades ficam por apenas 956 reais, tá jóia?"  {audio:midias/3EB074D3EE675A92A44A89_274409.ogg}
+[15:37] CLIENTE: [áudio] "E aí vocês fazem balanceamento e alinhamento? Tipo por fora?"
+[15:38] LOJA: *Josy:*
+Se  conseguir sacar e  trazer o pagamento em *dinheiro*  faço por R$ 229,00 cada os 4 pneus ficam por R$ 916,00
+[15:38] LOJA: [áudio] "Sim, fazemos sim."  {audio:midias/3EB0FCD9308E2D728C0CD5_43708.ogg}
+[15:39] CLIENTE: Qual os valores
+[15:39] CLIENTE: ?
+[15:40] LOJA: *Josy:*
+1 min
+[15:47] LOJA: *Josy:*
+* 30,00 balanceamento por roda 
+* 90,00 alinhamento.
+[15:47] CLIENTE: Ok
+[15:47] CLIENTE: Pode me mandar a loc?
+[15:48] LOJA: *Josy:*
+Valores negociaveis, está bem!
+[15:48] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:48] CLIENTE: Beleza
+[15:48] CLIENTE: Obrigado
+[15:48] LOJA: [foto]
+--- 23/09/2026 (Wed) ---
+[10:59] CLIENTE: Bom dia
+[10:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:00] CLIENTE: Gostaria de saber se é agendado para trocar os pneus
+[11:00] LOJA: *Josy:*
+Bom dia, Eduardo!
+[11:00] LOJA: *Josy:*
+Como vai?
+[11:00] LOJA: *Josy:*
+Pode vir...
+[11:00] LOJA: *Josy:*
+Não precisa agendar.
+[11:00] CLIENTE: Ok, obrigado
+[11:01] CLIENTE: Mais está muito cheio agora na parte da tarde
+[11:01] CLIENTE: ?
+[11:01] LOJA: *Josy:*
+Não...
+[11:01] LOJA: *Josy:*
+Aqui o fluxo é rapido.
+[11:01] LOJA: *Josy:*
+Quer vir que horas?
+[11:01] CLIENTE: Blz, obrigado
+[11:02] LOJA: [áudio] "Eduardo, eu saio para o almoço uma hora e retorno às duas, tá?"  {audio:midias/3EB0CC298E7B5040E4A19A_284022.ogg}
+[11:10] CLIENTE: Tudo bem
+[14:12] LOJA: *Josy:*
+Oi!
+[14:12] LOJA: *Josy:*
+Estou por aqui!
+[14:13] LOJA: [foto]
+[14:18] CLIENTE: A caminho

@@ -1,0 +1,17 @@
+CONVERSA 19d90008ad | contato: Ronaldo | 21/09/2026 13:47 até 21/09/2026 13:51 | 9 msgs do cliente, 4 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[13:47] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:47] CLIENTE: Boa tarde
+[13:48] CLIENTE: [foto]
+[13:48] CLIENTE: Você tem essas peças
+[13:51] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Não, aqui nós não trabalhamos com peças."  {audio:midias/3EB0BFB06C5DCA9AF22C23_986623.ogg}
+[13:51] LOJA: [áudio] "E nós estamos aqui em Luziânia, Goiás."  {audio:midias/3EB068E5949BCA66EE5595_275534.ogg}
+[13:51] CLIENTE: Isso
+[13:51] CLIENTE: Estou em Goiânia
+[13:51] CLIENTE: Sabe onde encontrar
+[13:51] LOJA: [áudio] "Não, não sei. E nós estamos distantes, né? Você está em Goiânia e nós aqui em Luziânia, perto de Brasília quase."  {audio:midias/3EB0C6A2CC6C7A64F47286_701749.ogg}
+[13:51] CLIENTE: A sim
+[13:51] CLIENTE: Obrigado

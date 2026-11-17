@@ -1,0 +1,15 @@
+CONVERSA e6181f35ef | contato: Luck | 27/09/2026 12:24 até 28/09/2026 10:02 | 2 msgs do cliente, 7 da loja, 0 do robô
+
+--- 27/09/2026 (Sun) ---
+[12:24] CLIENTE: Bom dia. Por favor informe o preço pneu 185/65/R15 GP1
+[12:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 28/09/2026 (Mon) ---
+[08:22] LOJA: [áudio] "Bom dia, Seredelcio! Tudo jóia! Tem um Axi, inclusive, que tá na promoção, tá?"  {audio:midias/3EB0A8D95807E339A0DADD_863686.ogg}
+[08:23] LOJA: [áudio] "O preço normal dele é R$ 289,00 e esse mês ele está por apenas R$ 249,00 a vista, que é o pneu GP Premium."  {audio:midias/3EB04FDAFA81A2BDA39608_605419.ogg}
+[08:23] LOJA: [foto]
+[08:57] LOJA: [áudio] "Eu posso separar os pneus para o Senhor, Senhora Dilson?"  {audio:midias/3EB0DB7B56E27E4937692E_851015.ogg}
+[09:07] CLIENTE: [áudio] "Oi, Luzi. Bom dia. Eu estive em Brasília, mas tive que voltar ontem mesmo. Na hora que eu passei, eu lembrei dos pneus. Quando eu voltar de novo, eu me programo de passar durante um horário de semana para pegar os pneus. Mas acho que vai demorar um pouquinho. Obrigado, tá?"
+[09:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:02] LOJA: [áudio] "Não tem problema não, Sra. Edélcio, tá? Quando tiver tudo certinho aí para o Senhor, o Senhor passa aqui na nossa loja sem problemas, tá bom? E assim, muito obrigada por lembrar de nós e tenha uma boa semana."  {audio:midias/3EB08122ED33ED7F1F83F4_662802.ogg}

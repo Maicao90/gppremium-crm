@@ -1,0 +1,30 @@
+CONVERSA f261d091b2 | contato: Bruna Alves | 23/09/2026 17:29 até 24/09/2026 11:46 | 4 msgs do cliente, 11 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[17:29] CLIENTE: Quero cotar o pneu 175/70 R13 GP Premium.
+[17:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:30] LOJA: *Josy:*
+Boa tarde, Bruna...
+[17:30] LOJA: [foto]
+[17:30] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:31] CLIENTE: Ta certo, obrigada!
+[17:32] LOJA: *Josy:*
+Mora aqui em Luziânia, mesmo?
+[17:34] LOJA: *Josy:*
+Está em busca de alguma marca especifica?
+[17:44] CLIENTE: Não, estou buscando preço 
+Em torno de 200 a 230
+[17:45] LOJA: *Josy:*
+Entendi... olha eu tenho aqui 165/70/13 a R$ 239,00 cada
+[17:46] CLIENTE: Tem que ser 175
+[18:00] LOJA: *Josy:*
+O pneu GP Premium 175/70/13 se você conseguir sacar o *dinheiro* fica por 250,00 cada e é o pneu mais vendido que temos.
+--- 24/09/2026 (Thu) ---
+[11:46] LOJA: [áudio] "Oi Bruna, tudo bem? Nós estávamos conversando ontem e eu vou encerrar aqui o seu atendimento, tá certo? Justamente para não ficar enchendo o seu WhatsApp de mensagens e vou deixar também a nossa localização, pois se de repente você achar que é viável, você passa aqui na nossa empresa para conversarmos pessoalmente, tá bem? Obrigada pela sua atenção, boa semana."  {audio:midias/3EB0BC803B451ABECB6760_986768.ogg}
+[11:46] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:46] LOJA: [foto]

@@ -1,0 +1,52 @@
+CONVERSA 05bbbd43d9 | contato: 🤨 | 31/08/2026 10:49 até 31/08/2026 11:09 | 14 msgs do cliente, 22 da loja, 0 do robô
+
+--- 31/08/2026 (Mon) ---
+[10:49] CLIENTE: bom dia
+[10:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:49] CLIENTE: tem pneu 245 /70 /16?
+[10:49] LOJA: *Josy:*
+Bom dia, Claudio!
+[10:50] LOJA: *Josy:*
+Tudo bem contigo? Temos sim! Já usa o GP Premium , certo?
+[10:51] LOJA: *Josy:*
+Se o pagamento for em *dinheiro* o menor preço é R$ 445,00 a unidade.
+[10:51] LOJA: *Josy:*
+Pix R$ 479,00 a unidade .
+[10:52] CLIENTE: tudo bem
+[10:52] LOJA: *Josy:*
+Que benção.
+[10:52] CLIENTE: Esse é Remold?
+[10:52] LOJA: [foto] *Josy:*
+Para parcelar muda um pouco o valor
+[10:53] LOJA: *Josy:*
+Posso enviar áudio?
+[10:53] CLIENTE: Vou querer 2
+[10:53] CLIENTE: sim
+[10:53] CLIENTE: pode mandar
+[10:54] LOJA: [áudio] "Oi Cláudio, bom dia, tudo jóia? Cláudio, o pneu GP Premium é o pneu aqui da nossa empresa, que é o ecológico, que entra assim na categoria de remodelagem, porém linha Premium é o pneu mais vendido que nós temos, com 2 anos de garantia."  {audio:midias/3EB0AA0A1DD5EF0CB2FBA8_412847.ogg}
+[10:55] LOJA: *Josy:*
+Onde você está?
+[10:55] CLIENTE: Ocidental
+[10:56] LOJA: *Josy:*
+ certo... me de um instante.
+[10:56] CLIENTE: tem foto desse pneu adventure?
+[10:56] LOJA: *Josy:*
+Tenho sim!
+[10:56] CLIENTE: so pra ver o desenho
+[10:56] LOJA: [áudio] "Sim, vou te mandar sim, me dá só um minutinho, que só tô colocando o celular aqui pra carregar, que ele descarregou, eu já ia mandar o vídeo aqui pra ti, tá bom? Só um minutinho."  {audio:midias/3EB0CDAA4CABAC87F7B258_172600.ogg}
+[10:57] CLIENTE: A loja é aberta no período de almoço?
+[11:00] LOJA: *Josy:*
+Sim, é sim!
+[11:04] LOJA: [áudio] "Senhor Cláudio, o senhor consegue vir aqui na nossa loja em Luziânia? Porque eu estava vendo se eu conseguia atendê-lo por aí e eu estou sem carro para poder fazer entregas."  {audio:midias/3EB08787156711C0EDF97D_154653.ogg}
+[11:05] LOJA: [vídeo]
+[11:06] CLIENTE: estou indo
+[11:06] CLIENTE: já faz a troca aí mesmo?
+[11:07] LOJA: *Josy:*
+Sim!
+[11:07] CLIENTE: manda a localização
+[11:07] LOJA: *Josy:*
+Claro!
+[11:07] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6 *Josy:*
+[11:07] LOJA: [foto]
+[11:08] LOJA: [áudio] "Aí, às vezes, a minha localização não está abrindo, aí eu estou mandando a foto aqui da fachada da loja, e o senhor só me comunica, por gentileza, se está funcionando aí."  {audio:midias/3EB0C05C97AB2C14355551_856530.ogg}

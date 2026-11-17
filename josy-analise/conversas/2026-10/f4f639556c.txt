@@ -1,0 +1,30 @@
+CONVERSA f4f639556c | contato: José Dos Reis | 01/10/2026 08:29 até 01/10/2026 17:36 | 6 msgs do cliente, 12 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[08:29] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[08:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:29] LOJA: *Josy:*
+Bom dia!
+[08:30] CLIENTE: 205/65/15
+[08:30] LOJA: [foto]
+[08:30] LOJA: No dia de hoje temos  essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:30] LOJA: *Josy:*
+Mora aqui em Luziania mesmo, José?
+[08:31] CLIENTE: Não zona rural
+[08:31] LOJA: *Josy:*
+Mas é Luziania, certo?
+[08:31] CLIENTE: Isso
+[08:32] LOJA: *Josy:*
+Ah, sim,!
+[08:34] CLIENTE: São borrachudos
+[08:35] LOJA: *Josy:*
+O de R$ 339,00 é sim!
+[08:35] LOJA: [foto]
+[08:36] CLIENTE: Garantia
+[08:37] LOJA: *Josy:*
+tEM.
+[09:13] LOJA: [áudio] "Oi, Sr. José. Bom dia. Como é que vai? Sim, os pneus, eles têm garantia, sim, tá? Tem garantia de 2 anos. E se o senhor quiser já fazer a instalação dos pneus, vindo aqui com o veículo, nós já fazemos esse serviço para o senhor, tá joia? Esse valor aí é de pneu colocado. Aí, a parte, nós podemos negociar os valores de balanceamento e alinhamento do seu veículo, se realmente for necessário."  {audio:midias/3EB08E8207E8CF6112FBD7_996495.ogg}
+[17:36] LOJA: [áudio] "Oi, Sr. José. Quer que eu te encaminhe a nossa localização para que assim que estiver tudo ok, o senhor passe aqui na nossa loja?"  {audio:midias/3EB050FFC790A7C3542BCC_462251.ogg}

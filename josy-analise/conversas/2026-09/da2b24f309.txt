@@ -1,0 +1,24 @@
+CONVERSA da2b24f309 | contato: Milena Scalise | 02/09/2026 21:56 até 03/09/2026 09:04 | 11 msgs do cliente, 4 da loja, 0 do robô
+
+--- 02/09/2026 (Wed) ---
+[21:56] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[21:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[21:57] CLIENTE: albumMessage
+[21:57] CLIENTE: [foto]
+[21:58] CLIENTE: [foto]
+[21:59] CLIENTE: 235/35zr20 92w xl
+--- 03/09/2026 (Thu) ---
+[08:08] LOJA: [áudio] "Oi Milena, bom dia, tudo bem com você? Olha, eu não disponho dessa opção aqui a pronta entrega, mas eu posso fazer uma cotação junto com os meus distribuidores, aí assim que eles me responderem eu te passo aqui o valor. Vocês estão em busca de alguma marca específica?"  {audio:midias/3EB06B245EDA83FA3BB328_14883.ogg}
+[08:40] CLIENTE: Bom dia
+[08:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:40] CLIENTE: Faça então
+[08:40] CLIENTE: Uma marca intermediária
+[08:40] CLIENTE: Não cara
+[09:03] LOJA: *Josy:*
+Milena... desta vez está em falta. Não há nenhuma marca disponivel com essa medida.
+[09:04] CLIENTE: Beleza
+[09:04] CLIENTE: Obrigada

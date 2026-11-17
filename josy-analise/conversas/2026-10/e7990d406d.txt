@@ -1,0 +1,23 @@
+CONVERSA e7990d406d | contato: Jose Melo | 02/10/2026 15:50 até 08/10/2026 11:05 | 3 msgs do cliente, 10 da loja, 0 do robô
+
+--- 02/10/2026 (Fri) ---
+[15:50] LOJA: *Josy:*
+Boa tarde,
+[15:50] CLIENTE: 👍
+[15:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:58] LOJA: *Josy:*
+Debiro/ pix 289,00
+[15:58] LOJA: *Josy:*
+NO *dinheiro* a unidade fica por 275,00
+--- 07/10/2026 (Wed) ---
+[11:18] LOJA: [áudio] "Oi, Sr. José, bom dia, tudo bem? Alguns dias atrás, o senhor passou aqui na nossa loja, aqui na fábrica GP Premium, e o senhor estava precisando de uns pneus aí, se eu não me engano, era o 205-55-16, né? O senhor quer que deixe os pneus reservados aqui?"  {audio:midias/3EB01432AC450958607821_158175.ogg}
+--- 08/10/2026 (Thu) ---
+[06:30] CLIENTE: [áudio] "Bom dia, tudo bem? Vou sim. Hoje eu vou buscar eles aí então."
+[06:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:20] LOJA: [áudio] "Perfeito, então, Sr. José, te aguardo."  {audio:midias/3EB0D05E8AC2C7FECE5EC6_69132.ogg}
+[08:46] CLIENTE: Ok
+[11:05] LOJA: Bom dia, sr José!
+[11:05] LOJA: Se possivel, pode nos avaliar no Google, se possivel fale sobre sua experiência com os pneus GP Premium e atendimento.
+[11:05] LOJA: https://da.gd/gp-avaliar

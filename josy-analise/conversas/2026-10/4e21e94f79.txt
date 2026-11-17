@@ -1,0 +1,18 @@
+CONVERSA 4e21e94f79 | contato: Valdiclei | 20/10/2026 15:28 até 20/10/2026 17:56 | 1 msgs do cliente, 4 da loja, 0 do robô
+
+--- 20/10/2026 (Tue) ---
+[15:28] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[15:28] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[15:29] LOJA: *Josy:*
+🙋🏼‍♀️
+[15:29] LOJA: *Josy:*
+Valdiclei...
+[17:56] LOJA: [áudio] "Eu vou ciclei, tudo jóia? Mais cedo o senhor me mandou mensagem aqui que gostaria de realizar um orçamento. Assim que tiver um tempo, me diz qual que é a medida dos pneus que o senhor precisa, certinho?"  {audio:midias/3EB060D409BDD5B86A4831_925680.ogg}

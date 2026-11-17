@@ -1,0 +1,17 @@
+CONVERSA 515499e21a | contato: fernando. | 23/09/2026 10:24 até 23/09/2026 10:32 | 5 msgs do cliente, 5 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[10:24] CLIENTE: [áudio] "Bom dia Josi, tudo bem? Pergunta os meninos se vocês vão querer carvão, é o Fernando. Outra vez ele tinha pedido dois sacos e o caminhão vai passar ali no setorzinho deles, fazer umas entregas aí. Se ele quiser eu já deixo dois aí. Ou mais, se vocês quiserem também."
+[10:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:24] CLIENTE: Eu esqueço o nome deles
+[10:27] LOJA: [áudio] "Oi Fernando, como é que você está?"  {audio:midias/3EB01381373D79D4FC8097_685726.ogg}
+[10:28] CLIENTE: [áudio] "Estou bem, graças a Deus. E você, trabalhando muito, né? Só correria hoje em dia."
+[10:30] LOJA: *Josy:*
+Sim...trabalhando muito!
+[10:30] LOJA: *Josy:*
+Bruno e Charles...
+[10:31] CLIENTE: [áudio] "Tem como ver com eles? Vocês vão querer um carvão? Acho que é o Bruno, sempre pegava comigo, sempre deixava dois sacos aí com ele, dois, três..."
+[10:31] LOJA: *Josy:*
+Ele disse que hoje não... obrigada.
+[10:32] CLIENTE: Blz eu que agradeço

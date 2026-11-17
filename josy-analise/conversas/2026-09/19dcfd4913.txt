@@ -1,0 +1,11 @@
+CONVERSA 19dcfd4913 | contato: Edna Araujo | 29/09/2026 15:28 até 29/09/2026 15:49 | 4 msgs do cliente, 3 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[15:28] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[15:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:29] CLIENTE: 175/ 13
+[15:29] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Eu tenho aqui sim. Você mora aqui em Luziânia?"  {audio:midias/3EB06D5C81CD96D622CBE9_312848.ogg}
+[15:31] CLIENTE: Ah não
+[15:31] CLIENTE: Desculpa
+[15:49] LOJA: [áudio] "Imagina que é isso, não se desculpe."  {audio:midias/3EB02E8F7816DE722FC3EB_701213.ogg}

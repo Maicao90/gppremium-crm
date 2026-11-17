@@ -1,0 +1,25 @@
+CONVERSA 5ca3171254 | contato: 🍀CLEA🌻CARL🍀 | 10/09/2026 11:02 até 11/09/2026 13:42 | 3 msgs do cliente, 8 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[11:02] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso?
+[11:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:05] LOJA: *Josy:*
+🙋🏼‍♀️
+[12:11] CLIENTE: 205/55 r16
+[12:11] LOJA: *Josy:*
+Boa tarde!
+[12:11] LOJA: [foto]
+[12:11] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 11/09/2026 (Fri) ---
+[13:40] LOJA: [áudio] "Olá, tudo bem?"  {audio:midias/3EB0375D75D4A54569976C_738538.ogg}
+[13:40] LOJA: [vídeo]
+[13:42] CLIENTE: Boa tarde! Não seguirei com a negociação blz. 
+Muito obrigado pela atenção .
+[13:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

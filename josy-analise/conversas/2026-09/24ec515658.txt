@@ -1,0 +1,31 @@
+CONVERSA 24ec515658 | contato: Clari Costa | 22/09/2026 16:14 até 25/09/2026 09:55 | 4 msgs do cliente, 13 da loja, 0 do robô
+
+--- 22/09/2026 (Tue) ---
+[16:14] LOJA: *Josy:*
+Boa tarde, Clariane...
+[16:15] LOJA: [foto]
+[16:15] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:16] LOJA: [foto]
+[16:19] LOJA: *Josy:*
+Aqui ficamos com a loja aberta das 08:00 às 18:00
+[16:19] CLIENTE: Perfeito Josy, te aviso quando for levar o carro aí tá
+[16:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 23/09/2026 (Wed) ---
+[08:24] CLIENTE: Bom dia. O carro está a caminho 👍🏻
+[08:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:24] LOJA: *Josy:*
+Bom dia!
+[08:24] LOJA: *Josy:*
+Perfeito!
+--- 25/09/2026 (Fri) ---
+[09:48] CLIENTE: Bom dia! Vc tenho contato da super via?
+[09:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:49] LOJA: [áudio] "Oi Clary, bom dia, tudo bem? Tenho sim, aconteceu alguma coisa?"  {audio:midias/3EB0C6682A2E2AEAE23AB2_493916.ogg}
+[09:50] LOJA: *Josy:*
+3620-1400
+[09:54] CLIENTE: Obrigada. Eu fiz alinhamento e todo o resto, mas o carro tá puchando, preciso levar de volta lá
+[09:55] LOJA: *Josy:*
+Sim..perfeito!

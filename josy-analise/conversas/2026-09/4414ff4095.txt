@@ -1,0 +1,31 @@
+CONVERSA 4414ff4095 | contato: Carlos Eduardo | 15/09/2026 16:00 até 16/09/2026 11:43 | 6 msgs do cliente, 12 da loja, 0 do robô
+
+--- 15/09/2026 (Tue) ---
+[16:00] CLIENTE: Boa tarde 
+Quanto que ta o pneu aro 13?
+[16:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:01] LOJA: *Josy:*
+Boa tarde!
+[16:02] LOJA: [foto]
+[16:02] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:03] LOJA: [áudio] "Olá, tudo bem com você? Eu me chamo Josi e no dia de hoje temos todas essas opções. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB004E137A762D083DEB4_490510.ogg}
+[16:05] CLIENTE: Moro aqui mesmo
+[16:05] CLIENTE: Ok obrigado
+[16:10] LOJA: *Josy:*
+Perfeito!
+[16:35] LOJA: [áudio] "E Carlos, você sabe aqui onde é a nossa loja? Hoje você só está realmente fazendo orçamentos ou pretende fazer a instalação desses pneus daqui a alguns dias?"  {audio:midias/3EB04118BC1187AE205457_644088.ogg}
+--- 16/09/2026 (Wed) ---
+[11:34] LOJA: [áudio] "Bom dia, bom dia, Carlos. Tudo jóia? Eu te encaminhei um áudio ontem, mas imagino que na correria você não tenha conseguido me responder. Você gostaria de seguir aqui com a negociação? Quer que eu deixe os pneus reservados para ti? Assim que você vai me dar um retorno, está bem? Obrigada pela atenção."  {audio:midias/3EB0F625896172FC358366_348773.ogg}
+[11:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:35] CLIENTE: [áudio] "Oi, bom dia. Eu fui ver hoje aqui. Aí era para te retornar e acabei esquecendo. Eu queria saber os valores, né? Eu não estava sabendo quanto que era. Só um orçamento mesmo. Eu vou precisar de dois, mas não é coisa de emergência agora. Vai passar daqui a um mês ou dois, mais ou menos."
+[11:36] CLIENTE: [áudio] "Aí vai ser para pagamento à vista, esse pneu, o GP mesmo, o GP Premium, 175,70, daria para fazer quanto? Com duas unidades."
+[11:39] LOJA: [áudio] "Certo, compreendo, Carlos. Olha, se o pagamento for em dinheiro em espécie, se você sacar para trazer o dinheiro aqui para mim, dá para fazer por 258 cada, tá? E faz a instalação aí para ti."  {audio:midias/3EB0E45651A78313CAE705_4052.ogg}
+[11:42] CLIENTE: Entendi ok obrigado
+[11:43] LOJA: *Josy:*
+Disponha!
+[11:43] LOJA: [foto]

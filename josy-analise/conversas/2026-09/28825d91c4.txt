@@ -1,0 +1,35 @@
+CONVERSA 28825d91c4 | contato: Janna Silva 🩶 | 29/09/2026 12:35 até 29/09/2026 15:17 | 14 msgs do cliente, 13 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[12:35] CLIENTE: Boa tarde
+[12:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:36] LOJA: [áudio] "Oi Jana, como é que você está?"  {audio:midias/3EB0E5D3BDFDB2E7533E75_579239.ogg}
+[12:36] CLIENTE: [áudio] "Oi Josi, tudo bem? Tô bem, tirando meu pneu que tá rasgado. Josi, eu tô sem condições de sair de casa, vou te passar o vídeo do meu pneu."
+[12:36] CLIENTE: [vídeo]
+[12:37] CLIENTE: [áudio] "Josi, aí você consegue ver qual foi a última vez que eu comprei o mesmo pneu, né? Que vou ter que comprar dois. Eu queria saber se você faz desconto e se você consegue entregar para mim aqui no Totalville."
+[12:38] LOJA: *Josy:*
+Certo...deixa eu ver aqui...
+[12:49] LOJA: [áudio] "Jana, você comprou que foi o 2055516, né?"  {audio:midias/3EB09FD91C5DAB30996202_786342.ogg}
+[12:52] LOJA: [foto]
+[12:56] CLIENTE: Ai 2 ficariam quase 700,00 ne?
+[12:56] CLIENTE: Vc consegue fazer essa entrega e se possível a troca aqui pra min
+[12:56] CLIENTE: Olha o outro
+[12:57] CLIENTE: [vídeo]
+[12:58] LOJA: [áudio] "Jana, eu só não consigo entregar os pneus pra você aí, porque meu carro que faz a rota, ele inclusive tá voltando aqui pra Luziânia. Eu deixei os pneus justamente naquela borracharia que você foi aquela vez, lembra?"  {audio:midias/3EB05D69FDD945C78BFCEB_34435.ogg}
+[12:58] CLIENTE: Lembro
+[12:59] CLIENTE: Mas como buscarei?
+E amanha consegue me entregar?
+[13:08] LOJA: [áudio] "Jana, assim, deixa eu ver o que eu consigo fazer aqui, mas se você conseguir ir até lá na borracharia, eu sei que, né, não tem como, que a situação aí tá um pouco complicada, mas sei lá, se de repente você conseguir pegar um Uber pra poder te levar, que aí você consegue passar o cartão lá com ele, né, você me diz qual que vai ser a forma de pagamento, tudo direitinho aqui, que eu falo pro rapaz. Aí, amanhã, como eu não sei se eu terei entregas aí pra essa região, eu não consigo te confirmar."  {audio:midias/3EB08D13D9AFC23FB06A08_906975.ogg}
+[13:08] CLIENTE: E la e o local mais perto de mim?
+[13:09] LOJA: [áudio] "Sim, lá é o local mais próximo."  {audio:midias/3EB0896B3540CDE4F16935_28681.ogg}
+[13:55] CLIENTE: Josy,  eu vou ai de moto e levo os pneus de uber
+[13:55] CLIENTE: 6x
+[13:55] CLIENTE: 2 pneus
+[14:20] LOJA: *Josy:*
+Ok
+[14:21] LOJA: [áudio] "Preciso que te mande a localização novamente?"  {audio:midias/A528F11C4168CDBAB68A71CF8502C0C0_64159.ogg}
+[14:22] LOJA: *Josy:*
+Total R$ 622,00 você vai pagar 6 parcelas de R$ 103,66
+[14:51] LOJA: [localização] -16.0680034,-48.0643739
+[15:17] LOJA: Pedo para o rapaz reservar os pneus para você

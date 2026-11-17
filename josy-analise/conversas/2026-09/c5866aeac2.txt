@@ -1,0 +1,16 @@
+CONVERSA c5866aeac2 | contato: Allan Silva | 18/09/2026 08:49 até 24/09/2026 12:36 | 2 msgs do cliente, 4 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[08:49] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso?
+[08:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:50] CLIENTE: Qual o valor do 215/50 aro 17
+[08:52] LOJA: [foto]
+[08:52] LOJA: *Josy:*
+Allan, No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 24/09/2026 (Thu) ---
+[12:36] LOJA: [áudio] "Oi Alain, tudo jóia? Alain, nós conversamos aí alguns dias atrás a respeito dos pneus aí para o seu carro e eu gostaria de saber se você pretende seguir com a negociação. Você consegue me dar um retorno, por gentileza? Porque imagina aí que na correria você acabou não conseguindo me dar um retorno, né? Fala aqui comigo."  {audio:midias/3EB0ECD8D6E776C60E8EDE_390634.ogg}

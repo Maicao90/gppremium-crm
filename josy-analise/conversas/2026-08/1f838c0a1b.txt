@@ -1,0 +1,17 @@
+CONVERSA 1f838c0a1b | contato: Karine | 19/08/2026 12:30 até 19/08/2026 14:10 | 5 msgs do cliente, 6 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[12:30] CLIENTE: [foto] 📢 [Anúncio] Converse conosco
+
+Olá! Posso ter mais informações sobre isso?
+[12:30] CLIENTE: Vcs ficam aonde ?
+[12:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:30] CLIENTE: 175/65
+[13:14] LOJA: Boa tarde, somos de Luziania-Go!
+[13:24] LOJA: [foto]
+[13:24] LOJA: Pneu da marca GP Premium. Apenas R$ 249,00 a vista
+[13:38] LOJA: [áudio] "Oi, boa tarde, tudo bem com você? Nós somos aqui de Luziânia e você fica onde?"  {audio:midias/3EB0F6CC28BDB946C0044A_102282.ogg}
+[14:05] CLIENTE: [áudio] "Obrigada, vocês são muito longe, valeu mesmo. Eu sou de Brasília, fica muito distante para mim."
+[14:06] LOJA: [áudio] "Ah, sim, compreendo perfeitamente. E se eu mandar os pneus para o Novo Gama ainda assim continuar distante de você?"  {audio:midias/3EB04EBFD8DC28D0C37E66_229677.ogg}
+[14:10] CLIENTE: [áudio] "Aí eu já consegui aqui, tá bom? Obrigada, viu?"

@@ -1,0 +1,56 @@
+CONVERSA 76b37b3b04 | contato: Suelen Alves Consultora de planos de saúde | 31/08/2026 12:45 até 31/08/2026 13:38 | 15 msgs do cliente, 23 da loja, 0 do robô
+
+--- 31/08/2026 (Mon) ---
+[12:45] CLIENTE: Quero cotar o pneu 215/50 R17 GP Premium.
+[12:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:45] CLIENTE: Aro 17
+[12:46] CLIENTE: qual o valor do pneu?
+[12:48] LOJA: *Josy:*
+Oi , Suellen
+[12:48] LOJA: *Josy:*
+Obrigada por aguardar...
+[12:50] LOJA: *Josy:*
+O Pneu GP Premium está por R$ 310,00 em *dinheiro*
+[12:51] LOJA: *Josy:*
+No débito /Pix está por R$ 329,00
+[12:51] LOJA: *Josy:*
+Meu celular descarregou
+[12:51] LOJA: *Josy:*
+🙋🏼‍♀️
+[12:51] LOJA: *Josy:*
+🙋🏼‍♀️
+[12:52] CLIENTE: [áudio] "José, a Suelen, eu já trabalhei aí, eu queria verificar para a gente comprar e retirar na loja de Vicente Pires, em Brasília, seria como?"
+[12:53] LOJA: [áudio] "Oi, Suelen, como é que você tá? Ah, é que o WhatsApp da loja ficou uma doideira e eu não consegui verificar que era tu, mulher. Olha... Ai, que legal que você tá morando por aqui. Eu sei que você tinha ido embora. Suelen, nós não estamos mais trabalhando com o pessoal aí de Vicente Pires, mas se eu mandar os pneus pro novo Gama, vocês conseguem retirar lá?"  {audio:midias/3EB075335F6F52AEDF9A30_733463.ogg}
+[12:53] LOJA: [foto]
+[12:55] CLIENTE: [áudio] "Eu tô bem, graças a Deus, mulher. E você, como é que tá? Pois é, mulher. Fui embora. Teve uma época que eu fui pra Piauí, aí eu fiquei, acho que foi 5 meses lá, mas não deu certo. Aí eu peguei e fui pra Goiânia, fiquei mais de um ano lá em Goiânia. Aí agora... tô com o André, né? A gente tá morando junto, aí a gente tá aqui em Brasília. Eu vim recentemente. Foi esse ano ainda. Aí a gente tá precisando trocar os pneus. Aí eu pensei, eu falei, ah, vou verificar lá. Só que a gente queria ver pra retirar aqui em Brasília. Eu vou verificar com ele, ver o que que ele acha, então. Se dá pra tirar lá no Novo Gama. No caso, a outra unidade de vocês é só no Novo Gama, né?"
+[12:57] LOJA: [áudio] "É isso mesmo, aí eu mando os pneus pra lá, pra uma borracharia, aí se for do interesse de vocês, você me avisa quando que vocês vão precisar, que eu alinho com o pessoal aqui pra poder deixar os pneus lá pra nós. Aí te mando a localização, tudo direitinho, tá?"  {audio:midias/3EB0C90D7F7D72DA077BD8_808901.ogg}
+[12:58] CLIENTE: Tá bom
+[12:58] CLIENTE: Daria para mandar hoje ainda ?
+[13:05] LOJA: *Josy:*
+Sim!
+[13:05] LOJA: [áudio] "Dá sim, Suelen. Qual que vai ser a forma de pagamento? Porque Deus já deixou o rapaz avisado lá."  {audio:midias/3EB0AB02443CE2CDC0981A_260358.ogg}
+[13:06] LOJA: *Josy:*
+Qual é seu CPF?
+[13:07] CLIENTE: [áudio] "Ah, sim. Não, Josi. Perfeito, então. Eu tô só verificando com o André. Porque ele teria que pegar lá no novo Gama. Ah, eu tô vendo se vai dar pra ele. Porque ele tava querendo vir mais próximo, mas mais próximo pra gente ficar lá, Vicente Pinto. Por isso que eu te perguntei. É... Já eu te retorno aí, tá bom? Pra te confirmar."
+[13:07] LOJA: [áudio] "Tá, já então."  {audio:midias/3EB0E151079605E63B43AE_413805.ogg}
+[13:15] CLIENTE: Me manda o endereço de lá do novo Gama.
+[13:15] LOJA: *Josy:*
+Sim!
+[13:15] LOJA: [localização] -16.0680034,-48.0643739
+[13:15] CLIENTE: [áudio] "Que aí, Jesus, a gente vai calcular aqui e ver direitinho se compensa, e compensando a gente pega a compra de vocês aí, aí você manda entregar lá que a gente pega lá, mas primeiro a gente tem que ver aqui se compensa, porque senão seria melhor pegar por aqui mesmo, entendeu?"
+[13:16] LOJA: *Josy:*
+Borracharia Popular.
+[13:16] LOJA: *Josy:*
+Beleza!
+[13:16] CLIENTE: Esse aqui é da borracharia?
+[13:16] LOJA: *Josy:*
+Isso.
+[13:17] LOJA: [áudio] "Fica perto do posto pontão e vivenda supermercado aí no Novo Gama."  {audio:midias/3EB03D33CF916F6AA0E1B6_823875.ogg}
+[13:36] CLIENTE: [áudio] "Jos, a gente decidiu aqui que vai comprar por aqui por Brasília mesmo, tá bom? Porque a gente não compensaria não ir pra lá pro Novo Gão ou ir em Lisiane hoje, entendeu? Mas eu agradeço você, tá? Quando a gente precisa, a gente fala com você novamente, porque ia ser só dois pneus agora, né? Aí depois vai ter que ver mais dois."
+[13:37] LOJA: [áudio] "Imagina, Suelen, tudo certo, tá bom?"  {audio:midias/3EB03775CCE943078943C2_803247.ogg}
+[13:37] CLIENTE: Obrigada 🙏🏼
+[13:37] CLIENTE: Bom trabalho.
+[13:37] LOJA: *Josy:*
+Para ti, também! Boa semana.
+[13:38] CLIENTE: Obrigada.

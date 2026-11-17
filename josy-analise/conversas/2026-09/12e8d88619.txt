@@ -1,0 +1,27 @@
+CONVERSA 12e8d88619 | contato: Adaílson Mariane Festas | 27/09/2026 21:46 até 29/09/2026 08:24 | 6 msgs do cliente, 8 da loja, 0 do robô
+
+--- 27/09/2026 (Sun) ---
+[21:46] CLIENTE: Quero cotar o pneu 185/65 R14 GP Premium.
+[21:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[21:47] CLIENTE: 185/65 R14
+--- 28/09/2026 (Mon) ---
+[08:10] CLIENTE: [áudio] "Bom dia!"
+[08:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:10] CLIENTE: 185/65 R14
+[08:21] LOJA: [áudio] "Bom dia, obrigada por aguardar. Como nosso horário de atendimento é de segunda a sábado, né, no sábado de 8 até as 12, então sua mensagem não apareceu aqui pra mim, tá? Já a partir deste momento vou dar continuidade no seu atendimento."  {audio:midias/3EB05ABBF257168DEBB4D9_183860.ogg}
+[08:21] LOJA: [foto]
+[08:21] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 29/09/2026 (Tue) ---
+[08:05] CLIENTE: Já foi trocado
+[08:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:06] LOJA: *Josy:*
+O senhor não veio aqui , não é?
+[08:06] CLIENTE: Não
+[08:24] LOJA: *Josy:*
+Está certo... boa semana então.

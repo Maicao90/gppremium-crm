@@ -1,0 +1,67 @@
+CONVERSA 1b3589254d | contato: 🙏🏾Guto Santos🙏🏾 | 19/09/2026 17:31 até 24/09/2026 10:32 | 16 msgs do cliente, 29 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[17:31] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso?
+[17:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:31] CLIENTE: Boa tarde
+[17:32] CLIENTE: Queria fazer o orçamento de 4 pneus 215 60 R17
+--- 21/09/2026 (Mon) ---
+[08:13] LOJA: *Josy:*
+Bom dia!
+[08:13] CLIENTE: Queria fazer o orçamento de 4 pneus 215 60 R17
+[08:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:15] LOJA: [foto]
+[08:15] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:18] CLIENTE: [áudio] "Eu não entendi aí, por favor, pneu 215, 60, roda 17, 356, é isso?"
+[08:22] LOJA: [áudio] "Olá, bom dia. Eu tenho aqui o pneu da marca GP Premium. A unidade está, sim, por R$ 359. Digamos que o senhor queira os 4. Então, R$ 359 vezes 4 dá um total de R$ 1.436. E esses pneus já são instalados. O senhor mora aqui na cidade de Luziânia?"  {audio:midias/3EB06B421935CC13D6778B_686717.ogg}
+[08:24] CLIENTE: [áudio] "Eu moro aqui no Valparaíso, Valparaíso do Goiás."
+[08:25] LOJA: [áudio] "Ah, é pertinho de nós?"  {audio:midias/3EB0DB17141FCC82FDC3A7_854250.ogg}
+[08:25] LOJA: [áudio] "Vou mandar aqui a nossa localização, tá bom?"  {audio:midias/3EB0C71A6F525E4C00666B_965659.ogg}
+[08:25] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:25] CLIENTE: [áudio] "Esse pneu de vocês ter garantia? Quanto tempo? Me fale aí, por favor."
+[08:25] LOJA: [áudio] "Garantia de 2 anos, roda 60 mil km tranquilamente."  {audio:midias/3EB06F7F9F5AFFF994A873_211916.ogg}
+[08:26] LOJA: [foto]
+[08:26] CLIENTE: São novos ?
+[08:26] LOJA: [áudio] "Remolde."  {audio:midias/3EB0A1DB74723B2EE83249_602019.ogg}
+[08:26] CLIENTE: [áudio] "Não entendi. Remold quer dizer o que? São novos? São novos? Ou são recuperados?"
+[08:36] LOJA: [áudio] "Na verdade, são pneus ecológicos que nós fazemos, e o Inmetro pede para classificar como sendo o remolde, tá? Que é um pneu que seria reaproveitado, só que nós fazemos ele todo de novo."  {audio:midias/3EB01AB9A5FA58BE53EF8F_260187.ogg}
+[08:36] LOJA: [áudio] "E ele é o pneu mais vendido que eu tenho. Há 10 anos nós temos a empresa que é a fábrica e os pneus são de primeira linha mesmo. Quer uma foto?"  {audio:midias/3EB0CF58C21BDE19B97F1F_250489.ogg}
+[08:38] CLIENTE: [áudio] "Manda para mim aí, por favor, essa foto aí. O remold é pneu que vocês recuperam, né? Não é um pneu novo, novo, novo, não é isso? Para me entender mais ou menos."
+[08:43] LOJA: [áudio] "No caso, o processo que nós fazemos aqui, ele acaba que faz com que o pneu se torne novo completamente, porque nós fazemos ele todinho de novo, tá? Que é diferente do que as pessoas chamam de recapagem, né, que é quando você pega um pneu velho, passa uma cola e prega nele, passa nele uma borracha pra fazer o pneu ficar como novo. Nós não fazemos esse tipo de processo, porque nós fazemos o pneu todinho de novo, entendeu? Não é recapagem. Mas o Inmetro, como é um produto artesanal, né, aí o Inmetro pede pra classificá-lo apenas. Eu vou te mandar aqui a foto pro senhor ver, tá bom?"  {audio:midias/3EB09F810F6CAA674BD3A3_87641.ogg}
+[08:44] LOJA: *Josy:*
+215/60/17 Adventure verde 👇🏻
+[08:44] LOJA: [foto]
+[08:44] LOJA: [áudio] "Nós produzimos esses pneus há 10 anos, eles são referência, porque são pneus muito bons."  {audio:midias/3EB074DF3088612F9EFA29_36568.ogg}
+[09:00] CLIENTE: [áudio] "Me tira uma dúvida, você só trabalha com pneu de carro pequeno, pneu de caminhão também vocês trabalham? Estou te perguntando por que eu tenho um caminhão e eu estava precisando comprar dois pneus novos com caminhão."
+[09:01] LOJA: [áudio] "Nossa, de caminhão, infelizmente não estamos trabalhando."  {audio:midias/3EB0747D6E391E74E469D4_637475.ogg}
+[09:03] LOJA: [áudio] "Augusto, seu nome, né, faz o seguinte, passa aqui na nossa loja para nós conversarmos pessoalmente, que inclusive eu tenho meu celular, ele não tem uma câmera muito boa, eu mandei a foto aí para o senhor, mas pessoalmente dá para ter uma percepção, obviamente, muito melhor aí do pneu. E, conforme eu disse, né, esse é o pneu mais vendido que eu tenho justamente por conta da qualidade, tá bom?"  {audio:midias/3EB09E0DF6EBD2086F0A8D_917178.ogg}
+--- 22/09/2026 (Tue) ---
+[08:27] CLIENTE: Aro 14 185
+[08:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:27] CLIENTE: Bom dia tem como vc fazer esse orçamento
+[08:28] LOJA: *Josy:*
+Bom dia Augusto...
+[08:28] LOJA: *Josy:*
+60?65? 70?
+[08:29] CLIENTE: [áudio] "Me passa o orçamento dos três, por favor."
+[08:30] LOJA: *Josy:*
+É para qual carro?
+[08:30] CLIENTE: [áudio] "Agora você me pegou, viu? Esse orçamento aí é para o carro do meu tio. E eu não perguntei qual é o carro, não. Tem que ter precisa do carro para saber?"
+[08:31] LOJA: [áudio] "Eu vou encher seu WhatsApp aí de orçamento assim que de repente seja desnecessário para você. Se você souber qual que é o carro, eu já faço o orçamento direto naquilo. Tem carro que não comporta, por exemplo, usar um 8570. Então, é por essa razão que eu estou te perguntando."  {audio:midias/3EB0DAF6944C30B478F23E_636783.ogg}
+[08:31] LOJA: [áudio] "Mas eu vou fazer aqui o intermediário, que é 185-65, tá?"  {audio:midias/3EB0BA181C28FA03892637_886207.ogg}
+[08:31] CLIENTE: [áudio] "Isso pode ser, pode ser."
+[08:32] LOJA: [foto]
+[08:32] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 24/09/2026 (Thu) ---
+[10:32] LOJA: [áudio] "Oi Augusto, bom dia, tudo jóia? Nós nos falamos aí no decorrer da semana, né? Te mandei uns orçamentos e gostaria de saber se você pretende seguir aqui com a negociação. Você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0308489C76A0279894F_683331.ogg}

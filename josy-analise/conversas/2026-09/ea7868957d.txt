@@ -1,0 +1,76 @@
+CONVERSA ea7868957d | contato: Recepção Moto e Cia Honda | 26/09/2026 08:52 até 03/10/2026 08:08 | 16 msgs do cliente, 30 da loja, 0 do robô
+
+--- 26/09/2026 (Sat) ---
+[08:52] CLIENTE: Bom dia, tudo bem?
+[08:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:54] LOJA: [áudio] "Bom dia, Bruno. Tudo jóia?"  {audio:midias/3EB0652F4084C1969CD6DD_894939.ogg}
+[08:54] LOJA: [áudio] "Perdão, Bruna."  {audio:midias/3EB085CAADA6DA871F6E6F_59926.ogg}
+[08:54] LOJA: [áudio] "Em que eu posso te ajudar no dia de hoje, Bruna?"  {audio:midias/3EB0D57110414AB2BB3A61_620203.ogg}
+[08:56] CLIENTE: A Bruna não trabalha mais aqui, meu nome é Salma, prazer!☺️
+[08:57] CLIENTE: Gostaria de saber se tem pneu 265/60R18
+[08:57] LOJA: *Josy:*
+Oi , Salma...
+[08:58] LOJA: *Josy:*
+Temos sim! Seu patrão está em busca de alguma marca especifica?
+[08:59] CLIENTE: Sim, Argos Hit
+[09:00] LOJA: *Josy:*
+Não dispomos dessa opção de marca a pronta entrega, mas vou verificar com nossos distribuidores, na segunda feitra, assim que eles me responderem te informo, preço e prazo de entrega. Tudo bem?
+[09:00] CLIENTE: Tudo sim
+[10:28] CLIENTE: Uma correção, seria Roadking Argos H/T 255/60 R18
+[10:28] LOJA: *Josy:*
+Eu entendi, fique tranquila. ☺️
+[10:40] LOJA: *Josy:*
+Como aqui é uma central, vi que tem outra  empresa está pedindo aqui também.
+--- 28/09/2026 (Mon) ---
+[08:16] CLIENTE: Bom dia, tudo bem?
+[08:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:17] CLIENTE: Gostaria de saber se tem atualizações
+[08:20] LOJA: [áudio] "Oi Salma, bom dia, tudo bem? Olha, eu solicitei o seu orçamento aqui para o distribuidor, agora eu só preciso aguardar a resposta dele para poder te passar direitinho o preço e o prazo de entrega, é só aguardar."  {audio:midias/3EB0728F4646A678FBEF1F_605471.ogg}
+[08:22] CLIENTE: Certo, obrigada
+[09:12] LOJA: *Josy:*
+Assim, que eu tivr o preço, eu te informo e informo as outras empresas também. Todos estão me pedindo.
+[09:29] LOJA: *Josy:*
+Não temos no fornecedor dessa marca, pode ser outro?
+[09:31] CLIENTE: Quais seriam as outras marcas?
+[09:33] LOJA: *Josy:*
+Estava aguardando a sua confirmação para pedir outras marcas
+[09:40] LOJA: [foto]
+[09:40] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 200,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:46] LOJA: *Josy:*
+Estou aguardando a resposta de importados.
+[09:46] CLIENTE: Um momento
+[15:07] LOJA: *Josy:*
+Pretendem prosseguir com a marca Bridgestone?
+[16:07] LOJA: *Josy:*
+Importados em falta..
+--- 29/09/2026 (Tue) ---
+[08:59] CLIENTE: Bom dia, tudo bem?
+[08:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:00] LOJA: *Josy:*
+Tudo bem, obrigada por perguntar...
+[09:00] LOJA: *Josy:*
+O calor é que está dem a
+[09:00] CLIENTE: Estou verificando a situação com o meu gestor, não consigo te dar uma resposta nesse instante
+[09:02] LOJA: *Josy:*
+Certo...compreendo perfeitamente!
+[16:53] LOJA: [áudio] "Salma, por hora eu vou encerrar aqui o seu atendimento, tá joia? E caso vocês precisem futuramente, você me chama novamente. Ou se eu tiver a possibilidade, passa aqui na nossa empresa pra conversar mais pessoalmente, tá joia? Muito obrigada aí por sua atenção, que você tenha uma boa semana."  {audio:midias/3EB000DB3413F4934AAA02_994061.ogg}
+[16:54] LOJA: [foto]
+--- 02/10/2026 (Fri) ---
+[15:32] CLIENTE: Boa tarde, tudo bem? 
+Gostaria de verificar, por gentileza, se vocês têm disponível Pneu Alliance Aro 24 Farm Pro 324 12.4-24 129A8 12PR TT. Poderia me informar também o valor, caso tenham
+[15:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:57] CLIENTE: 324 12.4-24 129
+[18:12] LOJA: [áudio] "Oi, Salma, boa noite, tudo bom? Muitíssimo obrigada por aguardar. O WhatsApp travou aqui e agora que eu tô conseguindo ver as mensagens de todo mundo. Socorro, Deus! Olha, nós não trabalhamos com pneus agrícolas, eu vou ficar te devendo, tá?"  {audio:midias/3EB0DC32C89B4ED3B66E14_676593.ogg}
+--- 03/10/2026 (Sat) ---
+[08:07] CLIENTE: Bom dia, obrigada mesmo assim
+[08:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:08] LOJA: *Josy:*
+Disponha... bom final de semana, Salma.

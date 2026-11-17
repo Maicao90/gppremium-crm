@@ -1,0 +1,9 @@
+CONVERSA 7e4e939487 | contato: divinoadilson55 | 14/10/2026 05:22 até 14/10/2026 08:30 | 3 msgs do cliente, 2 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[05:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[05:22] CLIENTE: [áudio] "Não vou demorar não. Tá bom? Vou ficar sossegado e aí que eu vou. A roda de caminhonete... parece que a letrinha não é 16, parece. É uma range... 2021. Não. É 2001. Eu preciso levantar ela. Agora, pneu... ela tá com os quatro, bom, mas... você pode ficar sossegado. Meu cliente é você. Meu cliente, não. Eu sou cliente seu. Você é muito boa pra vender, muito educada. E sempre eu passo por ali."
+[05:23] CLIENTE: [áudio] "Não, não é hoje não. Estou esperando. A advogada já vai mandar pro juízo. Um carro que eu vendi pra ela, pra pôr o Pescara, aí eu tenho uma amiga que é advogada. Ela não pode, porque não sei se ela é parente dele também, advogada, amiga dele, pra, pra pedir o Wilson pode entrar no juízo, no juiz. Aí eu falei, ué, aí, é, eu sei que sabe, eu sei que é advogado."
+[05:24] CLIENTE: [áudio] "Mas é só que eu pego a caminhonete e vou preenchido só para comprar os pneus mais baratos."
+[08:30] LOJA: [áudio] "Oi, seu divino, bom dia, tudo jóia? Sem problemas, quando for bom aí para o Senhor estiver tudo certo, tá bom? O Senhor ainda tem aquele vídeo que eu mandei de onde é a nossa loja?"  {audio:midias/3EB07B8900D8BC732787E3_613682.ogg}

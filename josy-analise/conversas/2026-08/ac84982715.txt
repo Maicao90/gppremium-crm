@@ -1,0 +1,42 @@
+CONVERSA ac84982715 | contato: Juliano Muniz | 25/08/2026 18:14 até 24/09/2026 08:18 | 5 msgs do cliente, 18 da loja, 0 do robô
+
+--- 25/08/2026 (Tue) ---
+[18:14] CLIENTE: 195 55 15 qual valor ?
+--- 26/08/2026 (Wed) ---
+[08:25] LOJA: *Josy :*
+Bom dia!
+[08:28] LOJA: [foto]
+[08:29] LOJA: *Josy :*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:06] LOJA: [áudio] "Oi, bom dia. Tudo bem com você? Eu sou a Josi. E assim que você me diz qual é o seu nome, tá? Gostaria de saber se alguma dessas opções aí te atende?"  {audio:midias/3EB0720A3E76335F4C6F41_239199.ogg}
+[09:06] LOJA: [áudio] "E você mora aqui em Luziânia mesmo?"  {audio:midias/3EB06E0F03C251E12ADD35_300985.ogg}
+[17:42] LOJA: [áudio] "Olá, tudo bem? Eu sou a Josi e, quando possível, só me diz o seu nome. Bem, eu vou encerrar o seu atendimento, tá, pois imagino que o seu dia tenha sido bem corrido, aí você não conseguiu aqui me responder. Aí, para não ficar enchendo o seu WhatsApp de mensagens, tá, vou encerrar. Vou te mandar aqui a nossa localização, pois, se de repente houver a possibilidade, vocês vêm aqui na nossa empresa para nós conversarmos pessoalmente, combinado?"  {audio:midias/3EB0B92DE9968E9E7662A6_656159.ogg}
+[17:42] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 23/09/2026 (Wed) ---
+[20:33] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?qual o preço do 195 55 15 e essa promoção é compatível com essa medida ?
+[20:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[21:38] CLIENTE: 195 55 15
+--- 24/09/2026 (Thu) ---
+[07:59] LOJA: *Josy:*
+Bom dia.
+[07:59] LOJA: *Josy:*
+A promoção compre 3 e leve 4 é para pneus da marca GP Premium nas medidas 195/65/15 e 215/55/17
+[08:00] LOJA: No dia de hoje, ainda dispomos  dessas opções a pronta entrega.
+[08:02] LOJA: [foto]
+[08:09] LOJA: *Josy:*
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:09] LOJA: [áudio] "Oi Juliano, bom dia. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0A7DB4483179A6356B2_718552.ogg}
+[08:16] CLIENTE: Tá bom , estou fazendo um orçamento primeiro
+[08:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:17] LOJA: *Josy:*
+Ainda tem a nossa localização?
+[08:18] CLIENTE: Sim
+[08:18] LOJA: [áudio] "Juliano, se a compra for dos pneus da marca GP Premium, se você for parcelar, nós podemos negociar algo que fique bom para você, tá, jóia? E esses pneus, eles são colocados já aí no seu carro automaticamente. Se você não quiser instalar, também não tem problema, você pode levar para montar onde você quiser, tá bom?"  {audio:midias/3EB0EA5F1766DBAFCE3583_558499.ogg}
+[08:18] LOJA: [foto]

@@ -1,0 +1,14 @@
+CONVERSA 5a5a8ff89b | contato: Val Motta🥰 | 08/10/2026 16:58 até 08/10/2026 17:07 | 4 msgs do cliente, 6 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[16:58] LOJA: Boa tarde!
+[16:59] CLIENTE: Oi
+[16:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:00] CLIENTE: 185/65
+[17:00] CLIENTE: Aro 14
+[17:04] LOJA: [áudio] "Moça, aqui eu não vou ter, mas eu vou te encaminhar um contato que vai conseguir te ajudar, tá bom? Que lá é uma oficina e eles estão tendo a pronta entrega."  {audio:midias/3EB08275513F10D07A6378_213854.ogg}
+[17:04] LOJA: 61 3774-2115
+[17:04] LOJA: [áudio] "Esse número é o WhatsApp, tá bom? Lá, se eu não me engano, eles têm a partir de R$ 139,00."  {audio:midias/3EB0146AF7D8DFBCE9CD9B_865641.ogg}
+[17:04] CLIENTE: Obg
+[17:07] LOJA: Por nada

@@ -1,0 +1,25 @@
+CONVERSA 242bd13b13 | contato: Érica Duguel | 30/09/2026 09:42 até 30/09/2026 10:10 | 11 msgs do cliente, 6 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[09:42] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:42] CLIENTE: Bom dia!
+[09:43] CLIENTE: Pneu 185/65
+[09:43] CLIENTE: R15
+[09:43] CLIENTE: Voyage
+[10:01] LOJA: Bom dia, obrigada por aguardar.
+[10:01] LOJA: [foto]
+[10:01] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:07] CLIENTE: Essa loja é no Gama?
+[10:07] CLIENTE: Esse valor é instalado? Tem balanceamento e alinhamento?
+[10:07] LOJA: Luziania-Go
+[10:07] CLIENTE: Ixi
+[10:08] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:09] CLIENTE: Longe
+[10:09] CLIENTE: Pesquisei aqui no Gama e apareceu essa
+[10:10] CLIENTE: Muito obrigada pela atenção!

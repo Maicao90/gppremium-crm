@@ -1,0 +1,18 @@
+CONVERSA f8e0928701 | contato: Guedes | 09/10/2026 09:50 até 09/10/2026 15:25 | 4 msgs do cliente, 8 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[09:50] CLIENTE: Bom dia
+[09:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:50] CLIENTE: [foto]
+[09:50] CLIENTE: 185 70 14
+[09:51] LOJA: [foto]
+[09:51] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:53] LOJA: É daqui de Luziânia-Go?
+[10:05] LOJA: [áudio] "Oi Guedes, bom dia, como é que você está?"  {audio:midias/3EB0B1B6F514C8865B6B7F_454483.ogg}
+[10:13] CLIENTE: [áudio] "Opa, tudo bem. Então, mais em conta é esse de 289, né? Que eu entendi. Não sei se eu entendi certo."
+[10:27] LOJA: [áudio] "Isso, isso mesmo, Guedes. O melhor preço é para o pneu da marca GP Premium, que ele está por R$ 289,00 a unidade. Esse valor é para o débito e para o Pix também, tá?"  {audio:midias/3EB03167B1BD9633186BE1_568388.ogg}
+[15:25] LOJA: [áudio] "Guedes, eu vou te encaminhar aqui a nossa localização, pois se houver a possibilidade, você passa aqui, tá bom?"  {audio:midias/3EB00D08EFA695C2F52ABC_873492.ogg}
+[15:25] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

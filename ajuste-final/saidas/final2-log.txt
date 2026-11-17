@@ -1,0 +1,2 @@
+[BotService][TRAVA POS-ORCAMENTO] cortado: ["O valor que te passei antes era da 175/65/14, que é a medida do Gol mais novo.","Também dá pra parcelar em até 10x no cartão!"]
+[BotService][TRAVA POS-ORCAMENTO] cortado: ["Ajustei em relação ao valor que te passei antes, porque essa é a medida certa pro seu carro.","Se preferir, você pode parcelar em até 10x no cartão!"]

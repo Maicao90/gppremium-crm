@@ -1,0 +1,23 @@
+CONVERSA 04d4fbacf2 | contato: Pr. André | 03/09/2026 19:45 até 04/09/2026 10:51 | 5 msgs do cliente, 6 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[19:45] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso?
+[19:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:58] CLIENTE: 205/55/16
+--- 04/09/2026 (Fri) ---
+[08:25] LOJA: *Josy:*
+Bom dia!
+[08:25] LOJA: [foto]
+[08:25] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:37] CLIENTE: Valeu 👍
+[10:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:43] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB06B47BB4651B9F4853B_239507.ogg}
+[10:51] CLIENTE: Valparaíso
+[10:51] CLIENTE: [áudio] "Ô Josi, não, eu encontrei uns pneus mais em conta, tá bom? Eu encontrei uns aqui, bom, né? Importado e bem mais em conta do que o seu."

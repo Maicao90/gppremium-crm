@@ -1,0 +1,22 @@
+CONVERSA 093e283edd | contato: Eudes Carvalho | 10/10/2026 11:57 até 13/10/2026 16:07 | 8 msgs do cliente, 9 da loja, 0 do robô
+
+--- 10/10/2026 (Sat) ---
+[11:57] CLIENTE: Bom dia
+[11:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:58] CLIENTE: [áudio] "Oi, Jôs, tudo bem? O Luiz Claudio, mecânico da Peugeot, passou o seu contato. Estou precisando de 2 pneus, 205, 55, 17. Você tem aí? Qual o valor?"
+[11:59] LOJA: [áudio] "Oi, Eudes. Bom dia, tudo jóia? Pois eu tenho a que sim."  {audio:midias/3EB04A30F344815C991236_233145.ogg}
+[11:59] LOJA: [áudio] "Olha, o GP Premium, o pneu aqui da fábrica, ele está por apenas R$ 349,00 se o pagamento for no débito ou no Pix."  {audio:midias/3EB0DFC3012F341C4EBD87_669651.ogg}
+[12:01] CLIENTE: Onde fica a loja?
+[12:02] LOJA: [áudio] "Nós somos aqui de Luziânia, Goiás. Você fala de onde?"  {audio:midias/3EB08DFAB21DD81F90099A_892837.ogg}
+[12:04] CLIENTE: Sou de Brasília
+[12:04] CLIENTE: Riacho fundo 2
+[12:04] CLIENTE: [áudio] "Mas nesse preço tem confiança em buscar. É porque é para um brother meu. Aí eu já mandei aqui para ele, se ele quiser. A gente vai... Eu te aviso."
+[12:05] LOJA: [áudio] "Beleza, então. Aí tem uma observação, como vocês são aí de Brasília, eu posso mandar os pneus para uma borracharia que fica no Novo Gama, aí se vocês tiverem interesse, nós alinhamos, né, o dia que fique bom para vocês e damos continuidade na negociação, tá? Aí é opcional, posso mandar para o Novo Gama, mas se vocês quiserem vir até aqui serão muito bem-vindos, tá bem?"  {audio:midias/3EB02527E91FC8D71EA89E_657804.ogg}
+[12:06] CLIENTE: Melhor ainda
+[12:07] CLIENTE: [áudio] "Aí, assim que ele me der um retorno aqui, eu falo com vocês de novo. Aí o Luiz já tinha passado, né? Ele tinha comentado comigo uma vez a qualidade aí. Aí eu já... Quando tem qualidade, a gente indica, né?"
+[12:09] LOJA: [áudio] "Exatamente isso. Beleza, e na terça-feira nos falamos mais. Tchau, Joia, obrigada aí pelo contato, bom final de semana e bom feriado."  {audio:midias/3EB0F3DEFCE37B4529D743_708123.ogg}
+--- 13/10/2026 (Tue) ---
+[16:02] LOJA: [áudio] "Oi, eu disse tudo jóia."  {audio:midias/3EB0532D7AF2E6EBFA9185_502763.ogg}
+[16:06] LOJA: [foto]
+[16:07] LOJA: Vamos dar continuidade?

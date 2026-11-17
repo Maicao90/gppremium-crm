@@ -1,0 +1,35 @@
+CONVERSA 28cded7342 | contato: Fernando | 09/10/2026 19:18 até 13/10/2026 16:38 | 6 msgs do cliente, 14 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[19:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:18] CLIENTE: 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[19:20] CLIENTE: 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[19:20] CLIENTE: Aro 14
+--- 10/10/2026 (Sat) ---
+[08:08] LOJA: Bom dia!
+[08:09] LOJA: Qual a medida dos pneus que você precisa ?
+[11:53] LOJA: [áudio] "Oi Fernando, tudo bem com você? Eu sou a Josi. Fernando, eu gostaria muito de saber qual que é a medida dos pneus que você precisa, porque 14 é apenas o aro. Se você não estiver perto do seu carro, né, que a numeração do pneu está na lateral, você me diz qual é o seu carro que eu faço um orçamento com a medida original. Pode ser?"  {audio:midias/3EB0606C1B977165421180_892018.ogg}
+[12:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:15] CLIENTE: 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem 195-55-85H
+[12:17] CLIENTE: 195-55-85-H
+[12:17] CLIENTE: [áudio] "Boa tarde, essa loja fica antes."
+--- 13/10/2026 (Tue) ---
+[08:13] LOJA: [áudio] "fokinowski, fui lembrado na turma e curte amigos sobre o nosso site de aprendizagem forte a toda negligência."  {audio:midias/3EB0DF655B913FA36D5D88_320479.ogg}
+[08:13] LOJA: [áudio] "Pra pra pra pra me é é e ti ti ti ti di por que é não não não é se espon que ap downloaded Ká Ká Ká well, the way up Gaya, it hoping heavy up Gaya people with Day 1Side1Side1Side3 Free, Poh Gimiento temer 790 and 790x353 Iyense over a sea nom Отлич fitted no conexão, All right and over a sea, all right and over. Field in the store and over a sea, all right, all right and over a sea... mittens up TV on it?"  {audio:midias/3EB051E28249925D41BAE7_117022.ogg}
+[09:05] LOJA: [áudio] "Oi, seu Fernando, bom dia, tudo bom? Olha, eu gostaria muito que o senhor me fizesse uma gentileza de olhar na lateral do seu carro para confirmar a medida dos pneus que o senhor está precisando. Porque o senhor me solicitou aqui orçamento de pneus aro 14, só que a medida que o senhor colocou aí para mim não condiz com pneus de aro 14. Então, por gentileza, assim que o senhor pudesse, olha na lateral do carro e só confirma para mim, por favor."  {audio:midias/3EB08EBE4F7AAC293ACD2F_892664.ogg}
+[16:37] LOJA: Bem, como não sei o que o senhor está de fato precisando, vou te encmainhar 175/70/14
+[16:37] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:37] LOJA: [foto]
+[16:37] LOJA: Eu vou encerrar seu atendimento para não encher seu whatsapp de mensagem.                                                                                                                   Se precisar futuramente é só chamar. Ou se possivel, venham até nossa loja.                                                                                                  Obrigada 👋🏻
+[16:37] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:38] LOJA: [foto]

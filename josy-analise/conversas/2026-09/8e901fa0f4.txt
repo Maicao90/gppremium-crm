@@ -1,0 +1,28 @@
+CONVERSA 8e901fa0f4 | contato: Gilson | 30/09/2026 10:40 até 30/09/2026 10:49 | 13 msgs do cliente, 9 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[10:40] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:41] CLIENTE: Bom dia
+[10:41] CLIENTE: 185/65 / 15
+[10:41] LOJA: *Josy:*
+Bom dia!
+[10:41] CLIENTE: Bem
+[10:41] CLIENTE: Josy
+[10:41] LOJA: [foto]
+[10:41] CLIENTE: Pneu mais em conta
+[10:42] LOJA: [áudio] "Oi, Gilson. Bom dia. Como é que você está? Gilson, eu tenho todas essas opções de marcas no dia de hoje, tá? Eu estou com a oferta do pneu da marca GP Premium, que este mês, né, de R$ 289,00, ele está por apenas R$ 249,00 à vista. E se você quiser, nós já colocamos os pneus aí no seu carro."  {audio:midias/3EB060AFAC811138A51EDF_852482.ogg}
+[10:42] LOJA: [áudio] "Você mora aqui em Luziânia?"  {audio:midias/3EB021EE722AD9011FF35B_191055.ogg}
+[10:42] CLIENTE: Oi
+[10:42] CLIENTE: Não
+[10:42] CLIENTE: Recanto das emas
+[10:43] LOJA: [áudio] "Ah, sim, perfeito. E você vai precisar de quantos pneus? Pois eu posso fazer o seguinte, esse pneu, justamente como você quer um pneu mais em conta, eu consigo mandar esses pneus para uma borracharia que me ajuda demais da conta para poder atender os clientes aí de Brasília em torno. Eu posso mandar os pneus ali para uma borracharia que fica no Novo Gama e se você tiver interesse, nós podemos alinhar aqui e você pode ir lá para fazer a retirada e pode até mesmo realizar o pagamento."  {audio:midias/3EB01EF81B89A08F708ECA_431589.ogg}
+[10:45] CLIENTE: Seria 2
+[10:45] LOJA: [áudio] "Certo, perfeito. Me dê um instante."  {audio:midias/3EB0C795936E1595E17414_409877.ogg}
+[10:47] LOJA: [áudio] "Gilson, você precisa desses pneus ainda hoje? Que eu estava conferindo com o rapaz que faz a minha rota aqui, e ele vai deixar justamente um jogo de pneus nessa borracharia, creio que daqui a pouco ele está chegando lá, aí se você tiver interesse, me fala qual que vai ser a forma de pagamento, só para eu poder avisar o rapaz, e se não for incomodá-lo, claro, me fala qual que é o seu nome completo, o CEP do seu endereço e endereço, que eu vou já agilizar para ele poder fazer a garantia dos pneus para você."  {audio:midias/3EB0C0733CF3D08D7E5232_117586.ogg}
+[10:47] CLIENTE: Amiga, pode deixar
+[10:47] CLIENTE: Já resolvi
+[10:47] CLIENTE: Desde já muito obrigado
+[10:49] LOJA: *Josy:*
+Certo.

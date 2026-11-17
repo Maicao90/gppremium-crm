@@ -1,0 +1,14 @@
+CONVERSA 5d498b0c89 | contato: RB | 25/09/2026 14:55 até 25/09/2026 15:44 | 3 msgs do cliente, 5 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[14:55] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[14:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:55] CLIENTE: R 18 165 40
+[15:06] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Eu sou a Josi e, no momento, não dispõe dessa opção a pronta entrega. Será apenas através de encomenda e leva uns 3 dias úteis para chegar se o meu distribuidor tiver a opção aí. Você era aqui de Luziânia?"  {audio:midias/A5F2C1796D7DDB945CF342C0985D9925_760146.ogg}
+[15:10] CLIENTE: [áudio] "Opa, entendi, entendi, jovem. E qual seria o valor deles? Eu sou de Brasília, sou de Brasília."
+[15:11] LOJA: [áudio] "Bem, como eu não tenho a sua opção aqui a pronta entrega, conforme eu te disse, eu preciso aguardar a resposta dos meus distribuidores para ver se eles têm no estoque. Então, assim que eles me responderem, eu te passo direitinho a marca o preço e o prezo de entrega, tudo bem?"  {audio:midias/A5FE1569082725137F049EECA5EAF754_455843.ogg}
+[15:43] LOJA: 18" 165 40 R18 85V XL DS2	R$ 664,00 em 10x sem juros.
+[15:44] LOJA: [áudio] "Olá, tudo bem? Vai ter o pneu da marca Belint. A unidade está por R$664,00. Esse valor parcelinha até 10 vezes sem juros para você."  {audio:midias/A5347E1D18706818639789283BA676BE_210704.ogg}

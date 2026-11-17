@@ -1,0 +1,18 @@
+CONVERSA fd31a2e215 | contato: JOÃO MARIA ALVES DANTAS | 18/08/2026 09:20 até 19/08/2026 17:54 | 5 msgs do cliente, 6 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[09:20] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[09:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:21] CLIENTE: Pneus 185/ 65 aro 15 renault sandereiro
+[09:21] CLIENTE: Pesquisando  ser faz a troca e alinhamento balanceamento
+[09:27] LOJA: [foto]
+[10:10] LOJA: o pneu ja colocamos no ato da compra por nossa conta, alinhamento e balanceamento, são a parte
+[10:51] CLIENTE: Ok
+[10:51] CLIENTE: Valor dos 4 pneus
+[10:54] LOJA: De qual marca? Qual forma de pagamento?
+[17:23] LOJA: [áudio] "E Sr. João, o senhor mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0CFBA26FB56688C83A0_577380.ogg}
+--- 19/08/2026 (Wed) ---
+[17:54] LOJA: 🙋🏼‍♀️

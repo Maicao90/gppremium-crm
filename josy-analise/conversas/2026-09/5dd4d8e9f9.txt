@@ -1,0 +1,15 @@
+CONVERSA 5dd4d8e9f9 | contato: cleber martins | 09/09/2026 11:32 até 09/09/2026 11:46 | 4 msgs do cliente, 4 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[11:32] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:33] CLIENTE: Bom dia
+[11:34] CLIENTE: 175/70/14
+[11:36] LOJA: [foto]
+[11:36] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:36] LOJA: [áudio] "Olá, tudo bem com você, Kleber? E você mora aqui em Luziânia mesmo?"  {audio:midias/3EB080E228654EE347297A_810700.ogg}
+[11:46] CLIENTE: [áudio] "Ah, a fábrica é em Luziânia. Não, eu peguei na internet aqui pela região aqui, mas foi pra Luziânia. Aí é longe, pra mim eu moro em Brasília."

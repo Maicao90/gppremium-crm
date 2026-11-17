@@ -1,0 +1,12 @@
+CONVERSA 25b516a394 | contato: Wanderson Silva | 17/08/2026 12:05 até 17/08/2026 14:31 | 2 msgs do cliente, 6 da loja, 0 do robô
+
+--- 17/08/2026 (Mon) ---
+[12:05] LOJA: [foto]
+[12:05] LOJA: [áudio] "Olá, tudo bem com você? O sistema voltou. E no dia de hoje eu tenho aqui a pronta entrega os pneus da Goodyear, da marca HodgeTrack e pneus da marca GP Premium que estão em oferta. A unidade está por apenas R$ 249 a vista. Você é daqui de Luziânia mesmo?"  {audio:midias/3EB0579BD4789199244CA6_91773.ogg}
+[14:06] CLIENTE: [áudio] "Oi moça, tudo bom? Boa tarde. Eu sou do Valparaíso, tá bom? Mas eu vou para Luziânia direto, né? Que eu sou motorista de aplicativo. Então, eu me interesso normalmente por duas unidades, né? Somente duas... Deixa eu só ver aqui... Duas unidades. É... Se eu não tenho nenhum mais em conta não, mais baratinho mesmo, nem que seja remold, nada assim não. É só para tampar um furo, só."
+[14:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:13] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu sou a Josi. Sim, o mais barato que eu tenho vai ser o pneu aqui, ó, de R$ 249,00 a unidade, essa opção de pagamento é para débito e Pix também. Se for para parcelar, o valor muda, mas é muito pouca coisa e, dependendo de como você quiser parcelar, nós dois podemos negociar aqui, algo que fique bom para você."  {audio:midias/3EB0E3AC2595A47AEF9721_38045.ogg}
+[14:28] CLIENTE: [áudio] "Não, tranquilo, eu vou fazer esse valor aí, comigo é no Pix. Se você fizer um bom valor, é no Pix, entendeu? Eu quero só, como eu te falei, 2 pneuzinhos, mais baratinho, não me importa a marca, nada, pode ser até remote, entendeu? É só pra sair do prego, entendeu? Qual o menor valor que você consegue no Pix, entendeu? Vai cair até semana que vem, que eu posso estar adquirindo esses aí."
+[14:31] LOJA: Te aguardando aqui na loja.
+[14:31] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

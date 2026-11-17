@@ -1,0 +1,40 @@
+CONVERSA 342ec5f7fe | contato: Edilene Caetano Eventos | 20/08/2026 08:02 até 27/08/2026 08:13 | 16 msgs do cliente, 18 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[08:02] CLIENTE: Bom dia
+[08:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:03] CLIENTE: E os pneus chegou
+[08:03] LOJA: Bom dia!
+[08:03] LOJA: Não chegou .
+[08:08] LOJA: Vou negociar com os senhores 1 pneu de outra marca conforme havíamos conversado anteriormente, pois o da mesma marca adquirida, por ora está em falta.  Vou te enviar as formas de pagamento. Os senhores analisem, e me digam qual forma de pagamento que fica boa para vocês, e a partir de sua informação vou negociar diretamente com o fornecedor para fazer um preço melhor, também conforme haviamos conversado, tudo bem!
+[08:08] CLIENTE: Ok
+[08:08] LOJA: [foto]
+[08:09] LOJA: Hoje o pneu está por esse preço.
+[08:09] CLIENTE: [áudio] "Aí, no caso, vai entrar outro, como garantir quanto de diferença."
+[08:10] LOJA: [áudio] "Oi, Dona Edilene. Bom dia, tudo bem? Então, conforme nós já havíamos conversado, o pneu de vocês teve garantia sim. Só que eu não tenho o pneu para poder entregar a vocês. Aí, a proposta na qual nós havíamos conversado era de um outro pneu que eu tinha aqui e tinha uma pequena diferença, né, na qual nós estaríamos cobrindo certa parte e vocês ficariam, né, para pagar uma outra parte. Aí, o que que ocorre? Eu te enviei aí o orçamento de como está o preço do pneu no dia de hoje. Aí, a senhora analisa, me diz qual que é a forma de pagamento que fica boa para vocês, que aí eu já vou passar aqui para o meu distribuidor, justamente para fazer um preço melhor e, a partir daí, calcular o valor de diferença que fica para nós nos ajustarmos. Obrigado. Obrigado. Obrigado. Obrigado."  {audio:midias/3EB00736F35937B20AE57D_178157.ogg}
+[08:11] CLIENTE: E avista
+[08:12] LOJA: certo.
+--- 27/08/2026 (Thu) ---
+[07:58] CLIENTE: Bom dia
+[07:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:58] CLIENTE: Posso ir buscar hoje
+[08:03] LOJA: Bom dia, sra Edilene.
+[08:03] LOJA: Sim.
+[08:04] CLIENTE: [áudio] "Você tem como mandar uma foto desse pneu aí, pra ver se tá certo e se você faz os 200 reais?"
+[08:04] CLIENTE: [áudio] "Não há diferença."
+[08:05] LOJA: O desenho é diferente, mas é a mesma medida.
+[08:05] CLIENTE: [áudio] "Tá, e você me manda a foto, por favor, se puder."
+[08:06] LOJA: [foto]
+[08:06] LOJA: [foto]
+[08:09] CLIENTE: [áudio] "Tá, beleza. Aí, você faz os 200, eu já vou fazer o pagamento aí, você manda o Pix, eu já faço o pagamento, chega aí só pegar, você deixa separado."
+[08:10] LOJA: [áudio] "Ok, bom dia, Dona Edilene. Pix de 206 reais, tá? Eu vou te mandar que o número da chave para a senhora vai ser em CNPJ, tá bom?"  {audio:midias/3EB0C1426B8B607A06FFA4_242590.ogg}
+[08:10] CLIENTE: Não tira o 6
+[08:11] CLIENTE: Só tenho os 200
+[08:11] LOJA: Não consigo, pois já negociei o ultimo preço com eles.
+[08:12] CLIENTE: [áudio] "Tá, eu vou fazer o Pix de 200, aí quando eu for pegar eu passo 6."
+[08:12] LOJA: 26.621.495/0001-60
+[08:13] CLIENTE: https://recibo.infinitepay.io/statements/Z6HD2QOVNox80tuaQUJw5mLorZuJumn4U5dMMp6NnZjdDhlWUeGcl2R7uSk
+[08:13] CLIENTE: Quando eu for pegar mais tarde passo os 6
+[08:13] LOJA: Certo!

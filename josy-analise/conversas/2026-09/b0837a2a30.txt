@@ -1,0 +1,26 @@
+CONVERSA b0837a2a30 | contato: Alan Gabriel | 03/09/2026 19:27 até 11/09/2026 17:34 | 3 msgs do cliente, 9 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[19:27] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[19:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:27] CLIENTE: interactiveResponseMessage
+[19:27] CLIENTE: 205/60 15
+--- 04/09/2026 (Fri) ---
+[08:22] LOJA: *Josy:*
+Bom dia!
+[08:23] LOJA: [foto]
+[08:23] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[18:11] LOJA: [áudio] "Olá, tudo bem com você? Eu te encaminhei um orçamento mais cedo e gostaria de saber se alguma dessas opções te atendem. Assim que possível, você consegue me dar um retorno, por gentileza? Ou sim, você mora aqui em Luziânia?"  {audio:midias/3EB05780F5D865AD11C2CB_943863.ogg}
+--- 10/09/2026 (Thu) ---
+[17:17] LOJA: [áudio] "Oi Alain, tudo bem?"  {audio:midias/3EB0B3C8BD62B5B857D90F_704042.ogg}
+[17:17] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[17:34] LOJA: [áudio] "Oi, Alan. Tudo jóia? Bem, eu vi que você viu o vídeo que eu fiz aí para nós tentarmos interagir, mas imagino que na correria você tenha esquecido de me responder. Então, eu vou finalizar com seu atendimento justamente para não ficar enchendo seu WhatsApp de mensagens, porque eu sei que é chato, a gente acaba se tornando inconveniente. Eu vou te mandar aqui a localização da nossa empresa, que se houver a possibilidade, você vem até aqui. Tá, jóia? Obrigada por sua atenção e bom final de semana."  {audio:midias/3EB00F248B6ADAC05F835B_105797.ogg}
+[17:34] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

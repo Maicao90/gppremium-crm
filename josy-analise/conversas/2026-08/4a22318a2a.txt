@@ -1,0 +1,39 @@
+CONVERSA 4a22318a2a | contato: . | 17/08/2026 12:03 até 17/08/2026 12:15 | 19 msgs do cliente, 17 da loja, 0 do robô
+
+--- 17/08/2026 (Mon) ---
+[12:03] LOJA: Vou reservar para você, tem certeza que não quer o jogo? tenho apenas 12 unidades em estoque. Acaba rápido.
+[12:03] CLIENTE: Não meu anjo , os dois dianteiros tem 1 mês de uso
+[12:03] CLIENTE: Ai vou coloca atrás
+[12:04] LOJA: Está bem.
+[12:04] CLIENTE: Reserva 2 eu pego com você sábado cedo umas 9:30 pode ser ?
+[12:04] LOJA: Claro! Pode sim!
+[12:04] CLIENTE: Ficou quantos mesmo
+[12:04] CLIENTE: Cada !
+[12:07] LOJA: [áudio] "Você havia me perguntado se eu fechava 230 para você, né? E aí eu conversei com meu gerente, ele disse que se o pagamento for em dinheiro, ele faz por 230 a unidade. Então, os dois pneus vão ficar por 460 reais, está bem?"  {audio:midias/3EB0691103E50805868F30_309660.ogg}
+[12:09] CLIENTE: Ótimo
+[12:10] CLIENTE: Pode deixa reservado pra mim por favor 🙏🏻
+[12:10] LOJA: [áudio] "Combinado então, tá já, Dudu?"  {audio:midias/3EB00EF9B554ED5BBD6BE8_353750.ogg}
+[12:10] CLIENTE: 165/70/13
+[12:10] LOJA: Isso, rs
+[12:10] CLIENTE: [áudio] "Me manda uma fotinha deles, você consegue me mandar de novo? Que eu apaguei tudo no meu telefone, eu dei uma limpada boa nele e apaguei tudo."
+[12:11] LOJA: [áudio] "Mas rapaz, como assim? Por que que você apagou as minhas mensagens? Você não pode."  {audio:midias/3EB0EEDFE322F41959B255_431174.ogg}
+[12:11] LOJA: [áudio] "Me dê só um minutinho aí que eu já te mando as fotos de novo, tá bom?"  {audio:midias/3EB0E567EDD0A2EC5DDAA0_756498.ogg}
+[12:11] CLIENTE: [áudio] "Meu telefone estava com quase 17 mil fotos, Jô. Fotos, vídeos, trem, demais. Eu fui e apaguei quase tudo."
+[12:11] LOJA: [foto]
+[12:11] LOJA: [foto]
+[12:11] LOJA: [foto]
+[12:12] CLIENTE: [áudio] "E conversa também, eu apaguei muitas também. Tinha quase 300 mensagens do povo perguntando ao meu pai como que ele tá, muita gente. Eu fui e dei um limpa também."
+[12:12] LOJA: [áudio] "Ai, eu não te julgo. Como eu também tô precisando fazer uma limpeza aqui, mas... Ai, tem coisa que dá dó, ó."  {audio:midias/3EB079001B7E4767A59C31_970900.ogg}
+[12:12] CLIENTE: Tem garantia né kk
+[12:12] CLIENTE: [áudio] "Ah, eu também tinha esse negócio, entendeu? Eu falei, não, vou limpar esse telefone, eu nunca tinha limpado, seis meses eu peguei e falei, não, vou dar uma limpada boa agora. Ah, trem demais."
+[12:12] LOJA: [áudio] "É, aí, no caso, né, de pessoas perguntando a respeito aí já de outro segmento, né, mas é assim mesmo."  {audio:midias/3EB047830424FCCE7DA6A2_47580.ogg}
+[12:13] CLIENTE: Sim 🙌
+[12:13] LOJA: [áudio] "Eu ainda estou decidindo o que eu faço, porque tem umas fotos que são muito boas, e aí dá dó, caramba! É tenso, é complicado."  {audio:midias/3EB08EBCB8E9C01B5498B5_170712.ogg}
+[12:13] CLIENTE: [áudio] "Não, mas foto antiga, foto minha, foto desse trem, foto das minhas coisas, entendeu? Não apago não. É mensagem de grupo, é fotinha, é trem à toa, armaria."
+[12:13] LOJA: [áudio] "E com questão a garantia, sim, os pneus têm garantia, sim, tá? E independente de marca, a garantia do pneu é válida se porventura surgir algum tipo de defeito de fabricação."  {audio:midias/3EB01727AD1A0E08E19E5F_826439.ogg}
+[12:14] LOJA: [áudio] "Ah não, nesse caso realmente não dá. Aí a gente apaga mesmo. Porque a gente não vai usar, né?"  {audio:midias/3EB0773D80A4204268CBC6_451498.ogg}
+[12:14] CLIENTE: Eles rodam quantos kms
+[12:14] CLIENTE: Siim muito foto atoa
+[12:14] LOJA: [áudio] "Se o carro estiver bem alinhado, você mantiver os pneus sempre bem calibrados, a vida eu te obedeço sem estar meio tranquilo."  {audio:midias/3EB0A6048CBDAFAB7E7639_105986.ogg}
+[12:15] CLIENTE: Sim 🙌 meu carro antigo placa preta lkkk ando 1 x por semana
+[12:15] CLIENTE: Corsa wind 2002 com 30 mil kms rodados

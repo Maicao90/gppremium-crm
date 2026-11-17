@@ -1,0 +1,62 @@
+CONVERSA f6f46c111f | contato: Jr. | 23/09/2026 10:55 até 23/09/2026 15:15 | 18 msgs do cliente, 26 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[10:55] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:55] LOJA: *Josy:*
+🙋🏼‍♀️
+[10:56] CLIENTE: Pensei para ram dakota , esses mais cravudos para ela ficar com a carcaça mais cheia no para lamas
+[10:56] CLIENTE: Está saindo quanto ?
+[10:56] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa?
+[10:56] CLIENTE: Roda aro 17
+[10:56] CLIENTE: Gostaria de sugestões, um que preencha mais o para lamas do aro 17
+[10:57] CLIENTE: Estou usando de fábrica que acredito ser misto
+[10:59] LOJA: *Josy:*
+ Pneus maiores como 265/70 R17 ,  275/70 R17 ou 285/70 R17 não dispomos dessas opções de medida a pronta entrega.
+[11:00] LOJA: *Josy:*
+265/65/17?
+[11:01] LOJA: [áudio] "Oi Júnior, bom dia, tudo bem?"  {audio:midias/3EB072E84790A857BF45CC_50556.ogg}
+[11:01] LOJA: [áudio] "Qual que é o ano aí da sua caminhonete?"  {audio:midias/3EB08B150ABEC3046DC04C_256224.ogg}
+[11:04] CLIENTE: 2026
+[11:05] CLIENTE: Isso
+[11:29] LOJA: *Josy:*
+Na sua camionete tem espaçador?
+[11:30] LOJA: [áudio] "Júnior, Júnior mesmo é seu nome, né? Bem, eu solicitei aqui para o meu distribuidor se ele tem essas medidas maiores aí que, né, eu falei contigo, porque aqui a pronta entrega eu não tenho, tá? Assim que eles me responderem eu te passo direitinho marca, preço e prazo de entrega."  {audio:midias/3EB042FC3D5E2926A62556_111374.ogg}
+[11:31] CLIENTE: Júnior sim
+[11:31] CLIENTE: Tem não
+[11:31] LOJA: *Josy:*
+Hm...
+[11:32] LOJA: *Josy:*
+Dependendo do pneu (especialmente se for do tipo MUD/Lama com cravos laterais pesados), pode ser necessário colocar um pequeno espaçador ou kit de levante (lift).
+[11:33] CLIENTE: Entendi
+[11:33] CLIENTE: Eu não quero ela levantada não, quero mais pra preencher a caixa de roda , pois os originais são pequenos aí fica um espaço feio
+[11:40] LOJA: *Josy:*
+Entendi. de todo modo aguardo a resposta dos distribuidores.
+[11:41] CLIENTE: Certo
+[14:36] LOJA: [foto]
+[14:36] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 500,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:37] LOJA: [áudio] "Júnior, inclusive esse 285,70 que eu coloquei no orçamento, até vendi para um cliente, só que foi de outra marca, eu tenho até a foto aqui para você ver como é que ficou na caminhonete."  {audio:midias/3EB09EFA9FE5441329FE6A_547751.ogg}
+[14:38] LOJA: [foto]
+[14:38] LOJA: [áudio] "E se você quiser, eu peço as fotos dessas macas aí para você."  {audio:midias/3EB060FC5D674D65E0C7EE_914718.ogg}
+[14:46] CLIENTE: Aro 17?
+[14:47] CLIENTE: Quero sim
+[14:48] LOJA: *Josy:*
+Isso! Instalei 285/70/17
+[14:50] LOJA: PNEU WANLI LT285/70 R17 10PR 121/118R SU006 AT (RO) 👇🏻
+[14:50] LOJA: [foto]
+[14:51] LOJA: *Josy:*
+PNEU OWL ARIETIS LT265/70 R17 10PR 121/118S ALL-TERRAIN-AX5 👇🏻
+[14:52] LOJA: [foto]
+[14:52] LOJA: *Josy:*
+PNEU APTANY LT265/70 R17 10PR 121/118S RU007 AT (RO)👇🏻
+[14:52] LOJA: [foto]
+[14:53] LOJA: [foto]
+[15:03] CLIENTE: Vou analisar com calma e te chamo
+[15:03] CLIENTE: Por hora, obrigado
+[15:15] LOJA: *Josy:*
+Disponha... amanhã nos falamos.

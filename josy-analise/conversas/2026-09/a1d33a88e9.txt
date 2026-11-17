@@ -1,0 +1,30 @@
+CONVERSA a1d33a88e9 | contato: Weber | 24/09/2026 10:48 até 24/09/2026 11:00 | 10 msgs do cliente, 11 da loja, 0 do robô
+
+--- 24/09/2026 (Thu) ---
+[10:48] CLIENTE: bOM DIA e do gp pneus loja de pneus?
+[10:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:48] CLIENTE: 225/65/17
+[10:49] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Sim, aqui é a loja de pneus da marca GP Premium. Eu tenho aqui nessa medida por 399 a vista. Você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB0A43B2E9BE36BACA706_389388.ogg}
+[10:50] CLIENTE: moro em uberlandia mas vou em brasilia uma vez ao mes e passo na frente de voces sempre so que em horarios noturnos nunca deu pra parar e ver valores
+[10:51] CLIENTE: 399 a vista? pneus bons? vcs sao fabrica ne
+[10:51] CLIENTE: novos
+[10:52] LOJA: *Josy:*
+Isso! No caso a linha que produzimos, é de pneus ecologícos , o Inmetro pede para classifica-los como remodelagem. Mas são coisas bem diferentes.
+[10:52] LOJA: *Josy:*
+E Uberlândia tem muitos clientes nossos!
+[10:53] CLIENTE: So uma dúvida.  Eles os pneus sao fabricados do zero ou em cima de pneus ja usados? Pq remold aqui sao estes que relatei.
+[10:54] LOJA: [áudio] "Sim, nós utilizamos uma estrutura. Entretanto, como aqui o padrão é bem criterioso, que é o mesmo do europeu, precisam ser estruturas que estejam completamente intactas, tá? E aí, nós fazemos o revestimento todo dela novamente. Então, assim, é um processo criterioso que não é o mesmo dos pneus remoldes convencionais."  {audio:midias/3EB00673C6DC4F04FC58C8_105836.ogg}
+[10:55] CLIENTE: ok. vou avaliar certinho e procuro vcs quando eu for ai.
+[10:55] LOJA: *Josy:*
+Na medida 225/65/17 👇🏻
+[10:55] LOJA: [foto]
+[10:56] LOJA: [áudio] "Quando você estiver passando por aqui, entre aqui na nossa loja para nós conversarmos pessoalmente, porque fica até mais prático de você compreender que aqui, realmente, o processo é o mesmo de padrão europeu, então, assim, é bem criterioso, assim, você não faz ideia do tão criterioso que ele é para poder fazer esse pneu, e ele pode completamente dar linha de remoto convencional. Justamente por isso estamos há 10 anos no mercado, os pneus são de primeira linha, nós produzimos desde o aro 13 até 18 para caminhonete, pneu de corrida, então, assim, é uma linha premium mesmo, tá jóia?"  {audio:midias/3EB004D00FE8BE3B65477E_928284.ogg}
+[10:57] CLIENTE: sim. claro. qual horario de funcionamento de voces?
+[10:58] LOJA: [áudio] "O nosso horário de atendimento é de segunda a sexta, de 8 da manhã até as 18, nós não fechamos para o almoço, e aos sábados de 8 até o meio-dia."  {audio:midias/3EB04CCA7896E6C0E7CFC3_978109.ogg}
+[10:59] CLIENTE: bacana se eu passar a noite tento ir no sabado de manha . geralmente vou na quinta a noite . sexta resolvo monte de coisa... sabado da pra ir ai
+[10:59] LOJA: *Josy:*
+Como for melhor para você , Weber...
+[10:59] CLIENTE: Obrigado pela atençao. Em breve te chamo aqui.
+[11:00] LOJA: *Josy:*
+Imagina... será uma satisfação recebe-lo em nossa empresa!

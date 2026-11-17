@@ -1,0 +1,17 @@
+CONVERSA 0e1eb4111f | contato: Carlos | 02/09/2026 13:12 até 02/09/2026 17:49 | 2 msgs do cliente, 9 da loja, 0 do robô
+
+--- 02/09/2026 (Wed) ---
+[13:12] LOJA: *Josy:*
+Boa tarde, Carlos  Alberto
+[15:47] LOJA: [foto]
+[15:47] LOJA: [áudio] "Carlos, por hora eu consegui aqui a opção do 205, 40 e 18. Cada pneu está por R$ 547,00 a vista, e essa é uma opção que é somente por encomenda, chega em três dias úteis, mediante um pagamento calção aí de R$ 250,00. Tá jóia?"  {audio:midias/3EB02E5EA8BE35DC9C4DF1_658731.ogg}
+[17:25] LOJA: [foto]
+[17:26] LOJA: [áudio] "Carlos, consegui aqui um retorno também do R$ 215,35,18. A unidade está por R$ 470,00 para o pagamento à vista e é a mesma situação do anterior, tá? É uma opção por encomenda, só que se daqui ele leva já 10 dias para poder chegar."  {audio:midias/3EB06FF62AEA734F812007_405706.ogg}
+[17:27] LOJA: *Josy:*
+Ou também, pode instalar sem medo o 205/50/17 que eu tenho aqui a pronta entrega.
+[17:27] LOJA: [foto]
+[17:47] CLIENTE: [áudio] "Oi, boa tarde. Deixa eu te falar, ocorreu um imprevisto aqui, aí no caso, semana que vem eu te procuro aí, tá bom?"
+[17:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:48] LOJA: [áudio] "Tá, Joia Carlos? E aí, olha só, eu te mandei o orçamento do R$ 205,50,17 como opção que vai lhe atender muito bem, tá? Aí, dá uma olhada aí no orçamento."  {audio:midias/3EB0A603F7AD97ED93D666_673135.ogg}
+[17:49] CLIENTE: [figurinha]

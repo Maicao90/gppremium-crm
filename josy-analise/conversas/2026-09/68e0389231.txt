@@ -1,0 +1,23 @@
+CONVERSA 68e0389231 | contato: Ricardo | 14/09/2026 14:26 até 14/09/2026 15:18 | 9 msgs do cliente, 7 da loja, 0 do robô
+
+--- 14/09/2026 (Mon) ---
+[14:26] LOJA: *Josy:*
+Boa tarde, tudo bem contigo?
+[14:26] LOJA: *Josy:*
+Você nos ligou aqui na pneus GP Premium
+[14:26] CLIENTE: Sim
+[14:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:33] LOJA: Pneus 215/50/17 certo?
+[14:36] CLIENTE: 215  50 17
+[14:36] CLIENTE: Goodyear eficient grip
+[14:36] CLIENTE: 2 unidades
+[14:37] CLIENTE: Sim
+[14:47] LOJA: [áudio] "Certo. Como eu não tenho aqui a pronta entrega, eu estou aguardando a resposta dos meus distribuidores. Está bem? Assim que eles me responderem, eu te passo direitinho o preço, tá?"  {audio:midias/3EB05111421C6C1E9B4D5B_475679.ogg}
+[15:16] CLIENTE: Ok
+[15:17] LOJA: *Josy:*
+Vai ter somente  Dunlop , chega  para nós amanhã.
+[15:17] LOJA: [foto]
+[15:18] CLIENTE: Obrigado
+[15:18] CLIENTE: Mas pra mim não dá
+[15:18] CLIENTE: Obrigado

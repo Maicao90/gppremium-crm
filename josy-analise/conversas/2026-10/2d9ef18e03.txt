@@ -1,0 +1,21 @@
+CONVERSA 2d9ef18e03 | contato: Clayton | 06/10/2026 08:02 até 06/10/2026 08:23 | 3 msgs do cliente, 8 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[08:02] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[08:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:02] CLIENTE: [áudio] "Bom dia, tudo bem? Eu tô precisando de uns pneuzinhos aro 14, 17, 5, 70, 14. Você tem eles aí aqui, as importadinhos, que não seja remolde?"
+[08:03] LOJA: *Josy:*
+Bom dia!
+[08:03] LOJA: [foto]
+[08:03] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:03] LOJA: *Josy:*
+O remold é o de R$ 279,00
+[08:03] CLIENTE: [áudio] "Então, tranquilo. Mais tarde eu dou uma passadinha aí. Deixa eu ver como é que vai ser o dia aqui, tá bom? Obrigado por enquanto."
+[08:04] LOJA: [áudio] "Perfeito, Cleiton. Olha, aqui nós não fechamos para o almoço, não."  {audio:midias/3EB0223A53A01B03F5D16A_418675.ogg}
+[08:04] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:23] LOJA: [foto]

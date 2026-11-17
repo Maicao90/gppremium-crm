@@ -1,0 +1,37 @@
+CONVERSA eefb3f05bd | contato: Reinaldo | 19/09/2026 14:25 até 22/09/2026 11:53 | 7 msgs do cliente, 17 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[14:25] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[14:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:26] CLIENTE: [áudio] "Quanto é o pneu 14 de vocês aí?"
+--- 21/09/2026 (Mon) ---
+[08:07] LOJA: [áudio] "Olá, Sr. Reinaldo, bom dia, tudo bem? Depende da medida, os valores mudam, tá? Eu gostaria de saber qual que o senhor está precisando."  {audio:midias/3EB09606CC367050BE9263_712009.ogg}
+[08:07] LOJA: [áudio] "Porque eu tenho aqui 1,6570 por 239, 1,7565 por 249, e assim vai mudando, conforme a medida é um valor, tá?"  {audio:midias/3EB057C0193F9E5D14CA18_417671.ogg}
+[08:09] CLIENTE: E o 14 165
+[08:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:10] LOJA: [foto]
+[08:10] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:13] LOJA: *Josy:*
+Mora aqui em Luziânia-Go?
+[16:25] LOJA: *Josy:*
+🙋🏼‍♀️
+[16:42] LOJA: [áudio] "O senhor mora aqui em Luziânia mesmo, eu posso separar essa maca aqui para o senhor vir instalar?"  {audio:midias/3EB0F237E7322FBAE057E8_651882.ogg}
+--- 22/09/2026 (Tue) ---
+[08:35] LOJA: [áudio] "Oi, Sr. Reinaldo, bom dia. Tudo jóia? Eu te encaminhei um orçamento ontem e gostaria de saber se o senhor pretende seguir com a negociação. Até te perguntei se mora aqui em Luziânia, né, para podermos agilizar o seu atendimento. Assim que possível, o senhor consegue me dar o retorno, por gentileza."  {audio:midias/3EB0372CE7785AFBA9CD2A_984808.ogg}
+[11:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:44] CLIENTE: [áudio] "Não, eu moro no Jardim Lá, Jorge. É porque minha sogra estava aqui querendo os pneus e eu liguei, mas não consegui falar imediato e ela terminou comprando já. Isso aí é da fábrica de remoto ou o que que é? Fala aí para mim. Mas se quiser mandar o preço também, pode mandar para mim, por favor, que aí a gente já fica por dentro do que está acontecendo."
+[11:45] CLIENTE: 14 175
+[11:45] LOJA: [áudio] "É sim, mas o Senhor não teve dificuldade de falar comigo. Eu te respondi assim que o Senhor me mandou mensagem."  {audio:midias/3EB0D7A3BFC5D9E706C1C8_844955.ogg}
+[11:46] LOJA: [áudio] "O Senhor me mandou mensagem ontem às 8 e 9 da manhã e eu te respondi às 8 e 10."  {audio:midias/3EB0AF5B382830280675D0_385121.ogg}
+[11:47] LOJA: [áudio] "Aí eu te enviei aqui 165-70-14, que ele está na promoção, de R$ 279,00 por apenas R$ 239,00 a vista. E nós já colocamos os pneus. Pode conferir aí as nossas conversas, para gentileza, para ver se realmente chegou."  {audio:midias/3EB0073F70B48F53DE76F8_785562.ogg}
+[11:50] LOJA: [áudio] "Aí, seu Reinaldo, eu vou deixar aqui na nossa conversa também a localização da nossa loja, que se houver a possibilidade, né, em algum outro momento, vocês vêm direto aqui. O nosso horário de atendimento é de segunda a sexta, de 8 da manhã às 18 e aos sábados de 8 até o meio-dia, tá?"  {audio:midias/3EB0A5AAA43520C9473918_487126.ogg}
+[11:52] LOJA: [foto]
+[11:52] CLIENTE: [áudio] "Foi por isso que eu não consegui falar, porque no sábado eu mandei uma mensagem lá e vai responder só no computador, mas por isso nós não se falemos, porque eu mandei no sábado, ela comprou no sábado mesmo. Tá bom? Obrigado. Essa aí fica em frente à Coca-Cola, aqui indo pra Luziânia."
+[11:52] LOJA: [áudio] "Ah, sim, é porque no sábado o nosso horário de atendimento é até o meio-dia. Agora que eu vi, o seu irmão da mensagem era 12h25 da tarde, por isso."  {audio:midias/3EB06D0455ECA1EC7A0594_312242.ogg}
+[11:53] CLIENTE: [áudio] "Mesmo assim, eu agradeço, tá bom? Agradeço mesmo. Obrigado pela atenção. Tenha uma ótima semana e um bom trabalho."

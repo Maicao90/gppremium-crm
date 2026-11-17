@@ -1,0 +1,12 @@
+CONVERSA 75e5794b6a | contato: Gustavo Miranda | 28/09/2026 14:13 até 28/09/2026 14:28 | 2 msgs do cliente, 4 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[14:13] CLIENTE: Quero cotar o pneu 165/70 R14 GP Premium.
+[14:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:14] CLIENTE: 165/70 R14
+[14:25] LOJA: *Josy:*
+Boa tarde, temos sim!
+[14:25] LOJA: *Josy:*
+Os pnesu GP Premium, estão em oferta de R$ 279,00 por apenas R$ 239,00 a vista.
+[14:28] LOJA: [foto]

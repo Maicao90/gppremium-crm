@@ -1,0 +1,34 @@
+CONVERSA e2e3abdef6 | contato: 🌹Elaine ❤️ | 08/09/2026 09:21 até 08/09/2026 11:19 | 7 msgs do cliente, 13 da loja, 0 do robô
+
+--- 08/09/2026 (Tue) ---
+[09:21] LOJA: *Josy:*
+Bom dia!
+[09:21] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:24] LOJA: [foto]
+[09:39] CLIENTE: Obrigada
+[09:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:45] LOJA: *Josy:*
+Por nada! Imagina...
+[10:03] LOJA: *Josy:*
+A localização está carregando?
+[10:04] CLIENTE: Sim
+[11:11] CLIENTE: Sai daí agora a pouco Elaine, qual valor do pneu  175 65 14
+[11:11] LOJA: *Josy:*
+R$ 249,00
+[11:12] LOJA: *Josy:*
+Se for no debito ou pix
+[11:12] CLIENTE: Ok
+[11:12] CLIENTE: Obrigada
+[11:12] LOJA: *Josy:*
+Disponha!
+[11:12] LOJA: *Josy:*
+Quer aproveitar e levar?
+[11:14] CLIENTE: E para meu filho vou conversar com ele primeiro
+[11:15] LOJA: *Josy:*
+Tranquilo... vou te encaminhar a planilha com as opções de parcelamento.
+[11:16] LOJA: [foto]
+[11:17] CLIENTE: Muito obrigado
+[11:19] LOJA: *Josy:*
+Disponha!

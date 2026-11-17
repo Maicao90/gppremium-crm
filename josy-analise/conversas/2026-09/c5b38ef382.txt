@@ -1,0 +1,24 @@
+CONVERSA c5b38ef382 | contato: Marcos Antonio Nolasco | 03/09/2026 20:37 até 04/09/2026 18:52 | 4 msgs do cliente, 10 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[20:37] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[20:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 04/09/2026 (Fri) ---
+[08:25] LOJA: *Josy:*
+🙋🏼‍♀️
+[08:26] CLIENTE: [áudio] "Pneus GP 17, 205, 45, 17."
+[08:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:43] LOJA: *Josy:*
+Temos sim!
+[08:43] CLIENTE: 205 45 17
+[08:43] LOJA: [foto]
+[18:17] LOJA: [áudio] "Olá, tudo bem com você? Durante o dia eu te encaminhei um orçamento e eu gostaria de saber se a opção que eu te encaminhei te atende e se pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0DF5DD6608AB03F5B42_494165.ogg}
+[18:43] CLIENTE: [áudio] "Sim, nega. Eu queria comprar, mas é porque eu vi o ar 17 de 299 que estava na placa aqui, aí é por isso que eu chamei vocês. Mas você falou que demonstrou que não tem esse pneu nessa promoção aí?"
+[18:51] LOJA: [áudio] "Eu creio que o senhor se enganou."  {audio:midias/3EB0684437766D29B6BC74_23970.ogg}
+[18:52] LOJA: [áudio] "Aqui na placa eu tenho a promoção para os pneus da marca GP Premium na medida R$ 215,55,17, que a unidade é R$ 395,00."  {audio:midias/3EB0860C75B75604F47396_2936.ogg}
+[18:52] LOJA: [áudio] "Ah, e agora entendi outra coisa. Está escrito aí no anúncio R$ 215,50,17 por R$ 329,00. Isso procede."  {audio:midias/3EB0D61C4BDF3918A1F0B1_892828.ogg}
+[18:52] LOJA: [foto]

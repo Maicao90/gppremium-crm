@@ -1,0 +1,77 @@
+CONVERSA 83cf0981c8 | contato: Raulison | 29/09/2026 15:07 até 19/10/2026 13:52 | 25 msgs do cliente, 30 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[15:07] CLIENTE: opa
+[15:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:07] CLIENTE: boa tarde
+[15:07] CLIENTE: pneu 225/45/17  qual vc tem mais em conta ? preciso de dois
+[15:09] LOJA: [áudio] "Oi Raulisson, como é que você está?"  {audio:midias/3EB0B05E157E6E62D1C323_123861.ogg}
+[15:10] LOJA: [foto]
+[15:10] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:11] LOJA: *Josy:*
+O mais em conta é o GP Premium , que está por apenas R$ 339,00 a vista e é o pneu mais vendido.
+[15:11] CLIENTE: [áudio] "Oi, tudo bom? Tô bem. E você, como é que você tá? Eu vi aí que você tem um de 339, né? É o mais barato que você tem, né? Isso aí no cartão fica quanto?"
+[15:12] CLIENTE: [áudio] "É, eu acho que vou pegar 2 aí com você."
+[15:13] LOJA: [áudio] "Ah, eu estou bem também, obrigada por perguntar, Raulison. Isso, isso mesmo, é o pneu aqui da GP Premium."  {audio:midias/3EB0FD55B1B2B3B457C32A_140468.ogg}
+[15:14] LOJA: [áudio] "Sim, vem assim. Você quer parcelar em quanto? Que igual eu mandei aí no orçamento? Por exemplo, se forem 10 vezes, a unidade é 380 reais, né? No caso, você vai pagar 10 parcelas de 76 reais. Aí, quanto menos parcelas, né? Muda o valor aí também, até chegar ao valor de à vista de 339."  {audio:midias/3EB07974026244B3FD4DF1_275764.ogg}
+[15:17] CLIENTE: [áudio] "Não, seria só em duas vezes."
+[15:17] LOJA: [áudio] "Ah, beleza. Em duas vezes fica por 350, um pneu por mês."  {audio:midias/3EB0A6CB8856E233520CA3_511821.ogg}
+[15:36] CLIENTE: [áudio] "Não, beleza. Acho que vou passar amanhã para pegar esses dois pneus aí."
+[15:49] LOJA: [áudio] "Combinado, Raulison."  {audio:midias/3EB0172A2B271722A19406_814873.ogg}
+[15:49] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:49] LOJA: [foto]
+[15:49] CLIENTE: amanhã pela manhã desço aí
+[15:50] LOJA: [áudio] "Beleza, combinado. Raoulson, te aguardo."  {audio:midias/3EB0D51EFBEB8496C150B4_572092.ogg}
+[15:50] CLIENTE: obrigado
+--- 30/09/2026 (Wed) ---
+[08:16] CLIENTE: [áudio] "Opa, bom dia. Não, tranquilo, mais tarde. Volta de umas 11, 11 e pouquinho, eu estou subindo aí, tá bom? Ou até antes? Estou só resolvendo umas coisas aqui. Mas obrigado, viu?"
+[08:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:17] LOJA: [áudio] "Bom dia, Raul, como é que você está? Perfeito, ficamos combinados, tá? Que nós não fechamos para o almoço, não."  {audio:midias/3EB0A617BBA6B49D77E175_834288.ogg}
+[08:36] CLIENTE: bom dia ... estou bem e vc ?
+[15:46] LOJA: [áudio] "Oi, Raul. São tudo, Joia. Passando aqui pra agradecer que você veio aqui na nossa loja, tá? E que deu tudo certo, né? Quando eu precisar, novamente, é só me chamar. Obrigada e até mais."  {audio:midias/3EB08D76323F2588D0AA04_907682.ogg}
+[18:06] CLIENTE: 🙏🏻
+--- 16/10/2026 (Fri) ---
+[13:13] LOJA: [áudio] "Raulisson, você quer que mande a foto do pneu?"  {audio:midias/3EB0608E758790B9F83EE8_384269.ogg}
+[13:29] CLIENTE: sim
+[13:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:30] CLIENTE: mas eu vou pegar 4 mesmo  mas segunda feira apenas
+[13:30] CLIENTE: na verdade amanhã vcs ficam abertos até que horas ?
+[14:14] LOJA: Amanhã até meio dia!
+[15:36] CLIENTE: blza então vai ficar pra segunda mesmo
+[15:37] LOJA: [áudio] "Ajeia, Raulson. Obrigada."  {audio:midias/A591281633300C6B243860E98651AB10_519682.ogg}
+[15:45] CLIENTE: eu que agradeço
+--- 19/10/2026 (Mon) ---
+[08:02] CLIENTE: opa bom dia ... passei bem e vc ?
+[08:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:03] CLIENTE: 225/55/r18 pode deixar os 4 separados que na hora do almoço vou buscar
+[08:05] LOJA: Bom dia!
+[08:05] LOJA: Beleza!
+[12:42] LOJA: *Josy:*
+Oie... está a caminho?
+[12:42] CLIENTE: [áudio] "Oi, tudo bom? Eu só estou terminando de almoçar aqui e já estou subindo."
+[12:43] LOJA: *Josy:*
+Vou almoçar agora também... retorno as 13:45
+[13:01] CLIENTE: [áudio] "Deixa eu te falar, mas eu consigo atendimento aí agora, porque é o único horário que eu vou ter esse horário do almoço."
+[13:41] LOJA: *Josy:*
+Raulisson...
+[13:42] CLIENTE: oiii ... muito obrigado peguei os pneus estou montando
+[13:42] LOJA: Posso encaminhar um link para você fazer uma avaliação no Google, falando sobre a experiência de usar os pneus e o atendimento ☺️
+[13:42] LOJA: *Josy:*
+https://da.gd/gp-avaliar
+[13:46] LOJA: *Josy:*
+Nunca te pedi nada rsrs
+[13:47] CLIENTE: pode é claro
+[13:47] LOJA: *Josy:*
+segue o link
+[13:49] CLIENTE: fiz lá
+[13:51] LOJA: *Josy:*
+Muito obrigada, e tenha uma boa semana!
+[13:52] CLIENTE: igualmente 🙏🏻

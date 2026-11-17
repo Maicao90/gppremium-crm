@@ -1,0 +1,31 @@
+CONVERSA a82d0bc32f | contato: Edson Neves | 30/09/2026 08:32 até 01/10/2026 17:35 | 6 msgs do cliente, 10 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[08:32] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[08:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:32] CLIENTE: Aonde fica loja
+[08:32] LOJA: *Josy:*
+Bom dia, somos de Luziânia-Go, e você?
+[08:33] CLIENTE: Acho que sei, passei perto de vcs outro dia.
+[08:34] LOJA: *Josy:*
+Como  posso ajudar?
+[08:34] CLIENTE: O meu pneu é o 225/45/17
+[08:34] LOJA: *Josy:*
+Perfeito!
+[08:34] LOJA: [foto]
+[08:34] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:36] CLIENTE: Qual tempo de garantia deles e se vc já fazem a montagem?
+[08:46] LOJA: [áudio] "Oi Edson, tudo jóia? Esse pneu da marca GP Premium, que está com o valor de oferta, ele tem garantia de 2 anos. Eles eu já consigo colocar instalado, colocado para você. Entretanto, serviços de balanceamento, alinhamento, o que mais for preciso fazer, eles serão cobrados à parte, tá jóia? Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0F0BB030A5671491C55_206459.ogg}
+[08:47] CLIENTE: Valparaiso
+[08:48] LOJA: Pertinho!☺️
+--- 01/10/2026 (Thu) ---
+[17:35] LOJA: *Josy:*
+Boa tarde, sr Edson...  vou encerrar seu atendimento para não encher seu whatsapp de mensagem.                                                                                                                   Se precisar futuramente é só chamar. Ou se possivel, venham até nossa loja.                                                                                                  Obrigada 👋🏻
+[17:35] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

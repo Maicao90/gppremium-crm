@@ -1,0 +1,25 @@
+CONVERSA d0f6553145 | contato: M | 27/09/2026 09:31 até 06/10/2026 10:03 | 9 msgs do cliente, 7 da loja, 0 do robô
+
+--- 27/09/2026 (Sun) ---
+[09:31] CLIENTE: Bom dia vcs faz entrega jardim abc ocidental
+[09:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 06/10/2026 (Tue) ---
+[09:58] CLIENTE: Aro 17 tá quanto
+[09:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:58] CLIENTE: [foto]
+[10:00] LOJA: [áudio] "Bom dia, Maicon! Tudo jóia?"  {audio:midias/3EB0EB3573231CAC20B66D_160798.ogg}
+[10:00] CLIENTE: Tudo sim
+[10:00] LOJA: [áudio] "Ah, que bacana. Olha, continua o mesmo preço que nós conversamos há uns dois meses atrás."  {audio:midias/3EB095A8747552B05D7786_725613.ogg}
+[10:01] LOJA: [foto]
+[10:01] CLIENTE: Esse e o menos valor..
+[10:01] CLIENTE: Quantas vez  vcs parcela
+[10:02] LOJA: *Josy:*
+
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:02] CLIENTE: Blz  vó paga o cartão entrou encontanto
+[10:02] CLIENTE: Vcs entregam no jardim abc cidade ocidental
+[10:03] LOJA: [áudio] "Maicon, nós não estamos fazendo entregas, tá? Que esse pneu, ele chega aqui realmente para retirada na loja."  {audio:midias/3EB04EE2FBFF93FAB6E379_843815.ogg}
+[10:03] CLIENTE: Entendi ..

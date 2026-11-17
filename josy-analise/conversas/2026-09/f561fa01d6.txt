@@ -1,0 +1,21 @@
+CONVERSA f561fa01d6 | contato: Riqueza..... | 19/09/2026 09:27 até 19/09/2026 09:44 | 6 msgs do cliente, 10 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[09:27] LOJA: *Josy:*
+Bom dia!
+[09:27] CLIENTE: Bom dia
+[09:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:27] CLIENTE: 205 55 r16
+[09:27] LOJA: [áudio] "Olá, tudo bem com você? Eu sou a Josi, você precisa de pneus 205, 55, 16, correto?"  {audio:midias/3EB09682835DB940C813D5_948357.ogg}
+[09:27] CLIENTE: Isso
+[09:31] LOJA: [foto]
+[09:31] LOJA: [foto]
+[09:33] LOJA: [áudio] "No dia de hoje nós temos todas essas opções de marcas à pronta entrega, Henrique. Aí no orçamento está o valor unitário do pneu, na primeira coluna está o valor à vista, que é correspondente à débito e Pix, e seguem as opções de parcelamento em 10 vezes, caso você queira parcelar."  {audio:midias/3EB0DB5EE5E5723243A0A1_232170.ogg}
+[09:40] CLIENTE: Quero e remold
+[09:41] LOJA: [áudio] "Sim, perfeitamente. Olha, como o pneu está por R$ 289,00, se você conseguir sacar o dinheiro e trazer aqui para mim, eu faço por R$ 275,00. E já faz a instalação também."  {audio:midias/3EB085947F8AE916474949_732816.ogg}
+[09:43] CLIENTE: [áudio] "O remold está a 275."
+[09:43] LOJA: [áudio] "Se o pagamento for em dinheiro, sim, porque ele não é qualquer remolde."  {audio:midias/3EB045E19259460BF2D811_893064.ogg}
+[09:44] LOJA: [áudio] "Por aí você vai encontrar a preço de banana, mas a qualidade também vai ser igual. Aqui eu garanto o meu produto."  {audio:midias/3EB06D2428538C70A9C427_901360.ogg}
+[09:44] CLIENTE: [áudio] "Não, moço, XBRI, XBRI no atacadão dia a dia tá 300 reais, moço. XBRI é a primeira linha, não é remold não, mas enfim..."
+[09:44] LOJA: [áudio] "Então, arrocha lá. Obrigada, tchau, tchau."  {audio:midias/3EB07894C2C79C01870443_968678.ogg}

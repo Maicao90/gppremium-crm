@@ -1,0 +1,18 @@
+CONVERSA e271d3ec02 | contato: Ivanildo | 08/10/2026 18:15 até 09/10/2026 15:15 | 4 msgs do cliente, 7 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[18:15] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[18:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:15] CLIENTE: 14
+[18:15] LOJA: Qual a medida dos pneus que você precisa hoje?
+[18:16] LOJA: 14 é apenas o aro
+[18:16] CLIENTE: 1 75 65
+[18:17] LOJA: [foto]
+[18:19] CLIENTE: So 1pneu ta quanto
+[18:19] LOJA: [foto]
+--- 09/10/2026 (Fri) ---
+[15:15] LOJA: [áudio] "Sr. Ivanildo, tudo jóia? Eu te mandei um orçamento dos pneus 175-60 aro 14, e gostaria de saber se quer que eu reservo essa unidade para o Senhor. Sr. Maraquim."  {audio:midias/3EB012D9E8386A325A0219_264708.ogg}
+[15:15] LOJA: [áudio] "Você ama aqui em Luziânia mesmo?"  {audio:midias/3EB050D725975664DAAE25_86248.ogg}

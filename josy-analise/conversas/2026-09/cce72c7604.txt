@@ -1,0 +1,10 @@
+CONVERSA cce72c7604 | contato: Valdir De Brito | 29/09/2026 12:59 até 29/09/2026 13:07 | 4 msgs do cliente, 2 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[12:59] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:59] CLIENTE: Pneu 20.8-38 tem?
+[13:00] CLIENTE: Tem esse pneu aí?
+[13:06] LOJA: [áudio] "Oi, boa tarde, tudo jóia? Não, nós não trabalhamos com pneus para tratores e maquinários."  {audio:midias/3EB0313AAD2A03280596CC_437486.ogg}
+[13:07] CLIENTE: Ta joia

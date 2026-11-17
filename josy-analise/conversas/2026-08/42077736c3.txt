@@ -1,0 +1,29 @@
+CONVERSA 42077736c3 | contato: Gabriel Gianesini | 26/08/2026 16:50 até 10/09/2026 16:12 | 4 msgs do cliente, 12 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[16:50] LOJA: *Josy:*
+Olá! Seja muito bem-vindo à GP Pneus. 🛞 Meu nome é Josy. Como posso te ajudar hoje?
+[16:51] CLIENTE: Oi Josi você tem pneu 205. 60 r15
+[16:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:51] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Sim, tenho sim, me deixa só um instante que eu vou realizar os seus orçamentos, tá bem?"  {audio:midias/3EB010BB4DA84F47CA7DB5_901552.ogg}
+[16:54] LOJA: [foto]
+[16:54] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:04] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB07C086877DDD30D94B9_905476.ogg}
+[17:44] CLIENTE: Trabalha com o da Wanli?
+[17:47] LOJA: [áudio] "No dia de hoje, realmente as opções que eu tenho são essas do orçamento, tá? A VanLie está em falta."  {audio:midias/3EB0A74DA97E3EF7766FD2_314190.ogg}
+--- 27/08/2026 (Thu) ---
+[17:14] LOJA: [áudio] "E você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB029C418C10FEF84D7B7_495866.ogg}
+--- 28/08/2026 (Fri) ---
+[11:19] LOJA: [áudio] "Oi Gabriel, bom dia. Como é que você está? Eu estou entrando em contato para saber se você pretende seguir com a negociação. Você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB04AF058CE7672EBF3A3_644873.ogg}
+[16:58] CLIENTE: Boa tarde, vou esperar meu cartão virar para decidir
+[16:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 10/09/2026 (Thu) ---
+[16:09] LOJA: [áudio] "Oi Gabriel, tudo jóia? Como é que passou esses dias? Nós conversamos há uns longos dias atrás, lá pela metade do mês passado, mais ou menos, e eu gostaria de saber se você ainda precisa dos pneus, se gostaria de agendar aqui um dia para você vir até nossa empresa, quando possível me dar um retorno, está bem?"  {audio:midias/3EB000F043E27ABC2D2B69_744291.ogg}
+[16:12] CLIENTE: Oi Josy, boa tarde, já comprei os pneus, obrigado
+[16:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

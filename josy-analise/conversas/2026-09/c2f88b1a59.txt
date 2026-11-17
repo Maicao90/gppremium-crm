@@ -1,0 +1,77 @@
+CONVERSA c2f88b1a59 | contato: Jean Eustaquio | 04/09/2026 18:45 até 22/09/2026 17:08 | 25 msgs do cliente, 27 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[18:45] LOJA: *Josy:*
+Boa noite!.
+[18:47] LOJA: *Josy:*
+578,00
+[18:48] LOJA: *Josy:*
+265/65/17 Brutus
+[18:50] LOJA: [foto]
+[18:51] LOJA: *Josy:*
+No débito/pix 599,00
+--- 08/09/2026 (Tue) ---
+[12:49] LOJA: [áudio] "Oi, seu José, tudo jóia? Eu estou passando aqui para avisar que os pneus já estão prontos."  {audio:midias/3EB0827E7F084A4E900B6B_14473.ogg}
+[14:26] CLIENTE: Só um instante estou em uma reunião
+[14:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:26] CLIENTE: Aqui
+[14:29] LOJA: *Josy:*
+Desculpa...
+[15:18] CLIENTE: Oi boa tarde
+[15:19] CLIENTE: Ok
+[15:19] LOJA: *Josy:*
+Boa tarde!
+[15:20] LOJA: *Josy:*
+Perdão por ter ligado... como eu havia dito que ligaria, liguei.
+[15:26] CLIENTE: [áudio] "Oi Josi, boa tarde, tudo bem, minha amiga? Desculpa, eu tava numa reunião aqui, por isso que eu não atendi a sua ligação, agora que eu tô saindo da sala de reunião. Olha, obrigado, viu? E eu vou ver se amanhã é quarta, quinta, eu acho que quinta-feira eu vou ir e já busco eles, tá? Pode ficar tranquilo que na quinta eu vou de manhã, que a gente já vai buscar. Pode deixar aí pra mim meus pneus e eu pago em dinheiro, tá?"
+[15:31] LOJA: [áudio] "Oi, seu Geo. Nossa, muitíssimo obrigada pelo seu retorno. Aí eu fui atrevida, né? Eu disse que quando tivesse, eu já ligava e eu fui e liguei."  {audio:midias/3EB08AFCAD1318ED8A3611_28803.ogg}
+[15:31] CLIENTE: Eu que agradeço pela atenção
+[15:31] CLIENTE: Especial
+[15:33] LOJA: *Josy:*
+Deus o abençoe 🙏🏻
+--- 10/09/2026 (Thu) ---
+[10:21] LOJA: *Josy:*
+Bom dia, bom dia, sr José!
+[10:22] LOJA: *Josy:*
+Eu deixei os pneus reservados para o senhor.
+[10:30] CLIENTE: Bom dia
+[10:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:30] CLIENTE: Minha amiga
+[10:30] CLIENTE: Sim
+[10:30] CLIENTE: Vou buscar
+[10:31] LOJA: *Josy:*
+Eu vou precisar dar usa saída , na parte da tarde, aí quando o senhor chegar pode falar com quem estiver aqui que já separei os pneus, está bem!
+[10:43] CLIENTE: Eu não entendi
+[10:43] CLIENTE: Precisar da usa
+[10:43] CLIENTE: ?????
+[10:43] CLIENTE: Obrigado
+[10:54] LOJA: *Josy:*
+Desculpa...digitei errado.
+[10:54] LOJA: *Josy:*
+Vou precisar sair
+[10:58] CLIENTE: Sim
+[10:58] CLIENTE: Sem problema
+[10:58] CLIENTE: Após o almoço vou buscar
+[11:05] LOJA: *Josy:*
+Perfeito!
+[14:02] CLIENTE: [áudio] "Josi, tudo bem? Josi, eu vou pegar os pneus amanhã de manhã, que eu vou pra Valparaíso pra reunião amanhã com o deputado. Pab, ele marcou essa reunião pra amanhã, ele desmarcou hoje, que eu ia e já ia pegar os pneus. Aí eu tenho a reunião lá 8 da manhã, tá? E aí eu pego com você, tá bom? Pode deixar meus pneus aí, que aí a gente já... Eu já venho com prazo e a gente já troca, tá?"
+[14:09] LOJA: [áudio] "Oi, Sérgio. Perfeito, eu deixei os pneus aqui separadinhos para o senhor. Fique tranquilo, tá bom?"  {audio:midias/3EB0236A441E7F7A6AB2C7_271741.ogg}
+[14:09] CLIENTE: [áudio] "Não, obrigado. Eu tava até aqui no posto abastecendo já, pra descer pra ir arrumar e ter a reunião. E o deputado me ligou agora e pediu pra mim ir amanhã de manhãzinha, que teve entrevista. Ah, então eu faço tudo amanhã que eu já economizo tempo e petróleo."
+[14:10] LOJA: [áudio] "Certinho, Sejão. Obrigada."  {audio:midias/3EB00736ABFA7F47313034_799500.ogg}
+--- 22/09/2026 (Tue) ---
+[17:07] CLIENTE: Boa tarde minha amiga
+[17:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:07] CLIENTE: Vc tem pneus 13
+[17:07] LOJA: *Josy:*
+Boa tarde!
+[17:07] CLIENTE: E valor
+[17:07] CLIENTE: Josy
+[17:07] LOJA: *Josy:*
+Como vai, sr Jean!?
+[17:07] LOJA: *Josy:*
+Olha... os GP Premium estão em oferta de R$ 299,00 por R$ 269,00 a vista
+[17:08] CLIENTE: [áudio] "Obrigado, Josi. Vou passar para um amigo meu que me perguntou onde eu tinha comprado os da caminhonete. Eu falei que era com vocês aí."
+[17:08] LOJA: [áudio] "Sim, perfeito então, tá joia?"  {audio:midias/3EB03D41B72500BAABE668_312453.ogg}

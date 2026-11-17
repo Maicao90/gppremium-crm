@@ -1,0 +1,24 @@
+CONVERSA 25093e2849 | contato: Davyd Kacyo | 12/09/2026 16:09 até 16/09/2026 12:22 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[16:09] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso?
+[16:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:09] CLIENTE: 175/65 R14
+--- 14/09/2026 (Mon) ---
+[11:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 16/09/2026 (Wed) ---
+[12:02] LOJA: [áudio] "Oi David, tudo jóia? David, eu te encaminhei um orçamento aí na segunda-feira e eu gostaria muito de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0E3C74DBDC9BCB22BA8_568641.ogg}
+[12:11] CLIENTE: Oi boa tarde
+[12:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:11] CLIENTE: [áudio] "Então, eu vi aqui seu orçamento, eu esqueci de responder, desculpa. É porque eu achei que, como na fábrica, né, mais barato, né, mas aí esse valor aí eu comprei na loja do lado de casa, os mesmos, entendeu? Eu não vou precisar mais não, obrigado."
+[12:13] LOJA: [áudio] "E onde é que você mora, David?"  {audio:midias/3EB02FCFC83DE88846850E_711583.ogg}
+[12:13] CLIENTE: Cidade ocidental
+[12:14] LOJA: *Josy:*
+hmmm
+[12:22] LOJA: *Josy:*
+Ta bom, então.

@@ -1,0 +1,28 @@
+CONVERSA 972385c827 | contato: Anderson Martins Silva | 18/08/2026 16:11 até 20/08/2026 07:57 | 5 msgs do cliente, 14 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[16:11] CLIENTE: Boa tarde! Tudo bem ?
+Favor informar a política de preços para o item:
+Pneu 215.65 R16. No aguardo.
+[16:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:14] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Sou a Josi. E eu tenho aqui os pneus da marca GP Premium. A unidade está por R$ 349,00 para o pagamento à vista. Você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB050C5A0B19185702B9E_752496.ogg}
+[16:31] CLIENTE: [áudio] "Oi, Josi. Muito obrigado aí pela atenção do seu retorno. Ele respondendo, não, eu moro em Minas, tá? Eu queria ver com vocês, se dá pra fazer igual da última vez, vocês encaminharem pra mim via transportadora."
+[16:33] LOJA: [áudio] "Eu vou verificar aqui quanto que está o frete para poder mandar esses pneus. Você pode me mandar aqui qual que é o seu CEP?"  {audio:midias/3EB0C7D2542349ABD849B0_492432.ogg}
+[16:35] CLIENTE: [foto]
+[16:37] LOJA: [áudio] "Só confirma para mim, Anderson, são quantos pneus?"  {audio:midias/3EB0E76EE5B18857BD0739_885914.ogg}
+[16:43] LOJA: certo... consta CPF inválido. A transportadora não está conseguindo cotar.
+[16:43] CLIENTE: [áudio] "Oi, Josi. Vamos lá. Não decaminhei meus dados cadastrados e meu CPF falou que está inválido, não? Eu utilizo ele quase que diariamente para fazer compras. Você deve ter ouvido alguma incompatibilidade na hora da digitação ou desconfundir os números, mas o número que está aí está correto."
+[16:44] LOJA: Deu certo.
+[16:45] LOJA: [foto]
+[16:45] LOJA: [áudio] "Anderson, o frete vai ficar por R$ 171,53. Os dois pneus R$ 698,00. Então, ficam aqui um total de R$ 869,53."  {audio:midias/3EB017F2501E0465514E7E_701995.ogg}
+[16:46] LOJA: [áudio] "Eu não sei como foi a maneira que você realizou a compra da vez passada, mas, por hora, a compra é somente via Pix, tá bom? Não tem links de parcelamento."  {audio:midias/3EB0E6E42EB29991BB25E7_950617.ogg}
+[16:57] LOJA: [áudio] "Combinado, tudo de bom para você, bom descanso, tá?"  {audio:midias/3EB074B362E6B7FE4E900D_940358.ogg}
+--- 19/08/2026 (Wed) ---
+[17:54] LOJA: Boa tarde...como vai?
+[17:54] LOJA: Pretende prosseguir com a negociação?
+[20:44] CLIENTE: Boa noite! Tudo bem ? Agradeço pela atenção. Retorno contato com a sua pessoa na segunda-feira dia 24.08.26. Muito Obrigado. Tudo de Bom!
+[20:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 20/08/2026 (Thu) ---
+[07:57] LOJA: Perfeito. Grata pelo seu retorno. Bom final de semana.

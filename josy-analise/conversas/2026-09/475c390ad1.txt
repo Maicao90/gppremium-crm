@@ -1,0 +1,46 @@
+CONVERSA 475c390ad1 | contato: guina | 03/09/2026 15:02 até 10/09/2026 17:16 | 17 msgs do cliente, 16 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[15:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:02] CLIENTE: [áudio] "Bom, deixa eu te falar, eu compro pneu de vez em quando com vocês aí, é o Aguinaldo. Eu queria saber quanto é que tá seus pneus saindo."
+[15:02] CLIENTE: 195 55 15
+[15:02] CLIENTE: São 4
+[15:03] CLIENTE: [áudio] "Quanto é que tá saindo cada um? Quanto é que tá saindo um jogo de quatro? Você só tem essa marca aí, de premium, ou tem outras marcas sem ser remolde, mas em conta, assim, qual é o valor que você tem aí dos pneus?"
+[15:03] CLIENTE: 195 55 16
+[15:10] LOJA: [áudio] "Agnaldo, tudo jóia? Josi aqui falando. Olha só, o pneu GP Premium, ele é o pneu mais em conta que tem, de 289, estou fazendo ele aqui por 250 reais e já coloco os pneus para você, esse valor é à vista, então os quatro pneus ficam por mil reais, depois dele vai ter um pneu aqui chinês, que a unidade é 335 reais. E aí, vamos lá, vamos lá, vamos lá."  {audio:midias/3EB011C1BEA6DD17E532E0_61027.ogg}
+[15:11] LOJA: [foto]
+[15:58] CLIENTE: [áudio] "Oi Josi, boa tarde, tudo bem? Josi, você me manda a foto desse, desse, esse, esse aí eu já, eu já conheço já, você não manda a foto desse outro chinês aí que você fala? Eles são bons esses pneus, qual o valor dele? É porque eu não queria colocar remold, sabe que eu tô com um carro semi novo, eu vou colocar umas rodas nele, eu não queria colocar remold, porque remold assim, ele é, querendo que ele é mais pesado um pouquinho, né, que é borracha em cima de borracha, né, eu queria um que não fosse recapado, entendeu?"
+[16:10] LOJA: [foto] *Josy:*
+195/55/16 Sunny
+[16:18] CLIENTE: [áudio] "Você tem foto desse pneu aí para me mandar? Assim, na frente e assim, dedo de lado? Para me dar uma olhada, meus desenhos dele, como é que é? Esse GP Premium, ele mudou alguma coisa? Tem como você mandar foto dele também, da lateral? Eu vou dar uma olhada aqui com o meu irmão. Se a gente sentir firmeza mesmo, é porque eu tenho os meus que eu comprei com você, tem um ano e pouco, está no meu carro até hoje. Está novinho, entendeu? Eu não viajo, eu só ando aqui em Brasília mesmo. Mas eu queria dar uma olhada nesses outros aí seus. Tá bom? Obrigado, viu?"
+[16:18] LOJA: [foto]
+[16:18] LOJA: *Josy:*
+Assim que possivel vou no estoque tirar a foto oficial, está bem.
+[16:18] LOJA: *Josy:*
+Já te ouço
+[16:24] CLIENTE: Ok
+[16:24] CLIENTE: [áudio] "Esse aí que você tirou foto, ele é qual? É o importado ou é o que vocês fabricam aí?"
+[17:02] LOJA: [vídeo]
+[17:06] LOJA: [vídeo]
+[18:06] CLIENTE: [áudio] "Tá bom, muito obrigado. Eu vou pensar aqui, tá bom? O que que eu vou colocar, entendeu? Aí logo nós eu te dou a resposta, tá bom? Eu te agradeço, muito obrigado, viu? Esses pneus aí, esses de cima que você mostrou, excelente. O meu carro lá, que eu comprei já a segunda vez de vocês, o meu carro lá durou 5 anos, o GP, esse remold. E eu comprei outros lá, que vocês mandaram também, lá no Vicente Pires, que ela tá com um ano e meio já, tá novinha ainda também. Eu tô pensando pra outro carro, entendeu? Aí eu vou ver aqui. Se aprovar, eu compro, tá bom? Porque vai pro cabeça dos outros aí, tem que ver se os outros pra o gosto, tá bom? Se gostar, aí a gente fecha, tá bom? Muito obrigado."
+[18:10] CLIENTE: Estes valores divide em 2 ou 3
+--- 04/09/2026 (Fri) ---
+[08:17] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:33] LOJA: [áudio] "Agnaldo, bom dia, tudo bem? Nossa loja é somente aqui em Lusiânia."  {audio:midias/3EB00FD882DE6D000FB424_871764.ogg}
+[08:50] CLIENTE: Ok
+[08:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:51] CLIENTE: [foto] *Josy:*
+195/55/16 Sunny
+[08:51] CLIENTE: [áudio] "Bom dia, deixa eu te falar, meu irmão tá vendo isso daqui, mas ele tá achando muito caro. Eu falei com ele agora, ele tá achando meio puxado o preço, porque ele achou de 270, 280, entendeu? Ele achou até pneu continental, essas coisas assim por 310, entendeu? Ele tá achando meio pesado esse preço aí, entendeu? Aí eu tô vendo aqui com ele, vê o que ele decide, tá bom? Mas qualquer coisa eu te aviso aí. É pra ele, se fosse pra mim, eu ia comprar os remoldes, entendeu? Mas como ele não gosta muito de perder o remolde, aí ele tá vendo aqui, ele tá fazendo uma pesquisa, vamos aguardar ele, vê o que ele decide, qualquer coisa eu te falo aí, tá bom? Te agradeço muito."
+[08:55] LOJA: [áudio] "Entendo, Guina. E assim, o pneu GP Premium, ele roda muito mais do que esse pneu chinês aí, e ele vai rodar a mesma coisa que o Continental. É questão de gosto realmente, tá bom?"  {audio:midias/3EB0F95C685CF3BAB4B388_146136.ogg}
+[09:18] CLIENTE: Ok
+[09:19] LOJA: [áudio] "Aí conversa com ele e qualquer coisa passa aqui na loja que nós já fazemos a instalação dos pneus GP Premium para vocês, tá?"  {audio:midias/3EB0448FE7DB5B84B26FC0_82134.ogg}
+--- 10/09/2026 (Thu) ---
+[16:53] LOJA: [áudio] "Oi, Guina, tudo jóia? E aí, moço, o que vocês decidiram a respeito dos pneus que estavam buscando?"  {audio:midias/3EB071FB458FFC48B928E8_264641.ogg}
+[17:15] CLIENTE: Boa tarde meu irmão aconteceu um imprevisto com eles e mulher. Está semana estão se separando .tá vamos aguardar 🙂 m pouco pra ver q ele vai desistir ta
+[17:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:16] CLIENTE: Muito obrigado 🙏🤗

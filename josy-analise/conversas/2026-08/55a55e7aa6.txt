@@ -1,0 +1,14 @@
+CONVERSA 55a55e7aa6 | contato: naiviana | 20/08/2026 09:53 até 20/08/2026 10:28 | 2 msgs do cliente, 8 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[09:53] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:58] LOJA: 🙋🏼‍♀️
+[10:25] LOJA: [foto]
+[10:26] LOJA: No débito ou Pix a unidade é 399,00 mas se o pagamento for em dinheiro em espécie fica por 375,00 cada
+[10:27] CLIENTE: [áudio] "Me manda a localização aí, que eu vou dar um pulo aí. Eu já levo o carro aqui e a gente dá uma verificada pessoalmente."
+[10:27] LOJA: [foto]
+[10:27] LOJA: [áudio] "Claro, mando sim!"  {audio:midias/3EB04DF49E37EB91AFC5C7_343569.ogg}
+[10:28] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:28] LOJA: [foto]

@@ -1,0 +1,15 @@
+CONVERSA 0100b42513 | contato: Chrystofer Gomes | 14/09/2026 12:03 até 14/09/2026 12:10 | 5 msgs do cliente, 4 da loja, 0 do robô
+
+--- 14/09/2026 (Mon) ---
+[12:03] CLIENTE: Quero cotar o pneu 245/70 R16 GP Premium.
+[12:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:04] LOJA: *Josy:*
+Bom dia!
+[12:04] CLIENTE: 245/70r aro16
+[12:04] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[12:04] CLIENTE: Não
+[12:07] CLIENTE: Quanto tá saindo
+[12:08] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Eu tenho aqui, a princípio, os pneus da marca GP Premium, que são pneus remoldes de primeira linha. A unidade está por apenas R$ 479,00 a vista. E nossa loja fica aqui em Luziânia, Goiás."  {audio:midias/3EB0F88B553F350A441FEB_102838.ogg}
+[12:10] CLIENTE: Remoldes não me interessa não

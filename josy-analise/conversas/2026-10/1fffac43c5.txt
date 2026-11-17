@@ -1,0 +1,22 @@
+CONVERSA 1fffac43c5 | contato: Renova Construções | 06/10/2026 12:32 até 06/10/2026 13:13 | 4 msgs do cliente, 11 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[12:32] LOJA: *Josy:*
+Boa tarde!
+[12:34] LOJA: [foto]
+[12:43] CLIENTE: Depois você manda fotos do pneu aro 16
+[12:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:43] CLIENTE: Por favor
+[12:44] LOJA: [foto]
+[13:04] LOJA: [áudio] "Senhora Antônio, aí na medida 235-70, esse desenho aqui, tá? Aí quando o senhor tiver um tempo, só dá uma verificada pra nós, na lateral do pneu, só para nos certificarmos da medida certinho, tá bom?"  {audio:midias/3EB0152FC7B931D211B8CF_680134.ogg}
+[13:07] CLIENTE: Ok
+[13:08] CLIENTE: 265/70 R16
+[13:11] LOJA: *Josy:*
+Teremos apenas importado.
+[13:11] LOJA: [foto]
+[13:11] LOJA: *Josy:*
+Pneu da marca Lanvigator.
+[13:12] LOJA: *Josy:*
+A vista a unidade fica por R$ 699,00
+[13:13] LOJA: [foto]

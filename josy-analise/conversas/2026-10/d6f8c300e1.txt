@@ -1,0 +1,20 @@
+CONVERSA d6f8c300e1 | contato: David | 15/10/2026 09:06 até 15/10/2026 09:19 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[09:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:06] CLIENTE: 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[09:06] CLIENTE: Bom dia
+[09:06] CLIENTE: Tem loja no valparaiso
+[09:07] CLIENTE: ?
+[09:07] LOJA: Somos de Luziânia-Go
+[09:07] LOJA: Somente aqui.
+[09:07] LOJA: Qual a medida dos pneus que você precisa hoje?
+[09:16] CLIENTE: 175 65 14
+[09:18] LOJA: Bom dia, temos sim!
+[09:18] LOJA: [foto]
+[09:19] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

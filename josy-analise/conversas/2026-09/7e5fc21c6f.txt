@@ -1,0 +1,31 @@
+CONVERSA 7e5fc21c6f | contato: Danila | 25/09/2026 16:09 até 25/09/2026 17:01 | 7 msgs do cliente, 13 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[16:09] CLIENTE: Boa tarde! Qual é o valor do pneu 215/55 r17? Por favor
+[16:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:10] CLIENTE: 215/55 r17
+[16:15] LOJA: *Josy:*
+Boa tare...tudo bem?
+[16:21] LOJA: *Josy:*
+Hoje temos a pronta entrega pneus da marca GP Premium que estão na promoção compre3 e leve 4
+[16:21] LOJA: [foto]
+[16:21] LOJA: *Josy:*
+Exemplo digamos que seu pagamento seja a viista a  unidade  é  R$ 395,00 x 3 pneus = R$ 1.185,00 por esse preço você vai levar os 4
+[16:35] CLIENTE: Está promoção válida até quando?
+[16:36] LOJA: *Josy:*
+Por ora , por tempo indeterminado,  Daniela.
+[16:37] LOJA: *Josy:*
+Você mora aqui em Luziania-Go?
+[16:42] CLIENTE: No Jardim Inga
+[16:42] LOJA: É pertinho de nós!
+[16:59] CLIENTE: Sim
+[17:00] CLIENTE: Obrigada semana q vem eu compro
+[17:00] LOJA: *Josy:*
+Combinado!
+[17:00] LOJA: *Josy:*
+Vou te encaminhar  a nossa localização!
+[17:00] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:01] LOJA: [foto]
+[17:01] LOJA: [áudio] "Daniela, e esses pneus nós entregamos eles colocados no seu carro, tá?"  {audio:midias/3EB059AF1777B476EF11EC_465788.ogg}
+[17:01] CLIENTE: Ok

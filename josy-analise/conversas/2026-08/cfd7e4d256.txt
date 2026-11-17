@@ -1,0 +1,10 @@
+CONVERSA cfd7e4d256 | contato: Gesika Meireles | 17/08/2026 13:46 até 17/08/2026 13:50 | 3 msgs do cliente, 3 da loja, 0 do robô
+
+--- 17/08/2026 (Mon) ---
+[13:46] CLIENTE: Boa tarde
+[13:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:47] CLIENTE: Vocês tem pneus para moto ?
+[13:48] LOJA: infelizmente não trabalhamos
+[13:49] CLIENTE: Obrigada
+[13:50] LOJA: Disponha!

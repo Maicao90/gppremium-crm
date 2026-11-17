@@ -1,0 +1,15 @@
+CONVERSA 269150cf20 | contato: Ronilda | 18/08/2026 06:46 até 18/08/2026 09:13 | 6 msgs do cliente, 5 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[06:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[06:46] CLIENTE: [áudio] "Bom dia, Josia. Rui Nilda, tudo bem? Ontem nós compramos os pneus aí com você, aí levou para montar. Quando foi para alinhar, o pneu já estava baixo, aí nós viemos para a roça, meu esposo passou no posto, calibrou, porque ele viu que estava baixo de novo, aí nós viemos, chegamos aqui ontem, hoje o pneu amanheceu murcho, eu fiz um vídeo e vou te mandar para você ver, tá? Aí nós vamos embora, acho que só na quinta ou sexta. E aí a gente vai aí para ver o que você pode estar fazendo, porque como amanheceu murcho, aí você vê aí o que pode estar fazendo, tá bom? Bom dia."
+[06:49] CLIENTE: [vídeo]
+[06:50] CLIENTE: Bom dia! ☀️
+[06:51] CLIENTE: Te mandei explicando ao invés de estarmos indo direto aí, porque vamos embora acho que quinta ou sexta!
+[08:05] LOJA: [áudio] "Oi, bom dia, tudo bem com você?"  {audio:midias/3EB0C6453C704035557740_692212.ogg}
+[08:06] LOJA: [áudio] "Certo, não tem problema, tá? Se você estiver com tempo, passa aqui que nós já averiguamos o que foi que aconteceu aí com esse pneu, porque não sei se quando você realizou a troca, você trocou a válvula de ar também, né? Às vezes ela que pode estar vazando. Mas vem cá que nós analisamos pra vocês, tá bem?"  {audio:midias/3EB0E5DFC61703D6A7A76C_898746.ogg}
+[09:04] CLIENTE: Bem graças a Deus! E vc?
+[09:05] CLIENTE: Tranquilo! Obg
+[09:13] LOJA: disponha, estamos te aguardando para verificar o que houve
+[09:13] LOJA: tenha um bom dia!

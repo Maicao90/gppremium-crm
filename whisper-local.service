@@ -1,0 +1,15 @@
+[Unit]
+Description=Transcricao de audio local (whisper.cpp) para o robo do WhatsApp
+After=network.target
+
+[Service]
+ExecStart=/opt/whisper.cpp/build/bin/whisper-server -m /opt/whisper-models/ggml-small-q5_1.bin -l pt -t 1 --host 127.0.0.1 --port 8178 --convert -nt
+WorkingDirectory=/opt/whisper-teste
+Nice=15
+CPUWeight=20
+MemoryMax=900M
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

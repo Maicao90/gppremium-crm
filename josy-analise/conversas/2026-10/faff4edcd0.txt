@@ -1,0 +1,48 @@
+CONVERSA faff4edcd0 | contato: Olahir Neto | 20/10/2026 15:34 até 21/10/2026 11:11 | 15 msgs do cliente, 18 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[15:34] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+Olá! Tenho interesse e queria mais informações, por favor.
+[15:34] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[15:34] CLIENTE: Boa tarde
+[15:35] LOJA: *Josy:*
+Boa tarde!
+[15:35] CLIENTE: Vcs tem loja em Goiânia?
+[15:36] CLIENTE: Josy
+[15:36] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Não, eu sou loja somente aqui em Luziânia, Goiás."  {audio:midias/3EB06B026F5BDFF2A6CA28_634547.ogg}
+[15:47] CLIENTE: Tem site?
+[15:47] LOJA: *Josy:*
+Temos sim! Mas o site vai te direcionar aqui!
+[15:47] LOJA: *Josy:*
+Qual *A MEDIDA* dos pneus que você precisa.
+[16:26] CLIENTE: 275/60 ou 65 r18
+[16:26] CLIENTE: Qual é o site josy?
+[16:26] LOJA: Hmmm
+[16:26] LOJA: Não dispomos dessa opção de medida a pronta entrega. Não produzimos.
+[16:27] LOJA: https://www.pneusgppremium.com.br/?srsltid=AU7gw4WMuCogdofuwMhBwn3A9C7lQpaacfw9o1XVz2hCuMa4Q2-7PAz1
+[16:27] CLIENTE: No anúncio do Instagram tem um Brutus
+[16:27] LOJA: 265/60/18
+[16:29] CLIENTE: Ele é fabricado por vcs mesmo aí em Luziânia?
+[16:32] LOJA: Sim! Isso mesmo!
+[16:33] CLIENTE: É recapado , remold ou novo mesmo?
+[16:33] LOJA: [áudio] "Remodelagem, remodelagem premium. Nós trabalhamos com essa categoria já há 10 anos e eles se tornam pneus de primeira linha."  {audio:midias/3EB03CB85874E78D8F6C92_527178.ogg}
+[16:34] CLIENTE: Certo
+[16:34] CLIENTE: Muito obrigado josy pela atenção mas estou procurando novos mesmo
+[16:34] CLIENTE: 🙏🏻
+[16:35] LOJA: [áudio] "Eu também tenho pneus novos, mas aí você precisa vir aqui para fazer a retirada, tá bom?"  {audio:midias/3EB0BA5F0962144C833DF2_51718.ogg}
+[16:35] CLIENTE: O xbri 265 R 18 seu está quanto?
+[16:36] LOJA: A marca que temos hoje é Maxzez
+[17:08] LOJA: [foto]
+[17:08] LOJA: Se estiver passando por nossa região, venha até nossa loja, será uma satisfação receber você aqui!
+[17:09] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:09] CLIENTE: Tem uma foto desse pneu?
+[17:13] LOJA: [foto]
+--- 21/10/2026 (Wed) ---
+[11:11] ROBÔ: 🙋🏼‍♀️

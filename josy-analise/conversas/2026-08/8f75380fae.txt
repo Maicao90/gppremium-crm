@@ -1,0 +1,29 @@
+CONVERSA 8f75380fae | contato: Raul | 25/08/2026 16:49 até 28/08/2026 14:28 | 7 msgs do cliente, 11 da loja, 0 do robô
+
+--- 25/08/2026 (Tue) ---
+[16:49] CLIENTE: Oi
+[16:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:49] CLIENTE: Boa tarde
+[16:49] LOJA: *Josy :*
+Oi, Raul!
+[16:49] LOJA: *Josy :*
+Boa tarde!
+[16:50] CLIENTE: Vcs tem peneu pra camionete
+[16:50] CLIENTE: [foto]
+[16:51] CLIENTE: [áudio] "Luzi, vocês têm ele aí? Como é que está o valor dos pneus para a Hilux?"
+[16:56] LOJA: [foto]
+[16:57] LOJA: [áudio] "Olha, o pneu aqui, o GP Premium, ele está por apenas R$ 559,00 para o pagamento à vista."  {audio:midias/3EB030CB9756352328654A_248121.ogg}
+[16:57] LOJA: [foto]
+[17:00] CLIENTE: Beleza vou ver aqui e ti falo
+[17:04] LOJA: *Josy :*
+ok
+--- 28/08/2026 (Fri) ---
+[11:38] LOJA: [áudio] "Oi, Sr. Raul, tudo jóia? Passando para saber aqui se o senhor quer que reserva os pneus aí para vocês?"  {audio:midias/3EB055F04623E90B8B014B_915785.ogg}
+[14:14] CLIENTE: Boa tarde
+[14:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:28] LOJA: *Josy:*
+Boa tarde!
+[14:28] LOJA: *Josy:*
+Como estão?

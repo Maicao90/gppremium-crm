@@ -1,0 +1,7 @@
+CONVERSA 0d13483db4 | contato: ó Godinho da savero | 17/09/2026 13:22 até 17/09/2026 13:22 | 2 msgs do cliente, 1 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[13:22] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:22] CLIENTE: [áudio] "Boa tarde, Jogo de Roda, Jogo de Roda 14."

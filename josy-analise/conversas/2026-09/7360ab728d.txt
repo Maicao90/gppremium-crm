@@ -1,0 +1,30 @@
+CONVERSA 7360ab728d | contato: Robson | 03/09/2026 11:35 até 05/09/2026 09:44 | 3 msgs do cliente, 11 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[11:35] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[11:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:35] CLIENTE: 13
+[11:37] LOJA: *Josy:*
+Bom dia!
+[11:37] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega:
+[11:37] LOJA: *Josy:*
+Pneu 175/70/13 r1 Dunlop R$ 371,69 (débito/pix)
+Pneu 175/70/13 82t Kelly Goodyear R$ 357,66 (débito/pix)
+Pneu GP Premium em *oferta* R$ 269,00 (débito/pix) Ou R$ 252,00 em *dinheiro*
+[11:39] LOJA: *Josy:*
+Mora aqui em Luziânia?
+[12:20] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Me chamo Josi. E você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0237FCDD876C955969A_205150.ogg}
+[12:25] LOJA: *Josy:*
+👀
+--- 05/09/2026 (Sat) ---
+[07:40] CLIENTE: Em luziania
+[07:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:35] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Imagino que você esteja muito ocupada e por essa razão você não está conseguindo conversar aqui comigo. Eu vou fazer o seguinte, eu vou encerrar aqui o seu atendimento, tá? Caso você precise, você entre em contato aqui comigo novamente e vou deixar aqui registrada a nossa localização, pois se houver a possibilidade, vem cá na loja para conversarmos pessoalmente, tá bem? Obrigada pela sua atenção e tenha um bom final de semana."  {audio:midias/3EB0C5203482174F32C54A_455769.ogg}
+[08:36] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:44] LOJA: [foto]

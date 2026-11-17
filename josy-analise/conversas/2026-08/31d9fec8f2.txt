@@ -1,0 +1,34 @@
+CONVERSA 31d9fec8f2 | contato: Duuh❤️ | 31/08/2026 08:52 até 31/08/2026 09:48 | 8 msgs do cliente, 14 da loja, 0 do robô
+
+--- 31/08/2026 (Mon) ---
+[08:52] CLIENTE: [áudio] "Bom dia, deixa eu te perguntar, quanto que tá o jogo seu de pneu? 175, 65, 14 e 185, 70, 14."
+[08:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:53] CLIENTE: 185/65 14
+185/70 14
+[08:53] CLIENTE: Qual valor desses jogos de pneu
+[08:58] LOJA: *Josy:*
+Bom dia!
+[08:59] LOJA: *Josy:*
+Temos aqui os pneus da marca GP Premium, eles estão no mesmo valor.
+[09:00] LOJA: *Josy:*
+Se o pagamento for em *dinheiro* a unidade é 274,00
+[09:00] LOJA: *Josy:*
+No débito ou Pix R$ 289,00 a unidade.
+[09:01] LOJA: *Josy:*
+Se for para parcelar o valor tem uma pequena alteração conforme a quantidade de parcelas.
+[09:01] LOJA: [foto]
+[09:01] LOJA: [áudio] "Você mora aqui em Luziânia mesmo, moço?"  {audio:midias/3EB023CB75CB2C7A927487_44998.ogg}
+[09:14] CLIENTE: Sim
+[09:14] CLIENTE: Já comprei aí outras vezes
+[09:15] LOJA: *Josy:*
+Sério!!!
+[09:16] LOJA: *Josy:*
+Qual é seu nome mesmo?
+[09:18] CLIENTE: [áudio] "Meu nome é Eduardo, eu comprei um jogo de pneus 18 de vocês aí, deve ter um ano e pouco, dois anos, no mesmo lugar, do mesmo jeito, nunca baixou um, e outra vez foi um jogo de pneus, acho que foi três ou foi quatorze também, só que aí foi indicação para um amigo meu, e os pneus 18 também, ele que foi buscar para mim, eu estava trabalhando."
+[09:18] CLIENTE: Eduardo
+[09:18] CLIENTE: [áudio] "Só que esses 14 aí eu acho que dessa vez eu não vou conseguir fechar não, porque tem uma lojinha ali no Valparaíso que está com uma promoçãozinha, eu vou só verificar se é isso mesmo, mas aparentemente o preço desse está melhor."
+[09:19] LOJA: [áudio] "Oi Eduardo, tudo jóia?"  {audio:midias/3EB0136EFAC054B32414A6_880838.ogg}
+[09:20] LOJA: [áudio] "É pra qual carro que a Mali pergunte?"  {audio:midias/3EB009D0FAB45DDEE2032A_764671.ogg}
+[09:21] LOJA: [áudio] "Porque aqui no preço diferenciado, eu tenho na medida 175-65-14, se for no débito ou no Pix, ele é R$ 249,00. Se for pagamento em dinheiro, ele fica por R$ 235,00. E 175-74, de R$ 289,00, ele está por R$ 279,00, se for no débito ou no Pix. E, se for pagamento no dinheiro, R$ 262,00. Aí, se essas opções, de repente, te atenderem..."  {audio:midias/3EB0F88D1C4CA4A52DF3A6_203997.ogg}
+[09:48] LOJA: [áudio] "É, Eduardo, é assim, nós sabemos que tem muitas empresas, não é pouca não, são muitas empresas que estão com um valor assim, absurdo, o qual eu e muitas outras empresas também não conseguimos cobrir, porém, além de serem pneus à base de troca, se o cliente não fizer os serviços básicos, eles não liberam os pneus para o cliente levar, por exemplo, para montar em um amigo, né, eles dizem até que não tem mais o pneu. Ixi, todo dia eu recebo cliente aqui com a mesma alegação, só não posso citar o nome de empresas, né, mas fazem negociação, aí chega lá e fala, ah, não tem mais o pneu, ou então, teve um que eu recebi aqui no sábado, ele foi ali, ele me contou o seguinte, que ele chegou lá e ele falou que só queria colocar os pneus, porque prometeram entregar já o carro balanceado, alinhado, entre outras coisas, né, ele falou, não, eu só quero comprar o pneu. Aí, eles disseram, não, rapaz, que podia te atender, foi embora, só volta amanhã. Aí ele, ah, mas como assim, daí ninguém pode me atender, ninguém pode vender, nada? Ah, não, não dá. Então, assim, só verifica essas coisas, tá? Já aí, como você sabe onde é que é a nossa loja, faça aqui para nós conversarmos pessoalmente, se de repente você quiser parcelar, nós podemos negociar algum parcelamento que fique mais atrativo e te atenda aí, tá bom, Du? E aí E aí E aí E aí E aí E aí"  {audio:midias/3EB04CDF0D55905917DA66_178600.ogg}

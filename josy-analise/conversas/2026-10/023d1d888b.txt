@@ -1,0 +1,38 @@
+CONVERSA 023d1d888b | contato: Wilton Rezende | 16/10/2026 12:31 até 20/10/2026 08:19 | 12 msgs do cliente, 14 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[12:31] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[12:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:31] CLIENTE: [áudio] "Irmão, eu tenho um Prisma 2014 e os pneus dele eu já estou precisando trocar os quatro que fiz aí para mim."
+[12:33] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Wilton? Sim, eu faço um orçamento para você, mas antes eu preciso saber qual é a medida dos pneus que estão instalados no seu veículo. Pode me ajudar?"  {audio:midias/3EB0AF53F22DA3B5791956_179425.ogg}
+[12:33] CLIENTE: [foto]
+[12:33] CLIENTE: E qual a forma de pagamento
+[12:35] CLIENTE: O motivo da troca, e o tempo de uso.
+[12:35] LOJA: [foto]
+[12:36] LOJA: [áudio] "Bem, eu tenho aqui, neste momento, as duas últimas unidades do pneu importado da marca Sunny, a unidade está por R$333,00 para o pagamento à vista, e tenho também os pneus da marca GP Premium, a unidade por R$289,00, se o pagamento for no débito ou Pix, que é o valor à vista, e seguem as opções de parcelamento em até 10 vezes, caso você queira parcelar."  {audio:midias/3EB00A3BF82C9CA35EB376_8229.ogg}
+[12:41] CLIENTE: São pneus novos, quero dizer , não são pneus remoldes
+[12:41] LOJA: [áudio] "O pneu da marca GP é um remold premium, inclusive é o pneu mais vendido que eu tenho por conta da qualidade. Se você quiser, até grava um vídeo aqui para poder te mostrar, tá?"  {audio:midias/3EB014FB1AF3198BDC7BD7_957162.ogg}
+[12:41] LOJA: [áudio] "Como ele é feito com a mesma borracha de pneus de grandes marcas nacionais, ele tem todo um processo de produção, tá? É o pneu mais vendido que eu tenho justamente por conta dessa qualidade, tá?"  {audio:midias/3EB03D3127B8E8D4D83B1E_923370.ogg}
+[12:42] CLIENTE: [áudio] "Ah não, remold não, não gosto de pneu remold não. Bom, já tive problema com pneu remold, então eu sou contra pneu remold."
+[12:42] CLIENTE: [áudio] "E até mesmo por causa do seguro do carro, né?"
+[12:43] LOJA: [vídeo]
+[12:45] LOJA: [áudio] "Eu lamento muito pela sua experiência com os pneus remoldes e é justamente por conta desse outro tipo de pneu aí, tá? Os pneus GP Premium, eles têm 2 anos de garantia com questão de quilometragem, Sr. Wilton, ele roda 60 mil km e, assim, no momento são essas opções que eu tenho. Caso o senhor esteja em busca de alguma marca específica, o senhor me fala que eu verifico também com os meus distribuidores, certo?"  {audio:midias/3EB0FD082C64591C8CEFEA_112790.ogg}
+[12:45] CLIENTE: [áudio] "Eu filmo meu pneu ali para você ver, ele tem mais de 4 anos. E ele está novo, eu estou trocando só por idade, entendeu? Mas não é remolding. Eu já tive problema com remolding. Dá certo porque você quer vender, mas todo mundo fala isso para mim. E como meu filho já teve problema, entendeu? E não tem jeito, cara. É carro que você não pode confiar. E o seguro, se acontecer alguma coisa por causa do pneu, eles vão me pagar? Esse aqui é o problema, entendeu?"
+[12:46] LOJA: Assim que possivel ouça!
+[12:46] CLIENTE: [foto]
+[12:47] CLIENTE: [áudio] "Vê essa marca mesmo que tá aí nele, ó. Beleza?"
+[12:48] LOJA: Vou verificar com nossos distribuidores, assim que eles me responderem te informo,  preço e prazo de entrega. Tudo bem?
+[12:49] CLIENTE: [figurinha]
+--- 19/10/2026 (Mon) ---
+[10:19] LOJA: *Josy:*
+Bom dia, consegui o retorno da Pirelli
+[10:19] LOJA: [foto]
+[10:20] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor UNITÁRIO do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 20/10/2026 (Tue) ---
+[08:19] LOJA: [áudio] "Oi, bom dia. Tudo bem com você? Eu te encaminhei um orçamento referente à marca dos pneus que o senhor precisa e gostaria de saber se pretende seguir com a negociação. Consegue dar um retorno, por gentileza?"  {audio:midias/3EB0C83571AEE9E36CFCAB_410166.ogg}

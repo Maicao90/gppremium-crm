@@ -1,0 +1,26 @@
+CONVERSA 1b249ba38b | contato: Francisco | 01/10/2026 14:15 até 01/10/2026 14:23 | 6 msgs do cliente, 14 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[14:15] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:15] CLIENTE: Boa tarde
+[14:15] CLIENTE: Tem pneu 235 70 16?
+[14:16] LOJA: [áudio] "Oi, boa tarde. Tudo bem com você, Francisco? Eu tenho o axímide. Só um instante que eu estou finalizando o seu orçamento."  {audio:midias/3EB03FEAD881C2873FFE57_833412.ogg}
+[14:18] LOJA: [foto]
+[14:18] LOJA: [áudio] "Esse é o pneu da marca GP Premium. Ele está na promoção de R$ 559,00 por R$ 489,00, se o pagamento for no débito ou no Pix. Se for para parcelar, tem as opções de parcelamento em até 10 vezes, tá bom?"  {audio:midias/3EB02B8652FE7774023E2C_770173.ogg}
+[14:18] LOJA: 235/70/16 👇🏻
+[14:18] LOJA: [foto]
+[14:19] CLIENTE: [áudio] "Ah não, eu quero pneu liso. Eu não quero desborrachudo aí não. Eu queria liso, pneu liso."
+[14:19] LOJA: [áudio] "Olha, no modelo Luzi, eu tenho no 245-70, que eu tenho certeza que dá para colocar aí na sua caminhonete."  {audio:midias/3EB03E6A981C33E439BF02_987475.ogg}
+[14:20] LOJA: [foto]
+[14:20] LOJA: *Josy:*
+245/70/16 👇🏻
+[14:20] CLIENTE: [áudio] "Não é porque o cliente vai querer só 2, aí os 4 pneus dele é 2, 3, 5, entendeu? Aí tem 2 ruim, ele vai querer só 2, mas da mesma medida, 2, 3, 5, entendeu? 2, 4, 5 ele não vai querer, né? Ele vai querer o pneu liso."
+[14:20] LOJA: [foto]
+[14:20] LOJA: [áudio] "Sim, eu entendi sim."  {audio:midias/3EB0AEBF5951CA464DC150_275937.ogg}
+[14:22] LOJA: [áudio] "Bem, eu vou te mandar aqui a localização, caso vocês não deem de ideia para o projeto Francisco."  {audio:midias/3EB00E1A2CA1DE09716324_58266.ogg}
+[14:22] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:22] LOJA: [foto]
+[14:23] CLIENTE: Tá obrigado

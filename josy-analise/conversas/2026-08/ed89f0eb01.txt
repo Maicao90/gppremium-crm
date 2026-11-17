@@ -1,0 +1,12 @@
+CONVERSA ed89f0eb01 | contato: Eny Silva advogada | 27/08/2026 11:16 até 27/08/2026 11:21 | 3 msgs do cliente, 3 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[11:16] LOJA: *Josy:*
+Bom dia, Eny... bem por aqui realmente, não se tem nada referente a empresa Ferrari.
+[11:16] CLIENTE: ‎Eny Silva advogada agradece seu contato. Como podemos ajudar?
+[11:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:20] CLIENTE: Bom dia
+[11:20] CLIENTE: Obrigada
+[11:21] LOJA: *Josy:*
+Imagina... disponha.

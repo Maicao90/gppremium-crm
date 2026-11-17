@@ -1,0 +1,50 @@
+CONVERSA d01d922ff6 | contato: Lucas Felisberto | 05/09/2026 08:52 até 11/09/2026 15:10 | 13 msgs do cliente, 24 da loja, 0 do robô
+
+--- 05/09/2026 (Sat) ---
+[08:52] LOJA: *Josy:*
+Bom dia!
+[08:52] LOJA: [foto]
+[09:17] CLIENTE: Oi
+[09:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:17] CLIENTE: Bom dia
+[09:17] LOJA: *Josy:*
+Oie
+[09:17] CLIENTE: Josy, me envia por favor.
+[09:17] CLIENTE: As fotos dos pneus
+[09:18] CLIENTE: Manda o preço do importado
+[09:18] LOJA: *Josy:*
+Sim!
+[09:18] CLIENTE: E o vídeo do que está na sua caminhonete
+[09:19] CLIENTE: [foto] Tenho Bridgestone e itaro aqui na s10
+[09:20] LOJA: [foto]
+[09:21] LOJA: [áudio] "Lucas, o pneu importado que eu tenho é da marca Maxx. Ele está por R$ 663,00 à vista."  {audio:midias/3EB07749F80CAB3F02BD0C_382559.ogg}
+[09:22] LOJA: [vídeo]
+[09:25] LOJA: *Josy:*
+pneu 265/60/18 110h peakgrip h/t maxzez 👇🏻
+[09:26] CLIENTE: Esse é o Remold ?
+[09:26] LOJA: Isso
+[09:26] LOJA: [vídeo]
+[09:27] LOJA: [vídeo]
+[09:30] LOJA: [áudio] "Lucas, eu vou te mandar aqui a nossa localização, está bem?"  {audio:midias/3EB0447BB90B53D3F0A6DB_938449.ogg}
+[09:30] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:31] LOJA: [foto]
+[09:58] CLIENTE: Esse você tem 4 unidades aí?
+[09:59] LOJA: *Josy:*
+Sim!
+[09:59] CLIENTE: [áudio] "Esse é quanto mesmo, Jos? Vê aí, quanto é que você vai fazer o menor valor para mim nas 4 unidades? Eu olhei aqui na localização, você fica na rodovia, não é isso?"
+[10:06] LOJA: [áudio] "Isso, aqui na BR-040. Eu até te mandei a fotinho aqui da fachada da nossa loja, que às vezes a localização manda para outro rumo."  {audio:midias/3EB0D0E41EC505AC4400A8_214341.ogg}
+[10:06] LOJA: [foto]
+[10:49] LOJA: *Josy:*
+Está vindo, Lucas?
+[10:59] CLIENTE: [áudio] "Oi, Josi. Infelizmente não tô indo ainda, viu? Eu tô aqui agora chegando no Jardim Gá. Eu tô com medo de... Até que horário vai ficar aberto aí, Josi?"
+[10:59] LOJA: *Josy:*
+Trabquilo
+[10:59] LOJA: [áudio] "Não, fica tranquilo, dá tempo, você está chegando no Jardim Gá, Jardim Gá aqui para a nossa fábrica é um pulo."  {audio:midias/3EB020A9048F6FD53CF7DF_615050.ogg}
+[11:01] CLIENTE: [foto]
+[11:01] CLIENTE: [áudio] "Não, Josi. Na verdade, eu ainda estou a caminho do Jardim Gá. Eu estou chegando aqui para descarregar a caminhonete, entendeu?"
+[11:01] LOJA: *Josy:*
+Da tempo
+--- 11/09/2026 (Fri) ---
+[15:10] LOJA: [áudio] "Oi Lucas, como é que você está? Jovens, será que esse final de semana você vai conseguir vir aqui?"  {audio:midias/3EB032527DEC2B0CB1CA76_898005.ogg}

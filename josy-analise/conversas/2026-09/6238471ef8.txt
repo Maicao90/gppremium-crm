@@ -1,0 +1,14 @@
+CONVERSA 6238471ef8 | contato: José Carlos Braz De Queir | 01/09/2026 08:37 até 01/09/2026 15:06 | 1 msgs do cliente, 5 da loja, 0 do robô
+
+--- 01/09/2026 (Tue) ---
+[08:37] LOJA: *Josy:*
+Bom dia!
+[08:38] LOJA: *Josy:*
+195/55/15 R$ 268,00 cada em dinheiro
+[14:55] LOJA: *Josy:*
+Oi...
+[14:56] LOJA: *Josy:*
+Está voltando aqui na loja?
+[15:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:06] CLIENTE: [áudio] "Oi, Josi. Eu tô montando aqui embaixo mesmo, Josi. O rapaz fez pra mim aqui, no precinho bom, ele tá me dando montado também, sabe? Eu não tô tendo tempo de ir aí em cima, e aqui eu vou passar o cartão, fica mais fácil pra mim. Tá bom? Obrigado. Na próxima eu compro isso aí."

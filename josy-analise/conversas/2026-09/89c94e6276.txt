@@ -1,0 +1,19 @@
+CONVERSA 89c94e6276 | contato: Silvano radiador e mecânica | 22/09/2026 12:59 até 25/09/2026 12:49 | 3 msgs do cliente, 8 da loja, 0 do robô
+
+--- 22/09/2026 (Tue) ---
+[12:59] LOJA: *Josy:*
+Boa tarde, Silvano ... 245/70/16 R$ 425,00 cada em *dinheiro*
+--- 24/09/2026 (Thu) ---
+[11:53] LOJA: [áudio] "Oi Silvano, boa tarde, tudo bem? Nós nos falamos alguns dias atrás e gostaria de saber quando que você volta aqui para nós podermos fazer a instalação dos pneus para você."  {audio:midias/3EB04989D217DED27E7C1C_902247.ogg}
+[19:28] CLIENTE: [áudio] "Oi, tudo bem? Não, acho que semana que eu vou ir. A roda quebrou? Eu tenho que arrumar a roda. Vocês não tem roda para vender dela não, da Frontier?"
+[19:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 25/09/2026 (Fri) ---
+[08:00] LOJA: [áudio] "Bom dia, Silvano. Tudo jóia? Rapaz, pior que não tem não, viu?"  {audio:midias/3EB03754D00CBF9050B14B_605550.ogg}
+[09:22] CLIENTE: [áudio] "Tá bom então, eu vou pra banda aqui, eu moro aqui no Luziânia mesmo, não achei lugar nenhum também, aí amanhã eu vou pra banda de Brasília, ver se eu acho, vou ter que achar uma roda, porque na hora que estourou o pneu lá, a roda estourou também, eu até achei que não tinha estourado, aí eu fui olhar aqui, aí a roda quebrou também, não compensa arrumar ela."
+[09:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:28] LOJA: [áudio] "Caramba! Aí é complicado, né, Silvano?"  {audio:midias/3EB08A3030E1B3A88E151A_297599.ogg}
+[09:28] LOJA: [áudio] "Mas aí, para buscar os pneus, o senhor passa aqui, tá bom?"  {audio:midias/3EB0442B9219774AAF9287_60065.ogg}
+[09:28] LOJA: [foto]
+[12:49] CLIENTE: Tá bom

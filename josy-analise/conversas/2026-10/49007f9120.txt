@@ -1,0 +1,15 @@
+CONVERSA 49007f9120 | contato: Marcelo Barreto | 22/10/2026 07:28 até 22/10/2026 12:19 | 2 msgs do cliente, 3 da loja, 5 do robô
+
+--- 22/10/2026 (Thu) ---
+[07:28] CLIENTE: [foto] 📢 [Anúncio] Anúncio no Status
+
+Oi, Tudo bem ?
+[07:28] ROBÔ: Oi, tudo bem?
+[07:28] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[07:28] CLIENTE: 14
+[07:28] ROBÔ: 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+[07:29] ROBÔ: Temos os 14 pneus *175/65/14* da marca *GP Premium* saem por *R$ 3.486,00 à vista* (valor total).
+[07:29] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[09:35] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu sou a Josi. Eu gostaria que, por gentileza, você me dissesse qual que é a medida dos pneus que você precisa, Marcelo, porque no aro 14 existem diversas opções. Assim que possível você consegue me dar um retorno, por gentileza."  {audio:midias/3EB01BAFD3FDA7CB862860_605749.ogg}
+[12:17] LOJA: [áudio] "Oi, por gentileza Marcelo, me diz qual que é a medida dos pneus que você precisa para que eu possa realizar o seu orçamento?"  {audio:midias/3EB04105A7E533000D1F40_886612.ogg}
+[12:19] LOJA: [áudio] "Se você não souber a medida, me diz qual é o seu carro, que eu faço o orçamento com a medida original."  {audio:midias/3EB0DF3A6EF460263DBC1D_700598.ogg}

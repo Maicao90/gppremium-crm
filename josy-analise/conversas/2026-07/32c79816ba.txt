@@ -1,0 +1,8 @@
+CONVERSA 32c79816ba | contato: Nolasco | 19/07/2026 10:04 até 20/07/2026 09:46 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 19/07/2026 (Sun) ---
+[10:04] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:06] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 20/07/2026 (Mon) ---
+[09:44] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:46] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

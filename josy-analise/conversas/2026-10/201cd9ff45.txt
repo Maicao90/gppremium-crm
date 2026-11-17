@@ -1,0 +1,18 @@
+CONVERSA 201cd9ff45 | contato: Rosendo Neres | 22/10/2026 12:09 até 22/10/2026 12:38 | 3 msgs do cliente, 6 da loja, 3 do robô
+
+--- 22/10/2026 (Thu) ---
+[12:09] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Olá! Posso ter mais informações sobre isso?
+[12:09] ROBÔ: Oi, tudo bem?
+[12:09] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[12:11] CLIENTE: Camionete silverado
+31/10.50  roda 15
+[12:11] ROBÔ: [áudio — sem transcrição]
+[12:14] LOJA: [foto]
+[12:14] LOJA: [áudio] "No dia de hoje, eu tenho os pneus da marca Conforcer. No modelo ATR Brutus, ele está por R$ 779,00 a unidade para o pagamento à vista. E no modelo AT, ele está por R$ 664,00 a unidade à vista."  {audio:midias/3EB081C215AF49919DC520_136409.ogg}
+[12:20] LOJA: [áudio] "O senhor mora aqui em Luziânia mesmo, senhor Rosendo?"  {audio:midias/3EB02D7A1D354B20FAB221_15601.ogg}
+[12:37] CLIENTE: [áudio] "Mauro, mas eu ouvia o anúncio falando que tinha pneu de caminhoneta a partir de 400 e pouco, aí já vem dobrado o dobro, aí... esses preços aí tem demais por aí."
+[12:38] LOJA: [áudio] "Isso, isso mesmo, é o pneu do aro 16, na medida 2, 4, 5, 70, 16. Pneus de caminhonete no aro 15 são iguais pneus de Fiat Uno no aro 13, como as caminhonetes estão saindo de fábrica somente a partir do aro 16, então os pneus são mais baratos e são mais fáceis de encontrar."  {audio:midias/3EB0C10F850DEAE8AB6104_931179.ogg}
+[12:38] LOJA: [áudio] "Então, pneus de carro de passeio no aro 13 e pneus de caminhonete no aro 15, eles são mais caros, tá?"  {audio:midias/3EB0DA12C9D2EACF15D063_991826.ogg}
+[12:38] LOJA: [áudio] "Se o senhor quiser, eu te mando a foto deles."  {audio:midias/3EB0F9680F8E5AE7DEC856_437251.ogg}

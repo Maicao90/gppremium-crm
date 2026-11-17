@@ -1,0 +1,18 @@
+CONVERSA a91aaedabd | contato: Gratidão 💚 | 08/10/2026 11:26 até 08/10/2026 11:34 | 6 msgs do cliente, 6 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[11:26] CLIENTE: Oi, quero fazer um orçamento.
+[11:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:26] CLIENTE: 185/70r14
+[11:28] LOJA: [áudio] "Olá, bom dia, tudo bem? Eu tenho aqui os pneus da marca GF Premium, a unidade está por R$ 289,00 a vista. Você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB0F3525DEBCB9F9035BA_552917.ogg}
+[11:32] CLIENTE: Moro em valparaiso do goias
+[11:33] CLIENTE: Valparaíso do Goiás, bom dia!
+[11:33] LOJA: Ah, sim!
+[11:33] LOJA: Pertinho
+[11:33] CLIENTE: Sim sim
+[11:33] CLIENTE: Qual é a marca para esse pneu?
+[11:34] LOJA: [foto]
+[11:34] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

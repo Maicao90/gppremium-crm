@@ -1,0 +1,12 @@
+CONVERSA 3cda54ed69 | contato: cosmecarneiro | 15/09/2026 14:37 até 16/09/2026 10:50 | 2 msgs do cliente, 4 da loja, 0 do robô
+
+--- 15/09/2026 (Tue) ---
+[14:37] LOJA: *Josy:*
+Oi!
+[15:46] CLIENTE: Oi
+[15:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:46] LOJA: [áudio] "Oi, seu Cosme, tudo bom?"  {audio:midias/3EB005C585650606E2C375_561410.ogg}
+[15:46] CLIENTE: [áudio] "Eu não cheguei em casa, enquanto eu estou colocando os pneus na borracharia, para fazer a rota aqui de 5 horas, aí quando eu vou ver lá, eu entro em contato com você."
+--- 16/09/2026 (Wed) ---
+[10:50] LOJA: [áudio] "Bom dia, Sr. Cosme. Como é que vai?"  {audio:midias/3EB092C1943905BEE2D851_113174.ogg}

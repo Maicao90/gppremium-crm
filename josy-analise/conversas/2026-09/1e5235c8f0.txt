@@ -1,0 +1,25 @@
+CONVERSA 1e5235c8f0 | contato: Jhony Everton | 16/09/2026 11:35 até 22/09/2026 15:25 | 5 msgs do cliente, 9 da loja, 0 do robô
+
+--- 16/09/2026 (Wed) ---
+[11:35] CLIENTE: Olá! Vim pelo site e quero cotar pneus GP Premium.
+[11:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:37] CLIENTE: pneu 205/60 r16 92h
+[11:40] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Eu sou a Josi. Eu tenho aqui a princípio os pneus da marca GP Premium. A unidade está por apenas R$ 329 a vista. Você mora aqui em Luziânia?"  {audio:midias/3EB02DE8C8C59C9261E694_905300.ogg}
+[11:46] LOJA: [foto]
+[11:47] LOJA: *Josy:*
+No dia de hoje temos pneus da marca Aptany e GP Premium,  opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:49] CLIENTE: ah, vcs fabricam tbm? não sabia
+[11:50] CLIENTE: ou sao remold?
+[11:50] LOJA: *Josy:*
+Posso encaminhar áudio?
+[11:50] CLIENTE: sem problema
+[11:52] LOJA: [áudio] "Olá, tudo bem com você? E peço desculpas que no início da nossa conversa eu já mandei áudio sem perguntar se eu podia, tá? Johnny, então, o pneu GP Premium, ele é um pneu que nós produzimos, tá? Ele é um pneu ecológico que entrará na categoria de remodelagem. Porém, o que é que difere ele dos pneus que são remoldes convencionais? Tudo. Porque o pneu GP Premium, ele não é do mesmo processo que os pneus remoldes convencionais, conforme eu citei, né? Os pneus que são remoldes, eles são feitos de material, na grande maioria de reciclagem realmente, tá? E são feitos apenas passando uma cola num pneu e pregando uma banda de rodagem nova. Aqui nós não trabalhamos dessa forma. O pneu, ele é feito todinho de novo, tá? Justamente por isso, ele é um pneu ecológico. O Inmetro pede pra colocar na lateral dele como pertencente, sim, à categoria de remoldes, porém, linha primeira linha. Ele tem o selo do Inmetro, tudo certinho, o dote dele é recente, porque nós trabalhamos com produções semanais justamente porque são pneus que eu vendo demais da conta, assim, é... Tem nem o que falar, porque realmente é a opção que eu mais vendo. Se você quiser, eu faço aqui um vídeo pra poder te mostrar direito, tá bom? Então, eu faço aqui um vídeo pra poder te mostrar direito, tá?"  {audio:midias/3EB0C654AAEADA1D00286F_681803.ogg}
+--- 18/09/2026 (Fri) ---
+[18:11] LOJA: *Josy:*
+🙋🏼‍♀️
+[18:11] LOJA: [vídeo]
+--- 22/09/2026 (Tue) ---
+[15:25] LOJA: [foto]

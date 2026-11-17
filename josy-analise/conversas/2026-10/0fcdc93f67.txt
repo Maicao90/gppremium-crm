@@ -1,0 +1,33 @@
+CONVERSA 0fcdc93f67 | contato: Valdir ❤️Eva💍 | 03/10/2026 16:57 até 05/10/2026 10:38 | 9 msgs do cliente, 11 da loja, 0 do robô
+
+--- 03/10/2026 (Sat) ---
+[16:57] CLIENTE: Oi boa tarde mim manda os preços do seu pneu por favor ok
+[16:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:58] CLIENTE: 185 60 15
+[17:03] CLIENTE: E aí mim fala ok
+--- 05/10/2026 (Mon) ---
+[08:15] LOJA: *Josy:*
+🙋🏼‍♀️
+[08:17] CLIENTE: Bom dia qual o preço do pneus aro 15
+[08:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:17] CLIENTE: 185 15
+[08:18] LOJA: [áudio] "Oi, Valdir. Bom dia. Tudo jóia? Eu me chamo Josi. Eu gostaria de saber a medida completa do que você precisa. Por exemplo, 185-6015, 185-6515. Você pode, por gentileza, me informar?"  {audio:midias/3EB09EBA24EF4C0EA4D8ED_18532.ogg}
+[08:19] CLIENTE: 185 60 15
+[08:19] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:19] LOJA: [foto]
+[09:04] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB09BBFB06B1265E4DE65_947022.ogg}
+[09:33] CLIENTE: Não mora em marajo faz parte de cristalina Goiás
+[09:33] LOJA: *Josy:*
+Ah, sim!
+[09:34] CLIENTE: Depois eu passo por aí ok
+[10:35] LOJA: *Josy:*
+Certo... vou te encaminhar a nossa localização.
+[10:36] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:38] LOJA: [foto]
+[10:38] CLIENTE: Ok

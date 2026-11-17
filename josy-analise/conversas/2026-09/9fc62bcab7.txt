@@ -1,0 +1,53 @@
+CONVERSA 9fc62bcab7 | contato: Franklin | 05/09/2026 12:33 até 08/09/2026 15:42 | 12 msgs do cliente, 22 da loja, 0 do robô
+
+--- 05/09/2026 (Sat) ---
+[12:33] CLIENTE: Olá
+[12:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:33] CLIENTE: Tudo bem?
+[12:33] CLIENTE: Falei com você tempo atrás
+[12:33] CLIENTE: Os valores tiveram alteração?
+--- 08/09/2026 (Tue) ---
+[08:12] LOJA: *Josy:*
+Bom dia!
+[08:13] LOJA: *Josy:*
+Qual medida de pneus que você precisa?
+[08:18] CLIENTE: 195 55 16
+[08:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:51] LOJA: [foto]
+[09:14] LOJA: [áudio] "Oi Franklin, tudo já é com você? Então, eu não consegui rastrear aqui o restante das nossas conversas, mas tem os pneus da marca chinesa Sunny e os pneus da marca GP Premium, que de R$ 289,00 estão por R$ 250,00 e já colocamos eles para você, se você quiser."  {audio:midias/3EB00E8D948836915A0D66_222403.ogg}
+[09:35] CLIENTE: Esses da sunny monta?
+[09:46] LOJA: *Josy:*
+A montagem para o pneu Sunny é cobrada.
+[09:47] LOJA: *Josy:*
+Mas pode levar para montar onde quiser.
+[09:47] LOJA: *Josy:*
+Já o GP Premium eu faço a montagem.
+[11:01] LOJA: [áudio] "Franklin, eu vi aqui, na vez passada que nós conversamos, foi lá em abril. O pneu GP Premium, ele estava por R$ 289,00. Estou fazendo um preço bem bacana aí para você."  {audio:midias/A5E94E9B42581E09CD622B9E0B6AE915_200496.ogg}
+[11:03] CLIENTE: [áudio] "É, eu acabei olhando aqui, desculpa. Pois é, eu vou querer 4. Só que... eu tô vendo aqui, eu tô analisando. Eu queria testar um pneu diferente, né? Queria ver esse Sony aí. Eu tô vendo aqui um, mas tem que comprar esses pneus... urgente, eu preciso de 4."
+[11:04] LOJA: [áudio] "Olha, o Sunny, inclusive neste momento, tem apenas duas unidades, que assim, ele é bem raro de vender. O pneu que eu mais vendo aqui é o GP Premium, sem sombra de dúvidas."  {audio:midias/3EB0FA2479E51E3806CFF5_474162.ogg}
+[15:05] LOJA: [áudio] "Pois é, Franklin, passa aqui na nossa loja então, eu vou te mandar aqui a localização, está bem?"  {audio:midias/3EB0B7D45827434DC80B67_406331.ogg}
+[15:05] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:24] CLIENTE: O 205/15 tá quanto?
+[15:30] LOJA: *Josy:*
+60? 65?70?
+[15:31] CLIENTE: 55
+[15:35] LOJA: *Josy:*
+Teremos 195/55/15 e 205/60/15
+[15:36] LOJA: [foto]
+[15:36] CLIENTE: É roda 16
+[15:36] LOJA: *Josy:*
+👆🏻
+[15:36] LOJA: *Josy:*
+Você solicitou aro 15
+[15:36] CLIENTE: Desculpe
+[15:36] LOJA: *Josy:*
+Vou refazer
+[15:39] LOJA: [foto]
+[15:40] CLIENTE: Achei que fosse mais barato
+[15:42] LOJA: *Josy:*
+Bem.. vou encerrar seu atendimento, caso precise futuramente se houver a possibilidade, venha até nossa loja
+[15:42] LOJA: *Josy:*
+Boa semana!

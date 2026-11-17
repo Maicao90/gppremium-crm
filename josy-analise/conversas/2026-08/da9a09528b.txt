@@ -1,0 +1,13 @@
+CONVERSA da9a09528b | contato: dera | 27/08/2026 12:18 até 27/08/2026 12:22 | 4 msgs do cliente, 4 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[12:18] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:21] CLIENTE: Vcs tem pneus
+[12:21] LOJA: *Josy:*
+Por gentileza...
+[12:21] LOJA: Qual a medida dos pneus que você precisa hoje?
+[12:22] CLIENTE: [foto]
+[12:22] LOJA: [áudio] "Bom dia, tudo jóia? Não, não tenho a sua opção a pronta entrega não, tá? Você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB060CF18ED06DC4403AA_337171.ogg}
+[12:22] CLIENTE: Não obrigada

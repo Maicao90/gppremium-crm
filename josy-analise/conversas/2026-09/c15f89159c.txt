@@ -1,0 +1,15 @@
+CONVERSA c15f89159c | contato: João Batista | 11/09/2026 11:42 até 11/09/2026 11:47 | 6 msgs do cliente, 4 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[11:42] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:43] LOJA: *Josy:*
+🙋🏼‍♀️
+[11:45] CLIENTE: albumMessage
+[11:45] CLIENTE: [foto]
+[11:45] CLIENTE: [foto]
+[11:46] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu sou a Josi. E eu tenho aqui sim, a princípio, o pneu da marca GP Premium. Ele está por apenas R$ 349 a vista. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB059457BDEF491E0B29E_949700.ogg}
+[11:46] CLIENTE: [áudio] "Não, não, eu achei que isso era de Campos Belo, não é não?"
+[11:47] LOJA: [áudio] "Não, não somos."  {audio:midias/3EB0C35748D69F225D5842_360449.ogg}
+[11:47] CLIENTE: [áudio] "Ah não, tá bom, obrigado."

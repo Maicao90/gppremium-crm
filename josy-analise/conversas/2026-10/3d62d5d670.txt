@@ -1,0 +1,12 @@
+CONVERSA 3d62d5d670 | contato: Matheus Alves | 07/10/2026 14:38 até 07/10/2026 15:37 | 3 msgs do cliente, 5 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[14:38] CLIENTE: Quero cotar o pneu 185/65 R15 GP Premium.
+[14:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:39] CLIENTE: o pneu 185/65 R15 GP Premium.
+[14:42] LOJA: [áudio] "Oi Matheus, tudo bom? É só um instante que eu estou fazendo o seu orçamento, tá bem? Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB05990D47033427DBBC3_617637.ogg}
+[14:53] CLIENTE: Sou de Brasília
+[15:37] LOJA: [foto]
+[15:37] LOJA: [áudio] "Matheus, o pneu da marca GP Premium, ele está na promoção, o valor normal dele é R$ 289,00, e neste mês ele está por apenas R$ 249,00 a vista."  {audio:midias/3EB0AAEA46F2AF26F5788F_804079.ogg}
+[15:37] LOJA: [áudio] "Eu consigo enviar esses pneus ali para o novo Gama, para poder reduzir o seu trajeto."  {audio:midias/3EB0420B4A5BC234AB2457_899033.ogg}

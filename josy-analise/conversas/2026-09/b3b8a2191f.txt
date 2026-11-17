@@ -1,0 +1,13 @@
+CONVERSA b3b8a2191f | contato: Rener | 15/09/2026 09:47 até 15/09/2026 09:52 | 2 msgs do cliente, 5 da loja, 0 do robô
+
+--- 15/09/2026 (Tue) ---
+[09:47] LOJA: *Josy:*
+Bom dia!
+[09:47] LOJA: *Josy:*
+265/60/18
+[09:50] CLIENTE: Rener: bom dia!
+[09:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:50] LOJA: [foto]
+[09:51] CLIENTE: Obrigado. Estou pesquisando.
+[09:52] LOJA: [áudio] "Oi René, tudo jóia? Olha só, eu te mandei aí o orçamento da Bridgestone. A unidade está por R$ 1.236,00 se o seu pagamento for no débito ou no Pix. Esse é o modelo dólar, aquele pro asfalto mesmo, o modelo HT, tá jóia? E segue as opções de parcelamento em até 10 vezes. Eu consegui uma outra opção que não é Bridgestone, mas é naquele modelo Alterian, que é bem cravudo. Aí, se for de seu interesse, meu distribuidor tem esses pneus, tá jóia? E esses valores, eles sofrem alteração com o passar do tempo, tá jóia?"  {audio:midias/3EB0FF4C88FF68CCAB2AC9_367400.ogg}

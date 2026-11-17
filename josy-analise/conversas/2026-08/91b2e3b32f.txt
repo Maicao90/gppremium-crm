@@ -1,0 +1,21 @@
+CONVERSA 91b2e3b32f | contato: Luiz | 17/08/2026 16:50 até 18/08/2026 17:55 | 5 msgs do cliente, 8 da loja, 0 do robô
+
+--- 17/08/2026 (Mon) ---
+[16:50] CLIENTE: Boa tarde
+[16:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:50] CLIENTE: Eu preciso de 4 pneu 175/70r13 do uno
+[16:50] CLIENTE: Qual o preço?
+[16:51] LOJA: Boa tarde, so um instante que vou realizar seu orçamento
+[16:51] CLIENTE: Ok
+[16:56] LOJA: obrigado por aguardar
+[16:56] LOJA: [foto]
+[16:56] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 18/08/2026 (Tue) ---
+[08:33] LOJA: Bom dia!
+[08:34] LOJA: [vídeo]
+[17:55] CLIENTE: Não vou poder, mas muito obrigado!
+[17:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

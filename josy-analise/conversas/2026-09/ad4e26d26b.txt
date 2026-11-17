@@ -1,0 +1,39 @@
+CONVERSA ad4e26d26b | contato: Telma Meireles | 10/09/2026 08:33 até 10/09/2026 09:13 | 12 msgs do cliente, 12 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[08:33] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[08:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:34] CLIENTE: 14/ 175
+[08:34] LOJA: *Josy:*
+65 ou 70?
+[08:35] LOJA: *Josy:*
+🙋🏼‍♀️
+[08:36] LOJA: [áudio] "Oi Thelma, bom dia, tudo bem com você? Você pode confirmar para mim se é 175-65 ou 175-70?"  {audio:midias/3EB0B287B3AF8A362FFD35_972811.ogg}
+[08:36] CLIENTE: 70
+[08:40] CLIENTE: 75
+[08:41] LOJA: [foto]
+[08:41] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:44] CLIENTE: Certo
+[08:44] CLIENTE: Muito obrigada
+[08:44] CLIENTE: Depois passo ai
+[08:47] LOJA: *Josy:*
+175/75/14 👇🏻
+[08:47] LOJA: [foto]
+[08:48] LOJA: [áudio] "Você mora aqui em Luziânia mesmo, Thelma?"  {audio:midias/3EB08CF2CB858571079C9D_700484.ogg}
+[08:53] CLIENTE: Sim
+[09:06] LOJA: *Josy:*
+Passa aqui na nossa loja, Telma!
+[09:12] CLIENTE: Sim
+[09:12] CLIENTE: Obrigada pela atenção
+[09:13] LOJA: *Josy:*
+Vou te encaminhar a nossa localização.
+[09:13] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:13] CLIENTE: Certo
+[09:13] CLIENTE: Voltamos a falar

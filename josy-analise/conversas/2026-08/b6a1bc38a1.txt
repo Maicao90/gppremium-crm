@@ -1,0 +1,22 @@
+CONVERSA b6a1bc38a1 | contato: Doninho  | 28/08/2026 16:41 até 28/08/2026 16:49 | 11 msgs do cliente, 4 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[16:41] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[16:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:41] CLIENTE: Tô carregando pra vocês
+[16:41] CLIENTE: Vocês recebem amanhã?
+[16:45] LOJA: *Josy:*
+O que é a entrega?
+[16:45] CLIENTE: Banda de recapagem
+[16:45] CLIENTE: Vipal
+[16:48] LOJA: *Josy:*
+que horas?
+[16:49] CLIENTE: Primeiro horário
+[16:49] CLIENTE: Quando abrir eu já tô aí
+[16:49] CLIENTE: [figurinha]
+[16:49] LOJA: *Josy:*
+é aqui na GP Premium mesmo?
+[16:49] CLIENTE: Viji, não
+[16:49] CLIENTE: Kkkkk
+[16:49] CLIENTE: Desculpa

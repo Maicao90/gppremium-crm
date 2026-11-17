@@ -1,0 +1,21 @@
+CONVERSA 0cb784f2b0 | contato: Marcio Lima | 19/09/2026 09:11 até 22/09/2026 11:25 | 2 msgs do cliente, 8 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[09:11] LOJA: *Josy:*
+Bom dia!
+[09:13] CLIENTE: Bom dia
+[09:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:13] CLIENTE: 175/70 r14
+[09:14] LOJA: [foto]
+[09:14] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 21/09/2026 (Mon) ---
+[09:04] LOJA: *Josy:*
+Bom dia!
+[09:10] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu te mandei um orçamento no sábado e eu gostaria muito de saber se você teve a oportunidade de analisar, Márcio, e se tem alguma das opções que eu te encaminhei que, de repente, eu possa reservar aqui para você. Assim que possível, pode me dar um retorno, por gentileza?"  {audio:midias/3EB0FBFEC36B9726644C0A_202556.ogg}
+--- 22/09/2026 (Tue) ---
+[11:25] LOJA: [áudio] "Olá, tudo bem? Eu vou encerrar aqui o seu atendimento, justamente para não ficar enchendo seu WhatsApp de mensagens, tá joia? Vou deixar aqui a nossa localização, se houver a possibilidade de passar aqui na loja para conversarmos pessoalmente. Muito obrigada por sua atenção. Até mais."  {audio:midias/3EB08AAE207B6A00CAB267_857766.ogg}
+[11:25] LOJA: [foto]

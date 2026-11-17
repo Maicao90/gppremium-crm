@@ -1,0 +1,22 @@
+CONVERSA b5ea5d2355 | contato: vitoria amor eterno. | 26/08/2026 13:28 até 26/08/2026 17:55 | 8 msgs do cliente, 7 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[13:28] CLIENTE: Olá! Vim pelo site e quero cotar pneus GP Premium.
+[13:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:29] LOJA: [áudio] "Olá, boa tarde, tudo bem? Eu sou a Josi. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB020DBD0E7F8F80497D2_556100.ogg}
+[13:29] CLIENTE: Aro 13
+[13:30] CLIENTE: Sim
+[13:30] CLIENTE: Mas a medida é 175/75R13
+[13:31] CLIENTE: São 4
+[13:39] CLIENTE: Qual valor
+[13:39] CLIENTE: Sim moro em luziania
+[13:47] CLIENTE: Quero cotar o pneu 165/70 R13 GP Premium.
+[14:27] LOJA: [foto]
+[14:28] LOJA: *Josy :*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:28] LOJA: [áudio] "É que quando você utiliza no aro 13, você pode usar aí também um 7570, tá joia? E igual a observação que você colocou aqui, um 6570. Então, você pode utilizar todas essas opções."  {audio:midias/3EB01472D2D024A54DB84F_819252.ogg}
+[17:55] LOJA: [áudio] "Olá, boa tarde. Eu imagino que o seu dia tenha sido bem corrido e por essa razão você não pode me dar um parecer aqui a respeito do orçamento que eu te encaminhei, mas eu vou fazer o seguinte, por hora eu vou encerrar aqui o seu atendimento e vou deixar aqui registrada a nossa localização, pois se houver a possibilidade você vem aqui para conversarmos pessoalmente, está bem? Obrigada e até mais."  {audio:midias/3EB087FC1AAB792939B52A_901804.ogg}
+[17:55] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

@@ -1,0 +1,13 @@
+CONVERSA e022ad2052 | contato: Lindomar | 14/09/2026 11:59 até 14/09/2026 12:00 | 3 msgs do cliente, 4 da loja, 0 do robô
+
+--- 14/09/2026 (Mon) ---
+[11:59] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:59] CLIENTE: Vocês a multa para-brisa de carro aí
+[11:59] LOJA: *Josy:*
+Bom dia.
+[11:59] LOJA: *Josy:*
+Aqui não monta , para-brisa.
+[12:00] CLIENTE: Você tem algum contato de alguma loja em Jussara que a monta para-brisa por favor tiver me informa
+[12:00] LOJA: [áudio] "Não, não. Inclusive, nós somos aqui de Luziânia, Luziânia, Goiás."  {audio:midias/3EB0531E977EF7F0B0E61E_332750.ogg}

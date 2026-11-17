@@ -1,0 +1,30 @@
+CONVERSA fe49fced38 | contato: Axed.com.br E Freitas Producoes Graficas | 30/09/2026 07:37 até 01/10/2026 17:36 | 6 msgs do cliente, 12 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[07:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:37] CLIENTE: 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[07:41] CLIENTE: 215 55 17
+[08:16] LOJA: [áudio] "Olá, bom dia, tudo bem? Eu me chamo Josi. E vocês têm busca de alguma marca específica?"  {audio:midias/3EB03B17A3696B25B7AFE7_772623.ogg}
+[08:18] CLIENTE: Não quero garantia e qualidade com preço
+[08:19] LOJA: [áudio] "Certo, compreendi. E o senhor mora aqui em Luziânia, Goiás?"  {audio:midias/3EB060969F268C09602B70_903682.ogg}
+[08:19] CLIENTE: Não Bsb
+[09:02] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:02] LOJA: [foto]
+[09:22] LOJA: *Josy:*
+Ah, e o pneu da marca GP Premium é o pneu mais vendido que temos, e está na promoção compre 3 e leve 4
+[09:22] LOJA: *Josy:*
+Exemplo digamos que seu pagamento seja a viista a  unidade  é  R$ 395,00 x 3 pneus = R$ 1.185,00 por esse preço você vai levar os 4
+[09:23] CLIENTE: Ok vou analisar
+[09:35] LOJA: [áudio] "Perfeito! Se você quiser, eu te mando foto, eu gravo um vídeo para você ver direito como que é esse pneu, tá? E reforço, ele é o pneu mais vendido que eu tenho justamente por conta da qualidade, tá bom?"  {audio:midias/3EB010E26222FF58FA36B6_906496.ogg}
+[09:38] CLIENTE: Me manda então
+[16:51] LOJA: *Josy:*
+Obrigada por aguardar, a internet apresentou instabilidade em nossa cidade. Reestabeleceu agora.
+[16:57] LOJA: [vídeo]
+--- 01/10/2026 (Thu) ---
+[17:36] LOJA: [áudio] "Olá, boa tarde, tudo bom? Ontem eu até te encaminhei um vídeo aqui a respeito dos pneus e gostaria de saber se o senhor analisou, né, e me diz o que é que achou."  {audio:midias/3EB0CB202BAEDACC85F1AA_375080.ogg}

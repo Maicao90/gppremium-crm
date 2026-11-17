@@ -1,0 +1,21 @@
+CONVERSA 2922db5f56 | contato: Jheffin Santtos | 15/09/2026 11:07 até 15/09/2026 11:42 | 6 msgs do cliente, 8 da loja, 0 do robô
+
+--- 15/09/2026 (Tue) ---
+[11:07] CLIENTE: Bom dia tudo bem?
+[11:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:07] CLIENTE: Vocês tem o pnus GP Premium 185/65 15?
+[11:09] LOJA: *Josy:*
+Bom dia!
+[11:09] LOJA: *Josy:*
+Temos sim!
+[11:10] LOJA: [foto]
+[11:10] LOJA: *Josy:*
+De R$ 289,00 por R$ 249,00 a vista.
+[11:37] LOJA: [áudio] "Olá, tudo bem com você? Eu me chamo Josi e Jefferson, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB08A4023385F25478F95_539729.ogg}
+[11:39] CLIENTE: Sim
+[11:39] CLIENTE: Vocês ficam localizados aonde?
+[11:40] LOJA: [áudio] "Nós somos aqui de Luziânia também, na fábrica, aqui na BR-040. Sabe aqui onde fica, pra frente um pouquinho desse motel Vegas aqui na BR, aí tem um posto de combustível, que é o posto Aliança, logo ao lado tem a Goiás Diesel e Hotel Goiás, e aí chega aqui na nossa empresa."  {audio:midias/3EB0E89E77E448FCAEA08B_589575.ogg}
+[11:40] LOJA: [foto]
+[11:41] CLIENTE: Sei onde fica
+[11:42] CLIENTE: Assim que tiver na cidade vou aí na fábrica

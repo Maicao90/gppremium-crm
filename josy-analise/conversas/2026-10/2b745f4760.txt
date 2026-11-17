@@ -1,0 +1,32 @@
+CONVERSA 2b745f4760 | contato: Isnar | 14/10/2026 18:05 até 15/10/2026 18:03 | 9 msgs do cliente, 16 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[18:05] CLIENTE: Boa Tarde Josi
+[18:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:05] CLIENTE: 265 _ 65_17
+[18:05] CLIENTE: Ou 265 70 17
+[18:06] LOJA: [áudio] "Oi Suizna, tudo bom?"  {audio:midias/3EB07927DAB7183090F6B5_741654.ogg}
+[18:06] LOJA: [foto]
+[18:06] CLIENTE: Oieee
+Tudooo
+[18:07] LOJA: [áudio] "Vocês, ah, eu tenho aqui o 265-65-17. Ai, que bom que você tá bem. É, então, neste momento eu tenho o pneu da marca Maxx, a unidade é de 684 reais e vou ter no modelo brutos por 599 reais à vista. Eu creio que eu consigo aqui também os quatro últimos no modelo ATR por 559 reais. Fiste aí. FReVce 4,7-3 FReVce 4,8 14,8 14,8� 1,9 FRIVCE 4,820 o círculo ARIZ Ge eine composición. Aciebe 6,9 – 16,6 o círculo ARIZ , 4,9 Nasına, 6,7%. Aciebe,chte 1,9 sobre 30,9o. Aciebe,otes 4,9s, 8,6 quírculo Aries Net."  {audio:midias/3EB04A20388ABE384CB675_624234.ogg}
+[18:07] LOJA: [áudio] "Esses são os pneus da marca GP Premium, tá?"  {audio:midias/3EB0A6AD36646F77A2227F_845502.ogg}
+[18:07] LOJA: [foto]
+[18:07] CLIENTE: [áudio] "Ah, Josi, eu entendi. Não, tá no preço bom. Deixa eu te perguntar, eles são remold ou é importado normal? Me fala aí."
+[18:08] LOJA: [foto] Brutus
+[18:08] CLIENTE: Bonito Hein
+[18:08] LOJA: [foto]
+[18:08] LOJA: Atr
+[18:09] CLIENTE: Qual Marca e esse
+[18:09] LOJA: [áudio] "Seu Isna, os pneus GP Premium são os pneus que nós fazemos. Eles são pneus ecológicos, eles entrarão na categoria de remodelagem, só que linha Premium, que é completamente diferente dos pneus remoldes convencionais. Inclusive, eu tenho instalado aqui na nossa caminhonete. Se o senhor quiser dar uma olhada..."  {audio:midias/A5CF517B51B1D8351D0F74DF1686EAEB_124123.ogg}
+[18:09] LOJA: [vídeo]
+[18:10] LOJA: [áudio] "Eles têm 2 anos de garantia, tá? Eu só vou encerrar aqui o nosso atendimento porque o meu WhatsApp bloqueia exatamente às 6h10, tá bom? Aí amanhã eu consigo te responder."  {audio:midias/A5BB16B62C16D6AE432B872F8C884DD1_867305.ogg}
+[18:10] CLIENTE: Entendi
+--- 15/10/2026 (Thu) ---
+[08:16] LOJA: [áudio] "Bom dia, bom dia, Esna. Como é que você está?"  {audio:midias/3EB0E863AA5AEABC3F5B62_16135.ogg}
+[09:30] CLIENTE: [áudio] "Opa Josi, bom dia! E aí, tudo bem? Então Josi, estou analisando aqui, viu? Porque eu moro em Taguatinga, até chegar em Luziânia, também tem tudo isso, né? Eu estou pesquisando aqui, mas vamos ver, acho que vai dar certo. Vamos ver, estou analisando aqui, tá bom?"
+[09:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:48] LOJA: Posso mandar para o Novo Gama para encurtar o trajeto, se for bom para você!
+[18:03] LOJA: [áudio] "Senhor Isna, então, como o senhor mora aí para essas bandas, para poder facilitar aí a questão de trajeto, porque eu sei que é distante realmente, eu mando os pneus para o novo Gama, tá? Aí, se for de seu interesse, o senhor me fala aqui que nós providenciamos para o senhor, tá bom?"  {audio:midias/3EB0EA5A0CA0B1ABCEBA2B_958444.ogg}

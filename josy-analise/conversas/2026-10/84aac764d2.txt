@@ -1,0 +1,93 @@
+CONVERSA 84aac764d2 | contato: . | 05/10/2026 08:58 até 05/10/2026 17:10 | 35 msgs do cliente, 33 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[08:58] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[08:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:58] CLIENTE: Bom dia
+[08:59] CLIENTE: Aro 17 205/50
+[09:00] LOJA: *Josy:*
+Bom dia, obrigada por aguardar.
+[09:00] LOJA: *Josy:*
+Temos sim!
+[09:00] LOJA: [foto]
+[09:00] LOJA: *Josy:*
+Pneus da marca Forceland e Pneus da marca GP Premium
+[09:00] LOJA: *Josy:*
+
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:01] CLIENTE: Muito obrigado,vou passar aí atarde quando eu chegar do trabalho,tá bom ?
+[09:01] CLIENTE: A loja é aberta até que horas ?
+[09:02] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu sou a Josi e assim que possível me diz qual é o seu nome para que eu possa salvar o seu contato, tá bem? E perfeito, nossa, será uma satisfação receber você aqui."  {audio:midias/3EB0DF03ED9B90F0ECCC84_954890.ogg}
+[09:02] LOJA: [áudio] "Hoje o nosso horário de atendimento é das 8 da manhã até as 18. Nós não fechamos para o almoço."  {audio:midias/3EB09D1C46A36657805C35_615260.ogg}
+[09:03] CLIENTE: Pronto ,irei passar aí na parte da tarde tá bom?
+[09:03] CLIENTE: Muito obrigado pela atenção
+[09:04] LOJA: *Josy:*
+Excelente!
+[09:04] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:05] LOJA: [foto]
+[15:19] CLIENTE: Boa tarde
+[15:19] LOJA: *Josy:*
+oI!
+[15:20] LOJA: *Josy:*
+Boa tarde
+[15:20] CLIENTE: Eu queria fechar a compra de um pneu aí com vcs
+[15:20] CLIENTE: E um rapaz vai pegar aí pra mim,pode ser ?
+[15:20] CLIENTE: Eu queria esse aro 17 205/50 Nacional
+[15:20] LOJA: *Josy:*
+pODE SIM!
+[15:21] CLIENTE: Vcs tem garantia de quanto tempo ?
+[15:24] LOJA: *Josy:*
+O GP Premium, é o pneu mais vendido.
+[15:24] LOJA: *Josy:*
+2 anos de garantia.
+[15:25] CLIENTE: Qual valor dele ?
+[15:28] LOJA: *Josy:*
+Se for a vista a unidade R$ 339,00
+[15:29] CLIENTE: No Pix
+[15:29] LOJA: *Josy:*
+R$ 1.356,00
+[15:29] CLIENTE: Vou precisar de 1
+[15:29] CLIENTE: Por enquanto
+[15:29] LOJA: *Josy:*
+Pensei que seriam os 4 rsrs
+[15:29] LOJA: *Josy:*
+Desculap
+[15:29] CLIENTE: Não somente 1
+[15:30] LOJA: *Josy:*
+Perfeito!
+[15:30] LOJA: [áudio] "Você já vai querer fazer a instalação dele?"  {audio:midias/3EB0843A74E97D21336797_96858.ogg}
+[15:30] CLIENTE: Eu vou mandar no Pix e pedir o rapaz pra pegar pra mim tá bom
+[15:30] LOJA: [áudio] "E, por gentileza, me fala qual é o seu nome completo, seu CPF, o CPF do endereço e endereço para eu gerar nota fiscal, está bem?"  {audio:midias/3EB05D2150E4540B93CA7B_863763.ogg}
+[15:30] CLIENTE: Pois só chego em Luziânia anoite
+[15:31] CLIENTE: Tarcísio da Costa souza
+[15:31] CLIENTE: CPF 06495135505
+[15:31] CLIENTE: Rua rodovalho Roriz número 22 Q23 Jardim sion
+[15:35] LOJA: *Josy:*
+Vi aqui , o senhor já é nosso cliente!
+[15:35] CLIENTE: Bacana rsrs
+[15:35] CLIENTE: Nem lembrava
+[15:36] LOJA: [áudio] "Sim, aqui no WhatsApp não apareceu seu nome, porque o meu WhatsApp atualizou, é por isso que eu pedi seus dados, aí quando eu coloquei seu CPF já carregou de imediato aqui."  {audio:midias/3EB04AC0EF39B686F7CBF3_343940.ogg}
+[15:36] LOJA: [áudio] "Quem é a pessoa que vai vir aqui para buscar?"  {audio:midias/3EB0B58A345A07CB3CE25C_273677.ogg}
+[15:37] CLIENTE: Elenildo
+[15:37] CLIENTE: Eu vou deixar pago já tá bom?
+[15:38] LOJA: *Josy:*
+Vou te encaminhar o pix
+[15:38] CLIENTE: Ok
+[15:46] CLIENTE: Eu vou ficar sem sinal de internet
+[15:46] CLIENTE: Já me envia o Pix pra deixar pago tá bom?
+[15:47] LOJA: *Josy:*
+24.289.955/0001-79
+[15:52] CLIENTE: Enviei mas não tô conseguindo gerar o comprovante
+[15:52] CLIENTE: Só um momento
+[15:53] CLIENTE: [documento]
+[15:53] CLIENTE: Prontinho
+[15:53] LOJA: *Josy:*
+Perfeito!
+[15:53] CLIENTE: Vou pedir pro rapaz ir aí fazer a retirada tá bom?
+[15:53] LOJA: *Josy:*
+Certinho!
+[16:09] LOJA: [áudio] "Ele já veio aqui buscar, tá bom, Preciso? Muitíssimo, obrigada. Boa semana pra você."  {audio:midias/3EB0EA1D64E89F24E90279_491699.ogg}
+[17:10] CLIENTE: Tá bom ,eu que agradeço ☺️

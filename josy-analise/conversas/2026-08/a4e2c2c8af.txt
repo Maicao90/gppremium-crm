@@ -1,0 +1,51 @@
+CONVERSA a4e2c2c8af | contato: FLAVIO ROQUE | 28/08/2026 16:50 até 22/09/2026 15:44 | 18 msgs do cliente, 22 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[16:50] CLIENTE: Quero cotar o pneu 165/70 R14 GP Premium.
+[16:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:50] CLIENTE: Boa tarde
+[16:50] CLIENTE: 165/70 R14
+[16:54] LOJA: [áudio] "Oi, boa tarde, tudo bem com você? Eu sou a Josi. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB099AA725735382CBD4D_641307.ogg}
+[16:55] CLIENTE: Moro sim
+[16:56] LOJA: [foto]
+[16:56] LOJA: *Josy:*
+Prefere mensagem de áudio ou texto?
+[16:57] CLIENTE: Oque vc achar melhor
+[16:57] CLIENTE: Pode ser áudio
+[17:10] LOJA: [áudio] "Olá, obrigada por aguardar. Eu tenho aqui sim, tá? A opinião é da marca GP Premium. A unidade está por R$ 239,00. Esse valor é para o débito ou Pix, mas se você trouxer o pagamento em dinheiro, fica por R$ 227,00 cada um, tá? Débito e Pix, R$ 239,00. Dinheiro, R$ 227,00."  {audio:midias/3EB0DBBD767EA5D42F7CAB_592412.ogg}
+[17:48] CLIENTE: Certo
+[17:48] CLIENTE: [áudio] "Eu vou, como eu estou com um orçamento aqui, eu vou esperar virar mês agora, ver se vai sobrar o dinheiro, vou ver se eu já compro logo os 4. Aí, assim que virar mês, eu retorno, tá bom?"
+[17:49] LOJA: [áudio] "Combinado, vai dar tudo certo. Qual é o mesmo seu nome?"  {audio:midias/3EB0FA01142CE765E46CB5_232665.ogg}
+[17:49] CLIENTE: Flavio
+[17:50] CLIENTE: [áudio] "Deixa eu te perguntar um negócio, Luzi. Eu já comprei pneu e antes, entendeu? Acho que foi ano passado, não, ano atrasado. Ano passado, é. Beleza. Agora eu vou comprar novamente, né? Só que daí eu quero te perguntar o seguinte, tá dizendo no site, quando você entra no Google, que vocês já, esse valor já com a mão de obra, de montagem. ou ainda tem que pagar por fora lá na cena pra montar?"
+[17:51] LOJA: [áudio] "Mas você comprando aqui comigo, que aqui é a fábrica, tá? Você comprou aqui comigo mesmo?"  {audio:midias/3EB07385849FA79F411A02_730211.ogg}
+[17:51] LOJA: [áudio] "Porque comprando aqui comigo, sim, a montagem já é inclusa, a mão de obra de instalar os pneus já é inclusa, já está pago. A única coisa que se paga a parte é o balanceamento dos pneus, alinhamento, serviços que forem necessários ser feitos, tá?"  {audio:midias/3EB0E5CFB3E30E828A6B29_736841.ogg}
+[17:51] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:52] LOJA: [foto]
+[17:53] CLIENTE: [áudio] "Não, tranquilo, é porque na época que eu comprei aí, eu comprei o 5, né, aí na época teve que levar para a loja parceira, né, que foi lá na Sena Pneus, para poder fazer não só o desempenho das rodas, mas teve que fazer balanceamento. Por isso que eu estou te perguntando."
+[17:54] LOJA: [áudio] "Ah, sim, perfeito, justo. A montagem, né, que tirar os pneus aí do seu carro e colocar os novos, isso você não precisa pagar. Agora, serviços, né, aí são à parte. Aí nós estamos com a parceria com a loja que é ao nosso lado, que é a Supervia. Aí você, negociando aqui comigo, consiga um preço bacana pra você nesses serviços, tá?"  {audio:midias/3EB02C57D4D34B03571062_748021.ogg}
+[17:55] CLIENTE: [áudio] "Não, tranquilo, até porque está se tratando de quatro rodas de ferro novas, né? Não tem pneu ainda, só uma que foi usada, mas ainda é vídeo. Aí eu vou precisar dos bicos e do balanceamento. Quando eu receber aqui que der certo, pode ficar tranquilo que eu vou retornar e vamos sim colocar. Aí eu te aviso."
+[18:00] LOJA: [áudio] "Fechou!"  {audio:midias/3EB0D6D96971CFA21DA486_962726.ogg}
+[18:00] LOJA: [áudio] "Ficamos combinados então, tá bom Flávio? Por hora agradeço muito pelo seu contato, espero que você tenha um bom final de semana, vamos nos falando, tá joia? Tchau, tchau, um abraço."  {audio:midias/3EB0743775D1B5B9B56D8B_246801.ogg}
+--- 22/09/2026 (Tue) ---
+[15:13] LOJA: [áudio] "Oi Flávio, tudo jóia? Flávio, já vai fazer um mês praticamente que nós conversamos, né, a respeito dos pneus aí para o seu carro. Gostaria de saber se você, primeiramente, se você está bem, né, que já tem tempo que nós não nos falamos, e posteriormente aí se você está precisando ainda de colocar os pneus no seu carro. Quando possível, fala aqui comigo, tá bom?"  {audio:midias/3EB0C1A3FFCF6A5DB2720A_561574.ogg}
+[15:38] CLIENTE: [áudio] "Boa tarde, Luzi. Tudo bem? Como é que você tá? Então, na medida do possível, eu tô bem. Sim, ainda quero comprar os pneus, só porque infelizmente deu uma apertada nas contas aqui em casa, né? Então, tipo assim, por isso que eu ainda não procurei, mas sim, ainda tô em vista de comprar os pneus, mesmo que vai ficar parado, entendeu? Aí, eu tô só esperando agora a condição financeira dar uma melhoradinha agora, mês que vem, pra ver se eu já seguro. Porque se eu não conseguir segurar a vista no Pix, eu vou segurar no cartão. Aí, eu tô pagando o cartão pra ver se eu consigo sobrar dinheiro ou se eu compro no mesmo. Mas, no mais demais, por hora, é isso aí. Assim que melhorar a condição aqui das pernas, eu entro em contato, sim. Pode ficar tranquilo."
+[15:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:38] LOJA: *Josy:*
+Eu entendo....
+[15:39] LOJA: *Josy:*
+Quando a gente fala que está na medida do possível... é sobre isso, esto ucom as costas travadas kkkk
+[15:39] LOJA: *Josy:*
+Vai dar tudo certo, meu amigo!
+[15:39] CLIENTE: Ser brasileiro e pobre é foda
+[15:40] LOJA: [figurinha]
+[15:40] CLIENTE: Quando sobra um dinheirinho, aparece imprevistos
+[15:40] LOJA: [áudio] "Tudo conforme o imprevisto, não é, Flávia? É assim mesmo."  {audio:midias/3EB00C197BD09C4BC461CD_483642.ogg}
+[15:40] LOJA: [áudio] "Mas vai dar certo."  {audio:midias/3EB06379EA559B3FDA4044_123743.ogg}
+[15:40] CLIENTE: Vai sim
+[15:42] CLIENTE: [áudio] "Mas fique tranquilo, tá? Eu ainda não desisti da ideia de comprar os pneus, não. Porque é o seguinte, no meu caso, dá até dó, mas é o que eu quero no momento, né? Eu quero comprar esses 4 pneus pra colocar no meu chevet que tá parado, que eu vou reformar. Então, tipo assim, é... Eu preciso comprar esses pneus porque os que estão lá são tudo desiguais, já estão velhos, ressecados, estão murchos. Então, tipo assim, por mais que seja uma dó colocar esses pneus novos pra ficar no quintal, né? Só pra movimentar o carro pra lá e pra cá. Mas eu realmente preciso, até porque quando for levar pra lanterna de pintura, já tenha pneus e rodas que aguente fazer o transporte. Mas vai dar certo. No mais demais, assim que eu juntar aqui e for a hora, eu te aviso."
+[15:43] LOJA: [áudio] "Beleza, Flavio. Ficamos combinados assim, tá? E vai dar certo. Vai dar tudo certo. Obrigada pela sua atenção. Que você tenha desde já uma boa semana aí. E bom final de semana quando chegar, né? Porque chega rápido."  {audio:midias/3EB0CEF1BBEE20D7611403_38417.ogg}
+[15:44] CLIENTE: Para vc também

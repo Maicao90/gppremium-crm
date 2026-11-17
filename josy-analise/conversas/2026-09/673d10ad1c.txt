@@ -1,0 +1,29 @@
+CONVERSA 673d10ad1c | contato: gabriel Fernandes | 09/09/2026 14:36 até 09/09/2026 14:45 | 6 msgs do cliente, 10 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[14:36] CLIENTE: Boa tarde, Vocês trabalham com as marcas kumho ou ceat?
+[14:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:37] CLIENTE: 195 65 15
+[14:37] LOJA: *Josy:*
+Boa tarde...temos sim!
+[14:37] LOJA: *Josy:*
+Vou realizar seu orçamento.
+[14:37] CLIENTE: Ok obrigado
+[14:38] LOJA: *Josy:*
+Prontinho!
+[14:38] LOJA: [foto]
+[14:38] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:38] LOJA: *Josy:*
+Os pneus da marca GP Premium , estão na promoção compre 3 e leve 4
+[14:38] LOJA: *Josy:*
+Exemplo: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[14:44] LOJA: [áudio] "Oi Gabriel, tudo bem? Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0B076F41FCEAF0C3684_151307.ogg}
+[14:45] CLIENTE: Moro em santa Maria
+[14:45] LOJA: *Josy:*
+Perto de nós!
+[14:45] CLIENTE: Mas tenho preferência pelas marcas citadas acima mesmo
+[14:45] CLIENTE: Obrigado

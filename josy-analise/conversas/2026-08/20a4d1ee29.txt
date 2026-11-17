@@ -1,0 +1,20 @@
+CONVERSA 20a4d1ee29 | contato: Emerson Santos Tavares | 26/08/2026 16:54 até 26/08/2026 17:06 | 8 msgs do cliente, 6 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[16:54] CLIENTE: Boa tarde, tudo bem? Preciso de um orçamento: PNEUS 225 / 55 / R19 ?
+[16:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:54] CLIENTE: Olá, pneus gp premium! Tudo bem?
+Eu sou a assistente da *SJ Limp* e da *Chácara São Paulo*. Nós oferecemos estacionamento próximo ao aeroporto e também vendemos produtos de limpeza de alto padrão.
+Como posso te ajudar hoje? Você busca informações sobre o nosso estacionamento ou gostaria de ver nossa tabela de preços de produtos de limpeza?
+[16:54] CLIENTE: PNEUS 225 / 55 / R19
+[16:55] CLIENTE: Também quero ver 235, 55, R19
+[16:55] LOJA: *Josy:*
+É essa medida mesmo?
+[16:55] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Aqui a pronta entrega não dispõe de nenhuma das duas opções, eu vou ter somente o 255."  {audio:midias/3EB0767A8F96FCDDBF7E75_762193.ogg}
+[16:55] CLIENTE: Para Dodge Journey
+[16:56] LOJA: [áudio] "Essa opção aqui do 235, eu consigo ela somente através de encomenda. Ele leva uns três dias para poder chegar. Aí me dá só um instante que eu vou verificar aqui com o meu distribuidor qual as opções que ele tem. Tá joia? Você é daqui de Luziânia mesmo?"  {audio:midias/3EB06EF9ADB5C0204A3C14_903346.ogg}
+[16:57] CLIENTE: Tranquilo, foi não tenho pressa, foi uma indicação, um amigo comprou para o carro dele aí com vocês.
+[17:03] LOJA: [foto]
+[17:04] LOJA: [áudio] "Bem, do 235, eu consegui essas três opções de marcas, tá? Os pneus nacionais da Continental, a unidade 1582, se o pagamento for à vista. Os pneus importados da marca TrackMax, a unidade 681 reais à vista e pneus da marca Sunny por 765, a unidade à vista. Já o 2255, continua aguardando a resposta aqui dos distribuidores, está bem?"  {audio:midias/3EB03088B62EFB92B436A9_320635.ogg}
+[17:06] CLIENTE: Ok, obrigado.

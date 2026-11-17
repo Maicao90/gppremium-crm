@@ -1,0 +1,18 @@
+CONVERSA 23e4868ef9 | contato: nelsonjunioroliveira1 | 09/10/2026 13:37 até 09/10/2026 14:43 | 4 msgs do cliente, 8 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[13:37] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+[13:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:37] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+265/70/16
+[13:39] CLIENTE: Preço?
+[13:40] LOJA: Boa tarde, Nelson!
+[13:40] LOJA: [foto]
+[13:41] LOJA: Hoje terei o pneu da marca  Lanvigator
+[13:41] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:42] CLIENTE: [áudio] "Só tem essa marca aí, não tem outra marca não. E manda aí o Laçote para mim ver."
+[13:44] LOJA: [foto]
+[13:44] LOJA: [foto]
+[14:43] LOJA: [áudio] "Seu Nelson, aí vai ter o 2, 4, 5, 70, 16, aqui o da GP Premium."  {audio:midias/3EB046199E95A434831221_647262.ogg}

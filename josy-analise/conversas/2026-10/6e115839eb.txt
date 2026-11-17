@@ -1,0 +1,81 @@
+CONVERSA 6e115839eb | contato: Atacadão do Brimo | 08/10/2026 12:58 até 13/10/2026 12:53 | 54 msgs do cliente, 19 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[12:58] CLIENTE: Olá boa tarde
+[12:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:58] CLIENTE: Vocês trabalham com venda faturada?
+[13:03] LOJA: Qual a medida dos pneus que você precisa hoje?
+[13:03] LOJA: São aqui de Luziania-Go?
+[13:07] CLIENTE: 265/60 r18
+[13:07] CLIENTE: Brasília
+--- 09/10/2026 (Fri) ---
+[09:48] CLIENTE: Bom dia Josy tudo bem?
+[09:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:48] LOJA: Bom dia!
+[09:49] LOJA: Bem a respeito dessa medida, teremos os pneus da nossa marca GP Premium, são pneus ecologicos que nós produzimos, eles entrarão na categoria de remodelagem, entretanto linha  premium, são os pneus mais vendidos que temos.
+[09:56] CLIENTE: Tudo bem graças a Deus
+[09:56] LOJA: [áudio] "Qual é o Tsunami?"  {audio:midias/3EB0BE7B655CBE3D3FC6B1_623324.ogg}
+[09:58] CLIENTE: Josy você fala com Tiago
+[10:03] LOJA: [áudio] "Seja bem-vindo, Thiago."  {audio:midias/3EB05FF33D09987ABD8255_864543.ogg}
+[10:06] CLIENTE: Obrigada
+[10:07] LOJA: [áudio] "E Tiago, esses pneus aqui que eu acabei de falar contigo, eles são os pneus mais vendidos que eu tenho justamente por conta da qualidade. Quer que eu te mande foto, alguma coisa assim?"  {audio:midias/3EB00D41558015A344FE0D_632070.ogg}
+[10:57] CLIENTE: Sim por favor
+[11:13] LOJA: [vídeo]
+[11:15] LOJA: [foto]
+[11:16] LOJA: Pneus com 2 anos de garantia.
+[11:17] CLIENTE: Maravilha perfeito
+[11:21] CLIENTE: Josy vou te enviar a documentação completa
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [foto]
+[11:22] CLIENTE: [foto]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [foto]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [foto]
+[11:22] CLIENTE: [foto]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [documento]
+[11:22] CLIENTE: [foto]
+[11:22] CLIENTE: [foto]
+[11:23] CLIENTE: Caso tenha faltado algum documento me avise por gentileza
+[11:24] LOJA: Certo.
+[11:34] LOJA: Contrato social, não vi aqui
+[11:36] CLIENTE: .
+[11:37] LOJA: Perdão...
+[11:39] CLIENTE: Imagina se tiver faltando mais alguma coisa me avisa
+--- 13/10/2026 (Tue) ---
+[11:59] CLIENTE: Bom dia
+[11:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:12] LOJA: [áudio] "Oi Tiago, bom dia, tudo bom? Tiago, eu estava falando justamente alguns minutos atrás com a pessoa do Departamento Financeiro e realmente não estão fazendo boletos. Eu até tentei negociar lá, mas não estão."  {audio:midias/3EB03BE13CF97BD4F8BF3C_232204.ogg}
+[12:19] CLIENTE: [áudio] "Tudo bem, então. Obrigado pela atenção. Até a próxima. Um abraço. Tchau, tchau."
+[12:44] LOJA: [áudio] "Um abraço, Tiago. Uma pena, não consegui realmente, tá? Mas caso você mude de ideia e queira vir até nossa empresa, nós negociamos o pagamento para o cartão de crédito, tá bom?"  {audio:midias/3EB02CAB97F251A2C86C6B_31070.ogg}
+[12:52] CLIENTE: [áudio] "Tudo bem então, amiga? Eu fiz um..."
+[12:53] CLIENTE: [áudio] "Música"
+[12:53] LOJA: Oi...
+[12:53] CLIENTE: Beleza amiga

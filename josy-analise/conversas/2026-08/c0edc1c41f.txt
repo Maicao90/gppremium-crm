@@ -1,0 +1,72 @@
+CONVERSA c0edc1c41f | contato: RM Construções | 25/08/2026 20:25 até 22/10/2026 08:42 | 20 msgs do cliente, 28 da loja, 2 do robô
+
+--- 25/08/2026 (Tue) ---
+[20:25] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[20:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 26/08/2026 (Wed) ---
+[08:30] LOJA: *Josy :*
+Qual a medida dos pneus que você precisa hoje?
+[08:55] CLIENTE: 215/50/17
+[08:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:55] CLIENTE: 4
+[08:58] LOJA: [foto]
+[08:58] LOJA: *Josy :*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:40] LOJA: [áudio] "Olá, tudo bem? Eu me chamo Josi e, quando possível, me diz o seu nome. Eu te encaminhei o orçamento a ir mais cedo, mas eu imagino que seu dia tenha sido extremamente corrido e, por essa razão, você não tenha conseguido aqui me responder. Então, por hora, eu vou encerrar o seu atendimento e, caso você precise, você me chama aqui novamente. Vou deixar aqui na conversa a nossa localização, pois, se você preferir vir diretamente aqui para nós conversarmos pessoalmente, será uma satisfação receber você em nossa empresa."  {audio:midias/3EB0E9418981B9362B2E94_332325.ogg}
+[17:40] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 08/10/2026 (Thu) ---
+[22:11] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[22:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 09/10/2026 (Fri) ---
+[08:54] LOJA: [áudio] "Oi, bom dia. Me diz, por gentileza, que eu posso te ajudar?"  {audio:midias/3EB0C05B4888B2CC59F8CD_119784.ogg}
+[10:26] CLIENTE: 215/50/17
+[10:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:26] CLIENTE: 4
+[10:33] LOJA: [áudio] "Eu esqueci qual que é o seu nome, mas por hora continuam os mesmos preços que nós conversamos há cerca de um mês atrás, dois meses aproximadamente. O pneu da marca GP Premium, ele está por R$ 329,00 a unidade à vista."  {audio:midias/3EB0114A19537DA311C169_555460.ogg}
+[10:38] CLIENTE: Tem foto do pneu
+[10:38] CLIENTE: Na medida que eu quero por favor
+[10:42] LOJA: Sim, tem sim! Por isso te mandei áudio!
+[10:42] LOJA: 1 instante.
+[10:43] LOJA: [foto]
+[10:43] LOJA: [foto]
+[10:43] LOJA: [foto]
+[10:43] LOJA: [foto]
+[10:47] LOJA: [foto]
+[10:47] CLIENTE: Esse valor é pr retirar na loja
+[10:47] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:47] LOJA: Sim, mas se quiser instalar, já instalamos também!
+[10:47] CLIENTE: Manda a localização
+[10:48] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 22/10/2026 (Thu) ---
+[06:51] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Olá! Posso ter mais informações sobre isso?
+[06:51] ROBÔ: Oi, tudo bem? Em que posso te ajudar?
+[06:51] CLIENTE: 315/50/17
+[06:51] CLIENTE: 4
+[06:52] ROBÔ: [áudio — sem transcrição]
+[06:55] CLIENTE: 215/50/17
+[07:23] CLIENTE: Vcs tem
+[07:43] CLIENTE: ???
+[08:08] LOJA: Oi...bom dia!
+[08:09] LOJA: Nosso horário de atendimento é das 08:00 às 18:00
+[08:09] LOJA: Só 1 instante que estou realizando seu orçamento.
+[08:09] CLIENTE: Ok
+[08:09] CLIENTE: Bom dia
+[08:09] CLIENTE: Mas tem
+[08:10] LOJA: Só 1 instante que estou realizando seu orçamento.!!!
+[08:11] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:11] LOJA: [foto]
+[08:42] LOJA: Alguma dessas opções te atende?

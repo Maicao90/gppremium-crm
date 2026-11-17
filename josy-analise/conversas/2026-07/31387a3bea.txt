@@ -1,0 +1,8 @@
+CONVERSA 31387a3bea | contato: sidney | 19/07/2026 10:00 até 20/07/2026 09:42 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 19/07/2026 (Sun) ---
+[10:00] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:02] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 20/07/2026 (Mon) ---
+[09:40] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:42] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

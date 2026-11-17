@@ -1,0 +1,17 @@
+CONVERSA 2c60860a55 | contato: Amigo Gil | 15/10/2026 10:57 até 15/10/2026 11:12 | 4 msgs do cliente, 5 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[10:57] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+Olá! Tenho interesse e queria mais informações, por favor.
+[10:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:57] CLIENTE: [foto]
+[10:58] CLIENTE: 245 70 16
+[11:01] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Olá! Posso ter mais informações sobre isso?
+[11:12] LOJA: 245/70/16  Pneu da marca GP Premium
+[11:12] LOJA: [foto]
+[11:12] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:12] LOJA: [foto]

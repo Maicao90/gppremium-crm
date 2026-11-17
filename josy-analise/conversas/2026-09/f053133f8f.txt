@@ -1,0 +1,12 @@
+CONVERSA f053133f8f | contato: Francisco | 25/09/2026 11:14 até 25/09/2026 13:50 | 3 msgs do cliente, 5 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[11:14] CLIENTE: [áudio] "Bom dia, bom dia, tudo bom? Eu vou lá domingo, hein? Pra domingo dar uma confidazinha de pertinho. Se tem algum instante lá, vai ter um cafezinho pra gente tomar? Como é que é? Fala comigo."
+[11:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:15] LOJA: [áudio] "Oi, Francisco. Bom dia. Como é que você está? Rapaz, vamos estar com um stand aqui em Luziânia. Vamos fazer sorteio de pneus. Vai ter um stand da Direcional também, que vai sortear, acho que serviço em rodas, alguma coisa assim, tá? Então vai ser bem bacana. O café eu não garanto, tá? Mas assim, vai ter uma praça de alimentação lá, né? Tem brinquedo para as crianças e tudo mais. Aparece sim."  {audio:midias/3EB02B758C17DD81D53183_188581.ogg}
+[11:44] CLIENTE: [áudio] "Oi, Júcio. Que bom, graças a Deus. Não, vou sim. Vou lá, meu bebezinho lá. Eu brinca lá. E curti um pouquinho também, né? Tá bom, vou sim. Beleza? Obrigado. Tchau, tchau. É nóis."
+[11:47] LOJA: [áudio] "Imagina, eu que agradeci pelo contato. Chama a galera para ir participar. Aproveita e participa do nosso sorteio também, tá jóia? Nós vamos estar lá o dia todo."  {audio:midias/3EB009A4D8CD81718C0339_183540.ogg}
+[11:47] LOJA: [áudio] "Qualquer coisa você posta aí no seu status também."  {audio:midias/3EB005787E864D3F4A0344_430011.ogg}
+[12:24] LOJA: [vídeo]
+[13:50] CLIENTE: show 👍🏿

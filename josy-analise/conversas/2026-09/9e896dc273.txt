@@ -1,0 +1,30 @@
+CONVERSA 9e896dc273 | contato: Fábio acabamentos Restaur | 29/09/2026 16:24 até 29/09/2026 16:51 | 8 msgs do cliente, 14 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[16:24] CLIENTE: Boa tarde
+[16:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:25] LOJA: *Josy:*
+Boa tarde!
+[16:25] CLIENTE: 195.65.15
+[16:25] CLIENTE: Boa tarde Josy
+[16:25] LOJA: [áudio] "Oi Fábio, boa tarde, como é que você está? Eu já vou te mandar aqui o orçamento, tá? Você vai precisar de quantos pneus?"  {audio:midias/3EB077A5C7FDBDCD740B36_829028.ogg}
+[16:26] CLIENTE: Qual marca você tem
+[16:26] CLIENTE: Vou precisar dos 4 pneus
+[16:27] LOJA: [áudio] "Ah, excelente! Olha, eu tenho aqui inclusive na promoção 956515 da marca GP Premium, está na promoção Compre 3 e Leve 4. Vou te mandar o orçamento, tá bom?"  {audio:midias/3EB0F524CC998453BAEE76_946724.ogg}
+[16:28] LOJA: [foto]
+[16:28] LOJA: *Josy:*
+Digamos que seja a vista: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[16:30] CLIENTE: Mais essa marca sua e importada?
+[16:30] LOJA: [áudio] "NACIONAL"  {audio:midias/3EB04ADA050BA06249C7BD_667033.ogg}
+[16:31] CLIENTE: Pode me mandar uma foto por favor?
+[16:43] LOJA: *Josy:*
+Obrigada por aguardar, loja cheia !
+[16:43] LOJA: *Josy:*
+Posso sim!
+[16:43] LOJA: [foto]
+[16:43] LOJA: [foto]
+[16:43] LOJA: [foto]
+[16:44] LOJA: [áudio] "E você mora aqui em Luziânia mesmo?"  {audio:midias/A5DCB95450C0CD5D329B7BA430A97D16_487690.ogg}
+[16:46] CLIENTE: Jardim ingá
+[16:51] LOJA: [áudio] "Nossa, pertinho de nós, Rábio."  {audio:midias/3EB021E7E6CFDDB56D13D3_702826.ogg}

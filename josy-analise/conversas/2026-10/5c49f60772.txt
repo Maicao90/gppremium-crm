@@ -1,0 +1,9 @@
+CONVERSA 5c49f60772 | contato: Dione | 22/10/2026 08:32 até 22/10/2026 12:17 | 2 msgs do cliente, 2 da loja, 2 do robô
+
+--- 22/10/2026 (Thu) ---
+[08:32] CLIENTE: Olá! Tenho interesse e queria mais informações, por favor.
+[08:32] ROBÔ: Oi, tudo bem?
+[08:32] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[10:02] LOJA: 🙋🏼‍♀️
+[12:17] LOJA: [áudio] "Oi, tudo bem? Você entrou em contato aqui comigo dizendo que gostaria de mais informações? Por gentileza, Johnny, me diz qual que é a medida dos pneus que você precisa?"  {audio:midias/3EB0C19339954B0339720E_997023.ogg}
+[12:17] CLIENTE: [áudio] "Fiquei em que lugar em Brasília? Vou tirar uma foto aqui, tá?"

@@ -1,0 +1,27 @@
+CONVERSA cde2e953a4 | contato: Elidonez | 15/09/2026 22:32 até 16/09/2026 08:43 | 5 msgs do cliente, 8 da loja, 0 do robô
+
+--- 15/09/2026 (Tue) ---
+[22:32] CLIENTE: Quero cotar o pneu 225/65 R17 GP Premium.
+[22:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[22:32] CLIENTE: 225 65 17
+--- 16/09/2026 (Wed) ---
+[08:05] LOJA: *Josy:*
+Bom dia, temos sim!
+[08:06] LOJA: [foto]
+[08:06] LOJA: *Josy:*
+No dia de hoje temos os pneus da marca Comforser e GP Premium  a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:07] CLIENTE: Bom dia
+Vou dar uma olhada 
+Grato
+[08:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:08] CLIENTE: Em samambaia 
+Tem algum posto de venda ?
+[08:09] LOJA: *Josy:*
+Somente aqui em Luziania-Go.
+[08:39] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu sou a Josi. Elidonês, compreendo que aqui é um pouco distante para você, que nós somos aqui de Luziânia, mas se for de seu interesse, eu posso enviar os pneus para o novo Gama, que eu acho que fica mais próximo. Aí, me diz, se for de seu interesse, você me comunica que nós providenciamos para ti, tá bom?"  {audio:midias/3EB0153AE7526D6A7B6D37_356750.ogg}
+[08:41] CLIENTE: [áudio] "Bom dia, Josi. Obrigado aí pelo retorno. Não é que eu tô avaliando. Eu já comprei de vocês já há alguns anos atrás e houve... Antigamente tinha até um serviço de entrega, né? Tinha aí uma empresa que fazia a entrega. Aí depois, deixa eu ver onde eu comprei de vocês... Ah, e depois tinha um posto de venda autorizado, né, de vocês aqui na Samambaia. Mas Luziânia fica... Na verdade, eu nem avaliei a questão de buscar. Eu tô avaliando só a questão de que eu aí... Já tô prevendo o início das chuvas. Comprar os quatro pneus por esse novo carro. Aí eu vou avaliar isso daí. Mas eu entro em contato com vocês de novo. Obrigado aí pelo retorno."
+[08:43] LOJA: [áudio] "Sim, perfeitamente. Aí, como o senhor mora em Samambaia, eu posso enviar os pneus GP Premium ali para o novo Gama. Inclusive, a montagem, eu pago para o senhor e o senhor só negocia, além do valor dos pneus, obviamente, o valor do balanceamento dos mesmos, tá? E nós tínhamos realmente, né, umas redes autorizadas aí para essas regiões, mas como nós estamos passando por uma reestruturação, né, justamente de ampliação, nós demos uma pausa aí nessa região para organizarmos, né, e recomeçarmos. E vai ser um projeto muito bom aí para Brasília, tá? Então, por hora, se for de seu interesse, o senhor me fala aqui que eu mando os pneus para o novo Gama, o valor do pneu GP Premium, né, se for à vista, 399, se for para parcelar, tem as opções aí de parcelamento, mas nós podemos negociar algo que fique bom para o senhor poder ir até lá no novo Gama, que eu entendo que aqui para Lusiana realmente é uma longa caminhada, tá? Aí, vem e me comunica. E aí, vem e me comunica."  {audio:midias/3EB09046B9CBD5AA1186E8_593678.ogg}

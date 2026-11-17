@@ -1,0 +1,15 @@
+CONVERSA dd4309a8ed | contato: Noelma | 09/09/2026 11:33 até 09/09/2026 11:36 | 4 msgs do cliente, 3 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[11:33] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:34] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB00DD18DDCE4FBC6968C_431412.ogg}
+[11:34] CLIENTE: Pneu xbri 285 70 18 Brutus
+
+Olá boa tarde!
+
+Me chamo Noelma gostaria de saber se vocês tem esses pneus para despachar via Nova Friburgo !?!
+[11:34] CLIENTE: Posso ligar?
+[11:34] CLIENTE: Não!
+[11:36] LOJA: [áudio] "Oi, Naelma. Tudo jóia? Nossa, é uma pena. A princípio, porque eu não disponho dessa opção de medida, né? E nós não estamos fazendo entregas."  {audio:midias/3EB0E9CBDADA3980CF19F1_648661.ogg}

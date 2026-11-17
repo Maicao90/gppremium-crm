@@ -1,0 +1,10 @@
+CONVERSA 3451a92869 | contato: Núbia Pereira dos Santos | 15/10/2026 09:54 até 15/10/2026 10:21 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[09:54] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[09:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:55] CLIENTE: [áudio] "Bom dia, tudo bem? Eu queria saber quanto é que está o pneu da Saveiro, Robusca, 15. Quanto é que está o valor deles?"
+[10:21] LOJA: Qual a medida dos pneus que você precisa? Pode conferir na lateral do pneu?

@@ -1,0 +1,18 @@
+CONVERSA 46bf49f6ad | contato: móveis sob medida | 19/08/2026 14:51 até 19/08/2026 14:54 | 7 msgs do cliente, 6 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[14:51] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:52] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:52] LOJA: 🙋🏼‍♀️
+[14:52] CLIENTE: Boa tarde
+[14:53] CLIENTE: Gostaria de fazer um orçamento
+[14:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:53] CLIENTE: Na verdade está a procura de rodas aro 16 ou 17 vc tem ?
+[14:53] LOJA: Qual a medida dos pneus que você precisa hoje?
+[14:54] LOJA: Não trabalhamos com rodas, apenas pneus.
+[14:54] CLIENTE: Ok obrigado
+[14:54] LOJA: Disponha.
+[14:54] CLIENTE: ‎Lmplanejados agradece seu contato. Como podemos ajudar?

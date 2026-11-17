@@ -1,0 +1,35 @@
+CONVERSA 9e31c76658 | contato: Jéssyca Oliveira | 20/10/2026 13:46 até 21/10/2026 12:06 | 9 msgs do cliente, 7 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[13:46] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[13:46] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[13:49] CLIENTE: Jessyca 
+O pneu e ARO 20, perfil baixo.
+[14:49] LOJA: [áudio] "Oi, Jéssica, tudo bom? Eu gostaria apenas que você me dissesse qual que é a medida do pneu que você precisa."  {audio:midias/3EB0AEFA33F5AAFF416577_494771.ogg}
+[14:49] LOJA: *Josy:*
+205/30/20? 225?
+[14:51] CLIENTE: E ARO 20 kkkk
+[14:51] CLIENTE: Não sei qual a medida
+[14:51] CLIENTE: E um i30
+[14:51] CLIENTE: O carro
+[14:57] LOJA: [foto]
+[14:57] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:58] CLIENTE: Obrigada
+[14:59] LOJA: *Josy:*
+Mora aqui em Luziânia-Go?
+[15:00] CLIENTE: Valparaíso
+[15:00] CLIENTE: Mas eu consegui por 325,00 comprando os 4
+[15:02] LOJA: *Josy:*
+Cuidado com golpes!
+--- 21/10/2026 (Wed) ---
+[12:06] ROBÔ: 🙋🏼‍♀️

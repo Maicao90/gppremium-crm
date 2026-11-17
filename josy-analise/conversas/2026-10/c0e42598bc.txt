@@ -1,0 +1,22 @@
+CONVERSA c0e42598bc | contato: Daniel Sudário | 03/10/2026 08:40 até 03/10/2026 09:47 | 6 msgs do cliente, 7 da loja, 0 do robô
+
+--- 03/10/2026 (Sat) ---
+[08:40] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[08:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:40] CLIENTE: 185/65/15
+[08:45] LOJA: [áudio] "Oi Daniel, tudo bom com você?"  {audio:midias/3EB09EDF81142CB709EBFA_682055.ogg}
+[08:48] CLIENTE: Blz
+[08:48] CLIENTE: Qual o valor
+[08:49] LOJA: [foto]
+[08:49] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:31] LOJA: [áudio] "Oi Daniel, eu posso separar alguma dessas opções aqui para você?"  {audio:midias/3EB026B3986A7F14B2FC5C_83304.ogg}
+[09:46] CLIENTE: Então estou fazendo umas pesquisas pra colocar pelo menos 2
+[09:46] CLIENTE: Meio apertado aí pesquisando
+[09:47] LOJA: *Josy:*
+Eu etendo...

@@ -1,0 +1,98 @@
+
+# [t1#1] 185/65/15 cotado -> "aro 16" (185/65/16 nao existe: pede a medida com a lista)
+  http=200 via=ia_livre acao=undefined chaves=[] estado=preco_confirmado dados={"medida":"185/65/15"}
+  > Temos várias medidas no aro 16, de carro de passeio até picape e SUV.
+  > Me diz o *modelo do seu carro* (ou a medida completa, ex.: 205/55/16) que eu já te passo o valor certinho.
+
+# [t1#2] 185/65/15 cotado -> "aro 16" (185/65/16 nao existe: pede a medida com a lista)
+  http=200 via=ia_livre acao=undefined chaves=[] estado=preco_confirmado dados={"medida":"185/65/15"}
+  > Beleza! Em aro 16 a gente não tem o 185/65, mas temos outras medidas que servem nessa roda.
+  > Me passa o *modelo do seu carro* ou a medida completa (ex.: 205/55/16) que eu já te passo o valor certinho.
+
+# [t2#1] 185/65/15 cotado -> "e aro 16?"
+  http=200 via=fluxo acao=OFERECER_ALTERNATIVAS chaves=["medida_inexistente"] estado=medida_sem_match dados={"aroSemMatch":"16"}
+  > [ENVIAR_AUDIO:so-um-instante-verificando]
+  > Essa medida a gente não tem, infelizmente. No mesmo aro eu tenho: 195/55/16: R$ 259,00 à vista; 205/55/16: R$ 289,00 à vista; 205/60/16: R$ 329,00 à vista. Alguma dessas serve pra você?
+
+# [t2#2] 185/65/15 cotado -> "e aro 16?"
+  http=200 via=fluxo acao=OFERECER_ALTERNATIVAS chaves=["medida_inexistente"] estado=medida_sem_match dados={"aroSemMatch":"16"}
+  > [ENVIAR_AUDIO:so-um-instante-verificando]
+  > Essa medida a gente não tem, infelizmente. No mesmo aro eu tenho: 195/55/16: R$ 259,00 à vista; 205/55/16: R$ 289,00 à vista; 205/60/16: R$ 329,00 à vista. Alguma dessas serve pra você?
+
+# [t3#1] 195/55/15 cotado -> "aro 16" (195/55/16 existe: cota)
+  http=200 via=ia_livre acao=undefined chaves=[] estado=preco_confirmado dados={"medida":"195/55/15"}
+  > Deixa eu confirmar uma coisa com você — pode repetir, por favor?
+
+# [t3#2] 195/55/15 cotado -> "aro 16" (195/55/16 existe: cota)
+  http=200 via=ia_livre acao=undefined chaves=[] estado=preco_confirmado dados={"medida":"195/55/15"}
+  > Deixa eu confirmar uma coisa com você — pode repetir, por favor?
+
+# [t4#1] 195/55/15 cotado -> "e aro 16?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [t4#2] 195/55/15 cotado -> "e aro 16?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [t5#1] 205/60/15 cotado -> "tem aro 16?" (205/60/16 existe)
+  http=200 via=ia_livre acao=undefined chaves=[] estado=preco_confirmado dados={"medida":"205/60/15"}
+  > Deixa eu confirmar uma coisa com você — pode repetir, por favor?
+
+# [t5#2] 205/60/15 cotado -> "tem aro 16?" (205/60/16 existe)
+  http=200 via=ia_livre acao=undefined chaves=[] estado=preco_confirmado dados={"medida":"205/60/15"}
+  > Deixa eu confirmar uma coisa com você — pode repetir, por favor?
+
+# [t6#1] 175/70/13 cotado (4 pneus) -> "e no aro 14?" (175/70/14 existe, mantem quantidade)
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"175/70/14"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *175/70/14* da marca *GP Premium* está saindo por *R$ 279,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [t6#2] 175/70/13 cotado (4 pneus) -> "e no aro 14?" (175/70/14 existe, mantem quantidade)
+  http=200 via=ia_livre acao=undefined chaves=[] estado=preco_confirmado dados={"medida":"175/70/13","quantidade":4}
+  > Deixa eu confirmar uma coisa com você — pode repetir, por favor?
+
+# [t7#1] cliente antigo sem estado: preco 185/65/15 no historico -> "e aro 16?"
+  http=200 via=fluxo acao=OFERECER_ALTERNATIVAS chaves=["medida_inexistente"] estado=medida_sem_match dados={"aroSemMatch":"16"}
+  > [ENVIAR_AUDIO:so-um-instante-verificando]
+  > Essa medida a gente não tem, infelizmente. No mesmo aro eu tenho: 195/55/16: R$ 259,00 à vista; 205/55/16: R$ 289,00 à vista; 205/60/16: R$ 329,00 à vista. Alguma dessas serve pra você?
+
+# [t7#2] cliente antigo sem estado: preco 185/65/15 no historico -> "e aro 16?"
+  http=200 via=fluxo acao=OFERECER_ALTERNATIVAS chaves=["medida_inexistente"] estado=medida_sem_match dados={"aroSemMatch":"16"}
+  > [ENVIAR_AUDIO:so-um-instante-verificando]
+  > Essa medida a gente não tem, infelizmente. No mesmo aro eu tenho: 195/55/16: R$ 259,00 à vista; 205/55/16: R$ 289,00 à vista; 205/60/16: R$ 329,00 à vista. Alguma dessas serve pra você?
+
+# [t8#1] 185/65/15 cotado -> "aro 19" (nenhuma medida aro 19)
+  http=200 via=ia_livre acao=undefined chaves=[] estado=preco_confirmado dados={"medida":"185/65/15"}
+  > Em aro 19 a gente não tem opção no momento. Nossa linha vai do aro 13 ao 18.
+  > Se for pra outro carro ou outra roda, me passa a medida ou o modelo que eu já te passo o valor.
+
+# [t8#2] 185/65/15 cotado -> "aro 19" (nenhuma medida aro 19)
+  http=200 via=ia_livre acao=undefined chaves=[] estado=preco_confirmado dados={"medida":"185/65/15"}
+  > Pra aro 19 a gente não tem opção no momento, nossa linha vai do aro 13 ao 18.
+  > Se você precisar de outra medida, é só me passar por aqui que eu te falo o valor.
+
+# [t9#1] mesmo aro: 185/65/15 cotado -> "aro 15?" (nao muda nada)
+  http=200 via=ia_livre acao=undefined chaves=[] estado=preco_confirmado dados={"medida":"185/65/15"}
+  > Isso mesmo, o *185/65/15* é aro 15, o último número da medida é o aro da roda.
+  > Quantos pneus você precisa? Se quiser, já me fala quando consegue vir até a loja.
+
+# [t9#2] mesmo aro: 185/65/15 cotado -> "aro 15?" (nao muda nada)
+  http=200 via=ia_livre acao=undefined chaves=[] estado=preco_confirmado dados={"medida":"185/65/15"}
+  > Isso mesmo, o 185/65/15 é aro 15, o último número da medida é o aro da roda.
+  > Quantos pneus você precisa? Quando consegue passar aqui na loja?
+
+# [t10#1] sem preco antes: "aro 16" sozinho (continua "Show, aro 16!")
+  http=200 via=fluxo acao=PEDIR_CARRO chaves=["aro_sem_medida"] estado=sem_estado dados={}
+  > Show, aro 16! 👍
+  > Qual é o carro? Já te passo a medida certa e o valor.
+
+# [t10#2] sem preco antes: "aro 16" sozinho (continua "Show, aro 16!")
+  http=200 via=fluxo acao=PEDIR_CARRO chaves=["aro_sem_medida"] estado=sem_estado dados={}
+  > Show, aro 16! 👍
+  > Qual é o carro? Já te passo a medida certa e o valor.

@@ -1,0 +1,23 @@
+CONVERSA 5081737fc6 | contato: Felip Eric | 25/09/2026 13:59 até 25/09/2026 15:04 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[13:59] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Boa tarde
+[13:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:59] CLIENTE: Pneu 225 45 17
+[14:00] CLIENTE: Você tem?
+[14:00] LOJA: *Josy:*
+Boa tarde!
+[14:01] LOJA: *Josy:*
+Temos sim!
+[14:01] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:01] LOJA: [foto]
+[14:01] LOJA: [áudio] "Você é daqui de Luziânia mesmo, Felipe?"  {audio:midias/3EB0B4A8C596D7485C0C06_940381.ogg}
+[14:02] CLIENTE: Não, sou do Gama
+[14:14] CLIENTE: Esse mais em conta é remold?
+[15:04] LOJA: [áudio] "Oi Felipe, obrigada por aguardar. Os pneus da marca GP Premium, eles são os pneus que nós produzimos, né, eles são pneus ecológicos, eles entram sim na categoria de remodelagem, só que linha Premium. Justamente por isso são os pneus mais vendidos que eu tenho, que são por conta da qualidade."  {audio:midias/A549485494B35EB88C28768F4FC2F0C4_394206.ogg}

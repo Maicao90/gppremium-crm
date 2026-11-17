@@ -1,0 +1,36 @@
+CONVERSA 4a535d60ca | contato: paulosantos9239 | 23/09/2026 10:25 até 24/09/2026 12:11 | 8 msgs do cliente, 19 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[10:25] LOJA: *Josy:*
+Bom dia, Paulo...
+[10:25] LOJA: *Josy:*
+195/55/16
+[10:37] LOJA: Oi!
+[10:38] CLIENTE: [áudio] "Oi, aí você me manda a altura do pneu do 205 e do 195, fazendo um favor, se você puder tirar foto dos dois juntos aí pertinho, só para não ver a altura e a diferença. Eu estou vendo uns vídeos aqui, tem uns caras que botam esse de 205."
+[10:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:38] LOJA: [foto]
+[10:38] LOJA: O 195/55 é o da direita.
+[10:38] LOJA: Já te mando mais fotos.
+[10:41] LOJA: [foto]
+[10:41] LOJA: [foto]
+[10:43] CLIENTE: [áudio] "Tira a foto da lateral dele também, ele tirou uma foto da lateral para a gente poder ver, que aqui só veio a parte de rodagem, quero ver essa outra parte lateral dele aí, com a marca do pneu, anumeração."
+[10:43] LOJA: Pneu da marca GP Premium
+[10:44] LOJA: [foto]
+[10:44] LOJA: [foto]
+[10:45] CLIENTE: [áudio] "Tira uma foto nessa posição aí do 205 para mim."
+[10:46] LOJA: *Josy:*
+já te ouço
+[11:06] LOJA: [foto]
+[11:06] LOJA: [foto]
+[11:07] CLIENTE: [áudio] "Ah não, não vai dar mesmo, a altura fica totalmente diferente. Nossa, esse pneu aí não é remolde não, né? Esse pneu aí é fabricado aí ou é remolde?"
+[11:09] LOJA: [áudio] "Sim, ele é o pneu GP Premium, é um pneu ecológico que nós fazemos. O Inmetro pede para classificá-lo como remodelagem apenas por questões técnicas, tá? Esses pneus têm garantia total de 2 anos, de quilometragem roda 60 mil km. São os pneus mais vendidos que eu tenho. Se quiser, eu faço uma gravação aqui para você, para você ver o que é um pneu remolde e a nossa linha ecológica, tá?"  {audio:midias/3EB0D5E68BF43DC87CEC23_392728.ogg}
+[11:15] CLIENTE: [áudio] "Beleza, moça, tranquilo. Vou pesquisar aqui e qualquer coisa eu falo com você, beleza?"
+[11:38] LOJA: [vídeo]
+[11:57] CLIENTE: [figurinha]
+--- 24/09/2026 (Thu) ---
+[11:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:47] CLIENTE: [áudio] "Oi, bom dia, beleza? Estou dando uma pesquisada melhor aqui porque eu preciso viajar nesse carro. Eu quero botar um pneu muito bom mesmo que aguente rodar bastante, sabe? Porque eu viajo muito nesse carro. Botar um pneu que não aguente é complicado. Eu estou pesquisando sobre os pneus de vocês também, beleza? Mas para resolver aqui eu te ligo."
+[11:48] LOJA: [áudio] "Sim, sim, compreendo perfeitamente, Paulo. E aqui, olha, meu irmão usando a caminhonete, tem a Tucson, que assim, usamos em todos os nossos carros esses pneus. Eles são bons, não tem restrição nenhuma de viagem, tá? Pode viajar tranquilamente. E não sei se você acompanha a corrida, tudo mais, mas os pneus GP Premium, eles estão presentes até mesmo nas vistas. São realmente muito bons. Então, eu vou encerrar o seu atendimento, tá? Pra não ficar enchendo o seu WhatsApp de mensagens. Qualquer coisa você retana aqui pra mim. Obrigada pela atenção. Até mais."  {audio:midias/3EB051171539803203CF7C_491521.ogg}
+[12:11] CLIENTE: [figurinha]

@@ -1,0 +1,25 @@
+CONVERSA fd007a2d91 | contato: Jessica Leticia ♥️ | 11/09/2026 11:07 até 11/09/2026 11:14 | 4 msgs do cliente, 8 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[11:07] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[11:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:08] LOJA: *Josy:*
+🙋🏼‍♀️
+[11:09] CLIENTE: [foto]
+[11:10] LOJA: *Josy:*
+Olá!
+[11:10] LOJA: [foto]
+[11:10] LOJA: *Josy:*
+No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:10] CLIENTE: Quais são as marcas ?
+[11:11] LOJA: [foto] *Josy:*
+ Sunny, e GP Premium
+[11:11] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[11:12] CLIENTE: Não, Df
+[11:14] LOJA: [áudio] "Ah, sim, perfeitamente. E você não teria disponibilidade de vir até nossa loja?"  {audio:midias/3EB0F1A3194882AB9B8A06_606878.ogg}

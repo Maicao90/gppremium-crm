@@ -1,0 +1,60 @@
+CONVERSA 8c060385f7 | contato: Wallacy Reis | 20/10/2026 13:02 até 21/10/2026 14:03 | 9 msgs do cliente, 17 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[13:02] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[13:02] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[13:03] CLIENTE: Wallacy
+Medida 205/50 R17
+[13:03] LOJA: *Josy:*
+Boa tarde, Wallacy, temos sim!
+[13:04] LOJA: [foto]
+[13:04] LOJA: *Josy:*
+No dia de hoje temos essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:04] CLIENTE: Show
+[13:04] CLIENTE: Onde fica a loja?
+[13:04] LOJA: *Josy:*
+Aqui em Luziânia-Go!
+[13:04] LOJA: *Josy:*
+Mora aqui?
+[13:05] CLIENTE: Vc tem o 205/45 R17?
+[13:05] CLIENTE: Já morei
+[13:05] LOJA: *Josy:*
+Temos também!
+[13:06] LOJA: [foto]
+[13:06] LOJA: *Josy:*
+ 
+Pneu da marca sunny
+[13:09] CLIENTE: Muito bom Josy
+Eu pretendo ir e já instalar aí 
+Vocês tem espaço de espera?
+[13:09] LOJA: *Josy:*
+Sim, temos sim!
+[13:10] LOJA: *Josy:*
+Pretende vir que dia?
+[13:10] CLIENTE: Amanhã
+[17:38] LOJA: Vou te encaminhar  a nossa localização está bem!
+[17:38] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:39] LOJA: [foto]
+--- 21/10/2026 (Wed) ---
+[10:12] CLIENTE: Bom dia 
+Como não recebi o R$ das férias vou na sexta tá!?
+[10:12] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[10:12] LOJA: Sem problemas!
+[10:12] LOJA: Vamos nos falando!
+[14:03] ROBÔ: 🙋🏼‍♀️

@@ -1,0 +1,11 @@
+CONVERSA 76b460495e | contato: Lessandra | 28/07/2026 12:22 até 28/08/2026 12:22 | 1 msgs do cliente, 4 da loja, 0 do robô
+
+--- 28/07/2026 (Tue) ---
+[12:22] LOJA: [áudio — sem transcrição]  {audio:midias/3EB09BA8EB53CF19B07E3F_175348.ogg}
+--- 28/08/2026 (Fri) ---
+[12:20] CLIENTE: Boa tarde, Fiz a opção de comprar 02 Goodyear  ,e  próximo mês os outros, obrigada.
+[12:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:21] LOJA: *Josy:*
+Ah, sim! Perfeito!
+[12:22] LOJA: [áudio] "Oi Alessandra, tudo jóia? Sim, compreendo perfeitamente. E o preço aqui comigo, o Dugodier, continua do mesmo jeito, tá jóia? Se de repente você tiver interesse de passar aqui, será muito bem-vinda. Obrigada aí pelo retorno, tá jóia? E tenha um bom final de semana."  {audio:midias/3EB0699E5A7124577D3A5A_407378.ogg}

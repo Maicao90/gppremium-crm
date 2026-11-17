@@ -1,0 +1,8 @@
+CONVERSA 4fea72a7a9 | contato: maria | 11/09/2026 09:05 até 11/09/2026 09:06 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[09:05] CLIENTE: Bom dia
+[09:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:05] CLIENTE: Vcs vende pneus pra biz
+[09:06] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Aqui só vendemos pneus de carro. Você é daqui de Luziânia mesmo?"  {audio:midias/3EB0E23C1B88905EE42B58_661541.ogg}

@@ -1,0 +1,64 @@
+CONVERSA b0364d5c3c | contato: nivaldooliveirasantana3@g | 19/10/2026 12:22 até 21/10/2026 13:51 | 16 msgs do cliente, 20 da loja, 2 do robô
+
+--- 19/10/2026 (Mon) ---
+[12:22] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Olá! Posso ter mai boa tarde informações sobre isso?
+[12:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:22] CLIENTE: 265/60  18
+[12:23] LOJA: [áudio] "Olá, boa tarde, tudo bem? Eu me chamo Josine Valdo, você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB00845F6261C290911D9_390983.ogg}
+[12:23] CLIENTE: Você tem esta numeração  qua valor
+[12:23] CLIENTE: [áudio] "Boa tarde, tudo bem? Eu moro em Santa Maria. Você tem essa numeração desse pneu aí? Para caminhonete? E qual a marca que você tem aí? Manda fazendo um favor para mim de todas as marcas e o valor."
+[12:23] CLIENTE: [áudio] "De preferência é uma marca boa, viu? Tá bom?"
+[12:24] LOJA: [foto]
+[12:24] LOJA: No dia de hoje temos os pneus da marca  Maxzez e GP Premium essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:24] LOJA: [vídeo]
+[12:29] CLIENTE: [áudio] "Não tem outra marca aí, não, né, nega? Godil, Gureiro, Duloc, não tem não, né?"
+[12:37] LOJA: [áudio] "Não tenho pronta a entrega, não. Eu vou ter esses dois aí e o pneu importado da marca Maxx."  {audio:midias/3EB01B30E69B4C03664907_515064.ogg}
+[13:04] CLIENTE: [áudio] "Eu tenho uma marca boa, né? Caminhonete é pesada, é... ser de uma Mampireira, uma Duloc, uma... outras marcas boas, beleza? Obrigadão aí pela atenção."
+[15:19] LOJA: [foto]
+[15:19] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor UNITÁRIO do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:27] CLIENTE: [áudio] "Se for para mim fazer o pedido desse aí das marcas Pireira, ou Godia, ou Doulon, qual o valor desse, se for para mim fazer o pedido, para chegar em 3 dias?"
+[15:28] LOJA: *Josy:*
+Te mandei aqui
+[15:29] LOJA: [áudio] "Olha, o meu distribuidor vai ter as marcas que eu te mandei aí no orçamento, tá? Que é o da Bridgestone, vai ter ele no modelo AT, vai ter ele no modelo HT, vai ter o da Goodyear no modelo Hangler e vai ter o da Pirelli, que é esse último aí."  {audio:midias/3EB0EF5D5D78711D615078_515228.ogg}
+[15:32] LOJA: [áudio] "O da Dunlop está em falta, mas olha só, o da Pirelli, se for para o pagamento à vista, está por R$ 1.540 cada pneu."  {audio:midias/3EB0C8D79A3E6293214306_416794.ogg}
+[15:32] LOJA: [áudio] "Aí, o mais em conta vai ser o da Goodyear, que a vista vai ficar por R$ 996,00."  {audio:midias/3EB0F39E4D72AFAE165773_564485.ogg}
+[15:33] LOJA: [áudio] "Aí, como o senhor quer os 4, né? Então, 996,93 vezes os 4, dá um total de 3.987,72 reais. Tá joia? E fazendo a encomenda hoje, até quinta-feira os pneus já estão aí."  {audio:midias/3EB0AD26120951BDD5B294_235523.ogg}
+[15:34] CLIENTE: Blz
+[15:34] CLIENTE: Vou ver e ti falo
+[15:45] CLIENTE: [áudio] "Se eu te falar, gata, eu sei se da audiência não faz um despontinho, não? Mais um despontinho, então não? Ficar com os quatro? Vê aí pra mim, eu tô no trabalho, mas tarde eu te falo aí, tá bom?"
+[15:46] LOJA: [áudio] "Você acredita que eu já coloquei com desconto?"  {audio:midias/3EB01B56064C3E1BA1B2A9_915044.ogg}
+[15:46] LOJA: [áudio] "Eu até estava confirmando aqui como é o distribuidor justamente isso."  {audio:midias/3EB086D33C07B8F93FCB68_369242.ogg}
+[15:47] LOJA: [áudio] "Que eu já coloquei desconto pra minha conta, acredita?"  {audio:midias/3EB0A8CCA7EB73751A7B53_681202.ogg}
+--- 20/10/2026 (Tue) ---
+[09:16] LOJA: [áudio] "Oi, Sr. Anivaldo, bom dia, como é que vai? E aí, vamos continuar aqui a negociação?"  {audio:midias/3EB0F8AA5F3A6C24C93B79_380444.ogg}
+[09:27] CLIENTE: Bom dia
+[09:27] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[09:27] CLIENTE: Tude
+[09:30] CLIENTE: Tô fazendo outro  osamemto  mais tarde eu ti falo blz
+[16:29] LOJA: [áudio] "Eu sou Anivaldo, tudo jóia? E aí, vamos dar continuidade aqui na negociação?"  {audio:midias/3EB001EF50B4B46DB85CDE_728947.ogg}
+--- 21/10/2026 (Wed) ---
+[08:58] CLIENTE: Bom dia
+[08:58] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[08:59] CLIENTE: Tô vendo a qui e ti falo
+[10:45] ROBÔ: Tranquilo! Qualquer dúvida ou se quiser fechar, é só me chamar por aqui.
+[13:51] ROBÔ: 🙋🏼‍♀️

@@ -1,0 +1,46 @@
+CONVERSA c3da592c12 | contato: Deus e minha fortaleza | 09/09/2026 18:26 até 11/09/2026 17:07 | 8 msgs do cliente, 18 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[18:26] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[18:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:26] CLIENTE: 13
+[18:26] CLIENTE: Quando custa
+--- 10/09/2026 (Thu) ---
+[08:03] LOJA: *Josy:*
+Bom dia!
+[08:03] LOJA: *Josy:*
+No dia de hoje tremos as seguintes opçõs de marxas:
+[08:04] LOJA: [foto]
+[08:04] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:13] CLIENTE: Não foi esse valor que vim no face
+[14:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:15] LOJA: *Josy:*
+E o que foi que você viu no facebook?
+[14:16] LOJA: *Josy:*
+Pode me explicar?
+[14:20] LOJA: *Josy:*
+❓
+[14:27] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Eu me chamo Josi. Por gentileza, será que você pode me dizer o que foi que você viu? Porque aqui para mim não está aparecendo o anúncio que você clicou, mas de modo geral, pneus de aro 13, os que eu tenho no dia de hoje, conforme o orçamento que eu te encaminhei, serão essas opções. Uma outra opção que, justamente, estava com estoque limitado e já acabou aqui para mim, é 165-7013, que estava por R$ 239,00."  {audio:midias/3EB096948AD379DA60BE20_844058.ogg}
+--- 11/09/2026 (Fri) ---
+[13:58] LOJA: [áudio] "Olá, boa tarde, tudo bem? Eu te mandei mensagem ontem, mas eu imagino aí que na correria você não tenha conseguido me responder. Então, fala aqui comigo, por gentileza, você falou que não foi esse preço que você viu no Face e te perguntei aqui para ver se eu poderia entender o que foi que você viu. Então, assim que possível, você fala aqui comigo, tá joia? Obrigada aí pela sua atenção."  {audio:midias/3EB07B1EC63A94DF53D046_649269.ogg}
+[17:02] CLIENTE: 189
+[17:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:02] CLIENTE: Aro 189
+[17:02] CLIENTE: Aro 13
+[17:04] LOJA: *Josy:*
+175/70/13, certo?
+[17:04] LOJA: *Josy:*
+165/70/13 por R$ 239,00
+[17:04] LOJA: *Josy:*
+Essa é o opção do anúncio.
+[17:05] LOJA: *Josy:*
+Se você mora aqui em Luziânia, vou te mandar a nossa localização, se possível, passa aqui!
+[17:05] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:07] CLIENTE: Ok obrigado

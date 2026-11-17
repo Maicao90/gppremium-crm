@@ -1,0 +1,49 @@
+CONVERSA 00425fdd0b | contato: Paulo Victor Rodrigues | 09/09/2026 17:05 até 16/10/2026 12:09 | 7 msgs do cliente, 30 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[17:05] LOJA: [foto]
+[17:07] LOJA: [vídeo]
+[17:09] CLIENTE: Esse valor no cartão 1x no crédito
+[17:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:09] CLIENTE: Faz quanto
+[17:09] CLIENTE: ?
+[17:09] LOJA: *Josy:*
+Essas são as opções de
+[17:10] LOJA: [áudio] "Ai, perdão, como o WhatsApp está com um problema aqui. Olha, no crédito à vista, a unidade está por 806 reais."  {audio:midias/3EB00E596CA6714E9A33BE_801502.ogg}
+[17:10] LOJA: [áudio] "Que esses pneus, para serem importados, o fabricante já deixa no preço dele aqui na nossa empresa, tá?"  {audio:midias/3EB0804D1D255ACCDF806B_879888.ogg}
+[17:11] CLIENTE: [áudio] "Ô Josi, vamos fazer o seguinte, é que eu tô vendo que o patrão aqui, ele é chorão demais, não consegue fazer esse preço de avista uma vez no cartão não?"
+[17:14] LOJA: [áudio] "São as 4 unidades, Paulo?"  {audio:midias/3EB0642092595F0FA73781_579397.ogg}
+[17:15] CLIENTE: [áudio] "Se fosse para ser, era que eu ia brigar aqui com o patrão, né? Andando sem caminhonete, velho, sem pneu. Eu ia tentar ver se eu convencia ele, porque ele é chorão demais."
+[17:15] LOJA: [figurinha]
+[17:15] LOJA: [áudio] "Deixa eu ver aqui, Paulo, um instante."  {audio:midias/3EB0217B3FD28F1B71720F_242204.ogg}
+[17:25] LOJA: *Josy:*
+Paulo... estou verificando aqui cim o distribuidor está bem.
+[17:30] LOJA: *Josy:*
+789,00 o distribuidor disse que faz esse preço no crédito a vista.
+[17:47] LOJA: *Josy:*
+Pode ser?
+[17:48] CLIENTE: [áudio] "Eu mandei para o patrão aqui, pelo autorizar."
+[17:48] LOJA: [áudio] "Vai dar certo, vai dar certo."  {audio:midias/3EB07D508559010BA14213_784033.ogg}
+--- 22/09/2026 (Tue) ---
+[15:08] LOJA: [áudio] "Oi Paulo, tudo jóia? Nos falamos já tem uns bons dias atrás e fica aqui te aguardando a respeito dos pneus da caminhonete. Se vocês não decidiram nada não, o patrão não quer mesmo os pneus?"  {audio:midias/3EB0C7EB878396A699D7A9_150046.ogg}
+--- 01/10/2026 (Thu) ---
+[09:03] LOJA: *Josy:*
+Bonjour...
+[09:04] LOJA: [foto]
+[09:07] LOJA: [áudio] "Paulo, olha só, os pneus 165,73 e 165,74, o preço normal deles é 279 a vista, mas estamos fazendo aqui por 239 valor para pagamento no débito ou no Pix, e aí tem as opções de parcelamento em até 10 vezes, mas isso não significa que a gente não possa negociar, tá? 175,65,14, preço 289, mas estamos fazendo aqui a vista para você por 249 reais, e aí tem as opções de parcelamento também em até 10 vezes, tá?"  {audio:midias/3EB0592EE8384AEDA71C21_62605.ogg}
+[09:31] LOJA: 👀
+[17:43] LOJA: [áudio] "Oi, Paula. Me diga que você fez Pix também do carro que vai usar os pneus que você pediu preço pra mim mais cedo."  {audio:midias/3EB02EC7EB4C3512ED73B7_676259.ogg}
+--- 16/10/2026 (Fri) ---
+[08:43] LOJA: Bom dia!
+[08:45] LOJA: [foto]
+[08:45] LOJA: O GP Premium modelo ATR 👇🏻
+[08:46] LOJA: [foto]
+[12:04] LOJA: Oooi...
+[12:04] LOJA: Posso reservar para você?
+[12:04] CLIENTE: Precisa não
+[12:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:08] LOJA: [áudio] "Oi, Paulo, deixa eu te falar. Eu consegui aqui, que eu pedi para os meninos procurarem melhor aqui no nosso estoque, eu consegui aqui dos pneus da marca GP Premium mesmo, tá? Vai ser nesse modelo borrachudinho aí, na medida 205,65. Aí, o preço dele, deixa eu te passar aqui, dá para fazer à vista por R$ 39,00."  {audio:midias/3EB0096573C6FDF273A0FD_141290.ogg}
+[12:09] LOJA: [áudio] "E aí eu vou ter as duas últimas unidades."  {audio:midias/3EB0AB8762BD6C6AC67D4D_660133.ogg}
+[12:09] LOJA: [foto]

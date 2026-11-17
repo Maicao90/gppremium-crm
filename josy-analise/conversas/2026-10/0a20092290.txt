@@ -1,0 +1,25 @@
+CONVERSA 0a20092290 | contato: Ebener | 22/10/2026 09:29 até 22/10/2026 09:38 | 6 msgs do cliente, 8 da loja, 4 do robô
+
+--- 22/10/2026 (Thu) ---
+[09:29] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[09:29] ROBÔ: Oi, tudo bem?
+[09:29] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[09:29] CLIENTE: Bom dia   são novos  que marca
+[09:29] ROBÔ: O GP Premium usa borracha padrão europeu e passa por um controle rígido de qualidade.
+[09:30] ROBÔ: E tem garantia de 2 anos e 60 mil km ou seu dinheiro de volta. Se quiser, vem ver o pneu de perto aqui na loja.
+[09:30] LOJA: Poderia me informar a medida do pneu que você precisa?
+[09:30] CLIENTE: 16
+[09:30] CLIENTE: Me passa a localização
+[09:30] LOJA: *medida*?
+[09:31] LOJA: Exemplo : 265/70/16
+[09:34] LOJA: [áudio] "Oi, Bener. Bom dia. Como é que você está? Eu preciso que, por gentileza, você me diga qual que é a medida dos pneus que você precisa, pois 16 é apenas um aro. E nós somos aqui de Luziânia, Goiás."  {audio:midias/3EB090FB1C2171B8BF877D_293865.ogg}
+[09:37] CLIENTE: 205/55/16
+[09:37] LOJA: [foto]
+[09:37] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:37] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0DE96BE4DF38F660CEC_835450.ogg}
+[09:38] CLIENTE: Gama
+[09:38] LOJA: Ah, sim!

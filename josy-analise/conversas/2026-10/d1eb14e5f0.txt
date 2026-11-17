@@ -1,0 +1,12 @@
+CONVERSA d1eb14e5f0 | contato: Denes Rodrigues | 02/10/2026 11:49 até 05/10/2026 08:40 | 1 msgs do cliente, 4 da loja, 0 do robô
+
+--- 02/10/2026 (Fri) ---
+[11:49] LOJA: *Josy:*
+Oi...
+[15:13] CLIENTE: [áudio] "Maravilhoso, tranquilo, tranquilo, sem problema. Tô terminando de resolver o negócio aqui pra ir buscar esse pneu."
+[15:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:15] LOJA: *Josy:*
+Te esperando!
+--- 05/10/2026 (Mon) ---
+[08:40] LOJA: [áudio] "Oi, Sr. Denis, bom dia, como é que o senhor está? Eu deixei os pneus aqui reservados para o senhor, tá bom? Assim que o senhor estiver com um tempinho, passa aqui."  {audio:midias/3EB080465B4EE78B9E07DA_457380.ogg}

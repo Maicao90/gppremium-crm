@@ -1,0 +1,31 @@
+CONVERSA 369db3e89d | contato: Ananias Soares | 01/10/2026 10:06 até 03/10/2026 10:02 | 6 msgs do cliente, 13 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[10:06] LOJA: *Josy:*
+Bom dia!
+[10:07] LOJA: [foto]
+[10:08] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:08] LOJA: [foto]
+[10:11] CLIENTE: Bom dia
+[10:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:11] LOJA: [áudio] "Olá, bom dia! Tudo bom com o senhor? Sra. Ananias, eu te mandei aí a localização da nossa empresa, tá? É aqui na BR-040, pertinho de Santa Fe."  {audio:midias/3EB0D9511D96D047D18C7E_657004.ogg}
+[10:13] CLIENTE: Ok
+--- 02/10/2026 (Fri) ---
+[12:47] LOJA: [áudio] "Professor Ananias, tudo jóia? Nós conversamos ontem, né, que o senhor está precisando de uns pneus aí, e até te mandei uma mensagem mais cedo, mas imaginei que na correria o senhor não conseguiu me responder. Eu posso guardar os pneus aqui para o senhor?"  {audio:midias/3EB0CC993E62A714161B5D_155591.ogg}
+[12:51] CLIENTE: [áudio] "Oi, boa tarde. Oi, minha querida, eu já tô chegando em Minas Gerais, você acredita? Mas na próxima vez que eu vim aqui eu comprei, Luzi. Eu tô com meus pneus, tá até bom ainda, viu? Deixa eu gastar um pouco, mas aí eu vou comprar de vocês, tá bom?"
+[12:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:55] LOJA: [áudio] "O senhor foi ligeiro, hein, senhor Ananias? Não, mas beleza então, tá? Quando o senhor retornar aqui pra nossa cidade, passa aqui na loja, né, eu te mandei aí a localização, tem a foto aqui da fachada da nossa loja, então quando o senhor voltar aqui pra Luziânia, vem aqui pra nós conversarmos, tá bom? Obrigada pela atenção e bom final de semana aí pro senhor."  {audio:midias/3EB0D8A5306D1F7286CCAC_795261.ogg}
+[12:58] CLIENTE: Ok
+--- 03/10/2026 (Sat) ---
+[09:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:39] CLIENTE: [áudio] "Bom dia, Josi. Deixa eu falar, qual é a marca dos pneus que vocês têm aí?"
+[09:45] CLIENTE: [áudio] "Hoje não. Eu quero saber qual experimento vocês têm aí. Marca boa. O dia que eu fui em Luziânia, eu vou comprar de vocês, tá?"
+[09:51] LOJA: *Josy:*
+Obrigada por aguardar!
+[09:51] LOJA: *Josy:*
+A loja stá completamente cheia!
+[10:02] LOJA: [foto]

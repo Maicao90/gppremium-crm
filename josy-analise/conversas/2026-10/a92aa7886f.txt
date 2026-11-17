@@ -1,0 +1,45 @@
+CONVERSA a92aa7886f | contato: Marlu$ Credicerto | 20/10/2026 12:39 até 21/10/2026 12:02 | 16 msgs do cliente, 11 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[12:39] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Olá! Posso ter mais informações sobre isso?
+[12:39] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[12:40] CLIENTE: Marlus
+[12:40] CLIENTE: Pneu pra van
+[12:40] CLIENTE: Vcs tem
+[12:40] CLIENTE: 205 75 16
+[12:40] CLIENTE: ?
+[12:40] LOJA: [áudio] "Oi Marlos, tudo bom contigo? Me chamo Josi e você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB0A0DD81880ACC24AFDC_488071.ogg}
+[12:40] CLIENTE: Moro em Valparaiso Josy
+[12:41] LOJA: [áudio] "Ah, sim. Perfeito. Deixa eu te fazer uma pergunta. O 225-65 te atende? Qualquer opção que você está precisando, ela esgotou no meu estoque?"  {audio:midias/3EB0940930D470C732E7CD_116557.ogg}
+[12:43] CLIENTE: [áudio] "Não, não aguento não porque tem que ser, é alto mesmo, tem que ser alto. Se botar ali assim fica muito baixo. A van já é baixa por natureza, que é aquelas master, né? Elas já são baixa por natureza já."
+[12:44] LOJA: [áudio] "Sim, sim, compreendo perfeitamente. Eu vou fazer o seguinte, eu vou ver com os meus distribuidores se eles têm, e assim que eles me derem uma resposta eu te passo, tá? Já é?"  {audio:midias/3EB08CCDAE4F9B2F339134_592060.ogg}
+[12:44] CLIENTE: 🫱🏽‍🫲🏽👍🏽blz👍🏽🙏🏽🫱🏽‍🫲🏽
+[15:17] LOJA: [foto]
+[15:17] LOJA: *Josy:*
+Consegui o retorno dessas marcas.
+[15:17] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor UNITÁRIO do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:22] CLIENTE: [áudio] "Vocês estão a sério, mas fica mais caro, né? Esse pneu, então, vocês só conseguem ele por encomenda, né?"
+[15:22] CLIENTE: [áudio] "A segunda coluna aí tá dizendo que ele é 550 e pouco, né?"
+[15:23] CLIENTE: [áudio] "R$ 560,19. É, o preço é parecido com o que tá na parte de Cícero, mas aí não tá falando se ele é 110 lonas igual o outro que tá lá na frente lá, o outro que tá lá na primeira coluna."
+[15:28] LOJA: [áudio] "No momento, sim."  {audio:midias/3EB0F11BCACC0E046E42D5_69617.ogg}
+[15:28] LOJA: [áudio] "Todos são de 8 lonas."  {audio:midias/3EB098E9BDA832BF889BB8_495564.ogg}
+[15:30] CLIENTE: Ok
+[15:30] CLIENTE: Entendi
+[15:31] CLIENTE: [áudio] "Eu vou querer um no início do mês, eu vou ver contigo depois, que aí eu posso passar o cartão aí e ficar na espera."
+[15:31] CLIENTE: [áudio] "Vou mandar uma localização para vocês. Eu acho que é bem ali perto de Luziânia, ali mesmo, depois do engalho à esquerda, né? Quem está subindo de volta para isso."
+[15:31] LOJA: [áudio] "Isso aqui na BR-040."  {audio:midias/3EB0AA1100010E8051C600_423852.ogg}
+[15:31] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 21/10/2026 (Wed) ---
+[12:02] ROBÔ: 🙋🏼‍♀️

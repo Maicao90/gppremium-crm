@@ -1,0 +1,19 @@
+CONVERSA ac274f67ab | contato: taynnarasilva2403 | 27/08/2026 10:35 até 27/08/2026 10:38 | 8 msgs do cliente, 5 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[10:35] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:35] CLIENTE: Eu preciso paga um boleto vencido
+[10:36] LOJA: *Josy:*
+É aqui com nossa empresa mesmo?
+[10:36] CLIENTE: [foto]
+[10:37] CLIENTE: E esse o boleto vencido
+[10:37] CLIENTE: Tem como me mandar outro boleto
+[10:37] LOJA: *Josy:*
+Aqui é a Pneus GP Premium.
+[10:37] CLIENTE: Pra pagamento
+[10:38] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu me chamo Josi. Nossa empresa aqui é a Pneus GP Premium. É conosco mesmo que você está tentando verificar essa questão de boleto?"  {audio:midias/3EB03D311D0E6A241665AE_120986.ogg}
+[10:38] LOJA: [áudio] "Eu acho que não é a mesma empresa, não."  {audio:midias/3EB047BA43DC452F7B99FA_471864.ogg}
+[10:38] CLIENTE: Ok
+[10:38] CLIENTE: Obrigada

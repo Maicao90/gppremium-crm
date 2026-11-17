@@ -1,0 +1,39 @@
+CONVERSA 1e18dd8225 | contato: Cleber Mota | 18/08/2026 13:48 até 31/08/2026 14:04 | 12 msgs do cliente, 21 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[13:48] CLIENTE: Valor pneu Scorpions aro 15   : 205/60/15?
+[13:48] CLIENTE: Boa tarde
+[13:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:50] LOJA: Boa tarde!
+[13:51] LOJA: no momento não tenho esse disponivel , vou fazer a cotação aqui com meus fornecedores
+[13:51] LOJA: tem 205/60/15 da GP Premium ATR é do mesmo jeito
+[13:52] CLIENTE: Este , valor
+[13:52] LOJA: 319,00 a vista
+[13:52] CLIENTE: Remold?
+[13:53] LOJA: ele é linha premium, não é o remold convencional, inclusive são os mais vendidos da loja
+[13:53] CLIENTE: Blz , obrigado
+[13:53] LOJA: qualidade excelente
+[13:54] LOJA: vou fazer a cotação do que voce solicitou
+[13:54] LOJA: e te mando assim que tiver resposta
+[13:54] CLIENTE: Obrigado
+[13:54] LOJA: disponha
+[14:15] LOJA: Boa tarde, obrigado por aguardar.
+[14:16] LOJA: no momento esta em falta no fornecedor o seu pneu
+[14:16] LOJA: seria interessante voce vir ate a loja ve o nosso gp premium pessoalmente
+[14:17] CLIENTE: Ok
+[14:17] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:17] LOJA: estou enviando a localização
+[14:17] CLIENTE: Obrigado
+[16:48] LOJA: [áudio] "Olá, boa tarde. Tudo bem com vocês? Sou a Josi. Mais cedo eu te encaminhei um orçamento. Eu gostaria de saber se, de repente, você quer a foto dos pneus para poder ver como eles são."  {audio:midias/3EB0253B633C487F032989_116308.ogg}
+[16:51] CLIENTE: Pode enviar
+[16:54] CLIENTE: [áudio] "É praticamente o mesmo modelo do Scorpio, né? Obrigado."
+[16:54] LOJA: [foto]
+[16:56] LOJA: [áudio] "E os pneus GP Premium, eles são os pneus mais vendidos que nós temos justamente por conta da qualidade, o preço é muito bom mas a qualidade dele assim é ímpar realmente, tá? Então, se houver a possibilidade, vem aqui na loja para conversarmos pessoalmente, que esses pneus eu já consigo até colocá-los aí no seu carro, eles têm garantia de 2 anos, rodam 60 mil km, tá bom?"  {audio:midias/A58828BE8DA9F411545F0168D20B5D2E_191175.ogg}
+[16:57] LOJA: [áudio] "Sim, vem assim. Você é daqui de Luziânia, né?"  {audio:midias/3EB0802A33ED522BA287CE_249811.ogg}
+[16:57] CLIENTE: Sim.
+[16:57] CLIENTE: Moro.aqui
+--- 31/08/2026 (Mon) ---
+[14:04] LOJA: *Josy:*
+Cleber... boa tarde. Vou encerrar seu atendimento está bem! Quando for o momento certo para você realizar sua compra, se ainda for interessante, entre em contato novamente, ou venha até nossa loja, será uma satisfação recebe-lo aqui. Boa semana.
+[14:04] LOJA: [foto]

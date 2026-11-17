@@ -1,0 +1,37 @@
+CONVERSA c66b0001a6 | contato: Lauesly Pereira | 10/10/2026 09:49 até 10/10/2026 11:25 | 13 msgs do cliente, 19 da loja, 0 do robô
+
+--- 10/10/2026 (Sat) ---
+[09:49] CLIENTE: Bom dia!
+[09:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:50] CLIENTE: Gostaria de verificar esse orçamento
+[09:52] LOJA: Bom dia!
+[09:53] LOJA: 165/70/14 certo?
+[09:54] CLIENTE: Sim
+[09:54] CLIENTE: Seria par ao kiwid
+[09:55] LOJA: [foto]
+[09:55] LOJA: [áudio] "E seu pneu da marca GP Premium, a unidade está por R$ 239,00 à vista."  {audio:midias/3EB0375598048B3F31102C_987169.ogg}
+[09:58] CLIENTE: É Remold?
+[10:01] LOJA: [áudio] "É o pneu GP Premium, ele é um pneu ecológico que nós fazemos, ele vai entrar na categoria de remodelagem Premium, que não tem nada a ver com os pneus remoldes, convencionais, tá? Justamente por isso são os pneus mais vendidos que nós temos."  {audio:midias/3EB07D93838FCA7005C415_57324.ogg}
+[10:04] CLIENTE: Entendi
+[10:04] LOJA: Quer que te mando foto.. videio para explicar melhor?
+[10:05] CLIENTE: Pode ser
+[10:05] LOJA: Certo...
+[10:05] CLIENTE: Consegue montar hoje?
+[10:07] LOJA: Aim!
+[10:09] LOJA: [vídeo]
+[10:16] CLIENTE: Quanto tempo para montagem?
+[10:16] CLIENTE: Ótimo
+[10:16] CLIENTE: Obrigado pela explicação
+[10:17] LOJA: Uns 20 min
+[10:17] LOJA: Agora está tranquilo.
+[10:17] CLIENTE: Ok
+[10:18] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:18] LOJA: [foto]
+[10:24] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:59] LOJA: Oiê...
+[10:59] LOJA: Se puder compartilhe sua experiencia!
+[10:59] LOJA: https://da.gd/gp-avaliar
+[11:23] CLIENTE: Feito
+[11:25] LOJA: Muitíssimo obrigada!
+Tenha um bom final de semana!

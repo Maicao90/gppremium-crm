@@ -1,0 +1,44 @@
+CONVERSA 1276e78d43 | contato: Helberth Araujo | 20/10/2026 16:11 até 20/10/2026 17:52 | 13 msgs do cliente, 17 da loja, 0 do robô
+
+--- 20/10/2026 (Tue) ---
+[16:11] CLIENTE: [foto] 📢 [Anúncio] Pneus de Passeio em Oferta
+
+Quais são os preços dos pneus?
+[16:11] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[16:11] CLIENTE: 265 65r18
+[16:20] LOJA: Boa tarde, teremos 265/60/18 te atende?
+[16:20] CLIENTE: Não
+[16:20] CLIENTE: Por encomenda?
+[16:23] LOJA: Vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[16:23] CLIENTE: Ok
+[16:24] LOJA: Pode ser qualquer marca e modelo?
+[16:24] LOJA: Mora aqui em Luziânia-Go?
+[16:27] CLIENTE: Sim
+[17:30] LOJA: [foto]
+[17:31] LOJA: Retorno somente da marca Xbri
+[17:31] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor UNITÁRIO do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:31] LOJA: Wanli, também se pronunciou
+[17:32] LOJA: [foto]
+[17:41] CLIENTE: Ok
+[17:41] CLIENTE: Acompanha alinhamento e balanceamento, montagem?
+[17:43] LOJA: São serviços cobrados a parte, entretanto valores negociáveis.
+[17:43] LOJA: Em média...
+[17:43] CLIENTE: To fora então
+[17:43] LOJA: * Balanceamento = 45,00 (por pneu)
+* Alinhamento = 140,00 (Alinhamento de Direção)
+[17:43] LOJA: ?
+[17:50] LOJA: Eu vou encerrar seu atendimento.  Caso precise é só chamar novamente ou se possível, venha até nossa loja.
+[17:50] LOJA: Obrigada  👋🏻
+[17:50] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:51] CLIENTE: Ok
+[17:51] CLIENTE: Obgd pela atenção
+[17:52] CLIENTE: Irei na loja negociar!
+[17:52] CLIENTE: Até sexta-feira

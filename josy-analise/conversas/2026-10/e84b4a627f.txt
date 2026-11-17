@@ -1,0 +1,22 @@
+CONVERSA e84b4a627f | contato: Bruna | 14/10/2026 15:48 até 14/10/2026 15:51 | 3 msgs do cliente, 5 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[15:48] CLIENTE: Boa tarde!
+Tudo bem?
+
+Me chamo Bruna e possuo interesse na vaga de Auxiliar financeiro. 
+
+De acordo com minhas experiências como assistente dministrativo, assistente comercial - financeiro e auxiliar de RH acredito ter as competências necessárias para a posição.
+
+Envio meu currículo para análise, e me coloco a disposição para conversarmos por vídeo ou de modo presencial.
+ 
+Atenciosamente, 
+Bruna Fortes
+[15:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:48] CLIENTE: [documento]
+[15:50] LOJA: Boa tarde, Bruna...
+[15:50] LOJA: Por gentileza, me informa seu CPF
+[15:50] CLIENTE: 064.967.671-81
+[15:51] LOJA: Certo! Seu C.V está sendo encaminhado para avaliação.  Sendo selecionada entraremos em contato.
+[15:51] LOJA: Boa sorte.

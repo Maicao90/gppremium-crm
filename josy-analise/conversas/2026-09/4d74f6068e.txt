@@ -1,0 +1,28 @@
+CONVERSA 4d74f6068e | contato: Personal | 29/09/2026 21:48 até 30/09/2026 08:58 | 9 msgs do cliente, 11 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[21:48] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[21:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[21:51] CLIENTE: 225/55/18
+--- 30/09/2026 (Wed) ---
+[08:14] LOJA: [áudio] "Bom dia, Paulo. Tudo bom?"  {audio:midias/3EB084D1A83F6934C0D9EE_480914.ogg}
+[08:14] LOJA: [áudio] "Paulo, nós até conversamos há um tempo atrás, né, que nós fomos aqui de Luziânia, Goiás. Você mora onde mesmo, que eu não me recordo?"  {audio:midias/3EB0CE7936A5EE88A72EC6_386048.ogg}
+[08:21] CLIENTE: [áudio] "É, só que eu acabei viajando para o Paraguai e acabei comprando pneu lá. Aí agora eu vou viajar de novo, só que eu quero ir com pneu novo já, entendeu?"
+[08:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:22] CLIENTE: [áudio] "Eu moro aqui na Ponte Alta do Gama. Quanto é que está custando os pneus 18 mesmo? Qual é a marca dele? E qual é a especificação do pneu? Tipo A, B, C, D, E, qual deles?"
+[08:24] LOJA: [áudio] "Oi, Sr. Paulo, tudo jóia? Então, eu estava até aguardando aqui, porque eu me recordo, apesar de eu ter muitos clientes, tem uns específicos assim que eu me lembro de detalhes de conversa, e eu lembro que o senhor tinha dito que era de algum lugar, eu só não me recordava de onde, e eu lembro que na negociação que nós tínhamos feito anteriormente, quando eu falei que éramos aqui de Luziânia, o senhor até ficou meio assim, falou, nossa, não dá, é longe. Aí, por isso, eu estava aguardando aqui, né, ouvindo seus áudios, para nós darmos continuidade. Aqui, a princípio, eu trabalho com pneus da marca GP Premium, que são pneus remoldes, e são os pneus mais vendidos que eu tenho. Entretanto, também trabalho com marcas de pneus novos e importados, tá bom? Quantos pneus que o senhor vai precisar para eu fazer o levantamento do que é que eu tenho aqui no meu estoque para poder te oferecer?"  {audio:midias/3EB0BE305A2FCF7D691267_407672.ogg}
+[08:25] CLIENTE: 2
+[08:26] CLIENTE: [áudio] "Não quero remolde."
+[08:26] LOJA: [foto]
+[08:27] LOJA: [áudio] "Pois é, o remold está aí no orçamento, que é o de R$ 399,00. Outra opção é o pneu da marca Conforce, que é pneu novo."  {audio:midias/3EB083F6661F6747F06AA9_739454.ogg}
+[08:27] CLIENTE: [áudio] "Você tem aquela etiquetazinha branca no pneu? Quando você compra o pneu, vem etiquetazinha branca com os detalhes do pneu. Você tem nesse pneu para me dar uma olhada nele?"
+[08:28] LOJA: [áudio] "Tem, tem sim. Se eu me dar só um instante, o meu celular aqui descarregou, mas eu vou pegar aqui uma imagem aqui do Google pra poder te mandar."  {audio:midias/3EB0D7C752B45EA8F705AC_212546.ogg}
+[08:31] LOJA: [foto]
+[08:33] LOJA: [foto]
+[08:33] CLIENTE: [áudio] "Não, esse desenho é diferente do meu pneu, completamente diferente."
+[08:48] LOJA: [áudio] "Pois é, Paulo, no dia de hoje são essas opções que eu tenho aqui a pronta entrega para poder te oferecer, tá?"  {audio:midias/3EB06C72592E474F6AC672_162029.ogg}
+[08:58] CLIENTE: Obrigado

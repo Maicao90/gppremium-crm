@@ -1,0 +1,25 @@
+CONVERSA 6b03436aca | contato: Nei | 14/10/2026 15:15 até 14/10/2026 18:03 | 6 msgs do cliente, 11 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[15:15] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Olá! Posso ter mais informações sobre isso?
+[15:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:16] CLIENTE: Qual é a cidade
+[15:16] LOJA: Somos de Luziânia-Go e você?
+[15:53] CLIENTE: Perdizes mg.  Mas tô em mineiros Goiás até domingo
+[15:55] LOJA: Bacana!
+[15:55] LOJA: [áudio] "Pois então, Ney, me diz qual que é a medida de pneus que você precisa?"  {audio:midias/3EB03C0170A270377DA037_948582.ogg}
+[15:57] CLIENTE: 265/60/18 Goodyear Territory
+[15:58] LOJA: Não dispomos dessa opção de marca a pronta entrega.
+[15:58] CLIENTE: Ok obg pela atenção
+[15:58] LOJA: Podem ser outras?
+[16:08] CLIENTE: Depende o preço qto você me faz quatro da TITANO
+[16:57] LOJA: [foto]
+[16:57] LOJA: No dia de hoje temos essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:57] LOJA: [áudio] "Os pneus mais vendidos que eu tenho aqui são os pneus da marca GP Premium. Ainda no orçamento, eu coloquei um modelo Brutus, que é um modelo mais off-road, e eu tenho também ele no modelo HT."  {audio:midias/3EB031E92BA03A5F485DF2_349634.ogg}
+[17:57] LOJA: [vídeo]
+[18:03] LOJA: [áudio] "Perdão, te chamei de Jomar, é nesse seu nome, desculpa."  {audio:midias/3EB0020A257F63434FDCB1_491756.ogg}

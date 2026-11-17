@@ -1,0 +1,14 @@
+CONVERSA 02edde3e3e | contato: Aline Rodrigues | 17/09/2026 13:49 até 17/09/2026 14:33 | 2 msgs do cliente, 5 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[13:49] CLIENTE: Boa tarde
+[13:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:50] CLIENTE: 195/35/18
+[14:28] LOJA: [foto] *Josy:*
+teremos 185/35/18
+[14:28] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:28] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[14:33] LOJA: [áudio] "Olá, tudo bem com você? Aline, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB053A3CEED92F4F0216D_314389.ogg}

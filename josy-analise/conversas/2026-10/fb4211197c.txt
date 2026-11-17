@@ -1,0 +1,33 @@
+CONVERSA fb4211197c | contato: Andre Araujo | 02/10/2026 16:08 até 07/10/2026 15:03 | 4 msgs do cliente, 13 da loja, 0 do robô
+
+--- 02/10/2026 (Fri) ---
+[16:08] LOJA: *Josy:*
+Boa tarde!
+[16:23] LOJA: [documento]
+--- 06/10/2026 (Tue) ---
+[10:53] CLIENTE: Bom dia!
+Teria mais 2 pneu iguais ao da nota
+[10:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:54] LOJA: *Josy:*
+Bom dia, André!
+[11:05] LOJA: [áudio] "Estou conferindo aqui para vocês, tá bem?"  {audio:midias/3EB07BD9034C7D566C034C_88886.ogg}
+[11:06] LOJA: *Josy:*
+Tem sim!
+[11:06] LOJA: *Josy:*
+Posso reservar para o senhor?
+[11:13] LOJA: [áudio] "Oi Sra. André, bom dia. Tudo jóia? Eu tenho aqui sim os pneus e já quer que eu reserva aqui pra ti?"  {audio:midias/3EB024236EDA1193F02DF4_833874.ogg}
+[11:14] CLIENTE: Pagamento em 2x como ficaria o valor
+[11:14] LOJA: *Josy:*
+Em 2 X a unidade fica por R$ 795,00
+[11:16] CLIENTE: Pode reservar.
+Pego amanhã a tarde.
+[11:16] LOJA: *Josy:*
+Já vou faturar para não correr o risco.
+[11:17] CLIENTE: Ok
+--- 07/10/2026 (Wed) ---
+[12:15] LOJA: [áudio] "Oi, Sr. André, tudo jóia? Estou passando aqui para confirmar que o senhor vai vir agora à tarde, certo?"  {audio:midias/3EB0D153A619D77C9CC015_836010.ogg}
+[15:03] LOJA: *Josy:*
+Sr André... se possivel nos avalie no Google!
+[15:03] LOJA: *Josy:*
+https://da.gd/gp-avaliar

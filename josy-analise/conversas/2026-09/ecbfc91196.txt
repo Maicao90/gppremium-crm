@@ -1,0 +1,13 @@
+CONVERSA ecbfc91196 | contato: coob1101196 | 18/09/2026 08:37 até 18/09/2026 08:41 | 1 msgs do cliente, 6 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[08:37] LOJA: *Josy:*
+Bom dia!
+[08:38] LOJA: [foto]
+[08:40] LOJA: [áudio] "Oi Seu João, tudo jóia?"  {audio:midias/3EB0FD4C324FE141B81C51_134872.ogg}
+[08:40] LOJA: [áudio] "Aí eu mandei a foto da frente da loja e vou te mandar a localização também, tá?"  {audio:midias/3EB08325B5F6A9DA176FC6_72916.ogg}
+[08:40] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:41] CLIENTE: [áudio] "Oi, bom dia. Certinho, chegou aqui direitinho. Obrigado, hein."
+[08:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

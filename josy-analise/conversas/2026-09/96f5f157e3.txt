@@ -1,0 +1,48 @@
+CONVERSA 96f5f157e3 | contato: gorete m freitas | 22/09/2026 17:58 até 23/09/2026 11:40 | 11 msgs do cliente, 20 da loja, 0 do robô
+
+--- 22/09/2026 (Tue) ---
+[17:58] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso saber mais informações sobre isto?
+[17:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:59] CLIENTE: [foto]
+[17:59] CLIENTE: preciso de dois pneus
+[17:59] CLIENTE: esse não é remold não né?
+--- 23/09/2026 (Wed) ---
+[08:03] LOJA: *Josy:*
+Bom dia!
+[08:03] LOJA: *Josy:*
+Esse ai da foto provavelmente não é não é não.
+[08:05] LOJA: *Josy:*
+O que tenho aqui é o GP Premium, remold de 1ª linha e é o pneu mais vendido.
+[08:05] LOJA: *Josy:*
+Está na promoção compre 3 e leve 4
+[08:10] CLIENTE: preciso de dois
+[08:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:10] CLIENTE: qual valor dos 3?
+[08:10] LOJA: *Josy:*
+Vou te mostrar.
+[08:11] LOJA: [foto]
+[08:11] LOJA: *Josy:*
+Exemplo digamos que seu pagamento seja a viista a  unidade  é  R$ 395,00 x 3 pneus = R$ 1.185,00 por esse preço você vai levar os 4
+[08:11] LOJA: *Josy:*
+E os pneus já são colocados.
+[08:14] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Gorete, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0CC489D98A9BE7A86DA_814220.ogg}
+[08:25] CLIENTE: valparaiso
+[09:12] LOJA: [áudio] "Ah, sim. É pertinho aqui de nós, Gorete?"  {audio:midias/3EB09613600BBD3BFE31C4_457163.ogg}
+[09:12] LOJA: [áudio] "Olha, esses pneus, eles têm garantia de 2 anos, tá? Com questão da quilometragem, eles rodam 60 mil km e já entrego eles colocados para você, tá joia? Gostaria já de deixar agendado para você passar aqui na nossa loja?"  {audio:midias/3EB0BCC74F60076D0A5BB9_723066.ogg}
+[10:05] LOJA: *Josy:*
+Está em busca de alguma marca especifica?
+[10:30] LOJA: *Josy:*
+Oi...
+[11:33] CLIENTE: desculpa estou no trabalho
+[11:33] CLIENTE: não consigo agora
+[11:34] LOJA: Compreendo.
+[11:34] LOJA: Não precisa ser necessariamente agora, ou hoje, nós mulheres precisamos dar conta muita coisa! Fique tranquila.
+[11:35] CLIENTE: [figurinha]
+[11:35] CLIENTE: obrigada
+[11:35] LOJA: Vou salvar a figurinha rs
+[11:36] LOJA: Bem, se a opção que te encaminhei te atender... Passa aqui em algum sábado que imagino ser mais tranquilo para você ,
+[11:40] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

@@ -1,0 +1,28 @@
+CONVERSA ebb0a52cdb | contato: Bruno | 07/10/2026 15:02 até 09/10/2026 14:13 | 2 msgs do cliente, 15 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[15:02] LOJA: *Josy:*
+Boa tarde!
+[15:02] LOJA: *Josy:*
+265/60/18
+[15:09] LOJA: [foto]
+[15:09] LOJA: [áudio] "Esses são os pneus aqui da marca GP Premium, tá?"  {audio:midias/3EB09FE4DA43344F2D4DA0_107453.ogg}
+[15:10] CLIENTE: Me manda as fotos dele
+[15:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:13] LOJA: *Josy:*
+265/60/18 HT 👇🏻
+[15:14] LOJA: [foto]
+[15:14] LOJA: *Josy:*
+265/60/18 ATR👇🏻
+[15:14] LOJA: [foto]
+[15:15] LOJA: *Josy:*
+265/60/18 Brutus👇🏻
+[15:15] LOJA: [foto]
+[15:36] LOJA: [áudio] "Bruno, quer que eu te encaminhe a nossa localização?"  {audio:midias/3EB0FA7A3C07736029BBBC_79114.ogg}
+[15:38] CLIENTE: [áudio] "Eu já sei onde é, eu vou passar amanhã, tá bom?"
+[15:39] LOJA: [áudio] "Perfeito, Bruno. Assim que abrir a loja, eu te mando a nossa localização, está bem?"  {audio:midias/3EB065B02A673E1E3C266B_553212.ogg}
+--- 08/10/2026 (Thu) ---
+[11:11] LOJA: [áudio] "Oi Bruno, bom dia, tudo jóia? Que horas que você vai conseguir passar por aqui?"  {audio:midias/3EB078CAA06CDB6A61C3EE_984637.ogg}
+--- 09/10/2026 (Fri) ---
+[14:13] LOJA: Boa tarde Bruno, vou encerrar seu atendimento para não encher seu whatsapp de mensagem.                                                                                                                   Se precisar futuramente é só chamar. Ou se possivel, venham até nossa loja.                                                                                                  Obrigada 👋🏻

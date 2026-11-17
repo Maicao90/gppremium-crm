@@ -1,0 +1,13 @@
+--- /root/aprendizado-lab-api/.originais/server.ts	2026-10-22 17:42:22.646620152 +0000
++++ /root/aprendizado-lab-api/src/bot-service/server.ts	2026-10-22 17:46:54.039074957 +0000
+@@ -535,7 +535,9 @@
+           console.log(`[BotService][Cerebro] ensinamento ${l.id} (${l.acao}): ${l.situacao}`);
+           if (!req.body?.simular && !req.body?.teste) registrarUso(l.id);
+           const baseCerebro = { deterministico: true, novoEstadoPreco: estadoPrecoAtual, novosDadosPreco: JSON.stringify(dadosPrecoAtuais), via: 'cerebro', assuntos: [l.situacao], rajada, simulado: !!req.body?.simular, licao: { id: l.id, situacao: l.situacao, acao: l.acao } };
+-          if (l.acao === 'responder') return res.json({ ...baseCerebro, partes: partesDaLicao(l), acaoTipo: 'CEREBRO', chaves: ['cerebro'] });
++          // Audio no ensinamento ([ENVIAR_AUDIO:josy-x!N], aprendizado da Josy): so vai se quem chamou sabe enviar
++          // (audioFluxo, igual ao fluxo abaixo); senao sai so o texto de reserva.
++          if (l.acao === 'responder') return res.json({ ...baseCerebro, partes: partesDaLicao(l, req.body?.audioFluxo === true), acaoTipo: 'CEREBRO', chaves: ['cerebro'] });
+           if (l.acao === 'silencio') return res.json({ ...baseCerebro, partes: [], acaoTipo: 'SILENCIO', chaves: ['cerebro_silencio'] });
+           if (l.acao === 'atendente') return res.json({ ...baseCerebro, partes: ['Só um instante que eu vou verificar aqui pra você, tá bem?'], acaoTipo: 'CEREBRO', chaves: ['sem_alternativa'] });
+           instrucaoCerebro = `\nORIENTACAO DO DONO DA LOJA PARA ESTA SITUACAO ("${l.situacao}") — siga a risca, acima das outras regras: ${l.resposta}`;

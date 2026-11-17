@@ -1,0 +1,94 @@
+CONVERSA 44738c2c7e | contato: Elias | 08/10/2026 16:22 até 14/10/2026 15:14 | 37 msgs do cliente, 45 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[16:22] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[16:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:22] CLIENTE: [áudio] "Os pneus da Toro aí tá quanto? Os pneus seus da Toro, da FIT Toro, área 18."
+[16:24] LOJA: [áudio] "Olá, boa tarde. Tudo bem com o senhor, senhora Elias? Eu tenho aqui o 2255518. Essa medida é que o senhor usa?"  {audio:midias/3EB01CFC4EF010858ED486_958350.ogg}
+[16:24] CLIENTE: [áudio] "É essa mesmo, meu amor. É essa mesmo, meu bem. Quanto é que tá, os seus?"
+[16:24] CLIENTE: [áudio] "Fota aí dos pneus para mandar para mim aqui para mim ver."
+[16:25] LOJA: [foto]
+[16:25] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:26] CLIENTE: [áudio] "O valor que você mandou aí não carregou."
+[16:26] CLIENTE: [áudio] "Você não carregou, então você vai ter como ser enviado de novo."
+[16:26] LOJA: [áudio] "Tá bom, vou mandar de novo."  {audio:midias/3EB0D070424E72E5F9561B_157745.ogg}
+[16:27] LOJA: [foto]
+[16:27] CLIENTE: [áudio] "Right up for you, right up here, right up for you."
+[16:27] LOJA: [áudio] "Eu tenho aqui a pronta entrega, os pneus da marca Conforcer, a unidade está por R$ 481,00 a vista e tem também os pneus da marca GP Premium, a unidade por R$ 399,00 a vista."  {audio:midias/3EB0828A0FBDF967C50122_345657.ogg}
+[16:28] CLIENTE: [áudio] "Vou mandar essa foto desse GP Premium de R$399,00 pra mim ver."
+[16:29] CLIENTE: [áudio] "Desse pneu aí, R$399."
+[16:29] LOJA: [foto] Adventure Verde
+[16:29] CLIENTE: [áudio] "Na lateral, vira aí na lateral pra me dar uma olhada na lateral. Isso é importado ou é em molde isso aí?"
+[16:30] LOJA: [áudio] "É o pneu que nós fazemos. Ele é um pneu ecológico. Ele vai entrar na categoria de remodelagem, só que linha Premium. Ele é o pneu mais vendido que eu tenho."  {audio:midias/3EB0417606BB08150E5681_473106.ogg}
+[16:30] LOJA: [foto]
+[16:31] CLIENTE: [áudio] "Fala, onde é a loja sua em Luziânia? Em Luziânia?"
+[16:33] LOJA: [áudio] "Aqui é na fábrica GP Premium, aqui na BR-040."  {audio:midias/3EB02968F8B540B061895B_481570.ogg}
+[16:33] LOJA: [áudio] "Eu vou fazer um vídeo aqui para poder te mostrar, tá bom?"  {audio:midias/3EB01150E0476813FAEA02_545578.ogg}
+[16:33] LOJA: [áudio] "Aqui na BR, o senhor vai passar ali pela, uma empresa que se chama Vipal, passa um pouquinho, vai ter, acho que é Motel, Motel alguma coisa, esquece o seu nome, mas pra frente um pouquinho, vai ter o posto de gasolina, aí o senhor já vai entrar à sua direita, fica pertinho aqui da Goiás Diesel e o Hotel Goiás, tá?"  {audio:midias/3EB025A83D84127D75F554_428009.ogg}
+[16:35] LOJA: [vídeo]
+[16:39] CLIENTE: [áudio] "Beleza, Beleza, Beleza. Entendi."
+[16:40] LOJA: [áudio] "Vai, passa aqui na loja, Sr. Elias."  {audio:midias/3EB03B2A9F30CB67EC66F5_199832.ogg}
+[16:40] CLIENTE: [áudio] "Isso que eu vou fazer. Eu vou ver se dá pra me ir amanhã. Vocês vão abrir amanhã e sábado? Eu vou ver se dá pra me ir amanhã ou sábado. Vocês trabalham com pneu de caminhão também? Eu tenho caminhão. Trabalho com pneu de caminhão também, né?"
+[16:41] LOJA: [áudio] "Pois bem, Sra. Elias, amanhã nós trabalhamos normalmente, tá? Aqui é de segunda a sexta, de 8 da manhã até as 18. Nós não fechamos para o almoço. No sábado é de 8 até o meio-dia, tá bom? E, infelizmente, não estamos trabalhando mais com pneus de caminhão. Uma pena."  {audio:midias/3EB06C794989B2F5002A8C_773408.ogg}
+[16:49] CLIENTE: [áudio] "Ele vai mandar aqui dos pneus também, do carro pequeno dele. Aí eu vou ver qual é a medida dos dele, que eu vou comprar da touro e do carro, tá? Da touro e do carro pequeno que tinha."
+[16:50] CLIENTE: [áudio] "Pneus 185-70-13, tá quanto? 185-70-13, com Fit Uno. Uno não, com... Ainda não, com o módulo."
+[16:52] LOJA: Está em oferta 165/70/13 de R$ 279,00 por R$ 239,00 e 175/70/13 de R$ 299,00 por R$ 269,00
+[16:52] LOJA: [foto]
+[16:52] LOJA: No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:52] CLIENTE: [áudio] "Bem, é 14, é 14. É 1, 7, 5, 6, 5, 14. 1, 7, 5, 6, 5, 14. Levou aí. O cartão divide em quantas vezes? Eu vou comprar 4 para Toro e 4 para... 4 para Toro e 4 para ele, o carro pequeno, tá?"
+[16:54] LOJA: [foto]
+[16:54] LOJA: Está em oferta 165/70/14 de R$ 279,00 por R$ 239,00 e 175/64/14  de R$ 289,00 por R$ 249,00
+[16:55] CLIENTE: [áudio] "Meu nome, eu vou te procurar aí, amanhã ou depois, tá bom? Eu vou te procurar aí, amanhã ou depois."
+[16:55] CLIENTE: [áudio] "Amanhã eu te procuro aí. Amanhã ou depois, eu vou ver aqui como é que tá acontecendo o cartão do Guilherme de Contas."
+[16:56] LOJA: [áudio] "Tá bom, senhora Elias."  {audio:midias/3EB0BE0BD90D5FDF3D231C_112721.ogg}
+[16:56] CLIENTE: [áudio] "Procurar aí. Muito obrigado. Tá aí, hein? Eu vou ver. Se eu vou amanhã ou no sábado, que eu vou comprar 4 para todos os seus pneus, se eu for negócio dele. E a garantia desses pneus? Como é que é as garantias deles?"
+[16:57] CLIENTE: [áudio] "Aí dá montado, tem que montar, como é que é?"
+[16:57] LOJA: [áudio] "Os pneus, eles têm 2 anos de garantia, tá? E sim, ele já é colocado. A parte, nós negociamos aí os serviços de balanceamento e alinhamento, se realmente for necessário fazer no seu carro, tá bom?"  {audio:midias/3EB03810A0F9B50F9CE51A_740566.ogg}
+[16:59] CLIENTE: [áudio sem fala]
+[17:07] LOJA: Não consegui te ouvir.
+[17:08] CLIENTE: [áudio] "Tá, eu tô falando assim. Beleza, eu vou combinar aqui com meu sobrinho, que aí nós leva logo os dois carros que montam os dois pneus logo, montam da Toro, os quatro, e montam do carro dele também, tá bom? Aí eu vou ver aqui se eu vou levar no sábado, de manhãzinha, primeiro horário, quando vocês abrirem, nós seriam os primeiros carros, ou amanhã ou sábado, eu vou ver aqui qual é o melhor, tá bom? Aí no cartão, vocês parcelam até quantas vezes? Esse valor aí parcelam no cartão?"
+[17:18] LOJA: Perfeito!
+[17:19] LOJA: parcela em até 10 x
+[17:28] CLIENTE: [áudio] "Não faz esse tanto de vez na misericórdia, aí é 3, 4 vezes no máximo. Aí eu me diviso tanto de vez."
+[17:28] CLIENTE: [áudio] "A caminhão, você tem? Quando eu for precisar, eu vou precisar para levar a caminhão."
+[17:30] LOJA: [áudio] "Não, de caminhão não temos não."  {audio:midias/3EB0F8529636999287138E_576766.ogg}
+[17:31] CLIENTE: [áudio] "Já tá bom, ficar pequeno já dá pra me socorrer. Beleza, eu vou ver, eu vou ir amanhã ou depois. Vou te chamar, tá bom? Você não falou seu nome pra eu te procurar aí, quando eu chegar aí."
+[17:33] LOJA: [áudio] "Meu nome é Josi."  {audio:midias/3EB0FECB304970EC8DCBBC_269091.ogg}
+[17:34] CLIENTE: [áudio] "Não esquece não, o Josi tem uma filha de criação que chama Josi. Não esqueci, tchau."
+[17:34] CLIENTE: [áudio] "Abre a partir das 8 horas, né, Jússi? Qualquer coisa leva um amanhã e outro sábado."
+[17:35] LOJA: [áudio] "Isso, isso mesmo, Sra. Elias. Ah, que bacana. Não tem como esquecer mesmo, não."  {audio:midias/3EB06E60726619B5461A5B_869497.ogg}
+--- 10/10/2026 (Sat) ---
+[12:05] CLIENTE: [áudio] "Não deu pra mim, hoje eu tô fazendo entrega, eu acho que eu vou ir na terça-feira, tá bom? Na terça."
+[12:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:06] LOJA: [áudio] "Oi, Soelias, tudo jóia? Eu senti só falta, eu sei que é corrido, mas beleza, ficamos combinados para terça-feira então. Jóia, bom final de semana aí, até mais."  {audio:midias/3EB08A6E6261324C9C1FD1_183750.ogg}
+[12:09] CLIENTE: [áudio] "Mais, mais, mais. Beleza, foi dia a dia, caminhão."
+[12:10] LOJA: [áudio] "Entendo perfeitamente, Sarelias, mas ficamos alinhados assim, tá joia?"  {audio:midias/3EB08502EEF3C89A060EB4_482285.ogg}
+[12:10] CLIENTE: [áudio] "Terça, terça, né? Segunda fechada aí, né?"
+--- 14/10/2026 (Wed) ---
+[08:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:10] CLIENTE: [áudio] "Eu só vou levar minha mulher ali na Irmão Sutra e vou descer aí. Beleza? Na semana só a localização."
+[08:11] LOJA: Bom dia!
+[08:11] LOJA: Está bem!
+[08:11] LOJA: Vou te mandar o video que te mandei outro dia
+[08:11] CLIENTE: [áudio] "Beleza, Beleza."
+[08:11] LOJA: [vídeo]
+[08:12] CLIENTE: [áudio] "Beleza, Beleza."
+[14:41] CLIENTE: [áudio] "Querida, 175-7013, tá com o Adseus aí."
+[14:42] LOJA: [áudio] "Feliz, tudo jóia? Olha, eu tenho aqui 165,7013, que está por 239, que é o valor na oferta, tá bom? E o 175,70 de 299 por 269 a vista. Já te mando os orçamentos, tá?"  {audio:midias/A56B1CE98474E52D1138FE5F505D8A09_992207.ogg}
+[14:42] CLIENTE: [áudio] "Você é meu amigo de São Paulo, ele trabalha no caminhão, acho que ele vai passar e comprar uns com você."
+[14:46] LOJA: [foto]
+[14:51] CLIENTE: [áudio] "Ele vai falar com você, ele não é pra sair, ele vai falar com você."
+[14:51] LOJA: [áudio] "Aí, Elias, o 165 de 279, dá para fazer por 239 à vista, e o 17570 de 299 por 269 a unidade à vista."  {audio:midias/3EB00A0D40C3A7976E7D42_373190.ogg}
+[14:51] LOJA: [áudio] "Beleza, Elias. Obrigada."  {audio:midias/3EB0A19E1A927051DEDCCB_884466.ogg}
+[15:03] LOJA: Me passa o contato do seu amigo!
+[15:04] CLIENTE: [áudio] "Entrou ali para carregar, quando ele sair eu te mando aí. Ele é de São Paulo, eu nem tenho contato nele para descaminhar o bem de São Paulo."
+[15:14] LOJA: Ta bom!
+[15:14] LOJA: Meu conterraneo então, nasci lá!
+[15:14] LOJA: [áudio] "Qualquer coisa, o senhor mostrou o vídeo e a foto que eu fiz aí da frente da loja para ele poder saber onde é."  {audio:midias/3EB01CA8EE43116E970473_459353.ogg}

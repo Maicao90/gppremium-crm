@@ -1,0 +1,30 @@
+CONVERSA 632b40b107 | contato: Caio Milhomem | 10/10/2026 10:27 até 10/10/2026 11:56 | 10 msgs do cliente, 14 da loja, 0 do robô
+
+--- 10/10/2026 (Sat) ---
+[10:27] CLIENTE: queria saber os valores e condiçoes de pagamento
+[10:27] CLIENTE: Quero cotar o pneu 205/55 R16 GP Premium.
+[10:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:27] CLIENTE: 205 55 16
+[10:35] LOJA: [foto]
+[10:35] LOJA: [foto]
+[11:33] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:33] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB092892C1D6293D23E4E_64475.ogg}
+[11:37] CLIENTE: gp1 e gp4 são os remoldes de vocês neh?
+[11:37] LOJA: Isso! E são os mais vendidos !
+[11:38] LOJA: Garantia de 2 anos.
+[11:39] LOJA: Quer uma foto...video?
+[11:39] CLIENTE: voces fazem a montagem também?
+[11:40] CLIENTE: por favor
+[11:40] LOJA: Sim!
+[11:40] CLIENTE: balanceamento incluso?
+[11:44] LOJA: [vídeo]
+[11:44] LOJA: [áudio] "Serviço de balanceamento, alinhamento e os demais são cobrados à parte, tá? E são todos preços negociáveis."  {audio:midias/3EB04C7A8BDF962549E64E_837796.ogg}
+[11:51] CLIENTE: No caso tá incluso só a montagem
+[11:52] LOJA: [áudio] "Isso, a montagem já é por nossa conta, tá bom, Caio?"  {audio:midias/3EB063134C0C67103B67E5_698085.ogg}
+[11:55] CLIENTE: [áudio] "Eu estou fazendo duas cotações. No caso, são para dois carros. Um é esse carro aí, esse pneu que você me falou. Inclusive, esse carro é para um amigo meu, na verdade. O meu é um 205,50 e 17. Você poderia ver para mim também qual é o valor? Poderia me mandar a tabela também dos valores? Para esse pneu, 205,50 e 17."
+[11:55] CLIENTE: 205 50 17
+[11:56] LOJA: [foto]
+[11:56] LOJA: Prontinho!

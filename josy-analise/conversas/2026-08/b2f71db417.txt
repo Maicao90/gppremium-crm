@@ -1,0 +1,29 @@
+CONVERSA b2f71db417 | contato: Maisa | 29/08/2026 11:17 até 31/08/2026 16:54 | 8 msgs do cliente, 9 da loja, 0 do robô
+
+--- 29/08/2026 (Sat) ---
+[11:17] CLIENTE: Bom dia
+[11:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:18] LOJA: *Josy:*
+Bom dia!
+[11:18] CLIENTE: Vcs estão precisando de um pa trabalha aí não
+[11:19] LOJA: *Josy:*
+Por ora, não. Mas me mande seu c.v que eu arquivo aqui e se surgir algo te comunicamos.
+[11:20] CLIENTE: Ok
+[11:38] CLIENTE: C.v não entendi
+[11:38] LOJA: *Josy:*
+c.v abreviação de currilum
+[11:54] CLIENTE: Ok
+--- 31/08/2026 (Mon) ---
+[15:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:48] CLIENTE: [foto]
+[16:51] LOJA: *Josy:*
+Boa tarde.
+[16:52] CLIENTE: Boa tarde
+[16:52] LOJA: *Josy:*
+Preciso que me envie em PDF
+[16:53] LOJA: *Josy:*
+Do contrário, se não conseguir, pode trazer e deixar aqui na empresa.
+[16:53] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6 *Josy:*
+[16:54] CLIENTE: Pode ser então

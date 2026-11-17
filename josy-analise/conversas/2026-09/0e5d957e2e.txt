@@ -1,0 +1,36 @@
+CONVERSA 0e5d957e2e | contato: Higor Queiroz | 21/09/2026 10:22 até 24/09/2026 12:02 | 11 msgs do cliente, 15 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[10:22] CLIENTE: Bom dia
+[10:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:22] CLIENTE: Qual maior pneus R16 vc tem
+[10:23] CLIENTE: Pra camionete
+[10:23] CLIENTE: 265 75 16 tem?
+[10:23] LOJA: [áudio] "Oi Igor, tudo bom?"  {audio:midias/3EB0940F753E8A9DA69D2E_802443.ogg}
+[10:23] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[10:24] CLIENTE: Qual vcs tem ai?
+[10:24] CLIENTE: 16
+[10:25] LOJA: ☺️
+[10:25] LOJA: *Josy:*
+255/70/16 Brutus da GP Premium...245/70/16...
+[10:26] CLIENTE: Tem 265?
+[10:26] CLIENTE: Desses AT
+[10:26] LOJA: [áudio] "Igor, eu vou ter somente 255-70-16 e 245-70-16, tá? À medida que você solicitou, como é um perfil mais alto, nós não dispomos a pronta entrega, mas eu vou verificar com os meus distribuidores. Então, assim que eles responderem, eu te informo a Marco para esse prazo de entrega, que vai ter somente importado."  {audio:midias/3EB010F85CCA3A04BE0BC0_215656.ogg}
+[10:26] LOJA: *Josy:*
+255/70/16 Brutus da GP Premium👇🏻
+[10:27] LOJA: [foto]
+[10:27] CLIENTE: Quanto ta esse?
+[10:28] LOJA: [foto]
+[10:28] LOJA: *Josy:*
+De R$ 589,00 por R$ 539,00 a vista
+[10:30] CLIENTE: Vou passar ai mais tarde
+[10:30] CLIENTE: Te procuro
+[10:51] LOJA: *Josy:*
+Higor...265/75/16 só importado e por encomenda
+[10:51] LOJA: [foto]
+[17:22] LOJA: 👀
+[17:22] LOJA: *Josy:*
+está vindo?
+--- 24/09/2026 (Thu) ---
+[12:02] LOJA: [áudio] "Oi, Igor. Tá na correria, né, rapaz? Se eu falar que ia passar aqui na segunda-feira, não apareceu."  {audio:midias/3EB0DDD1FB2B32163E8B93_449789.ogg}

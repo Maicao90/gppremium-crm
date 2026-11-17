@@ -1,0 +1,27 @@
+CONVERSA b951c918a9 | contato: Geladeira | 16/09/2026 15:47 até 21/09/2026 09:30 | 4 msgs do cliente, 12 da loja, 0 do robô
+
+--- 16/09/2026 (Wed) ---
+[15:47] LOJA: *Josy:*
+Boa tarde!
+[15:49] LOJA: [foto]
+[15:49] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:49] LOJA: [foto]
+--- 19/09/2026 (Sat) ---
+[22:21] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[22:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[22:21] CLIENTE: [áudio] "Qual o preço de 175, 75, 14? Isso aí é novo ou é remoto?"
+--- 21/09/2026 (Mon) ---
+[08:16] LOJA: [áudio] "Bom dia, tudo bom com o senhor? Então, até na quarta-feira o senhor ligou aqui para mim e eu te passei o preço do 175-75-14 da Conforster, 300 reais, mas o senhor me falou que encontrou em outra empresa aí num valor muito mais barato, né? Até te expliquei que esse valor que eles estão passando é apenas para atrair o cliente, porque chegando lá não vai ser nada disso, tá? Então, aqui, o meu pneu, um 7575, ele é pneu novo, se for para pagar à vista, está 300 reais cada."  {audio:midias/3EB0D378366FE48EAE4B63_469821.ogg}
+[08:17] LOJA: [áudio] "Aí, senhor, dá uma olhadinha aqui nas nossas conversas, que eu até te mandei a localização da nossa loja, pode me dizer se realmente chegou?"  {audio:midias/3EB0EA397A2DE8266EFF2D_736628.ogg}
+[09:03] LOJA: [áudio] "E eu vou te mandar aqui a nossa localização, tá joia?"  {audio:midias/3EB02775548626B02C5230_712095.ogg}
+[09:03] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:03] LOJA: [foto]
+[09:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:22] CLIENTE: [áudio] "Bom dia, bom dia, mas deixa eu te explicar. Eu já comprei, aquele dia mesmo, já comprei o motor pneu 175 75 14 a 199, entendeu? Eu comprei lá na Muniz, me deu garantia de 5 anos, tudo na nota fiscal, tudo bonitinho, pneu novo, entendeu? Muito obrigado, bom dia."
+[09:27] LOJA: [áudio] "Ah, legal, então. Aí, por esse preço, o senhor só pegou os pneus e levou para casa? Como é que foi?"  {audio:midias/3EB0EE97D922DF0FB89244_825734.ogg}
+[09:30] CLIENTE: [áudio] "Não, coloquei lá mesmo, fiz um alinhamento, tá bom? Coloquei lá mesmo."

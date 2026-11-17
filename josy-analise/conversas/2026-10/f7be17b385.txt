@@ -1,0 +1,26 @@
+CONVERSA f7be17b385 | contato: Brasil  | 07/10/2026 13:48 até 09/10/2026 11:40 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[13:48] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso saber mais informações sobre isto?
+[13:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:48] CLIENTE: Valparaíso ?
+[13:48] CLIENTE: Pneu 14
+[13:49] CLIENTE: Não quero remold
+[13:51] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa hoje?
+[13:51] LOJA: *Josy:*
+Luziania-Go
+[13:51] CLIENTE: 175/65
+[13:52] LOJA: [foto]
+[13:52] LOJA: *Josy:*
+No dia de hoje temos  essas opções a pronta entrega.  O ultimo do orçamento é remold
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 09/10/2026 (Fri) ---
+[11:40] LOJA: Bom dia,  para não ficar enchendo seu whatsapp de mensagem , estou encerrando seu atendimento. 
+Caso precise futuramente, venha até nossa loja. 
+Será uma satisfação receber você aqui!
+[11:40] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

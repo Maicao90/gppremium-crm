@@ -1,0 +1,21 @@
+CONVERSA f554046987 | contato: Matheus | 11/09/2026 14:48 até 24/09/2026 10:24 | 2 msgs do cliente, 7 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[14:48] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[14:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:48] CLIENTE: 195/60 r16
+[15:01] LOJA: *Josy:*
+Boa tarde...
+[15:01] LOJA: [foto]
+[15:01] LOJA: *Josy:*
+No dia de hoje temos essa opção de marca a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:06] LOJA: [áudio] "Olá, tudo bem com você? Matheus, eu sou a Josi e vocês têm busca de alguma marca específica?"  {audio:midias/3EB0A25BB152FBD060310B_806329.ogg}
+--- 22/09/2026 (Tue) ---
+[15:41] LOJA: [áudio] "Oi Matheus, tudo jóia? Nós falamos alguns dias atrás e eu gostaria de saber se pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB017A771850885D69F10_277357.ogg}
+--- 24/09/2026 (Thu) ---
+[10:24] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

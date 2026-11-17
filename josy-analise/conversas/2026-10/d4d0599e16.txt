@@ -1,0 +1,37 @@
+CONVERSA d4d0599e16 | contato: laboratório | 20/10/2026 09:30 até 21/10/2026 12:36 | 4 msgs do cliente, 11 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[09:30] CLIENTE: Bom dia pinel da Tucson tem
+[09:30] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[09:33] CLIENTE: Rogério Barbosa 
+Aro 16 235/60
+[09:41] LOJA: *Josy:*
+Bom dia!
+[09:41] LOJA: Rogério...Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[09:42] LOJA: *Josy:*
+Você é daqui de Luziânia-Go?
+[09:44] CLIENTE: Jardim inga
+[09:44] LOJA: *Josy:*
+Pertinho!
+[09:44] LOJA: *Josy:*
+Temos a pronta entrega o 215/65/16 posso te apresentar?
+[09:45] CLIENTE: Valor
+[09:48] LOJA: [foto]
+[09:48] LOJA: *Josy:*
+No dia de hoje temos os pneus da marca GP Premium 
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:52] LOJA: [foto]
+[11:10] LOJA: [foto]
+[11:10] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor UNITÁRIO do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 21/10/2026 (Wed) ---
+[12:36] ROBÔ: 🙋🏼‍♀️

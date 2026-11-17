@@ -1,0 +1,41 @@
+CONVERSA 413937e5d0 | contato: Juvenal | 27/07/2026 10:00 até 09/08/2026 05:42 | 13 msgs do cliente, 13 da loja, 0 do robô
+
+--- 27/07/2026 (Mon) ---
+[10:00] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:02] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 28/07/2026 (Tue) ---
+[09:40] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:42] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 29/07/2026 (Wed) ---
+[08:20] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[08:22] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 30/07/2026 (Thu) ---
+[07:00] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[07:02] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 31/07/2026 (Fri) ---
+[06:40] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[06:42] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 01/08/2026 (Sat) ---
+[05:20] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[05:22] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 02/08/2026 (Sun) ---
+[12:00] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[12:02] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 03/08/2026 (Mon) ---
+[11:40] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[11:42] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 04/08/2026 (Tue) ---
+[10:20] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:22] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 05/08/2026 (Wed) ---
+[09:00] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:02] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 06/08/2026 (Thu) ---
+[08:40] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[08:42] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 08/08/2026 (Sat) ---
+[06:00] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[06:02] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 09/08/2026 (Sun) ---
+[05:40] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[05:42] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

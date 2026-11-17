@@ -1,0 +1,39 @@
+CONVERSA a9f3455134 | contato: Walisson Sousa | 15/10/2026 15:13 até 21/10/2026 11:01 | 11 msgs do cliente, 18 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[15:13] CLIENTE: Boa tarde joia
+[15:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:13] CLIENTE: Me chamo walisson
+[15:13] CLIENTE: Voces tem pneus aro 19 de qual marca ??
+[15:14] LOJA: Para que eu possa gerar o orçamento para você, poderia me informar a *medida* do pneu que você precisa (ex: 255/55/19)  😊
+[15:15] CLIENTE: [foto]
+[15:15] CLIENTE: 2 desse
+[15:15] CLIENTE: 2 35
+[15:15] CLIENTE: Pra bmw
+[15:23] LOJA: Nossa, infelizmente não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[15:23] LOJA: MOra aqui em Luziânia-Go?
+[15:23] CLIENTE: Ok
+[15:23] CLIENTE: Sim
+[15:26] LOJA: [áudio] "E o Alisson, vocês têm busca de alguma marca específica? Que aí eu já peço para o meu distribuidor me passar a opção que você está buscando."  {audio:midias/3EB058EFC89083AB004402_189847.ogg}
+[15:52] CLIENTE: [áudio] "Não, não tem a marca específica certa não. Vê um aí que você vê que é boa e não é tão cara e me manda aí."
+[15:54] LOJA: ok!
+[16:07] LOJA: Walisson...  como está seu coração no dia de hoje? Consegui o retorno apenas da Michellin
+[16:07] LOJA: [foto]
+[16:07] LOJA: [figurinha]
+[16:08] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:18] CLIENTE: [áudio] "Esse aí tá 2.700 e pouco à vista, é os quatro. Aí de qual marca que é, que você falou da Michelin? Só porque aí parece que tá outra marca. E o perfil eu quero 2, 225, 40, 19, 2, 225, 35, 19. Porque ela tem um perfil diferente, entendeu? Da frente a trás."
+[16:20] LOJA: Perfil 35 em falta
+[16:54] LOJA: Está a marca *MI*chellin
+[16:54] LOJA: No orçamento, está o valor *UNITÁRIO* do pneu.
+--- 19/10/2026 (Mon) ---
+[10:35] LOJA: *Josy:*
+Bom dia, Walisson... vamos prosseguir com a negociação?
+--- 20/10/2026 (Tue) ---
+[08:44] LOJA: [áudio] "Oi, Alisson, bom dia. Tudo bom? Eu te encaminhei um orçamento referente ao pneu da Michelin e gostaria de saber se você pretende seguir com a negociação. Consegue me dar o retorno, por gentileza?"  {audio:midias/3EB0F1C9F47ED01B021780_41613.ogg}
+--- 21/10/2026 (Wed) ---
+[11:01] LOJA: Bom dia! Vou encerrar seu atendimento, caso precise novamente é só chamar, ou venha até nossa loja, será uma satisfação reeber você aqui!
+[11:01] LOJA: Obrigada!
+[11:01] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

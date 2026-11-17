@@ -1,0 +1,13 @@
+CONVERSA 7ca1c175ab | contato: Neide Protetora🐶🐱🐹🐭🐰 | 07/10/2026 22:14 até 09/10/2026 11:36 | 1 msgs do cliente, 4 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[22:14] CLIENTE: [foto] 📢 [Anúncio] Pneus de Passeio em Oferta
+
+Olá! Tenho interesse e queria mais informações, por favor.
+[22:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 08/10/2026 (Thu) ---
+[08:17] LOJA: [áudio] "Olá, bom dia. Tudo bem com você, Neide? Você é daqui de Luziânia mesmo?"  {audio:midias/3EB0A6FEE60563CDAE7AA6_82225.ogg}
+[08:17] LOJA: [áudio] "Só confere para mim, por gentileza, a medida que você está precisando é 165-7014, isso mesmo?"  {audio:midias/3EB0BC629407D8F8992752_240571.ogg}
+--- 09/10/2026 (Fri) ---
+[11:36] LOJA: Bom dia, por falta de interação estou encerrando esse atendimento. Caso precise futuramente é só chamar.

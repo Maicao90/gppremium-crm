@@ -1,0 +1,25 @@
+CONVERSA a729d0961e | contato: Alessandro Araujo | 02/10/2026 12:47 até 02/10/2026 13:07 | 7 msgs do cliente, 11 da loja, 0 do robô
+
+--- 02/10/2026 (Fri) ---
+[12:47] CLIENTE: Boa tarde.
+[12:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:48] CLIENTE: 195/5516
+[12:48] CLIENTE: 205/55R16
+[12:49] LOJA: [áudio] "Oi Alessandro, tudo jóia? Você vai precisar de quantos pneus? Que a princípio eu vou te mandar aqui a opção 9555-16, tá? Que inclusive eu estou com uma oferta do pneu da marca GP Premium, o preço normal do 9555-16 é 289 reais à vista, mas na oferta do mês ele está por apenas 259, esse valor é para débito e PIX também, tá?"  {audio:midias/3EB01D61C14C780E4FB851_88375.ogg}
+[12:49] LOJA: [foto]
+[12:50] LOJA: No dia de hoje temos os pneus da marca Sunny e GP Premium a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:51] CLIENTE: Preciso dos 04, e Goodyear vcs trabalham??
+[12:54] LOJA: [foto]
+[12:54] LOJA: *Josy:*
+Goodyear, acabou...
+[12:55] LOJA: [áudio] "E, Alessandro, você mora aqui em Luziânia mesmo? Porque, de repente, o que eu posso fazer para você, eu vou conferir aqui com o meu fornecedor da Goodyear para me informar o dia que vai ter de novo aqui no meu estoque. Aí, se você ainda tiver interesse, eu posso te avisar."  {audio:midias/3EB0EF162A4AB229FE83E3_923691.ogg}
+[12:56] LOJA: [áudio] "E qual é o modelo do Goodyear que você está precisando?"  {audio:midias/3EB0E8995006770FF4EDFC_857149.ogg}
+[12:57] CLIENTE: É que eu preciso pra trocar amanhã cedo no primeiro horário.
+[12:57] LOJA: [áudio] "Alessandro, aí o que acontece, né? O dia é igual eu te falei, mas eu tenho essas outras opções aí, a pronta entrega eu vou ter o jogo deles para você, tá? E se de repente alguma dessas opções aqui te atender?"  {audio:midias/3EB05774F7229D2267490C_729831.ogg}
+[12:58] CLIENTE: Esse GP é remolde?
+[13:00] LOJA: [áudio] "Alessandro, o pneu GP Premium é um pneu ecológico que nós fazemos. Ele vai entrar na categoria de remodelagem, só que é a linha Premium. Se você quiser, até te faço um vídeo rápido aqui, para você poder entender a diferença do pneu GP Premium para o pneu que é remold mesmo, tá? Inclusive, o GP Premium é o pneu que eu mais vendo por conta da qualidade. Ele não perde em nada para o Goudier, nem para o Dunlop, nem para a marca nenhuma, tá?"  {audio:midias/3EB0CED8C3A2B5FE12914B_976643.ogg}
+[13:01] CLIENTE: Tá ok, vou terminar as cotações qualquer coisa volto a chamar, muito obrigado.
+[13:07] LOJA: [áudio] "Como o meu celular descarregou, e eu tô falando contigo aqui através do computador, assim que ele der uma caga, eu mando aqui pra você, tá bom?"  {audio:midias/3EB02E0432DE4BECCC212A_902629.ogg}

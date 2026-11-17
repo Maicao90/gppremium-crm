@@ -1,0 +1,38 @@
+CONVERSA 03a29dccb7 | contato: Vanderlei | 14/10/2026 15:19 até 20/10/2026 15:22 | 6 msgs do cliente, 14 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[15:19] CLIENTE: Boa tarde
+[15:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:20] LOJA: Boa tarde!
+[15:20] LOJA: Como posso ajudar?
+[15:20] CLIENTE: 185/55 16
+[15:20] LOJA: pode ser 195/55/16?
+[15:21] LOJA: Pois essa opção está em falta.
+[15:21] LOJA: O que posso fazer é cotar para ver se meu distribuidor terá por encomenda.
+[15:21] LOJA: [áudio] "Wanderlei, vocês têm busca de alguma marca específica?"  {audio:midias/3EB012C62A33E6AFDA0F08_720194.ogg}
+[15:22] CLIENTE: [áudio] "É para o Honda Fit, é para o Honda Fit, entendeu? Se eu tiver um outro aí..."
+[15:23] LOJA: [foto]
+[15:23] LOJA: Pode por 195/55/16
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 15/10/2026 (Thu) ---
+[18:07] LOJA: [áudio] "Oi Silvanderlei, tudo jóia? Imaginei que na correria do dia a dia o senhor não tenha conseguido me responder, mas assim que tiver um tempinho, fala aqui comigo, me diz se essas opções aí te atendem para nós darmos continuidade aqui na negociação, tá jóia?"  {audio:midias/3EB085F2C2721D4EAA3605_516284.ogg}
+--- 20/10/2026 (Tue) ---
+[15:16] CLIENTE: Boa tarde
+[15:16] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[15:17] CLIENTE: 175/ 70 14
+[15:18] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:18] LOJA: [foto]
+[15:21] LOJA: *Josy:*
+No pagamento em *dinheiro* o GP fica por 265,00 a unidade.
+[15:22] CLIENTE: Beleza qualquer coisa te falo aí obrigado

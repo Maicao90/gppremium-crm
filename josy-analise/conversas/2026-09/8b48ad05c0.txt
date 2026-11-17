@@ -1,0 +1,47 @@
+CONVERSA 8b48ad05c0 | contato: Gratidão | 22/09/2026 19:00 até 23/09/2026 12:06 | 18 msgs do cliente, 13 da loja, 0 do robô
+
+--- 22/09/2026 (Tue) ---
+[19:00] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[19:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:00] CLIENTE: Onde fica?
+[19:00] CLIENTE: sou de Brasília
+--- 23/09/2026 (Wed) ---
+[08:06] LOJA: [áudio] "Olá, bom dia, tudo bem? Eu sou a Josi e nós somos aqui de Luziânia, Goiás."  {audio:midias/3EB0193F31E71F5D42F820_270335.ogg}
+[11:33] CLIENTE: Como que é a promoção?
+[11:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:33] CLIENTE: 13
+[11:39] LOJA: [foto] Bom dia, a promoção compre 3 e leve 4 são para os pneu aro 15 e 17
+[11:39] LOJA: *Josy:*
+Somos de Luziânia-Go
+[11:44] LOJA: *Josy:*
+Temos 165/70/13 por apenas R$C 239,00 a unidades a vista e 175/70/13 por apenas R$ 269,00 a unidade a vista, ambos da marca GP Premium.
+[11:46] CLIENTE: Quero não
+[11:47] LOJA: ☺️
+[11:55] CLIENTE: Quero seu whatsapp
+[11:55] LOJA: *Josy:*
+?
+[11:56] CLIENTE: .... Sim seu whatsapp pessoal
+[11:57] LOJA: *Josy:*
+Não é conveniente.
+[11:58] LOJA: *Josy:*
+Pode falar comigo por aqui mesmo.
+[11:58] CLIENTE: Hummm sua voz tão perfeita
+[11:58] CLIENTE: Mais o assunto não era pneu
+[11:58] LOJA: *Josy:*
+hm
+[11:58] CLIENTE: Era sobre nós conhecer
+[11:58] CLIENTE: Bater papo
+[12:00] CLIENTE: Se de vontade de descobrir sobre mim e possivelmente sermos amigos etc
+[12:00] CLIENTE: Me chama nesse número
+[12:00] CLIENTE: Boa tarde Josy 🫶🏽
+[12:02] LOJA: *Josy:*
+Boa tarde!
+[12:02] LOJA: *Josy:*
+Qual é seu nome?
+[12:03] CLIENTE: Francisco
+[12:04] CLIENTE: Sua voz é perfeita
+[12:06] CLIENTE: Me chama no WhatsApp com número pessoal

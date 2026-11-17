@@ -1,0 +1,17 @@
+CONVERSA 64cb1530df | contato: Edelvi Nascimento😎 | 12/09/2026 08:48 até 12/09/2026 10:15 | 5 msgs do cliente, 5 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[08:48] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[08:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:11] CLIENTE: 175/65 14
+165/70 14
+[10:06] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu sou a Josi. E, Delvi, eu tenho aqui sim os pneus da marca GP Premium, na medida 175-65, que está por 249 vistas, e um 75-70 aro 14, por 279."  {audio:midias/A5ACBC2C466C4CDAC3286DC555B2E234_741508.ogg}
+[10:08] CLIENTE: Tem como seria a montagem na loja
+[10:08] CLIENTE: Se tem balanceamento alinhamento
+[10:11] LOJA: [áudio] "Sim, fazemos esse serviço sim, só que eles são cobrados à parte, tá bom?"  {audio:midias/A5941C108A7DB1F08BA84606C9F52C97_788423.ogg}
+[10:11] LOJA: [áudio] "O que que eu te mando aqui é a nossa localização?"  {audio:midias/A55B84D11D1112C6E8700B74A75B75E8_493885.ogg}
+[10:14] CLIENTE: Ah tá não precisa não porque eu consegui mais em conta ali e já vem com alinhamento balanceamento grátis
+[10:15] LOJA: Boa sorte!

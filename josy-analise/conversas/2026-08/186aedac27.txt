@@ -1,0 +1,12 @@
+CONVERSA 186aedac27 | contato: Edivaldo Correia | 19/08/2026 11:26 até 19/08/2026 12:16 | 4 msgs do cliente, 4 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[11:26] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:26] CLIENTE: 235/55/17
+[11:26] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu sou a Josi e eu gostaria de saber se você é daqui de Luziânia mesmo."  {audio:midias/3EB076318CFFCA3E3C81D3_564304.ogg}
+[12:04] CLIENTE: Samambaia df
+[12:07] LOJA: [áudio] "Certo, é que eu não tenho essa opção aqui, a pronta entrega, e no caso eu preciso cotar com os meus distribuidores, aí se eu conseguir, você consegue vir aqui para realizar a compra?"  {audio:midias/3EB0751ADB09880AAF85D8_88767.ogg}
+[12:14] CLIENTE: Queria só fazer o orçamento mesmo e saber do valor!
+[12:16] LOJA: Ah, sim! Entendi... infelizmente não temos.

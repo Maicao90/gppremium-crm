@@ -1,0 +1,26 @@
+CONVERSA 4cd868f69b | contato: José Gomes | 05/10/2026 15:15 até 05/10/2026 15:29 | 7 msgs do cliente, 9 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[15:15] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[15:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:16] CLIENTE: A medida
+205 65 r16, qual o orrco
+[15:17] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[15:17] CLIENTE: Onde fica a loja?
+[15:17] LOJA: *Josy:*
+Somos de Luziânia-Go! E voc~e?
+[15:17] CLIENTE: Gama DF
+[15:17] LOJA: *Josy:*
+Na verdade terei os 2 ultimos pneus.
+[15:18] CLIENTE: preciso de 4
+[15:19] CLIENTE: Qual o valor?
+[15:19] LOJA: [foto]
+[15:20] CLIENTE: zOk
+[15:24] LOJA: *Josy:*
+A unidade a vista está por apenas R$ 483,00
+[15:29] LOJA: [áudio] "Bem, eu vou te mandar aqui, José, a nossa localização para receber a possibilidade de você passar aqui na nossa empresa, está bem?"  {audio:midias/3EB027C679A3C6EE581DA6_367611.ogg}
+[15:29] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

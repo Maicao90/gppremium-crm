@@ -1,0 +1,23 @@
+CONVERSA 6fc04f349b | contato: David Robson | 21/09/2026 09:37 até 22/09/2026 10:15 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[09:37] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:38] CLIENTE: Preciso de um pneu run flat 235/50 r18
+[09:39] LOJA: *Josy:*
+Bom dia!
+[09:39] LOJA: *Josy:*
+Estão aqui em LuziânIa-Go?
+[09:41] CLIENTE: Estamos em Alto Paraíso. Vamos ter que pedir para buscarem pra gente
+[09:41] CLIENTE: Bom dia
+[09:42] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[09:42] CLIENTE: Ok
+[10:48] LOJA: [foto]
+[10:48] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 22/09/2026 (Tue) ---
+[10:15] LOJA: [áudio] "Olá, bom dia, tudo bem? Ontem eu te caminhei um orçamento e eu gostaria de saber se pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB086F0F8842C9E502DB0_897752.ogg}

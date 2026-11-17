@@ -1,0 +1,11 @@
+CONVERSA 477dfd1102 | contato: Netinho Soares | 14/10/2026 06:16 até 14/10/2026 13:31 | 2 msgs do cliente, 3 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[06:16] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[06:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:30] LOJA: 🙋🏼‍♀️
+[12:57] LOJA: [áudio] "Oi, boa tarde. Tudo bem com você, Neto? Você me mandou aqui uma mensagem solicitando um orçamento e eu gostaria muito de saber qual é a medida dos pneus que você precisa."  {audio:midias/3EB023A904B8730A45D88A_970803.ogg}
+[13:31] CLIENTE: Em breve obrigado

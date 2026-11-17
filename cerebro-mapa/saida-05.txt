@@ -1,0 +1,204 @@
+=== schema FluxoEvento
+689:model FluxoEvento {
+690-  id           String   @id @default(uuid())
+691-  criadoEm     DateTime @default(now())
+692-  usuarioId    String
+693-  chatJid      String
+694-  chatNome     String?
+695-  cliente      String   // mensagem(ns) do cliente que o robo leu (rajada), unidas por " / "
+696-  assuntos     String   // JSON: assuntos que a leitura separou
+697-  chaves       String   // JSON: blocos do fluxo que responderam
+698-  via          String   // 'fluxo' | 'ia_livre'
+699-  motivoLivre  String?
+700-  estadoAntes  String
+701-  estadoDepois String
+702-  partes       String   // JSON: bolhas enviadas
+703-
+704-  @@index([criadoEm])
+705-  @@index([usuarioId, criadoEm])
+706-}
+=== routes/fluxo.ts
+345 src/routes/fluxo.ts
+33:router.get('/', async (req, res) => {
+95:router.get('/ao-vivo', async (req, res) => {
+152:router.get('/precos', (_req, res) => {
+174:router.get('/ia-livre', async (req, res) => {
+214:router.post('/simular', async (req, res) => {
+260:router.get('/loja-config/:lojaId', (req, res) => {
+264:router.put('/loja-config/:lojaId', async (req, res) => {
+279:router.put('/:chave', async (req, res) => {
+325:router.delete('/:chave', async (req, res) => {
+=== ao-vivo
+95:router.get('/ao-vivo', async (req, res) => {
+96-  try {
+97-    const escopo = escopoUsuarios(req);
+98-    const desdeParam = Number(req.query.desde);
+99-    const desde = Number.isFinite(desdeParam) && desdeParam > 0 ? new Date(desdeParam) : new Date(Date.now() - 60 * 60 * 1000);
+100-
+101-    const eventos = await prisma.fluxoEvento.findMany({
+102-      where: { ...escopo, criadoEm: { gt: desde } },
+103-      orderBy: { criadoEm: 'desc' },
+104-      take: 60,
+105-    });
+106-
+107-    // Onde cada conversa esta AGORA (estado do fluxo de preco), das ultimas 24h.
+108-    const conversas = await prisma.botConversa.findMany({
+109-      where: { ...escopo, atualizadoEm: { gte: new Date(Date.now() - 24 * 3600 * 1000) }, estadoPreco: { not: 'sem_estado' } },
+110-      orderBy: { atualizadoEm: 'desc' },
+111-      take: 200,
+112-      select: { chatJid: true, estadoPreco: true, dadosPreco: true, atualizadoEm: true },
+113-    });
+114-    const nomes = new Map<string, string>();
+115-    const recentes = await prisma.fluxoEvento.findMany({ where: { ...escopo, criadoEm: { gte: new Date(Date.now() - 24 * 3600 * 1000) }, chatNome: { not: null } }, orderBy: { criadoEm: 'desc' }, take: 400, select: { chatJid: true, chatNome: true } });
+116-    for (const r of recentes) if (r.chatNome && !nomes.has(r.chatJid)) nomes.set(r.chatJid, r.chatNome);
+117-
+118-    const estados: Record<string, Array<{ nome: string; minutos: number; medida?: string }>> = {};
+119-    for (const c of conversas) {
+120-      let medida: string | undefined;
+121-      try { medida = JSON.parse(c.dadosPreco || '{}').medida; } catch { /* ignora */ }
+122-      (estados[c.estadoPreco || 'sem_estado'] ||= []).push({ nome: nomeOuNumero(nomes.get(c.chatJid), c.chatJid), minutos: Math.round((Date.now() - c.atualizadoEm.getTime()) / 60000), ...(medida ? { medida } : {}) });
+123-    }
+124-
+125-    res.json({
+126-      agora: Date.now(),
+127-      eventos: eventos.map((e) => ({
+128-        id: e.id,
+129-        quando: e.criadoEm.getTime(),
+130-        chat: nomeOuNumero(e.chatNome, e.chatJid),
+131-        cliente: e.cliente,
+132-        assuntos: jsonArray(e.assuntos),
+133-        chaves: jsonArray(e.chaves),
+134-        via: e.via,
+135-        motivoLivre: e.motivoLivre,
+136-        estadoAntes: e.estadoAntes,
+137-        estadoDepois: e.estadoDepois,
+138-        partes: jsonArray(e.partes),
+139-      })),
+140-      estados,
+141-    });
+142-  } catch (e: any) {
+143:    console.error('[Fluxo] GET /ao-vivo:', e?.message || e);
+144-    res.status(500).json({ error: 'Não foi possível carregar o fluxo ao vivo.' });
+145-  }
+146-});
+147-
+148-// ---------- Tabela de precos que o robo usa (so leitura) ----------
+149-// A MESMA tabela do codigo (tabelaPrecos.ts, gerada da planilha do dono). Preco nao se edita pela tela:
+150-// muda a planilha e gera de novo. Aqui so mostra, com os valores ja calculados do jeito que o robo fala.
+151-const centavos = (v: number) => Math.round(v * 100) / 100;
+152-router.get('/precos', (_req, res) => {
+153-  const itens = TABELA_PRECOS_GP.map((i) => ({
+154-    medida: i.medida,
+155-    modelo: i.modelo,
+156-    categoria: i.categoria,
+157-    promocao: !!i.promocao,
+158-    compre3Leve4: !!i.compre3Leve4,
+159-    aVista: i.aVista,
+160-    dinheiro: centavos(i.aVista * (1 - DESCONTO_DINHEIRO_PCT / 100)),
+161-    parcelas: Object.entries(i.parcelado)
+162-      .map(([k, total]) => ({ n: Number(k.replace('x', '')), total: Number(total), parcela: centavos(Number(total) / Number(k.replace('x', ''))) }))
+163-      .sort((a, b) => a.n - b.n),
+164-  }));
+165-  res.json({
+166-    itens,
+167-    regras: { balanceamentoPorRoda: VALOR_BALANCEAMENTO_POR_RODA, descontoDinheiroPct: DESCONTO_DINHEIRO_PCT, parcelasMaximas: PARCELAS_MAXIMAS },
+168-    origem: 'Planilha do dono de 02/09/2026 (Tabela_de_Precos_Pneus_Organizada.xlsx)',
+169-  });
+170-});
+171-
+172-// ---------- O que a IA ainda decidiu sozinha ----------
+173-// Toda resposta que NAO saiu do fluxo (via 'ia_livre'), com o motivo: mostra o que ainda falta fechar em codigo.
+174-router.get('/ia-livre', async (req, res) => {
+175-  try {
+176-    const escopo = escopoUsuarios(req);
+177-    // O rastro (FluxoEvento) so guarda 14 dias (limpeza no botAtendimentoService).
+178-    const dias = Math.max(1, Math.min(14, Number(req.query.dias) || 7));
+179-    const desde = new Date(Date.now() - dias * 24 * 3600 * 1000);
+180-    const onde = { ...escopo, criadoEm: { gte: desde } };
+181-    const [porVia, motivos, livres] = await Promise.all([
+182-      prisma.fluxoEvento.groupBy({ by: ['via'], where: onde, _count: { _all: true } }),
+183-      prisma.fluxoEvento.groupBy({ by: ['motivoLivre'], where: { ...onde, via: 'ia_livre' }, _count: { _all: true } }),
+184-      prisma.fluxoEvento.findMany({ where: { ...onde, via: 'ia_livre' }, orderBy: { criadoEm: 'desc' }, take: 150 }),
+185-    ]);
+186-    const contagem: Record<string, number> = {};
+187-    for (const v of porVia) contagem[v.via] = v._count._all;
+188-    // Contagem por motivo de TODOS os eventos do periodo (a lista abaixo mostra so os 150 mais recentes).
+189-    const porMotivo: Record<string, number> = {};
+190-    for (const m of motivos) porMotivo[m.motivoLivre || 'outro'] = (porMotivo[m.motivoLivre || 'outro'] || 0) + m._count._all;
+191-    res.json({
+192-      dias,
+193-      porVia: contagem,
+194-      porMotivo,
+195-      totalLivres: contagem['ia_livre'] || 0,
+196-      eventos: livres.map((e) => ({
+197-        id: e.id,
+198-        quando: e.criadoEm.getTime(),
+199-        chat: nomeOuNumero(e.chatNome, e.chatJid),
+200-        cliente: e.cliente,
+201-        assuntos: jsonArray(e.assuntos),
+202-        motivoLivre: e.motivoLivre,
+203-        estadoAntes: e.estadoAntes,
+=== registrarEventoFluxo
+=== pg disponivel?
+@prisma
+pg
+default.d.ts
+default.js
+deno
+edge.d.ts
+edge.js
+index-browser.js
+index.d.ts
+index.js
+libquery_engine-debian-openssl-3.0.x.so.node
+package.json
+=== montagem /api/fluxo
+src/server.ts:262:app.use('/api/fluxo', requireAuth, requireModulo('at-fluxo'), fluxoRouter); // Tela "Fluxo": mapa do atendimento + edicao dos textos
+=== tsconfig
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "CommonJS",
+    "target": "esnext",
+    "types": [],
+    "esModuleInterop": true,
+    // For nodejs:
+    // "lib": ["esnext"],
+    // "types": ["node"],
+    // and npm install -D @types/node
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
+
+    // Recommended Options
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": false,
+    "isolatedModules": true,
+=== pacote bot-service
+6:  "scripts": {
+7-    "dev": "ts-node-dev src/server.ts",
+8-    "test": "echo \"Error: no test specified\" && exit 1"
+9-  },
+whatsapp-crm /root/whatsapp-crm/backend/src/server.ts  /root/whatsapp-crm/backend
+bot-service /root/whatsapp-crm/backend/src/bot-service/server.ts  /root/whatsapp-crm/backend

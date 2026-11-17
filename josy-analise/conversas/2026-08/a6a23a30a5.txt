@@ -1,0 +1,9 @@
+CONVERSA a6a23a30a5 | contato: João Batista | 18/08/2026 09:29 até 18/08/2026 13:37 | 1 msgs do cliente, 4 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[09:29] LOJA: oi
+[09:30] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[13:06] LOJA: [áudio] "Oi, olá, boa tarde, como é que você está? Eu te mandei aí a localização, pode confirmar para mim, por gentileza, se chegou tudo certo?"  {audio:midias/3EB0B0F8506CBC39693FF8_774021.ogg}
+[13:37] CLIENTE: Sim
+[13:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

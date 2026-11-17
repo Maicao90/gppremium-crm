@@ -1,0 +1,50 @@
+CONVERSA 05e064d2e2 | contato: Nívea Caixeta | 01/09/2026 07:41 até 10/09/2026 16:24 | 12 msgs do cliente, 22 da loja, 0 do robô
+
+--- 01/09/2026 (Tue) ---
+[07:41] CLIENTE: Bom dia?
+[07:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:53] CLIENTE: [áudio] "Bom dia, Josi, tudo bem? Passei na porta, parece que tem uma promoção muito boa, né? Comprei dois pneus e leve quatro. Não sei se é aí com vocês. Eu quero saber qual o valor que tá o do Ford Ka 2017, 16, 17. A gente já tinha até conversado aqui. Ah, e outra coisa, eu quero saber formas de pagamento também, como que vocês fazem."
+[07:56] LOJA: *Josy:*
+Bom dia!
+[07:56] LOJA: [áudio] "Oi Nívia, bom dia, tudo bem? Sim, a promoção aqui para a nossa empresa e a promoção Compre 3 e Leve 4 é voltada para os pneus da marca GP Premium, nas medidas 1,95, 65, 15 e 215, 55, 17."  {audio:midias/3EB0C6FE8B96D52BEE0190_9450.ogg}
+[07:57] LOJA: [áudio] "O pneu que nós conversamos anteriormente, que é o que você disse que precisava ir para o seu carro, é o pneu na medida 175-65-14, ele está por 250 reais, o preço normal dele é 289, e por enquanto permanece da maneira que nós tínhamos conversado, foi lá no mês de junho, 250, tá jóia?"  {audio:midias/3EB06B40164941D6F03FEC_679117.ogg}
+[07:57] LOJA: [áudio] "E esses 250 é para o pagamento no débito ou Pix. Aí, se for para parcelar, o valor muda um pouco, tá joia? Você ainda tem o orçamento que eu te encaminhei?"  {audio:midias/3EB0B6EFE7D76FAC148E8F_663784.ogg}
+[07:57] LOJA: Esse aqui.
+[07:59] CLIENTE: [áudio] "Se for para parcelar no cartão, parcela em quantas vezes, por favor?"
+[07:59] CLIENTE: [áudio] "Esse pneu é remolde?"
+[08:03] LOJA: [áudio] "Nívia, esse pneu é o pneu da marca GP Premium, é um pneu ecológico que nós fazemos. Na lateral dele, o Inmetro pede para classificá-lo como pertencente à categoria de remodelagem, só que ele é completamente diferente dos pneus que são remolds convencionais, tá? Justamente por isso, são os pneus mais vendidos que nós temos."  {audio:midias/3EB05CECF4D120B5D8C300_188992.ogg}
+[08:03] LOJA: [áudio] "Os pneus têm garantia de 2 anos e, com questão à quilometragem, eles rodam 60 mil km, assim como grandes marcas nacionais famosas."  {audio:midias/3EB06CA4BC3F99D1112762_300370.ogg}
+[08:03] LOJA: [foto]
+[08:04] LOJA: [áudio] "Para parcelar, parcelem até 10 vezes. O valor muda, mas você pode observar aí que é bem pouca coisa."  {audio:midias/3EB02938FFD9387A4236F7_882943.ogg}
+[08:05] CLIENTE: Os 4 em 3x, fica qto?
+[08:06] LOJA: *Josy:*
+Em 3 X a unidade é 261,00 x 4 pneus = 1.044,00 dividido em 3 X = 3 parcelas de 348,00
+[08:06] LOJA: *Josy:*
+Os pneus já são colocados.
+[08:07] CLIENTE: Vc pegam os meus usados?
+[08:07] LOJA: *Josy:*
+Não... não são a base de troca, você pode levar seus pneus se assim quiser. Fique tranquila.
+[08:20] CLIENTE: Troca não, mas comprar pra remolde
+[08:31] LOJA: *Josy:*
+Ah... se estiverem em boas condições, os pneus são avaliados, depois que tirar das rodas os rapazes fazem testes.
+[08:34] CLIENTE: Ah sim...vou ver se consigo ir ai mais tarde.
+[08:38] LOJA: *Josy:*
+Perfeito!
+[14:55] LOJA: *Josy:*
+Oi...Nivea...você ainda vem?
+[15:01] CLIENTE: Gj n consigo
+[15:01] CLIENTE: Eu trabalho das 13 às 19h
+[15:07] LOJA: *Josy:*
+Certo... Passa aqui amanhã cedo se possível!
+[15:24] CLIENTE: Se amanhã n conseguir vou na quinat
+[15:24] LOJA: *Josy:*
+Combinado. Como for melhor para você!
+--- 10/09/2026 (Thu) ---
+[16:18] LOJA: [áudio] "Oi Nívia, tudo bem? Há alguns dias atrás nós conversamos a respeito de uns pneus aí para o seu carro e tínhamos agendado para você passar aqui na quinta-feira da semana passada, né? Mas eu sei que é corrido, mulher de Deus. E gostaria de saber se você quer agendar para amanhã ou até mesmo no sábado, que eu acho que é um dia mais tranquilo para você, não é? Me dá um retorno, por gentileza, tá bom?"  {audio:midias/3EB0AA60E91350398D4F99_487379.ogg}
+[16:23] CLIENTE: Boa tarde só na próxima semana
+[16:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:24] LOJA: [áudio] "Certo, Nívia, perfeito. Eu vou fazer o seguinte, eu vou encerrar o seu atendimento, justamente para não ficar enchendo o seu WhatsApp de mensagens, porque eu sei que incomoda, tá? Então, eu vou encerrar aqui o seu atendimento, vou deixar aqui a nossa localização e, precisando, você passa aqui na loja, então, para conversar mais pessoalmente, tá, Joia? Muitíssimo, obrigada pela sua atenção e, desde já, bom final de semana."  {audio:midias/3EB0DCF8DD224E4D919264_797276.ogg}
+[16:24] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

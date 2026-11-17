@@ -1,0 +1,23 @@
+CONVERSA 10d3a2895b | contato: Helder Sousa | 08/10/2026 12:01 até 08/10/2026 12:07 | 9 msgs do cliente, 10 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[12:01] CLIENTE: Boa tarde.
+[12:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:01] LOJA: [áudio] "Oi, Alder, bom dia, tudo jóia?"  {audio:midias/3EB0972EED1A62222C35FB_537742.ogg}
+[12:02] CLIENTE: [áudio] "Bom dia, Júlio. Tudo bem? Vou passar aqui um modelo de um pneu, ver se você tem. É o 19555 aro 15."
+[12:03] LOJA: 195/55/15
+[12:03] LOJA: [foto]
+[12:03] LOJA: [áudio] "É, Odette, no dia de hoje eu tenho essas três opções de marcas à pronta entrega, tá? O Goodyear está por R$ 489,00, valor para débito e Pix, o Conforcer R$ 288,00, a unidade, valor para débito e Pix, e o GP Premium, que é a opinião mais vendida que eu tenho, está por R$ 289,00 no débito ou no Pix."  {audio:midias/3EB0F91E099C4866D22F0D_316849.ogg}
+[12:05] CLIENTE: [áudio] "O da JP Premium é aquele remolde ainda, né? Ou vocês já estão fazendo CC Remolde?"
+[12:05] LOJA: [áudio] "Os pneus que nós fazemos, eles são somente remodelados, tá? Só que é o de primeira linha. E como nós aprimoramos ainda mais a qualidade dele, hoje ele está com garantia de 2 anos."  {audio:midias/3EB04D313C7C85C1AA98B9_686669.ogg}
+[12:06] CLIENTE: Ok.
+[12:06] CLIENTE: Vou passar na loja
+[12:07] LOJA: [áudio] "Você tem a nossa localização, né? Como o meu WhatsApp mudou, eu só vou reenviar aqui para você, tá? Só para ficar salvo aqui na nossa conversa, tá bom?"  {audio:midias/3EB08BAFA238AF9C241F7F_789165.ogg}
+[12:07] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:07] CLIENTE: Ok
+[12:07] LOJA: [foto]
+[12:07] LOJA: [áudio] "Quando que você vai conseguir passar aqui?"  {audio:midias/3EB05C0E08BC44F0C9269B_886736.ogg}
+[12:07] CLIENTE: Obrigado.
+[12:07] CLIENTE: Semana que ve.
+[12:07] CLIENTE: Vem.

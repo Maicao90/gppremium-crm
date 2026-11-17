@@ -1,0 +1,25 @@
+CONVERSA 3026e86166 | contato: Juscelino Ferreira | 01/10/2026 16:12 até 01/10/2026 17:51 | 3 msgs do cliente, 10 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[16:12] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[16:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:13] LOJA: *Josy:*
+🙋🏼‍♀️
+[16:14] CLIENTE: Aro 14 175 65
+[16:16] LOJA: [foto]
+[16:16] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:17] LOJA: [áudio] "Moro aqui em Luziânia mesmo, Sr. Juscelino?"  {audio:midias/3EB070449144478FEFE7A0_180029.ogg}
+[16:17] CLIENTE: Não moro em santa Maria
+[16:18] LOJA: *Josy:*
+Ah, sim...
+[16:18] LOJA: *Josy:*
+Estamos um pouco distantes... mas é pouco.
+[16:33] LOJA: [áudio] "E senhor Juscelino, se eu te encaminhar a localização, o senhor consegue vir até nossa loja? Alguma dessas opções aí foi do seu interesse?"  {audio:midias/3EB069E754E8441C9FBC07_570970.ogg}
+[17:51] LOJA: [áudio] "Senhor Juscelino, por hora então eu vou encerrar aqui o seu atendimento, tá? Mas eu vou deixar a nossa localização aqui na conversa, pois se de repente o senhor estiver passando aqui na nossa região, vem aqui na loja para nós conversarmos pessoalmente, venha nos conhecer, está bem?"  {audio:midias/3EB0335E3EEEBA2B0D1B87_631027.ogg}
+[17:51] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

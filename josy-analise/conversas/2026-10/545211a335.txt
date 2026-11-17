@@ -1,0 +1,24 @@
+CONVERSA 545211a335 | contato: Newton | 09/10/2026 13:52 até 09/10/2026 15:08 | 6 msgs do cliente, 12 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[13:52] LOJA: 🙋🏼‍♀️
+[13:52] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+Olá! Tenho interesse e queria mais informações, por favor.
+[13:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:03] LOJA: 🙋🏼‍♀️
+[14:04] CLIENTE: Pneu 265/70/16
+[14:12] LOJA: [foto]
+[14:13] LOJA: [áudio] "Olá, tudo bem com você, Newton? No dia de hoje eu tenho aqui o pneu da marca Landry Gator. É um pneu importado. A unidade está por R$ 699,00 a vista."  {audio:midias/3EB0BD4E864A41F099200B_634587.ogg}
+[14:13] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB06E803DF682B4049A1F_233496.ogg}
+[14:23] CLIENTE: [áudio] "Eu moro na Santa Maria. Essa loja de vocês é aí na pista, voltando de Luziânia para o Valparaíso, é isso?"
+[14:24] CLIENTE: [áudio] "Esse nacional aí não tem o 265, 70, 16, não?"
+[14:26] LOJA: [áudio] "Isso, isso mesmo. É aqui na pista, voltando para o Valparaíso, que é a fábrica de pneus da marca GP Premium."  {audio:midias/3EB0A3C94662C13452BACF_67593.ogg}
+[14:26] LOJA: [áudio] "Olha, do da marca GP Premium já esgotou no nosso estoque, porque o nosso porte aqui, nós vendemos todos os tipos de medida, mas os pneus de caminhonete, eu tenho a lista de espera deles, aí eu tenho no 245, que eu coloquei aí no orçamento para o senhor."  {audio:midias/3EB0BA4B772FB60FA10A10_813676.ogg}
+[14:30] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:57] CLIENTE: [áudio] "Ah, tá ok. Eu já comprei, eu já botei dois pneus aí da caminhonete e agora eu tô precisando colocar mais dois, né? Mas é o 265-70, entendeu?"
+[14:58] LOJA: [áudio] "Sim, entendi sim. Eu creio que vai produzir mais daqui uns dias. Se o senhor quiser, assim que produzir, eu te aviso."  {audio:midias/3EB0F23BC673FB8E376B8D_106792.ogg}
+[14:58] LOJA: [áudio] "Quando você comprou, foi o modelo HT, né?"  {audio:midias/3EB0290E55B6524DDB718C_141708.ogg}
+[15:07] CLIENTE: [áudio] "Isso, então tá bom. Eu fico aguardando, ver se não demora muito aí aparecer mais essa medida, tá bom? Eu fico aguardando."
+[15:08] LOJA: [áudio] "Tá bom, nós vamos nos falando, Sr. Isaac."  {audio:midias/3EB0DFB25A2E84E8790FC6_398098.ogg}

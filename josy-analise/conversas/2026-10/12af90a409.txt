@@ -1,0 +1,11 @@
+CONVERSA 12af90a409 | contato: Everaldo Rodrigues | 06/10/2026 17:14 até 06/10/2026 17:23 | 3 msgs do cliente, 3 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[17:14] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[17:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:14] CLIENTE: Pneus 175 70 14 quanto é?
+[17:16] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Geraldo? Eu sou a Josi. Eu tenho aqui, sim, o pneu a princípio da marca GP Premium. A unidade está por apenas R$ 279,00 para o pagamento à vista, o pneu da marca GP Premium. Você mora aqui em Luziânia, Luziânia, Goiás?"  {audio:midias/3EB093165D9B4BFF909237_10234.ogg}
+[17:17] CLIENTE: Não, obrigado
+[17:23] LOJA: *Josy:*
+Boa semana!

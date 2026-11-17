@@ -1,0 +1,62 @@
+CONVERSA 82e004cc59 | contato: Rogério | 19/10/2026 08:21 até 22/10/2026 11:29 | 22 msgs do cliente, 24 da loja, 3 do robô
+
+--- 19/10/2026 (Mon) ---
+[08:21] CLIENTE: Bom dia!
+[08:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:22] CLIENTE: Tudo bem?
+[08:24] CLIENTE: 195/50/16
+[09:11] LOJA: [foto]
+[09:13] CLIENTE: [áudio] "E você dá garantia desses pneus de quanto tempo?"
+[09:13] CLIENTE: [áudio] "E outra coisa, vocês trabalham com boleto também?"
+[09:19] LOJA: [áudio] "Não, não, nós não fazemos boleto, Rogério. O pneu chinês, ele tem garantia de 5 anos e o GP Premium tem garantia de 2. Entretanto, o GP Premium é o pneu mais vendido que eu tenho, justamente por conta da qualidade, tá? E ele está em oferta, o preço normal dele é R$290,00. E ele está por R$259,00, se for no Débito ou Pix."  {audio:midias/3EB0D6778F6C79F30E2C0A_848193.ogg}
+[09:20] CLIENTE: [áudio] "Tá tranquilo então, eu vou dar um jeito de ir até a loja, ver se eu consigo pegar esse pneu aí, e também vou levar dois que eu tava usando aqui, pra você dar uma olhada nele pra mim, sabe? Porque eles racham ali na... a banda de rodagem ali, sabe? Na lateral. Você dá uma olhada pra mim, só que tem um pouco mais de dois anos que eu comprei ele, sabe? uns dois anos e um mês."
+[09:21] LOJA: [áudio] "Não, beleza, nós damos uma olhada assim, tá bom, Rogério? Como você disse, já tem mais de 2 anos que você comprou, então por tempo já expirou realmente essa garantia aí, tá bom? Mas não custa nada a gente dar uma olhada pra você."  {audio:midias/3EB04A5218C7132B5EE9CB_204316.ogg}
+[09:22] CLIENTE: [áudio] "Tá bom, então. Na correria acabou que eu não consegui levar eles antes, que eles apresentou já tem um tempinho, sabe? Começou a rachar ali na lateral, mas vou dar uma olhada aí."
+[10:02] LOJA: *Josy:*
+Entendi...
+[10:02] LOJA: *Josy:*
+Combinado.
+[10:03] CLIENTE: [áudio] "Por acaso você tem os registros de venda de 2024?"
+[10:04] LOJA: *Josy:*
+Qual seu CPF
+[10:07] CLIENTE: 10000341606
+[10:22] LOJA: *Josy:*
+Sua compra foi em 26/09/2024
+[10:29] CLIENTE: Ata
+--- 20/10/2026 (Tue) ---
+[08:21] LOJA: *Josy:*
+Bom dia, Rogério...tudo bem!
+[08:21] LOJA: *Josy:*
+Por ora , vou encerrar seu atendimento no whatsapp para não encher seu whatsapp de mensagens stá bem!
+[08:22] LOJA: Assim que puder vem cá na loja e me procura 😉
+[08:23] CLIENTE: Blz
+[08:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:23] CLIENTE: Bom dia
+[08:23] LOJA: [foto]
+--- 21/10/2026 (Wed) ---
+[12:29] CLIENTE: [áudio] "Olá, boa tarde, tudo bem, Josi? Será que você conseguiria passar um cartão de crédito aí remotamente, tipo você enviar um link? É porque meu tio tá aí, aí se desce, aí ele já trazeria pra mim esse pneu hoje?"
+[12:29] ROBÔ: Bom dia! Não consegui ouvir seu áudio direito por aqui. Pode me mandar por escrito o que você precisa? 😊
+[12:30] LOJA: [áudio] "Oi Rogério, tudo bom? Como é que você tá?"  {audio:midias/3EB0CBC5BD1D89651F5CF2_940892.ogg}
+[12:30] LOJA: [áudio] "Nossa, Rogério, o pior é que nosso sistema de link deu problema e eu não estou conseguindo gerar."  {audio:midias/3EB0AE1A89B61FD8702C8E_129915.ogg}
+[12:31] CLIENTE: Ata entendi
+[12:32] CLIENTE: Mais tranquilo vou ver aqui quando eu consigo ir aí
+[12:47] ROBÔ: Deixa eu confirmar uma coisa com você — pode repetir, por favor?
+[12:48] CLIENTE: Não entendi?
+[12:49] LOJA: [áudio] "Ai, desculpa, Rogério, que eu tava digitando aqui, fui mandar mensagem pra outra pessoa, mandei pra você. Correria, me perdoa, tá?"  {audio:midias/3EB0B877A89981096E10B9_3072.ogg}
+[12:49] CLIENTE: Tranquilo
+[12:52] CLIENTE: A promoção da compra de 4 ganhar 1 está válida ainda?
+[12:54] LOJA: A promoção existe e é válida para os pneus da marca GP Premium nas medidas 195/65/15 e 215/55/17.
+[12:56] CLIENTE: Ata os meus são 16
+[12:59] LOJA: Isso.
+[16:01] ROBÔ: 🙋🏼‍♀️
+--- 22/10/2026 (Thu) ---
+[10:46] LOJA: Oi...
+[11:06] CLIENTE: [áudio] "Eu vou confirmar com ele aqui, mas ele passou aqui agora o valor normal que era pra ser, sabe, de 10 vezes. Vou ver se ele já fez o cancelamento da outra. Eu acho que vai aumentar só mais um pouco, né? Vou ver com ele aqui."
+[11:09] CLIENTE: [áudio] "Eu pergunto, rapaz, se você já fez o cancelamento da compra, porque senão vai ser efetivado e acaba que vindo."
+[11:21] LOJA: [foto]
+[11:25] LOJA: Rogério... pode  avaliar o atendimento no Google?
+[11:26] LOJA: https://da.gd/gp-avaliar
+[11:28] LOJA: E nos desculpe pelo ocorrido, o sistema mudou hoje, estamos em adaptação.
+[11:29] CLIENTE: Tabom

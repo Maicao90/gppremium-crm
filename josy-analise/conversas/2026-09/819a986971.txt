@@ -1,0 +1,22 @@
+CONVERSA 819a986971 | contato: Wilson Gonçalves da Costa | 17/09/2026 13:26 até 24/09/2026 12:16 | 2 msgs do cliente, 8 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[13:26] CLIENTE: Boa tarde vcs tem pneu xbry 195/55 aro 15?
+[13:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:27] CLIENTE: 195/55 15
+[13:27] LOJA: [foto]
+[13:27] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:27] LOJA: *Josy:*
+Mora aqui em Luziânia-Go?
+--- 18/09/2026 (Fri) ---
+[15:41] LOJA: *Josy:*
+Boa tarde!
+[15:42] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Wilson? Ontem eu te mandei um orçamento aí com todas as opções que eu tenho à pronta entrega, porque justamente a qual você me solicitou é bem difícil de encontrar. Aí, se as que eu te encaminhei aí estiverem dentro daquilo que você procura, você me fala aqui, tá bom?"  {audio:midias/3EB02583AD1BD48A44F694_248382.ogg}
+--- 24/09/2026 (Thu) ---
+[12:16] LOJA: [áudio] "Olá, tudo bem? Wilson, tentei falar com você alguns dias atrás, mas imaginei que na correria você não tenha conseguido me responder. Eu vou encerrar aqui o seu atendimento, tá bom? Caso você precise, passa aqui na loja para nós conversarmos pessoalmente. Muitíssimo obrigada por sua atenção."  {audio:midias/3EB06A86C12FE1861C3C63_293247.ogg}
+[12:16] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

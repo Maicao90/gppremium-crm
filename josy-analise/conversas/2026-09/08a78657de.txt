@@ -1,0 +1,10 @@
+CONVERSA 08a78657de | contato: Darcio | 16/09/2026 11:07 até 16/09/2026 18:27 | 1 msgs do cliente, 4 da loja, 0 do robô
+
+--- 16/09/2026 (Wed) ---
+[11:07] LOJA: *Josy:*
+Bom dia, Darcio
+[11:07] LOJA: [foto]
+[17:41] LOJA: [áudio] "Oi, Dacio, tudo jóia? E aí, gostaria de seguir aqui com a negociação do pneu para o seu carro? Me dá um retorno, por gentileza. Aqui é a loja da BR que você tinha passado antes."  {audio:midias/3EB0945FE252A1EB98DCBE_752284.ogg}
+[18:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:27] CLIENTE: [áudio] "Oi, boa noite. Eu estou dando mais uma pesquisada, tá ok? Assim que eu terminar de dar uma pesquisada aqui, eu te dou retorno aí, tá ok?"

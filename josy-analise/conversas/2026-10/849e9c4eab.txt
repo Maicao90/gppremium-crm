@@ -1,0 +1,16 @@
+CONVERSA 849e9c4eab | contato: Felipe Bueno | 05/10/2026 14:44 até 05/10/2026 15:16 | 1 msgs do cliente, 9 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[14:44] LOJA: *Josy:*
+Boa tarde, Felipe
+[14:44] LOJA: [foto]
+[14:45] LOJA: [foto]
+[14:45] LOJA: [foto]
+[14:45] LOJA: [foto]
+[14:45] CLIENTE: Tem algum desconto a vista?
+[14:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:46] LOJA: [áudio] "Felipe, esse pneu ele já tá realmente no menor preço."  {audio:midias/3EB0CC8496E07810CD347E_523539.ogg}
+[15:09] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:16] LOJA: [foto]

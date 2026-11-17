@@ -1,0 +1,13 @@
+CONVERSA 3340e30dd7 | contato: Marcela | 12/09/2026 08:43 até 12/09/2026 09:53 | 4 msgs do cliente, 3 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[08:43] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso?
+[08:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:44] CLIENTE: Pneu aro 16 195/55
+[08:53] LOJA: [áudio] "Oi Marcela, tudo bom? Nós até conversamos um tempo atrás a respeito desses pneus, e no dia de hoje ele está em oferta, tá? Quando nós conversamos ele estava por R$ 289,00, se o pagamento for à vista, e hoje eu faço aqui para você por apenas R$ 259,00 e já faço a instalação, tá bom? Você mora aqui em Luziânia mesmo?"  {audio:midias/A5C7990372E2A39C0E67C91CBD469896_706698.ogg}
+[08:54] CLIENTE: 1 pneu?
+[08:54] CLIENTE: [áudio] "Vocês costumam passar o preço de 2. Eu quero saber de exclusivamente um pneu. Não, não é Luziânia, mas não vou parar isso. Hein, não vou parar isso."
+[09:53] LOJA: [áudio] "Monsa, eu te passei o preço justamente de um pneu, R$ 259."  {audio:midias/A57F8BB3AF0DDDA5C65699B79B241AC2_369713.ogg}

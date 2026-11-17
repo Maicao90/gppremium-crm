@@ -1,0 +1,8 @@
+CONVERSA 670df0a32a | contato: Alex Aguiar | 14/09/2026 15:10 até 14/09/2026 15:10 | 3 msgs do cliente, 1 da loja, 0 do robô
+
+--- 14/09/2026 (Mon) ---
+[15:10] CLIENTE: Olá! Quero um orçamento de pneus.
+[15:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:10] CLIENTE: [áudio] "Paz, paz, paz."
+[15:10] CLIENTE: [áudio] "Balançar pro céu. Aham, tá chão."

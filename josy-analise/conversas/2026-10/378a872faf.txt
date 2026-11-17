@@ -1,0 +1,27 @@
+CONVERSA 378a872faf | contato: Guilherme Souza💰 | 05/10/2026 15:18 até 05/10/2026 16:30 | 5 msgs do cliente, 11 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[15:18] CLIENTE: Boa tarde
+[15:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:19] CLIENTE: Gostaria de saber de saber o valor, dos pneus aro 14
+[15:31] LOJA: [áudio] "Olá Guilherme, boa tarde, como é que você está? Eu gostaria muito de saber qual que é a medida dos pneus que você precisa para que assim eu possa fazer o seu orçamento."  {audio:midias/3EB08EC050EC080A35B114_523586.ogg}
+[15:37] CLIENTE: 175/70/14
+[15:38] CLIENTE: Ou 165
+[15:44] LOJA: [foto]
+[15:44] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:45] LOJA: [foto]
+[15:48] LOJA: [áudio] "Aí, Guilherme, 165,70, eu tenho aqui o da marca GP Premium, que ele está por apenas 239."  {audio:midias/3EB03C21F5074F37E9CEE0_127620.ogg}
+[16:22] LOJA: *Josy:*
+Mora aqui em Luziânia, mesmo?
+[16:23] CLIENTE: Sim, vou só esperar o pagamento cair na conta e vou aí, até o momento foi o melhor valor que encontrei
+[16:29] LOJA: *Josy:*
+Perfeito!
+[16:30] LOJA: *Josy:*
+Vou te encaminhar a nossa localização.
+[16:30] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:30] LOJA: [foto]

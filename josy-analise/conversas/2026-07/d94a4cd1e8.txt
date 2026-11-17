@@ -1,0 +1,5 @@
+CONVERSA d94a4cd1e8 | contato: Camila Barbosa | 19/07/2026 10:52 até 19/07/2026 10:54 | 1 msgs do cliente, 1 da loja, 0 do robô
+
+--- 19/07/2026 (Sun) ---
+[10:52] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:54] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

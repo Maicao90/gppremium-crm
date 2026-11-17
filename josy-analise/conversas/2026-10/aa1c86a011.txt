@@ -1,0 +1,18 @@
+CONVERSA aa1c86a011 | contato: Raphael Maia | 09/10/2026 08:48 até 09/10/2026 08:58 | 4 msgs do cliente, 6 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[08:48] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[08:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:51] CLIENTE: Aro 15
+[08:52] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu tenho aqui sim, eu gostaria de saber só qual é a medida dos pneus que você precisa, e mais um detalhe, eu vi que seu BBD é de outro estado, ou você está aqui na cidade de Luziânia, Goiás."  {audio:midias/3EB0119FBFF5E6297C27D5_11666.ogg}
+[08:57] CLIENTE: Sim Valparaíso
+[08:58] LOJA: [áudio] "Certo, excelente, mas eu preciso de todo modo saber qual é a medida dos pneus que você precisa, Rafael."  {audio:midias/3EB0E44BA7E84885CC40D5_321309.ogg}
+[08:58] LOJA: 235/75/15? 31x10,5R15?
+[08:58] CLIENTE: 185/60/15
+[08:58] LOJA: [foto]
+[08:58] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

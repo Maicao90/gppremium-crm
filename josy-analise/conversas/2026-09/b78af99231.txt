@@ -1,0 +1,34 @@
+CONVERSA b78af99231 | contato: Gjs Assintencia Tecnica | 18/09/2026 22:32 até 19/09/2026 08:23 | 8 msgs do cliente, 8 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[22:32] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[22:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[22:32] CLIENTE: 225 50 18
+[22:33] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+--- 19/09/2026 (Sat) ---
+[08:07] LOJA: *Josy:*
+Bom dia!
+[08:07] LOJA: *Josy:*
+225/55/18 te atende?
+[08:07] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento não
+[08:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:09] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[08:10] CLIENTE: [foto]
+[08:10] CLIENTE: E essa
+[08:14] LOJA: [foto]
+[08:14] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:17] CLIENTE: Vou da mais uma pesquisada ok
+[08:20] CLIENTE: Onde eu encontrar mas em conta eu compro obrigado
+[08:23] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

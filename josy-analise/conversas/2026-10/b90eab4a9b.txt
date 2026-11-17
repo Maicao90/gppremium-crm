@@ -1,0 +1,46 @@
+CONVERSA b90eab4a9b | contato: jonathan amaro | 20/10/2026 12:42 até 22/10/2026 12:31 | 11 msgs do cliente, 11 da loja, 13 do robô
+
+--- 20/10/2026 (Tue) ---
+[12:42] CLIENTE: oi boa tarde
+[12:42] CLIENTE: comprei 2 pneus em julho e já estão deslocados
+[12:42] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[12:42] CLIENTE: a garantia cobre isso
+[12:43] LOJA: [áudio] "Oi Jonathan, tudo bom? Jonathan, você tem disponibilidade de trazer os pneus aqui para análise? Se eles estiverem procedentes, já verifica para você na hora, tá bom? O rapaz fez análise de segunda a sexta, de 8 da manhã até às 11, 11 e meia no máximo, e das 13 às 17."  {audio:midias/3EB030FAB01954B3980386_939608.ogg}
+[12:44] CLIENTE: [áudio] "Como é que funciona essa análise? Tem como você me informar? Vou ver se eu consigo disponibilidade para estar indo aí. Eu aviso antes, porque estou trabalhando semana todinha, inclusive no final de semana. Se eu conseguir alguma folga, eu levo aí. Levei para fazer o rodízio dos pneus agora e o meu mecânico de confiança falou que não dava fazer o rodízio porque os dois pneus estão deslocados."
+[12:45] LOJA: [áudio] "A análise é o seguinte, você vem cá, traz a garantia e você pode ir direto aqui na oficina na Supervia e pedir para que desmontem os pneus. Eles desmontando, trarão os pneus aqui para o nosso técnico fazer a avaliação, tá joia?"  {audio:midias/3EB0BF42E3658073BDEF55_83186.ogg}
+[12:46] CLIENTE: [áudio] "Tá, entendi. Assim que possível eu vou estar chegando aí, tá bom? Obrigado."
+[12:46] LOJA: [áudio] "Beleza, ficamos combinados. Jonathan, por nada."  {audio:midias/3EB03B201046D5D82F6155_545898.ogg}
+--- 21/10/2026 (Wed) ---
+[12:21] ROBÔ: 🙋🏼‍♀️
+[12:31] CLIENTE: [áudio] "Oi, boa tarde. Acho que eu consigo estar indo aí depois de uma hora, tá? Hoje mesmo, tá bom?"
+[12:31] ROBÔ: Oi, boa tarde! Não consegui ouvir seu áudio direito por aqui. 😕
+[12:31] ROBÔ: Pode me escrever por mensagem o que aconteceu com os pneus? Assim eu consigo te responder certinho.
+[12:33] LOJA: oI!
+[12:33] LOJA: Ficamos combinados!
+[12:35] LOJA: [áudio] "A compra foi realizada no seu CPF mesmo? Me passa aqui que eu já vou deixar impressa a sua via de compra."  {audio:midias/3EB0EACE44666DDF54CBB4_699563.ogg}
+[12:56] CLIENTE: 05715684161
+[12:57] ROBÔ: Oi, boa tarde! Recebi seu número, mas por aqui eu não consigo consultar a compra pelo CPF.
+[12:57] ROBÔ: Sobre a garantia: os pneus têm garantia de 2 anos ou 60 mil km. Como a compra foi em julho, está dentro do prazo.
+[12:57] ROBÔ: O melhor é você trazer os dois pneus aqui na loja pra gente ver de perto o que aconteceu com eles.
+[12:57] ROBÔ: Quando você consegue passar aqui?
+[12:57] CLIENTE: [áudio] "Eu só vou almoçar aqui, fazer um quilo e tô indo, tá?"
+[12:58] ROBÔ: Esse áudio também não carregou direito por aqui. 😕
+[12:58] ROBÔ: Pode me escrever em uma mensagem o que você quer me dizer? Assim eu te respondo certinho.
+[12:58] CLIENTE: só vou almoçar
+[12:58] ROBÔ: Tranquilo, bom almoço! 😊
+[12:58] ROBÔ: Quando terminar, é só me escrever por aqui o que aconteceu com os pneus, que eu te ajudo.
+[12:59] LOJA: Ok
+[16:01] ROBÔ: 🙋🏼‍♀️
+[17:35] LOJA: [áudio] "Oi, Jonathan. Deu tudo certo, né? Agora que eu consegui te mandar um oi."  {audio:midias/3EB0EF57F09D47A1D346CA_285727.ogg}
+[19:04] CLIENTE: [áudio] "Graças a Deus deu tudo certo, sim, trocou o pneu. Obrigadão pela ajuda aí."
+--- 22/10/2026 (Thu) ---
+[08:36] LOJA: [áudio] "Imagina, Jonathan, que é isso. Se não for incômodo para você, eu posso te encaminhar um link para você poder fazer a avaliação do atendimento no Google?"  {audio:midias/3EB0F81483C596E6C69129_560980.ogg}
+[09:23] CLIENTE: [áudio] "Pode sim, manda aí que eu faço atendimento ou avaliação de vocês."
+[09:28] LOJA: https://da.gd/gp-avaliar
+[12:31] ROBÔ: 🙋🏼‍♀️

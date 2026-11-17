@@ -1,0 +1,26 @@
+CONVERSA 3343a808c4 | contato: Marcelo | 20/10/2026 12:57 até 20/10/2026 15:20 | 4 msgs do cliente, 6 da loja, 0 do robô
+
+--- 20/10/2026 (Tue) ---
+[12:57] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[12:57] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[12:59] LOJA: *Josy:*
+🙋🏼‍♀️
+[13:00] LOJA: *Josy:*
+Maarcelo...
+[13:24] CLIENTE: [áudio] "Eu estou procurando um pneu de trilha, eu quero colocar no estrada, só que ela é 14. Aí eu queria ver se eu achava aquele baixo do 225. É 7014. Não sei se você trabalha com essa numeração de pneu, que é meio complicado esses pneus desse tamanho. 195 7014."
+[14:05] LOJA: *Josy:*
+225/70/14 realmente é dificil
+[15:15] CLIENTE: [áudio] "Qual a numeração mais alta que você tem aí do 14, pra largura, né, no caso?"
+[15:19] LOJA: *Josy:*
+185/70/14
+[15:19] LOJA: *Josy:*
+Mas não é para trilha
+[15:20] CLIENTE: A sim

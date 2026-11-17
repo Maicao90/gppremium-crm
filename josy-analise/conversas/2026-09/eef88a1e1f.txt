@@ -1,0 +1,24 @@
+CONVERSA eef88a1e1f | contato: Lindomar Alves | 10/09/2026 09:54 até 11/09/2026 13:32 | 3 msgs do cliente, 10 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[09:54] LOJA: *Josy:*
+Bom dia, Lindomar
+[09:55] LOJA: [foto]
+[09:55] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:57] CLIENTE: bom dia
+[09:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:03] LOJA: [áudio] "Oi, Lindomar, tudo jóia?"  {audio:midias/3EB0CF634154DDE07E4825_830803.ogg}
+[11:30] CLIENTE: [áudio] "Beleza, beleza. É igual que eu falei, eu vou conferir direitinho o número certinho do pneu, a numeração, viu? Aí eu passo para você, aí a gente vê se a gente combina."
+[11:31] LOJA: [áudio] "Tá joia, lindomar. Eu vou fazer o seguinte, eu vou te mandar a nossa localização, que se houver a possibilidade, você vem cá na loja pra gente conversar."  {audio:midias/3EB0A77DE597FF6559F72D_490686.ogg}
+[11:31] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 11/09/2026 (Fri) ---
+[13:30] LOJA: [áudio] "Oi, seu lindomar, tudo jóia? E aí, o senhor conseguiu o vídeo direito em qualquer medida dos pneus?"  {audio:midias/3EB08D8F0456FC8EF43836_998363.ogg}
+[13:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:32] CLIENTE: [áudio] "Opa, tudo bom? Boa tarde. Olha, eu esqueci desse negócio, que deu outro problema no carro, aí eu tô cabeça linda aqui pra ver se eu resolvo esse problema aqui no carro, hein? Assim que eu, amanhã, com calma, eu vejo muito pra você. Porque como eu moro aí perto, né? Moro aí no Jardim Gás, fica fácil eu ir em Luziânia, tá bom?"
+[13:32] LOJA: [áudio] "Até já, então, amém, vamos lá."  {audio:midias/3EB07B27CE94B64D5EED58_140609.ogg}

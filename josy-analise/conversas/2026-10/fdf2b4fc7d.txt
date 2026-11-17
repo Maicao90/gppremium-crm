@@ -1,0 +1,41 @@
+CONVERSA fdf2b4fc7d | contato: Ismailey | 06/10/2026 15:09 até 06/10/2026 16:01 | 6 msgs do cliente, 20 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[15:09] LOJA: *Josy:*
+Boa tarde!
+[15:10] LOJA: *Josy:*
+Como posso, Ismailey
+[15:10] LOJA: 🙋🏼‍♀️
+[15:10] CLIENTE: Boa tarde
+[15:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:10] LOJA: *Josy:*
+Boa tarde!
+[15:11] CLIENTE: 205 55 16
+[15:11] LOJA: *Josy:*
+Temos sim
+[15:15] CLIENTE: Qual valor ?
+[15:15] LOJA: ,*Josy:*
+1 min
+[15:15] CLIENTE: Pode me mandar foto
+[15:19] LOJA: [foto]
+[15:20] LOJA: *Josy:*
+Perdão...
+[15:22] LOJA: [foto]
+[15:22] LOJA: *Josy:*
+No dia de hoje temos  essas 3 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:22] LOJA: O GP Premium é no desenho abaixo👇🏻
+[15:26] CLIENTE: Ok aguardo
+[15:27] LOJA: *Josy:*
+Estou tentando tirar a foto
+[15:28] LOJA: [foto] Hoje tem nesse modelo
+[15:28] LOJA: [foto] E nesse aqui
+[15:30] LOJA: *Josy:*
+Daqui a pouco consigo ir no deposito tirar a foto dos outros,
+[15:42] CLIENTE: [áudio] "Ô Josi, já tá bom, já tá bom. Eu tô olhando aqui para uma prima minha que trabalha comigo aqui no escritório, contei para ela que eu comprei o de vocês, fui muito feliz, aí a gente tá olhando para o carro dela também. Mas esse aí já tá bom."
+[15:43] LOJA: [áudio] "Ai, que bacana. Eu me recordo de você."  {audio:midias/3EB0CE293BB533CF15631D_257982.ogg}
+[15:57] LOJA: [áudio] "Agora que eu vou conseguir tirar foto, tá bom? E aí, Minas, como é que tá?"  {audio:midias/A5565202BDC5B3353F882825E5048D86_597188.ogg}
+[16:00] LOJA: [foto]
+[16:01] LOJA: [foto] Conforser

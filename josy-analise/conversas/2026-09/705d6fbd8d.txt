@@ -1,0 +1,33 @@
+CONVERSA 705d6fbd8d | contato: Gildevon Galvao | 09/09/2026 06:52 até 22/09/2026 14:52 | 7 msgs do cliente, 12 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[06:52] CLIENTE: Bom dia
+[06:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[06:53] CLIENTE: [áudio] "Bom dia, eu queria ver quanto está o pneu. Ele é um pneu 14, mas eu queria ele mais alto e mais largo um pouquinho. É para mim colocar numa estrada, estrada 1.4. Aí eu levantei o carro, levantei a suspensão do carro e queria colocar uns pneus mais robustos para dar mais destaque. Fechado, totalmente fechado."
+[08:04] CLIENTE: Orçamento do quatro peneu
+[08:05] LOJA: *Josy:*
+Pode usar 185/70/14
+[08:06] LOJA: *Josy:*
+Vou fazer seu orçamento.
+[08:06] LOJA: *Josy:*
+1 instante.
+[08:06] CLIENTE: E mais largo o mais alto né
+[08:07] LOJA: [foto]
+[08:07] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:09] LOJA: [áudio] "Olá, bom dia! Tudo bem com vocês, Gil Devon? Olha, sim, o 185, ele é mais largo e alto. E aí eu tenho aqui no manual preço o pneu da marca GP Premium. Ele está por apenas R$ 289,00 para o débito ao Pix e já realizo a instalação deles para o senhor, se o senhor quiser."  {audio:midias/3EB0DFBA371335147DCF40_602482.ogg}
+[08:10] CLIENTE: [áudio] "Bom dia. Eu comprei, no ano passado, dois pneus com a estrada de Ventura que eu tinha. Agora estou precisando de 4. Uma estrada de 1.4. Eu queria eles mais altos e mais largos um pouquinho. Faz o seguinte, eu não estou aí não, eu estou em Tocantins. Eu estou programando uma viagem para Ica e eu já levo o carro. E já coloca estaladinha aí, tá bom?"
+[08:11] LOJA: [áudio] "Sim, isso mesmo!"  {audio:midias/3EB00ABC2012F1BB37FB63_851602.ogg}
+--- 22/09/2026 (Tue) ---
+[13:30] CLIENTE: [áudio] "Alô, boa tarde. Aqui é o Gil Devon. Comprei os pneus seus aí. Era para mim ter te falado. Aquele mecânico lá da onde vocês mandaram alinhar os pneus, a gente trocou lá um terminal e uma pecinha lá da Triseta. Rapaz, mas foi um livramento de Deus. Você acredita que chegou aqui? Eu vi um barulhinho na direção do carro, aí cheguei aqui e fui mandar alinhar o carro. Você acredita que é a porca do terminal ali? Ele tirou com a mão. O mecânico lá não apertou, viu um mecânico mal educado, aquele mecânico de lá, da onde trocou os pneus. Menino, um livramento de Deus, porque eu com minha família dentro do carro, minha netinha, viajamos 600 km daí aqui, com esse carro, com essa porca frouxa. Aí era para mim ter te avisado, aí os dias foi passando e eu esqueci de te avisar, mas aquele mecânico lá é muito mal educado. Eu fui fazer umas perguntas para ele lá e estava com mal educação."
+[13:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:03] LOJA: [áudio] "Oi, seu Gidevon, tudo jóia? Nossa, sei nem o que eu digo, mas assim, eu agradeço muito pela sua mensagem e eu vou repassar para a gerência de lá, tá?"  {audio:midias/3EB0F6591FC6FC193FE91C_267760.ogg}
+[14:52] LOJA: *Josy:*
+Eu encaminhei seu áudio para o gerente da loja, o qual vai apurar , e fazer uma reunião com a equipe.
+[14:52] CLIENTE: 🤝
+[14:52] LOJA: *Josy:*
+Agradeço o feedback

@@ -1,0 +1,56 @@
+CONVERSA bc9fbb82a0 | contato: Deusmar F | 18/09/2026 11:32 até 18/09/2026 17:04 | 18 msgs do cliente, 22 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[11:32] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:32] CLIENTE: Bom dia
+[11:32] CLIENTE: E da gomas pneu
+[11:32] LOJA: *Josy:*
+Bom dia, aqui é a Pneus GP Premium
+[11:35] CLIENTE: [foto]
+[11:35] CLIENTE: A / T
+[11:35] CLIENTE: [áudio] "O pneu aí, se tiver a mesma marca, é parrela. Parrela. Se tiver a mesma marca, é melhor. Se tiver, é esse calibre aí, AT."
+[11:40] LOJA: [áudio] "Oi, o senhor até ligou aqui, mas aqui não é a Goma Pneus, aqui é a Pneus GP Premium. Eu vou ter aqui a pronta entrega, pneus da marca Conforce. A unidade está por 618 reais, se o seu pagamento for à vista. Se for para parcelar, o valor sobe um pouco, tá? Vou te mandar o orçamento e a foto dos pneus para ver se te atende."  {audio:midias/3EB0815B5CADD096A2A75A_515384.ogg}
+[11:40] LOJA: [foto]
+[11:41] LOJA: [foto]
+[11:41] LOJA: [foto]
+[11:45] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:46] LOJA: *Josy:*
+👆🏻
+[11:57] CLIENTE: [áudio] "Amiguinha, vê se ele é o B, quantos centímetros de profundidade ele tem, se ele tem 7 centímetros, vê se ele é o B e vê se ele tem 400 na lateral dele, se ele pega 400, na lateral ele pega 400, se essa plaquinha dele é B e se ele tem 7 milímetros, Quantos milímetros tem de profundidade aqui nessa placa só não dá pra ver não."
+[12:24] LOJA: *Josy:*
+Tem 7
+[12:25] LOJA: [foto]
+[13:58] CLIENTE: Vc vai me da a montagem
+[13:58] CLIENTE: Vou aí amanhã
+[13:59] CLIENTE: Trocar os 4
+[14:02] LOJA: *Josy:*
+Se fossem os pneus aqui na nossa marca GP Premium, eu poderia pagar a montagem dos pneus , mas não tenho deles.
+[14:03] LOJA: *Josy:*
+Os pneus importados são cobrados.
+[14:06] CLIENTE: [áudio] "E você vai cobrar quanto para trocar os 4 pneus aí, amantais? Quanto é que você vai cobrar, amantais? Fala aí!"
+[14:07] LOJA: *Josy:*
+montagem 40,00 por roda,  alinhamento de direção 145,00  e   balanceamento 45,00 por roda
+[14:07] LOJA: *Josy:*
+Valores negociaveis
+[14:07] LOJA: [áudio] "Esses valores não sou eu que cobro, são os meninos aqui da oficina, tá bom?"  {audio:midias/3EB0935C0D6DE9112D18AA_509641.ogg}
+[16:17] CLIENTE: Josy 
+Eu não vi aqui se ele é A / T
+[16:18] LOJA: *Josy:*
+Te mandei a foto!
+[16:18] LOJA: *Josy:*
+Pneus AT são assim.
+[16:19] CLIENTE: Assim
+[16:21] LOJA: [foto]
+[16:22] CLIENTE: Assim
+[16:23] LOJA: [vídeo]
+[16:57] CLIENTE: Amanhã vou pegar 4
+[16:58] CLIENTE: Vc vai fazer 600 reais em cada né
+[16:59] LOJA: [foto] *Josy:*
+A vista a unidade é 618,00  os 4 ficam por R$ 2.472,00
+[17:00] CLIENTE: Então vai ficar 2.400
+[17:01] LOJA: *Josy:*
+R$ 2.472,00
+[17:03] CLIENTE: Da um desconto
+[17:04] LOJA: [áudio] "Eu não consigo, porque esse pneu, eu tenho ele apenas para repassar realmente, tá?"  {audio:midias/3EB037C38FF5CCBBEF171D_990108.ogg}

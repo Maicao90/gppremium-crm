@@ -1,0 +1,16 @@
+CONVERSA d675f844f3 | contato: Pastor Eduardo P  Pereira | 30/09/2026 10:40 até 30/09/2026 11:07 | 6 msgs do cliente, 5 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[10:40] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:40] CLIENTE: [áudio] "Bom dia, eu queria uma informação, aí você vende o pneu aro 13, 175,70, qual o preço e aonde que a loja é, em Minas?"
+[10:40] CLIENTE: [áudio] "Você vende ele remolde ou é só importado?"
+[10:41] LOJA: [áudio] "Oi, bom dia, tudo bem com você? Eu me chamo Josi. Sim, vendemos sim. O senhor mora aqui em Luziânia, Goiás?"  {audio:midias/3EB09A662F234FDD0D30A6_839926.ogg}
+[10:42] CLIENTE: [áudio] "Bom, moço. Não, eu moro em Caturaí. Aí fica para o outro lado, que eu peguei esse número pelo Google. Tá bom, obrigado."
+[10:42] LOJA: [áudio] "Sim, sim, compreendo. Pois é, nós somos aqui de Luziânia."  {audio:midias/3EB02CC1DCBF1F4F961D8B_992573.ogg}
+[10:43] CLIENTE: [áudio] "Pois é, é muito longe. Eu sou aqui perto de Goiânia. 30 km de Goiânia. Aí eu achei que era em Minas. Obrigado aí, viu? Boa tarde."
+[10:49] LOJA: [áudio] "Vou deixar aqui a nossa localização, pois se de repente o senhor estiver passando aqui por nossa região um dia desses, venha aqui na nossa loja para conversarmos pessoalmente, está bem? Obrigada."  {audio:midias/3EB054F356B0DAE7FB0252_866296.ogg}
+[10:49] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:07] CLIENTE: Ok obrigado

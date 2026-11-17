@@ -1,0 +1,18 @@
+CONVERSA d909c257ed | contato: Andersson | 27/08/2026 16:20 até 27/08/2026 16:40 | 3 msgs do cliente, 7 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[16:20] LOJA: *Josy:*
+Boa tarde...tudo bem!
+[16:20] LOJA: *Josy:*
+Acabaram de chegar pneus da marca Comforser.
+[16:20] LOJA: [foto]
+[16:24] LOJA: [áudio] "Oi Anderson, tudo jóia? Então, acabaram de chegar os pneus, tá? A unidade está por 505 reais à vista. Ainda precisa?"  {audio:midias/3EB0D25912B41AD8051815_402318.ogg}
+[16:38] CLIENTE: Oi boa tarde
+[16:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:38] CLIENTE: A gente conseguiu alguns
+[16:40] CLIENTE: Se eu precisar de novo entro em contato
+[16:40] LOJA: *Josy:*
+Combinado!
+[16:40] LOJA: *Josy:*
+Até breve...👋🏻

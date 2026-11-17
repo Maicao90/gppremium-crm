@@ -1,0 +1,87 @@
+CONVERSA a087c5c1ae | contato: Daniel Vieira | 31/08/2026 08:53 até 02/09/2026 16:52 | 17 msgs do cliente, 38 da loja, 0 do robô
+
+--- 31/08/2026 (Mon) ---
+[08:53] CLIENTE: Bom dia, tranquilo, me chamo Osmar Daniel e tenho interesse em comprar 4 pneus aro 15 para o carro jac 3
+[08:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:53] CLIENTE: Consegue me ajudar
+[08:58] LOJA: *Josy:*
+Bom dia!
+[08:58] LOJA: *Josy:*
+Muito obrigada por aguardar.
+[08:58] LOJA: *Josy:*
+/cClaro! Para que eu possa gerar o orçamento para você, poderia me informar a *medida* do pneu que você precisa (ex: 205/55 R16)  😊
+[09:01] CLIENTE: Só um momento já te informo
+[09:04] CLIENTE: Acredito que as medidas sejam as padrões do aro 15, 185/60/15
+[09:04] LOJA: *Josy:*
+Perfeito!
+[09:05] LOJA: [foto]
+[09:05] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:06] LOJA: *Josy:*
+O pneu da marca GP Premium está em oferta...  no pagamento em *dinheiro*  R$  236,00 a unidade.                                                   No debito ou pix R$ 249,00
+[09:07] LOJA: *Josy:*
+Se preferir pode enviar áudio.
+[09:25] LOJA: *Josy:*
+Mora aqui em Luziania-Go mesmo?
+[09:28] CLIENTE: Sim sim
+[09:28] CLIENTE: Estou pensando em comprar as 4, consegue fazer uma valor bom?
+Iria dividir em 4 parcelas?
+[09:39] LOJA: *Josy:*
+Os pneus da GP Premium, posso fazer o valor de 2
+[09:40] LOJA: *Josy:*
+Então ficam 4 x de 257,29
+[09:41] CLIENTE: Posso te dar a confirmação hoje à tarde??
+[09:41] LOJA: *Josy:*
+Pode sim!
+[09:41] LOJA: *Josy:*
+Que horário fica bom para nos falarmos novamente?
+[09:44] CLIENTE: Ficam abertos até qual horário?
+[09:45] LOJA: *Josy:*
+Aqui até as 18:00
+[09:45] LOJA: *Josy:*
+sabe onde fica nossa loja?
+[09:45] LOJA: [foto]
+[09:57] CLIENTE: Tem a localização pra ficar mais fácil para encontrar
+[09:57] CLIENTE: ?
+[09:58] LOJA: *Josy:*
+Sim!
+[09:58] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:58] CLIENTE: Obrigado
+[09:59] LOJA: [áudio] "Oi Osma, tudo jóia? Perfeito então, ficamos combinados aqui e eu te aguardo. Obrigada eu."  {audio:midias/3EB0153C22EFD69DC6A04B_783702.ogg}
+[10:00] CLIENTE: Combinado
+[17:05] LOJA: *Josy:*
+Oi... Osmar...
+[17:06] LOJA: *Josy:*
+👀
+[17:07] CLIENTE: Boa tarde, os pneus tem garantia?
+[17:07] LOJA: [áudio] "Sim, tem garantia sim, senhora Osmar. Garantia de 2 anos, tá?"  {audio:midias/3EB06D9829ED15A7D74B92_196.ogg}
+[17:08] LOJA: [áudio] "Você quer que te mande uma foto aí dos pneus?"  {audio:midias/3EB0FC643ABFE863ED179F_102960.ogg}
+[17:08] CLIENTE: Gostaria sim, por favor
+[17:09] CLIENTE: Acredito que não vou conseguir ir buscar eles hoje, na hora do almoço de amanhã, vocês ficam abertos 12:00 que é meu horário de almoço
+[17:09] CLIENTE: ?
+[17:09] LOJA: [áudio] "Eu já vou te mandar a foto, tá? Que eu pedi pro rapaz pegar ali pra mim. E não, nós não fechamos no horário do almoço, não, Sra. Osná."  {audio:midias/3EB0D1184AEBA7E519873D_528593.ogg}
+[17:14] LOJA: [foto]
+[17:14] LOJA: [foto]
+[17:14] LOJA: [foto]
+[17:15] CLIENTE: Acredito que fique melhor para retirar amanhã esse horário
+[17:16] LOJA: *Josy:*
+Perfeito, então!
+--- 01/09/2026 (Tue) ---
+[14:10] LOJA: *Josy:*
+Boa tarde, sr Osmar...como está?
+[15:21] LOJA: *Josy:*
+O senhor não conseguiu vir no horário do almoço, não é? Imagino que esteja bem corrido por aí!
+--- 02/09/2026 (Wed) ---
+[16:30] LOJA: *Josy:*
+Boa tarde, sr Osmar!
+[16:31] LOJA: *Josy:*
+Te mandei mensagem, mas o senhor não respondeu...está tudo bem?
+[16:38] LOJA: *Josy:*
+Mas para não ficar enchendo seu whatsapp de mensagem pois imagino que esteja ocupado, vou encerrar seu atendimento. E deixo registrado que mantenho o preço combinado que ficou bem acessível  para o senhor ☺️
+[16:39] LOJA: [foto]
+[16:52] LOJA: *Josy:*
+O senhor ainda vem?

@@ -1,0 +1,31 @@
+CONVERSA 1020070168 | contato: Rafael Ramos | 04/09/2026 20:01 até 09/09/2026 10:42 | 4 msgs do cliente, 10 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[20:01] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[20:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:04] CLIENTE: 215/50 aro 17
+--- 05/09/2026 (Sat) ---
+[08:24] LOJA: *Josy:*
+Bom dia!
+[08:24] LOJA: [foto]
+[08:24] LOJA: *Josy:*
+No dia de hoje temos essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 08/09/2026 (Tue) ---
+[17:07] LOJA: *Josy:*
+Boa tarde, Rafael!
+[17:07] LOJA: [vídeo]
+--- 09/09/2026 (Wed) ---
+[10:40] LOJA: [áudio] "Oi Rafael, bom dia, tudo bem? Eu te encaminhei um vídeo ontem, né, para tentar conversar aqui contigo, mas imagino que na correria você não conseguiu me responder. Me fala aqui, por gentileza, pretende seguir com a negociação, já realizou a compra dos pneus? Fala comigo!"  {audio:midias/3EB02F67BC3EB0201D7048_863608.ogg}
+[10:41] CLIENTE: Bom-dia
+[10:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:41] CLIENTE: Ainda to fazendo orçamento
+[10:42] LOJA: *Josy:*
+Bem, então para não ficar enchendo seu whatsapp de mensagem, vou encerrar seu atendimento.                                                                                                                                                                                                                                    Se precisar futuramente me chame, ou venha aqui na loja para conversar pessoalmente , obrigada  👋🏻
+[10:42] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

@@ -1,0 +1,33 @@
+CONVERSA 724f134a47 | contato: Edson Torquato | 19/09/2026 08:16 até 21/09/2026 14:52 | 6 msgs do cliente, 11 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[08:16] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso?
+[08:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:17] CLIENTE: 205/40 17 
+205/45 17 
+
+4 unidades
+[08:24] LOJA: *Josy:*
+Bom dia!
+[08:26] LOJA: [foto]
+[08:26] LOJA: *Josy:*
+No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:27] CLIENTE: Onde fica a loja?
+[08:28] LOJA: *Josy:*
+Somos de Luziânia-Go, e voc~e?
+[08:28] CLIENTE: Pode mandar a localização !
+[08:30] LOJA: *Josy:*
+Claro!
+[08:30] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:30] LOJA: [foto]
+[08:42] LOJA: [áudio] "Edson, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0E930BA7B7EA5998342_757282.ogg}
+[08:45] CLIENTE: Moro no novo Gama
+[08:46] CLIENTE: Vcs fornece troca alinhamento e balanceamento ?
+[09:16] LOJA: [áudio] "Aqui nós fazemos esse serviço, sim, mas eles são cobrados à parte, está bem?"  {audio:midias/3EB08EF6E4D6ABB03FD170_860546.ogg}
+--- 21/09/2026 (Mon) ---
+[14:52] LOJA: [áudio] "Oi Edson, tudo bom? Nós conversamos no sábado e eu gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0991701AD55A7088B91_938547.ogg}

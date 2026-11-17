@@ -1,0 +1,19 @@
+CONVERSA eaef96a55b | contato: Zanolla Assessoria Aeronáutica | 18/08/2026 16:24 até 19/08/2026 15:09 | 3 msgs do cliente, 8 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[16:24] LOJA: Prefere mensagem de áudio ou texto?
+[16:25] CLIENTE: pode ser áudio
+[16:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 19/08/2026 (Wed) ---
+[14:57] LOJA: Boa tarde, Marcelo...como vai? Te encaminhei um orçamento e gostaria de saber se pretende prosseguir com a negociação ou se tem alguma marca de pneus a qual não esteja em busca, para que eu possa atende-los.
+[14:57] LOJA: Consegue me dar um retorno, por gentileza?
+[15:07] CLIENTE: Boa tarde Josy
+meu carro deu um problema no motor ontem, agora vou esperar um pouco pra ver o que vou ter que fazer
+[15:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:09] LOJA: Certo... compreendo Marcelo.
+[15:09] LOJA: Vou encerrar seu atendimento, se possível passa aqui na nossa loja para conversarmos pessoalmente. Obrigada 👋🏻
+[15:09] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:09] CLIENTE: combinado 
+obrigado

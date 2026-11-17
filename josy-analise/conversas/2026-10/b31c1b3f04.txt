@@ -1,0 +1,51 @@
+CONVERSA b31c1b3f04 | contato: medalha milagrossa | 19/10/2026 11:50 até 21/10/2026 12:22 | 17 msgs do cliente, 17 da loja, 1 do robô
+
+--- 19/10/2026 (Mon) ---
+[11:50] CLIENTE: Oi bo. Dia
+[11:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:50] LOJA: *Josy:*
+Bom dia!
+[11:50] CLIENTE: Pneu 225 75 15
+[11:51] CLIENTE: 235
+[11:51] CLIENTE: 205
+[11:51] CLIENTE: Qualquer um
+[11:51] LOJA: *Josy:*
+De carga?
+[11:51] CLIENTE: Para s19
+[11:51] CLIENTE: S10
+[11:51] LOJA: *Josy:*
+235/75/15
+[11:51] CLIENTE: Pode
+[11:52] CLIENTE: Qual valor
+[11:52] LOJA: [foto]
+[11:52] LOJA: *josy:*
+No dia de hoje temos os pneus da marca Comfforser a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:52] LOJA: [foto]
+[11:53] LOJA: [foto]
+[11:53] CLIENTE: Remold
+[11:53] CLIENTE: Tem
+[11:54] LOJA: *Josy:*
+Não temos...esgotou no estoque.
+[11:54] CLIENTE: 205x70x15 será que aguenta
+[11:54] CLIENTE: Na s 10
+[11:54] LOJA: *Josy:*
+É muito estreito para camionete.
+[11:55] LOJA: [áudio] "Por que não é aconselhável utilizar o 205? Porque é um pneu que usa, por exemplo, numa doblô, que é um carro muito pequeno. Então, o 205 se torna extremamente estreito e baixo."  {audio:midias/3EB03542B2CB25A86BF272_156636.ogg}
+[11:56] CLIENTE: [áudio] "Deixa eu te falar, eu não tô com pressa, não. Até quem me indicou vocês é um cliente de vocês. Professor Luiz, lá de Brasília, de Valparaíso. Do Citroën Prata. Aí, eu não tô com pressa, não. De repente, dependendo do valor, eu espero. Se você não tem uns remold, não, porque os remold vai ser mais em conta pra mim. Não precisa de pneu novo, não, porque esse preço eu tenho ele aqui. Até mais barato eu tenho. Entendeu? Eu tô querendo uns pneus na faixa de 250 para baixo. Pode ser remold."
+[11:56] CLIENTE: Sim
+[11:56] LOJA: [áudio] "Se fosse no aro 16, aí eu tenho a que sim, tá? Mas o aro 15, ele acabou e eu não tenho nem previsão de quando é que vai ter."  {audio:midias/3EB0F9656EA96DA44F1BCF_363260.ogg}
+[11:57] CLIENTE: [áudio] "Aí eu tenho que trocar minhas rodas, eu preciso no 15. Então você tá sem previsão, então nem adianta, né? Então deixa eu correr atrás. Ou então tá. Então mesmo assim, valeu. Obrigado pela atenção. Eu vou tentar ver se eu arrumo aqui. Então você acha que o... E se eu arrumar o 225-70-15, que isso tá mais fácil de arrumar? Você acha que aguenta na, na, na S10?"
+[11:58] LOJA: [áudio] "Bem, na verdade, essa opção do 225, ela é inclusive até mais difícil de achar, porque pararam de produzir essa medida, tá? Ela ficou restrita somente ao 235,75, que é do orçamento que eu te encaminhei, ou 31 por 10,5, mas a opção mais utilizada realmente vai ser essa do 235."  {audio:midias/3EB029628CDE35A831CA59_961216.ogg}
+[12:35] CLIENTE: [áudio] "31 por 10,5. Você não tem ele mais barato? Não. Eu precisava de quatro pneus aqui, mas eu quero pneu remolde, mais baratinho. Esse carro anda pouco, anda mais na cidade. Você não tem aí, não? Esse 31 que você tá falando aí, de repente ele me serve também, porque segundo o professor lá, ele falou que vocês fabricavam pneus, pneu, mexer com recapagem, que tinha uns pneus mais baratos, porque esse que você me passou o preço aí, o valor dele também é mais caro que aqui."
+--- 20/10/2026 (Tue) ---
+[08:52] LOJA: *Josy:*
+Bom dia, não temos não.
+[08:53] LOJA: [áudio] "Bom dia, tudo joia? Pois é, igual eu estava explicando para o senhor, né? Os pneus aqui da GP Premium, na medida 235-75, eles já esgotaram. Os pneus aqui da nossa empresa, eles são os mais vendidos justamente por conta da qualidade. E por hora, eu não tenho nem previsão para dar para o senhor a respeito desses pneus. Então, a opção que eu vou ter realmente aqui, que possa atender, vai ser a desse pneu importado que eu te mandei. E o 31 por 10,5, ele é mais caro, inclusive, tá? Então, eu te passei aí o 235-75, que é a única opção que eu tenho realmente, tá bom?"  {audio:midias/3EB06E33CFB7E793D736CA_457925.ogg}
+[12:36] LOJA: [áudio] "Olá, tudo jóia? Eu vou te mandar aqui a nossa localização, que de repente só passa aqui na loja, então, para nós conversarmos pessoalmente, tá bem?"  {audio:midias/3EB0003DE07327634D855E_156348.ogg}
+[12:36] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 21/10/2026 (Wed) ---
+[12:22] ROBÔ: 🙋🏼‍♀️

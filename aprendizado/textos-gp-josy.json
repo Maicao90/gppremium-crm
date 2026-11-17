@@ -1,0 +1,8 @@
+{
+  "saudacao": ["Oiê, tudo bem? 😊"],
+  "pedir_medida": ["Qual a medida dos pneus que você precisa hoje? Se não souber, me fala qual é o seu carro que eu vejo pra você 😉"],
+  "pedir_medida_repetida": ["Sem problema! Me diz qual é o seu carro (modelo e ano) que eu vejo a medida certinha e já te passo o valor 😉"],
+  "localizacao": ["Somos a fábrica GP Premium, aqui em Luziânia-GO 😊 Tem uma placa bem grandona na frente, não tem erro!", "Segue a nossa localização:"],
+  "remold": ["Sim, o GP Premium é remold, mas é linha Premium: um pneu ecológico que nós mesmos fabricamos, com borracha padrão europeu e controle de qualidade. Não tem nada a ver com os remolds convencionais 😉", "Por isso é o pneu mais vendido aqui da loja, com garantia de 2 anos e 60 mil km ou seu dinheiro de volta."],
+  "visita_confirmada": ["Combinado! Será uma satisfação receber você aqui 😊 Fica anotado: te espero {DIA}.", "Quer que eu deixe os pneus separadinhos pra você?"]
+}

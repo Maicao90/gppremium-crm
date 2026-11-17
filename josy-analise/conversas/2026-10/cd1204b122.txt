@@ -1,0 +1,24 @@
+CONVERSA cd1204b122 | contato: Júlio César | 20/10/2026 14:48 até 21/10/2026 12:05 | 3 msgs do cliente, 4 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[14:48] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[14:48] CLIENTE: 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento 185/60/15
+[14:49] CLIENTE: 185/60/15
+[14:50] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:50] LOJA: [foto]
+[15:09] CLIENTE: No cartão quantas vezes sem juros.
+[15:10] LOJA: *Josy:*
+Com juros
+--- 21/10/2026 (Wed) ---
+[12:05] ROBÔ: 🙋🏼‍♀️

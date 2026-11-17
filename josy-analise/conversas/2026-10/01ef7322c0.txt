@@ -1,0 +1,15 @@
+CONVERSA 01ef7322c0 | contato: Mateus Lopes | 07/10/2026 16:49 até 07/10/2026 16:54 | 4 msgs do cliente, 7 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[16:49] CLIENTE: Quero cotar o pneu 225/45 R17 GP Premium.
+[16:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:49] LOJA: [áudio] "Olá, boa tarde Matheus, como é que você está? Eu vou fazer aqui para você um orçamento com todas as opções que eu tenho no dia de hoje, está bem?"  {audio:midias/3EB003375C5FF3F5DA2A1D_765278.ogg}
+[16:50] LOJA: [foto]
+[16:50] LOJA: [áudio] "Os pneus da marca GP Premium, conforme sua solicitação inicial, são os pneus que estão a ir por R$ 339,00 a unidade para pagamento à vista."  {audio:midias/3EB02DC6EC61893B61A626_117292.ogg}
+[16:51] CLIENTE: tudo ótimo e você?
+[16:52] CLIENTE: ah perfeito, vou entrar em contato novamente para realizar o pedido mais pra frente
+[16:52] LOJA: [áudio] "Sim, excelente. Você mora onde?"  {audio:midias/3EB0A06069E3D219489608_771365.ogg}
+[16:53] CLIENTE: em brasilia
+[16:53] LOJA: Ah, sim!
+[16:54] LOJA: Podemos retornar a conversar em qual dia?

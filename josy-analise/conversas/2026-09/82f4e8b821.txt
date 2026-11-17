@@ -1,0 +1,14 @@
+CONVERSA 82f4e8b821 | contato: Viana Anjo Azul | 01/09/2026 18:08 até 02/09/2026 08:47 | 4 msgs do cliente, 4 da loja, 0 do robô
+
+--- 01/09/2026 (Tue) ---
+[18:08] CLIENTE: Oi
+[18:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:09] CLIENTE: Vou passar seu contato pra um amigo
+--- 02/09/2026 (Wed) ---
+[08:07] LOJA: [áudio] "Bom dia, bom dia, tudo bem com você? Perfeito, pede para ele falar aqui comigo, tá bom?"  {audio:midias/3EB0A0438B7C4692F5659E_577272.ogg}
+[08:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:46] CLIENTE: [áudio] "Oi Josi, tudo bem? Eu passei o teu contato pra ele, daí acho que eu vou passar o dele pra você também. Ele tem um palhozinho, ele tava perguntando pra mim, eu passei na frente ontem, falei que eu tinha comprado pneu aí, que eu tinha gostado, e que o preço era bom também, qualidade e tinha preço. Aí ele me perguntou, eu passei o contato, tá? Mas eu vou passar aqui, porque se ele não tiver mandado mensagem, você já manda e fala comigo."
+[08:46] CLIENTE: [contato] 👤 Gcm Santos
+[08:47] LOJA: [áudio] "Perfeito, João. Nossa, muitíssimo obrigada."  {audio:midias/3EB03742E06A1AB271AB56_424429.ogg}

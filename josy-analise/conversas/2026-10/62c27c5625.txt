@@ -1,0 +1,17 @@
+CONVERSA 62c27c5625 | contato: Fillipe Lima😶‍🌫️ | 22/10/2026 11:37 até 22/10/2026 11:45 | 8 msgs do cliente, 4 da loja, 2 do robô
+
+--- 22/10/2026 (Thu) ---
+[11:37] CLIENTE: Olá
+[11:37] CLIENTE: Boa tarde
+[11:37] ROBÔ: Oi, tudo bem?
+[11:37] CLIENTE: Eu falo com o Charles ?
+[11:37] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[11:38] LOJA: Eu sou a JOsy
+[11:38] LOJA: Em que posso ajudar?
+[11:38] CLIENTE: Eu queria falar com o Charles
+[11:39] CLIENTE: Um dos meninos que trabalha aí me disse que estava contratando
+[11:39] LOJA: Me manda o curriculum com seu CPF
+[11:39] CLIENTE: Ok
+[11:44] CLIENTE: [documento]
+[11:45] LOJA: Qual seu CPF?
+[11:45] CLIENTE: 08057471174

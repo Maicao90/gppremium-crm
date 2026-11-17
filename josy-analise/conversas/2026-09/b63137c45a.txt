@@ -1,0 +1,13 @@
+CONVERSA b63137c45a | contato: claudevilopesaquino1981 | 02/09/2026 09:26 até 02/09/2026 09:30 | 2 msgs do cliente, 6 da loja, 0 do robô
+
+--- 02/09/2026 (Wed) ---
+[09:26] LOJA: *Josy:*
+Oi
+[09:26] LOJA: [áudio] "Oi, eu estava falando aqui com o senhor, mas a ligação caiu. Eu estava perguntando se o senhor é daqui de Luziânia mesmo."  {audio:midias/3EB0ADB8238A0F4104F0EB_935303.ogg}
+[09:26] LOJA: [áudio] "Que no momento não estou vendendo no atacado, mas dependendo do que o senhor estiver precisando, nós podemos conversar aqui."  {audio:midias/3EB0FA08B230E672EA06AA_397143.ogg}
+[09:28] CLIENTE: [áudio] "Sim, mas e aí, qual o preço que vai fazer pra mim no atacado?"
+[09:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:29] LOJA: [áudio] "No momento, para o atacado em si, estamos em standby, estamos sem fazer vendas para atacado."  {audio:midias/3EB0D9ECFA4D06E34139C4_962668.ogg}
+[09:29] LOJA: [áudio] "Posso lhe oferecer algumas unidades, mas o preço é esse mesmo que eu te passei, por exemplo, do 175-65, 249 hoje, tá?"  {audio:midias/3EB0E1248FDFCE8BB0D588_130029.ogg}
+[09:30] CLIENTE: [áudio] "Beleza, mas esse preço aí não dá pra mim não. Nesse preço aí eu compro importado, entendeu? Sem ser remold, é mais fácil pra vender, porque eu pensei que vocês estavam vendendo pneus no atacado ainda."

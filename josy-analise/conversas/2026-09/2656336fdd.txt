@@ -1,0 +1,19 @@
+CONVERSA 2656336fdd | contato: Hugo Cunha | 28/09/2026 12:07 até 28/09/2026 16:44 | 5 msgs do cliente, 8 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[12:07] CLIENTE: Bom dia
+[12:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:07] CLIENTE: Josy
+[12:07] LOJA: *Josy:*
+Bom dia, Hugo...
+[12:07] CLIENTE: Vc não me venderá os pneus mulher?
+[12:08] LOJA: *Josy:*
+Uai, Hugo rsrs
+[12:08] CLIENTE: Kkk
+[12:09] LOJA: Até então....eu havia passado esse preço de frete.
+[12:09] LOJA: [figurinha]
+[12:10] LOJA: [áudio] "Hugo, e você não consegue ir para o novo Gama, que até lá eu consigo mandar os pneus para uma borracharia que fica ali no Lunabel, especificamente. E aí não cobre o frete. Mas se você conseguir chegar lá, já acho que fica mais que meio caminho andado, não?"  {audio:midias/3EB0E1FFEEEAA21A5BD59F_802509.ogg}
+[12:17] CLIENTE: [vídeo] E esses pneus, vc me contaria eles?
+[12:18] LOJA: [áudio] "Aí, neste caso, teria que trazer aqui para poder fazer a avaliação, Hugo, porque aí os rapazes vão fazer o teste primeiramente visual e depois na máquina para ver se eles estão aptos."  {audio:midias/3EB0AAF205F38274EC1B2F_789581.ogg}
+[16:44] LOJA: 👀

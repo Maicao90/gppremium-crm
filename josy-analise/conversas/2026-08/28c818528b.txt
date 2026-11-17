@@ -1,0 +1,31 @@
+CONVERSA 28c818528b | contato: Mario Sergio | 26/08/2026 20:02 até 28/08/2026 08:08 | 5 msgs do cliente, 12 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[20:02] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[20:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:02] CLIENTE: Pneus camioneta Frontier aro 18
+--- 27/08/2026 (Thu) ---
+[08:06] LOJA: Bom dia, sr Mário!
+[08:07] LOJA: [foto]
+[08:07] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:41] LOJA: *Josy:*
+🙋🏼‍♀️
+[11:53] CLIENTE: Bom Dia senhora Josy! Qual o seu endereço
+[11:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:53] LOJA: [áudio] "Oi Mário, bom dia. Nós somos aqui de Luziânia. Você mora por aqui mesmo?"  {audio:midias/3EB0718F712DB6157AFD60_823668.ogg}
+[11:54] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:54] CLIENTE: Esse pneu é novo?
+[11:55] LOJA: [foto] *Josy:*
+*NOVO*
+[12:16] LOJA: [áudio] "E o senhor é daqui de Luziânia mesmo?"  {audio:midias/3EB0B080A046124BF7EF36_507425.ogg}
+[17:42] LOJA: [áudio] "O senhor é daqui de Luziânia mesmo, senhor Amário?"  {audio:midias/3EB0C5846D959A951C4857_550978.ogg}
+[18:17] CLIENTE: Sim
+--- 28/08/2026 (Fri) ---
+[08:08] LOJA: [áudio] "Olá, bom dia, tudo bom? Pois é, passa aqui na loja para nós conversarmos pessoalmente, que aí o senhor vê os pneus também, ok? Eu te mandei aqui a nossa localização, aqui é a fábrica, na BR-040, do lado aqui do Hotel Goiás e da Goiás Diesel. Vem cá para nós conversarmos pessoalmente."  {audio:midias/3EB0261CAABB83524B2F5F_893999.ogg}

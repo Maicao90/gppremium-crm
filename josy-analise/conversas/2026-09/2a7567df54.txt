@@ -1,0 +1,15 @@
+CONVERSA 2a7567df54 | contato: Flavio | 30/09/2026 12:55 até 30/09/2026 15:05 | 2 msgs do cliente, 7 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[12:55] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[12:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:55] LOJA: 🙋🏼‍♀️
+[12:55] CLIENTE: 205/65/15
+[14:22] LOJA: [áudio] "Oi, boa tarde, obrigada por aguardar. Hoje a nossa internet está com muita instabilidade, então as mensagens aqui do WhatsApp não estão chegando, agora que eu consegui ver aqui que vocês solicitam um orçamento."  {audio:midias/3EB0F7289A7A459B0CF49D_427961.ogg}
+[14:22] LOJA: [foto]
+[14:23] LOJA: [áudio] "No dia de hoje, eu disponho dessas duas opções de marcas a pronta entrega. Está bem, Flávio? No orçamento, está o valor de apenas um pneu. Na primeira coluna, eu deixei o valor à vista, que já é o menor e melhor preço. E seguem também as opções de parcelamento em 10 vezes, caso você queira parcelar."  {audio:midias/3EB09C23CB820486339D8E_580754.ogg}
+[14:23] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB039921B3ABA980537DD_82217.ogg}
+[15:05] LOJA: 🙋🏼‍♀️

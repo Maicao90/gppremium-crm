@@ -1,0 +1,9 @@
+CONVERSA fdc668d27f | contato: Mark | 21/10/2026 17:41 até 21/10/2026 19:07 | 2 msgs do cliente, 4 da loja, 0 do robô
+
+--- 21/10/2026 (Wed) ---
+[17:41] LOJA: Boa tarde!
+[17:41] LOJA: [foto]
+[17:45] CLIENTE: Muito obrigado
+[17:46] LOJA: [áudio] "Imagina, eu quem agradeço."  {audio:midias/3EB00728B95580C036976C_972734.ogg}
+[17:46] LOJA: [áudio] "Você quer que separe algum para você?"  {audio:midias/3EB0F5ECCFF9BBE04A2D83_572033.ogg}
+[19:07] CLIENTE: Por enquanto nao. Obrigado

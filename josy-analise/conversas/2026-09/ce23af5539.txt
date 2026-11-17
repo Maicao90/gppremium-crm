@@ -1,0 +1,25 @@
+CONVERSA ce23af5539 | contato: Higor Nunes | 02/09/2026 09:26 até 02/09/2026 17:42 | 8 msgs do cliente, 11 da loja, 0 do robô
+
+--- 02/09/2026 (Wed) ---
+[09:26] CLIENTE: Bom dia
+[09:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:26] CLIENTE: Tudo bem?
+[09:27] LOJA: [áudio] "Oi Igor, bom dia."  {audio:midias/3EB057A666467AC955EA5C_817873.ogg}
+[09:27] LOJA: [áudio] "Tudo bem, e com você?"  {audio:midias/3EB0FE5910D03ECE50263E_843064.ogg}
+[09:27] LOJA: *Josy:*
+Diga, Higor...
+[09:28] LOJA: *Josy:*
+🙋🏼‍♀️
+[09:30] CLIENTE: albumMessage
+[09:30] CLIENTE: [foto]
+[09:30] CLIENTE: [foto]
+[09:30] CLIENTE: [áudio] "Bom dia, tudo bem? Você vai ter esse pneu disponível para venda? E o valor dele certinho?"
+[09:31] LOJA: [áudio] "Temos sim, vou te mandar aqui a opção que eu tenho no dia de hoje, tá?"  {audio:midias/3EB09C4B581576B6A055D5_992111.ogg}
+[09:31] LOJA: [foto]
+[09:31] LOJA: [áudio] "Aí no orçamento está o valor de apenas uma unidade, porque é o que o orçamento comporta. A primeira coluna é o valor à vista, que é o valor final, e aí seguem as opções de parcelamento em até 10 vezes, tá bom?"  {audio:midias/3EB05F27BFF7FB0E8D503E_781185.ogg}
+[09:32] LOJA: [vídeo]
+[10:06] CLIENTE: [áudio] "Ah, sim, ok. Você vai ter ele sem ser borrachudão, assim, né?"
+[10:07] CLIENTE: [áudio] "Outra dúvida também, vocês fazem no boleto ou só o cartão em dinheiro?"
+[10:35] LOJA: [áudio] "E no dia de hoje, Igor, só tendo borrachudo, está bem difícil de encontrar essa medida do modelo liso."  {audio:midias/3EB01A4634859F62BF21B6_809174.ogg}
+[17:42] LOJA: [áudio] "Igor, aqui eu não trabalho com boleto, tá? Só cartão de débito e cartão de crédito. Pix, né? Também."  {audio:midias/3EB0D09B73CC75746AC9DA_196659.ogg}

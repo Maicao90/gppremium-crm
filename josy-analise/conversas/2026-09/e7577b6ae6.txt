@@ -1,0 +1,72 @@
+CONVERSA e7577b6ae6 | contato: Lucivaldo | 22/09/2026 09:25 até 21/10/2026 12:23 | 18 msgs do cliente, 26 da loja, 1 do robô
+
+--- 22/09/2026 (Tue) ---
+[09:25] LOJA: *Josy:*
+Bom dia!
+[09:25] LOJA: *Josy:*
+185/55/15
+[09:26] CLIENTE: 👍🏼
+[09:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:26] CLIENTE: Valor?
+[09:26] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[09:27] LOJA: Já o 195/55/15 temos a pronta entrega. 👇🏻
+[09:27] LOJA: [foto]
+[09:27] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:28] LOJA: [áudio] "Lucivaldo, o 195-55, eu tenho aqui, tá? Eu vou ter pneu novo da Goodyear, pneu novo da Dunlop, pneu novo da Conforcer e os pneus GP Premium, que igual eu te falei, eles não são recatagem, tá? É o remodelado da categoria Premium, que você até já conhece. Aí, se for no débito ou no Pix, é R$ 289. Se for pagamento em dinheiro em espécie, você sacando pra trazer o dinheiro aqui pra mim, a unidade já vai ficar por R$ 274, tá?"  {audio:midias/3EB01C04E09CD90DFF4109_209778.ogg}
+[09:29] CLIENTE: [áudio] "Sim, eu já sou cliente, eu acho que eu já fiz umas 3 ou foi, 2 ou foi 3 compras com vocês, de 4 jogos de pneus. É muito bom o pneu de vocês, né? Esse GP1 aí, mas eu queria ver se tem como, se tem ele nessa numeração, 18555 aro 15, entendeu? Mas é o GP Premium, entendeu? No caso aí, esse GP1 aí, né? Mas é 185, em vez de ser 195."
+[09:31] LOJA: [áudio] "Não, aí nós não fabricamos um 8555, tá? Eu até perguntei lá para o distribuidor se ele vai ter alguma marca importada no estoque dele para poder te oferecer. Ele me respondendo, eu já te passo aqui de imediato."  {audio:midias/3EB0E47E6AE5037F1E2050_409341.ogg}
+[09:31] LOJA: [áudio] "Aí, da GP Premium, eu tenho só 195-55-15, somente esse, tá? Ou também 85-60-15, essas opções."  {audio:midias/3EB0AA2FF0BD040BBA1233_223112.ogg}
+[09:33] CLIENTE: [áudio] "Tá bom, tô na guarda aqui pra ver qual é o valor que ele vai fazer."
+[09:54] LOJA: [foto]
+[09:54] LOJA: [áudio] "Olha, o meu distribuidor vai ter o pneu da marca Conforce. Cada pneu, se for para pagar a vista, está por R$ 411,00, na medida 185-55, e é uma opção somente por encomenda, leva 3 dias para poder chegar e o distribuidor pede um pagamento calção de R$ 250,00 para reservar a opção para você."  {audio:midias/3EB01DAE18C4066164A187_634973.ogg}
+[10:17] CLIENTE: [áudio] "Esse aí pra mim não dá não, tá muito caro. É melhor comprar um 95. É GP aí, é bem melhor, bem mais em conta. Tá bom, muito obrigado. Qualquer coisa eu entre em contato aí, viu?"
+[10:18] LOJA: [áudio] "Com certeza, bem melhor. Todas as medidas que são diferentes assim, elas são bem mais caras."  {audio:midias/3EB0C8B2A6644D622B475B_622598.ogg}
+[10:18] LOJA: [áudio] "Perfeito, Lucivaldo. Obrigada pela atenção."  {audio:midias/3EB06E5C07A09D06716EDC_830137.ogg}
+[10:19] CLIENTE: [áudio] "Obrigado, bom dia."
+--- 23/09/2026 (Wed) ---
+[12:09] CLIENTE: [áudio] "Oi, boa tarde, tudo bem? Deixa eu te perguntar. Eu queria saber sobre a medida 185-60-15. Vocês tem ele? Aquele dia eu perguntei sobre o 5-5, né? Mas eu quero saber do 185-60-15."
+[12:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:09] CLIENTE: ???
+[12:11] LOJA: [áudio] "Oi, seu Lucivaldo. Tudo bom? Obrigada por aguardar. Temos sim!"  {audio:midias/3EB0C0DDC4210B62BDCFCF_685558.ogg}
+[12:11] LOJA: [foto]
+[12:11] CLIENTE: [áudio] "Qual é o valor dele? Qual é o valor, por favor?"
+[12:11] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:11] CLIENTE: [áudio] "Tá, tá, eu vou ver que eu retorne pra vocês."
+--- 20/10/2026 (Tue) ---
+[12:04] CLIENTE: [áudio] "Oi, boa tarde. Você poderia me informar o preço do pneu 185 6514, o remold aí? Qual é o valor que tá aí, por favor?"
+[12:04] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[12:04] CLIENTE: ???
+[12:05] CLIENTE: 185 65 14
+[12:05] CLIENTE: Preco
+[12:05] CLIENTE: ?
+[12:06] LOJA: *Josy:*
+Obrigada por aguardar sr Lucivaldo!!!!
+[12:06] LOJA: [foto]
+[12:06] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:14] LOJA: [áudio] "Sra. Lucivaldo, qual das opções que eu posso separar para ti?"  {audio:midias/3EB0B08310158060706B0E_824548.ogg}
+[12:14] CLIENTE: [áudio] "Eu tô fazendo uma cotação aqui, tô vendo em outras lojas também, tá ok?"
+[12:15] LOJA: [áudio] "Olha, o pneu da marca GP Premium, ele está por R$ 289,00, se o pagamento for no débito ou no Pix. Se o pagamento for em dinheiro, dá para fazer a unidade por R$ 275,00, tá?"  {audio:midias/3EB03AA6658E2116656F39_94476.ogg}
+[12:15] CLIENTE: Ta ok
+[12:16] LOJA: [áudio] "A senhora é daqui de Luziânia mesmo?"  {audio:midias/3EB0A2648A08D3534BF307_82149.ogg}
+[12:17] CLIENTE: [áudio] "Eu tô fazendo uma cotação e já já eu entro em contato, mas tá, até mais tarde eu entro em contato."
+[12:24] LOJA: [foto]
+--- 21/10/2026 (Wed) ---
+[12:23] ROBÔ: 🙋🏼‍♀️

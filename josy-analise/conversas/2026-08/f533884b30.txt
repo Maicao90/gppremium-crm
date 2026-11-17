@@ -1,0 +1,17 @@
+CONVERSA f533884b30 | contato: Nivaldo Oliveira | 19/08/2026 11:05 até 19/08/2026 14:52 | 4 msgs do cliente, 7 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[11:05] CLIENTE: [foto] 📢 [Anúncio] Converse conosco
+
+Olá! Posso ter mais informações sobre isso?
+[11:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:06] CLIENTE: 225/60/18
+[11:28] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu sou a Josi, muito obrigada por aguardar."  {audio:midias/3EB0B17D1714840240F568_442066.ogg}
+[11:29] LOJA: [áudio] "Neste momento, essa opção esgotou aqui no meu estoque, tá? Mas se vocês tiverem busca de alguma marca específica, eu posso fazer encomenda para você."  {audio:midias/3EB07E642A78EE52CE3C08_863297.ogg}
+[11:32] CLIENTE: Obrigado
+[11:44] LOJA: O 225/55/18 te atende?
+[11:50] CLIENTE: Atende não
+[12:26] LOJA: Ah...que pena... esse eu tenho aqui a pronta entrega.
+[14:52] LOJA: Vou deixar aqui registrada a nossa localização, caso mude de idéia, passa aqui para conversarmos pessoalmente. Será uma satisfação receber você em nossa empresa.
+[14:52] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

@@ -1,0 +1,14 @@
+CONVERSA 85f7edb0c8 | contato: Anoe Tavares | 13/10/2026 20:49 até 14/10/2026 14:17 | 2 msgs do cliente, 4 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[20:49] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Olá! Posso ter mais informações sobre isso?
+[20:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 14/10/2026 (Wed) ---
+[08:26] LOJA: 🙋🏼‍♀️
+[13:13] LOJA: [áudio] "Oi, boa tarde. Tudo bem com o senhor, senhor Tavares? O senhor me solicitou aqui, né, para saber mais informações e eu gostaria de saber qual que é a medida dos pneus que o senhor precisa para que assim eu possa realizar seu orçamento. Assim que possível me dá um retorno, está bem?"  {audio:midias/3EB009A999B995F690AEFE_224091.ogg}
+[14:17] CLIENTE: já comprei
+[14:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

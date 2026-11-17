@@ -1,0 +1,12 @@
+CONVERSA 7adcd83d15 | contato: D. S. S🤔 | 20/08/2026 15:30 até 20/08/2026 15:37 | 4 msgs do cliente, 4 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[15:30] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[15:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:30] LOJA: 🙋🏼‍♀️
+[15:30] CLIENTE: Aro 15
+[15:30] CLIENTE: Você é de Pirenópolis
+[15:30] LOJA: [áudio] "Olá, boa tarde. Seja bem-vindo ao Pneus GP Premium. Eu sou a Josi. No aro 15, eu tenho a partir de R$ 249,00 e nossa loja é somente aqui em Luziânia."  {audio:midias/3EB0295C4C434B44857E02_503290.ogg}
+[15:31] CLIENTE: Eu pensava que era em Pirenópolis
+[15:37] LOJA: Não somos...

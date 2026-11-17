@@ -1,0 +1,16 @@
+CONVERSA d8a61502a0 | contato: Jandim | 11/09/2026 17:39 até 22/09/2026 15:45 | 2 msgs do cliente, 5 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[17:39] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Quanto e pneu 204 40
+[17:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:39] CLIENTE: 17
+[17:42] LOJA: *Josy:*
+Claro! Para que eu possa gerar o orçamento para você, poderia me informar a *medida* do pneu que você precisa (ex: 265/65/17)  😊
+[17:43] LOJA: [foto]
+[17:44] LOJA: [áudio] "Olá, tudo bem com você? Eu sou a Josi e essa opção, no momento, eu não tenho a pronta entrega, vai ser somente através de encomendas, cheguem até 3 dias úteis. A unidade, se for para o pagamento à vista, está por R$ 490,00, tá? E o distribuidor solicita um pagamento calção de R$ 250,00 para poder reservar essa opção e trazer até aqui a nossa loja. Aí, os dias que os pneus chegarem, você pode realizar o restante do pagamento. Você mora aqui em Luziânia?"  {audio:midias/3EB08487DFD0E452F471E3_200795.ogg}
+--- 22/09/2026 (Tue) ---
+[15:45] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

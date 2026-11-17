@@ -1,0 +1,29 @@
+CONVERSA 746489416b | contato: Art | 06/10/2026 11:18 até 06/10/2026 12:34 | 8 msgs do cliente, 11 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[11:18] CLIENTE: Olá! Quero um orçamento de pneus.
+[11:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:18] CLIENTE: 215 65 16
+[11:19] LOJA: *Josy:*
+Bom dia!
+[11:19] LOJA: [foto]
+[11:20] LOJA: *Josy:*
+No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:25] CLIENTE: [áudio] "Eu até falei com o Demen aqui, mas eu falei com ele porque assim, o pessoal do Padre Cício do Valparaíso me ofereceu alinhamento e balanceamento e eu compraria dois pneus novos Continental, original, né? Aí o valor de vocês tão bom, agora eu tenho que pagar alinhamento e balanceamento ainda, né? Pra mim eu prefiro pegar em outro lugar e não pagar balanceamento nem alinhamento."
+[11:27] LOJA: [áudio] "Olha, deixa eu falar uma coisa, que nos anos aí que eu tô no ramo automotivo, quando as empresas falam que vai entregar já o produto, já com tudo incluso, é só pra chamar o cliente. Na verdade, não vai acontecer nada disso, não. Eles vão cobrar por outras coisas aí pra poder tirar o preço do serviço, tá? E aqui nós somos sinceros. Preço dos pneus é uma coisa, preço de serviço de balanceamento e alinhamento é outro, tá? Mas você pode comprar os pneus e levar pra montar onde você quiser também."  {audio:midias/3EB0926ED30087D211C892_426935.ogg}
+[11:28] CLIENTE: [áudio] "Não, tudo bem, eu sei que eles vão, eles podem estar embutindo o valor do alinhamento e balanceamento em cima do produto, mas o exemplo lá, o pneu lá, o continental original, tá no mesmo preço do de vocês, entendeu? Lá eles dão o balanceamento, vamos supor que o continental lá esteja 300 o original, eles estão adicionando o valor embutido e botando 350, mas mesmo assim, entendeu?"
+[11:42] LOJA: [áudio] "Suspeito, mas..."  {audio:midias/3EB0200248C1DFF713DE5A_405740.ogg}
+[11:55] CLIENTE: [áudio] "Não, eu entendi você. Eu falo em relação a tipo... Tipo assim, vamos supor que o pneu lá seja de 300. Eles estão vendendo tipo a 350 para embutir o alinhamento e o balanceamento, entendeu? Nos dois pneus. Mas eu entendo o que você quer dizer."
+[11:56] LOJA: [áudio] "Eu também entendi o seu ponto de vista, mas a questão é... Continental, com um preço tão assim, abaixo do preço normal de venda de todas as empresas? Sei não."  {audio:midias/3EB032796B4837E6BB3FBE_937445.ogg}
+[11:56] LOJA: [áudio] "Aí eu vi que você mandou mensagem pra mim lá no meu WhatsApp particular, só que ela já tava tão cheia aqui que eu não consegui pegar no meu aparelho. Aí como você foi, mandou mensagem aqui, aí eu tava atendendo o rapaz e já tentei falar contigo de imediato."  {audio:midias/3EB0703AD46190053AF959_937361.ogg}
+[12:31] CLIENTE: Qual valor do balanço e alinhamento?
+[12:34] LOJA: *Josy:*
+* Balanceamento = 45,00 (por pneu)
+* Alinhamento = 140,00 ( Alinhamento de Direção)
+[12:34] CLIENTE: Ok
+[12:34] LOJA: *Josy:*
+Valores completamente negpciáceis.
+[12:34] CLIENTE: Obrigado

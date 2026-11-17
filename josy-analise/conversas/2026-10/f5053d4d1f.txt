@@ -1,0 +1,26 @@
+CONVERSA f5053d4d1f | contato: Daniel Pereira | 05/10/2026 09:08 até 05/10/2026 09:19 | 6 msgs do cliente, 10 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[09:08] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:08] CLIENTE: Aro 16 205/75 para carga.
+[09:09] LOJA: *Josy:*
+Bom dia!
+[09:09] LOJA: *Josy:*
+Temos sim!
+[09:09] LOJA: [foto]
+[09:09] LOJA: *Josy:*
+
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:09] CLIENTE: Ok. Obrigado
+[09:10] LOJA: [áudio] "Oi, senhor Daniel, bom dia. E o senhor mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB03539ACFD8DF44E60F5_178265.ogg}
+[09:11] CLIENTE: [áudio] "Moro no Valparaíso aqui."
+[09:11] CLIENTE: [áudio] "Bom dia. Modo Nouveau Paraíso."
+[09:12] LOJA: [áudio] "Ah, sim, é perto de nós."  {audio:midias/3EB0D512515ACC14EC3D3D_356223.ogg}
+[09:16] LOJA: [áudio] "Eu vou te mandar aqui a nossa localização, está bem, Sr. Daniel?"  {audio:midias/3EB0752DF35F4F7546CF51_261183.ogg}
+[09:16] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:17] LOJA: [foto]
+[09:19] CLIENTE: Obrigado

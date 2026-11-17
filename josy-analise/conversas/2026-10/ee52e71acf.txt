@@ -1,0 +1,25 @@
+CONVERSA ee52e71acf | contato: Roni | 17/10/2026 12:23 até 21/10/2026 12:40 | 4 msgs do cliente, 9 da loja, 1 do robô
+
+--- 17/10/2026 (Sat) ---
+[12:23] CLIENTE: Olá boa tarde
+[12:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:24] CLIENTE: 13
+[12:24] CLIENTE: Quanto é?
+[12:34] LOJA: Boa tarde!
+[12:34] LOJA: [foto]
+[12:34] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:47] LOJA: 🙋🏼‍♀️
+--- 19/10/2026 (Mon) ---
+[10:52] LOJA: *Josy:*
+Bom dia! Tudo bem?
+[10:57] LOJA: *Josy:*
+Te encaminhei um orçamento dias atrás, e gostaria de saber se teve tempo de analisar, se sim, qual das opçõs posso reservar para você!
+[17:56] LOJA: [áudio] "Oi Rony, tudo jóia? Eu te encaminhei um orçamento anteriormente e vi que você até deu a minha mensagem, mas eu sei que está corrida e não dá tempo de responder. Você gostaria de prosseguir com a negociação? Alguma dessas marcas aí posso deixar reservadas para você? Me dá uma resposta, por favor."  {audio:midias/3EB028BF5FFAAA5ED53C19_937183.ogg}
+[23:27] CLIENTE: [áudio] "Então, eu tô com um pneu aqui que ele é aro 13. Na verdade, eu tava precisando de urgência, né, de um pneu 13, mas eu já até comprei ele, já comprei um, só que mais pra frente a gente tem que comprar outro, só que esse preço aí tá caro, hein, eu comprei aqui o mesmo preço, eu comprei aqui na usental já colocado, foi 260, aro 13."
+[23:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 21/10/2026 (Wed) ---
+[12:40] ROBÔ: 🙋🏼‍♀️

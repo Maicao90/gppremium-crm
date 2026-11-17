@@ -1,0 +1,81 @@
+CONVERSA f357dc0f94 | contato: Fernando Ruicci | 02/09/2026 09:04 até 06/10/2026 11:26 | 26 msgs do cliente, 30 da loja, 0 do robô
+
+--- 02/09/2026 (Wed) ---
+[09:04] CLIENTE: Oi
+[09:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:04] LOJA: [áudio] "Oi Fernando, bom dia, como é que você está?"  {audio:midias/3EB0A05E5AC6888D79D8A8_363138.ogg}
+[09:04] CLIENTE: Bom dia
+[09:04] CLIENTE: Tudo bem graças a deus
+[09:05] CLIENTE: E vc
+[09:05] LOJA: [áudio] "Bem também, graças a Deus. Hoje é bom que o dia está fresquinho, né?"  {audio:midias/3EB01E27D30E8ED1272A45_150036.ogg}
+[09:06] CLIENTE: Hoje ta bom
+[09:08] LOJA: [áudio] "Mas me diga aí, Fernando, o que é que você precisa para hoje?"  {audio:midias/3EB05933F599D206D7950E_505636.ogg}
+[09:09] CLIENTE: Pessoal da loja ta vendo 4 pneus com vcs
+[09:09] CLIENTE: Me manda o valor e o pix
+[09:10] CLIENTE: E faz um desconto pra mim mulher
+[09:10] LOJA: *Josy:*
+Ok
+[09:10] LOJA: *Josy:*
+Fiz... os pneus de 279,00 fiz por 249,00
+[09:12] LOJA: *Josy:*
+Total: 1068,00
+[09:12] LOJA: *Josy:*
+24.289.955,0001-79
+[09:12] CLIENTE: Ta bem,ja ja te mando ai,obrigado
+[09:33] LOJA: *Josy:*
+Já reservei os pneus aqui, está bem!
+[09:34] CLIENTE: Ok,obrigado
+[09:56] CLIENTE: 24289955000179
+[09:57] CLIENTE: [foto]
+--- 29/09/2026 (Tue) ---
+[12:44] LOJA: *Josy:*
+Oieê
+[12:45] LOJA: *Josy:*
+R$ 1090,00
+[12:45] LOJA: *Josy:*
+pix
+[12:45] LOJA: *Josy:*
+24.289.955/0001-79
+[12:45] CLIENTE: JA FAÇO AI
+[12:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:45] CLIENTE: TO SO TIRANDO UMA NOTA AQUI
+[12:45] CLIENTE: SEGURA SO UM POUCO
+[12:47] LOJA: *Josy:*
+Ok
+[12:54] CLIENTE: [foto]
+--- 06/10/2026 (Tue) ---
+[10:43] LOJA: [áudio] "Bom dia, Fernando. Tudo jóia? Eu estava falando aqui com o Clayson."  {audio:midias/3EB09AB1B33F95797A67D7_785523.ogg}
+[10:43] CLIENTE: bom dia
+[10:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:43] CLIENTE: tudo bem
+[10:43] CLIENTE: e vc
+[10:43] LOJA: [áudio] "Ele me pediu aqui 4 pneus 185-60-15 e 417-570-14, né?"  {audio:midias/3EB0505ECADAF3271EACEC_924839.ogg}
+[10:44] CLIENTE: sim
+[10:44] LOJA: *Josy:*
+Bem também! Obrigada!
+[10:44] LOJA: Certo... Total 8 pneus R$ 2.208,00
+[10:44] LOJA: *Josy:*
+Pix CNPJ
+[10:44] LOJA: *Josy:*
+24.289.955/0001-79
+[10:44] CLIENTE: me passa os valores com desconto de cada medida
+[10:45] LOJA: [áudio] "Fernando, igual eu tinha falado com o Clydson, o pneu 185-60, preço normal dele é R$ 289,00 e estou fazendo por R$ 249,00 o valor normal. Só que aí, para poder dar mais uma ajudinha aí, coisa mínima, porque para mim cobra taxa, as transações independentes, é Pix ou parcelado, tudo cobra. Aí eu fiz por R$ 246,00 cada pneu 185-60. Já R$ 175-70,00, como o preço normal dele é R$ 290,00 e eu fiz por R$ 279,00, mas ainda dei um mínimo do máximo que eu consigo, que é R$ 276,00 cada, tá?"  {audio:midias/3EB0B52671BB045589BB4F_925269.ogg}
+[10:46] LOJA: *Josy:*
+185/60/15 DE R$ 289,00 por R$ 249,00  finalizei por R$ 246,00 cada
+[10:46] CLIENTE: ficou bom,obrigado
+[10:46] LOJA: *Josy:*
+175/70/14 de R$ 299,00 por R$ 279,00   finalizei por R$ 276,00 cada
+[10:47] CLIENTE: [foto]
+[10:54] LOJA: *Josy:*
+Fernando... perdão... quando finalizei aqui o sistema atualizou , e passei o preço a mais par avocê, me informa seu pix que vou devolver R$ 120,00
+[10:57] CLIENTE: Mundial@hotmail.com
+[11:02] LOJA: *Josy:*
+vai ser em nome de quem?
+[11:02] CLIENTE: Fernando de aguiar ruicci
+[11:20] LOJA: [documento] SICOOB_2026_06_10_11_14_25_PIX.pdf
+[11:20] LOJA: *Josy:*
+Obrigada, Fernando!
+[11:26] CLIENTE: 👍

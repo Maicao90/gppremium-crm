@@ -1,0 +1,10 @@
+CONVERSA 329a738494 | contato: josy | 21/08/2026 10:49 até 21/08/2026 13:01 | 2 msgs do cliente, 4 da loja, 0 do robô
+
+--- 21/08/2026 (Fri) ---
+[10:49] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:49] CLIENTE: Bom dia
+[10:52] LOJA: Bom dia!
+[10:52] LOJA: Prossiga , por gentileza.
+[13:01] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu me chamo Josi e eu gostaria de saber como eu posso te ajudar."  {audio:midias/3EB013303F9721B7D93DA8_358201.ogg}

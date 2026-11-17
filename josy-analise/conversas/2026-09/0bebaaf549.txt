@@ -1,0 +1,38 @@
+CONVERSA 0bebaaf549 | contato: Uendell | 28/09/2026 08:49 até 29/09/2026 12:10 | 10 msgs do cliente, 16 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[08:49] CLIENTE: Bom dia
+[08:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:49] CLIENTE: Tudo bem?
+[08:49] LOJA: *Josy:*
+Bom dia!
+[08:49] CLIENTE: Pneu 215/50 R17
+[08:49] LOJA: *Josy:*
+Como vai, uendell!
+[08:49] CLIENTE: Qual valor ?
+[08:50] LOJA: [áudio] "Oi, o GP, ele está por apenas R$ 329,00 a vista. Eu já te mando o orçamento..."  {audio:midias/3EB09EADAFBBF708F04E03_200531.ogg}
+[09:05] CLIENTE: [áudio] "Você fala o GP porque você vende outras marcas? Eu já estive aí comprando uns pneus para caminhonete e a gente comprou o GP, que agora está rodando de boa. Eu não sei se essa medida você tem de outras marcas também. A questão é que eu vou trocar só dois, né? Eu quero trocar só dois. E eu queria ver também as formas de parcelamento, se é com juros, sem juros, como que é."
+[09:12] LOJA: *Josy:*
+Sim, o GP...já te passo a planilha d epreços
+[09:55] CLIENTE: Ok
+[10:00] LOJA: [foto]
+[10:00] LOJA: [áudio] "Wendel, obrigada por aguardar, está bem? O GP Premium, se for para o pagamento no débito ou Pix, 329 unidades. Para parcelar, você observa que muda o preço, mas, assim, cerca de 3 reais por parcela. Então, é muito pouco, realmente, a taxa. Mas, dependendo aí, você me diz em quantos que você quer parcelar, a gente vê o que consegue fazer de melhor aqui para vocês, está bem?"  {audio:midias/3EB025A8F3A2D97166282C_990832.ogg}
+[11:27] CLIENTE: [áudio] "Não, beleza, entendi. Você consegue me mandar os desenhos que você tem de pneu dessa numeração e quais as marcas que você tem?"
+[11:38] LOJA: [áudio] "Wendel, o que eu tenho vai ser o GP Premium mesmo, tá?"  {audio:midias/3EB098E71FE9A04DB03031_483287.ogg}
+[11:39] LOJA: [foto]
+[11:40] LOJA: [foto]
+[11:40] LOJA: [foto]
+--- 29/09/2026 (Tue) ---
+[11:38] CLIENTE: [áudio] "Bom dia, tudo bem? Não, é porque eu tenho que me programar para ir aí, entendeu? Eu estou em Anápolis, não sei quando eu vou."
+[11:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:40] LOJA: *Josy:*
+Booom dia! Entendo sim!
+[11:40] LOJA: *Josy:*
+Fica traquilo
+[12:07] LOJA: [áudio] "Wendel, eu vou encerrar aqui seu atendimento, tá? Só para não ficar chegando mensagens automáticas para você e ficamos combinados assim, quando você estiver passando aqui por nossa região, você vem aqui na nossa loja, como sempre vai ser uma satisfação poder receber você aqui, está joia? Obrigada aí pela sua atenção e até breve."  {audio:midias/3EB072E185BAF55795374A_301869.ogg}
+[12:09] CLIENTE: Tá bem
+[12:09] CLIENTE: Obrigado
+[12:10] LOJA: *Josy:*
+Boa semana!

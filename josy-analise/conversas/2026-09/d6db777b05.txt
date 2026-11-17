@@ -1,0 +1,12 @@
+CONVERSA d6db777b05 | contato: 💕✨ | 15/09/2026 10:07 até 15/09/2026 10:09 | 4 msgs do cliente, 3 da loja, 0 do robô
+
+--- 15/09/2026 (Tue) ---
+[10:07] CLIENTE: Olá! Quero um orçamento de pneus.
+[10:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:07] LOJA: *Josy:*
+🙋🏼‍♀️
+[10:07] LOJA: Qual a medida dos pneus que você precisa hoje?
+[10:09] CLIENTE: Oi
+[10:09] CLIENTE: Eu não quero
+[10:09] CLIENTE: Foi meu filho que ligou sem querer

@@ -1,0 +1,13 @@
+CONVERSA e9554f8e21 | contato: (sem nome) | 15/09/2026 11:26 até 15/09/2026 12:30 | 3 msgs do cliente, 2 da loja, 0 do robô
+
+--- 15/09/2026 (Tue) ---
+[11:26] CLIENTE: templateMessage
+[11:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:27] CLIENTE: *Larissa Karla*
+
+Bom dia!
+
+Acaso neste contato falo na empresa *DIRECIONAL PNEUS LTDA* inicial do CNPJ *45.705?
+[11:27] LOJA: [áudio] "Oi Larissa, tudo bem? Eu acho que eu te conheço. Larissa, aqui é a Pneus GP Premium."  {audio:midias/3EB023A28637436D5BDAF1_336389.ogg}
+[12:30] CLIENTE: Informamos que nosso sistema não permite mensagens por áudio. Gentileza enviar vossa dúvida por meio de mensagem *de texto*.

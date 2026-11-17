@@ -1,0 +1,36 @@
+CONVERSA 7e128f82cb | contato: Paulo Roberto | 04/09/2026 13:49 até 05/09/2026 08:26 | 10 msgs do cliente, 10 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[13:49] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[13:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:49] CLIENTE: Boa tarde
+[13:50] CLIENTE: Pneu comforser
+225/60/17
+4 unidades
+[13:50] CLIENTE: 103 H
+[13:58] CLIENTE: Aproveita e verifica o pneu para Duster
+225/60/16
+4 unidades
+[14:08] LOJA: [áudio] "Oi, Seu Paulo, tudo bom? Olha, inclusive aqui no meu computador não ficou registrada a mensagem, tá? Mas eu vi aqui por alto que é 225-60-17 e eu tenho aqui 225-65-17 a princípio da marca GP Premium. Então, a unidade está por R$339,00 a vista e no aro 16 essa medida aí ela é bem difícil de achar também. Aí eu tenho aqui o 215-65-16 da GP Premium que está por R$349,00 a vista."  {audio:midias/A5AF973D941045E19B48932522F91B3E_932106.ogg}
+[14:08] LOJA: [vídeo]
+[14:08] LOJA: [áudio] "Aí, assim que voltar meu sistema, seu Paulo, eu te mando o orçamento direitinho aí, tá?"  {audio:midias/A5024D17271E62212192A941F35C1C8F_148677.ogg}
+[14:14] CLIENTE: OK, obrigado
+[14:20] LOJA: [áudio] "É, Sra. Paula, não estou conseguindo mandar o orçamento realmente, mas a princípio eu não tenho aqui nem mesmo o pneu da marca Conforcer, tá? Eu tenho que fazer uma cotação para ver se meu distribuidor consegue essa marca."  {audio:midias/A525C79E32E4E57525051ED4B58E5A46_212725.ogg}
+--- 05/09/2026 (Sat) ---
+[07:41] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Bom dia
+[07:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:42] CLIENTE: 225 60 17
+[08:13] LOJA: *Josy:*
+Bom dia!
+[08:14] LOJA: *Josy:*
+Aguardando a resposta dos distribuidores.
+[08:15] CLIENTE: [áudio] "E eu já tô já na rua já para comprar já tô aqui em frente aqui é uma loja aqui agora né eu vou ver o preço aqui"
+[08:24] LOJA: [áudio] "Senhora Paulo, na medida e na marca que o senhor está buscando, que o senhor até falou aqui para mim ontem, que é Conforcer, né? Está em falta, não tem não."  {audio:midias/3EB0DCFF860DEACD99015E_102468.ogg}
+[08:25] LOJA: [áudio] "Aqui na nossa loja eu vou ter igual mandei no áudio para o senhor, o 215-60-17, 225-65-17, e no aro 16 eu tenho 215-65-16."  {audio:midias/3EB011CA5FDD1979C915FC_437049.ogg}
+[08:26] CLIENTE: Obrigado

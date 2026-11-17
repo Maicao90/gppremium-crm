@@ -1,0 +1,34 @@
+CONVERSA a7d3f377d5 | contato: 🕊️🤍 | 17/09/2026 20:26 até 24/09/2026 12:38 | 10 msgs do cliente, 11 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[20:26] CLIENTE: Olá! Quero cotar o pneu 185/65 R15 GP Premium.
+[20:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:28] CLIENTE: Olá! Vim pelo site e quero cotar pneus GP Premium.
+[20:28] CLIENTE: 185 65 R 14
+[23:29] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso?
+--- 18/09/2026 (Fri) ---
+[08:10] LOJA: Bom dia!
+[08:10] CLIENTE: Bom dia!
+[08:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:10] CLIENTE: 185 65 aro 14
+[08:16] LOJA: [foto]
+[08:17] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:18] CLIENTE: Esse gp1 seria qual?
+[08:19] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Quando possível me diz qual é o seu nome? Esse é o pneu da marca GP Premium."  {audio:midias/3EB0766058506069F11935_258453.ogg}
+[08:19] LOJA: [áudio] "Você é mar aqui em Luziânia mesmo?"  {audio:midias/3EB0C1D6F1A7027EDB9F88_47235.ogg}
+[08:20] CLIENTE: Moro no Lunabel
+[08:20] CLIENTE: Nunca nem ouvir falar dessa marca kk
+[08:20] LOJA: [áudio] "Essa é a marca mais vendida que eu tenho, simplesmente."  {audio:midias/3EB0475178DFE50997B460_86387.ogg}
+[15:51] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu me chamo Josi e quando possível me diz seu nome. Bem, o pneu GP Premium é o pneu mais vendido que eu tenho, tá? Pneu que tem 2 anos de garantia e em questão de quilometragem roda 60 mil km. É uma opção que eu já entrego inclusive até colocados para você."  {audio:midias/3EB0802203487241B51876_698850.ogg}
+--- 24/09/2026 (Thu) ---
+[12:36] LOJA: [áudio] "Oi, boa tarde, tudo jóia? Nós conversamos alguns dias atrás aí a respeito de uns pneus para o seu carro e eu gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB055F915509A5A7BA547_559470.ogg}
+[12:38] CLIENTE: Não preciso mais, obg!
+[12:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

@@ -1,0 +1,31 @@
+CONVERSA 6a076ebca2 | contato: Arthur | 19/09/2026 08:43 até 19/09/2026 09:54 | 5 msgs do cliente, 12 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[08:43] LOJA: *Josy:*
+Bom dia!
+[08:45] LOJA: *Josy:*
+215/30/20
+[08:52] CLIENTE: Apenas 1?
+[08:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:02] CLIENTE: 215/30/20
+[09:05] LOJA: *Josy:*
+Oie
+[09:06] LOJA: *Josy:*
+Autorizado a venda de 1 pneu
+[09:06] LOJA: [foto]
+[09:06] LOJA: *Josy:*
+
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:07] LOJA: [foto]
+[09:07] CLIENTE: Jaja eu vou aí entt
+[09:08] CLIENTE: Seis ainda da montagem ?
+[09:17] LOJA: [áudio] "A montagem é a parte."  {audio:midias/3EB05D37F27D3ED22EAA44_502441.ogg}
+[09:50] LOJA: *Josy:*
+ R$70,00 a montagem
+[09:52] CLIENTE: Consegue fazer um menos não?
+[09:53] LOJA: *Josy:*
+Creio que ele faz sim!
+[09:54] LOJA: *Josy:*
+Você conversando na hora ele faz.

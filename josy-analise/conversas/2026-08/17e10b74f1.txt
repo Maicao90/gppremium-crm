@@ -1,0 +1,22 @@
+CONVERSA 17e10b74f1 | contato: Jelson carlos | 19/08/2026 15:42 até 31/08/2026 14:05 | 6 msgs do cliente, 11 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[15:42] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[15:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:42] CLIENTE: 175/75/ar14
+[15:43] LOJA: Certo... você mora aqui em Luziania-Go, mesmo?
+[15:43] CLIENTE: Sim, jardim ingá
+[15:44] LOJA: Perfeito! É bem proximo ☺️
+[15:44] LOJA: [foto]
+[15:45] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:46] CLIENTE: Ok, muito obrigado
+[15:46] LOJA: Posso reservar para você?
+[15:47] CLIENTE: Estou comparando orçamento
+[15:47] LOJA: hm
+[15:48] LOJA: Bem... vou deixar aqui a nossa localização passa aqui para negociarmos pessoalmente, vai ser uma satisfação atende-lo.
+[15:48] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 31/08/2026 (Mon) ---
+[14:05] LOJA: *Josy:*
+Boa tarde. Vou encerrar seu atendimento, caso precise futuramente, venha até nossa loja, será uma satisfação reebe-lo aqui.
+[14:05] LOJA: [foto]

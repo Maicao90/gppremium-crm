@@ -1,0 +1,9 @@
+CONVERSA 571ce88ce0 | contato: Valdecir | 11/09/2026 11:14 até 11/09/2026 11:14 | 3 msgs do cliente, 2 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[11:14] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:14] CLIENTE: Bom dia
+[11:14] CLIENTE: Vc tem pneu 1000x20
+[11:14] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Não, aqui em Luziânia não temos não."  {audio:midias/3EB08B1D37E6E245F9FFB1_384650.ogg}

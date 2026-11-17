@@ -1,0 +1,24 @@
+CONVERSA 971dcc4172 | contato: Gabriel Guimarães | 18/09/2026 08:13 até 18/09/2026 16:07 | 9 msgs do cliente, 9 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[08:13] CLIENTE: Olá! Bom dia
+[08:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:14] CLIENTE: Preciso orçamento do 195/70-R16
+[08:18] LOJA: [áudio] "Olá, Gabriel. Tudo jóia? Olha, essa medida aqui eu não tenho, não. Você usa em qual carro?"  {audio:midias/3EB028C09A813FA4456B73_930234.ogg}
+[08:19] CLIENTE: Polo 2007
+[08:19] CLIENTE: Qual a medida
+[08:19] CLIENTE: Na verdade
+[08:19] CLIENTE: Eu não lembro a medida do meio
+[08:20] CLIENTE: Sei que é 195 pra roda 16
+[08:20] LOJA: [áudio] "Gabriel, a medida que você pode instalar aí é 95-55-16, 205-55-16."  {audio:midias/3EB02F098A201A4ED476FC_877600.ogg}
+[08:22] CLIENTE: Me manda a 195/55R16
+[08:27] LOJA: [foto]
+[08:28] LOJA: *Josy:*
+No dia de hoje teremos os pneus da marca GP Premium
+[08:28] LOJA: *Josy:*
+No orçamento, está o valor *UNITÁRIO8  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:51] LOJA: *Josy:*
+🙋🏼‍♀️
+[16:05] CLIENTE: [áudio] "Fala Josi, tudo bem? Então, é porque... Já era por mim ter mandado mensagem há muito tempo, sabe? Comprei com 6 pneus uns anos atrás, que eu tô pensando em comprar... Pensando em comprar 4 pneus novos, né? Colocar no meu carro, dia 16. Só que assim, eu tenho um outro carro também que eu uso pra trabalhar. E aí acabou que... Ele tá... Eu tenho que trocar a embreagem dele, então custo um pouco maior. Então talvez eu vou ter que segurar um pouco essa compra de pneu. Mas eu vou comprar esse pneu com vocês aí."
+[16:07] LOJA: [áudio] "Ah, beleza então, Gabriel. Você sabe aqui onde é a nossa loja, né? E... Então, por hora, eu vou encerrar aqui o seu atendimento, está bem? E caso haja a possibilidade, você passa aqui na nossa loja, certinho? Muitíssimo obrigada aí pelo seu retorno e que você tenha um bom final de semana."  {audio:midias/3EB05F71E2DEFA214B0C6E_282895.ogg}

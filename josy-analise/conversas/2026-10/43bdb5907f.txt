@@ -1,0 +1,37 @@
+CONVERSA 43bdb5907f | contato: Weslei🙌🏻🙏🏻 | 02/10/2026 20:41 até 05/10/2026 08:15 | 8 msgs do cliente, 13 da loja, 0 do robô
+
+--- 02/10/2026 (Fri) ---
+[20:41] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[20:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:43] CLIENTE: 205/55/16
+--- 03/10/2026 (Sat) ---
+[08:10] LOJA: *Josy:*
+Bom dia, Weslei!
+[08:15] LOJA: [foto]
+[08:15] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:45] LOJA: [áudio] "Oi Leslie, bom dia, como é que você está? Moro aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0A713D279D0F9D17C4D_316444.ogg}
+[09:21] CLIENTE: [áudio] "Oi, bom dia. Estou bem, sim. Eu moro aqui na cidade ocidental, mas conheço Luziânia e sempre estou indo aí. Pois é, porque eu vi no anúncio lá que estava, acho que era 249, 250, né? Por isso que eu mandei para fazer o orçamento, porque eu estou precisando de 4 desses para colocar no meu carro."
+[09:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:24] LOJA: [áudio] "Oi Wesley, bom dia, tudo jóia? Realmente, olha só, o que tá lá por 249 são as medidas 185, 65, 15, 195, 65, 15, perdão, 185, 60, 15 e 1865, 15. No aro 16, eu tenho em oferta os pneus da marca GP Premium, só que na medida 195, 55. Aí, ele está por apenas 249 reais, nós já colocamos eles para você, se você quiser."  {audio:midias/3EB002AFFEDB0E2BBB57EB_766350.ogg}
+[09:32] CLIENTE: [áudio] "Só me tira uma dúvida, esse pneu que você falou, ele é mais alto ou mais baixo do que o que eu tenho no meu carro? O meu é 205, 55, 16, né?"
+[09:40] CLIENTE: [áudio] "Outra coisa, você tem uma outra medida de pneu que a gente tá precisando também? Eu tô precisando também de 2, do 265-70-16."
+[09:40] CLIENTE: [áudio] "E qual o valor dele que você está tendo?"
+[09:44] LOJA: [áudio] "O 195 vai ser um dedinho meu, que é um dedinho magrelo, de largura. Vai ser um dedinho meu mais estreito, só isso."  {audio:midias/3EB04325DAA6FAA06A0BBF_495883.ogg}
+[09:45] LOJA: *Josy:*
+vou te mandar o orçamento
+[10:00] LOJA: *Josy:*
+Oi... obrigada por aguardar!
+[10:00] LOJA: [foto]
+[10:01] LOJA: *Josy:*
+Temos essas opções hoje!
+[12:56] CLIENTE: [áudio] "Tá sim, eu dei uma olhada aqui. Esse que você me passou, que no caso é para o meu carro, é para o Vectra, essa medida aí é um pouquinho mais estreita, mas eu acho que está tranquilo para ele. Só que eu vou conseguir só semana que vem, porque esse final de semana eu estou trabalhando, e eu vou ver se eu consigo um dia na semana que vem, para estar indo ali."
+[12:56] CLIENTE: [áudio] "Caso, você já me dai desmontado ou não? Como é que é?"
+--- 05/10/2026 (Mon) ---
+[08:15] LOJA: [áudio] "Oi Wesley, bom dia, tudo bem com você? Ah, sim, seu carro é um Vectra, então melhor realmente colocar o 205-55, tá joia? Os pneus que são da marca GP Premium, esses que estão no melhor preço, eles sim eu consigo entregar ele instalado para você. Nós cobraremos a parte os serviços de balanceamento dos pneus e alinhamento do seu carro, se realmente for necessário fazer, está bem? Obrigado. Obrigado."  {audio:midias/3EB0067B45C6F00D1C3C8C_214149.ogg}

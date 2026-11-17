@@ -1,0 +1,21 @@
+CONVERSA d273d3632c | contato: Engenheiro Neto 🙏 | 19/08/2026 16:43 até 19/08/2026 17:46 | 6 msgs do cliente, 11 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[16:43] CLIENTE: Boa Tarde.
+[16:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:43] CLIENTE: Vocês trabalham só com pneus novos ?
+[16:43] LOJA: Prefere mensagem de áudio ou texto?
+[16:43] CLIENTE: Tanto faz.
+[16:44] LOJA: [áudio] "Olá, boa tarde, tudo bem? Eu sou a Josi, então eu vou mandar áudio que se torna mais efetivo para nós aqui, está bem? Olha, eu tenho aqui pneus novos, pneus remoldes, o que é que você está buscando?"  {audio:midias/3EB0BD3BEA144B764EBA4F_195469.ogg}
+[16:44] CLIENTE: Josy, seu remold está saindo a quanto ? Aro 14 175/65.
+[16:45] LOJA: [áudio] "R$ 249,00 para Débite Pix."  {audio:midias/3EB026C0E027AD8236D961_312589.ogg}
+[16:46] LOJA: [áudio] "Você é daqui de Luziânia mesmo?"  {audio:midias/3EB0B360CBAC5F52CC3573_21250.ogg}
+[16:53] CLIENTE: Sou sim.
+[16:53] CLIENTE: Pneus novos está saindo quanto ?
+[16:53] LOJA: [áudio] "Vocês têm busca de alguma marca específica?"  {audio:midias/3EB0022F640A5C963C664F_351483.ogg}
+[16:54] LOJA: pneu 175/65/14 86h kelly edge touring goodyear R$ 371,00 a unidade a vista.
+[16:56] LOJA: Pneu 175/65/14 touring r1 dunlop R$  397,00 a unidade a vista.
+[17:01] LOJA: [áudio] "Você gostaria que eu te encaminhasse a minha localização? Que aí você venha aqui na nossa empresa para nós conversarmos pessoalmente."  {audio:midias/3EB0ED477287AACA66ABBB_882079.ogg}
+[17:46] LOJA: Bem, para não encher seu whatsapp de mensagem vou encerrar seu atendimento. Caso precise, é só me chamar 👋🏻
+[17:46] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

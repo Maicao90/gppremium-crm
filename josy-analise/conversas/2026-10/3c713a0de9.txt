@@ -1,0 +1,108 @@
+CONVERSA 3c713a0de9 | contato: rayonecoelho | 21/10/2026 04:12 até 22/10/2026 12:15 | 61 msgs do cliente, 32 da loja, 4 do robô
+
+--- 21/10/2026 (Wed) ---
+[04:12] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[04:12] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[04:12] CLIENTE: Rayone Coelho
+[04:12] CLIENTE: Pneus da SW4 2013
+[04:14] CLIENTE: 265/65 R17
+[08:24] LOJA: [áudio] "Olá, Rayone. Bom dia. Tudo bem com você? Eu sou a Josi. Rayone, no momento, essa opção, ela está em falta, tá? Vamos ter, eu creio, que daqui 15 dias, aproximadamente. Aí, se você quiser, eu te aviso assim que chegar."  {audio:midias/3EB01ECD4183C25E85AA97_379021.ogg}
+[08:27] CLIENTE: OK
+[09:18] LOJA: Mora aqui em Luziânia-Go?
+[09:18] LOJA: [foto]
+[09:18] LOJA: [áudio] "Eu estava aqui conferindo o meu estoque e eu vou ter somente, Raione, os pneus aqui da nossa marca, tá, que são os pneus da marca GP Premium e eu vou ter neste momento somente no modelo Brutus. Aí nesse orçamento é o valor de apenas uma unidade."  {audio:midias/3EB016488D5E939EE581CE_30156.ogg}
+[09:21] CLIENTE: Sim sim
+[09:23] CLIENTE: Qual é o formato
+[09:23] LOJA: Vou te mostrar
+[09:23] CLIENTE: Ok
+[09:23] CLIENTE: Queria 02
+[09:25] LOJA: [foto]
+[09:25] LOJA: Esse aqui!
+[09:26] CLIENTE: [foto]
+[09:26] CLIENTE: É mais ou menos no formato desses
+[09:26] CLIENTE: Né
+[09:27] LOJA: Aqui não dá para ter percepção...
+[09:27] LOJA: Não estou conseguindo indentificar.
+[09:27] CLIENTE: Vou tirar uma foto melhor
+[09:27] CLIENTE: Depois
+[09:27] CLIENTE: E mando
+[09:28] LOJA: Combinado!
+[09:28] CLIENTE: A base de troca
+[09:29] CLIENTE: Têm desconto
+[09:29] LOJA: Não!
+[09:29] CLIENTE: A sim
+[09:29] LOJA: Se o pagamento for em *dinheiro* tem sim!
+[09:29] CLIENTE: Sim
+[09:29] CLIENTE: Sério Pix
+[09:30] LOJA: Em *dinheiro* De R$ 599,00 por R$ 569,00 cada
+[09:30] LOJA: R$ 599,00
+[09:31] CLIENTE: Pix é mais caro
+[09:31] CLIENTE: ?
+[09:32] LOJA: é que no Pix tem taxa 😢
+[09:33] LOJA: Mas assim... passa aqui que conversamos melhor, e meu gerente estando aqui, fica mais fácil de negociar.
+[09:34] CLIENTE: Pix não tem taxa amigo...
+[09:34] LOJA: [áudio] "Oi, Rayone, tudo bem? Rayone, para mim tem. Tem taxa sim."  {audio:midias/3EB0CF6711A65F656C2542_831847.ogg}
+[09:34] CLIENTE: Amiga..
+[09:36] CLIENTE: Vou ver aqui
+[09:36] LOJA: [áudio] "Eu vou te mandar aqui a nossa localização, pois aí, se houver a possibilidade, você passa aqui na loja para nós conversarmos pessoalmente. Pode ser?"  {audio:midias/3EB0B2937D25C36C8670C3_567971.ogg}
+[09:37] CLIENTE: E lhe procuro
+[09:37] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:37] LOJA: [foto]
+[09:39] CLIENTE: Sim sim
+[09:39] CLIENTE: Vou aí depois
+[09:39] CLIENTE: Obrigado pela atenção
+[09:39] CLIENTE: 🤝🤝
+[09:39] LOJA: Combinado!
+[09:39] LOJA: Disponha!
+[09:39] LOJA: Foi um prazer falar com você!
+[12:48] ROBÔ: 🙋🏼‍♀️
+--- 22/10/2026 (Thu) ---
+[09:23] CLIENTE: [vídeo]
+[09:23] CLIENTE: [foto]
+[09:23] CLIENTE: Bom dia
+[09:23] CLIENTE: Esses são os pneus
+[09:23] CLIENTE: Que tenho no carro
+[09:24] ROBÔ: Temos o pneu *265/65/17* da marca *GP Premium* está saindo por *R$ 559,00 à vista*.
+[09:24] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[09:24] CLIENTE: Da mesma
+[09:24] CLIENTE: É pq eu peguei esse carro
+[09:25] CLIENTE: O antigo dono não fez rodízio
+[09:25] CLIENTE: [figurinha]
+[09:25] ROBÔ: Sim, a medida é a mesma que está no pneu que você tem hoje no carro: 265/65/17, e serve direitinho na sua roda aro 17.
+[09:25] CLIENTE: Aí tá liso só os da frente
+[09:25] CLIENTE: [vídeo]
+[09:26] CLIENTE: [vídeo]
+[09:26] CLIENTE: Então por isso que eu quero colocar do mesmo
+[09:26] CLIENTE: Certo?
+[09:27] LOJA: [áudio] "Oi haioni!"  {audio:midias/3EB056167AA88C1768CED1_367479.ogg}
+[09:28] LOJA: [áudio] "Isso, o desenho é o mesmo."  {audio:midias/3EB04B53C3D252BB3F7D5E_954871.ogg}
+[09:28] LOJA: [áudio] "E eu tenho os pneus aqui, tá?"  {audio:midias/3EB086860AE5758EE1D63F_525265.ogg}
+[09:28] CLIENTE: Tá bom
+[09:29] CLIENTE: Amanhã a tarde vou aí
+[09:29] CLIENTE: Dependendo do desconto no dinheiro
+[09:29] CLIENTE: Eu vou querer colocar os dois
+[09:30] LOJA: ☺️
+[09:32] CLIENTE: Mais um desconto né 🥲🥲
+[09:34] LOJA: Está no valor final.
+[09:36] CLIENTE: 🥲🥲
+[12:05] CLIENTE: Ganha montagem
+[12:05] CLIENTE: Alinhando e balanceamento
+[12:05] CLIENTE: ?
+[12:05] CLIENTE: Como é
+[12:06] LOJA: A montagem sim!
+[12:06] LOJA: São cobrados a parte.
+[12:13] CLIENTE: A sim
+[12:13] CLIENTE: Amanhã após as 14 horas
+[12:13] CLIENTE: Estou aí
+[12:14] CLIENTE: Têm que agendar
+[12:14] CLIENTE: ?
+[12:14] LOJA: [áudio] "Não, não precisa agendar não, tá?"  {audio:midias/3EB0C6E1A00BB5C8A3BDA3_476834.ogg}
+[12:15] CLIENTE: Ok

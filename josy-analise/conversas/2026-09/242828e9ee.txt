@@ -1,0 +1,37 @@
+CONVERSA 242828e9ee | contato: Mariomar Jose | 12/09/2026 09:04 até 17/09/2026 11:55 | 13 msgs do cliente, 16 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[09:04] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:08] CLIENTE: [foto]
+[09:10] CLIENTE: [foto]
+[09:10] LOJA: [áudio] "Bom dia, tudo bem? Eu sou a Josi. E, Mariomar, eu não trabalho com pneus de micro-ônibus aqui."  {audio:midias/A53C8730B9B393E590233E51147C95E0_307155.ogg}
+[09:12] CLIENTE: [foto]
+[09:12] CLIENTE: [áudio] "E é isso aí, você tem? Vira aí."
+[09:37] LOJA: [áudio] "Tem, tem sim. Nessa medida ele está por 300 reais. Aí tem o 175-70-13 que está por 269 cada."  {audio:midias/A56344C864F7B1E3CC6C5A869DCF5D5C_613656.ogg}
+[10:47] CLIENTE: [foto]
+[10:54] LOJA: [foto]
+[10:55] LOJA: Todo dia recebo clientes que foram , e correram pra cá, por que aqui, nós não ficamos inventando nada.
+[11:03] CLIENTE: Ninguém é obrigado a fazer serviço nenhum.
+[11:03] CLIENTE: Eu só compro os pneus e pronto.
+[11:05] LOJA: [áudio] "Olha, atendi um rapaz aqui, tem uns 15 minutos atrás, ele veio lá do Valparaíso, foi aí nessa loja, para comprar 4 pneus para Fiat Toro, ele mostrou os comércios aqui para mim, ele veio negociando, tem os pneus aí, tem, o vendedor foi lá, tirou foto, falou, ó, tá aqui, tô te esperando e tal, ele chegou lá e falou, beleza, vou fechar, é, só que eu não vou fazer serviço nenhum não, eu só quero pegar os pneus, aí o moço falou para ele, nossa, sabe o que é, é que os pneus acabaram, sendo que ele tava conversando com o próprio cliente, falando, não, tá aqui, mandou foto e tudo, o cliente só foi e falou, ó, mas eu não vou fazer serviço, ele falou, ih, o pneu acabou, o senhor não sabe a confusão que deu, acabei de vender 4 pneus aqui, porque aqui eu não fico inventando moda."  {audio:midias/A5F81012C18AE0BB445743FCE999D382_893324.ogg}
+[11:06] LOJA: [áudio] "Que é assim, igual o senhor foi, me ligou, né? Eu não consegui te atender de imediato, porque quando é assim, eu tô com um cliente aqui na minha mesa. Então, essa é uma situação que acontece a todo instante."  {audio:midias/A5314C57088CA02BBD76B5EC4BAE1AB6_875760.ogg}
+[11:07] CLIENTE: Pode acontecer.
+[11:09] LOJA: Não só pode acontece a todo instante.
+[11:10] LOJA: [áudio] "Bem, eu não gosto de ficar forçando a pessoa a nada. Então, depois, procura mais saber a respeito dessa empresa, da Joia, e eu vou encerrar o seu atendimento, justamente para não ficar enchendo seu WhatsApp de mensagens, porque eu entendo que acaba que você está no inconveniente, tá? Eu vou te mandar aqui a localização da nossa empresa, que assim que o senhor decidir, o senhor passa aqui para conversarmos pessoalmente, tá, Joia? Muito obrigada pela sua atenção e tenha um bom final de semana."  {audio:midias/A55ADAFA5B8F42536D6FD6307884915E_604902.ogg}
+[11:11] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:13] CLIENTE: 👍👍👍👍
+--- 16/09/2026 (Wed) ---
+[15:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:02] CLIENTE: [foto]
+[15:03] LOJA: [foto]
+[15:04] CLIENTE: Ok.
+[15:05] LOJA: [áudio] "Oi, seu Maromar, tudo bom? Nossa, que ótimo que o senhor voltou, isso é um bom sinal. Isso é sinal que o senhor não caiu no golpe lá daquela empresa, que o senhor me falou que os pneus estavam por 159, isso é ótimo. Então, eu tenho aqui o pneu da marca Conforcer, né, que é um pneu novo empatado, a unidade está por apenas R$290,00, e eu tenho aqui o pneu da marca GP Premium, na medida R$1,75,70,13, por apenas R$269,00, tá? O senhor ainda tem a localização aqui da GP Premium?"  {audio:midias/3EB0FB53B10DE45D9FD1F1_658325.ogg}
+--- 17/09/2026 (Thu) ---
+[09:09] LOJA: [áudio] "Oi, Sra. Maria Amar, tudo jóia? Eu vou encerrar aqui o seu atendimento, tá jóia? Para não ficar enchendo seu WhatsApp de mensagem, porque eu sei que é chato. Eu vou te mandar foto aqui da nossa loja, que o senhor se programa para vir aqui no dia que estiver tudo tranquilo aí para o senhor, tá jóia? Muitíssimo obrigada pela sua atenção. Até mais."  {audio:midias/3EB0F0EF00331EEBECEA06_932265.ogg}
+[09:09] LOJA: [foto]
+[11:55] CLIENTE: Obrigado.
+[11:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

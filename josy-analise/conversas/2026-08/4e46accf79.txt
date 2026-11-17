@@ -1,0 +1,13 @@
+CONVERSA 4e46accf79 | contato: Werlei Jr Vilar | 21/08/2026 12:53 até 21/08/2026 12:59 | 5 msgs do cliente, 4 da loja, 0 do robô
+
+--- 21/08/2026 (Fri) ---
+[12:53] CLIENTE: Boa tarde
+[12:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:53] CLIENTE: Joia
+[12:54] CLIENTE: Vc abre amanhã?
+[12:54] CLIENTE: Tem a pronta entrega
+[12:55] CLIENTE: Se tiver vou pedir pra Luana pegar aí
+[12:58] LOJA: Bom dia, sim...abrimos sim!
+[12:58] LOJA: Das 08:00 às 12:00
+[12:59] LOJA: Combinado!

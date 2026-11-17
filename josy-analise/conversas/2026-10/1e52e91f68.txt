@@ -1,0 +1,10 @@
+CONVERSA 1e52e91f68 | contato: . | 09/10/2026 01:17 até 09/10/2026 08:57 | 1 msgs do cliente, 3 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[01:17] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[01:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:57] LOJA: Oi, Tudo bem ?
+[08:57] LOJA: Como posso ajudar?

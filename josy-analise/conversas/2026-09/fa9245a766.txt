@@ -1,0 +1,77 @@
+CONVERSA fa9245a766 | contato: Iran | 25/09/2026 14:16 até 16/10/2026 14:37 | 20 msgs do cliente, 40 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[14:16] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[14:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:16] CLIENTE: Pneu 17 quais opções?
+[15:04] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Irã, depende muito do que você está precisando para hoje. Qual que é a medida?"  {audio:midias/A565A6BF7DA789B217BB298B525FD8B1_246528.ogg}
+[15:24] LOJA: [áudio] "Você pode me dizer qualquer medida dos pneus que você precisa, Irã?"  {audio:midias/A573FAF1D21BCC054D0759663FF5ECB8_277091.ogg}
+[15:27] LOJA: [áudio] "Se você não souber a medida dos pneus que você precisa, me informa qual é o seu carro que eu faço um orçamento com a medida original."  {audio:midias/A523E375A8B5BDFDBBD8ED066A8DFB95_642619.ogg}
+--- 29/09/2026 (Tue) ---
+[17:29] CLIENTE: 205/50 17
+[17:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:42] LOJA: *Josy:*
+Obrigada por aguardar!
+[17:42] LOJA: [foto]
+[17:43] LOJA: *Josy:*
+No dia de hoje os pneus da marca Forceland e GP Premium  opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:45] CLIENTE: Ok..
+[17:45] CLIENTE: Até sexta eu decido
+[17:47] LOJA: [áudio] "Perfeito! Ficamos combinados dessa maneira. Está bem, Irã?"  {audio:midias/3EB07B37ECD828B44E2BDF_121828.ogg}
+[17:47] LOJA: [áudio] "Você é daqui de Luziânia mesmo?"  {audio:midias/3EB0CD03590C5D2C6D2B88_319975.ogg}
+[17:49] CLIENTE: [áudio] "Olá, eu sou daqui do Jardim Gá. Depois eu quero que você mande a localização para mim, tá? E me diz uma coisa, esse GP4, entre os dois aí, qual dos dois é mais procurado? Eu costumo dar uma viajada. Desses dois aí, qual que você me indica? Com sinceridade, independente do valor. Esse GP4, não sei se eu já tive desse pneu, ele é para o Honda Civic, né? LXR."
+--- 30/09/2026 (Wed) ---
+[08:16] LOJA: [áudio] "Bom dia, tudo bom?"  {audio:midias/3EB0868142B0E4F0151071_132733.ogg}
+[08:17] LOJA: [áudio] "Bem, o mais procurado é justamente esse pneu de 339, e digo para você, não é por conta do preço, não, é justamente por conta da qualidade, que esse pneu, olha, posso ter a marca que for, eu vendo ele, justamente por conta da qualidade, o pessoal conhece muito, então, pode instalar eles tranquilamente aí, tá?"  {audio:midias/3EB03C147AE755020133AD_693624.ogg}
+[08:19] CLIENTE: [áudio] "Ah, tá. Faz assim para mim, manda localização, que até sexta-feira eu vou aí. Espero que esteja o mesmo valor. Vocês fazem alinhamento, balanceamento também?"
+[08:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:20] LOJA: [áudio] "Não, pode ficar tranquilo que esse pneu não vai alterar o preço não, tá joia? E sim, aqui na nossa oficina é feito todo tipo de serviço que você precisar."  {audio:midias/3EB0F0FD8D9F0E225F2E00_976004.ogg}
+[08:43] CLIENTE: [áudio] "Luiz Júlio, deixa eu te perguntar. Eu estou fazendo os orçamentos aqui. O alinhamento, o balanceamento, ele é por fora, né? Não é incluído aí na compra dos pneus, né?"
+[08:45] LOJA: [áudio] "Isso, isso mesmo. Os serviços, eles são por fora. Tem muita empresa que está com essa modalidade de dizer que todo serviço já está incluso, mas quando o cliente chega lá, a conversa muda completamente, tá? Então, aqui, eu trabalho de maneira objetiva, sem enrolação. Esse é o preço dos pneus e serviços realmente são cobrados à parte. Entretanto, aqui na nossa região, aqui realmente é o menor e melhor preço, tá? Justamente por isso que os clientes retornam e indicam os pneus aqui da GP Premium para os seus amigos e familiares, tá?"  {audio:midias/3EB0ADCCA9F3DD2F6774BA_938550.ogg}
+[08:53] CLIENTE: [foto]
+[08:53] CLIENTE: [áudio] "Ah, desculpa, a foto foi sem querer. Não, eu entendi, tá bom? Eu entendi, eu tô decidindo aqui e provavelmente eu vá aí mesmo, porque esse pneu aí eu acho ele melhorzinho."
+[08:54] LOJA: [áudio] "Imagina, o que é isso, Irã? Compreende, é correria, né?"  {audio:midias/3EB08D890E3B4425E5F97D_833010.ogg}
+[08:55] LOJA: [áudio] "Perfeito, Irã. Eu vou te mandar aqui a nossa localização, está bem?"  {audio:midias/3EB0CA8AB01AA5F3B20A9A_784013.ogg}
+[08:56] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:56] LOJA: [foto]
+--- 16/10/2026 (Fri) ---
+[06:48] CLIENTE: [foto]
+[06:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[06:49] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+[08:17] LOJA: Bom dia!
+[08:17] LOJA: Temos sim!
+[08:17] LOJA: Iran, No orçamento, está o valor UNITÁRIO  do pneu.    Qual a forma de pagamento?
+[08:19] CLIENTE: [áudio] "A forma de pagamento seria no cartão mesmo. A questão do valor aí eu entendi. E a marca? Qual que é a marca que vocês têm? Dedo mesmo?"
+[08:19] LOJA: [áudio] "Oi, seu Irã, bom dia. Esse é o pneu da marca GP Premium, certo? Eu entendi que é no cartão, mas se eu quero parcelar, vai ser à vista? Se for para parcelar, vai ser em quantas? Me passa essas informações que eu consigo te ajudar com esclarecimento."  {audio:midias/3EB0D4942545D73890A18E_118234.ogg}
+[08:20] CLIENTE: 5x
+[08:27] LOJA: Em 5 x a unidade é R$ 361,00 x 4 pneus = 1.444,00 o senhor vai pagar 5 parcelas de 288,80
+[08:27] CLIENTE: Qual marca?
+[08:27] LOJA: 😊
+[08:28] LOJA: GP PREMIUM é a marca
+[08:29] LOJA: Quer que eu mande foto?
+[08:30] CLIENTE: Manda por gentileza
+[08:38] LOJA: [vídeo]
+[08:44] CLIENTE: [áudio] "Tá, beleza. Me manda a localização direitinho. Eu não sei se você já tinha me mandado da outra vez, porque hoje acredito que vai dar tudo certo. Aí, vocês fazem a montagem, alinhamento, balanceamento. Como é que é?"
+[08:47] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:47] LOJA: [foto]
+[09:01] LOJA: [áudio] "Aqui é bem fácil de chegar, você disse que mora no Jardim Gá, né? Aqui é do lado do Hotel Goiás, da Goiás Diesel."  {audio:midias/3EB05DE8D3B09445ADA51F_70732.ogg}
+[09:14] CLIENTE: [áudio] "Tá bom, eu vou chegar por aí no horário de 13 horas mais ou menos, uma hora da tarde, ok?"
+[09:16] LOJA: [áudio] "Perfeito! Combinado, Iraã!"  {audio:midias/3EB0BDFE669C5AE6234A5D_268558.ogg}
+[13:15] LOJA: Está vindo?
+[13:21] CLIENTE: [áudio] "Eu tô indo, é... Separa aí os 4 pneus aí, tá bom? Eu já tô indo. 15 minutos eu tô aí. Pode separar aí, meu tempo é um pouco curto, que der pra agilizar melhor ainda. 15 minutinhos eu tô aí."
+[13:29] CLIENTE: [áudio] "Música Guarda ela, Marcelo. Ela é bonita, viu? Todo mundo achou ela bonita. Meu filho tá ficando aí gordo, tá meio gordinho, viu? Barrigudinho, treinar daqui a pouco não tenta correr não você ganhou a camisa 10 você tem que sustentar ela é é se majestade é só o homem como o que será desvio eu não sou boy, só não sou otário bicho pra quem corre, bicho pra quem tá parado quero melhor playboy, quero melhor carro eu não sou playboy, não, só não sou otário eu não sou playboy, não, só não sou otário eu não sou playboy, não, só não sou otário eu não sou playboy, não, só não sou otário eu não sou playboy, não, só não sou otário eu não sou playboy, não, só não sou otário eu não sou playboy, não, só não sou otário eu não sou playboy, não, só não sou otário eu não sou playboy, não, só não sou otário eu não sou playboy, não, só não sou otário eu não sou playboy, não, só não sou otário eu não sou playboy, não, só não sou otário eu não sou playboy, não, só não sou otário eu não sou playboy, não, só não sou otário eu não sou playboy, não, só não sou otário E o próprio mês faz parte, se assanou o frego, pirou o colo, bate, chama a cara E avisa a rua, é troque, para, não aceita, leva bem Caraíso de bandido, imprevisível que compõe Snike, backpack, rock house, que dispõe, dois desejos, prazer"
+[14:07] LOJA: ok
+[14:08] LOJA: Iran... vai ser essa forma de pagamento certo?
+[14:08] LOJA: me informa seu cpf e nome completo para gerar a garantia.
+[14:10] LOJA: Oi...
+[14:10] LOJA: [áudio] "Oi, Irã. Estou tentando falar contigo, mas aqui a minha ligação está péssima. Me informa, por gentileza, o seu CPF é o nome completo para eu poder fazer a garantia dos pneus e você vai pagar em 5 vezes mesmo, certo?"  {audio:midias/3EB0174A583E89ED5B009B_701110.ogg}
+[14:37] LOJA: Confirmou a forma de pagamento?

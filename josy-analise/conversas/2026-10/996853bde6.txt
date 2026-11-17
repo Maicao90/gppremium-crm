@@ -1,0 +1,49 @@
+CONVERSA 996853bde6 | contato: João Alessandro | 19/10/2026 11:46 até 20/10/2026 11:13 | 10 msgs do cliente, 18 da loja, 0 do robô
+
+--- 19/10/2026 (Mon) ---
+[11:46] CLIENTE: Bom Dia!
+Gostaria de saber os valores do pneu 215-65-16
+[11:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:47] LOJA: [foto]
+[11:47] LOJA: *Josy:*
+
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:03] LOJA: [áudio] "Olá, tudo bem contigo? João, você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB05CF23E0D1FB773E7AC_481580.ogg}
+[12:04] CLIENTE: Não moro em Ceilândia DF.
+[12:05] CLIENTE: Foi uma amiga que me indicou você, ele mora aí, em Luziânia.
+[12:05] CLIENTE: Vocês cobre orçamento?
+[12:07] LOJA: *Josy:*
+O meu menor preço é para o pneu GP Premium se o pagamento for em *dinheiro* a unidade fica por R$ 335,00
+[12:07] LOJA: *Josy:*
+Serviços são cobrados a parte.
+[12:08] CLIENTE: Na verdade eu estou querendo só os pneus mesmo.
+[12:08] LOJA: [áudio] "Olá, tudo bem, João? Entendo perfeitamente. É que aqui já tem a opção de sair com ele colocado para você, tá? Serviços são cobrados à parte, mas automaticamente já faço a instalação."  {audio:midias/3EB0B679833FF836A5D5AC_32079.ogg}
+[12:14] LOJA: [áudio] "Como você mora em Ceilândia, de repente, se você achar que é mais prático, eu posso enviar os pneus ali para o Novo Gama, que tem uma borracharia que me ajuda muito para poder atender os clientes aí dessa região do entorno, aí se de repente for de seu interesse, nós podemos alinhar aqui o dia, né, que eu mando os pneus para essa borracharia e você vai lá, você pode até montar, aí é do seu critério mesmo, tá?"  {audio:midias/3EB068D76D147FD6C616F1_101792.ogg}
+[12:17] CLIENTE: [áudio] "Boa tarde, Josi. Tudo bem? Desculpa estar te respondendo em áudio só agora. Não, eu estava pensando em Luziânia, segunda-feira, que o meu filho vai mudar para o Valparaíso. Dá a divisa de Valparaíso com Luziânia, e dependendo, eu fecharia o negócio contigo. Seu preço ficou bom, 335, só que à vista, né? Consegui ver uns pneus, 339. Rapaz, divide para mim até em 6 vezes sem juros, e acima de até 10, 12 é com o juro. Só que o máximo que eu queria era 5, 6 dividir, porque eu queria comprar os 4 pneus. Mas aí, se eu for pegar, fica mais alto o valor, ou mais caro do que os que eu estou vendo aqui de 339."
+[12:26] LOJA: *Josy:*
+Ah, sim!
+[12:26] LOJA: *Josy:*
+Perfeito|
+[12:27] LOJA: *Josy:*
+Vou ver aqui
+[12:38] LOJA: [áudio] "Olha, o que eu consigo fazer para você na compra do pneu GP Premium, pelo menos, é o valor do crédito à vista, que é 356,75, que eu parcelo para você nas 4 vezes. É o máximo que eu consigo chegar."  {audio:midias/3EB0C5C28EFC486D4CFEC0_894590.ogg}
+--- 20/10/2026 (Tue) ---
+[08:48] LOJA: [áudio] "Bom dia, João. Tudo bem? Olha, com questão a valores, realmente o que eu consegui aqui é a opção do pagamento em dinheiro, né? Onde a unidade fica por 335 reais, tá? No caso, se for pra parcelar, de repente, nós podemos ver algo que te atenda, tá bom? E eu vou mandar aqui pra você a nossa localização, pois se você estiver com disponibilidade de tempo, você vem cá pra conversarmos pessoalmente, pra conhecer a nossa loja, tá bom?"  {audio:midias/3EB0A1120AA416A29A7C14_785036.ogg}
+[08:48] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:48] LOJA: [foto]
+[11:08] CLIENTE: [foto]
+[11:08] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[11:10] CLIENTE: [áudio] "Oi, bom dia, tudo bem? Olha aí a proposta que eu te falei, que a empresa fez. Pneu A339, divide até 5 vezes sem juros e 12 vezes com juros."
+[11:11] LOJA: [áudio] "Sim, sim, mas é a partir de..."  {audio:midias/3EB0012F94061B11BAE5FD_834862.ogg}
+[11:11] LOJA: [áudio] "E até sei como é que funciona isso daí, tá?"  {audio:midias/3EB0BF7690D956ADC49B68_583927.ogg}
+[11:12] CLIENTE: [áudio] "Não, sim, sim. Ele tinha me falado que era parte D. Aí eu fui perguntar qual a marca e você divide em quantas vezes. Aí ele falou Comfort, Rifle e Rotale. Aí ele me mandou essas três marcas, que é de 339."
+[11:13] CLIENTE: [áudio] "É, você vê aí direitinho. Segunda-feira eu vou aí, em Luziânia. Eu vou na divisa de Luziânia com Valparaíso. Eu vou levar uns negócios no apartamento do meu filho. Qualquer coisa, dependendo, a gente fecha o negócio. Porque não dá para eu pagar em 4 vezes, porque eu vou pagar 300 e pouco em cada pneu. Então, para mim, fica muito pesado."

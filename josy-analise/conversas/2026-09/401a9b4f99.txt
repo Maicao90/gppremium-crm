@@ -1,0 +1,30 @@
+CONVERSA 401a9b4f99 | contato: Cleber Marianoaattn.lakan | 04/09/2026 16:54 até 08/09/2026 16:42 | 9 msgs do cliente, 10 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[16:54] CLIENTE: boa tarde Josi tudo bem?
+[16:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:54] CLIENTE: sabe me dizer quanto ficam 4 pneus 195 55 15 instalados aí?
+[16:57] LOJA: [áudio] "Oi, Kleber, como é que você está, homem? Kleber, olha só, o 195-55-15, até o presente momento, se for para o pagamento no débito ou Pix, permanece o mesmo preço de R$ 289,00 como o das últimas vezes, tá? Se você trouxer o pagamento em dinheiro para mim, eu faço por R$ 275,00 cada, mas esse valor é somente no dinheiro. débito e Pix, R$ 289,00 cada, tá? Então, se for no débito ou no Pix, R$ 289,00 vezes os quatro pneus, R$ 1.156,00. Se for no dinheiro em espécie, fica por R$ 1.100,00, tá? E já coloca os pneus aqui, se você quiser."  {audio:midias/3EB0DD81FF1C9C3C03ACBA_325108.ogg}
+[16:59] CLIENTE: 289,00
+[17:00] LOJA: *Josy:*
+Isso!
+[17:00] CLIENTE: E NO CRÉDITO?
+[17:00] CLIENTE: Manda um orçamento formal, por favor!
+[17:01] LOJA: [foto]
+[17:03] CLIENTE: em 5X 308,25 x 4 = R$ 1.233,00 em 5 X de R$ 246,60, é isso?
+[17:04] LOJA: [áudio] "Sim, isso mesmo, Cléber."  {audio:midias/3EB0A584E7AC38D35B0423_822895.ogg}
+[17:09] LOJA: *Josy:*
+Se te ajudar... faço o valor de 3 x para parcelar nas 5 sem juros.
+[17:10] CLIENTE: como em valores?
+[17:11] CLIENTE: em 5X 301,83 x 4 = R$ 1.207,32 em 5 X de R$ 241,47, é isso?
+[17:13] LOJA: *Josy:*
+Isso!
+[17:14] CLIENTE: Vou ver aqui
+--- 08/09/2026 (Tue) ---
+[16:42] LOJA: *Josy:*
+Oi...tudo bem!?
+[16:42] LOJA: *Josy:*
+Pede para sua esposa me enviar novamente o site que é para eu acessar, pois eu esqueci.
+[16:42] LOJA: *Josy:*
+É de libras.

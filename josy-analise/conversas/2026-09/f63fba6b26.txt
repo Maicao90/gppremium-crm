@@ -1,0 +1,73 @@
+CONVERSA f63fba6b26 | contato: Anna Carolina | 02/09/2026 10:49 até 06/10/2026 17:40 | 20 msgs do cliente, 27 da loja, 0 do robô
+
+--- 02/09/2026 (Wed) ---
+[10:49] CLIENTE: ola bom dia,
+[10:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:49] LOJA: *Josy:*
+Bom dia, Anna
+[10:50] CLIENTE: tem uns outros pneus que compramos em janeiro com vcs para Hilux PLACA RNA8D06
+[10:51] CLIENTE: consegue olhar ai nos registro de vcs qual a km que ela estava quando trocamos?
+[10:51] LOJA: *Josy:*
+Diga...
+[10:51] CLIENTE: pois ja estao lisos kkk
+[10:51] LOJA: *Josy:*
+Não consigo... olhar..
+[10:52] LOJA: *Josy:*
+O sistema teve atualização, e perdi informações.
+[10:54] LOJA: *Josy:*
+Se recordam de quando instalaram , foram feitos serviços de alinhamento na camionete? O Thyago até havia comentado sobre, me mandou fotos, eu vi que desgastou mais na lateral.
+--- 17/09/2026 (Thu) ---
+[13:42] CLIENTE: Olá boa tarde
+[13:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:42] CLIENTE: Tudo bem
+[13:54] CLIENTE: Vamos precisar de mais 4 pneus para hiluc
+[14:18] LOJA: *Josy:*
+Oi, Ana!
+[14:18] LOJA: *Josy:*
+Obrigada por aguardar!
+[14:20] CLIENTE: Imagina
+[14:20] CLIENTE: Vc tem os pneus!?
+[14:21] LOJA: *Josy:*
+Quer no modelo ATR ou Brutus?
+[14:22] LOJA: [áudio] "Oi Ana, tudo jóia? A TR é um modelo que você levou da última vez agora e Brutus é aquele cravudo anterior."  {audio:midias/3EB0307C0CDBFEFD38F255_325519.ogg}
+[14:22] CLIENTE: ATR que é para terra e asfalto ne
+[14:22] LOJA: *Josy:*
+Vou te mandar a foto.
+[14:23] LOJA: *Josy:*
+ATR 👇🏻
+[14:23] LOJA: [foto]
+[14:23] LOJA: *Josy:*
+Que você comprou a dias atrás.
+[14:23] CLIENTE: Este melhor
+[14:24] LOJA: *Josy:*
+Temos sim!
+[14:29] LOJA: [áudio] "E o preço continua do mesmo jeito que nós havíamos conversado anteriormente. Está bem, Ana?"  {audio:midias/3EB05AF52B874A45D1ECD6_733466.ogg}
+[14:48] CLIENTE: [áudio] "Mais cliente, assim, não consegue mais nenhum descontinho, não? Nenhumzinho?"
+[15:09] LOJA: *Josy:*
+Em 2 vezes a unidade  é R$ 577,61, fiz por 569,00 cada
+[15:22] CLIENTE: Ok
+--- 30/09/2026 (Wed) ---
+[11:37] CLIENTE: ola bom dia
+[11:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:37] CLIENTE: tudo bem
+[11:37] CLIENTE: pneu 265/55-16
+[11:38] CLIENTE: vcs tem?
+[11:38] LOJA: [áudio] "Bom dia, Carol! Tudo jóia? Carol, é essa medida aqui mesmo? Para qual carro?"  {audio:midias/3EB064F70967037955BE74_227328.ogg}
+[11:39] CLIENTE: desculpe 265/75
+[11:39] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[11:40] LOJA: Pode ser qualquer marca?
+[11:40] CLIENTE: Vc tem!? Mas tem que ser um pneu que aguente porque é uma caminhonete que anda bastante
+[11:40] LOJA: *Josy:*
+Vou cotar
+[15:36] LOJA: *Josy:*
+Oi, Carol... obrigada por aguardar!
+[15:36] LOJA: [foto]
+[15:36] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 06/10/2026 (Tue) ---
+[17:40] LOJA: [áudio] "Oi Ana, tudo jóia? Ana, alguns dias atrás eu encaminhei um orçamento para você com os pneus de perfil mais alto. Gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0438F0AAC8F2EA115E2_339326.ogg}

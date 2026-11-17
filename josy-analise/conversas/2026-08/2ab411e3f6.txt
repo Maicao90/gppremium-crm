@@ -1,0 +1,63 @@
+CONVERSA 2ab411e3f6 | contato: Beijar Flor Festas | 26/08/2026 15:35 até 22/09/2026 15:58 | 12 msgs do cliente, 23 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[15:35] LOJA: *Josy :*
+Boa tarde, Francisco!
+[15:35] CLIENTE: Beija flor festas 🌹💃🏿 
+
+Agradece seu contato. Como podemos ajudar?
+Me fala a data do seu evento, assim que estiver disponível eu já faço seu orçamento 😍🥰
+[15:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:35] LOJA: [foto]
+[15:36] LOJA: *Josy :*
+Se você conseguir trazer o pagamento em *dinheiro* meu gerente disse que faz a unidade a 274,00
+[15:39] LOJA: *Josy :*
+Para te ajudar, meu gerente também disse que faz parcelado o valor de
+[15:39] LOJA: *Josy :*
+3 vezes para parcelar nas 5 sem juros.
+[15:43] CLIENTE: Oi boa tarde
+[15:44] CLIENTE: Não entendi vcs parcela esse valor em 5 vezes sem juros e isso??
+[15:44] CLIENTE: 274,00
+[15:44] LOJA: *Josy :*
+Não....
+[15:44] LOJA: *Josy :*
+Esse valor é em *dinheiro*
+[15:45] LOJA: [foto] *Josy :*
+que no caso é R$ 301,83 a unidade
+[15:47] LOJA: [foto] *Josy :*
+Valor unitário em 3 X é 301,83 , tão fica assim: 301,83 x 4 pneus = R$ 1.207,32, o senhor vai pagar 5 parcelas de  R$ 241,64
+[15:47] CLIENTE: Certo
+[15:48] CLIENTE: E se eu passa 400 reais no dinheiro.
+O restante parcela em quantas sem juros?
+[15:50] LOJA: *Josy :*
+Para parcelar tem juros de todo jeito, mas  em 5 vezes , vai ficar assim:    Do valor total 1.207,32 - 400 = 807,32 dividindo esse valor em 5 x ficam 5 parcelas de 161,46
+[15:59] CLIENTE: Sou cliente antigo olha meu CPF aí já comprei muitos pineus com vcs
+[16:00] CLIENTE: Essa opção ficou boa
+[16:00] CLIENTE: Vou ver aqui e procuro vcs aí na segunda ou terça
+[16:11] LOJA: *Josy :*
+Combinado, sr Francisco.
+--- 01/09/2026 (Tue) ---
+[09:04] LOJA: *Josy:*
+Bom dia, sr Francisco... Como vai?
+[09:04] LOJA: *Josy:*
+Estou passando para saber se o senhor quer que eu já separe os pneus aqui para seu carro.
+[09:32] CLIENTE: Oi bom dia!!!
+
+Não vou conseguir ir aí hoje acho que sexta feira consigo ok
+[09:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:33] LOJA: *Josy:*
+Sem problemas...vamos nos falando!
+--- 03/09/2026 (Thu) ---
+[12:49] LOJA: *Josy:*
+Boa tarde!!! Boa tarde, sr Francisco!
+--- 22/09/2026 (Tue) ---
+[15:06] LOJA: [áudio] "Oi, Francisco, tudo jóia? Homem, tu sumiu! Tá tudo bem com você?"  {audio:midias/3EB08050C634E9CDF2BCD8_213685.ogg}
+[15:56] CLIENTE: Opa boa tarde
+[15:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:56] LOJA: *Josy:*
+Taaarde! Tudo bem com o senhor?
+[15:57] CLIENTE: [áudio] "Oi, boa tarde. Não, eu tive que viajar já, tive que ir em Uberlândia, Minas Gerais. Aí eu já troquei lá já. Meu sobrinho trabalha num Auto Center lá, fez um preço no jeito também lá. Aí já troquei já. Tá bom? Muito obrigado."
+[15:58] LOJA: [áudio] "Até já, então. Obrigada."  {audio:midias/3EB064CB80756B4874B78A_73028.ogg}

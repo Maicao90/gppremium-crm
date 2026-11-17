@@ -1,0 +1,20 @@
+CONVERSA 23cbb15c97 | contato: Rogerio Gomes Barbosa | 28/09/2026 13:35 até 28/09/2026 14:23 | 4 msgs do cliente, 8 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[13:35] CLIENTE: Boa tarde!
+[13:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:35] CLIENTE: 205/55/16
+[14:20] LOJA: *Josy:*
+Boa tarde, Rogerio...como vai?
+[14:20] CLIENTE: Tudo bem
+[14:20] LOJA: Temos sim!
+[14:21] LOJA: *Josy:*
+O GP Premium, está por apenas R$ 289,00 a vista
+[14:21] LOJA: [foto]
+[14:22] LOJA: *Josy:*
+Ah...e os 195/55/16 de R$ 289,00 por R$ 259,00 a vista
+[14:22] LOJA: [foto]
+[14:22] CLIENTE: Vou passar aí.
+[14:23] LOJA: *Josy:*
+Venha sim!

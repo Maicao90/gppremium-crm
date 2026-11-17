@@ -1,0 +1,18 @@
+CONVERSA b307981ccc | contato: Apoenio Pedro | 23/09/2026 08:30 até 23/09/2026 08:54 | 6 msgs do cliente, 5 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[08:30] CLIENTE: Oi bom dia
+[08:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:30] CLIENTE: Tudo tranquilo
+[08:31] CLIENTE: Vc trabalha com pneu 215/75 r17.5
+[08:31] LOJA: *Josy:*
+Infelizmente não...
+[08:31] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[08:31] CLIENTE: [áudio] "Sou de Unaí, mas estou em Luziânia hoje. Sabe onde eu encontro esse pneu?"
+[08:33] CLIENTE: Onde eu encontro esse peneu
+[08:52] LOJA: [áudio] "A pronta entrega, não sei."  {audio:midias/3EB0065E920B544764D21A_274505.ogg}
+[08:52] CLIENTE: Obrigado
+[08:54] LOJA: *Josy:*
+Disponha!

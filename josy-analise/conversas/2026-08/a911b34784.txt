@@ -1,0 +1,16 @@
+CONVERSA a911b34784 | contato: LC Piscina | 17/08/2026 13:38 até 17/08/2026 14:31 | 2 msgs do cliente, 8 da loja, 0 do robô
+
+--- 17/08/2026 (Mon) ---
+[13:38] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:39] CLIENTE: 175 65 14
+[14:08] LOJA: Boa tarde
+[14:08] LOJA: obrigada por aguardar
+[14:08] LOJA: [foto]
+[14:09] LOJA: Esse é o pneu do anuncio da linha GP Premium
+[14:09] LOJA: No dia de hoje tenho essa opção a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:14] LOJA: [áudio] "Olá, tudo bem? Eu sou a Josi, quando você me diz o seu nome. E você é daqui de Luziânia mesmo?"  {audio:midias/3EB046D414F89E04E9A94B_613936.ogg}
+[14:31] LOJA: 🙋🏼‍♀️

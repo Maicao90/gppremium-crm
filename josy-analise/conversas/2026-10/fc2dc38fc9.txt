@@ -1,0 +1,9 @@
+CONVERSA fc2dc38fc9 | contato: . | 21/10/2026 11:00 até 21/10/2026 11:01 | 1 msgs do cliente, 1 da loja, 2 do robô
+
+--- 21/10/2026 (Wed) ---
+[11:00] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[11:01] ROBÔ: Oi, tudo bem?
+[11:01] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[11:01] LOJA: 🙋🏼‍♀️

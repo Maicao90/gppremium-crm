@@ -1,0 +1,40 @@
+CONVERSA 6507bd69b9 | contato: Zeilton | 14/10/2026 14:15 até 21/10/2026 12:52 | 3 msgs do cliente, 18 da loja, 1 do robô
+
+--- 14/10/2026 (Wed) ---
+[14:15] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+Boa tarde
+[14:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:15] CLIENTE: Tem 265/50/20
+[14:17] LOJA: Boa tarde, tudo bem?
+[14:17] LOJA: Temos sim!
+[14:17] LOJA: [foto]
+[14:18] LOJA: pneu 265/50/20 111v crosswind linglong
+--- 15/10/2026 (Thu) ---
+[08:35] LOJA: [áudio] "Bom dia, Zilton. Tudo jóia? Eu me chamo Josi e ontem eu te encaminhei um orçamento a respeito do pneu no aro 20 que você solicitou e gostaria de saber se essa opção te atende. Você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB0ADAB2E1F473FEBB79D_828329.ogg}
+[18:09] LOJA: [áudio] "Oi, Zilton. Tudo jóia? Eu te encaminhei ao orçamento e gostaria de saber se o senhor pretende seguir com a negociação. Caso você esteja buscando alguma marca específica, pode me falar que eu verifico se os meus distribuidores têm para poder te atender."  {audio:midias/3EB0E16CA94B1C980E62A1_383427.ogg}
+--- 19/10/2026 (Mon) ---
+[11:48] LOJA: *Josy:*
+Bom dia!
+[11:57] LOJA: *Josy:*
+Assim que me passarem a opção do pneu mais borrachudo... te informo.
+[12:40] LOJA: *Josy:*
+OI...
+[12:40] LOJA: *Josy:*
+Consegui um retorno de 3 marcas.
+[12:40] LOJA: [foto]
+[12:40] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor UNITÁRIO do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:41] LOJA: *Josy:*
+O ultimo vai ter escritas laterais
+[12:41] LOJA: [foto]
+[13:47] LOJA: [áudio] "Pensei o tom, tudo jóia? Eu consegui o retorno dessas 3 marcas. Se de repente pode ser interesse, o senhor me fala que já faz a encomenda deles, tá bom?"  {audio:midias/3EB07B5190D52D267B9F49_103547.ogg}
+[13:54] CLIENTE: [áudio] "Opa, beleza. Boa tarde. Eu vou chegar aqui no escritório, vou dar uma olhadinha, tá certo?"
+[13:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:55] LOJA: [áudio] "Tchau, joia! Tchau, Suzeilton!"  {audio:midias/3EB01F2D0D885670AEC44C_186061.ogg}
+--- 21/10/2026 (Wed) ---
+[12:52] ROBÔ: 🙋🏼‍♀️

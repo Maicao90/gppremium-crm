@@ -1,0 +1,26 @@
+CONVERSA 526d84d6ed | contato: gilcelia | 09/09/2026 15:44 até 09/09/2026 16:48 | 6 msgs do cliente, 11 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[15:44] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[15:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:44] CLIENTE: Oi
+[15:45] CLIENTE: Me manda os valores do penel aro 17
+[15:46] LOJA: *Josy:*
+Claro! Para que eu possa gerar o orçamento para você, poderia me informar a *medida* do pneu que você precisa (ex: 265/65/17)  😊
+[15:46] CLIENTE: 1853517
+[15:46] CLIENTE: 185 35 17
+[15:48] LOJA: *Josy:*
+Tenho sim! neste momento as 2 ultimas unidades.
+[15:48] LOJA: [foto]
+[15:48] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:49] CLIENTE: Qual a marca do penel
+[15:51] LOJA: [foto] *Josy:*
+Sunny
+[15:54] LOJA: *Josy:*
+ora aqui em Luziânia-Go?
+[16:28] LOJA: [áudio] "Olá, tudo bem? E você mora aqui em Luziânia mesmo?"  {audio:midias/3EB061335D2333CA9909E5_636458.ogg}
+[16:48] LOJA: [áudio] "Bem, eu vou encerrar aqui o seu atendimento, que eu imagino que você esteja bem ocupada, e vou te mandar aqui a nossa localização, se houver a possibilidade, venha até nossa loja, que será uma satisfação receber você aqui, está bem? Até mais!"  {audio:midias/3EB0C9AE7935263FC7AE1B_117990.ogg}
+[16:48] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

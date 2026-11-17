@@ -1,0 +1,12 @@
+CONVERSA 999c6bd114 | contato: rubens | 18/07/2026 11:04 até 21/07/2026 08:04 | 4 msgs do cliente, 2 da loja, 0 do robô
+
+--- 18/07/2026 (Sat) ---
+[11:04] CLIENTE: Olá, gostaria de saber os preços de pneus.
+--- 19/07/2026 (Sun) ---
+[10:44] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:46] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 20/07/2026 (Mon) ---
+[09:24] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:26] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 21/07/2026 (Tue) ---
+[08:04] CLIENTE: Olá, gostaria de saber os preços de pneus.

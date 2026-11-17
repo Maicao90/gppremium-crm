@@ -1,0 +1,33 @@
+CONVERSA 28cfb7f812 | contato: Alexandra Sousa | 10/09/2026 10:01 até 08/10/2026 12:02 | 12 msgs do cliente, 10 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[10:01] CLIENTE: Ola, bom dia
+[10:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:01] CLIENTE: 185 65 15R
+[10:03] LOJA: [áudio] "Oi Alexandra, tudo bom?"  {audio:midias/3EB0537C7A411C220B781F_870879.ogg}
+[10:04] LOJA: [foto]
+[10:04] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:05] CLIENTE: ok, vou analisar
+--- 08/10/2026 (Thu) ---
+[09:43] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:43] CLIENTE: Bom dia Josy
+[09:43] CLIENTE: Tem pneus continental 185 65 15r
+[09:44] LOJA: Não dispomos dessa opção de marca a pronta entrega.
+[09:44] CLIENTE: A sim
+[09:44] CLIENTE: Pena
+[09:46] LOJA: [áudio] "Eu posso tentar fazer um orçamento com os meus distribuidores, mas eu creio que em Cristalina é mais fácil de você encontrar realmente, justamente por conta do preço."  {audio:midias/3EB03DFBB78E77348DF2D9_613427.ogg}
+[09:46] CLIENTE: Aqui não tem
+[09:46] CLIENTE: Mas vou pesquisar novamente
+[09:47] LOJA: Então a coisa está feia mesmo...
+[10:03] CLIENTE: Sim
+[10:03] CLIENTE: Mas já encontrei em Val
+[12:02] LOJA: [foto]
+[12:02] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

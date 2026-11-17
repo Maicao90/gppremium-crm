@@ -1,0 +1,30 @@
+CONVERSA c100e1cf34 | contato: Ítalo | 20/10/2026 13:45 até 21/10/2026 11:13 | 6 msgs do cliente, 7 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[13:45] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[13:45] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[13:45] CLIENTE: Boa tarde
+[13:46] CLIENTE: 17 55 225 ou 235?
+Modelos e valores
+[14:38] LOJA: *Josy:*
+Boa tarde, essa medida é para qual carro?
+[14:40] CLIENTE: Cruze
+[16:01] LOJA: Para o Cruze as melhores opções são 215/50/17 e 225/45/17
+[16:01] LOJA: [foto]
+[16:02] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:02] LOJA: [foto]
+[16:03] CLIENTE: Não é sem juros?
+[16:03] CLIENTE: Cobre orçamento?
+[16:03] LOJA: Não.
+--- 21/10/2026 (Wed) ---
+[11:13] ROBÔ: 🙋🏼‍♀️

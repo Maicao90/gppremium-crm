@@ -1,0 +1,20 @@
+CONVERSA ceaf382903 | contato: Gezonias Maciel Lira | 04/09/2026 10:00 até 09/09/2026 11:12 | 2 msgs do cliente, 8 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[10:00] LOJA: *Josy:*
+Bom dia, Gesonias
+[10:00] LOJA: [foto]
+[10:02] LOJA: *Josy:*
+6 parcelas de R$ 175,21
+--- 08/09/2026 (Tue) ---
+[11:09] LOJA: [áudio] "Olá, tudo bem com você? Nós estávamos conversando aqui a respeito dos pneus 175-65-14 para o seu carro e gostaria de saber se você pretende seguir com a negociação. Você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0EA6164768BD6BA0DB4_173448.ogg}
+[17:06] LOJA: *Josy:*
+👀
+--- 09/09/2026 (Wed) ---
+[10:21] CLIENTE: Oi
+[10:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:24] LOJA: [áudio] "Oi, tudo bem com você? Eu deixei os pneus reservados para você aquele dia. Você vai voltar a buscar?"  {audio:midias/3EB0A4B921CEB5A1802E68_860288.ogg}
+[11:11] CLIENTE: [áudio] "Ô meu coração, é porque deu tudo errado aqui pra mim, sabe, aí não deu certo não, tá bom? Mas eu, da próxima eu ajeito aí com você, é porque, né, não é na próxima, que eu não tô conseguindo, é porque eu ia pegar um cartão, entendeu? O cartão da minha prima, só que ela fez um tratamento de dente, aí não deu pra nós fazer, tá bom? Mas vai dar tudo certo futuramente, tá bom? Obrigado, viu? Tchau."
+[11:12] LOJA: *Josy:*
+Está bem!

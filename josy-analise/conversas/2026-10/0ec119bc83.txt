@@ -1,0 +1,24 @@
+CONVERSA 0ec119bc83 | contato: Matheus | 13/10/2026 12:28 até 13/10/2026 14:57 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[12:28] CLIENTE: Boa tarde!
+Pneu 175/65 R14
+
+Qual valor Vocês tem?
+[12:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:28] CLIENTE: Preciso de 2 unidades
+[12:29] CLIENTE: [foto]
+[12:36] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:36] LOJA: [foto]
+[12:46] LOJA: [áudio] "O GP Premium, ele está por apenas R$ 249,00 a vista, Matheus."  {audio:midias/3EB073ABDFE752165F087F_730614.ogg}
+[12:46] LOJA: [áudio] "Você quer que separe eles aqui para você? Os dois, no caso, como está por 249, se for à vista fica por 498."  {audio:midias/3EB073F31F0661485C5790_500541.ogg}
+[12:47] CLIENTE: Esse é o menor valor que consegue fazer no pix?
+[12:47] LOJA: [áudio] "Sim, Matheus, no débito e no Pix é esse valor aí mesmo, mas se você conseguir sacar o dinheiro para trazer aqui para mim, eu consigo fazer por 235 a unidade."  {audio:midias/3EB0253BAB5045874A116B_467653.ogg}
+[13:08] LOJA: [áudio] "Posso separar aqui para você?"  {audio:midias/3EB00A5D28E144049B1413_56758.ogg}
+[13:12] CLIENTE: Vou ver aqui e já te falo
+[13:50] LOJA: estou te aguardando.
+[14:57] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:57] LOJA: [foto]

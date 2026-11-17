@@ -1,0 +1,28 @@
+CONVERSA 6b3abe41a6 | contato: dorcelitosilva2019 | 22/09/2026 11:50 até 22/09/2026 12:25 | 11 msgs do cliente, 11 da loja, 0 do robô
+
+--- 22/09/2026 (Tue) ---
+[11:50] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:51] CLIENTE: 175/70/14
+[11:51] LOJA: [áudio] "Olá, bom dia. Eu tenho aqui sim o pneu da marca GP Premium. A unidade está por R$ 279,00 a vista. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB050EF666F50DF4441A9_745465.ogg}
+[11:51] CLIENTE: [áudio] "Luziânia, eu queria onde mais perto, Goiânia, era para em Rio. Eu moro no interior de Goiás."
+[11:51] CLIENTE: [áudio] "Eu estava querendo um borrachudo, porque eu tenho um Scorpion que estava de estébre, e aí eu queria um borrachudo mais ou menos igual ele, para fazer par com ele, para colocar para rodar."
+[12:02] LOJA: [áudio] "Eu tenho aqui o modelo ATR, vou ver se eu mando a foto aqui para ti, tá?"  {audio:midias/A5823E7438371E3D414EEA393907C54D_853433.ogg}
+[12:03] CLIENTE: [áudio] "Ok."
+[12:03] LOJA: [foto]
+[12:04] CLIENTE: [áudio] "Qual é a medida dele e o valor?"
+[12:04] LOJA: Essa medida
+[12:05] LOJA: Pneu da marca GP Premium
+[12:05] CLIENTE: Valor
+[12:05] LOJA: A vista.
+Para parcelar o  valor muda um pouco.
+[12:06] CLIENTE: [áudio] "Sim, qual o preço de avista e o preço da parcela?"
+[12:15] LOJA: *Josy:*
+Obrigada por aguardar... nosso whatsapp apresentou instabilidade.
+[12:16] LOJA: [foto]
+[12:22] CLIENTE: [áudio] "Deixa eu te falar, só porque vocês é de Luziânia, né? Vocês não tem loja em Goiânia, não?"
+[12:23] LOJA: [áudio] "Nossa loja é somente aqui em Luziânia mesmo, moço."  {audio:midias/3EB0EC6CB78FD7D3F565E9_601463.ogg}
+[12:23] CLIENTE: [áudio] "O problema é que se fosse em Goiânia, minha irmã tava vindo pra cá no dia 3 e ela trazia pra mim. O problema é que aí tinha que mandar pelo correio, né, esses pneus, né."
+[12:25] LOJA: [áudio] "Sim, e para enviar é caro."  {audio:midias/3EB01FEDAFC5FB956F15EC_939178.ogg}
+[12:25] CLIENTE: [áudio] "Pois é, não, então tá, muito obrigado. Vem ver se eu acho ele aqui um pouquinho mais proberto."

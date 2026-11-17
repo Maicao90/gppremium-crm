@@ -1,0 +1,26 @@
+CONVERSA 569c82a2b9 | contato: Gilson Matos | 19/10/2026 10:09 até 21/10/2026 18:01 | 2 msgs do cliente, 12 da loja, 2 do robô
+
+--- 19/10/2026 (Mon) ---
+[10:09] LOJA: *Josy:*
+Bom dia!
+[10:09] LOJA: *Josy:*
+Como posso ajudar?
+[10:10] LOJA: *Josy:*
+Oi... não estou te ouvindo
+[10:11] LOJA: [foto]
+[10:12] LOJA: [foto]
+[10:49] LOJA: [áudio] "Seu Gilson, que horas que a sua esposa vai vir aqui?"  {audio:midias/3EB0DECA17FA7361E1C139_736848.ogg}
+[13:52] LOJA: *Josy:*
+Oi...
+[17:59] LOJA: *Josy:*
+Sua esposa vem amanhã?
+[17:59] CLIENTE: 👍🏻
+[17:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 21/10/2026 (Wed) ---
+[12:41] ROBÔ: 🙋🏼‍♀️
+[13:05] LOJA: [áudio] "Seu dia são tudo jóia. Fiquei aqui aguardando ela vir aqui, mas eu creio que ela não veio. Vocês já realizaram a compra?"  {audio:midias/3EB0CFD5FC841A7ECB1E79_210379.ogg}
+[14:55] CLIENTE: [áudio] "Oi. Boa tarde. Não, não comprei ainda não. Eu deixei pro final de semana. Sabe, vocês abrem? Que aí eu vou pra aí, que aí eu dou um, vou receber aqui um pouco de dinheiro e dou um pouco de entrada pra parcelar pra mim, pra diminuir o valor da prestação. Você entendeu? Aí nós vai aí colocar. Beleza."
+[14:55] LOJA: [áudio] "Sim, sábado abre sim, seu Gilson. Oito horas nós já estamos com a loja aberta."  {audio:midias/3EB03DE706AB302A238939_310103.ogg}
+[14:57] LOJA: [áudio] "Tá jóia, pode deixar."  {audio:midias/3EB078C3582975EBDDC745_259899.ogg}
+[18:01] ROBÔ: 🙋🏼‍♀️

@@ -1,0 +1,15 @@
+CONVERSA ad537ba1f7 | contato: Jorge | 16/10/2026 10:50 até 16/10/2026 11:05 | 3 msgs do cliente, 4 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[10:50] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[10:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:50] CLIENTE: 205/60 r16
+[10:50] CLIENTE: Quero 2 pneus
+[10:51] LOJA: [foto]
+[10:51] LOJA: No dia de hoje temos a marca Aptany e GP premium opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:05] LOJA: [áudio] "Olá Jorge, bom dia, tudo bom? Você mora aqui na cidade de Luziânia, Goiás? E no dia de hoje, as opções que eu tenho serão essas, tá? No pneu da marca Aptane, a unidade para o pagamento à vista é R$332,00. Como você precisa de duas unidades, no débito ou fixo, que é o valor à vista, fica um total de R$664,00. A joia, para passar lá, tem as alterações."  {audio:midias/3EB049B97A6817986D3F5A_403019.ogg}

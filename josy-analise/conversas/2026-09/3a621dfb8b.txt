@@ -1,0 +1,13 @@
+CONVERSA 3a621dfb8b | contato: Marcelo Veloso | 18/09/2026 13:17 até 18/09/2026 14:10 | 5 msgs do cliente, 3 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[13:17] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:17] CLIENTE: Boa tarde
+[13:17] CLIENTE: Preciso pneis bridstone
+[13:18] CLIENTE: Sua loja e no scia?
+[13:45] LOJA: [áudio] "Olá, boa tarde, tudo bem? Somos de Luziânia, Goiás."  {audio:midias/3EB028975AC7E02653114F_124704.ogg}
+[14:08] LOJA: *Josy:*
+Sr, Marcelo... pneus Bridgestone aqui em nossa região, são somente por encomenda.
+[14:10] CLIENTE: 🙏🏽

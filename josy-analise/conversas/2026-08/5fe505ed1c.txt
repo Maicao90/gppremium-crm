@@ -1,0 +1,24 @@
+CONVERSA 5fe505ed1c | contato: Mauro José Do Nascimento | 21/08/2026 10:41 até 21/08/2026 11:49 | 6 msgs do cliente, 14 da loja, 0 do robô
+
+--- 21/08/2026 (Fri) ---
+[10:41] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:42] CLIENTE: Bom dia 4 pneus 15
+[10:42] CLIENTE: Remoldi
+[10:42] LOJA: Pode apenas me confirmar a medida?
+[10:42] LOJA: 185/60/15?
+[10:42] LOJA: 195/65/15?
+[10:42] CLIENTE: Da s10
+[10:43] LOJA: Para S-10 não temos remold
+[10:43] LOJA: Apenas novos.
+[10:43] LOJA: [foto]
+[10:43] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:50] CLIENTE: 235/75-15
+[10:51] LOJA: Isso.
+[10:51] LOJA: A marca que temos hoje é Comforser, novo e importado.
+[11:34] LOJA: Te atende , Mauro?
+[11:48] CLIENTE: [áudio] "Bom dia, bom dia. Eu só achei muito caro. A camionetinha é camioneta de trabalho, mas só aqui dentro do Valparaíso, 3 mil reais é muito dinheiro agora. Obrigado."
+[11:49] LOJA: [áudio] "É, realmente, Sra. Mauro, é que realmente essa é a opção que nós temos no dia de hoje. Os remotos, como são os mais vendidos, nossa, não dá para quem quer e está em falta."  {audio:midias/3EB0AC97B178D8B725519A_592659.ogg}
+[11:49] LOJA: [áudio] "Mas, de todo modo, vou deixar aqui registrada a nossa localização, que se houver a possibilidade, caso o senhor mudisse de ideia e queira pelo menos duas unidades, o senhor passa aqui para conversarmos pessoalmente, tá bom?"  {audio:midias/3EB06F56DCB3A12A2476C0_82846.ogg}
+[11:49] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

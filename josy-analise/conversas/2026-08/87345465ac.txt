@@ -1,0 +1,17 @@
+CONVERSA 87345465ac | contato: Anna Soares | 18/08/2026 10:53 até 18/08/2026 13:08 | 4 msgs do cliente, 9 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[10:53] LOJA: Bom dia, Ana!
+[10:53] LOJA: [foto]
+[10:53] LOJA: Por encomenda realmente.
+[11:17] LOJA: 🙋🏼‍♀️
+[12:36] CLIENTE: Vê quanto vc consegue me fazer naquele importado mesmo avista 4 pneus?
+[12:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:38] CLIENTE: Os que vi aí hj
+[12:38] CLIENTE: Uns importados
+[12:39] LOJA: [foto]
+[12:40] LOJA: A vista eles ficam por R$ 2.740,00
+[12:42] CLIENTE: Fecha pelos 2.700
+[12:44] LOJA: Não tem como, no importado não consigo.
+[13:08] LOJA: Mas volta aqui e conversem com meu supervisor, vai que ele consegue algo para vocês.

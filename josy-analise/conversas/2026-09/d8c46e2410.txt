@@ -1,0 +1,17 @@
+CONVERSA d8c46e2410 | contato: Deus no comando | 09/09/2026 11:47 até 09/09/2026 12:53 | 6 msgs do cliente, 6 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[11:47] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:47] CLIENTE: Vcs tem pneus 205/50/18?
+[11:48] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu me chamo Josi. E não, 205, 50, 18. Eu não trabalho com ele aqui à pronta entrega. Você mora aqui em Luziânia?"  {audio:midias/3EB0CEDC532BC63BB15D05_176468.ogg}
+[11:48] CLIENTE: [áudio] "Oi, bom dia. Eu moro em Alexsanya e eu não estou encontrando essa medida, que seria para me colocar num Virtus 2025, aquele que vem com 205, 45, 18. Eu queria um perfil mais alto um pouquinho para poder viajar, pegar a estrada. Será que você consegue encomendar, consegue achar para mim?"
+[11:49] LOJA: [áudio] "Mas se eu conseguir, o senhor consegue vir aqui na cidade de Luziânia para fazer essa compra?"  {audio:midias/3EB0A76BC774FA9545E206_247413.ogg}
+[11:50] CLIENTE: [áudio] "Sim, consigo sim. Daqui para aí dá uns 92, 93 km. Se você conseguisse uma marca boa, que seja bom para pegar estrada e tal, eu iria ir sim."
+[11:51] LOJA: [áudio] "Tá, Joia, eu vou verificar, tá bom?"  {audio:midias/3EB0ABE975672E18777C5B_184585.ogg}
+[11:52] CLIENTE: [áudio] "Ok, fico no aguardo. Pesquisa uma marca boa."
+[12:49] LOJA: Em falta essa medida.
+[12:49] LOJA: *Josy:*
+Lamento.
+[12:53] CLIENTE: Ok

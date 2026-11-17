@@ -1,0 +1,21 @@
+CONVERSA 230f95ffb9 | contato: Flávio Liborio 🇧🇷 booker | 19/08/2026 11:16 até 19/08/2026 16:48 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[11:16] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:17] CLIENTE: 225/60/17
+[11:22] LOJA: bOM DIA!
+[11:22] LOJA: 1 instante
+[11:23] LOJA: Essa opção é somente por encomenda ,  está em busca de alguma marca especifica?
+[11:25] LOJA: 🙋🏼‍♀️
+[11:25] CLIENTE: [áudio] "Bom dia, tudo bem? Quanto fica aí para encomenda? Eu não uso remold não, tá? É em Caldas Novas, essa loja?"
+[11:26] LOJA: [áudio] "Oi, tudo jóia? Não, a nossa loja é aqui em Luziânia e os meus pneus remoldes nessa medida esgotaram completamente, porque eles são excelentes, tá? Eu ainda não tenho nem previsão de quando eu vou ter no estoque. No caso específico, igual eu te mandei aí. Essa opção vai ser agora somente por encomenda. Se vocês estiverem em busca de alguma mais específica, você me fala que eu verifico."  {audio:midias/3EB0BEACC7F00670C6CE3F_704740.ogg}
+[11:26] CLIENTE: Ok
+[11:27] LOJA: [áudio] "Aí, se você estiver em busca de alguma marca específica, você me fala que eu verifico se o meu distribuidor tem alguma opção de pneus importados para poder te atender."  {audio:midias/3EB037F6208F672C054877_86577.ogg}
+[11:28] CLIENTE: 👍
+[16:47] LOJA: [foto]
+[16:47] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:48] LOJA: 215/60/17 ou  225/65/17 não te atendem?

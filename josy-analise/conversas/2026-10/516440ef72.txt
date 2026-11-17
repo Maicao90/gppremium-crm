@@ -1,0 +1,17 @@
+CONVERSA 516440ef72 | contato: José Filho | 09/10/2026 14:48 até 09/10/2026 14:57 | 3 msgs do cliente, 6 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[14:48] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Boa tarde
+[14:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:48] CLIENTE: [áudio] "Pneu Aro 3 aí, meu, já ouviu na loja, está com outro aí, o pneu que eu vi aqui no Facebook."
+[14:49] LOJA: Boa tarde!
+[14:49] LOJA: 1 instante por gentileza.
+[14:51] LOJA: [foto]
+[14:51] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:57] CLIENTE: [áudio] "Não sei aí, duzentos e pouco aí. É uma unidade?"
+[14:57] LOJA: [áudio] "Olá, José. Boa tarde. Tudo bem? Exatamente. O orçamento está com o valor unitário do pneu. Na medida 165,7013, cada pneu está por 239. E na medida 175,7013, à vista, cada pneu está por 269."  {audio:midias/3EB0853EEDBA14B6C634F7_255467.ogg}

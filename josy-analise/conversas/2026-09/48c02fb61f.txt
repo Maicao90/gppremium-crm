@@ -1,0 +1,37 @@
+CONVERSA 48c02fb61f | contato: 𝓜𝓪𝓻𝓬𝓮𝓵𝓸😎 | 25/09/2026 18:02 até 29/09/2026 12:34 | 8 msgs do cliente, 13 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[18:02] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[18:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:02] CLIENTE: 195 40 17
+[18:03] LOJA: *Josy:*
+Temos sim!
+[18:04] LOJA: *Josy:*
+	
+pneu 195/40/17 81w cf700 comforser R$ 414,21 parcelo em 10 X
+[18:04] LOJA: *Josy:*
+Mora aqui em Luziânia-Go?
+[18:04] CLIENTE: Valparaiso
+[18:04] LOJA: *Josy:*
+Pertinho de nós!.
+[18:05] LOJA: *Josy:*
+Passa aqui!
+[18:05] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[18:05] CLIENTE: Vcs fica aberto até que horas amanhã?
+[18:05] LOJA: *Josy:*
+Das 08:00 às 12:00
+[18:05] CLIENTE: Ok
+[18:06] CLIENTE: Vou ver se consigo ir amanhã!
+[18:06] LOJA: [áudio] "Marcelo, você vai precisar das 4 unidades?"  {audio:midias/3EB0AD86FB66274D78D446_806836.ogg}
+[18:06] LOJA: [foto]
+[18:06] CLIENTE: Sim
+[18:08] CLIENTE: [áudio] "Deixa eu te fazer uma pergunta, colocando os pneus aí, comprando os pneus aí, o alinhamento, o balanceamento é grátis ou não? É por fora?"
+--- 26/09/2026 (Sat) ---
+[08:09] LOJA: [áudio] "Bom dia, Marcelo. Tudo bom? Olha, aqui nós trabalhamos de maneira bem clara, sem ficar inventando coisas. Esse é o preço dos pneus. Serviços de alinhamento, balanceamento, desempenho, qualquer outro tipo de serviço, são todos feitos à parte."  {audio:midias/3EB08B32F7C83950F3166C_318064.ogg}
+[08:10] LOJA: [áudio] "Essa é uma modalidade que as empresas têm de dizer que eu, ouvindo o seu áudio, entendo que você já deve ter ouvido que tem empresas que entregam supostamente todo o serviço incluso, mas na verdade não é bem assim não, tá? Aqui eu prefiro ser transparente com você. Cada coisa tem o seu valor."  {audio:midias/3EB09824AA6EF2A73C6E3E_573695.ogg}
+--- 29/09/2026 (Tue) ---
+[12:34] LOJA: [áudio] "Marcelo, tudo jóia? Marcelo, eu te mandei um orçamento aí, né, a respeito dos pneus 9540 e gostaria de saber se você pretende seguir com a negociação. Você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB062FB9979131723577A_992335.ogg}

@@ -1,0 +1,25 @@
+CONVERSA 7e90775aba | contato: Eng Rodrigues | 12/09/2026 08:14 até 16/09/2026 17:45 | 9 msgs do cliente, 9 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[08:14] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[08:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:14] CLIENTE: 225 55 r18
+[08:26] LOJA: [áudio] "Olá, bom dia! Tudo jóia? Olha, eu tenho aqui sim, a princípio, os pneus da marca GP Premium, onde a unidade está por apenas R$ 399,00 por pagamento à vista. Você mora aqui em Luziânia?"  {audio:midias/A5C40C51B292D07657F3F622C33E7BAC_698513.ogg}
+[08:29] CLIENTE: Valparaiso
+[08:29] CLIENTE: Me manda foto dos pneus por gentileza
+[08:29] CLIENTE: Seria 2 unidades
+[08:30] CLIENTE: [áudio] "Mas no caso eu queria só comprar, assim, eu não tô precisando nem da montagem, nem alinhamento, nem balanceamento, só comprar os pneus mesmo, pra eu deixar guardado aqui, que eu vou mexer na suspensão do meu carro, e aí eu já quero fazer a troca de dois pneus, aí quanto que sair o valor desses pneus, dividido no cartão em 4 vezes."
+[08:31] LOJA: 1 instante
+[08:32] LOJA: Já mando a foto
+[08:36] LOJA: [foto]
+[09:34] CLIENTE: 175 75 r13. 2nd
+[09:35] CLIENTE: [áudio] "Para mim, é o pneu 175, 75 aro 13, dois conjuntos. Pode jogar fora isso aqui? Não vai querer não, né?"
+[09:35] CLIENTE: Melhor custo-benefício
+[09:52] LOJA: [áudio] "Olha, o 175 75, eu vou ter um pneu importado aqui, o menor preço, R$ 300,00. E aí eu tenho os pneus também aqui da marca GP Premium, que a unidade, na medida 175 7013, está por apenas R$ 269,00 a vista."  {audio:midias/A5D10D397CA1D4E01F1E680276E3F8E2_599155.ogg}
+[10:29] LOJA: [áudio] "Você quer que eu te encaminhe a localização?"  {audio:midias/A561E029772F5CBDCE5AB7EBB9246AE6_37288.ogg}
+[10:29] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 16/09/2026 (Wed) ---
+[17:45] LOJA: [áudio] "Olá, boa tarde, tudo bem? Josi, aqui da Pneus GP Premium. No sábado nós nos falamos aqui pelo WhatsApp, né? E eu gostaria de saber se você pretende seguir aqui com a nossa negociação. Você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB071771A716D225FD96C_720200.ogg}

@@ -1,0 +1,32 @@
+CONVERSA 92995f81f8 | contato: Biam | 14/09/2026 12:13 até 14/09/2026 12:27 | 15 msgs do cliente, 9 da loja, 0 do robô
+
+--- 14/09/2026 (Mon) ---
+[12:13] CLIENTE: Boa tarde!
+[12:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:14] CLIENTE: Comprei um carro de um proprietário q informou q umas das rodas estão na loja de vcs, gostaria de saber se ela de fato se encontra aí
+[12:15] CLIENTE: albumMessage
+[12:15] CLIENTE: [foto]
+[12:15] CLIENTE: [foto]
+[12:16] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu me chamo Josi. Você comprou um carro e as rodas estão na loja. Qual que é o nome da pessoa? Qual que é a roda?"  {audio:midias/3EB03D5247AA98464EADE4_808268.ogg}
+[12:17] CLIENTE: O nome do cara é wberdan
+[12:17] CLIENTE: Roda aro 17
+[12:17] CLIENTE: Essas da imagem
+[12:17] LOJA: [áudio] "Com esse nome aqui, não. Não tem nada aqui, não."  {audio:midias/3EB016C39CCF9F121D1D9F_270037.ogg}
+[12:18] LOJA: [áudio] "Mas é nesta loja aqui mesmo? Aqui em Luziânia? Pneus GP Premium? Isso mesmo?"  {audio:midias/3EB0E96BF5B1CB4B1301DF_250675.ogg}
+[12:18] CLIENTE: Segundo informações dele sim
+[12:18] LOJA: *Josy:*
+Aqui é a Pneus GP Premium
+[12:18] CLIENTE: Somente uma das rodas
+[12:18] LOJA: *Josy:*
+Tem certeza de que é aqui?
+[12:19] LOJA: *Josy:*
+Pois desconheço.
+[12:19] CLIENTE: Certo, vou conferir com ele mais informações
+[12:19] LOJA: *Josy:*
+Somos de Luziania-Go.
+[12:26] CLIENTE: Encontrei onde ela está!
+[12:26] CLIENTE: Foi engano
+[12:26] CLIENTE: Desculpa o transtorno!
+[12:26] CLIENTE: Obg pela atenção
+[12:27] LOJA: [áudio] "Imagina! Boa semana pra você! Até mais!"  {audio:midias/3EB0FDCDD024276DC3C08B_714004.ogg}

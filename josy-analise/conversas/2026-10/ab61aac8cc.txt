@@ -1,0 +1,25 @@
+CONVERSA ab61aac8cc | contato: Geraldo Conceição Lopes | 09/10/2026 20:00 até 10/10/2026 11:52 | 8 msgs do cliente, 9 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[20:00] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[20:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:00] CLIENTE: Onde fica a loja
+--- 10/10/2026 (Sat) ---
+[08:10] LOJA: Bom dia, somos de Luziania-Go
+[08:10] LOJA: E você?
+[11:08] CLIENTE: Gama
+[11:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:08] CLIENTE: 1956016
+[11:08] CLIENTE: 2 pneus
+[11:08] CLIENTE: Quanto fica
+[11:16] LOJA: [foto]
+[11:17] LOJA: [áudio] "Oi, tudo bom? Olha, a nossa loja, ela fica aqui em Luziânia, Goiás, né? E no dia de hoje eu vou ter apenas o pneu importado da marca Ling Long. A unidade está por 469 reais, se o seu pagamento for à vista."  {audio:midias/3EB04DD4A628AB5CF4F41A_241780.ogg}
+[11:46] CLIENTE: [áudio] "É, mas eu usava GP Premium, mas essa tabela que você me mandou aí não tem nada a ver com pneu recondicionado, mais caro do que o pneu novo."
+[11:47] CLIENTE: [áudio] "Eu já achei desses importados aí por 248 e seis vezes no cartão."
+[11:51] LOJA: [áudio] "Não, mas é porque não é realmente. Só que nessa medida que o senhor está pedindo, 1,9560, não tem da marca GP Premium, vai ter somente esse pneu importado mesmo, porque nós não produzimos 1,9560."  {audio:midias/3EB09547FE448780752B69_477337.ogg}
+[11:51] LOJA: [áudio] "E esses pneus que o pessoal tá passando aí, principalmente importado, num preço muito abaixo de mercado, o senhor se prepara, tá, senhor Geraldo? Porque é puro golpe. Toda hora eu recebo cliente que vai aí atrás dessas propostas enganadoras aí, chega lá, não é nada do que eles estão falando."  {audio:midias/3EB0C1972274ED6E098985_945087.ogg}
+[11:52] LOJA: [áudio] "Olha, eu tenho aqui o 195-55-16, que o GP Premium, que é o pneu que o senhor já conhece, ele está por, de 289, ele está na oferta por 259, aí esse eu tenho, o 195-55-16, da GP Premium, que o senhor já usa aí no seu carro, o senhor conhece a marca."  {audio:midias/3EB0690434365D27BDA9F6_770586.ogg}

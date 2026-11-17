@@ -1,0 +1,63 @@
+CONVERSA 328db48b72 | contato: Milena Santos | 14/10/2026 17:20 até 17/10/2026 10:30 | 22 msgs do cliente, 30 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[17:20] CLIENTE: Boa tarde
+[17:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:21] CLIENTE: Qual o valor do pneu
+[17:21] LOJA: Qual a medida dos pneus que você precisa hoje?
+[17:21] CLIENTE: [foto]
+[17:21] CLIENTE: Acho que é aro 15
+[17:22] CLIENTE: Eles são pneu remold?
+[17:22] LOJA: Tenho novos e o remold de 1ª linha
+[17:22] LOJA: [foto]
+[17:22] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:23] CLIENTE: Eu queria novos
+[17:24] CLIENTE: Apenas 1 peneu por 493 é esse o valor?
+[17:24] LOJA: [foto] *NOVOS*
+[17:24] LOJA: Isso
+[17:24] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.
+[17:25] LOJA: MOra aqui em Luziania-Go
+[17:25] LOJA: ?
+[17:25] CLIENTE: Moro no jardim ingá
+[17:26] LOJA: Pertinho, Milena!
+[17:26] LOJA: E olha...  o pneu  GP Premium o de R$ 249,00 é o mais vendido!
+[17:27] CLIENTE: Mas é novo ou remold?
+[17:27] LOJA: Remold amiga!
+[17:27] LOJA: Só que de 1ª linha!
+[17:28] LOJA: Vou gravar um video para que você tenha melhor compreensão.
+[17:29] LOJA: [vídeo]
+[17:32] CLIENTE: Entendi
+[17:32] CLIENTE: Obrigada por explicar
+[17:33] CLIENTE: [áudio] "Então, esse valor que você mandou, deixa eu ver se eu entendi, de R$ 249,00, é um remold, só que o que você mostrou no vídeo, né, que é o mais novo, não é o remendado, é o que a fábrica produz, é isso?"
+[17:33] LOJA: Imagina!
+[17:34] LOJA: [áudio] "Isso, isso mesmo, Milena. Ele é um pneu que nós fazemos e ele é de primeira linha, bem especificado nele, que ele é um pneu ecológico, ele entra assim na categoria de remodelagem, só que linha Premium, justamente por isso os pneus, eles têm 2 anos de garantia e são os pneus mais vendidos que eu tenho."  {audio:midias/3EB02E49C88CEF74717050_388040.ogg}
+[17:39] CLIENTE: [áudio] "Ah, entendi."
+[17:40] CLIENTE: [áudio] "Ah, eu vou pensar aqui, o que eu tô fazendo uma pesquisa, é que eu tô querendo pra eu poder ir trabalhar com o meu carro, né, pra Brasília. Eu tô com os pneus, né, bem desgastados e como eu vou usar todo dia, eu não sei, sabe? Eu tava querendo comprar 4 pneus, mas aí, sem meu orçamento, sabe, tô fazendo uma pesquisa. Tchau, tchau, tchau."
+[17:48] LOJA: [áudio] "Pois, mulher, vou te falar, eu uso aqui no carro do meu filho, é um Palio, eu instalei justamente essa medida, tá? Só que tem o seguinte, já tem 3 anos que eu já instalei os pneus e ele trabalha como barman, então ele vai pra tudo que é lugar que você pode imaginar. Eu também uso o carro de vez em quando, com a impressa dele quando o meu tá na oficina, aí eu ando pra tudo que é lugar, a gente viaja pra tudo que é... Nossa! Gente, anda muito. Só mostrar os pneus ali pra você, eles estão inteiros."  {audio:midias/3EB01D4EB0F6648A71585E_220010.ogg}
+[17:48] LOJA: [áudio] "Você pode colocar ele, tá? Que eu garanto que você vai instalar, daqui 3 anos você vai botar aqui pra poder comprar mais, vai indicar pras pessoas que realmente os pneus são, assim, fora de sério, viu Milena? E eu não tô falando pra você como quem quer vender, estou falando primeiramente como consumidora, pois eu comecei a utilizar esses pneus, nossa, muitos anos atrás. Então, eu sou cliente primeiro."  {audio:midias/3EB02D713859C7BC7F33F4_166404.ogg}
+[18:37] CLIENTE: Entendi
+--- 15/10/2026 (Thu) ---
+[14:38] CLIENTE: Qual o endereço da loja?
+[14:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:39] LOJA: Vou te encaminhar, Milena!
+[14:39] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:39] LOJA: [áudio] "Boa tarde Milena, como é que você está? Olha, aqui fica do lado da Goiás Diesel, Hotel Goiás, tá bom?"  {audio:midias/3EB03E7C4541DB63B1CC76_539966.ogg}
+[14:39] LOJA: [foto]
+[14:44] CLIENTE: Não fazem a troca aí né ?
+[14:44] CLIENTE: Só a compra mesmo?
+[14:44] LOJA: [áudio] "Faz! Faz sim!"  {audio:midias/3EB04B1D3459D675368FFC_375139.ogg}
+[14:45] CLIENTE: [áudio] "E quanto que é para fazer isso aí? Para fazer a troca, tem que fazer o realinhamento também. Me falaram aqui na mecânica."
+[14:48] LOJA: * Balanceamento = 35,00 (por pneu)
+* Alinhamento = 120,00 (somente Alinhamento de Direção)
+[14:48] LOJA: Valores completamente negociáveis!
+[14:50] CLIENTE: Certo
+[15:31] LOJA: [áudio] "Gostaria de agendar para vir aqui no sábado, que imagino que seja um dia mais tranquilo para você."  {audio:midias/3EB09C22D3BF45581C9130_970573.ogg}
+--- 17/10/2026 (Sat) ---
+[10:30] CLIENTE: Bom dia
+[10:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:30] CLIENTE: Ok

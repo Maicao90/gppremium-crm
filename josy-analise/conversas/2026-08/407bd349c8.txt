@@ -1,0 +1,13 @@
+CONVERSA 407bd349c8 | contato: . | 27/08/2026 12:20 até 27/08/2026 12:25 | 4 msgs do cliente, 3 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[12:20] CLIENTE: [foto] 📢 [Anúncio] Converse conosco
+
+Olá! Posso ter mais informações sobre isso?
+[12:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:21] CLIENTE: [áudio] "Bom dia, bom dia. Eu queria saber o valor dos pneus do HRV 2021. É a última série agora, após esse último modelo."
+[12:21] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu sou a Josi e você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB04C56B3504932D57E95_641226.ogg}
+[12:21] CLIENTE: [áudio] "As medidas eu não sei, tem que dar uma puxada aí no Google e ver quais são as medidas dos pneus originais do HRV desse ano aí, 2021. E aí me passa os valores, por gentileza."
+[12:23] CLIENTE: [áudio] "Pô, Jôs, desculpa, eu não vi que o anúncio era pra Luziânia, tá? Eu sou de Goiânia. Foi mal, desculpa aí, minha querida. Obrigado."
+[12:25] LOJA: [áudio] "Imagina que é isso, não se preocupe, tá bom? É que sempre que eu vejo quando o DDD é de fora, antes mesmo de eu mandar o orçamento, eu pergunto se a pessoa está por aqui na região, porque eu não trabalho com entregas, tá joia? Mas agradeço muito aí pelo seu contato, tenha um bom final de semana já, né? Até mais!"  {audio:midias/3EB01346DB9BA95C26BBD9_597581.ogg}

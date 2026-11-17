@@ -1,0 +1,42 @@
+CONVERSA 7047fa3548 | contato: Maria Elicia | 24/09/2026 10:41 até 25/09/2026 08:08 | 6 msgs do cliente, 17 da loja, 0 do robô
+
+--- 24/09/2026 (Thu) ---
+[10:41] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[10:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:41] CLIENTE: Olá
+[10:41] LOJA: *Josy:*
+Bom dia!
+[10:41] CLIENTE: Bom diaaaaaaaa
+[10:42] LOJA: *Josy:*
+Como posso te ajudar, Maria?
+[10:42] LOJA: *Josy:*
+Gostei...está animada!
+[10:43] LOJA: [áudio] "Oi Maria, bom dia, como é que você está? Fala comigo em que eu posso te ajudar no dia de hoje."  {audio:midias/3EB0966BCBC63ADE9897CC_398812.ogg}
+[10:46] CLIENTE: [áudio] "Josi, bom dia, tudo bem? Então, Josi, eu estou precisando comprar quatro pneus para o carro da minha filha, mas talvez sejam seis, porque eu preciso comprar dois para o meu carro, ainda estou vendo. No aro 17, quais são as marcas que você tem e o menor preço que você faz? Que esse é para o Honda Civic da minha filha. E se for no... no aro... deixa eu ver aqui, o aro do meu carro aqui, que o meu é um Toyota. Deixa eu ver o aro desse aqui... No aro 15... 15? É, 15, no aro 15. Vê para mim, no aro 17, no aro 15, quais são os pneus e as marcas que você tem e o preço para pagamento à vista."
+[10:48] LOJA: *Josy:*
+No aro 17 pode confirmar qual é a medida que está instalada: 205/50 R17...215/50 R17?
+[10:48] LOJA: *Josy:*
+E no seu também por gentileza.
+[10:49] CLIENTE: [áudio] "Luzi, daqui a pouco eu te mando foto do pneu do meu carro e da minha filha, eu vou pedir pra ela, tá? Porque eu não sei as medidas certinhas."
+[10:50] LOJA: [áudio] "Tá, Joia, que daí fica mais prático que eu já vou direto ao ponto, tá bom?"  {audio:midias/3EB085431D24FDA735B2B9_743225.ogg}
+[10:51] LOJA: [áudio] "Mas qual que é o seu Toyota? É um Yaris, Corolla?"  {audio:midias/3EB04FF8A8CEAAE95D93C2_991708.ogg}
+[10:59] CLIENTE: [áudio] "Oi, o meu é o Toyota Yaris e o da Annalise é o Honda Civic 2020."
+[11:04] LOJA: Toyota Yaris, imagino que esteja usando 185/60/15 👇🏻
+[11:04] LOJA: [foto]
+[11:08] LOJA: *Josy:*
+No Honda Civic , imagino que sua filha tenha instalado pneus 215/50/17👇🏻
+[11:08] LOJA: [foto]
+[11:08] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:37] LOJA: *Josy:*
+Oooiiii
+[11:38] LOJA: *Josy:*
+Você mora aqui em Luziânia-Go?
+--- 25/09/2026 (Fri) ---
+[08:08] LOJA: *Josy:*
+Bom dia, bom dia, Maria!

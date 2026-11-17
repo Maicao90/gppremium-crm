@@ -1,0 +1,39 @@
+CONVERSA 5f81cd1de8 | contato: Ivanilson Costa | 22/09/2026 12:58 até 22/10/2026 12:28 | 10 msgs do cliente, 11 da loja, 7 do robô
+
+--- 22/09/2026 (Tue) ---
+[12:58] CLIENTE: Boa tarde 
+Qual valor do pneu 195/55 R15
+[12:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:58] CLIENTE: 195/55 R15
+[13:00] LOJA: [foto]
+[13:00] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:00] LOJA: [áudio] "Fala, Ivanilson, tudo jóia? Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB01CB3806BB2FA2A74B5_161724.ogg}
+[13:01] CLIENTE: Sim moro
+[13:02] LOJA: [áudio] "E quando que você consegue vir aqui na loja para nós conversarmos pessoalmente?"  {audio:midias/3EB093CDA51B8FD5E1228C_226751.ogg}
+[13:02] CLIENTE: Vou passar aí por volta das 17 h
+[13:03] CLIENTE: Assim que sair do trabalho
+[13:03] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[13:03] LOJA: [foto]
+--- 24/09/2026 (Thu) ---
+[12:34] LOJA: [áudio] "Oi, Ivanilson, tudo jóia? Nós conversamos há alguns dias atrás e você ficou de passar aqui na nossa loja, imagino que você está aí na correria e acabou não dando tempo. Gostaria de agendar para esse sábado, se estiver tudo tranquilo aí para você?"  {audio:midias/3EB0795968CE72543C1716_394889.ogg}
+--- 22/10/2026 (Thu) ---
+[10:58] CLIENTE: Bom dia , vocês ainda estão com promoção de pneu aro 15/195/55
+[10:58] ROBÔ: A promoção existe e é válida para os pneus da marca GP Premium nas medidas 195/65/15 e 215/55/17.
+[10:59] ROBÔ: Temos o pneu *195/55/15* da marca *GP Premium* está saindo por *R$ 289,00 à vista*.
+[10:59] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[10:59] CLIENTE: Quatro pneus dividido em 10 qual valor sairia
+[10:59] ROBÔ: 195/55/15 (4 unidades)
+Em 10x fica R$ 129,72 cada, total de R$ 1.297,16.
+[11:02] CLIENTE: Alinhamento vocês faz ou e só montagem?
+[11:02] ROBÔ: Fazemos sim! O alinhamento é feito aqui na nossa oficina.
+[11:02] ROBÔ: O valor é combinado direto com os meninos da oficina, aqui na loja.
+[11:03] CLIENTE: Perfeito
+[12:03] ROBÔ: Tranquilo! Qualquer dúvida ou se quiser fechar, é só me chamar por aqui.
+[12:21] LOJA: [áudio] "Sr. Ivanildo, o senhor quer que te encaminhe a nossa localização?"  {audio:midias/3EB034E9F6C1E13FBC3796_13420.ogg}
+[12:25] CLIENTE: Por gentileza
+[12:25] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:28] LOJA: [áudio] "Aí, Sr. Ivanilson, como o WhatsApp está com um pouco de instabilidade, às vezes eu estou mandando mensagem para o cliente e ele acaba mandando alguma figurinha, alguma coisa aleatória para a pessoa, aí o senhor desconsidera, tá bom?"  {audio:midias/3EB0C7DB730ED811E02F4C_154549.ogg}

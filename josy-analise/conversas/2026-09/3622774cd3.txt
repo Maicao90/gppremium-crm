@@ -1,0 +1,31 @@
+CONVERSA 3622774cd3 | contato: Pereira Splash Luziania | 24/09/2026 15:56 até 24/09/2026 17:26 | 7 msgs do cliente, 14 da loja, 0 do robô
+
+--- 24/09/2026 (Thu) ---
+[15:56] LOJA: *Josy:*
+Boa tarde!
+[15:58] LOJA: *Josy:*
+185/65/14 R$ 289,00
+[15:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:58] CLIENTE: [áudio] "Boa tarde! Quando a pessoa liga, já passa uma mensagem? Hehe."
+[15:58] LOJA: *Josy:*
+Sim!
+[15:58] LOJA: *Josy:*
+Já sim!
+[15:59] LOJA: [áudio] "Como eu estava atendendo o rapaz aqui, aí eu te chamei aqui no WhatsApp e pedi para o meu gerente falando contigo enquanto eu estava atendendo o rapaz aqui."  {audio:midias/3EB008EA48DEEEFB1E0FE7_632234.ogg}
+[15:59] CLIENTE: [áudio] "Então, eu sou cliente de vocês aí há tempo, da piscina ali, mas aí eu queria comprar no cartão e a taxinha tá meio pesada. Sem taxa vocês fazem até quantas vezes no cartão?"
+[15:59] CLIENTE: [áudio] "Aí pode ser aquele pneu mais barato de vocês, o 70, tá 139, ou 239, né?"
+[16:04] LOJA: [áudio] "Certo, certo. Para parcelar, cobra sim um pouco, tá? Mas podemos ver o que podemos fazer aqui para ti."  {audio:midias/3EB0C819E98476D78F26E9_54862.ogg}
+[16:04] LOJA: [áudio] "Qual que é o carro mesmo que eu não ouvi?"  {audio:midias/3EB01F6B20C075716B227D_139279.ogg}
+[16:05] CLIENTE: [áudio] "É um cieninha, um cieninha... Na verdade, eu vou pôr ele numa carretinha primeiro, pra me apresentar a carretinha na Polícia Federal, depois eu vou tirar e botar num ciena, um cieninha antigo, é... 2002."
+[16:08] LOJA: [foto]
+[16:09] LOJA: [áudio] "Olha, recomenda essas duas opções aí. Um 7565, que está por 249, e um 7570, por 279."  {audio:midias/3EB0F37745706637D85089_770764.ogg}
+[16:11] CLIENTE: [áudio] "Eu vou ver qual que tá nele lá."
+[16:12] LOJA: *Josy:*
+Fique tranquilo, vamos negociar algo que fique bom para você.
+[16:47] LOJA: *Josy:*
+Passa aqui na loja!
+[16:47] LOJA: [foto]
+[17:20] CLIENTE: [áudio] "Fiz, moleque. Estou no corre, corre, corre. Vamos ver se eu consigo passar aí. O trem aqui está feito ao meu lado. Serviço mais!"
+[17:24] LOJA: [áudio] "Ai, que benção! O serviço de mais é bom. É cansativo? Muito! Mas é bom também. Tá, Jaia, então. Vê aí, me encaixa na agenda para eu poder fazer a troca aí dos pneus para você, tá, Jaia?"  {audio:midias/3EB0C7791D321D9E23BD68_26508.ogg}
+[17:26] CLIENTE: [áudio] "Beleza, beleza, beleza. Eu tenho até domingo para apresentar essa carretinha com pneu novo. Carretinha lavada. Ô, Polícia Federal, é foda."

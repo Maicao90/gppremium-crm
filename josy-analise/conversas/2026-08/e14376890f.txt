@@ -1,0 +1,31 @@
+CONVERSA e14376890f | contato: Ronildo | 27/08/2026 14:39 até 28/08/2026 13:26 | 8 msgs do cliente, 14 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[14:39] CLIENTE: [áudio] "Boa tarde. A GP Pneus no sábado de manhã abre também. Se não der pra mim passar aí amanhã de tarde."
+[14:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:39] LOJA: [áudio] "Oi, boa tarde. Como é que você tá, Ronildo?"  {audio:midias/3EB06AEB72BA0E6A6325FF_279685.ogg}
+[14:39] LOJA: [áudio] "Sim, abrimos sim, de 8 da manhã até o meio-dia."  {audio:midias/3EB055FC4E93F28D42A3B8_226441.ogg}
+[14:39] CLIENTE: [áudio] "O pedido que eu te passei é um 95, 50, 15. A roda liga leve. Eu tô levando até a roda, a roda tá comigo aqui no caminhão, pra mim fazer a medida lá. Eu não quero com perfil muito alto, não. Tem no perfil mais baixo um pouquinho."
+[14:40] LOJA: [áudio] "Igual eu tinha falado pra você, Ronildo, a opção que eu tenho é de 1,95, 55,15, tá?"  {audio:midias/3EB02515CBEAC6D7A967EC_656094.ogg}
+[14:40] CLIENTE: [áudio] "Você só tem essa medida hoje? Só essa medida que você tá tendo?"
+[14:42] LOJA: *Josy:*
+Somente essa , 195/55/15
+[14:48] CLIENTE: [áudio] "Eu tô levando... Eu tô levando o árbitro fússico aqui, pra na hora de a gente testar ele. Eu trouxe uma roda nova comigo, tá no caminhão comigo aqui. Aí ou amanhã ou sábado de manhã cedo eu passo aí. Mas provavelmente vai dar pra me passar amanhã aí, à tarde."
+[14:49] LOJA: *Josy:*
+Ok
+[14:49] LOJA: [áudio] "Beleza, Sr. Ronaldo, ficamos combinados, tá?"  {audio:midias/3EB034E864942C4ABDAA00_315187.ogg}
+--- 28/08/2026 (Fri) ---
+[13:13] CLIENTE: [áudio] "Bom dia, moça. Daqui a meia hora eu tô chegando aqui. Aqui eu trouxe o aro do meu Fusca só pra gente testar ele aí. Tem jeito de a gente testar o pneu aí? Colocar o pneu na roda? Tem alguém aí que possa fazer isso pra gente? O perfil do pneu eu não quero muito alto, não. Tem o mais baixo e o mais alto."
+[13:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:18] LOJA: *Josy:*
+Oie!
+[13:19] LOJA: [foto]
+[13:19] LOJA: [áudio] "Nós vemos aqui para o Senhor, tá bom?"  {audio:midias/3EB0B044BA7FB706F97694_463660.ogg}
+[13:21] CLIENTE: [áudio] "Vê um preço melhor para mim, eu vou levar 4, hein?"
+[13:22] LOJA: [áudio] "É, primeiro vamos ver aí se vai dar certo essa medida, que igual eu falei para a senhora, eu tenho aqui é um 9555."  {audio:midias/3EB0AE744C7F2E9E96A798_291133.ogg}
+[13:23] CLIENTE: [áudio] "Vai dar certo, sim, tem que dar certo. Olha, mesmo eu tô chegando, uns 20 minutos eu chego aí, do outro Fusca meu, que eu comprei pneu aí, a roda 17, eu tenho um branco, eu tenho quatro, eu tenho três Fusca, tenho três Fusca, eu sou colecionador de Fusca lá de Ubar, eu sou de Ubar, não sou daqui não. Eu sempre comprei pneu com vocês, hein."
+[13:23] LOJA: [áudio] "Tá, já então, Sr. Ronildo."  {audio:midias/3EB01828B2B63AB7B5F860_900952.ogg}
+[13:24] LOJA: [áudio] "Tô te esperando aqui, tá bom, Sr. Ronildo? Aí eu te mandei a foto aqui da frente da loja. Tô te esperando."  {audio:midias/3EB026A28753997A15EDD7_26582.ogg}
+[13:26] CLIENTE: [áudio] "Não sei onde é que é, eu passo aqui direto, eu passo aqui direto. Toda semana eu tô passando aqui no tal do Brasília, eu venho trazer móveis pra vocês aqui ó, Atraente Estofado, quem sabe você resolve comprar um sofá nosso também. Sofá de primeira linha, você vai ver o caminhão, você vai tirar foto dele, você vai olhar o Instagram da Atraente aí ó, o melhor sofá do Brasil."

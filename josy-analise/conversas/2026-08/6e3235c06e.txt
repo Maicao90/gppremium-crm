@@ -1,0 +1,93 @@
+CONVERSA 6e3235c06e | contato: Leonardo | 18/08/2026 12:58 até 08/09/2026 14:02 | 20 msgs do cliente, 36 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[12:58] LOJA: Oi!
+[12:58] LOJA: Eu sou a Josy!
+[12:59] CLIENTE: Boa tarde 
+Pneu aro 18
+225/55
+Valor
+[12:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:59] CLIENTE: E marca
+[12:59] LOJA: [foto]
+[12:59] LOJA: [áudio] "Oi, Léo, tudo jóia? Olha, a princípio, o GP Premium, a unidade está por R$ 399,00 à vista."  {audio:midias/3EB02F9F728D6AF446679F_24293.ogg}
+[13:03] CLIENTE: Ok
+Deixa eu ver aqui direitinho 
+Seriam 2 und
+[13:04] LOJA: Temo sim!
+[13:04] CLIENTE: Veja se o charles faz a vista pra boleto 10 dias
+[13:05] LOJA: Vejo sim!
+[17:30] LOJA: Oi...obrigada por aguardar...agora que o Charles me retornou.
+[17:30] LOJA: Faz sim!
+[17:37] CLIENTE: [áudio] "Não, tá ok, eu vou falar pra pessoa aqui, vou ver direitinho, mas acho que vai ser só semana que vem, acho que ela não tá aqui, tava fazendo pesquisa de preço aqui."
+[17:37] LOJA: [áudio] "Beleza, então."  {audio:midias/3EB07E86047246C3C89F54_280703.ogg}
+--- 25/08/2026 (Tue) ---
+[17:51] LOJA: [áudio] "Oi, Léo, tudo? Joia? Estou entrando em contato para saber se você pretende seguir aqui com a negociação, quer que eu separe os pneus para ti. Quando possível, me dê um retorno, por gentileza, está bem?"  {audio:midias/3EB05B451EC1A75A41DC42_264917.ogg}
+[17:52] CLIENTE: [áudio] "Boa tarde, tudo bem? Amanhã a gente deve trocar os dois pneus, deixa eu só arrematar lá porque o carro não está podendo parar muito, mas vai pegar dois pneus sim."
+[17:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 26/08/2026 (Wed) ---
+[12:08] LOJA: [áudio] "Beleza, Léo. Eu estou te aguardando aqui, tá? Aqui é na fábrica mesmo, tá bom?"  {audio:midias/3EB063D2CBB63F29916873_474780.ogg}
+--- 27/08/2026 (Thu) ---
+[14:45] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:45] LOJA: [foto]
+[17:13] LOJA: *Josy:*
+Léo.. precisa de nota fiscal?
+[17:21] CLIENTE: Sim para a garantia
+[17:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:21] LOJA: *Josy:*
+No seu nome mesmo, certo?
+[17:21] CLIENTE: Pode ser
+[17:23] LOJA: [documento]
+--- 08/09/2026 (Tue) ---
+[11:43] CLIENTE: Bom dia
+[11:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:48] LOJA: *Josy:*
+Oiê...
+[11:48] LOJA: *Josy:*
+O celular descarregou
+[11:48] LOJA: *Josy:*
+Pode mandar audio?
+[11:49] CLIENTE: [áudio] "Josi, eu vou pegar mais dois pneus daquele, do mesmo, 18-255, se não me engano, dois iguais aquele, e eu queria saber, se eu olhar na loja, quanto que é para poder fazer a troca deles? Eu vou logo depois do almoço, uma hora vocês já estão por aí?"
+[11:55] LOJA: [áudio] "Oi, tudo jóia? Vai ser o 2255518, isso mesmo, né?"  {audio:midias/3EB02E7742213C5B0FDDDD_407621.ogg}
+[11:56] LOJA: [áudio] "Olha, aqui não faz só para o almoço não, tá, Léo?"  {audio:midias/3EB04DD08B3CAB6163433F_568407.ogg}
+[11:56] CLIENTE: Isso
+[11:56] LOJA: [áudio] "E a montagem, ela já é por minha conta mesmo, tá? E só o balanceamento que paga para os meninos."  {audio:midias/3EB056967369F6C3E97204_903961.ogg}
+[11:58] CLIENTE: [áudio] "Tem como você ver esse valor aí para mim, do balanceamento? Porque eu já quero levar o dinheiro já arrumado."
+[12:00] LOJA: *Josy:*
+Claro!
+[12:00] LOJA: *Josy:*
+Qual é o carro mesmo?
+[12:01] CLIENTE: Jeep compass
+[12:02] LOJA: *Josy:*
+Vou ver aqui
+[12:08] CLIENTE: Ok
+[12:08] CLIENTE: No aguardo
+[12:09] LOJA: *Josy:*
+Sim, sim!
+[12:09] LOJA: *Josy:*
+Eles estão ruins de atender ligação hoje kkk
+[12:09] LOJA: *Josy:*
+Mas estou na linha aguardando...
+[12:10] LOJA: *Josy:*
+Eles me disseram R$ 45,00 por roda.
+[12:12] CLIENTE: Ok
+[12:16] LOJA: *Josy:*
+Vou separar os pneus aqui para ti!
+[12:25] CLIENTE: Ok
+Obrigado
+[13:46] CLIENTE: Josy 
+Na verdade vai ser só um pneu 
+Pq o outro ainda está bom 
+A troca já está inclusa tbm?
+[14:02] LOJA: *Josy:*
+Sim!
+[14:02] CLIENTE: Ok
+Vou subir aí agora
+[14:02] CLIENTE: Obrigado
+[14:02] LOJA: *Josy:*
+Ok!

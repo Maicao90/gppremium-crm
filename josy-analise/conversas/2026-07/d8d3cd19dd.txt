@@ -1,0 +1,27 @@
+CONVERSA d8d3cd19dd | contato: Filomena Lacerda | 18/07/2026 11:44 até 26/07/2026 11:04 | 9 msgs do cliente, 7 da loja, 0 do robô
+
+--- 18/07/2026 (Sat) ---
+[11:44] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[11:46] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 19/07/2026 (Sun) ---
+[10:24] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:26] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 20/07/2026 (Mon) ---
+[09:04] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:06] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 21/07/2026 (Tue) ---
+[08:44] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[08:46] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 22/07/2026 (Wed) ---
+[07:24] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[07:26] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 23/07/2026 (Thu) ---
+[06:04] CLIENTE: Olá, gostaria de saber os preços de pneus.
+--- 24/07/2026 (Fri) ---
+[05:44] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[05:46] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 25/07/2026 (Sat) ---
+[12:24] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[12:26] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 26/07/2026 (Sun) ---
+[11:04] CLIENTE: Olá, gostaria de saber os preços de pneus.

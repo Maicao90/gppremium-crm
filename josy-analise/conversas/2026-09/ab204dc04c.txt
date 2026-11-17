@@ -1,0 +1,20 @@
+CONVERSA ab204dc04c | contato: Baiano | 28/09/2026 15:41 até 05/10/2026 18:01 | 4 msgs do cliente, 9 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[15:41] LOJA: *Josy:*
+Boa tarde, sr Jurandir..
+[15:44] LOJA: [foto]
+--- 05/10/2026 (Mon) ---
+[15:32] CLIENTE: [áudio] "Jó, tudo bem? Eu foquei de hoje para trocar os pneus, mas eu não fui não, viu? É porque eu resolvi não comprar os pneus fiados, parcelar, eu estou com dinheiro para receber aqui, se eu receber ao menos a metade eu quero dar para vocês aí, então na hora que eu estiver prontinho aqui eu ligo para vocês aí, beleza? Obrigado, desculpa aí."
+[15:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:33] LOJA: [áudio] "Este é o Jurandir. Como é que o senhor está?"  {audio:midias/3EB0295C1B9E3D1F62DB45_538790.ogg}
+[15:34] LOJA: [áudio] "Não tem problema não, tá?"  {audio:midias/3EB02D9C4C7CC6FF098243_323063.ogg}
+[15:35] CLIENTE: [áudio] "Ah, moça, obrigado, viu? É porque vai dar um dinheiro aí, eu quero dar uma entrada aí, não ficar devendo muito assim, não gosto de ficar devendo, mas eu já, ontem mesmo, eu conversei com clientes seus, viu? Conheci um cliente seu de novo, falou que pode comprar, que não me arrepende, já foi para o Ceará na segunda vez, botou na caminhonete dele, botou no Celta do amigo dele, e eu conheci esses caras tudinho, e do filho dele no Prisma, que comprou de vocês, tá bom? E eu vou me esperar fazer esse negócio aqui, ou entrar esse dinheiro. Se o negócio meu não sair e entrar o dinheiro, eu vou aí, daqui a 15 dias, nós coloca, porque é de 15 em 15 que eu tenho folga segunda-feira, viu? Muito obrigado."
+[15:40] LOJA: [áudio] "Não, pode colocar aí, tranquilo. Falei pro senhor. Tá vendo? Aí todo mundo realmente utiliza e aprova. Realmente os pneus são muito bons."  {audio:midias/3EB072DCF966667090192C_337669.ogg}
+[15:41] CLIENTE: Ok
+[18:00] LOJA: [áudio] "Eu só vou deixar aqui a nossa localização, só pra ficar registrada na conversa, tá bom? E quando for o melhor momento pro senhor, passa aqui pra conversarmos pessoalmente, certinho?"  {audio:midias/3EB08301D977CB205BA834_570269.ogg}
+[18:00] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[18:00] LOJA: [foto]
+[18:01] CLIENTE: Ok

@@ -1,0 +1,9 @@
+CONVERSA 16f0e78ca0 | contato: Carlos | 31/08/2026 11:28 até 31/08/2026 11:28 | 1 msgs do cliente, 3 da loja, 0 do robô
+
+--- 31/08/2026 (Mon) ---
+[11:28] LOJA: *Josy:*
+Bom dia, Carlos
+[11:28] CLIENTE: Opa
+[11:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:28] LOJA: [foto]

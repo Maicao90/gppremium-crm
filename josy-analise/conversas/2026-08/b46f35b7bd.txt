@@ -1,0 +1,29 @@
+CONVERSA b46f35b7bd | contato: Val Lp | 30/08/2026 12:41 até 02/09/2026 16:10 | 2 msgs do cliente, 15 da loja, 0 do robô
+
+--- 30/08/2026 (Sun) ---
+[12:41] CLIENTE: Olá
+[12:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:53] CLIENTE: Boa tarde, 195/60
+--- 31/08/2026 (Mon) ---
+[08:09] LOJA: Bom dia!
+[08:09] LOJA: Temos sim!
+[08:09] LOJA: Pneu da marca GP Premium.
+[08:09] LOJA: [foto]
+[08:10] LOJA: No pagamento em *dinheiro*  R$ 269,00 a unidade
+[08:10] LOJA: No débito ou pix R$ 289,00
+[08:10] LOJA: Para parcelar o valor muda um pouco conforme a quantidade de parcelamento.
+[08:11] LOJA: Mora aqui em Luziãnia-Go?
+[10:47] LOJA: *Josy:*
+🙋🏼‍♀️
+[17:33] LOJA: *Josy:*
+👀
+--- 01/09/2026 (Tue) ---
+[08:11] LOJA: *Josy:*
+Bom dia...
+[08:11] LOJA: *Josy:*
+Teve a oportunidade de analisar o orçamento?
+[08:11] LOJA: *Josy:*
+Consegue me dar um retorno?
+--- 02/09/2026 (Wed) ---
+[16:10] LOJA: Boa tarde, como vai?  Devido a falta de interação, e para não ficar enchendo seu whatsapp de mensagem, vou encerrar seu atendimento por aqui.                                                                                                                                                                                                                                            Se precisar  futuramente é só chamar. Obrigada 👋🏻

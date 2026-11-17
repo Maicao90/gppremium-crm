@@ -1,0 +1,23 @@
+CONVERSA 8c125a5655 | contato: Qra.JPSILVA😎 | 16/10/2026 13:39 até 16/10/2026 15:27 | 9 msgs do cliente, 9 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[13:39] CLIENTE: Boa tarde !
+[13:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:39] CLIENTE: Tudo bem ?
+[13:40] CLIENTE: Queria ver as marcas que você tem e valores
+[13:40] CLIENTE: 185/60/15
+[14:31] LOJA: [foto]
+[14:31] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:31] LOJA: Somos de Luziânia-Go, e você?
+[14:33] CLIENTE: Não não
+[14:33] CLIENTE: Mais viajo e faço entrega aí
+[14:34] CLIENTE: Já comprei outros
+[14:34] LOJA: Que bacana!
+[14:34] LOJA: Qual é seu nome?
+[14:34] CLIENTE: Tem foto desse GP1
+[14:34] CLIENTE: João Paulo Vieira da Silva
+[14:34] LOJA: [foto]
+[15:27] LOJA: [áudio] "E, Sr. João, que dia que você vai estar passando por aqui? Onde estiver bem de somente, fala que eu já vou deixando os pneus separados, tudo bem?"  {audio:midias/A59E8BB206D3B3F32993761E88DF68B7_824744.ogg}

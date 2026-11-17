@@ -1,0 +1,16 @@
+CONVERSA 7d6fb8ab65 | contato: Valdiney | 14/10/2026 08:48 até 14/10/2026 09:28 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[08:48] CLIENTE: Bom dia
+[08:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:50] CLIENTE: preciso de 2 pneus 215/55/17
+[08:54] LOJA: [áudio] "Oi, Valdinei. Tudo jóia?"  {audio:midias/3EB0327AB0983FB445DD04_165673.ogg}
+[08:55] LOJA: Exemplo digamos que seu pagamento seja a vista a  unidade  é  R$ 395,00 x 3 pneus = R$ 1.185,00 por esse preço você vai levar os 4
+[08:58] CLIENTE: Eita, aumentou bem desde da ultima vez
+[08:59] CLIENTE: [foto]
+[09:00] LOJA: [áudio] "Nossa, é justamente isso que eu ia dizer, ele era 339, né? Ele aumentou aí cerca de 56 reais, só tem esse fator que auxilia aí e fica bem melhor na compra, que é o senhor só paga 3 pneus e leva 4."  {audio:midias/3EB0077F59E7820F724C3B_432703.ogg}
+[09:00] CLIENTE: Eu vou aí
+[09:00] LOJA: [áudio] "Taja, eu sou Valdinei."  {audio:midias/3EB01D48AD7E6938B29A9C_824198.ogg}
+[09:00] LOJA: [foto]
+[09:28] LOJA: https://da.gd/gp-avaliar

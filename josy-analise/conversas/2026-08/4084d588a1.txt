@@ -1,0 +1,8 @@
+CONVERSA 4084d588a1 | contato: José Milton | 14/08/2026 08:52 até 16/08/2026 06:14 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 14/08/2026 (Fri) ---
+[08:52] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[08:54] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 16/08/2026 (Sun) ---
+[06:12] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[06:14] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

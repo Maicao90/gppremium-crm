@@ -1,0 +1,145 @@
+CONVERSA 4c42597aa1 | contato: Elciomar Ramos | 27/08/2026 12:35 até 03/09/2026 12:53 | 58 msgs do cliente, 44 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[12:35] CLIENTE: [foto] 📢 [Anúncio] Converse conosco
+
+Tem essa loja Luziânia
+[12:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:36] CLIENTE: [foto]
+[12:37] CLIENTE: 185/70.   R.  14. 88. H
+[12:39] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? A nossa loja é aqui em Luziânia. Você mora por aqui?"  {audio:midias/3EB0F8375A3D1DEAC7F4C2_790609.ogg}
+[12:39] LOJA: [foto]
+[12:39] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:44] CLIENTE: De brindes alinhamento e balanceamento
+[12:47] LOJA: *Josy:*
+*osy:*
+* Balanceamento = 25,00 (por pneu )
+* Alinhamento = 90,00 (Alinhamento de Direção)
+[12:54] LOJA: [áudio] "Qual das opções de pneus que eu posso reservar aqui para você?"  {audio:midias/3EB05519E3FF8E594E93E5_976966.ogg}
+[17:53] LOJA: [vídeo]
+--- 28/08/2026 (Fri) ---
+[09:20] LOJA: *Josy:*
+Bom dia... pretende seguir com a negociação...consegue me dar um retorno?
+[11:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:18] CLIENTE: [áudio] "Pô, minha querida, agora no momento não dá pra mim não, o Steve foi que gastar o dinheiro aqui na consulta aqui no hospital."
+[11:19] LOJA: [áudio] "Nossa, espero que você fique bem. E você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB031CDFD449A745D248E_969475.ogg}
+[11:32] CLIENTE: Vc também
+[11:32] CLIENTE: Moro perto de vc
+[11:32] CLIENTE: Da loja que fui
+[11:33] LOJA: [áudio] "Ah, perfeito. Que bom que você mora aqui pertinho. Aí, estava até conversando aqui com o meu gerente, ele me falou o seguinte, que se você trouxer o pagamento em dinheiro para o pneu aí da marca GP Premium, ele faz a unidade por 270 reais, tá joia? E se de repente você achar mais interessante sacar o dinheiro e trazer ele aqui para nós, fica mais prático, tá joia?"  {audio:midias/3EB0569DAD28625F4B5DFF_523825.ogg}
+[11:33] LOJA: [foto]
+[11:40] CLIENTE: [áudio] "Tudo jóia, amiga, mas agora no momento eu não vou querer não, tá? O negócio tá feito do meu lado. Pareceu um monte de conta. Mas muito obrigado, você é muito gentil, educado, tá bom? Seu cabelo também é top. Valeu, viu?"
+[11:51] LOJA: [áudio] "Nossa, obrigada pela observação. Mas não tem problema, tá? Assim que as coisas resolverem aí pra ti, você passa aqui na loja pra nós conversarmos, tá, jóia? Obrigada aí pelo contato e tenha aí um bom final de semana."  {audio:midias/3EB0141CB162FC27B56171_768622.ogg}
+[11:52] CLIENTE: Vc também bom fim semana e  bebi bastante água viu tá quente 🥵
+[12:00] LOJA: [áudio] "Ai, não fala não. E eu tô tomando bastante água, peguei um resfriado. Só Jesus, mas aí dá tudo certo."  {audio:midias/3EB082B65D15B7DCBF160F_399643.ogg}
+[12:11] CLIENTE: Água e vida
+[12:12] CLIENTE: Vc já leu sobre água
+[12:12] CLIENTE: Algum livro 📔📕
+[12:14] LOJA: *Josy:*
+Sinceramente não li.
+[12:15] CLIENTE: E bom
+[12:15] CLIENTE: Cura até câncer
+[12:15] LOJA: *Josy:*
+Sim... agua é vida!
+[12:15] CLIENTE: Tô atrapalhando vc amiga suas vendas
+[12:15] CLIENTE: Kkk
+[12:15] CLIENTE: E falo de amis
+[12:15] CLIENTE: De mais
+[12:15] CLIENTE: Kk
+[12:15] LOJA: *Josy:*
+Naada...
+[12:16] LOJA: *Josy:*
+está tranquilo aqui.
+[12:16] CLIENTE: Vc da qui
+[12:16] LOJA: *Josy:*
+Moro em Luziânia.
+[12:16] CLIENTE: Bom que perto do trabalho
+[12:19] LOJA: *Josy:*
+é.... mais ou menos...rs
+[12:25] CLIENTE: Então vc Jardin inga
+[12:25] LOJA: *Josy:*
+Não ... não... moro perto do batalhão da pm
+[12:25] CLIENTE: Ali bom no 2
+[12:25] CLIENTE: Top
+[12:26] LOJA: *Josy:*
+é sim...bem tranquilo.
+[12:26] CLIENTE: Vix agora vi esse número de empresa
+[12:26] CLIENTE: Jesus
+[12:26] CLIENTE: Pensei era seu 🤭😂
+[12:27] LOJA: *Josy:*
+kkkk, se torna meu pois é de meu uso.
+[12:27] CLIENTE: Ata
+[12:27] CLIENTE: Aqui onde eu trabalho tem número todos ver as msg de clientes
+[12:27] CLIENTE: Trabalho no Sesc gama
+[12:28] LOJA: *Josy:*
+ah, sim.
+[12:28] LOJA: *Josy:*
+não conheço
+[12:29] CLIENTE: Aqui e bom tem várias atividades e modalidade pra fazer
+[12:30] CLIENTE: Vcs aí tem convênio algum clube
+[12:30] LOJA: *Josy:*
+Naada kkk
+[12:31] CLIENTE: Que bom dia aqui sua família filhos esposo
+[12:31] CLIENTE: Conheçe
+[12:31] CLIENTE: Saiu tudo errado aí meu celular quebrou tela
+[12:32] LOJA: *Josy:*
+KKKKKK
+[12:32] LOJA: *Josy:*
+RELAXA.
+[12:34] LOJA: *Josy:*
+vou almoçar... 👋🏻
+[12:34] CLIENTE: https://www.instagram.com/reel/C2YFX-TPTeI/?igsi=OGxjZGEyazJxczI2
+[12:34] CLIENTE: Bom almoço
+[12:35] CLIENTE: Nesse lugar eu trabalho
+[12:48] CLIENTE: Vem fazer um visita pra gente
+[12:48] CLIENTE: Um dia
+--- 03/09/2026 (Thu) ---
+[12:33] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+👀
+[12:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:34] LOJA: *Josy:*
+👀
+[12:35] CLIENTE: Tudo bem
+[12:36] LOJA: *Josy:*
+jóia... e tú?
+[12:36] CLIENTE: Tudo faz 😻
+[12:37] CLIENTE: Tudo na paz 🕊️🕊️
+[12:37] LOJA: *Josy:*
+bom de mais...
+[12:37] LOJA: *Josy:*
+paz, não tem preço... tem valor.
+[12:38] CLIENTE: E  as promoções tem algum
+[12:40] LOJA: *Josy:*
+depende.. qual medida de pneus?
+[12:40] CLIENTE: A msm
+[12:40] CLIENTE: [foto]
+[12:40] LOJA: *Josy:*
+Continua do mesmo jeito que conversamos anteriormente,
+[12:41] CLIENTE: 185/70..R..14..88..H
+[12:42] LOJA: *Josy:*
+Do mesmo jeitinho...
+[12:42] CLIENTE: T bom
+[12:42] CLIENTE: 🥰🤭
+[12:44] LOJA: [áudio] "É igual eu tinha te falado, por enquanto permanece, porque os pneus vão sofrer reajuste para mais. Então, é sem promoção. E conforme eu tinha dito a ti, eu falei com o meu gerente aquele dia, né, ele disse que se você trouxer o pagamento em dinheiro, a unidade ele faz por 270 reais, mas é no dinheiro, né, se for débito, Pix e parcelamento, realmente fica conforme aí o orçamento que eu tinha te encaminhado. E esse pneu que eu tô te falando é o da GP Premium, tá bom?"  {audio:midias/3EB0C7701CA7CB7603AF31_200604.ogg}
+[12:44] CLIENTE: Vc já almoçou
+[12:46] LOJA: *Josy:*
+não...
+[12:46] CLIENTE: Vamos almoçar mulher
+[12:46] CLIENTE: Tá bom
+[12:48] LOJA: *Josy:*
+só as 13:30
+[12:48] CLIENTE: Tá perto
+[12:48] CLIENTE: Tô atrapalhando ai
+[12:48] CLIENTE: Mandando msg
+[12:49] LOJA: *Josy:*
+naaaada...
+[12:50] LOJA: *Josy:*
+estou fazendo orçametos.
+[12:50] CLIENTE: 🫡🇧🇷🥰

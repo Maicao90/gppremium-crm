@@ -1,0 +1,64 @@
+CONVERSA eb1c2d7e60 | contato: Fabricio Oliveira | 20/10/2026 16:20 até 21/10/2026 16:57 | 24 msgs do cliente, 21 da loja, 8 do robô
+
+--- 20/10/2026 (Tue) ---
+[16:20] CLIENTE: Quero cotar o pneu 165/70 R13 GP Premium.
+[16:20] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[16:21] CLIENTE: NOME: Fabricio 
+MEDIDA:165/70 R13
+[16:21] LOJA: Teremos 175/70/13 Fabricio!
+[16:21] LOJA: [foto]
+[16:23] LOJA: [áudio] "Olá, boa tarde, Fabrício. Tudo bom? Olha, o 165,70, ele acabou de esgotar no nosso estoque, tá? Eu vou ter um 75,70, que também está na oferta, de 299 por 269 no débito e no Pix."  {audio:midias/3EB0C2A09DC3C39E261B68_878391.ogg}
+[16:23] CLIENTE: É esse mermo
+[16:24] LOJA: Mora aqui em Luziânia-Go?
+[16:24] CLIENTE: Nada na cei
+[16:24] LOJA: Hm...
+[16:24] CLIENTE: Na verdade quero ver 5 pneus r13, e um r17
+[16:25] LOJA: Se eu mandar esses pneus para  o Novo Gama e te encaminhar a localização te ajuda?
+[16:25] LOJA: Qual a medida do 17?
+[16:25] CLIENTE: Ajuda
+[16:25] CLIENTE: Rapz pior que esqueci, tô de viagem
+[16:25] CLIENTE: 165,35 acho
+[16:26] LOJA: esse não temos
+[16:30] CLIENTE: Haaaa🥲
+[16:30] CLIENTE: Eu vou passar na volta, por Luziânia ai passo ae
+[16:31] LOJA: [áudio] "Então, vocês sabem onde fica a nossa loja, né Fabricio?"  {audio:midias/3EB06DAA0EFCF44CFBBB44_323846.ogg}
+[16:32] LOJA: [áudio] "Ah, é você agora que apareceu aqui sua foto, meu amigo. Como é que você tá?"  {audio:midias/3EB07D7B976F3C71DC8F02_505383.ogg}
+[16:39] CLIENTE: Sim sei
+[16:40] LOJA: [áudio] "Menino, tu sumiu! Você tá bem?"  {audio:midias/3EB0E90AB99AB08AC0A628_940664.ogg}
+[16:40] CLIENTE: Uai ...
+[16:40] CLIENTE: Kkk
+[16:40] CLIENTE: É tú josi?
+[16:40] CLIENTE: Tô sim, andando q nem jumento na Paraíba
+[16:45] LOJA: idem
+[16:49] CLIENTE: Em 5 pneus r13 em 4 x sai quanto?
+[16:50] CLIENTE: 175/70 R13
+[16:51] LOJA: Deixa eu ver aqui
+[16:52] LOJA: Ficam 4 parcelas de R$ 355,00
+[16:53] CLIENTE: É tá marromeno
+[16:53] LOJA: kkkk
+[17:07] LOJA: Então parcelo em 6 x para você, ficam 6 de 236,66
+[17:17] LOJA: Que dia vai passar por aqui?
+[17:18] CLIENTE: Rapz pior q não sei vei, tô em Goiânia, carregando pra SC.
+[17:19] LOJA: Eitha
+--- 21/10/2026 (Wed) ---
+[11:10] ROBÔ: 🙋🏼‍♀️
+[11:13] LOJA: [áudio] "Jovem, como é que você está? Eu vou, por hora, finalizar aqui o atendimento, tá? E quando você estiver passando aqui por Luziânia, você passa aqui para nós conversarmos pessoalmente, tá jóia? E como é que estão as músicas?"  {audio:midias/3EB0AE1CF84FAAE1344058_169029.ogg}
+[13:38] CLIENTE: [áudio] "Opa, tá bom! É porque eu mandei mensagem, talvez eu vou comentar o preço. Me jogaram pra Santa Catarina, mas de hora pra outra ele me jogou pra São Paulo, sabe? Vou lá e volto. Aí na volta, vou passar pro Luziânia, aí eu passei."
+[13:38] ROBÔ: Fabricio, não consegui ouvir seu áudio direito por aqui. Pode me escrever o que você disse?
+[13:38] CLIENTE: [áudio] "As músicas estão aí. Tem umas novas músicas para poder lançar. E aí, estou com medo disso. Tive que mudar meu nome de artista, sabe? Até lá. Tem clipe para lançar esse ano agora. Esse ano que vem, né? Porque já está acabando esse ano."
+[13:38] ROBÔ: Fabricio, o áudio chegou picado aqui e não consegui entender de novo 😅
+[13:39] ROBÔ: Pode me escrever por texto o que você quis dizer? Assim já te respondo certinho.
+[13:41] CLIENTE: Não eu falei que tudo bem pode ser o atendimento também falei sobre a música que tem música tem música novas para lançar só que esse ano quando tá acabando eu vou deixar para lançar o ano que vem aí também fala que eu troquei o nome né o nome de artista aí empurrando nem tô que nem cachorro de poço mas tá aí relacionando as músicas também falei que eu não vou mais passar Santa Catarina eu vou para São Paulo aí eu vou para São Paulo lá esperando a carga lá e voltar na volta agora não tenho mais certeza vou passar para o Luciano mas de qualquer jeito eu vou aí aí eu passando por Luziânia eu passo aí e pago depois eu volto para buscar os pneu aí é isso
+[14:40] ROBÔ: [localização] -16.2334867,-47.9120936 — Pneus GP Premium
+[14:40] ROBÔ: [foto] Pneus GP Premium
+[14:40] ROBÔ: Beleza, Fabricio! Boa viagem pra você 🚛
+[14:40] ROBÔ: Quando passar por Luziânia na volta, é só vir aqui na loja. Você vê os pneus, paga e já leva. Segue nossa localização!
+[14:43] LOJA: [áudio] "Ah, sim. Nossa, meu Deus. Meu áudio aqui tá péssimo. Não consegui ouvir de início e agora ficou mais claro. Pois é, quando for gravar os vídeos você me chame."  {audio:midias/3EB018475C00B8E227B1E9_742824.ogg}
+[16:57] CLIENTE: Kkkk tá bom
+[16:57] CLIENTE: Meleza

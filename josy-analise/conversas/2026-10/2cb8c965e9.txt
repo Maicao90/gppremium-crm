@@ -1,0 +1,55 @@
+CONVERSA 2cb8c965e9 | contato: Fernando De Jesus | 17/10/2026 14:57 até 21/10/2026 11:10 | 12 msgs do cliente, 20 da loja, 1 do robô
+
+--- 17/10/2026 (Sat) ---
+[14:57] CLIENTE: Boa tarde
+[14:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:59] CLIENTE: 265/60 R18
+[14:59] CLIENTE: Frontier
+--- 19/10/2026 (Mon) ---
+[08:08] LOJA: Bom dia, Fernando!
+[08:08] LOJA: Temos sim!
+[15:20] LOJA: *Josy:*
+OI Fernando... quer foto...video?
+[15:23] CLIENTE: Quero sim
+[15:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:48] LOJA: *Josy:*
+Pneus GP Premium 👇🏻
+[15:48] LOJA: [vídeo]
+[15:57] LOJA: [foto]
+[17:53] CLIENTE: [áudio] "Eu quero ele na pneu para asfalto. Eu não quero ele borrachudo não, porque eu já usei borrachudo, faz muito barulho no asfalto e eu rodo pouco em estrada de chão."
+[17:54] LOJA: *Josy:*
+então tem o HT do inicio do video.
+[17:54] LOJA: *Josy:*
+Vai te atender muito bem.
+[17:54] LOJA: [áudio] "Você mora onde mesmo, Fernando?"  {audio:midias/3EB0D1C6BE80D4471BD544_692477.ogg}
+[18:29] CLIENTE: Moro no park way
+--- 20/10/2026 (Tue) ---
+[08:05] LOJA: *Josy:*
+Bom dia!
+[08:05] LOJA: *Josy:*
+Ah, sim!
+[12:48] CLIENTE: Bom dia
+[12:48] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[12:48] LOJA: [áudio] "Olá, tudo bem, Fernando?"  {audio:midias/3EB04C5D6F10098EECFCFD_216452.ogg}
+[12:50] CLIENTE: [áudio] "Deixa eu te fazer uma pergunta. Aquela promoção lá de compra 3 leva 4, tá valendo?"
+[12:52] LOJA: *Josy:*
+Fernando... Sim, realmente, a promoção existe!  Mas   é válida para os pneus da marca GP Premium nas medidas 195/65/15 e 215/55/17.
+[13:46] CLIENTE: [áudio] "Aí é covardia. Eu vim de São Paulo, passei na frente, acho que em Luziânia, sei lá, e vi a promoção me chamou atenção."
+[13:47] CLIENTE: [áudio] "Os pneus lisos de vocês e um pneu boi em conta, qual você me indica aí?"
+[14:48] LOJA: [áudio] "Então, Fernando, essas são as opções que realmente são as mais vendidas aqui na loja."  {audio:midias/3EB049768464D593AEBC0F_132185.ogg}
+[14:52] CLIENTE: [áudio] "Deixa eu te fazer uma pergunta. Fazendo alinhamento, balanceamento, tudo certinho, o pneu desse roda quantos mil km?"
+[14:52] CLIENTE: Esse aqui está quanto?
+[14:54] LOJA: *Josy:*
+R$ 663,94 a unidade a vista
+[17:27] LOJA: [áudio] "Fernando, eu vou te mandar aqui a nossa localização, pois se houver a possibilidade, você vem aqui na nossa loja."  {audio:midias/3EB0D43C4535B60A05593C_287746.ogg}
+[17:27] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 21/10/2026 (Wed) ---
+[11:10] ROBÔ: 🙋🏼‍♀️

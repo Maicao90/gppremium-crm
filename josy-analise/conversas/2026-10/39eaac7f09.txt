@@ -1,0 +1,81 @@
+CONVERSA 39eaac7f09 | contato: . | 08/10/2026 18:03 até 09/10/2026 14:22 | 32 msgs do cliente, 37 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[18:03] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Boa noite
+[18:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:03] LOJA: Boa noite
+[18:03] CLIENTE: Esse pneu 245/70/16 para caminhonete Ainda disponível nesse valor a partir de 479
+[18:04] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Eu sou a Josi, assim que possível me diz o seu nome. E sim, está assim disponível."  {audio:midias/3EB0360E6035F5FCC30408_654552.ogg}
+[18:04] CLIENTE: Acabei de ver no anúncio  no Instagram
+[18:04] LOJA: [áudio] "Sim, sim, nós produzimos mais. Eu tenho aqui a pronta entrega."  {audio:midias/3EB0FA75409AC8B1DA27B9_944833.ogg}
+[18:04] CLIENTE: Oi josy
+[18:04] LOJA: [áudio] "São os pneus da marca GP Premium."  {audio:midias/3EB0C4390C51FB4622ECED_901629.ogg}
+[18:04] CLIENTE: Me chamo neto
+[18:04] LOJA: [foto]
+[18:04] LOJA: [áudio] "Seja muito bem-vindo, Neco."  {audio:midias/3EB0F299A986E9D4C03882_480117.ogg}
+[18:05] LOJA: [áudio] "O valor unitário para o débito para a Pix está por R$ 479,00 a vista, tá? E se for para parcelar, o valor muda, mas é muito pouca coisa."  {audio:midias/3EB00E79AC4E652A10F123_525479.ogg}
+[18:05] LOJA: [foto]
+[18:05] LOJA: [áudio] "Você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB07923BC71C67EEA85C9_158177.ogg}
+[18:06] CLIENTE: Esses pneus são remold
+[18:06] CLIENTE: Ou novos
+[18:06] CLIENTE: Não
+[18:06] CLIENTE: Moro na ponte alta do gama
+[18:06] LOJA: [áudio] "Neto, ele é um pneu ecológico que nós fazemos. Sim, ele vai entrar na categoria de remodelagem, só que Linha Premium, ele é o pneu mais vendido que eu tenho, assim, eu não sei nem te descrever, mas é o pneu mais vendido que eu tenho, justamente por conta da qualidade, tá?"  {audio:midias/3EB0A11FEE56BF0FDDE33F_114895.ogg}
+[18:07] LOJA: [áudio] "Os pneus, eles têm 2 anos de garantia. Com questão a quilometragem, eles rodam os seus 60, 70 mil km tranquilamente, tá?"  {audio:midias/3EB04E84078FB79056159A_892557.ogg}
+[18:08] CLIENTE: Tenho medo de comparar e não atender as minhas expectativas
+[18:08] LOJA: [áudio] "Se você quiser, amanhã cedo eu gravo um vídeo que eu tenho um exemplar aqui de pneu que é remolde mesmo, aí eu mostro a diferença deles, tá bom?"  {audio:midias/3EB098BEEC5CCED059F554_879027.ogg}
+[18:09] CLIENTE: Te agradeço
+[18:09] LOJA: [áudio] "Fique extremamente tranquilo. Nós produzimos esses pneus há 10 anos e são realmente de primeira linha, tá bom?"  {audio:midias/3EB0A8713CC3C11679B57B_736486.ogg}
+[18:09] CLIENTE: As vezes um barato pode sair caro ne
+[18:09] LOJA: [áudio] "E desculpa ficar te encaminhando o áudio, né, que eu observei que você prefere mensagens digitadas. Amanhã prometo me conter e digito pra ti também, tá, Joia?"  {audio:midias/3EB01F44B0916DFFCF4098_346595.ogg}
+[18:09] CLIENTE: Mais vc tem outras marcas de pneus tbm ne
+[18:10] LOJA: [áudio] "Nesse caso não, porque ele é um pneu num preço muito acessível e a qualidade dele é muito boa, inclusive temos montado aqui na caminhonete."  {audio:midias/3EB0910443FEA5542E1995_814053.ogg}
+[18:10] LOJA: [áudio] "No dia de hoje, não tenho outras marcas, tá? Elas estão em falta. Às vezes acontece de ter uma ou outra aqui no meu estoque, mas assim, de antemão, já deixo informado a você que pneus de outras marcas aqui famosíssimas ficam encalhados no meu estoque, porque quando coloca para poder comparar justamente, né, a qualidade e o custo-benefício, esse daqui, realmente, eu vendo ele assim de lavada."  {audio:midias/3EB04B3918CB5782C6E1C7_76822.ogg}
+[18:10] CLIENTE: Fique tranquila
+[18:10] CLIENTE: Estou em um consultório
+[18:11] LOJA: [áudio] "E se você tiver interesse em alguma outra marca, você pode me falar que amanhã, pela manhã, eu solicito também um orçamento aqui com os meus distribuidores, certo? Bem, por hora vou encerrar aqui o meu atendimento e amanhã voltamos a nos falar. Agradeço muito pelo seu contato, tá joia? Boa noite."  {audio:midias/3EB0F56221B0A70F7B3BEE_108320.ogg}
+[18:12] CLIENTE: Muito obrigado
+[18:12] LOJA: Disponha!
+[18:12] CLIENTE: Depois me manda a localização da loja por favor
+[18:13] LOJA: Claro... mando sim, agora mesmo!
+[18:14] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[18:14] LOJA: [foto]
+[18:15] CLIENTE: Obrigado josy
+[18:15] CLIENTE: Bom descanso
+[18:15] LOJA: Disponha!
+[18:15] LOJA: Para ti, também!
+--- 09/10/2026 (Fri) ---
+[11:08] LOJA: Bom dia, Neto...como vai?   Se estiver em busca de alguma marca especifica me fala que eu peço uma cotação, pois sei que daqui alguns dias teremos pneus importados , mas por ora não sei dizer a marca e preço.
+[11:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:25] CLIENTE: [áudio] "Oi, bom dia, tudo bem? Tudo bem, Josi? Pois é, eu vou precisar de 4 pneus, na realidade, então assim, eu sou meio cabreiro com esses pneus remolde, eu já tive problema com esse tipo de pneu e aí eu não tenho 100% de credibilidade com eles não, tá? Mas se você puder fazer uma agotaçãozinha dos pneus, pode ser até importado mesmo o preço em conta aí, o 245-70-16, eu te agradeço, tá? É... Desde que não seja remolde."
+[11:27] LOJA: [áudio] "Oi Neto, bom dia, como é que você está? Bem, eu solicitei lá com o pessoal e vai chegar aqui pneu importado, 245. Eu só fico de mãos atadas com a questão de passar o preço, porque eu não sei nem qual marca que vai chegar. É igual aquele chocolate Kinder Ovo que a gente comprava antigamente, que vem sempre com uma surpresa. É porque realmente eu não sei, é uma surpresa. Vem a marca, aí eu tenho os pneus em estoque. Mas por hora eu ainda realmente fico te devendo aí com questão a marca e preço, tá? Mas se você estiver, por exemplo, em busca de alguma marca nacional, sei lá, um Goudir, um Pirelli, eu verifico para você especificamente o que você estiver buscando, tá?"  {audio:midias/3EB0EC4206D03EBC082DD6_658961.ogg}
+[11:44] CLIENTE: [áudio] "Me passa os valores desses aí, Josi, por favor, desses Pirelli, desse Gudeu, do que você tiver aí. Me passa os valores aí pra gente ter mais ou menos uma noção, entendeu? Mas dá pra esperar, não tô com muita pressa não, essa caminhonete tem que ficar parada, entendeu? Tô até mexer em suspensão dela, esses trenques, preciso mexer nela, mas eu preciso comprar 4 pneus pra ela. Mas dá tempo, aí quando surgir aí você me avisa."
+[12:00] LOJA: PN 245/70R16 KELLY EDGE AT 2 113T	KELLY	SUV	16	245/70R16	R$ 1.206,00 em 10x
+
+PN 245/70R16 WRANGLER WORKHORSE AT 113/110T	GOODYEAR	SUV	16	245/70R16	R$ 1.561,00 em 10x
+
+PN 245/70R16 WRANGLER FORTITUDE HT 107H	GOODYEAR	SUV	16	245/70R16	R$ 1.548,00 em 10x
+[12:01] LOJA: [áudio] "Neto, a princípio, eu consegui aqui a resposta da Goodyear, tá? E eles me mandaram essas opções aí. Esses valores, eles são para parcelar em até 10 vezes, tá? E eles solicitam um pagamento calção de 300 reais para poder reservar alguma dessas opções. Aí, fazendo pagamento calção, os pneus chegando aqui na nossa loja, obviamente, né? Eu irei te avisar. E você vindo aqui para realizar o restante do pagamento, esse valor do pagamento calção, ele é abatido do total da sua compra, tá?"  {audio:midias/3EB0B22E463EB0A57D97EB_897116.ogg}
+[12:17] CLIENTE: [áudio] "Pneus, Luzi, esse valor aí de cada pneu é? Mil, esse mais barato de 1.200, é cada pneu? Ou é os 4 pneus?"
+[12:17] LOJA: [áudio] "Isso, é o valor de cada pneu."  {audio:midias/3EB04AC09C887C5DEC63BF_613445.ogg}
+[12:17] LOJA: [áudio] "Nacionais são caros, aí o importado por hora não obtive retorno."  {audio:midias/3EB096927EF5D059AB0E44_327597.ogg}
+[12:18] CLIENTE: Deus é mais
+[12:18] CLIENTE: Kkkkk
+[12:18] CLIENTE: [áudio] "Desculpa ter feito você fazer essa pesquisa aí, tá? Vai tá muito puxado mesmo. Vamos aguardar aí pra ver se chega o outro importado, tá? Não tem pressa também não, tá bom?"
+[12:19] LOJA: [figurinha]
+[12:19] LOJA: rindo mas respitosamente.
+[12:19] CLIENTE: [áudio] "Eu vou fazer o seguinte, eu sempre tô nessa região do Goiás aí, Balparaíso, Ocidental, Jardim Ligar, tô sempre por aí. Eu mexo com entregas também, aí eu vou passar, eu vou te ligar. Vou passar por aí, pode dar uma olhadinha, tá?"
+[12:20] LOJA: [áudio] "Ah, sim, perfeitamente. Uai, muito bom. Já que você sempre está aqui pela região e eu te encaminhei a localização, quando você estiver por aqui, já vem aqui na loja para nós, né, nos conhecermos pessoalmente, para você visitar aqui a nossa empresa, conhecer os nossos produtos."  {audio:midias/3EB0925B48487743194B64_218762.ogg}
+[12:27] CLIENTE: Pronto
+[12:28] CLIENTE: Só consigo falar com vc só nesse número
+[12:28] CLIENTE: ?
+[12:43] CLIENTE: Desculpe a pergunta as vezes possa ter outro número corporativo caso não consigo falar nesse.
+[13:39] LOJA: Oi... tudo bem!?
+[13:39] LOJA: Estava em horário de almoço.
+[13:51] CLIENTE: [áudio] "Oi, Josi. Tranquilo, Josi. Depois que eu te mandei mensagem, eu tava dirigindo também, não vi mais. Só pra precaução, às vezes eu posso estar por aí e eu vi que é número corporativo da empresa, tipo, é WhatsApp, mas é número interno, né? Às vezes você possa ter outro número também da empresa, outro número que eu consigo falar com você quando estiver por aí. Tá beleza? Às vezes, não sei se você é vendedora, representante, treino e tudo aí, aí eu conversaria com você. Tá bom? Obrigado e já."
+[14:08] LOJA: 61996749841
+[14:22] CLIENTE: Ob.

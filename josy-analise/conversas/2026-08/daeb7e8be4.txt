@@ -1,0 +1,14 @@
+CONVERSA daeb7e8be4 | contato: João Neto | 12/08/2026 10:20 até 16/08/2026 06:02 | 4 msgs do cliente, 4 da loja, 0 do robô
+
+--- 12/08/2026 (Wed) ---
+[10:20] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:22] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 14/08/2026 (Fri) ---
+[08:40] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[08:42] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 15/08/2026 (Sat) ---
+[07:20] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[07:22] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 16/08/2026 (Sun) ---
+[06:00] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[06:02] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

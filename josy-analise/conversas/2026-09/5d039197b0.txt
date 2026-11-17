@@ -1,0 +1,17 @@
+CONVERSA 5d039197b0 | contato: Arlene Meneses | 21/09/2026 10:21 até 22/09/2026 10:48 | 2 msgs do cliente, 7 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[10:21] LOJA: *Josy:*
+Bom dia, sr Sebastoão.
+[10:22] LOJA: *Josy:*
+Teremos 175/70/14 de carga
+[10:22] LOJA: [foto]
+[10:23] LOJA: *Josy:*
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 22/09/2026 (Tue) ---
+[10:17] LOJA: [áudio] "Oi, senhora Sebastião, bom dia. Ontem o senhor solicitou um orçamento aqui de pneu de carga aro 14 e eu tenho aqui um 7570. Eu te mandei um orçamento. Gostaria de saber se o senhor teve oportunidade de analisar. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB05C41C0FBDA909CBCE3_702008.ogg}
+[10:48] CLIENTE: Esse número não é desse senhor
+[10:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:48] CLIENTE: Vc mandou errado

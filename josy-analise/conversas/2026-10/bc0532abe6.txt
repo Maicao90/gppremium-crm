@@ -1,0 +1,19 @@
+CONVERSA bc0532abe6 | contato: Antônio | 14/10/2026 17:10 até 15/10/2026 09:20 | 4 msgs do cliente, 6 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[17:10] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[17:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:15] CLIENTE: 225 45 aro 17
+[17:16] CLIENTE: Você tem esse pneu
+[17:17] LOJA: Temos sim!
+[17:17] CLIENTE: Qual a marca desse pneu
+[17:17] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:17] LOJA: [foto]
+[17:18] LOJA: Mora aqui em Luziânia-Go?
+--- 15/10/2026 (Thu) ---
+[09:20] LOJA: [áudio] "Oi, Antônio. Bom dia. Como é que você está? Ontem eu te encaminhei ao orçamento e gostaria muito de saber se você pretende seguir com a negociação. E eu tenho a pronta entrega todas as marcas que eu te encaminhei no orçamento. Portanto, assim que possível, me dá um retorno, por gentileza."  {audio:midias/3EB05725DDF7F54ADDD6DB_915555.ogg}

@@ -1,0 +1,20 @@
+CONVERSA 980b98aaff | contato: 𝕸𝖆𝖗𝖎𝖆 𝕯𝖔𝖘 𝖆𝖓𝖏𝖔𝖘 | 08/10/2026 00:45 até 08/10/2026 16:00 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[00:45] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[00:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[00:45] CLIENTE: 14 175 70
+[08:10] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu sou a Josi. Maria, você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB061FD509EBD5E6E2029_787664.ogg}
+[10:43] CLIENTE: Não Goiânia
+[15:53] CLIENTE: Oi
+[15:56] LOJA: Oooii
+[15:58] CLIENTE: Você não me falou o valor do pneus
+[16:00] LOJA: Me perdoe.
+[16:00] LOJA: [foto]
+[16:00] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:00] LOJA: [áudio] "Como você é de Goiânia, eu deduzi erroneamente que você não teria interesse, ainda mais porque, no caso, tem que vir aqui para poder realizar a compra. Me desculpa."  {audio:midias/3EB04685F2B43A9D42C1BB_81203.ogg}

@@ -1,0 +1,32 @@
+CONVERSA 02d748a5d4 | contato: Marcelo | 18/08/2026 10:50 até 19/08/2026 10:42 | 9 msgs do cliente, 18 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[10:50] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi. Sim, tenho a Xim, eu só estou com dificuldade de mandar o orçamento neste momento, porque eu estou sem sistema, mas a princípio eu tenho aqui os pneus da marca GP Premium, que a unidade está por 329 reais à vista. Você mora aqui em Luziânia mesmo?"  {audio:midias/A51E1A924CFE9DE31AAA43AE415ABE3F_77338.ogg}
+[10:56] CLIENTE: Eu moro em Brasília
+[10:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:57] CLIENTE: Mas posso ir buscar
+[10:57] CLIENTE: A prazo qual o valor?
+[10:57] CLIENTE: Eu irei precisar de 04
+[10:58] LOJA: [áudio] "Então, o valor que eu te passei é para o pagamento à vista. Aí você me dá só um instante que a tela aqui do meu computador está atualizando, aí eu te mando as opções de parcelamento, foto do pneu, tudo certinho, tá bom?"  {audio:midias/A533FBBE8BAE3684E02B6A157A4EB730_489608.ogg}
+[10:58] CLIENTE: Tá bom
+[10:59] LOJA: Pneu da marca GP Premium
+[11:00] LOJA: [foto]
+[11:01] LOJA: [áudio] "Aí, a unidade à vista é 329. Para parcelar, o valor sofre alteração, tá jóia?"  {audio:midias/A5A527221A9F530A62CF3CE105D0355B_638507.ogg}
+[11:01] LOJA: [foto]
+[11:02] CLIENTE: [áudio] "Eu vi na tabela aqui, vocês tem uma foto da lateral dele? E vocês montam no veículo ou eu tenho que levar em algum lugar para pagar a montagem?"
+[11:02] LOJA: [áudio] "Nós fazemos a montagem aqui na nossa oficina."  {audio:midias/A53E7C0EF8589E561A0C3FDF5BA976AD_37612.ogg}
+[11:03] CLIENTE: Cobra à parte ou é cortesia
+[11:05] LOJA: [áudio] "A montagem é cortesia, tá? Aí o que é cobrado somente balanceamento dos pneus, alinhamento, mas aqui é o preço justo, preço normal, tá? Sem ficar inventando moda não."  {audio:midias/A544936BFFBFABD3497352D427454D92_541573.ogg}
+[11:05] LOJA: [foto]
+[11:05] LOJA: [foto]
+[11:23] CLIENTE: [áudio] "Gostei do pneu, é bonito, o pneu é bem parecido com o que está nela, a Spin Active. Eu vou ver um dia melhor, eu entro em contato novamente, que é 100 km daqui, né? Aí eu vou me organizar para poder ir aí e resolver tudo num dia só, tá bom? Muito obrigado."
+[11:27] LOJA: [áudio] "Sim, perfeito, então. Ficamos combinados dessa maneira, tá? Além desse modelo, eu tenho um outro que ele faz com que seja até mais econômico, né? Que é um modelo liso. O preço vai ser o mesmo, daqui a pouquinho eu te mando a foto. E só pra eu salvar aqui seu contato, confirma pra mim o seu nome."  {audio:midias/3EB04731DF4687E9E689E1_256497.ogg}
+[11:38] CLIENTE: [áudio] "Ah tá, manda pra mim a foto pra eu ver. É porque ela, essa, a Spin Active, ela é, é igual aqueles, aquela linha de ventre da, da Fiat, assim, ela já vem com pneu assim, né, modelo, é, modelo misto, né, que fala, né. E aí, eu não sei se ficaria legal, mas manda a foto pra mim, ver esse outro aí. Tá bom? Meu nome é Marcelo."
+--- 19/08/2026 (Wed) ---
+[09:42] LOJA: [áudio] "Oi, Sr. Marcelo, bom dia, tudo bem? Ontem eu tive uma instabilidade aqui no nosso WhatsApp e eu fiquei sem comunicação. Eu vou te mandar aqui a foto do pneu e a localização da nossa loja, tá joia?"  {audio:midias/3EB0D61840A0EB6DAFC67E_161165.ogg}
+[10:29] LOJA: albumMessage
+[10:29] LOJA: [foto]
+[10:29] LOJA: [foto]
+[10:29] LOJA: Vou te encaminhar a nossa localização.
+[10:42] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

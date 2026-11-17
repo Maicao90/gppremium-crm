@@ -1,0 +1,210 @@
+CONVERSA 7bf9779ba6 | contato: Compras Manteigaria Nacional | 10/09/2026 17:02 até 19/09/2026 09:31 | 55 msgs do cliente, 92 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[17:02] CLIENTE: [foto] 265/60 R18
+[17:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:03] LOJA: [áudio] "Oi Amanda, tudo jóia? Amanda, esse Bridgestone aí que você está utilizando, ele é o HT, né?"  {audio:midias/3EB0C887FDC68D58908604_875811.ogg}
+[17:03] CLIENTE: Boa tarde, estou precisando do orçamento para os 4 pneus da camionete, pneus para asfalto e estrada de chão 
+Pode ser Bridgestone, toyo, Michellin ou Yokohama
+[17:04] LOJA: [áudio] "A pronta entrega eu não disponho de nenhuma dessas opções, tá? Mas eu vou fazer um orçamento com os meus distribuidores, assim que eles me responderem eu te passo qual marca que eles vão ter, o preço e o prazo de entrega."  {audio:midias/3EB038A33596DA7286D209_781728.ogg}
+[17:05] CLIENTE: [áudio] "Assim, eu não estou precisando com tanta pressa, mas tem uma certa urgência, porque os pneus estão todos carecas. E como está esse período de chuva, está escorregando bastante."
+[17:08] LOJA: [áudio] "E somente essas marcas mesmo que te atendem, porque aqui eu tenho a pronta entrega, os pneus que eles são mais para o asfalto, da marca Maxx, são pneus importados e são bons, a unidade sai por R$ 664,00 a vista, e tem os pneus aqui da empresa, que são da marca GP Premium, eles são pneus ecológicos, entram na categoria de remodelagem, porém, são pneus bem reforçados, que eu até uso aqui na minha Amarok, e dá para fazer aqui a unidade por R$ 599,00, eles são no modelo mais cravudo."  {audio:midias/3EB0AB8477EB73335E01DD_195114.ogg}
+[17:08] LOJA: [áudio] "Eu vou te mandar aqui o orçamento do que eu tenho, só para deixar registrada na nossa conversa, tá bom?"  {audio:midias/3EB07D62F20D4E721D5CA3_569118.ogg}
+[17:08] LOJA: [foto]
+[17:09] LOJA: *Josy:*
+Pneu GP Premium 265/60/18 Brutus para terra e asfalto 👇🏻
+[17:09] LOJA: [foto]
+[17:20] CLIENTE: E o 265/70/18
+[17:20] LOJA: *Josy:*
+Isso
+[17:20] CLIENTE: Só essas marcas mesmo
+[17:21] CLIENTE: Dessa marca você tem a medida de 265/70/18?
+[17:21] LOJA: *Josy:*
+Somente 265/60/18
+[17:21] LOJA: [áudio] "Amanda, deixa eu te fazer uma pergunta. Você está buscando a medida 265-618, conforme a foto que você me solicitou, ou você está em busca de um perfil mais alto, que daí eu preciso cancelar a solicitação que eu fiz e pedir uma nova?"  {audio:midias/3EB03A7DBB7420D567A955_449627.ogg}
+[17:22] CLIENTE: Vou mudar para um mais alto
+[17:22] LOJA: [áudio] "que você está digitando aqui para mim, 18570."  {audio:midias/3EB07650311FEB5F1C8CFE_616500.ogg}
+[17:22] LOJA: [áudio] "Beleza, então, vou cancelar lá, vou pedir esse mais alto."  {audio:midias/3EB047339BF559C6D9D8C2_57100.ogg}
+[17:22] CLIENTE: Esse e o que está atualmente, vou querer um mais alto
+[17:31] CLIENTE: [áudio] "Tem uma viagem marcada para o início do mês para Coronel José Dias. Fica no Piauí, tem uma fazenda lá, e normalmente o Sr. Ricardo anda toda a fazenda na caminhonete, então tem muita, muita pedra."
+[17:34] LOJA: [áudio] "Entendo perfeitamente. Olha, Amanda, eu solicitei lá para o meu distribuidor, tá joia? E ele me dando um retorno, eu falo de imediato contigo, tá bom?"  {audio:midias/3EB0AD14CD05C0427B9786_845838.ogg}
+[17:35] CLIENTE: [áudio] "Tá bom, outra dúvida. Como nós vamos trocar os quatro pneus, nós estamos cientes que mais ou menos um pneu dessa marca e dessa especificação vai ficar em torno de uns 2 mil a unidade. Vocês vendem no boleto para a empresa? Consegue parcelar no boleto?"
+--- 11/09/2026 (Fri) ---
+[10:23] LOJA: *Josy:*
+Bom dia!
+[10:23] LOJA: [foto]
+[10:23] LOJA: *Josy:*
+Gonsegui da marca  BF GOODRICH , que são os melhores pneus.
+[10:24] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 500,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:44] CLIENTE: ?
+[10:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:45] CLIENTE: Bom dia, tudo bem?
+[10:45] CLIENTE: Consegue ver a questão do boleto?
+[10:48] LOJA: [áudio] "Oi, Amanda, tudo jóia? Amanda, infelizmente nós não trabalhamos com boletos."  {audio:midias/3EB03718D58A77BAD22694_467137.ogg}
+[11:01] LOJA: *Josy:*
+Está cotando em outras empresas também né? Eles cotam daqui, com mesmo preço pois aqui é distribuição.
+[11:01] CLIENTE: Sim
+[11:02] CLIENTE: Porém precisávamos comprar no boleto
+[11:02] LOJA: *Josy:*
+É...infelizmente não faz
+--- 12/09/2026 (Sat) ---
+[08:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:26] CLIENTE: [áudio] "Bom dia, Luzi. Tudo bem? Deixa eu te perguntar. Igual, na camionete, nós utilizamos o pneu 265-60-18. Se eu passar para um 70, eu vou precisar fazer alteração na suspensão. Porém, se eu passar para um 65, eu preciso, você consegue me dar essa informação? Se eu preciso fazer alguma alteração?"
+[08:29] LOJA: Bom dia!
+[08:30] LOJA: Qual é a camionete mesmo?
+[08:31] LOJA: [áudio] "Oi, Amanda, bom dia, tudo bem? Qual que é a caminhonete mesmo? Porque o meu WhatsApp travou, eu não tô conseguindo ver aqui as mensagens direito. Pode confirmar pra mim?"  {audio:midias/A5BAE748662B364CD927287A9775292E_218754.ogg}
+[08:31] CLIENTE: Hillux
+[08:33] LOJA: Sabe o ano?
+[08:34] LOJA: [áudio] "Oi, Amanda. Não vai dar certo, tá? Tem que ser o original mesmo, que é o 60."  {audio:midias/A5BF595471C5A446A8C25D681E9DC733_828167.ogg}
+[08:35] LOJA: Nesse caso tem que fazer alteração na camionete para loro 265/70
+[09:15] CLIENTE: 2018
+[09:15] CLIENTE: Tá bom
+[10:26] LOJA: [áudio] "É isso mesmo, Amanda. Segue a instrução que eu te passei, tá joia?"  {audio:midias/A56AF7EA9B20BB4EF19D95BD705A1BA4_162174.ogg}
+[11:53] CLIENTE: [áudio] "Eu acabei de falar com um rapaz mecânico também, ele falou que teria que fazer uma adaptação. Então, de qualquer forma, eu vou precisar dos 4 pneus 265 barra 60 barra 18. Tem alguma marca Toyama ou Yokohama para entregar na segunda-feira ou até terça-feira? E aí você verifica para mim uma condição de parcelamento no cartão?"
+[11:56] LOJA: [áudio] "Amanda, eu só preciso confirmar o desenho com o pessoal da Michelin, tá? Que é a única marca que eu consegui no 265-6018, a unidade está por R$ 1.427,00, é a única marca que vai ter o modelo disponível, que eu entrei em contato com as outras, né, que você sugeriu, e a única que me deu retorno foi Michelin. Aí, na segunda-feira, eu só dou uma confirmada direitinho aqui pra nós, tá bem?"  {audio:midias/A5017CF2C4EA8BED0277CFDCD5797638_823707.ogg}
+--- 14/09/2026 (Mon) ---
+[14:21] CLIENTE: 1.  *Michelin LTX Trail 265/60 R18* - 
+
+2.  *Bridgestone Dueler H/T 684 II 265/60 R18* - 
+
+3.  *Yokohama Geolandar AT G015 265/60 R18* -
+[14:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:21] CLIENTE: [áudio] "Alguma marca dessa você tem desses modelos em específico? Eu consegui aqui conversar com o seu Ricardo e aí seria o pagamento no cartão para dividir."
+[14:22] LOJA: [áudio] "Amanda, há pronta entrega nenhuma delas, tá?"  {audio:midias/3EB02CBC269920CADAB7BC_654372.ogg}
+[14:22] CLIENTE: Pra chegar até sexta?
+[14:22] LOJA: [áudio] "Não, Amanda, nenhuma delas é pronta entrega. Eu só estou confirmando esse daqui da Bridgestone, que é no modelo HT, desse orçamento aqui que você me solicitou. E HT é somente para o asfalto, tá joia? Só estou aguardando aqui a confirmação e já te passo, tá bom?"  {audio:midias/3EB004A09E0F5979CEFCD3_60303.ogg}
+[14:23] CLIENTE: Teria que ser para os dois
+[14:24] LOJA: [áudio] "Pois é, é que aqui você pediu para mim o modelo HT, a Bridgestone HT."  {audio:midias/3EB0141E5328E4827DAC50_87222.ogg}
+[14:24] LOJA: [áudio] "E, de todo modo, estou confirmando aqui com o pessoal, tá bom?"  {audio:midias/3EB059C651E5EC1F5B8DA2_733173.ogg}
+[14:26] CLIENTE: Foi os modelos que ele enviou, mas ele quer para asfalto e estrada de chão
+[14:27] LOJA: [áudio] "Sim, sem problemas. Aí o bom é que eu já estou te informando, aí você já vai tendo uma noção de quando ele falar que quer um modelo para o chão, para o asfalto e estrada de chão, é modelo AT. Aí quando falarem para você modelo HT, é somente para o asfalto. Aí já vai te ajudando quando ele pedir essas solicitações para você, você já vai tendo noção. Só estou aguardando aqui a resposta do pessoal."  {audio:midias/3EB072984F62E2533D72E8_509277.ogg}
+[14:27] CLIENTE: Tá bom
+[14:27] CLIENTE: Obrigada
+[16:24] LOJA: *Josy:*
+OI!
+[16:25] LOJA: *Josy:*
+Retorno apenas da Michellin
+[16:25] LOJA: [foto]
+[16:25] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 500,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:27] LOJA: [foto]
+[16:27] LOJA: [foto]
+[16:56] CLIENTE: Os 4 pneus consegue um desconto nesse parcelamento?
+[16:56] LOJA: *Josy:*
+Eles já me passaram no menor preço, Amanda
+[17:35] CLIENTE: [áudio] "Josi, eu conversei com o Sr. Ricardo e ele disse que pode fechar. Nós iremos parcelar em 6 vezes. Eu gostaria de saber se eu posso te enviar esses 500 reais no Pix e eu consigo programar para amanhã no final do dia. E, no caso, você consegue fechar hoje para chegar até quinta-feira?"
+[17:35] CLIENTE: [áudio] "Outra dúvida, ele perguntou se seria a base de troca e eu acredito que não. Só realiza a troca e os pneus que nós temos hoje nela fica com a gente mesmo, correto?"
+[17:37] LOJA: [áudio] "Amanda, fique tranquila, tá? Não é a base de troca, tá bom? E sim, eu vou te passar aqui o Pix."  {audio:midias/3EB028AD607337F94B5E1F_808921.ogg}
+[17:38] LOJA: [áudio] "Sim, eu creio que ele chega assim até quinta-feira, tá bom?"  {audio:midias/3EB0B87840B9AD9792E902_869156.ogg}
+[17:38] LOJA: *Josy:*
+PIX em nome de VIA PNEUS
+[17:38] LOJA: *Josy:*
+26.621.495/0001-60
+[17:50] CLIENTE: Passei ao financeiro para pagamento
+[17:50] LOJA: *Josy:*
+Perfeito.
+[17:51] LOJA: *Josy:*
+Realizando o Pix me encaminha o comprovante, para que possa sinalizar o distribuidor.
+[17:51] CLIENTE: Tá bom
+--- 15/09/2026 (Tue) ---
+[07:52] CLIENTE: [documento] 86915092026.pdf
+[07:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:52] CLIENTE: Bom dia Josy, segue o comprovante
+[08:03] LOJA: *Josy:*
+Bom dia, Amanda!
+[08:07] LOJA: *Josy:*
+Perfito, Amanda.
+[10:38] LOJA: [áudio] "Amanda, obrigada, tá? E sua solicitação já foi feita. Os pneus chegando aqui, eu entro em contato imediato com vocês, tá bem?"  {audio:midias/3EB05FA42412CE83220357_389528.ogg}
+[10:58] CLIENTE: [áudio] "E esses pneus, eles estão previstos para chegar que dia? Na quinta ou na sexta-feira?"
+[11:01] LOJA: [áudio] "A priori, quinta. Se o transporte vir todo direitinho, quinta-feira, eu creio que na parte da tarde já estão aqui, tá bom?"  {audio:midias/3EB0B2B3E79E88D23AC564_226619.ogg}
+[11:01] LOJA: [áudio] "Aí eu vou te mantendo informada."  {audio:midias/3EB05CCBC9A672BE6076C9_571102.ogg}
+--- 16/09/2026 (Wed) ---
+[16:07] LOJA: *Josy:*
+Oi!
+[16:07] LOJA: [áudio] "Boa tarde, Amanda. Tudo bom? Amanda, os pneus chegaram."  {audio:midias/3EB048F2CAEE480B4A04D6_255915.ogg}
+[16:07] CLIENTE: Boa tarde
+[16:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:08] LOJA: *Josy:*
+Me informa os dados do comprador para que eu realize a nota fiscal
+[16:08] CLIENTE: Amanhã a tarde iremos realizar a troca dos pneus
+[16:08] LOJA: *Josy:*
+Ok!
+[16:09] LOJA: *Josy:*
+E me informa qual é a forma de pagamento que será realizada, para que possa fechar a ntoa.
+[16:10] CLIENTE: [documento]
+[16:10] CLIENTE: Cartão, 6x
+[16:13] LOJA: *Josy:*
+Perfeito!
+[16:14] LOJA: *Josy:*
+Total R$ 6.600,00  - R$ 500,
+[16:53] CLIENTE: As parcelas serão no valor de R$1525,25 correto?
+[16:55] LOJA: *Josy:*
+ficam 6 de 1.016,66
+[16:56] CLIENTE: Tá bom
+--- 17/09/2026 (Thu) ---
+[09:03] LOJA: *Josy:*
+Bom dia!
+[09:03] LOJA: *Josy:*
+Segue nossa localziação.
+[09:03] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:03] LOJA: [foto]
+[09:04] CLIENTE: Bom dia Josy, obrigada
+[09:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:05] CLIENTE: Iremos no período da tarde
+[09:05] LOJA: *Josy:*
+Ok.
+--- 18/09/2026 (Fri) ---
+[16:24] LOJA: *Josy:*
+Boa tarde, Amanda... tudo certo?
+[17:08] LOJA: *Josy:*
+Amanda... vão fazer alinhamento...balanceamento né?
+[17:50] CLIENTE: Boa tarde, tudo bem?
+[17:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:51] LOJA: *Josy:*
+Jóia!
+[17:55] LOJA: [áudio] "Oi Amanda, tudo jóia? Eu estou ligando, pois nós já estamos encerrando aqui o nosso expediente, tá?"  {audio:midias/3EB0149C4C496033B2405C_566656.ogg}
+[17:55] CLIENTE: Sim
+[17:55] LOJA: [áudio] "E já está concluindo aqui os serviços da caminhonete."  {audio:midias/3EB056FE10C4BA034AD36E_71724.ogg}
+[17:55] LOJA: [áudio] "Aí o rapaz que veio aqui, ele disse que a proprietária estaria vindo aqui para passar o cartão, que quando ele tentou não deu certo. Aí estou aguardando por vocês agora, está bem? Aí se quiser e puder vir..."  {audio:midias/3EB090336E2FB7152CBE28_258548.ogg}
+[17:59] CLIENTE: Iris ligar para ela
+[17:59] LOJA: *Josy:*
+Ok
+[18:08] LOJA: *Josy:*
+Ela está a caminho?
+[18:09] CLIENTE: Sim
+[18:10] LOJA: *Josy:*
+Obrigada!
+[18:23] CLIENTE: Deu certo?
+[18:25] LOJA: *Josy:*
+Deu sim!
+[18:25] LOJA: *Josy:*
+Obrigada!
+[18:26] CLIENTE: Eu quem agradeço
+--- 19/09/2026 (Sat) ---
+[08:53] CLIENTE: [contato] 👤 Ricardo Bonilla
+[08:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:55] CLIENTE: [áudio] "Eu acho que você mesmo pode resolver aí, porque eles fizeram balanceamento e alinhamento, normalmente, que é o que se faz quando bota pneu novo, mas o preço que tu me passou e o preço que eles cobraram tem diferença. Eu quero saber que diferença é essa e se vão devolver, não?"
+[09:18] LOJA: *Josy:*
+Amanda...falei com o pessoal da oficina, e me passaram a seguinte situação:
+[09:19] LOJA: *Josy:*
+Antes de serem feitos os serviços, foi passado para o rapaz que  trouxe o carro e ele autorizou. Por isso foi feito.
+[09:20] CLIENTE: Mas ele autorizou fazer o que?
+[09:22] CLIENTE: Além do alinhamento e balanceamento?
+[09:25] LOJA: [áudio] "Eu vou te mandar aqui em PDF, tá bom, Amanda?"  {audio:midias/3EB0D66E60AD6C43FC903B_47788.ogg}
+[09:27] CLIENTE: Tá bom
+[09:31] LOJA: [documento]

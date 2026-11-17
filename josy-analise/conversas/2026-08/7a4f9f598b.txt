@@ -1,0 +1,29 @@
+CONVERSA 7a4f9f598b | contato: Wandey Gabriel | 21/08/2026 13:38 até 21/08/2026 14:51 | 10 msgs do cliente, 15 da loja, 0 do robô
+
+--- 21/08/2026 (Fri) ---
+[13:38] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:38] CLIENTE: [foto] Precisava de 2 pneus desses vcs tem? 205/70/15
+[13:42] LOJA: Boa tarde !
+[13:47] LOJA: [foto] valor unitario !
+[13:47] LOJA: tenho esse modelo importado!
+[13:47] CLIENTE: É igualzinho?
+[13:48] CLIENTE: Tem a pronta entrega ?
+[13:48] CLIENTE: Tem fotos desse aí? As vezes se for parecido serve
+[13:48] LOJA: Wandey de onde voce fala ?
+[13:49] CLIENTE: Luziânia Goiás
+[13:49] LOJA: não fazemos entrega ,poderia vim aqui na loja
+[13:50] LOJA: vou te enviar agora a foto dele ok!
+[13:50] CLIENTE: Sim claro
+[13:54] LOJA: estava verificando aqui o compativel seria  comforse !
+[13:56] CLIENTE: Assim que possível me envie fotos
+[14:01] LOJA: [foto]
+[14:01] LOJA: [foto]
+[14:02] LOJA: Esse é o modelo do nosso .
+[14:16] LOJA: [foto]
+[14:16] LOJA: Vou te enviar a foto
+[14:16] CLIENTE: Tá bom
+[14:20] LOJA: [áudio] "Te atende essa opção? Ou você quer ele ainda mais borrachudo?"  {audio:midias/3EB00ADD12B6483E87793E_623565.ogg}
+[14:20] CLIENTE: Manda foto da lateral pfv
+[14:51] LOJA: Oi! Está em busca de marca específica?

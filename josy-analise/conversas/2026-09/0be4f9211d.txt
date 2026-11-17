@@ -1,0 +1,14 @@
+CONVERSA 0be4f9211d | contato: Gilberto Pinto | 09/09/2026 13:48 até 09/09/2026 13:52 | 5 msgs do cliente, 4 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[13:48] CLIENTE: [áudio] "Boa tarde, tudo bem? Gilberto tá falando. Você tem pneu e 225, 45, 17 por Corolla? Seu parol é muito cedo."
+[13:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:48] CLIENTE: [áudio] "Duas unidades? Ou uma só também?"
+[13:50] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu me chamo Josi e você mora aqui na cidade de Luziânia, Goiás."  {audio:midias/3EB06C75B6EDA9994AC680_184287.ogg}
+[13:50] CLIENTE: Sou de MG
+[13:51] CLIENTE: Já sou Cliente
+[13:51] LOJA: [áudio] "Ah, sim, perfeito. Pois é, Seu Gilberto, eu tenho o Axi, ele está por apenas R$ 339,00 a vista."  {audio:midias/3EB009CE4EE511012F23D7_244439.ogg}
+[13:51] CLIENTE: Já com frete grátis
+[13:52] LOJA: *Josy:*
+a transportadora cobra , só não sei dizer o preço.

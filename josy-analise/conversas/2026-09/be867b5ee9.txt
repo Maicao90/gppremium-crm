@@ -1,0 +1,29 @@
+CONVERSA be867b5ee9 | contato: PROTESTOS | 22/09/2026 11:52 até 22/09/2026 12:02 | 15 msgs do cliente, 10 da loja, 0 do robô
+
+--- 22/09/2026 (Tue) ---
+[11:52] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:53] LOJA: 🙋🏼‍♀️
+[11:53] CLIENTE: Opa
+[11:53] CLIENTE: Boa tarde josy
+[11:53] CLIENTE: Vc tem o pneus 205/60/15
+[11:54] CLIENTE: Hifly
+[11:55] CLIENTE: [áudio] "Boa tarde, Jô. Tudo bem, Jô. Você tem o pneu 205, 60, 15. É o Ifrit? Importado esse pneu, né?"
+[11:55] LOJA: [foto]
+[11:55] LOJA: [áudio] "É o pneu da marca Hi-Fly. Tenho aqui sim as duas últimas unidades. Ele está por R$ 434,00 cada um, se o pagamento for à vista. Então, os dois pneus vão ficar por R$ 868,00 à vista. Já esse foi para parcelar o valor mudou um pouco."  {audio:midias/3EB011E6D85B87A1672D84_620149.ogg}
+[11:56] CLIENTE: [áudio] "Pois é, eu estou aqui na Alto Centro Muniz, só que aqui vai demorar, aqui também só tem duas unidades, eu achei aqui de 299."
+[11:56] CLIENTE: [áudio] "Então vou aguardar aqui mesmo, aqui está mais em conta, está 299."
+[11:57] CLIENTE: [foto]
+[11:58] CLIENTE: [áudio] "Não tá bom então, eu vou continuar aguardando aqui na Muniz, eu tô aqui, eu vi que só tem um cara terminou trabalhando, vai demorar, eu achei que conseguiria ele em conta também, mas aí ele tá muito puxado."
+[12:00] LOJA: Somos de Luziânia
+[12:00] LOJA: E não ficamos inventando serviços
+[12:00] CLIENTE: [áudio] "Pois é, eu estou aqui na Muniz, estou aqui em Luziânia."
+[12:00] LOJA: Cuidado aí.
+[12:00] CLIENTE: [áudio] "É só troca de pneus, não vou fazer mais nada."
+[12:00] CLIENTE: [áudio] "É só trocar os pneus só e os dois traseiros que eu estou precisando, os dois dianteiros eu já troquei."
+[12:01] CLIENTE: [áudio] "Já vi que eles são tudo mal, eles já se derramam a serviço para fazer."
+[12:01] LOJA: Cuidado ai
+[12:01] CLIENTE: Ok
+[12:01] LOJA: [áudio] "Pois é, e aqui a gente não fica inventando nada. O preço do meu pneu é esse, os serviços são cobrados à parte. Se o senhor quiser comprar os pneus aqui comigo e levar para montar onde o senhor quiser, o senhor fica à vontade, tá joia? Eu vou ver se eu consigo mandar a nossa localização para o senhor, porque a minha internet está oscilando, mas qualquer coisa o senhor passa aqui, tá bom?"  {audio:midias/A5A43D60750C9613086169C95EB1A924_566947.ogg}
+[12:02] LOJA: [foto]

@@ -1,0 +1,75 @@
+CONVERSA 2ced92ef79 | contato: Eliza | 21/09/2026 12:31 até 29/09/2026 17:55 | 21 msgs do cliente, 30 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[12:31] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:31] CLIENTE: Boa tarde!
+Qual o valor do pneu aro 18?
+[12:51] CLIENTE: O Felipe filho do Celso, me indicou vcs...
+[12:56] LOJA: [áudio] "Oi Elisa, bom dia. Boa tarde, na verdade, né? Por gentileza, me diz qual que é a medida dos pneus que você precisa?"  {audio:midias/3EB0CD0CB957EDB32BE504_762148.ogg}
+[13:01] CLIENTE: 18
+[13:03] LOJA: *Josy:*
+Qual a medida dos pneus?
+[13:04] LOJA: *Josy:*
+Qual é seu carro?
+[13:04] CLIENTE: Um min
+[13:05] CLIENTE: IX 35
+[13:05] CLIENTE: 225 60R
+[13:07] LOJA: *Josy:*
+Hoje teremos a medida 225/55/18 medidda original
+[13:08] LOJA: [foto]
+[13:08] LOJA: *Josy:*
+Pneu da marca GP Premium
+[13:08] LOJA: *Josy:*
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:10] CLIENTE: Tá jóia!
+Vou analisar aqui...
+[13:11] LOJA: *Josy:*
+Perfeito...se quiser te mando foto também.
+[13:11] CLIENTE: Gostaria sim
+[13:28] LOJA: [foto]
+[13:32] LOJA: *Josy:*
+Mora aqui em Luziânia, mesmo?
+[13:44] CLIENTE: [áudio] "Mas vocês não tem uma loja que, não sei se é na Estrutural ou no Vicente Pires? Foi lá que minha cunhada comprou com vocês."
+[13:45] LOJA: [áudio] "Não, não, Elisa. Nossa loja é somente aqui em Luziânia. Eu consigo mandar os pneus ali para o Novo Gama, para poder atender a redondeza aí de Brasília."  {audio:midias/3EB063E0AD459A87BDD3F2_440714.ogg}
+[13:45] LOJA: [áudio] "Agora somos somente aqui em Luziânia e eu consigo mandar os pneus para o novo Gama."  {audio:midias/3EB02E65DA46DC9D07FD7D_739761.ogg}
+[13:46] CLIENTE: [áudio] "Entendi. Eu moro no Riacho Fundo 1."
+[13:46] LOJA: [áudio] "E se eu te mandar a localização, já te ajuda que fica mais perto e para o novo gama do que você vir aqui para Luziânia, aí nós podemos alinhar direito e eu envio os pneus para você."  {audio:midias/3EB00C870A6B65AE311252_846091.ogg}
+[13:47] CLIENTE: [áudio] "Pode me mandar a localização, que aí meu esposo vai ver aqui o local direitinho. Outra coisa que eu queria te pedir é que você me mandasse também uma cotação. Ah, não, mas eu vou ter que ver com meu filho, que eu só sei que era o 17, mas eu tenho que ver as outras referências, né?"
+[13:48] LOJA: [áudio] "Certo, certo. Qual que é o carro na hora 17?"  {audio:midias/3EB04D160B6E99819C24FA_117744.ogg}
+[13:48] CLIENTE: [áudio] "É um Corolla."
+[13:48] LOJA: [localização] -16.0680034,-48.0643739
+[13:49] LOJA: [áudio] "Aí, Elisa, eu te mandei a localização para você ver a distância, tá? O que é que nós podemos alinhar? Você me disse para quando que você precisa dos pneus, que aí eu envio lá para a borracharia e você vai lá para poder fazer a instalação e pode realizar o pagamento por lá mesmo, está bem?"  {audio:midias/3EB09CD080FF89C542B80E_734367.ogg}
+[13:50] LOJA: *Josy:*
+No Corolla as melhores opções de medidas são 215/50/17 e 225/45/17
+[13:50] LOJA: [foto]
+[13:50] LOJA: *Josy:*
+ 
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:51] CLIENTE: [áudio] "Josi, no caso, eu vou querer só os pneus mesmo. Eu não vou precisar que vocês façam a instalação não, entendeu? Quero só o pneu."
+[13:52] LOJA: [áudio] "Sim, entendi. É porque a instalação é opcional, já ofereço ela. Aí, caso o cliente queira, pode estar fazendo."  {audio:midias/3EB0AB6F840DF42FA98A33_102724.ogg}
+[13:52] CLIENTE: Tranquilo, entendi 😉
+[13:53] LOJA: [áudio] "Aí vocês analisem aí a questão da localização e me informa para quando que vocês precisam dos pneus que eu providencio para vocês, tá bem?"  {audio:midias/3EB00F84B4425E0DB43463_339630.ogg}
+[13:53] CLIENTE: Informo sim 👍
+--- 24/09/2026 (Thu) ---
+[11:53] LOJA: [áudio] "Oi Elisa, tudo jóia? Nós nos falamos há alguns dias atrás e gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB02F165711B433B11568_879355.ogg}
+[11:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:56] CLIENTE: [áudio] "Oi, Josi, bom dia. Josi, ainda hoje eu te dou um retorno, tá? É porque meu filho vai casar agora, no início de outubro, e meu marido tá ajudando ele com umas coisas aí. Aí ontem, porque inclusive meu filho provavelmente vai precisar comprar um pneu do carro também, que por isso que eu te fiz cotação do 17, e o meu, no meu caso, né, vai ser 18, e a gente vai precisar de dois. E meu marido tá resolvendo essas coisas com o meu filho, né? Ah, é por isso que eu não te respondi ainda, mas hoje a gente tinha até conversado sobre isso, parar pra analisar. Aí eu vou ver se eu consigo te dar um retorno ainda hoje, tá?"
+[11:57] LOJA: [áudio] "Tá joia então, Elisa. Ai, que bacana aí. Uma nova etapa, não é?"  {audio:midias/3EB0D6D27D003CCFC8DDD6_746207.ogg}
+[12:00] CLIENTE: [áudio] "Sim, exatamente, graças a Deus. Meu filho é muito abençoado, somos muito abençoados também como pais, né, aí ele está nessa correria aí, porque está arrumando o lugar onde eles vão morar, né, instalando pia, essas coisas. Ontem meu marido, ele passou o dia todinho, todinho, para instalar uma pia no banheiro, a pia da cozinha, o tanque, e hoje estão lá de novo, voltaram, porque não conseguiu finalizar ontem. com o rapaz que está arrumando, né, aí é só por isso que a gente não decidiu, mas temos que decidir. Tanto que ontem meu marido foi no borracheiro, aqui, eu moro em Riacho Fundo 1, né, meu marido foi no borracheiro, porque meu filho já tinha que trocar o pneu do carro, e aí ainda entrou um prego ontem, que ele não sabe como, e aí, um parafuso, sei lá, e meu marido foi levar para o borracheiro avaliar se o nosso realmente é precisado de um pneu novo, mas a gente já imaginava que sim, né, porque estava andando com o carro, furou o pneu e a gente parou, quando é assim já estraga rapidinho, né, o pneu. Aí ontem, o borracheiro confirmou que tem sim que trocar, aí a gente vai comprar dois pneus, mas estamos só resolvendo isso."
+[12:00] CLIENTE: [áudio] "Eu já avisei para ele que, no caso, para a gente pegar mais perto, que é no novo Gama, que tem que avisar para você com antecedência. Já expliquei tudo, tá?"
+[12:01] LOJA: [áudio] "Tá jóia, tá perfeita, Elisa. E que bacana, eu também tenho um filho, ele tem 18 anos, ele já tem 3 anos que ele namora firme, sério, eu acho que ele vai dar casamento. Seja o que Deus quiser, na verdade."  {audio:midias/3EB013BD0B91E2D9F3782F_225714.ogg}
+--- 29/09/2026 (Tue) ---
+[17:10] LOJA: [áudio] "Oi Elisa, tudo jóia? Elisa, eu estou entrando em contato para saber se você quer que envie os pneus lá para o Novo Gama, que eu vou estar fazendo uma entrega lá e eu mando os pneus que vocês precisam. Assim que possível você me dá um retorno?"  {audio:midias/3EB0D437714B9AA4B0DD72_442101.ogg}
+[17:24] CLIENTE: Boa  tarde, Josy!
+Então, ontem meu esposo comprou os pneus na cidade do automóvel, ele comprou numa loja atacadista. Ele ficou desanimado de ter q ir buscar no Novo Gama 😢
+Mas te agradeço pela atenção.
+[17:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:52] LOJA: [áudio] "Ah, sim. Tudo bem, então. Espero conseguir atendê-las numa próxima oportunidade."  {audio:midias/3EB0E3C0BAA220560F4E20_878709.ogg}
+[17:52] LOJA: [áudio] "Obrigada pelo seu contato e tudo de bom aí para vocês, tá?"  {audio:midias/3EB0930880C30068D8787A_625115.ogg}
+[17:55] CLIENTE: Obrigada, pra vc também 🥰

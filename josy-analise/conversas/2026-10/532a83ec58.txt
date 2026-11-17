@@ -1,0 +1,21 @@
+CONVERSA 532a83ec58 | contato: Alex | 19/10/2026 11:29 até 21/10/2026 12:49 | 1 msgs do cliente, 8 da loja, 1 do robô
+
+--- 19/10/2026 (Mon) ---
+[11:29] LOJA: *Josy:*
+Bom dia,  sr AleX
+[11:30] LOJA: [foto]
+[11:31] LOJA: *Josy:*
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:31] LOJA: *Josy:*
+No *dinheiro e espéfcie* a unidade fica por R$ 335,00
+[12:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:53] CLIENTE: [áudio] "Passei para ver os 4 pneus da Globo. Quanto é que fica 2? 2 fica no mesmo preço, é 235? É, 335, comprando 2, depois vou comprar mais 2. Deixa eu te perguntar, esses pneus não é que vai balancear e alinhar, eles não treme muito não, né? Porque eu gosto de botar, quando eu viajo, eu vou para me viajar, eu sempre boto 130, 140, eles não treme na estrada não, né? Porque uma vez eu botei um, Deus me livre. Aí a garantia é só de 2 anos, né? Amém."
+[13:40] LOJA: *Josy:*
+Da 100 % de balanceamento.
+[13:40] LOJA: *Josy:*
+Isso garantia de 2 anos.
+[17:57] LOJA: [áudio] "Isso, no dinheiro é 335 cada. Os dois pneus vão ficar por 610 reais e eles dão 100% de balanceamento, tá? Pode instalar tranquilo, senhora Alex. E o senhor já usa os pneus aí no seu carro, então o senhor sabe que são bons mesmo."  {audio:midias/3EB01F44E4B7C0BD1E95EC_575134.ogg}
+--- 21/10/2026 (Wed) ---
+[12:49] ROBÔ: 🙋🏼‍♀️

@@ -1,0 +1,55 @@
+CONVERSA 29fa5c50c2 | contato: ALDA DINIZ 🫶🏾🫶🏾 | 21/09/2026 14:48 até 21/09/2026 16:43 | 13 msgs do cliente, 23 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[14:48] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:48] CLIENTE: Pneu aro 17 205x55 qual valor?
+[14:49] LOJA: *Josy:*
+Pneu da marca GP Premium está por apenAs R$ 349,00 a vista
+[14:50] LOJA: *Josy:*
+Mora aqui em Luziânia=Go?
+[14:50] CLIENTE: Não gama
+[14:50] CLIENTE: A loja está em Luziânia?
+[14:50] LOJA: *Josy:*
+Sim!
+[14:50] CLIENTE: Ah ta obrigada
+[14:51] LOJA: *Josy:*
+Precisa de quantos pneus?
+[14:52] CLIENTE: 2
+[14:53] LOJA: *Josy:*
+Posso enviar os pneus para uma borracharia no Novo Gama, te ajuda?
+[14:53] CLIENTE: Não pode deixar. Obrigada
+[15:28] CLIENTE: Oi , se for no crédito fik qt o pneu?
+[15:29] CLIENTE: Vou conseguir um endereço p deixar
+[15:29] LOJA: [foto]
+[15:30] LOJA: *Josy:*
+Pneu da marca GP Premium, remold 1ª linha.
+[15:30] LOJA: *Josy:*
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:33] LOJA: *Josy:*
+Eu consigo deixar em uma borracharia no Novo Gama, que se você quiser pode até mesmo instalar.
+[15:38] CLIENTE: Manda a localização dessa borracharia
+[15:39] LOJA: *Josy:*
+Claro!
+[15:39] CLIENTE: P eu ver se é perto daki
+[15:40] LOJA: [localização] -16.0680034,-48.0643739
+[15:41] LOJA: *Josy:*
+Essa é a localização, fica  em frente ao posto de gasolina Pontão 24h Lunabel, em Novo Gama-GO.
+[15:41] CLIENTE: O pneu é remold?
+[15:41] LOJA: *Josy:*
+Isso , só que de primeira, linha!
+[15:42] LOJA: *Josy:*
+Quer um video?
+[15:42] LOJA: *Josy:*
+Eu gravo para você.
+[15:43] CLIENTE: Ah não  precisa
+[15:44] LOJA: *Josy:*
+O jogo de pneus que eu tinha vendi, vou mandar mais amanhã.
+[15:53] LOJA: albumMessage
+[15:53] LOJA: [foto]
+[15:53] LOJA: [foto]
+[16:03] LOJA: [vídeo]
+[16:43] LOJA: *Josy:*
+Eu vou encerrar seu atendimento para não encher seu whatsapp de mensagem.                                                                                                                   Se precisar futuramente é só chamar.                                                                                                                                                                           Obrigada 👋🏻

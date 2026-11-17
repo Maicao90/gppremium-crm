@@ -1,0 +1,289 @@
+CONVERSA 1b2ca28e31 | contato: Edcarlos | 02/09/2026 11:36 até 13/10/2026 17:18 | 97 msgs do cliente, 123 da loja, 0 do robô
+
+--- 02/09/2026 (Wed) ---
+[11:36] LOJA: *Josy:*
+Oi...
+[11:36] CLIENTE: Opa
+[11:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:40] LOJA: [foto]
+[11:40] LOJA: [foto]
+[11:40] LOJA: [foto]
+[11:44] CLIENTE: [áudio] "Tô esperando a resposta dele, aí eu te falo, tá?"
+[11:47] LOJA: *Josy:*
+Tranquilo1
+[12:56] CLIENTE: [foto]
+[12:56] CLIENTE: [foto]
+[13:06] LOJA: *Josy:*
+Hmmm
+[13:20] LOJA: [foto]
+[13:20] LOJA: [vídeo]
+--- 14/09/2026 (Mon) ---
+[11:18] CLIENTE: [foto] Aro 15
+[11:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:18] CLIENTE: [foto] Aro 16
+[11:20] CLIENTE: [áudio] "Vê pra mim, por favor, você viu aí que eu mandei um aro 15 e um aro 16. Lá no Carlos, eles têm 4 rodas 15 e uma roda de step 16. Aí, o que eu falei pra eles? Como eles já tem uma 16, eu falei pra eles comprar mais uma roda 16 e fazer duas 16, né? Dica pra mim um aro 16, um pneu 16 aí, pra mim colocar aí. Deu pra você ver mais ou menos aí o paralama aí, um pneu que não pegue na lata, né? E um pneu que não pega na direção. Que eu vou comprar uma roda 16 aqui e mandar junto com dois 16. Eu vou precisar de dois pneus 16. Aí, no Carlos, essa roda 16 tá aí, é a roda da D20, que no Carlos dá certo na C10 lá. Aí, só que eles não querem pôr 16. Só que aí eu tô falando pra eles, como eles já tem um 16, seria interessante que eles vão colocar os 4 pneus e já colocar 16. É um pneu mais fácil de encontrar e mais barato, né? Vai ficar um pouco caro agora no início porque tem que comprar as rodas. Mas aí eu acho que até compensa eu procurar uma roda aqui de D20 e mandar junto. O que que você acha? Dá uma opinião aí, me ajuda aí. E aí"
+[11:20] CLIENTE: [áudio] "Mas esses dois que você me mandou aí no carro são 15, né? Esses dois que você me falou. Quanto tá esses aí que você me mandou?"
+[11:24] LOJA: [áudio] "Sim, deu para ver o paralama sim, tá? Só que eu não estou conseguindo identificar qual que é a medida que está instalada aí para eu procurar o que eu tenho semelhante aqui, tá bom? Mesma coisa para o aro 15, na foto não está dando para identificar a medida direito."  {audio:midias/3EB05781CC5FC05826D99B_477778.ogg}
+[11:26] CLIENTE: [áudio] "No Ario 15, é aquela medida que eu te mandei, entendeu? Mas aí, como você me indicou esses outros aí, pode ser esses outros aí que você me indicou, o que você acha? Esse que você me indicou aí vai dar bom nesse paralama aí? Porque a minha vontade era de coletar um time meu esse carro, a minha vontade era de colocar tudo 16, entendeu? Mais facilidade para achar pneu e mais barato. Aí diz que não quer mexer com trocar a roda agora, entendeu?"
+[11:27] CLIENTE: [foto]
+[11:27] LOJA: *Josy:*
+31x10,5r15
+[11:28] LOJA: [áudio] "Olha, o 31 por 10,5, eu até tinha mandado um orçamento para você no início do mês. Por enquanto, está do mesmo jeito, questão de preço, tá? A foto do pneu, o vídeo que eu gravei aí para você, eu acho que ainda tem no seu WhatsApp, né?"  {audio:midias/3EB034F06FEF99F0594069_239954.ogg}
+[11:29] LOJA: [áudio] "Agora, no aro 16, Ed, eu teria aqui o pneu da GP Premium, que ele estaria por 539 a vista, nessa medida aí, que é o 255-70-16. Aí eu preciso confirmar aqui, assim que os rapazes chegarem, eu creio que uma hora eles estão aqui, eu só confirmo direitinho a produção deles e já te dou um retorno, pode ser?"  {audio:midias/3EB047268431C4E2E5E95C_686252.ogg}
+[11:36] CLIENTE: [áudio] "Pode ser sim, aí você me dá o retorno. Esse 16 que você me mandou aí, ele dá bom nessa, nesse, nesse, nesse, nessa caixa de, nesse carro aí. Não dá? Não fica muito pesado não, né? Porque ela é uma areia mendonça, mulher."
+[11:36] LOJA: [áudio] "Bem, o pneu que, se eu tiver ali, ele vai ser bem borrachudo, tá? Aí eu só vou aguardar. É essa medida aí da foto que você me mandou."  {audio:midias/3EB0980E16A9F0352097BB_544761.ogg}
+[11:45] CLIENTE: [áudio] "Tá, tá, eu entendi. E esse aí, você me manda o valor dele, dessa medida que eu mandei aí, me manda o valor dele, mas eu vou acabar comprando 16 mesmo. Vai dar certo aqui. 16 é melhor, é mais fácil de achar. Vou ficar no aguardo, tá?"
+[11:46] LOJA: *Josy:*
+Estou aguardando os rapazes chegarem para er a produção, está bem!
+[14:03] CLIENTE: Não esquece por favor
+[14:03] LOJA: *Josy:*
+Não esqueci não.
+--- 16/09/2026 (Wed) ---
+[10:47] LOJA: *Josy:*
+Oi... tudo bem?
+[10:47] LOJA: *Josy:*
+Não me esqueci de ti... sabe o que aconteu?
+[10:48] LOJA: *Josy:*
+Os rapazes sairam de férias.
+[10:48] LOJA: *Josy:*
+Você transporta muita carga ?
+--- 17/09/2026 (Thu) ---
+[09:58] LOJA: [áudio] "Oi Ed, tudo jóia? Ontem até te perguntei aqui se vocês transportam muita carga aí nessa caminhonete, pois temos que ver a questão do peso, né, para poder indicar um produto assim mais específico para você. Aí, como eu sei que é corrido, né, eu tenho aqui diversos pneus, eu vou ter o 31 por 10,5, vou ter os pneus no aro 16, então, quando você tiver um tempo, você já vem direto aqui na loja para nós conversarmos pessoalmente, que eu acho que vai ficar mais prático, que aí você já vê os pneus também e faz a sua melhor escolha, né?"  {audio:midias/3EB0486536E653603EFEBB_349360.ogg}
+[09:58] LOJA: [foto]
+[10:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:02] CLIENTE: [áudio] "Oi, oi, bom dia, tudo bem? Eu vou precisar de 2, 2,15. 2,15. Pode ser... Não, lá não pega assim tanto peso, não. É carro da roça só para a gente estar fazendo uma ou outra viagem assim, sabe? Não pega tanto, tanto peso assim diariamente. Outra coisa, lá é rural, só estrada de chão. Raramente vai na estrada de asfalto. Só que você tem que melhorar esse preço para mim, esse preço seu aí tá muito... Eu andei pesquisando, andei me informando, gosto de negociar com você, mas o que que você pode melhorar nesses preços para mim?"
+[10:05] LOJA: [áudio] "O WhatsApp tá travando. Ed, com questão ao preço, realmente vai ser esse que eu te encaminhei. A joia é R$779,00, porque assim, é um pneu muito bom, um pneu bem reforçado mesmo."  {audio:midias/3EB0CDE4974162ACE8FDA7_533359.ogg}
+[11:20] CLIENTE: [áudio] "Mulher, dá uma melhorada nesse preço, porque, ó, o que acontece, eu vou mandar esses pneus 970 km, quando chegar lá eu ainda tenho que pagar pra ir pro interior, daqui pra lá eu ainda pago pra van levar, porque o ônibus não leva, entendeu, eu pago 70 reais, de lá quando chega lá na cidadezinha eu pago mais pro interior, então assim compensa mais eu mandar comprar lá, entendeu, por isso que tem que ter um certo preço pra poder me ajudar, senão, ó, se eu for somar, cada pneu desse pra van levar, ela me cobra 75, já se vai 150, 150 dividido por 2 aí, vai dar 75 acima do preço, aí já vai pra 800 e pouco, dá uma melhorada, minha querida."
+[11:20] LOJA: *Josy:*
+Eu não consigo...
+[11:20] LOJA: [figurinha]
+[11:21] CLIENTE: [áudio] "Essa não foi a vendedora que eu conheci. Tá jogo duro você, viu?"
+[11:32] LOJA: [áudio] "Mas é que isso não é culpa minha. Quando eu consigo fazer, você sabe que eu faço, mas é que isso daí não... É assim, são forças externas, coisas maiores, entende, Ed? Ai, eu vou chorar."  {audio:midias/3EB0EF1EA895D4BC78FE1E_206236.ogg}
+[11:41] LOJA: [áudio] "Quando é o pneu aqui da nossa marca, né, da GP Premium, dá para a gente negociar, bacana, tá? Agora, quando são esses pneus importados, olha, é isso e pronto. Infelizmente, eu não tenho o que fazer, sabe? É ruim."  {audio:midias/3EB0D200848DA78681700E_245011.ogg}
+[12:10] CLIENTE: [áudio] "E da sua marca aí não tem 15, não? Vai pensando, daqui até sábado eu vou esperar você pensar para você me ajudar. Eu sei que não é culpa sua, e nem minha também, mas o que acontece, por comparação de preço, o que eu vou gastar para chegar onde eu quero, aí às vezes compensa eu mexer por lá mesmo, entendeu? Por isso que eu preciso que você me ajuda. Eu sei que você consegue me ajudar."
+[12:31] LOJA: [áudio] "Não tem, Ed, já tem uns dias que não produz, que já acabaram mesmo."  {audio:midias/3EB0AD220A9D11911EDE5D_110073.ogg}
+--- 18/09/2026 (Fri) ---
+[11:17] CLIENTE: [áudio] "Oi, bom dia, tudo bem? Uma informação, por favor, amanhã vocês abrem aí, até que hora?"
+[11:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:17] LOJA: [áudio] "Oi Ed, tudo jóia? Sim, amanhã abriremos das 8 até o meio-dia."  {audio:midias/3EB0A2364A150FE3409873_366845.ogg}
+[11:17] CLIENTE: [áudio] "Perfeito, amanhã irei aí fazer uma super negociação com você, porque por telefone já vi que não adianta."
+[11:18] LOJA: [áudio] "Vou até fazer um café bom para nós amanhã."  {audio:midias/3EB0DC0D3FC0F295F6AC04_254261.ogg}
+[11:18] CLIENTE: [figurinha]
+--- 19/09/2026 (Sat) ---
+[07:04] CLIENTE: [áudio] "Bom dia, bom dia, amiga. Deixa eu te falar, eu vou ficar com 2,15. Quantas vezes você faz no cartão para mim?"
+[07:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:07] CLIENTE: [áudio] "Aquilo que você me falou, mulher, os 15 lá, parece que é 3, 4, não sei o que aí. Você me falou o que dá certo lá na C10."
+[08:02] LOJA: *Josy:*
+Bom dia, meu amigo.
+[08:03] LOJA: [foto]
+[08:04] LOJA: [áudio] "Oi Ed, bom dia, tudo bom? Olha, a mensagem que... Sempre você vai receber essa mensagem automática aqui no meu WhatsApp, tá? Então, é... Você sempre pode conversar comigo normal, porque essa mensagem, ela já fica fixada aqui no meu WhatsApp, então toda vez que você fala comigo, ela vai perguntar a mesma coisa. Então, quando você chegar falando comigo, você já pode falar, Josi, eu preciso disso, eu preciso disso, e pode ficar tranquilo que nós já resolvamos você, tá bom? É o 31 por 10,5. Aí, para parcelar, tem as opções de parcelamento aí em até 10 vezes, tá? Que o valor muda, igual eu tinha te explicado anteriormente."  {audio:midias/3EB0FEB274CD89E636724F_664739.ogg}
+[12:08] LOJA: 👀
+[12:08] LOJA: [áudio] "Ed, cadê tu?"  {audio:midias/3EB0E6F0BBA362946EFBCE_751801.ogg}
+[12:08] CLIENTE: [áudio] "Opa, mil perdão! Mulher, eu vim aqui na roça buscar um boi e não vou chegar a tempo, mas semana que vem eu vou aí para ficar com os dois pneus. Me desculpa, agora que eu lembrei de você, aqui fica ruim de sinal."
+[12:09] LOJA: [áudio] "Beleza então, Ed. Ficamos combinados assim. Já é bom final de semana para você."  {audio:midias/3EB0CF992B7165A8FDBFED_28983.ogg}
+[12:11] CLIENTE: [áudio] "Igualmente, bom final de semana, bom descanso, curta a família, o esposo, os filhos. Fica com Deus."
+[12:12] LOJA: [áudio] "Só o filho mesmo. Obrigada, tchau, tchau."  {audio:midias/3EB0E18C79CB0ADF82E7A2_291106.ogg}
+--- 02/10/2026 (Fri) ---
+[09:05] CLIENTE: Oi
+[09:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:05] CLIENTE: Bom dia vc está bem
+[09:05] LOJA: *Josy:*
+Bom dia, Ed!
+[09:05] LOJA: *Josy:*
+Estou bem e você?
+[10:13] LOJA: [áudio] "Ed, muito obrigada mais uma vez por ter vindo aqui. Você é muito gente boa. Obrigada pelo presente. Caramba, você não faz ideia de como eu gosto de receber presentes assim. São uma benção. Muitíssimo obrigada de coração. Fiquei emocionada."  {audio:midias/3EB0C790521266512C0F2B_491594.ogg}
+[10:17] CLIENTE: Tudo na vida tem um propósito de Deus eu que agradeço todos os dias a Deus por colocar pessoas igual a você simpática carismática educada respeitadora em minha vida e meus caminhos sempre é um prazer fazer um negócio com você
+[10:17] CLIENTE: Só um gesto de quem a gente gosta a gente cuida né então eu acho que um leite saudável vai fazer bem para você
+[10:18] CLIENTE: Um abraço fica com Deus que pena que agora vamos demorar a se ver porque eu não vou comprar pneu por agora mas sempre que quiser conversar estamos por aqui beleza bom final de semana para você seu filho
+[10:19] LOJA: *Josy:*
+a quanto tempo não vejo leite direto da roça.... isso é raro!
+[10:20] CLIENTE: Olha esse foi tirado hoje assim que eu terminei de tirar fui aí comprar os pneus tá fresquinho fresquinho coloca no refrigerador para ele não cortar né porque leite aí pegar qualquer quenturazinha ele corta que aí você vai poder buscar ele melhor
+[10:20] CLIENTE: Ah não perdão vou buscar o meu brinde assim que chegar boné você vai me mandar e eu vou aí buscar ou a gente se encontra em Luziânia aí eu pego qualquer hora eu também trabalho aí em Luziânia
+[10:21] CLIENTE: Você tem que tirar um tempinho para poder relembrar as raízes tempos antigos não pode se envolver só no trabalho não senão você vai ficar rico e esquecer da gente
+[10:21] LOJA: *Josy:*
+Coloquei na geladeira, aqui!
+[10:22] LOJA: *Josy:*
+Pode deixar que assim que tiver eu reservo um para você , está bem!
+[10:23] CLIENTE: Ok obrigado vou te cobrar
+[10:23] LOJA: *Josy:*
+se tem uma coisa que não esqueço, são das raizes... está sendo um pouco dificil, por conta do tempo, mas quando posso, me embrenho na roça. Não tem coisa melhor na vida não!
+[10:24] LOJA: *Josy:*
+Não precisa cobrar, eu tenho boa memória, só vou mandar mensagem, seu boné está aqui!
+[10:24] CLIENTE: 1 tem que tirar um tempinho para tudo para relembrar as raízes para sair se divertir e arrumar um namorado
+[10:26] LOJA: *Josy:*
+quando minha maiga vai para a roça ela me chama, quando não to trabalhando eu vou.. amo a simplicidade... andar com os pés no chão...
+[10:26] CLIENTE: Se estiver te atrapalhando me desculpe mas é bom conversar com você
+[10:27] LOJA: *Josy:*
+Não ...não está atrapalhando não, neste momento está tranquilo.
+[10:27] CLIENTE: Agora sou seu amigo quando quiser visitar a minha chácara ou seja bem-vinda
+[10:32] CLIENTE: Oi
+[10:32] CLIENTE: Sua família é da onde você tem cara que é do Sul
+[10:36] LOJA: *Josy:*
+Que legal!!!!, Fico grata!
+[10:36] LOJA: *Josy:*
+Então, meu amigo... sou do interior de S.P / Paraná rsrs
+[10:36] LOJA: *Josy:*
+kkkk
+[10:37] CLIENTE: Errei por pouco que bom faz muito tempo que você residência aqui
+[10:37] LOJA: *Josy:*
+Tem anos que moro aqui, mas ainda falo poooorta...leite quente....
+[10:37] CLIENTE: Então você é a mulher das praias de Barreto
+[10:37] LOJA: *Josy:*
+Mas onde nasci é divisa de Paraná então é Sul, sim!
+[10:38] LOJA: *Josy:*
+não kkk e nunca fui para lá.
+[10:39] CLIENTE: Kkk
+[10:39] CLIENTE: Logo vi que essa obra de arte não era daqui não era goiana
+[10:39] CLIENTE: La sua família tinha sítio morava na roça
+[10:39] CLIENTE: E aí tá se adaptando aqui tá gostando daqui seja bem-vinda
+[10:41] LOJA: *Josy:*
+sim, eu vivi muito tempo no sitio.
+[10:41] LOJA: *Josy:*
+plantava feijão, etc...
+[10:42] CLIENTE: Ah tá então você é uma mulher raiz uma mulher destinada trabalhadeira isso é bom é bom mesmo
+[10:42] CLIENTE: Mulheres assim é raridade viu as mulheres hoje são tudo Doquinha de shopping
+[10:43] CLIENTE: Me conta desculpa perguntar sei que não é da minha conta você já veio de lá sem seu marido você separou você é viúva
+[10:43] CLIENTE: Você veio fazer um recomeço aqui
+[10:44] CLIENTE: Você tem cara também que foi uma mulher muito bem sucedida lá se não tem cara de mulher de pouca condições eu vejo em você uma mulher empresária alguma coisa assim você já foi
+[10:56] LOJA: *Josy:*
+rapaiz... se não for assim....  fazendo tudo o que a gente faz, já estamos em modo sobrevivencia, se não fizer...  já era...
+[10:59] CLIENTE: Kkk
+[10:59] LOJA: *Josy:*
+recebo suas palavras! Que Deus te ouça!
+[11:01] CLIENTE: Kkk
+[11:01] CLIENTE: Mas você já foi uma mulher bem sucedida não já me conta talvez essa loja é até sua né não
+[11:01] CLIENTE: Eu tenho uma suspeita que essa loja é sua né não
+[11:05] LOJA: *Josy:*
+Já ouviur aquela cantiga de criança:                                                                                                                                                                                 Eu sou pobre, pobre, pobre
+De marré, marré, marré
+Eu sou pobre, pobre, pobre
+De marré deci. Rsrs... minha familia era palpérrima, fomos muito pobres, meu pai morreu quando eu tinha 12 anos e eu trabalho mesmo desde os 10 anos.
+[11:15] LOJA: [áudio] "Eu vou mandar áudio que é mais efetivo. E sim, sim, eu tenho um filho. Eu fiz minha família aqui, né? Só que tem 5 anos que eu estou solteira, estou divorciada. E tá bom do jeito que tá. Nossa, fico muito feliz aí com a visão que você tem, né? De mulher empresária. Não sou empresária. Minha vida começou assim, né? Igual a musiquinha aí que eu te mandei. Vim de família muito humilde. Ai, esqueci de fazer o pagamento da marmita pra você, César. Já vou fazer aqui, tá? Aí você pede pra mim de frango com frango. Frango empanado e filé de frango, tá? 18? Tá, vou fazer aqui o pix pra você. Obrigada, tá? Agora que eu fiz essa mensagem. Obrigada. Aí, Ed, então, eu... Minha vida sempre foi trabalhar, que meu pai faleceu quando eu tinha 12 anos, né? E eu tenho mais irmãos. Então, desde sempre o que eu faço é apenas trabalhar. Eu só estudei o ensino médio, justamente pra poder cuidar dos meus irmãos e ajudar minha mãe na criação deles. Todos eles se formaram, graças a Deus, são todos formados, estão muito bem. E eu, né? Só trabalho, só trabalho, só trabalho. Fiquei um tempo aí desempregada, que eu saí de uma empresa tóxica. Mas essa empresa aqui me recebeu e aparentemente me aceita do jeito que eu sou. Que é esse jeito aqui, né? Que você vê e que conversa e tudo mais. Então, aparentemente, eles aceitam esse meu jeito de ser por aqui. E o que eu faço realmente é trabalhar. Até hoje, eu estou correndo e buscando... Estou correndo atrás dos meus sonhos de me realizar, principalmente aí, financeiramente, né? E tem que correr atrás das coisas pra gente poder conquistar, né? Principalmente os nossos bem materiais aí. A gente tem uma casa pra morar, alimento na mesa, essas coisas assim. A gente realmente precisa trabalhar. E nesse sentido, realmente, eu não meço esforços. Eu, literalmente, visto a camisa de tudo aquilo que eu faço. E eu faço com empenho e dedicação. E aí, basicamente, é isso. E recebo... Nossa, meu Deus! Amei aqui que você colocou que eu sou bem-sucedida. Mas no sentido de ser bem-sucedida, posso não estar sendo bem-sucedida financeiramente, que é o que eu estou buscando, né? Mas existem outras riquezas, né? Existem outros sucessos na vida da gente que fazem com que nós nos sintamos bem-sucedidos, igual na criação do meu filho. Eu me sinto extremamente abençoada e muito bem-sucedida quanto a isso. Porque ele é um jovem aí que fez 18 anos. É um bom menino. Ele não me dá trabalho com nada. Pelo contrário, ele me ajuda muito. Às vezes, ele... Às vezes, não. Ele, desde os 13 anos, ele faz freelancer aí em festas. Ele é barman. Então, ele me ajuda como ele pode. É um menino muito educado. Nossa! Assim, quem vê, se encanta. Porque é um menino maravilhoso. E também ser bem-sucedido está condicionado também a gente manter a nossa paz, nossa serenidade, buscar ver as coisas boas, até mesmo quando elas não estão tão boas assim. Então, tem esse conceito também. E, mais uma vez, obrigada aí."  {audio:midias/3EB0B5EA552B79C434F5F0_131240.ogg}
+[11:15] CLIENTE: Nossa então você é uma mulher para casar uai para ajudar o homem ficar rico
+[11:17] LOJA: *Josy:*
+kkkkkk
+[11:17] LOJA: *Josy:*
+justamente isso que não foi valorizado, e estou buscando  me reerguer. Faz parte .
+[11:29] CLIENTE: Deixa eu te falar uma coisa melhor riqueza você já tem sabe às vezes a gente busca um pouquinho a mais já tem uma qualidade de vida melhor mas você teve um relacionamento não foi compatível que você esperava entendeu ficou algumas sequelas de verdade né
+[11:29] CLIENTE: Mas não tem riqueza melhor de que a boa vontade a disponibilidade de querer fazer as coisas entendeu igual você tem eu vi aí você senta na mesa mexe no computador pegando em pneu
+[11:29] CLIENTE: Isso é bom demais a gente honrar a camisa que tá vestindo entendeu e não precisa se preocupar às vezes a gente quer antecipar as coisas mas o que é da gente vem para o contorna à vontade né Deus manda na hora
+[11:30] CLIENTE: Eu também vendo um relacionamento 26 anos tenho um filho de 23 anos um ano e nove meses que eu me separei
+[11:30] CLIENTE: É não tomei trauma igual aparentemente você tomou mas veio buscando também as mesmas coisas que você busca né uma dignidade trabalhar ver uma vida digna né eu não penso mais né sei que você não perguntou né mas eu vou falar eu tenho 41 anos não busco mais tanta riqueza eu só quero viver bem estar bem viver em paz entendeu e o resto eu acho que a gente tem que esperar a vontade de Deus acontecer
+[11:31] CLIENTE: Mas essa situação que você me falou pobre de marré marrese nunca foi pobre porque olha só a idade que você já começou a ajudar sua mãe então a riqueza maior você já teve
+[11:32] LOJA: *Josy:*
+Na verdade não ficou sequelas. Eu me resolvi principalemente espiritualmente, pois  o que o outro faz diz sobre ele, não sobre nós. O que estou buscando desde então é me reeguer financeiramente mesmo. Ainda mais que fiquei 3 anos desempregada, eu fazia freelancer fritando pastel em feira, então assim a vida segue sabe.
+[11:33] LOJA: *Josy:*
+é... minha essencia é assim!
+[11:34] LOJA: *Josy:*
+isso mesmo, meu amigo! Principalmente, que o que é nosso ninguém tira.
+[11:36] LOJA: *Josy:*
+Faz parte... acontece, nas melhjores familias.
+[11:40] LOJA: *Josy:*
+Igual falei , o financeiro, não tem como a gente correr dele não, tudo é dinheiro, precisamos nos alimentar, vestir, cuidar da saúde, comprar pneus etc... rsrs , mas como falei também, a riqueza maior, está em enxergar os detalhes.
+[11:42] CLIENTE: Desculpe não quis dizer sequelas é porque na mensagem anterior você me falou que tava bom do jeito que tava
+[11:48] CLIENTE: Gosto muito de conversar com você você é muito direta
+[11:48] CLIENTE: Pode parecer que estou te paquerando mas não estou quero ser só seu amigo
+[11:50] LOJA: *Josy:*
+Sim, porque a gente tem que seguir em frente!
+[11:51] LOJA: *Josy:*
+Realmente.
+[11:51] LOJA: *Josy:*
+Fique tranquilo, eu sei que não está!
+[11:52] CLIENTE: Às vezes um pouquinho kkk
+[11:56] LOJA: *Josy:*
+Eu sei que nós humanos, ficamos intrigados com as pessoas que passam por nós e , normal querer saber sobre elas.
+[11:57] CLIENTE: Desculpa não entendi
+[11:58] CLIENTE: Eu gosto de conhecer bem meus amigos
+[11:59] CLIENTE: Fico muito feliz de você sabia diferenciar as coisas que bom fico muito feliz você é uma pessoa que eu conheço há pouco tempo mas tenho muito agrado e ter a sua amizade sua simplicidade e o seu caráter
+[12:01] LOJA: [áudio] "Ah, eu vou mandar áudio, porque eu estava atendendo aqui o cliente, eu terminei, digitei e vou mandar áudio, é mais prático, você disse que não entendeu, mas eu quis dizer o seguinte, né, você disse que não está dando em cima, eu falei, eu sei, fique tranquilo, eu sei que você não está, justamente porque eu sei que nós, humanos, né, a gente fica empregado com as pessoas que passam por nossas vidas, e é normal a gente querer saber sobre elas, porque, né, eu, eu sei a maneira que eu atendo as pessoas, que eu trato as pessoas, e você, assim, não é a primeira pessoa que conversa comigo e fala, caramba, você é diferente de onde você veio, de onde você vai, o que você faz, porque, justamente como você colocou aí, né, a questão de educação, né, de ser prestativa e tudo mais, nos dias de hoje, é difícil demais encontrar, pessoas que sejam assim, né, que tratem bem, tem educação, é, que respeita o próximo, então, é, como as pessoas, né, não, não encontram gente como a gente, é, isso inclui você, que também é uma pessoa muito simpática, igual eu coloquei aí, você é muito gente boa, sua mãe, caramba, vocês são muito nota 10, então, assim, a gente fica, caramba, que bacana, né, encontrar pessoas assim, então, super normal a gente querer saber um pouco da história delas, né."  {audio:midias/3EB0BBBC912035A3F116A2_922459.ogg}
+[12:02] LOJA: *Josy:*
+Recíproco, tenha certeza!
+[12:03] CLIENTE: Não verdade verdade mas você é diferenciada cara parabéns viu continua assim e
+[12:03] CLIENTE: Porque eu prefiro mais alto dá para ter sua voz parece que a gente estamos ao vivo
+[12:03] CLIENTE: Tá mas vou deixar você trabalhar se não eu te atrap
+[12:05] CLIENTE: Um abraço fica com Deus sempre que quiser conversar estamos aqui beleza sempre bom estar com você espero precisar de comprar mais pneus para estar te vendo pessoalmente
+[12:08] LOJA: *Josy:*
+Ah, obrigada pelo carinho! Vocês são demais!
+[12:09] CLIENTE: Mas para a gente ter uma amizade igual a sua a gente tem que ser no mínimo 90% comparado a você né então se eu sou demais é porque você é 100%
+[12:10] LOJA: *Josy:*
+Que é isso... imagina!
+[12:11] CLIENTE: A verdade tem que ser tem que ser dita
+[12:12] LOJA: *Josy:*
+Obrigada, então é reciproco!
+[12:13] CLIENTE: Difícil conversar com você você conversa muito complexo muito certo muito bonito
+[12:36] LOJA: *Josy:*
+Realmente, as vezes falo diferente...
+[12:41] LOJA: *Josy:*
+Por isso  as pessoas perguntam se estão falando com IA, igual você me  perguntou.
+[13:14] CLIENTE: Kk
+--- 09/10/2026 (Fri) ---
+[12:48] CLIENTE: 😍
+[12:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:38] CLIENTE: Oi, Tudo bem ?
+[20:38] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi
+[20:38] CLIENTE: Boa noite tudo bem com você
+--- 10/10/2026 (Sat) ---
+[08:24] LOJA: Bom dia, Ed...como vai?
+[08:24] LOJA: Meu amigo...aqui está uma correria dquelas!
+[08:24] CLIENTE: Bom dia
+[08:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:24] CLIENTE: Vc está bem
+[08:52] LOJA: Ed...estou sim!
+[08:52] LOJA: Só está extremamente corrido.
+[08:52] LOJA: E você como vai?
+[08:57] CLIENTE: Ok
+[08:57] CLIENTE: Bom final de semana
+[09:02] LOJA: E você como vai?
+[09:03] CLIENTE: Estou bem graças Deus
+[09:05] LOJA: Bom demais!
+[09:47] LOJA: [áudio] "Ed, aqui está bem corrido. Os vendedores estão participando de uma gincana que, assim, é como se fosse blogueiro mesmo, sabe, tipo digital influencer, que a gente tem que, tipo assim, postar o dia a dia do trabalho, né, as vendas e tudo mais. Então, o WhatsApp está com bastante movimento, ainda mais agora que está chegando o final de ano, então as pessoas estão mandando mais mensagens, tem mais cliente vindo à loja, aí eu faço esses atendimentos, aí preciso agendar outros e tiro foto e posto. Então, assim, está bem, bem frenético, de semana passada para cá, assim, está uma loucura, mas bem, graças a Deus, né. E daí, na nossa gincana, aí tem que fazer pontuação no Google também. Se você também quiser colaborar, te fazer uma avaliação de Google, né, para dizer como você se sente, né, utilizando os pneus aqui da empresa, se os pneus te atendem, se eles são bons, falar, né, se o atendimento da empresa e desta pessoa que vos fala foi bom para vocês. Aí, se você também quiser participar, colabora aí com a campanha, aí eu te mando um link, tá bom?"  {audio:midias/3EB015E4451CDCE05B556F_782487.ogg}
+[09:52] CLIENTE: [áudio] "Mas aí o que é que eu tenho que fazer? Eu entro no Google, pesquiso o nome da empresa, é pneus, prêmios, é isso?"
+[09:53] LOJA: Vou te mandar...
+[09:53] LOJA: https://da.gd/gp-avaliar
+[09:53] LOJA: [áudio] "Ed, tem esse link aqui que você vai clicar nele e vai dar o seu depoimento, tá?"  {audio:midias/3EB066778650621BB0E5CB_771119.ogg}
+[09:54] CLIENTE: [áudio] "Aí eu falo o nome da empresa ou do vendedor? Aí tem que ser teu nome, manda teu nome."
+[09:55] LOJA: [áudio] "Aí você pode escrever sobre a sua experiência usando os pneus, né? Falar assim, ah, os pneus são muito bons, tem um bom preço, o atendimento é bacana, aí é do seu agrado, você escreve do seu jeito, tá bom?"  {audio:midias/3EB0FFE874304E752F8C77_860804.ogg}
+[09:55] LOJA: Josy!
+[09:55] CLIENTE: Kkkk
+--- 13/10/2026 (Tue) ---
+[11:01] LOJA: Bom dia! Como pasou o feriado?
+[11:01] LOJA: Ed... deu certo o link?
+[11:03] LOJA: Hoje está corrido, mas ameno.
+[12:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:10] CLIENTE: [áudio] "Eu não consegui não, aquele dia não, mas eu vou conseguir hoje. Deixa eu te falar, tô precisando dos pneus 14. Tá tudo bem comigo, e você?"
+[12:10] CLIENTE: [foto]
+[12:17] LOJA: [áudio] "Aqui na Paz também, Ed. Igual eu coloquei aí, corrido, mas um pouco a menos. Hoje a PEC está mais ou menos."  {audio:midias/3EB050238032AFFA0AE962_121127.ogg}
+[12:48] LOJA: [áudio] "E Ed, só confirma pra mim qual que é a medida dos pneus 014?"  {audio:midias/3EB02B78EFD13E26CA2B56_201669.ogg}
+[12:57] CLIENTE: [áudio] "Oi, nega. É 14. 14, vem pra mim, por favor. Aí parece que no estilo que ele mandou aí é aquele meio esportivo, né? Meio alto, parece. Aquele 14 mais alto, mais cravadão. Que bom. Fico feliz que tá corrido pra você. Quando a gente tá corrido é porque tá dando certo. Agora, quando a gente tá na zona de conforto é que tá errado."
+[13:03] LOJA: [áudio] "Mas a foto que você me mandou é de um pneu 265-7015. Aí você quer desse desenho aí, só que no aro 14 é isso mesmo?"  {audio:midias/3EB09EB3BB7580ABFA1CD9_867457.ogg}
+[13:03] LOJA: [áudio] "Exatamente isso. E não está dando para ficar confortável, não. A gente tem que correr atrás, né?"  {audio:midias/3EB09DB7826425E2FB1EEC_169463.ogg}
+[13:13] CLIENTE: [áudio] "Eu vou dar uma olhada aqui, porque esse pneu é encomenda, é pra ir lá pro Nordeste. Vou dar uma olhada e te falo, tá? Mas é assim mesmo. Quando a gente estiver na zona de conforto, tá errado, entendeu? Às vezes a gente acha que tá fazendo o máximo, o máximo, mas a gente tem que sair da zona de conforto. Você pode prestar atenção que quando a gente sai da zona de conforto, a gente adquire sempre alguma coisa, entendeu? Mas assim, eu vou ver aqui e te falo, tá bom?"
+[14:06] LOJA: oK
+[14:52] CLIENTE: [áudio] "É 14, viu, gente?"
+[14:52] LOJA: [áudio] "Certo, perfeito. 14, Ed, é somente o aro. Pode confirmar para mim, em qualquer medida, se é 175-65, 175-70, 185-60, 185-65, 185-70. Eu só preciso dessa informação."  {audio:midias/3EB0806DAA0A5147F67CE5_27810.ogg}
+[14:57] CLIENTE: Pneu 175/70/14
+[14:58] LOJA: Não dispomos desse modelo a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[15:22] CLIENTE: [foto]
+[15:22] CLIENTE: [áudio] "E aí, Carli, tu vê se tu, se lá atendendo esse pneu igual a Isaí. Isaí é o da mesma numeração que eu mandei para você aí. Pergunta a moça se tem desse modelo lá."
+[15:23] CLIENTE: Ok
+[15:29] LOJA: Esse é modelo ATR e temos aqui!
+[15:29] LOJA: Nesse modelo que é por enocmenda.
+[15:30] LOJA: [áudio] "Ed, nesse modelo que você me mandou aqui agora, que é o modelo ATR, eu tenho ele aqui à pronta entrega, tá? Ele vai sair por R$ 279 no Pix. Vou te mandar uma foto real aqui."  {audio:midias/3EB0507AD41EAA9351758C_837642.ogg}
+[15:30] LOJA: [áudio] "É que você tinha mandado aquela primeira foto, ele é um modelo mais off-road, ele que é por encomenda, tá?"  {audio:midias/3EB0AADC3D78A9E17D0C21_653109.ogg}
+[15:31] LOJA: [foto]
+[15:31] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:35] LOJA: [foto]
+[15:35] LOJA: [foto]
+[15:35] LOJA: [foto]
+[17:18] CLIENTE: [áudio] "Valeu, nego. Eu mandei pra eles lá. Tô esperando a resposta desse último que você me mandou. Assim que ele me dar a posição, eu falo contigo, tá? Um abraço, bom descanso."

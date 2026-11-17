@@ -1,0 +1,10 @@
+CONVERSA 36c0a0f1e4 | contato: Márcio Vieira | 29/08/2026 11:32 até 29/08/2026 12:26 | 4 msgs do cliente, 2 da loja, 0 do robô
+
+--- 29/08/2026 (Sat) ---
+[11:32] LOJA: [áudio] "Oi, Márcio. Tudo bom com você? Há alguns dias atrás tentei falar contigo, vi até que você ouviu o meu áudio, mas não me deu um retorno. Eu sei que é corrido, né, o dia aí, mas me dá um retorno, por gentileza, me diz se você pretende seguir com a negociação ou até mesmo, né, se decidiu optar por outro caminho. Fala comigo, tá, jóia? Agradeço aí pela sua atenção e retorno."  {audio:midias/3EB05BE4CB0D017D27CC91_525276.ogg}
+[12:26] CLIENTE: Oi
+[12:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:26] CLIENTE: Bom dia
+[12:26] CLIENTE: Tudo bom ?
+[12:26] CLIENTE: Vou precisar não ?

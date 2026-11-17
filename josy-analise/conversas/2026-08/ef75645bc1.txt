@@ -1,0 +1,5 @@
+CONVERSA ef75645bc1 | contato: Financiamentos | 21/08/2026 12:16 até 21/08/2026 12:37 | 1 msgs do cliente, 1 da loja, 0 do robô
+
+--- 21/08/2026 (Fri) ---
+[12:16] CLIENTE: Boa tarde! Vc consegue para entrega em Niquelandia? Ou tem que buscar?
+[12:37] LOJA: [áudio] "Oi Elton, como é que você está? Elton, eu preciso que você me informe qual que é o seu endereço, que no caso, como eu particularmente não realizo entregas, eu preciso ver com o pessoal da transportadora para poder te passar o preço. Aí a observação é que não tem como parcelar no caso, né? A compra é somente à vista."  {audio:midias/3EB03B00FDDBD580431105_907602.ogg}

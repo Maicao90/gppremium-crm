@@ -1,0 +1,41 @@
+CONVERSA c560e4f05a | contato: ANJOS | 20/10/2026 15:00 até 21/10/2026 12:02 | 11 msgs do cliente, 11 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[15:00] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[15:00] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[15:00] CLIENTE: Onde fica loja?
+[15:00] CLIENTE: Márcio
+[15:00] CLIENTE: 215/60 17
+[15:01] CLIENTE: Carro ASX
+[15:02] LOJA: *Josy:*
+Prefere mensagem de áudio ou texto?
+[15:03] CLIENTE: Áudio
+[15:04] LOJA: [áudio] "Oi Márcio, boa tarde. Como é que você está? Bem, a nossa loja, ela fica aqui em Luziânia, Goiás. Você mora por aqui?"  {audio:midias/3EB029B4B0503882FBDC0A_392215.ogg}
+[15:08] LOJA: [foto]
+[15:08] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:09] CLIENTE: [áudio] "Esse valor que você me passou aí é valor de unidade cada pneu, é isso?"
+[15:10] LOJA: *Josy:*
+ *UNITÁRIO*
+[15:11] LOJA: [áudio] "Isso, exatamente. Por exemplo, o pneu da marca Sunny, para o pagamento à vista, a unidade é R$ 558. Se o senhor precisar das 4 unidades à vista, os 4 pneus ficarão por R$ 2.232."  {audio:midias/3EB0631CB5F595660F7AF9_248981.ogg}
+[15:14] CLIENTE: Ta ok
+[15:14] CLIENTE: Fazendo pesquisa ok
+[15:14] CLIENTE: Obrigado
+[15:15] LOJA: [áudio] "Senhora daqui de Luziânia, Goiás."  {audio:midias/3EB0A16CF34009889B90AF_211298.ogg}
+[15:15] CLIENTE: [áudio] "Não, não, não sou de Luziânia, não. Mas eu tô perto aí de vocês, só que eu tô fazendo uma pesquisa de preço, entendeu? E aí a gente tá dando uma olhada aí primeiro, tá bom? Te agradeço, obrigado pela atenção aí."
+[15:19] LOJA: *Josy:*
+Entendi!
+[15:19] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 21/10/2026 (Wed) ---
+[12:02] ROBÔ: 🙋🏼‍♀️

@@ -1,0 +1,27 @@
+CONVERSA 0c63371190 | contato: Rodrigues centro automotivo | 15/10/2026 08:35 até 15/10/2026 18:09 | 10 msgs do cliente, 9 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[08:35] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[08:35] CLIENTE: Bom-dia
+[08:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:36] CLIENTE: Quanto está um pneu 185/65/15
+[08:36] LOJA: Bom dia!
+[08:36] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:36] LOJA: [foto]
+[08:36] LOJA: [áudio] "Olá, tudo bem com você? E você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB089F18F3DBB81799ED0_392311.ogg}
+[08:37] CLIENTE: Morro próximo
+[08:37] CLIENTE: CNPJ fica barato ?
+[08:39] LOJA: É o mesmo valor.
+[08:39] CLIENTE: Entendi
+[08:39] CLIENTE: Blz
+[08:39] CLIENTE: Estou apenas fazendo orçamento por enquanto
+[08:39] CLIENTE: Obrigado
+[08:42] LOJA: Certo... entendi!
+[18:09] LOJA: [áudio] "Bem, eu vou ensinar aqui o seu atendimento, Itajé Rodrigues, e vou te encaminhar à nossa localização. Se houver a possibilidade, você vem aqui na loja para nós conversarmos pessoalmente, está bem?"  {audio:midias/3EB0DCE028D3B6239E291E_265246.ogg}
+[18:09] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[18:09] CLIENTE: Agradecemos sua mensagem. Não estamos disponível no momento, mas entraremos em contato assim que possível.

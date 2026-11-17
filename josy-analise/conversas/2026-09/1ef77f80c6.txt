@@ -1,0 +1,16 @@
+CONVERSA 1ef77f80c6 | contato: Edilso | 10/09/2026 13:02 até 22/09/2026 17:39 | 1 msgs do cliente, 8 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[13:02] LOJA: [foto]
+[13:11] LOJA: [áudio] "Oi, seu Edilson, tudo jóia? Vou te mandar aqui a foto do pneu, tá bom?"  {audio:midias/3EB0517E0F31A7C5A80251_263023.ogg}
+[13:12] LOJA: [foto]
+[13:14] LOJA: *Josy:*
+No *dinheiro* a unidade fica por R$ 515,00
+--- 11/09/2026 (Fri) ---
+[13:41] LOJA: [áudio] "Oi, senhor Edilson, como é que vai? E aí, seu amigo decidiu a respeito dos pneus?"  {audio:midias/3EB016EA79D223D4AC74E2_474197.ogg}
+--- 22/09/2026 (Tue) ---
+[16:06] LOJA: [áudio] "Oi, Sr. Edilson, tudo, Joia? Há alguns dias atrás te mandei o orçamento dos pneus para caminhonete e queria saber se o senhor ainda está precisando..."  {audio:midias/3EB0D66BDCAA93A7472DC8_271473.ogg}
+[17:29] CLIENTE: [áudio] "Oi, amigo. Boa tarde. Então, deixa eu falar. Precisa onde tem que estar. Porque, na verdade, igual eu te falei, não é pra mim, é um amigo meu que tá com a manhã. Só que ele tá meio sem dinheiro, estamos esperando ele arrumar. Na hora que ele conseguir ir, eu vou ir contigo, tá? Não esqueci não. Beleza? Um abraço. Boa tarde."
+[17:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:39] LOJA: [áudio] "Tá, Jéssora Edilson? Eu lembro que você falou que era para o seu amigo, tá bom? Fica tranquila aí, só para saber realmente, tá? Obrigada pela sua atenção, o senhor é sempre muito gentil. Boa semana!"  {audio:midias/3EB0F25F8D424D1E45FB38_392098.ogg}

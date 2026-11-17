@@ -1,0 +1,23 @@
+CONVERSA cfc7811a8a | contato: Vidraçaria Diamante | 03/09/2026 11:54 até 09/09/2026 17:47 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[11:54] LOJA: *Josy:*
+Bom dia, Roberval!
+[11:54] LOJA: [foto]
+[11:55] LOJA: *Josy:*
+O valor de 3 x , vou parcelar em 4 x sem juros pneus do Palio.
+[11:57] LOJA: *Josy:*
+Palio , valor total R$ 1.165,56
+--- 09/09/2026 (Wed) ---
+[16:46] CLIENTE: Boa tarde
+[16:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:46] CLIENTE: [áudio] "Boa tarde, tudo bem? Eu sou um rapaz que foi aí, mas o rapaz dos pneus, dois pneus da Kombi e o pneu do Palio. Eu falei com o rapaz, ele passei até a localização daí. Na hora que ele foi, eu não sei se ele vai hoje, né? Ficou dele ontem, não foi, porque ele disse que ia pagar o cartão dele hoje pra virar, que aí ele ia passar. Mas ele vai passar, se ele não passar, hoje passa amanhã, vamos ver aqui. Aí quando ele chegar aí, aí a senhora me avisa. Tá bom?"
+[16:47] LOJA: [áudio] "Oi, sou Robert Val, tudo jóia?"  {audio:midias/3EB0B5D3E6587BD9A2BDDC_457536.ogg}
+[16:48] LOJA: [áudio] "Para ele vai ser os pneus do Palio, né?"  {audio:midias/3EB0CF82A023B518ED1734_313740.ogg}
+[16:48] CLIENTE: [áudio] "É, o pneu do Palio e os dois da Kombi. Chegou os dois da Kombi? A senhora falou que ia chegar essa semana, parece?"
+[16:49] LOJA: [áudio] "Não, da Kombi ainda não chegou."  {audio:midias/3EB0ADCC431943512A78D2_316691.ogg}
+[16:49] CLIENTE: [áudio] "Chega que dia, se dá Kombi. Que ele ia passar do Pádio ou da Kombi no cartão logo, né? Que deu esse valor aí que a senhora tinha passado."
+[16:51] LOJA: [áudio] "Então, eu acabei de mandar mensagem para eles lá para poder confirmar novamente, porque já era para estar aqui, só que aí teve o feriado, né?"  {audio:midias/3EB0458D43E5986D709E88_856379.ogg}
+[17:47] LOJA: [áudio] "O pneu da Kombi N2 está em falta, Roberta?"  {audio:midias/3EB08600C6A6CBF37D66BD_472996.ogg}
+[17:47] CLIENTE: Ok

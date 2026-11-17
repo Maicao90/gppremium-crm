@@ -1,0 +1,47 @@
+CONVERSA 0b04256733 | contato: Paulo Henrique | 12/09/2026 08:56 até 12/09/2026 11:09 | 22 msgs do cliente, 20 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[08:56] CLIENTE: Oi
+[08:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:56] CLIENTE: Bom dia
+[08:57] LOJA: [áudio] "Olá, bom dia. Tudo bem? Eu sou a Josi. Paulo, por gentileza, me informa qual é a medida dos pneus que você precisa?"  {audio:midias/A55EB3C12885BFF1E9ED4FCCB2386D76_167660.ogg}
+[08:57] CLIENTE: Eu comprei esses pneus ai
+[08:58] CLIENTE: [vídeo]
+[08:58] CLIENTE: Eu quase sofri um acidente na br
+[08:59] CLIENTE: [áudio] "Então, eu comprei esses pneus aí, vocês me falaram que os pneus eram novos e tudo, eu trouxe o borracheiro aqui, eu tava indo trabalhar, um pneu deslocou no meio da BR, o carro foi pulado, eu passei por cima do meio fio, estourou, os 3 pneus que eu comprei com vocês aí, estourou, vocês falaram que os pneus eram novos, que eu não entendo muito, eu trouxe o borracheiro aqui, o borracheiro falou que esses pneus aqui é remote, pneu recapitulado, eu não entendo bem. ... ... ... ... ... ... ... ... ... ... ... ..."
+[09:00] LOJA: Estranho...
+Pois pneus não estouram desse jeito.
+[09:01] LOJA: Onde você montou os pneus?
+[09:01] CLIENTE: [áudio] "Então, pois é. O que já estava nele não aconteceu nada. Eu passei por cima do meio-fio porque um deslocou aqui, não sei o que foi, o carro puxou para o lado, eu tive que jogar o carro para cima do meio-fio para não acontecer um acidente pior e agora eu estou aqui. as minhas rodas, quebrou as rodas, nenhuma das rodas mais eu trouxe os borracheiros aqui, não está prestando, os pneus também não estão."
+[09:01] CLIENTE: [áudio] "Eu montei, eu montei na loja onde eu comprei. Eu montei aqui na entrada da Ocidental."
+[09:03] CLIENTE: [áudio] "Porque, na verdade, quando eu fui comprar aí, eu pedi pneu novo, eu queria um pneu bom. Eu não entendo, o rapaz, na hora de me vender, ele falou que tinha uns aí na promoção, que era 260 e poucos, e eu peguei e comprei. E aí, quando eu trouxe o borracheiro aqui, o borracheiro falou que ele já até trabalhou na empresa desses pneus aqui, disse que é pneu remote, pneu recapado, pneu que não presta."
+[09:03] LOJA: Certo... Você comprou na Loja City!
+[09:03] CLIENTE: [áudio] "Bom, o carro estava aqui, ainda tive que pagar um guincho da BR, larguei o carro aqui em casa, o carro está aqui parado, agora não sei nem como é que eu vou fazer, que eu preciso do carro para me trabalhar, sem pneus, sem que perdi as rodas, vou ter que comprar pneu, vou ter que comprar roda, tudo novo."
+[09:04] CLIENTE: [áudio] "Então, eu não sei, eu tô com um papelzinho aqui, é uma loja que fica aqui na entrada da Ocidental."
+[09:04] LOJA: Cidade Ocidental.
+[09:04] CLIENTE: Sim
+[09:05] LOJA: Não fez balanceamento nos pneus, não trocou válvula e não fez  nenhum tipo de serviço, coberto?
+[09:05] CLIENTE: [áudio] "Não, fiz não. Eu só troquei os pneus mesmo, porque eu tava meio que sem dinheiro e não deu pra mim fazer. Só que eu tava juntando dinheiro aqui pra mim poder fazer isso. Mas você acha normal com menos de um mês comprar os pneus e acontecer isso?"
+[09:06] LOJA: Pneus não estouram assim não.
+[09:06] LOJA: Precisa investigar.
+[09:07] LOJA: Vou entrar em contato com a empresa que te atendeu.
+[09:07] CLIENTE: [áudio] "Pois é, então vocês investigam ver o que vocês fazem. Se vocês quiserem vir aqui olhar o carro, vocês vêm e aí vocês vêm o que vocês fazem, porque eu não vou sair no prejuízo, não."
+[09:10] CLIENTE: [áudio] "Pois é, porque se você tivesse me falado que era pneu remoldo, eu não tinha comprado não, eu tinha pagado um pouco mais caro, mas tinha comprado um bom, porque ele me passou como pneu novo."
+[09:14] LOJA: Já ouço seus áudios, está bem.
+[09:28] CLIENTE: Poisé se vocês não ver isso pra mim vou atrás dos meus direitos por que quase sofri e um acidente
+[09:36] LOJA: Aguarde por gentileza.
+[10:22] LOJA: Obrigada por aguardar.
+[10:23] LOJA: Preciso que o senhor  traga os pneus para avaliação , caso seja detectado algum defeito de fabricação será trocado, sem problemas.
+[10:24] LOJA: Se não for idêntificado defeito de fabricação  será emitido um laudo tecnico.
+[10:29] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:30] LOJA: Horário de atendimento técnico.
+De segunda a sexta das 08:00 as 11:00 e das 13;00 as 17;00
+[10:48] CLIENTE: [áudio] "Então, ó, eu vou falar uma coisa. Se tivessem me falado que era pneu remold, eu não tinha comprado. E outra, o carro tá aqui no chão, como é que eu vou fazer pra mim arrancar essas rodas, esses pneus, pra levar pra onde você tá mandando aí? Eu vou tirar os pneus aqui e vou levar aonde eu comprei e vou deixar lá. E aí vocês veem. Isso é uma tremenda, de uma sacanagem, me vender uns pneus que não prestam, pneu remoldo, pneu recapado. Se ele tivesse me falado isso ou não, eu jamais tinha comprado esses pneus. Eu fui lá, ele falou que tinha uns pneus bons na promoção e pegou e me empurrou esses pneus. Eu vou deixar aonde eu comprei, aí vocês veem o que vocês fazem. Se não, se não, a gente vai pra justiça. Eu vou atrás dos meus direitos, eu tô com as notas, eu tô com tudo aqui que eu comprei."
+[10:49] CLIENTE: [áudio] "E outra, eu ainda perdi, foi 3 rodas orbital do meu carro. As 3 rodas que estavam eu perdi, porque amassou tudo."
+[11:07] CLIENTE: [áudio] "Então, eu chamei um borracheiro aqui, porque tem que trazer três macacos, os três pneus tá furados, eu vou tirar aqui e vou levar na loja onde eu comprei e vou deixar lá, e aí vocês vêem o que vocês fazem, porque eu tô perdendo dia de serviço, eu não tô indo trabalhar, eu tinha que estar trabalhando com o carro, não tô indo, tô parado, tô perdendo serviço, paguei guincho pra vir deixar o carro aqui, aqui de casa, E, pois é, tô no prejuízo, tô aqui parado. E aí vocês vêem o que vocês fazem, se não, eu vou atrás do meu direito."
+[11:08] CLIENTE: [áudio] "Vou fazer um vídeo aqui até mais detalhado do pneu, para você ver, para ver se tem condição."
+[11:08] LOJA: Perfeito! Caso seja detectado algum defeito de fabricação será trocado, sem problemas.
+[11:08] LOJA: Se não for idêntificado defeito de fabricação  será emitido um laudo tecnico.
+[11:09] CLIENTE: [áudio] "Não, beleza. Eu vou tirar os pneus aqui e vou levar na loja onde eu comprei. Vou deixar lá, vou deixar onde eu comprei."
+[11:09] CLIENTE: [vídeo]

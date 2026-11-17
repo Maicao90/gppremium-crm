@@ -1,0 +1,38 @@
+CONVERSA 0bbafa72fc | contato: Leo | 18/07/2026 11:12 até 30/07/2026 07:14 | 12 msgs do cliente, 12 da loja, 0 do robô
+
+--- 18/07/2026 (Sat) ---
+[11:12] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[11:14] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 19/07/2026 (Sun) ---
+[10:52] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:54] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 20/07/2026 (Mon) ---
+[09:32] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:34] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 21/07/2026 (Tue) ---
+[08:12] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[08:14] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 22/07/2026 (Wed) ---
+[07:52] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[07:54] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 23/07/2026 (Thu) ---
+[06:32] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[06:34] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 24/07/2026 (Fri) ---
+[05:12] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[05:14] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 25/07/2026 (Sat) ---
+[12:52] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[12:54] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 26/07/2026 (Sun) ---
+[11:32] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[11:34] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 27/07/2026 (Mon) ---
+[10:12] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:14] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 29/07/2026 (Wed) ---
+[08:32] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[08:34] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 30/07/2026 (Thu) ---
+[07:12] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[07:14] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

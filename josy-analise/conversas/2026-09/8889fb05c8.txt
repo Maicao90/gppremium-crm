@@ -1,0 +1,16 @@
+CONVERSA 8889fb05c8 | contato: ❤️🫶🏾✝️🛐🙏🏾 | 24/09/2026 11:53 até 24/09/2026 12:08 | 4 msgs do cliente, 8 da loja, 0 do robô
+
+--- 24/09/2026 (Thu) ---
+[11:53] CLIENTE: [contato] 👤 Mecânico D Chapol
+[11:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:53] LOJA: [áudio] "Oi Elton, tudo jóia?"  {audio:midias/3EB086D61E6E70A34C9803_640628.ogg}
+[11:54] CLIENTE: [áudio] "Bom dia, bom dia, gente. Esse aí, ó, eu coloquei mecânico, o Shopping Rolink era só um ponto de referência, mas o nome dele é, é, até esqueci, mas chamei de Jose. Aí entre em contato com ele, pra ver os pneus, o carro dele é um Vec, só que o dele é aro, se não me engano, ele falou aro 15. Aí fala que você vai fazer um preço bacana pra ele aí."
+[11:54] LOJA: [áudio] "Tá, Joia, pode deixar que eu chamo ele aqui, tá bom?"  {audio:midias/3EB0739098EB6261FEF928_496524.ogg}
+[11:55] LOJA: [áudio] "E você, como é que você está?"  {audio:midias/3EB03FF906662CCD67AA5E_30058.ogg}
+[11:56] CLIENTE: [áudio] "Tô bem. Eu tava na correria aí de sempre. Eu vi aí. Vai ter, né? O negócio do carro lá no autódromo. Domingo agora, né?"
+[11:57] LOJA: [áudio] "Correria demais mesmo, mas não vai ser no autódromo, vai ser aqui em Luziânia."  {audio:midias/3EB07AB8592F281DAD77FE_497528.ogg}
+[11:57] LOJA: [áudio] "Vou te mandar aqui."  {audio:midias/3EB01D2D2B6771BC94DBDC_296085.ogg}
+[11:57] LOJA: [vídeo]
+[12:07] CLIENTE: [áudio] "Ah, 12 anos. Ixi, vai ficar mais longe ainda. Apesar que eu ainda vou trabalhar domingo. Pensei que era um autódromo. Eu ia tentar fazer com o patrão lá pra ele ir também. Mas tá bom, vai ter outras oportunidades. Obrigado."
+[12:08] LOJA: [áudio] "Sim, vão ter outras oportunidades, sim. Até mais."  {audio:midias/3EB09BA955B9BA848AC822_795648.ogg}

@@ -1,0 +1,93 @@
+CONVERSA bc73982bfc | contato: Leila Martins | 25/08/2026 17:27 até 26/08/2026 16:37 | 23 msgs do cliente, 32 da loja, 0 do robô
+
+--- 25/08/2026 (Tue) ---
+[17:27] LOJA: *Josy :*
+Olá! Seja muito bem-vindo à GP Pneus. 🛞 Meu nome é Josy . Como posso te ajudar hoje?
+[17:29] LOJA: *Josy :*
+🙋🏼‍♀️
+[17:31] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[17:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:32] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[17:32] CLIENTE: Pálio Fire 2009/2010
+[17:32] CLIENTE: 165/70 R13
+[17:33] CLIENTE: Qual o valor ?
+[17:33] LOJA: [foto]
+[17:33] LOJA: *Josy :*
+Pneu da marca GP Premium, a vista 239,00 cada
+[17:34] LOJA: *Josy :*
+Mora aqui em Luziania-Go?
+[17:35] CLIENTE: Não! No Valparaíso
+[17:37] CLIENTE: Vocês fazem a montagem?
+[17:37] LOJA: *Josy :*
+Vou te encaminhar a nossa localziação.
+[17:39] LOJA: *Josy :*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:40] LOJA: *Josy :*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:41] CLIENTE: Fica Qt ?
+[17:43] LOJA: *Josy :*
+A montagem não é cobrada, apenas o balanceamento dos pneus 20,00 cada e o alinhamento de direção se realmente for preciso fazer.
+[17:44] CLIENTE: 239.00 cada?
+[17:44] CLIENTE: Vou passar para o meu esposo.
+[17:45] LOJA: Isso
+[17:45] LOJA: *Josy :*
+E seguem as opções de parcelamento caso queiram parcelar.
+[18:46] CLIENTE: Pagamento avista!
+--- 26/08/2026 (Wed) ---
+[11:41] CLIENTE: Bom dia
+[11:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:41] CLIENTE: E remolde?
+[11:42] CLIENTE: 👆
+[11:47] LOJA: *Josy :*
+Sim
+[11:47] LOJA: *Josy :*
+sim.
+[11:48] LOJA: *Josy :*
+E é o pneu mais vendido que temos, por ser de primeira linha .
+[11:48] LOJA: *Josy :*
+Se quiser te mando foto...video...
+[14:41] CLIENTE: [áudio] "Então, Josi, eu fiz esses orçamentos, estou fazendo para o meu esposo. Amanhã ele está de folga, aí ele vai avaliar direitinho e vai definir, tá bom? Mas que a gente vai trocar, com certeza a gente precisa trocar."
+[14:42] LOJA: [áudio] "Sim, perfeito. Você quer que eu te mande uma foto, um vídeo para você ver como é o pneu?"  {audio:midias/3EB0F857F379CB6D1E5847_411345.ogg}
+[14:45] CLIENTE: [áudio] "Você pode me mandar. Só que, como eu te falei, eu não entendo muito dessas coisas, sabe? Aí eu só fiz as perguntas de acordo conforme ele pediu para eu fazer o orçamento. E aí você me manda o vídeo e eu mando para ele. Hoje, inclusive, eu falei tudo, né, das pesquisas que eu fiz e tal. Só que hoje ele não tinha tempo, porque ele entrou mais cedo no trabalho. Aí amanhã ele está de folga, né, amanhã o dia todo ele vai tirar para resolver essas coisinhas que tem que ser feita. Pneu, tem uns outros negocinhos que ele tem que arrumar. Aí eu só vou passar o orçamento para ele e ele vai definir. Aí você pode me mandar que eu vou estar enviando para ele, tá bom? Muito obrigada."
+[14:51] LOJA: [áudio] "Não tem problema você não entender, Leila. Imagina, o que é isso? Eu estou aqui justamente para poder auxiliar você e seu esposo também, tá joia? Então fique tranquila, não precisa entender. Eu vou tentar ser bem clara com vocês, tá joia? E vamos nos falando, pode ficar tranquila."  {audio:midias/3EB0BCAE6E3BCAE1FE6A9C_459408.ogg}
+[14:53] LOJA: [áudio] "Vocês vão precisar de quantos pneus?"  {audio:midias/3EB0BEDC00777B7B96B221_980879.ogg}
+[14:59] CLIENTE: [áudio] "Então, a gente estava pensando em trocar os 4. Ele me falou que tem 2 que foi trocado recente, ele falou que talvez não haveria necessidade, né? No caso, quando for chegar aí, que levantar, que vai olhar tudo direitinho, que ele vai definir. Aí seria entre 4 ou 2, né? Eu não sei como vai, o que ele vai definir."
+[15:00] LOJA: [áudio] "Entendo. É que se os pneus foram colocados recentemente, se eles não estiverem com desgastes irregulares, nem nada, realmente não há necessidade de troca, né?"  {audio:midias/3EB0D1E94AD194CC566931_42209.ogg}
+[15:06] LOJA: [vídeo]
+[15:44] CLIENTE: Pneus 175/70R13 da marca MIRAGE
+R$219,00 Cada pneu
+Pneus novos com 5 anos de garantia
+Na compra de 2 ou mais.
+
+Pneus para montagem em loja a base de troca e pagamento facilitado nos cartões.
+[15:44] CLIENTE: Pneus 175/70R13 da marca ONYX
+R$275,00 Cada pneu
+Pneus novos com 5 anos de garantia
+Na compra de 2 ou mais.
+
+Pneus para montagem em loja a base de troca e pagamento facilitado nos cartões.
+[15:45] CLIENTE: [áudio] "A senhora agendando aqui comigo, a montagem dos pneus, alinhamento direcional e balanceamento das rodas fica como cortesia, tá?"
+[15:48] LOJA: *Josy :*
+Procura sobre essa empresa no Google.
+[15:48] LOJA: *Josy :*
+Apenas isso que eu tenho a dizer.
+[15:49] CLIENTE: Sim! E a Fortaleza Pneus 🌺
+[15:50] LOJA: *Josy :*
+Então... pesquisa direito no reclame aqui.
+[15:50] CLIENTE: [áudio] "Falei, Luzi. Meu esposo é que vai definir, então assim, né? Eu só mandei, porque como eu tô fazendo orçamento, né? Então, ele vai até a loja, vai ver direitinho, tá? Com certeza ele vai avaliar tudo isso, na hora que ele chegar."
+[15:51] LOJA: *Josy :*
+Tranquilo.
+[15:51] LOJA: [áudio] "Sim, sem problemas, dona Leila. Igual aí, nesses avanços aí que a senhora me mandou, são pneus chineses, tá? Igual a senhora falou, a senhora não conhece, né, não tem muito conhecimento sobre pneu, mas estou te explicando, mesmo que a senhora opte em realizar a compra em outro local, e seu esposo também, vou te explicar a respeito desses pneus, tá?"  {audio:midias/3EB00172ED1A7F4CAA9CC9_155666.ogg}
+[15:53] LOJA: [áudio] "Então, esses pneus, que são pneus chineses, primeiro, que eles não vêm com essa medida que vem descrito, que é um 7570, ele vem mais estreito, tá? E uma outra observação, os pneus chineses, eles não têm borracha natural, eles são de material sintético, então eles acabam mais rápido, tá? Isso é para qualquer marca importada."  {audio:midias/3EB065EF3BC5BB151DD316_947763.ogg}
+[15:55] LOJA: [foto]
+[15:55] LOJA: *Josy :*
+Aqui temos também a medida 175/70/13👇🏻
+[15:55] LOJA: [foto]
+[15:58] LOJA: [áudio] "E aqui, na medida que a senhora estava buscando, né, que foi o início da nossa conversa, 165-7013, eu tenho somente o pneu da marca GP Premium. Já na medida 175-7013, eu disponho dos pneus novos da marca Goodyear e da marca Dunlop, que são marcas muito boas, tá? E, independente de marca, qualquer pneu, ele tem garantia apenas para defeito de produto, né? Que não está inclusa em bolhas, que geralmente são em decorrência de impactos laterais, furos, né? Porque estamos no asfalto, passamos no prego, furo pneu, isso não é defeito de produto. Então, assim, a questão de garantia, se de repente ocorrer um defeito de produção, isso para qualquer tipo de marca, tá joia? Então, conversei com seu esposo e entre em contato aqui comigo novamente, tá bom?"  {audio:midias/3EB0780701F7A879236589_619269.ogg}
+[16:37] CLIENTE: Entendi!

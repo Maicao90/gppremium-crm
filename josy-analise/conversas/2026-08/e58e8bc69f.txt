@@ -1,0 +1,30 @@
+CONVERSA e58e8bc69f | contato: Kalleno | 28/08/2026 16:41 até 28/08/2026 17:21 | 9 msgs do cliente, 9 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[16:41] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[16:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:41] CLIENTE: 225/40r20
+[16:45] LOJA: *Josy:*
+Bpa tarde!
+[16:45] CLIENTE: Boa tarde
+[16:46] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[16:46] CLIENTE: Tudo bem
+[16:46] CLIENTE: A pronta entrega vc tem alguma medida aro 20
+[16:54] LOJA: *Josy:*
+225/30/20 te atende?  Mora aqui em Luziânia-Go, mesmo?
+[16:55] CLIENTE: Quanto fica os 4
+[16:55] LOJA: *Josy:*
+A vista R$ 1.800,00
+[16:57] CLIENTE: 35 vc não tem acho q 30 é muito fino
+[17:09] LOJA: *Josy:*
+35 so tenho 2
+[17:18] LOJA: *Josy:*
+Ficam por 930,00
+[17:18] CLIENTE: Poxa se tivesse os 4
+[17:20] LOJA: *Josy:*
+Na verdade o que ocorre é o seguinte... vou ter 2 de uma marca e 2 de outra
+[17:21] LOJA: *Josy:*
+o sistema acabou de atualizar
+[17:21] CLIENTE: Entendi

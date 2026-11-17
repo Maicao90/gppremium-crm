@@ -1,0 +1,35 @@
+CONVERSA a0c8c47e08 | contato: duda | 17/09/2026 17:01 até 18/09/2026 11:34 | 11 msgs do cliente, 10 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[17:01] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[17:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:01] CLIENTE: albumMessage
+[17:01] CLIENTE: [foto]
+[17:01] CLIENTE: [foto]
+[17:01] CLIENTE: gostaria de 1 pneu desse
+[17:15] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[17:15] CLIENTE: Tá bom! muito obrigada
+[17:40] LOJA: *Josy:*
+Mora aqui em Luziania-Go, mesmo?
+[17:43] LOJA: [foto]
+[17:43] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 200,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 18/09/2026 (Fri) ---
+[10:53] CLIENTE: Em brasília
+[10:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:55] LOJA: *Josy:*
+Ah, sim!
+[11:26] CLIENTE: a loja fica onde ?
+[11:31] LOJA: *Josy:*
+ Luziania-Go
+[11:32] CLIENTE: A sim
+[11:32] CLIENTE: E pode confinar me confirmar se a marca do pneu é essa
+[11:32] CLIENTE: por favor
+[11:33] LOJA: [foto]
+[11:34] LOJA: *Josy:*
+A unica opção de marca disponivel por aqui é Wanli.

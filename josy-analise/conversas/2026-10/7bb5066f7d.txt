@@ -1,0 +1,10 @@
+CONVERSA 7bb5066f7d | contato: Junio | 21/10/2026 15:20 até 21/10/2026 18:26 | 2 msgs do cliente, 0 da loja, 3 do robô
+
+--- 21/10/2026 (Wed) ---
+[15:20] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[15:21] CLIENTE: Pneu 17 205/55
+[15:21] ROBÔ: Temos o pneu *205/55/17* da marca *GP Premium* está saindo por *R$ 349,00 à vista*.
+[15:21] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[18:26] ROBÔ: 🙋🏼‍♀️

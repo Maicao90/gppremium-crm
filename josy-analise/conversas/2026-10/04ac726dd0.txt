@@ -1,0 +1,18 @@
+CONVERSA 04ac726dd0 | contato: Fabio | 09/10/2026 06:06 até 09/10/2026 15:17 | 4 msgs do cliente, 6 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[06:06] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[06:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[06:37] CLIENTE: 205/60 R16 92H
+[08:57] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi e eu tenho a coxinha, a princípio, o pneu da marca GP Premium, ele está por 329 reais à vista. Eu gostaria que, por gentileza, você só me informa, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB05234260403056A970F_158008.ogg}
+[09:05] CLIENTE: Vaparaiso
+[09:05] CLIENTE: Valparaiso
+[09:16] LOJA: Certo.
+[09:17] LOJA: [foto]
+[09:17] LOJA: No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:17] LOJA: [áudio] "Olá, tudo bem com você, Fábio? Nós nos falamos mais cedo e eu gostaria de saber se você quer que eu reserve alguma dessas opções para você. Assim que possível, você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB03F2C91853830A0D5F9_546444.ogg}

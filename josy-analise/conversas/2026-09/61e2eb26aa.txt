@@ -1,0 +1,40 @@
+CONVERSA 61e2eb26aa | contato: Mycarla🪷🌹 | 11/09/2026 16:18 até 22/09/2026 16:15 | 7 msgs do cliente, 14 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[16:18] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[16:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:18] CLIENTE: Aro 14
+[16:21] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa?
+[16:22] LOJA: *Josy:*
+Se não souber me diz qual é seu carro.
+[16:22] LOJA: *Josy:*
+🙋🏼‍♀️
+[16:23] CLIENTE: 175/65/14
+[16:23] LOJA: [foto]
+[16:23] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:25] CLIENTE: Não entendi
+[16:27] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:27] LOJA: *Josy:*
+Exemplo:
+[16:28] LOJA: *Josy:*
+Digamos que você precise de 2 pneus Pneu Goodyear a vista a unidade é 371,00 x 2 pneus = 742,00
+[16:28] LOJA: *Josy:*
+Entendeu?
+[16:33] LOJA: [áudio] "Olá, tudo bem? Eu sou a Josi. Ficou clara a explicação que eu te dei?"  {audio:midias/3EB0BB8B6233FF67B97C48_321572.ogg}
+[16:36] CLIENTE: Ficou sim
+[16:36] LOJA: [áudio] "E vocês têm busca de alguma marca específica? Mora aqui em Luziânia mesmo?"  {audio:midias/3EB0E408AEED680B228DB1_29079.ogg}
+--- 22/09/2026 (Tue) ---
+[15:53] LOJA: [áudio] "Olá, boa tarde, tudo bem? Alguns dias atrás eu te encaminhei um orçamento e gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB03BEB4DD092971EC380_525353.ogg}
+[16:15] CLIENTE: Oi moça 
+Boa tarde
+[16:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:15] CLIENTE: Já consegui resolver

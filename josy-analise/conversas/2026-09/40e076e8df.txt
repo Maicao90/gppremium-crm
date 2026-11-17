@@ -1,0 +1,12 @@
+CONVERSA 40e076e8df | contato: Davi Nunes | 18/09/2026 11:30 até 18/09/2026 11:32 | 4 msgs do cliente, 2 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[11:30] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[11:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:30] CLIENTE: 14 /13/ 15 / 16
+[11:31] CLIENTE: Queria comprar pra revender
+[11:31] LOJA: [áudio] "Oi, Davi. Bom dia. Tudo bem com você? Olha, por ora, nós não estamos trabalhando com vendas no atacado."  {audio:midias/3EB04D1B0A27AEDAF2C4B7_216030.ogg}
+[11:32] CLIENTE: Ata entendi

@@ -1,0 +1,21 @@
+CONVERSA adf6cb0e3a | contato: Iris | 19/08/2026 12:34 até 19/08/2026 17:16 | 5 msgs do cliente, 8 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[12:34] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Qual endereço da loja
+[12:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:34] CLIENTE: 185/65 r14
+[13:13] LOJA: Boa tarde!
+[13:16] LOJA: [foto]
+[13:16] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:19] CLIENTE: Qual endereço
+[13:24] LOJA: Somos de Luziania-Go, e você?
+[14:15] CLIENTE: Gsma
+[14:15] LOJA: Posso enviar áudio?
+[14:16] CLIENTE: Sim
+[14:16] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Se te ajudar, eu consigo enviar os pneus de R$ 289,00 para uma borracharia que fica no Novo Gama. Você tem interesse?"  {audio:midias/3EB0DC04BC4C28E35F24CA_962715.ogg}
+[17:16] LOJA: Bem, para não encher seu whatsapp de mensagem , vou encerrar seu atendimento, caso precise é só chamar. Obrigada 👋🏻

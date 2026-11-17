@@ -1,0 +1,24 @@
+CONVERSA 35015f8054 | contato: Raimunda Maria | 06/10/2026 15:05 até 06/10/2026 16:55 | 8 msgs do cliente, 10 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[15:05] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[15:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:05] LOJA: *Josy:*
+🙋🏼‍♀️
+[15:05] CLIENTE: Oi boa tarde
+[15:06] CLIENTE: Vc tem esse  pneu
+[15:06] CLIENTE: [foto]
+[16:49] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Obrigada por aguardar, tá? Meu WhatsApp está com um pouco de instabilidade, eu não consegui visualizar sua mensagem até este presente momento. Olha, da Pirelli especificamente, eu não tenho aqui, tem entrega, mas eu tenho o pneu da marca GP Premium que ele vai ser justamente nesse desenho aí."  {audio:midias/3EB0B140BB0E137CBD2D89_895245.ogg}
+[16:51] LOJA: [foto]
+[16:51] LOJA: [áudio] "Esse é o pneu da marca GP Premium. A unidade está por apenas R$ 319,00 se o seu pagamento for no Debit ou Pix. Para parcelar, seguem as opções de parcelamento em até 10 vezes, está bem?"  {audio:midias/3EB053F949BD17B69EB556_868354.ogg}
+[16:51] LOJA: [foto]
+[16:52] CLIENTE: [áudio] "Muito obrigada. Eu quero exatamente o Pirelli, tá bom? Muito obrigada."
+[16:53] LOJA: [áudio] "Como eu não tenho o Pirelli à pronta entrega, eu posso cotar ele para você. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0F62906685C86D33F64_873019.ogg}
+[16:54] CLIENTE: [áudio] "Aonde que é sua loja aqui em Luziânia? É, eu moro aqui em Luziânia. Aonde que você fica que eu dou um pulinho aí amanhã cedo."
+[16:54] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:54] CLIENTE: 👍
+[16:54] LOJA: [foto]
+[16:54] LOJA: [áudio] "Fica aqui na BR-040."  {audio:midias/3EB00237C33CCC8B801912_428698.ogg}
+[16:55] CLIENTE: 👍

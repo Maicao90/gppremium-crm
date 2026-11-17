@@ -1,0 +1,70 @@
+CONVERSA 4e1c98a456 | contato: Valdeir Marques | 28/08/2026 14:30 até 28/08/2026 17:29 | 30 msgs do cliente, 32 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[14:30] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:30] CLIENTE: [áudio] "Boa tarde. Aí vende pneu, é? Estou procurando dois pneus, 205, 70, 15, aquilo cravudo, papalho quente."
+[14:30] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? E você mora aqui em Luziânia mesmo?"  {audio:midias/3EB064912C2DAA5AA0FEB5_737747.ogg}
+[14:31] CLIENTE: [áudio] "No, no, no, no, no."
+[14:32] CLIENTE: [áudio] "Vocês têm essa medida aí desse pneu?"
+[14:50] LOJA: [foto]
+[14:50] LOJA: [foto]
+[14:52] LOJA: [foto]
+[14:52] LOJA: [áudio] "Oi, boa tarde, tudo jóia? Tenho sim. Eu tenho o pneu da marca GP Premium nesse desenho que eu te encaminhei. A unidade está por R$ 349,00."  {audio:midias/3EB0DB4873007C65BE64E4_283947.ogg}
+[15:00] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:27] CLIENTE: [áudio] "Boa tarde. Aquele pneu cravudo, que é da Palio Candy, se você tiver foto, você manda aí para mim, eu falei com o menino aí que você estava culpado, aí eu vou aí no meio da semana, mas se você tiver, deve você tirar a foto desse cravudo aí, se você não entender, pergunte o menino aí, parece que é Júnior o nome dele, um negócio assim, que aí ele te fala, se você tirar foto, manda aí para mim, por favor."
+[15:29] CLIENTE: [áudio] "Não é Júnior não, desculpa, é Bruno."
+[15:29] LOJA: *Josy:*
+Tenho esse
+[15:29] LOJA: [áudio] "Sim, é o meu gerente."  {audio:midias/3EB0542887260C1C279D66_356760.ogg}
+[15:30] CLIENTE: [áudio] "Ele me falou aquele GP não sei o que, o prêmio, que eu falei para ele que tinha aquele cravudo, né, que é o original da Pago Candy Lock, aí se você tiver a foto, deixa eu mandar aí para mim, por favor, se não for difícil, ele é 205-70-15."
+[15:30] LOJA: [áudio] "Eu só tô conferindo pra ver se eu tenho mais cravudo ainda, mas até então o que eu tenho vai ser esse aí, tá bom?"  {audio:midias/3EB0402F3E54769FDE295D_408551.ogg}
+[15:30] LOJA: [áudio] "Isso, isso mesmo, GP Premium."  {audio:midias/3EB0B25B4039B39C29FFAD_569344.ogg}
+[15:32] CLIENTE: Olha o que eu encontrei! Kit 2 Pneus Aro 15 Palio Weekend 205/70r15 Blackarrow At02 - R$ 1.154 no Mercado Livre. Entra aqui:  https://www.mercadolivre.com.br/up/MLBU4725155686?pdp_filters=item_id:MLB5055424773&matt_tool=38524122#origin=share&sid=share&wid=MLB5055424773&action=whatsapp
+[15:32] LOJA: [áudio] "Eu sei, eu sei. Eu até te mandei o meimento do 205-70-15, da marca GP Premium, no desenho da foto que eu te encaminhei, que é R$ 349,00 à vista. Aí eu só estou aguardando para ver se eu vou ter um mais cravudo ainda. Aí o senhor me dá só um tempinho que eu já te respondo."  {audio:midias/3EB0BA9A9E3C909D6025E2_853115.ogg}
+[15:33] CLIENTE: [áudio] "Beleza, obrigado."
+[15:33] LOJA: [áudio] "Tá, eu só tô confirmando aqui com o pessoal, já te respondo."  {audio:midias/3EB0524ED64E3F68BCCA50_663140.ogg}
+[15:57] LOJA: [áudio] "Seu Valdeir, só vai precisar de quantos pneus?"  {audio:midias/3EB0F0685C7D8FD919A943_968448.ogg}
+[15:57] LOJA: [áudio] "Porque, a princípio, eu tenho 2 pneus aqui à pronta entrega, aí o preço dele é R$ 389,00 para o pagamento à vista e eu já coloco os pneus."  {audio:midias/3EB006CC8F9D2EBC0EAA78_171585.ogg}
+[15:59] CLIENTE: [áudio] "É só dois que eu preciso. Só que eu vou comprar pra me trazer. Aqui eu não vou no meu carro. Eu vou arrumar o cara do Uber pra me ir buscar. Manda foto dele aí pra gente ver, por favor. Mas o menino aí falou que fazia o menor preço nele lá, pra ganhar dinheiro, o Bruno."
+[16:00] LOJA: [foto]
+[16:00] LOJA: [áudio] "O preço dele é R$389,00? Acho que ele faz por R$370,00 cada um no dinheiro."  {audio:midias/3EB0F50985174D1D555D08_95903.ogg}
+[16:01] CLIENTE: [áudio] "Vocês não entregam, não? Se tiver alguém de confiança aí, que a gente pode mandar o dinheiro pela pessoa. Porque se vocês entregassem, que eu moro aqui no Racho Fundo 1, 2. É, eu moro no Racho Fundo 2. Que aí tivesse alguém para deixar aqui, né? De moto não dá para trazer, né? É isso aí mesmo que eu estou querendo."
+[16:01] CLIENTE: [áudio] "Aqui na Samambaia, vocês não tem loja aqui, né? Que tem esse pneu."
+[16:01] LOJA: [áudio] "O senhor mora em que lugar de Brasília especificamente? Porque, de repente, o que eu posso fazer para poder te ajudar, porque eu não trabalho com entregas, mas tem uma empresa que me ajuda muito, que fica ali no novo Gama. Se for de seu interesse, eu posso mandar os pneus para lá e nós combinamos direitinho o dia do senhor e nós ajeitamos."  {audio:midias/3EB022431D7E606AEB8763_761974.ogg}
+[16:02] LOJA: [áudio] "Não, nossa loja é somente aqui em Luziânia."  {audio:midias/3EB070EE4E8FF8A47A0BBF_25852.ogg}
+[16:04] CLIENTE: [áudio] "Eu moro aqui no Riacho Fundo 2. Aqui é QN 2D, Conjunto 9, Broco F, apartamento 04, Condomínio 2."
+[16:05] LOJA: [áudio] "Certo. Se eu mandar os pneus para o Novo Gama e te mandar a localização, tudo direitinho, nós podemos alinhar o senhor e ir para o Novo Gama? Porque aqui em Luziane eu sei que vai ficar um pouquinho mais distante para o senhor, e aí o Novo Gama já fica mais próximo. Nós podemos alinhar aqui e eu digo para o senhor, o dia que eu consigo mandar os pneus, aí o senhor pode pagar o valor para o rapaz que vai te atender lá para mim. Obrigado."  {audio:midias/3EB0D5E25FFD69CEDF466F_747216.ogg}
+[16:06] CLIENTE: [áudio] "É, eu vou só esperar, vou ver se o menino que faz UBA aqui, que mora aqui, vizinho aqui, eu vou conversar com ele, aí eu já te mando o retorno daqui para amanhã, mas isso aí já fica até mais fácil a gente pegar aí, beleza? É, daqui para amanhã eu já te dou a posição e marcar o dia e dou ele lá pegar, que eu trabalho também, né? Aí tem que ser um dia dessa semana para me tirar para mim e ir lá buscar, beleza? Aí eu te aviso. Obrigadão, tá? Mas você vai segurando esses dois pneus aí para mim até amanhã. Esses dois aí serve para mim."
+[16:07] CLIENTE: [áudio] "Que esse aí é o GP Premium, né?"
+[16:07] CLIENTE: [áudio] "No domingo lá é fechado, né?"
+[16:21] LOJA: [áudio] "Isso, é o GP Premium, tá? E sim, no domingo é fechado."  {audio:midias/3EB0B84A4E70B12547CEDB_490634.ogg}
+[16:21] CLIENTE: [áudio] "No sábado, essa loja aí fecha que hora? Porque eu tô falando com um rapaz que faz Uber, aí depende o horário que fechar, quer dizer, ele sempre pega a corrida pra ir, né? Aí ele pegava esses pneus pra mim amanhã. Ele mora aqui, vizinho, de lado aqui no outro apartamento."
+[16:22] LOJA: [áudio] "No sábado, nós atendemos de 8 da manhã até o meio-dia."  {audio:midias/3EB0CF00F85FF0ABF5B9D0_721532.ogg}
+[16:24] CLIENTE: [áudio] "Você não tem um amigo aí que faz Uber, não? Aí depende do preço. Você mandava trazer esses pneus pra mim hoje e passava esse dinheiro pro seu, hein? Eu tenho dinheiro em mãos, né? Sinto ser uma pessoa de confiança, né? Porque se o vizinho tivesse dinheiro aqui, ou você mandava o pico e chegasse aqui e já passava o pico pra você. Vê se você tem alguma amiga aí de confiança e vê quanto que ele traz esses dois pneus aqui hoje."
+[16:26] LOJA: *Josy:*
+Não tenho...
+[16:27] LOJA: [áudio] "Pois é, não tem essa pessoa de confiança."  {audio:midias/3EB01C9F62490CC4C354C5_61423.ogg}
+[16:29] CLIENTE: [áudio] "Eu vou começar com o vizinho aqui. Se ele estiver aqui, eu vou começar com ele. Se ele passar o Pix aí para você, aí você me fala se tem como você pedir um Uber para trazer esse pneu aqui para mim. Aí você me fala o preço, mais ou menos."
+[16:30] LOJA: [áudio] "Mas no Pix, o valor é 389 cada pneu, 270 no dinheiro em mãos mesmo, tá?"  {audio:midias/3EB03C2539879C32006E33_174159.ogg}
+[16:31] CLIENTE: [áudio] "Mas o Pix é dinheiro, aí não cai na hora, na conta de vocês."
+[16:31] LOJA: [áudio] "Não, não. Para mim, tem taxa. Então, no dinheiro, dinheiro, dinheiro de papel, 370. Pix, 389."  {audio:midias/3EB0B162FF18C75B3A979F_639948.ogg}
+[16:32] CLIENTE: [áudio] "Não, beleza, eu vou verificar aqui então, porque aqui é isso que eu te mandei a foto, vem de São Paulo, né? Eu posso pagar, se eu quiser pagar até de 12 vezes, eu posso pagar, mas eu não gosto de ficar fazendo prestação, né? E se esse preço aí fosse isso aí, nós íamos combinar e eu vim falar com o vizinho aqui, já passou o Pix, né? Quando o pneu chegasse, eu ia pagar a voa para deixar aqui hoje ainda, né?"
+[16:32] LOJA: [áudio] "Sim, eu entendo, senhor. Realmente é ruim fazer prestação."  {audio:midias/3EB099288D9E87ECA13D5F_754753.ogg}
+[16:33] LOJA: [áudio] "Que igual passar aqui pra mim no Pix, igual as pessoas falam que não cobra taxa, cobra sim. Aí ao invés de eu receber os 389 do Pix, eu vou receber apenas 343 reais, cobra aí 46 reais por pneu, entendeu? Aí pra mim já é complicado. Gente, hoje em dia tá tenso, viu seu Valdir? Tá muito tenso."  {audio:midias/3EB0078AE227128CF5007A_578802.ogg}
+[16:33] CLIENTE: [áudio] "Você me mandou a foto do pneu aí, só de frente. Eu queria ver o acabamento dele. O menino disse que busqueias pra mim amanhã. Eu falei pra ele que aí fecha meio-dia, né? Manda a foto do lateral dele, que você mandou só de frente. Vem ver como é que é o acabamento dele. Fazendo um favor. Que aí dá tudo certo. Aí amanhã ele pega esses pneus aí pra mim, ele já leva o dinheiro, sabe? Aí eu te passo o nome dele, tudo. Ele sempre faz trabalho aqui pra mim. me leva no lugar quando é preciso. Em Goiânia ele sempre me leva também. Aí eu... esse aqui eu tenho confiança de pôr o dinheiro na mão dele e aí pegar os pneus, tá? Manda só a foto do lateral dele aí, por favor."
+[16:45] CLIENTE: [áudio] "Me manda a localização e o seu nome para quando ele chegar amanhã cedo ele te procurar, tá? É Leandro, o nome dele. Ele tem um HB20 branco."
+[16:51] LOJA: [vídeo]
+[16:53] CLIENTE: [áudio] "Me mande a localização aí, por favor, que amanhã cedo o rapaz vai buscar, tá? Ele já vai levar o dinheiro para pagar em mãos, beleza? Te agradeço aí pelo incomodo, tá?"
+[17:21] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:22] LOJA: [foto]
+[17:22] LOJA: [áudio] "Seu Valdeir, já me manda aqui, por gentileza, o seu nome completo, seu CPF, o CEP do endereço e endereço, para quando o rapaz chegar aqui, eu só finalizar aqui o seu atendimento, entregar o comprovante da compra."  {audio:midias/3EB099A3C9BCFD1991CEEF_965985.ogg}
+[17:25] CLIENTE: [áudio] "O endereço aqui é qnd12, conjunto 9, Broco F, apartamento 04."
+[17:26] CLIENTE: [áudio] "Condomínio 2. Reaxo Fundo 2. Meu CPF aqui é 357-913-06172."
+[17:28] CLIENTE: [foto]
+[17:28] CLIENTE: [áudio sem fala]
+[17:29] CLIENTE: [áudio] "Aí, eu te mandei a foto do endereço daqui, que fica mais fácil. Tá no nome da minha esposa, mas o nome do meu CPF é esse aí, tá? Aí, manda o endereço aí, que fica mais fácil. O endereço aqui que a gente fica falando é complicado, que tá bem apagado aqui, beleza?"
+[17:29] CLIENTE: [áudio] "Se você tiver alguma dúvida, você me manda uma mensagem ou me liga."

@@ -1,0 +1,323 @@
+CONVERSA 08fc7a4575 | contato: Charles  | 18/08/2026 09:49 até 22/10/2026 08:47 | 62 msgs do cliente, 121 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[09:49] CLIENTE: 110500300 ou
+11900000
+[09:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:49] CLIENTE: 4- 255/40/17
+Dimensões: 62x62x23 cm
+Peso: 12kg cada 
+Valor unit: 200,00
+[09:50] CLIENTE: [áudio] "José, faz um favor, liga na Rodonaves, passa lá o CNPJ-DGP, né? E faz a cotação aí, mandar 4 pneus para esse CEP aí, acho que é Santos. E essas dimensões aí de cada pneu, peso também unitário e o valor unitário. Faz essa cotação lá, dá uma chorada boa, fala que a gente tem tabela especial que a gente consegue aprontar. Aí você cota de Brasília para Santos e cota também de Ribeirão Preto para Santos, que como o caminhão nosso vai para Ribeirão, aí a gente pode entregar lá na Rodonaves de Ribeirão Preto, que aí eles acabam de levar para Santos, tá?"
+[10:14] LOJA: [foto] Para Santos
+[10:16] LOJA: [foto] Registro, não tem rota.
+[12:57] CLIENTE: [foto]
+[12:57] CLIENTE: [foto]
+--- 19/08/2026 (Wed) ---
+[11:02] LOJA: Confere 1 pox na via comerce... 988,00
+[11:02] LOJA: Luiz carlos alves
+[11:03] LOJA: 🙂
+[11:04] LOJA: Chegou o Pix?
+[11:09] CLIENTE: [foto]
+[11:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:09] LOJA: Valeu
+[11:09] CLIENTE: [áudio] "Outra coisa, você está conseguindo falar com a Danúbia para confirmar esses Pix? O ramal dela é o 2026, ela está lá no Feirão, mas está trabalhando normal."
+[11:11] LOJA: Consegui.
+Eu havia perguntado, mas creio que ela estava ocupada, por isso falei contigo.
+--- 20/08/2026 (Thu) ---
+[12:25] LOJA: Chefe... não consigo puxar a ligação do ramal do Bruno e a tela está bloqueada
+[12:26] LOJA: Qual senha do pc dele?
+--- 26/08/2026 (Wed) ---
+[11:27] LOJA: *Josy :*
+Chefe... tem 800 pulseiras.
+[11:38] CLIENTE: ok
+[11:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:38] CLIENTE: é suficiente
+--- 29/08/2026 (Sat) ---
+[08:58] LOJA: *Josy:*
+Chefe... precisa mandar 2 pneus da GP venda por fora lá no feirão, pois a Marina está colocando 2 em um carro e a Ana precisa de 2 para outro.
+[08:59] CLIENTE: blz
+[08:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 31/08/2026 (Mon) ---
+[15:50] CLIENTE: [foto]
+[15:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:50] CLIENTE: [foto]
+[15:51] CLIENTE: [áudio] "Josi, chama aí o Adriel aí e troca uma ideia com ele, que ele tá querendo os pneus."
+[15:55] LOJA: *Josy:*
+oK
+[15:56] LOJA: [áudio] "Chefe, tem um rapaz que eu atendi ontem, lá no evento, e ele quer pneus 255-4017. Aí eu falei, olha, esses pneus, eles são apenas para o drift, porque eles têm uma normativa, tarará, tarará, são pneus que não podem circular, né, nas vias. Enfim, dei uma explicação lá para ele. Só que aí, ele tá me mandando um monte de áudio aqui, porque ele quer que explique para ele porque que não pode, porque ele quer porque que é esse pneu. Eu vou te mandar aqui os áudios dele, você ouve, me diz o que é que você acha, tá jóia?"  {audio:midias/3EB0F2C1954A88DAF76E77_388562.ogg}
+[16:02] LOJA: [áudio] "Não, entendi. Entendi, sim. Mas o que vocês exigem aí para comprovar que eu vou usar no Drist o carro, por exemplo? Porque esse pneu é justamente para montar num projeto, né? É um projeto V8 e etc e tal. O carro está fazendo reforma, né? Está sendo reformado, restaurado, etc e tal. Então, o que vocês exigem para poder comprovar que eu vou usar ele no Drift ou não?"  {audio:midias/3EB0CFCBEDE30C13B8FF00_332380.ogg}
+[16:02] LOJA: [áudio] "Porque aí, nesse caso, não caberia os órgãos de fiscalização, fiscalizar se o veículo tá rodando na rua com esse tipo de pneu ou não, etc. Porque fica meio subjetivo, né? Você concorda comigo? Por exemplo, eu posso comprar o pneu falando que eu vou usar no drift e não usar. Ou então o carro é de carreira de coleção, só vai pra encontro e etc. Como é que fica? Não seria os órgãos de fiscalização que iriam fiscalizar isso aí, se o carro tá com esse tipo de pneu ou não? Olha só."  {audio:midias/3EB0848ECC135E808A0069_951721.ogg}
+[16:02] LOJA: [áudio] "Ou alguém cadastrado na confederação de Drift, que pode comprar através de loja, de CNPJ, alguma coisa assim? Seria isso?"  {audio:midias/3EB0D30FB7A9F628ED41FE_841231.ogg}
+[16:07] LOJA: [áudio] "Não, tranquilo. Eu só queria saber quais são os meios para comprar. Quem é que pode? Se é por CNPJ, se é alguma credencial do Drift. Alguém compra, né? Eu queria saber quem é que está autorizado a comprar. Aí eu vejo os meios aqui também. Obrigado."  {audio:midias/3EB026A73877BAC2CE109F_891390.ogg}
+[16:08] LOJA: [áudio] "Esse moço, ele não é do Drift, tá? Mas ele olhou os pneus lá, ele gostou pra caramba, ele disse que tá com um projeto e ele quer, porque quer, colocar os pneus."  {audio:midias/3EB0AD489BB44101075C29_892426.ogg}
+[16:31] CLIENTE: [áudio] "Você pode vender para ir, não tem problema não, agora só tem que deixar claro que os pneus não são para rodar em rodovia, né, porque para rodar na rodovia eles tem que ter ali o CNPJ, então assim, é o uso off-road, tá, você pode vender."
+[16:32] LOJA: *Josy:*
+Sim, eu deixei isso claro!
+--- 01/09/2026 (Tue) ---
+[11:02] LOJA: *Josy:*
+Chefe...
+[11:12] LOJA: *Josy:*
+Vou pedir para testar o pneu lá na via...
+[11:15] LOJA: *Josy:*
+Pois ele quer porque quer
+[11:16] CLIENTE: ok
+[11:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:14] LOJA: *Josy:*
+Chefe... o Eder Hara vai querer apenas 2 pneus 255/40/17 😢
+[12:14] LOJA: *Josy:*
+Disse estar apertado 💸
+[12:49] LOJA: *Josy:*
+chefe... o Jean da super via , vai passar aqui para pegar a saveiro e ir na direcional pegar o scanner.
+[12:50] CLIENTE: Não pode
+--- 02/09/2026 (Wed) ---
+[12:13] CLIENTE: [foto]
+[12:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:00] LOJA: *Josy:*
+Chefe , assim que possivel cancela  o  94527    emiti errado , fiz como pneu escareado.
+--- 03/09/2026 (Thu) ---
+[13:26] LOJA: *Josy:*
+Aqui...
+[13:26] LOJA: [foto]
+[14:17] CLIENTE: Qtas unidades ?
+[14:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:22] LOJA: *Josy:*
+as 4
+--- 16/09/2026 (Wed) ---
+[08:39] CLIENTE: Bom dia 
+O Eiler pediu p vc mandar o valor q ele está devendo 
+Ele vai pagar
+[08:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:39] LOJA: *Josy:*
+Bom dia, ele deve ter apagado as minhas mensagens.
+[08:40] LOJA: *Josy:*
+Ontem cobrei de novo o Vinicius , mas...🫩
+--- 22/09/2026 (Tue) ---
+[16:14] CLIENTE: [áudio] "Josi, o Elton vai pegar uns pneus aí, dois pneus, o Demer vai separar eles. Eu acho que é o 205,50 e 17. Na hora que o Demer separar, ele te confirma a medida. 205,50 e 17 ou 215,50 e 17. Dois pneus, tá? Aí você pode lançar eles pro Elton com preço zerado. É a título de patrocínio."
+[16:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:17] LOJA: *Josy:*
+O senhor seu sogro esta´ligando aqui para falar com as crianças.
+[16:18] CLIENTE: [figurinha]
+[16:19] LOJA: [figurinha]
+[16:27] LOJA: *Josy:*
+Chefe
+[16:27] LOJA: *Josy:*
+O Elton está perguntando dos adesivos...
+[16:29] CLIENTE: Vai imprimir ainda
+--- 28/09/2026 (Mon) ---
+[12:23] LOJA: *Josy:*
+Chefe...dos @ que sei...
+[12:24] LOJA: *Josy:*
+@dim.modulos
+@davisolaaa
+@dk._guii                                                                                                                                                                                                        @joaoguidrift
+@eltonparaisoveiculos
+@rodolphocunha
+@freitagperformance
+@felipe_glenavann
+@kayro.piloto
+@matheus_sanfona
+@wesley_cupim
+@gabriel.castroo
+@federalmoveis_eletroecolchoes
+@dersonracing-quartashow
+@popara_fest
+@monabimmer
+[12:29] LOJA: *Josy:*
+faltam só uma 1/2 duzia...
+[12:29] LOJA: [figurinha]
+[12:52] LOJA: [foto]
+[12:54] LOJA: *Josy:*
+ 61 9853-3038
+[12:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:55] CLIENTE: [foto]
+[13:06] LOJA: [documento] Pedido_GP_Premium_Pneus.pdf
+--- 29/09/2026 (Tue) ---
+[12:20] LOJA: *Josy:*
+Chefe... não esquece de avaliar a ficha do cliente...
+[12:56] LOJA: *Josy:*
+Oie
+[12:56] LOJA: *Josy:*
+confere um pix na GP
+[12:56] LOJA: *Josy:*
+1090
+[12:56] LOJA: *Josy:*
+Fernando aguiar
+[12:57] CLIENTE: [foto]
+[12:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:56] LOJA: *Josy:*
+Analisou? O moço me mandou mensagem de novo.
+--- 30/09/2026 (Wed) ---
+[10:17] LOJA: *Josy:*
+Chfe
+[10:17] LOJA: *Josy:*
+Confere um Pix na GP em nome de max  698,00
+[10:18] CLIENTE: veja com a danubia
+[10:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:18] LOJA: [figurinha]
+[10:18] LOJA: *Josy:*
+creio que ela não viu a mensagem
+--- 01/10/2026 (Thu) ---
+[11:06] LOJA: *Josy:*
+Oi, chefe
+[16:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:03] CLIENTE: [áudio] "José, manda uma mensagem lá para o marido daquela piloto que veio aqui no Zé, né? Aquela Mona, né? Mona Bimmer, né? Acho que esse é o nome dela mesmo. É... que é o seguinte, ele pegou uns pneus lá, era para ele ter pego uns aro 14, mas aí ele optou por pegar uns 17 e pagar a diferença. São dois pneus, é... O 14 é 160, o escariado, e o 17 é 220. Então, ele deixou os 14 de lado e levou os 17 para pagar 60 reais em cada pneu. Então, no caso, tem que receber dele 120. Aí, você manda mensagem para ele falando, ô, fulano, é... tem uma diferencinha para você acertar aí dos pneus aro 17 que você pegou no lugar dos aro 14, você conversou com o Charles, e é 120 reais, 60 reais de cada pneu, que aí ele te manda aí, peixe."
+[16:03] LOJA: *Josy:*
+Isso, Mona
+[16:04] LOJA: *Josy:*
+Esqueci o nome dele
+[16:14] LOJA: *Josy:*
+É Leandro... vou tentar falar com ele.
+--- 02/10/2026 (Fri) ---
+[17:36] LOJA: Chefe... o Leandro disse que você deu os pneus aro 17 para ele, estou na ligação com ele.
+[17:36] CLIENTE: Dei os aro 14 de 160
+[17:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:36] CLIENTE: Ele q propôs levar os 17 e pagar a diferença
+[17:36] LOJA: *Josy:*
+ele disse outra coisas
+[17:36] CLIENTE: Ou esqueceu 
+Ou está dando uma de esperto
+[17:36] CLIENTE: Tenho certeza
+[17:37] LOJA: *Josy:*
+entãaaaao
+[18:08] LOJA: *Josy:*
+ 61 8250-6020
+--- 05/10/2026 (Mon) ---
+[08:22] LOJA: *Josy:*
+Chefe... no sábado você disse que é para eu fazer novamente as vendas que ficaram no nome do Bruno, então vou dar sequência, está bem!
+[08:22] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+[08:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:23] CLIENTE: [áudio] "Aí, depois você só fala com o Bruno, não sei se você já conversou com ele, só para deixar alinhado, tá?"
+[08:24] LOJA: [áudio] "Beleza, chefe."  {audio:midias/3EB07C82D8F0D04B690431_9597.ogg}
+[11:16] CLIENTE: [foto]
+[11:16] CLIENTE: [foto]
+[11:16] CLIENTE: [foto]
+[11:18] CLIENTE: [áudio] "Eu já exclui a venda do sistema."
+[11:18] LOJA: *Josy:*
+ Certo!
+[16:59] LOJA: *Josy:*
+Chefe...lá no instagram tem uma empresa DIKfilmes... está pedindo seu whatsapp. disse que anotou errado seu número , posso passar?
+--- 06/10/2026 (Tue) ---
+[11:25] LOJA: *Josy:*
+Chefe...
+[11:26] LOJA: *Josy:*
+confere 1 pix na GP
+
+874,00 Danilo
+[11:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:27] CLIENTE: [foto]
+--- 07/10/2026 (Wed) ---
+[16:33] CLIENTE: https://mpago.li/2y2aGHv
+[16:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:34] LOJA: Ok
+[16:34] CLIENTE: [áudio] "Josi, mandei o link aí do Vinícius Trindade, é R$ 4.712,00. Aí pode pagar até quatro vezes sem juros, tá?"
+--- 10/10/2026 (Sat) ---
+[09:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:58] CLIENTE: [foto]
+[09:58] LOJA: Ok
+[09:58] CLIENTE: Bom dia 
+Tem umas msg no insta
+[09:58] LOJA: Aqui não está aparecendo nada
+[10:03] LOJA: E esse ig é da City , chefe
+[10:03] LOJA: [figurinha]
+[10:09] LOJA: Assim cê me quebra
+[10:12] CLIENTE: Kkk
+Blz
+--- 13/10/2026 (Tue) ---
+[11:19] LOJA: Oi, chefe... pedi a Danubia para encaminhar uns doc`s para você avaliar, o cliente precisa de uns pneus para camionete, e gostaria de saber se há a possibilidade de fazer boleto. Oferci os pneus GP somente.,
+[11:20] CLIENTE: Ok
+Vou olhar
+[11:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:28] CLIENTE: Não dá p vender no boleto não.
+[11:29] LOJA: ok
+[12:26] CLIENTE: [foto]
+[12:49] LOJA: [foto]
+[16:55] LOJA: Chefe...querem falar contigo
+[16:56] LOJA: 11 93937-6069
+--- 14/10/2026 (Wed) ---
+[09:21] LOJA: Vhefe
+[09:21] LOJA: PN 235/45R19 WRANGLER TERRITORY 95V	GOODYEAR	SUV	19	235/45R19	 *PAGAMENTO POR CLIENTE AVISTA- R$ 1422,98*
+PN 225/60R18 WRANGLER FORTITUDE HT 104H	GOODYEAR	SUV	18	225/60R18	*PAGAMENTO POR CLIENTE AVISTA-R$ 1094,60*
+[09:22] LOJA: pode cadastrar na City
+[09:28] LOJA: são 4 de cada
+[09:47] LOJA: Chefe...cadastra eles na Via commerce
+[10:09] LOJA: Alana, TV Anhanguera 21 993428551
+[10:50] LOJA: 11 93937-6069 fernando mercado pago
+[12:32] LOJA: Chefe... faz uma requisição de emprestimo para mim. 4 pneus 265/65/17 ATR estão no feirão.
+--- 15/10/2026 (Thu) ---
+[09:39] CLIENTE: Emitir nota fiscal
+[09:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 17/10/2026 (Sat) ---
+[10:38] CLIENTE: [foto]
+[10:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:38] CLIENTE: [foto]
+[10:44] CLIENTE: Vini respondeu
+[10:44] CLIENTE: [áudio] "Fala doutor, bom dia, tudo bem? Tenho um valorzinho pra acertar com vocês aí, né? O meu cartão deu problema e eu vou mandar em dinheiro. Vou ver se eu já tenho alguma coisa, porque eu fiquei de receber um valor, já vou pra mandar um valor e depois eu já finalizo, tá bom? Pode ficar tranquilo."
+[10:44] LOJA: [figurinha]
+[10:44] LOJA: [figurinha]
+[10:46] LOJA: [figurinha]
+--- 19/10/2026 (Mon) ---
+[15:21] CLIENTE: [foto]
+[15:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:21] CLIENTE: [áudio] "José, entro em contato com o Júlio aí, ele tá precisando dos pneus 215, 55, 17, ele quer pneu novo."
+[17:11] LOJA: [foto] Não.
+[17:12] CLIENTE: clique em desligar e  reinicie a maq
+[17:22] LOJA: *Josy:*
+deu certo!
+--- 20/10/2026 (Tue) ---
+[09:42] CLIENTE: [foto]
+[09:42] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[09:43] CLIENTE: [áudio] "Josi, puxei uma ligação. Esse cliente está querendo o pneu 235-6016. Informei a ele para o Tucson antigo. Informei a ele que a melhor opção seria o 215-65. É um pneu que economiza combustível. Entra em contato com ele. Falei que ia mandar no WhatsApp. Aí você passa o preço dos dois, passa o 235 chinês e passa o GP 215, né?"
+[09:44] LOJA: *Josy:*
+Eu já falei, ele entrou em contato através de outro número.
+[11:41] LOJA: *Josy:*
+Charles... o Anderson, vai precisar de 4 pneus 205/55/16 , ele quer saber o menor preço que você faz para ele pagar no deibto/pix
+[14:57] CLIENTE: [foto]
+[14:58] CLIENTE: [áudio] "Luziânia, chama esse rapaz aí no WhatsApp, ele me ligou, passou o telefone meu pra ele, foi o Jerônimo do Drift, ele tá querendo pneu aro 14."
+[15:48] LOJA: *Josy:*
+E aqui?
+--- 21/10/2026 (Wed) ---
+[08:37] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[08:37] CLIENTE: [foto]
+[08:37] CLIENTE: Pode dar mais 5% em cima da tabela
+[12:12] CLIENTE: [foto]
+[12:12] CLIENTE: [foto]
+[12:13] CLIENTE: [áudio] "Luzi, entrei em contato com o Caio, ele é o proprietário lá daquela empresa Descomplica Gráfica, que a gente roda umas lonas, tem lá também os painéis de LED, aí ele tá querendo fazer uma permuta, querendo pegar uns pneus, se eu não me engano é 2,65, 18 brutos, aí verifica com ele aí."
+[12:16] LOJA: ok
+--- 22/10/2026 (Thu) ---
+[08:47] LOJA: 65646 Chefe altera essa o.s da city   coloca 268,00 no valor do pneu

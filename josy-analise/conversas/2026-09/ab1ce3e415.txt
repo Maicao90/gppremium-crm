@@ -1,0 +1,23 @@
+CONVERSA ab1ce3e415 | contato: Paulo Gonçalves | 05/09/2026 08:32 até 05/09/2026 09:37 | 6 msgs do cliente, 10 da loja, 0 do robô
+
+--- 05/09/2026 (Sat) ---
+[08:32] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Bom dia  quanto ta o pneu 235 60 roda  16
+[08:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:38] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi e eu não disponho dessa opção à pronta entrega, mas eu posso fazer uma cotação para você na segunda-feira, tá? Segunda não, na terça, perdão."  {audio:midias/3EB0A722E022B646DD2B4B_434676.ogg}
+[08:38] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB08D338F434BFB7BA6F4_899209.ogg}
+[08:39] CLIENTE: [áudio] "Bom dia, moro, mas eu não tava precisando pra hoje, entendeu? Porque o pneu tá muito ruim e eu vou sair hoje à tarde, mas obrigado, tá?"
+[08:39] LOJA: [áudio] "Qual que é o seu carro?"  {audio:midias/3EB048BB6996F3718D7897_366252.ogg}
+[08:55] CLIENTE: Tukson
+[08:55] LOJA: [áudio] "Ah, não. Então, você pode instalar tranquilamente 215,65, 16. Eu vou realizar com seu orçamento, tá?"  {audio:midias/3EB0EAA30E328A5AF4AAAA_299779.ogg}
+[08:56] CLIENTE: [áudio] "Aí vê quanto fica aí pra mim. Vocês parcelam também? Como é que é?"
+[09:09] CLIENTE: [áudio] "Aí, quanto fica o 215, 65, 60? Vem e me manda um orçamento, por favor."
+[09:09] CLIENTE: [áudio] "Os 4, no caso."
+[09:15] LOJA: *Josy:*
+Vou te enviar
+[09:19] LOJA: [foto]
+[09:20] LOJA: [áudio] "Hoje eu tenho aqui o pneu da marca GP Premium, que é o pneu da nossa empresa. Ele está por R$ 349,00 se for no débito ou no Pix."  {audio:midias/3EB0D1013C89C1C5E9F348_345714.ogg}
+[09:21] LOJA: [foto]
+[09:37] LOJA: [áudio] "Te atende a SOP, São Paulo."  {audio:midias/3EB0FA14F3F5793EC5A824_809243.ogg}

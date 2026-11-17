@@ -1,0 +1,63 @@
+CONVERSA f9993c816d | contato: Artur Martins | 15/10/2026 09:37 até 15/10/2026 17:16 | 27 msgs do cliente, 28 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[09:37] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[09:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:37] CLIENTE: Pneus aro 15 por gentileza
+[09:45] LOJA: Qual a medida dos pneus que você precisa,  por gentileza ?
+[09:49] CLIENTE: [foto]
+[09:50] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:50] LOJA: [foto]
+[09:51] CLIENTE: 510,58 um pneu no cartão?
+[09:53] CLIENTE: Esse de 249,00 nacional é qual marca?
+[09:54] LOJA: [áudio] "Arthur, você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB0024A54318E219C800B_130626.ogg}
+[09:55] CLIENTE: Em Luziânia não
+[10:47] LOJA: Exato! O Dunlop é esse valor unitário para o crédito a vista.
+[10:48] LOJA: GP Premium.
+[10:48] LOJA: És de onde?
+[11:01] CLIENTE: Certo, então e pague 3 e leve 4 é isso?
+[11:06] LOJA: A promoção compre 3 e leve 4 é válida para pneus da marca *GP Premium*, nas medidas 195/65/15 e 215/55/17 😉
+[11:06] CLIENTE: Saquei
+[11:06] CLIENTE: Obrigado
+[11:07] LOJA: [áudio] "Arthur, de todo modo, o pneu da marca GP Premium que eu mostrei para ti, ele está em um preço muito bom, o valor normal é R$ 289,00, estou fazendo por apenas R$ 249,00 a vista."  {audio:midias/3EB0A3E6856207CF825539_567013.ogg}
+[11:10] LOJA: Eu vou encerrar seu atendimento para não encher seu whatsapp de mensagem.                                                                                                                   Se precisar futuramente é só chamar. Ou se possivel, venham até nossa loja.                                                                                                  Obrigada 👋🏻
+[11:10] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:14] CLIENTE: [áudio] "Olá, bom dia! Não, eu compreendo, só que eu vim realmente pela promoção, né? Pague 3, leve 4, porque aí compensaria para mim pegar 3 pneus a 249. Não compensa para mim levar na unidade, porque eu já fiz um orçamento e saiu mais em conta, e o pneu não é da GP. Entendeu? Então, para mim não ia sair mais caro. É isso. Obrigado, viu?"
+[11:14] LOJA: [áudio] "Mas os pneus que estão na promoção, compre 3, leve 4, são o triplo do preço. Então, assim, né, é outra questão. E qual que é o seu carro?"  {audio:midias/3EB003A2CDEA7BF4AEB276_930831.ogg}
+[11:16] CLIENTE: [áudio] "Uai, o triplo do preço? Não entendi. Então quer dizer que essa unidade que você me mandou aí de R$249,00 não inclui? É que eu não tô entendendo esse desconto de vocês aí. Realmente tá meio confuso, né?"
+[11:17] CLIENTE: [áudio] "Mas enfim, já que estamos conversando, vou ser bem sincero, fiz um orçamento e saiu mais em conta, então mesmo eu levando 4 pneus por 249 cada unidade, vai sair mais caro para mim, entendeu? Teria algum desconto levando 2, eu só quero os pneus, moço, nessa medida aí."
+[11:22] LOJA: [áudio] "Moço, são pneus, né, que igual te mandei aí, 95, 65, 15 e 255, 17. O pneu, por exemplo, na medida 255, 17, como é um pneu para uma HR-V, que é uma, entra na categoria de SUV, então o preço é bem maior. A unidade é 395 reais, entende? Então, é um preço elevado, é um preço maior, porque é demandado por um carro maior. Ó, 195, 65, 15, que é pneu que utiliza aí no Cobalt, por exemplo, ele é um pneu bem maior do que esse 185, 60. Preço dele, 329 reais. Então, são preços mais elevados, pois são promoções voltadas para esse tipo de pneu, tá, jóia? Agora, no seu caso, o pneu, no preço normal, ele seria 289 reais. Na oferta, ele está por apenas 249, então, são preços diferentes para medidas diferentes, para veículos diferentes também."  {audio:midias/3EB0DB4DBBBF29FC458499_961684.ogg}
+[11:22] LOJA: A promoção compre 3 e leve 4 é válida para pneus da marca *GP Premium*, nas medidas 195/65/15 e 215/55/17 😉
+[11:23] LOJA: [áudio] "Arthur, se você conseguir trazer o pagamento em dinheiro, eu consigo lhe ceder um desconto, mesmo o pneu já estando com o valor abaixo do valor venal dele, né? Eu consigo fazer aqui pra você a unidade por R$ 235,00, para o pagamento no dinheiro em espécie, tá bom? Medida 185-60-15, conforme o que você está precisando aí no seu carro, tá?"  {audio:midias/3EB0FC8EF1B42562AFAB28_330105.ogg}
+[11:24] CLIENTE: Show de bola
+[11:24] CLIENTE: Mas seria no cartão mesmo
+[11:25] LOJA: V
+[11:25] CLIENTE: Queria fazer um ródio, então quanto ficaria 2 pneus nessa medidas, e vocês fazem balanceamento?
+[11:25] LOJA: [áudio] "Sim, o balanceamento R$ 35,00 por roda, o alinhamento de direção R$ 120,00, entretanto, são valores completamente negociáveis, tá?"  {audio:midias/3EB0257F176F5BB4A321C4_989245.ogg}
+[11:25] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:26] CLIENTE: Poderia me passar um orçamento?
+[11:26] CLIENTE: Meu carro é um gol
+[11:29] LOJA: * Balanceamento = 35,00 (por pneu) 
+* Alinhamento = 120,00 (Alinhamento de Direção)
+[11:29] LOJA: Valores negociáveis com os rapazes aqui da oficina.
+[11:30] CLIENTE: Mais 509,06 em 2 pneus no cartão de crédito, correto?
+[11:31] LOJA: Isso, esse  valor é para o crédito a vista.
+[11:54] CLIENTE: [áudio] "Eu somei aqui esses dois pneus, né, e balanceamento em cada roda, então vai ser em duas rodas, mais 120, dá 699,06 centavos. Vou criar algum desconto, mesmo sendo no cartão de crédito."
+[11:54] CLIENTE: Tô fazendo orçamento e se ficar mais em conta, eu fecho com vocês
+[17:01] LOJA: Façamos o seguinte com respeito aos pneus, faço o de R$ 498,00 cada no crédito 1 x
+[17:03] CLIENTE: Dois pneus?
+[17:03] LOJA: Isso
+[17:04] CLIENTE: Conseguir 590,00 já com o balanceamento
+[17:05] CLIENTE: Esse valor que te passei já inclui rodízio, montagem, balanceamento e alinhamento de direção pelo R$ 90,00.
+[17:05] CLIENTE: Total R$ 590,00 os pneus com os serviços.
+[17:05] CLIENTE: Você cobrem esse valor?
+[17:05] LOJA: Faço o balanceamento por R$ 30,00
+[17:07] CLIENTE: E o alinhamento?
+[17:11] LOJA: Será que realmente vai precisar fazer esse alinhamento?
+[17:16] CLIENTE: Realmente não sei
+[17:16] LOJA: Desculpa, sei que nos dias atuais, estamos em busca dos menores preços, não está fácil para ninguém... mas você como homem experiente que é , não acha suspeito uma proposta assim?

@@ -1,0 +1,34 @@
+CONVERSA 5867a56e18 | contato: Esdras Mascarenhas Silva | 21/09/2026 17:05 até 24/09/2026 12:34 | 9 msgs do cliente, 12 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[17:05] LOJA: *Josy:*
+Boa tarde!
+[17:06] LOJA: [foto]
+[17:31] LOJA: *Josy:*
+No Pix/Debito o minimo que consigo fazer é 336,00 cada
+[17:32] CLIENTE: Recebe os meus que vou buscar agora
+[17:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:33] LOJA: *Josy:*
+Não tem como não.
+[17:33] LOJA: *Josy:*
+Infelizmente.
+[17:35] CLIENTE: Eu não consigo ficar com os meus e comprar mais esses
+[17:35] CLIENTE: Ver um contato aí que queira comprar
+[17:35] CLIENTE: Vendo bem mais barato
+[17:35] CLIENTE: Vendo os 4 por 1Mil Reais
+[17:36] LOJA: [áudio] "Olha, eu creio que você gostou de falar numa boa xixaria. E vender vezes é muito mais prático, porque aqui ninguém compra, não."  {audio:midias/3EB0821500C2D3F9ECCBDC_999909.ogg}
+[17:37] CLIENTE: [áudio] "Meu bem, o teu áudio não ficou bacana."
+[17:37] LOJA: *Josy:*
+Deu falha no whatsapp
+[17:38] LOJA: *Josy:*
+Mas disse que talvez o senhor consiga vende-los em alguma borracharia.
+[17:38] CLIENTE: Vou agilizar
+--- 24/09/2026 (Thu) ---
+[12:32] LOJA: [áudio] "Oi, Esdras, tudo bom? E aí, conseguiu fazer negócio nos pneus aí do seu carro?"  {audio:midias/3EB04A9C7963850917AD1E_971064.ogg}
+[12:33] CLIENTE: Ainda não minha querida
+[12:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:33] CLIENTE: Tá difícil
+[12:34] LOJA: *Josy:*
+Imagino...

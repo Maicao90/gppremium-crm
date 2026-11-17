@@ -1,0 +1,13 @@
+CONVERSA 9b6cc9a6e0 | contato: Fabiano | 22/10/2026 11:36 até 22/10/2026 12:27 | 2 msgs do cliente, 6 da loja, 2 do robô
+
+--- 22/10/2026 (Thu) ---
+[11:36] CLIENTE: Bom dia
+[11:36] ROBÔ: Oi, tudo bem?
+[11:36] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[11:36] CLIENTE: 185 65 15 seu qual valor ?
+[11:36] LOJA: Jóia, Fabiano
+[11:37] LOJA: O GP Premium está na oferta, de R$ 289,00 por R$ 249,00 a vista!
+[12:25] LOJA: [áudio] "Fabiana, eu vou te mandar aqui todas as opções que eu tenho, tá joia?"  {audio:midias/3EB077404518573BAF7DE3_354068.ogg}
+[12:25] LOJA: [foto]
+[12:25] LOJA: [áudio] "Eu tenho todas essas opções, já é no dia de hoje, e o orçamento de valor unitário."  {audio:midias/3EB01E0C05C199F42FB2BC_136480.ogg}
+[12:27] LOJA: [foto]

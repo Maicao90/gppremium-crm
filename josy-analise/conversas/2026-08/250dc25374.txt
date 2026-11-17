@@ -1,0 +1,30 @@
+CONVERSA 250dc25374 | contato: Consultório Dr Jair | 18/08/2026 13:33 até 18/08/2026 15:14 | 13 msgs do cliente, 12 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[13:33] CLIENTE: Olá vi seu cadastro no Google Maps e gostaria de mais informações sobre os pneus
+[13:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:33] CLIENTE: 235/70/16
+[13:33] CLIENTE: 245/70/16
+[13:56] LOJA: Boa tarde
+[13:59] LOJA: so um momento por favor
+[14:01] CLIENTE: ok
+[14:05] LOJA: voce tem preferencia ATR OU T/A
+[14:23] LOJA: Vou te encaminhar todas as opções que temos no dia de hoje.
+[14:30] LOJA: [foto]
+[14:31] LOJA: [foto]
+[14:52] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu sou a Josi. E no dia de hoje nós temos essas opções à pronta entrega. Aí no orçamento que eu tinha em caminhar, estava o valor de apenas um pneu. Na primeira coluna eu deixei o valor à vista, que já é o menor preço. E tem as opções de parcelamento em até 10 vezes, caso você queira parcelar."  {audio:midias/A5467FD31432A3F95FFD49245E694790_379786.ogg}
+[14:52] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/A5F357AC5996A4B9ECED89A76E8B294D_536678.ogg}
+[15:03] CLIENTE: CRISTALINA
+[15:03] CLIENTE: VOU PRECISAR DE 2
+[15:09] LOJA: Temos aqui todas essas opções.
+Você vem ainda hoje?
+[15:09] CLIENTE: VOU TE LIGAR AI
+[15:09] CLIENTE: QUAL NUMERO FICA MELHOR
+[15:10] CLIENTE: QUE EU FALO DIRETO AI COM VC
+[15:11] LOJA: [áudio] "Sim, isso mesmo. Você quer ligar agora?"  {audio:midias/A55B5FACB93C8F21F249910E62E4D5D1_888389.ogg}
+[15:11] CLIENTE: SIM
+[15:11] CLIENTE: ESSE NUMERO DO WHAST SO TEM MUSICA
+[15:11] CLIENTE: KK
+[15:11] LOJA: [áudio] "Não, não tem música não. Eu vou te ligar, tá bom? Só um instante."  {audio:midias/A540474DC0FC478D529FF114315DC486_557172.ogg}
+[15:14] CLIENTE: 64 992667853

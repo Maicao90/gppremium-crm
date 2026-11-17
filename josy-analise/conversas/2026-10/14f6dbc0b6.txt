@@ -1,0 +1,31 @@
+CONVERSA 14f6dbc0b6 | contato: Osvaldo Santos | 13/10/2026 09:10 até 13/10/2026 16:45 | 11 msgs do cliente, 15 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[09:10] CLIENTE: Quero cotar o pneu 185/60 R14 GP Premium.
+[09:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:10] CLIENTE: Bom dia
+[09:11] CLIENTE: ARo 14 185 60 tá quanto 2
+[09:13] LOJA: [foto]
+[09:13] LOJA: No dia de hoje temos essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:15] CLIENTE: 2 unidades fica quanto
+[09:18] LOJA: Depende... qual forma de pagamento?
+[09:20] CLIENTE: Tá muito pequeno os números
+[09:20] CLIENTE: Vocês fazem entrega
+[09:20] LOJA: [foto] Se sua escolha for o pneu Hifly, como o orçamento é de valor *UNITARIO* , fica da seguinte maneira para o gamento a vista R$ 290,87 x 2 pneus = R$ 581,74
+[09:20] LOJA: Consegue dar zoom?
+[09:21] LOJA: As vezes pode estar travado o meu sistema de envio, pode ser que ai nçao consiga dar zomm , pode me dizer por gentileza?
+[09:22] LOJA: Você mora aqui em Luzânia-Go?
+[09:25] LOJA: [áudio] "Oi, Sr. Oswaldo, tudo bom? Pode, por gentileza, confirmar para mim se o orçamento está abrindo corretamente no seu WhatsApp e o senhor mora aqui em Luziânia, Goiás?"  {audio:midias/3EB01FBB3305C897F4B200_107503.ogg}
+[09:25] CLIENTE: [foto]
+[09:26] CLIENTE: [áudio] "Eu moro bem aqui no Francaroli, de Luziânia, do lado do Sol Nascente."
+[09:26] LOJA: Não consigo fazer entrega ai
+[09:26] LOJA: [áudio] "Senhor, não tem algum amigo, algum Uber, de repente, que possa vir para fazer a retirada dos pneus?"  {audio:midias/3EB09E1781476124A571D0_744643.ogg}
+[09:26] CLIENTE: [áudio] "Música"
+[09:27] CLIENTE: [áudio] "É porque o meu pneu estourou e o step vai estar furado também, todo rasgado, não tem nem como eu ir aí. É por isso que eu queria que entregasse, né?"
+[09:27] CLIENTE: [áudio] "Esse aí é o menor preço que vocês têm."
+[09:27] LOJA: [áudio] "Bem, eu tenho aí, conforme o orçamento que eu te encaminhei, o pneu na medida 175-65-14, que no débito ou no Pix é 249, e tem o pneu também da marca GP Premium na medida 185-60, que está por 289, valor para débito e Pix."  {audio:midias/3EB0BA21CF8F9F3153E26B_644628.ogg}
+[10:34] LOJA: 🙋🏼‍♀️
+[16:45] LOJA: [áudio] "Oi, Sr. Oswaldo, tudo? Jóia? Estou aqui pensando no Senhor. Conseguiu resolver a situação? Conseguiu alguém para poder levar a opinião aí para o Senhor?"  {audio:midias/3EB06704CABF1A634DD53A_226994.ogg}

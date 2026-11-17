@@ -1,0 +1,33 @@
+CONVERSA 1f97ad06b2 | contato: Barbosa | 20/10/2026 09:58 até 21/10/2026 12:24 | 8 msgs do cliente, 10 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[09:58] CLIENTE: Olá
+[09:58] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[10:00] CLIENTE: Isaías
+[10:00] CLIENTE: 185/65 R15
+[10:04] LOJA: [foto]
+[10:04] LOJA: [áudio] "Oi Isaías, bom dia. Tudo bem? Eu sou a Josi. E no dia de hoje temos todas essas opções de marcas à pronta entrega. Aí no orçamento está o valor de uma unidade, na primeira coluna está o valor à vista, que é correspondente a débito e Pix e segue as opções de parcelamento em até 10 vezes, caso você queira parcelar."  {audio:midias/3EB0A48F1A4E2A526B60A8_689198.ogg}
+[10:06] CLIENTE: [áudio] "E comprando os 4, já vem incluso alinhamento e balanceamento, ou não?"
+[10:08] CLIENTE: ??
+[10:10] LOJA: *Josy:*
+Só um minuto por gentileza, meu amigo. Já te ouço.
+[10:10] CLIENTE: Tudo bem
+[10:19] LOJA: [áudio] "Oi Isaías, tudo jóia? Obrigada por aguardar. Os serviços, eles são todos cobrados à parte, está bem?"  {audio:midias/3EB0D40A1D39CF4593D7A7_999551.ogg}
+[10:20] LOJA: *Josy:*
+* Balanceamento = 35,00 (por pneu)
+* Alinhamento = 120,00 ( Alinhamento de Direção) valores super negociáveis.
+[10:20] CLIENTE: [áudio] "E este 249 aí, ó, ele é... é novo? Com garantia, ou é remote?"
+[10:20] LOJA: [áudio] "Remold de primeira linha, inclusive é o pneu mais vendido que eu tenho, porque ele tem 2 anos de garantia, né, se porventura acontecer algum tipo de defeito de fabricação. E o material que é utilizado para fazer esse pneu é o mesmo das marcas nacionais que estão nesse orçamento, tá?"  {audio:midias/3EB03F331A47FD361B8006_423946.ogg}
+[10:20] LOJA: [áudio] "Se quiser, eu faço um vídeo aqui para poder demonstrar para você."  {audio:midias/3EB0D2E51F06EF4640A418_140422.ogg}
+[10:21] CLIENTE: Pode ser
+[11:34] LOJA: *Josy:*
+Oie...obrigada por aguardar!
+[11:35] LOJA: [vídeo]
+--- 21/10/2026 (Wed) ---
+[12:24] ROBÔ: 🙋🏼‍♀️

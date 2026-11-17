@@ -1,0 +1,41 @@
+CONVERSA 6e562fbf27 | contato: ferreira criacoes Ferreir | 20/10/2026 15:12 até 22/10/2026 12:21 | 8 msgs do cliente, 14 da loja, 4 do robô
+
+--- 20/10/2026 (Tue) ---
+[15:12] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Olá! Posso ter mais informações sobre isso?
+[15:12] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[15:13] CLIENTE: Nilton 265/65/17
+[15:14] LOJA: *Josy:*
+Boa tarde, sr Nilton...como vai?
+[15:14] LOJA: *Josy:*
+Vou ver aqui para o senhor.
+[15:32] LOJA: [áudio] "Oi Sr. Newton, tudo jóia? Olha, eu estava verificando aqui para o senhor e essa medida ela já esgotou no nosso estoque."  {audio:midias/3EB076C82829066D1CB60C_816675.ogg}
+[15:32] CLIENTE: obrigado
+--- 21/10/2026 (Wed) ---
+[11:02] LOJA: [áudio] "Olá, Sr. Newton, tudo jóia? Deixa eu te falar uma coisa aqui. Eu tenho aqui no meu estoque quatro pneus 265-17 da marca GP Premium no modelo Brutus."  {audio:midias/3EB0336A75802280EE2A6F_713688.ogg}
+[11:03] LOJA: [foto]
+[11:03] LOJA: No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:05] LOJA: [foto]
+[11:19] CLIENTE: são pneus novos ou remolds?
+[11:19] LOJA: [áudio] "Sr. Newton, esse é o pneu da marca GP Premium, pneu ecológico que nós produzimos e ele entra assim na categoria de remodelagem, só que é a linha Premium, tá? Justamente por isso é o pneu mais vendido que nós temos. Tem 2 anos de garantia."  {audio:midias/3EB0C417E315EFCDCBD013_419726.ogg}
+[11:20] CLIENTE: ok, amanhã vou ai
+[11:22] LOJA: Perfeito!
+[11:22] LOJA: Sabe onde fica nossa loja?
+[11:28] CLIENTE: aí na Br 040?
+[11:28] LOJA: Isso!
+[11:30] LOJA: [vídeo]
+[11:31] CLIENTE: obrigado
+[11:32] LOJA: [áudio] "Neste momento eu vou ter justamente as 4 últimas unidades e eu vou reservar elas para o senhor, tá? Que agora pela manhã eu já vendi um jogo. Vou reservar esse outro aqui para ti."  {audio:midias/3EB05B5D4ACD10F7B55D91_41032.ogg}
+[14:35] ROBÔ: 🙋🏼‍♀️
+--- 22/10/2026 (Thu) ---
+[09:17] CLIENTE: vou a tarde, bom dia
+[09:18] ROBÔ: Combinado! Fica anotado aqui: te espero hoje 😊
+[09:18] ROBÔ: Qualquer coisa é só me chamar por aqui.
+[12:21] ROBÔ: 🙋🏼‍♀️

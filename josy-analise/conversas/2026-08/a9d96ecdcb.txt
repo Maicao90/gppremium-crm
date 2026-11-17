@@ -1,0 +1,22 @@
+CONVERSA a9d96ecdcb | contato: Guilherme Pires | 21/08/2026 12:22 até 29/08/2026 12:10 | 6 msgs do cliente, 11 da loja, 0 do robô
+
+--- 21/08/2026 (Fri) ---
+[12:22] CLIENTE: 175/70/14R
+[12:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:22] CLIENTE: Qual valor dessa medida ?
+[12:22] CLIENTE: A vista
+[12:22] CLIENTE: 2 unidades
+[12:25] LOJA: Tenis sim, Guilherme!
+[12:25] LOJA: Debito ou Pix R$ 279,00 cada
+[12:25] LOJA: Dinheiro R$ 265,00 cada
+[12:26] LOJA: Pneu da marca GP Premium
+[12:27] LOJA: Posso reservar para você?
+[12:39] CLIENTE: Estou em orçamento ainda
+[12:39] CLIENTE: Qualquer coida retorno
+[12:39] LOJA: [áudio] "E é somente um 75-70 mesmo que te atende? Porque se for um 75-65, dá para fazer aqui por 249. Qual que é o carro aí?"  {audio:midias/3EB018B096E4C6850D7BD0_620430.ogg}
+[12:44] LOJA: Dependendo do carro,  tem também 165/70/14 R$ 239,00
+--- 29/08/2026 (Sat) ---
+[12:10] LOJA: [áudio] "Oi Guilherme, tudo já com você? Eu te encaminhei um orçamento alguns dias atrás, te mandei um vídeo, né, pra gente tentar conversar aqui, mas imagino que você esteja muito ocupado, e aí eu sei que a correria não dá pra ficar falando assim, mas eu vou encerrar aqui o seu atendimento, tá, de forma definitiva, para não ficar justamente enchendo seu WhatsApp de mensagem, e vou te mandar aqui a localização, pois se houver a possibilidade, você vem aqui direto pra nós conversarmos, tá bem? Obrigada aí pela sua atenção e tenha um bom final de semana."  {audio:midias/3EB05D5E5F66C42A16C5BF_267336.ogg}
+[12:10] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

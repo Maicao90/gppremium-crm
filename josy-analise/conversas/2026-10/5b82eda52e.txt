@@ -1,0 +1,35 @@
+CONVERSA 5b82eda52e | contato: Edson Nunes | 19/10/2026 11:49 até 21/10/2026 16:25 | 4 msgs do cliente, 14 da loja, 5 do robô
+
+--- 19/10/2026 (Mon) ---
+[11:49] LOJA: *Josy:*
+Bom dia!
+[11:56] LOJA: [áudio] "Oi, você ligou aqui e eu tentei te atender, mas a ligação caiu. Posso te ajudar?"  {audio:midias/3EB0D9D57F69CD8044C27D_554119.ogg}
+[12:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:29] CLIENTE: [áudio] "Ok, bom dia. É, eu tô pisando assim, manda uma lista de pneus aí pra mim, é pra Pneu Aro 15, pra Pajeiro, ok? Pajeiro Full."
+[12:36] LOJA: *Josy:*
+Temos sim!
+[12:36] LOJA: *Josy:*
+Pneu novos na mdida 235/75/15
+[12:37] LOJA: [foto]
+[12:37] LOJA: *josy:*
+No dia de hoje temos os pneus da marca Comfforser a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:37] LOJA: [foto]
+[12:37] LOJA: [foto]
+[13:15] CLIENTE: Valor
+[13:17] CLIENTE: Estou fazendo uma cotação
+[13:39] LOJA: *Josy:*
+Está bem!
+[17:57] LOJA: [áudio] "Eu vou deixar aqui a nossa localização para o senhor, tá bom?"  {audio:midias/3EB03F31439B0B85C64ED0_938345.ogg}
+[17:58] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:58] LOJA: [foto]
+--- 21/10/2026 (Wed) ---
+[12:42] ROBÔ: 🙋🏼‍♀️
+[16:25] CLIENTE: [áudio] "Ah, tá. Não, tá fazendo cotação de preço. Eu sou aqui da cidade de Araguari, Minas Gerais, ok? Aí eu consultei no Google aí, apareceu vocês, em Brasília aí, ó. Aí qualquer coisa, eu tenho parente aí, vem aqui, todo mês ele vem pra cá, aí ele pegar, vem pra mim, ok? Eu tô a 480 km de vocês. Falou, queria uma cotação de preço só."
+[16:25] ROBÔ: Tranquilo, pode cotar à vontade!
+[16:25] ROBÔ: Se for a medida 235/75/15, temos o pneu *235/75/15* da marca *GP Premium* saindo por *R$ 489,00 à vista*.
+[16:25] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[16:25] ROBÔ: Se for outra medida, é só me falar que eu passo o valor.

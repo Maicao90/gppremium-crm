@@ -1,0 +1,46 @@
+CONVERSA b1c1ec14bd | contato: Andrey | 26/08/2026 08:29 até 26/08/2026 10:22 | 19 msgs do cliente, 15 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[08:29] CLIENTE: Bom dia
+[08:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:29] CLIENTE: Tudo bem
+[08:30] LOJA: *Josy :*
+Bom dia
+[08:30] LOJA: *Josy :*
+Tudo bem
+[08:30] CLIENTE: Vocês tem pneus da sprinter 313
+[08:30] CLIENTE: 225/70/15 carga
+[08:36] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi e eu gostaria de saber se você reside aqui na cidade de Luziânia, Goiás."  {audio:midias/3EB02783850E55676AF3E4_217787.ogg}
+[08:37] CLIENTE: Não
+[08:37] CLIENTE: Sou de MG
+[08:37] CLIENTE: vocês tem esse pneu ?
+[08:44] LOJA: [foto]
+[08:44] LOJA: *Josy :*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:45] CLIENTE: Qual endereço
+[08:45] CLIENTE: Da loja
+[08:46] CLIENTE: Pronta entrega ?
+[08:47] LOJA: *Josy :*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:47] LOJA: [foto]
+[09:02] LOJA: [áudio] "Quer que eu reserve os pneus para você?"  {audio:midias/3EB0D95E0BE18370CE0480_106858.ogg}
+[09:23] CLIENTE: [áudio] "Aqui, deixa eu te falar. Você consegue montar esse pneu pra mim? Eu sou de Belo Horizonte, eu queria ficar com um pneu apenas. Era só montar ele aqui na minha roda aqui."
+[09:24] CLIENTE: [áudio] "Vou chegar na loja daqui a 36 minutos, se tivesse como."
+[09:41] CLIENTE: Consegue ?
+[09:43] CLIENTE: 15m estou aí blz
+[09:46] LOJA: [áudio] "Oi, moço, tudo bem com você? A observação é que eu tenho que confirmar se o meu distribuidor me permite vender apenas uma unidade, tá? Porque, de modo geral, a venda é realizada aos pares. E aí, tem uma oficina, aqui ao meu lado, que realiza o serviço de montagem, tá bom?"  {audio:midias/3EB08807EBE8ACFBE99128_107574.ogg}
+[09:47] CLIENTE: OK
+[09:47] CLIENTE: [áudio] "Ah, entendi. Você consegue dar uma verificada pra mim? Eu rasguei o pneu meu na estrada, sabe? Aí eu tô sem pneu nenhum aqui agora. Preciso de colocar um no lugar porque meu step não tá bom."
+[09:48] LOJA: [áudio] "Eu só estou aguardando a resposta do distribuidor mesmo, porque quando você falou comigo eu já mandei mensagem para ele, eu já te dou um ok."  {audio:midias/3EB002195AC2E03695DF3B_290587.ogg}
+[09:56] CLIENTE: OK
+[10:22] LOJA: *Josy :*
+Nota para transportar o outro pneu.
+[10:22] LOJA: *Josy :*
+Boa semana!
+[10:22] CLIENTE: Obrigado
+[10:22] LOJA: *Josy :*
+Disponha!
+[10:22] CLIENTE: 🙏🏼

@@ -1,0 +1,19 @@
+CONVERSA 78626a7904 | contato: ✌️ Otacílio ✌️ | 16/10/2026 08:54 até 16/10/2026 09:16 | 5 msgs do cliente, 6 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[08:54] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[08:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:55] CLIENTE: 15
+[08:56] LOJA: Para que eu possa gerar o orçamento para você, poderia me informar a *medida* do pneu que você precisa (ex: 31x10,5 R15)  😊
+[09:02] CLIENTE: 185, 65, 15 , 88
+[09:02] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:02] LOJA: [foto]
+[09:06] CLIENTE: Essa loja fica aonde
+[09:12] LOJA: Somos de Luziânia-Go e você?
+[09:13] CLIENTE: DF
+[09:16] LOJA: [áudio] "E você tem a possibilidade de vir até nossa loja, Tassílio?"  {audio:midias/3EB0F6B758372F17958490_393665.ogg}

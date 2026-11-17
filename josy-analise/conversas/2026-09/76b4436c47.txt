@@ -1,0 +1,48 @@
+CONVERSA 76b4436c47 | contato: Antônio Muniz | 17/09/2026 15:52 até 17/09/2026 16:59 | 21 msgs do cliente, 19 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[15:52] CLIENTE: Quero cotar o pneu 195/65 R15 GP Premium.
+[15:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:56] LOJA: [foto]
+[15:56] LOJA: *Josy:*
+Está na promoção compre 3 e leve 4
+[15:56] LOJA: *Josy:*
+Exemplo: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[16:32] LOJA: [áudio] "Olá, tudo bem? Antônio, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB02AC74BF1EBC1DEE7F6_353461.ogg}
+[16:37] CLIENTE: [áudio] "Oi, Joyce. Eu moro em Brasília, mas já morei muito tempo aí na cidade ocidental. Inclusive, eu tava vendo uma oferta de pneus que tem numa loja de pneus aí na entrada ocidental, depois dos túneis. Entendeu que o preço deles tá mais em conta do que vocês, porque que são os fabricantes. Entendeu? O preço deles lá tá R$199,00 a promoção. Está certo que é o R$185,00 R$65,00, R$15,00, R$15,00, R$15,00, R$15,00, R$15,00, R$15,00. Não é R$195,00, R$15,00. Mas tá bem mais em conta. Se eu for comprar 4 lá, eu vou pagar menos do que eu vou pagar. Se eu comprar 3 aí com vocês, eu levar 4. Então, vê se você melhora esse preço aí pra gente fazer negócio."
+[16:37] CLIENTE: [áudio] "É da City Pneus, é o revendedor lá de pneus, que tem pneus de vocês para vender lá também. Está vendendo mais barato que vocês, que fornece, pô."
+[16:38] LOJA: [áudio] "Não, não está mais em conta, não. Eles estão, inclusive, fazendo o mesmo preço."  {audio:midias/3EB0A033442C41D89A2C2D_425200.ogg}
+[16:38] LOJA: [áudio] "Não, não é não. Eu creio que haja algum equívoco. 199, eu creio que é para pneu aro 13 a base de troca."  {audio:midias/3EB0F7C6C62676EAA99AB5_257951.ogg}
+[16:39] LOJA: [áudio] "E aqui, o 185-6015, 185-6515, estão por apenas R$ 249."  {audio:midias/3EB02CA65E3D8A1315CA09_6089.ogg}
+[16:39] CLIENTE: [foto]
+[16:39] CLIENTE: *José Ângelo:*
+O pneu que está em promoção é o da parte de baixo
+[16:40] CLIENTE: [áudio] "Vê aí, Rosi, 185-65-15, GP1, R$ 199, R$ 200, mais em conta que vocês que são fornecedores."
+[16:43] CLIENTE: [figurinha]
+[16:43] LOJA: *Josy:*
+eu também vou  kkkk
+[16:47] CLIENTE: [figurinha]
+[16:47] CLIENTE: [figurinha]
+[16:47] CLIENTE: [figurinha]
+[16:47] CLIENTE: [figurinha]
+[16:50] LOJA: [áudio] "Sr. Antônio, procede, isso aqui realmente é o que eu acabei de te dizer. Esse valor aí é somente a base de troca. Se os pneus do seu carro não estiverem bons, vai para 249 a unidade, tá? E não pega os GP Premium na negociação."  {audio:midias/3EB0AEAFE4BB65510EAA20_970283.ogg}
+[16:50] CLIENTE: [figurinha]
+[16:50] LOJA: [áudio] "Aí aqui, como eu não estou trabalhando a base de troca, como o pneu, se for no débito ou no Pix, é 249. Se o senhor conseguir trazer o dinheiro, né, passar em algum lugar, sacar o dinheiro e trazer aqui pra mim, eu faço por 235 cada. Não é a base de troca, tá joia? No dinheiro, 235 cada. Se for débito ou Pix, 249, mas eu consigo tirar aí uns 3 reais, 4 reais mais ou menos aí no Pix pro senhor, tá?"  {audio:midias/3EB03568E3CD0DB4B0EE3B_848471.ogg}
+[16:51] LOJA: [áudio] "Eu estou aqui me acabando de rir com suas figurinhas, elas são muito boas."  {audio:midias/3EB0F80432A1DB33348EF2_458103.ogg}
+[16:51] LOJA: [áudio] "Eu vou ter que salvá-las."  {audio:midias/3EB0A199A3EEA4237FF249_59229.ogg}
+[16:51] LOJA: [áudio] "Bem, aí fica ao seu critério, tá bom, Sra. Antônio? Eu não gosto de ficar insistindo com o cliente, eu gosto de ele se sentar à vontade para fazer a sua decisão, tá bom? Como o senhor disse, o senhor já conhece, né? E só vou deixar aqui registrada a nossa localização, pois se houver a possibilidade, o senhor venha aqui para nós conversarmos pessoalmente, que será uma satisfação recebê-lo, isso tá bem?"  {audio:midias/3EB02B68DC0468D1B5B756_954054.ogg}
+[16:53] CLIENTE: [figurinha]
+[16:53] CLIENTE: [figurinha]
+[16:53] CLIENTE: [figurinha]
+[16:53] CLIENTE: [figurinha]
+[16:54] CLIENTE: [áudio] "Amiga Juzi, eu entendi e vou pensar direitinho, tá? Te agradeço a atenção e peço desculpa aí pelas brincadeiras, tá bom? Eu vou ver direitinho, eu tô precisando de 4 pneus realmente pra daqui a uma semana, né, que eu tô pensando em fazer uma viagem, precisando fazer uma viagem e tem que trocar os pneus do carro, tá bom? Eu vou ver direitinho, qualquer coisa eu entre em contato com você mais uma vez. Muito obrigado pela sua atenção, tá bom? Uma boa tarde, um bom final de semana pra você."
+[16:56] LOJA: [áudio] "Ai, eu amei essas figurinhas, eu tô salvando quase todas."  {audio:midias/3EB05C9C94F0C899049ED9_525454.ogg}
+[16:58] LOJA: [áudio] "Certo, sem problema, Sr. Antônio. Aí, a princípio, como o senhor solicitou aqui o 215,65, eu vou te mandar o orçamento do 185,60 e 515 também, tá joia? Conforme eu disse no débito no Pix, 249 a unidade. Se for para parcelar, tem as opções de parcelamento e caso o senhor opte em vir até aqui, nós podemos negociar de uma maneira melhor e com mais calma para poder te atender, tá joia? E agradeço muito pelo seu contato e espero que você tenha um bom final de semana, tá joia?"  {audio:midias/3EB00C776DF13192A0DD20_480384.ogg}
+[16:58] LOJA: [foto]
+[16:58] LOJA: [foto]
+[16:59] CLIENTE: [figurinha]
+[16:59] CLIENTE: [figurinha]
+[16:59] CLIENTE: [figurinha]
+[16:59] CLIENTE: [figurinha]
+[16:59] LOJA: [figurinha]

@@ -1,0 +1,49 @@
+CONVERSA d239aaf137 | contato: Tavares | 30/09/2026 10:11 até 15/10/2026 10:08 | 9 msgs do cliente, 21 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[10:11] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[10:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:35] LOJA: *Josy:*
+🙋🏼‍♀️
+[11:09] LOJA: [áudio] "Oi, bom dia! Tudo jóia, Tavares? Você me mandou mensagem aqui que gostaria de fazer um orçamento e eu estou aguardando aqui o seu retorno. Consegue me responder, por gentileza?"  {audio:midias/3EB041BA4E9C411B7DD2EC_516571.ogg}
+[12:49] CLIENTE: 2 pneus 205/55 R16 preço 
+2 pneus 185/60 R15 preço
+[12:50] LOJA: [foto]
+[12:50] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:50] LOJA: [foto]
+[12:51] LOJA: [foto]
+[15:14] LOJA: [áudio] "Oi, boa tarde, tudo bem com você, Tavares? Olha, obrigada aí por aguardar, que minha internet está péssima, hoje eu consegui mandar um orçamento aí para você, mas eu não consegui te dar explicação a respeito de nada, tá? E peço perdão por isso. Olha, no dia de hoje eu tenho todas essas opções de marcas à pronta entrega e aí no orçamento está o valor de apenas um pneu. Na primeira colônia está o valor à vista, que é correspondente a um débito ou Pix, e seguem as opções de parcelamento em até 10 vezes. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB08E9E492624BF825DFB_844459.ogg}
+[15:19] CLIENTE: Qual é  aro 16 que custa custa 249,00? Vc pó me falar a medida dele?
+[15:20] LOJA: [foto] É o pneu da marca GP Premium
+[15:21] LOJA: *Josy:*
+185/60/15
+[16:34] CLIENTE: [áudio] "Não, eu quero saber, é a medida que você tem nesse preço menor, porque se for aro 16, ele pode ser 195, pode ser 205, entendeu? Ele pode ser 55, ele pode ser 60, pode ser 65. O carro pega, entendeu? O que ele não pega é se for 185, 14, porque aí a roda é 16, ele não pega. Ou um aro 15, aí não pega. Ou se for 17, mas a largura do pneu, e a altura do pneu, não tem problema. O problema é exatamente o aro do pneu, porque ele tem que encaixar no aro. Se é 16, ele tem que ser 16. Ele pode ser 185, 195, 75, o que for, desde que ele tenha o aro 16. Aí eu quero saber o que você tem, eleito. Eu pedi os 60. 205, 60, 16. Mas pode ser 195, 65, 16. Ou 60, 16. Ou 55, 16. Entendeu?"
+[16:35] LOJA: [áudio] "Mas, Sra. Tavares, eu te mandei, no preço menor, até tirei a fotinho aí de novo para o senhor ver, é 185-6015, que é o de 249. O senhor me falou aqui, qual é o aro 16 que custa 249? Você pode me falar a medida dele? Aí eu te mandei aqui a foto, é o pneu da marca GP Premium, só que é na medida 185-6015."  {audio:midias/3EB0667ED665A73D5381EE_343097.ogg}
+[16:36] LOJA: [foto]
+[16:39] LOJA: [foto]
+[16:39] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 14/10/2026 (Wed) ---
+[16:34] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[16:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:34] LOJA: Oi, Tudo bem, Tavares ?
+[16:35] CLIENTE: 185/60 R15 e
+205/60 R16 dois de cada
+[16:36] LOJA: Certo...
+[16:37] LOJA: O 185/60/15 da GP  estou fazendo de R$ 289,00 por R$ 249,00 a unidade a vista
+[16:37] LOJA: [foto]
+[17:58] LOJA: [áudio] "Seu Tavares, tudo jóia? Eu posso separar os pneus aqui para o senhor?"  {audio:midias/3EB0CA8A21CEEB09FF338C_957677.ogg}
+--- 15/10/2026 (Thu) ---
+[10:05] CLIENTE: Onde fica sua loja?
+[10:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:06] CLIENTE: Vou precisar dis dois pneus 185/60 R15
+[10:08] CLIENTE: Se vc conseguir 279,00 no 205/60 R16 também quero  2

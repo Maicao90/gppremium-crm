@@ -1,0 +1,16 @@
+CONVERSA def6847bc0 | contato: Maxiley Senna ⚓ | 13/10/2026 10:16 até 13/10/2026 16:53 | 2 msgs do cliente, 8 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[10:16] LOJA: Bom dia, Max
+[10:17] LOJA: [foto]
+[10:17] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:17] CLIENTE: certo
+[10:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:18] CLIENTE: esqueci de te perguntar, vocês tem na medida 175 60 14 ?
+[10:22] LOJA: Não temos.
+[10:23] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[16:52] LOJA: Em falta.
+[16:53] LOJA: [áudio] "Você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB03E08EE1F6066072867_743890.ogg}

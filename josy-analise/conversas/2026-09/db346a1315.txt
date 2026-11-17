@@ -1,0 +1,14 @@
+CONVERSA db346a1315 | contato: Victor | 22/09/2026 13:16 até 22/09/2026 14:12 | 7 msgs do cliente, 3 da loja, 0 do robô
+
+--- 22/09/2026 (Tue) ---
+[13:16] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:16] CLIENTE: Boa tarde
+[13:16] CLIENTE: Vc tem
+[13:16] CLIENTE: Marca penu
+[13:16] CLIENTE: Jinyn
+[13:16] CLIENTE: ?
+[14:03] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu me chamo Josi e não, nós não trabalhamos com essa marca não."  {audio:midias/3EB00DE0929F00BAB87DF0_200361.ogg}
+[14:03] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0E7553A5F9CD78AF785_441172.ogg}
+[14:12] CLIENTE: [áudio] "Ah, beleza. Não, eu moro em Brasília. Se tivesse eu, eu ia buscar."

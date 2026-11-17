@@ -1,0 +1,44 @@
+CONVERSA 5d6601c007 | contato: Roney Pcosta | 06/10/2026 17:10 até 09/10/2026 14:21 | 9 msgs do cliente, 20 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[17:10] CLIENTE: Olá, quanto o preço do pneu da Amarok aro 19
+[17:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:11] CLIENTE: 255/55/19
+[17:13] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Rony, você mora aqui em Luziânia?"  {audio:midias/3EB0681A192D77CFAF845F_428773.ogg}
+[17:14] CLIENTE: Sim
+[17:17] LOJA: *Josy:*
+Certo... temos sim!
+[17:17] LOJA: [foto]
+[17:17] LOJA: *Josy:*
+Pneus da marca Sunny
+[17:17] LOJA: *Josy:*
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:18] CLIENTE: Qual desenho do pneu?
+[17:21] LOJA: [foto]
+[17:21] CLIENTE: Blz
+[17:21] LOJA: [foto]
+[17:21] CLIENTE: Vou ver e te falo, ok
+[17:22] LOJA: *Josy:*
+Vou te encaminhar a nossa localização.
+[17:22] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:24] LOJA: [foto]
+[17:27] LOJA: [áudio] "Você está buscando algum outro tipo de modelo?"  {audio:midias/3EB0A88FEA5E713A549F53_936426.ogg}
+[17:28] CLIENTE: Tem AT
+[17:30] LOJA: [áudio] "A pronta entrega, não. Vou ter somente esse mesmo. Mas eu posso cotar com os meus distribuidores. Assim que eles responderem, eu te passo direitinho aqui a marca o preço e o prazo de entrega, tá?"  {audio:midias/3EB04007E9184787C76E6C_264515.ogg}
+[17:31] CLIENTE: Blz então.
+--- 08/10/2026 (Thu) ---
+[15:11] LOJA: Boa tarde, Roney...
+[15:11] LOJA: Hoje consegui um retorno de pneus 255/55/19 At
+[15:11] LOJA: [foto]
+[15:11] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 09/10/2026 (Fri) ---
+[14:16] LOJA: [áudio] "Rony, tudo jóia? Eu te encaminhei um orçamento ontem e gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB021639DDB36045A195F_858848.ogg}
+[14:17] CLIENTE: [áudio] "Opa, boa tarde, beleza. Mas vou guardar a mão um pouco, para que não se perigo meio claro, menino. Vou olhar direitinho, que é o que eu te falo, hein? Obrigado, hein, pela atenção."
+[14:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:21] LOJA: [áudio] "É, realmente, Sr. Roney, está um pouquinho alto o preço, né? Mas é porque também o modelo, igual o senhor sugeriu, o senhor quer ele no modelo mais cravudo, né? Então, ele tem um preço diferenciado, digamos assim. E a pronta entrega, eu tenho aquele lá que eu te falei, eu acho que vai te atender super bem."  {audio:midias/3EB052D3FA221792298714_225970.ogg}

@@ -1,0 +1,71 @@
+CONVERSA 546da46190 | contato: Tiago | 20/10/2026 15:00 até 21/10/2026 16:46 | 23 msgs do cliente, 17 da loja, 13 do robô
+
+--- 20/10/2026 (Tue) ---
+[15:00] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Boa tarde!
+[15:00] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[15:00] CLIENTE: Tiago
+[15:01] CLIENTE: Quanto está custando um pneu aro 15/ 70/205?
+[15:06] LOJA: *Josy:*
+Tiago, é pneu de carga ou não?
+[15:23] CLIENTE: Fiat Idea adventure ano 2007
+[15:27] LOJA: [foto]
+[15:28] LOJA: *Josy:*
+No dia de hoje temos os pneus da Comforser e GP Premium  essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:33] CLIENTE: Gp e remoud??
+[15:33] LOJA: [áudio] "Sim, é sim. E é o pneu mais vendido que eu tenho por conta da qualidade."  {audio:midias/3EB0D1F514A7445821A0A7_465877.ogg}
+[15:33] LOJA: [áudio] "É um pneu que tem garantia de 2 anos e questão de quilometragem roda a 60 mil km."  {audio:midias/3EB0CFC1566A80B047C6D8_523827.ogg}
+[15:34] CLIENTE: [áudio] "Pois é, o que eu botei no meu carro aqui, não rodei nem 20. É GP também, é isso que eu desanimei. Eu tenho um Pirelli aqui do Step, que eu botei nele, que ele criou tudo bucho. Tem o quê? Tem uns 3 anos que eu tô com ele, não rodei nem 20 mil km. Os pneus tá tudo cheio de bucho. Aí peguei o Pirelli, que já é o original do carro, botei o Pirelli aqui, o Pirelli tá filezinho. Firelli, Scorpio. Aí eu realmente eu pensei que a GP era bom mesmo, mas não tem comparação não. O pneu novo é realmente, por isso que é mais caro. Pirelli. Pirelli. Pirelli. Pirelli. Pirelli."
+[15:34] LOJA: [vídeo]
+[15:35] LOJA: *Josy:*
+Sério? Deixa eu ver
+[15:35] LOJA: [áudio] "É, bucho, geralmente é de impacto lateral. Eu já recebi um cliente aqui que perdeu um pneu Michelin por causa de bucho."  {audio:midias/3EB086B531E501CD1AF90D_457231.ogg}
+[15:35] CLIENTE: [foto]
+[15:35] CLIENTE: [áudio sem fala]
+[15:36] CLIENTE: [foto]
+[15:36] CLIENTE: [áudio] "Aí o Pirelli que eu botei é o step original do carro ainda, tá filezinho. Tem o quê? É 2007 ano do carro, o tanto de ano que tem um pneu que tava no step, eu botei pra rodar agora e tá filezinho."
+[15:37] LOJA: [áudio] "Pois é, era um step que você não usava e se instalou agora, realmente, ele vai ficar filé."  {audio:midias/3EB0A446F16F852B862306_451182.ogg}
+[15:37] CLIENTE: [áudio] "Pois é, mas aí o de vocês é bem mais novo, como é que tá todo trincado e rachado, e o Pirelli não tem isso, entendeu? E os três tá cheio de bucho, o outro eu já joguei fora, era quatro, tudo cheio de bucho, tá os três cheio de bucho."
+[15:37] LOJA: [áudio] "E aí, igual eu te falei, a questão de bucho é muito relativo. Recebi um cliente hoje aqui que ele tava com pneu Michelin e o pneu Michelin é o zóio da cara da gente, de caro que é o pneu e ele perdeu um pneu Michelin por conta de bucho. Então, assim, uma coisa que pode acontecer com qualquer opção de marca, não é exclusivo da que você comprou."  {audio:midias/3EB0459E5A4D4CFB697F34_304935.ogg}
+[15:38] LOJA: [áudio] "E quando você analisou que estava dessa forma, pelo menos você poderia trazer o pneu aqui para nós avaliarmos se realmente é uma questão de impacto lateral ou não."  {audio:midias/3EB05275C3D66471248226_923232.ogg}
+[15:38] CLIENTE: [áudio] "Não, pneu rachado do jeito que tá ali, qualquer pancadinha esfola, porque borracha velha toda ruim, essa borracha de vocês é ruim, tá vendo, nem cheio de rachadura, aí eu vou botar aqui o Pirelli, que é da idade do carro, que manda a foto pra você ver a diferença."
+[15:39] CLIENTE: [foto]
+[15:39] LOJA: *Josy:*
+Não estou vendo.
+[15:40] LOJA: [áudio] "Mas, de todo modo, eu te mandei aí no orçamento, tem o pneu GP Premium e tem o pneu Conforcer também, tá joia?"  {audio:midias/3EB00D1B81CED953EDAA9B_782714.ogg}
+[15:40] CLIENTE: [áudio] "Eu vou fazer um orçamento aí, acho que naquele Achei Pneus tava uma promoção boa também, pneu da China mais, como é que se diz, novo. Qualquer coisa, eu entro em contato que eu vi uma propaganda de vocês, eu achei que vocês estavam com o preço mais em conta. Mas aí tá esse GP aí, que tá quase o preço do novo, não compensa não. Então valeu, obrigado."
+[17:51] LOJA: Vaso mude de idéia...
+[17:51] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:51] LOJA: [foto]
+--- 21/10/2026 (Wed) ---
+[11:08] ROBÔ: 🙋🏼‍♀️
+[11:15] CLIENTE: Vocês aí tá muito caro
+[11:15] ROBÔ: Entendo! Mas o GP Premium tem controle de qualidade rígido e garantia de 2 anos e 60 mil km ou seu dinheiro de volta — poucos por aí oferecem isso nessa faixa de preço.
+[11:15] ROBÔ: Dá pra parcelar em até 10x também, e vindo até a loja a gente consegue negociar melhor. Quer que eu já te passe o valor parcelado?
+[11:15] CLIENTE: No momento o que está mais difícil e o dinheiro
+[11:16] ROBÔ: Entendo, Tiago. Pra sua medida 205/70/15, o pneu *GP Premium* sai por *R$ 349,00 à vista*, e dá pra dividir em até 10x no cartão pra pesar menos no bolso.
+[11:16] ROBÔ: Quantos pneus você precisa trocar agora?
+[11:16] CLIENTE: Qualidade muito inferior e preço igual um novo
+[11:18] CLIENTE: Vou ser sincero um remold tem que ser pelo menos 40% a menos que um novo pra conta fecha
+[11:19] CLIENTE: Já achei novo por 400
+[13:19] ROBÔ: Vou ser sincero com você: sim, é remold — mas não é um remold comum.
+[13:20] ROBÔ: O GP Premium é feito com borracha padrão europeu e passa por controle rígido de qualidade.
+[13:20] ROBÔ: A gente dá garantia de 2 anos e 60 mil km ou seu dinheiro de volta. Muitos clientes já aprovaram esse modelo.
+[13:20] ROBÔ: Entendo! Se quiser, vem até a loja ver o pneu de perto — pessoalmente a gente consegue negociar melhor.
+[13:43] CLIENTE: Sim mais não e mesma coisa do novo
+[13:43] CLIENTE: Sei disso porq já conheço sua mercadoria
+[13:43] ROBÔ: Entendo sua preocupação. Por isso a gente oferece a garantia de 2 anos e 60 mil km ou seu dinheiro de volta.
+[13:43] ROBÔ: Se quiser, vem até a loja ver o pneu de perto antes de decidir.
+[13:44] CLIENTE: Quando fiz a primeira compra a te já briguei defendendo vocês sem ganhar um real acho que estava certo
+[13:44] CLIENTE: Mais depois que vim que não e mesma coisa
+[13:44] ROBÔ: Fico feliz em saber, Tiago, e agradeço a confiança desde a primeira compra. 🙏
+[16:46] ROBÔ: 🙋🏼‍♀️

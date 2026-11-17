@@ -1,0 +1,27 @@
+CONVERSA 82bd4d8389 | contato: Raquel Meireles | 09/10/2026 16:43 até 09/10/2026 16:51 | 8 msgs do cliente, 11 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[16:43] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[16:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:43] CLIENTE: Qual valor?
+[16:44] LOJA: Para qual a medida dos pneus?
+[16:44] CLIENTE: 15  195/60
+[16:45] LOJA: Certo... essa medida não está na promoção compre 3 e leve 4, está bem!?
+[16:46] LOJA: [foto]
+[16:46] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:47] CLIENTE: Ok
+[16:47] CLIENTE: Obrigada
+[16:47] LOJA: Raquel... mora aqui em Luziania-Go?
+[16:47] CLIENTE: Sim
+[16:47] LOJA: Que bacana!
+[16:47] LOJA: Qual é seu carro?
+[16:47] CLIENTE: Nilfiesta
+[16:48] CLIENTE: 2013/14
+[16:50] LOJA: Certo... tenho aqui na oferta pneus 185/60/15  que podem ser instalados em seu carro.
+[16:51] LOJA: De R$ 289,00 por apenas 249,00 a unidade a vista! Pneus da marca GP Premium
+[16:51] LOJA: [foto]

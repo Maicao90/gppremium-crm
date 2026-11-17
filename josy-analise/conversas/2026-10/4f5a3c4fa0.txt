@@ -1,0 +1,23 @@
+CONVERSA 4f5a3c4fa0 | contato: antonio | 13/10/2026 15:38 até 13/10/2026 17:22 | 8 msgs do cliente, 11 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[15:38] CLIENTE: Boa tarde
+[15:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:38] LOJA: Boa tarde!
+[15:39] LOJA: [áudio] "Oi, António, tudo bom? Como posso te ajudar?"  {audio:midias/3EB0327C44E920A2B53997_579355.ogg}
+[15:46] CLIENTE: 175/70/14
+[15:46] LOJA: [foto]
+[15:46] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:56] CLIENTE: [áudio] "Preciso de 2 pneus aro 14, 175, 70, 14."
+[15:56] CLIENTE: [áudio] "Queria saber qual o preço que está aí com vocês."
+[16:01] LOJA: Qual marca voc~e quer que eu reserve para ovc~e?
+[16:31] CLIENTE: [áudio] "Não, eu não vou querer reservar não. Esses seus pneus aí tá meio caro pra mim, tá meio puxado."
+[16:31] CLIENTE: [áudio] "Você tem algum outro modelo de pneu aí, mais barato do que esse aí, número 14?"
+[16:32] LOJA: 175/65/14 da marca GP Premium R$ 249,00 a vista e 165/70/14 por R$ 239,00 a vista
+[16:34] CLIENTE: [áudio] "Não, beleza. Vou pesquisar aqui. Tá puxado esses pneus aí, tá salgado."
+[16:35] LOJA: [áudio] "Você mora aqui em Luziânia, que de repente eu vejo se tem alguma empresa que tem pneu meia-vida para poder te atender."  {audio:midias/3EB014F49B9F8656F29DF8_692197.ogg}
+[17:11] CLIENTE: [áudio] "Sim, eu moro aqui em Luziânia. Só que eu não tô em Luziânia hoje, mas eu tô atrás desses pneus. Se você conseguir mais barato, eu vou aí buscar na loja. O negócio é que esses pneus aí tá muito caro."
+[17:22] LOJA: [áudio] "Antônio, mais barato que esses, eu consigo, se conseguir, vai ser pneu meia-vida realmente, porque pneu novo, mais barato que isso, tem empresa que vai te oferecer, entretanto vai te dar um golpe ali na frente."  {audio:midias/3EB05036CDDEA1B26168AB_272358.ogg}

@@ -1,0 +1,13 @@
+CONVERSA 190d9cd8a4 | contato: nilva | 18/08/2026 14:22 até 18/08/2026 15:09 | 3 msgs do cliente, 6 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[14:22] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:25] CLIENTE: 190/60/15
+[14:26] CLIENTE: 195/60/15
+[14:57] LOJA: Boa tarde
+[14:57] LOJA: so um minuto
+[14:59] LOJA: voce é de Luziania  Goias
+[14:59] LOJA: ?
+[15:09] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Eu sou a Josi. E você mora aqui em Luziânia mesmo? Porque eu vi que seu DDD é de outra localidade. E no momento nós não fizemos entregas. O pneu que eu tenho aqui é o pneu da marca GP Premium. A unidade está por R$ 289,00 à vista."  {audio:midias/A5BD6078EDA640C9F8001D7126AEC64A_242683.ogg}

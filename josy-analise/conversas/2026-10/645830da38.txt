@@ -1,0 +1,38 @@
+CONVERSA 645830da38 | contato: Odilon | 20/10/2026 08:27 até 21/10/2026 16:06 | 4 msgs do cliente, 16 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[08:27] LOJA: *Josy:*
+Bom dia!
+[08:28] LOJA: *Josy:*
+205/65/15
+[08:29] LOJA: [foto]
+[08:58] CLIENTE: Vc tem os pneus?
+[08:58] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu NOME
+👉 A MEDIDA dos pneus que você precisa.
+[08:59] LOJA: *Josy:*
+Não, infelizmente em falta mesmo.
+[09:00] LOJA: *Josy:*
+Terei 205/60/15 e 205/70/15
+[09:01] LOJA: [foto]
+[11:39] LOJA: [áudio] "Senhora de loja, seu carro é uma EcoSport? Instala o 205-70."  {audio:midias/3EB0FAB1DE8DAE331FEDE5_198696.ogg}
+[11:44] CLIENTE: [áudio] "É, amiga, deixa eu te falar. Ô, Bobo, desculpa a demora para responder. O que eu uso no carro já tem 10 anos, e compro sempre aí com vocês, é o 205-65-15, tá? E como eu tô querendo comprar só 2, se eu comprar 2, 205-60-15 e colocar no carro, o carro vai ficar, se eu colocar atrás, ele vai ficar um pouco mais levantado, um pouquinho atrás, entendeu? E eu não quero usar o carro dessa forma. Por isso que eu tô atrás do outro, tá? Do 205-65-15, tá bom?"
+[11:45] LOJA: *Josy:*
+Sim 1cm
+[11:45] LOJA: *Josy:*
+Entendo...
+[11:46] LOJA: [áudio] "Sim, eu entendi. O GP Premium, por hora, eu não tenho previsão de ter no meu estoque, que já vendi todos e também não tem nenhuma das empresas as quais revendam a nossa marca, tá? Eu vou ter aquele pneu chinês que eu te falei, só que ele não vai ser no modelo ATR."  {audio:midias/3EB0FB88AB17CF9713C6CA_982907.ogg}
+[11:46] CLIENTE: [áudio] "É isso que eu tô discutindo com o meu filho. Se eu dou um jeito de botar os quatro, aí eu boto o 70, o 205, 70, 70, 15, né? Mas eu tô vendo com ele aqui. Ele tá com um cliente aqui na oficina de vida. Tô esperando ele terminar pra conversar com ele. Qualquer coisa eu te ligo aí, tá?"
+[11:46] LOJA: [áudio] "Sim, perfeito. Conversem e me falem, tá?"  {audio:midias/3EB0691AF6DD99F892727E_737478.ogg}
+[12:26] LOJA: *Josy:*
+Qualquer coisa o senhor já vem para cá!
+[12:27] LOJA: [foto]
+--- 21/10/2026 (Wed) ---
+[11:25] LOJA: [áudio] "Comissora Adilão, bom dia! Como é que vão as coisas? E aí, conversou com seu filho? O que foi que vocês decidiram?"  {audio:midias/3EB0D96BE4475A876A32AB_270638.ogg}
+[12:53] CLIENTE: [áudio] "Pô, amiga, boa tarde. Desculpa a demora em responder, que eu tô no trabalho, só agora que eu parei pra almoçar, que eu tô vindo aqui, mas nós já compramos os pneus, eu comprei, eu fui lá no Gama e achei o que eu queria lá e mais barato, eu comprei lá, viu? Vamos deixar pra uma próxima vez aí, tá bom? Obrigado."
+[13:03] LOJA: [áudio] "Tá bom, então, Sra. Odilon, vamos nos falando, tá bem? Obrigada, até mais."  {audio:midias/3EB0A8FB188FE55CDCD22A_77092.ogg}
+[16:06] ROBÔ: 🙋🏼‍♀️

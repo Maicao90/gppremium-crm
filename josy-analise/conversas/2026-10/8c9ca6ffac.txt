@@ -1,0 +1,175 @@
+CONVERSA 8c9ca6ffac | contato: Felipe | 01/10/2026 13:23 até 02/10/2026 11:27 | 69 msgs do cliente, 74 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[13:23] CLIENTE: [áudio] "Tem que ser desse aí, porque é para carga, pô, as vãzinhas pesadas, esse CF300 aí, 16."
+[13:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:23] CLIENTE: [foto] Sai a quanto ?
+[13:24] CLIENTE: Você tem esse modelo
+[14:02] LOJA: [foto]
+[14:02] LOJA: [áudio] "Oi Felipe, tudo jóia? Eu vou ter aqui o pneu da marca Sunny. Dá para fazer cada um por 566, se o pagamento for no débito ou no Pix, tá?"  {audio:midias/3EB0E4727C76FE9E569134_844711.ogg}
+[14:19] LOJA: [áudio] "Quer que eu reserve eles aqui para você, Felipe?"  {audio:midias/3EB09C052EAF266770F1D3_979774.ogg}
+[14:21] CLIENTE: [áudio] "Não, eu achei já de 470. Eu pensei que eu ia achar mais em conta com vocês, como 100 reais mais caro."
+[14:22] LOJA: [áudio] "É porque depende de maca, né, Felipe?"  {audio:midias/3EB00465E1474A927F9208_75947.ogg}
+[14:27] CLIENTE: [áudio] "Mas marca para mim não interfere não. Sendo novo, não pode ser remold."
+[14:48] LOJA: [áudio] "Oi Felipe, tudo jóia? Deixa eu te falar, acabou de produzir 225-6516 da GP Premium."  {audio:midias/3EB00E7BCB95520ECF7BA4_373688.ogg}
+[14:48] LOJA: [áudio] "Você quer que separe os 4 aqui pra você agora?"  {audio:midias/3EB00447D78C23BC6A7D25_170947.ogg}
+[14:48] LOJA: [foto]
+[14:50] CLIENTE: [áudio] "Bom, eu tô vendo oito, eu quero oito, eu preciso de oito, por isso que eu tô falando, pra você melhorar o valor, entendeu? Porque eu preciso de oito. Oito desenho."
+[14:58] LOJA: *Josy:*
+Se conseguir trazer o pagamento em *dinheiro* consigo fazer a unidade por R$ 425,00 cada.
+[14:59] CLIENTE: [áudio] "Tem que ser desse aí, porque é para carga, pô, as vãzinhas pesadas, esse CF300 aí, 16."
+[15:00] CLIENTE: [áudio] "Vê se você entende o áudio."
+[15:00] LOJA: *Josy:*
+Creio que deve ser por conta do peso, o que vocês transportam?
+[15:03] LOJA: [áudio] "Esse F300, que ele está falando, que eu saiba, é o pneu da Firestone. E esse que você me mandou a foto aí é um pneu chinês da marca Maxx. Eu imagino que ele esteja falando a respeito disso."  {audio:midias/3EB0D73CD529E020743192_802875.ogg}
+[15:03] CLIENTE: [áudio] "Aí eu vejo direitinho porque isso é para aquelas ambulâncias, né? Elas é pesada, velho. Porque o pessoal aqui tinha, mas só que não era desse de cargo, entendeu? Porque tem inscrito de cargo, né? Mas não sei."
+[15:03] CLIENTE: [áudio] "É uma UTI, pô. Ela é tipo essas UTI móvel."
+[15:03] CLIENTE: [áudio] "Se eu tirar essa dúvida minha e falar que esse pneu serve para carga, aí você vai ganhar a venda. Se não der para carregar, não posso não, porque vai ser para ambulância."
+[15:04] LOJA: [áudio] "Ah, e o pneu GP Premium, ele é para carga. Inclusive, eu atendo a SEMI com esses pneus, justamente."  {audio:midias/3EB0D6B89012321E7D2F2E_641427.ogg}
+[15:04] LOJA: [áudio] "Eu uso não, a SEME ela compra de mim para colocar na ambulância."  {audio:midias/3EB032A4FA4BA7DFDF9867_593965.ogg}
+[15:05] CLIENTE: Você está quase me ganhando por conta dessa voz kkkkkkkkk
+[15:05] LOJA: [figurinha]
+[15:05] CLIENTE: [áudio] "Você só escreve agora. Esse pneu é... Só uma dúvida, né? Tipo assim, eu tenho que tirar todas as dúvidas. Esse pneu, ele não é remold, né?"
+[15:06] LOJA: [áudio] "Sim, é o remold. Inclusive, no áudio que você falou, você pode até ser remold. Esse é o pneu remold de primeira linha que nós temos, tá? Então, o preço dele está promocional de R$ 449,00 para o débito e Pix."  {audio:midias/3EB0053506CA6107DE8449_691133.ogg}
+[15:07] LOJA: no finalzinho do áudio....
+[15:08] LOJA: tem garantia de 12 meses, válido caso por ventura venha a acontecer   soltura de banda de rodagem.
+[15:10] LOJA: [áudio] "E, como eu te falei, a SEMI compra aqui comigo direto."  {audio:midias/3EB0DAF944158C1C10BAF9_478571.ogg}
+[15:10] LOJA: [áudio] "Quer que te manda foto, vídeo, alguma coisa assim?"  {audio:midias/3EB0621E09A612D54BC784_870886.ogg}
+[15:28] LOJA: Não consegui ouvir
+[15:29] LOJA: [figurinha]
+[15:29] LOJA: [áudio] "Felipe,"  {audio:midias/3EB079C9AB20692292608A_173422.ogg}
+[15:33] LOJA: *Josy:*
+Felipe...
+[15:38] LOJA: 👀
+[15:38] LOJA: *Josy:*
+não acredito que vai me deixar no vácuo.
+[15:39] CLIENTE: [áudio] "Ó moleque, eu tô com cliente aqui, desculpa aí."
+[15:40] CLIENTE: Jkkkk
+[15:40] CLIENTE: [áudio] "Falei que eu tô vendo com ele lá, porque o que que acontece? Ele... Ele tá vendo lá porque se ele compra novo mesmo, sem ser remold, porque pra ambulância lá o pessoal lá não aceita, entendeu? Esse menino lá."
+[15:41] LOJA: *Josy:*
+perdoado...
+[15:41] LOJA: *Josy:*
+tranquilo.
+[15:43] CLIENTE: Vai fica com raiva de mim não né ?
+[15:43] LOJA: [figurinha]
+[15:43] CLIENTE: Depois pago um açaí por te feito perde seu tempo kkkkk
+[15:44] LOJA: *Josy:*
+claro que não...imagina!
+[15:44] LOJA: *Josy:*
+Não dá para sentir raiva não.
+[15:44] LOJA: *Josy:*
+justo... kkkkk
+[15:45] LOJA: *Josy:*
+está calor.
+[15:46] CLIENTE: Kkkkkkk
+[15:46] CLIENTE: Só fala o dia
+[15:46] LOJA: *Josy:*
+Felipe...desculpa a pergunta, seu whats não tem foto, porque?
+[15:47] CLIENTE: Pq não está na minha agenda
+[15:47] CLIENTE: Kkkkkk
+[15:47] LOJA: [figurinha]
+[15:47] LOJA: [figurinha]
+[15:47] CLIENTE: Apareceu ?
+[15:48] LOJA: *Josy:*
+Não...
+[15:48] CLIENTE: Era pra vê se sou muito feio ?
+[15:48] LOJA: *Josy:*
+Não
+[15:48] CLIENTE: Acabei de salva seu contato
+[15:48] LOJA: [figurinha]
+[15:48] LOJA: *Josy:*
+é que eu salvo o nome das pessoas, acho estranho que não salva o meu
+[15:48] CLIENTE: [áudio] "Talvez o seu nome aqui tá... Pneus GP Premium."
+[15:48] CLIENTE: Kkkkkk
+[15:49] LOJA: *Josy:*
+Isso... pode editar e por Josy
+[15:50] CLIENTE: Pronto kkk
+[15:50] CLIENTE: Apareceu a foto
+[15:50] CLIENTE: A loja que trabalha fica onde ?
+[15:50] LOJA: [áudio] "Não, não apareceu não. E a nossa loja é aqui em Luziânia."  {audio:midias/3EB00F4B1006F28AE7407A_958496.ogg}
+[15:51] LOJA: [áudio] "Nós conversamos aqui desde 2025, como assim?"  {audio:midias/3EB05655DB8D4F096517D1_466918.ogg}
+[15:51] CLIENTE: [áudio] "Oxi, sério? Eu moro no meu paraíso. Eu sei que era aqui no CIO hoje que eu trabalho. Trabalho no CIO."
+[15:51] CLIENTE: Kkkkkkkkk
+[15:51] LOJA: [áudio] "Não, não, é aqui em Luziânia. Eu salvei o seu contato em ano passado. Você começou a falar aqui com a gente e eu salvei."  {audio:midias/3EB06C9495D263F58D036B_188559.ogg}
+[15:52] CLIENTE: Uai era pra te mostrado pq salvei seu contato
+[15:52] CLIENTE: Kkk
+[15:52] LOJA: [áudio] "Ixi, eu não falo não, eu não sou uma pessoa que pede nada. O dia que a pessoa sentir no coração, que Deus tocar no coração dela e falar, nossa, hoje tá tão calor, tem aquela pobre alma que está lá, trabalhando, falando com um monte de gente, levando o vácuo de um monte de gente, fazendo um monte de orçamento e o povo não tá comprando dela, acho que eu vou mandar um açaí, acho que, assim, é quando Deus tocar no coração, sabe? Ah!"  {audio:midias/3EB014DBBFB167D027CB64_73625.ogg}
+[15:53] CLIENTE: 🤣🤣🤣🤣🤣
+[15:53] CLIENTE: Isso foi indireta sobre o vácuo
+[15:54] CLIENTE: [áudio] "Trabalhasse perto aqui no Siã, eu ia levar um açaí do top, um açaí e um pastelzinho, isso é o mal no Siã, né?"
+[15:54] LOJA: [áudio] "Não, de jeito nenhum. Também não mando indiretas, não. Não, é porque isso é normal durante o dia, falando sério, é super normal mandar orçamento, né? E a pessoa assume e nunca mais responde. Acontece, tá? Tô falando, brincando assim, só que assim é super normal, tá?"  {audio:midias/3EB0A0AB729CAFC3BC7F92_812075.ogg}
+[15:56] CLIENTE: [áudio] "Mas o problema é que você mexe com pneu remolde, se você trabalhasse numa loja que não seria pneu remolde, você todo dia vende pra mim. Todo dia vendendo. Mas eu não posso botar a vida dos clientes da loja em risco, entendeu? Eu que sou o rapaz que faço as compras da loja. Aí tudo eu compro, tudo é eu que compro, entendeu? Então se eu botar pneu remolde e vier dar problema, eu paro de trocar e mato em cima de mim, você entende?"
+[15:57] CLIENTE: Você tinha que bota sua foto de perfil chamaria mais clientes kkkk
+[15:58] LOJA: [áudio] "Mas eu te mandei o orçamento do pneu que não é remolde, querido Felipe. O negócio é que o preço da maca que eu tenho aqui não te agradou e a única opção que eu tenho no dia de hoje, que é o de 566, pneu aí de 8 lonas também, mas aí você não gostou dele, seu amigo não gostou dele, poxa vida, é que eu trabalho com diversas marcas."  {audio:midias/3EB09A5F427E0D15025004_287662.ogg}
+[16:01] CLIENTE: Mais tava puxado coração
+[16:01] CLIENTE: Assim vou pra roça
+[16:01] LOJA: [áudio] "Sim, justamente. É por isso que eu disse, né? Ter eu tenho. A objeção foi justamente por conta do preço, né?"  {audio:midias/3EB0AA275580B5C38B38B0_583385.ogg}
+[16:02] LOJA: [figurinha]
+[16:03] CLIENTE: E esse açaí que dia vamos toma ou você não aceita minha companhia kkkkkkkkkkkkkkkkkkkkk
+[16:03] LOJA: *Josy:*
+Moço...eu trabalho de domingo a domingo...
+[16:03] CLIENTE: [áudio] "É, meu só é 2 galão. Oxi, Maria. Só vai domingo a domingo, né?"
+[16:03] CLIENTE: Aí sim
+[16:05] LOJA: *Josy:*
+Sim!
+[16:06] LOJA: *Josy:*
+Trabalho,
+[16:06] CLIENTE: É puxado demais
+[16:06] LOJA: *Josy:*
+Sim, é sim!
+[16:06] CLIENTE: Trabalho de segunda q sábado já fico cansado
+[16:06] LOJA: *Josy:*
+Bater metas , não pé tão simples quanto parece.
+[16:07] LOJA: *Josy:*
+já te ouço
+[16:07] CLIENTE: [áudio] "Você, como é que é? Eu sou o rapaz de frente aqui, que compra as coisas da loja, que resolve as coisas da loja aqui, eu sei, compro muita peça com os meninos, os meninos às vezes me mandando mensagem, bora comprar alguma coisa pra bater meta, é igual que os meninos aqui nos botem pra bater meta também os vendedores, mas graças a Deus bateram a meta de 35, mas bateram 33, mas tá bom. É, mas bater meta é um negócio bem corrido, viu?"
+[16:19] LOJA: [áudio] "Pois é, corrida e meio. Aí a gente se desdobra, faz um monte de coisa, vai trabalhar em evento. Ih, não para não, meu filho."  {audio:midias/3EB02018A19B4C3D4989AF_347464.ogg}
+[16:20] CLIENTE: Nossa senhora você é uma menina dedicada parabéns viu
+[16:20] CLIENTE: Continue assim
+[16:20] CLIENTE: Apaga essas msg pro seu marido ou namorado não ver viu kkkk
+[16:30] LOJA: [figurinha]
+[16:30] LOJA: *Josy:*
+para isso precisa ter 1.
+[16:30] CLIENTE: Kkkkkkkkk
+[16:31] CLIENTE: Aceita uma casado 🤫🫣
+[16:32] LOJA: [figurinha]
+[16:32] LOJA: [figurinha]
+[16:33] CLIENTE: [áudio] "Olha, é uma proposta, velho. É que é uma proposta boa."
+[16:34] LOJA: [áudio] "Mas é boa pra quem?"  {audio:midias/3EB0839C48E2AD8FAE8C31_828332.ogg}
+[16:34] CLIENTE: [áudio] "Vai, pode ser que seja pra você, uai. É a proposta, uai."
+[16:36] LOJA: [figurinha]
+[16:36] CLIENTE: [áudio] "Você fala que eu sou ruim de negócio. Você também é ruim de negócio, você."
+[16:43] LOJA: *Josy:*
+Desculpa a pergunta aí na empresa você é do setor de somente de compras , não pe?
+[16:44] CLIENTE: [áudio] "É uma longa história. Eu, particularmente, sou tudo. Sou o braço direito do homem, eu dou as coisas pra ele, sou vendedor. Eu que sou pós-venda, sou tudo de mais um pouco na loja. Assim, eu sou de frente assim, eu sou o braço direito dele, mas eu posso vender também. Eu que dou as coisas. Eu que compro coisas pra loja, eu que compro material pro lavaiado dos meninos, põe material pra loja, os carros que eu que levo pra oficina, eu que vou em banca, eu compro cartão. Vendo carro também, pós-venda também. Vendo. Eu sou mais um pouco, mas o meu setor mesmo é tomar de conta disso. Tomar de conta da loja, dos carros, pós-venda. Entendeu?"
+[16:45] LOJA: Entendi....
+[16:45] CLIENTE: [áudio] "Corrido, minha vida é fácil, é? Pelo ser o braço direito do homem, ser o homem de confiança dele, eu tenho que sempre estar pra lá e pra cá, com tudo."
+[16:45] CLIENTE: Minha foto apareceu né kkk
+[16:45] LOJA: *Josy:*
+não;....
+[16:47] CLIENTE: Essa é a foto de perfil
+[16:56] CLIENTE: Quer compra um carro comigo não ?
+[17:03] LOJA: *Josy:*
+É porque, eu estava ouvindo o áudio aqui kkkk , e pensei eu como vendedora, sangue nos olhos que sou, de longe sou ruim de negócio,  kkkkk
+[17:04] LOJA: *Josy:*
+Querer não é poder.
+[17:05] LOJA: *Josy:*
+Estou fazendo um outro investimento, por agora.
+[17:05] CLIENTE: [áudio] "Eu vou te falar a verdade, a pessoa que tem vontade aqui, ela ganha dinheiro, viu? Hoje também que fraco o mercado, mas ainda tem vídeo que sai com 3 mil, 2.500 por semana, mole, mole, entendeu? Basta querer. Hoje mesmo, o mercado mesmo, assim, é mais a internet. A internet é onde você consegue resgatar os clientes. Se você tiver uma modificação você mesmo, essas coisas, você ganha dinheiro, entendeu?"
+[17:07] LOJA: [áudio] "Sim, isso mesmo. A internet domina."  {audio:midias/3EB0C3F9BDBD24E1AE555E_383755.ogg}
+[17:08] CLIENTE: [áudio] "Sim, hoje a internet é uma ponte, né? Então tá bom então, vou deixar você trabalhar e parar de perder tempo comigo, mano, te manda uma mensagem aí. Se eu pagar seu café da manhã, amanhã..."
+--- 02/10/2026 (Fri) ---
+[08:20] CLIENTE: Bom dia kk
+[08:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:23] LOJA: [áudio] "Bom dia, Felipe. Tudo jóia? Como é que você está? Ah, hoje está aparecendo a sua foto ali."  {audio:midias/3EB0A1998AA3A992452AEE_454753.ogg}
+[08:27] CLIENTE: Kkkkkk
+[08:27] CLIENTE: Você não tinha salvo meu contato
+[08:28] LOJA: [áudio] "Eu tinha salvo sim. Se você observar, quando você começou a falar comigo, eu já te chamei pelo nome. Se eu te chamei pelo nome, é porque eu tenho seu contato salvo. Rapaz!"  {audio:midias/3EB0496E9AEC17583CB7C9_631180.ogg}
+[08:28] CLIENTE: Pse falto aparece a sua tbm kkkk
+[08:28] CLIENTE: Kkkkkk
+[08:28] CLIENTE: Verdade
+[11:26] LOJA: *Josy:*
+a minha creio que não gostem kkkkk
+[11:27] CLIENTE: Uai pq ?

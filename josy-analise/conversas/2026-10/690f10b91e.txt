@@ -1,0 +1,31 @@
+CONVERSA 690f10b91e | contato: Ray compra Frota | 20/10/2026 10:36 até 21/10/2026 12:37 | 7 msgs do cliente, 11 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[10:36] CLIENTE: Bom dia, tudo bem? 
+Estou precisando trocar 04 Pneus para Hylux, alinhar e balancear
+[10:36] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[10:36] LOJA: [áudio] "Olá, bom dia, tudo bem? Você está aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB0AF30F3509A908D28D5_437897.ogg}
+[10:37] CLIENTE: Sim
+[10:37] LOJA: [áudio] "Qual a medida dos pneus que você precisa?"  {audio:midias/3EB02DBAF111EBDFB16728_878176.ogg}
+[10:37] CLIENTE: [foto]
+[10:37] CLIENTE: [foto]
+[10:39] LOJA: [áudio] "Bem, nós não dispomos dessa opção a pronta entrega, ainda mais por se tratar de um pneu de carga, eu já solicitei aos nossos distribuidores uma cotação para poder verificar se teremos. Caso os meus distribuidores tenham, cheguem até 3 dias úteis, tá?"  {audio:midias/3EB061337E150E6F94DB5F_124821.ogg}
+[10:39] CLIENTE: Seria pra carga ou misto ATR ai me passa o valor dos dos
+[10:40] LOJA: [áudio] "Sim, sim. Eu estou aguardando aqui a resposta deles e eu vi que você usa da Dunlop. Tem que ser essa marca mesmo?"  {audio:midias/3EB00AEAB928E3111D3228_348782.ogg}
+[10:40] CLIENTE: Não, pode ser a mais em conta.
+[10:52] LOJA: [foto]
+[10:52] LOJA: [áudio] "Oi, a única opção que o meu distribuidor vai ter vai ser o pneu da Goodyear, da Joia, e a unidade está por R$ 1.492,00, se o seu pagamento for à vista, e aí seguem as opções de parcelamento em até 10 vezes."  {audio:midias/3EB076AB587B79E7982332_857002.ogg}
+[10:53] LOJA: [áudio] "Aí eu só estou confirmando se essa opção vai ser realmente pra carga, tá?"  {audio:midias/3EB06CAEFF2247C8EE7CC4_639145.ogg}
+[10:54] LOJA: *Josy:*
+Pode ser importado desde qeu seja de carga
+[10:58] LOJA: [áudio] "Porém, essa opção aí, ela realmente não vai ser de carga, só que é a única coisa que ele vai ter no estoque."  {audio:midias/3EB0F55F9CC2EB20072451_486955.ogg}
+[10:59] CLIENTE: ok, obrigado.
+[11:00] LOJA: [áudio] "Qual é o peso que vocês transportam aqui?"  {audio:midias/3EB04877DDD4270ADC1A48_716193.ogg}
+--- 21/10/2026 (Wed) ---
+[12:37] ROBÔ: 🙋🏼‍♀️

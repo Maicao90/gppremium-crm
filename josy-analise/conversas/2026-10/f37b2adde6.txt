@@ -1,0 +1,23 @@
+CONVERSA f37b2adde6 | contato: Cleber | 07/10/2026 14:51 até 09/10/2026 16:15 | 8 msgs do cliente, 8 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[14:51] CLIENTE: Boa tarde
+[14:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:51] LOJA: *Josy:*
+Oi, Cleber...
+[14:51] CLIENTE: Oi
+[14:52] CLIENTE: Quanto está custando o pneus 15 de vcs?
+[14:52] CLIENTE: Para o voiage
+[15:01] LOJA: [áudio] "Kleber, eu estou com a promoção do 185-65-15, de 289 por 249 a vista, pneu da marca GP Premium."  {audio:midias/3EB0FDE98D350FAA756F0D_664644.ogg}
+[15:14] CLIENTE: Ok. Eu vou falar pra minha filha ir ai ok.
+[15:18] LOJA: *Josy:*
+Ok!
+[15:22] CLIENTE: [áudio] "Ela falou que vai... vou ver se ela consegue ir amanhã aí, tá bom? Hoje eu não consegui, não."
+[15:22] CLIENTE: Amanha ela deve ir por volta das 09:00
+[15:26] LOJA: [áudio] "Aí eu só vou mandar aqui o orçamento pro senhor, tá bom? Pra ficar registrado. E amanhã, assim que eu abrir, eu mando um bom dia, tá? Qual que é o nome da sua filha?"  {audio:midias/3EB01AB7C768714B3C8051_863772.ogg}
+[15:27] LOJA: [foto]
+[15:36] CLIENTE: Ana luisa
+--- 09/10/2026 (Fri) ---
+[16:13] LOJA: Oi!
+[16:15] LOJA: [áudio] "Oi, seu Kleber, tudo jóia? Você estava falando comigo mesma, tá?"  {audio:midias/3EB0A509E30DCA6DAB29E8_690495.ogg}

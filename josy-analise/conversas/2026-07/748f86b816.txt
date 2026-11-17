@@ -1,0 +1,10 @@
+CONVERSA 748f86b816 | contato: Francival Ribeiro Sipriano | 18/07/2026 11:12 até 20/07/2026 09:34 | 3 msgs do cliente, 2 da loja, 0 do robô
+
+--- 18/07/2026 (Sat) ---
+[11:12] CLIENTE: Olá, gostaria de saber os preços de pneus.
+--- 19/07/2026 (Sun) ---
+[10:52] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:54] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 20/07/2026 (Mon) ---
+[09:32] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:34] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

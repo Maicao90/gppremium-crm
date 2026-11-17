@@ -1,0 +1,24 @@
+CONVERSA af66c408f1 | contato: Vilmar Alves Ramos🙏🙏🙏 | 14/10/2026 10:01 até 16/10/2026 08:12 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[10:01] CLIENTE: Bom dia penus aro 18 235 60 qual valor
+[10:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:10] LOJA: [áudio] "Olá, tudo bem Vilma? Como é que você está? Essa medida você usa em qual leículo?"  {audio:midias/3EB07D8E786EE4A71491C2_543980.ogg}
+[10:15] CLIENTE: Kia sorento
+[10:26] LOJA: Preciso que me informe a medida dos pneus, pois para seu carro existem no aro 16...17... 18
+[10:26] LOJA: A numeração está escrita na lateral do pneu.
+[10:27] CLIENTE: E aro 18 ,235 60
+[10:35] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[10:37] CLIENTE: Ok
+[15:48] LOJA: [foto] Consegui o retorno apenas da Michellin
+[15:48] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 15/10/2026 (Thu) ---
+[18:07] LOJA: [áudio] "Oi Vilmar, tudo jóia? Assim que você estiver com o tempinho, me dá um retorno, por gentileza?"  {audio:midias/3EB0244C6A889A4C71614B_431665.ogg}
+[18:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:31] CLIENTE: [áudio] "Opa, boa noite. Eu te mandei mensagem procurando pelos pneus, se demorou para responder, eu comprei, achei outro amigo meu que estava vendendo, eu peguei e comprei dele. Se eu quiser fazer os pneus para mim, eu peguei e comprei."
+--- 16/10/2026 (Fri) ---
+[08:12] LOJA: [áudio] "Oi, Silvio Mar, bom dia, tudo bem? Pois é, não demorei a te responder, não. Igual eu te disse, eu não tinha opção aqui a pronta entrega, então eu só esperei o meu fornecedor responder para poder te passar o orçamento, mas tudo bem então. Obrigada pela sua atenção, bom final de semana."  {audio:midias/3EB0C55B52B61D49A6D170_711985.ogg}

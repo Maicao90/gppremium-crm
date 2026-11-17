@@ -1,0 +1,9 @@
+CONVERSA 3f7d70782e | contato: Marcos Soares | 03/10/2026 09:21 até 03/10/2026 10:05 | 3 msgs do cliente, 2 da loja, 0 do robô
+
+--- 03/10/2026 (Sat) ---
+[09:21] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:22] CLIENTE: Kit 2 Pneus 195/55R15 Continental PowerContact 2 85H Aro 15
+[09:32] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Meu nome é Josi. Você mora aqui na cidade de Luziânia, Goiás? Porque eu não tenho essa opção aqui para não ter entrega, não."  {audio:midias/3EB075A8A08C732B6FB322_819834.ogg}
+[10:05] CLIENTE: Ok obrigado

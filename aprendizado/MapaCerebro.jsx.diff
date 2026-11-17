@@ -1,0 +1,220 @@
+--- originais/MapaCerebro.jsx	2026-10-22 17:42:23.167620776 +0000
++++ /root/aprendizado-lab-painel/src/components/MapaCerebro.jsx	2026-10-22 20:08:52.469573034 +0000
+@@ -2,8 +2,9 @@
+ import { createPortal } from 'react-dom';
+ import { Search, X, Crosshair, Send, Check, Plus, Minus, Pause, Play, RefreshCw, Lightbulb } from 'lucide-react';
+ import { api } from '../atendimento/api';
+-import { ACOES, COR_GRAVIDADE, TIPOS, vazio } from './cerebroConstantes';
++import { ACOES, COR_GRAVIDADE, ORIGEM, TIPOS, vazio } from './cerebroConstantes';
+ import { FormLicao, Bolhas } from './cerebroComum';
++import { CardAprendizado } from './AprendizadoJosy';
+ import './MapaCerebro.css';
+ 
+ // MAPA DO CEREBRO (22/10, pedido do dono: "quero ele todo interativo, tipo com neuronios, neuro links").
+@@ -18,17 +19,20 @@
+ const COR_ETAPA = { abertura: '#38BDF8', medida: '#A78BFA', preco: '#34D399', objecoes: '#F59E0B', fechamento: '#F472B6', atendente: '#94A3B8' };
+ const COR_ENSINAMENTO = '#2DD4BF';
+ const COR_ACHADO = '#FB923C';
+-const NOME_TIPO = { etapa: 'Etapas', categoria: 'Situações', ensinamento: 'Ensinamentos', achado: 'Achados p/ revisar' };
+-const NOME_TIPO_UM = { etapa: 'Etapa do atendimento', categoria: 'Situação que o robô reconhece', ensinamento: 'Ensinamento seu', achado: 'Achado da revisão (esperando você)' };
+-const LIGADO_POR = { conversa: 'pela conversa real (o bloco que respondeu)', texto: 'por texto parecido (pode não ser exato)', tipo: 'pelo tipo do erro' };
++const COR_APRENDIZADO = '#E879F9';
++const NOME_TIPO = { etapa: 'Etapas', categoria: 'Situações', ensinamento: 'Ensinamentos', achado: 'Achados p/ revisar', aprendizado: 'Jeito da Josy' };
++const NOME_TIPO_UM = { etapa: 'Etapa do atendimento', categoria: 'Situação que o robô reconhece', ensinamento: 'Ensinamento seu', achado: 'Achado da revisão (esperando você)', aprendizado: 'Jeito da Josy (esperando você)' };
++const LIGADO_POR = { conversa: 'pela conversa real (o bloco que respondeu)', texto: 'por texto parecido (pode não ser exato)', tipo: 'pelo tipo do erro', proposta: 'pelo bloco que a análise escolheu', nenhum: 'à IA livre (nenhum bloco parecido)' };
+ const ATUALIZAR_MS = 120 * 1000;
+ 
+-const corDoNo = (n) => (n.tipo === 'ensinamento' ? (n.ativo ? COR_ENSINAMENTO : '#64748B') : n.tipo === 'achado' ? COR_ACHADO : COR_ETAPA[n.etapa] || '#94A3B8');
++const corDoNo = (n) => (n.tipo === 'ensinamento' ? (n.ativo ? COR_ENSINAMENTO : '#64748B') : n.tipo === 'achado' ? COR_ACHADO : n.tipo === 'aprendizado' ? COR_APRENDIZADO : COR_ETAPA[n.etapa] || '#94A3B8');
+ const raioDoNo = (n) => {
+   const u = Math.sqrt(Math.max(0, n.usos7d || 0));
+   if (n.tipo === 'etapa') return 24 + Math.min(22, u * 2.2);
+   if (n.tipo === 'categoria') return 6 + Math.min(22, u * 2.6);
+   if (n.tipo === 'ensinamento') return 9 + Math.min(10, u * 2);
++  // proposta da Josy: maior = mais vezes nas conversas dela
++  if (n.tipo === 'aprendizado') return 8 + Math.min(9, Math.sqrt(Math.max(0, Number(n.extra?.proposta?.frequencia) || 0)) * 0.5);
+   return 8;
+ };
+ // raio na tela: afastando o zoom o neuronio encolhe menos que o mapa (senao vira poeira no "mostrar tudo")
+@@ -72,7 +76,7 @@
+   }
+   // ensinamento/achado novo nasce do lado do neuronio a que esta ligado
+   for (const l of ligs) {
+-    if ((l.tipo === 'ensina' || l.tipo === 'achado') && !velhos.get(l.b.id)) { l.b.x = l.a.x + (Math.random() - 0.5) * 50; l.b.y = l.a.y + (Math.random() - 0.5) * 50; }
++    if ((l.tipo === 'ensina' || l.tipo === 'achado' || l.tipo === 'aprendizado') && !velhos.get(l.b.id)) { l.b.x = l.a.x + (Math.random() - 0.5) * 50; l.b.y = l.a.y + (Math.random() - 0.5) * 50; }
+   }
+   const vizinhos = new Map(nos.map((n) => [n.id, new Set()]));
+   for (const l of ligs) { vizinhos.get(l.a.id).add(l.b.id); vizinhos.get(l.b.id).add(l.a.id); }
+@@ -80,7 +84,7 @@
+   return { nos, ligs, porId, vizinhos, maxPeso, maxHoje, alpha: anterior ? 0.35 : 1, estreito };
+ }
+ 
+-const FORCA_MOLA = { pertence: 0.1, caminho: 0.0015, ensina: 0.25, achado: 0.25, etapa: 0 };
++const FORCA_MOLA = { pertence: 0.1, caminho: 0.0015, ensina: 0.25, achado: 0.25, aprendizado: 0.25, etapa: 0 };
+ function passo(sim) {
+   const { nos, ligs, alpha, estreito } = sim;
+   const n = nos.length;
+@@ -143,6 +147,9 @@
+ function triangulo(ctx, x, y, r) {
+   ctx.beginPath(); ctx.moveTo(x, y - r * 1.15); ctx.lineTo(x + r * 1.05, y + r * 0.75); ctx.lineTo(x - r * 1.05, y + r * 0.75); ctx.closePath();
+ }
++function losango(ctx, x, y, r) {
++  ctx.beginPath(); ctx.moveTo(x, y - r * 1.2); ctx.lineTo(x + r * 0.95, y); ctx.lineTo(x, y + r * 1.2); ctx.lineTo(x - r * 0.95, y); ctx.closePath();
++}
+ // ponto de controle da curva (sinapse ida e volta ficam em curvas separadas)
+ function controle(a, b, curva) {
+   const mx = (a.x + b.x) / 2; const my = (a.y + b.y) / 2; const dx = b.x - a.x; const dy = b.y - a.y;
+@@ -166,7 +173,7 @@
+ function Painel({ d, dados, lojas, onFechar, onIr, onMudou, onDisparo }) {
+   const [modo, setModo] = useState(null); // 'ensinar' | 'testar' | null
+   const [form, setForm] = useState(vazio);
+-  const [msgTeste, setMsgTeste] = useState(d.extra?.exemplos?.[0] || '');
++  const [msgTeste, setMsgTeste] = useState(d.extra?.exemplos?.[0] || d.extra?.proposta?.exemplos?.[0]?.cliente || '');
+   const [lojaId, setLojaId] = useState(lojas?.[0]?.id || '');
+   const [res, setRes] = useState(null);
+   const [ocupado, setOcupado] = useState(false);
+@@ -224,12 +231,23 @@
+         <span className="mc-tipo" style={{ color: corDoNo(d), borderColor: `${corDoNo(d)}66` }}>{NOME_TIPO_UM[d.tipo]}</span>
+         <button type="button" className="mc-icone" onClick={onFechar} aria-label="Fechar"><X size={16} /></button>
+       </div>
+-      <h4 className="mc-titulo">
+-        {d.tipo === 'ensinamento' ? `Quando o cliente ${String(d.descricao).replace(/^quando o cliente\s*/i, '')}`
+-          : d.tipo === 'achado' ? `${TIPOS[d.extra?.achado?.tipo] || 'Erro'} — ${d.extra?.achado?.cliente || d.extra?.achado?.numero || 'cliente'}` : d.rotulo}
+-      </h4>
++      {d.tipo !== 'aprendizado' && (
++        <h4 className="mc-titulo">
++          {d.tipo === 'ensinamento' ? `Quando o cliente ${String(d.descricao).replace(/^quando o cliente\s*/i, '')}`
++            : d.tipo === 'achado' ? `${TIPOS[d.extra?.achado?.tipo] || 'Erro'} — ${d.extra?.achado?.cliente || d.extra?.achado?.numero || 'cliente'}` : d.rotulo}
++        </h4>
++      )}
++
++      {/* proposta do Aprendizado da Josy: o MESMO card da aba (aprovar com audio / so texto / ignorar) */}
++      {d.tipo === 'aprendizado' && d.extra?.proposta && (
++        <>
++          <CardAprendizado p={d.extra.proposta} lojas={lojas} noMapa
++            onDecidido={(r) => onMudou(r?.proposta?.licaoId ? `ensinamento:${r.proposta.licaoId}` : null)} />
++          <p className="mc-dica">Ligado no mapa {LIGADO_POR[d.extra.ligadoPor] || ''}.</p>
++        </>
++      )}
+ 
+-      {d.tipo !== 'achado' && (
++      {d.tipo !== 'achado' && d.tipo !== 'aprendizado' && (
+         <div className="mc-numeros">
+           <div><b>{d.usosHoje}</b><span>hoje</span></div>
+           <div><b>{d.usos7d}</b><span>em 7 dias</span></div>
+@@ -238,7 +256,7 @@
+         </div>
+       )}
+ 
+-      {d.tipo !== 'ensinamento' && d.tipo !== 'achado' && d.descricao && <p className="mc-texto">{d.tipo === 'categoria' ? <><b>Quando entra: </b>{d.descricao}</> : d.descricao}</p>}
++      {d.tipo !== 'ensinamento' && d.tipo !== 'achado' && d.tipo !== 'aprendizado' && d.descricao &&<p className="mc-texto">{d.tipo === 'categoria' ? <><b>Quando entra: </b>{d.descricao}</> : d.descricao}</p>}
+ 
+       {d.tipo === 'categoria' && d.extra?.exemplos?.length > 0 && (
+         <div className="mc-bloco">
+@@ -276,7 +294,7 @@
+           <div className="mc-rotulo">O robô deve</div>
+           <p className="mc-texto">{ACOES[licao.acao] || licao.acao}{licao.lojas?.length ? ` · ${licao.lojas.map((id) => lojas.find((x) => x.id === id)?.nome || id).join(', ')}` : ' · todas as lojas'}</p>
+           {licao.acao === 'responder' ? <Bolhas partes={String(licao.resposta || '').split(/\n\s*\n/).filter(Boolean)} /> : licao.resposta ? <p className="mc-texto mc-citacao">{licao.resposta}</p> : null}
+-          <p className="mc-dica">{licao.ativo ? '● Ligado' : '○ Desligado'} · {licao.origem === 'revisao' ? 'veio da revisão' : 'você ensinou'}{d.extra?.ligadoAutomatico ? ' · ligado no mapa pelo assunto parecido' : ''}</p>
++          <p className="mc-dica">{licao.ativo ? '● Ligado' : '○ Desligado'} · {ORIGEM[licao.origem] || ORIGEM.dono}{d.extra?.ligadoAutomatico ? ' · ligado no mapa pelo assunto parecido' : ''}</p>
+         </div>
+       )}
+ 
+@@ -305,7 +323,7 @@
+       {aviso && <div className="mc-aviso">{aviso}</div>}
+ 
+       <div className="mc-botoes mc-botoes-fim">
+-        {d.tipo !== 'achado' && <button type="button" className={`btn ${modo === 'ensinar' ? 'btn-primary' : 'btn-secondary'}`} onClick={() => setModo((m) => (m === 'ensinar' ? null : 'ensinar'))}><Lightbulb size={14} /> Ensinar algo aqui</button>}
++        {d.tipo !== 'achado' && d.tipo !== 'aprendizado' && <button type="button" className={`btn ${modo === 'ensinar' ? 'btn-primary' : 'btn-secondary'}`} onClick={() => setModo((m) => (m === 'ensinar' ? null : 'ensinar'))}><Lightbulb size={14} /> Ensinar algo aqui</button>}
+         <button type="button" className={`btn ${modo === 'testar' ? 'btn-primary' : 'btn-secondary'}`} onClick={() => setModo((m) => (m === 'testar' ? null : 'testar'))}><Send size={14} /> Testar</button>
+         {d.tipo === 'ensinamento' && licao && <button type="button" className="btn btn-secondary" disabled={ocupado} onClick={alternar}>{licao.ativo ? 'Desligar' : 'Ligar'}</button>}
+       </div>
+@@ -344,8 +362,8 @@
+           {saida.length > 0 && <><div className="mc-rotulo">E leva para</div>{saida.slice(0, 6).map((l) => <Vizinho key={l.para} v={porId.get(l.para)} peso={l.peso} onIr={onIr} />)}</>}
+           {filhos.length > 0 && (
+             <>
+-              <div className="mc-rotulo">{d.tipo === 'etapa' ? 'Situações desta etapa' : 'Ensinamentos e achados ligados aqui'}</div>
+-              {[...filhos].sort((x, y) => y.usos7d - x.usos7d).slice(0, 14).map((f) => <Vizinho key={f.id} v={f} peso={f.tipo === 'achado' ? null : f.usos7d} rotuloPeso=" em 7d" onIr={onIr} />)}
++              <div className="mc-rotulo">{d.tipo === 'etapa' ? 'Situações desta etapa' : 'Ensinamentos, achados e propostas ligados aqui'}</div>
++              {[...filhos].sort((x, y) => y.usos7d - x.usos7d).slice(0, 14).map((f) => <Vizinho key={f.id} v={f} peso={f.tipo === 'achado' || f.tipo === 'aprendizado' ? null : f.usos7d} rotuloPeso=" em 7d" onIr={onIr} />)}
+             </>
+           )}
+         </div>
+@@ -362,7 +380,7 @@
+   const [selId, setSelId] = useState(null);
+   const [dica, setDica] = useState(null); // { no, x, y }
+   const [busca, setBusca] = useState('');
+-  const [tiposOn, setTiposOn] = useState({ etapa: true, categoria: true, ensinamento: true, achado: true });
++  const [tiposOn, setTiposOn] = useState({ etapa: true, categoria: true, ensinamento: true, achado: true, aprendizado: true });
+   const [pausado, setPausado] = useState(() => typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches);
+   const [toque, setToque] = useState(() => typeof window !== 'undefined' && !!window.matchMedia?.('(pointer: coarse)').matches);
+   // no celular o painel vira gaveta presa no rodape da tela (portal no body: a pagina tem transform da animacao de entrada,
+@@ -514,7 +532,7 @@
+         const rel = Math.min(1, (l.peso || 0) / (sim.maxPeso[l.tipo] || 1));
+         const c = controle(l.a, l.b, curvaDoTipo(l.tipo));
+         ctx.beginPath(); ctx.moveTo(sx(l.a.x), sy(l.a.y)); ctx.quadraticCurveTo(sx(c.x), sy(c.y), sx(l.b.x), sy(l.b.y));
+-        ctx.setLineDash(l.tipo === 'ensina' || l.tipo === 'achado' ? [4, 4] : []);
++        ctx.setLineDash(l.tipo === 'ensina' || l.tipo === 'achado' || l.tipo === 'aprendizado' ? [4, 4] : []);
+         if (l.tipo === 'etapa') {
+           const g = ctx.createLinearGradient(sx(l.a.x), sy(l.a.y), sx(l.b.x), sy(l.b.y));
+           g.addColorStop(0, l.a.cor); g.addColorStop(1, l.b.cor);
+@@ -523,6 +541,8 @@
+           ctx.strokeStyle = '#E2E8F0'; ctx.globalAlpha = fraco ? 0.03 : 0.08 + rel * 0.5; ctx.lineWidth = Math.max(0.6, (0.7 + rel * 3.2) * v.k);
+         } else if (l.tipo === 'pertence') {
+           ctx.strokeStyle = l.a.cor; ctx.globalAlpha = fraco ? 0.04 : 0.2; ctx.lineWidth = Math.max(0.5, 1 * v.k);
++        } else if (l.tipo === 'aprendizado') {
++          ctx.strokeStyle = COR_APRENDIZADO; ctx.globalAlpha = fraco ? 0.06 : 0.4 + 0.2 * Math.sin(t * 2); ctx.lineWidth = Math.max(0.8, 1.4 * v.k);
+         } else {
+           ctx.strokeStyle = l.tipo === 'achado' ? COR_ACHADO : COR_ENSINAMENTO;
+           ctx.globalAlpha = fraco ? 0.06 : l.tipo === 'achado' ? 0.35 + 0.3 * Math.sin(t * 4) : 0.55; ctx.lineWidth = Math.max(0.8, 1.4 * v.k);
+@@ -558,7 +578,7 @@
+       }
+ 
+       // ---- neuronios
+-      const ordem = ['etapa', 'categoria', 'ensinamento', 'achado'];
++      const ordem = ['etapa', 'categoria', 'ensinamento', 'achado', 'aprendizado'];
+       for (const tipo of ordem) {
+         for (const n of sim.nos) {
+           if (n.d.tipo !== tipo || !visivelNo(n)) continue;
+@@ -571,7 +591,7 @@
+           const disparou = disparo?.ids.includes(n.id);
+           // brilho
+           const gl = r * (n.d.tipo === 'etapa' ? 3.2 : 3.6) * (disparou ? 1.6 : 1);
+-          ctx.globalAlpha = fraco ? 0.05 : Math.min(1, (n.d.tipo === 'achado' ? 0.55 * pisca : 0.18 + hoje * 0.6 * respira) + (disparou ? 0.5 : 0));
++          ctx.globalAlpha = fraco ? 0.05 : Math.min(1, (n.d.tipo === 'achado' ? 0.55 * pisca : n.d.tipo === 'aprendizado' ? 0.35 + 0.25 * respira : 0.18 + hoje * 0.6 * respira) + (disparou ? 0.5 : 0));
+           ctx.drawImage(brilho(n.cor), x - gl / 2, y - gl / 2, gl, gl);
+           // corpo
+           ctx.globalAlpha = fraco ? 0.18 : n.d.tipo === 'ensinamento' && !n.d.ativo ? 0.55 : n.d.tipo === 'achado' ? 0.6 + 0.4 * pisca : 1;
+@@ -580,6 +600,7 @@
+           ctx.fillStyle = g;
+           if (n.d.tipo === 'ensinamento') hexagono(ctx, x, y, r);
+           else if (n.d.tipo === 'achado') triangulo(ctx, x, y, r);
++          else if (n.d.tipo === 'aprendizado') losango(ctx, x, y, r);
+           else { ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); }
+           ctx.fill();
+           if (n.d.tipo === 'etapa') {
+@@ -745,7 +766,7 @@
+   const disparar = useCallback((ids) => { estadoRef.current.disparo = { ids, ate: performance.now() + 2600 }; }, []);
+ 
+   const contagem = useMemo(() => {
+-    const c = { etapa: 0, categoria: 0, ensinamento: 0, achado: 0 };
++    const c = { etapa: 0, categoria: 0, ensinamento: 0, achado: 0, aprendizado: 0 };
+     for (const n of dados?.nos || []) c[n.tipo]++;
+     return c;
+   }, [dados]);
+@@ -799,6 +820,7 @@
+           {pctRoteiro != null && <span><b>{pctRoteiro}%</b> pelo roteiro</span>}
+           <span><b>{u.viaLivre}</b> na IA livre</span>
+           {dados.revisao && <span className="mc-resumo-alerta"><b>{dados.revisao.pendentes}</b> achados pra revisar</span>}
++          {dados.aprendizado?.pendente > 0 && <span className="mc-resumo-josy"><b>{dados.aprendizado.pendente}</b> propostas do jeito da Josy</span>}
+           {u.fonte !== 'rastro' && <span className="mc-resumo-alerta">contagem só pelo log ({u.erro || 'sem rastro'})</span>}
+           <button type="button" className="mc-icone" onClick={() => carregar(false)} title="Atualizar agora" aria-label="Atualizar agora"><RefreshCw size={14} className={carregando ? 'mc-gira' : ''} /></button>
+         </div>
+@@ -836,6 +858,7 @@
+         <span><span className="mc-forma mc-forma-categoria" /> situação que o robô reconhece — maior = mais usada em 7 dias</span>
+         <span><span className="mc-forma mc-forma-ensinamento" /> seu ensinamento</span>
+         <span><span className="mc-forma mc-forma-achado" /> achado da revisão piscando (esperando você)</span>
++        <span><span className="mc-forma mc-forma-aprendizado" /> proposta do jeito da Josy (esperando você; maior = mais vezes nas conversas)</span>
+         <span><span className="mc-pulso" /> pulsos = caminho real das conversas (mais pulsos, mais gente passou)</span>
+         <span>brilho pulsando = usado hoje</span>
+         <span className="mc-cores">{ETAPAS.map((e) => <span key={e}><span className="mc-ponto" style={{ background: COR_ETAPA[e] }} />{dados?.nos.find((n) => n.id === `etapa:${e}`)?.rotulo || e}</span>)}</span>

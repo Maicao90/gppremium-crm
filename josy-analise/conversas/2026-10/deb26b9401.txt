@@ -1,0 +1,31 @@
+CONVERSA deb26b9401 | contato: Rui Cezar | 14/10/2026 08:29 até 14/10/2026 14:19 | 16 msgs do cliente, 11 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[08:29] LOJA: Bom dia!
+[08:29] CLIENTE: Bom dia
+[08:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:30] CLIENTE: albumMessage
+[08:30] CLIENTE: [foto]
+[08:30] CLIENTE: [foto]
+[08:30] CLIENTE: [foto]
+[08:30] CLIENTE: [foto]
+[08:30] CLIENTE: associatedChildMessage
+[08:30] CLIENTE: associatedChildMessage
+[08:30] CLIENTE: associatedChildMessage
+[08:30] CLIENTE: associatedChildMessage
+[08:31] LOJA: [áudio] "Oi, bom dia, como é que o senhor está?"  {audio:midias/3EB0021DACA6031EA03482_265538.ogg}
+[08:31] LOJA: [áudio] "Qual que é mesmo sua caminhonete e de quantos pneus o senhor vai precisar, seu Rui?"  {audio:midias/3EB0A43653970DFF55D1EC_138164.ogg}
+[08:31] CLIENTE: [áudio] "Esse pneu tá num F1000, é pra um amigo meu aqui de Cristalina, que eu tô indo pra Luziânia, eu até peguei pneu essa semana no Maldiogo aí, ele precisa só de dois, ele estourou um desses aí, sabe? Aí vai pro dois novo."
+[08:31] CLIENTE: [áudio] "F1000 Carroceiro de Madeira, essa é a numeração que tá lá certinho, porque tinha comprado os 4."
+[08:34] LOJA: [foto]
+[08:34] LOJA: [áudio] "Hoje eu só tenho um pneu importado aqui, seu Rui. A unidade está por R$ 700,00 para o pagamento à vista."  {audio:midias/3EB02953762B9AF896572F_801869.ogg}
+[08:37] CLIENTE: [áudio] "Fala desse aí, você não tá tendo, não? Desce mais barato, você é caminhonete trabalhar."
+[08:40] LOJA: [áudio] "Aí, no caso, eu terei o 2, 4, 5, 70, 16."  {audio:midias/3EB0C08D9ACB8B7D0D5D5F_821503.ogg}
+[08:45] CLIENTE: [áudio] "Esse não, aí fica muito baixo. Eu vou ver coelho aqui, vou passar na loja dele e vou ver coelho."
+[09:02] LOJA: [áudio] "Dá jóia e passa aqui também, tá bom?"  {audio:midias/3EB0348CB8574EF64346D5_48664.ogg}
+[09:04] CLIENTE: 👍
+[09:05] LOJA: [foto]
+[13:23] LOJA: [áudio] "Sr. Rui, quer que eu reservo os pneus aqui para o senhor?"  {audio:midias/3EB0657F6EFF03507181D6_147985.ogg}
+[13:31] CLIENTE: [áudio] "Não, não, mas os pneus tem que ser daquela numeração, o dono quer daquelas numeração, o rapaz está querendo os pneus porque ele comprou de vocês já, ele queria daquelas numeração."
+[14:19] LOJA: [áudio] "Sim, sim. É, a numeração eu até te mandei aí que é a que eu tenho no momento que é o pneu importado. Então, quando eu tiver o pneu da GP Premium, aí eu aviso vocês, tudo bem?"  {audio:midias/3EB062D2CBA85AEC1D5F37_148762.ogg}

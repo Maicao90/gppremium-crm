@@ -1,0 +1,14 @@
+CONVERSA 4944f18402 | contato: José | 06/10/2026 11:34 até 06/10/2026 12:50 | 3 msgs do cliente, 5 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[11:34] LOJA: *Josy:*
+Bom dia!
+[11:34] LOJA: *Josy:*
+|Pode me enviar um áudio por gentileza|?
+[11:34] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:34] CLIENTE: [áudio] "Bom dia, deixa eu te falar, eu preciso do pneu 225-7516 para carga, você está tendo?"
+[11:41] LOJA: [áudio] "Não, infelizmente não estamos tendo, está em falta."  {audio:midias/3EB0F17C7F07111CF6390F_158902.ogg}
+[11:41] CLIENTE: [áudio] "Muito obrigado."
+[12:50] LOJA: [áudio] "O senhor, gostaria que assim que chegasse eu te informasse?"  {audio:midias/3EB00FB3616750A867C6D2_774337.ogg}

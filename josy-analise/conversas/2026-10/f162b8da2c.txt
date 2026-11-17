@@ -1,0 +1,45 @@
+CONVERSA f162b8da2c | contato: Valdemar | 15/10/2026 12:43 até 15/10/2026 13:39 | 18 msgs do cliente, 23 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[12:43] CLIENTE: Quanto que tá esse pneu?
+[12:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:47] LOJA: [foto]
+[12:47] LOJA: *Josy:*
+Digamos que seja a vista: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[12:47] LOJA: Bom dia, sr Valdemar!
+[12:47] CLIENTE: Esse da postagem de hj, 195/65 R15
+[12:47] LOJA: Isso
+[12:49] CLIENTE: Vou verificar uma coisa aqui, dois minutos
+[12:50] LOJA: Certo!
+[12:53] LOJA: Ooooi!
+[12:54] LOJA: Se passaram 4 minutos rsrs
+[12:54] LOJA: [áudio] "Oi, seu Valdemar, tudo bom? Como é que o senhor está? E aí, me diga, esse pneu te atende?"  {audio:midias/3EB0FA64CB90850CD86282_34157.ogg}
+[12:58] CLIENTE: Bom dia
+[12:58] CLIENTE: Tudo bem graças a Deus e vc?
+[12:58] CLIENTE: Eu tava precisando de dois
+[13:00] LOJA: [áudio] "Oi, seu Valdemar, por que você não aproveita a promoção? Porque olha só, comprando 3 pneus, né? Se for para o pagamento à vista, vai ficar por R$ 987,00. E aí, o senhor já garante mais um pneu para utilizar de estepe."  {audio:midias/3EB03F4484F5013D2CFF7F_918060.ogg}
+[13:02] LOJA: [áudio] "Mas, como o senhor pretende apenas adquirir duas unidades, eu vou fazer o seguinte, como à vista, o pneu é R$ 329,00, eu vou te dar aqui 10% de desconto, tá, a unidade vai ficar por R$ 296,00, se for no débito ou no Pix, eu vou te mandar aqui as opções de parcelamento, caso o senhor queira parcelares, tá bem?"  {audio:midias/3EB05D27F289A30F1390FD_725961.ogg}
+[13:02] LOJA: [foto]
+[13:04] CLIENTE: Blz
+[13:05] LOJA: [áudio] "Posso reservar aqui para o Senhor? Eu sou Valdemar."  {audio:midias/3EB091D940149954985F28_799346.ogg}
+[13:07] CLIENTE: Eu tô fazendo um orçamento
+[13:10] CLIENTE: 592 é muito dinheiro pra dois pneukkkkk
+[13:12] LOJA: Compreendo...
+[13:12] LOJA: Gostaria de parcelar?
+[13:13] CLIENTE: Não
+[13:31] CLIENTE: Se você fizer mais um desconto eu vou lá buscar daqui a pouco
+[13:31] CLIENTE: Vou pagar no pix
+[13:31] LOJA: [áudio] "Seu Valdemar, eu já tirei 10% de desconto, já ultrapassou a minha cota."  {audio:midias/3EB0714E0ABEE4C36C705C_446490.ogg}
+[13:32] LOJA: [áudio] "De 329 por 296 cada, já tirei 10% aí, já passei por cima do gerente."  {audio:midias/3EB0E84C50E2D9BDE1C38B_729077.ogg}
+[13:32] CLIENTE: Kjkkk
+[13:33] LOJA: [áudio] "Vou deixar eles separados aqui para o Senhor, tá bom?"  {audio:midias/3EB0E3414CBA6DE06516D2_308198.ogg}
+[13:33] CLIENTE: Problema é meu dinheiro que e pouco kk
+[13:33] LOJA: [áudio] "Ah, eu entendo, eu entendo, Sra. Valdemar."  {audio:midias/3EB0A9605E032EAC627822_847964.ogg}
+[13:34] LOJA: [áudio] "Qual que é mesmo o seu carro, seu Valdemar? Que eu tenho aqui também a opção do 185-65-15, que eu consigo fazer aqui por 250 cada. Aí fica por 500 reais os dois, o que que a senhora acha?"  {audio:midias/3EB0330E9D3C340FEADF8A_212930.ogg}
+[13:34] CLIENTE: Meu carro é um virtus
+[13:35] CLIENTE: Esse 185 é na altura ou é na largura
+[13:36] LOJA: 185 é largura, a diferença é de 1 cm
+[13:37] CLIENTE: Melhorou
+[13:38] CLIENTE: Mais tarde eu vou aí
+[13:39] LOJA: Blz

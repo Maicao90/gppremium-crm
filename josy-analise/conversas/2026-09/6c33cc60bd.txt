@@ -1,0 +1,34 @@
+CONVERSA 6c33cc60bd | contato: 😎 | 24/09/2026 13:59 até 09/10/2026 14:34 | 5 msgs do cliente, 13 da loja, 0 do robô
+
+--- 24/09/2026 (Thu) ---
+[13:59] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[13:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:00] CLIENTE: Tem 205/35 r 18
+[14:03] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[14:16] LOJA: *Josy:*
+🙋🏼‍♀️
+[14:16] LOJA: [áudio] "Olá, tudo bem com você? Eu consegui aqui um retorno da Delinte."  {audio:midias/3EB0D43AAB30E3345CBF98_587254.ogg}
+[14:16] LOJA: [foto]
+[14:16] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:11] LOJA: [áudio] "Essa opção te atende? Me dá um retorno, por gentileza, medir se pretende seguir com a negociação."  {audio:midias/3EB02BE43A5700636199A5_297042.ogg}
+[15:18] CLIENTE: Ta pesado o valor
+--- 09/10/2026 (Fri) ---
+[14:24] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[14:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:25] CLIENTE: 205 35 r 18  tem
+[14:25] LOJA: Preciso conferir se essa opção ainda está disponivel.
+[14:26] LOJA: Vou verificar com nossos distribuidores, assim que eles me responderem te informo. Tudo bem?
+[14:34] LOJA: [foto]
+[14:34] LOJA: Continua o mesmo preço.
+[14:34] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

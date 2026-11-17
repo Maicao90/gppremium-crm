@@ -1,0 +1,29 @@
+CONVERSA 0aff8970b5 | contato: Ricardo | 03/10/2026 11:21 até 03/10/2026 11:39 | 7 msgs do cliente, 13 da loja, 0 do robô
+
+--- 03/10/2026 (Sat) ---
+[11:21] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:21] CLIENTE: 205/70 R15 cravudo
+[11:22] LOJA: [áudio] "Olá, tudo bem com você? Eu sou a Josi e modelo cravudo, cravudo eu não tenho no dia de hoje. Eu tenho outras duas opções. Eu vou te mandar aqui um orçamento para ver se a tia tem, tá joia?"  {audio:midias/3EB0FA958B48E7231C4934_997383.ogg}
+[11:22] LOJA: [foto]
+[11:22] LOJA: *Josy:*
+
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:23] LOJA: pneu 205/70/15 96h cf2000 comforser 👇🏻
+[11:23] LOJA: [foto]
+[11:23] LOJA: *Josy:*
+205/70/15 GP Premium 👇🏻
+[11:23] LOJA: [foto]
+[11:27] CLIENTE: [áudio] "Não, é mais cravudo que esse daí. É tipo aquele no padrão da estrada, você sabe? Aquele padrão da estrada."
+[11:28] LOJA: [áudio] "Sim, sim, sei sim. E você mora aqui em Luziânia? Porque nesse modelo mais escravudo eu não tenho no momento, mas eu posso fazer uma cotação para você e se estiver em busca de alguma marca específica, você pode me falar."  {audio:midias/3EB076602A5E5A8126F66A_542225.ogg}
+[11:28] CLIENTE: [foto]
+[11:28] CLIENTE: Desse modelo
+[11:28] CLIENTE: [áudio] "Eu sou de Jardim Gá, entendeu? Mas aí dependendo, se puder até entregar, eu acho até melhor. Eu tô querendo 3 desses mesminho aí, entendeu? Pra ontem, moça, que eu tenho que fazer, levar o carro lá pra roça e ter que levar hoje pra roça."
+[11:30] LOJA: [áudio] "Ah, entendi, sim. Pertinho de nós, ainda bem."  {audio:midias/3EB096C00215B75DF5899A_973206.ogg}
+[11:30] LOJA: [áudio] "Pois é, eu não tenho eles aqui a pronta entrega, eu vou ver na segunda-feira se algum distribuidor meu vai ter, porque daí se ele tiver vai ser somente através de encomenda, tá? Eu farei isso pra você na segunda-feira e aí eu vou te explicando como que vai ser, porque daí pra fazer a retirada tem que ser aqui na nossa loja física mesmo, tá?"  {audio:midias/3EB006D20EC5843A9FDD1C_997840.ogg}
+[11:35] CLIENTE: Tinha que ser pra hj mulher
+[11:39] LOJA: *Josy:*
+Infelizmente não temos...
+[11:39] LOJA: [figurinha]

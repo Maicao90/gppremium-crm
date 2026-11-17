@@ -1,0 +1,33 @@
+CONVERSA b277d9c469 | contato: Dorcil Caixeta | 18/08/2026 09:13 até 18/08/2026 14:23 | 12 msgs do cliente, 19 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[09:13] CLIENTE: ?
+[09:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:23] CLIENTE: 235 70 16
+[09:37] LOJA: oi
+[09:37] CLIENTE: Oi
+[09:38] LOJA: você queria A/T?
+[09:38] LOJA: OPS T/A
+[09:39] LOJA: ATR ou H/T
+[09:41] CLIENTE: Brutos t/a
+[10:07] LOJA: [foto]
+[10:08] LOJA: [áudio] "Oi, seu docinho, boa tarde. Boa tarde não, bom dia. Obrigada por aguardar, tá? Eu vou dar continuidade aqui no seu atendimento. O Brutus, se for o 23570, ele continua no valor de 489 reais, se o seu pagamento for no débito ou fixo, tá joia?"  {audio:midias/3EB09D174C7083C666241B_757954.ogg}
+[10:08] LOJA: [foto]
+[10:54] CLIENTE: [áudio] "Beleza, tô indo aí pegar, tá? Daqui uma hora, uma hora e pouco. Você fecha aí pro almoço ou não? Eu tô em Cristalino, vou só buscar esses dois pneus. O pagamento deve ser de..."
+[10:54] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:55] CLIENTE: [áudio] "Tá bom, eu sei aonde fica aí. Daqui a pouquinho eu tô chegando aí e pego com você os pneus, viu? Muito obrigado pelo atendimento."
+[10:56] LOJA: [áudio] "Imagina que é isso! Estou aguardando o senhor aqui, tá bom?"  {audio:midias/3EB07D225424BEC2C643FC_37836.ogg}
+[10:57] CLIENTE: Blz
+[12:42] CLIENTE: Moça me tira uma dúvida esses pneus e remold ou n
+[12:42] LOJA: [áudio] "Sim, esse é o GP Premium, que é o pneu mais vendido que nós temos. Estava até observando aqui que já tem um bom tempo que nós conversamos a respeito desses pneus."  {audio:midias/3EB02EE8B5166E3746D3A4_944702.ogg}
+[12:44] CLIENTE: [áudio] "GPTREME quer dizer que é remolde ou não? Me esclarece um pouquinho melhor. Eu estou meio perdido."
+[12:44] LOJA: [áudio] "É sim, seu Dorcio, é o pneu ecológico que nós fazemos. Nós produzimos esse pneu. Ele vai entrar na categoria de remodelagem, sim, vai vir escrito na lateral do pneu, só que ele não tem nada a ver com os pneus remoldes convencionais."  {audio:midias/3EB076069F068536DA895F_952765.ogg}
+[12:45] CLIENTE: Temos indo ai
+[12:47] LOJA: Tá
+[12:47] LOJA: [vídeo]
+[12:48] LOJA: [foto]
+[12:49] CLIENTE: Blz
+[13:11] LOJA: [áudio] "Sr. Dorcil, o senhor já está vindo com a caminhonete, né? Aí já faz a instalação dos pneus aí para vocês."  {audio:midias/3EB0B6BB411E77CEF6158E_704825.ogg}
+[14:22] LOJA: Está a caminho?
+[14:23] LOJA: Vou aqui almoçar rapidinho e volto .

@@ -1,0 +1,59 @@
+CONVERSA 24d21b112d | contato: Nonato Melo | 26/09/2026 13:52 até 09/10/2026 12:49 | 13 msgs do cliente, 19 da loja, 0 do robô
+
+--- 26/09/2026 (Sat) ---
+[13:52] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[13:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:52] CLIENTE: 225/50/18 qual valor
+[13:53] CLIENTE: Toyota Corolla Cross
+--- 28/09/2026 (Mon) ---
+[08:10] LOJA: *Josy:*
+Bom dia!
+[08:11] LOJA: *Josy:*
+Pode por gentileza, me informar a medida dos pneus?
+[08:19] CLIENTE: Aqui
+[08:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:19] CLIENTE: 225/50/18 qual valor
+[08:19] LOJA: [foto]
+[08:19] LOJA: *Josy:*
+para mim, não estava aparecendo a medida.
+[08:20] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[08:20] CLIENTE: Vocês têm Dunlop
+[08:20] CLIENTE: !
+[08:20] CLIENTE: Pode sim!!👍
+[09:57] LOJA: *Josy:*
+Consegui apenas uma marca importada.
+[09:57] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:57] LOJA: [foto]
+[09:58] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[10:21] CLIENTE: [áudio] "Josu, vocês não têm pneu de um móvel aí, não? Porque o meu carro é de um móvel, eu quero trocar dois."
+[10:26] LOJA: [áudio] "Olá, bom dia, tudo bem? Você mora aqui em Luziânia mesmo? Que eu estou aguardando a resposta aqui do distribuidor."  {audio:midias/3EB0A95599F9F2563670EE_585933.ogg}
+[10:45] CLIENTE: Sim
+[10:47] LOJA: *Josy:*
+ainda aguardando a resposta está bem!
+[14:53] LOJA: *Josy:*
+Consegui retorno da Dunlop
+[14:53] LOJA: [foto]
+[14:53] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:37] LOJA: [áudio] "Olá, tudo jóia? Seu Nanato, eu te encaminhei o orçamento mais cedo e gostaria de saber se pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB09B287463425B301551_582526.ogg}
+[16:51] CLIENTE: Ok obrigado
+[16:52] CLIENTE: Muito caro
+[17:01] LOJA: *Josy:*
+O importado não te atende?
+--- 09/10/2026 (Fri) ---
+[12:49] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[12:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

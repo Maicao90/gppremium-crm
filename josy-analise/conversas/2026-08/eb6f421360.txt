@@ -1,0 +1,17 @@
+CONVERSA eb6f421360 | contato: 👍🏻 | 17/08/2026 13:34 até 17/08/2026 14:53 | 6 msgs do cliente, 7 da loja, 0 do robô
+
+--- 17/08/2026 (Mon) ---
+[13:34] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:35] CLIENTE: 265/60/18
+[13:42] LOJA: [foto]
+[13:42] LOJA: Esse é o do anuncio na linha GP Premium
+[13:43] CLIENTE: Vc tem Bridgestone
+[13:43] CLIENTE: ?
+[13:45] LOJA: seria o H/T mesmo né
+[13:46] LOJA: eu vou conferir
+[13:46] CLIENTE: Acredito que sim
+[14:36] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Eu me chamo Josi. Quando possível me desculpe seu nome. Você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB00654F8F32AEFC88C56_737939.ogg}
+[14:37] CLIENTE: [áudio] "Pois é, agora que eu fui ver, achei que era Goiânia, depois que era 61."
+[14:53] LOJA: [áudio] "Isso, isso mesmo. Nós somos aqui de Luziânia. E o da Bridgestone, aqui, ao não disponho dele, é pronta entrega. Então, né, e justamente por isso eu te perguntei."  {audio:midias/3EB0170005052C64942797_202926.ogg}

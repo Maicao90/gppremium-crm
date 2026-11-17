@@ -1,0 +1,13 @@
+CONVERSA 1adf152b51 | contato: Ronivon | 18/09/2026 14:26 até 18/09/2026 14:31 | 5 msgs do cliente, 4 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[14:26] CLIENTE: Boa tarde
+[14:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:26] CLIENTE: Pneu 205 /70/15 para trilha
+[14:27] LOJA: [áudio] "Olá, Ronivon. Tudo jóia? Joseca falando. Você tem foto do pneu no modelo que você está precisando para poder me mostrar?"  {audio:midias/3EB026BE1578DDBA2451A6_362896.ogg}
+[14:28] CLIENTE: [foto]
+[14:29] CLIENTE: [áudio] "Boa tarde. Pode ser nesse estilo aí. Se tiver alguma de algum outro formato, pode me mandar as imagens se servir, mas é mais ou menos nesse sentido aí, nesse estilo aí, tá bom?"
+[14:30] LOJA: [áudio] "Não, desses recapados aí, nós não trabalhamos, não."  {audio:midias/3EB080D7490FBDDE1BCC9E_65681.ogg}
+[14:30] CLIENTE: [áudio] "Certo. Tem o original que seja borrachudo? Ou remold, alguma... algo assim, desse estilo?"
+[14:31] LOJA: [áudio] "Então, os meus, eles acabaram no momento, mas eu estou aguardando aqui a resposta dos meus distribuidores, porque se eu conseguir, vai ser somente por encomenda, tá? O senhor mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB0B4FDCE027442410662_184470.ogg}

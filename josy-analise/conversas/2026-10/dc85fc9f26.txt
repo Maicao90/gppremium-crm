@@ -1,0 +1,29 @@
+CONVERSA dc85fc9f26 | contato: Magalhaes | 21/10/2026 09:11 até 21/10/2026 15:39 | 4 msgs do cliente, 10 da loja, 2 do robô
+
+--- 21/10/2026 (Wed) ---
+[09:11] LOJA: Bom dia!
+[09:11] LOJA: Como posso ajudar?
+[09:12] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[09:12] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[09:13] CLIENTE: Bom dia preço do pneu 225 65 17
+[09:14] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Me dá só um instante que eu estou realizando o seu orçamento, está bem? Você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB07377B2C77BBC6EC0F7_383560.ogg}
+[09:15] CLIENTE: Moro no gama
+[09:17] LOJA: [foto]
+[09:17] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:35] ROBÔ: 🙋🏼‍♀️
+[12:35] LOJA: [áudio] "O senhor tem a disponibilidade de vir até aqui a nossa loja em Luziânia?"  {audio:midias/3EB08192F6DAFE3F470FB5_686996.ogg}
+[12:36] CLIENTE: [áudio] "Pô, minha amiga, eu vou sim, mas eu tenho que esperar a minha folga, né, aí para a semana eu vou tirar a folga semana que vem, acho que é quarta-feira de semana que vem, aí eu vou dar um pulinho aí, tá bom?"
+[12:37] LOJA: [áudio] "Sim, perfeito, seu Magalhães. Eu vou te mandar aqui então a nossa localização, tá bom?"  {audio:midias/3EB0A600DC760EB436AA93_131851.ogg}
+[15:38] ROBÔ: 🙋🏼‍♀️
+[15:39] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:39] LOJA: [foto]

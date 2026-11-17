@@ -1,0 +1,106 @@
+
+# [t1#1] 185/65/15 cotado -> "aro 16" (185/65/16 nao existe: pede a medida com a lista)
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["pedir_medida_do_aro"] estado=aguardando_medida dados={}
+  > Na 185/65 eu não tenho aro 16.
+  > Qual é a medida completa do seu pneu aro 16? No aro 16 eu tenho 195/55/16, 205/55/16, 205/60/16 e 215/65/16.
+
+# [t1#2] 185/65/15 cotado -> "aro 16" (185/65/16 nao existe: pede a medida com a lista)
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["pedir_medida_do_aro"] estado=aguardando_medida dados={}
+  > Na 185/65 eu não tenho aro 16.
+  > Qual é a medida completa do seu pneu aro 16? No aro 16 eu tenho 195/55/16, 205/55/16, 205/60/16 e 215/65/16.
+
+# [t2#1] 185/65/15 cotado -> "e aro 16?"
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["pedir_medida_do_aro"] estado=aguardando_medida dados={}
+  > Na 185/65 eu não tenho aro 16.
+  > Qual é a medida completa do seu pneu aro 16? No aro 16 eu tenho 195/55/16, 205/55/16, 205/60/16 e 215/65/16.
+
+# [t2#2] 185/65/15 cotado -> "e aro 16?"
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["pedir_medida_do_aro"] estado=aguardando_medida dados={}
+  > Na 185/65 eu não tenho aro 16.
+  > Qual é a medida completa do seu pneu aro 16? No aro 16 eu tenho 195/55/16, 205/55/16, 205/60/16 e 215/65/16.
+
+# [t3#1] 195/55/15 cotado -> "aro 16" (195/55/16 existe: cota)
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [t3#2] 195/55/15 cotado -> "aro 16" (195/55/16 existe: cota)
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [t4#1] 195/55/15 cotado -> "e aro 16?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [t4#2] 195/55/15 cotado -> "e aro 16?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [t5#1] 205/60/15 cotado -> "tem aro 16?" (205/60/16 existe)
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"205/60/16"}
+  > Temos o pneu *205/60/16* da marca *GP Premium* está saindo por *R$ 329,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [t5#2] 205/60/15 cotado -> "tem aro 16?" (205/60/16 existe)
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"205/60/16"}
+  > Temos o pneu *205/60/16* da marca *GP Premium* está saindo por *R$ 329,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [t6#1] 175/70/13 cotado (4 pneus) -> "e no aro 14?" (175/70/14 existe, mantem quantidade)
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"175/70/14"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *175/70/14* da marca *GP Premium* está saindo por *R$ 279,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [t6#2] 175/70/13 cotado (4 pneus) -> "e no aro 14?" (175/70/14 existe, mantem quantidade)
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"175/70/14"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *175/70/14* da marca *GP Premium* está saindo por *R$ 279,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [t7#1] cliente antigo sem estado: preco 185/65/15 no historico -> "e aro 16?"
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["pedir_medida_do_aro"] estado=aguardando_medida dados={}
+  > Na 185/65 eu não tenho aro 16.
+  > Qual é a medida completa do seu pneu aro 16? No aro 16 eu tenho 195/55/16, 205/55/16, 205/60/16 e 215/65/16.
+
+# [t7#2] cliente antigo sem estado: preco 185/65/15 no historico -> "e aro 16?"
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["pedir_medida_do_aro"] estado=aguardando_medida dados={}
+  > Na 185/65 eu não tenho aro 16.
+  > Qual é a medida completa do seu pneu aro 16? No aro 16 eu tenho 195/55/16, 205/55/16, 205/60/16 e 215/65/16.
+
+# [t8#1] 185/65/15 cotado -> "aro 19" (nenhuma medida aro 19)
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["pedir_medida_do_aro"] estado=aguardando_medida dados={}
+  > Na 185/65 eu não tenho aro 19.
+  > Qual é a medida completa do seu pneu aro 19?
+
+# [t8#2] 185/65/15 cotado -> "aro 19" (nenhuma medida aro 19)
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["pedir_medida_do_aro"] estado=aguardando_medida dados={}
+  > Na 185/65 eu não tenho aro 19.
+  > Qual é a medida completa do seu pneu aro 19?
+
+# [t9#1] mesmo aro: 185/65/15 cotado -> "aro 15?" (nao muda nada)
+  http=200 via=ia_livre acao=undefined chaves=[] estado=preco_confirmado dados={"medida":"185/65/15"}
+  > Sim, o 185/65/15 é aro 15, o último número da medida é o aro da roda.
+  > Quantos pneus você precisa? Já me diz quando consegue vir até a loja.
+
+# [t9#2] mesmo aro: 185/65/15 cotado -> "aro 15?" (nao muda nada)
+  http=200 via=ia_livre acao=undefined chaves=[] estado=preco_confirmado dados={"medida":"185/65/15"}
+  > Sim, esse 185/65/15 é aro 15, o último número da medida é justamente o aro da roda.
+  > Quantos pneus você precisa? Assim já te passo o total e você me diz quando consegue vir até a loja.
+
+# [t10#1] sem preco antes: "aro 16" sozinho (continua "Show, aro 16!")
+  http=200 via=fluxo acao=PEDIR_CARRO chaves=["aro_sem_medida"] estado=sem_estado dados={}
+  > Show, aro 16! 👍
+  > Qual é o carro? Já te passo a medida certa e o valor.
+
+# [t10#2] sem preco antes: "aro 16" sozinho (continua "Show, aro 16!")
+  http=200 via=fluxo acao=PEDIR_CARRO chaves=["aro_sem_medida"] estado=sem_estado dados={}
+  > Show, aro 16! 👍
+  > Qual é o carro? Já te passo a medida certa e o valor.

@@ -1,0 +1,32 @@
+CONVERSA 59ac4fe343 | contato: Vilmar Meireles | 03/09/2026 09:41 até 03/09/2026 09:47 | 7 msgs do cliente, 13 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[09:41] CLIENTE: Oi Bom dia
+[09:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:42] LOJA: *Josy:*
+Bom dia, sr Vilmar
+[09:42] LOJA: *Josy:*
+Como vai?
+[09:42] LOJA: *Josy:*
+Muito bom...
+[09:42] LOJA: *Josy:*
+Como posso te ajudar?
+[09:42] CLIENTE: Comprei dois pneus ai
+[09:43] CLIENTE: To precisando de mais 2 pra colocar na frente da camionete
+[09:43] CLIENTE: Qual valor
+[09:43] LOJA: *Josy:*
+Muito bom... me passa seu CPF só para eu confirmar o modelo dos pneus, pode ser?
+[09:43] CLIENTE: 599.008.061-15
+[09:43] LOJA: *Josy:*
+Encontrei...
+[09:44] LOJA: *Josy:*
+Temos sim!
+[09:44] LOJA: *Josy:*
+265/70/16
+[09:45] LOJA: [áudio] "Oi, seu Vilmar, tudo jóia? Da vez passada, o senhor comprou aqui, o senhor parcelou em 4 vezes, né? Então, em 4 vezes, se o senhor for realizar o pagamento, permanece tudo igual. A unidade, 591 reais. Se o senhor trouxer o pagamento em dinheiro, dá pra fazer aqui a unidade por 530 reais."  {audio:midias/3EB0F0F1EF2E0BFCF44FCC_703025.ogg}
+[09:45] LOJA: [áudio] "É esse valor de 530 no dinheiro mesmo, tá?"  {audio:midias/3EB0D52E4BEDBE082454C2_101242.ogg}
+[09:46] CLIENTE: Esta bom vcs trabalha no sábado?
+[09:46] LOJA: [áudio] "Sim, trabalhamos sim. Abrimos a loja aqui às 8 da manhã e encerraremos o expediente ao meio-dia."  {audio:midias/3EB06EBF7549D6D366A734_292841.ogg}
+[09:47] CLIENTE: [áudio] "Tá bom, se não der pra mim amanhã, hoje tá complicado. Se não der pra mim amanhã, eu vou no sábado de manhã."
+[09:47] LOJA: [áudio] "Beleza, ficamos combinados, se eu ver uma A."  {audio:midias/3EB099F83705474FDF3915_313867.ogg}

@@ -1,0 +1,44 @@
+CONVERSA 2cf79392ed | contato: Namir | 19/08/2026 11:23 até 21/08/2026 14:50 | 13 msgs do cliente, 25 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[11:23] LOJA: Bom dia!
+[11:23] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:25] CLIENTE: Obrigada
+[11:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:26] LOJA: [áudio] "Olá, tudo bem com a senhora? Acabou de ligar aqui para mim, tá? Vou colocar aqui como é que fica o pagamento dos pneus que a senhora estava falando comigo."  {audio:midias/3EB0A51E67675A3F6DBC41_347637.ogg}
+[11:26] LOJA: 8 parcelas de 65,50
+[11:27] CLIENTE: Qual a marca do pneu
+[11:27] LOJA: GP Premium
+[15:17] LOJA: Oi
+[15:17] LOJA: Posso separar os pneus aqui para vocês?
+[15:21] CLIENTE: [áudio] "É, deixa eu te falar, nós resolveu, nós vai querer os 4. Aí, os 4, aí você passa ele no cartão e outra, nós vai aí sexta-feira, eu não sei o horário, mas é sexta, que nós vai lá no Parque Alvorada e passa por aí, pode ser?"
+[15:22] LOJA: [áudio] "Claro que pode, pode sim, tá bom?"  {audio:midias/3EB041257F6122EBD29CFA_493649.ogg}
+[15:22] LOJA: [áudio] "Eu vou mandar a foto aqui da nossa loja certinho pra vocês verem como que é, tá?"  {audio:midias/3EB03CA8E5E842C85D227D_429380.ogg}
+[15:22] CLIENTE: [áudio] "Porque na BR, né? Aí, é... É perto de uma parada? Aí, é... Nós vai querer os quatro. Porque só dois, mas não vai resolver muita coisa, nada."
+[15:23] LOJA: [foto]
+[15:24] LOJA: [áudio] "Aqui é a fábrica GP Premium, fica do lado do Hotel Goiás, da Goiás Diesel."  {audio:midias/3EB09143D1C71666B35078_67930.ogg}
+[15:24] CLIENTE: [áudio] "Qualquer coisa nós acha aí, bota no GPS, nós acha o rumo, tá bom?"
+[15:25] LOJA: [áudio] "Ah, gostei demais da senhora. Desenrolada."  {audio:midias/3EB0B005F8A2D21758299B_951747.ogg}
+[15:25] CLIENTE: [áudio] "Ab!"
+[15:27] LOJA: [áudio] "Adorei, sério mesmo. A senhora vem mesmo, que eu tenho o último jogo desses pneus. Eu vou reservar eles aqui para a senhora."  {audio:midias/3EB030DFA8CF3D05F51E9B_295807.ogg}
+[15:28] CLIENTE: [áudio] "Reservar eles aí que nós vai. Tem os dois ou tem quatro?"
+[15:28] LOJA: [áudio] "Os 4, é o jogo que eu já estou reservando aqui para a senhora, porque esses pneus eles vendem demais a conta, e agora não sei quando é que eu vou ter eles de novo, então já vou reservar eles exclusivamente para vocês."  {audio:midias/3EB0D56E2A1825B70296FA_460170.ogg}
+[15:29] CLIENTE: [áudio] "Bom, pode aguardar ele aí que sexta-feira nós aparece aí, tá bom? Aí nós vai."
+[15:29] LOJA: Ok!
+[15:37] LOJA: Reservados.
+[15:38] CLIENTE: Blz
+[15:38] CLIENTE: Obrigada
+--- 21/08/2026 (Fri) ---
+[12:27] LOJA: [áudio] "Oi Namir, boa tarde, tudo bem com você? Josi aqui da Pneus GP Premium falando. Eu estou entrando em contato para saber se a senhora vai conseguir vir aqui hoje."  {audio:midias/3EB0754CFDA35AEBDBA8E0_631712.ogg}
+[14:13] LOJA: Sim... hoje até as 6
+[14:13] LOJA: [áudio] "Olá, boa tarde. Como é que a senhora está? Sim, pode ser amanhã também. Amanhã vou abrir a loja 8 horas da manhã e vou fechar meio-dia, tá bom?"  {audio:midias/3EB029AD8D980A7322C0DF_484691.ogg}
+[14:14] CLIENTE: [áudio] "Tá bom, porque eu fui trabalhar e esqueci de falar para o homem. Aí, quando eu cheguei, eu falei, nossa, eu tenho que ligar para o homem levar o carro. Aí, ele ligou, mas ele já não estava. Eu não sei nem aonde estava de gameleira. Não sei se é longe, se é perto. Ele vai demorar ou não. E, deixa eu te falar, os quatro pneus vai dar quanto? Os quatro, porque eu falei que queria só dois, né? Depois resolvi querer os quatro."
+[14:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:17] LOJA: [áudio] "Igual a senhora falou que queria em 8 vezes, né? Os 4 pneus ficarão 8 de R$ 131,00. Mas se a senhora quiser, a gente negocia aí."  {audio:midias/3EB0434EF47CFED06B6D5E_845527.ogg}
+[14:21] CLIENTE: [áudio] "Moça, deixa uns 4 por mil, não pode não? Tem que estar feio, minha filha. A gente que ajuda vocês, vocês ajudam a gente, que aí nós vamos pegar e arrumar aí o negócio aí. Você pode fazer isso para nós?"
+[14:31] LOJA: [áudio] "Se for à vista, dá pra fazer mil reais."  {audio:midias/A5231732482B684C87C2C8CDBCFBE380_773105.ogg}
+[14:31] LOJA: [áudio] "Mas, para poder te ajudar, esse valor aí de 8 vezes eu parcelo umas 10 para a senhora, pode ser?"  {audio:midias/A5B20643A81F5F77953ECB3D99491056_905920.ogg}
+[14:48] CLIENTE: [áudio] "De 131, 8 vezes é no cartão, né? Aí, sem como for em 6 e ver quantos que dá em 6, vai ficar mais pouco, mais pouco prestação, que à vista eu não dou quanto pagar, mas também prestação muito longa, fica ruim."
+[14:50] LOJA: [áudio] "Tem 6, vai ficar 6 de 172 reais os 4 pneus."  {audio:midias/A525DF4B7CCE5B34A14AB6991C0B1E59_292937.ogg}

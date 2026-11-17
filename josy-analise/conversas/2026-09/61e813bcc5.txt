@@ -1,0 +1,27 @@
+CONVERSA 61e813bcc5 | contato: 🥂 | 18/09/2026 06:38 até 18/09/2026 18:19 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[06:38] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[06:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[06:38] CLIENTE: 14
+[08:18] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Você só pode confirmar para mim qual é a medida certinha que você precisa ou então me diz qual é o seu carro que eu verifico aqui pela medida original."  {audio:midias/3EB0E3C4B055C1E880081C_37301.ogg}
+[08:18] LOJA: *Josy:*
+Porque tem 165/70/14...175/65/14...175/70/14...185/60..185/65..185/70...
+[08:40] LOJA: *Josy:*
+🙋🏼‍♀️
+[08:45] CLIENTE: Bom dia
+[08:45] CLIENTE: Seria o peugeout 206
+[08:46] LOJA: [foto]
+[08:46] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[18:14] LOJA: [áudio] "Olá, boa noite."  {audio:midias/3EB062BC6E11E3C99F8FD1_111912.ogg}
+[18:14] LOJA: [vídeo]
+[18:18] CLIENTE: Estou fazendo alguns orçamentos no momento,assim que tiver um retorno envio msg pra vc,muito obrigada :)
+[18:19] LOJA: *Josy:*
+Perfeito, então vou encerrar seu atendimento para não encher seu whatsapp de mensagem.                                                                                                                   Se precisar futuramente é só chamar. Ou se possivel, venham até nossa loja.                                                                                                  Obrigada 👋🏻
+[18:19] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

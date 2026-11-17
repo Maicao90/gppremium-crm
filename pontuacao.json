@@ -1,0 +1,15 @@
+{"titulo" : "Campanha de outubro — stories, avaliações e agendamentos", "de" : "2026-10-01", "ate" : "2026-10-21", "premios" : [300, 200, 100], "pontos" : {"story" : 1, "google" : 3, "agendamento" : 1}, "atualizadoEm" : "21/10/2026 (grupo Posts/Avaliações de 07/10 a 21/10)",
+ "juntar" : {"f6d02332-a2ce-45d7-8af2-0297f855ef64" : "750cdab9-1edd-43b9-9543-18b2f8b7c229"},
+ "ocultar" : ["6b016cfc-6cbf-4356-a10c-a3a5aaf30a65"],
+ "nomes" : {"750cdab9-1edd-43b9-9543-18b2f8b7c229" : "Daniel/Diogo"},
+ "lancamentos" : {
+  "f6d02332-a2ce-45d7-8af2-0297f855ef64" : {"nome" : "Diogo ", "stories" : 0, "google" : 0},
+  "6b016cfc-6cbf-4356-a10c-a3a5aaf30a65" : {"nome" : "Borracharia", "stories" : 0, "google" : 0},
+  "0533e6e3-53f1-4282-b2c2-67bfe7867b0f" : {"nome" : "José Ângelo", "stories" : 43, "google" : 11},
+  "366b379c-51a3-4d2b-ac6b-f35e38e91272" : {"nome" : "Alan machado", "stories" : 4, "google" : 0},
+  "49d44c1c-8333-4624-833c-9a581f04f1cd" : {"nome" : "Marina Elen", "stories" : 1, "google" : 0},
+  "c413f46a-b467-4bec-950c-e2b03ddb34f0" : {"nome" : "Ana Paula ", "stories" : 1, "google" : 1},
+  "750cdab9-1edd-43b9-9543-18b2f8b7c229" : {"nome" : "Daniel/Diogo (Super Via)", "stories" : 16, "google" : 12},
+  "34268c16-7bed-400a-bf1e-a3d9e37d8774" : {"nome" : "josy", "stories" : 49, "google" : 23},
+  "60e58df4-8f3a-4493-94a6-11953546e826" : {"nome" : "Camila Louseiro", "stories" : 51, "google" : 12}
+ }}

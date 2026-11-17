@@ -1,0 +1,36 @@
+CONVERSA fa78b7e539 | contato: deliomattosp | 10/10/2026 08:44 até 10/10/2026 09:12 | 15 msgs do cliente, 12 da loja, 0 do robô
+
+--- 10/10/2026 (Sat) ---
+[08:44] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[08:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:44] CLIENTE: 195/55/16
+[08:44] CLIENTE: Qual valor ?
+[08:45] CLIENTE: Vcs tem quais marcas ?
+[08:52] LOJA: Bom dia!
+[08:54] LOJA: [foto]
+[08:54] LOJA: No dia de hoje temos essas 2  opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:58] CLIENTE: [áudio] "O pneu à vista, R$ 259,00, correto? Parcelado em 10 vezes, R$ 290,00. E essa promoção de vocês aí, que leve 4, pague 3. Tem nessa situação também? Ou é o pneu específico?"
+[09:02] LOJA: [áudio] "A promoção Compre 3 e Leve 4 é para medida 195-65-15, o pneu de R$ 329,00 e R$ 215,55-17, que é o pneu de R$ 395,00. De todo modo, o pneu da marca GP Premium, na medida que você está buscando, está em um excelente preço. O valor normal deles é R$ 299,00 e esse mês ele está na oferta por R$ 259,00 apenas."  {audio:midias/3EB0BC4D5C3EABCD17E545_639627.ogg}
+[09:03] CLIENTE: Tá bom
+[09:03] CLIENTE: Muito obrigado
+[09:05] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB03F8ADA2AA847C2ED6B_864729.ogg}
+[09:06] CLIENTE: Não
+[09:06] CLIENTE: Ocidental
+[09:06] CLIENTE: [áudio] "Não, moro na Ocidental. Eu vi aqui no anúncio aqui, liguei e pensei que era essa minha marca também, essa minha medida aí também, né? 16, 195, 55, 16. Porque se fosse, eu ia trocar hoje mesmo. Entendeu? Estou precisando."
+[09:06] CLIENTE: Leve 4
+
+Pague 3
+[09:07] CLIENTE: [áudio] "E como é que funciona o alinhamento, balanceamento de vocês e a montagem? Esse valor aí é R$ 259 e as coisas, é grátis ou é adicional?"
+[09:09] LOJA: [áudio] "Entendo. Mas, igual eu te falei, são para pneus bem mais caros. Nossa, por exemplo, esse de 395, é R$ 1.185,00 de pneu. Então, assim, são para os pneus enormes, né? E essa promoção compre 3, leve 4. Mas, de todo modo, se você fizer a conta de um pneu, que ele é R$ 299,00, e este mês você vai pagar apenas R$ 259,00 a vista, Nossa! É uma diferença, assim, uma ajuda imensa para o cliente. Então, assim, o pneu, na medida que você está precisando, está numa super oferta, tá? E super baratíssimo."  {audio:midias/3EB03572A357B4C25C8E08_112667.ogg}
+[09:10] CLIENTE: [áudio] "Eu estou te entendendo, mas você tem outro pneu aí que entra naquela promoção lá? Leve 4, pague 3? De marca conhecida? É isso? Ou 16 não existe na promoção?"
+[09:10] LOJA: [áudio] "Moço, conforme eu te expliquei, é 195-6515 e 215-55-17, que são da promoção Compre 3 e Leve 4."  {audio:midias/3EB04E82FE10FFD1E03FEB_138062.ogg}
+[09:11] CLIENTE: Obrigado
+[09:11] CLIENTE: Passar bem !
+[09:11] LOJA: Os pneus da promoção compre 3 e leve 4 são pneus da marca GP Premium na medida 195/65/15
+[09:12] LOJA: Você também, meu querido!
+[09:12] LOJA: Bom final de semana.

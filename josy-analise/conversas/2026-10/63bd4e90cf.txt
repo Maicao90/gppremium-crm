@@ -1,0 +1,26 @@
+CONVERSA 63bd4e90cf | contato: Horlando | 21/10/2026 11:21 até 21/10/2026 17:50 | 7 msgs do cliente, 8 da loja, 6 do robô
+
+--- 21/10/2026 (Wed) ---
+[11:21] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[11:21] ROBÔ: Oi, tudo bem?
+[11:21] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[11:22] CLIENTE: [foto]
+[11:22] CLIENTE: Aro 15
+[11:22] ROBÔ: Beleza, aro 15! 👍
+[11:22] ROBÔ: Pra eu te passar o valor certinho, me diz o *modelo do seu carro* ou os números da lateral do pneu (ex.: 195/65/15).
+[11:22] LOJA: 🙋🏼‍♀️
+[11:45] CLIENTE: GM Cobalt
+[11:46] CLIENTE: 15 195 60
+[11:47] LOJA: Pode por 195/65/15, inclusive está na promoção compre 3 e leve 4!
+[11:55] LOJA: [foto]
+[11:55] LOJA: [foto]
+[11:55] LOJA: Pneus da marca GP Premium
+[11:56] LOJA: Digamos que seja a vista: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[12:17] CLIENTE: Tudo bem, obrigado
+[12:18] ROBÔ: Tranquilo! Qualquer dúvida ou se quiser fechar, é só me chamar por aqui.
+[12:18] CLIENTE: Combinado
+[12:19] LOJA: Mora aqui em Luziania-Go mesmo?
+[15:24] ROBÔ: 🙋🏼‍♀️
+[17:50] LOJA: [áudio] "Sr. Orlando, o senhor mora aqui na cidade de Luziânia mesmo? E olha, se os senhores estiverem em busca de alguma marca específica, o senhor pode me falar que eu verifico, tá bom?"  {audio:midias/3EB00BAA62159A1814E2F5_504181.ogg}

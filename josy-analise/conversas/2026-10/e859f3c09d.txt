@@ -1,0 +1,26 @@
+CONVERSA e859f3c09d | contato: Raimundo | 16/10/2026 12:05 até 16/10/2026 13:18 | 10 msgs do cliente, 12 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[12:05] LOJA: Boa tarde!
+[12:05] CLIENTE: 🙌🏽🙌🏽boa tarde🤝
+[12:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:05] CLIENTE: Tem um excelente almoço 🙌🏽🙌🏽
+[12:08] LOJA: Vou só após as 13:00, mas obrigada! Para tí também.
+[12:20] LOJA: Raimundo... acabaram de me entregar o laudo do pneu.
+[12:20] CLIENTE: Por nada obrigado 🙌🏽🙌🏽
+[12:21] LOJA: Houve um corte no pneu.
+[12:21] CLIENTE: Mas não  é minha culpa
+[12:22] CLIENTE: Mas tarde na garantia 👍🏻😟
+[12:22] LOJA: Entendo, você  está certo. Mas também não é defeito do pneu.  Retorna aqui para conversarmos pessoalmente, está bem!
+[12:22] LOJA: Te aguardamos.
+[12:24] CLIENTE: [áudio] "O menino aqui da borracharia falou que deve ser a malha de aço. A malha de aço que veio fraca, né? Que coisa, né? Defeito de fábrica, eu acho."
+[12:24] LOJA: Retorna aqui para conversarmos pessoalmente, está bem!!
+[13:14] LOJA: 🙋🏼‍♀️
+[13:14] CLIENTE: Oi
+[13:15] CLIENTE: Secagem que esta fazendo comigo
+[13:15] LOJA: Retorna aqui para conversarmos pessoalmente, está bem!!
+[13:15] CLIENTE: Está na garantia
+[13:15] LOJA: Retorna aqui para conversarmos pessoalmente, está bem!!
+[13:16] CLIENTE: Você  esta si agora
+[13:18] LOJA: Sim, e o tecnico tambem.

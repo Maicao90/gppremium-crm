@@ -1,0 +1,30 @@
+CONVERSA 4fbbd1349c | contato: Marciano Sousa | 14/10/2026 10:41 até 15/10/2026 17:56 | 7 msgs do cliente, 15 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[10:41] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[10:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:41] CLIENTE: Pneus cargo aro 14 vcs tem?
+[10:43] LOJA: Está em falta no momento, tanto 175/70/14 C quanto 185r14C
+[10:44] CLIENTE: Ok
+--- 15/10/2026 (Thu) ---
+[08:51] LOJA: Bom dia, você mora aqui em Luziânia-Go?
+[08:51] CLIENTE: Val
+[08:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:51] LOJA: Ah, sim!
+[08:51] LOJA: Se for pneu para Kombi, acabou de chegar!
+[08:56] CLIENTE: Não é para Strada adventure
+[09:00] LOJA: Transporta muita carga?
+[09:00] LOJA: Pois dependendo, teremos pneus normais 175/70/14
+[09:03] CLIENTE: [áudio] "Não, mas é porque eu tenho dois traseiros dele, que é aquele modelo cargo, entendeu? Eu queria colocar os dois da frente cargo também."
+[09:04] CLIENTE: [foto]
+[09:05] LOJA: Está usando pneu de Kombi na strada
+[09:06] LOJA: [áudio] "Bem, como a caixa de ar na parte traseira da estrada, ela é maior, realmente dá pra colocar esse pneu aí, que seria um pneu de Kombi. Agora, na dianteira, eu tenho lá as minhas ressalvas."  {audio:midias/3EB0D08D0F437A4BC0CC9C_57779.ogg}
+[09:13] LOJA: [foto]
+[09:13] LOJA: Mas tenho aqui sim, pneu da marca Comforser.
+[09:13] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:56] LOJA: Vou te encaminhar a nossa localização está bem!
+[17:56] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

@@ -1,0 +1,13 @@
+CONVERSA 6d264e08e7 | contato: Lucas Martins Costa | 14/10/2026 09:54 até 14/10/2026 10:12 | 3 msgs do cliente, 6 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[09:54] CLIENTE: [áudio] "Tudo bem? Bom dia! Você tem o pneu 205, 60, 15 aí? Por favor, com mais em conta que você tem."
+[09:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:07] LOJA: [áudio] "Oi Lucas, bom dia! Como é que você está?"  {audio:midias/3EB055EF7A3338B273E06C_34422.ogg}
+[10:09] LOJA: Vou te encaminhar
+[10:10] LOJA: [foto]
+[10:10] LOJA: [áudio] "Lucas, o mais em conta que nós temos é o 205-6015, aqui da GP Premium, no modelo GP1, que está por R$ 289,00 à vista e no modelo ATR por R$ 319,00 à unidade à vista."  {audio:midias/3EB079BFE62A2AC941CABB_315249.ogg}
+[10:11] CLIENTE: [áudio] "Esse valor é montado já?"
+[10:11] LOJA: [áudio] "Sim, coloco os pneus para você. Aí serviços como balanceamento, alinhamento e coisas que forem necessárias fazer são cobradas à parte, tá?"  {audio:midias/3EB0D102CBDF6CD5134BDE_715452.ogg}
+[10:12] CLIENTE: [áudio] "No meu caso é só para colocar no estepe, só para colocar no estepe e está ótimo. Eu coloquei o estepe para rodar, tá bom?"

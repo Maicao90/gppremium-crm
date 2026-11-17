@@ -1,0 +1,39 @@
+CONVERSA b5d257f512 | contato: Polar ar condicionado | 27/08/2026 11:02 até 27/08/2026 11:12 | 10 msgs do cliente, 13 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[11:02] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[11:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:02] CLIENTE: 14 175/70
+[11:03] LOJA: [foto]
+[11:03] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:03] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[11:03] CLIENTE: Sim
+[11:04] CLIENTE: O pagamento seria avista no Pix
+[11:04] CLIENTE: Estava precisando dos 4
+[11:07] LOJA: *Josy:*
+Temos todas as opções do orçamento a pronta entrega!
+[11:07] CLIENTE: Esses pneus não e remold né ?
+[11:07] LOJA: *Josy:*
+Os pneus da marca GP Premium de , se o pagamento for em *dinheiro*
+[11:08] LOJA: [foto] *Josy:*
+*NOVOS*
+[11:08] CLIENTE: Esse último aí nacional, tem garantia de quantos anos?
+[11:09] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi e o meu WhatsApp está com instabilidade e cortou o que eu ia digitar para você. O pneu GP Premium é um pneu que nós fazemos, ele é um pneu ecológico que entrará na categoria de remodelagem, porém, da linha Premium, que não tem nada a ver com os pneus remotos convencionais. E é o pneu mais vendido que eu tenho justamente por conta da qualidade."  {audio:midias/3EB046A4135D06060BE38B_584752.ogg}
+[11:09] LOJA: [áudio] "Ele tem garantia de 2 anos."  {audio:midias/3EB0DDD8B916FD4D1CFFE7_705875.ogg}
+[11:10] CLIENTE: Tá bom , importado nessa faixa de valor vocês não tem né ?
+[11:10] LOJA: *Josy:*
+temos!
+[11:10] LOJA: *Josy:*
+Aqui.
+[11:11] CLIENTE: Esse último aqui , faria quanto nos 4 avista?
+[11:11] LOJA: [áudio] "No caso dessas marcas aí, é conforme esse valor mesmo, tá?"  {audio:midias/3EB0D1ED5E0FB0DE1A15EE_620919.ogg}
+[11:12] CLIENTE: Ta ok , obrigado
+[11:12] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

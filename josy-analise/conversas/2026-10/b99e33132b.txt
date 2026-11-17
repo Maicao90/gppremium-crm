@@ -1,0 +1,27 @@
+CONVERSA b99e33132b | contato: Nelmo | 05/10/2026 13:36 até 06/10/2026 08:52 | 7 msgs do cliente, 11 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[13:36] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:39] CLIENTE: 175-65-14 50%asfalto e 50%chão
+[13:39] CLIENTE: Qual o valor
+[14:10] LOJA: *Josy:*
+Bom dia, no modelo ATR teremos 175/70/14 pode ser?
+[14:11] CLIENTE: [áudio] "Pode ser, aí você me fala qual o preço que ele tá aí. Aí eu vou dar uma passada aí pra nós negociar os pneus, ok?"
+[14:12] LOJA: [foto]
+[14:12] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Nelmo? Eu tenho aqui, sim, o pneu da marca GP Premium, que ele acabou de entrar em oferta. A unidade de R$ 299,00 está por apenas R$ 2,79,00, se o seu pagamento for à vista, tá bom?"  {audio:midias/3EB077EB07FDD41B7C2251_781162.ogg}
+[14:12] LOJA: [foto]
+[14:13] CLIENTE: [áudio] "Não, tudo bem, mas tarde eu vou passar aí, dá pra umas 3 horas mais ou menos, que eu tô saindo do serviço agora. Eu tô indo pra casa, eu vou pegar o carro e levar aí pra nós ficar cá, tá bom?"
+[14:18] LOJA: [áudio] "Sim, perfeito. Qual que é o seu carro mesmo? Você vai precisar de quantos pneus que eu já deixo eles reservados aqui."  {audio:midias/3EB070DF4C2A1DFB600F5A_638180.ogg}
+[14:19] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:40] LOJA: [foto]
+[16:30] LOJA: *Josy:*
+Oi... está a caminho?
+--- 06/10/2026 (Tue) ---
+[07:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:13] CLIENTE: [áudio] "Olá, bom dia. É, ontem não deu de eu ir, não. Aconteceu um acidente no meio do caminho aqui, aí acabou de eu ter que voltar embora, tá? Porque a gente mora na fazenda, né? Meio longe, né? Meio longe aí, acabou que deu um problema no caminho aqui, teve que voltar embora. Aí já me desculpa aí. Aí, outra hora eu vou, eu vou ir na fábrica aí, tá bom? Eu sei onde é que é aí a loja aí, aí eu vou ir, tá bom? Não tem culpa não."
+[08:23] LOJA: [áudio] "Não, imprevistos acontecem realmente, tá tudo bem, tá? Se o senhor tiver a possibilidade também de vir aos sábados, nós estaremos com a loja aberta de 8 até o meio-dia, tá joia?"  {audio:midias/3EB0D409AC983C1CADDF25_398157.ogg}
+[08:52] CLIENTE: [áudio] "Bom, tudo bem, então, João? Tudo bem, então? Tranquilo, então? Aí eu vou ver aqui, aí eu vou ver se eu vou pulei no sábado, tá bom? Aí, obrigado, hein? Fica um ótimo dia."

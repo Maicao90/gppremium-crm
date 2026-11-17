@@ -1,0 +1,9 @@
+CONVERSA ea01e29967 | contato: Antonio | 07/10/2026 19:46 até 13/10/2026 18:00 | 1 msgs do cliente, 3 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[19:46] CLIENTE: 👍
+[19:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 13/10/2026 (Tue) ---
+[18:00] LOJA: Sr, Antônio... pode avaliar o atendimento da empresa no Google?
+[18:00] LOJA: https://da.gd/gp-avaliar

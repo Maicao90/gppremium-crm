@@ -1,0 +1,102 @@
+CONVERSA 2e4617095f | contato: O Senhor É Meu Pastor | 08/09/2026 12:40 até 07/10/2026 18:14 | 26 msgs do cliente, 49 da loja, 0 do robô
+
+--- 08/09/2026 (Tue) ---
+[12:40] CLIENTE: Boa tarde
+[12:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:41] CLIENTE: Pneus pra spin
+[12:41] LOJA: [áudio] "Esse é o Gilmar, tudo jóia?"  {audio:midias/3EB0E01843E38B8ED9C7D9_468484.ogg}
+[12:41] LOJA: *Josy:*
+205/60/16?
+[12:42] CLIENTE: Isso
+[12:42] LOJA: *Josy:*
+Certo...
+[12:42] LOJA: *Josy:*
+1 instante.
+[12:42] CLIENTE: Esse é bom mesmo que eu comprei da ou vez né
+[12:42] CLIENTE: O mesmo?
+[12:42] LOJA: *Josy:*
+Muuuito!
+[12:42] LOJA: *Josy:*
+Me fala seu CPF
+[12:43] CLIENTE: 60213710110
+[12:45] LOJA: [áudio] "Sim, ele mesmo, seu Gilmar. Eu vou mandar aqui para o senhor as opções de pagamento, tá bom?"  {audio:midias/3EB05F483A860EA736792B_816098.ogg}
+[12:46] LOJA: [foto]
+[12:48] LOJA: [áudio] "Seu Gilmar, está ao mesmo preço até hoje, tá bom? Fico feliz que o senhor gostou dos pneus."  {audio:midias/3EB0C95B8463C6AADE4857_58331.ogg}
+[12:54] CLIENTE: [áudio] "Tá bom, daqui... não sei o dia certinho não, mas até sexta-feira eu marco com você e vou aí para pegar os pneus."
+[12:55] LOJA: [áudio] "Super combinado, seu Gilmar. Deus abençoe, tá?"  {audio:midias/3EB0829714ED783147648C_284263.ogg}
+[12:55] LOJA: [foto]
+--- 11/09/2026 (Fri) ---
+[15:17] LOJA: [áudio] "Esse é o Gilmar, tudo jóia. Estou passando para saber se eu posso reservar os pneus para o senhor passar aqui na loja amanhã."  {audio:midias/3EB0743C480103D305E0FA_942685.ogg}
+[15:19] CLIENTE: Estou viajando.e não deu pra ir essa semana
+[15:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:19] LOJA: [áudio] "Sem problemas, tá joia? Que o senhor havia dito, né, pra nós conversarmos no final de semana, aí por isso que estou tirando o retorno, tá bom?"  {audio:midias/3EB043408A242D5A58B7EE_330866.ogg}
+[15:20] CLIENTE: Vou na segunda ou terça
+[15:20] LOJA: [áudio] "Bom final de semana para você, tá joia?"  {audio:midias/3EB0A3E444375ED7F9CC75_472162.ogg}
+--- 22/09/2026 (Tue) ---
+[15:50] LOJA: *Josy:*
+Oi, sr Gilmar... como tem passado?
+[15:50] LOJA: *Josy:*
+Nos falamos a cerca de 15 dias atrás mais ou menos...
+[17:04] CLIENTE: Boa tarde
+[17:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:04] CLIENTE: Na verdade estou sem tempo de ir aí pegar os pneus
+[17:05] LOJA: *Josy:*
+É corrido né? 24 hr no dia é pouco;
+[17:06] CLIENTE: Pois é
+[17:07] CLIENTE: Eu preciso ir porque já estou rodando com o step
+[17:08] LOJA: *Josy:*
+Nossa... então precisa de urgente...é seu pneu de segurança.
+[17:08] CLIENTE: Pois é
+[17:09] LOJA: [áudio] "Pois é, Sra. Jumar. Então, na hora que o senhor tiver um tempinho, o senhor passa aqui, vamos fazer a troca desse pneu aí, logo começa as chuvas, aí se torna mais um momento de mais atenção, né, de precaução realmente. Mas beleza, tá? O senhor sabe onde é a nossa loja aqui. Se tiver tudo aqui, o senhor passa. Se tiver como vir no sábado também, que aqui é um dia mais tranquilo, fique à vontade, tá?"  {audio:midias/3EB0FEA981AC3CE1FB80AE_310241.ogg}
+[17:10] CLIENTE: [áudio] "Tá bom, vamos ver se essa semana vai dar uma folguinha pra mim, porque o meu irmão que me ajuda, né, que ela tem as primeiras vezes, foi até ele que foi aí pra pegar e eu fui só na última vez, ele mudou pra Teresópolis, lá pra perto de Goiânia, aí eu fiquei sozinho, aí pronto, aí o serviço dobrou pra mim aqui. Mas eu tenho que ir essa semana, porque eu vou viajar sábado e eu já viajei um final de semana já rodando com estepe. Aí não pode não, é muito perigoso. Se quer estourar na estrada, além do transtorno ainda fica muito mais caro."
+[17:16] LOJA: [áudio] "Eita, seu Gilmar, sério que seu irmão se mudou? Caramba! Faz parte, né? Faz parte. E não dá pra ficar viajando assim, não. Estepe é o seu pneu de segurança aí, né? Se ficar sem ele, como é que faz? Pois é, mas vê aí se o senhor consegue vir, então, que nós já conseguimos te atender, tá jóia? Obrigada aí pelo seu retorno."  {audio:midias/3EB05860239DDAA3D1FC4D_850645.ogg}
+--- 07/10/2026 (Wed) ---
+[08:44] CLIENTE: [áudio] "Bom dia! Tá tendo os pneus meus, do que eu quero aí hoje? Hoje eu tô indo aí. Agora, meio-dia ou depois de meio-dia? Quero só confirmar se tá tendo os pneus que eu tô querendo. Aí eu vou aí hoje."
+[08:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:45] CLIENTE: Esse
+[08:47] LOJA: [áudio] "Bom dia, Seu Gilmar! Sim, estão tendo sim, tá?"  {audio:midias/3EB0E20EB494D399AB5BB5_712853.ogg}
+[08:47] LOJA: [foto]
+[08:48] LOJA: [áudio] "E continua o mesmo preço, tá bom?"  {audio:midias/3EB0DFCBECAFE3072F10FA_112141.ogg}
+[08:53] CLIENTE: [áudio] "Tá bom, depois de meio dia eu apareço aí."
+[08:54] LOJA: [áudio] "Combinado, seu Gilmar, você vai precisar dos 4 pneus?"  {audio:midias/3EB0905D2CBF93B4B1E9F1_670546.ogg}
+[09:05] CLIENTE: [áudio] "É os 4 pneus, mas eu tô vendo que o preço que você me mandou aqui, eu não tenho mais o outro preço que você tinha me mandado antes, mas parece que era R$ 329,00, isso que você me mandou aqui tá R$ 349,00, tá mais caro aí."
+[09:07] LOJA: *Josy:*
+Beleza...
+[09:07] LOJA: [áudio] "O senhor tinha me pedido aqui o orçamento de um pneu que é o 205,6016. Não foi o 215, não. Eu tenho salvo aqui na nossa conversa."  {audio:midias/3EB038CA81F7228BBFD1D7_732243.ogg}
+[09:08] LOJA: [áudio] "Na verdade, o senhor tinha falado 205, 70 a 16."  {audio:midias/3EB0A701576EC1D8B193E8_459881.ogg}
+[09:08] LOJA: [áudio] "Só confirma comigo qual que é o seu carro mesmo."  {audio:midias/3EB095C3F08DC3F9551370_193461.ogg}
+[09:08] LOJA: [áudio] "Ah, eu vi aqui. Seu carro mais spin."  {audio:midias/3EB04C87A5BA3CEC1AB704_646595.ogg}
+[09:08] LOJA: [áudio] "É isso mesmo, né? Seu carro é uma Spin, certo?"  {audio:midias/3EB0875482B34135AEACE5_577643.ogg}
+[09:09] CLIENTE: [áudio] "Isso, é a Spin. Eu comprei duas vezes para ela. Não lembro agora se é o 215 ou se é o 205. E o pior é que eu estou longe do carro agora para ver o pneu que é. Mas eu tenho a última compra que eu fiz no ano passado."
+[09:09] LOJA: Aqui...
+Então será o 205/60/16 que é o de. 329,00
+[09:09] LOJA: [áudio] "Não, pode deixar que eu já ajeito aqui, eu só vou conferir aqui no meu stalk, tá bom?"  {audio:midias/3EB00FC17D3A35E794DCAC_753269.ogg}
+[09:10] CLIENTE: [áudio] "Confere e me avise antes de eu ir, porque eu estou em São Sebastião é longe, né? Para mim, eu tenho que ter certeza se tem ou não. Eu acho que o 215 é o que eu comprei para Touro. Deve ser."
+[09:10] LOJA: [áudio] "Isso, isso mesmo. 215 é para Fiat Toro."  {audio:midias/3EB00E470EE41E29190CEB_325109.ogg}
+[09:11] CLIENTE: [áudio] "Ah tá, porque eu mandei errado então, eu mandei o da Toro, é o da Spin, é o 205. Só confirmo se tem, porque eu vou daqui a pouquinho."
+[09:11] LOJA: [áudio] "Fica tranquilo, deixa eu só conferir aqui no meu estoque e já te dou um retorno, tá?"  {audio:midias/3EB0E193A15D06FA781297_884940.ogg}
+[09:18] LOJA: *Josy:*
+Já separei os pneus aqui para o senhor, tremos sim!
+[09:24] CLIENTE: Ok
+[09:48] LOJA: [foto]
+[11:24] LOJA: [áudio] "Seu Gilmar, o senhor acha que consegue chegar aqui que horas? Eu só vou pedir para os meninos deixarem os pneus aqui embaixo, perto de mim, porque eu acho que eu vou ficar sozinha aqui na loja, só para eu já poder providenciar tudo, tá?"  {audio:midias/3EB0BCE723879C3302993D_268718.ogg}
+[11:40] CLIENTE: [áudio] "Eu tô saindo de Selândia agora, que eu vim aqui no Hospital de Selândia. Tô saindo aqui agora direto pra Luziânia. Não sei se daqui aí quanto... Deve gastar uma hora mais ou menos daqui aí. Vou até colocar no GPS aqui. Me manda localização aí só pra me colocar no GPS aqui. Vem ver quanto tempo eu gastar."
+[11:43] LOJA: *Josy:*
+Está bem!
+[11:43] LOJA: *Josy:*
+Fique tranquilo!
+[11:43] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:57] LOJA: [áudio] "Seu Gilmar, o senhor chegando aqui, a porta só vai estar fechada porque eu liguei aqui o ar-condicionado, tá bom? Mas o senhor chegando, pode ficar tranquilo que eu abra a porta para o senhor."  {audio:midias/3EB09B9A1763E7B87103F0_701607.ogg}
+[13:05] CLIENTE: [áudio] "Tá bom, daqui uns 30 minutos, mais ou menos, eu chego aí."
+[13:49] LOJA: *Josy:*
+ok
+[14:47] LOJA: *Josy:*
+Se possivel, nos avalie no google
+[14:47] LOJA: *Josy:*
+https://da.gd/gp-avaliar
+[17:51] LOJA: [áudio] "Esse é o Gilmar, tudo jóia? Os vendedores da loja estão numa competição justamente para poder avaliar o atendimento, aí se o senhor puder, por gentileza, descrever qual a sua experiência com os pneus GP Premium e também nos me avaliar também, aí, por gentileza, te mandei aí um link, se possível, tá bom?"  {audio:midias/3EB087F99DDC1A8077F4E5_185969.ogg}
+[18:14] CLIENTE: [áudio] "Tá bom, até agora eu não parei ainda, mas acredite que lá para as 9, 10 horas da noite eu paro. Aí eu abro o link aqui, pode ter certeza que eu avalio sim."

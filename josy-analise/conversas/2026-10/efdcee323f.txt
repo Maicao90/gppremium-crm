@@ -1,0 +1,36 @@
+CONVERSA efdcee323f | contato: Geraldo Magela | 05/10/2026 09:38 até 05/10/2026 14:00 | 14 msgs do cliente, 12 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[09:38] CLIENTE: Bom dia
+[09:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:40] LOJA: [áudio] "Bom dia, seu Geraldo. Tudo bom?"  {audio:midias/3EB01D24E548DD97EDB1A4_937374.ogg}
+[09:40] CLIENTE: Bom dia
+[09:40] CLIENTE: Vc tem 195/60 15?
+[09:44] CLIENTE: ?
+[09:45] LOJA: [áudio] "Só um instante, por gentileza, Sr. Geraldo, o que eu estou fazendo aqui é o seu orçamento?"  {audio:midias/3EB09E8255B541378A25C7_651267.ogg}
+[09:45] CLIENTE: Ok
+[09:45] LOJA: [foto]
+[09:45] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:47] CLIENTE: Ok
+[09:47] CLIENTE: Vc ainda estão aí na Br 040
+[09:47] CLIENTE: Próximo do posto?
+[09:48] LOJA: [áudio] "Sim, estamos sim."  {audio:midias/3EB03569873FDACC0E5D65_991609.ogg}
+[09:48] CLIENTE: Ok
+[10:36] CLIENTE: Vcs fecham para almoço?
+[10:36] LOJA: *Josy:*
+Não fechamos não, sr Geraldo!
+[10:36] LOJA: [foto]
+[10:36] CLIENTE: Ok
+[10:36] CLIENTE: Tentar ir aí em Luziânia no horário do almoço
+[10:37] LOJA: [áudio] "Perfeito, seu Geraldo. Combinado."  {audio:midias/3EB0FB50827660D211CFBD_309195.ogg}
+[13:03] LOJA: [documento]
+[13:03] LOJA: *Josy:*
+Pronto, sr Geraldo!
+[13:03] LOJA: *Josy:*
+Tenha uma boa semana!
+[14:00] CLIENTE: Ok obrigado
+[14:00] CLIENTE: Vc tbm

@@ -1,0 +1,34 @@
+CONVERSA 00fa68ed41 | contato: Vinisilva7 | 19/09/2026 11:08 até 19/09/2026 12:35 | 9 msgs do cliente, 11 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[11:08] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso?
+[11:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:08] CLIENTE: Aro 14
+[11:08] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa?
+[11:10] LOJA: [áudio] "Oi jovem, bom dia, tudo bem com você? Eu sou a Josi. Você pode, por gentileza, me dizer qual é a medida dos pneus que você precisa? Porque no aro 14 existem diversas possibilidades, porém, se você não souber qual é a medida, me diz qual é o seu carro, que eu faço o orçamento com a medida original do veículo."  {audio:midias/3EB0E50BEF32398FAE1153_960106.ogg}
+[11:10] CLIENTE: No momento eu não tenho as medidas os pneu antigos são numerações diferentes
+[11:10] CLIENTE: Meu carro é um celta 2001
+[11:14] LOJA: *Josy:*
+Pode instalar sem medo 175/65/14
+[11:15] LOJA: [foto]
+[11:15] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:15] CLIENTE: Qual a marca dos pneus que vocês têm
+[11:15] CLIENTE: ?
+[11:17] LOJA: *Josy:*
+Todas essas essas marcas moço.
+[11:17] LOJA: *Josy:*
+O orçamento está abrindo? Pode conferir por gentileza?
+[11:18] CLIENTE: Qual dessas marcas e melhor
+[11:19] LOJA: [áudio] "Vini, de todas essas marcas, a que eu mais vendo é o pneu que está na promoção, tá? Que é o pneu da marca GP Premium. O preço normal dele é R$ 279,00. Aí, este mês, ele está por apenas R$ 249,00. E eu vendo ele não somente por conta do preço, é porque no quesito qualidade, ele vai ser a mesma coisa do que as outras duas opções que estão aí no orçamento, tá joia?"  {audio:midias/3EB05A3745E7EBE079AEA6_587643.ogg}
+[11:41] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0892921C463766FC83B_753178.ogg}
+[11:49] LOJA: *Josy:*
+Oooi
+[12:32] CLIENTE: Santa Maria
+[12:35] CLIENTE: pneus Gp é remoldad0??

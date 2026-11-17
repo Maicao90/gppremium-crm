@@ -1,0 +1,27 @@
+CONVERSA 9f2831b32f | contato: Michele | 29/09/2026 17:12 até 08/10/2026 15:09 | 5 msgs do cliente, 11 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[17:12] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[17:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:13] LOJA: *Josy:*
+🙋🏼‍♀️
+[17:13] CLIENTE: 225/55 R18 98v pirelli
+[17:14] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu me chamo Josi e você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0F35BA6CAA794EFBED5_183994.ogg}
+[17:14] LOJA: [áudio] "Eu pergunto, pois eu vi que seu DDD é de outra localidade e no momento eu não disponho dessa opção a pronta entrega e justamente nós também não estamos realizando entregas."  {audio:midias/3EB0B33C12E7D1FE8487B8_444669.ogg}
+[17:14] CLIENTE: Valparaiso
+[17:14] LOJA: [áudio] "Certo. E somente Pirelli que te atende?"  {audio:midias/3EB050E984DAA444FF97B0_355320.ogg}
+[17:15] CLIENTE: Sim
+[17:17] LOJA: [áudio] "Certo, eu não disponho deles aqui a pronta entrega, mas eu solicitei uma cotação com os meus distribuidores. Assim que eles me responderem, eu te passo o preço e o prazo de entrega, tá bem, Michelle?"  {audio:midias/3EB09A463F589309F5BBF7_474959.ogg}
+[17:17] CLIENTE: Tbom obrigada
+--- 30/09/2026 (Wed) ---
+[09:28] LOJA: [áudio] "Olá, bom dia! Tudo bem com você, Michele? Agora que eu consegui uma resposta aqui da Pirelli, tá?"  {audio:midias/3EB0376F5A62E0ED841D68_676691.ogg}
+[09:28] LOJA: [foto]
+[09:28] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:38] LOJA: *Josy:*
+🙋🏼‍♀️
+--- 08/10/2026 (Thu) ---
+[15:09] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Eu te encaminhei um orçamento alguns dias atrás e gostaria de saber se você pretende seguir com a negociação? Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB056927E325CB7DDE533_392914.ogg}

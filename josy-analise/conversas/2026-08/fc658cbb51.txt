@@ -1,0 +1,22 @@
+CONVERSA fc658cbb51 | contato: Jeanzin | 26/08/2026 12:54 até 28/08/2026 11:36 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[12:54] CLIENTE: Boa tarde
+[12:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:55] CLIENTE: Quais os valores dos pneus aro 13 175/70
+[12:55] LOJA: *Josy :*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:56] LOJA: [foto]
+--- 28/08/2026 (Fri) ---
+[11:30] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu sou a Josi. E alguns dias atrás, nós estávamos conversando a respeito de uns pneus aí para o seu carro, Jean. Gostaria de saber se você pretende seguir com a negociação. Pode me dar um retorno, por gentileza?"  {audio:midias/3EB062DE42CB24D73DD03A_828420.ogg}
+[11:30] LOJA: *Josy:*
+👀
+[11:32] LOJA: [áudio] "Jean, aí esse pneu que está por R$ 269,00, o meu gerente diz que se você trouxer o pagamento em dinheiro, ele faz a unidade por R$ 250,00, aí você só me dá um retorno, por gentileza, que aí ou eu continuo o seu atendimento, ou eu encerro ele para não ficar justamente enchendo o seu WhatsApp de mensagens, pode ser?"  {audio:midias/3EB0B5A3FDF9719605F0BD_726678.ogg}
+[11:36] CLIENTE: bom dia
+[11:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:36] CLIENTE: Pode cancelar, ok?
+[11:36] CLIENTE: Obrigado

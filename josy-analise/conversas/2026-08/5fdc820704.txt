@@ -1,0 +1,19 @@
+CONVERSA 5fdc820704 | contato: Jose Trompete | 18/08/2026 08:17 até 18/08/2026 10:19 | 4 msgs do cliente, 11 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[08:17] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[08:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:19] LOJA: 🙋🏼‍♀️
+[08:20] CLIENTE: 165 45 r 15
+[08:21] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu sou a Josi e essa opção do 165-45-15, eu não disponho dela aqui a pronta entrega, mas eu posso fazer uma cotação com os meus distribuidores e assim que eles responderem eu te passo marca, preço e prazo de entrega, está bem?"  {audio:midias/3EB0EB488535273D796F12_815658.ogg}
+[08:28] CLIENTE: Quais tá tendo 15
+[08:28] LOJA: Nesse perfil baixo nenhuma opção.
+[08:29] LOJA: Você reside aqui em Luziania-Go?
+[08:49] LOJA: [foto]
+[08:50] LOJA: [áudio] "Oi, a opção do 165-45-15 realmente vai ser somente por encomenda. A unidade está por 319 reais, se o pagamento for à vista, né, débito ou Pix, e o distribuidor solicita um pagamento calção de 150 reais para reservar a opção. Fazendo pagamento, eles enviam o pneu ou os pneus aqui para a nossa empresa, e assim que eles chegarem, você vindo aqui para realizar o restante do pagamento, esse valor do calção será abatido do total da sua compra."  {audio:midias/3EB00FF9F086B3F8864AB2_442832.ogg}
+[09:30] CLIENTE: Ceilândia
+[09:44] LOJA: Somos de Luziania
+[09:44] LOJA: TERIA COMO VIR AQUI
+[10:19] LOJA: [áudio] "E o senhor teria a possibilidade de vir até aqui a nossa empresa? Eu vou aproveitar e vou te encaminhar a nossa localização."  {audio:midias/3EB081DF46C66F59ADC235_646417.ogg}
+[10:19] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

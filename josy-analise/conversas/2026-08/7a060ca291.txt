@@ -1,0 +1,16 @@
+CONVERSA 7a060ca291 | contato: Edgar | 26/08/2026 15:22 até 26/08/2026 16:34 | 3 msgs do cliente, 6 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[15:22] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[15:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:22] LOJA: *Josy :*
+🙋🏼‍♀️
+[15:23] CLIENTE: 185,55,16
+[15:23] LOJA: *Josy :*
+Teremos 195/55/16 te atende? Se sim, vou realizar seu orçamento.
+[15:24] CLIENTE: Qual seria a marca?
+[15:41] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu sou a Josi e eu te mandei o orçamento das duas opções que eu tenho aqui à pronta entrega no dia de hoje. Você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0E5AEFD7625ACA985BD_293985.ogg}
+[16:33] LOJA: [áudio] "Bem, como eu imagino que o seu dia esteja bem corrido, aí o senhor deve estar bastante ocupado, aí por isso que o senhor não conseguiu me responder aqui, eu vou encerrar o seu atendimento, tá? Caso o senhor precise futuramente, é só me chamar aqui no WhatsApp de novo ou compareça até a nossa loja, tá bom? Nós estamos aqui em Luziânia, eu vou te encaminhar a nossa localização."  {audio:midias/3EB09BEEB55BE360319809_372233.ogg}
+[16:34] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

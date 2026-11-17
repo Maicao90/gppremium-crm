@@ -1,0 +1,11 @@
+CONVERSA 92798814c9 | contato: Edimar de Jesus | 19/09/2026 09:09 até 19/09/2026 13:25 | 4 msgs do cliente, 3 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[09:09] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:16] LOJA: [áudio] "Olá, bom dia, tudo bem? Edmar, você é daqui de Luziânia, Goiás?"  {audio:midias/3EB0739BD6B850F1A8B35E_162179.ogg}
+[09:17] CLIENTE: [áudio] "Ah, eu não sou do Talcantins, é porque eu peguei esse número aqui, mas eu peguei errado. É o pneu que eu preciso, mas eu tô no Talcantins."
+[09:20] LOJA: [áudio] "Ah, certo. Pois é, infelizmente não atendemos aí. Mas obrigada aí pelo contato e tenha um bom final de semana."  {audio:midias/3EB0808C12C9E49E5E28B4_970701.ogg}
+[09:32] CLIENTE: [áudio] "Para você também, um ótimo final de semana e um bom trabalho. Obrigadão."
+[13:25] CLIENTE: X bry 285 70 16

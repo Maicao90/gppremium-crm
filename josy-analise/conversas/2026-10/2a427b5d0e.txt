@@ -1,0 +1,17 @@
+CONVERSA 2a427b5d0e | contato: Rafa El | 13/10/2026 10:22 até 13/10/2026 16:51 | 2 msgs do cliente, 9 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[10:22] LOJA: Bom dia, como podemos ajudar?
+[10:28] LOJA: Oi
+[10:28] LOJA: 175 60 14
+[10:28] LOJA: [foto]
+[10:32] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:45] LOJA: Ooooi
+[16:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:48] CLIENTE: [áudio] "Pô, acabei já comprando, viu? Porque ficou mais em conta e tem muito juros na divisão aí. E eu moro no plano, né?"
+[16:48] CLIENTE: [áudio] "Valeu! Obrigado, hein!"
+[16:51] LOJA: [áudio] "Perfeito, Rafael. Eu vou encerrar aqui o seu atendimento. De todo modo, vou deixar aqui a nossa localização. Se houver a possibilidade de estiver passando pela nossa região algum dia desses, passa aqui na nossa empresa, está bem? Obrigada, boa semana."  {audio:midias/3EB05D55447D8E251CDA3A_766055.ogg}
+[16:51] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

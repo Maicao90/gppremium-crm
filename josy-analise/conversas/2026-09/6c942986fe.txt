@@ -1,0 +1,26 @@
+CONVERSA 6c942986fe | contato: Paulo Lacerda | 09/09/2026 15:45 até 11/09/2026 13:43 | 4 msgs do cliente, 9 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[15:45] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[15:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:46] LOJA: *Josy:*
+Oi, Tudo bem, e com você ?
+[15:47] CLIENTE: 185/65 r15
+[15:47] CLIENTE: 4x
+[15:51] LOJA: [foto]
+[15:51] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:38] LOJA: *Josy:*
+🙋🏼‍♀️
+--- 10/09/2026 (Thu) ---
+[14:29] LOJA: [áudio] "Oi Paulo, tudo bem com você?"  {audio:midias/3EB01AC2724CF0B3155580_66889.ogg}
+[14:32] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[13:43] LOJA: [áudio] "Oi Paulo, tudo bom? Eu imagino que você esteja com o dia bem corrido e por essa razão você não consegue me responder. Então eu vou encerrar aqui o seu atendimento, tá bom? Quando você precisar, compareça aqui na nossa loja que será uma satisfação receber você aqui. Obrigada por sua atenção e até mais!"  {audio:midias/3EB08DDD5A2927D7EA69A7_292218.ogg}
+[13:43] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

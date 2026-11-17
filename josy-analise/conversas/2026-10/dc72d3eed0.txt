@@ -1,0 +1,16 @@
+CONVERSA dc72d3eed0 | contato: Lucas Rocha | 19/10/2026 17:30 até 20/10/2026 11:48 | 3 msgs do cliente, 5 da loja, 0 do robô
+
+--- 19/10/2026 (Mon) ---
+[17:30] CLIENTE: Boa tarde
+[17:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:31] CLIENTE: 175/70/13
+[17:34] LOJA: [áudio] "Lucas, tudo jóia? Tenho aqui sim, vou te mandar o orçamento."  {audio:midias/3EB0310A19D2A9C92C1899_258203.ogg}
+[17:35] CLIENTE: Ok
+--- 20/10/2026 (Tue) ---
+[11:48] LOJA: [áudio] "Oi Lucas, tudo jóia? Perdão aí pela demora que a gente respondeu, que no WhatsApp ele estava com instabilidade e eu fui te mandar o orçamento e as mensagens sumiram, tá jóia?"  {audio:midias/3EB0839232967EB3104280_127341.ogg}
+[11:48] LOJA: [foto]
+[11:48] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

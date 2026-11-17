@@ -1,0 +1,11 @@
+CONVERSA 7bf7bb493c | contato: Marco Antonio de Castro C | 01/09/2026 16:57 até 10/09/2026 16:21 | 1 msgs do cliente, 4 da loja, 0 do robô
+
+--- 01/09/2026 (Tue) ---
+[16:57] LOJA: *Josy:*
+Boa tarde, sr Marcos!
+[16:58] LOJA: [foto]
+[18:16] CLIENTE: Obrigado
+[18:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 10/09/2026 (Thu) ---
+[16:21] LOJA: [áudio] "Oi, seu Marco, tudo jóia? Há alguns dias a atração passou aqui na nossa empresa, te mandei em um orçamento. Gostaria de saber se o senhor está precisando dos pneus, se gostaria que reservasse alguma das opções que nós conversamos. Assim que possível, me dá o retorno, por gentileza."  {audio:midias/3EB0B1FA937201EF35AF8D_80592.ogg}

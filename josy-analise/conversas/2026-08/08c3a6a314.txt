@@ -1,0 +1,42 @@
+CONVERSA 08c3a6a314 | contato: Bloco Forte | 19/08/2026 10:34 até 26/09/2026 11:03 | 8 msgs do cliente, 21 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[10:34] LOJA: Bom dia!
+[10:35] LOJA: Me encaminhe áudio por gentileza.
+[10:35] LOJA: 🙋🏼‍♀️
+[10:36] CLIENTE: [áudio] "Bom dia, você tem pneu 275? 75-16?"
+[10:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:37] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Obrigada por aguardar minha linha de telefone que está com estabilidade. E a pronta entrega eu não disponho, tá? Mas eu posso fazer uma cotação para você."  {audio:midias/3EB059D5A3858984ED4A97_148641.ogg}
+[10:37] CLIENTE: Sim
+[10:38] LOJA: [áudio] "E você, quer ele modelo liso ou borrachudo?"  {audio:midias/3EB0CCEA5BD57977698C8F_70826.ogg}
+[10:39] CLIENTE: Borrachudo
+[10:39] LOJA: [áudio] "Perfeito! Assim que o meu distribuidor me passar aqui, eu te informo marca, preço e prazo de entrega, tá joia? Qual que é o seu nome?"  {audio:midias/3EB0CCA8438B6CBA0391C2_776658.ogg}
+[10:39] CLIENTE: Tiago
+[16:48] LOJA: [áudio] "Oi Thiago, tudo bem? Olha, a opção que você está buscando do 275 está em falta nos distribuidores, tá?"  {audio:midias/3EB0B58512B59058DFA205_423601.ogg}
+[16:48] LOJA: [áudio] "A pronta entrega eu tenho aqui o 255-7016 no modelo Brutus. Quer que eu te mande foto? Sim."  {audio:midias/3EB08BB28F9AFAEF33BCDF_195398.ogg}
+[16:49] CLIENTE: Quero
+[16:49] CLIENTE: Valor
+[16:49] LOJA: [foto]
+[16:49] LOJA: Pneu da marca GP Premium
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:50] LOJA: [foto]
+[16:51] CLIENTE: Ok
+[16:51] LOJA: Te atende?
+[16:52] CLIENTE: [áudio] "O valor aí já é montado, como é que funciona?"
+[16:52] LOJA: [áudio] "Isso, o pneu GP Premium já é colocado, tá bom?"  {audio:midias/3EB07EC77FF12B85D4078A_223912.ogg}
+--- 20/08/2026 (Thu) ---
+[08:14] LOJA: Bom dia! Vamos dar continuidade em nossa negociação?
+--- 29/08/2026 (Sat) ---
+[12:09] LOJA: [áudio] "Oi, Tiago, tudo jóia? Nós conversamos aí alguns dias atrás, até te mandei um áudio, mas imaginei que na correria você não conseguiu me responder. Quando possível, fala aqui comigo, por favor, me diz se você pretende seguir com a negociação, né, ou até mesmo se decidiu optar aí por um outro caminho, somente para eu poder, né, dar uma pausa aqui no atendimento e não ficar enchendo seu WhatsApp de mensagem. Então, fala aqui comigo quando possível, tá jóia?"  {audio:midias/3EB05538CDBD38B67EA1DA_951903.ogg}
+--- 31/08/2026 (Mon) ---
+[10:47] LOJA: *Josy:*
+Bom dia, vou encerrar seu atendimento, caso precise , é só chamar ou vir até nossa empresa.
+[10:47] LOJA: *Josy:*
+Será uma satisfação recebe-lo aqui. Boa semana.
+[10:47] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 26/09/2026 (Sat) ---
+[11:02] LOJA: *Josy:*
+Bom dia Tiago...
+[11:03] LOJA: [documento]

@@ -1,0 +1,15 @@
+CONVERSA a691e692a7 | contato: Tião Gráfica | 15/10/2026 08:18 até 15/10/2026 08:42 | 4 msgs do cliente, 5 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[08:18] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[08:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:18] LOJA: 🙋🏼‍♀️
+[08:19] CLIENTE: Aro 16/205/55
+[08:20] LOJA: Mora aqui em Luziania-Go?
+[08:37] CLIENTE: Goiânia
+[08:39] LOJA: Ah, sim!
+[08:40] CLIENTE: Tem aqui em Goiânia
+[08:42] LOJA: Não...nossa loja é apenas aqui em Luziania-Go.

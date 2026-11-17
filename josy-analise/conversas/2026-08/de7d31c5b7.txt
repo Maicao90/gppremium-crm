@@ -1,0 +1,10 @@
+CONVERSA de7d31c5b7 | contato: IIIIIIIIIIIIIIIIIIIIIIIII | 20/08/2026 08:36 até 26/08/2026 17:43 | 1 msgs do cliente, 4 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[08:36] LOJA: Bom dia!
+[08:36] LOJA: [vídeo]
+--- 26/08/2026 (Wed) ---
+[17:41] CLIENTE: [áudio] "Oi Josi, perdão. Eu até peço desculpas por não ter lhe respondido antes. Achei que fosse até um vídeo promocional, alguma coisa assim, então acabei não assistindo, né, ser bem sincero. Esse orçamento que eu fiz era pro meu pai, né, meu pai é de Brasília, eu também sou, mas eu repassei tudo pra ele e, assim, é pro carro dele, entendeu? Quando eu trabalho aqui em Luziânia, no CIOPS, na Delegacia da Primeira DP, né, na Polícia Civil, eu me disponibilizei a fazer esse orçamento pra ele, porque vi o outdoor de vocês, né, falando sobre os pneus, e eu passei pra ele, né, ele não me deu um retorno algum em relação a isso, né, mas eu passei o contato de vocês, ele tá com tudo, tá? Então, se alguém for fazer essa negociação com vocês, é ele, tá bom? Luiz Mauro é o nome dele, tá joia? Muito obrigado, viu, Josi? Desculpa novamente aí pela demora."
+[17:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:43] LOJA: [áudio] "Oi, Jorge, tudo bom? Imagina, eu compreendo perfeitamente que é bem corrido, tá? E ficamos combinados dessa maneira, então, caso você precise também, é só entrar em contato aqui conosco, tá bom? Obrigada e até mais."  {audio:midias/3EB046E37253545D3F3399_942647.ogg}

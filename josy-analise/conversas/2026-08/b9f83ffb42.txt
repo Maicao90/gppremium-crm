@@ -1,0 +1,9 @@
+CONVERSA b9f83ffb42 | contato: Miguel Fuscaldo | 18/08/2026 10:56 até 18/08/2026 10:58 | 1 msgs do cliente, 3 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[10:56] CLIENTE: Bom dia  fui muito bem atendido por vcs.
+Vou retornar em breve para a compra de mais 02 pneus.  Parabéns pelo atendimento.  Miguel.     .  ' .
+[10:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:58] LOJA: Muito obrigado senhor miguel, Deus o abençoe! será um prazer atende lo novamente.
+[10:58] LOJA: estamos lhe aguardando

@@ -1,0 +1,22 @@
+CONVERSA 6571d30973 | contato: Larissa | 15/10/2026 08:47 até 16/10/2026 14:26 | 5 msgs do cliente, 9 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[08:47] CLIENTE: Olá bom dia
+[08:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:47] CLIENTE: Gostaria de fazer um orçamento
+[08:49] CLIENTE: 205 50 17
+[08:52] LOJA: [foto]
+[08:52] LOJA: No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 16/10/2026 (Fri) ---
+[13:55] CLIENTE: Vocês montam e balanciam
+[13:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:55] CLIENTE: Esse local fica em Luziania né
+[14:25] LOJA: Boa tarde!
+[14:25] LOJA: Sim, todo serviço que precisar fazer, tem aqui.
+[14:25] LOJA: Sim, isso mesmo!
+[14:26] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:26] LOJA: [foto]

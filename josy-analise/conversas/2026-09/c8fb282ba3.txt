@@ -1,0 +1,25 @@
+CONVERSA c8fb282ba3 | contato: Agnaldo Cardoso | 05/09/2026 09:11 até 05/09/2026 09:36 | 10 msgs do cliente, 8 da loja, 0 do robô
+
+--- 05/09/2026 (Sat) ---
+[09:11] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[09:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:31] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu me chamo Josi. Aguinaldo, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB025285E371F9610A5DE_174620.ogg}
+[09:32] CLIENTE: Não
+[09:32] CLIENTE: Orizona
+[09:32] CLIENTE: Qual valor do 265/60/18
+[09:32] CLIENTE: ?
+[09:33] LOJA: [áudio] "Olá, bom dia. Obrigada por aguardar."  {audio:midias/3EB0099936513DF4AF1FF8_331081.ogg}
+[09:33] LOJA: [áudio] "Eu tenho aqui o pneu da marca GP Premium, que ele está por R$ 599,00."  {audio:midias/3EB03E1F33A7CC4E46387C_230801.ogg}
+[09:34] LOJA: [áudio] "Você consegue vir aqui na nossa empresa, em Luziânia?"  {audio:midias/3EB0FB1DE304C6E05D2148_616557.ogg}
+[09:34] CLIENTE: Põe enquanto esses dias não
+[09:34] CLIENTE: Manda foto dele?
+[09:35] LOJA: [foto]
+[09:35] CLIENTE: Esse é  novo?
+[09:36] LOJA: *Josy:*
+REMOLD
+[09:36] CLIENTE: Ata
+[09:36] LOJA: [áudio] "E é o pneu mais vendido que eu tenho."  {audio:midias/3EB0B885DD6759630D9015_838758.ogg}
+[09:36] CLIENTE: Não uso remold

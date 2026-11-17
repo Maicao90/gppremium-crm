@@ -1,0 +1,13 @@
+CONVERSA 59c31fc8f2 | contato: WEVERTON FREITAS🤠 | 21/08/2026 12:36 até 21/08/2026 12:38 | 4 msgs do cliente, 4 da loja, 0 do robô
+
+--- 21/08/2026 (Fri) ---
+[12:36] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:36] CLIENTE: Boa tarde!
+[12:36] LOJA: Boa tarde!
+[12:37] CLIENTE: Aro 15
+195-60
+[12:37] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu sou a Josi. Eu tenho aqui um pneu da marca GP Premium, que está por apenas R$ 289,00 a vista. Você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0764BD0AC4985F63ACD_818108.ogg}
+[12:38] CLIENTE: Sou daí não
+[12:38] LOJA: Ah...

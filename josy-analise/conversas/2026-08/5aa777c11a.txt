@@ -1,0 +1,25 @@
+CONVERSA 5aa777c11a | contato: Tânia 🎀 | 18/08/2026 14:31 até 18/08/2026 15:20 | 8 msgs do cliente, 13 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[14:31] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:32] CLIENTE: Gostaria de saber quanto tá o pneu 14
+[14:32] LOJA: Claro! Para que eu possa gerar o orçamento para você, poderia me informar a *medida* do pneu que você precisa (ex: 165/70/14 )  😊
+[14:33] CLIENTE: Aro 14
+[14:35] CLIENTE: Fiat mobile
+[14:44] LOJA: [áudio] "Oi, moça. Boa tarde. Tudo bem com você? Bem, porque 14 é apenas o aro da roda. Os pneus, eles têm medidas. A medida, ela está escrito na lateral do pneu. Aí, por isso, eu perguntei. Claro que eu posso fazer o orçamento para você, mas qual é a medida que você precisa? É um 6570 a 14? Aí, como você não sabe qual é a medida que está utilizando aí no seu carro, Eu coloquei aqui. Eu vou te mandar a opção do 1 7565 14, porque eu não sei o que está instalado no seu veículo. Todos os pneus têm uma numeração na lateral. Aí, se você quiser ver, se tiver como você ver, me ajuda bastante, que eu passo o orçamento certo para você."  {audio:midias/3EB0B374DDB668C7DA42D3_326125.ogg}
+[14:45] LOJA: [foto]
+[14:45] LOJA: [foto]
+[14:45] CLIENTE: Esse !
+[14:46] LOJA: Esse aqui?
+[14:46] CLIENTE: Esse
+[14:46] LOJA: Só um instante.
+[14:46] CLIENTE: Qual marca ?
+[14:46] LOJA: Só um instante.
+[14:49] LOJA: [áudio] "Olha, eu tenho aqui o pneu da marca Goodyear. Cada pneu está por R$ 446,00 se o seu pagamento for no débito ou no Pix. E aí eu tenho também o pneu da marca GP Premium, que ele está na promoção. Cada pneu está por R$ 279,00 se o seu pagamento for no débito ou Pix, tá?"  {audio:midias/A58B1A47CE633272FB8A4ECBEB75068F_444414.ogg}
+[14:49] LOJA: [foto]
+[14:51] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/A56618B2131AD3FD2802D76C5A2D5C75_448469.ogg}
+[14:52] CLIENTE: [áudio] "Não, foi meu vizinho que hoje pela manhã comprou alguns pneus aí, ele comprou da caminhonete e quatro outros para o carro pequeno. Aí ele tava me falando e por isso ele viu que eu tava fazendo orçamento, aí ele pediu pra eu dar uma ligadinha pra saber os valores direitinho."
+[14:54] LOJA: [áudio] "Ah, sim! Excelente! Aí, os pneus que ele comprou aqui comigo são justamente os da marca GP Premium, tá? Ele comprou na medida 195, que está por R$ 289,00. E, no seu caso, os pneus estão por apenas R$ 279,00."  {audio:midias/A522549A8EB7E52A2D3DF4079E9F30BA_976697.ogg}
+[15:20] LOJA: 🙋🏼‍♀️

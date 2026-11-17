@@ -1,0 +1,33 @@
+CONVERSA 7ae9034d4d | contato: AnoNovo Nova Oportunidade | 14/10/2026 08:19 até 15/10/2026 08:57 | 11 msgs do cliente, 14 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[08:19] CLIENTE: Bom dia Josy
+[08:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:20] CLIENTE: 👆🏻kombi
+[08:20] LOJA: [áudio] "Bom dia, Sr. Carlos. Como é que vai?"  {audio:midias/3EB0060C67F4C38FB4DE51_997605.ogg}
+[08:21] CLIENTE: [foto]
+[08:21] CLIENTE: Td bem Josy🙏🏻, 
+e com vcs?
+[08:22] LOJA: Bem também... obrigada por perguntar.
+[08:22] LOJA: Olha infelizmente, está em falta.
+[08:22] LOJA: Já tem 1 mês.
+[08:22] CLIENTE: Tem previsão de chegar?
+[08:23] LOJA: Por ora não, mas assim que chegar posso avisa-lo.
+[08:23] CLIENTE: Sim, 
+P.favor
+[08:23] CLIENTE: Boa$ Venda$
+[08:25] LOJA: Ficamos combinados!
+[08:25] LOJA: Tenha um bom dia!
+--- 15/10/2026 (Thu) ---
+[08:38] LOJA: Bom dia, sr Carlos!
+[08:38] LOJA: Os pneus 185r14C acabaram de chegar!
+[08:38] LOJA: [foto]
+[08:39] LOJA: Da marca Comforser R$ 345,00 a unidade para pagamento a vista.
+[08:55] CLIENTE: Bom dia Josy, td bem por aí?
+[08:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:55] CLIENTE: Tenho previsão de passar nesta região no final deste mês
+[08:56] CLIENTE: Faço questão de passar na loja e conhecer este pneu
+[08:56] CLIENTE: Ele tem as mesmas características do anterior que comprei, embora seja de outra marca?
+[08:57] LOJA: Sim, do mesmo jeito!

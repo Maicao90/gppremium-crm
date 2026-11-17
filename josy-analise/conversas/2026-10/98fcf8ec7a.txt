@@ -1,0 +1,35 @@
+CONVERSA 98fcf8ec7a | contato: Alex Coelho | 02/10/2026 20:33 até 15/10/2026 08:18 | 5 msgs do cliente, 13 da loja, 0 do robô
+
+--- 02/10/2026 (Fri) ---
+[20:33] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[20:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:33] CLIENTE: Tem pneu 235x60r16 tucson 4x unidades
+[20:58] CLIENTE: Qual valor?
+--- 03/10/2026 (Sat) ---
+[08:31] LOJA: *Josy:*
+Bom dia, tudo bem?
+[08:31] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[08:31] LOJA: *Josy:*
+Mas terei 215/65/16 ! Inclusive deixa o carro mais economico.
+[11:25] LOJA: *Josy:*
+👇🏻
+--- 14/10/2026 (Wed) ---
+[17:11] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Boa tarde. Tem pneu 235x60R16 Tucson. 4 unidades
+[17:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:12] LOJA: Somente por encomenda, nas seguintes opções abaixo, Alex
+[17:12] LOJA: [foto]
+[17:12] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:54] LOJA: O 215/65/16 não te atende?
+[18:46] CLIENTE: Não.
+--- 15/10/2026 (Thu) ---
+[08:18] LOJA: Bom dia!
+[08:18] LOJA: Eu vou encerrar seu atendimento para não encher seu whatsapp de mensagem.                                                                                                                   Se precisar futuramente é só chamar. Ou se possivel, venham até nossa loja.                                                                                                  Obrigada 👋🏻
+[08:18] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

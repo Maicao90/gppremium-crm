@@ -1,0 +1,8 @@
+CONVERSA 4874aef02a | contato: Inaldinho Eo Melhor Sempr | 27/09/2026 16:05 até 28/09/2026 08:23 | 1 msgs do cliente, 2 da loja, 0 do robô
+
+--- 27/09/2026 (Sun) ---
+[16:05] CLIENTE: Sensacional top evento hj em luziana parabéns pelo trabalho de vcs
+[16:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 28/09/2026 (Mon) ---
+[08:23] LOJA: [áudio] "Oi, Rinaldinho, bom dia! Como é que você tá? Rapaz, muito obrigada! Até a jóia!"  {audio:midias/3EB0AC3C82BAEA815830FC_12394.ogg}

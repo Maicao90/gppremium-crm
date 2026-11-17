@@ -1,0 +1,25 @@
+CONVERSA a6beb76da0 | contato: Guincho 24 horas Luziânia e região | 06/10/2026 09:08 até 06/10/2026 12:38 | 9 msgs do cliente, 8 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[09:08] CLIENTE: Bom dia
+[09:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:09] LOJA: *Josy:*
+Bom dia!
+[09:09] CLIENTE: Quanto tá o pneu 205/70/15
+[09:09] LOJA: *Josy:*
+De carga, ou nçao?
+[09:09] CLIENTE: Não pode ser remold
+[09:09] CLIENTE: Me passa preço dos de carga
+[09:09] CLIENTE: E normal
+[09:09] LOJA: *Josy:*
+É para qual carro?
+[09:09] CLIENTE: Hr
+[09:10] LOJA: *Josy:*
+Usa-se somente de carga.
+[09:10] LOJA: *Josy:*
+Entretanto está em falta no momento.
+[09:11] CLIENTE: Ok
+[11:59] LOJA: [áudio] "Se você quiser, quando eu estiver com a espinal no meu estoque, eu te informo."  {audio:midias/3EB0FFF495B8B887AC4666_185410.ogg}
+[12:38] CLIENTE: Comprei
+[12:38] CLIENTE: Obrigado

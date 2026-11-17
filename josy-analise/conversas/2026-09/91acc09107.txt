@@ -1,0 +1,20 @@
+CONVERSA 91acc09107 | contato: Edwalter | 30/09/2026 14:20 até 10/10/2026 08:34 | 4 msgs do cliente, 8 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[14:20] LOJA: *Josy:*
+Boa tarde, Junior... Como vai?
+[14:21] LOJA: [foto]
+--- 07/10/2026 (Wed) ---
+[11:21] LOJA: [áudio] "Oi, senhora Edvalde, tudo bom? Alguns dias nós conversamos aqui a respeito dos pneus para o seu carro e gostaria de saber se quer que eu reserve eles para ti. Assim que possível, consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0D362AC8E91C33D1158_316324.ogg}
+[11:59] CLIENTE: [áudio] "Oi, boa tarde. Eu só vou conseguir colocar ele no sábado. Sábado eu consigo colocar ele, aí sábado eu vou aí cedo e aí já fecho com você os pneus e aí já coloco eles. Aí sábado é certeza."
+[11:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:00] CLIENTE: 185,65,15
+[12:01] LOJA: [áudio] "Da Jéssera de Walter, não tem problema não, tá? Ah, e desculpa essa mensagem que foi aí perguntando de novo qual que é a medida dos pneus, porque o meu WhatsApp às vezes ele trava, aí acaba ainda a mensagem sem querer. Desculpa, tá bom?"  {audio:midias/3EB0E9F7BC96F91C5DAAA1_358991.ogg}
+[12:01] LOJA: [áudio] "Perfeito, ficamos combinados. Aí, assim que eu abrir a loja no sábado, eu vou te mandar um bom dia, tá bom?"  {audio:midias/3EB02E1A1A486A051AD5B7_425134.ogg}
+[12:02] CLIENTE: Ta bom
+--- 10/10/2026 (Sat) ---
+[08:03] CLIENTE: Bom dia estou aguardando uma pessoa aqui já estou subindo
+[08:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:34] LOJA: Combinado!

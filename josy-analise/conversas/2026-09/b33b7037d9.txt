@@ -1,0 +1,35 @@
+CONVERSA b33b7037d9 | contato: F.P.P. LIMA | 10/09/2026 14:36 até 11/09/2026 10:48 | 8 msgs do cliente, 11 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[14:36] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[14:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:37] CLIENTE: 215/65/R16 quanto custa
+[14:39] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:39] LOJA: [foto]
+--- 11/09/2026 (Fri) ---
+[10:22] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[10:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:23] CLIENTE: 215/65/R16 quanto custa
+[10:25] LOJA: [foto]
+[10:25] LOJA: *Josy:*
+No dia de hoje temos  essas opções 2 a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:28] CLIENTE: Certo obrigado
+[10:28] CLIENTE: Onde fica a loja
+[10:31] LOJA: [áudio] "Somos aqui de Luziânia, Goiás, e você?"  {audio:midias/3EB00B69C1ABB5F6D03315_245041.ogg}
+[10:32] CLIENTE: Gama DF
+[10:33] LOJA: [áudio] "Ah, sim. É, estamos relativamente próximos."  {audio:midias/3EB0B3A31F072D2A2B2D83_780636.ogg}
+[10:35] CLIENTE: Me manda aí a localização
+[10:36] LOJA: [áudio] "Claro, mando sim!"  {audio:midias/3EB028CABC2718EB5C4538_91164.ogg}
+[10:48] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

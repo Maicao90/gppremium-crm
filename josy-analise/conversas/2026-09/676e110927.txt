@@ -1,0 +1,28 @@
+CONVERSA 676e110927 | contato: Joca | 11/09/2026 12:48 até 22/09/2026 15:03 | 2 msgs do cliente, 12 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[12:48] LOJA: *Josy:*
+Boa tarde!
+[12:50] LOJA: *Josy:*
+215/65/16
+[12:54] LOJA: [foto]
+[13:07] LOJA: *Josy:*
+No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:18] LOJA: [áudio] "Olá, tudo jóia? Nós nos falamos mais cedo e os senhores têm busca de alguma marca específica?"  {audio:midias/3EB0283064445B2EC14D82_158318.ogg}
+[16:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:34] CLIENTE: [áudio] "Não, não tem marca específica, não. Que seja boa e seja um preço acessível, né?"
+[16:34] CLIENTE: 215/65/16
+[16:35] LOJA: [áudio] "Pois é, eu te mandei aqui o orçamento, o senhor chegou a analisar?"  {audio:midias/3EB0730EDA9A0E2EF18791_663469.ogg}
+--- 17/09/2026 (Thu) ---
+[09:22] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Nós conversamos há alguns dias atrás a respeito dos pneus 215 e 6516 que o senhor precisa. Eu te mandei aí um orçamento e gostaria muito de saber se pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB08C30690B7DF53F12D8_225710.ogg}
+--- 18/09/2026 (Fri) ---
+[15:19] LOJA: *Josy:*
+👀
+[18:11] LOJA: *Josy:*
+🙋🏼‍♀️
+[18:11] LOJA: [vídeo]
+--- 22/09/2026 (Tue) ---
+[15:03] LOJA: [foto]

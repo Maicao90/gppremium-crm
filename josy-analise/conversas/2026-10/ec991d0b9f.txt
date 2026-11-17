@@ -1,0 +1,27 @@
+CONVERSA ec991d0b9f | contato: Denis Vinicius | 05/10/2026 09:42 até 06/10/2026 08:02 | 4 msgs do cliente, 12 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[09:42] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[09:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:43] CLIENTE: 195/65 R 15
+[09:49] LOJA: *Josy:*
+Bom dia, obrigada por aaguardar.
+[09:49] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:49] LOJA: [foto]
+[10:37] LOJA: [áudio] "Oi, Denis. Bom dia. Como é que você está? Bem, eu te mandei aí as opções que eu tenho no dia de hoje, e inclusive os pneus da marca GP Premium, eles estão na promoção, que é compre 3 e leve 4. A unidade está por 329 reais, se o seu pagamento for à vista. Então, digamos que seu pagamento, né, você quisesse pagar aí no débito ou no Pix, então 329 vezes 3 pneus dá um total de 987. Por esse preço, você vai levar as 4 unidades."  {audio:midias/3EB0680C718D5339EBF65C_629149.ogg}
+[10:37] LOJA: [áudio] "E você mora aqui em Luziânia?"  {audio:midias/3EB022F2BE5E14F3E62674_239233.ogg}
+[15:25] CLIENTE: [áudio] "Boa tarde, tudo bem? Desculpa, demoro para responder. Acabei olhando sua mensagem e não respondi. Eu estou fazendo umas cotações aí para ver qual está saindo mais em conta e marca também. Esses três vezes você não consegue fazer em três vezes no crédito, não?"
+[16:11] LOJA: [áudio] "Uai, Denis, faz sim, aí é conforme o orçamento. A unidade em 3 vezes já vai subir um pouco, fica por 343."  {audio:midias/3EB03F49F23FA532171922_578138.ogg}
+[17:59] LOJA: [áudio] "Pneus, você mora aqui na cidade de Luziânia mesmo? Pois eu vou fazer o seguinte, eu vou te mandar aqui a nossa localização e assim que possível você vem aqui na loja para nós conversarmos pessoalmente, está bem?"  {audio:midias/3EB0822378B0C2566B3347_561495.ogg}
+[17:59] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:59] LOJA: [foto]
+[18:20] CLIENTE: [áudio] "É, eu sei onde é que é a loja de vocês aí. Eu não moro em Luziânia não, moro no Valparaíso. Mas eu já troquei de pneu aí do meu carro já. Do carro da empresa, na verdade."
+--- 06/10/2026 (Tue) ---
+[08:02] LOJA: [áudio] "Oi, Denis. Bom dia. Tudo jóia? Ah, perfeito. Então, assim que você tiver com a disponibilidade, passa aqui para nós conversarmos pessoalmente."  {audio:midias/3EB00F6BE4167BF7040B03_18885.ogg}

@@ -1,0 +1,23 @@
+CONVERSA 1008ab9c5c | contato: Erivaldo | 20/10/2026 12:39 até 21/10/2026 12:20 | 2 msgs do cliente, 5 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[12:39] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Qual marca desse 16.    É a medida.
+[12:39] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[12:40] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu me chamo Josi e Erivaldo são os pneus da marca GP Premium."  {audio:midias/3EB0B4EDF10A36DF422156_858045.ogg}
+[13:17] CLIENTE: [áudio] "Vem aí para mim, eu quero um 9550, ou 255, ou 255, ou 16. Valeu os valores e a marca do pneu."
+[14:02] LOJA: *Josy:*
+Essa medida aí é 195/55/16
+[14:03] LOJA: [foto]
+[14:03] LOJA: No dia de hoje temos essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 21/10/2026 (Wed) ---
+[12:20] ROBÔ: 🙋🏼‍♀️

@@ -1,0 +1,32 @@
+CONVERSA 4eeb004b49 | contato: Rafael Craveiro | 21/09/2026 10:06 até 22/09/2026 12:40 | 7 msgs do cliente, 14 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[10:06] LOJA: *Josy:*
+Bom dia, Rafael
+[10:06] LOJA: [foto]
+--- 22/09/2026 (Tue) ---
+[11:24] LOJA: [foto]
+[11:25] CLIENTE: Vc tem 205 75  16 C
+[11:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:25] LOJA: *Josy:*
+Vou ver aqui, Rafael...
+[11:26] CLIENTE: Ok
+[11:26] LOJA: [foto]
+[11:26] CLIENTE: E o 185 60 13 também?
+[11:26] LOJA: [áudio] "Rafael, tem o AXIM, que são as duas últimas unidades do pneu da marca Sunny, só que no meu orçamento é o valor de apenas um pneu, tá? Então, se for para o pagamento à vista, a unidade está por R$ 516,00. Como eu só posso vender aos pares, então os dois pneus à vista ficam por R$ 1.032,00."  {audio:midias/3EB0EC2E18B08887263756_870758.ogg}
+[11:27] LOJA: *Josy:*
+165/70/13 e 175/70/13
+[11:27] LOJA: *Josy:*
+165/70/13 da marca GP Premium de R$ 280,00 por R$ 239,00  a vista
+[11:27] CLIENTE: [áudio] "Tá, aí você tem foto desse pneu aí? Vamos ver o suco dele como é que é. E o 13, qual que você tá tendo mais barato aí? Pneu 13, o que você tá tendo mais em conta aí?"
+[11:28] LOJA: *Josy:*
+175/70/13 da marca GP Premium de R$ 299,00 por apenas R$ 269,00 a vista.
+[11:28] CLIENTE: [áudio] "Você está naquela promoção que compra 3 e leva o 4?"
+[11:28] LOJA: [áudio] "Não, a promoção é válida para as medidas 195, 65, 15 e 215, 55 a 17."  {audio:midias/3EB010BE8974601FCAB8FC_658840.ogg}
+[11:29] CLIENTE: Ok
+[11:30] LOJA: 205/75/16 C👇🏻
+[11:30] LOJA: [foto]
+[12:22] LOJA: *Josy:*
+Era a foto dos pneus de carga mesmo que você pediu?
+[12:40] CLIENTE: [áudio] "Isso, eu mandei para o colega meu aqui que está querendo, aí eu passei aí o contato de vocês aí, tá?"

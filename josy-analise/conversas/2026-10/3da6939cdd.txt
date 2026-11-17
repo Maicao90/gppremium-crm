@@ -1,0 +1,98 @@
+CONVERSA 3da6939cdd | contato: Farney Borges | 05/10/2026 14:20 até 09/10/2026 12:06 | 29 msgs do cliente, 46 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[14:20] LOJA: *Josy:*
+Boa tarde!
+[14:23] CLIENTE: [áudio] "Boa tarde, é o Farme."
+[14:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:24] LOJA: [áudio] "Oi Tani, tudo jóia?"  {audio:midias/3EB04717EB4A2C25AC7DC0_138265.ogg}
+[14:24] CLIENTE: [áudio] "Josi, pode ser esta promoção."
+[14:25] CLIENTE: [áudio] "Me manda o valor que fica e a chave fixa, eu deixo pago. Assim que eu conseguir chegar, eu passei e pego ele."
+[14:26] LOJA: [foto]
+[14:26] LOJA: *Josy:*
+195/65/15 GP -7 👇🏻
+[14:26] LOJA: [foto]
+[14:27] CLIENTE: [áudio] "Sim, José, sim mesmo. Pode ser."
+[14:27] CLIENTE: [áudio] "Me mandou uma foto do ATR, 205, 70, 15, ATR."
+[14:27] LOJA: [áudio] "Excelente. Olha, esse é o 9565-15, ele está na promoção Compre 3 e Leve 4. Como a unidade é 329, os três pneus ficaram por 987 reais, tá? Como o meu carro já saiu para entrega faz muito tempo e já voltou aqui, inclusive, eu deixei os pneus numa borracharia que fica aí no Novo Gama. Aí, se for mais prático para você buscar, eu te mando a localização."  {audio:midias/3EB09620C3868BA32F4FC3_336567.ogg}
+[14:28] LOJA: *Josy:*
+Vai ser modelo ATX
+[14:28] LOJA: [foto]
+[14:28] CLIENTE: [áudio] "É porque eu tô no caminhão da empresa e eu não posso carregar mercadoria nele, né? Faltou fazer esse tipo de coisa."
+[14:28] CLIENTE: [áudio] "Mais um 9570, ele não tá na promoção de 289?"
+[14:29] LOJA: *Josy:*
+Não temos 195/70
+[14:29] CLIENTE: [áudio] "É o 9565, perdão."
+[14:29] CLIENTE: [áudio] "Liga pra eu!"
+[14:31] LOJA: *Josy:*
+008.022.311.79
+[14:35] LOJA: *Josy:*
+Pix CNPJ
+[14:35] LOJA: *Josy:*
+24.289.955/0001-79
+[14:35] LOJA: *Josy:*
+R$ 987,00
+[14:36] CLIENTE: [áudio] "Josi, manda o valor dos 4 pneus, R$ 205,75 para mim. É modelo ATX, não é TR não, né?"
+[14:36] LOJA: [áudio] "Isso, Farney, vai ser no modelo ATX, igual da foto aí que eu te mandei. Os 4, pro pagamento no débito ou no Pix, falei pra você que o mínimo que eu consigo fazer é 346 cada. Os 4 vão ficar por 1.384 reais."  {audio:midias/3EB0D35706577FB2ACBAE0_722017.ogg}
+[14:37] LOJA: [áudio] "Na verdade, arredondando aqui, 345 vezes 4, 1380, tá bom?"  {audio:midias/3EB0AF5C9358BCF1253627_758878.ogg}
+[14:37] CLIENTE: [áudio] "Não, vai ser esse mesmo, um 9565. Você tem ele um 8565, não entra na promoção, não."
+[14:37] LOJA: *Josy:*
+Não entra
+[14:38] CLIENTE: [áudio] "Tá bom, pode ser esse mesmo. Eu já vou fazer já já para você o Pix, tá? É no CNPJ, né?"
+[14:38] LOJA: [áudio] "Isso, isso mesmo, Pane, eu te mandei aí."  {audio:midias/3EB06C1CD2ADF66ECF25A0_33564.ogg}
+[14:49] CLIENTE: [foto] Ta feito obrigado
+[14:49] CLIENTE: Daqui a pouco eu busco ta bom
+[14:49] CLIENTE: 😉
+[14:49] LOJA: *Josy:*
+Ok!
+[15:40] CLIENTE: [áudio] "Josi, boa tarde. Deixa eu te fazer uma pergunta. Você não conseguiria entregar esse pneu para mim lá no Eliton Alinhamento, próximo ao rodoviário do Setor Leste, Luziânia?"
+[15:44] LOJA: [áudio] "Uai, rapaz, eu acho que eu consigo sim."  {audio:midias/3EB035862AFE051E0DFF64_154316.ogg}
+[15:45] LOJA: [áudio] "Você me manda a localização que eu vou ver se tá saindo fazer uma entrega daqui a pouco e aí providencia."  {audio:midias/3EB0477CE73901F1DEDBF3_122855.ogg}
+[15:45] CLIENTE: [áudio] "Uai, vou pedir ele aqui agora então, que aí fica melhor pra mim, que eu vou montar lá, tá bom?"
+[15:46] LOJA: [áudio] "Sim, tá, Joia, então, tá? Só não vou conseguir mandar exatamente por agora porque eu tô sem carro, tá, Joia?"  {audio:midias/3EB0ABE7511DB4D275DD74_328878.ogg}
+[15:47] CLIENTE: [áudio] "Não, tá bom então, mas você consegue mandar hoje pra mim? Se eu chegar antes das 18 horas, eu mesmo busco. Se você conseguir mandar lá pra mim, você me avisa."
+[15:47] LOJA: [áudio] "Eu vou te mantendo informado, pode ficar tranquilo, tá bom?"  {audio:midias/3EB07BAB5A9242758A4950_81913.ogg}
+[16:01] CLIENTE: [localização] -16.2559564,-47.9326739
+[16:01] CLIENTE: [áudio] "Josi, obrigado, viu? Essa é a localização. Faz um esforço para deixar lá para mim, por favor."
+[17:15] LOJA: *Josy:*
+Creio que não vou conseguir fazer a entrega
+[17:15] LOJA: *Josy:*
+Estou sem carro.
+--- 06/10/2026 (Tue) ---
+[09:19] CLIENTE: Bom dia assim q consegui entregar la pra eu me de um aviso aqui para q eu possa pedi para leva o carro ta bom
+[09:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:19] LOJA: [áudio] "Oi Fanny, bom dia, tudo jóia? Os pneus já saíram para entrega, tá bom?"  {audio:midias/3EB0F5979F6BFF789259AD_186557.ogg}
+[09:20] CLIENTE: Muito obrigado boas vendas
+[09:20] LOJA: *Josy:*
+Imagina....
+--- 08/10/2026 (Thu) ---
+[12:19] LOJA: Oie... tudo jóia?
+[12:19] LOJA: Deu tudo certo?
+[12:21] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+[12:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:23] LOJA: [áudio] "Olá, Farne, que da hora, então fico feliz, é muito bom que tenha dado tudo certo. E deixa eu te falar uma coisa, aproveitando o seu áudio aí, na loja nós estamos usando uma gincana com os vendedores e no qual nós recebemos pontuações, justamente por conta de avaliações, né, no Google, principalmente. Aí, se não for incomodá-lo, claro, eu vou te mandar um link e você faz a avaliação dos pneus, né, que você já conhece, já utiliza, se você puder falar um pouco, né, sobre a sua experiência utilizando os pneus GP Premium e também falar sobre o meu atendimento, vai ajudar muito aqui na minha pontuação. Aí, se você puder, por gentileza, tá?"  {audio:midias/3EB0B57EFE8FEA9E3827A1_33199.ogg}
+[12:23] LOJA: https://da.gd/gp-avaliar
+[12:30] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+--- 09/10/2026 (Fri) ---
+[11:10] LOJA: Oiê
+[11:13] CLIENTE: Bom dia
+[11:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:14] LOJA: Não esquece de mim rsrs
+[11:29] LOJA: e o meu atendimento, homem?
+[11:29] LOJA: [figurinha]
+[11:29] CLIENTE: Oi eu avaliei la o q pediu
+[11:29] CLIENTE: Vou la v d novo
+[11:29] LOJA: rsrsrs
+[11:30] LOJA: ta bom
+[11:30] CLIENTE: Seu atendimento sensacional ótimo
+[11:30] LOJA: mas não está escrito lá rsss
+[12:03] LOJA: Obrigada meu amigo!
+[12:03] LOJA: Estou aqui a disposição!
+[12:03] LOJA: Tenha um bom final de semana!
+[12:05] LOJA: Em breve precisarei dos serviços de Serginho, espero que ele tenha tempo para me ajudar.
+[12:06] CLIENTE: [áudio] "Não, vai dar certo sim. Agendar com ele direitinho dá certo."
+[12:06] LOJA: [áudio] "Eu espero que ele consiga me atender. A agenda dele é muito concorrida. Jesus amado!"  {audio:midias/3EB099A27513F81DC1629B_765311.ogg}

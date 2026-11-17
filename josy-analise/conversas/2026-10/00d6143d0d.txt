@@ -1,0 +1,39 @@
+CONVERSA 00d6143d0d | contato: Biiel | 16/10/2026 09:27 até 19/10/2026 10:33 | 14 msgs do cliente, 16 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[09:27] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[09:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:27] CLIENTE: [foto]
+[09:28] CLIENTE: [foto]
+[09:28] CLIENTE: Preciso desse pneu
+[09:28] CLIENTE: Você tem esse ?
+[09:28] LOJA: Bom dia!
+[09:28] LOJA: Prefere mensagem de áudio ou texto?
+[09:29] CLIENTE: Texto
+[09:29] CLIENTE: Estou trabalhando
+[09:29] LOJA: Perfeito!
+[09:30] LOJA: Roadking está em falta aqui em nossa região. Terei a pronta entrega as 2 ultimas unidades do pneu da marca Hifly.
+[09:30] LOJA: [foto]
+[09:30] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:31] CLIENTE: Ok obrigado
+[09:31] LOJA: Mora aqui em Luziânia-Go, mesmo?
+[09:34] CLIENTE: Novo Gama
+[09:34] LOJA: Pertinho de nós!
+[09:37] LOJA: Bem... sua sugestão de marca e o Hifly tem os mesmos indices, entretanto o Hifly ten capacidade de velocidade maior que é maior: H ( de 210 km/h)
+[09:38] LOJA: De todo modo, pedi aos meus distribuidores para verificarem  se tem Roadking por encomenda, assim que eles me derem um retorno te informo, está bem!
+[09:39] CLIENTE: [foto]
+[09:39] LOJA: iaao
+[09:39] CLIENTE: Preciso de pneus com essas especificações do imetro
+[09:39] CLIENTE: E nas medidas que te passei
+[09:40] LOJA: 😉
+[09:40] CLIENTE: Valeu
+[09:40] CLIENTE: Obrigado
+[09:40] LOJA: Disponha!
+--- 19/10/2026 (Mon) ---
+[10:32] LOJA: *Josy:*
+Bom dia! Como vai?
+[10:33] LOJA: *Josy:*
+Olha, infelizmente não encontrei outras opções me marcas, a mais próxima mesma, será o Hifly

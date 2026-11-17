@@ -1,0 +1,40 @@
+CONVERSA 93a236fabc | contato: Miquéias ⚖️ | 17/09/2026 14:20 até 18/09/2026 15:53 | 10 msgs do cliente, 15 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[14:20] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[14:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:23] LOJA: [áudio] "Olá, tudo bem com você, Miqueias? Eu estou aqui aguardando o restante da sua mensagem. Qual é a medida dos pneus que você precisa para hoje?"  {audio:midias/3EB0691EFC4066766EB888_173707.ogg}
+[14:25] CLIENTE: 17
+[14:25] CLIENTE: Dois
+[14:25] CLIENTE: Quais os valores?
+[14:26] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa?
+[14:26] CLIENTE: Vou confirmar
+[14:27] LOJA: [áudio] "Perfeito, Miquel, confirma para mim, por gentileza, que eu faço orçamento para ti, está bem?"  {audio:midias/3EB09145F8B55F29008A2C_108612.ogg}
+[17:47] LOJA: [áudio] "Oi, Miquel, tudo jóia? Me diz, por gentileza, então, qual que é o seu carro? Que daí eu já tenho uma noção aqui."  {audio:midias/3EB0ACDFE73C3ED4E2A00E_72327.ogg}
+[17:58] CLIENTE: [foto]
+[17:58] CLIENTE: [foto]
+[17:58] CLIENTE: [foto]
+[17:59] LOJA: [áudio] "Certo, Miquelias, e precisa ser o turanza mesmo?"  {audio:midias/3EB0446AEE30F9BDD4D22E_716953.ogg}
+[17:59] LOJA: [áudio] "Eu vou precisar da resposta aqui dos meus distribuidores, porém hoje eles já encerraram o atendimento, eu consigo te dar uma resposta na segunda-feira, tudo bem?"  {audio:midias/3EB0B71310C7DAA12C7921_873752.ogg}
+[18:35] CLIENTE: [áudio] "Não, não precisa ser da mesma marca, não. Não precisa ser da mesma marca, não. Pode ser uma marca boa aí."
+--- 18/09/2026 (Fri) ---
+[09:16] LOJA: [foto]
+[09:16] LOJA: *Josy:*
+Teremos a pronta entrega os pneus da marca Sunny
+[09:17] LOJA: *Josy:*
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:29] CLIENTE: E dois pneus
+[09:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:53] LOJA: [áudio] "Oi, seu Miqueias, tudo bem? O meu orçamento, ele é de valor unitário, ele não calcula mais que uma unidade. Então, digamos que o senhor queira realizar o pagamento à vista, se a unidade é R$ 524,00 à vista, multiplicado por 2 pneus, dá um total de R$ 1.048,00, tá? Esse valor é para o pagamento à vista, que é débito e pique. Se for para parcelar, aí tem as opções de parcelamento em até 10 vezes, tá? Já digamos que o senhor quisesse parcelar aí esses dois pneus em 4 vezes. Então, a unidade R$ 569,00, vezes os dois pneus R$ 1.138,00. Como o senhor está parcelando em 5 vezes, ficam 5 de R$ 227,60."  {audio:midias/3EB0F8095CF53A06F2E3C9_516412.ogg}
+[15:53] LOJA: *Josy:*
+Miqueias... o T005 conforme os da foto.
+[15:53] LOJA: [foto]
+[15:53] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

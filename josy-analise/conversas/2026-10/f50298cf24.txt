@@ -1,0 +1,14 @@
+CONVERSA f50298cf24 | contato: Rosana | 21/10/2026 10:40 até 21/10/2026 13:57 | 1 msgs do cliente, 1 da loja, 1 do robô
+
+--- 21/10/2026 (Wed) ---
+[10:40] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+https://youtu.be/SF5Wo_ICsKU?is=LqyaaMDg2MDcHq5S
+[10:40] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[13:57] ROBÔ: 🙋🏼‍♀️

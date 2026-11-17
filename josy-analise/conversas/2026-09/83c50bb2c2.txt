@@ -1,0 +1,21 @@
+CONVERSA 83c50bb2c2 | contato: Derson | 18/09/2026 11:53 até 18/09/2026 12:30 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[11:53] CLIENTE: Olá! Quero um orçamento de pneus.
+[11:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:54] CLIENTE: Bom dia eu preciso de 4 Pneus pra levar pra outro estado vcs vende
+185/60R15
+*Obs: Não quero Remold*
+[11:54] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu tenho aqui sim a joia. A princípio eu tenho os pneus remolde, mas também tenho de outras marcas. Me dá só um instante que eu vou realizar o seu orçamento, está bem? E você está passando aqui por nossa empresa para poder fazer a retirada?"  {audio:midias/3EB06FAE01D484F37D8394_481123.ogg}
+[11:58] CLIENTE: Ok
+[11:58] CLIENTE: Dependendo do preço posso fazer a retirada
+[12:20] LOJA: [foto]
+[12:20] LOJA: *Josy:*
+Teremos Goodyear
+[12:20] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:21] CLIENTE: Não tem de outra marca mais barato
+[12:22] LOJA: *Josy:*
+Não.
+[12:30] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

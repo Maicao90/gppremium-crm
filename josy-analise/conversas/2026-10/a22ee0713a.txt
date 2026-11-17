@@ -1,0 +1,31 @@
+CONVERSA a22ee0713a | contato: Minha Família 👪 | 03/10/2026 09:15 até 03/10/2026 11:23 | 9 msgs do cliente, 13 da loja, 0 do robô
+
+--- 03/10/2026 (Sat) ---
+[09:15] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:16] LOJA: *Josy:*
+Bom dia!
+[09:16] CLIENTE: Precisando de 4 peneu 205 70  15 aro x bri Brutus
+[09:33] CLIENTE: ?
+[09:33] LOJA: *Josy:*
+Bom dia, muitissimo obrigada por aguardar!!!
+[09:33] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[09:51] CLIENTE: A sim
+[09:51] CLIENTE: Então pode deixar pq tenho uma certa urgência
+[09:51] CLIENTE: Obgda
+[09:52] LOJA: [áudio] "Olá, tudo bem? Eu sou a Josi. Nossa, sinto muito, pois, com urgência, eu não disponibilizo aqui no momento. Todas as opções que eu tenho da marca XBridge já esgotaram. E aí, eu consigo ter uma resposta somente na segunda-feira."  {audio:midias/3EB09103DDFB506CBBEB89_788660.ogg}
+[10:00] CLIENTE: A sim entendi
+[10:02] CLIENTE: [áudio] "Oi, bom dia, tudo bem? Você tá falando com a Mônica. Então, pra mim, é o carro que vai colocar esse pneu, vai viajar segunda-feira. Então, por isso que eu tô com essa certa urgência, mas fica pra próxima, tá bom? Obrigada."
+[10:06] LOJA: [áudio] "Com questão à marca, realmente, eu não tenho aqui a pronta entrega. Eu vou ter aqui, que não é nesse modelo borrachudo que você está precisando, que o X-Brew é um modelo bem cravudão. Eu vou ter aqui o pneu da marca Conforcer, no modelo liso, a unidade, dá para fazer aqui por... Deixa eu ver... Dá para fazer aqui a unidade por 445 reais à vista. Aí eu tenho também o pneu da marca GP Premium, que ele é um pneu ecológico que nós fazemos. Ele entra na categoria de remodelagem, só que é o pneu mais vendido que eu tenho, justamente por conta da qualidade. Ele vai estar por 349 reais à vista. Aí, se de repente for de seu interesse, eu até te mando as fotos aqui. Tá jóia?"  {audio:midias/3EB0F1FC300369AB8CF859_470931.ogg}
+[10:06] LOJA: [foto]
+[10:08] LOJA: pneu 205/70/15 96h cf2000 comforser 👇🏻
+[10:09] LOJA: [foto]
+[10:09] LOJA: *Josy:*
+205/70/15 GP Premium 👇🏻
+[10:10] LOJA: [foto]
+[10:14] CLIENTE: [áudio] "Ah, sim, eu vi aqui não, mas dessa aqui não dá certo pro carro não, tá bom? Muito obrigada."
+[11:23] LOJA: [áudio] "Mônica, eu vou encerrar aqui o seu atendimento e aí você, futuramente, se precisar de algo, você vem aqui na nossa empresa para conversar mais pessoalmente. Bom final de semana."  {audio:midias/3EB07B254AF4CD8F36D6AF_326433.ogg}
+[11:23] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

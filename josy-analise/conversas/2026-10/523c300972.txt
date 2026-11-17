@@ -1,0 +1,16 @@
+CONVERSA 523c300972 | contato: Varejista_beer_mercearia | 16/10/2026 07:46 até 16/10/2026 12:46 | 4 msgs do cliente, 5 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[07:46] CLIENTE: [foto] 📢 [Anúncio] Pneus de Passeio em Oferta
+
+Quais são os preços dos pneus?
+[07:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:46] CLIENTE: 17
+[08:19] LOJA: Claro! Para que eu possa gerar o orçamento para você, poderia me informar a *medida* do pneu que você precisa (ex: 195/40/17)  😊
+[10:32] LOJA: [áudio] "Oi, bom dia, tudo bem com você? Pô, gentileza, me informa aqui qual que é a medida dos pneus que você está precisando."  {audio:midias/3EB05516B6288EFF5BA86B_829666.ogg}
+[12:41] CLIENTE: Sim
+[12:42] CLIENTE: 195 40  17
+[12:46] LOJA: [foto]
+[12:46] LOJA: Pneu 195/40/17 da marca Comforser
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

@@ -1,0 +1,73 @@
+CONVERSA c872b25bce | contato: Rejane | 08/09/2026 16:46 até 11/09/2026 15:35 | 22 msgs do cliente, 33 da loja, 0 do robô
+
+--- 08/09/2026 (Tue) ---
+[16:46] CLIENTE: Boa tarde
+[16:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:46] CLIENTE: Vcs tem pneu aro 17 205 x 55 17?
+[16:46] LOJA: [áudio] "Oi, Regione. Boa tarde. Como é que você está?"  {audio:midias/3EB0BE8C4F6D5259DE4C99_756317.ogg}
+[16:46] CLIENTE: Estou bem Josy e vc?
+[16:47] CLIENTE: Estou precisando de 4
+[16:47] LOJA: *Josy:*
+Que benção... temos sim! Estou finalizando o seu orçamento.
+[16:48] CLIENTE: Novo vc tem José?
+[16:49] LOJA: [foto]
+[16:50] LOJA: *Josy:*
+No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:50] LOJA: *Josy:*
+Sim, o Comforser.
+[16:52] CLIENTE: Este nacional é remoldi?
+[16:52] CLIENTE: Novo só este?
+[16:53] LOJA: [áudio] "Sim, sim, é o pneu ecológico que nós fazemos. Ele entra na categoria de remodelagem, só que da linha Premium, né? E ele é o pneu mais vendido que eu tenho, justamente por conta da qualidade dele."  {audio:midias/3EB0040D7D3DC015AF68B2_977905.ogg}
+[16:53] LOJA: [áudio] "Sim, com 4 unidades que eu tenho disponível no dia de hoje, somente da marca Conforcer."  {audio:midias/3EB033AEED987EE784770B_104261.ogg}
+[16:54] CLIENTE: Mas chinês (conforser ) não é remoldi
+[16:55] CLIENTE: É um pneu novo...
+[16:55] LOJA: Garantia de anos o GP
+[16:56] LOJA: [vídeo]
+[16:56] LOJA: [áudio] "Não é, não. É um pneu chinês. E os pneus chineses, independente de marca, eles atendem, né? Estão no mercado justamente para serem comercializados, mas eles são um material sintético, né? E vem menos borracha também."  {audio:midias/A564E05EC0404806A19E9788EE882465_537817.ogg}
+[16:57] CLIENTE: P comprar 4 teria desconto?
+[16:58] LOJA: *Josy:*
+O GP Premium se for no pagamento em *dinheiro*
+[16:58] LOJA: *Josy:*
+Se você conseguir sacar, meu gerente diz que faz a 330,00 cada
+[16:58] CLIENTE: Já compramos 4 salvo engano  a uns 5 anos atrás
+[16:59] LOJA: *Josy:*
+O importado o distribuidor mantem o preço conforme o orçamento.
+[16:59] LOJA: *Josy:*
+Que bacana, então você conhece!
+[16:59] CLIENTE: Pix pode ser?
+[16:59] LOJA: Somente *dinheiro**Josy:*
+[17:01] LOJA: [áudio] "Rejane, esse valor de 330 a unidade é somente no dinheiro mesmo, tá? Porque, para mim, as transações, sejam elas para parcelar débito e Pix, todas elas são cobradas, tá? E cobra-se muito, então, realmente, o máximo do mínimo que eu consigo fazer no Pix aí, para você, no pneu da GP Premium, é R$346,00, porque só de mim, passando aqui na maquininha, já vai cobrar, se eu não me engano, R$36,00 por unidade. Então, para mim, cobra o mínimo do máximo que eu consigo fazer no Pix, R$346,00 cada. No dinheiro, R$330,00 cada, tá bom?"  {audio:midias/3EB05526355BA5C0D593BB_967961.ogg}
+[17:01] CLIENTE: Entendi Josy
+[17:03] CLIENTE: Amanhã q hs estarão funcionando?
+[17:03] LOJA: [áudio] "Sim, sim, estaremos sim. 8 horas da manhã já estamos com a loja aberta."  {audio:midias/3EB02089B2ECB9210084ED_281094.ogg}
+[17:05] CLIENTE: Até q hs Josy?
+[17:06] LOJA: [áudio] "Até às 18, você chegando aqui até 5 e meia, mais ou menos, a tempo de já instalar os pneus para você."  {audio:midias/3EB051BCF02C4983119D9B_674620.ogg}
+[17:06] LOJA: [foto]
+[21:07] CLIENTE: Obrigada!!
+--- 09/09/2026 (Wed) ---
+[08:03] LOJA: *Josy:*
+Bom dia!
+[08:03] LOJA: *Josy:*
+Estamos com a loja aberta, Rejane...
+[08:04] CLIENTE: [figurinha]
+[08:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:38] LOJA: *Josy:*
+Oi...
+[17:38] LOJA: *Josy:*
+Rejane...
+[19:09] CLIENTE: Oi Josy
+--- 11/09/2026 (Fri) ---
+[13:23] LOJA: [áudio] "Olá, Rejane, tudo bem com você? Eu tinha te mandado um oi para saber se você viria na loja, era por isso, tá? Mas eu sei que é muito corrido e se for, né, obviamente viável para você, aparece aqui no sábado, que daí nós já fazemos a instalação dos pneus no seu carro, tudo bem?"  {audio:midias/3EB045AD71219210F44B0E_371466.ogg}
+[13:24] LOJA: [foto]
+[13:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:30] CLIENTE: [áudio] "Oi Josi, tudo bem? Boa tarde. Desculpa não ter respondido a você, porque realmente tem sido bem corrido por aqui. Meu esposo acabou que fez a troca dos pneus, ele comprou um novo, ele pagou praticamente o valor que era de vocês, de 360, ele pagou 380 nos pneus novos. Então, ele achou que tinha mais borracha e eu agradeço a você, igual ele falou, não, não é um pneu remold, não é um pneu chinês, é um pneu bom. E aí ele chegou em casa falando, eu até iria aí levar o carro aí pra vocês poderem fazer essa troca pra nós. Mas aí como ele acabou trocando por lá, tá bom? Os próximos agora a gente procura fazer com vocês. Agradeço muito sua atenção, Josi. Uma feliz tarde pra ti."
+[13:31] LOJA: [áudio] "Mas o pneu que eu te mandei de 360 é pneu novo."  {audio:midias/3EB0B222235C0DB419CB00_512143.ogg}
+[13:32] CLIENTE: [áudio] "Pois é, mas é o que ele estava argumentando, que era um pneu chinês e tudo, e o pneu que ele comprou foi uma marca boa, uma marca mais já conhecida, por isso que ele fez essa troca lá, entendeu? Mas muito obrigada, Josi, de qualquer maneira, obrigada mesmo pela sua atenção."
+[13:33] LOJA: [áudio] "Ah, ele conseguiu um pneu nacional? Que máximo!"  {audio:midias/3EB020EB8AD88A839565C9_227407.ogg}
+[13:33] LOJA: [áudio] "Olha que difícil de encontrar pneus nacionais com preço, assim, mais acessível."  {audio:midias/3EB0833D3FA7899954E999_565919.ogg}
+[15:35] CLIENTE: Foi Josy

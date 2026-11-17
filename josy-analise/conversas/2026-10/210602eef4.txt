@@ -1,0 +1,58 @@
+CONVERSA 210602eef4 | contato: . | 15/10/2026 11:58 até 17/10/2026 10:31 | 15 msgs do cliente, 32 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[11:58] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[11:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:59] CLIENTE: Ver o preço por favor
+[11:59] CLIENTE: 4 pneus  13/ 70 por favor
+[12:00] CLIENTE: 1757013
+[12:00] CLIENTE: Palio
+[12:01] LOJA: Ok
+[12:05] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:05] LOJA: [foto]
+[12:13] CLIENTE: [áudio] "E quando que você faz os quadros com o alinhamento e a cambagem, para dar ele montado já."
+[12:41] LOJA: Qual das opções a senhora quer?
+[12:41] LOJA: Me diz qual a forma de pagamento também!
+[12:43] CLIENTE: A vista
+[12:46] LOJA: por gentileza?
+[12:47] CLIENTE: Dinheiro
+[12:47] LOJA: [áudio] "Oi, boa tarde, tudo bom? Eu quero saber qual que é a marca do pneu que a senhora está querendo, que daí eu calculo aqui."  {audio:midias/3EB0F17AB457CE2E0E5CA2_872552.ogg}
+[12:47] LOJA: [áudio] "Fiquei no orçamento que eu te encaminhei, tem 4 opções."  {audio:midias/3EB0DEBE2E1358DCA07328_334792.ogg}
+[12:48] CLIENTE: [áudio] "Esse último é de baixo, nacional."
+[12:48] LOJA: Perfeito!
+[12:50] LOJA: No pagamento se realmente for em *dinheiro fisico*  a unidade faço por 259,00 x 4 pneus ficam por R$ 1036,00
+[12:50] LOJA: * Balanceamento = 35,00 (por pneu)
+* Alinhamento = 120,00 (Alinhamento de Direção)                             Valores negociaveis está bem!
+[12:51] LOJA: [áudio] "O serviço de balanceamento é 35 por roda e o alinhamento é 120. Só que esses valores, eles são completamente negociáveis, tá? E você vindo aqui na nossa loja, pode falar com os meninos aqui da oficina que eles fazem um preço melhor para a senhora, tá bom?"  {audio:midias/3EB00F1F45A56624049DB4_681114.ogg}
+[12:51] LOJA: [áudio] "Eu vou te mandar aqui a minha localização."  {audio:midias/3EB091E9CD5927C7347361_694755.ogg}
+[12:51] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:51] LOJA: [foto]
+[12:51] LOJA: [áudio] "Fica aqui na BR-040, do lado do Hotel Goiás, Goiás Diesel. Essa é a foto aqui da frente da nossa loja, tá?"  {audio:midias/3EB02115FE3F25DB66AB90_424188.ogg}
+[12:52] CLIENTE: [áudio] "É que Petro, se obvio, se ilusione, não é?"
+[12:52] CLIENTE: [áudio] "Mas aí você vê para mim que eu tenho que saber o valor quanto fica tudo, né? Porque para me levar sem saber o valor certo, não tem como."
+[12:52] LOJA: [áudio] "Isso, eu te mandei a localização da loja, exatamente, tá bom?"  {audio:midias/3EB0F12D0CBA6D21F2C2AD_955374.ogg}
+[12:53] LOJA: [áudio] "Eu te mandei. Então, os pneus ficam um total de R$ 1.036,00. O balanceamento por roda é R$ 35,00, vezes 4, dá R$ 140,00, mais o alinhamento do carro, que é R$ 120,00, dá um total de R$ 160,00. Aí, fica um total de R$ 1.296,00 tudo, tá joia? Só que igual eu te falei, o preço aí que eu te passei do balanceamento e do alinhamento, esse daí. Só que você vindo aqui, os meninos negociam um preço melhor com você, tá joia? Isso aqui é o meu preço, o preço final. Mas você vindo aqui, você negocia com eles, que eles fazem um preço melhor para a senhora, tá bom?"  {audio:midias/3EB072694684EA1ACAF9A4_776471.ogg}
+[12:53] LOJA: [áudio] "E a nossa loja é aqui, perto do CIOPS. Eu te mandei a localização e a foto da frente da loja. Chegou aí para a senhora? Pode confirmar, por gentileza."  {audio:midias/3EB03CF2CCF8C925345CE0_256948.ogg}
+[12:55] CLIENTE: [áudio] "Não, só chegou a foto da loja. A localização, não. Mas é isso que eu quero ver mesmo, porque se ele fechar em 1200, aí eu levo o carro aí no sábado de manhã."
+[12:55] LOJA: aqui a localização.
+[12:56] CLIENTE: Mandou sim a localização
+[12:56] LOJA: [áudio] "Eu falei para a senhora, é tudo negociável, fique tranquila, tá bom? Eu te passei aí o valor dos pneus, como a senhora disse que vai pagar no dinheiro, eu já te dei um desconto aqui, tá joia? Então os pneus ficam por 1.036. Já os serviços, como eu te passei aí o valor total deles, né? Que é 35 vezes 4 mais 120, total 260. Fica tranquila. Que esse valor é negociável, é só vir aqui na loja, tá bom?"  {audio:midias/3EB0FCD89B0663EAF9B233_618346.ogg}
+[13:27] LOJA: [áudio] "Aí eu vou agendar aqui então, que no sábado, assim que eu abrir a loja, eu te mando um bom dia, tá? Qual é mesmo o seu nome?"  {audio:midias/3EB0FD441D7F3535C01002_481063.ogg}
+[14:51] LOJA: Qual é seu nome moça?
+[15:37] LOJA: [áudio] "Bem, moça, vou salvar com seu contato, tá? Não sei seu nome, mas eu vou salvar com seu contato. E no sábado você vem cá, então, na nossa fábrica, tá? E me procura."  {audio:midias/3EB02AFFF153C1D3DD399B_163390.ogg}
+[15:38] LOJA: Sou a Josy, aqui é para a frente do Cipos
+[15:46] LOJA: [vídeo]
+--- 17/10/2026 (Sat) ---
+[10:11] LOJA: 🙋🏼‍♀️
+[10:11] LOJA: Está a caminho?
+[10:15] CLIENTE: Bom dia! Meu filho esta trabalhando  hoje nao tem como levar  o carro
+[10:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:15] LOJA: Tudo bem então...
+[10:16] LOJA: Obrigada por retornar 😊
+[10:31] CLIENTE: Ob eu

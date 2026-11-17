@@ -1,0 +1,38 @@
+CONVERSA 0bb12a157b | contato: Manoel | 26/08/2026 19:12 até 27/08/2026 12:09 | 11 msgs do cliente, 14 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[19:12] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[19:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 27/08/2026 (Thu) ---
+[08:06] LOJA: 🙋🏼‍♀️
+[08:20] CLIENTE: [áudio] "Bom dia! Esses pneus aí, vocês dividem no cartão? Como é que é?"
+[08:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:20] CLIENTE: [áudio] "Aro 15."
+[08:21] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu sou a Josi. Sim, dividimos. Por gentileza, me informa qual que é a medida dos pneus que o Senhor precisa, porque 15 é apenas o aro."  {audio:midias/3EB04050045433A69AB567_310614.ogg}
+[08:22] CLIENTE: [áudio] "Ah, tá. Vou verificar. Eu não tô em casa, não. Vou verificar. Se eu chegar em casa, vou ver a medida do pneu. Muito obrigado."
+[08:22] LOJA: *Josy:*
+Qual é seu carro?
+[08:23] CLIENTE: [áudio] "É um Siena 2010."
+[08:24] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:24] LOJA: [foto]
+[08:25] CLIENTE: [áudio] "Ah tá, vou ver se eu procurei, tá? Obrigado."
+[08:35] LOJA: [áudio] "A medida original é essa que eu te encaminhei, tá bom? E eu tenho aqui em promoção a opinião da marca GP Premium, o preço normal dele é 289 reais, aí este mês estou fazendo por apenas 249 reais à vista e já faz a instalação deles também, tá jóia? O senhor mora aqui em Luziânia mesmo?"  {audio:midias/3EB0BF1A56279DA0EC159A_507786.ogg}
+[08:37] CLIENTE: [áudio] "Moro, moro aqui em Luziânia. Ah, tá. E os quatro aí dividem quantas vezes?"
+[08:38] LOJA: [áudio] "Você vai precisar de quantos pneus, seu Manuel?"  {audio:midias/3EB0D13A1FAEAC638DD8DA_21002.ogg}
+[09:02] CLIENTE: [áudio] "São 4, todos 4."
+[09:02] CLIENTE: [áudio] "Mas pra mim aí, pra mim ver quanto fica. Esses pneus mais baratos, eles são bons?"
+[09:02] LOJA: [áudio] "Simplesmente são os pneus mais vendidos que eu tenho, justamente por conta da qualidade, tá bom? São muito bons."  {audio:midias/3EB0F26B30D093E6FBDF7C_619885.ogg}
+[09:03] LOJA: [áudio] "Se o senhor estiver realmente utilizando essa medida aí, digamos que o senhor queira parcelar em... Deixa eu ver aqui... Em 10 vezes. Então, os 4 pneus vão ficar assim, tá? Em 10 vezes vão ficar 10 parcelas de 112 reais. Os 4 pneus ficam 10 parcelas de 112 reais. Aí, se o senhor quiser que calcule em menos vezes, o senhor me fala que eu faço um novo cálculo aqui, tá bom?"  {audio:midias/3EB03BD8CCD7FA5C4C0B47_756440.ogg}
+[09:04] CLIENTE: [áudio] "Eu vou ver aqui a medida do pneu certinho, aí eu vou ver, tá? Te procuro."
+[09:05] LOJA: [áudio] "Tá, já então. Eu vou fazer o seguinte, eu já vou te mandar aqui a localização da nossa fábrica, que se o senhor estiver com o tempo, o senhor já vem direto aqui, que aí nós vemos, né, o carro, como é que tá a situação aí dos pneus, nós conferimos tudo direito aqui pro senhor, tá joia?"  {audio:midias/3EB004D8D2C25860054710_17795.ogg}
+[09:09] CLIENTE: Tá. Bom
+[09:11] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6 g*Josy:*
+[12:09] LOJA: [foto] *Josy:*
+Fabrica GP Premium

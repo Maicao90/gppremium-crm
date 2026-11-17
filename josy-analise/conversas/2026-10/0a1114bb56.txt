@@ -1,0 +1,31 @@
+CONVERSA 0a1114bb56 | contato: José Albuquerque | 02/10/2026 10:48 até 03/10/2026 09:31 | 3 msgs do cliente, 12 da loja, 0 do robô
+
+--- 02/10/2026 (Fri) ---
+[10:48] LOJA: *Josy:*
+Bom dia!
+[10:50] LOJA: [foto]
+[10:50] LOJA: *Josy:*
+
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:50] LOJA: *Josy:*
+Pagamento em *dinheiro* em espécie R$ 380,00 cada
+[10:58] LOJA: *Josy:*
+Estava vendo o senhor sair, e olhando a BR , ela é o nosso termômetro, liga norte a sul, e o senhor viu como está vazio?  Se na BR não tem fluxo... é preocupante.
+[11:25] CLIENTE: Verdade tudo isso é o efeito do PIB chegar à 82% muito difícil
+[11:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:26] LOJA: *Josy:*
+Muito, sr José... por demais.
+[17:21] LOJA: *Josy:*
+Oi...
+[17:22] CLIENTE: [áudio] "Pega aí. Olá, boa tarde, tudo bem? Eu queria saber se dava tempo ainda hoje aí. Mas eu acho que vou deixar para amanhã. Já sei que pouco, né? Fecha seis. Caralho!"
+[17:22] LOJA: [áudio] "Uai, se a senhora for vir agora, dá sim!"  {audio:midias/3EB07692BB034BFF878332_368009.ogg}
+[17:25] LOJA: *Josy:*
+Desculpa que não consegui atender, pois o celular descarregou, bem na hora!
+--- 03/10/2026 (Sat) ---
+[09:27] CLIENTE: Brigado bom dia 
+Deus nos abençoe sempre
+[09:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:31] LOJA: [áudio] "Senhor José, nossa, eu fico extremamente grata pelo Senhor por ter vindo aqui. Que agradável poder conversar com o Senhor, tá joia? Deus te abençoe, né? Ilumine muito aí o Senhor e a sua família e, nossa, bom final de semana, tá joia? Fiquem com Deus."  {audio:midias/3EB0C3793FC2D756A1F1FC_323598.ogg}

@@ -1,0 +1,8 @@
+CONVERSA 273d92dd16 | contato: João Felix | 19/08/2026 08:13 até 19/08/2026 08:13 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[08:13] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[08:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:13] CLIENTE: 175/65/14
+[08:13] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Me chamo Josi e eu tenho aqui os pneus da marca GP Premium por apenas R$ 249,00 à vista. E você mora aqui na cidade de Luziânia, Goiás mesmo?"  {audio:midias/3EB05A75059D9255B7F112_183100.ogg}

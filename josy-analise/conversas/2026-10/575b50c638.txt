@@ -1,0 +1,32 @@
+CONVERSA 575b50c638 | contato: Wr Kida | 19/10/2026 14:33 até 21/10/2026 16:26 | 6 msgs do cliente, 7 da loja, 7 do robô
+
+--- 19/10/2026 (Mon) ---
+[14:33] LOJA: *Josy:*
+Boa tarde, sr Wilton... pode avaliar a nossa empresa no Googel?
+[14:33] LOJA: *Josy:*
+https://da.gd/gp-avaliar
+[14:37] CLIENTE: Só se eu ganhar um boné de brinde ☺️
+[14:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:38] LOJA: *Josy:*
+hoje tenho adesivo rsrs...
+[14:38] LOJA: *Josy:*
+Mas quando tiver boné eu te aviso.
+[14:38] CLIENTE: Ta bom.👍🏻
+[14:55] LOJA: *Josy:*
+Salvei seu contato como Wilton Kida (boné)  para lembrar.
+[14:59] CLIENTE: 🙏🏻
+--- 20/10/2026 (Tue) ---
+[08:24] LOJA: *Josy:*
+Bom dia, sr Wilton... não esquece de fazer a avaliação, por gentileza.
+--- 21/10/2026 (Wed) ---
+[12:40] ROBÔ: 🙋🏼‍♀️
+[13:12] CLIENTE: Oi. Não consegui entrar no Google. Esqueci a senha
+[13:12] ROBÔ: Sem problema, Wilton! Quando você conseguir recuperar a senha, faz a avaliação com calma, sem pressa nenhuma 😊
+[13:12] ROBÔ: Se precisar de pneu, é só me passar a medida ou o modelo do carro que eu te passo o valor.
+[13:24] CLIENTE: [figurinha]
+[13:24] ROBÔ: Valeu, Wilton! 😄
+[13:24] ROBÔ: Qualquer coisa é só chamar por aqui.
+[13:24] CLIENTE: ☺️🙏🏻
+[13:24] ROBÔ: Por nada, Wilton! Um abraço 😊
+[16:26] ROBÔ: 🙋🏼‍♀️

@@ -1,0 +1,28 @@
+CONVERSA b5bbec6d65 | contato: Doutor Ninja | 25/09/2026 10:28 até 26/09/2026 10:57 | 6 msgs do cliente, 15 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[10:28] CLIENTE: Olá bom dia
+[10:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:29] CLIENTE: Vc tem esse pneu 265/70/16
+[10:36] LOJA: [áudio] "Olá Joildo, tudo jóia? Como é que você está?"  {audio:midias/3EB0A5B95FB0725B921850_489194.ogg}
+[10:37] LOJA: [áudio] "Sr. Joildo, essa foto aí, ela é do 235-70-16. E eu vou ter o 235-70-16 e o 255-70-16 nesse desenho aí mesmo, tá?"  {audio:midias/3EB0D4FC49BCFA46212627_586236.ogg}
+[10:37] CLIENTE: [áudio] "Bem, graças a Deus, estou precisando de 4 pneus para minha caminhonete."
+[10:37] CLIENTE: [áudio] "Esse 255 é mais alto que esse, então, eu quero ir mais alto, tá com o anteiro."
+[10:38] LOJA: [áudio] "Vou te mandar aqui os preços, tá?"  {audio:midias/3EB0251059C851D6304C15_93219.ogg}
+[10:38] LOJA: [foto]
+[10:38] LOJA: [áudio] "O 235 está por 489 e o 255, ele entrou aqui na oferta de 589 por apenas 539 a lista."  {audio:midias/3EB0DBB5DCCA40720C8CB4_843153.ogg}
+[10:40] LOJA: [áudio] "E senhora Joildo, o desenho vai ser desse mesmo jeitinho aí, tá?"  {audio:midias/3EB0DBE7EE6894A58B03E0_957562.ogg}
+[10:52] LOJA: [áudio] "Joíldo, quer que separa os pneus aqui pra você?"  {audio:midias/3EB0497E7A46128531ED91_929017.ogg}
+[10:52] LOJA: [foto]
+[10:53] CLIENTE: [áudio] "Então, amanhã vocês estão abertos e outra coisa, por isso você me dá a montagem, né? Quando você vai me fazer os quatro, à vista, pra me pegar e ir amanhã, uma vez mais certo o negócio, que aí eu vou ir amanhã e pego. E dessa vez você vai me dar garantia, né? Se der algum problema, porque aquele pneu lá que estourou, vocês não quiser me dar garantia da outra vez, não."
+[10:54] LOJA: [áudio] "Seu Joíldo, todo tipo de pneu tem garantia. Dentro dos critérios de garantia, né, são avaliadas as situações as quais são procedentes de garantia e as quais não são, tá? E isso não somente para o pneu da marca GP Premium, para qualquer marca. Então, se a situação for procedente, o pneu é ressarcido, não somente para o pneu GP Premium, qualquer marca. Se não for procedente, aí, infelizmente, faz-se um laudo. Mas não é exclusividade do pneu GP Premium, isso é para qualquer tipo de marca."  {audio:midias/3EB0C8E4CAF8BE00B33B9C_747799.ogg}
+[10:54] LOJA: [áudio] "E esses pneus já estão no preço final deles, tá joia? E nós colocamos os pneus sim."  {audio:midias/3EB06203397BDE0178E68B_482080.ogg}
+[13:50] CLIENTE: [áudio] "Então, mas quanto vai ficar os 4? É isso que eu tô perguntando."
+[13:56] LOJA: [áudio] "Olha, o 255, como ele está, coloquei aqui por 539, os 4 ficam por 2.156, tá?"  {audio:midias/3EB0DFEA1C2BB9044E20BA_291633.ogg}
+[13:56] LOJA: [áudio] "Esse é o valor à vista. E se você quiser parcelar, você me fala que eu faço aqui a simulação de parcelamento."  {audio:midias/3EB05CAA776B2AB3DDDBFE_604232.ogg}
+--- 26/09/2026 (Sat) ---
+[10:56] LOJA: *Josy:*
+Bom dia!
+[10:57] LOJA: *Josy:*
+Você está a caminho?

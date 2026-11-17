@@ -1,0 +1,29 @@
+CONVERSA 73a107ff45 | contato: Ozias | 23/09/2026 07:03 até 24/09/2026 11:44 | 4 msgs do cliente, 10 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[07:03] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[07:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:03] CLIENTE: 185x60x15
+[08:09] LOJA: *Josy:*
+Bom dia!
+[08:09] LOJA: *Josy:*
+Temos os pneus da marca GP Premium que estão em oferta.
+[08:10] LOJA: *Josy:*
+De R$ 289,00 por apenas R$ 249,00 a vista e já são pneus colocados.
+[08:15] CLIENTE: Quais modelos
+[08:16] CLIENTE: E os nacionais os preços
+[08:19] LOJA: [foto]
+[08:19] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:38] LOJA: *Josy:*
+Ozias, quando o senhor consegue vir aqui na nossa loja para fazer a troca dos pneus?
+--- 24/09/2026 (Thu) ---
+[09:28] LOJA: [áudio] "Oi, senhorasias, bom dia, como é que está? Eu te mandei um orçamento ontem e gostaria muito de saber se pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB007329198C8C4DEE1CE_547930.ogg}
+[11:44] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:44] LOJA: [foto]

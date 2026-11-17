@@ -1,0 +1,26 @@
+CONVERSA 1d7df13e4f | contato: Alex Araujo | 06/10/2026 12:37 até 09/10/2026 08:38 | 4 msgs do cliente, 11 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[12:37] LOJA: *Josy:*
+Boa tarde, Alex
+[12:37] LOJA: [foto]
+[12:37] CLIENTE: Oii
+[12:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:38] LOJA: [foto]
+[12:38] CLIENTE: Esse de 279 vc consegue um desconto são 4 unidades
+[12:38] CLIENTE: Pagamento avista
+[12:39] LOJA: No pagamento em *DINHEIRO fisico* consigo sim, a unidade vai ficar por R$ 265,00
+[12:47] LOJA: *Josy:*
+Vou te encaminhar a nossa localziação!
+[12:47] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:35] LOJA: 🙋🏼‍♀️
+[17:35] LOJA: *Josy:*
+Alex...
+--- 07/10/2026 (Wed) ---
+[11:56] LOJA: [áudio] "Oi, bom dia. Tudo bem com você? Nós estávamos conversando aí ontem e eu gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB07173B5C61D8C32CAD2_921496.ogg}
+--- 09/10/2026 (Fri) ---
+[08:38] CLIENTE: [áudio] "Não, eu já achei mais barato, tá? Obrigado aí. Achei de 180 reais. É só colocar umas carretinhas que eu tenho aqui, que vai dar certo. Obrigado, tá? Até a próxima."
+[08:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

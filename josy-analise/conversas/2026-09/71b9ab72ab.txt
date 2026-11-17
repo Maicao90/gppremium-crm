@@ -1,0 +1,38 @@
+CONVERSA 71b9ab72ab | contato: 🎣🍀🌱🌾🍺🇩🇪🇧🇷🙏🏻🙏🏻 | 22/09/2026 13:19 até 24/09/2026 10:19 | 12 msgs do cliente, 14 da loja, 0 do robô
+
+--- 22/09/2026 (Tue) ---
+[13:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:19] CLIENTE: [áudio] "Bom dia. Quanto ao pneu que dá na estrada? Você tem os pneus que dá na estrada? E qual valor está eles?"
+[13:22] CLIENTE: [áudio] "Não sei não, o que dá mais na palha de ventre? É 205? Eu não sei, eu não entendo muito nisso. Qual que põe na palha de ventre? É 205?"
+[13:23] CLIENTE: 205\70
+[13:23] CLIENTE: 15
+[14:04] LOJA: [áudio] "Oi, seu Francisco, tudo jóia? Obrigada aí por aguardar, tá? Minha internet está com estabilidade, então atrasou todos os meus atendimentos aqui no WhatsApp. E olha, eu tenho aqui, sim, 205,75, o da marca GP Premium, ele está por apenas R$ 349,00 a vista."  {audio:midias/3EB0B7CFB725A62E1A0CC1_483232.ogg}
+[14:06] LOJA: [foto]
+[14:06] LOJA: [foto]
+[14:06] LOJA: [foto]
+[14:23] CLIENTE: [áudio] "Bom, vou ver o que eu te procuro então. Hoje eu vou para Brasília e eu te procuro então, tá bom? Obrigado."
+[14:27] LOJA: [áudio] "Beleza, Francisco. Já vem com o carro e já montamos os pneus para você."  {audio:midias/3EB04DAA4D0D4DE915E23B_127731.ogg}
+[14:29] LOJA: [foto]
+[17:33] CLIENTE: [foto]
+[17:33] CLIENTE: [áudio] "E a medida? A medida é essa aí, ó. Pensei que era 15."
+[17:34] LOJA: *Josy:*
+Temos também!
+[17:34] CLIENTE: Valor e marca
+[17:34] LOJA: [foto]
+[17:34] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:36] CLIENTE: Ok
+--- 24/09/2026 (Thu) ---
+[10:14] LOJA: [áudio] "Oi, seu Francisco, bom dia, como é que vão as coisas? Eu te mandei aí o orçamento ontem, né, e gostaria de saber se tem alguma dessas opções que eu posso reservar para ti. Assim que possível me dá um retorno, tá bom?"  {audio:midias/3EB08E4BB87553B4320269_344534.ogg}
+[10:16] CLIENTE: Bom dia
+[10:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:16] CLIENTE: [áudio] "Eu tô vendo ainda, eu vou ver aqui, tô esperando agora, tô esperando arrumar, tá na saída da oficina, eu vou ver aqui. Qualquer coisa, eu vou contar com você de novo, tá bom? Obrigado, tá?"
+[10:17] LOJA: *Josy:*
+Perfeito!
+[10:17] LOJA: *Josy:*
+Boa semana.
+[10:19] CLIENTE: Obrigado pra vc também 🙏

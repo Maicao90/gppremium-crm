@@ -1,0 +1,41 @@
+CONVERSA cf0bbd433c | contato: gilsonsousa923@gmail.com | 20/10/2026 13:56 até 21/10/2026 12:07 | 8 msgs do cliente, 10 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[13:56] CLIENTE: [foto] 📢 [Anúncio] Pneus de Passeio em Oferta
+
+Boa tarde onde fica essa loja de pneus 🛞?
+[13:56] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[13:58] CLIENTE: Gilson Sousa 
+Pneus 195/ 55 R16
+[14:00] CLIENTE: Gilson Sousa
+[14:01] CLIENTE: 195/55 R16
+[14:01] LOJA: *Josy:*
+Boa tarde, Gilson, obrigada por aguardar!
+[14:01] LOJA: [foto]
+[14:02] LOJA: *Josy:*
+No dia de hoje temos  essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:04] LOJA: [foto]
+[14:10] CLIENTE: Eu gostaria de saber onde fica a loja amig só isso por favor?
+[14:10] LOJA: *Josy:*
+Somos de Luziânia-Go, e voc~e?
+[14:11] CLIENTE: Daqui do jardim ingá
+[14:12] LOJA: *Josy:*
+Pertinho!
+[14:13] CLIENTE: Sim é
+[14:23] LOJA: *Josy:*
+Que dia fica bom para o senhor vir aqui trocar os pneus.
+[14:39] CLIENTE: Depois passo por ae
+[14:45] LOJA: *Josy:*
+Vou te encaminhar a nossa localização.
+[14:47] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 21/10/2026 (Wed) ---
+[12:07] ROBÔ: 🙋🏼‍♀️

@@ -1,0 +1,29 @@
+CONVERSA 6819b8bf6b | contato: francomarcone619 | 02/10/2026 12:16 até 05/10/2026 16:49 | 4 msgs do cliente, 16 da loja, 0 do robô
+
+--- 02/10/2026 (Fri) ---
+[12:16] LOJA: *Josy:*
+Boa tarde!
+[12:16] LOJA: [foto]
+[12:22] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:23] LOJA: *Josy:*
+* Balanceamento = 35,00 (por pneu)
+* Alinhamento = 120,00 (somente Alinhamento de Direção)
+[12:26] CLIENTE: [áudio] "José, depois o Marconi só manda a localização aí, que você esqueceu de mandar o vídeo, mas não tem nada a ver não. Falou? Bom dia. Se eu não aparecer aí de hoje para amanhã, eu apareço na semana aí, tá?"
+[12:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:31] LOJA: [vídeo]
+[12:33] LOJA: [áudio] "Quando o senhor vier aqui para Luziânia, tem a BR, né? Aí o senhor vai fazer o retorno para frente um pouquinho de onde tem aqueles pardais eletrônicos, um pouquinho para frente do trevo de Luziânia. Aí o senhor vai fazer o retorno como se estivesse indo para o Valparaíso. Aí o senhor vai ver que à direita o senhor vai passar ali pela Vipal, né, que é de caminhões. Aí um pouquinho mais adiante vai ter aquele, é um motel, acho que é Las Vegas o nome dele. Um pouquinho para frente do motel vai ter esse posto aí que eu mostrei para o senhor. Aí é só entrar aqui na ruazinha aqui do lado, que o senhor já vai dar de frente aqui com a Goiás Diesel, Hotel Goiás. E aí aqui a gente... Tá bom? Tá bom? Tá bom?"  {audio:midias/3EB0576BBB50C712AE54D9_212170.ogg}
+[12:57] LOJA: [áudio] "Ei, Sr. Marconi, eu só não mandei a foto e o vídeo dos pneus, mas aí no seu carro vai dar para colocar o 9565 mesmo, tá? É que o celular aqui descarregou, eu estou mandando áudio para o senhor através do computador, tá joia? Mas assim que eu pegar o celular aqui de novo, eu mando a foto do pneu."  {audio:midias/3EB0FB88E4B9DD85E202FF_200510.ogg}
+[12:57] CLIENTE: [áudio] "Tá ok, moça. Tá tudo sob controle."
+--- 05/10/2026 (Mon) ---
+[14:52] LOJA: [áudio] "Sra. Marconi, como é que a senhora está?"  {audio:midias/3EB0C91D2AB6D65A07209D_452769.ogg}
+[14:55] LOJA: [foto]
+[14:55] LOJA: [foto]
+[15:05] CLIENTE: [áudio] "A pneuzinha aí é bom mesmo, depois eu vou aí, parrentinha. Está, beleza."
+[15:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:05] LOJA: [áudio] "Sim, o pneu é bom demais da conta, seu Franco. Eu fiquei também de te mandar o vídeo aqui da loja, né? Eu não esqueci do Senhor, não."  {audio:midias/3EB007AF4AFE11A9A48A15_594301.ogg}
+[15:06] LOJA: [vídeo]
+[16:39] LOJA: [áudio] "Aí, tá vendo? Não é difícil de achar aqui, não."  {audio:midias/3EB0B6D1045C58E5C7079E_241379.ogg}
+[16:48] CLIENTE: [áudio] "Eu sei, eu conheço por aí tudo, eu já sei onde é que é, moça. Na hora que der certo, quando você menos esperar, eu apareço por aí. Obrigado aí."
+[16:49] LOJA: [áudio] "Com nada, seu Franco. Boa semana. Deus te abençoe."  {audio:midias/3EB01D908A4238EEEC3324_516301.ogg}

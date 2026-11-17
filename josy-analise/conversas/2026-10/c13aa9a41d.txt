@@ -1,0 +1,27 @@
+CONVERSA c13aa9a41d | contato: Anderson | 13/10/2026 20:12 até 14/10/2026 14:24 | 5 msgs do cliente, 12 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[20:12] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[20:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:13] CLIENTE: 17/265/65
+--- 14/10/2026 (Wed) ---
+[08:19] LOJA: Bom dia!
+[08:20] LOJA: [foto]
+[08:20] LOJA: No dia de hoje temos essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:38] LOJA: [áudio] "Olá, tudo bem? Anderson, eu te encaminhei um orçamento mais cedo e gostaria de saber se essas opções aí te atendem ou se vocês têm busca de alguma marca específica."  {audio:midias/3EB0380E05B2668BEA753B_456902.ogg}
+[14:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:22] CLIENTE: [áudio] "Me atente sim, até sábado eu procuro vocês aí de novo."
+[14:22] LOJA: [áudio] "Ah, beleza, Anderson."  {audio:midias/3EB02E621F6449A0736B4E_860687.ogg}
+[14:22] CLIENTE: [áudio] "Deixa eu te perguntar, esse valor só é o pneu, né? Não tem montagem, nada não, né?"
+[14:22] LOJA: [áudio] "Na compra do pneu GP Premium, ele já é colocado sim, tá?"  {audio:midias/3EB077618EE81644F2F8C4_10525.ogg}
+[14:22] LOJA: [áudio] "Você quer que eu te mande foto dele?"  {audio:midias/3EB01BBE15D17BCDE70E0E_881757.ogg}
+[14:23] LOJA: [áudio] "E você vai precisar dos 4?"  {audio:midias/3EB01BFB453BBEEDDAE30F_802775.ogg}
+[14:23] CLIENTE: [áudio] "Seria os quatro. Manda uma foto dele pra mim, por favor."
+[14:24] LOJA: 265/65/17 Brutus 👇🏻
+[14:24] LOJA: [foto]

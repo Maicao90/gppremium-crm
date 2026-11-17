@@ -1,0 +1,29 @@
+CONVERSA 96e54ca261 | contato: Marcos Henrique | 01/10/2026 12:40 até 01/10/2026 13:03 | 5 msgs do cliente, 11 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[12:40] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:41] LOJA: *Josy:*
+🙋🏼‍♀️
+[12:41] CLIENTE: Tá quanto pneu 195 55 aro 15
+[12:41] CLIENTE: Boa tarde
+[12:41] LOJA: *Josy:*
+Boa tarde
+[12:44] LOJA: [foto]
+[12:44] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:49] LOJA: *Josy:*
+Mora aqui em Luziânia-Go?
+[12:50] CLIENTE: Sim santa fe
+[12:50] LOJA: *Josy:*
+Pertinho de nós!
+[12:51] LOJA: [áudio] "Max, boa tarde, tudo bom? Você mora aqui perto da nossa empresa e você só está fazendo orçamentos por agora ou já pretende realizar a troca dos pneus por daqui a alguns dias?"  {audio:midias/3EB0700F7A4C5F04A517C9_920034.ogg}
+[12:57] CLIENTE: Tô procurando aonde fica mais encontra
+[13:00] LOJA: *Josy:*
+Compreendo... bem... dessas opções eu consigo oferecer um desconto para os pneus da marca GP Premium , o que está por R$ 289,00 valor para débito/pix.. No pagamento em *dinheiro* fisico  a unidade fica por R$ 275,00
+[13:03] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[13:03] LOJA: [foto]

@@ -1,0 +1,14 @@
+CONVERSA e670ee6b4b | contato: Carlos | 07/10/2026 15:17 até 07/10/2026 15:54 | 4 msgs do cliente, 5 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[15:17] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[15:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:18] LOJA: *Josy:*
+🙋🏼‍♀️
+[15:52] CLIENTE: [áudio] "Oi, eu estou precisando de uma caixa de marcha, do COSSA, Clássico."
+[15:52] LOJA: [áudio] "Oi, Sra. Carlos, tudo bem? Aqui é o meu trabalho com esses itens."  {audio:midias/3EB0309ADDFAF0AEF3EE0A_176503.ogg}
+[15:53] CLIENTE: [áudio] "Beleza, então, você é em Brasília?"
+[15:53] LOJA: [áudio] "Não, aqui em Luziânia."  {audio:midias/3EB0126BDB3CC079563F6A_833172.ogg}
+[15:53] CLIENTE: [áudio] "Você pode me passar uma autofesta que vem de caixa de marcha aí? Já! Já!"
+[15:54] LOJA: [áudio] "Eu não conheço."  {audio:midias/3EB0326173E0860B4DE8AC_145143.ogg}

@@ -1,0 +1,59 @@
+CONVERSA 61d1aeb1c1 | contato: Leonardo Henrique | 28/08/2026 14:44 até 11/09/2026 10:53 | 26 msgs do cliente, 18 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[14:44] LOJA: *Josy:*
+Boa tarde!
+[14:48] LOJA: *Josy:*
+🙋🏼‍♀️
+--- 10/09/2026 (Thu) ---
+[09:13] CLIENTE: Bom dia
+[09:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:13] CLIENTE: Na vdd eu queria vender
+[09:13] LOJA: *Josy:*
+Bom dia!
+[09:14] CLIENTE: [áudio] "Acho que foi com você que eu falei, José, a respeito de vender uns pneus, você falou que ia falar com o seu gerente, não é isso mesmo?"
+[09:14] CLIENTE: Posso te mandar a medida por aqui
+[09:15] LOJA: [áudio] "Isso, isso mesmo, só que ele não chegou."  {audio:midias/3EB08B996A322C205F292C_959317.ogg}
+[09:15] CLIENTE: Ok
+[09:30] CLIENTE: Quer que adiante aqui pra você ou melhor tudo com ele
+[09:32] LOJA: *Josy:*
+é somente com ele.
+[09:33] CLIENTE: Blz
+[10:44] CLIENTE: Ele chegou ?
+[10:51] LOJA: *Josy:*
+Não...ainda não.
+[10:53] CLIENTE: Ok obrigado
+[12:43] CLIENTE: [áudio] "Boa tarde, Josi. Tudo bom? Até agora nada, Josi."
+[12:43] LOJA: [áudio] "Moço, até agora nada. Suspeito eu que ele nem apareça, porque já tá dando uma hora da tarde e até agora nada."  {audio:midias/3EB0013BC9BB0DD9D7DEA1_122924.ogg}
+[12:44] CLIENTE: [áudio] "Tem algum outro contato, Luzi, que eu consiga falar com ele, só para ver se ele se interessa ou não?"
+[12:44] CLIENTE: Caso não eu vou a Brasília
+[12:44] CLIENTE: Eu moro aqui no ocidental
+[12:44] LOJA: [áudio] "Olha, eu não tenho, de verdade, não tenho o número dele, porque ele só fala aqui através do número da loja mesmo."  {audio:midias/3EB07A62609661F1E6E6B0_996987.ogg}
+[12:45] LOJA: [áudio] "Mas creio que para não tomar o seu tempo, eu acho que é mais viável você já ir direto, porque senão fica segurando você aqui e te enrola, né?"  {audio:midias/3EB0F09DB847170670D36A_350094.ogg}
+[12:45] CLIENTE: Ah perfeito
+[12:45] CLIENTE: Mas eu não faço ideia de onde vende em Brasília tbm
+[12:45] CLIENTE: Mas vou ver se acho algum lugar
+[12:46] CLIENTE: Me indica alguém ?
+[12:46] LOJA: [áudio] "Entendo. É complicado. Eu também não conheço. Eu vim de outra região e não conheço nada daqui."  {audio:midias/3EB0324F0A260EB4C2BEC3_831526.ogg}
+[12:46] CLIENTE: Entendi
+[12:46] CLIENTE: Muito obrigado
+[12:48] LOJA: [áudio] "Imagina que é isso, uma pena que eu não consegui te ajudar."  {audio:midias/3EB0FD2A9F0F0C88065CB4_541001.ogg}
+[12:53] CLIENTE: [áudio] "Mas assim que ele chegar, se ele chegar hoje ainda e você puder ver com ele para mim, por favor, tá bom? Eu fico no aguardo."
+[12:53] LOJA: *Josy:*
+Certo.
+--- 11/09/2026 (Fri) ---
+[10:33] CLIENTE: Bom dia Josy
+[10:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:33] CLIENTE: Tudo joia ?
+[10:33] LOJA: [áudio] "Olá, bom dia, tudo bem?"  {audio:midias/3EB0FBB49501430C31CCCF_448171.ogg}
+[10:33] CLIENTE: O gerente esta por ai hoje ?
+[10:34] LOJA: *Josy:*
+Não...
+[10:34] LOJA: [figurinha]
+[10:41] CLIENTE: Puts
+[10:41] CLIENTE: Se eu for ai eu consigo pelo menos uma avaliação ?
+[10:53] LOJA: *Josy:*
+Seria somente com ele.
+[10:53] CLIENTE: Entendi

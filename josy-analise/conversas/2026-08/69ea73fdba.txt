@@ -1,0 +1,29 @@
+CONVERSA 69ea73fdba | contato: Herbert | 19/08/2026 09:27 até 11/09/2026 17:27 | 4 msgs do cliente, 16 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[09:27] LOJA: Bom dia, Hebert
+[09:33] LOJA: [localização] -16.067674,-48.0640728
+[09:33] LOJA: Borracharia Popular, pode falar com Lázaro.
+[14:08] LOJA: [áudio] "Oi, você conseguiu ir lá na loja?"  {audio:midias/3EB0D21FE3952644AE0D06_293228.ogg}
+[15:09] CLIENTE: Consegui não vai ficar pra amanhã  o carro deu um BO aqui
+[15:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:09] LOJA: Beleza... eu reservei os pneus para você, está bm!
+[15:12] CLIENTE: Blz amanhã pela manhã
+[15:12] LOJA: Combinado!
+[15:12] LOJA: Satisfação em falar com você!
+--- 20/08/2026 (Thu) ---
+[17:04] LOJA: Oiê!
+[17:04] LOJA: Tudo jóia?
+[17:05] LOJA: Deu tudo certo, lá?
+[17:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:05] CLIENTE: [áudio] "Oi, boa tarde. Moça, eu não consegui ir lá, não. Meu carro furou um selo de água aqui e eu tenho que trocar ele primeiro para poder ir lá."
+[17:08] LOJA: [áudio] "Homem de Deus, cuidado com essas mangueiras aí, porque, rapaz, eu passei um sufoco com uma que arrebentou aqui comigo. Então, vigia."  {audio:midias/3EB0E44839B23E50A5ADE7_81029.ogg}
+[17:16] CLIENTE: [áudio] "Bom, e assim que eu trocar o selo aqui, arrumar, organizar aqui, que eu mesmo faço serviço, aí eu te ligo aí, tem uma marca pra mim lá pegar."
+--- 03/09/2026 (Thu) ---
+[13:03] LOJA: [áudio] "Oi Herbert, tudo jóia? Herbert, nós conversamos alguns dias atrás, né, que eu separei o pneu lá para você na borracharia. Eu gostaria de saber se você ainda está precisando, se quer prosseguir com a negociação. Me dá um retorno, está bem?"  {audio:midias/3EB0D45A14C55903AADF01_295060.ogg}
+--- 10/09/2026 (Thu) ---
+[16:44] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[17:27] LOJA: [áudio] "Oi, Herbert, tudo jóia? Bem, eu vou encerrar aqui o seu atendimento, porque, né, até te mandei um vídeo aí, mas imagino que na correria você não pode me responder. Então, para não ficar enchendo seu WhatsApp de mensagens, né, porque eu sei que é chato, eu vou encerrar aqui o seu atendimento, tá bom? Obrigada aí pela sua atenção e bom final de semana."  {audio:midias/3EB0F015AF5A7F52A23323_802088.ogg}

@@ -1,0 +1,81 @@
+CONVERSA 009f30e988 | contato: Granja Caipira | 14/09/2026 16:52 até 18/09/2026 18:18 | 22 msgs do cliente, 31 da loja, 0 do robô
+
+--- 14/09/2026 (Mon) ---
+[16:52] LOJA: *Josy:*
+Boa tarde!
+[16:52] CLIENTE: Boa tarde, pneus gp premium! 👋 Como posso ajudar você hoje?
+[16:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:53] CLIENTE: Já conectei você com a nossa equipe. Alguém atenderá você em breve.
+[16:53] CLIENTE: Oi
+[16:53] LOJA: *Josy:*
+OI!
+[16:53] CLIENTE: Vou te passar as medida
+[16:53] LOJA: [áudio] "Olá, tudo bem? Qual é mesmo o seu nome?"  {audio:midias/3EB026BF6D71BA5717724A_279278.ogg}
+[16:53] CLIENTE: Lucas
+[16:54] CLIENTE: 265/64 R17 BF godrich 
+4 x Pneus
+[16:57] LOJA: [áudio] "Certo, Lucas. Eu já solicitei um orçamento aqui com os meus distribuidores. Assim que eles me responderem, eu te passo o preço e o prazo de entrega, tá joia?"  {audio:midias/3EB0D66066A1EFAD747C31_103589.ogg}
+[16:57] LOJA: [áudio] "E somente essa marca que te atende..."  {audio:midias/3EB0315F43D531E47434D6_707051.ogg}
+[17:00] CLIENTE: Sim josy
+[17:01] LOJA: [áudio] "Perfeito, Lucas. Eu só estou guardando aqui a resposta do distribuidor. Assim que ele me der um retorno, eu te passo aqui, tá joia?"  {audio:midias/3EB040C5AB50CB07301332_773548.ogg}
+[17:01] CLIENTE: Ok
+[17:02] CLIENTE: Aí você tira orçamento e me manda o pdf Tabom
+[17:06] LOJA: *Josy:*
+Claro, me envia os dados cadastrai, por gentileza.
+[17:07] CLIENTE: [áudio] "Vou te mandar os dados da minha mãe, como é da granja, a caminhonete, aí é para tirar o orçamento no nome dela."
+[17:08] CLIENTE: Luzijone Monteiro Correia 
+243.934.875-91
+Endereço Rua das mansões 
+Quadra H 
+Setor Sul II
+--- 15/09/2026 (Tue) ---
+[08:54] CLIENTE: Oi
+[08:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:59] LOJA: *Josy:*
+Bom dia!
+[09:00] CLIENTE: Bom dia
+[09:00] LOJA: *Josy:*
+Ainda não obtive o retorno do distribuidor.
+[09:00] CLIENTE: Tabom
+[09:47] LOJA: *Josy:*
+Oi
+[09:48] LOJA: [foto]
+[09:48] LOJA: [áudio] "Oi Lucas, eu consegui aqui a resposta da BF, tá? A unidade está por R$ 1.642,00 se o seu pagamento for à vista, e se for para parcelar, segue as opções de parcelamento em até 10 vezes, certinho? É uma opção que é somente por encomenda, pedindo hoje, hoje é terça, chega no máximo até sexta, e o distribuidor pede um pagamento calção para poder reservar o pneu para você aí no valor de R$ 300,00. Tá jóia? Realizando esse PIX de calção, ele já reserva os pneus e envia aqui para a nossa empresa os pneus chegando. Eu te informo, você vindo aqui para realizar o restante do pagamento, os R$ 300,00 do calção serão abatidos do total da sua compra, está bem?"  {audio:midias/3EB0E1E2B215BA19CDEBA4_585383.ogg}
+[09:50] CLIENTE: [áudio] "Tá bom. Você tem como me mandar, assim, aquele orçamento no PDF ou então na foto? E tem frete? Não paga o frete não, somente o calção, é isso? Que aí o calção recebe no dia que chega, né?"
+[09:51] LOJA: [áudio] "Não, não paga o frete não, tá? Eu só mandei assim já para você ter uma noção. Estou finalizando aqui o seu PDF, tá? Já é, Lucas. O pagamento de vocês vai ser à vista mesmo? Ou você vai parcelar? Eu já coloco a opção aqui certinho, tá bom?"  {audio:midias/3EB0085AEAA256A5CF67E6_788268.ogg}
+[09:51] CLIENTE: É avista o orçamento
+[10:11] LOJA: [áudio] "Você aguarda só mais um instantinho, porque o pessoal não conseguiu cadastrar o pneu para eu mandar o orçamento para você, eu já cobrei eles lá novamente para eu poder te mandar, só mais um instante."  {audio:midias/3EB0D0B8A7B5D0D661DE4A_851002.ogg}
+[10:16] LOJA: [documento]
+[10:16] LOJA: *Josy:*
+Prontinho.
+[10:16] LOJA: *Josy:*
+O distribuidor disse que pode fazer o caução de R$ 200,00
+[10:17] LOJA: *Josy:*
+Posso te ligar?
+[10:19] LOJA: *Josy:*
+pneu 265/65/17 116/113s all-terrain t/a bfgoodrich Josi Santos Dados da Proposta 14/09/2026 Número da Solicitação: Contato: Situação da Negociação: 2026091400000139 Proposta Comercial E-mail: UF: GO 61 9922-0186 CPF/CNPJ: Bairro: CEP: ABERTO 139 24393487591 Setor Sul II 72.801-894 Data de Emissão: 14/09/2026 Qtde. Valor Unitário Desconto Valor Total 4 R$ 1.642,00 R$ 0,00 R$ 6.568,00
+[10:21] LOJA: *Josy:*
+pneu 265/65/17 116/113s all-terrain t/a bfgoodrich    R$ 1.642,00 valor unitário x 4  = Valor total R$ 6.568,00
+[10:23] CLIENTE: [áudio] "Tá bom, Josi? É, entendi. O calção é que paga para esperar o pneu chegar, né? Aí eu vou passar para minha mãe aqui, que ela está analisando outros orçamentos, aí eu te retorno aí, tá bom?"
+[10:24] LOJA: [áudio] "Certo, perfeito. Inclusive, acabei de observar que teve uma outra empresa que pegou o mesmo orçamento para poder te mandar, porque aqui como é uma central, aí começa por aqui e o povo vai solicitando os orçamentos."  {audio:midias/3EB015AF2EEE56120F39F3_387672.ogg}
+[10:24] CLIENTE: Tabom
+[10:26] LOJA: [áudio] "Sim, sim, esse valor de 200 reais é para reservar os pneus, tá? E eles chegando aqui, vocês podem realizar o restante do pagamento, tá joia?"  {audio:midias/3EB08D6E2E2CC830EDE448_750372.ogg}
+[10:26] CLIENTE: Entendi
+[10:26] CLIENTE: Ok
+[10:32] LOJA: [áudio] "Aí só um adendo, né, que aí você faz o Pix do 200 reais para o calção, e no dia que você for vir retirar os pneus, esse valor de 200 reais, ele é abatido do total da sua compra, tá, então aí, o total dos pneus é 6.568, no dia que você for vir aqui para retirar os pneus, você vai pagar apenas 6.368, que eu vou abater esse valor de calção, tá, jóia?"  {audio:midias/3EB05CD6621CFAD09AF221_724696.ogg}
+[11:38] CLIENTE: Tabom
+--- 16/09/2026 (Wed) ---
+[08:32] LOJA: *Josy:*
+Bom dia, Lucas...tudo jóia?
+[08:33] LOJA: *Josy:*
+Passando para saber se pretendem dar continuidade em nossa negociação. ☺️
+[08:33] LOJA: *Josy:*
+Assim que possível, me de um retorno, está bem!
+--- 17/09/2026 (Thu) ---
+[09:32] LOJA: [áudio] "Oi Lucas, bom dia, tudo bem com você? Imaginei que na correria você não conseguiu visualizar aqui a minha mensagem e estou entrando em contato para saber se vocês gostariam de seguir aqui com a negociação, se a opção aí que eu te encaminhei atende a vocês. Assim que possível me dê um retorno, está bem? Obrigada."  {audio:midias/3EB09736616CFD93899B25_32437.ogg}
+--- 18/09/2026 (Fri) ---
+[15:20] LOJA: *Josy:*
+Oi, Lucas...
+[18:18] LOJA: Lucas, boa noite... e vou encerrar seu atendimento para não encher seu whatsapp de mensagem.                                                                                                                   Se precisar futuramente é só chamar. Obrigada 👋🏻

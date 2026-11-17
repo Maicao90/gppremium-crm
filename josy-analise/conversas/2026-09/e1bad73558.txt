@@ -1,0 +1,29 @@
+CONVERSA e1bad73558 | contato: Leonardo | 30/09/2026 15:09 até 02/10/2026 08:00 | 5 msgs do cliente, 12 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[15:09] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[15:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:10] LOJA: *Josy:*
+🙋🏼‍♀️
+[15:12] CLIENTE: Preço dos pneus aro 18
+[15:20] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa /
+[15:20] LOJA: *Josy:*
+?
+[15:20] CLIENTE: 265/60/18
+[15:24] LOJA: [foto]
+[15:24] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:28] LOJA: [áudio] "Oi, seu Leonardo, tudo jóia? Você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB06E2ECB68290A73DD10_548285.ogg}
+[15:52] CLIENTE: Alexânia
+[15:55] LOJA: [áudio] "Ah, sim. É um tanto distante, né, que nós estamos de você."  {audio:midias/3EB033C72182DB8B4C2932_403134.ogg}
+--- 01/10/2026 (Thu) ---
+[17:41] LOJA: [áudio] "Leonardo, eu vou encerrar aqui o seu atendimento e eu vou te encaminhar a nossa localização, pois se porventura você estiver passando aqui para a nossa região, venha aqui a nossa loja para nos conhecer pessoalmente, está bem?"  {audio:midias/3EB0483E2B7A302C20D738_23371.ogg}
+[18:01] CLIENTE: [áudio] "Tá ok. Achei que eu ia ficar mais perto, por ali, Novo Gama, Brasília, por ali. Mas muito obrigado pela atenção e pela educação, viu?"
+[18:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 02/10/2026 (Fri) ---
+[08:00] LOJA: [áudio] "Uai, Leonardo, se te atender, eu consigo sim mandar os pneus da marca GP Premium pro novo Gama. Quer que eu te mande a foto deles?"  {audio:midias/3EB0EC60874E779C8EE968_469385.ogg}

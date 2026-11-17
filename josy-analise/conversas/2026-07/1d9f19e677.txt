@@ -1,0 +1,7 @@
+CONVERSA 1d9f19e677 | contato: Roberto Luiz Bonfanti | 19/07/2026 10:12 até 20/07/2026 09:52 | 2 msgs do cliente, 1 da loja, 0 do robô
+
+--- 19/07/2026 (Sun) ---
+[10:12] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:14] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 20/07/2026 (Mon) ---
+[09:52] CLIENTE: Olá, gostaria de saber os preços de pneus.

@@ -1,0 +1,27 @@
+CONVERSA 8c8d093685 | contato: Paulo | 08/10/2026 18:00 até 08/10/2026 18:24 | 10 msgs do cliente, 11 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[18:00] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[18:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:01] LOJA: 🙋🏼‍♀️
+[18:01] CLIENTE: 215/50/17
+[18:01] CLIENTE: Mais barato
+[18:03] LOJA: Pneu da marca GP Premium
+[18:03] LOJA: [foto]
+[18:03] LOJA: No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[18:05] LOJA: [áudio] "Olá, tudo bem com você, Paulo? Eu sou a Josi e o meu menor preço é para o pneu aqui da marca GP Premium. A unidade está por apenas R$ 329,00 à vista. Se for para parcelar o valor muda, mas é muito pouca coisa. Você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB0BF0528129EE25632C5_34602.ogg}
+[18:07] CLIENTE: Não
+[18:07] CLIENTE: Taguatinga Norte
+[18:07] CLIENTE: Df
+[18:07] CLIENTE: Gp premiun
+[18:07] LOJA: [áudio] "Nossa empresa é somente aqui em Luziânia."  {audio:midias/3EB00CD107B1F14EA5A23A_244825.ogg}
+[18:08] CLIENTE: Longe
+[18:09] LOJA: [áudio] "Bem, se você realmente tiver interesse nesses pneus, eles são os pneus da marca GP Premium, eles são pneus ecológicos que nós produzimos, tá? Eles entrarão na categoria de remodelagem Premium. São os pneus mais vendidos que eu tenho. Se for de seu interesse, eu posso encaminhá-los para o novo Gama."  {audio:midias/3EB067A8C8B4903BA4439B_460977.ogg}
+[18:21] CLIENTE: Remold
+[18:21] CLIENTE: Nao
+[18:22] LOJA: Que pena!
+[18:24] LOJA: Seria uma satisfação atende-lo.
+[18:24] LOJA: Boa noite!

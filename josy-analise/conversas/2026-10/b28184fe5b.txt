@@ -1,0 +1,32 @@
+CONVERSA b28184fe5b | contato: rafael boiko | 05/10/2026 10:56 até 05/10/2026 12:01 | 4 msgs do cliente, 12 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[10:56] LOJA: *Josy:*
+Bom dia, Rafael!
+[10:57] LOJA: [foto]
+[10:57] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:57] LOJA: *Josy:*
+* Balanceamento = 35,00 (por pneu)
+* Alinhamento = 120,00 (somente Alinhamento de Direção)
+[11:02] CLIENTE: [documento]
+[11:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:04] CLIENTE: Vou querer os 2 nacional , o alinhamento e balanceamento das 4
+[11:04] LOJA: *Josy:*
+Ok
+[11:54] CLIENTE: Fico no aguardo da nota
+[11:54] LOJA: *Josy:*
+Sim, sim!
+[11:55] LOJA: *Josy:*
+O sistema está bem lento.
+[11:55] LOJA: *Josy:*
+Não me esqueci de você.
+[12:00] LOJA: [documento]
+[12:00] LOJA: *Josy:*
+Prontinho!
+[12:00] LOJA: *Josy:*
+Obrigada e boa semana.
+[12:01] CLIENTE: Muito obrigado, e boa semana para ti também

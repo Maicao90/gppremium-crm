@@ -1,0 +1,9 @@
+CONVERSA 1407e7d439 | contato: Wanderson | 11/09/2026 12:39 até 11/09/2026 12:42 | 3 msgs do cliente, 2 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[12:39] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:39] CLIENTE: Para caminhão
+[12:41] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Aqui não trabalhamos com pneus de caminhão."  {audio:midias/3EB0327A63F31012BFB7E2_597427.ogg}
+[12:42] CLIENTE: Ok obrigado

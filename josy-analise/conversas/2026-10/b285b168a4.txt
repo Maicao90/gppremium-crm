@@ -1,0 +1,71 @@
+CONVERSA b285b168a4 | contato: ~ | 15/10/2026 19:17 até 22/10/2026 08:17 | 19 msgs do cliente, 28 da loja, 13 do robô
+
+--- 15/10/2026 (Thu) ---
+[19:17] CLIENTE: Quero cotar o pneu 265/60 R18 GP Premium.
+[19:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:17] CLIENTE: Linha ADVENTURE H/T
+--- 16/10/2026 (Fri) ---
+[08:13] LOJA: Bom dia!
+[08:14] LOJA: [foto]
+[08:14] LOJA: [áudio] "Olá, tudo bem com você? Eu sou a Josi, assim que possível me diz qual é o seu nome. Olha, no modelo HT, Adventure HT 265-6018, a unidade do pneu GP Premium está por 559 reais, esse valor é para o débito e para o Pix. Agora, se for para parcelar, o valor sofre uma pequena alteração e parcela assim até 10 vezes. Eu tenho também nos modelos brutos, tá? Que é o mais cravudo."  {audio:midias/3EB0BFCC7D5D634C625A08_440302.ogg}
+[08:15] CLIENTE: No modelo brutos fica quanto ?
+[08:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:16] LOJA: A unidade está por R$ 599,00 a vista.
+[08:16] LOJA: Quer fotos dos pneus?
+[08:16] CLIENTE: Quero sim
+[08:20] LOJA: Ok
+[08:21] LOJA: [vídeo]
+[10:42] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu sou a Josi e ontem você só não me disse seu nome. Enfim, eu te encaminhei um orçamento e a foto dos pneus que eu tenho aqui à pronta entrega. Gostaria de saber se você pretende seguir com a negociação, consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0C0F629C50551B9E9C1_928157.ogg}
+--- 21/10/2026 (Wed) ---
+[12:17] LOJA: [áudio] "Oi Caio, tudo jóia? Josi aqui da GP Premium."  {audio:midias/3EB020C160A3A681EF9A04_179565.ogg}
+[13:16] CLIENTE: Oi Josi
+[13:16] ROBÔ: Oi, tudo bem? Em que posso te ajudar?
+[13:16] LOJA: Oi Caio!
+[13:17] LOJA: [áudio] "Caio, a vez passada nós estávamos conversando aqui sobre o pneu da GP, né? 265-6018."  {audio:midias/3EB0C3420E0D0308FA4EFC_169146.ogg}
+[13:17] CLIENTE: [áudio] "Isso. Aí eu vou querer esse Brutus aí."
+[13:27] ROBÔ: Oi! Não consegui ouvir seu áudio direito por aqui. Pode me mandar por escrito o que você precisa? 😊
+[13:29] CLIENTE: Esse mesmo
+[13:29] CLIENTE: O Brutus
+[13:29] ROBÔ: Perfeito! O pneu *265/60/18* no modelo Brutus está saindo por *R$ 599,00 à vista* a unidade.
+[13:29] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[13:30] ROBÔ: Quantos pneus você precisa e quando consegue vir até a loja?
+[13:32] CLIENTE: Os 4
+[13:32] ROBÔ: Temos os 4 pneus *265/60/18* da marca *GP Premium* saem por *R$ 2.236,00 à vista* (valor total).
+[13:32] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[13:32] CLIENTE: Charles te passou que vamos fazer na permuta ?
+[13:33] ROBÔ: A loja não trabalha com base de troca, não — só venda direta.
+[14:34] CLIENTE: ?
+[14:35] ROBÔ: <invoke name="status">
+</invoke>
+```json
+{"partes":["Desculpa a confusão!
+[14:35] LOJA: [áudio] "Ah, sim. Não, ele não chegou a passar não, mas vamos fazer aqui então, sem problemas."  {audio:midias/3EB00CAE0A0908DB5F9AE3_117823.ogg}
+[14:35] ROBÔ: Aqui na loja a gente não faz permuta nem base de troca: não aceitamos pneu usado como parte do pagamento.","Também preciso corrigir um valor: os R$ 2.236,00 que apareceram são dos 4 pneus do modelo ADVENTURE H/T.
+[14:35] ROBÔ: Os 4 no modelo Brutus, que você pediu, ficam R$ 2.396,00 à vista (R$ 599,00 cada).","Dá pra parcelar em até 10x no cartão também.
+[14:35] ROBÔ: Quando você consegue vir até a loja?"]}
+[14:35] CLIENTE: [áudio] "Então, é porque a gente é dono das empresas de painel de LED aqui da cidade e eles estão anunciando, aí como tem um boleto deles próximo a vencer, eu falei, ô Charles, vamos fazer uma permuta, aí foi isso."
+[14:35] CLIENTE: [áudio] "Aí ele falou, não, beleza, vou falar para a Júcia te chamar agora. Tá feito. Ele falou, pode fazer, vou falar para a Júcia te chamar agora."
+[14:35] LOJA: [áudio] "Não, beleza. Se está combinado, está combinado."  {audio:midias/3EB009947F7B9EA1FC9BF1_635729.ogg}
+[14:36] CLIENTE: Tem eles a pronta entrega aí na loja ?
+[14:37] LOJA: Estou verificando.
+[14:59] LOJA: Caio tenho sim!
+[14:59] LOJA: Modelo ATR e brutus
+[14:59] CLIENTE: Esse ATR é qual ?
+[14:59] LOJA: [foto]
+[14:59] LOJA: esse
+[15:00] LOJA: Brutus é o de baixo👇🏻
+[15:00] LOJA: [foto]
+[15:00] LOJA: Qual você quer?
+[15:11] CLIENTE: Esse
+[15:11] LOJA: Vai vir agora?
+[15:13] CLIENTE: Vou
+[15:13] CLIENTE: Quando tempo a troca ?
+[15:14] LOJA: 20 min.. jogo rápido
+[15:14] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:20] LOJA: [foto]
+[18:21] ROBÔ: 🙋🏼‍♀️
+[18:21] CLIENTE: Oi
+--- 22/10/2026 (Thu) ---
+[08:17] LOJA: Bom dia, Caio!

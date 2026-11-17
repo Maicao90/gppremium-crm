@@ -1,0 +1,8 @@
+CONVERSA 77572af7eb | contato: Sebastião Vieira | 18/08/2026 11:29 até 18/08/2026 11:29 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[11:29] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:29] CLIENTE: [áudio] "Quanto que tá seu pneu? 175-65-14, pra pôr num prisma. Fala pra mim aí, por favor."
+[11:29] LOJA: [áudio] "Olá, bom dia, tudo bem? Eu tenho aqui o pneu da marca GP Premium por R$ 249. Você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB0771AE0F84B3ED631EC_398667.ogg}

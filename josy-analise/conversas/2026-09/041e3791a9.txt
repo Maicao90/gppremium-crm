@@ -1,0 +1,61 @@
+CONVERSA 041e3791a9 | contato: Rodrigo Ternavisk | 09/09/2026 18:02 até 15/10/2026 13:32 | 20 msgs do cliente, 23 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[18:02] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[18:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:02] CLIENTE: [09/09, 17:26] Rodrigo Ternavisk: 195/65 aro 15
+[09/09, 17:26] Rodrigo Ternavisk: 4 unidades
+[18:10] LOJA: [áudio] "Olá Rodrigo, tudo bem com você? Eu sou a Josi. Eu tenho aqui sim, a princípio, os pneus da marca GP Premium, que eles estão na promoção, compre 3 e leve 4. A unidade está por apenas R$ 329,00 para o pagamento à vista."  {audio:midias/3EB00B65691C8BF4DD71A2_716145.ogg}
+[18:11] CLIENTE: Ah sim
+[18:11] LOJA: [foto]
+[18:12] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[18:12] LOJA: *Josy:*
+Exemplo: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[18:12] CLIENTE: Ah sim entendi
+[18:12] CLIENTE: Cotação te aviso
+[18:13] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB08B455F0D7F1CC186EE_78732.ogg}
+[18:13] CLIENTE: Isso e para retirada ?
+[18:13] CLIENTE: Valparaíso
+[18:13] LOJA: [áudio] "Sim, sim. Se você quiser montar também os pneus, já tem os serviços aqui."  {audio:midias/3EB0AD4A58BBCE75C8614F_654121.ogg}
+[18:14] CLIENTE: Te aviso
+[18:14] CLIENTE: Desde já agradeço
+--- 11/09/2026 (Fri) ---
+[17:25] LOJA: [áudio] "Oi Rodrigo, tudo jóia? Eu te encaminhei um orçamento e na quarta-feira gostaria de saber se pretende seguir com a negociação. Consegue me dar um retorno?"  {audio:midias/3EB0F2DC4CAD4B2827F868_735947.ogg}
+--- 15/10/2026 (Thu) ---
+[13:14] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[13:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:15] CLIENTE: 195/65 aro 15 
+2 unidades
+[13:15] CLIENTE: Valor hoje
+[13:16] LOJA: [áudio] "Olá, tudo bem com você, Rodrigo?"  {audio:midias/3EB06E4547D666E069C19A_38005.ogg}
+[13:17] CLIENTE: Localizei aqui
+[13:17] LOJA: [áudio] "Certo, perfeito. Por que você não aproveita a promoção, compre 3 e leve 4? Sai mais no lucro para você."  {audio:midias/3EB06E4B990276462DBC82_596344.ogg}
+[13:17] CLIENTE: Poderia está indo agora
+[13:17] LOJA: [áudio] "Pode, pode vir sim."  {audio:midias/3EB0D0C4B5CAEDAE645791_17021.ogg}
+[13:17] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[13:17] CLIENTE: Mandei errado
+[13:18] CLIENTE: Orçamento por favor
+[13:18] LOJA: [foto]
+[13:18] LOJA: Digamos que o pagamento seja a vista: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[13:20] CLIENTE: Lá e só a retirada né ?
+[13:20] LOJA: [áudio] "Aqui eu faço a montagem dos pneus também, você vindo com o carro já coloca para você."  {audio:midias/3EB033AAE92FFA48B7FC3D_597406.ogg}
+[13:20] LOJA: [foto]
+[13:20] CLIENTE: Valor?
+[13:21] LOJA: * Balanceamento = 35,00 (por pneu)
+* Alinhamento = 120,00 (Alinhamento de Direção) mas são valores negociaveis.
+[13:24] LOJA: [áudio] "A montagem do pneu, ela já é feita automático, tá bom? Aí a parte só negociamos aqui com os meninos da oficina os valores de serviços, que são completamente negociáveis, tá jóia? Estou te esperando."  {audio:midias/3EB0D90114FDBEB5A91C54_678679.ogg}
+[13:28] CLIENTE: Ok
+[13:28] CLIENTE: Cotação te aviso
+[13:30] LOJA: [áudio] "Uai, mas você não estaria vindo aqui?"  {audio:midias/3EB03471003406975998B9_633412.ogg}
+[13:30] LOJA: [áudio] "E assim, como você quer apenas duas unidades, eu vou te mandar aqui como que eu posso fazer, tá?"  {audio:midias/3EB02C11B6C6C2312B3E33_984888.ogg}
+[13:32] LOJA: [foto]
+[13:32] LOJA: [áudio] "Rodrigo, como você quer dois pneus, eu fiz o seguinte, de 329, te dei aqui 10% de desconto e faço por 296 cada, se for no débito ou no Pix, tá bom?"  {audio:midias/3EB0AFCB60DEF40E4C4CE9_634749.ogg}

@@ -1,0 +1,21 @@
+CONVERSA 6101973d59 | contato: Marina | 10/09/2026 08:08 até 11/09/2026 13:45 | 3 msgs do cliente, 9 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[08:08] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[08:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:08] CLIENTE: 15
+[08:08] LOJA: *Josy:*
+Claro! Para que eu possa gerar o orçamento para você, poderia me informar a *medida* do pneu que você precisa (ex: 31x10,5r15 )  😊
+[08:15] CLIENTE: 195/55,r15
+[08:20] LOJA: [áudio] "Olá, bom dia, tudo bem?"  {audio:midias/3EB03AA120BBD6213C42E6_262863.ogg}
+[08:20] LOJA: [foto]
+[08:21] LOJA: [áudio] "No dia de hoje eu tenho todas essas opções de marcas à pronta entrega. Aí no orçamento está o valor de apenas uma unidade."  {audio:midias/3EB028C7D9541A27E904F6_199734.ogg}
+[14:40] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você?"  {audio:midias/3EB008179892276CAFBEBE_190565.ogg}
+[14:40] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[13:45] LOJA: [áudio] "Oi, boa tarde. Tudo bem com você, Marina? Imagino que o seu dia esteja bem corrido, né? E você viu aí o vídeo que eu fiz para você, mas sei que por justamente estar corrido você não conseguiu me responder. Eu vou finalizar aqui o seu atendimento, tá joia? Justamente para não ficar enchendo o seu WhatsApp aí de mensagens. E vou te mandar a nossa localização. Se tiver a possibilidade, venha até a nossa empresa, que será uma satisfação receber você aqui. Obrigada pela atenção e até mais."  {audio:midias/3EB07639F3F1EF69A835F1_738256.ogg}
+[13:45] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

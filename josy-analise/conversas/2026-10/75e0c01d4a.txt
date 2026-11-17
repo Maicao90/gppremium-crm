@@ -1,0 +1,19 @@
+CONVERSA 75e0c01d4a | contato: alex sousa | 21/10/2026 09:34 até 21/10/2026 14:56 | 2 msgs do cliente, 5 da loja, 1 do robô
+
+--- 21/10/2026 (Wed) ---
+[09:34] CLIENTE: Quero cotar o pneu 205/70 R15 GP Premium.
+[09:34] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[09:34] LOJA: 🙋🏼‍♀️
+[09:37] LOJA: Para carga ou não?
+[09:37] CLIENTE: Não
+[09:39] LOJA: [foto]
+[09:39] LOJA: No dia de hoje temos essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:56] ROBÔ: 🙋🏼‍♀️

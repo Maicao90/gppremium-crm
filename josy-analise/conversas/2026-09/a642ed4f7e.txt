@@ -1,0 +1,14 @@
+CONVERSA a642ed4f7e | contato: Joao Victor | 18/09/2026 10:27 até 18/09/2026 10:31 | 5 msgs do cliente, 4 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[10:27] LOJA: *Josy:*
+Bom dia, João Vitor
+[10:27] LOJA: [foto]
+[10:30] CLIENTE: Esse entram na promoção da placa ?
+[10:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:30] CLIENTE: Pague 3 e leve 4 ?
+[10:31] CLIENTE: Esqueci de perguntar
+[10:31] CLIENTE: Kkk
+[10:31] LOJA: [áudio] "João, a promoção, compre 3 e leve 4, ela é para os pneus da marca GP Premium, só que nas medidas 195, 65, 15 e 215, 55, 17."  {audio:midias/3EB059CBEB290335BD41D8_958567.ogg}
+[10:31] CLIENTE: Entendi

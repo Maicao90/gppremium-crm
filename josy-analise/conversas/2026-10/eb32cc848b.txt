@@ -1,0 +1,51 @@
+CONVERSA eb32cc848b | contato: Rogeriobarbosa | 20/10/2026 09:46 até 20/10/2026 15:11 | 10 msgs do cliente, 18 da loja, 0 do robô
+
+--- 20/10/2026 (Tue) ---
+[09:46] LOJA: *Josy:*
+Bom dia, sr Rogério... conforme conversamos anteriormente o 235/60/16 é uma opção que é somente por encomenda, vou verificar se os distribuidores ainda tem. Como é uma opção dificil de encontrar , todos os usuários estão optando pelo 215/65/16
+[09:50] LOJA: *Josy:*
+Temos a pronta entrega o 215/65/16 posso te apresentar?
+[09:51] CLIENTE: Valor
+[09:51] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[09:51] LOJA: [foto]
+[09:51] LOJA: *Josy:*
+No dia de hoje temos os pneus da marca GP Premium 
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:52] LOJA: [foto]
+[11:10] LOJA: [foto]
+[11:10] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor UNITÁRIO do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:11] CLIENTE: [áudio] "Vou ver se eu vou ir à tarde, vou comprar pelo menos 2, aí vocês instalam aí na hora, como é que é que funciona? Comprar os 2 da frente, depois do mês que vem eu compro 2 de trás."
+[11:12] LOJA: [áudio] "Oi, Sr. Rogério, tudo bem? Então, o 215-65, sim, nós instalamos na hora. Já as opções do 235-60 são opções que são somente por encomenda. Eu coloquei aí que cheguem até 3 dias úteis, mas vai ter uma opção que vai chegar em 7 dias, que vai ser somente por encomenda, tá? Então, essas opções de encomenda, só mediante esse pagamento aí, tá bom?"  {audio:midias/3EB019AD90FAEA2839EC17_730653.ogg}
+[11:22] CLIENTE: [áudio] "Tá, mas esse outro que eu te falei aí, por encomenda, o valor dele é quanto?"
+[11:22] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor UNITÁRIO do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:22] LOJA: [áudio] "Seu Rogério, eu te mandei aí o orçamento com as marcas que o distribuidor tem, que são os pneus da Pirelli, cada pneu está por R$ 1.068 a vista, tem o pneu da Delinte por R$ 679 a unidade à vista e da Highfly por R$ 602 a unidade à vista."  {audio:midias/3EB0FB1903408D04A4A7F0_87185.ogg}
+[11:23] CLIENTE: [áudio] "Ah tá, não. Não, vou comprar esse aí mesmo, que é mais baratinho, esses 300 e pouco aí. Esse aí, pode ser, mais tarde eu vou aí."
+[11:23] CLIENTE: [áudio] "Não, mais tarde eu vou dar um pulo aí."
+[11:24] LOJA: [áudio] "Beleza, vou te mandar aqui a nossa localização, está bem?"  {audio:midias/3EB088A6D60147893A898D_268873.ogg}
+[11:24] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:24] CLIENTE: [áudio] "Esse de R$ 349,00."
+[11:24] CLIENTE: [áudio] "Esse 349 é esse da foto que você mandou para mim?"
+[11:24] LOJA: [foto]
+[11:25] LOJA: [áudio] "Isso, isso mesmo."  {audio:midias/3EB0DE6F6E706C3164FF91_871530.ogg}
+[11:25] CLIENTE: [áudio] "Manda foto pra mim desse de 349."
+[11:25] LOJA: *Josy:*
+Te mandei
+[11:25] CLIENTE: [áudio] "Não, tranquilo, tranquilo, mais tarde eu vou dar um pulo aí."
+[11:25] LOJA: [áudio] "Perfeito, Rogério. Combinado."  {audio:midias/3EB016AFED3CF52638A6C8_571010.ogg}
+[15:01] LOJA: *Josy:*
+Está a caminho?
+[15:11] CLIENTE: 16h

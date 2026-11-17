@@ -1,0 +1,32 @@
+CONVERSA 41af6b85cd | contato: Cruz | 03/09/2026 17:02 até 11/09/2026 17:31 | 4 msgs do cliente, 14 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[17:02] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[17:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:05] LOJA: 🙋🏼‍♀️
+[17:07] LOJA: *Josy:*
+Oi, Tudo bem ?
+[17:16] LOJA: *Josy:*
+Oi, Tudo bem, e com você ?
+[17:44] CLIENTE: Qual o valor do pneu 205.65.15
+[17:46] LOJA: [foto]
+[17:46] LOJA: *Josy:*
+No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:47] CLIENTE: E só um este preço e
+[17:48] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu me chamo Josi e, quando possível, me diz qual é o seu nome. Exatamente, conforme a mensagem que eu enviei, o orçamento está com o valor unitário do pneu. Portanto, o pneu da marca Hi-Fly, a unidade está por R$ 455,00 para o pagamento à vista. Já o pneu Adventure APR, da marca GP Premium, está por apenas R$ 339,00 a unidade à vista."  {audio:midias/3EB0DEF534C604B67C57FB_475192.ogg}
+[17:49] LOJA: [áudio] "O senhor vai precisar de quantos pneus?"  {audio:midias/3EB0E04D7F77FFEDADBD31_215579.ogg}
+[17:50] LOJA: [áudio] "Como o pneu da marca GP Premium já está em oferta, no valor de débito e Pix ele é R$339,00. Mas se o senhor trouxer o pagamento em dinheiro em espécie, ele já vai ficar por apenas R$327,00, tá joia? Aí esse valor é em dinheiro. Me diz quantos pneus que o senhor precisa, que eu faço um cálculo aqui para o senhor."  {audio:midias/3EB0D7BEF843D61915E74B_169512.ogg}
+[17:54] CLIENTE: Eu tô fazendo o orçamento pra vê onde fica mais encota
+[18:01] LOJA: [áudio] "Entendo. E o senhor mora aqui em Luziânia mesmo?"  {audio:midias/3EB05A9DB9D5CAE69306D5_798977.ogg}
+--- 10/09/2026 (Thu) ---
+[16:51] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você?"  {audio:midias/3EB092EC8C1A75106071A1_498960.ogg}
+[16:51] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[17:31] LOJA: [áudio] "Olá, Sr. Cruz, tudo jóia? Eu até tentei uma interação aqui com o senhor, o senhor viu o meu vídeo, mas imagino que na correria o senhor tenha esquecido de me responder. Eu vou encerrar aqui o seu atendimento, justamente para não ficar enchendo o seu WhatsApp de mensagem, porque eu sei que é chato, tá? E vou te mandar aqui a localização, pois se houver a possibilidade, o senhor passa aqui na loja para conversarmos pessoalmente. Muitíssimo obrigada pela sua atenção, tá bom? Bom final de semana."  {audio:midias/3EB0A1D8B8AC596DBF4CB2_366837.ogg}
+[17:31] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

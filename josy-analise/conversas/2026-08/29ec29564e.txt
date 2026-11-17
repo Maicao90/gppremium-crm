@@ -1,0 +1,47 @@
+CONVERSA 29ec29564e | contato: CÁSSIA  DIÁINE | 31/08/2026 15:50 até 01/09/2026 09:24 | 11 msgs do cliente, 22 da loja, 0 do robô
+
+--- 31/08/2026 (Mon) ---
+[15:50] LOJA: *Josy:*
+Sim...
+[15:50] LOJA: *Josy:*
+🙋🏼‍♀️
+[15:53] LOJA: [foto]
+[16:01] LOJA: *Josy:*
+Balanceamente 30,00 e
+[16:01] LOJA: [áudio] "Cássia, o balanceamento, ele faz 30 reais por roda. O alinhamento, hoje, o rapaz que faz o alinhamento não está na loja, agora na parte da tarde, porque ele teve um piriri e precisou se ausentar."  {audio:midias/3EB0A2487740F961FD7F00_961112.ogg}
+[16:16] CLIENTE: Tá certo
+[16:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:16] LOJA: [áudio] "E agora, Cássia? O que você decide?"  {audio:midias/3EB0AEBC42F67259DEFB51_614224.ogg}
+[16:18] CLIENTE: [áudio] "Então, eu estou fazendo uma pesquisa aqui, porque eu pesquisei na internet para achar o telefone, enfim, quando a gente pesquisa na internet alguma coisa, você sabe que fica entrando um monte aqui com a gente, né? Aí eu tenho uma proposta de uma empresa que fica no Pistão Sul, aqui em Taguatinga, aí eu estou perguntando para os seus preços totais, para eu fazer conta, porque ver se fica melhor para mim trocar o pneu aqui mesmo, em Taguatinga, ou se fica mais barato eu ir aí, entendeu? Mas levando em conta que eu vou ter que ir aí, aí eu vou ter o combustível também para estar indo aí. Aí é por isso que eu estou precisando saber quanto é que vai ficar alinhar e balancear, entendeu? Porque, inclusive, nesse lugar lá que eu falei para você que é para alinhar e balancear, ele cobra 120 nos dois, alinhamento e balanceamento. O que você está deixando lá mais caro é o preço do pneu, porque o pneu dele é mais caro que o seu, entendeu? Mas o alinhamento e balanceamento ele já me entrega pronto, ele me entrega pronto, faz tudo na mesma loja, entendeu? E aí"
+[16:19] LOJA: *Josy:*
+Sim, sei...
+[16:20] LOJA: [áudio] "Sim, entendi sim. É, com questão aos pneus, igual eu te falei, eu não sei em quantas parcelas que você quer fazer, aquela hora eu fiz uma simulação. Me fala aqui, qual dessas opções aí que você pretende realizar, que eu negocio com o meu gerente aqui, tá? Para poder facilitar para você. Inclusive, você é uma cliente que sempre compra aqui conosco, né?"  {audio:midias/3EB056B3696A016E221CCF_832859.ogg}
+[16:21] LOJA: [áudio] "Agora, com o que são os serviços, igual balanceamento, se forem dos 4 pneus, né, vão ficar por 120, somente o balanceamento. O alinhamento, ele é cobrado à parte. Que mal lhe pergunte, Cássia, qual que é a empresa que você está verificando que eles vão entregar todo o serviço somente por 120?"  {audio:midias/3EB0889064BAF2941B8DAA_467809.ogg}
+[16:32] CLIENTE: 4x
+[16:33] CLIENTE: [áudio] "O nome do lugar é Atacadão do Pneu. Tem no Pistão Sul em Taguatinga e no Cia. Como eu trabalho andando pra lá e pra cá, eu passei no Cia e vi uma faixa de promoção de pneu. Aí me interessou, entendeu? Porque como eu preciso trocar, aí já me chamou a atenção, entendeu?"
+[16:34] CLIENTE: [áudio] "E esse rapaz que me passou as promoções, ele é do Cia, mas ele falou pra mim pra eu fazer na loja de Itaguatinga, que na loja de Itaguatinga, da loja de Itaguatinga pra montar a montagem, que é alinhamento e balanceamento, ele disse que tava com uma promoção. Aí ele falou, melhor você fazer na Itaguatinga."
+[16:40] LOJA: [áudio] "É, Cássia, realmente, esse preço aí que você passou está muito bom. Agora, eu não sei como que anda sendo a questão aí dessa loja, se ela está fazendo igual às outras, que é de falar que o preço vai ser esse daí, mas na hora que o cliente chega, a conversa muda, acaba que anda saindo pelo dobro. Então, dia sim, dia não, eu recebo clientes que foram aí nessas lojas e a conversa mudou totalmente de figura depois. Eu nem pesquisei aqui no Google como é que está as observações referentes ao atacadão, mas a modalidade está sendo essa, mas para atrair realmente o cliente."  {audio:midias/3EB0F6E4588F20EF171D31_229432.ogg}
+[16:42] LOJA: [áudio] "E aqui nós precisamos injustamente ser bem claros quanto, né, aos serviços, né, ao preço dos pneus, aos serviços, que cada um tem seu preço. E aqui só pra, né, que você falou que queria em quatro vezes, eu conversei aqui com o meu gerente, ele falou que faz esse valor aqui de duas vezes aqui pra você, em quatro vezes sem juros, se te ajudar, tá? Então eu vou ficar 4 de 298 reais."  {audio:midias/3EB09E38192044C47E5C16_985010.ogg}
+[16:42] CLIENTE: Comigo não tem com essa atravessada não.
+[16:44] CLIENTE: [áudio] "Então vê comigo quanto é que fica o balanceamento aí na loja do amigo, tem que ser só o funcionário que sabe quanto que é o balanceamento dos pneus, o serviço que vai ser de troca, por exemplo, assim, o gerente da loja deve saber quanto é que fica para fazer o balanceamento, vê com ele se ele sabe quanto que fica mais ou menos, aí você me fala, pode ser amanhã, não precisa ser hoje não, amanhã você me fala, porque eu tirei o dia de quarta-feira para estar aí e ver isso, eu não posso mais aguardar para poder trocar esse pneu depois e depois não, eu tenho que trocar urgente, já passou da hora de trocar o pneu já."
+[16:44] LOJA: [áudio] "Sim, sim. Inclusive, eu adoro. Você é bem direta. Mas é porque é uma modalidade mesmo. Sabe, Cássia, tem uma empresa, inclusive, que é super famosa, começa com a letra M e termina com a letra Z, o preço dos pneus estão muitíssimo baixos. E aí eles falam que ainda vão entregar já os serviços balanceados, de balanceamento, alinhamento e tudo mais, já tudo não incluso no preço do pneu. Ah, tá virando caso de polícia. Tá terrível. É realmente um catfish, uma isca. Mas é assim, né? Fique à vontade para fazer a sua melhor escolha, claro."  {audio:midias/3EB06C3FEF41E3D450C5EA_392062.ogg}
+[16:44] LOJA: [áudio] "Não, eu te passei aqui o valor do balanceamento, aqui ó, R$ 30,00 cada."  {audio:midias/3EB0344762BEE72777EAC3_788308.ogg}
+[16:45] LOJA: [áudio] "Combinado, Cássia. Aí, o balanceamento é 30 por roda."  {audio:midias/3EB08FE4243B4C2F53192D_955975.ogg}
+[16:45] CLIENTE: [áudio] "Ah, sim. É o alinhamento, né? Que você ficou me devendo o preço. Porque tem que alinhar e balancear quando faz a troca dos 4 pneus. Então, eu vou trocar os 4 pneus, vou alinhar e balancear."
+[16:47] LOJA: [áudio] "Cássia, eu falei aqui, o alinhamento ele vai fazer por R$ 90,00."  {audio:midias/3EB085060ADFECC20131CD_591262.ogg}
+[16:47] LOJA: *Josy:*
+Total R$ 210,00
+[16:48] LOJA: [áudio] "Cássia, então, só para ficarmos alinhados aqui, fecha aqui os serviços de balanceamento e alinhamento por 210, tá joia? Ah, e amanhã o rapaz vai estar aqui para poder fazer o alinhamento do seu carro."  {audio:midias/3EB07315979C0DCAC3068A_400713.ogg}
+--- 01/09/2026 (Tue) ---
+[08:51] LOJA: *Josy:*
+Bom dia, Cassia!
+[08:51] LOJA: *Josy:*
+Tudo certo para hoje!?
+[09:22] CLIENTE: Oi
+[09:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:22] CLIENTE: Vou amanhã cedo
+[09:22] CLIENTE: Que horas vc abre.
+[09:24] LOJA: *Josy:*
+As 08:00 já estamos por aqui lindos e plenos 😌

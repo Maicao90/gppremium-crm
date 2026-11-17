@@ -1,0 +1,33 @@
+CONVERSA 9e6fbe1224 | contato: MazzoccoAgro | 21/10/2026 10:28 até 21/10/2026 15:11 | 7 msgs do cliente, 13 da loja, 2 do robô
+
+--- 21/10/2026 (Wed) ---
+[10:28] LOJA: Bom dia! Lucia...
+[10:28] CLIENTE: Olá, Pneus! Bom dia. Como a Mazzocco pode ajudar você hoje?
+[10:28] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[10:29] CLIENTE: Olá Josy, que bom falar com você! Aqui é a equipe da *Mazzocco Agro*, estamos bem e agradecemos o contato.
+A gente trabalha com pneus para tratores e carros, como o *185/60R14* que temos no catálogo, e sempre buscamos outras medidas conforme a demanda.
+Me conta quais medidas você tem em pronta entrega hoje e qual valor faz para a gente?
+[10:30] LOJA: Estou com o senhor, Beto aqui na loja.
+[10:32] CLIENTE: Ola
+[10:32] CLIENTE: Bom dia
+[10:33] LOJA: Vou deixar, aqui a opção do pneu 265/60/18 que terei aqui a  pronta entrega
+[10:33] LOJA: [foto]
+[10:33] LOJA: No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:33] CLIENTE: ehh ele me ligou e disse qeu estava 600,00
+[10:34] LOJA: Isso... seria outra opção, mas que acabou , pois nosso estoque tem giro rápido.
+[10:35] LOJA: Sempre que precisarem de pneus podem falar aqui conosco.
+[10:35] LOJA: Ele também pediu um orçamento de 235/70/16
+[10:36] LOJA: [foto]
+[10:38] CLIENTE: [áudio] "Ah, vou salvar seu contato aqui, tá? Porque aí qualquer cotação de pneus e é só de veículos leve ou você tem de veículos pesados também?"
+[10:41] LOJA: [áudio] "Temos só de veículos leves, do aro 13 até o 18 de caminhonete. Para tratores e máquinas, de modo geral, nós não temos."  {audio:midias/3EB00938073A7B7752A74C_914149.ogg}
+[10:42] CLIENTE: ok...
+[10:45] ROBÔ: Tranquilo! Qualquer dúvida ou se quiser fechar, é só me chamar por aqui.
+[13:52] ROBÔ: 🙋🏼‍♀️
+[15:10] LOJA: [foto]
+[15:11] LOJA: [áudio] "Lúcia, o senhor Roberto, ele tinha nos pedido também para fazer cotação dos pneus da marca Dunlop, né, outras opções de 265, 60 a 18. Aí eu te encaminhei aí, tá joia? São opções somente por encomenda."  {audio:midias/3EB075C7FC4D2719C7A20F_161354.ogg}

@@ -1,0 +1,16 @@
+CONVERSA ad17613f58 | contato: Adriana Eufrasio | 30/09/2026 10:25 até 30/09/2026 10:56 | 3 msgs do cliente, 6 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[10:25] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:26] CLIENTE: Pode me mandar a localização
+[10:35] LOJA: *Josy:*
+Bom dia!
+[10:35] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:35] LOJA: [foto]
+[10:45] LOJA: [áudio] "Oi, bom dia, tudo bem com você? Eu me chamo Josi. E, perdão aí que eu não consegui atender a sua ligação, pois a nossa internet caiu já tem um tempo, então ela está oscilando demais. Mas, me diz em que é que eu posso te ajudar?"  {audio:midias/3EB0466A45FEB7E0243F67_500675.ogg}
+[10:49] LOJA: *Josy:*
+🙋🏼‍♀️
+[10:56] CLIENTE: É muito longe pra onde estou

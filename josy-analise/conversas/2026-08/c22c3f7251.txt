@@ -1,0 +1,21 @@
+CONVERSA c22c3f7251 | contato: 😡te amo | 26/08/2026 13:39 até 26/08/2026 14:44 | 7 msgs do cliente, 9 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[13:39] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:40] CLIENTE: 13
+[13:41] CLIENTE: Oi
+[13:42] CLIENTE: [áudio] "Boa tarde, tá? Quantos quilo é 13, seu?"
+[14:26] LOJA: [foto]
+[14:27] LOJA: [áudio] "Olá, boa tarde. Eu me chamo Josi e muito obrigada por aguardar. No dia de hoje temos todas essas opções de marcas à pronta entrega. Aí no orçamento está o valor de apenas um pneu. Você é daqui de Luziânia mesmo?"  {audio:midias/3EB06D25AB7668DAD51586_904369.ogg}
+[14:32] CLIENTE: [áudio] "O portado sempre tem, não? Saiu agora pouco também, uma estimativa inicial..."
+[14:34] LOJA: [foto]
+[14:37] LOJA: [áudio] "Você é daqui de Luziânia mesmo?"  {audio:midias/3EB024B79DC7636F264182_723643.ogg}
+[14:37] CLIENTE: [áudio] "É, eu aqui em Luziânia, bora aqui na Serrinha. Queria ver o mais barato que você tivesse, 13, uns 4."
+[14:38] LOJA: [áudio] "O pneu mais barato que eu tenho é o que eu mandei no orçamento para você, que é de R$ 269,00, se for no débito ou no Pix, mas se você conseguir trazer o pagamento em dinheiro, em espécie, fica por R$ 256,00 a unidade."  {audio:midias/3EB034B4FA9E087DB4CCD0_183641.ogg}
+[14:38] LOJA: [áudio] "E aqui é a GP Premium, aqui na BR-040, do lado do Hotel Goiás e da Goiás Diesel, sabe?"  {audio:midias/3EB00EC0344362ADB127F8_146347.ogg}
+[14:38] LOJA: *Josy :*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:38] CLIENTE: [áudio] "Cheio o PC, hein?"
+[14:44] LOJA: [áudio] "Pois é, passa aqui na loja, que os pneus GP Premium eu já entrego eles instalados para você."  {audio:midias/3EB021FDC75992E8B398D3_470835.ogg}

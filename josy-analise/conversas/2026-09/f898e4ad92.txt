@@ -1,0 +1,28 @@
+CONVERSA f898e4ad92 | contato: Eusani Camara | 30/09/2026 10:17 até 06/10/2026 16:20 | 5 msgs do cliente, 15 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[10:17] LOJA: [áudio] "Oi, bom dia, tudo bem? Eu sou a Josi, estávamos aqui na ligação, mas eu não estou conseguindo te ouvir. Pode, por gentileza, me dizer qual que é a medida dos pneus que você precisa?"  {audio:midias/3EB05136CADE9F2A9DF046_459368.ogg}
+[10:19] CLIENTE: [áudio] "É o Celtinha, 2008. Eu vi falar em aro 14."
+[10:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:20] CLIENTE: [áudio] "Aí você me passa o preço e divide em quantas vezes, se eu for comprar os dois ou os quatro, que eu ainda não sei quantos. Aí eu quero saber se vocês aí também trocam a troca do pneu. E a carcaça também, como é que fica?"
+[10:20] LOJA: [foto]
+[10:21] LOJA: [áudio] "No dia de hoje, eu tenho essas três opções de marcas à pronta entrega, tá? No orçamento que eu te encaminhei, está o valor de apenas uma unidade. Eu estou com a oferta aqui do pneu da marca GP Premium, que neste mês, de 279, estou fazendo a unidade por apenas 249 reais, se o seu pagamento for à vista. E é uma opção que eu já coloco esses pneus no seu carro, tá? A senhora era aqui de Luziânia mesmo?"  {audio:midias/3EB076B418427B1F754BC3_592976.ogg}
+[10:21] LOJA: [áudio] "E aqui, como eu não trabalho a base de troca, se a senhora quiser levar os pneus do seu carro para casa, pode levar, tá joia?"  {audio:midias/3EB04D22BC5D434D7DC0BB_736135.ogg}
+[10:22] CLIENTE: Sou de Luziânia
+[10:23] LOJA: [áudio] "Ah, que ótimo então!"  {audio:midias/3EB0124104217ECF14AA7D_156490.ogg}
+[10:24] CLIENTE: Ok brigada
+[10:24] LOJA: [áudio] "A senhora quer que eu te mande aqui a localização para a senhora poder vir na nossa loja?"  {audio:midias/3EB0979FD4A8B40378A157_840606.ogg}
+[10:54] CLIENTE: [áudio] "Não, depois eu vou aí, porque eu não estou em Luziânia. Acho que é o final de semana que eu vou estar lá."
+[11:07] LOJA: [áudio] "Não tem problema, eu vou mandar aqui para a senhora a localização da nossa empresa, tá bom?"  {audio:midias/3EB0A021285950D410A776_45902.ogg}
+[11:07] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:08] LOJA: [foto]
+--- 06/10/2026 (Tue) ---
+[15:14] LOJA: *Josy:*
+Boa tarde!
+[15:15] LOJA: *Josy:*
+Oi!
+[15:15] LOJA: [foto]
+[16:04] LOJA: [foto]
+[16:20] LOJA: [áudio] "Daniel Zani, aí tudo que eu tenho no ar, o 13, eu mandei aí no orçamento para a senhora analisar, tá joia?"  {audio:midias/3EB0B00581C2CB48705664_801579.ogg}

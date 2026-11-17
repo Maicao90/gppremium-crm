@@ -1,0 +1,12 @@
+CONVERSA 53d0deaec2 | contato: Fernanda Lopes | 29/09/2026 13:36 até 29/09/2026 15:05 | 2 msgs do cliente, 3 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[13:36] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[13:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:19] LOJA: *Josy:*
+🙋🏼‍♀️
+[15:03] CLIENTE: [foto]
+[15:05] LOJA: [áudio] "Olá, boa tarde, tudo bem? Eu me chamo Josi e Fernanda, por gentileza, me dizem o que eu posso te ajudar?"  {audio:midias/3EB08A3A35ACA67F20B677_563251.ogg}

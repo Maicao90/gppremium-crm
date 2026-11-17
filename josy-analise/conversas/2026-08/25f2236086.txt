@@ -1,0 +1,18 @@
+CONVERSA 25f2236086 | contato: Eu Amo Minha Família | 27/08/2026 20:12 até 28/08/2026 08:09 | 3 msgs do cliente, 4 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[20:12] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[20:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:14] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+195/55 roda 15
+--- 28/08/2026 (Fri) ---
+[08:07] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Me chamo Josi e eu tenho aqui o pneu da marca GP Premium a R$ 289,00 à vista. Você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB0BC6E76E2B5C2A017F5_223304.ogg}
+[08:08] CLIENTE: Pires do rio
+[08:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:09] LOJA: *Josy:*
+Infelizmente não atendemos a sua região.

@@ -1,0 +1,12 @@
+CONVERSA b4ebb413e4 | contato: Clesio Mesquita | 09/09/2026 23:45 até 10/09/2026 14:55 | 1 msgs do cliente, 3 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[23:45] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[23:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 10/09/2026 (Thu) ---
+[08:17] LOJA: *Josy:*
+Estou te aguardando.
+[14:55] LOJA: [áudio] "Olá! Por falta de interação, estou encerrando seu atendimento. Caso precise futuramente, é só nos chamar. Até mais!"  {audio:midias/3EB08A8506489B43029274_26703.ogg}

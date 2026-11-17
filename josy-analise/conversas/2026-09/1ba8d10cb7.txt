@@ -1,0 +1,29 @@
+CONVERSA 1ba8d10cb7 | contato: Anderson | 28/09/2026 08:14 até 29/09/2026 08:21 | 8 msgs do cliente, 11 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[08:14] CLIENTE: Quero cotar o pneu 185/65 R14 GP Premium.
+[08:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:14] CLIENTE: Quero cotar o pneu 185/65 R14 GP Premium.
+[08:29] LOJA: *Josy:*
+Bom dia!
+[08:29] LOJA: [foto]
+[08:29] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:29] CLIENTE: Muito obrigado
+[08:30] LOJA: [áudio] "Bom dia Anderson, tudo bom? Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB07A532401101DAFA1C1_124691.ogg}
+[08:31] CLIENTE: [áudio] "Bom dia, Luzi. Tudo bem? É na cidade ocidental que eu moro."
+[08:34] LOJA: [áudio] "Ah sim, é pertinho aqui de nós."  {audio:midias/3EB0DAD9180796A6FDCADE_491506.ogg}
+[08:34] CLIENTE: É sim
+[08:34] CLIENTE: [áudio] "Aí, Josi, qual é o procedimento de troca aí? É só chegar? Vocês já fazem a troca? Como que procede?"
+[17:48] LOJA: [áudio] "Oi Anderson, boa tarde, tudo bem? Olha, obrigada por aguardar aí. Meu WhatsApp apresentou instabilidade e agora que restabeleceu a tudo aqui, tá? Olha, aqui não precisa agendar. Você chegando já providenciou aqui seu atendimento, tá bom?"  {audio:midias/3EB066523537437BBDD8F2_378211.ogg}
+[17:49] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:49] LOJA: [foto]
+[19:39] CLIENTE: [áudio] "Oi Josi, boa noite. Não, tá tudo bem. Eu... é assim que eu... ainda tá... o pneu ainda tá meia vida, né, então... ainda dá para rodar um pouquinho. Eu só tava fazendo orçamento... para... pedir para a empresa liberar e assim que liberar eu... eu faço a troca. Tá bom."
+--- 29/09/2026 (Tue) ---
+[08:18] LOJA: [áudio] "Bom dia! Tudo bem, Anderson? Excelente, tá? Eu te mandei a nossa localização. Quando for um momento propício para você, passa aqui na loja para nós conversarmos, tá joia? Boa semana!"  {audio:midias/3EB0FC28FB25FD72EC3FD9_863305.ogg}
+[08:21] CLIENTE: [áudio] "Tá ótimo, Julio. Boa semana pra você também, tá? Muito obrigado."
+[08:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

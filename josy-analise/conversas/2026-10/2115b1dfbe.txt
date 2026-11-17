@@ -1,0 +1,35 @@
+CONVERSA 2115b1dfbe | contato: Leonardo | 01/10/2026 18:25 até 03/10/2026 11:10 | 6 msgs do cliente, 14 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[18:25] CLIENTE: Quero cotar o pneu 195/55 R16 GP Premium.
+[18:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 02/10/2026 (Fri) ---
+[08:07] LOJA: [foto]
+[09:29] CLIENTE: Amanhã vocês funcionam até que horas?
+[09:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:38] LOJA: *Josy:*
+Sim !
+[09:38] LOJA: *Josy:*
+ amanha das 08:0 á s12:00
+[09:40] LOJA: [áudio] "Leonardo, amanhã, assim que eu abrir a loja, eu te mando um bom dia. Você sabe onde estamos localizados?"  {audio:midias/3EB0E1E4C83D87D04C179E_177479.ogg}
+[09:58] CLIENTE: Não, pode me passar o endereço?
+[09:58] LOJA: *Josy:*
+Claro! Posso sim!
+[09:58] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:58] LOJA: [foto]
+--- 03/10/2026 (Sat) ---
+[10:26] CLIENTE: Bom dia, vou ter que ir na segunda
+[10:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:26] CLIENTE: Vocês fazem alinhamento e balanceamento também?
+[10:27] LOJA: *Josy:*
+Oi...bom dia!
+[10:28] LOJA: *Josy:*
+Sim, sim!
+[10:55] LOJA: [áudio] "E, Leonardo, você está a caminho?"  {audio:midias/3EB088627C604AC0BD909F_301061.ogg}
+[11:08] CLIENTE: Só segunda
+[11:10] LOJA: *Josy:*
+Combinado!

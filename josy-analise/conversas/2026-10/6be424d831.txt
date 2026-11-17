@@ -1,0 +1,16 @@
+CONVERSA 6be424d831 | contato: Alan Costa | 13/10/2026 20:28 até 14/10/2026 13:11 | 2 msgs do cliente, 5 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[20:28] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[20:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:28] CLIENTE: 205 55 16
+--- 14/10/2026 (Wed) ---
+[08:21] LOJA: Bom dia!
+[08:21] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:21] LOJA: [foto]
+[13:11] LOJA: [áudio] "Olá, tudo bem com você, Alain? Eu te encaminhei um orçamento mais cedo e gostaria de saber se você teve a oportunidade de analisar, mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB07240312CF248059090_220436.ogg}

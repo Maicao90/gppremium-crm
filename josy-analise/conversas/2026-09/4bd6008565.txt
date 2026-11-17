@@ -1,0 +1,20 @@
+CONVERSA 4bd6008565 | contato: Luan Melo | 25/09/2026 09:07 até 25/09/2026 10:41 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[09:07] LOJA: *Josy:*
+Oi, Luan...como você está?
+[09:08] LOJA: *Josy:*
+Sumiu , meu filho...
+[09:12] CLIENTE: Oi Josy
+[09:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:12] CLIENTE: Tudo bem ?
+[09:12] CLIENTE: Correria kkkk
+[09:12] LOJA: *Josy:*
+Por aqui, tudo na paz!
+[09:12] LOJA: *Josy:*
+Não julgo...
+[09:14] CLIENTE: Bom demais
+[09:29] LOJA: [áudio] "E os pneus, Luan? Estava vindo daqui já vai fazer dois meses, depois de amanhã faz dois meses que nós conversamos a respeito aí, daí tu sumiu."  {audio:midias/3EB0BDA6C81FCA2BD9FA4A_457298.ogg}
+[09:31] CLIENTE: [áudio] "Oi, Juzi. A caminhonete estragou que eu ando. Ela está até para a oficina ainda, acho que ela fica pronta essa semana. Aí eu vou ver como é que está o andamento aqui e te dou uma posição aí. Tá ok?"
+[10:41] LOJA: [áudio] "Ok, perfeito, Luan."  {audio:midias/3EB04BB08905030A1AE0E4_871643.ogg}

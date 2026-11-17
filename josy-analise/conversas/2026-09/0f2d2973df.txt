@@ -1,0 +1,48 @@
+CONVERSA 0f2d2973df | contato: Carlos André 🚴‍♂️🚴‍♂️🚴‍♂️ | 12/09/2026 09:28 até 16/09/2026 08:39 | 17 msgs do cliente, 21 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[09:28] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[09:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:08] CLIENTE: 195 65 15
+[10:08] CLIENTE: Os 4 pneu
+[10:17] LOJA: [áudio] "Olá, tudo jóia? Eu sou a Josi, eu tenho aqui os pneus da marca GP Premium, que inclusive estão na promoção. Compre 3 e leve 4, a unidade está por apenas R$ 329,00, se o pagamento for à vista. Então, 329 x 3 pneus dá um total de R$ 987,00. Por esse preço você vai levar os 4."  {audio:midias/A54124E7E28BF49C658F4697BB713B83_870128.ogg}
+[10:17] LOJA: [áudio] "Você mora aqui em Luziânia?"  {audio:midias/A512B084B2928D7EE1D366B3A4F61B80_682449.ogg}
+[10:18] CLIENTE: Não
+[10:18] CLIENTE: No gama
+[10:20] LOJA: [áudio] "E você não conseguiria ver até aqui?"  {audio:midias/A5D96BCF1A0C93224B136A59685285A4_213801.ogg}
+[10:24] CLIENTE: Hoje não
+[10:24] LOJA: [áudio] "Não, moço, não necessariamente hoje, né? Porque eu sei que é corrido, o tempo é curto, né?"  {audio:midias/A50ADEE3E42D18C911CA1411955F8D05_425286.ogg}
+[10:24] CLIENTE: E no cartão
+[10:25] LOJA: [áudio] "No cartão de crédito, para parcelar, o valor tem alteração, tá? Mas aumenta 3 reais por parcela, é muito pouca coisa, tá?"  {audio:midias/A561895D1F15988C15CAB9E8E2DE3232_868994.ogg}
+[10:25] CLIENTE: [áudio] "Aí no caso aí vocês balanceiam e alinham também? Como é que é? Tá tudo incluído no pacote ou é separado?"
+[10:26] LOJA: [áudio] "Sim, sim, fazemos esses serviços, eles só são cobrados à parte. A montagem dos pneus não é cobrada nada, mas o serviço sim, tá joia?"  {audio:midias/A563EC432913A18C7875F510F47DCB88_515323.ogg}
+[10:48] LOJA: [áudio] "Você gostaria que eu te encaminhasse a nossa localização?"  {audio:midias/A55B17253C6520132C9D73DBEFB91181_582037.ogg}
+[10:51] CLIENTE: [áudio] "Sim, manda pra mim, por favor. Qualquer coisa que o senhor der pra mim, aí eu peço um primo meu que mora aí pegar pra mim. Pode ser, né?"
+[10:57] LOJA: [áudio] "Sim, pode sim, claro. Olha, eu só não tô conseguindo mandar aqui o orçamento com as opções de parcelamento, porque o meu computador travou, então tá meio complicado hoje, mas na segunda-feira eu consigo mandar direitinho aqui pra você, tá joia? E você disse que mora no Gama, certo? Olha, se for de repente de seu interesse, eu consigo mandar os pneus pra uma borracharia que fica ali no novo Gama, tá? Aí nós podemos alinhar aqui um dia que fica bom pra você e eu mando esses pneus pra lá, tá? Inclusive também pra poder te ajudar, que eu entendo a questão de trajeto, eu, pra poder te ajudar eu pago a instalação dos pneus, aí você só paga o balanceamento lá pro rapaz, pode ser assim? Se você achar que fica mais prático, né?"  {audio:midias/A5C5E1E90D93A52444340004A80CE6EB_567824.ogg}
+--- 15/09/2026 (Tue) ---
+[15:48] CLIENTE: Bom dia
+[15:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:48] LOJA: [áudio] "Oi Carlos, tudo jóia?"  {audio:midias/3EB0684C2DCB60402B9BC6_362601.ogg}
+[15:48] CLIENTE: [áudio] "Você lembra que eu falei com você?"
+[15:49] CLIENTE: [áudio] "Se eu for e agora vocês conseguem montar os pneus para mim?"
+[15:50] CLIENTE: E seu alinhamento balanceamento qual o valor
+[15:51] LOJA: [áudio] "Sim, lembro sim, Carlos. Pode vir que nós fazemos o serviço sim, tá?"  {audio:midias/3EB007D1B439315A659D41_119327.ogg}
+[15:51] LOJA: [áudio] "Qual que é o seu carro mesmo?"  {audio:midias/3EB01176DB767524D86EB2_323486.ogg}
+[15:51] CLIENTE: Vítus
+[15:52] CLIENTE: [áudio] "Esses seus pneus não é remolde não, hein?"
+[15:53] LOJA: [áudio] "Ele é o pneu da marca GP Premium, que é um pneu que nós fazemos. Ele entra na categoria de remodelagem, sim, porque eles são pneus ecológicos, são fabricações próprias nossas, então o Inmetro pede para classificá-lo como remolde, só que existe um grande diferencial entre os pneus GP Premium, que são os pneus que nós fazemos ecológicos, e os pneus que são remolds convencionais. Se você quiser, eu faço um vídeo agora mesmo, antes de você sair, para que você possa compreender."  {audio:midias/3EB0B4CB974E3476B68CCF_455542.ogg}
+[15:53] CLIENTE: [áudio] "O problema nesses pneus remold é que eles fazem muito barulho, aí pra mim não dá não."
+[15:54] LOJA: [áudio] "Não, mas esse daqui, por isso que eu estou te falando, por isso que eu quero gravar um vídeo para você poder compreender a diferença, os nossos pneus não são desse jeito."  {audio:midias/3EB070BC0984BFD31F0200_222703.ogg}
+[15:56] LOJA: [áudio] "Você quer que eu te envie o vídeo?"  {audio:midias/3EB09D91F134A1CF45DE1F_242824.ogg}
+[15:56] CLIENTE: Sim
+[15:59] LOJA: [vídeo]
+[16:00] LOJA: [foto]
+[16:04] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:04] LOJA: [foto]
+--- 16/09/2026 (Wed) ---
+[08:39] LOJA: [áudio] "Oi André, bom dia, tudo jóia?"  {audio:midias/3EB08F06577D63CDB3D626_905113.ogg}

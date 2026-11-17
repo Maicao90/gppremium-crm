@@ -1,0 +1,14 @@
+CONVERSA d6ab93bfd3 | contato: João Henrique. | 21/10/2026 12:17 até 21/10/2026 15:29 | 2 msgs do cliente, 2 da loja, 5 do robô
+
+--- 21/10/2026 (Wed) ---
+[12:17] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+Olá! Tenho interesse e queria mais informações, por favor.
+[12:17] ROBÔ: Oi, tudo bem?
+[12:17] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[12:18] CLIENTE: 265/60r18
+[12:18] ROBÔ: Temos o pneu *265/60/18* da marca *GP Premium* está saindo por *R$ 559,00 à vista*.
+[12:18] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[15:24] ROBÔ: 🙋🏼‍♀️
+[15:25] LOJA: Quer foto?
+[15:29] LOJA: [áudio] "Olá, João. Boa tarde. Como é que você está? Eu sou a Josi e eu te mandei aí uma opção, que é o pneu da marca GP Premium. Se vocês estiverem em busca de alguma marca específica, você me fala que eu verifico com os meus distribuidores, está bem?"  {audio:midias/3EB054545A284C81D1B99D_482994.ogg}

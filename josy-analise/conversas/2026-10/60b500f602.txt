@@ -1,0 +1,23 @@
+CONVERSA 60b500f602 | contato: ×cerebro | 08/10/2026 20:00 até 09/10/2026 14:09 | 6 msgs do cliente, 7 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[20:00] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[20:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:00] CLIENTE: 175/65
+--- 09/10/2026 (Fri) ---
+[08:52] LOJA: Bom dia!
+[08:52] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:52] LOJA: [foto]
+[12:46] CLIENTE: 175/65 r14
+[12:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:47] CLIENTE: comprando os 4 sai qnt
+[12:47] CLIENTE: comprando 3 ganha o 4 /
+[12:47] CLIENTE: como funciona isso
+[13:39] LOJA: Oi!
+[14:09] LOJA: 🙋🏼‍♀️

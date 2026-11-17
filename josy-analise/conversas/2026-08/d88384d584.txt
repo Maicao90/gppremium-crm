@@ -1,0 +1,15 @@
+CONVERSA d88384d584 | contato: Walter Filho | 19/08/2026 08:29 até 19/08/2026 15:20 | 3 msgs do cliente, 8 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[08:29] CLIENTE: Olá! Vim pelo site e quero cotar pneus GP Premium.
+[08:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:30] LOJA: Bom dia! poderia mandar a medida por gentileza?
+[09:50] CLIENTE: [áudio] "Um set e cinco e treizei."
+[09:54] LOJA: [foto]
+[09:54] LOJA: [áudio] "Bom dia, tudo bem com você? Eu sou a Josi e no dia de hoje eu tenho todas essas opções de marcas à pronta entrega. Tenho aqui em oferta o pneu da marca GP Premium, a unidade está por R$ 269,00 à vista e já faz a instalação dos pneus para você."  {audio:midias/3EB037FE8068A112055634_626301.ogg}
+[15:15] LOJA: Oi
+[15:15] LOJA: [vídeo]
+[15:19] CLIENTE: [áudio] "O Josi, deixa eu te falar, eu gostei do seu preço, tá entendendo? R$ 26,01, né? Os quatro. Mas aguenta a mão aí, porque eu tenho que juntar dinheiro, porque eu estourei meus dois cartão, aí eu tenho que esperar um pouquinho, tá bom? Mas eu vou te retornar."
+[15:20] LOJA: [áudio] "Boa tarde, tudo jóia? Não tem problema, eu entendo perfeitamente como que é, tá bom? Eu vou deixar aqui na nossa conversa a localização da nossa empresa, que quando for o momento mais apropriado aí para o senhor, o senhor me manda só um oi aqui e fala, tô indo, que eu já separo os pneus para te aguardar, tá bom?"  {audio:midias/3EB0FFBE9A1E3D467F3AD3_731550.ogg}
+[15:20] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

@@ -1,0 +1,16 @@
+CONVERSA d8fcbb80e2 | contato: Marcosvageantonim86 | 22/10/2026 11:08 até 22/10/2026 11:18 | 4 msgs do cliente, 2 da loja, 5 do robô
+
+--- 22/10/2026 (Thu) ---
+[11:08] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[11:08] ROBÔ: Oi, tudo bem?
+[11:08] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[11:09] CLIENTE: 205/55/16
+[11:09] ROBÔ: Temos o pneu *205/55/16* da marca *GP Premium* está saindo por *R$ 289,00 à vista*.
+[11:09] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[11:10] CLIENTE: 175/75/14
+[11:10] ROBÔ: [áudio — sem transcrição]
+[11:11] CLIENTE: Estou fazendo uma pesquisa
+[11:18] LOJA: pneu 175/75/14 4pr 86t cf510 comforser R$ 300,00 a vista
+[11:18] LOJA: 175/70/14 GP Premium R$ 279,00 a vista.

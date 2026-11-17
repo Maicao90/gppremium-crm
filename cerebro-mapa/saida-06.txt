@@ -1,0 +1,420 @@
+{
+  "name": "crm-para-anuncios",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "framer-motion": "^12.40.0",
+    "lucide-react": "^1.17.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "recharts": "^3.8.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.3.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.6.0",
+    "vite": "^8.0.12"
+  }
+}
+=== src tree
+src:
+App.css
+App.jsx
+AtInbox.jsx
+apiBase.js
+assets
+atendimento
+components
+config
+context
+data
+ia
+index.css
+main.jsx
+pages
+setupAuthFetch.js
+sounds.js
+
+src/pages:
+Assistant.jsx
+AtAtendentes.jsx
+AtInbox.jsx
+AtMetricas.jsx
+BotPneus.jsx
+Campaigns.jsx
+CartaoResposta.jsx
+CerebroRobo.jsx
+Companies.jsx
+Contas.jsx
+Dashboard.jsx
+DecisoesIA.jsx
+Disparo.jsx
+Fios.jsx
+FluxoAtendimento.css
+FluxoAtendimento.jsx
+FluxoMapa.jsx
+Garantia50k.jsx
+LinkNaBio.jsx
+Login.jsx
+OlxAnuncios.jsx
+OlxChat.jsx
+OtimizadorAds.jsx
+ParceirosExtensao.jsx
+Settings.jsx
+Stores.jsx
+TabelaPrecos.jsx
+Usuarios.jsx
+fluxoUtil.js
+=== git
+ce1523c Painel: Cerebro do robo (revisao diaria pra aprovar, ensinamentos, testar o robo)
+eea9dcd Pontuacao: agendamento = cada um programado no periodo (ja saiu ou nao), decisao do dono
+d0f0a0d Pontuacao: juntar contas (Daniel/Diogo), ocultar Borracharia e mostrar pontos por tipo (agendamento, story, Google)
+ M package-lock.json
+=== CerebroRobo.jsx
+     1	import { useCallback, useEffect, useMemo, useState } from 'react';
+     2	import { Brain, Check, X, Play, RefreshCw, Trash2, Pencil, Send } from 'lucide-react';
+     3	import { api } from '../atendimento/api';
+     4	import './FluxoAtendimento.css';
+     5	
+     6	// CEREBRO DO ROBO (22/10): o dono ensina o robo ("quando o cliente X, faca Y"), testa, e aprova as correcoes que a
+     7	// revisao diaria das conversas sugere. O robo so muda com aprovacao — nada se ensina sozinho.
+     8	const ACOES = {
+     9	  responder: 'Responder com este texto',
+    10	  atendente: 'Passar pra atendente ("só um instante" + etiqueta)',
+    11	  silencio: 'Não responder',
+    12	  orientar: 'Orientar a IA (ela escreve seguindo a orientação)',
+    13	};
+    14	const COR_GRAVIDADE = { alta: '#E8252C', media: '#d9892a', baixa: '#8b94a8' };
+    15	const TIPOS = {
+    16	  preco: 'Preço', repetiu_pergunta: 'Perguntou de novo', nao_entendeu: 'Não entendeu', contradisse_atendente: 'Contradisse a atendente',
+    17	  atropelou_atendente: 'Atropelou a atendente', inventou: 'Inventou', fora_de_contexto: 'Fora de contexto', sem_resposta: 'Sem resposta',
+    18	  nao_era_cliente: 'Não era cliente', outro: 'Outro',
+    19	};
+    20	const dataBR = (iso) => (iso ? iso.split('-').reverse().join('/') : '');
+    21	const vazio = { situacao: '', acao: 'responder', resposta: '', lojas: [], ativo: true };
+    22	
+    23	function FormLicao({ valor, onChange, lojas, compacto }) {
+    24	  const v = valor || vazio;
+    25	  const set = (campo, x) => onChange({ ...v, [campo]: x });
+    26	  return (
+    27	    <div style={{ display: 'grid', gap: 10 }}>
+    28	      <label className="muted-hint" style={{ margin: 0 }}>Quando o cliente…
+    29	        <textarea className="input-field" rows={compacto ? 2 : 2} value={v.situacao} onChange={(e) => set('situacao', e.target.value)} placeholder="ex.: perguntar se a gente entrega o pneu em casa" />
+    30	      </label>
+    31	      <label className="muted-hint" style={{ margin: 0 }}>O robô deve…
+    32	        <select className="input-field" value={v.acao} onChange={(e) => set('acao', e.target.value)}>
+    33	          {Object.entries(ACOES).map(([k, t]) => <option key={k} value={k}>{t}</option>)}
+    34	        </select>
+    35	      </label>
+    36	      {v.acao === 'responder' && /R\$\s?\d|\d{3}\/\d{2}/.test(v.resposta || '') && (
+    37	        <div className="muted-hint" style={{ margin: 0, color: '#d9892a' }}>
+    38	          ⚠️ Esse texto tem preço ou medida. Texto fixo vai igual pra todo cliente — se depende da medida, escolha “Orientar a IA” (ela calcula pela tabela).
+    39	        </div>
+    40	      )}
+    41	      {(v.acao === 'responder' || v.acao === 'orientar') && (
+    42	        <label className="muted-hint" style={{ margin: 0 }}>{v.acao === 'responder' ? 'Texto que o robô manda (linha em branco = outra mensagem)' : 'Orientação pra IA'}
+    43	          <textarea className="input-field" rows={compacto ? 3 : 4} value={v.resposta} onChange={(e) => set('resposta', e.target.value)}
+    44	            placeholder={v.acao === 'responder' ? 'ex.: A gente não faz entrega, mas a montagem aqui na loja é grátis e rapidinha 😊' : 'ex.: diga que não fazemos entrega e convide pra vir na loja, sem prometer prazo'} />
+    45	        </label>
+    46	      )}
+    47	      {lojas?.length > 1 && (
+    48	        <div className="muted-hint" style={{ margin: 0, display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+    49	          Vale para:
+    50	          <label><input type="checkbox" checked={!v.lojas?.length} onChange={() => set('lojas', [])} /> todas as lojas</label>
+    51	          {lojas.map((l) => (
+    52	            <label key={l.id}><input type="checkbox" checked={!!v.lojas?.includes(l.id)} onChange={(e) => set('lojas', e.target.checked ? [...(v.lojas || []), l.id] : (v.lojas || []).filter((x) => x !== l.id))} /> {l.nome}</label>
+    53	          ))}
+    54	        </div>
+    55	      )}
+    56	    </div>
+    57	  );
+    58	}
+    59	
+    60	function Bolhas({ partes }) {
+    61	  if (!partes?.length) return <div className="muted-hint">(o robô não manda nada)</div>;
+    62	  return (
+    63	    <div style={{ display: 'grid', gap: 6 }}>
+    64	      {partes.map((p, i) => (
+    65	        <div key={i} style={{ justifySelf: 'end', maxWidth: '85%', background: '#144d37', color: '#e9f5ef', padding: '8px 12px', borderRadius: 10, whiteSpace: 'pre-wrap', fontSize: '0.9rem' }}>{p}</div>
+    66	      ))}
+    67	    </div>
+    68	  );
+    69	}
+    70	
+    71	function Testar({ lojas, rascunho }) {
+    72	  const [msg, setMsg] = useState('');
+    73	  const [lojaId, setLojaId] = useState(lojas?.[0]?.id || '');
+    74	  const [res, setRes] = useState(null);
+    75	  const [rodando, setRodando] = useState(false);
+    76	  const [erro, setErro] = useState('');
+    77	  const testar = async () => {
+    78	    setRodando(true); setErro(''); setRes(null);
+    79	    try { setRes(await api('/api/cerebro/testar', { method: 'POST', body: JSON.stringify({ mensagem: msg, lojaId }) })); }
+    80	    catch (e) { setErro(e.message); }
+    81	    setRodando(false);
+    82	  };
+    83	  return (
+    84	    <div style={{ display: 'grid', gap: 10 }}>
+    85	      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+    86	        <input className="input-field" style={{ flex: 1, minWidth: 220 }} value={msg} onChange={(e) => setMsg(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && msg.trim() && testar()} placeholder="Escreva como se fosse o cliente: ex. vocês entregam em casa?" />
+    87	        {lojas?.length > 1 && (
+    88	          <select className="input-field" style={{ width: 'auto' }} value={lojaId} onChange={(e) => setLojaId(e.target.value)}>
+    89	            {lojas.map((l) => <option key={l.id} value={l.id}>{l.nome}</option>)}
+    90	          </select>
+    91	        )}
+    92	        <button type="button" className="btn btn-primary" disabled={!msg.trim() || rodando} onClick={testar}><Send size={14} /> {rodando ? 'Pensando…' : 'Testar'}</button>
+    93	      </div>
+    94	      {rascunho && <div className="muted-hint" style={{ margin: 0 }}>Salve o ensinamento antes de testar — o teste usa o que já está salvo.</div>}
+    95	      {erro && <div className="muted-hint" style={{ color: '#E8252C', margin: 0 }}>{erro}</div>}
+    96	      {res && (
+    97	        <div style={{ background: 'var(--panel-bg, #0f1520)', border: '1px solid var(--panel-border)', borderRadius: 12, padding: 12, display: 'grid', gap: 8 }}>
+    98	          <div className="muted-hint" style={{ margin: 0 }}>
+    99	            {res.via === 'cerebro' ? <>Usou o ensinamento: <b>{res.licao?.situacao}</b></> : res.via === 'fluxo' ? 'Respondeu pelo fluxo (texto fixo / tabela)' : 'Respondeu pela IA'}
+   100	          </div>
+   101	          <Bolhas partes={res.partes} />
+   102	          <div className="muted-hint" style={{ margin: 0, fontSize: '0.75rem' }}>Teste: nada foi enviado pra ninguém.</div>
+   103	        </div>
+   104	      )}
+   105	    </div>
+   106	  );
+   107	}
+   108	
+   109	function Achado({ a, data, lojas, podeEditar, onDecidido }) {
+   110	  const [sug, setSug] = useState(a.sugestao || vazio);
+   111	  const [aberto, setAberto] = useState(false);
+   112	  const [salvando, setSalvando] = useState(false);
+   113	  const [erro, setErro] = useState('');
+   114	  const decidir = async (status) => {
+   115	    setSalvando(true); setErro('');
+   116	    try { await api(`/api/cerebro/revisoes/${data}/achados/${a.id}`, { method: 'POST', body: JSON.stringify({ status, licao: sug }) }); onDecidido(); }
+   117	    catch (e) { setErro(e.message); }
+   118	    setSalvando(false);
+   119	  };
+   120	  return (
+   121	    <div className="card" style={{ padding: 14, display: 'grid', gap: 10, borderLeft: `4px solid ${COR_GRAVIDADE[a.gravidade] || '#8b94a8'}` }}>
+   122	      <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
+   123	        <span className="badge" style={{ background: 'rgba(232,37,44,0.12)', color: COR_GRAVIDADE[a.gravidade] }}>{TIPOS[a.tipo] || a.tipo}</span>
+   124	        <b>{a.cliente || a.numero || a.chatJid}</b>
+   125	        <span className="muted-hint" style={{ margin: 0 }}>{a.numero ? `(${a.numero}) ` : ''}· {a.conta}</span>
+   126	        {a.status !== 'pendente' && <span className="badge" style={{ marginLeft: 'auto' }}>{a.status === 'aprovado' ? '✓ virou ensinamento' : 'ignorado'}</span>}
+   127	      </div>
+   128	      <div>{a.resumo}</div>
+   129	      {(a.mensagemCliente || a.respostaRobo) && (
+   130	        <div style={{ display: 'grid', gap: 4, fontSize: '0.85rem' }}>
+   131	          {a.mensagemCliente && <div><span className="muted-hint">Cliente:</span> “{a.mensagemCliente}”</div>}
+   132	          {a.respostaRobo && <div><span className="muted-hint">Robô:</span> “{a.respostaRobo}”</div>}
+   133	        </div>
+   134	      )}
+   135	      <button type="button" className="btn btn-secondary" style={{ justifySelf: 'start', padding: '4px 10px', fontSize: '0.78rem' }} onClick={() => setAberto((x) => !x)}>{aberto ? 'Esconder conversa' : 'Ver a conversa'}</button>
+   136	      {aberto && <pre style={{ whiteSpace: 'pre-wrap', fontSize: '0.78rem', background: 'rgba(255,255,255,0.03)', padding: 10, borderRadius: 8, margin: 0 }}>{(a.trecho || []).join('\n')}</pre>}
+   137	      {a.status === 'pendente' && (
+   138	        <>
+   139	          <div className="muted-hint" style={{ margin: 0, fontWeight: 700 }}>Correção sugerida (pode ajustar antes de aprovar):</div>
+   140	          <FormLicao valor={sug} onChange={setSug} lojas={lojas} compacto />
+   141	          {erro && <div className="muted-hint" style={{ color: '#E8252C', margin: 0 }}>{erro}</div>}
+   142	          {podeEditar && (
+   143	            <div style={{ display: 'flex', gap: 8 }}>
+   144	              <button type="button" className="btn btn-primary" disabled={salvando} onClick={() => decidir('aprovado')}><Check size={14} /> Aprovar e ensinar o robô</button>
+   145	              <button type="button" className="btn btn-secondary" disabled={salvando} onClick={() => decidir('ignorado')}><X size={14} /> Ignorar</button>
+   146	            </div>
+   147	          )}
+   148	        </>
+   149	      )}
+   150	    </div>
+   151	  );
+   152	}
+   153	
+   154	export const CerebroRobo = () => {
+   155	  const [dados, setDados] = useState(null);
+   156	  const [erro, setErro] = useState('');
+   157	  const [aba, setAba] = useState('revisao');
+   158	  const [dataRev, setDataRev] = useState('');
+   159	  const [rev, setRev] = useState(null);
+   160	  const [soPendentes, setSoPendentes] = useState(true);
+   161	  const [nova, setNova] = useState(vazio);
+   162	  const [editando, setEditando] = useState(null);
+   163	  const [msg, setMsg] = useState('');
+   164	
+   165	  const carregar = useCallback(() => api('/api/cerebro/resumo').then((d) => { setDados(d); setErro(''); setDataRev((x) => x || d.revisoes?.[0]?.data || ''); }).catch((e) => setErro(e.message)), []);
+   166	  useEffect(() => { carregar(); }, [carregar]);
+   167	  useEffect(() => { if (!dados?.rodando) return undefined; const t = setInterval(carregar, 15000); return () => clearInterval(t); }, [dados?.rodando, carregar]);
+   168	  const carregarRev = useCallback(() => { if (!dataRev) { setRev(null); return; } api(`/api/cerebro/revisoes/${dataRev}`).then(setRev).catch(() => setRev(null)); }, [dataRev]);
+   169	  useEffect(() => { carregarRev(); }, [carregarRev, dados?.rodando]);
+   170	
+   171	  const podeEditar = true; // a API recusa quem nao e administrador
+   172	  const lojas = dados?.lojas || [];
+   173	  const ativas = (dados?.licoes || []).filter((l) => l.ativo).length;
+   174	  const pendentesHoje = dados?.revisoes?.[0]?.pendentes || 0;
+   175	  const achados = useMemo(() => (rev?.achados || []).filter((a) => !soPendentes || a.status === 'pendente'), [rev, soPendentes]);
+   176	
+   177	  const revisarAgora = async () => {
+   178	    setMsg('');
+   179	    try { await api('/api/cerebro/revisar', { method: 'POST', body: JSON.stringify({}) }); setMsg('Revisão começou — leva alguns minutos. A tela atualiza sozinha.'); carregar(); }
+   180	    catch (e) { setMsg(e.message); }
+   181	  };
+   182	  const salvarNova = async () => {
+   183	    setMsg('');
+   184	    try { await api('/api/cerebro/licoes', { method: 'POST', body: JSON.stringify(nova) }); setNova(vazio); setMsg('Ensinado! Já vale na próxima mensagem.'); carregar(); }
+   185	    catch (e) { setMsg(e.message); }
+   186	  };
+   187	  const salvarEdicao = async () => {
+   188	    try { await api(`/api/cerebro/licoes/${editando.id}`, { method: 'PUT', body: JSON.stringify(editando) }); setEditando(null); carregar(); }
+   189	    catch (e) { setMsg(e.message); }
+   190	  };
+   191	  const alternar = async (l) => { await api(`/api/cerebro/licoes/${l.id}`, { method: 'PUT', body: JSON.stringify({ ...l, ativo: !l.ativo }) }).catch((e) => setMsg(e.message)); carregar(); };
+   192	  const excluir = async (l) => { if (!window.confirm('Apagar esse ensinamento?')) return; await api(`/api/cerebro/licoes/${l.id}`, { method: 'DELETE' }).catch((e) => setMsg(e.message)); carregar(); };
+   193	
+   194	  if (erro) return <div className="card"><div className="empty-state">{erro}</div></div>;
+   195	  if (!dados) return <div className="card"><p className="muted-hint">Carregando o cérebro do robô…</p></div>;
+   196	
+   197	  return (
+   198	    <div className="animate-fade-in" style={{ display: 'grid', gap: 16 }}>
+   199	      <div className="card" style={{ display: 'grid', gap: 10 }}>
+   200	        <h3 style={{ margin: 0 }}><Brain size={20} style={{ verticalAlign: -4, marginRight: 8, color: '#d9892a' }} />Cérebro do robô</h3>
+   201	        <p className="muted-hint" style={{ margin: 0 }}>
+   202	          Todo dia, de noite, o robô relê as conversas do dia e aponta onde errou, já com a correção sugerida. Você aprova (ou ajusta) e ele aprende.
+   203	          Você também pode ensinar direto: "quando o cliente…, faça…". Ele só muda com a sua aprovação.
+   204	        </p>
+   205	        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
+   206	          <span className="badge">{ativas} ensinamento{ativas === 1 ? '' : 's'} ativo{ativas === 1 ? '' : 's'}</span>
+   207	          {dados.revisoes?.[0] && <span className="badge" style={{ background: 'rgba(217,137,42,0.15)', color: '#d9892a' }}>{pendentesHoje} correç{pendentesHoje === 1 ? 'ão' : 'ões'} pra revisar ({dataBR(dados.revisoes[0].data)})</span>}
+   208	          {dados.rodando
+   209	            ? <span className="badge" style={{ background: 'rgba(29,158,94,0.14)', color: 'var(--success-color)' }}><RefreshCw size={12} style={{ verticalAlign: -2 }} /> revisando as conversas de {dataBR(dados.rodando.data)}…</span>
+   210	            : <button type="button" className="btn btn-secondary" onClick={revisarAgora}><Play size={14} /> Revisar as conversas de hoje agora</button>}
+   211	        </div>
+   212	        {msg && <div className="muted-hint" style={{ margin: 0 }}>{msg}</div>}
+   213	      </div>
+   214	
+   215	      <div className="fx-abas" role="tablist">
+   216	        <button type="button" className={`fx-aba ${aba === 'revisao' ? 'fx-aba-ativa' : ''}`} onClick={() => setAba('revisao')}>O que errou (revisão diária)</button>
+   217	        <button type="button" className={`fx-aba ${aba === 'ensinar' ? 'fx-aba-ativa' : ''}`} onClick={() => setAba('ensinar')}>Ensinamentos</button>
+   218	        <button type="button" className={`fx-aba ${aba === 'testar' ? 'fx-aba-ativa' : ''}`} onClick={() => setAba('testar')}>Testar o robô</button>
+   219	      </div>
+   220	
+   221	      {aba === 'revisao' && (
+   222	        <div style={{ display: 'grid', gap: 12 }}>
+   223	          <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
+   224	            <select className="input-field" style={{ width: 'auto' }} value={dataRev} onChange={(e) => setDataRev(e.target.value)}>
+   225	              {(dados.revisoes || []).map((r) => <option key={r.data} value={r.data}>{dataBR(r.data)} — {r.pendentes} pendente(s) de {r.achados}</option>)}
+   226	            </select>
+   227	            <label className="muted-hint" style={{ margin: 0 }}><input type="checkbox" checked={soPendentes} onChange={(e) => setSoPendentes(e.target.checked)} /> só pendentes</label>
+   228	            {rev && <span className="muted-hint" style={{ margin: 0 }}>{rev.analisadas} conversas lidas</span>}
+   229	          </div>
+   230	          {!dados.revisoes?.length && <div className="card"><div className="empty-state">Ainda não tem revisão. Clique em “Revisar as conversas de hoje agora”.</div></div>}
+   231	          {rev && !achados.length && <div className="card"><div className="empty-state">Nada pendente nesse dia. 👍</div></div>}
+   232	          {achados.map((a) => <Achado key={a.id} a={a} data={dataRev} lojas={lojas} podeEditar={podeEditar} onDecidido={() => { carregarRev(); carregar(); }} />)}
+   233	        </div>
+   234	      )}
+   235	
+   236	      {aba === 'ensinar' && (
+   237	        <div style={{ display: 'grid', gap: 12 }}>
+   238	          <div className="card" style={{ display: 'grid', gap: 10 }}>
+   239	            <h4 style={{ margin: 0 }}>Ensinar o robô</h4>
+   240	            <FormLicao valor={nova} onChange={setNova} lojas={lojas} />
+   241	            <button type="button" className="btn btn-primary" style={{ justifySelf: 'start' }} onClick={salvarNova}><Check size={14} /> Salvar ensinamento</button>
+   242	          </div>
+   243	          {(dados.licoes || []).length === 0 && <div className="card"><div className="empty-state">Nenhum ensinamento ainda.</div></div>}
+   244	          {(dados.licoes || []).map((l) => (
+   245	            <div key={l.id} className="card" style={{ padding: 14, display: 'grid', gap: 8, opacity: l.ativo ? 1 : 0.55 }}>
+   246	              {editando?.id === l.id ? (
+   247	                <>
+   248	                  <FormLicao valor={editando} onChange={setEditando} lojas={lojas} />
+   249	                  <div style={{ display: 'flex', gap: 8 }}>
+   250	                    <button type="button" className="btn btn-primary" onClick={salvarEdicao}><Check size={14} /> Salvar</button>
+   251	                    <button type="button" className="btn btn-secondary" onClick={() => setEditando(null)}>Cancelar</button>
+   252	                  </div>
+   253	                </>
+   254	              ) : (
+   255	                <>
+   256	                  <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
+   257	                    <b style={{ flex: 1 }}>Quando o cliente {l.situacao.replace(/^quando o cliente\s*/i, '')}</b>
+   258	                    <span className="badge">{l.origem === 'revisao' ? 'veio da revisão' : 'você ensinou'}</span>
+   259	                    <span className="muted-hint" style={{ margin: 0 }}>usado {l.usos || 0}x</span>
+   260	                  </div>
+   261	                  <div className="muted-hint" style={{ margin: 0 }}>→ {ACOES[l.acao]}{l.lojas?.length ? ` · ${l.lojas.map((id) => lojas.find((x) => x.id === id)?.nome || id).join(', ')}` : ' · todas as lojas'}</div>
+   262	                  {l.resposta && <div style={{ whiteSpace: 'pre-wrap', fontSize: '0.9rem' }}>{l.resposta}</div>}
+   263	                  <div style={{ display: 'flex', gap: 8 }}>
+   264	                    <button type="button" className="btn btn-secondary" style={{ padding: '4px 10px', fontSize: '0.78rem' }} onClick={() => alternar(l)}>{l.ativo ? 'Desligar' : 'Ligar'}</button>
+   265	                    <button type="button" className="btn btn-secondary" style={{ padding: '4px 10px', fontSize: '0.78rem' }} onClick={() => setEditando({ ...l })}><Pencil size={12} /> Editar</button>
+   266	                    <button type="button" className="btn btn-secondary" style={{ padding: '4px 10px', fontSize: '0.78rem' }} onClick={() => excluir(l)}><Trash2 size={12} /> Apagar</button>
+   267	                  </div>
+   268	                </>
+   269	              )}
+   270	            </div>
+   271	          ))}
+   272	        </div>
+   273	      )}
+   274	
+   275	      {aba === 'testar' && (
+   276	        <div className="card" style={{ display: 'grid', gap: 10 }}>
+   277	          <h4 style={{ margin: 0 }}>Testar o robô</h4>
+   278	          <p className="muted-hint" style={{ margin: 0 }}>Escreva uma mensagem como se fosse um cliente e veja o que o robô responderia agora, já com os ensinamentos. Não manda nada pra ninguém.</p>
+   279	          <Testar lojas={lojas} />
+   280	        </div>
+   281	      )}
+   282	    </div>
+   283	  );
+   284	};
+=== como CerebroRobo e usado
+src/App.jsx:20:import { CerebroRobo } from './pages/CerebroRobo';
+src/App.jsx:70:          {view === 'at-cerebro' && ehMaster(usuario) && <CerebroRobo />}
+=== tailwind?
+/* ==========================================================================
+   GP PREMIUM — CRM DE ANÚNCIOS & ATENDIMENTO
+   DESIGN SYSTEM OFICIAL DA MARCA (VERMELHO GP #E8252C + DARK SLATE)
+   100% COMPLETO E RESPONSIVO PARA TODAS AS RESOLUÇÕES E MONITORES
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* === Cores Oficiais da Logo GP Premium === */
+  --red-gp: #E8252C;
+  --red-gp-dark: #C81E24;
+  --red-gp-hover: #FF333B;
+  --red-gp-glow: rgba(232, 37, 44, 0.45);
+  /* Nomes antigos ainda usados em 13 lugares do JSX — sem estes aliases o
+     vermelho da marca some dessas telas. */
+  --red: #E8252C;
+  --red-600: #C81E24;
+
+  --navy: #0d1527;
+  --navy-700: #070b14;
+  --navy-600: #131f38;
+  
+  --brand-gradient: linear-gradient(135deg, #E8252C 0%, #B91C22 100%);
+  --brand-gradient-hover: linear-gradient(135deg, #FF333B 0%, #D82228 100%);
+  --brand-gradient-glow: linear-gradient(135deg, rgba(232, 37, 44, 0.25) 0%, rgba(200, 30, 36, 0.08) 100%);
+
+  /* Superfícies & Backgrounds (Dark Profundo, Limpo & Moderno) */
+  --bg-color: #080c16;
+  --bg-soft: #0e1526;
+=== FluxoResposta
+680:model FluxoResposta {
+681-  chave         String   @id
+682-  partes        String   // JSON: array de bolhas de WhatsApp
+683-  atualizadoPor String?
+684-  atualizadoEm  DateTime @updatedAt
+685-}
+686-
+687-// Rastro de POR ONDE cada mensagem de cliente passou no fluxo do robo (fluxograma ao vivo da tela "Fluxo").
+688-// Guarda so 14 dias (limpeza em botAtendimentoService). Falha ao gravar aqui nunca atrapalha a resposta.
+689-model FluxoEvento {
+690-  id           String   @id @default(uuid())
+=== imports
+[
+  '72213a6c-31c5-410d-a6b4-504dfd223e2f',
+  'cb13ea54-9df1-44bf-9e12-b59bb46167d4'
+]

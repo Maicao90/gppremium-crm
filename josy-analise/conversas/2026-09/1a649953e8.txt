@@ -1,0 +1,49 @@
+CONVERSA 1a649953e8 | contato: Alexandre Peixoto | 15/09/2026 10:57 até 09/10/2026 08:33 | 13 msgs do cliente, 24 da loja, 0 do robô
+
+--- 15/09/2026 (Tue) ---
+[10:57] LOJA: *Josy:*
+Bom dia!
+[10:57] LOJA: [foto]
+[11:47] LOJA: [áudio] "Oi Alexandre, você vai passar por aqui ainda hoje?"  {audio:midias/3EB082144839DF3D866D1E_767663.ogg}
+--- 16/09/2026 (Wed) ---
+[10:36] LOJA: [áudio] "Oi Alexandre, tudo jóia? Nós nos falamos ontem e gostaria de saber se você vai passar por aqui para nós darmos continuidade na negociação dos pneus e do seu carro. Dá um retorno, está bem?"  {audio:midias/3EB04D25F42EDB14ED8D94_110678.ogg}
+--- 22/09/2026 (Tue) ---
+[16:50] LOJA: *Josy:*
+Boa tarde, eu vou encerrar seu atendimento para não encher seu whatsapp de mensagem.                                                                                                                   Se precisar futuramente é só chamar.                                                                                                                                                                           Obrigada 👋🏻
+--- 08/10/2026 (Thu) ---
+[16:36] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[16:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:36] LOJA: [áudio] "Oi Alexandre, tudo bom?"  {audio:midias/3EB0DF6602995DF41D3A10_665675.ogg}
+[16:37] CLIENTE: 15
+[16:37] CLIENTE: [áudio] "Tudo bem, você. O pneu que eu preciso é 15."
+[16:38] LOJA: [áudio] "Alexandre, eu preciso saber qual é a medida do pneu que você precisa, porque 15 é somente o aro."  {audio:midias/3EB065859B1D65578745B4_944228.ogg}
+[16:38] CLIENTE: [áudio] "É para um Fox. Eu quero ele mais fino, mais fino e mais alto, ou então mediano. Quanto mais fino, melhor, para colocar no Fox."
+[16:39] CLIENTE: [áudio] "Acho que é 185-60, 175-60, por aí."
+[16:39] LOJA: [áudio] "Olha, o 18560, inclusive, ele acabou de entrar na oferta, o pneu da marca GP Premium aqui da nossa empresa, o valor normal dele R$ 289,00. Estou fazendo aqui na oferta por R$ 249,00 esse mês e faz a instalação."  {audio:midias/3EB077E06BD4D3C6F0C501_758585.ogg}
+[16:40] CLIENTE: [áudio] "Aí compra 3 e ganha 1, é isso? Conforme a promoção aí."
+[16:41] LOJA: [foto]
+[16:42] LOJA: [áudio] "Não, a promoção do Compre 3 e Leve 4 é para um pneu bem maior, que é 1,95,65,15. Cada pneu está por 229 reais e tem o 215,55,17, que está por 395 reais. Então, são para pneus bem grandes, mas igual falei para o senhor, o 185,60 está num preço muito bom de 289, valor normal, estou fazendo por apenas 249 cada. Então, assim, muito difícil achar pneu nesse preço. E já entrega ele colocadinho, tá?"  {audio:midias/3EB0736D9759BFC81F0219_89181.ogg}
+[16:43] CLIENTE: [áudio] "Vou ver no carro se dá pra pôr isso da promoção, o que eu tô querendo é essa da promoção, que ele é mais barato ainda e ganha o outro, né? De repente, isso aí dá pra pôr também. Vou ver no carro lá qual que tem nele."
+[16:44] LOJA: 195/65/15 é muito grande...vai raspar.
+[16:52] LOJA: [áudio] "Sra. Alexandre, o senhor é daqui de Luziânia mesmo? Eu lembro que eu até tinha mandado a localização da nossa loja uma vez, ainda tem aqui na nossa conversa."  {audio:midias/3EB0F92E1D09EFA1CF3B3A_190356.ogg}
+[16:52] LOJA: [áudio] "Acho que, na verdade, o Senhor até passou por aqui."  {audio:midias/3EB0BA5313DA9CC2C9592C_138254.ogg}
+[17:57] CLIENTE: [áudio] "É, eu acho que eu tenho um pulo aí, do lado da Pé da Prima Via, não é?"
+[17:57] LOJA: [áudio] "Não, não. Aqui é a fábrica. O senhor passou por aqui, eu lembro. Aqui é na fábrica, na BR-040."  {audio:midias/3EB042D127BA623DF0B8B1_931140.ogg}
+[17:57] LOJA: [foto]
+[18:12] CLIENTE: [áudio] "Essa medida que eu te mandei, você não consegue fazer não? Compre 3 e levo outro."
+[18:12] CLIENTE: [áudio] "Se fizer, eu vou dar um jeito de comprar."
+[18:12] LOJA: [áudio] "Não, porque a promoção é exclusiva para o pneu 215, 55, 17, 195, 65, 15. Não tem como fazer, compre 3, leve 4 para qualquer outro tipo de medida. Ela é exclusiva para essas duas."  {audio:midias/3EB0227DFD6E05A715F373_652814.ogg}
+[18:13] LOJA: [áudio] "Mas se eu prestar atenção aqui, que o 185-60-15, de 289, está por apenas 249 reais. Então, assim, vale muito a pena."  {audio:midias/3EB0B3E39CF98324A9A262_218489.ogg}
+[18:14] LOJA: [áudio] "Vamos fazer um negócio para nós fecharmos essa negociação aqui, senhor Alexandre? O senhor consegue sacar o dinheiro? Porque se o senhor trouxer o seu dinheiro em espécie para mim, eu vou fazer aqui a unidade por 235 cada pneu. 235 no dinheiro. Se trouxer para mim, nós fechamos a negociação dessa forma para poder te ajudar."  {audio:midias/3EB0ABA121C47649ED3F4F_464901.ogg}
+[18:15] LOJA: [áudio] "E já coloque esses pneus aí também no seu carro."  {audio:midias/3EB03E5BEFBB56B63826DB_111678.ogg}
+[18:17] CLIENTE: [foto]
+[18:17] CLIENTE: [áudio] "Eu achei um aqui com 5 anos de garantia, 219."
+[18:18] LOJA: [áudio] "Ai, seu Alexandre, não cai nisso daí, não?"  {audio:midias/3EB047CFA139C9A2F9812A_473660.ogg}
+[18:19] LOJA: [áudio] "É isso, Alexandre. Sério, assim, não estou usando com o intuito de falar mal da outra empresa, mas dá um Google aí nesse daí para o senhor ver o que é que está acontecendo. O senhor já fez a sua pesquisa? Olha, que a gente não fica inventando nada não, tá bom? Só isso que eu vou te falar."  {audio:midias/3EB0935C6C9B78D013BC35_740794.ogg}
+[18:33] CLIENTE: [áudio] "Vou dar uma pesquisada para ver."
+--- 09/10/2026 (Fri) ---
+[08:32] LOJA: Bom dia!
+[08:33] LOJA: [áudio] "Pois é, seu Alexandre, mais uma vez reforço, não estou denegrindo o trabalho de outras empresas, porque justamente não tem nenhum porquê fazer isso, mas é porque especificamente essa daí, todo dia eu atendo cliente que foi para essa loja aí, movido por esse preço, quando chegou lá, virou caso de polícia, aí o cliente passa aqui, negocia os pneus aqui da fábrica com a gente, compra e sai embora satisfeito, tá? Realmente tem uma grande diferença aí."  {audio:midias/3EB0CF9E17B482E76EA9B2_402341.ogg}

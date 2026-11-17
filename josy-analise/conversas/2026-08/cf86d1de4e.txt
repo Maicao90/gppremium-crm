@@ -1,0 +1,33 @@
+CONVERSA cf86d1de4e | contato: 094-Brasilia | 21/08/2026 08:36 até 25/08/2026 16:33 | 9 msgs do cliente, 12 da loja, 0 do robô
+
+--- 21/08/2026 (Fri) ---
+[08:36] LOJA: Olá, bom dia! Me chamo Josy, sou aqui da Pneus GP Premium, Luziania-Go. Pode me instruir?
+Eu solicitei uma coleta ontem, mas não me passaram as medidas corretas, e hoje solicitei uma nova coleta. Para não dar viagem perdida em 1 delas, gostaria de saber se pode cancelar a que segue logo abaixo.
+[08:36] LOJA: [foto]
+[08:36] CLIENTE: ‎094-Brasilia agradece seu contato. Como podemos ajudar?
+Nossas mensagens são respondidas por ordem de chegada, em caso de urgência ligar 21039200
+[08:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 25/08/2026 (Tue) ---
+[15:49] LOJA: *josy :*
+Como que é para fazer?
+[15:49] LOJA: *josy :*
+Pode me instruir?
+[15:50] CLIENTE: [áudio] "Olá, boa tarde, tudo bom? Então, quem emitiu a nota fiscal consegue, no mesmo sistema, fazer a carta de correção. Aí, em cada NF tem que ter essas informações, tá bem? Na NF 14093 tem que ser conforme eu te orientei aí, dessa mesma forma, vai escrever na carta de correção. E na nota fiscal posterior também é a mesma coisa, tá bom?"
+[15:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:53] LOJA: *josy :*
+Entendo...a pessoa que fez não está aqui.
+[15:53] LOJA: [áudio] "Olá, boa tarde, tudo bem? Aí é só colocar essas informações, é isso?"  {audio:midias/3EB094CEDA0426BAEC7E0C_154568.ogg}
+[16:03] CLIENTE: [áudio] "E isso, do mesmo jeito que eu te mandei, aí você vai colocar na carta de correção."
+[16:04] LOJA: *josy :*
+Feito.
+[16:06] CLIENTE: tinha colocdo o numero de NF errado o certo e 14089
+[16:07] LOJA: *josy :*
+Mas eu fiz certo.
+[16:17] CLIENTE: ai quando fizer me envia essas cartas de correção em PDF
+[16:19] LOJA: [documento]
+[16:19] LOJA: [documento]
+[16:33] CLIENTE: valor frete ficou 920,03
+[16:33] CLIENTE: agrupando as 2 NFS
+[16:33] CLIENTE: ]SEGUIREMOS

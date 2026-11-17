@@ -1,0 +1,8 @@
+CONVERSA 5c7f3959a1 | contato: Edvaldo | 14/08/2026 08:08 até 16/08/2026 06:30 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 14/08/2026 (Fri) ---
+[08:08] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[08:10] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 16/08/2026 (Sun) ---
+[06:28] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[06:30] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

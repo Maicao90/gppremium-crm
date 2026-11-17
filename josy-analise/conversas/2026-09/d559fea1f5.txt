@@ -1,0 +1,61 @@
+CONVERSA d559fea1f5 | contato: Will | 02/09/2026 15:36 até 15/09/2026 17:52 | 15 msgs do cliente, 29 da loja, 0 do robô
+
+--- 02/09/2026 (Wed) ---
+[15:36] LOJA: *Josy:*
+Boa tarde, Willian
+[15:36] LOJA: [foto]
+[15:54] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:57] LOJA: [áudio] "Oi William, tudo jóia? William, eu te encaminhei o orçamento de todas as opções que nós temos aqui na nossa empresa, tá? No dia de hoje. E me dá um retorno aqui e me diz qual das opções que eu posso reservar pra vocês, tá bem?"  {audio:midias/3EB0D6C1B6AD915D675C6A_20481.ogg}
+[16:57] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[18:09] CLIENTE: [áudio] "Oi Josi, boa tarde, já quase boa noite. Eu vou querer aquela opção aí do GP, que você tem aí. Parece que em dinheiro mesmo, na hora aí, você consegue fazer por 275, parece. Tá bom? Só que é semana que vem, viu? Que eu vou dar um pulinho aí. Por essa semana tá me arrochado, inclusive agora eu tô viajando. Vou te responder minha áudio aqui, porque eu tô no volante aqui, tá bom?"
+[18:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:10] LOJA: [áudio] "Perfeito William, isso mesmo, no dinheiro eu faço por 275 cada, e vindo com o carro aqui nós já aproveitamos e instalamos os pneus para você, tá bom?"  {audio:midias/3EB0A8D56D5EE375555B80_750063.ogg}
+[18:10] LOJA: [áudio] "E vamos nos falando, tá?"  {audio:midias/3EB0AE6464EE21778FDCF3_491382.ogg}
+[18:11] CLIENTE: [áudio] "Tá ok, Josi. Obrigado, hein? Vem, Josi, esses pneus são novos ou são remolde?"
+[18:11] LOJA: [áudio] "Eles são os pneus que nós fazemos aqui da marca GP Premium, se tratam de pneus ecológicos, eles entram sim na categoria de remodelagem, vem até escrito nele, mas amanhã eu vou fazer um vídeo bem detalhado para você poder compreender o que é o nosso pneu, que é o pneu GP Premium, e o que difere ele dos pneus que são remoldes convencionais, tá, porque o pneu GP Premium é o pneu mais vendido que eu tenho justamente por conta da qualidade, tá bom?"  {audio:midias/3EB07D8C18990D96F15C18_55208.ogg}
+[18:13] CLIENTE: [áudio] "Tá bom, então, Júcio. Fico no aguardo."
+--- 03/09/2026 (Thu) ---
+[10:16] CLIENTE: [áudio] "Oi Josi, bom dia, tudo bem com você? Você ficou de ver um vídeo, fazer um vídeo aí dos pneus aí do GP. Você faz esse e manda pra mim, tá bom? Bom dia."
+[10:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:18] LOJA: [áudio] "Oi William, bom dia, tudo bem?"  {audio:midias/3EB035ACC3D71C032D0E60_48798.ogg}
+[10:18] LOJA: [áudio] "Faço sim, muito obrigada por aguardar, tá joia? Vou fazer agora mesmo."  {audio:midias/3EB08199BD4CC9EFBC3D5A_105164.ogg}
+[10:19] LOJA: [áudio] "Desculpa que não é justificativa, mas ontem foi extremamente corrido, graças a Deus, a loja ficou cheia e eu não consegui fazer o vídeo pra você, mas vou fazer agora que tá tranquilo, tá bom?"  {audio:midias/A5919A1187D8FDBA57561BB827DE9010_68862.ogg}
+[10:23] LOJA: [vídeo]
+[10:31] LOJA: [áudio] "William, ficou bem explicado aí para você?"  {audio:midias/3EB00790D91D7E0C5FDAF7_91004.ogg}
+[10:32] CLIENTE: Ficou ótimo
+[10:43] LOJA: *Josy:*
+Que bom!
+[10:44] LOJA: *Josy:*
+E quando o senhor vai retornar para fazermos a instalação dos pneus?
+[10:46] CLIENTE: [áudio] "Oi Josi, deixa eu te falar, estou esperando o quinto dia, mas vai ser essa semana que vem, segunda já é feriado, né, provavelmente terça-feira, quarta, é por aí da semana que vem, e agora eu tô, eu trabalho em caminhão também, e eu tô aqui pro lado de Crixás, no Goiás, tá bom, tá na correria aqui, mas provavelmente semana que vem. Se eu não puder levar o carro, eu passo aí de caminhão e pego os pneus e depois eu instalo, tá bom?"
+[10:49] LOJA: [áudio] "Sim, claro, da maneira que fica melhor para você, tá bom, William?"  {audio:midias/3EB051FB9387B1F421F000_980763.ogg}
+[10:51] CLIENTE: 👍🏼👍🏼
+[12:01] CLIENTE: [áudio] "Oi, Josi. O pneu, pelo vídeo, está muito bonito. Eu queria fazer uma pergunta para você duas, na verdade. Sobre a fabricação dele. Ele é feito com outras carcaças ou é fabricado todo aí com vocês? Ou é aproveitado alguma outra carcaça de pneu? E é feito ele. E se ele tem garantia? 3, 6, 9, não sei. Como tem selo de 2 metros, né? Eu queria saber se tem garantia. E se a carcaça dele é reaproveitada e feita. O ele é todo fabricado aí."
+[12:04] LOJA: [áudio] "William, nós utilizamos uma estrutura de um pneu anterior, sim. Só que existe um grande detalhe nisso tudo. Para poder utilizar essa estrutura, são feitos os testes juntamente com o Inmetro e com o nosso maquinário aqui de Scanner, para ver se não tem nenhuma ruptura no pneu todo, tá? Porque ele tem que ser impecável, é por isso que eu digo para você que é criterioso, tá? Então, não pode ter nenhum tipo de dano, nem de imperfeição. E esse pneu, ele precisa ser de uma estrutura de pneu recente, praticamente é o pneu semi-novo, entendeu? Aí nós fazemos esse pneu todo de novo, com base nessa estrutura. Então, por isso que ele é totalmente íntegro, porque ele é feito todo novamente, utilizando essa estrutura de um pneu anterior, mas com DOT recente, e sem nenhum tipo de dano. Então, é bem criterioso. Nossa, é extremamente enjoado para poder fazer esse pneu, tá joia? E ele tem garantia de 2 anos."  {audio:midias/3EB06F8827B37FFC864803_12425.ogg}
+--- 04/09/2026 (Fri) ---
+[15:54] CLIENTE: [áudio] "Oi Josi, boa tarde, você tá bem? Deixa eu te perguntar a loja e fecha que horas hoje? Eu tô descarregando aqui na, depois de Samambaia aqui, sentido Caldas Nova, uma obra aqui, e dá pra umas 4 e meia, mais ou menos eu vou estar voltando. Aí eu vou passar aí pra dar uma olhada, entendeu?"
+[15:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:56] LOJA: [áudio] "Oi, William. Como é que você está?"  {audio:midias/A5AB27E6297E4874381A271F432A6A3D_140141.ogg}
+[15:56] LOJA: [áudio] "Aqui eu fecho somente às 6 da tarde."  {audio:midias/A55E7C2591BAFC4B3614BFCA8AA841FF_859729.ogg}
+[15:56] LOJA: [áudio] "Sim, pode ver sim, será uma satisfação imensa receber você aqui na nossa loja."  {audio:midias/A5435D02F2FA93DEDEB8B4BAA61E72C0_24862.ogg}
+[15:58] CLIENTE: Tudo bem 🙏🏼Ta bom obrigado!
+[17:17] CLIENTE: [áudio] "Oi Jôs, boa tarde, tudo bem? Não vai ter como eu passar aí não, hein? Saindo aqui agora. Se passar esse já tá fechado a loja já, tá bom? Vamos ver se dá certo pra semana que vem. Pode ser do feriado."
+[17:17] LOJA: [áudio] "Ai William, do jeito que fica melhor para você, tá bom?"  {audio:midias/3EB09ED3622DE9C70D9C26_216922.ogg}
+[17:34] CLIENTE: 🙏🏼👍🏼
+--- 15/09/2026 (Tue) ---
+[17:33] CLIENTE: [áudio] "Olá Josi, boa tarde, tudo bem com você? Aqui é o William, tudo bem? Se Deus quiser, amanhã vai dar certo de ir até a sua loja para ver os pneus, tá bom? Peguei uma carga aí para a Silvânia, vou passar em frente aí. Tô achando que eu vou passar logo na ida. De repente posso enrolar lá igual aquele dia e ficar tarde e não dá tempo de passar."
+[17:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:42] LOJA: [áudio] "Oi William, como é que você está?"  {audio:midias/3EB02907808A09D804F534_389987.ogg}
+[17:43] LOJA: [áudio] "Ah, que bacana que você tá por aqui, William. Uai, perfeito então, tá joia? Assim que você estiver aí com a sua disponibilidade, você já se achega aqui então."  {audio:midias/3EB0A2B8B76F1DF1A52949_501450.ogg}
+[17:43] LOJA: [foto]
+[17:49] CLIENTE: [áudio] "Positivo, Josi. Se Deus quiser vai dar certo amanhã. A loja aí, a fábrica abre que horas? A tua loja."
+[17:50] LOJA: [áudio] "William, se Deus quiser, vai dar certo sim. Nossa loja lá abre 8 da manhã."  {audio:midias/3EB091AC12E2A57D227FA1_363752.ogg}
+[17:52] CLIENTE: 👍🏼

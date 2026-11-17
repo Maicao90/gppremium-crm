@@ -1,0 +1,23 @@
+CONVERSA c0de9c5421 | contato: Eduardo Andrade | 28/08/2026 13:35 até 28/08/2026 15:07 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[13:35] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:36] CLIENTE: 175/65
+[13:37] LOJA: [foto]
+[13:37] LOJA: *Josy:*
+Prefere mensagem de áudio ou texto?
+[13:38] CLIENTE: [áudio] "Qualidade desses aí, desses chinês, é melhor do que essa primeira, que é essa nacional?"
+[13:39] LOJA: [áudio] "Olá Eduardo, tudo bem com você? Eu sou a Josi. Então, no dia de hoje eu tenho essas três opções de marcas à pronta entrega. No orçamento é o valor de apenas um pneu. E, na verdade, esse pneu de 249, que é o da marca GP Premium, ele tem mais durabilidade do que o pneu chinês, tá?"  {audio:midias/3EB03C0F154A6DB9597050_497224.ogg}
+[13:39] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB052B5BCEF998AB69EF0_60919.ogg}
+[13:39] CLIENTE: [áudio] "Bora, bora sim, só porque eu vou arrumar amanhã, aí eu queria saber se vocês funcionam amanhã, na parte da manhã."
+[15:01] LOJA: *Josy:*
+Sim... amanhã das 08:00 às 12:00
+[15:02] LOJA: [áudio] "Você sabe aqui onde fica a nossa loja que eu vou te mandar a nossa localização, tá bom?"  {audio:midias/3EB03A558238DF24BE9790_399822.ogg}
+[15:02] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:02] LOJA: [foto]
+[15:04] CLIENTE: Obrigado
+[15:07] LOJA: *Josy:*
+Te aguardo!

@@ -1,0 +1,52 @@
+CONVERSA 0fc019896d | contato: . | 20/08/2026 08:45 até 13/10/2026 11:36 | 18 msgs do cliente, 20 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[08:45] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[08:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:45] LOJA: Bom dia!
+--- 21/09/2026 (Mon) ---
+[15:20] CLIENTE: Boa tarde
+[15:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:20] LOJA: *Josy:*
+Oi!
+[15:20] CLIENTE: Vc tem o pneu 175/75/14 ?
+[15:20] LOJA: *Josy:*
+Tudo bem?
+[15:20] CLIENTE: Bem
+[15:20] LOJA: [foto]
+[15:21] LOJA: *Josy:*
+Pneu da marca Comforser...R$ 300,00 a unidade a vista.
+[15:21] LOJA: *Josy:*
+Pneu GP Premium R$ 279,00 a unidade a vista na medida original 175/70/14
+[15:21] CLIENTE: Obrigada
+[15:22] CLIENTE: E o 195/65/15
+[15:22] CLIENTE: 185/65/15
+[15:23] LOJA: *Josy:*
+Pneu GP Premium acabou de entrar na promoção, DE R$ 289,00 por  R$ 249,00 a vista
+--- 09/10/2026 (Fri) ---
+[10:03] CLIENTE: Bom dia qual o valor do pneu 175/75/14
+[10:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:04] LOJA: [áudio] "E aí, Divaldo, bom dia, tudo bem? Continua o mesmo preço do qual nós conversamos da última vez."  {audio:midias/3EB07EA1F8776F6DB38124_234946.ogg}
+[10:04] CLIENTE: Apagou kkk
+[10:04] CLIENTE: Manda novamente
+[10:04] LOJA: [foto]
+[10:04] LOJA: [áudio] "Um 75,75, eu vou ter da marca Conforcer, a unidade está por 300 reais à vista. E na medida, um 75,70 a 14, tem os pneus da marca GP Premium, que de 290, eles estão por 279 esse mês."  {audio:midias/3EB016A815475DBFC3CB6A_622546.ogg}
+[10:05] CLIENTE: Esse 175 75 14 avista da para da um desconto não ?
+[10:07] LOJA: [áudio] "Edvaldo, diferente das outras empresas que colocam o preço lá embaixo, justamente porque eles estão fazendo pegadinha com o cliente, aqui eu trabalho da forma correta. Esse é o preço do pneu. O preço dele vai ser os 300 reais aí a unidade à vista, tá? Mas é que você pode comprar e levar os pneus para montar onde você quiser."  {audio:midias/3EB02F766C9DA9677AB7F2_517690.ogg}
+[10:07] CLIENTE: Não remold
+[10:07] CLIENTE: ?
+[10:07] CLIENTE: São
+[10:08] LOJA: [foto] Os pneus Comforser apresentados são pneus novos, com certificação do Inmetro e garantia de fábrica de 5 anos contra defeitos de fabricação.
+[10:44] LOJA: Posso reservar para você?
+[12:12] LOJA: 🙋🏼‍♀️
+[12:14] CLIENTE: Mais tarde eu retorno
+[14:46] LOJA: E ai... o que decidiu?
+--- 13/10/2026 (Tue) ---
+[11:00] LOJA: [áudio] "Oi, Divaldo. Bom dia, tudo jóia? Nós conversamos aí perto do final de semana e eu gostaria de saber se você pretende seguir com a negociação, se ficou de me dar um retorno aqui. Assim que possível, fala comigo, tá bom?"  {audio:midias/3EB0048B55E642FDF76B16_815485.ogg}
+[11:36] CLIENTE: Oi
+[11:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:36] CLIENTE: Eu comprei já

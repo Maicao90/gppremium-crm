@@ -1,0 +1,15 @@
+CONVERSA 712883ac7c | contato: CASA DO CHINELO | 29/08/2026 11:36 até 29/08/2026 11:50 | 4 msgs do cliente, 6 da loja, 0 do robô
+
+--- 29/08/2026 (Sat) ---
+[11:36] LOJA: [áudio] "Oi, Alessandro Joia. Alessandro, eu te encaminhei um áudio alguns dias atrás, você até chegou a visualizar aí, né, mas entendo que na correria você deve ter esquecido de me responder. Gostaria de saber se você pretende seguir com a negociação, se até mesmo, de repente, já realizou a compra em algum outro lugar, tá? Apenas para que eu não fique aí enchendo seu WhatsApp de mensagens, tá? E dar um encerramento devido aqui no meu atendimento. É... Estava aqui conversando com o meu gerente, ele me falou que se você trouxer o pagamento em dinheiro, em espécie, ele faz a unidade por 445 reais pra você. Aí, de repente, se for mais interessante, tá joia? Você fala aqui comigo, por gentileza. Eu agradeço muito pela sua atenção e bom final de semana."  {audio:midias/3EB01B3FDAB48B472FD475_521081.ogg}
+[11:40] CLIENTE: [áudio] "Oi, bom dia, tudo bem? Sim, esses pneus aí, eu fiz a cotação aí pro meu pai, sabe? Fiz o orçamento aquele dia pra pôr na caminhonete do meu pai, e ele vai colocar, sabe? Ele só tá esperando, parece que é pagar uma fatura lá, do cartão de crédito dele, aí ele vai sim, ele ainda vai colocar, mas eu não vou dizer pra você o dia certinho, né? Mas, eu acho que esse mês agora, começo do mês aí, ele vai dar um pulinho aí, beleza? Ele vai, ele interessou sim nos pneus. O preço também ficou bem bacana, né? Beleza? Tô só te passando aí."
+[11:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:42] LOJA: [áudio] "Beleza, Alessandro. Aí você fala pra ele que se ele conseguir sacar o dinheiro pra trazer aqui pra nós, fica melhor. Tá jóia?"  {audio:midias/3EB0356A453951503C364D_676602.ogg}
+[11:42] LOJA: [áudio] "Você fala pra ele direitinho onde que é a fábrica aqui, tá bom?"  {audio:midias/3EB075D6B4CEA868F62C43_545905.ogg}
+[11:49] CLIENTE: [áudio] "Não, beleza, mas eu acredito, igual eu te falei, ele vai passar no crédito, né? Vai passar no crédito."
+[11:49] CLIENTE: [áudio] "Então tranquilo, aí no dia que ele for vir, eu vou com ele aí. Eu até te falei aquele dia aí que eu já conheço a qualidade do pneu de vocês aí, só que quando eu compro, eu gosto daqueles que não tem aquela vulcanização por dentro, né? Porque eles são um pneu recuperado, geralmente aquela vulcanização é porque furou, né? Aí escolher umas quatro carcaças aí sem ter aquele buraquinho, aquela vulcanização."
+[11:49] LOJA: *Josy:*
+Tranquilo!
+[11:50] LOJA: [áudio] "Não, separa uns bons aqui para você, pode ficar tranquilo, tá?"  {audio:midias/3EB0A969FC4DA713FC8C5A_598050.ogg}
+[11:50] CLIENTE: [figurinha]

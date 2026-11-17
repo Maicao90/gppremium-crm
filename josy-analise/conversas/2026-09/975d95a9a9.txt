@@ -1,0 +1,19 @@
+CONVERSA 975d95a9a9 | contato: ativos | 23/09/2026 11:15 até 24/09/2026 11:38 | 3 msgs do cliente, 7 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[11:15] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:16] CLIENTE: 175/75-14
+[11:16] CLIENTE: Qual valor ?
+[11:17] LOJA: [foto]
+[11:18] LOJA: *Josy:*
+Pneu da marca Comforser  R$ 300,00 a unidade a vista.
+[11:21] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[12:37] LOJA: *Josy:*
+🙋🏼‍♀️
+--- 24/09/2026 (Thu) ---
+[10:11] LOJA: [áudio] "Olá, bom dia. Tudo bem? Eu te encaminhei um orçamento ontem e gostaria de saber se você chegou a analisar o orçamento. Assim que possível, você pode me dar um retorno, por gentileza."  {audio:midias/3EB0A24A02CE933AA46D0C_438721.ogg}
+[11:38] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

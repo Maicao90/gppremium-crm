@@ -1,0 +1,51 @@
+CONVERSA 1997d534e2 | contato: César | 03/09/2026 21:01 até 11/09/2026 16:05 | 10 msgs do cliente, 21 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[21:01] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[21:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[21:02] CLIENTE: 215/55r17
+--- 04/09/2026 (Fri) ---
+[08:26] LOJA: *Josy:*
+Bom dia!
+[08:27] LOJA: *Josy:*
+Temos sim! Inclusive os pneus da marca GP Premium estão em promoção, compre 3 e leve 4!
+[08:27] LOJA: [foto]
+[08:27] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:27] LOJA: *Josy:*
+Na medida 215/55/17 se o  pagamento for a vista a  unidade  é  R$ 395,00 x 3 pneus = R$ 1.185,00 por esse preço você vai levar os 4
+[18:14] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? No decorrer do dia, eu te encaminhei o orçamento do pneu 215-55-17 e gostaria de saber se você pretende seguir com a negociação. Quando possível, você pode me dar um retorno, por gentileza?"  {audio:midias/3EB012EC4E17C9AF0B2086_78666.ogg}
+[20:27] CLIENTE: Opa boa noite
+[20:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:27] CLIENTE: Estou pesquisando valores
+[20:27] CLIENTE: Obrigado
+--- 05/09/2026 (Sat) ---
+[08:25] LOJA: [áudio] "E você mora aqui em Luziânia mesmo, moço?"  {audio:midias/3EB031D9CE977B2BA5E960_144151.ogg}
+[08:33] CLIENTE: Ocidental
+[08:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:39] LOJA: [áudio] "Ah, é aqui pertinho de nós."  {audio:midias/3EB0D27856AC708936B7A8_356228.ogg}
+--- 11/09/2026 (Fri) ---
+[15:08] LOJA: *Josy:*
+Oi... Cesar...
+[15:09] LOJA: [vídeo]
+[15:11] CLIENTE: Estou verificando valores marcas
+[15:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:11] CLIENTE: Obrigado
+[15:13] LOJA: [áudio] "Certo. Tem alguma específica que você está buscando? Pois, no dia de hoje, realmente, a opção que eu continuo tendo é a que eu tinha mandado para você no orçamento, mas eu posso ver se algum distribuidor meu tem o que você estiver buscando."  {audio:midias/3EB0424C7EB47EFCE185A5_634492.ogg}
+[15:18] CLIENTE: Estou querendo continental.
+[15:18] LOJA: *Josy:*
+Hmmm
+[15:20] LOJA: [áudio] "Assim que o meu distribuidor me der um retorno, eu te mando aqui, tá bom?"  {audio:midias/3EB0B576AADA7CD7883BD3_997957.ogg}
+[16:03] LOJA: [foto]
+[16:03] LOJA: [áudio] "César, eu consegui aqui a resposta da Continental, tá? O pneu vai sair por R$ 917,00 a vista. Opção somente para encomenda e chegar em 3 dias úteis, tá bom?"  {audio:midias/3EB04BB0E018282284220A_853794.ogg}
+[16:04] CLIENTE: Nossa puchado
+[16:05] LOJA: *Josy:*
+Um tanto...
+[16:05] LOJA: *Josy:*
+😢

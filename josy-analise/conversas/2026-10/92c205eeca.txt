@@ -1,0 +1,35 @@
+CONVERSA 92c205eeca | contato: Karl Raimund Von Negri | 01/10/2026 20:57 até 02/10/2026 11:25 | 7 msgs do cliente, 13 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[20:57] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[20:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:58] CLIENTE: 225 x65  X  17
+--- 02/10/2026 (Fri) ---
+[08:00] LOJA: [áudio] "Oi Carol, como você? Eu vou te mostrar o orçamento, tá?"  {audio:midias/3EB0F9BD3B986FABF6199B_535108.ogg}
+[08:08] LOJA: [áudio] "E, Sr. Carl, eu tenho sim, inclusive, nós já conversamos há um tempo atrás a respeito dos pneus e o senhor não quis eles não."  {audio:midias/3EB08C67FEB816AE502F6A_179855.ogg}
+[08:09] LOJA: [foto]
+[08:09] LOJA: *Josy:*
+Pneus da marca GP Premium
+[08:09] LOJA: *Josy:*
+
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:22] CLIENTE: Bom ondecesta,sua loja? Qual é a data de fabricação do seu pneu
+[09:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:23] LOJA: [áudio] "A nossa loja, Sr. Carl, é aqui em Luziânia, Goiás e a data de fabricação é de agora."  {audio:midias/3EB0C508D0C6CB251D6817_930181.ogg}
+[09:23] LOJA: [áudio] "Sua esposa melhorou?"  {audio:midias/3EB07B9C11BA1B74271AE2_700949.ogg}
+[09:58] CLIENTE: E meu bem.ela está tranquilo hoje.voce sabe que esta doença não melhora.mas estamos traquilo graças a deus
+[09:59] LOJA: *Josy:*
+Sinto muito... e espero realmente que estejam bem!
+[10:00] LOJA: *Josy:*
+Bem. sr Karl... se houver interesse nos pneus, estou aqui a disposição para recebe-los.
+[10:03] CLIENTE: [foto]
+[10:03] CLIENTE: associatedChildMessage
+[10:03] CLIENTE: Ela tomando cafe
+[10:06] LOJA: *Josy:*
+Que linda!
+[11:25] LOJA: [áudio] "E, Sr. Carl, o senhor teria a possibilidade de vir aqui na nossa empresa, que nós somos aqui de Luziânia?"  {audio:midias/3EB0296207F9D81B50624C_614195.ogg}

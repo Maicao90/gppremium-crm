@@ -1,0 +1,76 @@
+CONVERSA 958e295555 | contato: Nazareno🦦🦦 | 22/09/2026 11:38 até 24/09/2026 11:47 | 18 msgs do cliente, 31 da loja, 0 do robô
+
+--- 22/09/2026 (Tue) ---
+[11:38] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:38] CLIENTE: Quanto tá saindo o pneu 185/70 aro 14 o mais enconta.
+[11:40] LOJA: [foto]
+[11:40] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:41] LOJA: *Josy:*
+O mais em conta é o Pneu da marca GP Premium R$ 289,00 valor para débito/pix,  e em *dinheiro* fica por R$ 275,00 cada
+[11:42] LOJA: *Josy:*
+Mora aqui em Luziânia-Go?
+[11:42] CLIENTE: Sim sim
+[11:43] LOJA: *Josy:*
+Quer que eu reserve os pneus para você?
+[11:43] CLIENTE: A inda não
+[11:44] LOJA: *Josy:*
+certo...
+[11:44] LOJA: [áudio] "Ok, seu Nazareno. Bem, na compra do pneu GP Premium, se o valor for em dinheiro, a unidade fica por 275 reais cada e eu já coloco esses pneus no seu carro, se assim o senhor quiser, está bem? Sabe aqui onde fica a nossa loja?"  {audio:midias/3EB07BE4F02F72E9E76104_201045.ogg}
+[11:45] CLIENTE: Sei sim perto da coca cola
+[11:46] CLIENTE: Preciso de outros serviços também
+[11:47] LOJA: [áudio] "Sim, perfeito. O senhor está precisando de que serviços?"  {audio:midias/3EB0A8674B2878D52FD61E_689758.ogg}
+[11:49] CLIENTE: Alimento. balanceamento. e acho que cambagem também
+[11:49] LOJA: [áudio] "Certo, certo. O senhor já cotou esses valores em outras empresas?"  {audio:midias/3EB0595B918BE1D168C997_342872.ogg}
+[11:49] LOJA: [áudio] "Se o senhor cotou, de repente eu posso ver aqui o que podemos fazer para poder te ajudar."  {audio:midias/3EB0D42FE3032A5B7BE5A0_271754.ogg}
+[11:50] CLIENTE: 1.284,0 os 4 pneus em 6x no cartao
+160,0 balanceamento e valvulas
+100,0 alinhamento caso precise
+[11:51] CLIENTE: Então vamos la.
+Pneus 1200,00
+Alinhamento direção 120,00
+Cambagem 2 rodas 
+220,00 
+Balanceamento 4 rodas  140,00
+Total de 1.680,00
+[11:51] CLIENTE: Fiz nessas duas ai.
+[11:52] LOJA: [áudio] "Certo, vejo que o senhor quer comprar os pneus para parcelar em 6 vezes, né?"  {audio:midias/3EB0BA01F6454FF17624F8_921439.ogg}
+[11:52] CLIENTE: Tô vendo a inda esses ai foi a opção que eles mim deram.
+[11:53] LOJA: [áudio] "Certo, entendo. O senhor gostaria de parcelar os pneus em quantas vezes?"  {audio:midias/3EB002434D3F4C926A797B_333522.ogg}
+[11:53] CLIENTE: Mais acho que não vou parcelas em 6 vezes não no máximo três.
+[11:54] LOJA: [áudio] "Certo, eu vou verificar aqui para o senhor, tá?"  {audio:midias/3EB0BBB33D2571A95D3F0E_324060.ogg}
+[11:55] CLIENTE: Ok
+[12:16] LOJA: [áudio] "Oi, senhor Nazareno. Nossa internet caiu aqui. Eu tinha perguntado para o senhor qual que é o seu carro mesmo?"  {audio:midias/3EB095DB2D98976029F9C9_471417.ogg}
+[12:17] CLIENTE: Hum  logan 2011
+[12:35] LOJA: *Josy:*
+* Balanceamento = 25,00 (cada roda ) total R$ 100,00
+* Alinhamento de Direção = 100,00 se realmente for preciso fazer.
+* Cambagem = 90,00 (cada) R$ 180,00
+[12:37] LOJA: *Josy:*
+A respeito dos pneus caso queira parcelar em 6 X ficará assim:
+[12:38] LOJA: *Josy:*
+ 6 parcelas de R$ 203,33
+[12:39] LOJA: *Josy:*
+Em 3 x ficam 3 parcelas de 393,89
+[12:40] CLIENTE: No caso a cambagem só e feita nas rodas dianteira.?
+[12:42] LOJA: *Josy:*
+o senhor precisa na dianteira?
+[12:47] LOJA: *Josy:*
+Mas isso é tranquilo.
+[12:54] LOJA: *Josy:*
+Para pagamento no débito/ pix consigo a unidade por R$ 286,00 x 4 = 1.144,00
+[12:54] CLIENTE: Não sei
+[12:55] LOJA: *Josy:*
+Não se preocupe...trazendo ao carro , o mecânico vai avaliar para ver se realmente vai ser preico fazer esse serviço, juntamente com seu acompanhamento.
+[12:56] CLIENTE: Tende
+[12:57] LOJA: *Josy:*
+Vou te encaminhar a nossa localização.
+[12:57] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:58] LOJA: [foto]
+[12:58] CLIENTE: Ok obrigado
+--- 24/09/2026 (Thu) ---
+[11:47] LOJA: [áudio] "Oi, senhor Nazareno, tudo jóia? Nós conversamos há alguns dias atrás e eu gostaria de saber se o senhor pretende seguir aqui com a negociação. O senhor consegue me dar um retorno, por gentileza?"  {audio:midias/3EB021F78C85D038426581_846157.ogg}

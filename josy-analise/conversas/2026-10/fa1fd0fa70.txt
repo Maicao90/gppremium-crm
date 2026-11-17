@@ -1,0 +1,27 @@
+CONVERSA fa1fd0fa70 | contato: Polliana | 21/10/2026 08:23 até 21/10/2026 12:00 | 6 msgs do cliente, 7 da loja, 1 do robô
+
+--- 21/10/2026 (Wed) ---
+[08:23] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[08:23] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[08:23] CLIENTE: Polliana
+[08:23] CLIENTE: Aro 16
+[08:24] LOJA: Para que eu possa gerar o orçamento para você, poderia me informar a medida do pneu que você precisa (ex: 265/70/16)
+[08:24] CLIENTE: Tenho que verificar
+[08:25] CLIENTE: Não consigo agora
+[08:25] LOJA: Qual é seu carro?
+[08:25] CLIENTE: Polo sedã
+[08:59] LOJA: Ok
+[08:59] LOJA: [foto]
+[08:59] LOJA: [foto]
+[08:59] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:00] ROBÔ: 🙋🏼‍♀️

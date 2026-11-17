@@ -1,0 +1,35 @@
+CONVERSA acb64c3369 | contato: 🥰💓🌸 | 22/09/2026 14:30 até 22/09/2026 14:40 | 12 msgs do cliente, 14 da loja, 0 do robô
+
+--- 22/09/2026 (Tue) ---
+[14:30] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[14:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:30] LOJA: *Josy:*
+🙋🏼‍♀️
+[14:31] LOJA: *Josy:*
+ual a medida dos pneus que você precisa hoje?
+[14:31] CLIENTE: [foto]
+[14:31] CLIENTE: Essa promoção como funciona?
+[14:32] LOJA: [áudio] "A promoção Compre 3 e Leve 4 é valida para os pneus da marca GP Premium, nas medidas de aro 15 e 17, que são 1,956 a 5,15 e 215, 55,17."  {audio:midias/3EB0F2A5A69D435DCCD675_475966.ogg}
+[14:34] CLIENTE: qual o valor desse 175/65 R14?
+[14:35] LOJA: Pneu da marca GP Premium De R$ 289,00 por apenas R$ 249,00 a vista. ☺️
+[14:35] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[14:35] CLIENTE: sim
+[14:36] CLIENTE: divide em quantas vezes no cartão ?
+[14:36] LOJA: [foto]
+[14:37] CLIENTE: obrigada
+[14:37] LOJA: [áudio] "Parcela assim até 10 vezes. Aí você pode observar que o valor muda conforme a quantidade de parcelamentos. Ele altera em cerca de 3 reais por parcela, mas nada que nós não possamos negociar algo que fique bom pra vocês, tá bem? E se você conseguir sacar o dinheiro, eu ainda consigo te dar 5% de desconto. Aí, no caso, o pneu que está por 249, no dinheiro em espécie, ele vai ficar por 236 cada. Obrigado. Obrigado. Obrigado. Obrigado."  {audio:midias/3EB008F54BA93D56A91CC2_799514.ogg}
+[14:37] LOJA: [áudio] "Qual é o seu nome mesmo?"  {audio:midias/3EB0890886DE31BC242500_374260.ogg}
+[14:38] CLIENTE: sim
+[14:39] CLIENTE: Erismar
+[14:39] CLIENTE: vou analisar e entro em contato
+[14:40] LOJA: *Josy:*
+E eu v ou te encaminhar a nossa localziação, pois se puder venha aqui para conversarmos pessoalmente e ajustarmos o que fica de melhor para você parcelar, está bem!
+[14:40] CLIENTE: desde já te agaradeço
+[14:40] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:40] LOJA: [foto]
+[14:40] CLIENTE: obrigada

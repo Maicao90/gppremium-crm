@@ -1,0 +1,114 @@
+CONVERSA 2415832071 | contato: Roberto Locações | 30/09/2026 08:41 até 14/10/2026 16:31 | 28 msgs do cliente, 50 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[08:41] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[08:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:41] CLIENTE: Tem pneu 26565r18
+[08:42] LOJA: [áudio] "Alberto, bom dia, tudo bem? Eu sou a Josi. Temos na medida 265-60-18. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB07236C87A342213826A_235226.ogg}
+[08:45] CLIENTE: [áudio] "Você tá em Luziânia? Você não tá aqui em Goiânia, não? Você não tem loja aqui em Goiânia? Eu tô em Goiânia."
+[08:46] LOJA: [áudio] "Nossa loja é aqui em Luziânia."  {audio:midias/3EB09AE6C761163C6FE0A0_177321.ogg}
+[08:59] CLIENTE: [áudio] "Quantos quilômetros de Goiânia você tá..."
+[09:07] LOJA: [foto]
+[09:07] LOJA: *Josy:*
+No dia de hoje temos os pneus da maca Maxzez e GP Premium essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:08] LOJA: pneu 265/60/18 110h peakgrip h/t maxzez 👇🏻
+[09:09] LOJA: [foto]
+[09:09] LOJA: *Josy:*
+265/60/18 GP Premium ATR 👇🏻
+[09:10] LOJA: [foto]
+[09:10] LOJA: *Josy:*
+265/60/18 GP Premium Brutus 👇🏻
+[09:10] LOJA: [foto]
+[09:14] CLIENTE: Valor deste
+[09:20] LOJA: *Josy:*
+É o de R$ 599,00 a unidade a vista.
+[11:10] LOJA: [áudio] "E o senhor quer que eu te envie a nossa localização?"  {audio:midias/3EB0897CF8B35B54AA1639_309561.ogg}
+[12:52] CLIENTE: [áudio] "Você está aqui na Goiana ou você está em outro local? Fala comigo."
+[12:55] LOJA: *Josy:*
+Somos de Luziânia-Go
+[12:56] CLIENTE: Roberto Carlos Souza
+[12:56] CLIENTE: CPF 40965422100
+[12:56] CLIENTE: Goiânia
+[12:56] LOJA: *Josy:*
+Cep do endereço
+[13:01] CLIENTE: Vai retira na trasportadora
+[13:59] CLIENTE: Vai dá certo
+[14:24] LOJA: [áudio] "Oi, oi, tudo joia? Olha, senhor, desculpa aí, senhor Roberto, que a internet está péssima aqui hoje, não estou conseguindo atender com precisão, tá? Eu solicitei o CEP do seu endereço para poder passar para a transportadora, porque eles pedem, né, essas informações para poder calcular o frete. Eu vou tentar aqui falar com a Rodonaves e com a empresa que é a... do Vale, para ver qual delas que está com disponibilidade para poder fazer essa entrega."  {audio:midias/3EB007632B633A0373CFD2_582139.ogg}
+[14:49] CLIENTE: [áudio] "Você pode cotar na do Vale, na do Vale você pode cotar, eu vou pôr o endereço de Caiapônia, quanto que fica para eles entregar em Caiapônia, tá bom? Você já pode cotar, eu vou te passar meu endereço de Caiapônia, e aí passa o CEP, passa tudo, porque eles entregam para mim lá em Caiapônia, porque de repente eles entregam lá para mim e a vantagem é grande, né? Não precisa de eu esperar aqui em Goiânia nem nada, mas aí você vê para mim."
+[14:49] CLIENTE: Cep 75850000
+[14:49] CLIENTE: Av do comércio número 650 setor note
+[14:49] CLIENTE: Caiapônia
+[14:49] CLIENTE: Goiás
+[14:50] LOJA: *Josy:*
+Perdão pela demora está bem! A internet está péssima!
+[14:53] LOJA: *Josy:*
+Ah, antes que eu me esqueça, os pneus GP Premium, são pneus ecológicos que nós produzimos está bem! Eles entraram na categoria de remodelagem, só que linha Premium.
+[15:50] LOJA: *Josy:*
+Consegui retorno da Do Vale
+[15:50] LOJA: *Josy:*
+*N° da cotação:* 209078
+*Frete (R$):* 240,00
+*Prazo de entrega:* de 1 a 2 dias uteis 
+
+Esse valor é considerando entrega no centro da cidade, em caso de fazendas e zonas rurais é cobrado taxa adicional para entrega. 🌳
+
+Cargas frágeis é preciso termo de isenção ⚠️
+
+Coletas em Goiânia e AP com a central 62 3586-5151 🚚
+[16:44] LOJA: 265/60/18 GP Premium ATR 👇🏻
+[16:44] LOJA: [foto]
+[16:45] LOJA: 265/60/18 GP Premium Brutus 👇🏻
+[16:45] LOJA: [foto]
+[17:02] LOJA: [vídeo]
+--- 01/10/2026 (Thu) ---
+[08:31] LOJA: *Josy:*
+Bom dia, sr Roberto.... como vai?
+[09:25] LOJA: [vídeo]
+[09:46] CLIENTE: [áudio] "Confirma pra mim a questão do frete direitinho, com a do Vale, essas entregas lá na Caiapone certinho, pelo valor, senão a hora que nós mandar, né, você vai falar o valor da nota, tudo, senão a hora que nós mandar, aí vem errado, né, aí vem outro frete, você torna, cotar lá de novo, passa o valor dos 4 pneus, pra mim, me fala aí, aí eu fico sabendo aqui, já falo pra você, mandar um vídeo e remandar pra mim, tá bom?"
+[09:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:58] LOJA: *Josy:*
+Já te retorno
+[10:00] LOJA: [áudio] "Oi, Sr. Roberto, tudo jóia? Eu estava finalizando o atendimento de um cliente que veio de Minas para poder comprar os pneus aqui conosco. Mas olha, é exatamente daquele jeitinho, tá? Conforme as informações que o senhor me passou, eu solicitei o orçamento. Vou até tirar foto aqui da conversa com a moça da Duvale, tá?"  {audio:midias/3EB06C3AE6F89F27C9F5F2_225986.ogg}
+[10:00] LOJA: [foto]
+[10:03] LOJA: [áudio] "Aí até tirei a foto aqui da tela, né, que como o senhor passou seus dados para mim, eu encaminhei do jeitinho que o senhor colocou aí na mensagem, eu passei para eles, tá? Então, realmente é isso daí."  {audio:midias/3EB017D18B5F1446604C38_240366.ogg}
+[10:06] CLIENTE: Veija se aí  tem trasportadora rápido ipora  ( RIT) faz cotacao
+[10:06] CLIENTE: Pra Caiapônia
+[10:10] LOJA: [áudio] "Eu vou pesquisar para ver se eu consigo um número de contato deles, tá bom?"  {audio:midias/3EB0825F16945DF1076AF3_336466.ogg}
+[10:14] LOJA: [áudio] "Eu consegui falar com eles e eles não atendem aqui a nossa região de Luziânia, somente a do Vale mesmo."  {audio:midias/3EB00F36A61C973DAC016C_736351.ogg}
+[10:15] LOJA: [foto]
+[10:20] CLIENTE: [áudio] "Não, então pode ser... pode ser a do Vale mesmo. Só... você confirmar direitinho pra depois não dar errado, entendeu? Você consegue fazer o... você consegue fazer o negócio pra nós passar o cartão online aí? Pra ter um prazo, hein, pra nós pagar isso aí? Não consegue quatro vezes só pagar um por mês? Veja aí pra mim se você consegue. Você me fala aqui. Tchau!"
+[10:21] LOJA: [áudio] "Não, não consigo fazer link de parcelamento, seu Roberto. Se fosse aqui na loja física, aí dá para fazer, né, parcela em até 10 vezes, mas nós não estamos mais gerando links de parcelamento."  {audio:midias/3EB0254A218BC41FAD5F89_259695.ogg}
+[10:21] LOJA: [áudio] "Aí eu vou te explicar porque que nós não fazemos mais. Nós trabalhávamos, sim, fazendo links de parcelamento, tá? Só que aí o pessoal começou a aplicar golpe na gente, então nós tivemos que suspender aí por conta das pessoas, né, de má índole e acabou que todos os demais ficaram sem essa opção também."  {audio:midias/3EB08533BAE00573638FE7_202963.ogg}
+[10:23] CLIENTE: [áudio] "Me passa o nome da sua empresa certinho, nome de fantasia, CGC, estranho pra mim então. Vou ver o que que eu faço aqui, tá bom? E aí você passa o Pix também, que vai ser, vai ser Pix, né? Tem que passar o valor certinho. Passa pra mim, que eu vou ver o que que eu faço aqui. Você levanta esse dinheiro aqui pra passar pra você, pra você mandar os pneus pra mim. Então... Tchau, tchau."
+[10:24] LOJA: *Josy:*
+O nome da minha empresa é GP Premium
+[10:25] LOJA: *Josy:*
+o Pix é nosso  CNPJ
+[10:25] LOJA: *Josy:*
+24.289.955/0001-79
+[10:25] CLIENTE: Qual nome sai Pix
+[10:26] CLIENTE: Qual banco
+[10:27] LOJA: *Josy:*
+CCLA CENTRO BRASILEIRA
+[10:27] LOJA: *Josy:*
+GP PREMIUM
+[10:42] CLIENTE: 62981591606
+[10:46] LOJA: Sua esposa?
+[10:54] CLIENTE: Não passei erado
+[12:21] CLIENTE: Opa
+[12:24] LOJA: *Josy:*
+Ooooi
+[12:52] LOJA: [áudio] "Fala, Sr. Roberto."  {audio:midias/3EB0BE9AFF710D679DD1CF_78681.ogg}
+[13:12] LOJA: [áudio] "Seu Roberto, eu vou sair para o almoço agora e às 2h20 eu retorno, tá? Se precisar de qualquer coisa, o senhor me chama aqui."  {audio:midias/3EB0C624BE25AD2DF0726E_451961.ogg}
+--- 14/10/2026 (Wed) ---
+[16:08] LOJA: Boa tarde!
+[16:24] CLIENTE: Opa
+[16:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:26] LOJA: [áudio] "Oi, Sr. Roberto, tudo bom? Há alguns dias atrás, já tem uns bons dias, nós estávamos conversando a respeito dos pneus aí para sua caminhonete e eu gostaria de saber se o senhor pretende seguir com a negociação."  {audio:midias/A5F1D827998B20C5A8BFA4A4B73052EA_594741.ogg}
+[16:27] CLIENTE: [áudio] "Vou deixar mais pra frente um pouco, tá? Aí qualquer coisa eu entro em contato com você."
+[16:31] LOJA: [áudio] "Até já, então, Sr. Roberto. Gratidão, tá bom? Tchau, tchau."  {audio:midias/3EB00D186707D5BC6B3442_852574.ogg}

@@ -1,0 +1,42 @@
+CONVERSA eac44eeb95 | contato: Isaac Santos Anest Vet | 11/09/2026 09:38 até 18/09/2026 14:39 | 10 msgs do cliente, 19 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[09:38] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:38] LOJA: *Josy:*
+🙋🏼‍♀️
+[09:39] CLIENTE: 165/70 r14
+[09:44] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu me chamo Josi e, quando possível, me diz qual é o seu nome. Eu tenho aqui sim o pneu da marca GP Premium, onde a unidade está por apenas R$ 239,00 para o pagamento à vista."  {audio:midias/3EB0661309591BEF7856D5_982792.ogg}
+[09:44] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0457CC6BC63858B2E6F_83224.ogg}
+[09:46] CLIENTE: A não, eu peguei o contato no google pesquisando no gama, nao da pra ir em luziania esses dias
+[09:46] CLIENTE: Obrigado!
+[09:46] LOJA: [foto]
+[09:47] LOJA: [áudio] "Sim, perfeitamente. Olha, mas se for de fácil acesso para você, eu posso encaminhar os pneus para uma borracharia que me ajuda muito. Fica ali no Novo Gama. Aí, se for de seu interesse, você me comunica."  {audio:midias/3EB0158687E2E36475FA7F_104685.ogg}
+[09:47] CLIENTE: Tem uma loja no recanto?
+[09:47] LOJA: [áudio] "Não, não."  {audio:midias/3EB0D0C9A468F3AFD8DEEA_62201.ogg}
+[09:49] CLIENTE: É do meu interesse sim
+
+Vou só aguardar as lojas mais proximas me responderem e entro em contato qq coisa ok?
+--- 12/09/2026 (Sat) ---
+[08:46] CLIENTE: Bom dia
+[08:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:47] CLIENTE: Quanto fica com a instalação no novo gama?
+[08:53] LOJA: [áudio] "Esse pneu, Isaac, eu pago a instalação para você, tá joia? E você só paga para o borracheiro o balanceamento e a troca da válvula de ar, tá joia?"  {audio:midias/A512123F186E9BCC7BE2BABF530476E3_488560.ogg}
+[08:53] LOJA: [áudio] "Você precisa de quantos pneus? Que eu vou já verificar se eu consigo atender você aí."  {audio:midias/A533B73C3269E513DB073D6C9492D7B7_580437.ogg}
+[08:57] LOJA: [áudio] "Você quer que eu te mando a localização?"  {audio:midias/A5135B0902FCDF2432E7C7CDA5B4413B_148779.ogg}
+[09:04] CLIENTE: Eu preciso de 2 por enquanto
+[09:05] CLIENTE: Gostaria sim da localização
+[09:07] LOJA: [áudio] "Perfeito. Você me diz, por gentileza,"  {audio:midias/A5EBBA4E3A964DD86EECB89DE6D18626_652733.ogg}
+[09:08] LOJA: Me informa seu nome completo, CPF e cep de endereço só para eu avisar o rapaz.
+[09:09] LOJA: https://www.google.com/maps/search/?api=1&query=Borracharia+Popular+Pneus+Em+frente+ao+posto+de+gasolina+Pont%C3%A3o+24h+Lunabel+Novo+Gama-GO+520+-+Lunabel
+[09:09] LOJA: Borracharia popular
+[09:38] LOJA: Pode procurar pelo Lázaro
+--- 16/09/2026 (Wed) ---
+[16:50] LOJA: *Josy:*
+Boa tarde, Isaac...como você está?
+--- 17/09/2026 (Thu) ---
+[08:15] LOJA: [áudio] "Oi Isaac, tudo jóia? Eu comecei a te mandar mensagem ontem, mas meu WhatsApp caiu e eu não concluí, só perguntei como é que você está. Nós estávamos conversando na semana passada e eu gostaria de saber se você pretende seguir com a negociação, se quer que eu mande os pneus lá para a borracharia para ti, assim que possível me dê um retorno, por gentileza, está bem?"  {audio:midias/3EB0475A0B44D3AE539FF8_740349.ogg}
+--- 18/09/2026 (Fri) ---
+[14:39] LOJA: [áudio] "Oi, Isaac, tudo bem? Eu imagino que o seu dia esteja extremamente corrido, e justamente por isso você não conseguiu me responder ontem, eu vou encerrar o seu atendimento, tá bom? Se você precisar futuramente, você fala aqui comigo, ou vem aqui na loja, sei que você mora aí em outro lugar, né, mas qualquer coisa aparece aqui. Então, já, obrigada aí por sua atenção, até mais."  {audio:midias/3EB077933A279EB40EA1C5_839051.ogg}

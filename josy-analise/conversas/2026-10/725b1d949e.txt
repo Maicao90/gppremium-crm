@@ -1,0 +1,8 @@
+CONVERSA 725b1d949e | contato: Jhonathan | 16/10/2026 14:38 até 16/10/2026 15:03 | 1 msgs do cliente, 3 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[14:38] LOJA: Boa tarde, Jonatan
+[15:03] LOJA: [áudio] "Já notam que quando você precisar de pneus para o seu carro, você coloca comigo, tá bom?"  {audio:midias/A5248061CB19E3FCD2F5473FD737DA1D_482738.ogg}
+[15:03] CLIENTE: [áudio] "Ok, ok. Obrigado, tá?"
+[15:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

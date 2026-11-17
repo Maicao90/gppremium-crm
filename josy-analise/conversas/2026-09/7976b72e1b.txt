@@ -1,0 +1,37 @@
+CONVERSA 7976b72e1b | contato: Analine Nascimento | 17/09/2026 16:50 até 22/09/2026 15:50 | 7 msgs do cliente, 12 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[16:50] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[16:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:51] LOJA: *Josy:*
+🙋🏼‍♀️
+[16:53] CLIENTE: 255/70/17
+[16:54] CLIENTE: [foto]
+[17:49] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, preço e prazo de entrega. Tudo bem?
+[20:05] CLIENTE: Ta ok 👍🏾
+--- 18/09/2026 (Fri) ---
+[15:47] LOJA: [foto]
+[15:48] LOJA: *Josy:*
+Boa tarde, Analine...
+[15:48] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:57] LOJA: *Josy:*
+Você mora aqui em Luziania-Go, mesmo?
+[15:58] CLIENTE: Não
+[15:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:58] CLIENTE: Moro em corumbá IV
+[15:58] LOJA: *Josy:*
+Ah, sim...
+--- 22/09/2026 (Tue) ---
+[15:27] LOJA: [áudio] "Olá, boa tarde. Tudo bem, Annaline? Eu tinha encaminhei o orçamento alguns dias atrás e gostaria de saber se pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0FDDE17BCC9CC015159_682876.ogg}
+[15:50] CLIENTE: Boa tarde! Ainda estou fazendo outros orçamentos
+[15:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:50] LOJA: *Josy:*
+Ok

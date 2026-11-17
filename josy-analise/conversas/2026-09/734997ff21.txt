@@ -1,0 +1,88 @@
+CONVERSA 734997ff21 | contato: Gabriela | 09/09/2026 14:49 até 30/09/2026 15:48 | 6 msgs do cliente, 14 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[14:49] LOJA: *Josy:*
+Boa tarde, Gabriela.
+[14:49] CLIENTE: Olá, agradecemos o seu contato.
+
+Para realizarmos a sua cotação, por gentileza informar os dados abaixo:
+
+*CNPJ ou CPF do remetente:*
+*CEP:*
+
+*CNPJ ou CPF do destinatário:*
+*CEP:*
+
+*Altura x cumprimento x Largura*
+
+*Peso total:*
+*Quantidade de volumes:*
+*Valor total da Nota Fiscal:* 
+
+*Pagador do frete:*
+
+_Informamos que não transportamos produtos frágeis e usados (vidros, parabrisas, porcelanatos, etc) EXCETO SE HOUVER TERMO DE RESPONSABILIDADE DE POSSÍVEIS AVARIAS_
+
+Obrigada!
+Gabriela.
+[14:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:50] LOJA: *Josy:*
+Gostaria de saber se está em transito uma entrega aqui na pneus GP Premium, em nome de Bruno Meireles Ros
+[14:51] LOJA: *Josy:*
+Nosso CNPJ 24.289.955/0001-79
+[15:01] CLIENTE: [áudio] "Boa tarde, tudo bem? Com esse CNPJ eu não consegui localizar nada aqui no meu sistema. Você tem o número da nota fiscal?"
+[15:02] LOJA: *Josy:*
+Perdão...
+[15:03] LOJA: [documento] NFe_0024613_GP PREMIUM RECAUCHUTAGEM DE PNEUS_08-09-26_R$_7.160,00_(PAULO SERGIO).pdf
+[15:04] CLIENTE: Mercadoria esta em rota de entrega, finaliza hj ainda
+[15:05] LOJA: *Josy:*
+Certo...
+[15:05] LOJA: *Josy:*
+Por ora , obrigada
+--- 30/09/2026 (Wed) ---
+[15:28] LOJA: *Josy:*
+Boa tarde!
+[15:28] CLIENTE: Olá, agradecemos o seu contato.
+
+Para realizarmos a sua cotação, por gentileza informar os dados abaixo:
+
+*CNPJ ou CPF do remetente:*
+*CEP:*
+
+*CNPJ ou CPF do destinatário:*
+*CEP:*
+
+*Altura x cumprimento x Largura*
+
+*Peso total:*
+*Quantidade de volumes:*
+*Valor total da Nota Fiscal:* 
+
+*Pagador do frete:*
+
+_Informamos que não transportamos produtos frágeis e usados (vidros, parabrisas, porcelanatos, etc) EXCETO SE HOUVER TERMO DE RESPONSABILIDADE DE POSSÍVEIS AVARIAS_
+
+Obrigada!
+Gabriela.
+[15:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:31] LOJA: *Josy:*
+Cotação para 4 pneus de camionete total da nota  R$ 2396,00                                                                                                                                              dimensão e peso unitário   77 X 26 X 77     peso 21,00                                                                                                                                           Cep 75850000      Caeaponia -Go                                                                                                                                                                                                                  Av do comércio número 650 setor note                                                                                                                                                                Roberto Carlos Souza
+CPF 40965422100
+[15:32] LOJA: *Josy:*
+CNPJ do remetente 24.289.955-0001-79
+[15:33] LOJA: *Josy:*
+Nós que pagamos o frete.
+[15:40] CLIENTE: Boa tarde, qual a cidade origem?
+[15:40] LOJA: *Josy:*
+Somos aqui de Luziânia-Go
+[15:48] CLIENTE: *N° da cotação:* 209078
+*Frete (R$):* 240,00
+*Prazo de entrega:* de 1 a 2 dias uteis 
+
+Esse valor é considerando entrega no centro da cidade, em caso de fazendas e zonas rurais é cobrado taxa adicional para entrega. 🌳
+
+Cargas frágeis é preciso termo de isenção ⚠️
+
+Coletas em Goiânia e AP com a central 62 3586-5151 🚚

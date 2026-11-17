@@ -1,0 +1,15 @@
+CONVERSA 541527f623 | contato: Itamar | 15/10/2026 14:31 até 15/10/2026 14:54 | 2 msgs do cliente, 7 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[14:31] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Olá! Posso ter mais informações sobre isso?
+[14:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:31] CLIENTE: 235/70/16
+[14:33] LOJA: Boa tarde!
+[14:33] LOJA: Pneus da marca GP Premium
+[14:33] LOJA: [foto]
+[14:33] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:33] LOJA: [foto]
+[14:54] LOJA: [áudio] "Sra. Itamar, mora aqui em Luziânia, Goiás?"  {audio:midias/3EB05382803C498859D0E3_777967.ogg}

@@ -1,0 +1,83 @@
+CONVERSA 964f28a223 | contato: Lucas | 12/09/2026 16:13 até 22/09/2026 17:07 | 17 msgs do cliente, 31 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[16:13] CLIENTE: Boa tarde
+[16:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:13] CLIENTE: R15
+--- 14/09/2026 (Mon) ---
+[11:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[23:50] CLIENTE: Boa noite. Estou procurando 2 pneus 185/60 R15 88H para um Argo 1.0.
+
+Tenho preferência por pneus de melhor qualidade, como Goodyear, Michelin, Pirelli ou Dunlop, mas estou aberto à melhor opção de custo-benefício.
+
+Gostaria de saber qual é a melhor condição que vocês conseguem fazer para os 2 pneus, especialmente para pagamento à vista. Se tiverem algum desconto ou promoção para pagamento à vista, gostaria de considerar.
+[23:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[23:50] CLIENTE: Também tenho um pneu reserva (estepe) 185/60 R15 84H, DOT 03/24, praticamente novo, porém o índice de carga é 84H e não 88H. Caso vocês tenham interesse em recebê-lo como parte da troca, gostaria de saber quanto conseguiriam abater no valor dos 2 pneus.
+
+Se possível, me passem o valor final dos 2 pneus já com montagem, balanceamento e demais serviços que voces oferecem, e o valor final caso eu deixe o estepe como parte da troca. Obrigado!
+--- 15/09/2026 (Tue) ---
+[08:09] LOJA: *Josy:*
+Bom dia, Lucas.
+[08:09] LOJA: *Josy:*
+Te encaminhei todas as opções que temos a pronta entrega.
+[08:11] LOJA: *Josy:*
+Aqui não trabalhamos a base de troca, entretanto, o pneu de estepe pode ser analisado, e após a analise os rapazes que analisam é que podem te informar o preço.
+[08:18] LOJA: *Josy:*
+O balanceamento está por R$ 30,00 por roda e  R$ 100,00 o alinhamento.
+[08:20] LOJA: [áudio] "Oi Lucas, bom dia, tudo bem com você? Lucas, ontem eu te encaminhei o orçamento aí com todas as opções de marcas que eu tenho no dia de hoje, mas eu gostaria de saber se realmente o orçamento chegou para você, que como o meu WhatsApp está passando por instabilidade, para mim consta que as mensagens chegaram, mas para alguns clientes realmente não está chegando, e se você puder, por gentileza, confirmar para mim se está abrindo aí para você, eu fico muito grata."  {audio:midias/3EB094F837195149BA0ED4_525958.ogg}
+[12:07] CLIENTE: Chegou
+[12:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:07] CLIENTE: Bom dia
+[12:08] LOJA: *Josy:*
+Vou te encaminhar a nossa localização. Se possível, passa aqui para conversarmos pessoalmente.
+[12:08] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:39] CLIENTE: Vocês são o da bandeira de Luziânia certo?
+[16:41] LOJA: [áudio] "Lucas, nós somos aqui na BR-040. Como assim bandeira?"  {audio:midias/3EB0DC6893F8A69DD323D4_924738.ogg}
+[16:41] LOJA: [foto]
+[16:42] CLIENTE: Tem uma bandeira "pneus aqui"
+[16:42] CLIENTE: Quando eu passei na Br eu vi
+[16:42] LOJA: [áudio] "Ah, sim! Isso mesmo!"  {audio:midias/3EB0BBB57C2EA456EDEEAB_234228.ogg}
+[16:43] LOJA: [vídeo]
+[16:44] CLIENTE: Quais os horários de atendimento?
+[16:44] CLIENTE: Amanhã a tarde estarei em Luziânia
+[16:44] LOJA: [áudio] "Lucas, aqui o horário de atendimento é de segunda a sexta, de 8 da manhã às 18, não fechamos para o almoço. E nos sábados, de 8 até o meio-dia."  {audio:midias/3EB013334CC95558F303F7_377041.ogg}
+[16:45] CLIENTE: Ok, amanhã irei aí para vê os pneus
+--- 16/09/2026 (Wed) ---
+[09:53] LOJA: *Josy:*
+Bom dia, Bom dia, Lucas!
+[11:20] LOJA: [áudio] "Oi Lucas, como é que você está? Você vai estar por aqui mesmo hoje à tarde. Então, assim que você tiver um tempinho, você passa aqui, tá jóia?"  {audio:midias/3EB06B0AEF332358197F35_104197.ogg}
+[11:32] CLIENTE: Bom dia, hoje não terei tempo, vou ir aí amanhã, no máximo até sexta
+[11:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:32] LOJA: [áudio] "Perfeito, Lucas! Tudo jóia!"  {audio:midias/3EB0C39B72D68403A9431E_153.ogg}
+--- 18/09/2026 (Fri) ---
+[12:22] LOJA: *Josy:*
+Lucas os pneus para o pagamento a vista ficam por R$ 964,00
+--- 21/09/2026 (Mon) ---
+[14:02] LOJA: [documento]
+[14:02] LOJA: *Josy:*
+Segue a nota fiscal da compra dos pneus.
+[14:02] LOJA: *Josy:*
+Obrigada Lucas.
+--- 22/09/2026 (Tue) ---
+[16:56] CLIENTE: Boa tarde
+[16:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:56] CLIENTE: Até que horas os guri tão aí pra avaliarem pneu?
+[16:57] LOJA: *Josy:*
+Oi!
+[16:57] LOJA: *Josy:*
+Até 17:30
+[16:57] LOJA: *Josy:*
+Qual é a marca do pneu que tirou e o dot?
+[17:00] CLIENTE: sentiva 185/60 R15 84H, DOT 03/24
+[17:02] LOJA: *Josy:*
+Deixa eu ver se esse eles pegam o fate sentiva...
+[17:04] LOJA: *Josy:*
+Sim, analisam.
+[17:07] CLIENTE: Ok

@@ -1,0 +1,37 @@
+CONVERSA 2981ea7fa9 | contato: Damiao Jacob da silva | 21/10/2026 06:59 até 22/10/2026 12:30 | 7 msgs do cliente, 12 da loja, 4 do robô
+
+--- 21/10/2026 (Wed) ---
+[06:59] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[06:59] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[07:00] CLIENTE: Damião
+[09:06] LOJA: Damião... por gentileza  *A MEDIDA* dos pneus que você precisa
+[09:45] LOJA: 🙋🏼‍♀️
+[14:10] CLIENTE: 205/55/16
+[14:10] ROBÔ: Temos o pneu *205/55/16* da marca *GP Premium* está saindo por *R$ 289,00 à vista*.
+[14:10] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[17:11] ROBÔ: 🙋🏼‍♀️
+[17:24] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:24] LOJA: [foto]
+[19:51] CLIENTE: Valor pra retirada em loja?
+--- 22/10/2026 (Thu) ---
+[08:17] LOJA: Isso!
+[08:18] CLIENTE: Tem que estalar na loja ou posso só fazer a retirada dos pneus?
+[08:20] LOJA: Pode retirar
+[11:21] ROBÔ: 🙋🏼‍♀️
+[11:36] CLIENTE: Estou avaliando, me preparando pra comprar os 4....mas por enquanto não vou comprar, esperar um pouco a $$$$$
+[11:37] LOJA: Entendo, perfeitamente!
+[11:37] LOJA: Mora aqui em Luziânia-Go, mesmo?
+[11:43] CLIENTE: Valparaíso de Goiás
+[12:22] LOJA: [áudio] "Perfeito, senhor Damião. Então, para não ficar enchendo aqui o seu WhatsApp de mensagens, eu vou encerrar o seu atendimento por hora, tá? E vou deixar aqui na nossa conversa a localização da nossa empresa."  {audio:midias/3EB06245968A3B6C484499_428626.ogg}
+[12:22] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:30] LOJA: [áudio] "Aí, senhor Damião, como meu WhatsApp está com instabilidade, ele pode acabar mandando mensagens aleatórias ou alguma figurinha. Eu, desde já, peço que o senhor desconsidere, tá bom?"  {audio:midias/3EB0323453FD8F53B382DB_531940.ogg}

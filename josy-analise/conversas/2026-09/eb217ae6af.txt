@@ -1,0 +1,6 @@
+CONVERSA eb217ae6af | contato: (sem nome) | 18/09/2026 08:29 até 18/09/2026 08:29 | 1 msgs do cliente, 1 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[08:29] CLIENTE: interactiveMessage
+[08:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

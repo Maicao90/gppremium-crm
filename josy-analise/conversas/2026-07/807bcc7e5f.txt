@@ -1,0 +1,7 @@
+CONVERSA 807bcc7e5f | contato: Elton | 19/07/2026 10:20 até 20/07/2026 09:00 | 2 msgs do cliente, 1 da loja, 0 do robô
+
+--- 19/07/2026 (Sun) ---
+[10:20] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:22] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 20/07/2026 (Mon) ---
+[09:00] CLIENTE: Olá, gostaria de saber os preços de pneus.

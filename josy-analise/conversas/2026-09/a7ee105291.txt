@@ -1,0 +1,32 @@
+CONVERSA a7ee105291 | contato: Lucas reformas em geral | 21/09/2026 12:56 até 22/09/2026 10:31 | 7 msgs do cliente, 11 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[12:56] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:56] CLIENTE: [áudio] "Gostaria de saber o valor dos pneus e as marcas do aro 14."
+[12:56] CLIENTE: [áudio] "Os pneus são novos, né? Não é remote."
+[12:57] LOJA: [áudio] "Lucas, boa tarde. No aro 14 existem diversas medidas, eu preciso saber o que é que você está de fato precisando para que eu possa fazer o orçamento para você. Aqui eu trabalho com pneus novos e os pneus da marca GP Premium, que são pneus ecológicos, eles entram na categoria de remodelagem sim, porém da linha Premium, são os pneus mais vendidos que eu tenho."  {audio:midias/3EB058A7D4F780483650F0_741564.ogg}
+[12:58] CLIENTE: [áudio] "Ah, então vou dar uma conferida lá em casa, porque eu estou no serviço, mas se eu não me engano, era o 14, 65, 45, se eu não me engano."
+[12:58] CLIENTE: [áudio] "Não, tem que ser novo."
+[13:11] LOJA: *Josy:*
+Qual é o carro?
+[13:37] CLIENTE: Siena 2003
+[13:41] LOJA: *Josy:*
+Se for 175/65/14 👇🏻
+[13:41] LOJA: [foto]
+[13:42] LOJA: *Josy:*
+Se for 175/70/14 👇🏻
+[13:42] LOJA: [foto]
+[13:42] LOJA: *Josy:*
+*Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:04] LOJA: *Josy:*
+Mora aqui em Luziânia-Go?
+--- 22/09/2026 (Tue) ---
+[10:13] LOJA: [áudio] "Oi Lucas, bom dia, tudo bem? Eu te encaminhei um orçamento ontem e gostaria de saber se pretende seguir com a negociação. Consegue me dar um retorno, pela gentileza?"  {audio:midias/3EB0F3650374DCC663D7EB_672209.ogg}
+[10:31] CLIENTE: [áudio] "Oi, bom dia. Depois que eu fui ver que vocês eram de Luziânia, eu consegui comprar, tá bom? Muito obrigado. Vai desculpando alguma coisa, tá? Obrigado pela atenção. Bom trabalho."
+[10:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

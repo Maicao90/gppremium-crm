@@ -1,0 +1,12 @@
+CONVERSA 38f2ad2218 | contato: Cristiano | Agência Many Hats | 08/10/2026 12:30 até 08/10/2026 12:36 | 4 msgs do cliente, 4 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[12:30] CLIENTE: Boa tarde
+[12:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:30] LOJA: [áudio] "Olá, boa tarde! Tudo bem com você, Cristiano?"  {audio:midias/3EB0A08B56B5D5C454204D_732424.ogg}
+[12:31] CLIENTE: Eu fiz a troca recentemente dos pneus do meu carro e gostaria de saber se vocês também compram pneus usados.
+[12:32] LOJA: [áudio] "Sim, Cristiano, compramos e os meninos, eles analisam se os pneus forem de marcas nacionais e com dotes recentes, tá?"  {audio:midias/3EB0CF4659BC82D6566480_124406.ogg}
+[12:35] CLIENTE: Entendi
+[12:36] CLIENTE: Eu vou tentar ir hoje aí na parte da tarde
+[12:36] LOJA: [áudio] "Combinado, Cristiano?"  {audio:midias/3EB01F7521F8C22A62F6B8_87055.ogg}

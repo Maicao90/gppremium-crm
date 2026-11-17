@@ -1,0 +1,17 @@
+CONVERSA db1e13bd89 | contato: Tião França | 08/10/2026 00:33 até 08/10/2026 08:22 | 8 msgs do cliente, 5 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[00:33] CLIENTE: Quero cotar o pneu 175/70 R13 GP Premium.
+[00:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[00:33] CLIENTE: 175 70 13
+[00:37] CLIENTE: Quero cotar o pneu 175/70 R13 GP Premium.
+[00:38] CLIENTE: Carro Corsa Classic
+[08:18] LOJA: Bom dia!
+[08:19] LOJA: [áudio] "Oi Tião, bom dia. Você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB02DA5DAE4DAB1B208B9_192112.ogg}
+[08:19] CLIENTE: [áudio] "Bom dia, eu moro muito longe, moro em Petrópolis, Rio de Janeiro."
+[08:20] LOJA: [áudio] "Ah, sim. Logo vi pelo seu DVD. Infelizmente, nós não estamos atendendo a sua região."  {audio:midias/3EB050F7E8F5C9C8A4B861_901536.ogg}
+[08:20] CLIENTE: [áudio] "Ok, tranquilo. Muito obrigado pela atenção."
+[08:21] CLIENTE: [áudio] "Por aqui eu não tenho nenhuma filial não, né?"
+[08:21] LOJA: [áudio] "Não, infelizmente, nós não temos lojas aí, não. Fico te devendo."  {audio:midias/3EB07F02A5F65886D987E0_364712.ogg}
+[08:22] CLIENTE: 👍🏾

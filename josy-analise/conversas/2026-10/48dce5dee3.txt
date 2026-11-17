@@ -1,0 +1,17 @@
+CONVERSA 48dce5dee3 | contato: Higor | 07/10/2026 13:24 até 09/10/2026 11:18 | 2 msgs do cliente, 6 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[13:24] CLIENTE: Boa tarde
+[13:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:24] CLIENTE: Qual valor dos pneus 205/55/16
+[13:53] LOJA: *Josy:*
+Boa tarde!
+[13:53] LOJA: [foto]
+[13:53] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 09/10/2026 (Fri) ---
+[11:18] LOJA: [áudio] "Oi Igor, bom dia, como é que você está? Igor, imagino que na correria você não está conseguindo me responder, então vou fazer o seguinte, eu vou encerrar o seu atendimento e caso você precise futuramente, você me manda um oi ou se possível passa aqui na loja para conversar mais pessoalmente, tá joia? Muito obrigada aí por sua atenção, um bom final de semana."  {audio:midias/3EB0AEED67794196A20E21_956474.ogg}
+[11:18] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

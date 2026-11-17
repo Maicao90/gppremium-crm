@@ -1,0 +1,25 @@
+CONVERSA ae43c69591 | contato: (sem nome) | 12/09/2026 09:48 até 24/09/2026 10:46 | 7 msgs do cliente, 7 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[09:48] LOJA: Bom dia!!!
+[10:12] CLIENTE: Bom dia!
+      Segunda ou terça te paço as medidas do pneu.
+[10:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:14] LOJA: Combinado
+[13:15] CLIENTE: [contato] 👤 pneus gp premium
+[13:15] CLIENTE: [áudio] "Opa, boa tarde. Eu tô com esse amigo aí, borracheiro. Ele viu os pneus aqui, gostou demais. Ele vai tá entrando em contato aí pra ver se pega pra revenda. Tranquilo? Ele vai entrar em contato com vocês pra ver se pega pra revenda, tá?"
+--- 22/09/2026 (Tue) ---
+[16:10] LOJA: [áudio] "Oi, seu Rubens, tudo jóia? Nós conversamos alguns dias atrás e o senhor mandou aqui para mim um áudio, falando que ia mandar o número de um borracheiro que gostou muito dos pneus, só que o senhor mandou o meu próprio contato para mim. Eu gostaria de saber se posso te ajudar."  {audio:midias/3EB040DB405B04771EA356_668937.ogg}
+[20:07] CLIENTE: [áudio] "Desculpa aí, mas ele tem interesse em revender os pneus, entendeu? Aí podia falar com ele aí, eu enviei até o contato dele aí."
+[20:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 23/09/2026 (Wed) ---
+[08:08] LOJA: [áudio] "Oi, bom dia, Sr. Rubens. Tudo jóia? Sr. Rubens, o Senhor não mandou o contato da pessoa para mim, não. O Senhor mandou para mim o meu próprio contato. Acho que o Senhor se confundiu."  {audio:midias/3EB03997139B62F422CB95_86151.ogg}
+--- 24/09/2026 (Thu) ---
+[10:45] CLIENTE: Bom dia!
+     Foi mesmo kkkkkkkk
+[10:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:46] CLIENTE: [contato] 👤 Cleiso Borraria Samambaia
+[10:46] CLIENTE: É esse aí o número

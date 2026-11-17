@@ -1,0 +1,15 @@
+CONVERSA e71c24b616 | contato: Cleomar | 10/09/2026 01:21 até 10/09/2026 15:21 | 3 msgs do cliente, 4 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[01:21] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[01:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:19] LOJA: *Josy:*
+🙋🏼‍♀️
+[14:29] LOJA: *Josy:*
+estou te aguardando...
+[15:14] CLIENTE: Oi
+[15:14] CLIENTE: 2.95 caminhão
+[15:21] LOJA: [áudio] "Olá, tudo bem? Nossa, infelizmente não trabalhamos com esses pneus."  {audio:midias/3EB0A745B8384B1B11B08F_323450.ogg}

@@ -1,0 +1,10 @@
+CONVERSA 32d522bbc8 | contato: Isabela Ribeiro | 17/09/2026 14:20 até 17/09/2026 14:34 | 2 msgs do cliente, 3 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[14:20] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:20] CLIENTE: vocês tem o pneu 215/50 R18 aro 18?
+[14:22] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu me chamo Josi. Eu queria saber se você mora aqui em Luziânia, porque eu não disponho dessa opção à pronta entrega, mas se estiver por aqui eu consigo fazer a cotação para você."  {audio:midias/3EB00161898710BD28A62D_516962.ogg}
+[14:34] LOJA: *Josy:*
+🙋🏼‍♀️

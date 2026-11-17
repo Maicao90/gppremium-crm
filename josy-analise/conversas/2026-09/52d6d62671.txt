@@ -1,0 +1,66 @@
+CONVERSA 52d6d62671 | contato: Samuel Ferreira | 14/09/2026 13:52 até 24/09/2026 10:58 | 24 msgs do cliente, 22 da loja, 0 do robô
+
+--- 14/09/2026 (Mon) ---
+[13:52] CLIENTE: Quero cotar o pneu 175/65 R14 GP Premium.
+[13:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:55] CLIENTE: Olá, tudo bem?
+[13:56] CLIENTE: Pneu 175/65 R14
+[14:01] CLIENTE: Poderia verificar o valor
+[14:01] LOJA: *Josy:*
+Boa tarde!
+[14:02] LOJA: *Josy:*
+Posso sim, me de um instante por gentileza pois meu sistema está com instabilidade.
+[14:03] LOJA: [foto]
+[14:03] LOJA: *Josy:*
+No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:04] CLIENTE: O GP fica 249,00?
+[14:04] CLIENTE: Correto
+[14:05] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Samuel? Sim, isso mesmo. O pneu da marca GP Premium está por R$ 249,00 à vista."  {audio:midias/3EB0F12FA2FE812CBE8FBB_345330.ogg}
+[14:05] CLIENTE: Perfeito demais, a loja fica onde?
+[14:05] CLIENTE: Para pegar?
+[14:06] LOJA: [áudio] "Somos daqui de Luziânia, você mora aonde?"  {audio:midias/3EB0270C8278DDBABA04DE_82583.ogg}
+[14:06] LOJA: [áudio] "Sim, você pode comprar, retirar, levar pra montar onde você quiser, se quiser montar aqui com a gente também pode, sem burocracia, tá?"  {audio:midias/3EB070B39F21B91E5BE8D1_497926.ogg}
+[14:06] CLIENTE: Sou de Luziânia também
+[14:06] LOJA: [áudio] "Você quer que eu te encaminhe a nossa localização, Samuel?"  {audio:midias/3EB0163E7EDD9F6A102FAA_811863.ogg}
+[14:06] CLIENTE: Encaminha por gentileza
+[14:07] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:07] LOJA: [áudio] "Como meu WhatsApp ainda está com instabilidade, quando eu mando a localização, eu não sei se está aparecendo a foto da frente da loja. Aí você só me confirma, por gentileza, se está mostrando direitinho."  {audio:midias/3EB0F590DB8CF4FE271DA8_733837.ogg}
+[14:11] CLIENTE: Apareceu sim
+[14:11] CLIENTE: Perfeito
+[14:19] LOJA: [áudio] "Samuel, e as opções de parcelamento que eu te encaminhei estão boas para você? Você gostaria de verificar parcelado em quantas vezes ou seria à vista mesmo?"  {audio:midias/3EB04BC7154B431A6DBD8D_105192.ogg}
+[14:20] CLIENTE: São sim, é para o meu tio
+[14:20] CLIENTE: Talvez seja parcelado
+[14:20] CLIENTE: Só esperando ele me responder
+[14:20] LOJA: *Josy:*
+Perfeito.. me comunica, e vamos vendo uma opção que fique boa para vocês.
+[14:21] CLIENTE: Perfeito, agradeço de coração
+--- 16/09/2026 (Wed) ---
+[12:09] LOJA: [áudio] "Oi, Samuel, tudo jóia? Nós conversamos aqui na segunda-feira e eu gostaria de saber se vocês gostariam de dar continuidade aqui na negociação dos pneus. Assim que possível, me dão retorno, está bem?"  {audio:midias/3EB09304D5A7B195996712_337564.ogg}
+--- 18/09/2026 (Fri) ---
+[18:12] LOJA: [áudio] "Oi, Samuel."  {audio:midias/3EB0C1B78F0E841F5907F4_140479.ogg}
+[18:12] LOJA: [vídeo]
+--- 22/09/2026 (Tue) ---
+[15:25] LOJA: [foto]
+[15:27] CLIENTE: No momento não
+[15:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:27] CLIENTE: Aguardando o meu TIO[
+--- 24/09/2026 (Thu) ---
+[10:44] CLIENTE: Olá, bom dia, tudo bem?
+[10:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:44] CLIENTE: Vocês trabalham com pneu de moto
+[10:45] LOJA: *Josy:*
+Bom dia, Samuel, ,infelizmente não mais, vendi os 2 ultimos semana passada.
+[10:46] CLIENTE: Vai voltar não
+[10:46] CLIENTE: Qual séria a faixa de preço de um modelo 100/80 - 17
+[10:49] LOJA: *Josy:*
+Não... não vai voltar....não temos mais... até excluiu o catálogo.
+[10:58] CLIENTE: Teria alguma loja parceira que teria para indicar
+[10:58] CLIENTE: Preciso comprar para minha moto
+[10:58] LOJA: *Josy:*
+Infelizmente, fico te devendo...

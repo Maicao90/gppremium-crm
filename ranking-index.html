@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0d1117">
+<title>Ranking da Campanha</title>
+<style>
+  :root { --bg:#0d1117; --card:#161b26; --card2:#1c2230; --linha:#262e3e; --texto:#eef1f6; --suave:#8b94a8; --ouro:#f2b53a; --prata:#c9d1dc; --bronze:#d08a52; --vermelho:#ff4b52; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html { -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+  body { margin:0; background:var(--bg); color:var(--texto); font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; line-height:1.35; }
+  .wrap { max-width:720px; margin:0 auto; padding:calc(18px + env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) calc(32px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); }
+
+  header { margin-bottom:16px; }
+  .tag { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--ouro); background:rgba(242,181,58,.12); padding:4px 10px; border-radius:999px; margin-bottom:10px; }
+  h1 { font-size:1.35rem; line-height:1.2; margin:0 0 6px; }
+  .sub { color:var(--suave); font-size:.88rem; margin:0; }
+
+  .premios { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:14px 0; }
+  .premio-box { background:var(--card); border:1px solid var(--linha); border-radius:12px; padding:10px 6px; text-align:center; }
+  .premio-box b { display:block; font-size:1rem; }
+  .premio-box span { font-size:.75rem; color:var(--suave); }
+
+  .regras { background:var(--card); border:1px solid var(--linha); border-radius:12px; padding:10px 12px; margin-bottom:18px; display:grid; gap:6px; font-size:.85rem; color:var(--suave); }
+  .regras div { display:flex; justify-content:space-between; gap:10px; }
+  .regras b { color:var(--texto); white-space:nowrap; }
+
+  h2 { font-size:.8rem; text-transform:uppercase; letter-spacing:.06em; color:var(--suave); margin:0 0 10px; }
+
+  .lista { display:grid; gap:10px; }
+  .item { background:var(--card); border:1px solid var(--linha); border-radius:14px; padding:12px; }
+  .item.top1 { border-color:rgba(242,181,58,.55); background:linear-gradient(180deg, rgba(242,181,58,.08), var(--card) 60%); }
+  .item.top2 { border-color:rgba(201,209,220,.35); }
+  .item.top3 { border-color:rgba(208,138,82,.45); }
+  .topo { display:flex; align-items:center; gap:12px; }
+  .pos { flex:0 0 40px; height:40px; border-radius:50%; display:grid; place-items:center; font-weight:800; font-size:1rem; background:var(--card2); color:var(--suave); }
+  .top1 .pos { background:var(--ouro); color:#1a1300; }
+  .top2 .pos { background:var(--prata); color:#11151c; }
+  .top3 .pos { background:var(--bronze); color:#1c0f05; }
+  .quem { flex:1; min-width:0; }
+  .quem b { display:block; font-size:1.02rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .quem small { color:var(--suave); font-size:.8rem; }
+  .total { text-align:right; flex:0 0 auto; }
+  .total strong { display:block; font-size:1.35rem; color:var(--vermelho); line-height:1; }
+  .total small { color:var(--suave); font-size:.72rem; }
+  .ganha { display:inline-block; margin-top:4px; font-size:.75rem; font-weight:700; padding:2px 8px; border-radius:999px; background:rgba(242,181,58,.15); color:var(--ouro); }
+
+  .partes { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-top:10px; }
+  .parte { background:var(--card2); border-radius:10px; padding:7px 6px; text-align:center; }
+  .parte .rot { display:block; font-size:.7rem; color:var(--suave); }
+  .parte .qtd { display:block; font-weight:700; font-size:.98rem; margin-top:1px; }
+  .parte .pts { display:block; font-size:.72rem; color:var(--suave); }
+
+  .rodape { color:var(--suave); font-size:.78rem; margin-top:16px; text-align:center; }
+  .vazio { padding:30px; text-align:center; color:var(--suave); }
+
+  @media (min-width:600px) {
+    h1 { font-size:1.6rem; }
+    .item { padding:14px 16px; }
+    .partes { gap:8px; }
+  }
+  @media (max-width:340px) {
+    .pos { flex-basis:34px; height:34px; font-size:.9rem; }
+    .total strong { font-size:1.15rem; }
+    .parte .rot { font-size:.65rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="tag">🏆 Ranking</span>
+    <h1 id="titulo">Ranking da Campanha</h1>
+    <p class="sub" id="periodo">Carregando…</p>
+  </header>
+  <div class="premios" id="premios"></div>
+  <div class="regras" id="regras"></div>
+  <h2>Classificação</h2>
+  <div class="lista" id="lista"></div>
+  <p class="rodape" id="rodape"></p>
+</div>
+<script>
+  const real = (v) => 'R$ ' + Number(v || 0).toLocaleString('pt-BR');
+  const dataBR = (iso) => iso.split('-').reverse().join('/');
+  const nomeBonito = (n) => String(n || '').trim().replace(/(^|[\s/])(\p{L})/gu, (m, a, b) => a + b.toUpperCase());
+  const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const pts = (n) => `${n} ${n === 1 ? 'pt' : 'pts'}`;
+  const parte = (rot, qtd, p) => `<div class="parte"><span class="rot">${rot}</span><span class="qtd">${qtd}</span><span class="pts">${pts(p)}</span></div>`;
+  fetch('dados.json?t=' + Date.now(), { cache: 'no-store' }).then((r) => r.json()).then((d) => {
+    document.getElementById('titulo').textContent = d.titulo || 'Ranking da Campanha';
+    document.getElementById('periodo').textContent = `Período: ${dataBR(d.de)} a ${dataBR(d.ate)}`;
+    document.getElementById('premios').innerHTML = ['1º', '2º', '3º'].map((p, i) => `<div class="premio-box"><span>${p} lugar</span><b>${real(d.premios[i])}</b></div>`).join('');
+    document.getElementById('regras').innerHTML =
+      `<div><span>📱 Story</span><b>${pts(d.pesos.story)}</b></div>` +
+      `<div><span>⭐ Avaliação no Google</span><b>${pts(d.pesos.google)}</b></div>` +
+      `<div><span>📅 Agendamento programado</span><b>${pts(d.pesos.agendamento)}</b></div>`;
+    const r = d.ranking || [];
+    if (!r.length) { document.getElementById('lista').innerHTML = '<div class="vazio">Ainda sem pontuação.</div>'; return; }
+    document.getElementById('lista').innerHTML = r.map((x, i) => `
+      <div class="item ${i < 3 ? 'top' + (i + 1) : ''}">
+        <div class="topo">
+          <div class="pos">${i + 1}º</div>
+          <div class="quem"><b>${esc(nomeBonito(x.nome))}</b><small>${esc(x.loja)}</small></div>
+          <div class="total"><strong>${x.total}</strong><small>pontos</small>${i < 3 && x.total > 0 ? `<br><span class="ganha">${real(d.premios[i])}</span>` : ''}</div>
+        </div>
+        <div class="partes">
+          ${parte('📅 Agendam.', x.agendamentos, x.pontos.agendamentos)}
+          ${parte('📱 Stories', x.stories, x.pontos.stories)}
+          ${parte('⭐ Google', x.google, x.pontos.google)}
+        </div>
+      </div>`).join('');
+    const at = new Date(d.atualizadoEm).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo', dateStyle: 'short', timeStyle: 'short' });
+    document.getElementById('rodape').textContent = `Atualizado em ${at} · atualiza 1 vez por dia`;
+  }).catch(() => { document.getElementById('periodo').textContent = 'Não foi possível carregar o ranking agora. Tente de novo em instantes.'; });
+</script>
+</body>
+</html>

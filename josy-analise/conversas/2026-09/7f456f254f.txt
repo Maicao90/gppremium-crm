@@ -1,0 +1,28 @@
+CONVERSA 7f456f254f | contato: oqjf? | 24/09/2026 17:56 até 06/10/2026 14:59 | 4 msgs do cliente, 11 da loja, 0 do robô
+
+--- 24/09/2026 (Thu) ---
+[17:56] LOJA: *Josy:*
+195/65/15
+[17:56] LOJA: *Josy:*
+Promoção compre 3 e leve 4
+[17:57] LOJA: [foto]
+[17:57] LOJA: *Josy:*
+Exemplo: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[17:57] CLIENTE: Obrigado pela atenção
+[17:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:58] LOJA: *Josy:*
+Falou , jovem!
+--- 06/10/2026 (Tue) ---
+[14:18] CLIENTE: Quanto tá o pneu 255/35/18 ?
+[14:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:19] LOJA: *Josy:*
+Infelizmente não temos.
+[14:20] LOJA: *Josy:*
+Vou cotar para você assim que me responderem te informo.
+[14:24] CLIENTE: Mas pode me informar o valor
+[14:24] LOJA: 😊
+[14:24] LOJA: *Josy:*
+Ok!
+[14:59] CLIENTE: Vlw

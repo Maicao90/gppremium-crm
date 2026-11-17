@@ -1,0 +1,45 @@
+CONVERSA 2729174cbc | contato: Yuri Guerra | 10/09/2026 15:48 até 22/09/2026 09:15 | 8 msgs do cliente, 18 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[15:48] CLIENTE: Quero cotar o pneu 205/60 R16 GP Premium.
+[15:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:49] CLIENTE: Quero cotar o pneu 205/60 R16 GP Premium.
+[15:50] LOJA: *Josy:*
+Olá! Temow sim!
+[15:50] LOJA: [foto]
+[15:51] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:51] CLIENTE: Comprando os 4 tem desconto
+[15:52] LOJA: *Josy:*
+Se o pagamento for em *dinheiro* em espécie tem sim!
+[15:52] LOJA: *Josy:*
+Posso conceder 5% de desconto.
+[15:53] LOJA: *Josy:*
+Então o pneu de R$ 329,00 valor para débito/ pix fica por R4 312,00 em *dinheiro* em espécie.
+[16:05] LOJA: *Josy:*
+Posso te enviar a nossa localziação?
+--- 11/09/2026 (Fri) ---
+[14:12] LOJA: [áudio] "Oi, tudo jóia?"  {audio:midias/3EB017588C745D25882B62_532327.ogg}
+[14:12] LOJA: [vídeo]
+--- 17/09/2026 (Thu) ---
+[09:15] LOJA: [áudio] "Oi Yuri, tudo bom? Nós nos falamos há alguns dias atrás, mas imagino que na correria você não tenha conseguido me responder. Eu vou encerrar o seu atendimento, tá bom? Caso você precise de alguma coisa, você me manda um oi ou então vem aqui na nossa loja para conversarmos pessoalmente, tá jóia? Muitíssimo, obrigada pela atenção e até mais."  {audio:midias/3EB02EB5BB8941B0021C26_41165.ogg}
+[09:15] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 22/09/2026 (Tue) ---
+[09:13] CLIENTE: Olá bom dia
+[09:13] CLIENTE: Tem o pneu a pronta entrega
+[09:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:13] LOJA: *Josy:*
+Bom dia, Yuri
+[09:13] LOJA: *Josy:*
+Temos sim!
+[09:14] LOJA: [foto]
+[09:14] CLIENTE: Faz a montagem ?
+[09:14] LOJA: *Josy:*
+Sim.
+[09:14] CLIENTE: Já está incluso no valor ?
+[09:14] CLIENTE: Estou indo agora
+[09:15] LOJA: *Josy:*
+Isso, a montagem dos pneus sim. Serviços de alinhamento...balanceamento e demais são cobrados a parte.

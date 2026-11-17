@@ -1,0 +1,14 @@
+CONVERSA 61591ed132 | contato: Humberto Guimarães 😎 | 25/09/2026 13:19 até 25/09/2026 15:31 | 7 msgs do cliente, 3 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[13:19] CLIENTE: boa tarde
+[13:19] CLIENTE: vcs compra pneu usado
+[13:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:20] CLIENTE: vcs compra pneu usado
+[13:26] CLIENTE: [foto] boa tarde vcs compra pneu
+[13:57] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Muito obrigada por aguardar. Sim, nós compramos, entretanto, somente marcas nacionais com dotes recentes, e aí precisa trazer para que seja feita a avaliação, para ver se aprova, tá joia? Os rapazes que atendem a esse serviço, eles ficam aqui de segunda a sexta, de 8h da manhã até às 11h30 e das 13h às 17h."  {audio:midias/3EB0111D9EC338CFD1E360_452022.ogg}
+[14:30] CLIENTE: [áudio] "A marca dos pneus é Michelin. Eu tenho aqui três, tem seis pneus. Ele é 225,518. Eu acho que vocês interessam, né? Esse é usado, sabe? É usado."
+[14:39] CLIENTE: o ano do pneu 2012
+[15:05] LOJA: [áudio] "Pode pegar. Pelo ano não pega."  {audio:midias/A56A2F58267AB2777E0566F9DE2361A2_199540.ogg}
+[15:31] CLIENTE: ok obrigado

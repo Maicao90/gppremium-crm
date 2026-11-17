@@ -1,0 +1,30 @@
+CONVERSA 0bf9b7fd37 | contato: grazielly🥰 | 17/10/2026 12:23 até 17/10/2026 12:50 | 10 msgs do cliente, 14 da loja, 0 do robô
+
+--- 17/10/2026 (Sat) ---
+[12:23] CLIENTE: Oi
+[12:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:23] CLIENTE: 13
+[12:34] LOJA: [foto]
+[12:34] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:38] LOJA: Mora aqui em Luziania-Go?
+[12:38] CLIENTE: Sim
+[12:44] LOJA: Que bacana!
+[12:44] LOJA: Passa aqui na loja!
+[12:44] CLIENTE: Quanto que está o pneu 13
+[12:44] CLIENTE: Fica aonde
+[12:44] CLIENTE: Ainda está aberta
+[12:45] LOJA: Precisa de quantos?
+[12:45] CLIENTE: 4
+[12:45] LOJA: Pode vir!
+[12:45] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:45] LOJA: [foto]
+[12:46] CLIENTE: Está quanto o pneu 13
+[12:46] LOJA: Te mandei o orçamento, pode conferir? o menor preço é para o GP Premium  R$ 269,00 a unidade a vista.
+[12:47] LOJA: posso mandar áudio?
+[12:49] CLIENTE: Sim
+[12:49] LOJA: [áudio] "Grazi, como o meu WhatsApp está com instabilidade, teve muito cliente que eu mandei o orçamento hoje e realmente não abriu. É por isso que eu estou te perguntando, tá bom?"  {audio:midias/3EB0809F0C8F2F083C2F6B_628031.ogg}
+[12:50] CLIENTE: Eu não vou querer não
+[12:50] LOJA: [áudio] "Aí me diz por gentileza se você está vindo realmente, que daí eu já vou pedir para o rapaz reservar aqui os pneus para você, tá bom?"  {audio:midias/3EB0E789FF7396279923E2_802109.ogg}

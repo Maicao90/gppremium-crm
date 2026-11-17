@@ -1,0 +1,43 @@
+CONVERSA f0353c7b7e | contato: Gustavo Braga | 28/09/2026 20:12 até 29/09/2026 12:33 | 10 msgs do cliente, 18 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[20:12] CLIENTE: Quero cotar o pneu 195/65 R15 GP Premium.
+[20:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:13] CLIENTE: 195/65 R15
+--- 29/09/2026 (Tue) ---
+[08:22] LOJA: [áudio] "Olá, bom dia. Tudo bem com você, Gustavo? Eu sou a Josi. Eu tenho aqui, sim, justamente, o pneu da marca GP Premium, que ele está na promoção Compre 3 e Leve 4."  {audio:midias/3EB0359EA3769CB9B4B341_117884.ogg}
+[08:23] LOJA: [foto]
+[08:23] LOJA: *Josy:*
+Digamos que seja a vista: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[09:26] LOJA: [áudio] "Gustavo, você mora aqui em Luziânia mesmo? Está em busca de alguma marca específica?"  {audio:midias/3EB0BE553B3430B2BFA9AB_333937.ogg}
+[10:50] CLIENTE: Moro sim,marca específica não
+[10:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:51] CLIENTE: Precisava de pneus mais em conta pra por nas rodas de trás
+[10:54] LOJA: *Josy:*
+Certo. e precisa de quantos pneus?
+[10:54] LOJA: *Josy:*
+Pois se for 1... ou 2 , eu consigo te dar um desconto neles.
+[10:55] LOJA: [foto]
+[10:55] LOJA: *Josy:*
+Posso fazer a unidade a R$ 296,00 a vista.
+[11:46] LOJA: *Josy:*
+🙋🏼‍♀️
+[11:57] CLIENTE: Tenho interesse em 2
+[11:59] LOJA: *Josy:*
+Separo eles agora para você!
+[11:59] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:00] LOJA: [foto]
+[12:29] CLIENTE: Qual o valor?
+[12:30] CLIENTE: Tô só fazendo o orçamento primeiro
+[12:30] LOJA: *Josy:*
+Te mandei aqui
+[12:30] LOJA: *Josy:*
+Posso fazer a unidade a R$ 296,00 a vista.
+[12:32] LOJA: [áudio] "Gustavo, como o pneu na promoção, compre 3 e leva 4, está por 329, como você vai precisar de uma ou duas unidades, eu te dei um desconto de 10%. Então, a unidade, se for para o pagamento à vista, vai ficar por 296 cada. Aí, para parcelar, né, o valor muda, mas você pode observar aí que é bem pouca coisa."  {audio:midias/3EB05FB866769AB37A6AA8_841590.ogg}
+[12:32] CLIENTE: Sim
+[12:32] CLIENTE: Mas parcela só no cartão né?
+[12:33] LOJA: [áudio] "Isso, parcelamento somente no cartão de crédito."  {audio:midias/3EB02D5E010E74AC9D9C00_4015.ogg}
+[12:33] CLIENTE: Ok

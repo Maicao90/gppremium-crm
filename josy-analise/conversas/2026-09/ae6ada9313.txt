@@ -1,0 +1,21 @@
+CONVERSA ae6ada9313 | contato: Eu  particular | 11/09/2026 16:30 até 11/09/2026 16:34 | 6 msgs do cliente, 6 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[16:30] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[16:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:31] CLIENTE: 185/60/15
+[16:32] LOJA: [foto]
+[16:32] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:32] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[16:33] CLIENTE: Não
+[16:33] CLIENTE: Vcs.tem.uma.loja aqui por Brasília?.
+[16:33] LOJA: [áudio] "Não, não temos lojas aí."  {audio:midias/3EB01AE9B089922FF54820_412566.ogg}
+[16:33] CLIENTE: Ok
+[16:34] CLIENTE: Estou pesquisando ainda. Obrigada
+[16:34] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

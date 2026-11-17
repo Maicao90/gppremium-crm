@@ -1,0 +1,11 @@
+CONVERSA 3f61fdd0a9 | contato: dourado sucesso | 01/09/2026 16:43 até 01/09/2026 17:32 | 1 msgs do cliente, 4 da loja, 0 do robô
+
+--- 01/09/2026 (Tue) ---
+[16:43] LOJA: *Josy:*
+Boa tarde, Edson !
+[16:43] LOJA: [foto]
+[17:30] CLIENTE: 👍🏾
+[17:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:32] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

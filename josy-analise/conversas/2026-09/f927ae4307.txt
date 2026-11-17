@@ -1,0 +1,52 @@
+CONVERSA f927ae4307 | contato: ERA🎯🥊💪 | 09/09/2026 23:02 até 12/09/2026 09:24 | 20 msgs do cliente, 19 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[23:02] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[23:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[23:02] CLIENTE: Qual o valor do kit de pneus 175 70 13 com vocês
+--- 10/09/2026 (Thu) ---
+[08:16] LOJA: [foto]
+[08:17] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu me chamo Josi. Bem, no dia de hoje eu disponho dessas três opções de marcas à pronta entrega. E no orçamento está o valor de apenas uma unidade, onde na primeira coluna eu já deixei o valor à vista, que é correspondente à débito ao Pix. E aí seguem as opções de parcelamento, em até 10 vezes, caso você queira parcelar. Digamos que você opte pela opção do pneu da marca Dunlop. À vista, a unidade é R$ 371,00. Os quatro pneus vão ficar por R$ 1.484,00. Se for para parcelar, o valor muda um pouco."  {audio:midias/3EB081E0012373F6470262_712326.ogg}
+[08:42] CLIENTE: Ok obrigado
+[08:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:48] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB002B64DD63BED29DFC3_706313.ogg}
+[12:29] CLIENTE: Então não moro no Valparaíso mas só que assim compras por internet eu achei bem mais em conta do que o de vocês não sendo remold também entendeu
+[12:30] LOJA: [áudio] "Ai, mas eu não trabalho só com remold, eu te mandei também os pneus da marca Godir e da Dunlop."  {audio:midias/3EB0789B7F9F0AB3B84615_784778.ogg}
+[12:30] CLIENTE: Sim claro levando em consideração que o de vocês ter mais qualidade mas para o que eu quero mesmo sendo um pouco mais baixo a qualidade ou rodo dois anos um ano e meio aí para mim já adianta
+[12:30] CLIENTE: Não pois é o que eu te expliquei é porque você não entendeu na verdade eu estava pensando que os seus nem eram remold
+[12:31] LOJA: [áudio] "Então, os pneus da Goodyear e da Dunlop são pneus da Goodyear e da Dunlop mesmo. Agora, o pneu GP Premium, que é esse de 269, ele é um pneu ecológico que nós fazemos. Sim, ele entrará na categoria de remodelagem, só que linha Premium, que é completamente diferente dos pneus que são remoldes convencionais. Se você quiser, eu te mando uma foto, faço um vídeo aqui para você poder analisar."  {audio:midias/3EB03CCCC8BD823C41F645_897860.ogg}
+[12:31] CLIENTE: É que eu cheguei a encontrar os valores de 225 250 e 240 da marca city e Dunlop
+[12:32] CLIENTE: Mas isso pela internet
+[12:32] CLIENTE: Aí para mim acaba sendo compensativo
+[12:32] LOJA: [áudio] "Sim, compreendo perfeitamente. E assim, nós não temos como competir justamente com internet, né? Que internet são redes nacionais, né? E aqui nós somos regionais."  {audio:midias/3EB029BDD8B3C1921B144B_489338.ogg}
+[12:35] CLIENTE: Sim pois é eu compreendo mas agradeço o seu atendimento foi muito bacana que Deus te abençoe no trabalho 🤝
+[12:35] LOJA: [áudio] "Amém, que Deus te abençoe também. De todo modo, eu vou te mandar aqui a nossa localização, pois se de repente houver a possibilidade, você vem aqui na loja, tá bom?"  {audio:midias/3EB0081CDC35D3AB5B6BCE_174892.ogg}
+[12:35] CLIENTE: Aí acaba aqui para mim lá nesse momento toda economia é boa entendeu ✔️
+[12:36] CLIENTE: Opa beleza então
+[12:36] CLIENTE: Amém 🙌
+[12:36] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:55] CLIENTE: [áudio] "Oi Josi, beleza? Deixa eu te falar, você acabou despertando a curiosidade aqui em mim a respeito desse pneu prêmio aí que você falou. Você me manda o que você falou aí, as fotos, acho que os vídeos, né? É porque eu tive uma experiência não muito boa. Uma vez eu fiz uma troca dos quatro pneus e coloquei remold. E aí o pneu, ele começou a se deformar, entendeu? Criar umas... se deslocar e tal, né? E aquela coisa toda. E aí a gente fica meio que assim, né? Só que aí pelo que você me explicou e acabou criando a curiosidade. Me manda aí, como eu não tô longe, eu vou ver se eu consigo dar um pulo aí, provavelmente no final de semana, não sei, eu te aviso. E aí eu te procuro aí. Eu vou dar uma olhada nesse pneu aí. De repente a gente chega num preço bacana aí. Aí dependendo do que a gente conseguir aí vai que dá certo. Já tá perto e aí eu não preciso esperar chegar também, né? Eu ganho tempo. E os meus já passou da hora de trocar, sabe?"
+[12:59] LOJA: [áudio] "Oi, pode deixar, mando sim. Você me deu só um tempinho que eu estou finalizando o atendimento aqui com o rapaz, tá? Aí eu já gravo o vídeo para você, tá bom?"  {audio:midias/3EB0BF53BB1BE8E87E3BC9_766565.ogg}
+[14:14] LOJA: [vídeo]
+[14:17] CLIENTE: [áudio] "Bacana, Josi, eu assisti seu vídeo aqui. É, igual eu te falei, eu fiquei curioso para ver esse pneu, né, porque os remold eu tive muito transtorno. Eu vou dar um jeito de comparecer aí, e aí a gente conversa pessoalmente, bacana?"
+[14:20] LOJA: [áudio] "Nossa, vai ser uma satisfação imensa receber você aqui, tá joia? Qual é mesmo o seu nome?"  {audio:midias/3EB0ECA6E347C0B37A1E3E_573922.ogg}
+[14:41] CLIENTE: Me chamo Edmar
+--- 11/09/2026 (Fri) ---
+[13:46] LOJA: [áudio] "Oi Edmar, tudo jóia? Edmar, nós estávamos até nos falando ontem aqui, né? Você gostaria de agendar um dia, um horário que fica bom para você, para você vir aqui para nós conversarmos? Se tiver disponibilidade, você me dá um oi aqui, tá bom?"  {audio:midias/3EB08BC35116A734F7893A_990492.ogg}
+[13:59] CLIENTE: [áudio] "Opa, tudo bem, Josi? Boa tarde. Então, Josi, eu vou tentar ver se eu consigo dar uma passada aí amanhã, só que assim, não dá pra me deixar agendado, porque eu não sei se vai dar certo, entendeu? Se caso eu conseguir chegar mais cedo em casa hoje, dependendo do meu trajeto aqui, aí eu tô em sobradinho hoje, sabe? E aí, se eu chegar num horário bacana aí, vocês ficam abertos até 18, acreditei, né? Aí eu dou um jeito de dar uma passada aí, ou então, se caso não der pra hoje, eu vou tentar amanhã, porque amanhã eu tô tranquilo, sabe? Mas eu vou dar uma saída por aí."
+[13:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:00] LOJA: [áudio] "Sem problemas, Edmar. Olha só, aqui o nosso horário de atendimento é de segunda a sexta, de 8 da manhã até as 6 da tarde e aos sábados de 8 até o meio-dia. Tá jóia?"  {audio:midias/3EB06B020B420ED5A7A3A7_172517.ogg}
+[14:00] LOJA: [áudio] "Eu acho que eu te mandei a localização ontem, que aqui pra mim não tá carregando no WhatsApp, aí eu vou mandar só foto aqui da frente da loja pra você, tá bom?"  {audio:midias/3EB08E0331CA729D392ED1_467482.ogg}
+[14:00] LOJA: [foto]
+[14:01] CLIENTE: Ok positivo 🤝
+--- 12/09/2026 (Sat) ---
+[09:24] CLIENTE: Bom dia
+[09:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:24] CLIENTE: Estou aqui na frente da loja

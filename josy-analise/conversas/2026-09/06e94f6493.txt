@@ -1,0 +1,33 @@
+CONVERSA 06e94f6493 | contato: Gustavo Zanetti | 29/09/2026 13:53 até 29/09/2026 17:08 | 6 msgs do cliente, 12 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[13:53] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:53] CLIENTE: 215/35/18
+Ou
+215/40/18
+[14:16] LOJA: *Josy:*
+Boa tarde,
+[14:17] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[14:18] CLIENTE: Sim fico no aguardo
+[14:19] LOJA: [áudio] "Olá, tudo bem com você, Gustavo? Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0374FFFE42DAC9B4302_459481.ogg}
+[14:19] LOJA: [áudio] "Você está em busca de alguma marca específica?"  {audio:midias/3EB0C8D0E2AE6E42E0135D_566002.ogg}
+[14:26] CLIENTE: [áudio] "Oi, boa tarde. Não, eu não moro em Luziânia, não. Eu já comprei da marca Pitani, eu gostei da marca Pitani, mas eu estou procurando um mais em conta, até porque se eu rodamos de vez em quando no carro, eu quero colocar o mais em conta que você tiver aí. Se tiver alguma outra medida aí também disponível, 18, alguma outra medida próxima essa aí, você pode me passar. É a mais em conta que você tiver aí."
+[14:29] LOJA: [áudio] "Para qual carro você está utilizando essas medidas?"  {audio:midias/3EB030C84515A104B15ACB_441160.ogg}
+[14:29] CLIENTE: Polo
+[14:30] CLIENTE: [áudio] "Estou utilizando num polo, mas é modificação quanto que eu fiz. Estou usando essa 18 num polo."
+[14:30] LOJA: *Josy:*
+Certo.
+[16:27] LOJA: *Josy:*
+Gustavo...
+[16:27] LOJA: [foto]
+[16:27] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:27] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:08] LOJA: [áudio] "Oi Gustavo, tudo jóia? Olha, eu te mandei aí, né, todas as opções que o meu distribuidor vai ter nas opções de medida que você precisa. Aí, igual falei, essas opções, elas são somente por encomendas."  {audio:midias/3EB0C32D1666C5943AD4A6_266325.ogg}

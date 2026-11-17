@@ -1,0 +1,27 @@
+CONVERSA 67e215b575 | contato: Guilherme | 03/09/2026 16:58 até 11/09/2026 14:25 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[16:58] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[16:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:59] CLIENTE: Qual o valor dos seus pneus 15?
+[16:59] CLIENTE: 185/60
+[16:59] LOJA: [áudio] "Olá Guilherme, boa tarde, tudo bem com você? Eu me chamo Josi, me dê só um instante que eu vou realizar o seu orçamento, tá bem? Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB023918607DD7471B8AC_148241.ogg}
+[17:00] LOJA: [foto]
+[17:00] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:01] CLIENTE: [áudio] "Boa tarde. E como é que funciona essa questão dessa promoção que tá lá no Instagram? Compra 3, leve 4? Como é que é isso aí?"
+[17:02] LOJA: [áudio] "A promoção, compre 3 e leve 4, é para os pneus da marca GP Premium, nas medidas 195, 65, 15 e 215, 55, 17."  {audio:midias/A577BDB6E0DDDD724E6AA3F1416AC9C3_897932.ogg}
+[17:03] CLIENTE: Ele qual o valor do 195/65 15?
+[17:05] LOJA: [áudio] "O 195-65-15 da GP Premium, na promoção, compre 3 e leve 4. À vista, 329 cada. Então, digamos que o seu pagamento fosse à vista, então, pagando 3 pneus dá um total de R$ 987,00. Só que por esse preço, você vai levar os 4 pneus e já fazemos a instalação deles para você."  {audio:midias/A56F493C951FB03549BB8559D1EBE071_642674.ogg}
+--- 10/09/2026 (Thu) ---
+[16:48] LOJA: [áudio] "Oi Guilherme, tudo jóia?"  {audio:midias/3EB00A5BEF2E47A43DABF7_164984.ogg}
+[16:48] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[14:25] LOJA: [áudio] "Oi Guilherme, tudo jóia? Vi que você viu o vídeo que eu te encaminhei, mas sei que na correria você não conseguiu me responder, então para não ficar enchendo seu WhatsApp de mensagens, eu vou encerrar o seu atendimento, tá bom? E vou te mandar aqui a localização, se puder você passa aqui na loja para conversarmos pessoalmente. Obrigada pela atenção e bom final de semana."  {audio:midias/3EB0912BAFB5800A4F4FDE_844334.ogg}
+[14:25] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

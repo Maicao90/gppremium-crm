@@ -1,0 +1,20 @@
+CONVERSA 1bd3a86ff7 | contato: Silverio Ferreira Sucupir | 09/10/2026 12:05 até 09/10/2026 17:59 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[12:05] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[12:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:05] CLIENTE: 175.175.14
+[12:05] LOJA: 175/70/14?
+[12:06] CLIENTE: Isso
+[12:06] CLIENTE: 2 pneus
+[12:06] LOJA: [foto]
+[12:06] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:07] LOJA: [áudio] "Olá, bom dia. Tudo bem com você, Silvério? Você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB05935B671A7F1365261_109433.ogg}
+[12:09] CLIENTE: Não  Brasília
+[17:59] LOJA: [áudio] "Bem, senhor Silvênio, por hora, então, vou encerrar aqui o seu atendimento, tá? Se houver a possibilidade, se estiver aqui na região, passa na nossa loja para conhecer a nossa empresa, tá joia? Bom final de semana para o senhor."  {audio:midias/3EB0190BA98572ABAF1139_712754.ogg}
+[17:59] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

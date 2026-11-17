@@ -1,0 +1,27 @@
+CONVERSA 707ea94e36 | contato: Hugo Jhonatan | 08/10/2026 14:33 até 08/10/2026 15:47 | 9 msgs do cliente, 10 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[14:33] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[14:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:33] LOJA: [áudio] "Oi Hugo, tudo jóia?"  {audio:midias/3EB0F442FDAF7FCB2FBCB4_661676.ogg}
+[14:33] CLIENTE: Pneu 185/55 R16
+[14:33] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[14:33] LOJA: 195/55/16 te atende?
+[14:33] CLIENTE: Qual o valor
+[14:34] LOJA: O pneu da marca GP Premium, está em oferta de R$ 299,00 por R$ 259,00 a vista.
+[14:36] LOJA: [foto]
+[14:36] CLIENTE: Ok
+[14:37] LOJA: [áudio] "Essa opção te atende, Hugo? Pois, de todo modo, eu solicitei um orçamento aqui para os meus distribuidores e assim que eles me responderem, eu te passo direitinho aqui a Marco para esse prazo de entregas, tá bem?"  {audio:midias/3EB086615BFA1E1C910D02_118381.ogg}
+[14:38] CLIENTE: Tá bom
+[14:38] CLIENTE: Tô fazendo alguns orçamentos ainda
+[14:38] CLIENTE: Vocês estão localizado aonde ?
+[14:38] LOJA: Luziânia-Go
+[14:43] LOJA: [foto]
+[14:43] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:47] CLIENTE: Ok obrigado
+[15:47] CLIENTE: Já achei os pneu aqui

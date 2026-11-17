@@ -1,0 +1,9 @@
+CONVERSA 1d71b041d7 | contato: Gustavo | 22/09/2026 11:14 até 22/09/2026 11:15 | 3 msgs do cliente, 2 da loja, 0 do robô
+
+--- 22/09/2026 (Tue) ---
+[11:14] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:14] CLIENTE: bom dia, vc tem o 175/65R 14 da speed max com a especificação "x 3" o spm 203
+[11:14] LOJA: [áudio] "Olá, bom dia, tudo bem? Nossa, eu não tenho aqui o pneu da Speedmax, Gustavo. Você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB0D6EDB0EEE508549253_965804.ogg}
+[11:15] CLIENTE: a não deixa obrigado pela atenção

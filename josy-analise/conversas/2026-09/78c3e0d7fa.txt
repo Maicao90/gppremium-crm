@@ -1,0 +1,39 @@
+CONVERSA 78c3e0d7fa | contato: Bolt | 25/09/2026 07:50 até 25/09/2026 11:06 | 8 msgs do cliente, 18 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[07:50] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[07:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:55] CLIENTE: 195/65 R15
+[08:03] LOJA: *Josy:*
+Bom dia!
+[08:03] LOJA: [foto]
+[08:03] LOJA: *Josy:*
+O pneu GP Premium está na promoção compre
+[08:04] LOJA: *Josy:*
+Digamos que seja a vista: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[08:45] LOJA: 🙋🏼‍♀️
+[09:02] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB01121471D97C6FE9835_987812.ogg}
+[09:40] CLIENTE: Moro sim!
+[09:43] CLIENTE: Esses pneus são remold?
+[09:44] LOJA: [foto] *Josy:*
+Esses são novos.
+[09:45] LOJA: [foto] Esse aqui é o GP Premiu, pneu ecologico que nós fazemos, entra na categoria de remodelagem, e é o pneu mais vendido por conta da qualidade.
+[09:46] LOJA: *Josy:*
+Se quiser faço um video para você ver.
+[09:47] CLIENTE: O negócio é que o carro é um Vectra ele precisa de um pneu seguro sem risco de estouro, pq ele atinge 200km/h fácil. Não sei se dá para confiar em um pneu remold ou ecológico
+[09:47] CLIENTE: É um carro pesado e bruto
+[09:47] LOJA: [áudio] "Justamente. Os pneus GP Premium, eles são testados e aprovados pelo Inmetro, justamente porque eles têm todo esse diferencial."  {audio:midias/3EB085072A1627E98CA17C_857613.ogg}
+[09:48] LOJA: [áudio] "Se eles suportam uma BMW, eles dão conta de qualquer tipo de veículo. Igual você mora aqui em Luziânia, neste final de semana, por exemplo, domingo, nós teremos um evento aqui na cidade, onde terão diversos pilotos que eles usam, todos eles, eles usam os pneus GP Premium, que eles são a prova de fogo da qualidade dos pneus."  {audio:midias/3EB0C1FFA76435CC2716FB_531409.ogg}
+[09:48] LOJA: [áudio] "E os carros que utilizam os pneus GP Premium, não somente em questão de peso, mas em questão de potência de motor. São carros realmente brutos. E eles usam tranquilamente."  {audio:midias/3EB01262CFC8922DB64BD2_712064.ogg}
+[09:53] CLIENTE: [áudio] "Eu já fui nesse evento uma vez, só que a questão é que você acelerar um carro em baixa velocidade não se compara com você pegar uma estrada a 200 km por hora e passar em um buraco ou ondulação, porque realmente o pneu é estressado, eles queimam o pneu, o motor dos carros tem mais de 600 cavalos, certo? Só que o giro da roda, ela não necessariamente tá fazendo força G de 200 km pra cima, entendeu? E constante. Vamos supor que a gente vai viajar, a gente vai viajar daqui pra Bahia, serão mais de 5 horas sendo usado, e um carro de drift, um pneu muito bom, não dura 15 minutos, porque o pneu ele é muito gasto. Eu vou pesquisar mais um pouco e te falo."
+[09:54] LOJA: [áudio] "Compreendo perfeitamente seu ponto de vista. E aí o que é que acontece, que eu já vou fazer um adendo aqui para você. Os pneus, não sei se você já viu o vídeo de como é feito o teste do pneu, né? Ele é colocado em uma máquina que justamente simula essa força aí que você está fazendo, que você está falando no caso, tá? E para que os pneus sejam aptos, eles têm que passar por essa, por esse teste. E justamente por isso os nossos pneus, eles têm o seu endometro, porque todos passam."  {audio:midias/3EB0FC09BF268FF248164C_879470.ogg}
+[10:05] CLIENTE: Qual a faixa de velocidade?
+[11:05] LOJA: *Josy:*
+Obrigada por aguardar, a loja ficou cheia...
+[11:05] LOJA: *Josy:*
+170 km
+[11:06] LOJA: *Josy:*
+capacidade de peso 580 kg cada

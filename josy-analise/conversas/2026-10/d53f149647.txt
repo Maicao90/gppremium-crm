@@ -1,0 +1,11 @@
+CONVERSA d53f149647 | contato: Kleber Rodrigues | 08/10/2026 20:33 até 09/10/2026 15:03 | 1 msgs do cliente, 3 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[20:33] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[20:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 09/10/2026 (Fri) ---
+[08:53] LOJA: 🙋🏼‍♀️
+[15:03] LOJA: [áudio] "Olá! Por falta de interação, estou encerrando seu atendimento. Caso precise futuramente, entre em contato."  {audio:midias/3EB003A5BCA61E1F020767_610198.ogg}

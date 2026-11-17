@@ -1,0 +1,13 @@
+CONVERSA 0e40de44cc | contato: Arnold 😎😇🙏 | 15/10/2026 10:53 até 15/10/2026 11:08 | 3 msgs do cliente, 4 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[10:53] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[10:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:06] LOJA: 👇🏻
+[11:07] LOJA: 🙋🏼‍♀️
+[11:07] CLIENTE: Pneu 140/70/17
+[11:08] CLIENTE: Moto
+[11:08] LOJA: [áudio] "Não temos pneus de moto."  {audio:midias/3EB0EC6CABADC21A8BC5E1_56043.ogg}

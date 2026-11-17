@@ -1,0 +1,17 @@
+CONVERSA ce189a3108 | contato: Guerra | 15/10/2026 11:32 até 15/10/2026 11:45 | 6 msgs do cliente, 5 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[11:32] CLIENTE: Ola
+[11:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:33] CLIENTE: [áudio] "Nossa, eu acabei de sair da loja aí, bugou o G4, fiz a troca dos dois pneus dianteiros, um pneu dianteiro aqui, um do lado do passageiro deslocou, impossível um trem desse, se estivesse correndo de marra aqui, tinha capotado o carro, e aí eu vou, acionei aqui um guiche aqui do seguro meu aqui, pra levar pra loja aí de novo aí. Tchau."
+[11:34] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Meu nome é Josi. Em qual loja que o senhor comprou os pneus? É aqui na GP Premium mesmo? Aqui na fábrica?"  {audio:midias/3EB034E2837E0ED9D5DE9F_730037.ogg}
+[11:38] CLIENTE: [áudio] "Não, comprei esse pneu aqui na loja na entrada do Ocidental, Cidade Ocidental, Goiás."
+[11:38] CLIENTE: [áudio] "Eu não peguei o número lá do WhatsApp da loja, você tem como me passar?"
+[11:43] CLIENTE: Preciso da localização de lá da loja pro guincho
+[11:45] LOJA: Sim!
+[11:45] LOJA: 61 3774-2112
+[11:45] CLIENTE: Ok
+[11:45] LOJA: [foto] CITY PNEUS & AUTO CENTER 🚘 🛞
+              👇🏼👇🏼👇🏼👇🏼
+https://maps.google.com/?q=-16.111513,-47.968296

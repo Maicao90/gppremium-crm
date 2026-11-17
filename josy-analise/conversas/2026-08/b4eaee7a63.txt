@@ -1,0 +1,12 @@
+CONVERSA b4eaee7a63 | contato: edinaldopc07 | 21/08/2026 14:14 até 21/08/2026 14:48 | 3 msgs do cliente, 5 da loja, 0 do robô
+
+--- 21/08/2026 (Fri) ---
+[14:14] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:15] CLIENTE: 185/70/14
+[14:16] LOJA: [áudio] "Oi Edinaldo, tudo bom?"  {audio:midias/3EB0047602771E05FC746F_588357.ogg}
+[14:22] CLIENTE: Tudo
+[14:22] LOJA: Vou te enviar.
+[14:47] LOJA: Obrigada por aguardar
+[14:48] LOJA: [áudio] "Edinaldo, no dia a dia eu já tenho todas essas opções aí a pronta entrega, tá? E o pneu GP Premium, né? Como você já conhece, o pneu mais vendido que nós temos, ele está por apenas R$ 289,00 à vista. Aí você vindo aqui com o carro, nós já fazemos a instalação pra você."  {audio:midias/A5D6FA6F608EDA9B7FDC9ED1182725B3_92207.ogg}

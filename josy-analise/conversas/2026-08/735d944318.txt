@@ -1,0 +1,14 @@
+CONVERSA 735d944318 | contato: Lucas Alves | 20/08/2026 15:39 até 20/08/2026 15:58 | 7 msgs do cliente, 3 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[15:39] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[15:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:39] CLIENTE: 175/70r14
+[15:39] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu me chamo Josi. Eu tenho aqui o pneu da marca GP Premium, que ele está por R$ 279,00 para o pagamento à vista. Você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB011EE25B314A8CEF716_496460.ogg}
+[15:40] CLIENTE: Há n
+[15:40] CLIENTE: Pensei que fosse Brasília
+[15:40] CLIENTE: Obg
+[15:40] LOJA: Consegue vir aqui?
+[15:58] CLIENTE: N
+[15:58] CLIENTE: Obg

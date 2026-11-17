@@ -1,0 +1,35 @@
+CONVERSA 9ef5439b6a | contato: Ismael | 18/09/2026 17:36 até 19/09/2026 10:51 | 15 msgs do cliente, 8 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[17:36] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Ola tudo bem
+[17:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:36] LOJA: *Josy:*
+🙋🏼‍♀️
+[17:36] CLIENTE: Vcs está contratando pra trabalhar
+[17:36] CLIENTE: Sou profissional em borracharia e torno
+[17:38] LOJA: *Josy:*
+Sim! Me encaminhe seu curriculum em pdf
+[17:38] CLIENTE: Ok
+[17:38] CLIENTE: [áudio] "É porque eu não sei fazer isso, mas eu vou pedir para um rapaz fazer para mim. Obrigado, viu?"
+[17:39] LOJA: *Josy:*
+Isso...
+[17:39] LOJA: *Josy:*
+faça... ou se tiver ele pronto pode trazer aqui na empresa.
+[17:39] CLIENTE: Na do parque Alvorada
+[17:40] CLIENTE: De frente com a br
+[17:40] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:40] CLIENTE: Oq obgd amanhã eu levo ai
+[17:40] CLIENTE: Ok
+--- 19/09/2026 (Sat) ---
+[08:48] CLIENTE: [documento]
+[08:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:48] CLIENTE: [áudio] "Oi, bom dia, tudo bem? Deixa eu te falar, você está aberto hoje aí, a loja? Você prefere que eu mande aí pelo PDF ou eu levo pessoalmente o currículo? É porque eu estou precisando muito desse emprego, cara. Eu sou profissional, entendeu? Tenho família, tenho filho, tudinho. Sou profissional no que eu faço. Ele paga aluguel e tem prestação de carro para pagar, tem dois filhos. Eu estou precisando muito, estou parado em casa. Qualquer coisa que quisesse que eu levasse aí pessoalmente também, eu levava o currículo aí pessoalmente."
+[08:49] CLIENTE: [áudio] "Eu já trabalhei em Auto Center, sou torneiro, borracheiro profissional, mexo com roda, com pneu, com tudo. Trabalho com estética também, mas isso aí não é o caso."
+[08:50] CLIENTE: [documento]
+[09:37] LOJA: [áudio] "Luiz Mael, tudo bom? Eu gostaria que você me informasse qual é o seu CPF, porque hoje o Departamento de Recursos Humanos não está aqui. Eu passo para eles na segunda-feira, está bem?"  {audio:midias/3EB0C5FD4D47E37CCC2392_923826.ogg}
+[10:51] CLIENTE: 07488817192
+[10:51] CLIENTE: [áudio] "Ok, muito obrigado, viu? Eu mandei pra você, tá bom? Obrigado, obrigado. Se pudesse me dar uma atençãozinha, porque eu tô precisando bastante. Família, tudo pra pagar, tá difícil."

@@ -1,0 +1,34 @@
+CONVERSA e5d3036ff8 | contato: M.vinícius🦈 | 11/09/2026 13:10 até 11/09/2026 13:57 | 7 msgs do cliente, 14 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[13:10] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:11] CLIENTE: Pneu 195/65 R15
+[13:12] LOJA: *Josy:*
+Boa tarde, temos sim!
+[13:12] LOJA: [foto]
+[13:12] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:13] LOJA: *Josy:*
+Os pneus da marca GP Premium estão em promoção. Compre 3 e leve 4
+[13:13] LOJA: *Josy:*
+Exemplo: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[13:15] CLIENTE: qual o valor do 195/60 R15
+[13:16] LOJA: *Josy:*
+O menor preço vai ser para o pneu da marca GP Premium, R$ 289,00 a unidade a vista.
+[13:18] LOJA: [foto]
+[13:18] LOJA: [áudio] "Olá Vinícius, tudo bem? E você mora aqui em Luziânia mesmo?"  {audio:midias/3EB04382C91F39D82C6C71_14577.ogg}
+[13:20] CLIENTE: Olá, resido em samambaia DF
+[13:20] LOJA: [áudio] "Um pouquinho distante."  {audio:midias/3EB0FA9305E2898EA5EE35_560503.ogg}
+[13:21] CLIENTE: Estou analisando os valores
+[13:40] CLIENTE: Vcs fazem entrega?
+[13:40] LOJA: [áudio] "Não, nessa localidade aí nós não fazemos entregas."  {audio:midias/3EB0D7137C3E49926831E2_113861.ogg}
+[13:50] CLIENTE: Obrigado pela sua atenção.
+Bom trabalho e ótimas vendas!
+[13:56] LOJA: [áudio] "Imagina, eu que agradeço pelo seu contato e deseja um bom final de semana, tá bom?"  {audio:midias/3EB0118570328F8B4E1255_480033.ogg}
+[13:57] LOJA: [áudio] "Ah sim, eu vou deixar aqui a nossa localização, pois se houver a possibilidade, quem sabe um dia você possa aqui. Obrigada e até mais."  {audio:midias/3EB0C373F6442D660A6CDA_846895.ogg}
+[13:57] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

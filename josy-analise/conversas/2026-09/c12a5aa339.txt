@@ -1,0 +1,16 @@
+CONVERSA c12a5aa339 | contato: Universo For Hair | 15/09/2026 11:22 até 16/09/2026 11:14 | 2 msgs do cliente, 7 da loja, 0 do robô
+
+--- 15/09/2026 (Tue) ---
+[11:22] LOJA: *Josy:*
+Bom dia, Pedro
+[11:22] CLIENTE: Oi
+[11:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:23] LOJA: [foto]
+--- 16/09/2026 (Wed) ---
+[10:33] LOJA: [áudio] "Oi Pedro, tudo jóia? Você passou aqui na nossa loja ontem e eu gostaria de saber se você pretende seguir com a negociação dos pneus? Quando possível me dá um retorno, tudo jóia? Obrigada."  {audio:midias/3EB064B46FCC8B1D6C65E4_912835.ogg}
+[11:04] CLIENTE: [áudio] "Pois é, eu estou exatamente indo agora ver se eu consigo recuperar o pneu antigo. Caso eu não consiga, aí eu vou ir para comprar o parque, tá? Só confirma para mim. A parte de montagem eu faço na loja da frente, está em curso, correto?"
+[11:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:10] LOJA: [áudio] "Não, a montagem não é inclusa, a montagem é inclusa somente para os pneus da marca GP Premium."  {audio:midias/3EB05684D149416F178AB2_800055.ogg}
+[11:14] LOJA: [áudio] "Mas aí fica da seguinte maneira, já para entregar os pneus colocados para ti, instalado e balanceado, cada pneu fica por R$ 85,00. Então, como são os dois, total de R$ 170,00. Entretanto, esse valor é negociável, tá joia?"  {audio:midias/3EB0025EC6FA0C43662E44_188118.ogg}

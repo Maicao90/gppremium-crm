@@ -1,0 +1,19 @@
+CONVERSA b20a9e56fe | contato: Helio | 31/08/2026 11:42 até 31/08/2026 12:37 | 3 msgs do cliente, 7 da loja, 0 do robô
+
+--- 31/08/2026 (Mon) ---
+[11:42] LOJA: *Josy:*
+Bom dia...tudo bem?
+[11:43] LOJA: *Josy:*
+Já realizou a compra dos pneus?
+[11:44] LOJA: *Josy:*
+Meu gerente disse que se o pagamento for em *dinheiro* o 175/65/14 fica por 236,00 no pix 249,00, e o 175/70 em *dinheiro* fica por R$ 265,00 no pix R$ 279,00
+[11:45] LOJA: *Josy:*
+Mas por ora, vou encerrar seu atendimento , quando precisar entre em contato ou venha aqui na loja está bem! boa semana.
+[11:45] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:49] CLIENTE: Ainda não comprei ,por enquanto ainda não vai dar
+[11:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:50] CLIENTE: *bom dia
+[12:12] LOJA: [áudio] "Certo, eu compreendo perfeitamente, não tá fácil, né? Mas assim, eu mantenho por mais algum período de tempo esses valores que eu te encaminhei, aí entre em contato aqui comigo, tá jóia? Nós já fazemos a instalação dos pneus, tudo certinho aí pra ti."  {audio:midias/3EB06B2226CE43346F8D0F_28640.ogg}
+[12:37] CLIENTE: Ok

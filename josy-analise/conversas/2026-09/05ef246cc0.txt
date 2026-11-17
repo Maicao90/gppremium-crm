@@ -1,0 +1,37 @@
+CONVERSA 05ef246cc0 | contato: Netylisarb | 15/09/2026 07:23 até 22/09/2026 15:44 | 6 msgs do cliente, 13 da loja, 0 do robô
+
+--- 15/09/2026 (Tue) ---
+[07:23] CLIENTE: Bom dia
+[07:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:23] CLIENTE: Gostaria saber qual valor dos pneus aro. 16,55
+[08:17] LOJA: *Josy:*
+Bom dia, para que eu possa gerar o orçamento para você, poderia me informar a *medida* do pneu que você precisa (ex: 205/55 R16)  😊
+[09:48] CLIENTE: Pra o Sonic da Chevrolet
+[09:48] CLIENTE: 2014
+[09:54] LOJA: *Josy:*
+205/55/16
+[09:54] LOJA: [foto]
+[09:54] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:12] LOJA: *Josy:*
+🙋🏼‍♀️
+[12:12] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[12:20] CLIENTE: E cada peneu
+[12:20] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.
+[12:21] LOJA: *Josy:*
+Precisa de quantos? Me diz qual forma de pagamento que calculo para você.
+[12:24] CLIENTE: Ok
+[12:27] LOJA: *Josy:*
+Precisa de quantos? Me diz qual forma de pagamento que calculo para você.
+[15:45] LOJA: *Josy:*
+🙋🏼‍♀️
+--- 16/09/2026 (Wed) ---
+[10:45] LOJA: [áudio] "Olá, bom dia, tudo bem? Ontem nós estávamos conversando aqui e eu te perguntei quantos pneus você precisa e qual a forma de pagamento para eu calcular aqui para ti. Então, assim que possível, por gentileza, me fala para eu poder te ajudar."  {audio:midias/3EB0FA57CA688CD27D57C1_222138.ogg}
+--- 22/09/2026 (Tue) ---
+[15:44] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

@@ -1,0 +1,13 @@
+CONVERSA b4314f5463 | contato: Idenilson | 25/08/2026 17:18 até 25/08/2026 17:26 | 6 msgs do cliente, 3 da loja, 0 do robô
+
+--- 25/08/2026 (Tue) ---
+[17:18] CLIENTE: Boa tarde
+[17:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:18] CLIENTE: Amanhã vou fazer a compra dos pneus 🛞
+[17:19] CLIENTE: Primeiro horário
+[17:19] CLIENTE: Que horas vocês começa atender
+[17:20] LOJA: [áudio] "Oi, Denilson, como é que você está? Nós começamos às 8 da manhã."  {audio:midias/3EB0963F39443211A97D77_268270.ogg}
+[17:25] CLIENTE: [áudio] "Então eu vou estar aí amanhã 8 horas, tá bom? Pra gente fazer essa compra aí, trocar aí os pneus."
+[17:25] LOJA: [áudio] "Estamos combinados, Sr. Ednilson, tá?"  {audio:midias/3EB0C59B26A8003657891D_938334.ogg}
+[17:26] CLIENTE: Ok

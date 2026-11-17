@@ -1,0 +1,4 @@
+[BotService][TRAVA POS-ORCAMENTO] cortado: ["Se preferir, dá pra parcelar em até 10x no cartão!"]
+[BotService][TRAVA POS-ORCAMENTO] cortado: ["Dá pra parcelar em até 10x no cartão."]
+[BotService][TRAVA POS-ORCAMENTO] cortado: ["Pro Gol 2010, a medida original mais comum é a *175/70/14*, então vale esse valor no lugar do que te passei antes (o 175/65/14 é dos Gol mais novos).","Se preferir, você pode parcelar em até 10x no cartão!"]
+[BotService][TRAVA POS-ORCAMENTO] cortado: ["É diferente do 175/65/14 que passei antes, então vale esse valor pro seu.","Também dá pra parcelar em até 10x no cartão!"]

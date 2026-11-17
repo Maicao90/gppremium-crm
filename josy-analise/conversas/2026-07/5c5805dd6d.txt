@@ -1,0 +1,5 @@
+CONVERSA 5c5805dd6d | contato: 556186737646 | 19/07/2026 10:36 até 19/07/2026 10:38 | 1 msgs do cliente, 1 da loja, 0 do robô
+
+--- 19/07/2026 (Sun) ---
+[10:36] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:38] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

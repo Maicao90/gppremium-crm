@@ -1,0 +1,19 @@
+CONVERSA 1d9a073ccc | contato: Wellington Sousa | 17/09/2026 12:00 até 17/09/2026 17:50 | 1 msgs do cliente, 7 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[12:00] LOJA: *Josy:*
+Boa tarde, Wellington
+[12:00] CLIENTE: , contato da loja 3597-3371 ou 99642-9123 blx motofrete
+[12:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:01] LOJA: *Josy:*
+175/60/15
+[15:29] LOJA: *Josy:*
+OI!
+[15:29] LOJA: [foto]
+[15:30] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 200,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:50] LOJA: *Josy:*
+🙋🏼‍♀️

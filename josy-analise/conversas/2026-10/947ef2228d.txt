@@ -1,0 +1,21 @@
+CONVERSA 947ef2228d | contato: Max Oliveira | 14/10/2026 10:22 até 14/10/2026 16:01 | 8 msgs do cliente, 9 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[10:22] LOJA: Bom dia!
+[10:22] LOJA: Maxwuell...
+[10:22] CLIENTE: Bom dia
+[10:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:23] CLIENTE: [foto]
+[10:23] CLIENTE: Semana passada comprei 4 pneus 15 aí com vocês
+[10:23] CLIENTE: Veja pra mim um valor bom nesse aro 14 por favor
+[10:29] LOJA: Hum... o seu é para carga....
+[10:36] LOJA: E de carga está em falta.
+[10:36] LOJA: A opção que o rapaz te passou por telefone , é de pneu comum
+[10:37] CLIENTE: Entendi
+[10:38] LOJA: Usa em qual carro? Qual total de carga?
+[10:38] CLIENTE: É uma Fiat strada
+[10:38] CLIENTE: A gente carrega motor nela
+[10:39] LOJA: peso médio?
+[10:41] CLIENTE: Daí pra frente
+[16:01] LOJA: [áudio] "Max, se você quiser, assim que chegar, eu entro em contato contigo."  {audio:midias/3EB059223293F1F6F49468_309448.ogg}

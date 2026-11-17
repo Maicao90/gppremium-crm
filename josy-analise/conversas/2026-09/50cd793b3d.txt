@@ -1,0 +1,19 @@
+CONVERSA 50cd793b3d | contato: Alexandre | 25/09/2026 16:19 até 25/09/2026 16:22 | 3 msgs do cliente, 5 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[16:19] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[16:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:21] LOJA: *Josy:*
+🙋🏼‍♀️
+[16:22] CLIENTE: Arov14
+[16:22] CLIENTE: Siena
+[16:22] LOJA: *Josy:*
+Se estiver usando 175/65/14 , segue orçamento:
+[16:22] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:22] LOJA: [foto]

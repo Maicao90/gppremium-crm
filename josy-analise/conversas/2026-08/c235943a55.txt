@@ -1,0 +1,32 @@
+CONVERSA c235943a55 | contato: Vangas Silva | 20/08/2026 12:26 até 21/08/2026 09:40 | 10 msgs do cliente, 17 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[12:26] CLIENTE: [foto]
+[12:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:27] CLIENTE: [áudio] "Inclusive foi esse aí que eu comprei, peguei dois, esse aí foi um deles."
+[12:27] CLIENTE: [áudio] "Meu nome é Edivan Teixeira da Silva."
+[12:27] LOJA: Oi
+[12:28] LOJA: Teremos o 255/70/16 Brutus!
+[12:29] CLIENTE: Manda foto ai
+[12:30] LOJA: [foto]
+[12:31] CLIENTE: [áudio] "E, Jô, então, no caso, tu só tem desses aí, é? Estava precisando de 4, mas qual que é o valor dele à vista? Daquele mês e meio do outro não tem, é isso? Não tá tendo dele, não? Tu sabe quando vai chegar?"
+[12:34] CLIENTE: [áudio] "Assim que tu puder, tu me manda o valor desse bicho aí, à vista."
+[12:35] LOJA: [áudio] "Eu tenho nesse modelo aí, que é o Brutus, e vou ter o 265-7016 no modelo ATR, que eu vou mandar a foto aqui para vocês e os preços também. Tá, Joice Edivan?"  {audio:midias/3EB06F1008B117B2BC29BB_87971.ogg}
+[12:37] LOJA: [foto]
+[12:46] CLIENTE: [áudio] "Falou, falou, mande um outro aí, mande um outro aí pra me ver, mande a foto do outro aí e os valores, vou aguardar."
+[12:49] LOJA: [foto]
+[12:52] CLIENTE: [áudio] "Depois tu me manda uma foto deles aí, desses outros que tu tá falando aí."
+[12:52] LOJA: Sim!
+[12:52] LOJA: [foto]
+[12:53] LOJA: [áudio] "Prontinho, seu Edivan. Aí ele, o 245 e o 265 serão nesse desenho aí, tá bom?"  {audio:midias/3EB0F328D789C1D4DFDD18_410446.ogg}
+[12:53] LOJA: [áudio] "Aí, o 265-70-16, dá para fazer aqui por R$ 559,00, no débito e fixo também."  {audio:midias/3EB02AD657641725395972_905191.ogg}
+[13:25] LOJA: [áudio] "Sra. Edivan, o senhor vem aqui ainda hoje?"  {audio:midias/3EB09D8E6F73895C033D60_242594.ogg}
+[13:25] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[13:25] LOJA: [foto]
+[13:48] CLIENTE: [áudio] "Não, eu acho que eu vou aí na parte da tarde, amanhã. Eu acho que na parte da tarde, amanhã. Hoje não tem como que eu vou sair. Eu vou sair com o caminhão, agora já tá carregado, vou buscar água e vou descarregar agora na parte da tarde e amanhã, de manhã, eu vou pegar outra carga na parte da tarde, amanhã. Amanhã é sexta, né? Pode ser na parte da tarde, aí eu imposto aí."
+[13:48] CLIENTE: [áudio] "É, o endereço eu sei, eu já peguei contigo aí, já. Aqueles que eu te bati a foto é daí, eu sei, na BR."
+[15:18] LOJA: Combinado, sr Edivan!
+[15:18] LOJA: [áudio] "Perfeito, então, Sra. Edivan, te aguardo. Obrigada."  {audio:midias/3EB07478B16762D7E3CAC3_59638.ogg}
+--- 21/08/2026 (Fri) ---
+[09:40] LOJA: Bom dia, Sr Edivan...tudo certo para hoje?

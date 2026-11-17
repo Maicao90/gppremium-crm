@@ -1,0 +1,37 @@
+CONVERSA e06f4d9680 | contato: samuel maximo | 03/09/2026 09:31 até 10/09/2026 16:42 | 7 msgs do cliente, 15 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[09:31] CLIENTE: Bom dia
+[09:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:33] LOJA: *Josy:*
+🙋🏼‍♀️
+[09:37] CLIENTE: aro 13
+[09:38] LOJA: *Josy:*
+/132
+[09:38] LOJA: *Josy:*
+Pneu 175/70/13 r1 Dunlop R$ 371,69 (débito/pix)
+Pneu 175/70/13 82t Kelly Goodyear R$ 357,66 (débito/pix)
+Pneu GP Premium em *oferta* R$ 269,00 (débito/pix) Ou R$ 252,00 em *dinheiro*
+[09:39] CLIENTE: Esses sao remold ?
+[09:41] LOJA: *Josy:*
+Somente o de R$ 269,00, e é o pneu mais vendido por conta da qualidade , pois ele é de primeira linha , completamente diferente dos pneus remold convencionais . Se quiser faço um video para você.
+[09:41] LOJA: *Josy:*
+Manda um abraço para a Silvia!
+[09:45] LOJA: *Josy:*
+🙋🏼‍♀️
+[09:51] LOJA: [áudio] "Oi, Samuel. Bom dia. Eu sou a Josi Aline e gostaria de saber se você quer seguir aqui com a negociação, que eu tenho também aí os pneus novos da Dunlop, da Gudir no modelo Kelly. Me dá um retorno, por gentileza."  {audio:midias/3EB0DEF7C318A7441DD561_688952.ogg}
+[10:05] CLIENTE: [áudio] "Tudo bem, Josi? Eu tô fazendo uma cotação porque eu preciso trocar dois pneus do meu carro, só que eu queria, eu tava procurando um pouco mais em conta, mas eu acho que tá mais ou menos no valor desse pneu, esse pneu realmente ele é bem caro, né, mas eu tô fazendo algumas cotações pra eu ver, tá bom? Aí eu sei que vocês trabalham com remold, né, eu acho que é a fabricação própria de vocês, mas eu vou ver, eu vou te dando..."
+[10:07] LOJA: [áudio] "Sim, exatamente, compreendo. E você, né, que trabalha em concessionária, você sabe que pararam de produzir, né, veículos que saem de fábrica aí com aro 13, até o 14 tá começando a ficar extinto. Então, esses pneus de aros menores sempre serão mais caros. E essas são as opções mais em conta que eu tenho no dia de hoje, tá? E com a observação e o pneu GP Premium, como nós que fazemos eles, e eles têm um padrão muito criterioso, é um nível de exigência muito grande pra poder fazer esse pneu. Então, ele não é de qualquer jeito, ele é o pneu mais vendido que eu tenho. E se você quiser, eu faço aí um vídeo pra você poder ter uma noção de como ele é, tá?"  {audio:midias/3EB0A63612DEB1C249E8F8_346993.ogg}
+--- 10/09/2026 (Thu) ---
+[16:35] LOJA: *Josy:*
+Oi... tudo bem, Samuel...
+[16:35] LOJA: [vídeo]
+[16:40] CLIENTE: Oi Josy Tudo bem
+[16:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:40] CLIENTE: Josy eu vou segurar mais um tempo com os que tenho aqui
+[16:41] LOJA: [áudio] "Certo, então, Samuel. Eu vou encerrar aqui o seu contato, justamente para não ficar enchendo o seu WhatsApp de mensagens e, para finalizar, vou deixar aqui a nossa localização, tá bom? Qualquer coisa você faça aqui, então, na nossa empresa. Obrigada pelo seu retorno. Tenha um bom final de semana."  {audio:midias/3EB0F680405B004AFD464E_788077.ogg}
+[16:41] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:42] CLIENTE: Ta bom muito obrigado

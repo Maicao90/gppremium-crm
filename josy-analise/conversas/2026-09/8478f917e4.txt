@@ -1,0 +1,31 @@
+CONVERSA 8478f917e4 | contato: Stephanie Cardozo | 28/09/2026 12:07 até 28/09/2026 17:16 | 4 msgs do cliente, 11 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[12:07] CLIENTE: Olá! Vim pelo site e quero cotar pneus GP Premium.
+[12:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:07] LOJA: *Josy:*
+🙋🏼‍♀️
+[12:07] CLIENTE: 175/65/14
+[12:10] LOJA: *Josy:*
+Bom dia!
+[12:10] LOJA: [foto]
+[12:10] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:24] CLIENTE: qual a loclaização de voces por favor
+[12:25] LOJA: *Josy:*
+Somos de Luziânia-Go!
+[12:25] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:42] LOJA: [áudio] "Stephanie, boa tarde, tudo jóia? Você é daqui de Luziânia mesmo?"  {audio:midias/3EB0F7D1C235ECF5EA7E7B_579830.ogg}
+[16:49] CLIENTE: Oie boa tarde, o pneu nao é pra mim nao.
+É pro meu primo, ja passei o valor pra ele e a localização. 
+Obrigada viu
+[17:00] LOJA: *Josy:*
+Ah, sim!
+[17:16] LOJA: *Josy:*
+Quando seu primo vier, pede para ele dizer me que você realizou o orçamento.
+[17:16] LOJA: *Josy:*
+Obrigada pelo contato. Boa semana.

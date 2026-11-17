@@ -1,0 +1,31 @@
+CONVERSA a822d648fa | contato: Oficial de Justiça Federal SJDF Fabio Matos | 04/09/2026 18:24 até 05/09/2026 10:28 | 9 msgs do cliente, 12 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[18:24] CLIENTE: Olá! Quero um orçamento de pneus.
+[18:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:24] LOJA: *Josy:*
+🙋🏼‍♀️
+[18:24] CLIENTE: 205 50 17
+[18:25] LOJA: [áudio] "Olá, boa noite, tudo bem com você? Eu me chamo Josi e, a princípio, eu tenho aqui os pneus da marca GP Premium, onde a unidade está por apenas R$ 339,00 à vista. Você mora aqui na cidade de Luziana, em Goiás?"  {audio:midias/3EB0346FAB16337F3B5D45_449928.ogg}
+[18:25] CLIENTE: Não. Brasília
+[18:26] CLIENTE: [áudio] "Correr boa noite. Eu tava precisando só de um, na verdade, mas também é tão longe, né, que como meu estepe lá é aquele pequenininho, às vezes eu vou comprar até 2. Onde ficaria pra 2 e pra entregar em Brasília? No caso até eu vou aí amanhã. Espero que é tão longe, né? Qual é o frete que você tem?"
+[18:27] LOJA: [áudio] "Moço, aí o frete tem que ver com alguém que faça o frete, porque hoje nós não estamos trabalhando assim com entregas, entende?"  {audio:midias/3EB0E1595E8E7D4F3C5CB6_164557.ogg}
+[18:27] CLIENTE: Vcs tem representante aqui? Acho que vendia no supermercado.
+[18:28] LOJA: [áudio] "Sim, sim, realmente, isso mesmo. Olha, eu vou verificar, não neste momento porque já fechou, mas tem uma borracharia no Novo Gama que eu sempre mando pneus pra lá. Amanhã cedinho eu posso verificar isso pra você, pra facilitar."  {audio:midias/3EB0C854B0A5312F26072B_374701.ogg}
+[18:29] CLIENTE: Tinha o outlet dos meus pneus no Itapoã. Se tiver e melhor. 
+. Mas obrigado pela atenção.
+[18:29] LOJA: [áudio] "Não, não, não vai ter mais nessa região aí, não."  {audio:midias/3EB01A8358A9CBCA67BBC0_925476.ogg}
+[18:30] CLIENTE: [áudio] "Não tá bom porque eu moro em Sobradinho, mas pra ir até Luziânia só com step é complicado. Eu acabei de perder um Pirelli novinho. O carro tem 20 mil km, mas eu já tinha boas referências de vocês. Mas tá bom, se tiver lá, às vezes eu vejo com eles. Obrigado."
+[18:30] LOJA: [áudio] "Sim, sim. Aí amanhã, no primeiro horário, eu já verifico isso pra você, tá joia? Pode ficar tranquilo."  {audio:midias/3EB0D514CEF40B04B1912F_826888.ogg}
+--- 05/09/2026 (Sat) ---
+[10:20] LOJA: *Josy:*
+Bom dia! Bom dia!
+[10:20] LOJA: *Josy:*
+Fiquei de te dar um retorno a respeito do pneu 205/50/17, e não tem onde eu iria te encaminhar.
+[10:21] LOJA: [áudio] "Fico te devendo, tá, Fábio?"  {audio:midias/3EB026A095A02C04DBE100_645132.ogg}
+[10:21] CLIENTE: Obrigado
+[10:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:21] LOJA: [áudio] "Mas agradeço muito pelo seu contato, espero que você tenha um bom final de semana, tá joia? Até mais!"  {audio:midias/3EB0C5723DF821A8D7B619_205200.ogg}
+[10:28] CLIENTE: Igualmente

@@ -1,0 +1,11 @@
+CONVERSA 6a4f6bcf1c | contato: Marcela Dias | 10/09/2026 19:57 até 11/09/2026 08:00 | 1 msgs do cliente, 2 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[19:57] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[19:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 11/09/2026 (Fri) ---
+[08:00] LOJA: *Josy:*
+🙋🏼‍♀️

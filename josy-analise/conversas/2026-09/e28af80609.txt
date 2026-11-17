@@ -1,0 +1,16 @@
+CONVERSA e28af80609 | contato: - Ricardo De Moraes 😎 | 28/09/2026 16:50 até 28/09/2026 17:08 | 3 msgs do cliente, 7 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[16:50] CLIENTE: Boa tarde josy
+[16:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:51] CLIENTE: 195/55R15
+[17:00] LOJA: *Josy:*
+Boa tarde!
+[17:00] LOJA: *Josy:*
+Temos sim!
+[17:00] LOJA: [foto]
+[17:01] CLIENTE: Você saberia me dizer as classificações Inmetro desses pneus ?
+[17:05] LOJA: [foto]
+[17:06] LOJA: [foto]
+[17:08] LOJA: [foto]

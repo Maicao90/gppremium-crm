@@ -1,0 +1,19 @@
+CONVERSA 9b5d797f47 | contato: William José Braga | 29/08/2026 10:06 até 31/08/2026 18:17 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 29/08/2026 (Sat) ---
+[10:06] CLIENTE: Bom dia!
+[10:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:06] CLIENTE: Tem pneu 195/55 R15 da continental general altimax
+[10:07] LOJA: *Josy:*
+Não dispomos dessa opção de marca a pronta entrega, mas vou verificar com nossos distribuidores, na segunda feira, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[10:07] CLIENTE: Ok
+--- 31/08/2026 (Mon) ---
+[17:30] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Somente neste momento que eu consegui obter aqui a resposta e retorno dos meus distribuidores da Continental, tá?"  {audio:midias/3EB0938220DD58CCB179B8_844093.ogg}
+[17:30] LOJA: [foto]
+[17:31] LOJA: [áudio] "Eles terão essas três opções, que serão somente através de encomenda, chegam com três dias úteis, mediante um pagamento-calção de R$ 250,00. O orçamento é composto de valor unitário, onde na primeira coluna está o valor à vista correspondente a débito ou Pix. E se for para parcelar, seguem aí as opções de parcelamento em até 10 vezes."  {audio:midias/3EB0A0EDB8D82E5454B912_753002.ogg}
+[17:31] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB01D161C427433793A26_547327.ogg}
+[18:17] CLIENTE: Boa tarde!
+[18:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:17] CLIENTE: Eu já fiz a troca, obrigado!

@@ -1,0 +1,7 @@
+CONVERSA 7933638bab | contato: Thiago | 08/10/2026 08:22 até 08/10/2026 08:22 | 1 msgs do cliente, 2 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[08:22] CLIENTE: [áudio] "Bom dia, tudo bom? Eu sei que vende pneu para carreta."
+[08:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:22] LOJA: [áudio] "Oi, bom dia, tudo bom? Infelizmente não vendemos."  {audio:midias/3EB05BC96C6E102171BC51_755028.ogg}

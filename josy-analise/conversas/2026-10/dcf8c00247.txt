@@ -1,0 +1,41 @@
+CONVERSA dcf8c00247 | contato: 🙏🏼 | 08/10/2026 22:18 até 09/10/2026 15:24 | 12 msgs do cliente, 19 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[22:18] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+Oi
+[22:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[22:19] CLIENTE: 265/60 R18
+[22:19] CLIENTE: 4 pneus
+[22:40] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+Olá! Tenho interesse e queria mais informações, por favor.
+--- 09/10/2026 (Fri) ---
+[08:54] LOJA: Bom dia!
+[08:55] LOJA: [foto]
+[08:55] LOJA: Pneus da marca GP Premium
+[08:55] LOJA: No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:58] CLIENTE: Tem foto deles
+[08:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:58] CLIENTE: 265/60/18
+[08:59] LOJA: Pneus da marca GP Premium
+[08:59] LOJA: ATR 👇🏻
+[08:59] LOJA: [foto]
+[08:59] LOJA: Brutus👇🏻
+[08:59] LOJA: [foto]
+[09:00] CLIENTE: Vc faz a montagem deles ?
+[09:01] CLIENTE: Da lateral por favor
+[09:01] LOJA: Eles não tem escritas brancas, está bem!?
+[09:03] CLIENTE: Tá bom
+[09:04] CLIENTE: Eu acho é feio com as escritas brancas
+[09:05] CLIENTE: Mim manda a localização, mais tarde passo ai pra comprar 4
+[09:14] LOJA: Claro... mando sim!
+[09:15] LOJA: [foto]
+[09:15] LOJA: [vídeo]
+[09:15] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:16] LOJA: [foto]
+[15:16] LOJA: [áudio] "Olá, tudo bem com você? Mais cedo nós nos falamos e gostaria de agendar a sua vinda até a nossa loja. Qual que é o seu nome mesmo?"  {audio:midias/3EB0D85C6E136496EBD368_980301.ogg}
+[15:18] CLIENTE: [áudio] "Oi, boa tarde, tudo bem? Eu passei aí, eu falei com o rapaz aí, mas acabei resolvendo botar o Michelan mesmo. Já está instalando aqui. Obrigado, hein?"
+[15:24] LOJA: Bom final de semana!

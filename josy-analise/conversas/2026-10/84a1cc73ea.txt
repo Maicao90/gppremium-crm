@@ -1,0 +1,38 @@
+CONVERSA 84a1cc73ea | contato: Matheus Pereira | 04/10/2026 13:03 até 06/10/2026 17:42 | 7 msgs do cliente, 14 da loja, 0 do robô
+
+--- 04/10/2026 (Sun) ---
+[13:03] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[13:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:04] CLIENTE: pneu 17 195 40
+--- 05/10/2026 (Mon) ---
+[08:17] LOJA: *Josy:*
+Bom dia!
+[08:17] LOJA: *Josy:*
+No dia de hoje teremos 205/40/17
+[08:17] LOJA: [foto]
+[08:22] CLIENTE: Meu carro e baixo não
+[08:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:23] CLIENTE: Tem que ser Perfil baixo
+[08:26] LOJA: *Josy:*
+O perfil é baixo, o que mudou foi a largura 1 cm
+[08:26] LOJA: *Josy:*
+Vou verificar o dia que vai chegar o 195
+[08:38] LOJA: *Josy:*
+	
+185/35/17 fica muito pequeno aí no seu carro? Pois essa opção também tenho aqui!
+[08:48] CLIENTE: Quando tá o 185 35
+[08:59] LOJA: [foto]
+[08:59] LOJA: *Josy:*
+Pneu da marca Wanli...a unidade está por apenas R$ 449,00 a vista
+[09:00] CLIENTE: [áudio sem fala]
+[09:00] LOJA: [áudio] "Oi Matheus, bom dia, como é que você está? Não foi possível ouvir o seu áudio."  {audio:midias/3EB0C6A14C1ABA6695E72D_841149.ogg}
+[09:01] CLIENTE: [áudio] "Ah não, beleza. Eu falei que eu vou pesquisar mais um pouquinho e vou ver e te mando mensagem, beleza?"
+[09:03] LOJA: [áudio] "Beleza, Matheus. Você sabe onde fica aqui a nossa loja?"  {audio:midias/3EB01E1A488041C22E5870_828056.ogg}
+--- 06/10/2026 (Tue) ---
+[17:42] LOJA: [áudio] "Oi, Matheus, tudo jóia? Eu só vou deixar aqui na conversa, registrar a localização da nossa loja, tá bom?"  {audio:midias/3EB075CEE6E9D1B0804E53_80769.ogg}
+[17:42] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

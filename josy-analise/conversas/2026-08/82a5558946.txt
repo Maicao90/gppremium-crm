@@ -1,0 +1,33 @@
+CONVERSA 82a5558946 | contato: Biouse Cosméticos | 18/08/2026 15:19 até 18/08/2026 17:32 | 13 msgs do cliente, 15 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[15:19] CLIENTE: Boa tarde
+[15:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:19] CLIENTE: Aro 16 
+Pra camionete
+[15:19] LOJA: [áudio] "Oi, Arley, tudo bem com você?"  {audio:midias/3EB0778190082D6AE01567_191899.ogg}
+[15:20] LOJA: 235/70 ou 245/70?
+[15:20] CLIENTE: Qual pneu mais largo e alto vc tem
+[15:21] CLIENTE: Mais largo vc tem
+[15:22] LOJA: [áudio] "Eu só estou verificando, Alice, se eu vou ter o 265-70, porque me parece que ele tinha acabado, aí agora se você quiser alguma medida que seja bem diferente mesmo, aí eu preciso que você me diga, que daí eu posso ver se algum distribuidor meu tem, tá? Que opções que são fora das medidas originais, somente por encomenda mesmo."  {audio:midias/3EB09A4A83C8BD9F2D91F0_580501.ogg}
+[15:32] CLIENTE: [áudio] "É o 265-70-16, aquele fora de estrada, com aquela borracha fora de estrada, né? Eu acho, se eu não me engano, depois do 265 é o 300. Qual que é a medida depois do 265, você sabe?"
+[15:34] LOJA: [áudio] "Existe o 275."  {audio:midias/3EB049705A43B3F50737F0_500387.ogg}
+[15:57] LOJA: Vou cotar para você.
+[17:12] LOJA: Em falta.
+[17:23] CLIENTE: 265/75/16
+[17:23] CLIENTE: Tem
+[17:23] CLIENTE: Remold
+[17:24] LOJA: [áudio] "Sra. Warley, vai ter o 265-70-16."  {audio:midias/3EB00A7B5C9B005E6F35EA_544799.ogg}
+[17:24] CLIENTE: Qual desenho
+[17:25] LOJA: ATR
+[17:25] LOJA: [foto]
+[17:27] CLIENTE: Desenho Brutos
+[17:27] CLIENTE: Borracha lisa não
+[17:29] LOJA: [foto] 255/70/16
+[17:29] LOJA: [áudio] "Seu Barley vai ter o 255,70. Aí ele dá para fazer aqui por 539 a unidade, valor para débito e picos também."  {audio:midias/3EB077EB790EF441C5C287_283909.ogg}
+[17:30] CLIENTE: Tô achando medida 255 fina quero um pneu robusto
+[17:30] CLIENTE: Manda foto
+[17:32] LOJA: [áudio] "Na verdade, o 255, ele é um dedinho, é um centímetro."  {audio:midias/A5E7A406C836069B5D745E88348C9706_67725.ogg}
+[17:32] LOJA: [foto]
+[17:32] LOJA: [foto]

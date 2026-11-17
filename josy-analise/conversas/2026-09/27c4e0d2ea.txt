@@ -1,0 +1,38 @@
+CONVERSA 27c4e0d2ea | contato: “ | 04/09/2026 14:06 até 18/09/2026 15:57 | 11 msgs do cliente, 14 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[14:06] CLIENTE: Boa tarde
+[14:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:06] CLIENTE: 265/65/17
+[14:06] CLIENTE: Qual o valor
+[14:08] LOJA: [áudio] "Oi, Volney, como é que você tá homem? Rapaz, o GP Premium, ele está por R$ 559 a vista."  {audio:midias/A5B9F8BE3F6B390E8E158E3FFDE6BAF5_850332.ogg}
+[14:09] LOJA: [vídeo]
+[14:10] CLIENTE: Ok
+[14:11] CLIENTE: Bom demais
+[14:19] LOJA: [áudio] "É, Valneia, aqui o negócio tá meio complicado, mas enfim, tem aqui o GP Premium, né? Se for no débito ou no Pix, é 559, que ele é naquele modelo ATR. Aí, se você trouxer o pagamento em dinheiro pra mim, eu faço por 530 cada."  {audio:midias/A59834B5CD7ED14952F9224E13145322_15482.ogg}
+[14:30] CLIENTE: Ok
+[17:23] LOJA: [foto]
+--- 05/09/2026 (Sat) ---
+[09:41] LOJA: [áudio] "Oi, bom dia, como é que você está? Você quer que eu separo os pneus aqui para você?"  {audio:midias/3EB0300661BB966E157952_722446.ogg}
+[10:31] CLIENTE: Bom dia bom demais
+[10:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:31] CLIENTE: Na semana
+[10:31] CLIENTE: Eu te aviso
+[10:31] LOJA: *Josy:*
+Combinado meu jovem!
+--- 16/09/2026 (Wed) ---
+[14:51] CLIENTE: [áudio] "Boa tarde, deixa eu te falar, pneu aro 16, 55, 205, pro Logan, pode ser até 195, eu acho que é mais barato, né? Vê aí e você me fala."
+[14:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:54] LOJA: *Josy:*
+OI!
+[14:54] LOJA: *Josy:*
+Temos sim!
+[14:55] LOJA: [áudio] "Evonê, tudo jóia? Tem aqui sim, tá? O 205,55,16, 289 a vista. E o 1,95,55, ele de 289 estamos fazendo aqui por 2,59. Então, 1,95,55,16, 259. Valor para débito e Pix também."  {audio:midias/3EB0492A003E54429FF321_658334.ogg}
+[16:47] LOJA: *Josy:*
+Quer que separe os pneus para você?
+[17:12] CLIENTE: [áudio] "Amanhã eu te aviso, tá bom? Obrigadão."
+--- 18/09/2026 (Fri) ---
+[15:57] LOJA: [áudio] "Oi! Amei!"  {audio:midias/3EB09A087C13E146B6FCE4_816594.ogg}

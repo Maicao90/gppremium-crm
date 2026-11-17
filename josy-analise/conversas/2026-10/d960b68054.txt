@@ -1,0 +1,22 @@
+CONVERSA d960b68054 | contato: Naiara Machado 🤌🏿😌 | 01/10/2026 10:47 até 01/10/2026 12:06 | 7 msgs do cliente, 6 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[10:47] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:47] LOJA: *Josy:*
+Bom dia!
+[10:47] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:50] LOJA: *Josy:*
+?
+[10:50] CLIENTE: Queria um pneu mais conta
+[10:50] CLIENTE: Que não seja remound
+[10:51] LOJA: *Josy:*
+Você mora aqui em Luziania-Go?
+[10:51] CLIENTE: Mineiros
+[10:52] LOJA: *Josy:*
+Tem a possibilidade de vir aqui?
+[10:52] CLIENTE: Não achei q era de mineiros
+[10:52] CLIENTE: Obrigada
+[12:06] LOJA: *Josy:*
+Não somos, infelizmente.

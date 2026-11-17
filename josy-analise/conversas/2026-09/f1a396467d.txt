@@ -1,0 +1,34 @@
+CONVERSA f1a396467d | contato: Daniell😎 | 30/09/2026 21:28 até 01/10/2026 16:16 | 7 msgs do cliente, 15 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[21:28] CLIENTE: Boa noite
+[21:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[21:28] CLIENTE: Queria fazer um orçamento de quatro pneu 14!
+[21:29] CLIENTE: Pode ser pneu remote!
+--- 01/10/2026 (Thu) ---
+[08:11] LOJA: [áudio] "Olá, bom dia. Tudo bem com você, Daniel? Eu preciso que você me diga qual é a medida dos pneus que você precisa. Se você não sabe a medida, me diz qual é o seu carro, que eu verifico pela medida original e faço o seu orçamento."  {audio:midias/3EB09558FDE8F7BE292954_717895.ogg}
+[08:28] LOJA: 🙋🏼‍♀️
+[08:32] CLIENTE: É um gol g2
+[08:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:38] LOJA: *Josy:*
+Para seu veiculo, as melhores são...175/65/14 e 185/60/14
+[08:38] LOJA: [foto]
+[08:38] LOJA: *Josy:*
+Esses são os pneus da marca GP Premium
+[08:38] LOJA: *Josy:*
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:59] CLIENTE: [áudio] "Os quatro montados, alinhados e balanceados. Deixar tudo pronto, fica com tudo."
+[09:03] LOJA: [áudio] "Vou verificar aqui para vocês, já te passo, tá?"  {audio:midias/3EB0382F482B2A8A5FAA73_833369.ogg}
+[09:37] LOJA: *Josy:*
+* Balanceamento = 35,00
+* Alinhamento = 120,00 , mas são valores negociáveis. Fique tranquilo.
+[09:42] CLIENTE: Tudo com desconto fica quanto?
+[09:43] LOJA: *Josy:*
+Você vindo aqui, é mais facil de negociar com os mecânicos.
+[16:14] LOJA: [áudio] "Olá, você gostaria de agendar para vir aqui amanhã ou no sábado?"  {audio:midias/3EB0F8A0C74E8AF1012D6D_87831.ogg}
+[16:15] CLIENTE: [áudio] "O dia que der eu vou ir, eu sei onde é que é, meu pai compra o pneu direto, um caminhoneiro, eu fico nas estradas, aí eu não tô aí ainda não."
+[16:15] LOJA: [áudio] "Ah, sim. Perfeito, perfeito, Daniel."  {audio:midias/3EB0363EF27115FBA73F32_295118.ogg}
+[16:16] LOJA: [áudio] "Aí, igual eu te falei, né, tudo com desconto fica quanto? Eu não vou me atrever aqui no serviço dos meninos, porque, né, se for pra gente conversar, eles podem acabar esquecendo, aí por hora eu te passo o valor, que é o valor normal, mas você vindo aqui, você fica tranquilo que negocie esse valor do balanceamento, do alinhamento pra você, tá, já pode ficar tranquilo, é tudo valor negociável. Que aí, você estando aqui, você conversando pessoalmente com eles, fica mais fácil de você conseguir um desconto do que passar, assim, direto pelo WhatsApp, tá bom?"  {audio:midias/3EB0252BCE42928910DC4B_533218.ogg}

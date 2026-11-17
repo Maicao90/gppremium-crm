@@ -1,0 +1,7 @@
+CONVERSA 13bad0bb62 | contato: Marcos | 13/10/2026 18:04 até 13/10/2026 18:04 | 1 msgs do cliente, 2 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[18:04] CLIENTE: Quanto?
+[18:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:04] LOJA: 185/60/15 da marca GP Premium de R$ 289,00 por apenas R$ 249,00 a vista!

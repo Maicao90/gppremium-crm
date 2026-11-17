@@ -1,0 +1,35 @@
+CONVERSA 1f43fa7cd7 | contato: Pai, Mengão e Campeão🏆🫣 | 18/09/2026 20:39 até 26/09/2026 11:01 | 7 msgs do cliente, 12 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[20:39] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[20:39] CLIENTE: Manda preços dos pneus aro 16 e 13 e 14
+[20:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:50] CLIENTE: 205/55/ 16
+--- 19/09/2026 (Sat) ---
+[08:27] LOJA: *Josy:*
+Bom dia!
+[08:42] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Olha, eu tenho aqui R$ 205,55,16 por R$ 289,00. Pneus da marca GP Premium."  {audio:midias/3EB0E86DBDF26978ED4B88_814194.ogg}
+[09:36] LOJA: [áudio] "E você mora aqui em Luziânia mesmo? Todas essas medidas aí são para carros particulares? Fala aqui um pouquinho comigo."  {audio:midias/3EB0786B3A190F53F421CE_386908.ogg}
+[09:38] CLIENTE: Seu áudio não baixa só baixou um. Manda o valor escrito ver se vai
+[09:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:39] CLIENTE: [foto]
+[09:39] LOJA: *Josy:*
+Pneu da marca GP Premium 289,00 a vista.
+[09:40] LOJA: *Josy:*
+Essas medidas são para seus carros? Você tem auto center?
+[12:10] LOJA: [áudio] "Por hora, eu vou encerrar aqui o seu atendimento e vou deixar a nossa localização. Se houver a possibilidade, passa aqui na loja para nós conversarmos pessoalmente."  {audio:midias/3EB098794996A009331FD4_922384.ogg}
+[12:10] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:10] LOJA: [foto]
+[12:25] CLIENTE: Blz! No sábado ficar aberto até q horas?
+--- 21/09/2026 (Mon) ---
+[08:03] LOJA: *Josy:*
+Bom dia, nosso, horário de atendimento é de segunda a sexta das 08:00 às 18:00hr e sábado das 08:00 às 12:00.
+--- 26/09/2026 (Sat) ---
+[11:01] CLIENTE: Muito longe vê se acho um aqui em Águas Lindas de Goiás
+[11:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

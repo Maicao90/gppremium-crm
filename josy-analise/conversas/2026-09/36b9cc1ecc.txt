@@ -1,0 +1,41 @@
+CONVERSA 36b9cc1ecc | contato: Clodoaldo Braz | 24/09/2026 13:40 até 24/09/2026 16:44 | 7 msgs do cliente, 19 da loja, 0 do robô
+
+--- 24/09/2026 (Thu) ---
+[13:40] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[13:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:42] CLIENTE: Aro 13 165/70
+[13:54] LOJA: *Josy:*
+Boa tarde, tudo bem!?
+[13:54] LOJA: *Josy:*
+Temos sim!"
+[13:54] LOJA: *Josy:*
+Pneus da marca GP Premium
+[13:54] LOJA: [foto]
+[13:54] LOJA: *Josy:*
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:26] CLIENTE: Está promoção leva (4) e paga três como funciona!!
+[14:27] LOJA: *Josy:*
+A promoção compre 3 e leve 4 é válida para pneus da marca GP Premium, mas na medida 195/65/15 e 215/55/17 😉
+[14:28] CLIENTE: Os 4 pneus 165/70 aro 13, quando ficam.
+[14:28] LOJA: *Josy:*
+É a vista mesmo?
+[14:29] LOJA: [foto] Se for a vista R$ 239 x 4 pneus = R$ 956,00
+[14:29] LOJA: *Josy:*
+Se quiser já instalamos os pneus para você!
+[14:29] LOJA: [áudio] "Sr. Clodoaldo, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0885686AD8561F5BF9C_681899.ogg}
+[14:32] CLIENTE: Sim, aqui mesmo em Luziânia!
+[14:34] LOJA: [áudio] "Ah, que bacana, seu Clodoaldo. Se o senhor quiser parcelar, o senhor me fala que eu faço cálculo aqui, tá bom?"  {audio:midias/3EB08F7083680BEAA8A3D3_277056.ogg}
+[15:24] CLIENTE: Ver para mim o valor das parcelas
+[15:25] LOJA: [áudio] "Certo, mas em quantos você quer parcelar, Clodoaldo?"  {audio:midias/3EB0F95B8C809E458632A5_241824.ogg}
+[15:27] LOJA: 🙋🏼‍♀️
+[15:27] CLIENTE: Em cinco vezes
+[15:27] LOJA: *Josy:*
+Certo...
+[15:28] LOJA: [áudio] "Olha, em 5 vezes você vai pagar 5 parcelas de R$ 203,20."  {audio:midias/3EB00C41B9D96D64E27451_949532.ogg}
+[15:32] LOJA: [áudio] "E, se você quiser, já instala os pneus, tá bom?"  {audio:midias/3EB0BADE8B9B608BD510C2_687023.ogg}
+[16:23] LOJA: [áudio] "Quer que eu te encaminhe a nossa localização para que você possa vir aqui realizar a troca dos pneus, Clodoaldo?"  {audio:midias/3EB0104971D1584133CBA5_12088.ogg}
+[16:44] LOJA: [foto]

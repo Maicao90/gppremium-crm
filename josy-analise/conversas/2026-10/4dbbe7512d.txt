@@ -1,0 +1,13 @@
+CONVERSA 4dbbe7512d | contato: John John | 01/10/2026 11:04 até 01/10/2026 11:06 | 4 msgs do cliente, 3 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[11:04] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:04] CLIENTE: Olá bom dia
+[11:04] CLIENTE: Vc tem a camara de ar aro 17
+[11:04] CLIENTE: ?
+[11:06] LOJA: *Josy:*
+Bom dia, muitissimo obrigada por aguardar.
+[11:06] LOJA: *Josy:*
+Não.

@@ -1,0 +1,16 @@
+CONVERSA 5fdf2935f5 | contato: TECH BAND | 09/09/2026 11:16 até 12/09/2026 08:38 | 1 msgs do cliente, 5 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[11:16] LOJA: *Josy:*
+Bom dia, Mateus!
+[11:16] LOJA: [foto]
+[11:16] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 11/09/2026 (Fri) ---
+[15:29] LOJA: [áudio] "Oi, Matheus, tudo jóia? Eu te mandei um orçamento aí alguns dias atrás e gostaria de saber o que é que você achou, se eu posso reservar alguma daquelas opções para ti. Quando tiver um tempinho, me dá um retorno, teu jóia."  {audio:midias/3EB09492A3A969917FB147_933123.ogg}
+--- 12/09/2026 (Sat) ---
+[08:38] CLIENTE: [áudio] "Opa, minha amiga, bom dia. Me mandou mensagem ontem e vi. Eu tive um imprevistuzinho financeiro aqui, aí por enquanto eu não vou comprar por agora não, mas eu vou... Eu não comprei ainda, mas assim que eu for comprar eu te aciono aí, tá bom? Pra gente negociar aí um valor legal aí, tá bom? Provavelmente lá pro meio, pro fim do mês."
+[08:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

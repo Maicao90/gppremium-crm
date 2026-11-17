@@ -1,0 +1,38 @@
+CONVERSA 6770224626 | contato: 𝙰𝚍𝚛𝚒𝚎𝚕𝚕𝚢 🫧 | 20/10/2026 16:46 até 21/10/2026 14:34 | 9 msgs do cliente, 15 da loja, 0 do robô
+
+--- 20/10/2026 (Tue) ---
+[16:46] CLIENTE: Olá! Boa tarde, quero vê os preços do pneus aro 15
+[16:46] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[16:47] CLIENTE: Adrielly 
+Quero ver os preços sem a medida
+[16:47] LOJA: Qual é seu carro?
+[16:47] CLIENTE: Cobalt
+[16:48] LOJA: 195/65/15
+[16:48] CLIENTE: Ok
+[16:50] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:50] LOJA: [foto]
+[16:50] LOJA: O pneu da marca GP Premium está na promoção compre 3 e leve 4
+[16:50] LOJA: Digamos que seja a vista: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[16:52] CLIENTE: Vocês dão a instalação?
+[16:53] LOJA: Na compra dos pneus da promoção eles já são colocados.
+[16:54] CLIENTE: Ok! Obrigada 
+Logo logo entrarei em contato
+[16:54] LOJA: Mora aqui em Luziania-Go mesmo?
+[16:54] CLIENTE: Moro em cristalina GO
+[16:55] LOJA: Ah, sim!
+[16:55] LOJA: Nossa... tenho muitos clientes ai de Cristalina!
+[16:59] LOJA: Vou te mandar a nossa localziação, será uma satisfação receber você aqui!
+[16:59] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:59] LOJA: [foto]
+[16:59] CLIENTE: Que bom 🥰
+[16:59] CLIENTE: Obrigada
+--- 21/10/2026 (Wed) ---
+[14:34] LOJA: [áudio] "Te aguardo, tá?"  {audio:midias/3EB01A2D87C12F2CC4BAFD_25969.ogg}

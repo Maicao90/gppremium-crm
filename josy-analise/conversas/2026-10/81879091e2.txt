@@ -1,0 +1,21 @@
+CONVERSA 81879091e2 | contato: Ismael | 07/10/2026 12:14 até 08/10/2026 14:40 | 5 msgs do cliente, 8 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[12:14] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:15] LOJA: *Josy:*
+🙋🏼‍♀️
+[12:15] CLIENTE: 235 50 19
+[12:15] LOJA: [áudio] "Olá, tudo bem com vocês, Nael? Eu sou a Josi. Essa opção, eu não tenho ela aqui a pronta entrega, tá? Mas eu posso fazer uma cotação junto com os meus distribuidores e assim que eles me responderem, eu te passo marca, preço e prazo de entrega. Você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB03F5AEEA5EEC8EDB27D_813783.ogg}
+[12:16] CLIENTE: [áudio] "Oi Jules, tudo bem? Sim, sou daqui de Luziânia. Então tá bom, me enviam uma cotação desse pneu. Eu tava procurando um pneu mais barato, mais em conta, tá? Desses importados mesmo. Esses pneus mais requisitados aí, eles estão muito caros, né?"
+[12:17] LOJA: [áudio] "Realmente, estão muito caros. Então ficamos combinados dessa maneira, está bem? Eu vou solicitar para eles e eles me respondendo eu já te passo aqui de imediato, tá bom?"  {audio:midias/3EB07C1F6E011E9BCDA341_362187.ogg}
+[12:18] CLIENTE: 👍
+[12:18] LOJA: [áudio] "E o que você precisa é para carro elétrico ou não?"  {audio:midias/3EB0DDFE00784F78307622_649628.ogg}
+[12:18] CLIENTE: [áudio] "Não, meu carro é um Commander da Jeep, a Diesel."
+--- 08/10/2026 (Thu) ---
+[14:40] LOJA: Oiê... consegui um retorno aqui, mas tem somente para carro eletrico.
+[14:40] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:40] LOJA: [foto]

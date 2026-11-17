@@ -1,0 +1,11 @@
+CONVERSA f3dad0d586 | contato: Iago Carvalho | 28/08/2026 10:29 até 28/08/2026 10:31 | 4 msgs do cliente, 3 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[10:29] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:29] CLIENTE: Bom dia
+[10:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:29] CLIENTE: A loja e de qual cidade?
+[10:30] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Nós somos aqui de Luziânia, Goiás."  {audio:midias/3EB0746A0016664753FEF3_620310.ogg}
+[10:30] CLIENTE: Assim desculpa então mandei msg errado era para Paracatu
+[10:31] LOJA: [áudio] "Imagina que é isso. Obrigada pelo contato e que você tenha um bom final de semana."  {audio:midias/3EB07237D1346E9AC3F666_347271.ogg}

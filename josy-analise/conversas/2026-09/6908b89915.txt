@@ -1,0 +1,30 @@
+CONVERSA 6908b89915 | contato: Paulo | 11/09/2026 18:59 até 12/09/2026 10:38 | 9 msgs do cliente, 9 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[18:59] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[18:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:00] CLIENTE: 175 70 13
+[19:25] CLIENTE: Oi
+[19:25] CLIENTE: Jocy
+[19:31] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso?
+--- 12/09/2026 (Sat) ---
+[08:13] LOJA: [áudio] "Oi Paulo, bom dia, tudo bem com você? Paulo, o menor preço que eu vou ter aqui vai ser para o pneu da marca GP Premium, que de R$ 299,00 eu faço ele para você por R$ 269,00 a vista, tá jóia?"  {audio:midias/A532948A24558C0841950C889D77F79B_900289.ogg}
+[08:13] LOJA: [áudio] "É o mesmo orçamento que eu te encaminhei lá em julho."  {audio:midias/A50AC2B9D07718B83BC994D97BC3BC74_423784.ogg}
+[08:13] LOJA: [áudio] "Ainda tem nas nossas conversas."  {audio:midias/A52CB94CE409E25D283E251C3A7ABBA3_979377.ogg}
+[09:13] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+[09:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:14] CLIENTE: 175 65 13
+[10:07] LOJA: [áudio] "Olá, Paulo, tudo jóia? Olha, 175-65-13, não trabalho com essa opção, não."  {audio:midias/A56286EB21B59CB8FA9BB2C10A497108_393734.ogg}
+[10:30] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Tá bom
+[10:31] LOJA: [áudio] "Mas essa medida mesmo, Paulo, que nós até estávamos conversando, né, anteriormente, e eu te mandei o orçamento que você tinha pedido um 7570 mesmo, você falou comigo, foi lá em julho, aí você tinha me pedido um 7570."  {audio:midias/A57C1CF4B1B30F3E1EC13682F5F88CE9_538545.ogg}
+[10:33] CLIENTE: [áudio] "Oi, mas só que não era esse preço, não. Era um preço mais em conta. Era um preço, acho que, se não me falha a memória, você ia fazer 209. Só que eu ainda falei, não dá para levar os quatro por 800, lembra? Por isso que eu te falei, eu acho que você tem a conversa. Eu não tenho mais, porque meu celular, como que eu sou pastor, meu celular só fica de sete, sete dias, paga tudo, porque é muita conversa. Eu só salvo o mesmo documento."
+[10:38] LOJA: [áudio] "Ah, mas eu tenho aqui, acabou de carregar todas as conversas que nós tivemos. Na medida 175-7013, eu combinei com o senhor, se os pagamentos forem em dinheiro em espécie, a unidade vai ficar por R$ 255,00, tá? Então, os quatro pneus vão ficar por R$ 1.020,00. Tá, jóia? Eu localizei aqui."  {audio:midias/A598F59AFC1CDC2F9CD5531A3192519E_556956.ogg}
+[10:38] LOJA: [áudio] "Lembro, lembro sim, mas eu tenho aqui nas conversas. Acabou de carregar tudo que nós conversamos, tá?"  {audio:midias/A5C8545F562639EF7FBF46C4A62AFB19_204968.ogg}

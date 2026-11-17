@@ -1,0 +1,9 @@
+CONVERSA 772a4d315e | contato: Roseli | 07/10/2026 13:54 até 07/10/2026 14:01 | 3 msgs do cliente, 2 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[13:54] CLIENTE: [áudio] "Olá, boa tarde. Vocês da GP Pneus, eu tenho uma entrega de pneus para fazer para vocês aí, e queria confirmar com vocês, se o nome que bate na nota fiscal é o mesmo para vocês, que eu estou com o nome na nota fiscal aqui, com o nome de Itapoã Mecânica Pneus e Serviços Automotivo Limitada, é esse mesmo? Confirma para mim, faz favor."
+[13:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:55] CLIENTE: [áudio] "Eu sou o motorista do caminhão que está vindo lá de Curitiba com a carga de 700 pneus para vocês amanhã. Queria confirmar."
+[13:55] CLIENTE: [áudio] "Não, eu não quero comprar pneu, eu quero saber se a loja de vocês é esse nome que eu falei para vocês, que eu estou trazendo pneu para entregar para vocês, se vocês ficam na quadra 1, conjunto A, lote 01, sem número, tá? Etapo A, mecânica, pneus e serviços limitados, é esse o endereço de vocês?"
+[14:01] LOJA: [áudio] "Olá, boa tarde. Tudo bem? Essa é uma mensagem automática e os dados são divergentes. Aqui é a Pneus GP Premium, na cidade de Luziânia, Goiás."  {audio:midias/3EB0EC3605906608A679C6_839647.ogg}

@@ -1,0 +1,11 @@
+CONVERSA 673e9e7b1e | contato: Alê Costa 🇵🇾 | 21/09/2026 09:14 até 21/09/2026 09:25 | 3 msgs do cliente, 4 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[09:14] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:15] CLIENTE: Pneu 175/75/14
+[09:15] LOJA: [foto]
+[09:17] LOJA: [áudio] "Bom dia, tudo bem? Eu tenho aqui a pronta entrega, o final da máquina com fósser. A unidade está por 300 reais, se seu pagamento for à vista. Moro aqui em Luziânia mesmo?"  {audio:midias/3EB0CE12122F5D6B988A06_237478.ogg}
+[09:22] CLIENTE: [áudio] "Oi, tudo bom? A loja de vocês fica em Luziânia, não é no Cia, aqui em Brasília? Eu moro em Brasília."
+[09:25] LOJA: [áudio] "Não, não é aí não. Nós estamos somente aqui em Luziânia."  {audio:midias/3EB0222E6075E95CB705C8_776219.ogg}

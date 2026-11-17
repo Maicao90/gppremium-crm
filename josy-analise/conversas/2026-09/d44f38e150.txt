@@ -1,0 +1,9 @@
+CONVERSA d44f38e150 | contato: paulo mariano | 09/09/2026 12:11 até 09/09/2026 12:17 | 2 msgs do cliente, 3 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[12:11] CLIENTE: [foto]
+[12:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:15] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi e você mora aqui em Luziânia mesmo? Porque eu não trabalho com peças aqui."  {audio:midias/3EB0FCB429B562B68F10F6_229918.ogg}
+[12:16] CLIENTE: Desculpe foi engano
+[12:17] LOJA: [áudio] "Imagina! Tudo bem, até mais!"  {audio:midias/3EB020B12C9AC9F69F8613_381610.ogg}

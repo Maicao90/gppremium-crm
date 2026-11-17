@@ -1,0 +1,31 @@
+CONVERSA 9c4cdd2659 | contato: Ismerino | 29/08/2026 11:17 até 01/09/2026 10:18 | 8 msgs do cliente, 14 da loja, 0 do robô
+
+--- 29/08/2026 (Sat) ---
+[11:17] LOJA: [áudio] "Oi, seu Ismaelindo, como é que o senhor está? Alguns dias atrás nós estávamos conversando aqui a respeito dos pneus para o seu carro. Ainda está precisando?"  {audio:midias/3EB002E1E52113CE7ECBE5_122468.ogg}
+[12:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:40] CLIENTE: [áudio] "Oi, boa tarde, boa tarde. Sim, nós vai sim, a gente vai sim. Da próxima segunda a oito eu vou aí para arrumar eles, tá bom? Vai sim, vamos colocar sim, precisando. Boa tarde, tchau."
+--- 31/08/2026 (Mon) ---
+[08:13] LOJA: [áudio] "Bom dia, senhores Merino, tudo jóia? Ah, beleza então, tá? Somente hoje que eu consegui ouvir aqui seu áudio. Eu vou te mandar aqui sua localização só para ficar registrada na nossa conversa, tá bom? Aí o senhor vem aqui na fábrica GP Premium."  {audio:midias/3EB0CA36C0E66420CA6F67_364399.ogg}
+[08:13] LOJA: [foto]
+[08:14] CLIENTE: [áudio] "Oi moço, bom dia, bom dia. Não, tá tranquilo. Eu já tô prevendo amanhã à tarde, amanhã depois do almoço, tá uma passada aí pra ver se a gente já coloca logo. Amanhã na tarde, mas quando eu tiver saindo de casa eu aviso. Eu te mando uma mensagem aí e te aviso, tá bom? Eu vou uma consulta cedo lá no Gama e quando eu sair do hospital eu passo em casa e aí pretendo descer aí pra gente fazer esse serviço logo. Amanhã à tarde. Obrigado, bom dia, bom dia. Saúde, tchau."
+[08:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:19] LOJA: [áudio] "Ficamos combinados então, tá joia? Boa semana para o Senhor!"  {audio:midias/3EB095A90131622ECAB644_831577.ogg}
+--- 01/09/2026 (Tue) ---
+[10:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:02] CLIENTE: [áudio] "Oi, moça. Bom dia, bom dia. É seu Esmerino sobre os pneus. Eu estou descendo para aí agora. O valor ainda é aquele que você me falou semana passada. Eu estou descendo para aí agora para nós colocar os quatro pneus. Ainda é aquele valor que você me falou, que você mandou o orçamento para mim. Fala aí para nós rapidinho. É seu Esmerino. Tchau, tchau. Bom dia."
+[10:03] CLIENTE: [áudio] "Aro 16, tia. Aro 16. O rapaz passou a numeração para você, se eu não estou enganado, ele falou 164, não sei se é, foi o rapaz que me falou aí da entrada, e aí passou para você, você anotou aí, não anotou não? E aí eu já estou descendo para aí agora, para me fazer. Bom dia, bom dia, tchau."
+[10:03] CLIENTE: [áudio] "Aí, Josi, eu já estou descendo para aí agora. Vê aí com os rapazes a 16, qual é a numeração que você tem, rapidinho, para mim poder descer já sabendo. Obrigado, tchau."
+[10:04] LOJA: [áudio] "Oi, Sr. Esmerindo, bom dia. Como é que o senhor está?"  {audio:midias/3EB0029D1DE61E4926AF14_777049.ogg}
+[10:05] LOJA: [áudio] "Confere para mim, por gentileza, a medida dos pneus, porque aqui o meu WhatsApp apagou as conversas, deu instabilidade aqui."  {audio:midias/3EB0737490934FA04A6614_12377.ogg}
+[10:05] CLIENTE: [áudio] "Oi, bom dia, bom dia. Tem os pneus? Estou descendo para ir, para colocar logo, tá bom? Fala aí para nós, posso ir ou não? Bom dia."
+[10:05] CLIENTE: [áudio] "É aro 16, aro 16, aí o rapaz que me atendeu aí e falou contigo, falou para você a numeração, a numeração tal e a numeração tal, parece que é dois tipos de pneu que tem, que são aro 16, parece que é dois tipos de pneu aro 16."
+[10:06] LOJA: [áudio] "Sim, tem sim, seu esmerindo. Pode vir sim, tá?"  {audio:midias/3EB0F73B9AD4FAD02F838D_780224.ogg}
+[10:06] LOJA: [áudio] "O senhor tá vindo com o carro já pra fazer a montagem, né?"  {audio:midias/3EB0D6D27E9539943A5D91_48398.ogg}
+[10:07] CLIENTE: [áudio] "Sim, sim, já vou levar, já vou deixar pronto, é para deixar pronto, tá bom? Estou descendo para aí. Mais uns 20 minutos eu estou chegando, tá bom? Bom dia, tchau, tchau."
+[10:07] LOJA: *Josy:*
+Combinado!
+[10:18] LOJA: [áudio] "Aí, olha só, a porta aqui por onde o senhor entra, ela tá fechada agora, porque o menino tá jogando água, tá? Mas, chegando aqui, só falar comigo que ele levanta a porta, tá jóia?"  {audio:midias/3EB04E70AFDA1B8DAB2994_366883.ogg}
+[10:18] LOJA: [foto]

@@ -1,0 +1,140 @@
+CONVERSA 12ac8227da | contato: Jonathan  | 05/10/2026 14:43 até 10/10/2026 11:36 | 59 msgs do cliente, 57 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[14:43] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:43] LOJA: *Josy:*
+🙋🏼‍♀️
+[14:43] CLIENTE: qual o valor do pneu aro 15 195/55 ?
+[14:46] LOJA: [foto]
+[14:46] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:47] LOJA: [áudio] "Jonathan, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0A495F95ECACA6FB97D_724843.ogg}
+[14:47] CLIENTE: isso,em luziânia
+[14:47] CLIENTE: [áudio] "Você vai ter só essas opções aí ou tem outros modelos também, de outras marcas?"
+[14:48] LOJA: [áudio] "No dia de hoje, somente esses que eu te encaminhei, realmente."  {audio:midias/3EB09D2BF688176FDB5F02_978629.ogg}
+[14:48] LOJA: [áudio] "O que você está buscando, Jonathan?"  {audio:midias/3EB079F291ADB659BCAA5E_849333.ogg}
+[14:49] CLIENTE: [áudio] "Na verdade eu estou em mente 3 opções, essas duas que você mandou e essas duas primeiras né, que é Goodyear, John Loplin e Continental."
+[14:50] LOJA: [áudio] "Olha, o Continental, se uma distribuidora tiver, vai ser somente através de encomenda. Só que, pelo visto, hoje, eles não estão trabalhando para me responder em qual modelo que eles vão ter no estoque."  {audio:midias/3EB0EB64CE7649B17DCF59_768724.ogg}
+[14:51] LOJA: [áudio] "Eu só vou deixar de maneira digitada aqui no WhatsApp a marca que você está buscando para entrar dentro do meu histórico aqui de cotações. Eu já solicitei, mas assim que eles me responderem, quando me responderem eu te passo direitinho qual é o modelo e o prazo de entrega e o preço também, tá?"  {audio:midias/3EB0F47442CA16E7BAA4F5_183406.ogg}
+[14:51] LOJA: *Josy:*
+195/55/15 Continental
+[14:51] CLIENTE: [áudio] "Tá ok. Você sabe mais ou menos quanto está saindo o custo dele, desse continental? Só para ter uma ideia mais ou menos."
+[14:53] LOJA: [áudio] "Não, Jonathan, não sei. Justamente porque todos os dias os valores mudam."  {audio:midias/3EB03892A45DD3C3B0BFD2_37970.ogg}
+[14:53] CLIENTE: [áudio] "Não, tranquilo então, vou aguardar aqui, quando você conseguir o valor desse mundo, por favor."
+[14:53] CLIENTE: [áudio] "Qual lugar aqui de Luziânia fica longe de vocês?"
+[14:54] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:54] LOJA: [foto]
+[14:54] LOJA: [áudio] "Bem aqui, é na BR-040."  {audio:midias/3EB0B59FF9C98020CAC808_933373.ogg}
+[14:55] CLIENTE: [áudio] "Certo, deixa eu te perguntar, esses pneus, eles não são remolde, né?"
+[14:57] LOJA: [áudio] "O de 289 é sim, e é o pneu mais vendido que eu tenho, tá? Vendo ele muito mais, até mesmo que o Dunlop e Goodyear, justamente por conta da qualidade, que vai ser a mesma, porque a matéria-prima que nós usamos para fazer o pneu GP Premium é a dessas marcas aí."  {audio:midias/3EB08D4A0D1834AE8D84AC_446534.ogg}
+[15:08] CLIENTE: [áudio] "Não, tranquilo. Aí, no caso, só esse que é 200 e pouco, que é remote, os outros não são, né, no caso."
+[15:08] LOJA: *Josy:*
+Correto!
+[15:11] CLIENTE: blz
+--- 06/10/2026 (Tue) ---
+[09:24] LOJA: *Josy:*
+Bom dia!
+[09:24] LOJA: *Josy:*
+Acabei de obter um retorno da Continental
+[09:24] LOJA: [foto]
+[09:24] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:29] CLIENTE: [áudio] "Bom dia, tudo bem? Não, tranquilo. Eu acho que se eu for comprar, vou pegar esse goodie aí, ou esse do unlock. Eu tô vendo aqui certinho, aí que é uma coisa dentro de contato com vocês."
+[09:29] CLIENTE: [áudio] "Esses valores de à vista, no dinheiro, você consegue mais algum desconto ou esse já é o valor final?"
+[09:35] LOJA: [áudio] "Oi, Jonathan, bom dia. Esse já é o valor final, tá?"  {audio:midias/3EB03629B0079343057EC5_533054.ogg}
+[09:36] CLIENTE: bom dia,ta ok
+--- 09/10/2026 (Fri) ---
+[13:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:54] CLIENTE: [áudio] "Boa tarde, tudo bem? Qual que é o horário de funcionamento de vocês amanhã?"
+[13:55] LOJA: [áudio] "Oi, Jonathan, tudo bom? Olha, amanhã vai ser de 8 da manhã até o meio-dia."  {audio:midias/3EB09D270494AE7AB41B81_128171.ogg}
+[13:55] CLIENTE: [áudio] "Estava querendo comprar 2 pneus contigo. Só que o que acontece, amanhã eu não consigo buscar. Vocês fazem entrega?"
+[13:55] CLIENTE: [áudio] "O que eu saio de vocês dizem que era só uma hora. Uma hora vocês já fecharam aí."
+[13:55] LOJA: [áudio] "Jonathan, você é de onde?"  {audio:midias/3EB0C62E7DA0E07AEFBD8E_504299.ogg}
+[13:56] CLIENTE: [áudio] "Aqui de Luziânia mesmo. Seria para entregar aqui perto da CPP, aqui no centro."
+--- 10/10/2026 (Sat) ---
+[08:16] CLIENTE: bom dia
+[08:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:16] CLIENTE: vcs fazem entrega ?
+[08:34] LOJA: Bom dia, Jonathan...
+[08:34] LOJA: Estou sem carro para fazer entrega.
+[08:52] CLIENTE: ok obrigado
+[09:03] LOJA: Oi...
+[09:04] LOJA: [áudio] "Oi, Jonathan, eu consegui um carro para poder levar aí. Fala aqui comigo."  {audio:midias/3EB02D6F18048FC98E593C_565744.ogg}
+[09:09] CLIENTE: oii
+[09:10] CLIENTE: vou te mandar a localização
+[09:10] LOJA: [áudio] "Por gentileza, me manda o seu CPF, o seu nome completo e o CEP do seu endereço e é o pneu da marca GP Premium mesmo, que é para entregar aí, né? Me diz a quantidade e qual que é a forma de pagamento."  {audio:midias/3EB04EC8556A5AA7E3DCFB_282401.ogg}
+[09:12] CLIENTE: vai ser esse goodyear
+[09:14] CLIENTE: 70784637148
+72810-170 cep
+jonathan pereira duarte 
+900 em dinheiro e o restante no pix
+[09:14] CLIENTE: tem taxa de entrega ?
+[09:14] LOJA: São quantos pneus?
+[09:15] CLIENTE: 2
+[09:15] CLIENTE: 195/55 -15
+[09:20] CLIENTE: esse não é remold né ?
+[09:22] LOJA: nÃO...
+[09:24] CLIENTE: ok
+[09:25] CLIENTE: ficou quanto ?
+[09:26] LOJA: r$ 978,00
+[09:26] CLIENTE: faz o seguinte vou te mandar o cep lá de casa que é mais perto de vocês
+[09:26] LOJA: Assim que o motorista aparecer peço para levar
+[09:26] LOJA: Ok
+[09:26] CLIENTE: 72816380
+[09:27] LOJA: Rua guimarães rosa .. qd ? lt? ponto de refrencia?
+[09:29] CLIENTE: rua maria guimarães quadra 284 lote 22
+[09:30] CLIENTE: jardim luzilia
+[09:31] CLIENTE: quando chegar lá me avisa que mando o pagamento no pix
+[09:31] CLIENTE: ou quando tiver saindo pra entrega
+[09:32] LOJA: Quem vai estar lá para receber?
+[09:32] CLIENTE: [áudio] "É que agora eu tô no serviço, aí eu vou mandar entregar aqui no serviço, só que aí vai ficar ruim, vai ficar mais perto que vocês, vocês deixam em casa, eles me avisam quando chegar pra eu mandar o pagamento."
+[09:32] CLIENTE: [áudio] "Só tô confirmando aqui quem vai estar lá em casa pra receber pra gente avisar aí."
+[09:32] LOJA: Me manda a localziação  que eu mando para o motorista assim que ele chegar auqi
+[09:33] CLIENTE: ok
+[09:33] CLIENTE: [áudio] "Você consegue me mandar uma foto desse pneu?"
+[09:34] CLIENTE: [localização] -16.22797393798828,-47.93670654296875
+[09:34] CLIENTE: quem vai receber vai ser luiza ou antônia
+[09:38] LOJA: [foto]
+[09:38] LOJA: [foto]
+[09:44] LOJA: Certo... vou encaminhar a máquina para realização do pix está bem!
+[09:44] LOJA: Vou te mantendo informado sobre a saida dos pneus.
+[09:45] CLIENTE: o pix vou fazer aqui do serviço
+[09:45] LOJA: [áudio] "Jonathan, eu estou sem a chave Pix para poder passar, aí eu vou mandar a máquina, você manda o Pix para a pessoa poder passar na máquina, tudo bem?"  {audio:midias/3EB090847A9622D1FD7C19_535065.ogg}
+[09:48] LOJA: [áudio] "E deixa eu te falar, você disse que ia pagar 900 reais no dinheiro, aí a pessoa tá com o dinheiro também, né?"  {audio:midias/3EB034FBF0DAAE07ABCC33_655534.ogg}
+[09:48] LOJA: [áudio] "Você quer passar tudo no Pix?"  {audio:midias/3EB0C33AADC2EA924513F6_634042.ogg}
+[09:48] CLIENTE: [áudio] "Deixa eu ver se eu consigo alguém passar o Pix então, porque minha mãe já é de idade, ela não sabe mexer com essa parte de banco."
+[09:48] LOJA: Não consegui ouvir seu audio
+[09:49] CLIENTE: [áudio] "Eu vou ver se eu consigo alguém para passar o Pix, porque minha mãe já é de idade, ela não entende esse negócio de Pix."
+[09:50] CLIENTE: [áudio] "Eu ia mandar tudo no Pix. É porque o dinheiro está em mãos. Ele está aqui no serviço. Como eu recebi no serviço, aí eu trouxe o dinheiro para o serviço. Aí eu vou mandar em Pix. Tudo em Pix aí agora."
+[09:53] CLIENTE: [áudio] "Faz o seguinte, manda nesse primeiro CEP que eu te mandei, porque aí o dinheiro tá comigo e eu passo o Pix. É aqui no meu serviço."
+[09:53] CLIENTE: [localização] -16.250587463378906,-47.96056365966797
+[09:54] CLIENTE: [áudio] "Mandando esse endereço, que é no meu serviço, é o primeiro que eu te passei, o primeiro endereço, o primeiro CEP, que aí eu tô com o dinheiro aqui e o Pix. É porque lá em casa eu ia mandar o Pix daqui, entendeu? Pra você deixar lá em casa, que é mais perto pra ter pra vocês. Mas como não tá tendo o Pix em CNPJ ou número, aí eu passo daqui, daqui do meu serviço, que aí eu tô com o dinheiro, eu passo os 900 no dinheiro e o resto no Pix."
+[09:55] LOJA: Ok
+[09:56] LOJA: [áudio] "Eu tô saindo pra entrega e vou pedir pra deixar aí pra você, tá?"  {audio:midias/3EB05B2EAC7653BF79EC1F_819406.ogg}
+[09:57] CLIENTE: diogo machado
+[09:57] CLIENTE: quadra 56
+[09:57] CLIENTE: lote 11
+[09:57] CLIENTE: loja fabrício motos
+[09:57] CLIENTE: [localização] -16.250625610351562,-47.96065139770508
+[09:58] LOJA: Ok
+[09:58] CLIENTE: vai ser 900 em dinheiro e 78 no  pix
+[10:00] LOJA: Ok
+[10:49] CLIENTE: [áudio] "Muito obrigado, viu? Acabou de chegar aqui, entregou aqui certinho. Você só consegue me mandar uma notinha, por favor?"
+[11:09] LOJA: Mando sim!
+[11:11] LOJA: [documento]
+[11:11] LOJA: Jonathan... muito obrigada por tudo!
+[11:11] LOJA: Pode avaliar nosso atndimento no Google?
+[11:11] LOJA: https://da.gd/gp-avaliar
+[11:35] CLIENTE: eu que agradeço,muito obrigado!
+[11:36] CLIENTE: posso sim

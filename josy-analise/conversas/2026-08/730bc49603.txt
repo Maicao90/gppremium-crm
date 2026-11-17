@@ -1,0 +1,11 @@
+CONVERSA 730bc49603 | contato: Gaby | 29/08/2026 12:00 até 31/08/2026 08:15 | 1 msgs do cliente, 4 da loja, 0 do robô
+
+--- 29/08/2026 (Sat) ---
+[12:00] LOJA: [áudio] "Oi, Gabriela, tudo bom? Eu falei contigo alguns dias atrás, vi até que você ouviu aí o áudio, mas eu imagino que na correria você não conseguiu me dar um retorno. Eu vou encerrar aqui o seu atendimento, tá? E caso você precise, futuramente você me chama de novo, ou até mesmo se houver a possibilidade, passem aqui na nossa loja, que será uma satisfação receber vocês aqui, tá? Estava até justamente falando com o meu gerente, que ele me informou que o pneu da marca GP Premium, que é esse de 349, se vocês trouxerem pagamento em dinheiro, ele faz por 328 unidades. Então, se de repente for interessante pra vocês, tá jóia? Agradeço muito aí pela sua atenção, tenha um bom final de semana."  {audio:midias/3EB0D6DC20385B05CA0B58_611674.ogg}
+[12:00] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:15] CLIENTE: [áudio] "Eu não consegui mesmo, viu? Eu acabei ficando hospitalizada e aí acabei que, né, não consegui verificar, entendeu? Aquele dia que a gente conversou, eu acabei ficando internada, eu tive alta essa semana e acabei que não consegui ver, entendeu? Meu esposo tá chegando de viagem, aí ele vê pra você, ele vai ver com você, eu vou passar o seu número e aí ele vai ver certinho, entendeu?"
+[12:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 31/08/2026 (Mon) ---
+[08:15] LOJA: Bom dia! Nossa... espero que esteja bem Gabriela.

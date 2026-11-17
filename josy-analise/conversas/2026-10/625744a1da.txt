@@ -1,0 +1,20 @@
+CONVERSA 625744a1da | contato: Enzo Govastki | 08/10/2026 08:29 até 09/10/2026 11:41 | 2 msgs do cliente, 7 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[08:29] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Bom dia quais opcoes voces tem na medida 195 50 15
+[08:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:30] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[08:30] CLIENTE: E na 195 55 r15
+[08:31] LOJA: [foto]
+[08:31] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:37] LOJA: [áudio] "Enzo, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0960B5312F19AAA973D_10906.ogg}
+--- 09/10/2026 (Fri) ---
+[11:41] LOJA: Bom dia,  para não ficar enchendo seu whatsapp de mensagem , estou encerrando seu atendimento. 
+Caso precise futuramente, venha até nossa loja. 
+Será uma satisfação receber você aqui!
+[11:41] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

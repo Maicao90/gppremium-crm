@@ -1,0 +1,43 @@
+CONVERSA 959f0f3fe7 | contato: Elivânia Caixeta | 14/10/2026 14:49 até 15/10/2026 18:13 | 10 msgs do cliente, 17 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[14:49] CLIENTE: Boa tarde
+[14:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:49] CLIENTE: Gostaria de fazer um orçamento de valor de pneu
+[14:49] CLIENTE: [foto]
+[14:49] CLIENTE: Esse modelo?
+[14:50] LOJA: [foto]
+[14:50] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:51] CLIENTE: Qual marca?
+[14:52] LOJA: [foto]
+[14:53] LOJA: Pneu 175/65/14 86t  Dunlop R$ 397,00                                                                                           Pneu 175/65/14 86h Kelly Goodyear R$ 371,00 (débito/pix)
+Pneu GP Premium 175/65/14 em *oferta*  R$ 249,00 (débito/pix) Ou R$ 235,00 em *dinheiro*
+[14:54] LOJA: Mora aqui em Luziania-Go, Elivânia?
+[14:56] CLIENTE: Sim
+
+Vou fazer mais alguns orçamentos, e volto a entrar em contato
+
+Obrigada
+[15:14] CLIENTE: Uma pergunta
+[15:14] CLIENTE: Eles são remonte?
+[15:16] LOJA: Goodyear e Dunlop são das maras Goodyear e Dunlop.   O pneu da marca GP Premium é um pneu ecologocio que nossa empresa faz, e entra na categoria de remold apenas por questão  de especificação, pois são os pneus mais vendidos que tenho.
+[15:17] LOJA: Se quiser posso gravar um video para que você tenha melhor compreensão.
+[15:19] CLIENTE: Entendi 
+
+Tranquilo
+[15:19] LOJA: Creio que é melhor gravar para você!
+[15:19] LOJA: Me de um instante.
+[15:28] LOJA: [vídeo]
+[15:34] CLIENTE: Entendi 
+
+Obrigada pela explicação 
+
+Vou verificar mais alguns orçamentos e volto a retornar com você
+[15:38] LOJA: [áudio] "Elivânia, então vou fazer o seguinte, por hora eu vou encerrar o seu atendimento, justamente para não ficar enchendo o seu WhatsApp de mensagens, mas eu vou deixar registrada aqui a nossa localização, pois se você estiver com a disponibilidade de tempo, faça aqui na loja para nós conversarmos pessoalmente, para você conhecer a nossa empresa, e aí vendo o pneu pessoalmente, ainda você vai ter uma outra percepção, que minha câmera não está boa para poder mandar foto e vídeo, me esforço para poder mostrar o melhor aí, tá bom?"  {audio:midias/3EB012DB102DA436284DD5_13986.ogg}
+--- 15/10/2026 (Thu) ---
+[18:13] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[18:13] LOJA: [foto]
+[18:13] LOJA: [foto]

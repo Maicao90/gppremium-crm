@@ -1,0 +1,37 @@
+CONVERSA 1a1351dd62 | contato: Kobertec  Coberturas | 25/08/2026 16:27 até 26/08/2026 17:51 | 6 msgs do cliente, 17 da loja, 0 do robô
+
+--- 25/08/2026 (Tue) ---
+[16:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:27] CLIENTE: [foto]
+[16:27] CLIENTE: [áudio] "Boa tarde, tudo bem? Tem como ver se tem esse pneu aí para mim, para gente ler?"
+[16:29] LOJA: [áudio] "Olá, boa tarde, tudo bem? Você me dá um instante, por gentileza, porque meu sistema caiu, eu não estou conseguindo verificar se eu vou dispor aqui no meu stalk, tá?"  {audio:midias/3EB0BCCB7C7A79ACF36785_333897.ogg}
+[16:30] CLIENTE: [figurinha]
+[16:32] LOJA: [foto]
+[16:32] CLIENTE: [áudio] "São 4 pneus, tá?"
+[16:32] LOJA: [áudio] "Neste momento eu tenho a última unidade do pneu da marca Van Lee. Ele está por R$ 625,00 à vista."  {audio:midias/3EB04CE9A835F4E1CC9EBA_371338.ogg}
+[16:33] CLIENTE: [áudio] "Pois é, estou precisando de 4. Você tem esses 4 aí?"
+[16:33] LOJA: [áudio] "Não, a pronta entrega não tenho."  {audio:midias/3EB09D9DEFBBF0761F8FA9_70414.ogg}
+[16:33] LOJA: [áudio] "Você está em busca de alguma marca específica? Que eu posso ver se meu distribuidor tem? E é assim que ele me der uma resposta e eu te passo, porque agora você somente através de encomenda."  {audio:midias/3EB00A52AAAD6A0991A5A1_888252.ogg}
+[16:34] CLIENTE: [áudio] "Não tem específico não, vê só se você consegue os 4 e qual o menor preço você consegue."
+[16:43] LOJA: [áudio] "E vocês têm busca de alguma marca específica? Que eu só estou aguardando aqui para o meu distribuidor me informar."  {audio:midias/3EB0891752959E163F70A0_650244.ogg}
+--- 26/08/2026 (Wed) ---
+[10:46] LOJA: *Josy :*
+Bom dia!
+[10:47] LOJA: *Josy :*
+Consegui o retorno dos distribuidores refente a medida 235/55/19
+[10:47] LOJA: [foto]
+[10:48] LOJA: [foto]
+[10:48] LOJA: *Josy :*
+Pneu da marca Tracmax
+[10:48] LOJA: *Josy :*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.
+[10:48] LOJA: *Josy :*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:08] LOJA: [foto]
+[17:51] LOJA: 🙋🏼‍♀️
+[17:51] LOJA: [vídeo]

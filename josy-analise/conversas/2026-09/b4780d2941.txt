@@ -1,0 +1,20 @@
+CONVERSA b4780d2941 | contato: Valdo Eugenio | 08/09/2026 14:28 até 17/09/2026 09:47 | 2 msgs do cliente, 9 da loja, 0 do robô
+
+--- 08/09/2026 (Tue) ---
+[14:28] LOJA: *Josy:*
+Boa tarde!
+[14:29] LOJA: [foto]
+[14:30] LOJA: [foto]
+--- 11/09/2026 (Fri) ---
+[15:22] LOJA: *Josy:*
+🙋🏼‍♀️
+[15:22] LOJA: [vídeo]
+--- 17/09/2026 (Thu) ---
+[09:15] LOJA: [áudio] "Oi, Josevaldo, tudo bom? Eu tentei falar contigo aí alguns dias atrás, né? Até fiz um vídeo para nós tentarmos interagir, mas imagino que na correria você não conseguiu me responder. Então, eu vou encerrar aqui o seu atendimento, tá bom? Se você precisar de alguma coisa, é só me chamar aqui de volta ou então vem aqui na nossa loja para conversarmos pessoalmente. Muitíssimo obrigada por sua atenção. Até mais."  {audio:midias/3EB0B1ADAFDE6310423DE9_944607.ogg}
+[09:15] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:44] CLIENTE: [áudio] "Oi José, bom dia. Ah José, eu comprei o pneu aí com vocês aí, eu fui aí, eu sou aquele rapaz da Fiat Toro, e eu falei com você que eu ia instalar só em mês de novembro, né? Aí você falou pra mim entrar em contato com você aí, que aqui na Santa Maria fazia a troca dos pneus, né? Não sei se você lembra. Mas obrigadão aí, viu? Pelo carinho aí. Obrigado. Bom, excelente dia aí. Obrigado."
+[09:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:46] LOJA: [áudio] "Oi, seu José Valdo, bom dia, tudo jóia? Lembro sim, sabe o que que é? Que meu WhatsApp, ele ficou com instabilidade no final de semana, aí eu perdi aqui as mensagens, não aparecia mais o nome, ficou uma loucura. Aí por isso que eu fui falando com todo mundo novamente, porque eu perdi as conversas, tá jóia? Mas obrigada aí, tá bom? Tenha um dia abençoado e deixe já bom final de semana."  {audio:midias/3EB039579215085D242471_404617.ogg}
+[09:47] CLIENTE: 🙌🙌🙌🙌🙌

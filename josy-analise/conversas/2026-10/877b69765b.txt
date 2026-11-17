@@ -1,0 +1,10 @@
+CONVERSA 877b69765b | contato: 🥋 | 05/10/2026 11:58 até 05/10/2026 12:09 | 1 msgs do cliente, 3 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[11:58] LOJA: *Josy:*
+Bom dia, Marcos... a ligação caiu.
+[11:58] LOJA: *Josy:*
+Somos de Luziânia-Go.
+[12:09] CLIENTE: Bom dia
+[12:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

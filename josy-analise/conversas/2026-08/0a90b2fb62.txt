@@ -1,0 +1,11 @@
+CONVERSA 0a90b2fb62 | contato: Jailsom A Oliveira | 18/08/2026 13:32 até 18/08/2026 13:35 | 2 msgs do cliente, 5 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[13:32] LOJA: oi
+[13:32] LOJA: boa tarde
+[13:33] LOJA: estava com voce no telefone agora
+[13:33] LOJA: GP premium
+[13:34] CLIENTE: Opa
+[13:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:35] CLIENTE: 295

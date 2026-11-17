@@ -1,0 +1,19 @@
+CONVERSA ac85c5230c | contato: Isabel Dos Santos Cruz | 13/10/2026 17:50 até 13/10/2026 17:55 | 3 msgs do cliente, 8 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[17:50] CLIENTE: Boa tarde
+[17:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:50] LOJA: Boa tarde, Isabel!
+[17:50] CLIENTE: Tem aro 13
+[17:52] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:52] LOJA: [foto]
+[17:52] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:53] LOJA: Isabel.. os pneus de aro 13 da marca GP Premium estão em oferta!  Na medida 165/70/13 de R$ 279,00 por R$ 239,00 e 175/70/13 de R$ 299,00 por R$ 279,00 a vista!
+[17:54] CLIENTE: Eu comprei  2 aí tem  os  2 mês  agora  vou comprar  mas 1
+[17:54] LOJA: Excelente!
+[17:55] LOJA: Que dia passa aqui para montarmos o pneus para você?

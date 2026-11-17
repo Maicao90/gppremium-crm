@@ -1,0 +1,36 @@
+CONVERSA 3612f07d8a | contato: Claudio Kaya | 20/10/2026 14:58 até 21/10/2026 11:14 | 5 msgs do cliente, 12 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[14:58] LOJA: *Josy:*
+Boa tarde, tudo bem!
+[14:58] LOJA: *Josy:*
+Sou a Josy da pneus GP Premium.
+[14:59] CLIENTE: Boa tarde
+Qual o valor do pneu 14x175x60
+[14:59] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[15:00] CLIENTE: Claudio
+[15:01] LOJA: *Josy:*
+/Rogério...Não dispomos dessa opção de medida a pronta entrega.
+[15:01] LOJA: *Josy:*
+Pode ser 175/65/14?
+[15:02] CLIENTE: Pode ser?
+[15:03] LOJA: *Josy:*
+Pneu da marca GP Premium.
+[15:03] LOJA: [foto]
+[15:03] LOJA: *Josy:*
+De R$ 279,00 por apenas R$ 249,00 a vista.
+[15:05] CLIENTE: Ele e remold?
+[15:06] LOJA: *Josy:*
+Sim
+[15:45] LOJA: *Josy:*
+Está em busca de alguma marca especifica?
+[15:50] CLIENTE: O mais barato
+[16:00] LOJA: Então é o GP memso!
+--- 21/10/2026 (Wed) ---
+[11:14] ROBÔ: 🙋🏼‍♀️

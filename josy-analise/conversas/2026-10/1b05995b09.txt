@@ -1,0 +1,45 @@
+CONVERSA 1b05995b09 | contato: Douglas | 03/10/2026 11:28 até 03/10/2026 11:52 | 17 msgs do cliente, 21 da loja, 0 do robô
+
+--- 03/10/2026 (Sat) ---
+[11:28] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:28] LOJA: *Josy:*
+🙋🏼‍♀️
+[11:29] CLIENTE: 205/55/17
+[11:29] LOJA: [áudio] "Olá, bom dia, tudo bem com você Douglas? Eu me chamo Josi e eu tenho aqui sim os pneus da marca GP Premium que eles estão por apenas R$ 349 a vista. Você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB064AEFD92DC9C2CA37C_278193.ogg}
+[11:30] CLIENTE: [áudio] "Eu não moro em Luziânia, não. Eu moro em Cristalina. É aberta até que hora a loja?"
+[11:34] LOJA: *Josy:*
+R$ 349,00 no débito/pix
+[11:37] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:37] LOJA: [foto]
+[11:38] CLIENTE: Os pneus
+[11:38] CLIENTE: N e remolde
+[11:38] CLIENTE: Ne
+[11:38] CLIENTE: ??
+[11:39] LOJA: [áudio] "Douglas, eu te expliquei que esse pneu, o pneu que nós fazemos, é um pneu ecológico, ele vai entrar na categoria de remodelagem apenas por questão técnica. Você me perguntou se eles têm o selo do Inmetro de aprovação para utilização. Sim, eles têm, justamente porque são pneus de primeira linha. Eu vou te mandar o selo dele de aprovação. E Cristalina, todo mundo usa os pneus GP Premium porque sabe que é o pneu melhor que tem."  {audio:midias/3EB0D40EB98A1169B30B13_341148.ogg}
+[11:39] CLIENTE: Manda a foto
+[11:39] CLIENTE: Do pneu
+[11:39] LOJA: [áudio] "Eles têm 2 anos de garantia, tá jóia?"  {audio:midias/3EB00A504FCD3E3D6956EF_792506.ogg}
+[11:40] LOJA: [foto]
+[11:40] LOJA: [foto]
+[11:40] LOJA: [áudio] "Qual que é o seu carro mesmo?"  {audio:midias/3EB00C5EA695C582C26140_21430.ogg}
+[11:41] CLIENTE: Stilos
+[11:41] CLIENTE: 2010
+[11:41] LOJA: [foto]
+[11:41] CLIENTE: [áudio] "Ah, esse pneu aí é refeito, né?"
+[11:42] LOJA: [áudio] "Esse pneu, eu faço ele todinho novamente. Eu uso a mesma matéria-prima dos pneus da Goodyear, de primeira linha, tá? São pneus ecológicos, repito mais uma vez, que nós fazemos e eles entrarão na categoria de remodelagem, só que linha Premium. Justamente por isso são os pneus mais vendidos que eu tenho. Hoje mesmo, de Cristalina, eu já atendi 6 pessoas que sempre compram aqui comigo e super indicam os pneus, porque sabem que esses pneus são excelentes, tá?"  {audio:midias/3EB051F22962794C1DB295_727095.ogg}
+[11:42] LOJA: [áudio] "Só me confirmar realmente que você está vindo para eu pedir para os meninos te esperarem."  {audio:midias/3EB0E82FCBBD612DB08DB2_896827.ogg}
+[11:42] LOJA: [áudio] "Para poder fazer a montagem e te atender no que mais for necessário."  {audio:midias/3EB024C58A33675287ED53_500971.ogg}
+[11:43] CLIENTE: [áudio] "Não, eu não vou querer não, moça. Pender o remote não dá não."
+[11:43] CLIENTE: [áudio] "Porque eu vou viajar para longe, né? Eu vou viajar dois mil e tantos km. Um pneu remoto não dá para viajar de tarde."
+[11:44] LOJA: [áudio] "Moço, mas é aí que você não tá entendendo. Esse pneu não tem nada a ver com os pneus que são remoldos e eles não têm restrição de uso nenhuma. Tá vendo isso daqui? Esse selo aqui é o que atesta a qualidade do pneu. Se não tiver isso daí, não tem como comercializar."  {audio:midias/3EB06E237ED98FCCDC9A89_315466.ogg}
+[11:45] CLIENTE: [áudio] "Não, eu sei, mas, tipo, é complicado botar pneu que já foi usado, já foi todo refeito, entendeu?"
+[11:46] LOJA: [vídeo]
+[11:47] CLIENTE: [áudio] "É de ouvir aí o vídeo, esse pneu não é ruim mesmo não, entendeu?"
+[11:48] LOJA: [áudio] "Não, não é. E reforço mais uma vez, gente, quando você estiver andando pelas ruas, vai observando os pneus que as pessoas utilizam nos carros, que você vai ver de verdade o tanto de gente que utiliza os pneus da marca GP Premium, porque eles são, assim, surreais. Surreais."  {audio:midias/3EB0D451EACB6030149C84_911005.ogg}
+[11:48] LOJA: [áudio] "Mas, enfim, eu entendo o seu posicionamento e não posso obrigá-lo a nada. E eu cancelei aqui com os meninos, então, para te aguardar."  {audio:midias/3EB0C134B00E7241326D1A_248591.ogg}
+[11:48] CLIENTE: [áudio] "Pois é, mas ele é tipo um remote, né?"
+[11:51] LOJA: [áudio] "Como ele é um pneu que nós fazemos, é artesanal, então o Inmetro pede apenas para classificá-lo como remolde, tá? Porque existem processos de produção. O que que difere a marca GP Premium dos pneus remoldes? Que os pneus são remoldes mesmo? Igual eu te mostrei no vídeo aí rapidinho. Ele parece até mesmo um plástico, porque ele é feito como se fosse aquela... É a recapagem que chamam, né? Pega um pneu velho, passa uma cola em cima do pneu velho e prega uma banda de rodagem, isso. E o pneu GP Premium, ele não tem nada a ver com esse tipo de coisa, tá? Ele é um pneu que sim, eu vou utilizar uma estrutura de um pneu, só que é uma estrutura de um pneu que seja de idade recente, sabe quando... Tem gente, e acredite, tem muita gente que compra, por exemplo, um pneu de uma marca nacional, um continental, digamos. A pessoa compra o pneu, mas ela fala, ah, eu não quero, não quero mais, quero optar por um Michelin. Vocês compram, a gente compra, compra. E aí nós tratamos esse pneu e fazemos ele todinho novamente, tá? Então, ele tem um dote novo, porque nós utilizamos ele, nós mergulhamos ele dentro da borracha, todinho de novo. Nossa, assim, é um processo extremamente criterioso, assim, se eu for ficar contando parte por parte aqui, a gente vai ficar uma tarde inteira conversando. Mas, assim, o padrão dele é padrão A, primeira linha mesmo, tá? Já, então existe um processo todo pra poder fazer o pneu GPTremium."  {audio:midias/3EB0A1FEBF0880C5435547_250422.ogg}
+[11:52] LOJA: [áudio] "E só para te dar um esclarecimento a respeito da empresa a qual você disse, que lá está bem mais barato. Olha, todo dia eu atendo diversos clientes que fizeram seus orçamentos lá, preço do pneu realmente, assim, muito barato. Como é que eles vão ganhar? Justamente no serviço do carro, porque eles inclusive danificam peças do carro para poder cobrar. Então, realmente, você fique muito atento a esse tipo de coisa, tá?"  {audio:midias/3EB051689EA62AB84B4A1D_489642.ogg}

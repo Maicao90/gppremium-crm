@@ -1,0 +1,27 @@
+CONVERSA 018908784a | contato: Jefferson | 30/09/2026 13:39 até 02/10/2026 15:17 | 6 msgs do cliente, 10 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[13:39] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:39] CLIENTE: Vcs tem pneu 205/40 r18
+[13:39] CLIENTE: Ou 215/40
+[13:45] CLIENTE: ?
+[14:00] LOJA: *Josy:*
+Boa tarde... obrigada por aguardar a intrnet está com isntabilidade.
+[14:01] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[14:03] CLIENTE: Ok
+[14:03] CLIENTE: Obg
+[14:28] LOJA: [foto]
+[14:28] LOJA: *Josy:*
+Por ora consegui essas opções
+[14:28] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:46] LOJA: *Josy:*
+205/40/18 👇🏻
+[14:46] LOJA: [foto]
+--- 02/10/2026 (Fri) ---
+[12:45] LOJA: [áudio] "Oi Jefferson, tudo jóia? Você me pediu um orçamento aqui a respeito dos pneus 018, eu te mandei aí as opções que o distribuidor vai ter, e eu gostaria muito de saber se você pretende seguir com a negociação. Será que você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0E97582326D4058450F_127769.ogg}
+[15:17] LOJA: [áudio] "Oi Jefferson, tudo bom? Eu te encaminhei um orçamento aí, já foi na quarta-feira, foi justamente o dia que nós estávamos aqui com a estabilidade na internet, mas eu te mandei aí todas as opções que eu consegui com o meu distribuidor. Eu gostaria muito de saber se você pretende seguir com a negociação. Assim que possível você consegue me dar um retorno, por gentileza."  {audio:midias/3EB0FFEC882AEB1A82C086_956771.ogg}

@@ -1,0 +1,8 @@
+CONVERSA 930d4b3fbb | contato: Edivan De Souza Curado | 14/08/2026 08:36 até 16/08/2026 06:58 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 14/08/2026 (Fri) ---
+[08:36] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[08:38] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 16/08/2026 (Sun) ---
+[06:56] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[06:58] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

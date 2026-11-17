@@ -1,0 +1,43 @@
+CONVERSA 7ea0209526 | contato: Junior Ventura ☢️ | 16/10/2026 08:52 até 20/10/2026 08:52 | 10 msgs do cliente, 19 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[08:52] CLIENTE: Bom dia
+[08:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:02] LOJA: Bom dia!
+[09:02] LOJA: Qual a medida dos pneus que você precisa hoje?
+[09:06] CLIENTE: 245/70/16
+[09:17] LOJA: [áudio] "Olá, bom dia! Tudo bem com você, Júnior? Tenho aqui sim, a princípio, o pneu da marca GP Premium. Ele está na oferta por apenas R$ 479,00 para o pagamento à vista."  {audio:midias/3EB0B4068871ECC63658ED_979885.ogg}
+[09:17] LOJA: [foto]
+[09:17] LOJA: Pneu da marca GP Premium
+[09:17] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:18] LOJA: [foto]
+--- 17/10/2026 (Sat) ---
+[08:37] LOJA: [áudio] "Bom dia, Júnior. Como é que você está? Eu me chamo Josi e eu te encaminhei um orçamento ontem referente ao pneu 245-7016. Gostaria de saber se você teve a oportunidade de analisar o orçamento e também se pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0F3C3B637B57F6DD2EC_667753.ogg}
+[08:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:41] CLIENTE: [áudio] "Bom dia, bom dia, tudo bom? Eu verifiquei. Só que eu tava verificando aqui, eu comprei esse carro tem um ano e aí ele já veio com essa marca de pneu. Inclusive o rapaz comprou, disse que não tinha rodado 500km nele. Aí deu problema, eu comprei, arrumei e dois pneus dessa mesma marca deslocou."
+[08:43] LOJA: [áudio] "Júnia, eu não sei quando que a pessoa comprou aí os pneus, né, pra instalar na caminhonete, mas dependendo do que estiver acontecendo, dependendo do tempo que foi realizada a compra, nós podemos fazer a análise, pois se estiver dentro dos critérios de garantia, nós podemos trocá-los, sem problemas, tá? Mas aí, no caso, eu preciso da via de compra, ou então do nome da pessoa, para que eu possa carregar aqui no meu sistema a questão da caminhonete. garantia, e aí nós podemos fazer a análise, sem problema algum."  {audio:midias/3EB0D68748D502F5316D07_655940.ogg}
+[08:45] CLIENTE: [áudio] "Só um minuto que eu vou te passar o nome dele, pra você ver se a compra foi no nome dele, senão eu ligo pra ele pra ver se foi no nome da loja. Ele tem uma loja também, eu também tenho um centro automotivo."
+[08:45] LOJA: [áudio] "Ah, sim! Que bacana isso!"  {audio:midias/3EB043A0538312CC5E8487_979111.ogg}
+[08:47] CLIENTE: Orcino Pereira da Silva
+[10:29] CLIENTE: Conseguiu verificar? Se precisar passo o CPF dele
+[10:30] LOJA: [áudio] "Oi Júnior, tudo jóia? Pois é, eu não consegui localizar o nome dele não, eu ia até te mandar mensagem agora."  {audio:midias/3EB0416ADEE989CA1715F6_823459.ogg}
+[10:30] CLIENTE: Quer tentar pelo CPF dele?
+[10:30] LOJA: [áudio] "Sim, posso tentar."  {audio:midias/3EB09491AC60FC2C9A5807_544219.ogg}
+[11:34] CLIENTE: 78429030263
+[11:42] LOJA: Encontrei aqui, a garantia expirou por data, ele realizou a compra em 2024
+--- 20/10/2026 (Tue) ---
+[08:46] LOJA: [áudio] "Oi Júnior, tudo jóia? Nós estávamos nos falando aqui, né, a respeito dos pneus aí para caminhonete, e de todo modo, né, a opção que eu tenho aqui no dia de hoje é o GP Premium, eu vou te mandar aqui a nossa localização, pois se houver a possibilidade, você passa aqui na loja para nós conversarmos pessoalmente, certinho?"  {audio:midias/3EB00934BB8BD1D7E13D71_691845.ogg}
+[08:46] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:46] LOJA: [foto]
+[08:52] CLIENTE: Bom dia
+[08:52] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu NOME
+👉 A MEDIDA dos pneus que você precisa.
+[08:52] CLIENTE: Ok

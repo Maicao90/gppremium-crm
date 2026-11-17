@@ -1,0 +1,29 @@
+CONVERSA fe87080c6b | contato: 🥰 | 22/10/2026 07:33 até 22/10/2026 10:07 | 7 msgs do cliente, 6 da loja, 11 do robô
+
+--- 22/10/2026 (Thu) ---
+[07:33] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[07:33] ROBÔ: Oi, tudo bem?
+[07:33] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[07:34] CLIENTE: Qual o preço do  aro 15?
+[07:34] ROBÔ: 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+[07:34] CLIENTE: 185/60
+[07:34] ROBÔ: Temos o pneu *175/65/14* da marca *GP Premium* está saindo por *R$ 249,00 à vista*.
+[07:34] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[07:34] ROBÔ: 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+[07:34] ROBÔ: Temos o pneu *185/60/15* da marca *GP Premium* está saindo por *R$ 249,00 à vista*.
+[07:34] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[07:36] CLIENTE: Comprando os 4  fica quanto no parcelamento?
+[07:36] ROBÔ: Sim, parcelamos em até 10x no cartão.
+[07:38] CLIENTE: Quero saber se para parcelar tem juros?
+[07:38] ROBÔ: Tem sim um jurinho em cada parcela — o valor à vista é sempre o mais em conta.
+[07:38] ROBÔ: Em quantas vezes você quer parcelar? Vindo até a loja a gente também consegue negociar melhor.
+[08:12] LOJA: Em quantas vezes você quer parcelar?
+[09:52] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Por gentileza, me dizem quantas vezes que você quer parcelar, que eu calculo aqui para ti."  {audio:midias/3EB03E0D3169F2D9D3DB6A_197910.ogg}
+[09:53] CLIENTE: [áudio] "Bom, moça, bom dia. Eu não respondi porque eu estou precisando colocar 4 pneus no meu carro, meu carro é uma Space Fox e eu estou precisando colocar 4 pneus nela, mas nesse momento eu não estou podendo porque eu estou com uma pessoa da família internada no hospital e não estou podendo sair daqui. Então, eu estava aproveitando aqui e fazendo pesquisa de preço, entendeu? Mas assim que eu... tiver um tempo, eu entro em contato, tá bom? Seria 4 vezes, 5 vezes no máximo, tá bom? Isso é 4 pneus que eu preciso, mas assim, é porque eu realmente eu estou... eu estava fazendo pesquisa de preço, mas realmente eu estou sem tempo nesse momento, tá? Nessa próxima... essa semana próxima eu não vou ter tempo. Tá bom? Obrigada pela gentileza e pela atenção."
+[09:56] LOJA: [áudio] "Não, não tem problema, é porque daí eu já deixo alinhado aqui com você para nós conversarmos posteriormente. Você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB009DD60A713D2701C3A_938106.ogg}
+[10:00] LOJA: [áudio] "Olha, como esse pneu está na oferta, em 4 vezes ele vai para R$ 262,00. Você vai pagar um pneu por mês apenas."  {audio:midias/3EB00B3417246B07B6B76F_101701.ogg}
+[10:00] LOJA: [áudio] "E você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB09F7211941172AD1AF3_218840.ogg}
+[10:04] CLIENTE: [áudio] "Moça, eu moro no Gama, tá bom? Eu moro no Gama. É porque eu tô aqui no hospital com a minha sobrinha e eu tava aqui sentada sem fazer nada, aí tava fazendo pesquisa de preço, tá bom? Mas qualquer coisa eu entre em contato com você, tá? Porque no momento eu não tô tendo tempo não. Obrigada."
+[10:07] LOJA: [áudio] "Sem problemas. Que dê tudo certo aí e melhora sua joia. Até mais."  {audio:midias/3EB0963EB81646D1255CC3_323722.ogg}

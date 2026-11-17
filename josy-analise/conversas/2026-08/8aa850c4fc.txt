@@ -1,0 +1,41 @@
+CONVERSA 8aa850c4fc | contato: Chico V | 29/08/2026 09:09 até 02/09/2026 23:34 | 8 msgs do cliente, 14 da loja, 0 do robô
+
+--- 29/08/2026 (Sat) ---
+[09:09] CLIENTE: Bom dia quanto está o seu pneu 
+R.14/175/70?
+[09:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:10] CLIENTE: R.14
+175/70
+[09:12] LOJA: Bom dia, Sr Francisco...como vai!
+[09:13] LOJA: [foto]
+[09:13] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:13] CLIENTE: Estou ótimo
+[09:14] LOJA: *Josy:*
+Sr Franciso... o Pneu GP Premium está em oferta...por R$ 279,00 no debito ou pix, e em *dinheiro* em espécie fica por R$ 265,00 cada
+[09:18] CLIENTE: Esse de 265.00
+Tem garantia de quanto tempo?
+[09:18] LOJA: *Josy:*
+2 anos
+[09:19] CLIENTE: Hoje fica aberto até que horas?
+[09:20] LOJA: *Josy:*
+Hoje é até meio
+[09:21] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:21] CLIENTE: Vou air na segunda feira te procuro aí
+[09:21] LOJA: *Josy:*
+Combinado, sr Francisco.
+[09:21] LOJA: [foto]
+[09:22] CLIENTE: Eu ja fui ai com meu irmão Paulo Valença
+[09:23] LOJA: *Josy:*
+Ah, sim!!!!
+[09:23] LOJA: *Josy:*
+Que bacana!
+--- 02/09/2026 (Wed) ---
+[17:43] LOJA: [áudio] "Oi, Francisco, tudo jóia? Nós conversamos aí na semana passada, né, a respeito de uns pneus aí para o seu carro, e eu gostaria de saber se você quer que reserve eles aqui para você vir buscar amanhã. Ontem não deu para você passar aqui, né? E aí, me dá um retorno que eu já peço para os meninos deixarem tudo alinhado aqui para nós."  {audio:midias/3EB0BB95C58C582BB68BD1_783331.ogg}
+[23:34] CLIENTE: Boa noite meu anjo não até então não
+[23:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

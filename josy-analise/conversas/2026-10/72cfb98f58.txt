@@ -1,0 +1,67 @@
+CONVERSA 72cfb98f58 | contato: Danillo Silva Alves | 06/10/2026 09:55 até 07/10/2026 08:30 | 17 msgs do cliente, 28 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[09:55] CLIENTE: Bom dia!
+[09:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:55] CLIENTE: albumMessage
+[09:55] CLIENTE: [foto]
+[09:55] CLIENTE: [foto]
+[09:56] CLIENTE: Qual preço?
+[09:59] LOJA: *Josy:*
+Bom dia, Danilo...tudo jóia?
+[09:59] LOJA: [foto]
+[09:59] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:01] CLIENTE: [foto]
+[10:01] CLIENTE: [áudio] "No caso, esse 206-60 GTI GT01. É esse mesmo modelo que eu te mandei aí, né? Mandei de novo aí outra foto."
+[10:01] CLIENTE: [áudio] "A numeração não, só o modelo do pneu."
+[10:02] LOJA: [áudio] "Danilo, eu não estou conseguindo ouvir o seu áudio, nenhum deles está abrindo aqui para mim."  {audio:midias/3EB083382732DC6DDDD0C5_807182.ogg}
+[10:02] LOJA: [áudio] "Mas eu vi que aí no carro tá 195-65-15, né? E esse pneu, ele está na promoção Compre 3 e Leve 4."  {audio:midias/3EB03F0B1E4BFC8E9AAF66_528644.ogg}
+[10:03] LOJA: [foto]
+[10:03] LOJA: *Josy:*
+Digamos que seja a vista: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[10:15] LOJA: *Josy:*
+Oooiii
+[10:26] CLIENTE: Opa
+[10:27] CLIENTE: Vou precisar somente de 1 pneu, consegue desconto no pix?
+[10:36] LOJA: *Josy:*
+195/65/15 R$ R$ 296,00
+[11:11] CLIENTE: [áudio] "Me manda a chave fixa que eu vou fazer o pagamento e o rapaz vai retirar aí pra mim."
+[11:12] LOJA: [áudio] "Danilo, não está dando para ouvir o seu áudio de jeito nenhum. Só me diz uma coisa, no 205-6015, você vai querer ele mais nesse modelo liso, que é igual ao 195-65, ou você vai querer ele no modelo mais borrachudo?"  {audio:midias/3EB04180A344B7950C8D3C_537232.ogg}
+[11:12] LOJA: [foto]
+[11:13] CLIENTE: Pode ser desse modelo
+[11:14] CLIENTE: Os dois
+[11:14] LOJA: *Josy:*
+Liso
+[11:14] LOJA: *Josy:*
+Certo... então vamos alinhar aqui.
+[11:14] LOJA: *Josy:*
+Serão 2 pneus 205/60/15
+[11:15] LOJA: *Josy:*
+e 1 pneu 195/65/15.
+[11:15] LOJA: *Josy:*
+É isso mesmo?
+[11:15] CLIENTE: Isso
+[11:17] LOJA: *Josy:*
+874,00 valor total para os 3 pneus
+[11:18] LOJA: *Josy:*
+Pix
+[11:18] LOJA: *Josy:*
+24.289.955/0001-79
+[11:20] CLIENTE: [documento]
+[12:04] LOJA: *Josy:*
+Certinho, obrigada!
+--- 07/10/2026 (Wed) ---
+[07:22] CLIENTE: [vídeo]
+[07:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:08] LOJA: [áudio] "Oi Danilo, bom dia, tudo jóia?"  {audio:midias/3EB0948F33B476761E6D70_362068.ogg}
+[08:12] LOJA: *Josy:*
+Danilo, se houver a possibilidade , trás de volta.
+[08:13] LOJA: *Josy:*
+Mas quando eu entreguei , eu conferi os 2 pneus em ambos os lados, e não havia nada.
+[08:27] CLIENTE: Pois é, mas não tem como o pneu cortar sem ser colocado ou usado
+[08:30] LOJA: 😉

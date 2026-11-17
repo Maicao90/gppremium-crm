@@ -1,0 +1,17 @@
+CONVERSA 7a0e8cdc99 | contato: Linda song | 21/08/2026 05:21 até 21/08/2026 05:21 | 1 msgs do cliente, 1 da loja, 0 do robô
+
+--- 21/08/2026 (Fri) ---
+[05:21] CLIENTE: Estimado amigo，
+
+Espero que você esteja bem.
+
+Meu nome é Linda, Gerente de Exportação da QINGDAO DIGNIO PNEU CO., LTD
+Encontrei seu negócio de distribuição de pneus online.
+
+Somos fornecedores chineses de pneus para carros (PCR) e caminhões‑ônibus (TBR).
+Todos os modelos que comercializamos possuem certificação *INMETRO* válida para importação no Brasil.
+Nossos pneus são resistentes ao desgaste, ideal para longas estradas brasileiras.
+
+Posso enviar‑lhe a lista dos tamanhos mais vendidos?
+[05:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

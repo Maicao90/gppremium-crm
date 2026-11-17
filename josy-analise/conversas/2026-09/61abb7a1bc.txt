@@ -1,0 +1,59 @@
+CONVERSA 61abb7a1bc | contato: Weslen Barbosa | 29/09/2026 21:10 até 13/10/2026 08:49 | 16 msgs do cliente, 23 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[21:10] CLIENTE: Olá! Vim pelo site e quero cotar pneus GP Premium.
+[21:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[21:11] CLIENTE: 235/60/16 qual valor por favor
+--- 30/09/2026 (Wed) ---
+[07:57] LOJA: *Josy:*
+Bom dia, Weslen...jóia?
+[07:57] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[07:58] LOJA: *Josy:*
+Mas temos 215/65/16 . Se quiser faço o orçamento.
+[09:31] LOJA: 🙋🏼‍♀️
+[09:38] CLIENTE: Faz por favor
+[09:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:05] CLIENTE: Esse
+[10:07] LOJA: *Josy:*
+235/60/16
+[10:47] CLIENTE: Qual a medida mais próximo dessa aí que vcs tem
+[10:48] LOJA: [foto]
+[10:49] LOJA: [áudio] "É o 215-65-16, tá? Justamente porque essa medida do 235, quem tem instalado no seu carro está migrando justamente para o 215, porque é uma opção que além de trazer mais economia para o veículo, ela é muito mais fácil de encontrar. No dia de hoje eu tenho os pneus da marca TrackMax, a unidade está por R$ 377,00, e esse valor é para o pagamento à vista WTPix, e tenho também os pneus da marca GP Premium, que a unidade está por R$ 349,00 à vista."  {audio:midias/3EB01421431E00C17265A0_242082.ogg}
+[10:50] CLIENTE: [áudio] "O meu carro é um Tiggo e esse pneu fica muito baixo para ela. A caixa de rodas dela é muito grande e esse pneu fica muito fino."
+[10:50] CLIENTE: [áudio] "Vou te mandar uma foto para você ver o pneu que está lá. Eu teria que aumentar o tamanho da roda para ter mais cobertura de espaço."
+[10:51] CLIENTE: [foto]
+[10:51] CLIENTE: [áudio] "E essa roda aí é original dela, né? Eu não queria fugir do padrão, do tamanho do pneu, porque o espaço dela aí é muito grande e eu não queria botar uma roda maior."
+--- 01/10/2026 (Thu) ---
+[08:33] LOJA: *Josy:*
+Bom dia, obrigada por aguardar Welsen... acabei de conseguir um orçamento de 235/60/16
+[08:34] LOJA: [foto]
+[08:34] LOJA: *Josy:*
+Pneu da marca DOUBLEKING
+[08:34] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 12/10/2026 (Mon) ---
+[10:53] CLIENTE: [áudio] "Oi Josi, bom dia. Manda para mim a foto daquele pneu que nós fizemos o orçamento dele primeiro aí, do 215, para mim ver o formato dele, por favor. 215 que você mandou para mim."
+[10:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:53] CLIENTE: Esse
+[10:57] CLIENTE: [áudio] "Oi, Josi. Deixa eu te falar, eu vi uns pneus da GP Premium com as letras pintadas, né? Na cor vermelha e branca. Se eu quisesse esse detalhe no pneu, vocês entregariam para nós pintar? Ou é só de amostra?"
+--- 13/10/2026 (Tue) ---
+[08:19] LOJA: Bom dia! Não fazemos em outras medidas, ele foi desenvolvido para os pneus de corrida.
+[08:20] LOJA: [áudio] "Aí, o 215-65, me dá só um instante que eu vou mandar foto para você, tá bom, Luziânia?"  {audio:midias/3EB0F2082C94ED516EABA5_545077.ogg}
+[08:29] CLIENTE: [áudio] "Tudo bem, Luzi."
+[08:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:34] LOJA: [foto]
+[08:34] LOJA: [foto]
+[08:34] LOJA: [foto]
+[08:35] CLIENTE: [áudio] "Josi, ele é largo, né? Essa medida é um pouco largo, né?"
+[08:35] CLIENTE: [áudio] "Então, eu queria uma medida, essa 215, ela é larga, né? 16, aro 16, 60, 65, que eu tô vendo aqui ainda, mas eu vou comprar com vocês, tô querendo achar uma medida que fica legal no carro."
+[08:36] LOJA: 215/65/16
+[08:38] LOJA: [áudio] "Oi Wesley, tudo jóia? Então, como você está em busca do 2, 3, 5, 60, igual conversamos já anteriormente, não faça esse pneu aqui. Nós não produzimos, tá? Ele é somente por encomenda, inclusive até tinha mandado um orçamento para você da marca da Balking, que é o que o meu distribuidor tinha até então. Essas medidas assim, como elas quase não têm saída, então eu não mantenho elas no meu estoque, é só por encomendar mesmo. O que eu tenho aqui é a pronta entrega, o 215-65-16, tá?"  {audio:midias/3EB047713751131FE01CED_767921.ogg}
+[08:40] CLIENTE: [áudio] "Não, tudo bem, eu vou avaliar aqui e vou tentar achar uma medida próximo do 35 aí, do 235. Se eu não achar, aí eu volto aí e a gente fecha o negócio, tá bom?"
+[08:49] LOJA: [áudio] "Não tem problema não, Wesley, tá? Fica à vontade aí. Essa medida do 235, todo mundo que usa ela em Duster, Tucson, todo mundo migrando para o 215-65, porque é mais fácil de encontrar."  {audio:midias/3EB009DB7CB49AC693FEC1_221896.ogg}

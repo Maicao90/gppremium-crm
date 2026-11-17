@@ -1,0 +1,25 @@
+CONVERSA 38ae8daa47 | contato: Pizza do Sul | 19/09/2026 10:55 até 19/09/2026 11:34 | 6 msgs do cliente, 5 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[10:55] LOJA: *Josy:*
+Bom dia!
+[10:55] CLIENTE: *Oi! Que bom ter você na Pizza do Sul* 😊  
+
+*Funcionamos todos os dias das 17:30 as 23:00hs*
+
+ 🗒️ ➡️ Pedidos agora são feitos direto pelo WhatsApp.  
+
+NA COMPRA DE QUALQUER COMBO GANHE *TAXA DE ENTREGA GRÁTIS*
+
+Qual seu pedido hoje??? 😍
+[10:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:56] CLIENTE: bom dia
+[10:56] LOJA: *Josy:*
+Oie
+[10:56] CLIENTE: 17 225 50
+[11:11] LOJA: [foto]
+[11:12] LOJA: [áudio] "Oi, Fabiano. Obrigadão por aguardar. Deu certo, tá? Aí, no dia de hoje, eu tenho aqui o pneu da marca Sany, a unidade está por R$ 524,00, e eu tenho o R$ 215,50 da GP Premium por R$ 329,00. De repente, se te atender..."  {audio:midias/3EB06437CDAB1DCA519EAD_2470.ogg}
+[11:33] CLIENTE: tava com.pressa
+[11:34] CLIENTE: aí acabei comprando já
+[11:34] CLIENTE: obrigado pela atenção

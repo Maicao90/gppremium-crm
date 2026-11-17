@@ -1,0 +1,31 @@
+CONVERSA 389ea619e3 | contato: Helton  Lopo😎😎 | 18/08/2026 16:51 até 19/08/2026 15:08 | 8 msgs do cliente, 16 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[16:51] CLIENTE: Boa tarde
+[16:51] LOJA: Boa tarde
+[16:51] LOJA: Olá! Seja muito bem-vindo à GP Pneus. 🛞 Meu nome é Atendente. Como posso te ajudar hoje?
+[16:51] CLIENTE: [áudio] "Quanto é que tá o pneu 14 seus aí?"
+[16:52] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu sou a Josi e eu tenho aqui a partir de R$ 239,00 a vista. Depende da medida que você está buscando."  {audio:midias/3EB00451DEFD7E1718027B_52655.ogg}
+[16:53] CLIENTE: [áudio] "Mas fica aonde a loja? A loja sua fica aonde aqui?"
+[16:54] CLIENTE: [áudio] "Mas não é remold não, né?"
+[16:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:55] CLIENTE: [áudio] "E eu passei na porta agorinha aí, ó."
+[16:56] LOJA: volta aqui então
+[16:56] LOJA: [áudio] "Aqui só fecha às 6 da tarde."  {audio:midias/3EB048CCDA166CF6522F0C_711115.ogg}
+[16:57] CLIENTE: [áudio] "Ah tá, se não der tempo hoje, amanhã eu vou ir."
+[16:57] LOJA: [áudio] "Venha! Venha sim!"  {audio:midias/3EB071F14B55C470F79748_135839.ogg}
+--- 19/08/2026 (Wed) ---
+[08:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:35] CLIENTE: [áudio] "O pneu que eu falei para você é o 175-65-14. Quanto que está o valor dele aí?"
+[08:35] CLIENTE: 175 6514
+[08:38] LOJA: Bom dia
+[08:38] LOJA: vou fazer o orçamento e ja te envio
+[08:45] LOJA: [foto]
+[08:45] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:05] LOJA: OI!
+[15:05] LOJA: [vídeo]
+[15:08] LOJA: As opções te atendem ou está em busca de algo especifico?

@@ -1,0 +1,13 @@
+CONVERSA 938e17f085 | contato: Aviva promoções | 21/09/2026 17:11 até 21/09/2026 17:23 | 4 msgs do cliente, 3 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[17:11] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[17:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:12] CLIENTE: Vcs tem o pneu
+[17:12] CLIENTE: 225/65/17
+[17:15] LOJA: *Josy:*
+Mora aqui em Luziânia-Go??
+[17:19] CLIENTE: Nao
+[17:23] LOJA: *Josy:*
+Ah sim...

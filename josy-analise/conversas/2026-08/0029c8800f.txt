@@ -1,0 +1,17 @@
+CONVERSA 0029c8800f | contato: Adelino Felix Da Silva | 29/08/2026 09:19 até 02/09/2026 19:46 | 1 msgs do cliente, 7 da loja, 0 do robô
+
+--- 29/08/2026 (Sat) ---
+[09:19] LOJA: *Josy:*
+Bom dia!
+[09:19] LOJA: *Josy:*
+	
+pneu 205/70/15c 106/104r super 2000 hifly
+[09:20] LOJA: [foto]
+[09:22] LOJA: [foto]
+[09:22] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 02/09/2026 (Wed) ---
+[17:24] LOJA: [áudio] "Olá, tudo bem com você? Eu te encaminhei um orçamento alguns dias atrás e gostaria de saber se você quer que reserve os pneus para você. Consegue mandar o retorno, por gentileza?"  {audio:midias/3EB0DF8765D07401D16D30_955310.ogg}
+[19:46] CLIENTE: Já comprei
+[19:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

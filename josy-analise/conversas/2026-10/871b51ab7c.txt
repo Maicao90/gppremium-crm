@@ -1,0 +1,40 @@
+CONVERSA 871b51ab7c | contato: Neiton 🚐 Tio TOM | 19/10/2026 16:26 até 21/10/2026 12:38 | 6 msgs do cliente, 12 da loja, 1 do robô
+
+--- 19/10/2026 (Mon) ---
+[16:26] CLIENTE: Boa tarde!
+[16:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:27] CLIENTE: 225-75-16
+[16:27] CLIENTE: 215-75-16
+[16:34] LOJA: *Josy:*
+Parqa cargas, certo?
+[16:50] LOJA: *Josy:*
+Teremos 225/65/16C
+[16:50] LOJA: *Josy:*
+Te atende?
+[16:58] CLIENTE: Não!
+[16:58] CLIENTE: Carga
+[17:00] LOJA: Infelizmente estão em falta essas medidas, mas vou confirmar com nossos distribuidores.
+--- 20/10/2026 (Tue) ---
+[08:17] LOJA: *Josy:*
+Bom dia!
+[08:17] LOJA: *Josy:*
+225/75/16C vai ser somente por encomenda consegui o retorno da marca Nébula
+[08:18] LOJA: *Josy:*
+Pneu de 8 lonas
+[08:18] LOJA: [foto]
+[08:18] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor UNITÁRIO do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:55] CLIENTE: Bom dia!
+Obrigado!
+[09:55] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+--- 21/10/2026 (Wed) ---
+[12:38] ROBÔ: 🙋🏼‍♀️

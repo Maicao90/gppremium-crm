@@ -1,0 +1,21 @@
+CONVERSA 08f354bde1 | contato: jackson santos | 22/10/2026 09:40 até 22/10/2026 09:43 | 8 msgs do cliente, 1 da loja, 7 do robô
+
+--- 22/10/2026 (Thu) ---
+[09:40] CLIENTE: Bom dia
+[09:40] CLIENTE: Tudo bom
+[09:40] ROBÔ: Oi, tudo bem?
+[09:40] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[09:40] CLIENTE: [documento] Para a vaga que está aberta ai
+[09:40] ROBÔ: Bom dia! Por aqui eu cuido só do atendimento de venda de pneus, então não tenho informação sobre vaga de emprego.
+[09:41] ROBÔ: Se precisar de pneu pro seu carro, me passa a medida (ex.: 175/65/14) ou o modelo que eu já te passo o valor.
+[09:41] CLIENTE: .
+[09:41] CLIENTE: Obrigado
+[09:41] ROBÔ: Tranquilo! Qualquer dúvida ou se quiser fechar, é só me chamar por aqui.
+[09:42] CLIENTE: Fechar oque?
+[09:42] ROBÔ: Desculpa, me expressei mal! Falei em fechar a compra de pneus, caso você precise.
+[09:42] ROBÔ: Se precisar, é só me mandar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro que eu te passo o valor.
+[09:42] LOJA: [áudio] "Oi, tudo jóia? Olha, desculpa que o meu WhatsApp tá com instabilidade, eu tô mandando mensagem para outras pessoas e ele tá bagunçando tudo, desculpa."  {audio:midias/3EB0B94A8D6869282D51C0_548373.ogg}
+[09:42] CLIENTE: Então vamos la!
+Vocês divulgaram no Instagram a vaga que está aberta na loja 
+Mandei mensagem deixando o meu currículo para concorrer a vaga
+[09:43] CLIENTE: Tudo bem 🥺

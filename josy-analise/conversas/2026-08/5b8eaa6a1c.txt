@@ -1,0 +1,32 @@
+CONVERSA 5b8eaa6a1c | contato: Ouromaq Refrigeração | 20/08/2026 11:17 até 21/08/2026 09:41 | 8 msgs do cliente, 16 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[11:17] CLIENTE: Bom dia
+[11:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:18] CLIENTE: Quanto tá o pneu 215/65 r16
+[11:23] LOJA: Bom dia!
+[11:23] LOJA: Temos sim!
+[11:23] LOJA: 1 instante.
+[11:25] LOJA: [foto]
+[11:25] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:26] CLIENTE: Está incluso a montagem?
+[11:27] LOJA: Os pneus de R$ 349,00 sim!
+[11:29] LOJA: Quantos pneus posso reservar para você?
+--- 21/08/2026 (Fri) ---
+[09:35] LOJA: 🙋🏼‍♀️
+[09:35] CLIENTE: Ola bom dia
+[09:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:36] CLIENTE: Acho que meu pai ja comprou ontem
+[09:36] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu estou entrando em contato para saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB095F1286A44385902B6_292654.ogg}
+[09:36] LOJA: [áudio] "Ah, sério? Quem é o seu pai?"  {audio:midias/3EB0DE1721183D104E29F7_296119.ogg}
+[09:36] CLIENTE: Disse que comprou 2 ontem pra pajero prata
+[09:36] CLIENTE: Nao sei se foi ai na sua loja
+[09:36] CLIENTE: Falei pra ele ir ai
+[09:40] LOJA: Sem problemas!
+[09:41] LOJA: De todo modo vou deixar aqui registrada a nossa localização.
+[09:41] LOJA: Tenha um bom final de semana.
+[09:41] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

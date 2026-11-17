@@ -1,0 +1,45 @@
+CONVERSA cbecdb9e01 | contato: 😉 | 26/08/2026 09:33 até 26/08/2026 12:06 | 13 msgs do cliente, 17 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[09:33] CLIENTE: Opa bom dia
+[09:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:33] LOJA: *Josy :*
+Opa bom dia
+[09:34] CLIENTE: Vc tem o pneu 215/65 R16?
+[09:34] CLIENTE: Qual o valor?
+[09:36] LOJA: [foto]
+[09:36] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? No dia de hoje eu tenho essas duas opções de marcas à pronta entrega. Você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0BED5E670E362B944E4_659465.ogg}
+[09:40] CLIENTE: Vc monta tmbm
+[09:41] CLIENTE: Tem da marca dunlop
+[09:41] LOJA: *Josy :*
+Hoje, não.
+[09:42] LOJA: *Josy :*
+Somente as marcas acima.
+[09:54] CLIENTE: Sabe onde eu encontro?
+[09:55] LOJA: *Josy :*
+Aqui em Luziânia-Go, não sei realmente, pois aqui eu abasteço as outras empressas.
+[09:55] CLIENTE: Ok, obg!
+[09:56] LOJA: *Josy :*
+Sim!
+[11:17] LOJA: *Josy :*
+Vou te encaminhar a nossa localização, se possível passa aqui para conversarmos pessoalmente!
+[11:17] LOJA: *Josy :*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:47] CLIENTE: Ok
+[11:50] CLIENTE: Vou aí trocar os 4 pneus
+[11:51] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu sou a Josi. E quando possível, só me diz qual o seu nome para poder salvar aqui o seu contato? Certo, venha sim. Eu já te mandei a nossa localização aqui em Luziânia. A nossa empresa fica ao lado da Goiás Diesel e Hotel Goiás."  {audio:midias/3EB00291282236CFFBA460_23673.ogg}
+[11:53] CLIENTE: Wallison
+[12:00] CLIENTE: Quanto fica tudo no pix?
+[12:01] LOJA: *Josy :*
+Os pneus GP Premium já são instalados. os 4 ficam por 1.396,00
+[12:01] LOJA: *Josy :*
+Já os serviços, vou fazer um preço bom para você.
+[12:02] LOJA: *Josy :*
+posso fazer o valor de carro pequeno
+
+* Balanceamento = 35,00 (por pneu a ser montado)
+* Alinhamento = 120,00 (Alinhamento de Direção)
+[12:03] CLIENTE: Ok
+[12:03] CLIENTE: Blz
+[12:06] LOJA: [áudio] "O Alisson aqui fica do lado da Goiás Diesel e do Hotel Goiás, na BR-040 em Luziânia. Aí você vem cá, então, para nós conversarmos pessoalmente, tá, Joia?"  {audio:midias/3EB0F68660BDDC1F270871_723600.ogg}

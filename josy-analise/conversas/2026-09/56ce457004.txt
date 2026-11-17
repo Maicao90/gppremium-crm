@@ -1,0 +1,23 @@
+CONVERSA 56ce457004 | contato: Assis Lima | 28/09/2026 15:59 até 29/09/2026 11:58 | 6 msgs do cliente, 6 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[15:59] CLIENTE: Boa tarde.
+[15:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:59] CLIENTE: Francisco Assis 
+265/70R16
+[16:00] CLIENTE: Estou precisando de quatro pneus 👆
+[16:00] LOJA: *Josy:*
+Boa tarde!
+[16:01] LOJA: [foto]
+[16:01] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 29/09/2026 (Tue) ---
+[09:41] CLIENTE: Sim. Gostaria de negociar.
+[09:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:42] CLIENTE: Pretendo passar amanhã por volta das 14h ai.
+[09:54] LOJA: [áudio] "Excelente, Sr. Francisco, muito bom, tá? Perfeito, venha aqui sim, que será uma satisfação poder atendê-la aqui na loja, tá bom?"  {audio:midias/3EB0CEA802CE51D46EF2BF_474814.ogg}
+[11:58] CLIENTE: Gratidão.

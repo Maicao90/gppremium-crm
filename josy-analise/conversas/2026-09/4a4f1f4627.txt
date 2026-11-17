@@ -1,0 +1,107 @@
+CONVERSA 4a4f1f4627 | contato: Michel Stoppa | 01/09/2026 10:16 até 30/09/2026 10:38 | 29 msgs do cliente, 50 da loja, 0 do robô
+
+--- 01/09/2026 (Tue) ---
+[10:16] LOJA: *Josy:*
+Bom dia!
+[10:19] CLIENTE: Bom dia
+[10:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:19] LOJA: *Josy:*
+265/60/18 certo!
+[10:20] LOJA: [foto]
+[10:20] LOJA: [áudio] "Olá, tudo jóia? No dia de hoje, nós temos os pneus da marca GP Premium, que o meu gerente estava falando contigo na ligação. No orçamento está o valor de apenas uma unidade. Primeira colônia é o valor à vista, que já é o menor preço, e seguem também as opções de parcelamento em até 10 vezes, caso você queira parcelar. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0FE48C7C2985EB6E6D4_522984.ogg}
+[10:42] CLIENTE: Vc tem foto do pneu ?
+[10:44] LOJA: *Josy:*
+265/60/18 HT 👇🏻
+[10:45] LOJA: [foto]
+[10:45] LOJA: [foto]
+[10:46] CLIENTE: Tem algum com fx branca ?
+[10:46] LOJA: 265/60/18 Brutus 👇🏻
+[10:46] LOJA: Não tem.
+[10:46] LOJA: [foto]
+[10:46] LOJA: [foto]
+[10:47] LOJA: Você mora aqui em Luziânia?
+[10:47] CLIENTE: Catalao
+[10:47] LOJA: *Josy:*
+Ah, sim.
+[10:49] LOJA: [áudio] "Bem, com letras brancas nós não dispomos, mas eu posso verificar se algum distribuidor meu tem e, se ele tiver, é somente por encomenda, tá?"  {audio:midias/3EB012411875D639517449_904375.ogg}
+[10:49] CLIENTE: [áudio] "Não, não tem problema não. Eu sou de Catalão, mas eu tô indo em Brasília amanhã ou depois, aí eu vou sair e pegar. Mas depois eu pego assim mesmo."
+[10:52] LOJA: [áudio] "Eu só estou aguardando aqui a resposta deles para saber quais marcas que eles têm disponíveis no momento. Assim que eles me derem uma resposta, eu te falo, tá bom?"  {audio:midias/3EB0BE0327671AFCCA7E9F_616985.ogg}
+[10:54] CLIENTE: [áudio] "Por acaso você não tem nenhum parceiro, algum cliente que está limpo de atalão hoje ou amanhã e podia trazer esse pneu pra mim, não?"
+[12:17] LOJA: [foto]
+[12:18] LOJA: [áudio] "Michel, olha só, o meu distribuidor vai ter os pneus da marca Ariets. A unidade está por R$ 1.087,00 se o pagamento for no débito ou Pix. E vai ter também pneu da marca Sunset. A unidade está por R$ 928,00 se o pagamento também for no débito ou Pix. Essas opções, elas são somente através de encomenda, chegam com 3 dias úteis e o distribuidor solicita um pagamento calção de R$ 500,00 para poder reservar a opção desejada. E assim que os pneus chegam aqui na nossa loja, aí eu aviso você vindo aqui para realizar o restante do pagamento, esse valor de calção será descontado do total da sua compra, tá?"  {audio:midias/3EB0F18C579CC42B06A8FD_780817.ogg}
+[12:20] CLIENTE: [áudio] "Entendi. E esse que você me passou primeiro, esse normal que não tem a lista branca, o que você me fala desse pneu? Ele é um pneu bom?"
+[12:20] CLIENTE: [áudio] "Aquele de 500 e pouco."
+[12:27] LOJA: [áudio] "Oi, Michel. Bem, pela manhã, a dona da empresa que te atendeu aqui pra mim deu o atendimento inicial. E esses pneus aí são da marca GP Premium, eles são pneus ecológicos que a nossa empresa produz e eles entram na categoria de remodelagem Premium, que é completamente diferente de pneus remoldes convencionais. Nós já estamos no mercado aí há 10 anos, os pneus são realmente um diferencial, não só por conta do preço, que é muito atrativo, mas justamente por conta da qualidade. Eu atendo diversas regiões do Brasil aí com eles, tá? No momento só estamos com empecilho com questão a entregas mediante a transportadora, porque o frete está muito alto. Mas vira e mexe, pessoal, de Minas, Rio de Janeiro, de todos os estados, vem cá pra poder comprar esses pneus conosco. E quem está disponível já pra fazer a instalação, já faz a instalação na hora mesmo, tá? E agora? E agora? E agora? E agora? E agora?"  {audio:midias/3EB0EC6DAF8800AA580849_349860.ogg}
+[12:29] CLIENTE: [áudio] "Não, tá bom. Eu vou resolver. Vigilante em contato com você."
+[12:31] LOJA: [áudio] "Sim, aí como você disse que está vindo, né, passando aqui por Brasília, eu vou deixar aqui na nossa conversa a localização da empresa, que você vem cá para nós conversarmos pessoalmente. Você vem e nos conhece, né, obviamente já vê como são os pneus. Inclusive, tem eles montados aqui na nossa Maroc e na nossa Maverick. Eu só não vou gravar agora para ti, porque eu estou sozinha aqui dentro da loja, mas assim que eu tiver a oportunidade, eu mando aí para você, tá bom?"  {audio:midias/3EB08BEA12C7EEC7F58A1E_394713.ogg}
+[12:31] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6 *Josy:*
+[12:33] LOJA: [foto]
+[12:35] CLIENTE: Ta bom
+--- 02/09/2026 (Wed) ---
+[07:37] CLIENTE: Bom dia
+[07:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:38] CLIENTE: Vai passar um amigo aí na loja e vai pegar os pneus pra mim
+[07:59] LOJA: *Josy:*
+Bom dia!
+[07:59] LOJA: *Josy:*
+Perfeito!
+[08:00] CLIENTE: [áudio] "Ele deve estar passando por aí agora cedo, falou que chegando aí ele vai me ligar aqui."
+[08:06] LOJA: [áudio] "Bom dia, Michel. Tudo jóia, tá? Vamos fazer o seguinte, assim que você tiver um tempo, você me manda o seu nome completo, seu CPF, o CEP do endereço, o endereço, para que eu possa fazer a nota fiscal para o seu amigo poder transportar os pneus, tá bem?"  {audio:midias/3EB05E376C1DB4F7333CCD_173286.ogg}
+[08:08] CLIENTE: Michel stoppa Lima
+[08:08] CLIENTE: 821.419.831-34
+[08:08] CLIENTE: 75.709-480
+[08:08] CLIENTE: Rua Eneas da Fonseca n 502
+[09:02] LOJA: *Josy:*
+Michel...
+[09:03] LOJA: *Josy:*
+Vai ser deste aqui?
+[09:03] LOJA: *Josy:*
+E Serão 2 ou 4 unidades?
+[09:07] CLIENTE: Sim
+[09:07] CLIENTE: 2
+[09:08] LOJA: [áudio] "Certo, Michel. O seu amigo passou por aqui, mas, por hora, não tem como colocar os pneus lá porque tá cheio, tá bom?"  {audio:midias/3EB04E0E04595D706560D7_263463.ogg}
+[09:09] CLIENTE: [áudio] "Ah, tá. Então não conseguiu pegar, não."
+[09:13] LOJA: [áudio] "Não, não conseguiu."  {audio:midias/3EB0278574243453679BB2_271875.ogg}
+[09:14] CLIENTE: [áudio] "E ele falou se na volta vai passar ou que eu não consegui falar com ele?"
+[09:16] LOJA: [vídeo]
+[09:17] LOJA: [vídeo]
+[11:13] LOJA: *Josy:*
+Ele havia dito que iria tentar passar aqui novamente.
+[11:18] LOJA: *Josy:*
+Total 1.198,00
+[11:18] LOJA: *Josy:*
+Pix
+[11:18] LOJA: *Josy:*
+24.289.955/0001-79
+[11:22] CLIENTE: [foto]
+--- 04/09/2026 (Fri) ---
+[16:08] CLIENTE: [áudio] "Boa tarde, tudo bem? Deixa eu te perguntar, pneu de caminhão, pneu de caminhão 3 quartos, você tem ou não? Vocês trabalham?"
+[16:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:09] LOJA: [áudio] "Oi, Michel, tudo jóia? Como é que você está? Michel, nós não estamos tendo..."  {audio:midias/A57C7501EBA10294BEB1E30D28020636_346316.ogg}
+[16:15] CLIENTE: Obrigado
+[16:18] LOJA: *Josy:*
+Disponha!
+[16:24] LOJA: [áudio] "Michelle, aqui a pronta entrega eu não tenho, mas eu posso conseguir através de encomenda pra você, tá? Aí você usou R$ 215,75, né?"  {audio:midias/3EB0BEF8A37C3FB8FCF430_597787.ogg}
+[16:24] LOJA: [áudio] "Eu só vou confirmar o preço aqui e já te passo."  {audio:midias/3EB02C20D764D5BCF4B020_408564.ogg}
+[16:37] CLIENTE: Ok
+[17:00] LOJA: *Josy:*
+PNEU MILEVER 215/75 R17.5 16PR 135/133K SAH01 LISO E (IP).....920,00 a unidade pagamento somente  a vista
+[17:00] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 29/09/2026 (Tue) ---
+[18:12] CLIENTE: Boa tarde
+[18:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:14] CLIENTE: 175/70/13
+[18:14] CLIENTE: Vc tem ?
+--- 30/09/2026 (Wed) ---
+[08:01] LOJA: [áudio] "Oi Michel, bom dia, tudo bem com você?"  {audio:midias/3EB015D105AE930E62119C_537592.ogg}
+[08:01] LOJA: [áudio] "Tenho sim, tá? Os pneus GP Premium aqui, eles estão em oferta de R$ 299,00. Eu faço para você aqui por R$ 269,00 no Pix."  {audio:midias/3EB06A0FED48B64206DAA9_225522.ogg}
+[10:38] CLIENTE: Já te falo
+[10:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

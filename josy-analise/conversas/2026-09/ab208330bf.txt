@@ -1,0 +1,264 @@
+CONVERSA ab208330bf | contato: Érik Rubens🦈🔨 | 29/09/2026 16:00 até 03/10/2026 12:10 | 120 msgs do cliente, 83 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[16:00] CLIENTE: Boa tarde
+[16:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:01] CLIENTE: 225/60 R17
+[16:02] LOJA: [áudio] "É para qual carro essa medida?"  {audio:midias/3EB02A95D126B4522D040D_463472.ogg}
+[16:02] LOJA: [áudio] "Oi Erick, tudo jóia?"  {audio:midias/3EB04B7E2EC63B4A827201_582631.ogg}
+[16:04] CLIENTE: Tudo jóia
+[16:05] CLIENTE: Para uma Fiat Toro 2024
+[16:08] LOJA: [áudio] "Então, vou fazer duas sugestões que vão lhe atender muito melhor do que esse daí, tá já, Erika? Que é o 215-60-17, que ele vai ser o pneu que vai trazer mais economia de combustível aí pra você e também o 225-65-17, que ele vai deixar o carro mais alto, tá?"  {audio:midias/3EB010331CEBC73CA3316C_270891.ogg}
+[16:22] CLIENTE: Me passa os valores dele
+[16:22] LOJA: *Josy:*
+Estou finalizando
+[16:22] LOJA: *Josy:*
+´so um min
+[16:23] CLIENTE: Ok
+[16:24] CLIENTE: Provavelmente vou querer os 225 65 17
+[16:24] LOJA: [foto]
+[16:25] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:25] CLIENTE: Ok Josy
+[16:25] CLIENTE: Eu vou aí trocar quinta feira pela manhã
+[16:26] CLIENTE: Como já sou cliente, já indiquei conhecidos ... Já saio satisfeito daí
+[16:27] CLIENTE: A troca eu faço na loja aí próxima né , sem custo
+[16:27] CLIENTE: ?
+[16:28] LOJA: [áudio] "Isso, isso mesmo, Erika. Você usa os pneus da marca GP Premium. É que sempre que eu mando lançamento, eu gosto de mandar assim completinho, tá bom? E temos todas as opções aqui à pronta entrega."  {audio:midias/3EB01F28A758D1C095D5F4_612071.ogg}
+[16:29] CLIENTE: Josy .... Sou Erik KKK não erika
+[16:30] LOJA: [áudio] "Aí, o pneu GP Premium, a instalação dele é sem custo. A parte, negocia com os meninos aqui da oficina, o serviço de balanceamento e alinhamento. E, perdão, Eric, aqui tá uma loucura, tá super corrido. Me desculpa, tá?"  {audio:midias/3EB0E5B11C6FD77A422A05_977957.ogg}
+[16:30] LOJA: [áudio] "Ai, me perdoa, me perdoa, me perdoa."  {audio:midias/3EB055F8C54C3F37F5BEB0_3217.ogg}
+[16:30] CLIENTE: Kkkkkk
+[16:30] LOJA: [figurinha]
+[16:30] CLIENTE: Entendo .... Normal .
+[16:31] CLIENTE: Quando o trabalho tá tenso , a gente se perde mesmo
+[16:31] CLIENTE: Mas combinado então
+[16:31] CLIENTE: Quinta feira estarei aí pela manhã ok
+[16:31] LOJA: [figurinha]
+[16:31] LOJA: [áudio] "Ai, beleza. Combinado então, tá joia?"  {audio:midias/3EB00EA313A64054372557_912361.ogg}
+[16:31] LOJA: [áudio] "E mais uma vez, desculpa aí, me perdoa."  {audio:midias/3EB0F689DA6E0967E25B36_701924.ogg}
+[16:32] CLIENTE: [figurinha]
+[16:32] CLIENTE: Precisa se desculpar não .... Vc é show. Obrigado pelo atendimento
+[16:32] CLIENTE: Até quinta feira
+[16:32] LOJA: [figurinha]
+[16:32] LOJA: *Josy:*
+Até!
+[16:57] LOJA: [áudio] "Ai, Érica, eu tava aqui rindo de mim, falando, meu Deus, mas por que que eu tô chamando o Éric de Érica? Agora que minha ficha caiu. É porque eu estava atendendo a Érica agora há pouco. Olha só."  {audio:midias/3EB0CB45984E8E5215AEA0_114371.ogg}
+[16:57] LOJA: [foto]
+[16:57] LOJA: [áudio] "Ai, que loucura, Jesus."  {audio:midias/3EB0BEFFE5BB5480A96565_753201.ogg}
+[16:58] CLIENTE: Kkkkkkk minha xará
+[16:58] LOJA: *Josy:*
+totlamente
+[16:59] CLIENTE: E tem até y no nome
+[16:59] CLIENTE: Ela é chic
+[16:59] CLIENTE: Kkkkkk
+[16:59] LOJA: [áudio] "Inclusive, estou conversando com ela neste exato momento, estou falando com você e com ela."  {audio:midias/3EB05EF19AB83510694548_147972.ogg}
+[16:59] LOJA: [foto]
+[17:00] CLIENTE: E o meu tá certinho com acento no E
+[17:00] CLIENTE: [figurinha]
+[17:00] LOJA: [áudio] "Não, mas está certo mesmo? É com acento seu?"  {audio:midias/3EB02B7FD6DEF892F94286_652730.ogg}
+[17:01] CLIENTE: Isso
+[17:01] CLIENTE: Com acento
+[17:01] LOJA: [áudio] "Ai, às vezes eu tenho, às vezes não, na grande maioria das vezes eu tenho um feelingzinho assim para as coisas que eu faço umas coisas assim inacreditáveis. Justamente pelo seu nome, Eric, eu coloquei com acento, mas assim, são coisas minhas e na grande maioria das vezes eu acerto o nome das pessoas assim de primeira. Interessante."  {audio:midias/3EB00A12DA718C9E8B9A29_245612.ogg}
+[17:02] CLIENTE: Mamãe gostava muito de um seriado chamado Chips lá da década de 70 80 . Tinha o ator chamado Érik Strada
+[17:02] LOJA: *Josy:*
+Hmmmm
+[17:02] CLIENTE: Ai ela gostou e colocou
+[17:02] LOJA: *Josy:*
+Interessante
+[17:02] CLIENTE: 😃
+[17:02] CLIENTE: Tu acertou
+[17:03] LOJA: *Josy:*
+Rapaiz... e não é que ele é um galã... fui pesquisar aqui
+[17:03] CLIENTE: Kkkk e eu nasci só o rascunho
+[17:03] CLIENTE: Kkkkk
+[17:03] LOJA: [figurinha]
+[17:05] CLIENTE: Mamãe mirou no ninho certo e errou o passarinho
+[17:05] CLIENTE: Kkkkkk
+[17:06] LOJA: [figurinha]
+[17:06] LOJA: *Josy:*
+rindo mas com respeito, tá!
+[17:06] CLIENTE: Kkkkkkk eu tmb entro na onda da risada
+[17:06] CLIENTE: Kkkkk
+[17:07] LOJA: [figurinha]
+--- 01/10/2026 (Thu) ---
+[08:03] CLIENTE: Bommmmmmmmmmm diaaaaaaaaaaaaaaaa....  Estou bem 😊. Você está bem ?
+[08:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:04] CLIENTE: Vou sair daqui de Taguatinga 9h03
+[08:05] LOJA: *Josy:*
+Amei esse bom dia, cheio de energia!
+[08:05] LOJA: *Josy:*
+Estou bem, também, obrigada por perguntar!
+[08:06] CLIENTE: Eu tava vendo aqui . Devo trocar só dois . Pq os traseiros estão bons e esse carro é do meu pai e mal sai da garagem.
+[08:06] CLIENTE: Comigo é assim ... Energia total kkkk
+[08:06] LOJA: *Josy:*
+Amei
+[08:08] CLIENTE: Hoje vai ser um dia corrido pra mim. Vou aí , depois volto pra casa , pego o meu carro e vou pra asa norte
+[08:08] CLIENTE: Levar o carro na oficina pra uma vistoria
+[08:08] CLIENTE: Motoqueiro bateu nele sábado
+[08:08] CLIENTE: Só pra me chatear
+[08:08] CLIENTE: Mas são coisas da vida
+[08:09] LOJA: *Josy:*
+sim, realmente, acontece.
+[08:10] LOJA: *Josy:*
+lado bom , bateu no carro. lado ruim bateu no carro.
+[08:10] CLIENTE: Kkkkk 2 lados da mesma moeda
+[08:10] CLIENTE: Kkkk
+[08:12] LOJA: *Josy:*
+bem assim
+[08:15] CLIENTE: Josyyyyyyy.... Deixa eu te falaaaaarrr ...
+[08:15] LOJA: *Josy:*
+diga
+[08:16] LOJA: *Josy:*
+fala comigo
+[08:16] CLIENTE: Meu pai acabou de acordar . Ele não tá sentindo muito bem 😔.
+[08:16] LOJA: *Josy:*
+Sem problemas...
+[08:16] CLIENTE: Acho que vou levar ele aqui no medsenior.
+[08:17] CLIENTE: Vou fazer o seguinte, sábado de manhã eu vou aí
+[08:17] LOJA: *Josy:*
+Como for melhor para você, está bem!
+[08:17] CLIENTE: Ele disse que tá desde 4h da manhã com dor
+[08:18] CLIENTE: É complicado pra mim cuidar de uma pessoa idosa e doente.
+[08:18] CLIENTE: Depois que mamãe se foi , meu pai foi ladeira abaixo
+[08:18] CLIENTE: Mas sábado sem falta eu estou aí
+[08:19] LOJA: *Josy:*
+percebo que isso é normal, sempre que 1 se vai, quem fica sente.
+[08:19] LOJA: *Josy:*
+tenho uma amiga que está passando por isso, a cerca de 1 mês a mãe dela se foi, e ela acabou de entrar com o pai dela na uti
+[08:20] CLIENTE: Meu pai é cheiro de energia. Mês seguinte que mãe se foi ele teve problemas
+[08:20] CLIENTE: Meu pai ele tá andando com dificuldade... Do nada ele cai
+[08:20] CLIENTE: As pernas perdem força e parece que passa uma rasteira
+[08:21] CLIENTE: Ele vai ao chão
+[08:21] CLIENTE: Fizemos vários exames
+[08:21] CLIENTE: Não deu nada
+[08:21] CLIENTE: Nem cabeça e nem coluna
+[08:28] LOJA: *Josy:*
+Na grande maioria das vezes, é por conta da falta mesmo.
+[08:28] CLIENTE: Pois é... Eu fico me desdobrando pra não deixar ele triste 😢
+[08:29] CLIENTE: Somos 3 irmãos mas só eu que cuida. As outras duas pouco faz o papel de filho
+[08:30] LOJA: *Josy:*
+é complicado... sempre tem essas coisas.
+[08:32] CLIENTE: A real família brasileira
+[08:33] CLIENTE: [figurinha]
+[08:39] LOJA: *Josy:*
+simplesmente, assim.
+[08:39] CLIENTE: Olha eu na casa do meu amigo quando era criança
+[08:39] CLIENTE: [foto]
+[08:39] CLIENTE: Kkkkkk
+[08:40] LOJA: [figurinha]
+[08:40] CLIENTE: Kkkkkkkkkkkk
+[08:40] LOJA: *Josy:*
+É porque na sua casa tem tem play 1 e na do amigo Xbox... eu não te jugaria kkkk
+[08:41] CLIENTE: Kkkk na  minha época era Atari...
+[08:42] LOJA: *Josy:*
+É bom também, mas prefiro o play 1
+[08:43] CLIENTE: Meu pai deu um Xbox pro meu sobrinho
+[08:43] CLIENTE: Dois anos depois deu um play 5
+[08:43] LOJA: *Josy:*
+Noooooooossa
+[08:43] CLIENTE: O mulk tá com dois
+[08:43] CLIENTE: Kkkkkk
+[08:43] CLIENTE: Eu nem sei jogar isso mais
+[08:48] LOJA: *Josy:*
+Eu tinha um mini game, master sistem, Super nintendo, o 64...   play 1..2 ...Xbox,
+[08:48] LOJA: *Josy:*
+vendi tudo.
+[08:48] CLIENTE: Eu tive só o Atari mesmo
+[08:48] CLIENTE: Mas gostava do super Nintendo
+[08:48] CLIENTE: Street fight e super Mario
+[08:48] CLIENTE: Adorava
+[08:49] LOJA: *Josy:*
+nunca gostei de mario
+[08:51] CLIENTE: Mario é bom demais
+[08:52] CLIENTE: Acho que foi em 2024 que teve o filme ... Levei meus alunos ao cinema
+[08:52] CLIENTE: Putz , fiquei vidrado no filme do Mario
+[08:52] CLIENTE: Nem piscava
+[08:52] CLIENTE: Kkkkk
+[09:02] LOJA: *Josy:*
+eu não gosto.
+[09:03] CLIENTE: Um dia vc vai jogar e gostar ... Quando salvar a princesa
+[09:03] CLIENTE: Aí pronto
+[09:04] CLIENTE: Vai amar
+[09:04] CLIENTE: Kkkk
+[09:04] LOJA: *Josy:*
+Já joguei, varias vezes.
+[09:04] LOJA: *Josy:*
+o santo não bateu kkkk
+[09:04] CLIENTE: Vixii
+[09:05] CLIENTE: Aí tem jeito não
+[09:05] CLIENTE: Se não bateu sintonia
+[09:05] CLIENTE: Já era
+[09:05] LOJA: *Josy:*
+não...definitivamente não...
+[09:06] LOJA: talvez porque meu gosto é outro. Gosto de enigmas... jogos de terror 🥰
+[09:06] CLIENTE: Kkkk tipo residente evil
+[09:06] CLIENTE: Esse é bom
+[09:09] LOJA: *Josy:*
+exatamente isso...dead s´pace... silent hill zerei todos sem detonado,  alan wake,,, esses
+[09:20] CLIENTE: Falou tudo mas não entendi uma vírgula
+[09:20] CLIENTE: Só concordo
+[09:20] CLIENTE: Kkkkk
+[09:23] LOJA: *Josy:*
+é o que?
+[09:23] LOJA: *Josy:*
+como assim?????
+[09:24] CLIENTE: Não entendi nada desses jogos
+[09:24] CLIENTE: Kkkk
+[09:24] LOJA: *Josy:*
+se conhece resident, tem que conhecer os outros...
+[09:24] LOJA: *Josy:*
+ah, pára...
+[09:24] CLIENTE: Só esse que eu conheço
+[09:24] CLIENTE: Pq meu amigo jogava
+[09:24] LOJA: [figurinha]
+[09:25] CLIENTE: Kkkk
+[17:56] LOJA: *Josy:*
+Jovem... bom final de tarde para ti! Vamos nos falando 👋🏻
+[17:57] CLIENTE: Jovenzinhaaaaaa bom findar de tarde para você também. Vamos nos falando sim. Intééééé
+[17:58] LOJA: *Josy:*
+intéeee
+[17:58] CLIENTE: [figurinha]
+--- 02/10/2026 (Fri) ---
+[15:20] CLIENTE: Boaaaaa tarde minha jovem
+[15:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:20] LOJA: *Josy:*
+Pardonnnnn
+[15:21] LOJA: *Josy:*
+Excusez-moi
+[15:21] LOJA: [áudio] "Boa tarde, meu jovem. Como é que você está?"  {audio:midias/3EB06832EAB7EB59E4E12E_627430.ogg}
+[15:22] LOJA: [áudio] "Ai, meu amigo, perdão. Jesus amado, que vergonha. O nosso WhatsApp aqui, eu tava tentando falar com outro rapaz, que também se chama Eric. Ai, acabei que mandei mensagem pra você de novo, Eric. Ai, a mensagem travou. Ai, gente do céu."  {audio:midias/3EB07305716DDB7E2F35CD_999003.ogg}
+[15:22] LOJA: [foto]
+[15:22] LOJA: [áudio] "Ai, gente, nosso WhatsApp tá todo doido, misericórdia."  {audio:midias/3EB0B657F361E59272CC1C_802276.ogg}
+[15:25] CLIENTE: Kkkk
+[15:25] CLIENTE: Vou trocar de nome
+[15:26] CLIENTE: Vou ser só Rubens mesmo
+[15:26] CLIENTE: Kkkkk
+[15:26] CLIENTE: Amanhã estou aí viu
+[15:28] LOJA: *Josy:*
+KKKKKKK
+[15:28] LOJA: *Josy:*
+Ainda bem que tenho provas...
+[15:28] CLIENTE: Kkkkk
+[15:39] LOJA: *Josy:*
+E ele estava falando sobre os pais também! Acredita?
+[15:43] CLIENTE: [figurinha]
+[15:49] LOJA: *Josy:*
+a mãe está bem debilitada.
+[15:49] CLIENTE: É complicado
+[15:49] CLIENTE: Tem que ter muita paciência com os velhinhos
+[15:49] CLIENTE: Cuidar bem
+--- 03/10/2026 (Sat) ---
+[12:09] LOJA: *Josy:*
+Érik, meu amigo... muito obrigada!
+[12:09] LOJA: *Josy:*
+Que vocês tenham um bom final de semana!
+[12:10] CLIENTE: Ummm linda fds minha amada. Obrigado 🫂
+[12:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:10] LOJA: [figurinha]

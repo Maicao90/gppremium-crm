@@ -1,0 +1,16 @@
+CONVERSA 45e3862c94 | contato: Tatiane | 05/10/2026 12:56 até 05/10/2026 15:47 | 1 msgs do cliente, 7 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[12:56] LOJA: *Josy:*
+Bom dia, Tatiane...
+[12:57] LOJA: [foto]
+[12:57] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:58] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:59] LOJA: [foto]
+[15:44] LOJA: [áudio] "Oi, Tatiane, tudo jóia? Eu te mandei um orçamento mais cedo, conseguiu analisar?"  {audio:midias/3EB0B51634B8D7F6D1B4FB_722430.ogg}
+[15:47] CLIENTE: Estou fazendo contação
+[15:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

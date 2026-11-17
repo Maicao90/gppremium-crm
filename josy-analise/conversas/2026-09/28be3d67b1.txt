@@ -1,0 +1,29 @@
+CONVERSA 28be3d67b1 | contato: Jean Lauro | 10/09/2026 09:28 até 10/09/2026 10:20 | 8 msgs do cliente, 10 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[09:28] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:28] CLIENTE: 225/45 RD 17
+[09:29] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:29] LOJA: [foto]
+[09:39] CLIENTE: Qual a marca?
+[09:40] CLIENTE: Já vi aqui obrigado
+[09:41] LOJA: [áudio] "Oi, no dia de hoje eu tenho todas as opções de marcas, que são os pneus da Goodyear, da Dunlop, Conforcer e GP Premium."  {audio:midias/3EB0E86299312B8D203D66_789486.ogg}
+[09:43] CLIENTE: [áudio] "Tá bom, que é da minha namorada e ela queria colocar da mesma marca, só que o dela é Bridgestone."
+[09:43] LOJA: [áudio] "Você mora aqui em Luziânia?"  {audio:midias/3EB0BD7423A83B58589969_42856.ogg}
+[09:43] CLIENTE: [áudio] "Sim, moro aqui no Luziânia sim."
+[09:44] LOJA: [áudio] "Certo. Como eu não tenho o pneu da Bridgestone aqui à pronta entrega, eu vou solicitar um orçamento com os meus distribuidores. Assim que ele me passar o preço e o prazo de entrega, eu te comunico. Pode ser?"  {audio:midias/3EB0439B53DAAC98AEEBCC_667879.ogg}
+[09:45] CLIENTE: [áudio] "Então, pode ser sim, mas eu acho que o filho dela vai levar, vai mais o pneu, também se querem comprar uns pneus, acho que ele vai dar uma passadinha por aí."
+[09:45] LOJA: [áudio] "Ah, beleza, então eu vou te mandar aqui a localização da loja, tá joia? E mesmo assim eu vou contar para você."  {audio:midias/3EB0AB123F80EED8377AD9_456592.ogg}
+[09:45] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:46] CLIENTE: [áudio] "Tá ok, vou mandar para ela aqui, para ela passar para o filho dela."
+[10:19] LOJA: [foto]
+[10:20] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

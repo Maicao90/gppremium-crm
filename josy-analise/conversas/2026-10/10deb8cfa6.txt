@@ -1,0 +1,23 @@
+CONVERSA 10deb8cfa6 | contato: joaoaugustonetopr | 14/10/2026 13:04 até 15/10/2026 18:18 | 7 msgs do cliente, 7 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[13:04] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[13:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:04] LOJA: 🙋🏼‍♀️
+[13:06] CLIENTE: boa tarde
+[13:06] CLIENTE: [foto]
+[13:06] CLIENTE: 22560/17
+[13:06] CLIENTE: H103
+[13:06] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Senhor João, eu não disponho dessa opção de maca em medida que é a pronta entrega. O senhor precisa de quantos pneus? Mora aqui em Luziânia mesmo que eu posso verificar se eu consigo com algum distribuidor."  {audio:midias/3EB01F2F37827689F91B77_679278.ogg}
+[13:08] CLIENTE: [áudio] "Boa tarde, Josi. Eu moro no Recanto da Zema, porque eu estou pesquisando e está aparecendo nas redes sociais e eu estou ligando nas lojas. Mas não é um problema à distância. Eu preciso de 4 unidades, nesse tamanho 225-60, aro 17, H103, que é o que eu uso na Toro, da Pirelli, né? Aí eu posso ver para mim os nacionais aí do Lop, Pirelli, Godia. Esses aí, o preço de valor à vista, as 4 unidades."
+[13:08] LOJA: [áudio] "Certo, assim que me responderem, eu te passo marca, preço e prazo de entrega, tá bem?"  {audio:midias/3EB02D7744C56EF122FC53_16383.ogg}
+[13:11] CLIENTE: ok
+[15:40] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:40] LOJA: [foto]
+--- 15/10/2026 (Thu) ---
+[18:18] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

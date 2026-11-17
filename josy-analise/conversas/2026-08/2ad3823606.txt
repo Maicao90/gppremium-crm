@@ -1,0 +1,20 @@
+CONVERSA 2ad3823606 | contato: Edmundo | 20/08/2026 13:32 até 29/08/2026 12:14 | 3 msgs do cliente, 9 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[13:32] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:32] CLIENTE: Boa tarde
+[14:37] LOJA: [áudio] "Oi, seu Edmundo, tudo jóia?"  {audio:midias/3EB057E62FBD6E819413A9_517203.ogg}
+[18:02] LOJA: [áudio] "Oi, Sra. Edmundo, o senhor me mandou um boa tarde, me ligou, né? Eu não consegui te responder porque a energia aqui da cidade tinha dado uma caída e aí, né, ficamos sem internet, ficamos incomunicáveis. Aí, na primeira oportunidade que eu tive, eu te mandei mensagem, te liguei e estou te retornando novamente para saber se eu ainda posso te ajudar. Quando possível, o senhor me manda um oi aqui, por gentileza."  {audio:midias/3EB0AB4726BAF9A176045A_118383.ogg}
+--- 21/08/2026 (Fri) ---
+[08:32] LOJA: Bom dia!
+[08:32] CLIENTE: Bom dia
+[08:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:33] LOJA: [foto]
+[08:34] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 29/08/2026 (Sat) ---
+[12:14] LOJA: [áudio] "Boa tarde, como é que está? Eu te mandei um áudio aí, porque o senhor ouviu, né, mas não teve oportunidade de me dar um retorno. Então, eu vou encerrar aqui o seu atendimento e vou deixar a nossa localização, pois se houver a possibilidade, o senhor passa aqui para nós conversarmos, tá bem? Obrigada aí pela atenção, até mais."  {audio:midias/3EB0F2C54ABBBC9605F663_49457.ogg}
+[12:14] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

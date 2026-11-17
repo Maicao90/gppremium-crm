@@ -1,0 +1,41 @@
+CONVERSA 16032c2e2a | contato: Nogueira | 21/10/2026 16:12 até 22/10/2026 12:34 | 13 msgs do cliente, 13 da loja, 6 do robô
+
+--- 21/10/2026 (Wed) ---
+[16:12] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[16:12] CLIENTE: Boa tarde
+[16:12] ROBÔ: Oi, tudo bem?
+[16:12] CLIENTE: Medida 195/55/15
+[16:12] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[16:12] ROBÔ: Temos o pneu *195/55/15* da marca *GP Premium* está saindo por *R$ 289,00 à vista*.
+[16:12] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[16:13] CLIENTE: Só tem essa marca ?
+[16:13] ROBÔ: [áudio — sem transcrição]
+[16:13] CLIENTE: No anúncio está 249
+[16:15] LOJA: 185/60/15 e 185/65/15 da marca GP Premium estão realmente por R$ 249,00
+[16:17] CLIENTE: Tem as especificações do pneu ?
+[16:18] LOJA: Mora aqui em Luziânia-Go?
+[16:19] CLIENTE: Ocidental
+[17:38] LOJA: [áudio] "Ah, sim, perfeito. Qual que é o seu nome mesmo, moço? Eu vou realizar um orçamento mais completo aqui para você."  {audio:midias/3EB002ACAF208426AA439E_14221.ogg}
+[18:04] CLIENTE: Edi
+--- 22/10/2026 (Thu) ---
+[08:23] LOJA: Bom dia, Ed...
+[08:24] LOJA: Esse pneu é da marca GP Premium!
+[08:24] LOJA: Aqui da nossa fabrica!
+[11:26] ROBÔ: 🙋🏼‍♀️
+[11:26] CLIENTE: Bom dia
+[11:27] CLIENTE: ?
+[11:29] LOJA: [áudio] "Oi, Sra. Ed. Nossa, perdão aí que o nosso WhatsApp está com instabilidade e aí tá demorando um pouquinho aqui para poder retornar, tá? Eu vou te mandar aqui as marcas que eu tenho disponíveis, tá? E já vou falar contigo."  {audio:midias/3EB0CC364D6322EAF49D02_735611.ogg}
+[11:49] CLIENTE: Tá bom
+[11:51] LOJA: [foto]
+[11:51] LOJA: No dia de hoje temos Dunlop e GP Premium essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:29] LOJA: [áudio] "Senhora Ed, mais uma vez aí, obrigada por aguardar, tá? Que realmente, hoje o WhatsApp tá com muita instabilidade, né, não tô conseguindo finalizar aqui os atendimentos com precisão. É, olha só, o pneu da marca GP Premium é um pneu ecológico que nós fazemos, tá? Ele é um pneu remold de primeira linha, inclusive, é o pneu mais vendido que nós temos por conta da qualidade, tá bom? Além dele, no dia de hoje, eu tenho os pneus novos da marca Dunlop. Aí, o meu estoque, ele é sempre variável. Hoje, eu tenho essas duas opções de marcas, né, e, às vezes, eu tenho outras opções também, tá?"  {audio:midias/3EB0EA5A4C55AD14023313_841721.ogg}
+[12:29] LOJA: [áudio] "Se por acaso os senhores estiverem em busca de alguma marca específica, o senhor pode me falar que eu verifico com os meus distribuidores."  {audio:midias/3EB05DAB11800FBAEAF91A_364787.ogg}
+[12:31] CLIENTE: Conforser 
+Wanly
+[12:32] LOJA: [áudio] "No dia de hoje eu já não tenho esses pneus chineses à pronta entrega."  {audio:midias/3EB0CDE13844A3F1B4EFCA_365323.ogg}
+[12:32] LOJA: [áudio] "Eu vou ver se meu distribuidor tem, aí eu já te dou um retorno, tá?"  {audio:midias/3EB0C7CF246A77A380DA77_85394.ogg}
+[12:34] CLIENTE: Tá bom

@@ -1,0 +1,21 @@
+CONVERSA 9f7efbc482 | contato: Edmar Pereira | 16/10/2026 10:02 até 16/10/2026 10:37 | 5 msgs do cliente, 8 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[10:02] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[10:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:02] CLIENTE: Aro 14
+[10:02] CLIENTE: Aro13
+[10:03] LOJA: R 13👇🏻
+[10:04] LOJA: [foto]
+[10:04] LOJA: Qual a medida dos pneus que você precisa?
+[10:07] LOJA: [áudio] "Oi Edmar, bom dia, como é que você está? Edmar, para que eu faça o orçamento para você, eu preciso que você me diga qual é a medida dos pneus que você precisa, porque diferente do aro 13, o aro 14 já existe um leque de opções, né? Então, assim que possível, você me responde que eu faço o seu orçamento."  {audio:midias/3EB0BBBA18A7BF84330C41_291299.ogg}
+[10:11] CLIENTE: Ok
+[10:32] LOJA: [áudio] "Oi, Edmar. Qual que é a medida?"  {audio:midias/3EB069E8073F4C42835155_790285.ogg}
+[10:36] CLIENTE: 175/70 R 14
+[10:37] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:37] LOJA: [foto]

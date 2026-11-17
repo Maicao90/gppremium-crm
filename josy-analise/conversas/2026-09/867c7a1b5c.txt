@@ -1,0 +1,12 @@
+CONVERSA 867c7a1b5c | contato: Felipy Silva Carvalho | 04/09/2026 10:55 até 04/09/2026 15:17 | 2 msgs do cliente, 3 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[10:55] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[10:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:56] CLIENTE: Oi
+[11:00] LOJA: *Josy:*
+🙋🏼‍♀️
+[15:17] LOJA: [áudio] "Boa tarde! Pela manhã você me mandou um oi, eu tinha perguntado qual é a medida dos pneus que você precisa e até o presente momento você não me retornou. Ainda posso te ajudar?"  {audio:midias/A59EF6444FABCEA2BBB8BB5752A1F1A7_990745.ogg}

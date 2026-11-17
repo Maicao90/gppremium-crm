@@ -1,0 +1,38 @@
+CONVERSA c05a46272e | contato: Marcos Vinicios | 22/09/2026 17:43 até 23/09/2026 10:54 | 5 msgs do cliente, 16 da loja, 0 do robô
+
+--- 22/09/2026 (Tue) ---
+[17:43] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+boa tarde
+[17:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:43] CLIENTE: 205/45 17
+[17:45] LOJA: *Josy:*
+OI, Marcos...
+[17:45] LOJA: *Josy:*
+Temos sim!
+[17:46] LOJA: [foto]
+[17:46] LOJA: *Josy:*
+	
+Pneu 205/45/17 88w na305 sunny R$ 389,00 a unidade a vista.
+--- 23/09/2026 (Wed) ---
+[10:06] LOJA: [áudio] "Oi, Max, tudo jóia? E aí, posso reservar os pneus aqui para você?"  {audio:midias/3EB02BFE34C16CCABED098_177787.ogg}
+[10:12] CLIENTE: [áudio] "Oi, bom dia. Não, não vou querer agora, não. Beleza? É só fazendo um orçamento mesmo."
+[10:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:47] CLIENTE: e essa
+[10:49] LOJA: *Josy:*
+Marcos...eu te mandei o orçamento!
+[10:49] LOJA: 👆🏻
+[10:49] CLIENTE: sim mais não vou querer agora não
+[10:50] LOJA: [foto] *Josy:*
+Você disse aqui, e essa..
+[10:50] LOJA: *Josy:*
+Não entendi... 🤷🏼‍♀️
+[10:52] LOJA: *Josy:*
+Ou você quis dizer:  *é essa* ?
+[10:53] LOJA: *Josy:*
+De todo modo vou  encerrar seu atendimento.                                                                                                                                                                                                        Se precisar futuramente , venha até nossa loaj.                                                                                                                                                                            Obrigada 👋🏻
+[10:53] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:54] LOJA: [foto]

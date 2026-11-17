@@ -1,0 +1,25 @@
+CONVERSA b98c0e6d7c | contato: As Sul (Sistec) | 19/10/2026 17:12 até 21/10/2026 14:35 | 4 msgs do cliente, 8 da loja, 1 do robô
+
+--- 19/10/2026 (Mon) ---
+[17:12] CLIENTE: Opa
+[17:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:12] CLIENTE: 265 70 16
+[17:14] LOJA: *Josy:*
+Boa tarde!
+[17:14] LOJA: [foto]
+[17:16] LOJA: *Josy:*
+No dia de hoje temos os pneus 265/70/16  das marca  Comforser e Lanvigator ,   essas opções a pronta entrega.                                                                                                                                             245/70/16 e 255/70/16 da marca GP Premium essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:55] LOJA: [áudio] "Olá, tudo bem com você? Eu me chamo Josi e você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB05667433BEB54438BB8_122575.ogg}
+[18:07] CLIENTE: Mora n mas passso sempre por aí
+[18:08] CLIENTE: Vi uma placa dizendo compre 3 leve 4 kk
+--- 20/10/2026 (Tue) ---
+[08:03] LOJA: *Josy:*
+Bom dia!
+[08:04] LOJA: *Josy:*
+Sim, realmente, a promoção existe e é válida para os pneus da marca GP Premium nas medidas 195/65/15 e 215/55/17.
+--- 21/10/2026 (Wed) ---
+[11:33] LOJA: [áudio] "Olá, tudo bem contigo? Bem, por hora eu vou encerrar aqui o seu atendimento, está bem? E caso você esteja passando por aqui, venha até nossa loja, pois vai ser uma satisfação falar com vocês, tá bem?"  {audio:midias/3EB0DAEF06B39D7F93CA8C_849299.ogg}
+[14:35] ROBÔ: 🙋🏼‍♀️

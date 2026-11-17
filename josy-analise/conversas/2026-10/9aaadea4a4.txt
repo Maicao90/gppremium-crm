@@ -1,0 +1,14 @@
+CONVERSA 9aaadea4a4 | contato: Reinaldo Sales | 01/10/2026 10:32 até 01/10/2026 12:55 | 3 msgs do cliente, 4 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[10:32] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[10:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:32] CLIENTE: 195/55R16
+[10:32] LOJA: [áudio] "Oi Reinaldo, bom dia. Tudo bem com você? Eu me chamo Josi. Eu tenho aqui sim, a princípio, os pneus da marca GP Premium, que eles estão na promoção de R$ 299,00 por R$ 259,00 à vista. Você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB0E017D14EAF027ABF62_171449.ogg}
+[10:34] CLIENTE: Não
+[12:55] LOJA: [áudio] "Perfeito, então, Reinaldo. Bem, de todo mundo, eu vou deixar aqui na nossa conversa a localização da nossa empresa, pois se de repente você estiver aqui na nossa região, passa aqui na nossa empresa para conversarmos pessoalmente, tá joia? Obrigada pelo seu contato, que você tenha um bom final de semana."  {audio:midias/3EB07EDA58D3B28294CCAA_364167.ogg}
+[12:55] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

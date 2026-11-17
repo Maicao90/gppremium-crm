@@ -1,0 +1,46 @@
+CONVERSA 873b2ba33f | contato: joe baldez | 30/09/2026 12:31 até 01/10/2026 18:32 | 13 msgs do cliente, 22 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[12:31] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:32] CLIENTE: 165/70/14
+[12:32] CLIENTE: Preciso de 4
+[12:33] LOJA: [áudio] "Olá, bom dia! Tudo bem com você, Joy? Eu me chamo Josi e eu tenho aqui a pronta entrega os pneus da marca GP Premium."  {audio:midias/3EB0E065AADCCAF718C9C2_506525.ogg}
+[12:33] LOJA: [foto]
+[12:33] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:33] LOJA: *Josy:*
+Mora aqui em Luziânia-Go?
+[12:33] CLIENTE: Cidade ocidental
+[12:33] LOJA: *Josy:*
+Perto!
+[12:34] LOJA: *Josy:*
+Está em busca de alguma marca specifica?
+[12:34] CLIENTE: Preciso das especificações e marca
+[12:34] LOJA: [áudio] "Esse, no caso, é um pneu ecológico que nós produzimos, tá? Ele vai entrar na categoria de remodelagem apenas por questão técnica. Entretanto, é o pneu mais vendido que eu tenho, justamente por conta da qualidade. Tem garantia de 2 anos e questão de quilometragem roda 60 mil km, tranquilamente."  {audio:midias/3EB063BD2D9FB5B1A48B89_398454.ogg}
+[12:38] CLIENTE: [áudio] "Sim, então você está dizendo que ele é remold, é isso? Se for remold, eu não quero não. Remold, eu já tive experiência ruim com esse tipo de pneu. Então, é um pneu que é barato e acaba você gastando mais dinheiro no final. Então, não compensa. Você tem marca SEAT?"
+[15:05] LOJA: [áudio] "Oi, boa tarde. Obrigada por aguardar. Como eu tive instabilidade aqui na nossa internet, somente agora que estou conseguindo ver sua mensagem. Sim, realmente o senhor tem toda razão, porque existem pneus que são produzidos de péssima qualidade. Já os pneus que nós produzimos, para iniciar aqui a nossa conversa, estamos há 10 anos no mercado, porque os pneus são de primeira linha mesmo. São os pneus mais vendidos que nós temos. E aí até te fiz uma pergunta, assim que possível o senhor me fala aqui, que eu posso verificar com algum distribuidor para tentar te atender, tá joia?"  {audio:midias/3EB00FD86C42AA6523982C_512521.ogg}
+[15:41] CLIENTE: [áudio] "Só me responde aí, esse pneu GP Premium é o que? Remold? Se ele for Remold não serve. Eu já pesquisei tanto aqui que eu já nem lembro mais. Se você me passou ele..."
+[15:41] LOJA: [áudio] "Sim, eu respondi, é sim."  {audio:midias/3EB0D23278148220C6A8D0_685994.ogg}
+[15:42] LOJA: [áudio] "É, muita gente, né? Muita coisa para a gente lidar. Mas eu solicitei aqui para o meu distribuidor para ver se ele tem alguma marca no estoque dele para poder te passar o orçamento, tá bom?"  {audio:midias/3EB07448C3CEC1AF7E7621_688403.ogg}
+[15:42] CLIENTE: [áudio] "Quero que um pneu que atenda às minhas necessidades, né, como chuva, né, e durabilidade, mas que esteja num preço bom."
+[15:42] CLIENTE: [áudio] "Você só tem essa marca aí."
+[15:43] CLIENTE: Não quero remold
+[15:43] LOJA: [áudio] "No dia de hoje somente, porque reporço, né, é o pneu mais vendido que eu tenho, porque o nosso padrão de qualidade, ele é extremamente alto, existe uma grande diferença dos pneus que são remoldes mesmo, né, e da linha GP Premium, produzindo aí há 10 anos, então assim, são os meus pneus mais vendidos. Outras opções de marcas eu posso conseguir, né, com os distribuidores. Eu até solicitei um orçamento aqui com eles, pra ver se eles têm, de repente, um Goodyear, alguma outra marca lá pra poder te atender, tá joia? Aí assim que eles me responderem, eu te passo direitinho o preço, o prazo de entrega, tá bom?"  {audio:midias/3EB0C0A03567BFC2B39261_469009.ogg}
+[15:43] CLIENTE: Já tive problemas com esse tipo de pneu
+[15:43] LOJA: 😊
+[15:44] LOJA: *Josy:*
+Só aguardar.
+[15:45] CLIENTE: [áudio] "Ok, eu fico no aguardo. Eu vou trocar os pneus até sexta-feira, porque meu carro está na oficina. Então, acho que até lá eu já consegui algum fornecedor ou alguma coisa."
+--- 01/10/2026 (Thu) ---
+[14:32] LOJA: [áudio] "Oi, boa tarde, tudo bem? Olha, neste exato momento, eu consegui uma opção de pneu importado na medida 165-7014. De repente, se for do seu interesse..."  {audio:midias/3EB034D537101360DD4848_68604.ogg}
+[14:33] LOJA: [foto]
+[14:33] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:40] LOJA: Bem... vou encerrar seu atendimento para não encher seu whatsapp de mensagem.                                                                                                                   Se precisar futuramente é só chamar. Ou se possivel, venham até nossa loja.                                                                                                  Obrigada 👋🏻
+[17:40] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[18:32] CLIENTE: Eu agradeço pela atenção, mas já consegui o pneu ideal.. obrigado
+[18:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

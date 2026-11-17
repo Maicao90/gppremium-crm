@@ -1,0 +1,26 @@
+CONVERSA e4bd5e5d85 | contato: Paulo | 19/09/2026 10:25 até 21/10/2026 15:28 | 3 msgs do cliente, 8 da loja, 4 do robô
+
+--- 19/09/2026 (Sat) ---
+[10:25] LOJA: *Josy:*
+Bom dia, Paulo!
+[10:25] LOJA: [foto]
+--- 21/10/2026 (Wed) ---
+[08:04] CLIENTE: [áudio] "Bom dia, eu queria saber se ainda você tem, eu peguei dois pneus, eu precisava de mais dois, dois, três, cinco, um 75 15 da S10. Se tiver, se puder passar o preço para mim."
+[08:04] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[08:22] LOJA: [foto]
+[08:22] LOJA: [foto]
+[08:22] LOJA: [foto]
+[08:23] LOJA: [áudio] "Oi, Sr. Paulo, bom dia, tudo bem? Eu vou ter neste desenho aqui, tá? Hoje, a unidade está por R$ 728,00 para o pagamento à vista."  {audio:midias/3EB0924B1D6A72E983A3BC_706097.ogg}
+[08:34] CLIENTE: [áudio] "Bom dia. Mas daquele lá, daquele que eu peguei lá era mais barato, né? Você ainda não tem ainda? Acho que era 502, né? Você consegue dois pneus para mim? Peguei dois, só que não deu para colocar os quatro que precisava alinhar."
+[09:06] LOJA: [áudio] "É porque os pneus, eles sofreram reajuste, né, Sr. Paulo, e no dia de hoje a opção que eu tenho realmente vai ser esse."  {audio:midias/3EB0DC86907A6834F3798E_570789.ogg}
+[12:17] ROBÔ: 🙋🏼‍♀️
+[12:26] CLIENTE: [áudio] "Tá bom, filho. Obrigado, viu? Deus abençoe."
+[12:27] ROBÔ: Oi, tudo bem? Não consegui ouvir seu áudio direito por aqui 😅
+[12:27] ROBÔ: Pode me mandar por escrito a *medida do pneu* (ex.: 175/65/14) ou o *modelo do seu carro*?
+[15:28] ROBÔ: 🙋🏼‍♀️

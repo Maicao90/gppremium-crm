@@ -1,0 +1,50 @@
+CONVERSA 974a526e08 | contato: Lívia Fonseca | 26/08/2026 08:29 até 27/08/2026 15:04 | 12 msgs do cliente, 18 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[08:29] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ? Qual valor dos 4 pneus 15/185/65
+[08:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:29] CLIENTE: 185/65/15
+[08:33] LOJA: *Josy :*
+Bom dia, obrigada por aguardar!
+[08:33] LOJA: *Josy :*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:33] LOJA: [foto]
+[12:27] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu me chamo Josi e te mandei o orçamento de todas as opções que nós temos no dia de hoje. Você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0051DCC3B051647A1D1_209526.ogg}
+[16:07] CLIENTE: Sim Josy
+[16:07] CLIENTE: Quanto ficaria em 4 pneus a vista
+[16:10] LOJA: *Josy :*
+Os pneus da marca GP Premium no  debito ou pix R$ 249,00 cada mas se o pagamento em *dinheiro* em espécie fica por R$  237,00
+--- 27/08/2026 (Thu) ---
+[12:42] LOJA: *Josy:*
+Boa tarde, Livia... como vai você?
+[12:43] LOJA: *Josy:*
+Estou passando para saber se pretende seguir com a negocição. ☺️
+[13:25] CLIENTE: Boa tarde Josy eu consegui aqui mais em conta com montagem, alinhamento e balanceamento incluso. Obrigada
+[13:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:33] LOJA: *Josy:*
+Hum... já fez o serviço?
+[14:35] LOJA: [áudio] "Oi Lívia, tudo jóia? Lívia, eu não sei onde é que você encontrou essa proposta, realmente muito tentadora, mas você como uma mulher inteligente, que eu imagino que seja, vai ficar atenta, né, para não cair em golpes, pois você não é a primeira pessoa que me vem, né, com esse argumento, e as pessoas que foram, enfim, né, eu vou encerrar aqui seu atendimento para não encher seu WhatsApp de mensagens e vou deixar também a nossa localização. Tá, Joia? Obrigada pela atenção e até mais."  {audio:midias/3EB06603BB0D0150D314FC_936288.ogg}
+[14:35] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:36] CLIENTE: Ainda não
+[14:36] CLIENTE: Avaliando
+[14:37] CLIENTE: Essa é em Luziânia
+[14:37] CLIENTE: ?
+[14:37] CLIENTE: Ou no Val ?
+[14:37] LOJA: *Josy:*
+Somos de Luziânia
+[14:37] LOJA: [foto]
+[14:40] CLIENTE: [áudio] "Tá, e no caso, fechando com você, ficaria 237 o pneu. E aí, você já me dá o alinhamento, o balanceamento e a montagem? Como é que é?"
+[14:41] LOJA: [áudio] "Não. Esses serviços são cobrados à parte. O pneu da GP Premium, se o pagamento for em dinheiro em espécie, né, que eu até deixei escrito aqui para que não haja confusão entre nós, em dinheiro em espécie, 237 cada pneu. Se for no débito ou Pix, 249 reais. E serviços são cobrados à parte. Tá, jóia?"  {audio:midias/3EB0B988978835A20086AE_977482.ogg}
+[14:41] LOJA: *Josy:*
+* Balanceamento = 25,00 (por pneu )
+* Alinhamento = 90,00 (Alinhamento de Direção)
+[14:43] LOJA: [áudio] "Que é assim, Lívia, igual eu te falei no áudio anterior, essa prática, essa abordagem de dizer para o cliente que já está tudo incluso, é só para chamar o cliente na loja. Porque, olha, se você estivesse por aqui, ou então se eu pudesse gravar, mas eu não posso, porque são meus clientes, para você ouvir o tanto de relatos que os clientes me trazem, justamente com essa promessa de que vai entregar o carro já todo pronto, só com o valor dos pneus. Mas quando chega lá, eles condenam o carro todinho. Tem uma empresa que justamente danifica peças do carro para que você faça o serviço, e aí obviamente que vai cobrar mais. Então, a pessoa espera chegar lá, fazer os serviços, só pagando o preço dos pneus, e na verdade vai sair o dobro do preço. E hoje mesmo pela manhã, recebi um cliente aqui, que ele foi numa empresa aí, sem citar nomes, ele chegou lá, ele falou, eu quero comprar os pneus e quero levar para montar. Eles disseram que, ah, o rapaz que fez a montagem foi embora, só voltar amanhã. E ele viu que o rapaz não foi embora de jeito nenhum, ficou escondido lá para não atender. Por quê? Eles utilizam de uma prática ilegal só para poder atrair realmente, tá bom? Então, vamos lá. Vamos lá. Vamos lá. Vamos lá. Vamos lá."  {audio:midias/3EB05951E09F3754CB0AB4_169880.ogg}
+[15:03] CLIENTE: [áudio] "Sim, Josi, eu te entendo perfeitamente, mas não tem como condenar o carro, porque o meu carro acabou de sair da oficina, não tem nem duas semanas, mas tranquilo, eu vou avaliar certinho junto com o meu esposo, vou verificar tudo direitinho e entre em contato com você, tá? Muito obrigada."
+[15:04] LOJA: [áudio] "Sim, exatamente, Lívia. E eu digo porque, não sou eu que estou falando, meu próprio cliente, eu recebi um aqui que ele é mecânico, ele cuida da parte elétrica, ele tinha feito tudinho no carro dele. E aí, quando ele foi lá, simplesmente falaram, olha, seu carro está com esse defeito, com esse outro aqui, esse outro aqui dele. Que estranho, porque eu sou mecânico, eu dei uma geral no meu carro e eu sei que ele não tem nada. Imagina a cara do pessoal caindo no chão, tenso. Mas, assim, fique à vontade, tá joia? Eu te mandei aí todas as opções que eu tenho aqui a pronta entrega no dia de hoje, tá? Meu estoque é fluido e pode ser que amanhã eu não tenha a marca X ou Y, mas estou aqui à sua disposição, tá joia? Como você sabe onde é a nossa empresa, eu te mandei aí a localização. Se tiver tempo, passem aqui para conversar nos pessoalmente, tá? Obrigada. Obrigada."  {audio:midias/3EB0CB422872A9D5E55210_383771.ogg}

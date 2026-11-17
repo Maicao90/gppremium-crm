@@ -1,0 +1,36 @@
+CONVERSA 3f694e2d46 | contato: Wilson De Sousa | 28/08/2026 13:35 até 29/08/2026 10:38 | 8 msgs do cliente, 16 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[13:35] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:35] LOJA: *Josy:*
+🙋🏼‍♀️
+[13:35] CLIENTE: 265/65/17
+[13:36] LOJA: [foto]
+[13:36] LOJA: *Josy:*
+Prefere mensagem de áudio ou texto?
+[13:37] CLIENTE: Pode ser áudio
+[13:37] LOJA: [áudio] "Olá Wilson, boa tarde. Como é que você está? Eu sou a Josie e no dia de hoje eu tenho essas duas opções de marcas à pronta entrega. O pneu importado da marca Maxx, onde a unidade está por 684 reais à vista e os pneus da marca GP Premium, que estão por 559 reais na unidade à vista. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB07D5E6C0598DA84EFB1_600375.ogg}
+[13:38] CLIENTE: Esses pneus são novos ou remold
+[13:38] CLIENTE: Moro em são Sebastião
+[13:38] LOJA: [áudio] "O chinês é novo."  {audio:midias/3EB01768006C61D6F29367_755806.ogg}
+[13:39] CLIENTE: Tem fotos
+[14:54] LOJA: *Josy:*
+Somente o de R$ 559,00 e é o pneu  mais vendido por conta da qualidade.
+[15:06] LOJA: *Josy:*
+pneu 265/65/17 112t peakgrip a/t maxzez 👇🏻
+[15:07] LOJA: [foto]
+[15:07] LOJA: *Josy:*
+265/65/17 Adventure ATR 👇🏻
+[15:07] LOJA: [foto]
+[17:13] LOJA: [áudio] "Olá Wilson, tudo bom? Então, te mandei aí as opções dos pneus que nós temos no dia de hoje, tá? Eu vi que você mora em São Sebastião, mas se de repente você conseguir vir até nossa loja, igual com questão, a pergunta que você me fez, o pneu GP Premium, ele é o pneu mais vendido justamente por conta da qualidade. Aqui na imagem não dá pra ter tanta percepção assim, né? Se você ver o pneu pessoalmente, você vai ver que realmente não tem nada a ver com os pneus remoldes convencionais. São pneus muito bons, garantia de 2 anos, tá? E é isso. Me dá um retorno assim que você ouvir meu áudio, tá?"  {audio:midias/3EB0C2F399529185637830_627728.ogg}
+[17:14] CLIENTE: [áudio] "Oi, boa tarde, tudo bem? Então, pois é, mas eu ando muito, eu acabo viajando muito, é para uma Hilux, aí pneu remold eu não tenho interesse não, mas de qualquer forma eu fico muito agradecido."
+[17:15] LOJA: [áudio] "Eu uso aqui na minha Amarok, meu pai utiliza numa Maverick."  {audio:midias/3EB02D60E2811D618C35CA_526469.ogg}
+--- 29/08/2026 (Sat) ---
+[10:27] LOJA: [áudio] "Bom dia, Sra. Wilson, tudo joia? Eu vou deixar aqui na nossa conversa a localização da nossa empresa, pois se de repente o senhor estiver aqui na nossa região, o senhor passa aqui na loja para nós conversarmos pessoalmente, está bem? Bom final de semana."  {audio:midias/3EB08ED20AE2D00D888946_175653.ogg}
+[10:27] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:38] CLIENTE: Tá bom obrigado
+[10:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

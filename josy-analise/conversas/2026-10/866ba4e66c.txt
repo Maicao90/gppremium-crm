@@ -1,0 +1,17 @@
+CONVERSA 866ba4e66c | contato: Gildemar | 08/10/2026 09:19 até 09/10/2026 12:39 | 3 msgs do cliente, 8 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[09:19] LOJA: Bom dia!
+[09:27] CLIENTE: Bom dia
+[09:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:28] LOJA: [áudio] "Oi, Zildemar, tudo bom?"  {audio:midias/3EB001EF3A803EFC9D2B01_643504.ogg}
+[09:28] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:28] LOJA: [foto]
+[09:28] LOJA: [áudio] "Olha, essa é a nossa localização, tá? Às vezes ela não tá abrindo corretamente aí no WhatsApp, aí eu mando a foto aqui da frente da nossa loja."  {audio:midias/3EB05C8E4214B5060EE68B_434294.ogg}
+[09:28] CLIENTE: Ok
+--- 09/10/2026 (Fri) ---
+[12:32] LOJA: [áudio] "Oi, Gildemar. Tudo jóia? Nós nos falamos ontem. Te mandei a nossa localização. E aí, você vai conseguir vir aqui hoje? Gostaria de agendar para amanhã e dar um retorno, tá bom?"  {audio:midias/3EB049DA0EB7D551F88596_23465.ogg}
+[12:39] CLIENTE: [áudio] "É, beleza? Eu achei um mais encontro aqui no Jardim Gá. Ah, eu já comprei já. Obrigado, viu?"
+[12:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

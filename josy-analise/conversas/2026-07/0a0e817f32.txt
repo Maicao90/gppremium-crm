@@ -1,0 +1,8 @@
+CONVERSA 0a0e817f32 | contato: Nilton | 19/07/2026 10:40 até 20/07/2026 09:22 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 19/07/2026 (Sun) ---
+[10:40] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:42] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 20/07/2026 (Mon) ---
+[09:20] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:22] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

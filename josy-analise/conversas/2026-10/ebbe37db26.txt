@@ -1,0 +1,19 @@
+CONVERSA ebbe37db26 | contato: Roberto Ribeiro | 22/10/2026 10:03 até 22/10/2026 10:06 | 4 msgs do cliente, 3 da loja, 5 do robô
+
+--- 22/10/2026 (Thu) ---
+[10:03] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[10:03] ROBÔ: Oi, tudo bem?
+[10:03] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[10:04] CLIENTE: [áudio] "Oi, bom dia, bom dia. Não, hoje eu quero só saber o valor que tá o perfil 195, 55, 15, seu aí."
+[10:04] ROBÔ: 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+[10:04] ROBÔ: Temos o pneu *175/65/14* da marca *GP Premium* está saindo por *R$ 249,00 à vista*.
+[10:04] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[10:05] CLIENTE: [áudio] "Eu estou melhor, sabe? A medida é 1,95, 55, 15."
+[10:05] LOJA: [áudio] "Perdão, perdão, mandei mensagem errada aqui, desculpa, estou fazendo seu orçamento, tá?"  {audio:midias/3EB001CBB9B4E3C8EB5CE0_837616.ogg}
+[10:05] CLIENTE: Ta bom
+[10:06] LOJA: [foto]
+[10:06] LOJA: No dia de hoje temos Dunlop e GP Premium essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

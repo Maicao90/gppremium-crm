@@ -1,0 +1,19 @@
+CONVERSA 2ed6cd4a7a | contato: adilson pfilho | 21/09/2026 09:24 até 21/09/2026 14:34 | 3 msgs do cliente, 7 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[09:24] LOJA: *Josy:*
+Bom dia!
+[09:24] LOJA: *Josy:*
+165/70/14 Pirelli cinturado.
+[09:45] CLIENTE: Ok
+[09:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:46] LOJA: *Josy:*
+Oi.. está em falta a opção solicitada.
+[13:32] CLIENTE: Ok.ob
+[13:33] LOJA: *Josy:*
+Tem que ser Pirelli mesmo? Outra opção de marca não te atende?
+[14:30] CLIENTE: Somente
+[14:34] LOJA: *Josy:*
+Vou te encaminhar a nossa localização, se possivel, passa aqui 🙏🏻
+[14:34] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

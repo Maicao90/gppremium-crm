@@ -1,0 +1,25 @@
+CONVERSA 45b577959c | contato: Rafael | 08/10/2026 16:54 até 09/10/2026 09:18 | 4 msgs do cliente, 11 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[16:54] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+Olá! Tenho interesse e queria mais informações, por favor.
+[16:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:54] CLIENTE: pneu 215/65/16 vcs tem valores
+[16:55] LOJA: Boa tarde, temos sim!
+[16:55] LOJA: [foto]
+[16:55] LOJA: No dia de hoje temos essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:56] LOJA: [áudio] "Rafael, boa tarde. Você é daqui de Luziânia mesmo?"  {audio:midias/3EB09449C20BF3638429D1_657548.ogg}
+[16:59] CLIENTE: Sim ocidental
+[16:59] LOJA: [áudio] "Pertinho de nós."  {audio:midias/3EB0D4A1AD5C8C40FB8470_633917.ogg}
+[17:20] LOJA: [áudio] "Você gostaria de deixar agendada sua vinda até a nossa loja?"  {audio:midias/3EB084A486F8D6BD29C1E1_136325.ogg}
+--- 09/10/2026 (Fri) ---
+[09:14] CLIENTE: Bom dia tô pesquisando ainda mais obrigado pela atenção
+[09:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:18] LOJA: [áudio] "Certo. Eu vou encerrar aqui o seu atendimento, mas vou deixar a nossa localização. Se houver a possibilidade, faça aqui, tá bem?"  {audio:midias/3EB0B1F4A2C20F8B9E50FF_50695.ogg}
+[09:18] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:18] LOJA: [foto]

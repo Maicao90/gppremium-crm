@@ -1,0 +1,61 @@
+CONVERSA 71ea42a3c1 | contato: Jeferson Reis | 25/08/2026 16:05 até 26/08/2026 17:52 | 26 msgs do cliente, 19 da loja, 0 do robô
+
+--- 25/08/2026 (Tue) ---
+[16:05] CLIENTE: Quero cotar o pneu 265/60 R18 GP Premium.
+[16:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:06] CLIENTE: 225/60 R18
+[16:06] LOJA: [áudio] "Olá, boa tarde. Tudo bem?"  {audio:midias/3EB0C1E643C38DA3BA1DA0_285713.ogg}
+[16:07] LOJA: [áudio] "Você é daqui da cidade de Luziânia, Goiás?"  {audio:midias/3EB043BA02A9C4CD4ECF2B_810958.ogg}
+[16:07] CLIENTE: Sim
+[16:07] CLIENTE: E para caminhonete da empresa
+[16:08] LOJA: [áudio] "Certo, uma observação, aí na sua mensagem você colocou duas medidas, 265-60, que é realmente para caminhonete, e 225-60-18, que são para SUVs, um exemplo, Fiat Toro, qual das duas opções que você está precisando?"  {audio:midias/3EB0596E23F0C359A24E3B_691180.ogg}
+[16:09] CLIENTE: Pra Fiat Toro
+[16:09] CLIENTE: Rancho 2022
+[16:13] LOJA: *josy :*
+Temos sim!
+[16:13] LOJA: [foto]
+[16:13] LOJA: *josy :*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:17] CLIENTE: [áudio] "Então, Josi, estou olhando aqui, me diz uma coisa, para a empresa, vocês fazem boleto? Só para mim conversar aqui, e se você tem alguma foto deles, dos pneus, para mim ver o desenho deles?"
+[16:20] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Eu me chamo Josi. Eu preciso que você me encaminhe a documentação para análise para ver se o Departamento Financeiro aprova para a realização de boletos."  {audio:midias/3EB08D04C291E9019619FE_897407.ogg}
+[16:21] CLIENTE: Entendi
+[16:21] CLIENTE: Já vou mandar
+[16:23] CLIENTE: [documento]
+[16:42] LOJA: *Josy :*
+Por gentileza, preciso do crt de cnpj, e contrato também
+[16:46] CLIENTE: CNPJ  37.832.508/0002-47
+crt 03
+[17:24] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Por gentileza, eu preciso do cartão mesmo, não somente um número, e não sou nem por mim que estou solicitando dessa maneira. É o departamento financeiro mesmo, tá? Aí, se você puder me ajudar, por gentileza..."  {audio:midias/3EB0C82A9DADB87A8BFF74_239449.ogg}
+[17:25] CLIENTE: [áudio] "Eu vou ver se consigo o cartão 100PJ com o financeiro de Anápolis, tá?"
+[17:25] LOJA: [áudio] "Perfeito. Desde já, obrigada."  {audio:midias/3EB076CA01B2285CA1BBCC_21474.ogg}
+[17:25] CLIENTE: [documento]
+[17:33] CLIENTE: about:blank
+[17:35] CLIENTE: https://solucoes.receita.fazenda.gov.br/Servicos/cnpjreva/comprovante
+[17:36] LOJA: [áudio] "Eu encaminhei tudo lá para o financeiro, aí eles que vão me dar o parecer, tá joia? Qualquer coisa eu entro em contato contigo aqui."  {audio:midias/3EB0DEDFF45D2AE7487216_329602.ogg}
+[17:39] CLIENTE: Ok fico no aguardo
+--- 26/08/2026 (Wed) ---
+[10:01] CLIENTE: Bom Dia
+[10:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:02] CLIENTE: Sabe se vão dar certo o boleto para trocar os pneus?
+[10:03] LOJA: *Josy :*
+Ainda não obtive retorno da diretoria.
+[10:06] CLIENTE: Ok
+[13:36] CLIENTE: Boa tarde
+[13:37] CLIENTE: Sobre os pneus será que conseguem te retornar. Senão não tem problema, vou ver em Anápolis comprar lá pela Matriz
+[14:33] LOJA: *Josy :*
+Boa tarde...
+[14:33] LOJA: *Josy :*
+Não foi autorizada a venda através de boleto.
+[14:35] CLIENTE: Ok obrigado
+[14:35] LOJA: *Josy :*
+Disponha.
+[16:41] CLIENTE: Tava olhando aqui
+[16:41] CLIENTE: Nem para uns 10 DD
+[16:46] LOJA: *Josy:*
+Não... e o departamento não me repassou o motivo, apenas disse que não foi aprovado.
+[17:51] CLIENTE: Ok obrigado!
+[17:52] LOJA: Disponha... uma pena não poder ajuda-los.

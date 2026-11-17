@@ -1,0 +1,43 @@
+CONVERSA f8741d117d | contato: Weverton Guincho | 22/10/2026 08:09 até 22/10/2026 12:36 | 20 msgs do cliente, 10 da loja, 8 do robô
+
+--- 22/10/2026 (Thu) ---
+[08:09] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[08:09] ROBÔ: Oi, tudo bem?
+[08:09] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[08:10] CLIENTE: 195.55.15
+[08:10] ROBÔ: Temos o pneu *195/55/15* da marca *GP Premium* está saindo por *R$ 289,00 à vista*.
+[08:10] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[08:11] CLIENTE: Onde é a loja
+[08:11] ROBÔ: Segue a nossa localização:
+[08:11] ROBÔ: [localização] -16.2334867,-47.9120936 — Pneus GP Premium
+[08:11] ROBÔ: [foto] Pneus GP Premium
+[08:11] LOJA: Somos de Luziânia-Go!
+[08:11] CLIENTE: Já da montado?
+[08:11] CLIENTE: Ou só vende
+[08:12] LOJA: Já é montado!
+[08:12] CLIENTE: Quem eu procuro aí
+[08:13] LOJA: Sou a Josy!
+[08:13] CLIENTE: Esse pneu eu vou paga pra uma moça que bati no carro dela
+[08:14] CLIENTE: Vou só confirma que horas ela vai aí
+[08:14] CLIENTE: Tem desconto aí não a mais kk ?
+[08:14] CLIENTE: No Pix
+[08:15] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Ué, Everton, se o pagamento for em dinheiro físico, eu consigo dar um desconto sim, agora no Pix realmente é esse valor de R$ 289,00, tá?"  {audio:midias/3EB062E52804B99279508C_54448.ogg}
+[08:16] CLIENTE: Quanto no dinheiro
+[08:17] LOJA: R$ 275,00
+[08:17] CLIENTE: 250 👀
+[08:17] CLIENTE: No dinheiro
+[08:17] LOJA: Não rsrs
+[08:17] CLIENTE: Me ajuda
+[08:17] CLIENTE: Kkk
+[08:18] LOJA: Estou te ajudando!
+[08:19] LOJA: Se fosse um pneu 185/60/15 ou 185/65/15 consigo um preço melhor
+[08:21] CLIENTE: E pq eu bati no carro
+[08:21] CLIENTE: Ai vou tenque paga
+[08:21] CLIENTE: [foto]
+[08:21] CLIENTE: É mesmo que vcs tem aí ?
+[08:23] LOJA: Isso mesmo!
+[09:33] CLIENTE: Vende no cnpj ?
+[09:34] LOJA: [áudio] "Sim, vende sim, o valor continua o mesmo, tá?"  {audio:midias/3EB08DA2DD7A4558F6CF70_883950.ogg}
+[12:36] ROBÔ: 🙋🏼‍♀️

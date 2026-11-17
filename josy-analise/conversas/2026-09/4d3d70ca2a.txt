@@ -1,0 +1,70 @@
+CONVERSA 4d3d70ca2a | contato: Giovani O+. | 19/09/2026 12:14 até 15/10/2026 17:03 | 23 msgs do cliente, 30 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[12:14] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[12:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:18] CLIENTE: Pneu aro 17
+[14:22] CLIENTE: 205 /50
+--- 21/09/2026 (Mon) ---
+[08:05] LOJA: *Josy:*
+Bom dia!
+[08:06] LOJA: [foto]
+[08:07] LOJA: [áudio] "Oi Giovanni, tudo bom? Olha, o GP Premium está por R$ 339,00 no Debit ou Pix."  {audio:midias/3EB0EC21296B9734770BF1_763652.ogg}
+[08:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:08] CLIENTE: [áudio] "Não, tranquilo, bom dia. Eu queria saber quando é que vai entrar aquela promoção lá da 17, 4x3. Vou esperar essa oportunidade. Tem um mês que eu comprei os 16 aí, como eu troquei de carro, tô precisando trocar os pneus. E na hora que aparecer uma promoçãozinha aqui, eu tô de olho sempre no Instagram e no WhatsApp."
+[08:09] LOJA: [áudio] "Lembra que eu te expliquei, Giovanni, que nós estávamos com a promoção do Compre 3 e Leve 4, mas é na medida 215, 55, 17."  {audio:midias/3EB088567EA9C94DE03DC9_512222.ogg}
+[08:10] CLIENTE: [áudio] "Não, cabe lá, 17 cabe, sendo os 4, cabe de boa."
+[08:11] CLIENTE: [áudio] "Mas eu vou dar uma olhadinha direitinho lá mesmo, você vê se cabe, né? Porque é no Corolla. Eu não sei se fica alto, baixo, grande, pequeno."
+[08:11] LOJA: [foto]
+[08:11] LOJA: [áudio] "No Corolla, é preferível que coloque o 215,50 do que o 215,55."  {audio:midias/3EB0E32B18FAA5EC017E7D_557776.ogg}
+[08:11] LOJA: [áudio] "De todo modo, vou deixar o orçamento aqui para você, tá bom?"  {audio:midias/3EB04AA8C5CFB056EBBD81_528295.ogg}
+[08:12] LOJA: *Josy:*
+O pneus 215/55/17  se o  pagamento for a vista a  unidade  é  R$ 395,00 x 3 pneus = R$ 1.185,00 por esse preço você vai levar os 4
+[08:13] CLIENTE: Ta bom obrigado
+[08:13] CLIENTE: [áudio] "Aí só é 17, só é essa medida só, né? Mas tranquilo, eu vou dar uma pesquisada, ver se pode colocar, não sei se ele vai ficar mais alto ou mais baixo, mas eu vou dar uma olhada."
+[08:22] LOJA: [áudio] "Se colocar essa medida, ele vai ficar alto demais. Eu suponho que não fica legal aí na sua caixa de ar, porque vai acabar pegando o 215,55."  {audio:midias/3EB072C13F32B924FFCDC7_964769.ogg}
+[08:23] CLIENTE: 225/50
+[08:41] LOJA: *Josy:*
+Para seu veiculo Corolla as melhores opções são 215/50/17 e 225/45/17
+[08:41] LOJA: [foto]
+[08:46] CLIENTE: O que fica mais alto
+[08:49] LOJA: *Josy:*
+215/50/17 então. Creio que você vai preferir ele, assim que eu tiver um tempo vou tirar a foto deles para você.
+[08:54] CLIENTE: [áudio] "Não, tranquilo, eu já agradeço. Eu estava fazendo as pesquisas aqui, eles falam muito do 105, 115, 50 e 17, e o 225, 50 e 17, né, que é o 215 e o 225, que são os que eles dão de início aí, para que o carro fique um pouco maior. Porque realmente esse perfil é baixo."
+[11:43] LOJA: [foto]
+[11:43] LOJA: [foto]
+--- 24/09/2026 (Thu) ---
+[12:29] LOJA: [áudio] "Oi Giovanni, tudo jóia? Como é que você está? Nós conversamos aí alguns dias atrás a respeito dos pneus, né? E eu gostaria de saber que dia que você vem cá para nós fazermos a instalação deles para ti. Quando possível você me dá um retorno, tá bom?"  {audio:midias/3EB0AB0B7EA93DA3E9BEFC_566204.ogg}
+[13:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:23] CLIENTE: [áudio] "Sim, eu vou ver na semana que eu estou na correria. Vamos ver se eu passo na segunda ou na terça. A gente vê sim."
+[14:10] LOJA: [áudio] "Beleza, então, Giovanni, por hora vou encerrar aqui o seu atendimento, tá, Joia? Precisando você dar um pulo aqui na loja."  {audio:midias/3EB0B14FA7E740182D602A_538570.ogg}
+[14:16] CLIENTE: [áudio] "Tá bom, muito obrigado. Mas aí eu vou naquela lata de 215, 55 e até 1,60 para ver se o carro fica mais alto um pouco. Realmente eu quero que ele fique um pouco alto para não arrastar na subida de casa."
+[14:17] LOJA: [áudio] "Combinado."  {audio:midias/3EB0F100F61B662E1735CE_573951.ogg}
+--- 15/10/2026 (Thu) ---
+[14:05] CLIENTE: Boa tarde
+[14:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:05] CLIENTE: Alguma promoção
+[14:05] CLIENTE: 215/17/50
+215/17/55
+[14:37] LOJA: Promoção do GP Premium 215/55/17
+[14:37] LOJA: O pneus 215/55/17  se o  pagamento for a vista a  unidade  é  R$ 395,00 x 3 pneus = R$ 1.185,00 por esse preço você vai levar os 4
+[14:38] LOJA: [foto]
+[14:39] LOJA: E os 215/50 e 225/45 que conversamos anteriromente permanecem o mesmo valor, ainda tem o orçamento?
+[14:40] CLIENTE: E pq apareceu no instra
+[14:40] CLIENTE: Ai mandei a msg
+[14:40] CLIENTE: O 215 / 50 não entra na promoção
+[14:41] LOJA: [áudio] "Pois é, nós começamos a conversar a sede de 3 meses atrás. Estava verificando aqui as nossas conversas e você ficou de passar aqui, disse que o carro estava na oficina. E aí, conta para mim."  {audio:midias/3EB041DDA5EB24089924BD_746734.ogg}
+[14:41] LOJA: Não
+[14:41] CLIENTE: E pq comprei os 16
+[14:41] CLIENTE: Agora vou no 17
+[14:41] CLIENTE: Kkkk
+[14:41] LOJA: [áudio] "Eu lembro, você comprou aro 16 e a promoção é só para R$ 215,55,17. Compre 3 e leve 4."  {audio:midias/3EB0222729BD82F01DF040_392942.ogg}
+[14:42] LOJA: [foto] As outras opções que conversamos permanecem o valor.
+[14:53] LOJA: [áudio] "E que dia você vai vir aqui para realizar a troca dos pneus, hein Giovanni?"  {audio:midias/3EB0AE3007A1B5BFEB351C_323020.ogg}
+[17:03] CLIENTE: [áudio] "Eu quero pegar uma FOG aí. Eu quero fazer o teste desse de 55 para o 10."

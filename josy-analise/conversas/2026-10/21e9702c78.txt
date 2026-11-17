@@ -1,0 +1,17 @@
+CONVERSA 21e9702c78 | contato: Josemar Moreira | 15/10/2026 13:34 até 15/10/2026 13:41 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[13:34] LOJA: [áudio] "Oi, seu Josemar, tudo bom?"  {audio:midias/3EB0D558228D81354B1701_199383.ogg}
+[13:34] CLIENTE: [áudio] "Olá, tudo bem? Eu queria saber de vocês o preço que está o pneu da Hilux, 265, 16, 70."
+[13:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:35] CLIENTE: Meus penus e.
+265/16/70
+[13:35] CLIENTE: Hillux
+[13:36] LOJA: [foto]
+[13:37] LOJA: [áudio] "Seu Josema, no dia de hoje eu tenho o pneu importado nessa medida, tá? E aí eu tenho 2, 4, 5, 70 e 16 aqui da GP Premium."  {audio:midias/3EB0DA45DA55044728D30D_838397.ogg}
+[13:38] CLIENTE: [áudio] "A medida do meu pneu é essa lá, entendeu? Aquele que eu te informei aí. Só que esse aí, tipo assim, isso aí que vocês estão vendendo, vocês estão vendendo esse valor só à vista, né? Pelo que eu tô vendo com essa tabela que você me mandou aqui, se eu dividir ele, eu vou ter que pagar 800 contra cada pneu, né? Pelo que você colocou aí. Quer dizer, vai aumentando juros, sobre juros, sobre juros, até o final."
+[13:39] LOJA: [áudio] "Isso, para parcelar ele tem um acréscimo de juros."  {audio:midias/3EB0EDE8F323EE64DDF1B3_832533.ogg}
+[13:40] CLIENTE: [áudio] "É, então aí não convém, né? Porque se você expõe uma promoção, tinha que ter pelo menos, vamos botar 6 meses sem juros, 4 meses sem juros. Quer dizer, enfim, você vai comprar o gato por lebre, né? Porque tu vai comprar uma coisa que vai ter que pagar juros, vamos supor, de 4 pneus, né? Você vai pagar aí, cada pneu 800, quanto? 800 e pouco. Vai dar o quê? 600, vai dar quase 4 mil reais. Então, não vale a pena, não."
+[13:41] LOJA: Caso mude de ideia!
+[13:41] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

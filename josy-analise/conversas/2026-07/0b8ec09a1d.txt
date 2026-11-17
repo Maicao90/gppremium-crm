@@ -1,0 +1,43 @@
+CONVERSA 0b8ec09a1d | contato: 556684577428 | 30/07/2026 07:08 até 13/08/2026 09:30 | 14 msgs do cliente, 13 da loja, 0 do robô
+
+--- 30/07/2026 (Thu) ---
+[07:08] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[07:10] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 31/07/2026 (Fri) ---
+[06:48] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[06:50] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 01/08/2026 (Sat) ---
+[05:28] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[05:30] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 02/08/2026 (Sun) ---
+[12:08] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[12:10] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 03/08/2026 (Mon) ---
+[11:48] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[11:50] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 04/08/2026 (Tue) ---
+[10:28] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:30] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 05/08/2026 (Wed) ---
+[09:08] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:10] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 06/08/2026 (Thu) ---
+[08:48] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[08:50] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 07/08/2026 (Fri) ---
+[07:28] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[07:30] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 08/08/2026 (Sat) ---
+[06:08] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[06:10] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 09/08/2026 (Sun) ---
+[05:48] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[05:50] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 10/08/2026 (Mon) ---
+[12:28] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[12:30] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 11/08/2026 (Tue) ---
+[11:08] CLIENTE: Olá, gostaria de saber os preços de pneus.
+--- 13/08/2026 (Thu) ---
+[09:28] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:30] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

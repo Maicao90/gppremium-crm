@@ -1,0 +1,15 @@
+CONVERSA 4c372fc6c2 | contato: Simone Aires | 28/08/2026 10:28 até 28/08/2026 15:46 | 2 msgs do cliente, 6 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[10:28] LOJA: *Josy:*
+Bom dia, dar Simone.
+[10:28] CLIENTE: Bom dia!
+[10:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:39] LOJA: [áudio] "Olá, doutora Simone, tudo bem? A senhora passou aqui pela manhã e eu fiquei de tirar um retorno a respeito dos pneus 255-55 da Pirelli, mas eles têm foto no nosso distribuidor. É somente essa marca mesmo que lhe atende?"  {audio:midias/3EB0976A7D01B8D46E1E1B_679284.ogg}
+[15:39] LOJA: [áudio] "Estou te mandando mensagem agora, porque somente agora que eles me responderam."  {audio:midias/3EB058A54775436B9DDFCA_972183.ogg}
+[15:42] CLIENTE: Boa tarde! Sem problema. 
+Então, em outra oportunidade fechamos.
+Obrigada, pelo retorno. Tenha um excelente final de semana.
+[15:46] LOJA: *Josy:*
+Disponha.

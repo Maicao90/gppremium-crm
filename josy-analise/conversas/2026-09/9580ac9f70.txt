@@ -1,0 +1,22 @@
+CONVERSA 9580ac9f70 | contato: Jefte Naykon Empresarial | 16/09/2026 12:17 até 21/09/2026 15:37 | 3 msgs do cliente, 9 da loja, 0 do robô
+
+--- 16/09/2026 (Wed) ---
+[12:17] CLIENTE: Quero cotar o pneu 245/70 R16 GP Premium.
+[12:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:18] CLIENTE: Aro de amarok
+[12:18] CLIENTE: 245 70 16
+[12:21] LOJA: *Josy:*
+Boa tarde, temos sim!
+[12:21] LOJA: [foto]
+[12:22] LOJA: [áudio] "Oi Jefet, tudo bem? Eu sou a Josi. No dia de hoje eu tenho as duas opções de marcas à pronta entrega, que são os pneus da marca Lovigator, a unidade está por R$ 633,00 para o pagamento à vista e temos também os pneus da marca GP Premium, que a unidade está por R$ 479,00 para o pagamento à vista."  {audio:midias/3EB0E6D9D97576925CB0C0_37570.ogg}
+--- 18/09/2026 (Fri) ---
+[18:10] LOJA: [áudio] "Ejeft, boa noite, tudo bem com vocês? Josique falando. Eu te encaminhei um orçamento há alguns dias atrás e gostaria muito de saber se você pretende seguir com a negociação. Você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB08260651701E61DBEE5_819382.ogg}
+--- 21/09/2026 (Mon) ---
+[15:37] LOJA: *Josy:*
+Boa tarde...se for possivel venha até nossa loja!
+[15:37] LOJA: *Josy:*
+Boa semana.
+[15:37] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:37] LOJA: [foto]

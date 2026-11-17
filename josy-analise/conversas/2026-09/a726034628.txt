@@ -1,0 +1,27 @@
+CONVERSA a726034628 | contato: Carla Mariana | 09/09/2026 10:45 até 22/09/2026 15:22 | 4 msgs do cliente, 11 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[10:45] CLIENTE: Bom dia
+[10:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:45] LOJA: *Josy:*
+Bom dia!
+[10:46] CLIENTE: pneu 205/55 r16
+[10:46] CLIENTE: Que pneu vc tem aí desses?
+[10:46] LOJA: [foto]
+[10:46] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:46] LOJA: *Josy:*
+Mora aqui em Luziânia-Go?
+[10:47] CLIENTE: Sim
+[17:39] LOJA: *Josy:*
+Oooiii
+[17:40] LOJA: *Josy:*
+Carla... te encaminhei um orçamento pela manhã, tve oportundade de analisar?
+--- 11/09/2026 (Fri) ---
+[17:24] LOJA: [áudio] "Olá, tudo bem?"  {audio:midias/3EB0E5EA00D4F8E990F4C7_764948.ogg}
+[17:25] LOJA: [vídeo]
+--- 22/09/2026 (Tue) ---
+[15:22] LOJA: [foto]

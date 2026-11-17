@@ -1,0 +1,17 @@
+CONVERSA 45161954f9 | contato: Clodoaldo | 15/09/2026 09:59 até 24/09/2026 12:51 | 1 msgs do cliente, 8 da loja, 0 do robô
+
+--- 15/09/2026 (Tue) ---
+[09:59] LOJA: *Josy:*
+Bom dia!
+[09:59] LOJA: *Josy:*
+Tentei te retornar
+[10:06] LOJA: *Josy:*
+4 pneus 195/55/15 ficam 4 parcelas de R$ 298,00
+[10:06] LOJA: [foto]
+[11:48] LOJA: [áudio] "Oi, o senhor vai conseguir vir aqui ainda hoje?"  {audio:midias/3EB0A9A859F4D64A3BE815_42884.ogg}
+[11:49] CLIENTE: Hoje eu posso não
+[11:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:50] LOJA: [áudio] "Não, não tem problema. Era só pra eu confirmar aqui que eu já deixo os pneus reservados, entende? E por essa razão."  {audio:midias/3EB0CEE70639AED6E9AA2D_628436.ogg}
+--- 24/09/2026 (Thu) ---
+[12:51] LOJA: [áudio] "Professor Clodoaldo, boa tarde, como é que vai? Nós conversamos há alguns dias atrás a respeito dos pneus aí para o seu carro e eu gostaria de saber se o senhor ainda tem interesse em continuar com a negociação, se podemos agendar um dia que fique bom para o senhor realizar a troca dos pneus aqui com a gente. Assim que possível o senhor consegue me dar um retorno, por gentileza?"  {audio:midias/3EB072F0AC3F1E1D2BDE0A_365337.ogg}

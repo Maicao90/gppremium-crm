@@ -1,0 +1,112 @@
+CONVERSA ebf1cfc462 | contato: Lucas Espindola | 15/09/2026 14:45 até 05/10/2026 14:47 | 32 msgs do cliente, 47 da loja, 0 do robô
+
+--- 15/09/2026 (Tue) ---
+[14:45] LOJA: *Josy:*
+Boa tarde!
+[14:45] CLIENTE: Oi Josy
+[14:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:46] LOJA: [foto]
+[14:46] LOJA: *Josy:*
+No dia de hoje temos essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:48] LOJA: [foto]
+[14:48] LOJA: *Josy:*
+Pneu GP Premium 265/65/17 ATR 👇🏻
+[14:49] LOJA: [foto]
+[14:50] CLIENTE: Esse é o chinês ?
+[14:50] LOJA: *Josy:*
+isso
+[14:50] CLIENTE: Esse o nacional ?
+[14:50] LOJA: *Josy:*
+isso
+[14:54] CLIENTE: [áudio] "Josi, deixa eu só tirar outra dúvida, que eu não sei se eu perguntei. Você teria algum só para asfalto, para caminhonete, para Ranger? Só asfalto? Só para eu ver o comparativo de preço e ter essa como opção?"
+[15:05] LOJA: [áudio] "Modelo HT, 100% em falta."  {audio:midias/3EB0BED2CF87E8FE78AF06_51521.ogg}
+--- 16/09/2026 (Wed) ---
+[14:40] CLIENTE: Josy
+[14:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:40] CLIENTE: Tudo bem ?
+[14:40] CLIENTE: Boa tarde
+[14:40] CLIENTE: Vcs geram link de pagamento via cartão
+[14:40] CLIENTE: Porque um amigo vem pra Brasília
+[14:40] CLIENTE: Ao invés de eu ir em Luziânia
+[14:40] CLIENTE: Eu faço o pagamento
+[14:40] CLIENTE: Vcs confirmam
+[14:40] CLIENTE: Ele passa aí e pega os pneus
+[14:40] CLIENTE: Tem como ?
+[14:55] LOJA: [áudio] "Olá, boa tarde, Lucas. Tudo jóia? Olha, infelizmente, nós não geramos links de parcelamento."  {audio:midias/3EB01A3A31F645AB61CD6F_854711.ogg}
+--- 02/10/2026 (Fri) ---
+[07:43] CLIENTE: Bom dia
+[07:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:43] CLIENTE: Josy
+[07:43] CLIENTE: Estou indo em Luziânia hoje
+[07:43] CLIENTE: Posso ir na loja para falarmos do pneu
+[07:43] CLIENTE: ?
+[07:58] LOJA: *Josy:*
+Bom dia, Lucas!
+[07:58] LOJA: *Josy:*
+Como você está?
+[07:58] LOJA: *Josy:*
+Pode vir sim!
+[07:58] CLIENTE: Beleza
+[07:58] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[07:59] CLIENTE: Te procuro aí né
+[07:59] LOJA: [áudio] "Sim, sim, sim, sim, pode me procurar."  {audio:midias/3EB09A9B5715E214FB0BDC_516903.ogg}
+[07:59] LOJA: [foto]
+[07:59] LOJA: [áudio] "Não sei se a carica está entendendo correto, sei, sei, sei. Mas tem, tem aqui, tem aqui, tem aqui, tem aqui, tem aqui, tem aqui, tem aqui."  {audio:midias/3EB08C05371C4AC8B6FC73_904278.ogg}
+[12:31] LOJA: [áudio] "Oi Lucas, tudo jóia? Você ainda vai vir, né?"  {audio:midias/3EB00AC3815E33F33A3A0B_686327.ogg}
+[12:32] CLIENTE: [áudio] "Oi, tudo bem? Josi, tá? Josi, eu tava saindo de Brasília, mas meu menino acabou vomitando o carro inteiro, então nós estamos aqui esperando pra ver se ele melhora. Se ele melhorar um pouquinho, a gente vai hoje, aí eu passo aí pra trocar o pneu. Se ele não melhorar, a gente vai amanhã, que aí eu vou pro interior de Goiás e eu passo aí, aí a gente vai amanhã. Amanhã vocês abrem, né? Mas vamos ver, se ele melhorar, a gente sai daqui a pouquinho, daqui uma hora, uma hora e meia, duas."
+[12:34] LOJA: [áudio] "Nossa, Lucas, meu Deus. Não, espera a criança recuperar realmente, né? Ficar bem. E aí, vocês vêm pra cá sem pressa, tá joia? Do jeito que ficar bem bom aí pra vocês, realmente. E assim, amanhã nós atendemos sim, tá Lucas? Às 8 horas da manhã nós já estamos com a loja aberta e só que aí o expediente ele é mais estreito. Amanhã, meio-dia, já tá fechando, tá?"  {audio:midias/3EB0967D4BAB57628FD2E2_152704.ogg}
+[12:36] CLIENTE: [áudio] "Não, eu vou tentar, nós vamos esperar, minha esposa vai pôr ele pra dormir ali, nós vamos ver se ele dorme um pouquinho, aí pra gente ver se a gente vai hoje ou amanhã. Como é que tá as condições dos pneus? Continuam aquelas?"
+[12:37] LOJA: [áudio] "Sim, Lucas. Continua do mesmo jeitinho por hora, tá?"  {audio:midias/3EB05225AF017F39E0E1E9_324879.ogg}
+[16:04] CLIENTE: [áudio] "Oi Josi, tá joia? Não Josi, eu vou levar os pneus, o rapaz falou que tem quatro aqui na minha frente, eu vou levar e eu dou um jeito de trocar eles lá em Pires do Rio mesmo, porque eu tenho que chegar lá a tempo ainda de descer uns negócios que estão aqui, estou com uns peixes aqui no carro, eu até te agradeço, mas eu vou trocar lá, tá? Aí se você quiser eu já subo aí e pego aí mesmo, porque aí a caminhonete não precisa trazer aqui embaixo não."
+[16:04] LOJA: *Josy:*
+Viiiiiishhhhh
+[16:04] LOJA: *Josy:*
+ta bom
+[18:10] LOJA: [documento]
+[18:11] LOJA: [áudio] "Oi Lucas, passando aí pra agradecer. Olha que Deus abençoe imensamente você e sua família, tá? E como tava na correria, não consegui entregar nota fiscal pra você aquela hora. Estou te mandando aqui no WhatsApp, tá joia? Obrigadão."  {audio:midias/3EB08C7107D660F4932FAB_471973.ogg}
+[18:40] CLIENTE: [áudio] "Pujoso, não, tranquilo, brigadão, valeu, obrigado pela nota fiscal. Aí, o pneu tem quanto tempo de garantia?"
+--- 03/10/2026 (Sat) ---
+[08:09] LOJA: [áudio] "Oi Lucas, bom dia, tudo bom? Os pneus têm 2 anos de garantia."  {audio:midias/3EB04297F21E0F62213320_77802.ogg}
+[10:59] CLIENTE: [áudio] "Ô Josi, tá jóia? Ô Josi, os pneus, Josi, são remolde, né? Não, aí eu não consigo ficar com eles não, Josi, aí é ruim isso, porque pneu remolde é ruim, aí eu vou nem montar eles aqui não."
+[10:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:00] LOJA: [áudio] "Oi, Lucas! Tudo jóia? Lucas, esse é o pneu que nós fazemos. Ele é um pneu ecológico aqui da marca GP Premium. Ele vem com essa especificação apenas por ser justamente um produto daqui, entendeu? Mas ele não tem nada a ver com os pneus que são remoldes, não, tá? Pode ficar extremamente tranquilo. Justamente por isso, os pneus, eles têm garantia. E, igual eu falei ontem, tem aqui na Maverick, tenho aqui utilizando na Maraó, que pode ficar extremamente tranquilo."  {audio:midias/3EB0B5521811C367CFCE5E_837433.ogg}
+[11:01] CLIENTE: [foto]
+[11:01] LOJA: [áudio] "Sim, exatamente, porque ele é um pneu ecológico que nós fazemos, aí ele vem apenas com as especificações, somente isso."  {audio:midias/3EB02383EF639D271FEE20_934217.ogg}
+[11:02] CLIENTE: [áudio] "Oi, Jôs. Não, eu entendi. Não, mas aí eu achava que ele não era remolde, não. Não achava que ele era remoldado, não. Eu entendo que ele é ecológico, mas eu não achava que ele era remoldado, não. Nesse caso, Jôs, aí eu vou deixar eles aqui na caminhonete. Eu vou voltar para Brasília no domingo, amanhã. E aí eu deixo eles aí para você na segunda. E aí, nesse caso aqui, eu te agradeço demais, mas não vou ficar com eles, não, Jôs. Ele faz o estorno do pagamento do cartão e aí eu deixo. Eu te agradeço demais, mas remolde eu não vou ficar com eles, não, Jôs."
+[11:02] LOJA: [áudio] "Ele apenas entra com essa especificação, fica tranquilo, sério mesmo."  {audio:midias/3EB033A421C9F5E9AE8733_54238.ogg}
+[11:04] LOJA: [foto]
+[11:05] CLIENTE: [áudio] "Eu entendo, Jô, mas eu que rodo muito, pneu remold, além de vibrar, ele não dá balanceamento, alinhamento é complicado, eu vou deixar isso aí na segunda, eu te agradeço demais, mas eu vou deixar isso aí na segunda, segunda-feira eu peço o caminhão para deixar isso aí, a gente faz o estorno, a devolução da nota, não tem erro não, eu te agradeço demais, mas eu não fico não, Jô, pra mim é ruim demais, eu te agradeço demais, mas ele remolde, ele remoldado, ele é ecológico, ele é remoldado, né, é ecológico, remoldado, não sei, eu te agradeço demais, viu, Jô, mas eu vou deixar isso aí, eles estão aqui na caminhonete, do jeito que eu coloquei, do jeito que eu fui descer as vias, eu já voltei, não pôs nem o pé no chão."
+[11:06] LOJA: [áudio] "Lucas, pelo contrário, é justamente aí que é o ponto. Esse pneu, ele não vibra, ele não faz nada. É essa a questão. E aqui, também viaja normalmente para tudo que é canto que você imaginar, tá joia? Mas, de todo modo, você passa aqui na segunda-feira, tá? Eu acho que vai estar chegando aqui o pneu importado, aí você só paga a diferença. Então, não tem problema."  {audio:midias/3EB0254FCCAE253100034E_109936.ogg}
+[11:06] LOJA: [áudio] "E aí, instala o importado."  {audio:midias/3EB0B81C12E7FB214CD215_190981.ogg}
+[11:08] LOJA: *Josy:*
+Combinado!
+[11:14] LOJA: [áudio] "No dia que nós conversamos, eu te mandei o orçamento do pneu novo e importado da marca Maxx e o do GP Premium."  {audio:midias/3EB059541DAE4C886F971D_585069.ogg}
+[11:25] LOJA: *Josy:*
+Conferi o estoque e  terei o importado aqui, está bem!
+[11:25] LOJA: *Josy:*
+Te aguardo na segunda...
+[11:25] LOJA: *Josy:*
+Bom fina de semana!
+[11:28] CLIENTE: [áudio] "Não, beleza. Na segunda a gente olha. Vamos olhar. Na segunda a gente olha. Quanto que tá saindo importado?"
+--- 05/10/2026 (Mon) ---
+[10:05] CLIENTE: [áudio] "Oi Josi, bom dia, tá joia? Josi, já já tô chegando aí, tô saindo aqui de Brasília agora, já já tô chegando aí. Em relação até o outro pneu, eu vou devolver esses aqui, mas eu não vou pegar outros. Por que que eu não vou pegar outros? Porque meu pai vendeu a caminhonete dele, eu vou pegar os pneus dele, vou pôr na minha caminhonete, vou pegar os dos meus e vou pôr na caminhonete dele. Então, até pra mim vai ser até mais barato do que comprar novos, pneus novos, como meu pai vendeu a dele, aí vai passar com os meus pneus, beleza? Beleza? Aí já tô chegando, já já tô saindo aqui de Brasília, já já eu cheguei. Você vai ver que o pneu não foi rodado, não foi usado, tá zero bala, do mesmo jeitinho que eu peguei que eu sei, tá? A gente só faz os estornos, beleza? Mais uma próxima possibilidade, eu compro com certeza aí com vocês."
+[10:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:07] LOJA: *Josy:*
+Bom dia, Lucas!
+[10:07] LOJA: *Josy:*
+Tudo jóia!
+[10:07] LOJA: *Josy:*
+Ok
+[10:12] LOJA: *Josy:*
+O whatsapp está com instabilidade , agora que consegui ouvir o áudio de sábado, estava constando como mensagem lida, e eu não tinha recebido.
+[10:14] CLIENTE: [áudio] "Oi Josi, não, não tem erro não, tá tranquilo, sossegado, não tem erro não. Já já tô chegando, tá uma chuva danada pro lado de cá, não sei se aí dá, mas já já eu tô chegando. Aí eu deixo os pneus aí pra você, tá bom? E aí eu tenho que correr e voltar pra Brasília, porque eu tenho que pegar os pneus do meu pai e pôr na caminhonete, pegar os meus e pôr na caminhonete dele, porque ele vendeu. A caminhonete dele é um Arranger também. Aí ele vendeu, eu vou pegar os pneus dele."
+[11:17] LOJA: [foto]
+[14:47] LOJA: *Josy:*
+Oi... e a medida dos pneus para o outro carro?

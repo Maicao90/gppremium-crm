@@ -1,0 +1,56 @@
+CONVERSA a42342f44d | contato: Arlindo | 31/08/2026 14:59 até 01/09/2026 11:28 | 14 msgs do cliente, 20 da loja, 0 do robô
+
+--- 31/08/2026 (Mon) ---
+[14:59] LOJA: *Josy:*
+OI, Arlindo!
+[14:59] LOJA: *Josy:*
+Josy da pneus GP Premium
+[15:00] CLIENTE: Opa
+[15:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:00] CLIENTE: Só olhar os traseiros
+[15:01] LOJA: [áudio] "Oi Arlindo, tudo jóia? Estou aqui com o senhor Mauro. Mauro mesmo, né? Paulo? Ai meu Deus! Desculpa, com o senhor Paulo. Ele está pegando dois pneus aqui comigo, e está bem. E os dois pneus ficaram por 500 reais."  {audio:midias/3EB027F326A9AC29098E48_419622.ogg}
+[15:01] LOJA: *Josy:*
+24.289.955/0001-79
+[15:07] CLIENTE: Já instalados?
+[15:08] CLIENTE: Com a nota fiscal?
+[15:08] LOJA: *Josy:*
+Sim, a instalação é feita. Aí só cobra o balanceamento a parte... 25,00 por roda, mas aí paga aqui na oficina... para mim paga os pneus.
+[15:09] LOJA: *Josy:*
+Faço.
+[15:09] CLIENTE: Qual o valor total?
+[15:09] CLIENTE: Será em uma nota só?
+[15:10] LOJA: [áudio] "Os pneus, eles são feitos em nota fiscal somente dos pneus e os serviços em outra."  {audio:midias/3EB0F7C1B2FCF023465B00_559310.ogg}
+[15:11] LOJA: *Josy:*
+Pneus 500,00
+[15:11] LOJA: *Josy:*
+Pois são 2
+[15:12] CLIENTE: São duas notas?
+[15:13] LOJA: *Josy:*
+Isso
+[15:13] CLIENTE: Uma de 500 e outra de 50,00?
+[15:13] LOJA: *Josy:*
+Isso
+[15:14] CLIENTE: 24.289.955/0001-79
+[15:14] CLIENTE: 500,00
+[15:14] LOJA: *Josy:*
+Isso
+[15:16] CLIENTE: [documento]
+[15:18] LOJA: *Josy:*
+Vou pedir para o rapaz da oficina falar contigo , está bem!
+--- 01/09/2026 (Tue) ---
+[11:24] LOJA: *Josy:*
+Oi
+[11:25] LOJA: *Josy:*
+24.289.955/0001-79
+[11:26] CLIENTE: 24.289.955/0001-79
+[11:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:26] LOJA: *Josy:*
+558,00
+[11:27] LOJA: *Josy:*
+Qual seu CPF?
+[11:27] CLIENTE: [documento]
+[11:27] CLIENTE: Não precisa CPF
+[11:28] LOJA: *Josy:*
+ok

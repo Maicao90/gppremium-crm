@@ -1,0 +1,11 @@
+CONVERSA 5b4e9741de | contato: Sandy | 10/10/2026 11:36 até 10/10/2026 12:07 | 1 msgs do cliente, 6 da loja, 0 do robô
+
+--- 10/10/2026 (Sat) ---
+[11:36] LOJA: Oi, Sandy...
+[11:36] LOJA: Pode fazer uma avaliação no Google, por gentileza?
+[11:37] LOJA: https://da.gd/gp-avaliar
+[12:03] LOJA: Fez o da Super via, precisa fazer o nosso também rsrs
+[12:06] CLIENTE: [áudio] "Ah, beleza, eu faço sim. Já que eu faço, tá bom?"
+[12:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:07] LOJA: [áudio] "Rapaz, o Charles tá botando fogo no parquinho. Ele fez essa competição aí entre as empresas pra ter justamente o feedback a respeito do atendimento, enfim, da logística geral aí da nossa empresa. Aí, se puder também, você faz um comentário aí sobre a GP mesmo e aqui sobre o meu atendimento se possível também, tá joia?"  {audio:midias/3EB0CD77CA4C2925A8AB00_73859.ogg}

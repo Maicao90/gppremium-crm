@@ -1,0 +1,26 @@
+CONVERSA 3328a109ae | contato: "Crux Sacra sit mihi lux" | 12/09/2026 08:09 até 12/09/2026 10:45 | 9 msgs do cliente, 8 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[08:09] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[08:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:11] CLIENTE: 215/55/17
+[08:11] CLIENTE: Para Traker
+[08:21] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu sou a Josi. E quando passei para uma edição, nome, tá bom? Eu tenho aqui sim, inclusive os pneus da marca GP Premium, eles estão na promoção Compre 3 e leve 4. Digamos que seu pagamento seja à vista. A unidade está por R$ 394,90. Então fica da seguinte maneira, R$ 394,90 vezes 3. Pneus, dá um total de R$ 1.185,00. Por esse preço, você vai levar os 4 já colocados. Mora aqui em Luziânia, Goiás."  {audio:midias/A5C3EA5EB21FBD7E70618BFA49F03CA3_129452.ogg}
+[08:29] CLIENTE: Bom dia
+[08:29] CLIENTE: Me chamo Jailton e moro no Gama
+[08:31] LOJA: [áudio] "Oi, Jailton, tudo jóia? Seja bem-vindo, tá? E consegue vir aqui na nossa loja, se eu te mandar a localização?"  {audio:midias/A51CCE6A5B94A56A8B9C51ECD87EC926_369225.ogg}
+[08:32] CLIENTE: Até que horas vcs ficam abertos no dia de hoje?
+[08:32] LOJA: [áudio] "Hoje até o meio-dia."  {audio:midias/A5120ECCBF8CAD667C64E8723F91D716_949430.ogg}
+[08:32] LOJA: [áudio] "Mas deixa eu ver uma coisa aqui, peraí."  {audio:midias/A51EE2E71354DF1E2810DD99989496CB_707909.ogg}
+[10:44] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Estou em reunião
+[10:44] LOJA: Oi!
+Desculpa te ligar... Que foquei de te dar um retorno.
+[10:44] LOJA: Perdão.
+[10:44] CLIENTE: Tranquilo
+[10:45] LOJA: Olha... Como o senhor mora no Gama.  Posso enviar os pneus para uma borracharia que me ajuda muito, fica ali no Novo Gama, se for de seu interesse me informa.
+[10:45] CLIENTE: Assim que terminar te retorno...

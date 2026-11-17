@@ -1,0 +1,22 @@
+CONVERSA 1f9de892db | contato: Tupy Fernandes | 16/09/2026 11:13 até 16/09/2026 11:20 | 8 msgs do cliente, 10 da loja, 0 do robô
+
+--- 16/09/2026 (Wed) ---
+[11:13] CLIENTE: Ola bom dia
+[11:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:14] CLIENTE: Pneu aro 16 195/55
+[11:14] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Eu sou a Josi. Assim que você me diz o seu nome, certinho?"  {audio:midias/3EB007B681BA32D5F0C3E0_290871.ogg}
+[11:15] CLIENTE: [áudio] "Bom dia, Josi. Gostaria de saber quanto é que tá o pneu aí, o aro 16, perfil 9555."
+[11:15] LOJA: [foto]
+[11:15] LOJA: [áudio] "Qual é o seu nome mesmo, jovem? Eu te mandei aqui agora a opção do pneu GP Premium, que é o pneu mais vendido que eu tenho. Cada um está por apenas R$ 259,00 se o pagamento for no débito ou no Pix. Para parcelar o valor muda, né? Mas você pode observar aí que muda cerca de R$ 3,00 por parcela, então é muito pouca coisa. E já entrega os pneus GP Premium instalados para você."  {audio:midias/3EB0088E5A8944BF1FACA7_957605.ogg}
+[11:15] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB01D7AE51709E6FE4B78_101117.ogg}
+[11:16] CLIENTE: [áudio] "Não, meu querido, eu trabalho com aplicativo, aí a gente tem uns colegas que querem comprar pneu e eu tenho que trocar o meu também. Aí, esse GP Premium, ele é o que? A marca é só GP Premium? Qual é a marca do pneu? Aí a gente trabalha com aplicativo e tem uns colegas que querem comprar também os 4 pneus de cada vez."
+[11:17] LOJA: [áudio] "A marca do pneu é GP Premium."  {audio:midias/3EB0CD99BEB21EF185B6C8_585391.ogg}
+[11:17] CLIENTE: [áudio] "Aí vocês dão montado o pneu, é? A durabilidade desse pneu, você tem mais ou menos aí a resistência dele? Qual o perfil dele para chuva e combustível, você sabe? Qual é a categoria lá? Do ar a qual classe?"
+[11:18] LOJA: [áudio] "Sim, o pneu da marca GP Premium, ele é instalado, tá? A parte, nós vamos negociar os serviços de balanceamento e alinhamento, porque esses serviços, eles não são inclusos, tá? A montagem, já faço automático. Balancear, alinhar ou qualquer outro tipo de serviço é cobrado à parte, tá joia? É um pneu que não tem restrição de uso, ele se adequa muito bem ao terreno de chuva e asfalto seco."  {audio:midias/3EB065286060CACBB33186_439253.ogg}
+[11:19] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6 *Josy:*
+[11:19] CLIENTE: [áudio] "Então tá bom Josu, muito obrigado, viu? Qualquer coisa que eu tinha passando por aí, sempre eu tô em Luziânia e vou dar uma passadinha aí, beleza? Muito obrigado e um bom dia pra você."
+[11:19] CLIENTE: [áudio] "Eu passo aí sempre na frente, eu vejo o rapaz, eu levando o pessoal aí, o pessoal me falou sobre essa fábrica aí de vocês, o valor de fábrica, pneu de valor de fábrica, tá bom? Muito obrigado, viu?"
+[11:19] LOJA: [áudio] "Sim, sim, eu te mandei a localização, eu acho que ela tá aparecendo à frente da nossa loja. Quando estiver passando aqui na BR, entra aqui tomar um café com a gente, aí conversamos pessoalmente, você vê o pneu presencial também."  {audio:midias/3EB09AC4EE4306C81EEAFB_725115.ogg}
+[11:20] LOJA: [áudio] "Foi nada, bom trabalho."  {audio:midias/3EB070C3547C68BFC7FC3B_731078.ogg}
+[11:20] CLIENTE: Obrigado

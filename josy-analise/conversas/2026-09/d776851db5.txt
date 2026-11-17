@@ -1,0 +1,27 @@
+CONVERSA d776851db5 | contato: Volvett | 30/09/2026 10:22 até 30/09/2026 17:09 | 5 msgs do cliente, 8 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[10:22] CLIENTE: Mercedes E250
+
+4 pneus 
+
+Preço ? 
+
+Em quantas X ?
+[10:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:22] CLIENTE: [foto]
+[10:22] CLIENTE: [figurinha]
+[10:22] LOJA: *Josy:*
+Bom dia!
+[10:23] LOJA: Eu vi... 😊
+[10:23] LOJA: *Josy:*
+Entretanto, não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[10:24] LOJA: [áudio] "Você tem preferências por marcas nacionais ou importadas?"  {audio:midias/3EB0C8813DFB635068011A_714914.ogg}
+[10:27] CLIENTE: [áudio] "Minha preferência é Michelin, tá? 4 Michelin. Aí abaixo disso pode ser outras marcas que tenham preço bom, entendeu? Aí eu queria fazer um orçamento aí das marcas que você tem preço melhor."
+[16:50] LOJA: [áudio] "Oi, obrigada por aguardar. Tive instabilidade aqui no WhatsApp. Na verdade, na internet, né? No dia de hoje está complicada. Essa opção, ela está em falta na rede de distribuição, tá? Eu consegui apenas um retorno da medida 245-4017 da marca Belint."  {audio:midias/3EB05F99F269952F101B6E_870923.ogg}
+[16:50] LOJA: [foto]
+[16:50] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:09] CLIENTE: Obrigado

@@ -1,0 +1,42 @@
+CONVERSA c0b380fb88 | contato: Deus a frente | 21/10/2026 15:02 até 22/10/2026 11:25 | 15 msgs do cliente, 19 da loja, 2 do robô
+
+--- 21/10/2026 (Wed) ---
+[15:02] CLIENTE: Boa tarde
+[15:03] LOJA: Boa tarde!
+[15:03] LOJA: Como posso ajudar?
+[15:03] CLIENTE: 225/75/16
+[15:04] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[15:05] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor UNITÁRIO do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:05] LOJA: [foto]
+[15:06] CLIENTE: [áudio] "Ah não, obrigado, obrigado. Já achei mais em conta, eu queria na remote da GP. Vocês não trabalham com GP mais não?"
+[15:06] CLIENTE: [áudio] "Antigamente eu comprava para essa caminhonete, tem um dia e não tem mais não?"
+[15:07] LOJA: [áudio] "Olha, o da GP eu tenho na medida 225-65-16. Esse eu tenho."  {audio:midias/3EB0F811A2A62689380FA8_491457.ogg}
+[15:07] CLIENTE: [áudio] "Qual que é o valor dele? Qual que tá saindo o valor dele?"
+[15:22] LOJA: [foto]
+[15:22] LOJA: R$ 449,00 a unidade
+[15:57] CLIENTE: [áudio] "Medida errada pra você, velho. Me perdoa, deixa eu te mandar aqui a medida certa, pra você..."
+[15:57] CLIENTE: 235/75/15
+[15:59] LOJA: [foto]
+[15:59] LOJA: [foto]
+[15:59] LOJA: [foto]
+[15:59] LOJA: [áudio] "Bem, o 235-75-15 eu vou ter somente importado também, que o pneu GP Premium já acabou."  {audio:midias/3EB005DEAED5A4D2C9B6C3_834422.ogg}
+[16:00] CLIENTE: Ixi
+[16:00] CLIENTE: Kk
+[16:00] CLIENTE: E pra pedido ?
+[16:01] LOJA: O GP não tem 1 para contar história do outro.
+[16:01] CLIENTE: Não entendi
+[16:03] LOJA: [áudio] "Você perguntou se tem pra pedir do Pneus GP Premium. Aí eu disse que não tem um pra poder contar a história do outro, é que não tem, não tem mesmo."  {audio:midias/3EB0E32B3D6C0BA7F1261A_220087.ogg}
+[16:04] CLIENTE: A sim
+[16:19] LOJA: [áudio] "Qual é mesmo o seu nome?"  {audio:midias/3EB01FB2EAA7D3BAE27CE4_693243.ogg}
+--- 22/10/2026 (Thu) ---
+[08:08] ROBÔ: 🙋🏼‍♀️
+[08:10] CLIENTE: Bom dia
+[08:11] ROBÔ: Oi, tudo bem? Em que posso te ajudar?
+[08:11] LOJA: Bom dia!
+[10:56] LOJA: [áudio] "Moço, ontem eu perguntei qual é o seu nome, aí você me passa, que eu vou deixar seu contato salvo, que assim que eu tiver os pneus aqui da GP Premium, eu aviso você, tá bom? Mesmo não tendo um período específico para poder te dizer."  {audio:midias/3EB0BC87F191087E9FDAD7_240311.ogg}
+[10:56] CLIENTE: Marcelo
+[10:57] CLIENTE: Ok
+[11:25] LOJA: Obrigada, Marcelo, vamos nos flando!

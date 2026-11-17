@@ -1,0 +1,15 @@
+CONVERSA 5a16108ca6 | contato: Aitila Dias | 19/08/2026 11:56 até 19/08/2026 16:52 | 5 msgs do cliente, 6 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[11:56] CLIENTE: Olá
+[11:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:57] CLIENTE: Pneu 205/55R 16 qual valor?
+[11:57] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi e você é daqui de Luziânia mesmo?"  {audio:midias/3EB0B451162DD9D563728B_210786.ogg}
+[11:58] CLIENTE: Sim
+[11:58] CLIENTE: Preciso de dois
+[11:58] CLIENTE: Vende?
+[11:58] LOJA: [foto]
+[11:59] LOJA: [áudio] "Sim, vendemos sim. No dia de hoje eu tenho essas três opções de marcas que são as mais vendidas, tá? Aí no orçamento está o valor unitário, na primeira coluna está o valor à vista, que já é o menor preço, e seguem as opções de parcelamento em até 10 vezes, caso você queira parcelar. Digamos que sua escolha seja do da Dunlop, cada pneu está por 512 reais, os dois pneus ficam à vista por 1.024."  {audio:midias/3EB0C641EECFDC8029ED0F_410261.ogg}
+[16:52] LOJA: Oi
+[16:52] LOJA: [vídeo]

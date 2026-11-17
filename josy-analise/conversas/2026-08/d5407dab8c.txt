@@ -1,0 +1,14 @@
+CONVERSA d5407dab8c | contato: Raferson | 12/08/2026 10:04 até 16/08/2026 06:46 | 4 msgs do cliente, 4 da loja, 0 do robô
+
+--- 12/08/2026 (Wed) ---
+[10:04] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:06] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 14/08/2026 (Fri) ---
+[08:24] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[08:26] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 15/08/2026 (Sat) ---
+[07:04] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[07:06] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 16/08/2026 (Sun) ---
+[06:44] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[06:46] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

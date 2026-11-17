@@ -1,0 +1,13 @@
+CONVERSA 51620c5816 | contato: Gusthavo Henryque | 29/09/2026 09:49 até 29/09/2026 12:07 | 3 msgs do cliente, 5 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[09:49] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:50] CLIENTE: 205/45 r17
+[09:55] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Gustavo, eu sou a Josi e eu vi apenas que seu dbd de outra localidade, ou você está aqui em Luziânia, mora por aqui?"  {audio:midias/3EB00FF346531B218E5FC8_296695.ogg}
+[09:55] CLIENTE: moro sim
+[09:58] LOJA: [foto]
+[09:58] LOJA: [áudio] "Gustavo, eu tenho aqui sim os pneus da marca Sunny. A unidade está por R$ 389,00, se o seu pagamento for correspondente a débito ou Pix. Tenho a opção também do 2254517, que é o pneu da marca GP Premium. Ele está por apenas R$ 339,00 a vista. De repente, se for interessante para você..."  {audio:midias/3EB0C9BC21D371FA00B007_795706.ogg}
+[12:07] LOJA: *Josy:*
+🙋🏼‍♀️

@@ -1,0 +1,31 @@
+CONVERSA f26d7cc89e | contato: Rejane Teles | 27/08/2026 15:24 até 27/08/2026 17:06 | 6 msgs do cliente, 15 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[15:24] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[15:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:28] LOJA: *Josy:*
+🙋🏼‍♀️
+[15:29] CLIENTE: Aro 15
+[15:29] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa?
+[15:31] CLIENTE: [áudio] "No vagão de treinamento..."
+[15:32] LOJA: *Josy:*
+🙋🏼‍♀️
+[15:32] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa?
+[15:32] LOJA: *Josy:*
+Se você não souber a medida dos pneus me fala qual é seu cqarro
+[15:33] LOJA: [áudio] "Olá, tudo bem? Eu sou a Josi. Como eu não sei qual é a medida que você está utilizando aí no seu carro, me diz qual é que eu verifico pelo menos com a opção original para fazer um orçamento para você, tudo bem?"  {audio:midias/3EB0DD27D8DFDE579252BF_580674.ogg}
+[15:35] LOJA: [áudio] "Qual é o seu carro?"  {audio:midias/3EB0257162238F3C66D1CE_774056.ogg}
+[15:36] CLIENTE: [áudio] "Então, meu bem, a medida do pneu eu não sei qual que é não, eu sei que é aro 15, é um C3 2012."
+[15:38] LOJA: [áudio] "Ah, sim, perfeito. Essa informação foi muito valiosa, C3, né? Só um instante."  {audio:midias/3EB018D65D1BA51D91A744_906978.ogg}
+[15:39] LOJA: [foto]
+[15:39] LOJA: [áudio] "Bem, se você estiver utilizando aí a medida original, ela é 185-6015, e no dia de hoje eu tenho todas essas opções de marcas à pronta entrega, no orçamento está o valor de apenas um pneu, onde na primeira coluna eu deixei o valor à vista, que é correspondente a débito e Pix, e seguem as opções de parcelamento em até 10 vezes, caso você queira parcelar."  {audio:midias/3EB0C79CBA06D69DAF69AC_45655.ogg}
+[16:41] LOJA: [áudio] "Olá, vamos dar continuidade aqui na sua negociação?"  {audio:midias/3EB03F2871FA98C13E3A91_657358.ogg}
+[16:44] LOJA: [áudio] "Ah sim, uma pergunta, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB07BC01E7612AB8F69E4_214788.ogg}
+[16:57] CLIENTE: [áudio] "Ô meu bem, desculpa a demora. Sim, eu moro em Luziânia mesmo. Ô meu bem, eu tô fazendo outras cotações, qualquer coisa eu volto a te procurar, tá bom? Obrigada."
+[16:59] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:59] LOJA: [áudio] "Ok, Rejane, perfeito. Eu vou encerrar aqui o seu atendimento, tá? Precisando, você me chama, ou melhor, vem aqui na loja para conversarmos pessoalmente. Te encaminhei a nossa localização, tá?"  {audio:midias/3EB03AC6CEE93606F834C0_368964.ogg}
+[17:06] CLIENTE: Obrigada

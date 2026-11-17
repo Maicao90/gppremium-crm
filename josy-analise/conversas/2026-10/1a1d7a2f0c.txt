@@ -1,0 +1,39 @@
+CONVERSA 1a1d7a2f0c | contato: wilson Correia | 09/10/2026 12:20 até 16/10/2026 16:11 | 12 msgs do cliente, 20 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[12:20] CLIENTE: Qual o valor desse 17
+[12:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:20] LOJA: 215/55/17
+[12:21] CLIENTE: Essa
+[12:21] LOJA: Sr Wilson, o pneu da marca GP Premium na medida 215/55/17 , está por R$ 395,00 cada a vista... vou te explicar, ele está na promoção compre 3 e leve 4
+[12:21] LOJA: [foto]
+[12:22] LOJA: Exemplo digamos que seu pagamento seja a vista a  unidade  é  R$ 395,00 x 3 pneus = R$ 1.185,00 por esse preço você vai levar os 4
+[12:22] LOJA: Qual é seu carro?
+[12:22] CLIENTE: Cruze
+[12:23] CLIENTE: E se eu pagar no cartão de crédito
+[12:23] CLIENTE: Qual é a marca desse pneu
+[12:23] LOJA: 😊
+[12:24] LOJA: em quantas vezes?
+[12:24] CLIENTE: Três vezes
+[12:25] LOJA: [foto] Em 3 X a unidade é R$ 412,00 , o senhor vai pagar 1 pneu po rmês
+[12:26] CLIENTE: E de duas vezes
+[12:28] LOJA: Em 2 X  cai para 408,00 a unidade, ficando da seguinte forma:   3 pneus x 408,00 = 1.224,00 , você paga´ra 2 parcelas de R$ 612,00
+[12:28] CLIENTE: Ok obrigado pela atenção
+[12:30] LOJA: [áudio] "A vez passada, a senhora estava em busca dos pneus 205, 50 e 17 da Bridgestone, né?"  {audio:midias/3EB08C2EFE2B7132A4C12A_496973.ogg}
+[12:30] LOJA: [áudio] "E assim, esses pneus, senhor Wilson, se o senhor for instalar, nós já fazemos o serviço aqui e para colocá-los no seu carro, já é por nossa conta, tá?"  {audio:midias/3EB0FFDB02AD1209869DAB_937993.ogg}
+[12:45] CLIENTE: Ok
+--- 16/10/2026 (Fri) ---
+[13:16] CLIENTE: Qual o valor desse jogo
+[13:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:16] LOJA: [foto]
+[13:17] LOJA: Por ora permanece o mesmo preço.
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:19] CLIENTE: A vista sai por 628 reais os quatro
+[14:15] LOJA: [foto] 329,00 x 4 = 1.316,00
+[14:26] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.
+[14:27] LOJA: Aqui é a nossa loja!
+[14:28] LOJA: Passa aqui Wilson!
+[16:11] CLIENTE: Valeu obrigado

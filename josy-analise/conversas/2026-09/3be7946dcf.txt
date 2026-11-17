@@ -1,0 +1,32 @@
+CONVERSA 3be7946dcf | contato: Renato | 23/09/2026 10:15 até 23/09/2026 10:54 | 10 msgs do cliente, 9 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[10:15] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[10:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:15] CLIENTE: 205 45 17
+[10:15] CLIENTE: 1 par?
+[10:15] CLIENTE: Mais barato?
+[10:16] LOJA: [foto]
+[10:18] CLIENTE: Quer pneus e esse?
+[10:18] CLIENTE: Tem foto air favor?
+[10:18] LOJA: *Josy:*
+
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:19] LOJA: *Josy:*
+Os 2 pneus a vista ficam por R$ 778,00
+[10:19] LOJA: *Josy:*
+Já te mando a foto.
+[10:20] CLIENTE: Me manda de lado é no meio
+[10:33] LOJA: [foto]
+[10:33] LOJA: [foto]
+[10:37] CLIENTE: A marca dele e SUNNY
+[10:39] LOJA: Isso
+[10:49] LOJA: *Josy:*
+Mora aqui em Luziânia-Go?
+[10:54] CLIENTE: Up 
+Acabei de comprar aqui no mercado livre!!!
+[10:54] CLIENTE: Obrigado bom trabalho 🤝

@@ -1,0 +1,36 @@
+CONVERSA c95885df19 | contato: Edson De Souza Batista | 28/08/2026 13:25 até 22/09/2026 15:38 | 6 msgs do cliente, 16 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[13:25] CLIENTE: Quero cotar o pneu 175/65 R14/82 GP Premium. Ford Ka 2019
+[13:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:26] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu sou a Josi. Eu tenho o X100 Pneu da marca GP Premium por R$ 259,00 à vista. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB083AA9F88F7FA5AD0BF_503684.ogg}
+[13:27] CLIENTE: 175 65 14/82 para o Ford KA 2019
+[13:27] CLIENTE: Sim moro
+[13:28] LOJA: [foto]
+[13:28] LOJA: *Josy:*
+O pneu da marca GP Premium se o pagamento for em *dinheiro* a unidade fica por 235,00
+[13:28] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:29] LOJA: [áudio] "Edson, o seu nome, né? Então, eu te mandei aí o orçamento. O pneu GP Premium, ele está numa oferta, mas se você trouxer o pagamento em dinheiro em espécie, a unidade já vai ficar no preço ainda melhor, que é 235 caro e nós já fazemos a instalação deles para você, se você quiser."  {audio:midias/3EB00B944D9E8847390507_947431.ogg}
+[13:31] CLIENTE: [áudio] "Tá, eu vou ver aqui, ô Josi. É porque meu menino tá com carro pra Goiânia, ó, quer chegar, eu vou ver isso amanhã. Aí eu dou um pulo aí, tá bom? Obrigado, viu?"
+[13:33] LOJA: [áudio] "Sim, perfeito. O senhor sabe onde fica a nossa loja? Que eu vou te mandar aqui a localização, tá bom?"  {audio:midias/3EB0848E87AB014B3D77BD_335396.ogg}
+[13:33] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[13:33] LOJA: [foto]
+[13:34] CLIENTE: Ok sei onde e amanhã vou aí e te procuro
+--- 31/08/2026 (Mon) ---
+[11:41] LOJA: [áudio] "Mas será, Edson, tudo jóia? E aí, seu menino apareceu..."  {audio:midias/3EB0678C9D446751A0C754_766204.ogg}
+--- 03/09/2026 (Thu) ---
+[10:00] LOJA: [áudio] "Oi, Sra. Edson, tudo jóia? Sra. Edson, nós conversamos há alguns dias atrás, né? Na verdade, acho que foi na sexta-feira. O senhor ia tentar vir aqui no final de semana e na correria, imagino que o senhor não tenha conseguido vir. Eu quero saber se eu posso separar aqui os pneus para o senhor, aí só me responde aqui, por gentileza, que eu já deixo tudo organizado para fazer a montagem dos pneus para ti."  {audio:midias/3EB0C05911EF786CE80791_432135.ogg}
+--- 10/09/2026 (Thu) ---
+[16:34] LOJA: [áudio] "Essa é a edição tudo jóia."  {audio:midias/3EB01CD811FE81C224AA8E_774565.ogg}
+[16:34] LOJA: [vídeo]
+[16:53] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+[16:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:55] LOJA: [áudio] "Beleza, mas, senhor, está bem que nós tínhamos conversado aqui, daí o senhor sumiu, não falou mais nada, aí não é somente por questão de vender, é porque realmente eu tenho, né, que o contato com os clientes, aí a gente vai conversando, aí sempre dá um parecerzinho, né, para dizer se está tudo bem, tá, jóia? Mas, beleza, de todo modo, estamos aí amanhã. Aparece aqui também um café com a gente, tá bom?"  {audio:midias/3EB0B7F820EC827283396C_418385.ogg}
+--- 22/09/2026 (Tue) ---
+[15:38] LOJA: [áudio] "Oi Sra. Edson, como é que o senhor está? O senhor deu uma assumida? Está tudo bom? Tudo certo por aí?"  {audio:midias/3EB019C2123E4F1F1F3321_923699.ogg}

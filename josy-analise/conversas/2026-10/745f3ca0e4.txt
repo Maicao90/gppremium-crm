@@ -1,0 +1,27 @@
+CONVERSA 745f3ca0e4 | contato: Jordana Borges | 16/10/2026 10:53 até 16/10/2026 11:05 | 10 msgs do cliente, 13 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[10:53] CLIENTE: Bom dia
+[10:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:53] CLIENTE: Gostaria de saber qual marca de pneu 205/40 aro 17 vocês têm disponível?
+[10:54] LOJA: [foto]
+[10:54] LOJA: Pneu 205/40/17 da marca maxzez
+[10:54] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:55] LOJA: Mora aqui em Luziania-Go?
+[10:55] CLIENTE: Município de Luziânia
+[10:56] CLIENTE: Deixa eu te perguntar eu andei pesquisando sobre essa marca e eles fala que ela é remote ou recapado eles realmente são
+[10:56] CLIENTE: Remold*
+[10:56] LOJA: Equivoco
+[10:57] LOJA: [foto]
+[10:59] CLIENTE: Tá bom
+[10:59] LOJA: [áudio] "Jordana, quer a nossa localização?"  {audio:midias/3EB078E17DED3A889C67C2_736964.ogg}
+[11:00] CLIENTE: Se for para eu comprar os quatro vocês dão um desconto mesmo se for parcelando? Vocês monta aí? Alinha e balanceia?
+[11:00] CLIENTE: Quero
+[11:01] LOJA: [áudio] "O preço é realmente conforme o orçamento, tá? Como ele é um pneu importado, o meu distribuidor apenas deixa ele aqui para eu repassar da maneira que ele me proporciona, tá joia?"  {audio:midias/3EB0E1752BB2D9B5A3D7F6_236407.ogg}
+[11:01] CLIENTE: Ok!
+[11:03] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:04] LOJA: [foto]
+[11:04] LOJA: [áudio] "Você quer que reserva as 4 unidades para você?"  {audio:midias/3EB003EE7279372EA8FED1_710751.ogg}
+[11:04] CLIENTE: Estou tentando falar com meu marido assim que ele me der um retorno eu falo com você
+[11:05] LOJA: Combinado!

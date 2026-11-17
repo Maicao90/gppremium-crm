@@ -1,0 +1,28 @@
+CONVERSA b1dc232be7 | contato: Paulo Roberto | 25/08/2026 16:43 até 25/08/2026 17:40 | 5 msgs do cliente, 14 da loja, 0 do robô
+
+--- 25/08/2026 (Tue) ---
+[16:43] CLIENTE: Quero cotar o pneu 225/45 R17 GP Premium.
+[16:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:44] CLIENTE: Boa tarde, Josy. Tudo bem? Me chamo Paulo Roberto. 225/45 e 225/50 R17
+[16:44] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Perfeito, Paula. Estou realizando aqui o seu orçamento e já vou te encaminhar aqui, tá bom?"  {audio:midias/3EB01ADE97A0F48C8955C1_479209.ogg}
+[16:44] LOJA: [foto]
+[16:45] LOJA: [áudio] "No dia de hoje eu tenho essas opções de marcas a pronta entrega na medida 225-45-17, aí no orçamento está o valor de apenas uma unidade, onde na primeira coluna está o valor à vista correspondente a débito ou Pix, e seguem também as opções de parcelamento em 10 vezes, caso você queira parcelar, mora aqui em Luziânia mesmo?"  {audio:midias/3EB0F87D9326111A06C93E_143505.ogg}
+[16:53] CLIENTE: Não moro, mas trabalho perto.
+[16:54] LOJA: *Josy :*
+Isso! Isso mesmo!
+[16:54] LOJA: *Josy :*
+Quer uma foto?
+[16:54] CLIENTE: Quero sim.
+[16:54] LOJA: *Josy :*
+Certo... vou providenciar.
+[16:59] LOJA: Temos em 2 modelos.
+[17:00] LOJA: [foto]
+[17:00] LOJA: [foto]
+[17:01] LOJA: [foto]
+[17:05] LOJA: [foto]
+[17:18] CLIENTE: Obrigado. Vou tentar passar na loja para conhecer melhor. Muito obrigado!
+[17:40] LOJA: *Josy :*
+Sim, venha sim! Será uma satisfação recebe-lo aqui.
+[17:40] LOJA: *Josy :*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

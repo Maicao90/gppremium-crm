@@ -1,0 +1,53 @@
+CONVERSA 76922b7213 | contato: Rosa | 26/08/2026 13:00 até 06/10/2026 08:26 | 8 msgs do cliente, 18 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[13:00] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[13:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:07] LOJA: [áudio] "Oi Rosa, tudo bem?"  {audio:midias/3EB056D9CBC83FDB886C0B_97257.ogg}
+[13:08] LOJA: [áudio] "Você está sumida, mulher. Já tem tempo que nós conversamos, né? E a última vez me recordo que você disse que estava aguardando conversar com sua filha."  {audio:midias/3EB0D524D8C1167FE5824B_477675.ogg}
+--- 28/08/2026 (Fri) ---
+[11:30] LOJA: *Josy:*
+Bom dia, Rosa ! ?
+[11:30] LOJA: *Josy:*
+👀
+--- 04/09/2026 (Fri) ---
+[12:46] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais bom dia sim  informações sobre isso?
+[12:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:47] CLIENTE: Renault Logan com rodas aro 15, a medida original homologada de fábrica é a 185/65 R15.
+[12:48] LOJA: [foto]
+[12:48] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:48] CLIENTE: Gostaria  de  saber  como fazer pra  compra deles
+[12:49] LOJA: *Josy:*
+Consegue vir até nossa loja?
+[12:50] CLIENTE: me desculpa eu errei com o valor  fiz vários  orçamentos
+[12:51] CLIENTE: [foto] PNEU 185/65R15 COMFORSER 88H CF510 por apenas $252,00 cada instalado em loja a base de troca para pagamento a vista
+[12:52] LOJA: *Josy:*
+Aqui não trabalhamso a base de troca.
+--- 09/09/2026 (Wed) ---
+[11:58] LOJA: *Josy:*
+Boa tarde, Rosa...como vai? Ainda precisa dos pneus que conversamos anteriormente?
+--- 05/10/2026 (Mon) ---
+[19:13] CLIENTE: [foto] 📢 [Anúncio] Pneus de Passeio em Oferta
+
+Olá! Tenho interesse e queria mais informações, por favor.
+[19:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:14] CLIENTE: Os peneus  185 60 15  é  239
+--- 06/10/2026 (Tue) ---
+[08:01] LOJA: *Josy:*
+Bom dia, Rosa!
+[08:01] LOJA: *Josy:*
+R$ 249,00 a unidade a vista
+[08:06] LOJA: *Josy:*
+Para seu carro que é o Logan o 185/65/15 fica mais alto, e absorve mais impacto.
+[08:07] LOJA: [foto]
+[08:26] LOJA: [áudio] "Aí, Rosa, eu lembro que você disse que mora em Santa Maria, né? E eu lembro também que quando eu conversei com você, eu disse que posso mandar esses pneus para uma borracharia que fica aí mais próximo a você, fica no Lunabel. Aí, se for de seu interesse, você fala aqui comigo que eu providencio os pneus para vocês, tá bem?"  {audio:midias/3EB0924F48FE070A532A41_328245.ogg}

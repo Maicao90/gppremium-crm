@@ -1,0 +1,19 @@
+CONVERSA d8e16e08c2 | contato: Ruan Carlos | 28/08/2026 08:50 até 28/08/2026 09:29 | 4 msgs do cliente, 6 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[08:50] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[08:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:50] CLIENTE: Pneu 185/70-14
+[08:50] CLIENTE: ?
+[08:54] LOJA: *Josy:*
+Bom dia, muito obrigada por aguardar!
+[08:54] LOJA: *Josy:*
+R$ 289,00 pneu da marca GP Premium
+[08:54] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[09:22] CLIENTE: Não
+[09:29] LOJA: *Josy:*
+Ah, sim! Que pena não poder atende-lo.
+[09:29] LOJA: *Josy:*
+Mas obrigada pelo contato. Bom final de semana.

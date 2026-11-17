@@ -1,0 +1,35 @@
+CONVERSA 3b23b26509 | contato: Giuzepp | 20/08/2026 15:21 até 21/08/2026 08:43 | 12 msgs do cliente, 16 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[15:21] CLIENTE: [áudio] "Oi, boa tarde, o rapaz dos pneus, amanhã tu querendo ir aí, tá? Se a gente combina os pneus."
+[15:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:22] LOJA: [áudio] "Oi, Sr. Giuseppe, como é que vai?"  {audio:midias/3EB022266A1CA96CC2E0E6_282495.ogg}
+[15:22] LOJA: [áudio] "Sim, vem assim. Que dia que o senhor quer passar por aqui?"  {audio:midias/3EB07C79C0A5002186D215_759327.ogg}
+[15:22] CLIENTE: [áudio] "Tchau, tchau, tchau."
+[15:22] LOJA: [áudio] "Ah, eu tô bem, graças a Deus."  {audio:midias/3EB0609398C2DF9EDB843F_11113.ogg}
+[15:23] CLIENTE: [áudio] "Então tá bom, ele merece graça mesmo. Eu vou dar uma idinha amanhã, tá? Vou dar um pulinho aí. Aí tá... baixou mais o preço ou tá a mesma coisa? Já saia de vontade já, né? Porque os meus não prestam pra nada. Nenhum pneu presta. Nem step tem. Aí vai ter que ser os 5 pneus."
+[16:12] CLIENTE: [áudio] "Me fala para mim aí, por favor. Seis pneus. Você pode fazer dez vezes para nós, né? Quando fica seis pneus? Não é cinco, mas nós é seis. Vem para mim, por favor."
+[16:14] LOJA: [áudio] "Vejo? Vejo sim, só um minutinho, tá?"  {audio:midias/3EB067C228057A9ECE5E26_138890.ogg}
+[16:16] LOJA: Ficam 10 parcelas de R$ 180,60
+[16:39] LOJA: O senhor vem aqui que dia?
+[17:40] LOJA: Agora que carregou seu áudio, é amanhã... perdão.
+[17:41] CLIENTE: [áudio] "É, porque amanhã que fecha a fatura também no meu cartão aí, pra poder usar eu, né?"
+[17:41] LOJA: [áudio] "Tá, já então, Sr. Giuseppe. Ficamos combinados assim, aí quando o senhor estiver vindo pra cá, o senhor me avisa, tá bom? Que Deus já deixa os pneus separados."  {audio:midias/3EB0208616B48F85998D93_110260.ogg}
+[17:42] CLIENTE: [áudio] "Tá bom. Tá de boa, então."
+[17:43] LOJA: [áudio] "Beleza, bom descanso para o Senhor e até amanhã, se Deus quiser."  {audio:midias/3EB0DBC999CA0C61C44EC7_114531.ogg}
+[17:44] CLIENTE: [áudio] "Tá bom, obrigado. Deus abençoa, tá?"
+--- 21/08/2026 (Fri) ---
+[08:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:39] CLIENTE: [áudio] "Bom dia!"
+[08:39] LOJA: [áudio] "Bom dia, seu Giuseppe. Como é que está?"  {audio:midias/3EB0442BDF9714CF199EA5_462917.ogg}
+[08:40] CLIENTE: [áudio] "Bom também. Você tá onde mesmo? Na GP, é?"
+[08:40] LOJA: [áudio] "Vou te mandar aqui a localização, tá bom?"  {audio:midias/3EB0AB6A09AA5FF31AB7D5_732188.ogg}
+[08:40] CLIENTE: [áudio] "Estou aqui na porta, só que está escrito que é GP."
+[08:40] CLIENTE: [áudio] "Fica aqui."
+[08:40] LOJA: [foto]
+[08:42] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6 
+/l
+[08:43] CLIENTE: [áudio] "Ah tá, então eu tô certo. Só esperando o menino chegar aqui, que ele vai comprar, que vai ficar com 2 pneus. Viu?"
+[08:43] LOJA: Ta bom!

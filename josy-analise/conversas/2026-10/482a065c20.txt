@@ -1,0 +1,32 @@
+CONVERSA 482a065c20 | contato: Marcelo | 14/10/2026 10:23 até 15/10/2026 11:35 | 9 msgs do cliente, 19 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[10:23] LOJA: Bom dia!
+[10:25] LOJA: [foto]
+--- 15/10/2026 (Thu) ---
+[10:47] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Ontem eu te encaminhei um orçamento a respeito da medida 225-55-18. Você teve a oportunidade de analisar o orçamento?"  {audio:midias/3EB0B765B425F816F3261A_127874.ogg}
+[10:50] CLIENTE: [áudio] "Olá, analisei sim, mas eu já achei um pneu mais em conta aqui, entendeu? Por isso que eu não retornei a ligação, porque eu já achei um mais em conta."
+[10:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:50] CLIENTE: [áudio] "Achei um GP Premium, entendeu? Um preço bem melhor."
+[11:05] LOJA: [áudio] "Então, o GP Premium está por R$ 399,00 para o pagamento à vista."  {audio:midias/3EB0ABDF8230C59CFB8F29_683006.ogg}
+[11:05] LOJA: 👆🏻
+[11:06] LOJA: [áudio] "Marcelo, justamente o orçamento que eu te encaminhei, e você mora aqui em Luziânia?"  {audio:midias/3EB0B96F05CE69D3DC3C95_405611.ogg}
+[11:08] LOJA: 🙋🏼‍♀️
+[11:10] LOJA: Assim que estiver mais tranquilo por  aí, confere o orçamento por gentileza.
+[11:12] CLIENTE: Não moro em Paracatu !! Mas já achei ele mais em conta
+[11:13] LOJA: Como  sendo que aqui é a fabrica ?  Não tem quem vnda mais barato.
+[11:15] CLIENTE: Então falei com outra pessoa aí da fábrica mesmo, ela me fez a 370,00 e falei se não dava pra chegar no 350,00 ela ia ver com o superior dela aí
+[11:16] CLIENTE: Não me lembro o nome dela
+[11:19] LOJA: Aqui na fábrica é comigo mesmo que fala.
+[11:20] LOJA: No pagamento em *dinheiro físico* a unidade fica por R$ 370,00 não chegando a menos que esse valor.
+[11:24] CLIENTE: Ah sim entendi
+[11:32] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:34] CLIENTE: Beleza estou vendo aqui ok
+[11:34] LOJA: Combinado!
+[11:34] LOJA: [foto]
+[11:35] CLIENTE: Esse pneu é remold??
+[11:35] CLIENTE: Tem garantia?
+[11:35] LOJA: É
+[11:35] LOJA: Tem sim!
+[11:35] LOJA: Tem sim! de 2 anos.

@@ -1,0 +1,145 @@
+CONVERSA 4b7d4c27ff | contato: P.M | 10/09/2026 11:17 até 14/10/2026 17:05 | 42 msgs do cliente, 66 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[11:17] LOJA: *Josy:*
+Bom dia, Pedro
+[11:18] LOJA: [foto]
+[11:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:18] CLIENTE: [foto]
+--- 17/09/2026 (Thu) ---
+[21:48] CLIENTE: [áudio] "Olá, boa noite. Desculpa o horário, mas a única hora que eu lembro é quando eu cheguei em casa. Tem como você dar uma olhada para mim os pneus 16 que você tem aí? Eu tinha pedido para você olhar esses 15 aí, mas a gente descobre que as rodas dela é 16. Aí eu queria uns pneus para caminhonete 16 sem ser remolde. Pode ser 215 ou 225 ou 235, 75 ou 70, 16."
+[21:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 18/09/2026 (Fri) ---
+[08:17] LOJA: [áudio] "Oi Pedro, bom dia, tudo jóia?"  {audio:midias/3EB04B3380B0ABEA593AA8_427171.ogg}
+[08:17] LOJA: [áudio] "Você pode confirmar para mim qual é a medida que você precisa?"  {audio:midias/3EB01BA3A2CBB816C806BB_670761.ogg}
+[08:46] CLIENTE: 215/70/16
+225/70/16
+235/70/16
+215/75/16
+225/75/16
+235/75/16
+[08:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:47] LOJA: *Josy:*
+Terei a pronta entrega somente remold na medida 235/70/16
+[08:53] LOJA: *Josy:*
+Vou cotar o preço de marcas importadas para você.
+[09:09] CLIENTE: Ok
+[16:29] LOJA: [áudio] "Oi Pedro, tudo jóia? Olha, eu consegui um orçamento aqui do pneu na medida que você está buscando, eu consegui um retorno apenas da Dunlop, tá?"  {audio:midias/3EB0289680B0B4E531FDF6_852077.ogg}
+[16:29] LOJA: [foto]
+[16:29] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:47] CLIENTE: [áudio] "É, mas está muito acima do que estou disposto a pagar. Se fosse um pouco mais em conta, eu queria na faixa de preço daquele lá que o Tu tinha me mandado o orçamento antes. Esse aqui, acho que era 724."
+[16:51] LOJA: [áudio] "Eu te entendo e não te juro."  {audio:midias/3EB021851F6385035357CE_872690.ogg}
+[17:25] CLIENTE: [áudio] "Pois é, eu queria mais ou menos na faixa do preço daqueles que você tinha me mandado primeiro, né? Que é o pneu chinês, né? Que eu acho que a gente tinha visto 15, mas aí quando mandou lavar ela viu que era 16. Ah, e outra medida de pneu. Tanto que a gente ia comprar os 15, né? Essa semana. Só quem mudou..."
+[17:27] LOJA: [áudio] "Sim, sim, eu entendo. Mas olha, Pedro, coloca aqui o GP Premium, eu tenho ele, vai ser naquele modelo borrachudo, e o GP Premium é o pneu mais vendido que eu tenho, porque realmente era um pneu muito bom."  {audio:midias/3EB007817C1A8509539182_427169.ogg}
+[17:27] LOJA: [áudio] "Na medida que você quer, eu tenho ele bem borrachudo. Nossa, pneu muito bom. Inclusive, eu uso aqui na caminhonete do meu irmão."  {audio:midias/3EB08DEF33C8A87A4A0FCF_128042.ogg}
+[17:29] CLIENTE: [áudio] "Me manda a foto das medidas e os valores, que eu vou conversar com meu pai e ver se ele vai querer pegar esse aí, igual ele pegou do quadro aqui."
+[17:29] LOJA: [vídeo]
+[17:30] LOJA: [vídeo]
+[17:30] LOJA: [áudio] "Ele está à vista por 489."  {audio:midias/A5024BA7B066C5B5806DDDAE50AF4E0E_867944.ogg}
+[17:31] LOJA: [áudio] "Qual que é a caminhonete mesmo, Pedro?"  {audio:midias/3EB06EB345DF44BB8CB5C8_364453.ogg}
+[17:31] CLIENTE: [áudio] "E eles aguentam até quantos quilos? Eu preciso que o pneu aguente até 1.500 kg, pelo menos, mais ou menos, por causa que é para caminhonete, a gente carrega muito peso nela, geralmente gira em torno de uma tonelada, uma tonelada e meia, só que uma tonelada e meia é o máximo do máximo que a gente coloca, mas geralmente ela leva uma tonelada, 1.200, 1.300, 1.400, no máximo 1.500, só que é muito difícil pegar uma tonelada e 500, entendeu? Mas acontece de levar."
+[17:31] CLIENTE: [áudio] "É uma C10 1977, no verde."
+[17:32] CLIENTE: [foto]
+[17:34] LOJA: [foto] Cada pneu suporta 750 kg
+[17:36] CLIENTE: [áudio] "Mas, mesmo sendo remold, ele suporta os 750 kg, porque só recapa a parte de cima, não é? Ou, por ser remold, ele aguenta menos do que o original, porque usa a carcaça do original, não é?"
+[17:36] LOJA: [áudio] "Isso, isso mesmo."  {audio:midias/3EB0CFCA3287549C62699D_550159.ogg}
+[17:36] LOJA: [áudio] "Não, nós não recapamos a partir de cima, ele é feito todinho de novo."  {audio:midias/3EB0E030047D8A227BB4BA_405429.ogg}
+[17:36] CLIENTE: [áudio] "Esse pneu, por ser a fabricação de vocês, se ele der algum defeito, acontecer um rasgo nele, alguma coisa assim, se eu levar o pneu e você esturar com ele na hora, como é que é?"
+[17:37] LOJA: [áudio] "Pneus tem garantia para defeito de fabricação. Rasgo, você concorda comigo que é uma situação externa?"  {audio:midias/3EB02661D094B4AD90D5BE_557194.ogg}
+[17:41] LOJA: *Josy:*
+De modo geral o que não vem a ser defeito de produto, isso para qualquer tipo de marca:
+[17:41] CLIENTE: [áudio] "É, porque que nem eu te falei, né, os pneus que a gente precisa é para carga, tem que aguentar o peso, entendeu? Aí, a gente tinha comprado dois, que eu já tinha comentado com você, né, dois remoldes, só que eu não sei se vê o daí, a gente comprou do Menina aqui da Ocidental, só que eles eram remoldes, era da Palio Candy, aí, quando a gente botou o peso, não tava nem no peso máximo, né, que o pneu aguenta. tava com 400 quilos, acho que cada pneu aguentava 700, agora, 800. Aí, o pneu, ele não, ele falaram que rasgou, né, a garantia falou que o pneu rasgou, mas não, o pneu, ele, acho que por causa da pressão e do peso, ele estourou, só que se ele não aguentou o peso, que não tava nem no peso máximo, era pra eles trocarem o pneu, né, a gente levou lá no ônibus, a gente comprou, ele falou que ela ia mandar pra garantia, o pneu ficou quase dois meses, três meses na garantia, a gente rodando com o step, no final das contas, não trocou, a gente teve que comprar outro, aí, a gente já comprou dois novos e tirou os remoldes."
+[17:42] LOJA: Bolhas na lateral: Em 99% dos casos, não são defeito de fábrica. Elas surgem quando o pneu sofre um forte impacto (como um buraco ou batida no meio-fio). O choque rompe as lonas de nylon internas, e a pressão do ar empurra a borracha para fora, criando a bolha.                                                                                                                                                                                              Desgaste irregular (pneu comendo de um lado só): Isso acontece por falta de alinhamento, balanceamento, cambagem incorreta ou problemas na suspensão do carro.                                                                                                                             Desgaste acelerado no centro ou nas bordas: Indica erro de calibragem. Pneu muito murcho gasta as bordas (ombros); pneu muito cheio gasta o meio.Cortes, rasgos e furos: Provocados por objetos cortantes na pista, pregos ou fricção em quinas de calçadas.
+[17:44] LOJA: *Josy:*
+Entendi...
+[17:44] CLIENTE: [áudio] "O que tava acontecendo muito com eles é de dar bucho, né, que eles falam. Aí... Dava muito bucho, aí só que a garantia trocava se os pneus tivessem buchos. Só que demorava quase um mês."
+[17:46] LOJA: [áudio] "Sim, sim, exatamente. Igual até mandei aqui digitado para você, porque isso não é exclusividade do pneu da GP Premium. É para qualquer marca de pneu, tá? O que não configura garantia são essas bolhas laterais, que 99% dos casos realmente não são defeitos, são porque ocorreu impacto. E, igual eu te falei, vira e mexe, tem cliente que passa aqui na porta, que pagou mil e tanto no pneu Michelin e perdeu justamente por conta disso, tá? Então, não é exclusividade do pneu GP Premium. Qualquer marca de pneu. A única observação é que aqui nós fazemos a análise para ver, né, o que foi que aconteceu com o pneu. Se, porventura, seja algo que seja relacionado a defeito de produto, realmente é ressarcido para o cliente. Aí, se não for, pelo menos nós emitimos um laudo para poder justificar o que é que está acontecendo, né? Porque, assim como o nosso corpo, os pneus, eles falam por si só, né? Se ele roda com calibragem baixa, ele danifica, dentro dele vai estar cheio de pozinho. Então, tem tudo isso, né? Então, tem tudo isso, né?"  {audio:midias/3EB07531AF025BF7A5079C_763813.ogg}
+[17:47] CLIENTE: [áudio] "Não, sim, sim. Vou passar aqui pro meu pai ver o que ele acha desse vídeo. Se ele quiser pegar, a gente pega, tá bom?"
+[17:48] LOJA: [áudio] "Tá, jóia! E caso não queira, né, eu consegui lá a opção que é um pouco mais diferenciada aí, né, que é o da Dunlop. Aí, se vocês quiserem, nós fazemos a encomenda pra vocês, tá bem?"  {audio:midias/3EB02F374A335793A85C35_648093.ogg}
+[17:49] LOJA: [áudio] "Aí, além do peso da caminhonete, que já é 1.500, você ainda transporta mais 1.500, né?"  {audio:midias/3EB0A0764DCE7A0F38B558_589620.ogg}
+[17:51] CLIENTE: Isso
+[17:59] LOJA: *Josy:*
+Hm...  nesse caso vou mudar minha sugestão
+[18:00] LOJA: Vamos para uma linha de pneus de 12 lonas... mas vai ser um valor, pois aí você pode ultrapassar o peso .
+[18:01] LOJA: *Josy:*
+Não aconselho nem o Dunlop
+[18:01] CLIENTE: [áudio] "Mandando foto para a gente aí e o preço que eu vou passando para ele. Ele tá voltando da roça e quando chegar ele olha."
+[18:02] LOJA: [áudio] "Tá, Joia. Pedro, nesse caso, eu vou cotar também, porque aqui eu não tenho, tá? Mas eu tendo a resposta, fica tranquilo que eu passo pra ti."  {audio:midias/3EB0B0166B2B440AA8A4B3_855549.ogg}
+[18:04] CLIENTE: [áudio] "Tá bom. Secota aí, me manda. E se tiver foto dele também, manda também que eu mostro pra ele."
+[18:05] LOJA: [áudio] "Sim, com certeza. Tendo uma resposta aqui, eu te mando o orçamento, te mando a foto, tudo direitinho, tá?"  {audio:midias/3EB0F3C18C46B743C57604_175786.ogg}
+[19:13] CLIENTE: Ok
+--- 21/09/2026 (Mon) ---
+[17:34] LOJA: *Josy:*
+Oi Pedro
+[17:34] LOJA: *Josy:*
+Consegui 21575/16 de 10 lonas
+[17:34] LOJA: [foto]
+[17:34] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:35] CLIENTE: Tem foto dele ?
+[17:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:35] LOJA: *Josy:*
+Cada pneu suporta 1.250,00 kg
+[17:35] CLIENTE: Original ou remold prêmio ?
+[17:37] LOJA: [áudio] "É o original, esse daí vai ser da marca Sony."  {audio:midias/3EB096160F06479DC890EB_503906.ogg}
+[17:37] LOJA: *Josy:*
+215/75 R16C
+Marca Sunny 10 lonas
+[17:38] CLIENTE: Já inclui a instalação?
+[17:38] LOJA: *Josy:*
+Infelizmente não... mas podemos engociar isso com os rapazes da oficina.
+[17:39] CLIENTE: Ok vou falar com meu pai
+[17:39] CLIENTE: Tenta me arrumar as fotos dele
+[17:45] LOJA: *Josy:*
+Vou solicitar
+[17:46] LOJA: [foto]
+[17:47] CLIENTE: [áudio] "Pede uma foto dele de frente, pegando os sucos dele. Meu pai quer ele bem caroçudo."
+[17:47] LOJA: Deixa
+[17:48] LOJA: [áudio] "Eu acho que eu tenho pneus pequenos ali, que dá pra tirar uma foto mesmo pra você, tá?"  {audio:midias/3EB0837362FEF7AAA3E39E_751007.ogg}
+[17:49] LOJA: Vai ser assim:
+[17:49] LOJA: [foto]
+[17:50] LOJA: [foto]
+[17:51] CLIENTE: [áudio] "Beleza, eu mandei aqui as fotos para ele, vamos ver o que ele acha."
+--- 02/10/2026 (Fri) ---
+[17:46] CLIENTE: Boa noite
+[17:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:46] CLIENTE: Ainda tem eles pronta entrega ?
+[17:46] CLIENTE: Nesse valor ?
+[17:48] CLIENTE: Vão está abertos amanhã?
+[17:49] LOJA: [áudio] "Olá! Boa noite, Pedro! Tudo jóia!"  {audio:midias/3EB0538BCBC619E2D9C47C_644931.ogg}
+[17:49] CLIENTE: [áudio] "Boa noite, tudo jóia. Você tem esses pneus ainda prontos de emprega? Quatro pneus? Nessa numeração, nesse valor que você tinha me passado?"
+[17:49] LOJA: [áudio] "Sim, sim, tudo igualzinho, do jeito que nós conversamos aí, tá bom? E amanhã nós vamos abrir 8 da manhã e encerraremos o expediente ao meio-dia, tá bom?"  {audio:midias/3EB0B389705268FB394987_705467.ogg}
+[17:50] CLIENTE: [áudio] "Você consegue me enviar uma nota com a soma do valor dos 4 pneus e as formas de pagamento, tudo que você tinha feito, só que com os 4 pneus? Eu vou mandar para um colega meu que está querendo comprar para a caminhonete dele e está querendo ir amanhã. Só que aí provavelmente ele quer ver o valor que vai ficar na nota e aquele que vai fazer o pico."
+[17:53] CLIENTE: Isso
+[17:53] CLIENTE: Com valor dos 4 pneus
+[17:53] CLIENTE: 489
+[18:05] LOJA: [documento]
+[18:05] LOJA: [áudio] "Pedro, prontinho, tá joia?"  {audio:midias/3EB002D3C1EFB9B1C1A741_783916.ogg}
+[18:05] CLIENTE: [áudio] "Tá bom, obrigado. Eu vou mandar pra ele aqui, ele autorizando, ele vai me mandar o dinheiro e talvez amanhã eu vou buscar esse pedido, tá bom? Espero tudo certo."
+[18:08] LOJA: [áudio] "Perfeito, Pedro. Tranquilo, tá?"  {audio:midias/3EB052CD07647BD5138C88_168726.ogg}
+[18:08] LOJA: [áudio] "Amanhã o nosso horário de atendimento é de 8 até o meio-dia."  {audio:midias/3EB08C6CC1479528DDC71C_491604.ogg}
+[18:08] CLIENTE: Tá bom obrigado
+[18:09] LOJA: [áudio] "Eu que agradeço. Bom descanso, tá?"  {audio:midias/3EB018C650F78D551FDA9C_237420.ogg}
+[18:09] CLIENTE: Obrigado pra vc tbm
+--- 14/10/2026 (Wed) ---
+[16:29] CLIENTE: [áudio] "Opa, boa tarde. Vocês estão aí ainda? Eu não pulei para ver aqueles pneus lá."
+[16:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:30] LOJA: [áudio] "Oi Pedro, tudo jóia?"  {audio:midias/3EB07CEB3A19FAFD7D1CD7_163971.ogg}
+[16:31] LOJA: [áudio] "Sim, estamos sim, Pedro."  {audio:midias/3EB030542608CD866DF01D_90861.ogg}
+[16:31] LOJA: [áudio] "Esses são os pneus para o seu amigo, né, que você falou."  {audio:midias/3EB0A49050F431FE3B2801_883921.ogg}
+[16:33] CLIENTE: [áudio] "É, mas só que ele é enrolado, que ele ia pegar a caminhonete, aí começou a inventar história. Eu vou dar uma olhada nesse pneu, pessoalmente. Se eu gostar, eu vou trazer os quatro logo. Tá bom? Porque botamos o pneu, fica mais fácil de vender ela também."
+[16:33] CLIENTE: [áudio] "Eu tô saindo aqui da Ocidental. Daqui a pouquinho eu tô chegando aí, tá? Só tenho que passar no outro lado aberto, no Engale, pra poder pegar 10 rolinhos de linhas. Segura a sacaria lá da loja. Aí, depois que eu passar lá eu subo e corro."
+[16:34] LOJA: [áudio] "Combinado, Pedro."  {audio:midias/3EB03A71AF814E7EFB94ED_997096.ogg}
+[16:55] LOJA: Te esperando!
+[16:55] LOJA: [foto]
+[17:05] CLIENTE: To chegando

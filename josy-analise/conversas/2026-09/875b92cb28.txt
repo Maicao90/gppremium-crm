@@ -1,0 +1,13 @@
+CONVERSA 875b92cb28 | contato: Maria | 24/09/2026 09:00 até 24/09/2026 09:41 | 1 msgs do cliente, 8 da loja, 0 do robô
+
+--- 24/09/2026 (Thu) ---
+[09:00] LOJA: [áudio] "Bom dia, Dona Maria. Tudo jóia? O Ícaro me passou o seu contato."  {audio:midias/3EB02B15E155E50453E4A8_454059.ogg}
+[09:00] LOJA: [foto]
+[09:00] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:36] CLIENTE: [áudio] "Oi, você já mandou a localização aqui para mim acessar? Manda aí, por favor."
+[09:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:40] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:40] LOJA: [áudio] "Te mandei a localização, aí na localização tem a foto aqui da frente da loja, mas como o WhatsApp tá com um pouco de instabilidade, eu vou te mandar a foto aqui da frente, tá bom?"  {audio:midias/3EB0DD5CC30CA52527289B_328157.ogg}
+[09:40] LOJA: [foto]
+[09:41] LOJA: [áudio] "Olha, aqui na BR, a senhora vai passar, vai ter aquele motel, que é Motel Vegas, Las Vegas, alguma coisa assim, aí a senhora vai ver um posto de combustível. Vendo o posto de combustível, a senhora anda um pouquinho e vai entrar à sua direita, fica do lado do Hotel Goiás e da Goiás Diesel."  {audio:midias/3EB03264EDD187C312F41D_73515.ogg}

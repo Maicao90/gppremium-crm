@@ -1,0 +1,39 @@
+CONVERSA 9cad40b725 | contato: JeffersonEhAnaMaria | 13/10/2026 17:18 até 17/10/2026 11:56 | 15 msgs do cliente, 16 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[17:18] CLIENTE: Boa Tarde
+[17:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:18] CLIENTE: Aro 14
+[17:20] LOJA: Mas qual a medida dos pneus que você precisa hoje?
+[17:20] CLIENTE: 175/65
+[17:21] LOJA: [foto]
+[17:21] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:21] LOJA: Mora aqui em Luziânia-Go?
+[17:23] CLIENTE: Irei aí em luziania no sábado
+[17:23] CLIENTE: Nesse valor já eh montado e balanceado
+[17:25] LOJA: [áudio] "Oi Jefferson, tudo jóia. Jefferson, os pneus da marca GP Premium, que são esses que estão na oferta, no valor de 249, eu consigo entregá-los já colocados para você, eles são montados. A parte, nós negociamos os serviços de balanceamento e alinhamento, tá bom?"  {audio:midias/3EB0DE727D3A7F6F0C9E0A_911641.ogg}
+[17:26] CLIENTE: Só o balanceamento fica quantos
+[17:34] LOJA: R$ 35,00 por roda o balancamento e alinhamento R$ 120,00 , mas são valores negociáveis.
+[17:35] CLIENTE: Certo
+[17:35] CLIENTE: No sábado
+[17:35] CLIENTE: Vc trabalha até que horas
+[17:39] LOJA: [áudio] "Jefferson, no sábado nós atendemos de 8 da manhã até o meio-dia."  {audio:midias/3EB0E2F88A4F79810A520F_491432.ogg}
+[17:42] LOJA: [áudio] "Eu vou enviar aqui a nossa localização, só para ficar registrado na nossa conversa, tá? E no sábado, assim que abrir a loja, eu te mando um bom dia, tá bom?"  {audio:midias/3EB062829E30306F856C9B_424725.ogg}
+[17:46] CLIENTE: Tá bom
+[17:48] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:49] LOJA: [foto]
+--- 17/10/2026 (Sat) ---
+[11:04] LOJA: Jefferson... vai conseguir vir hoje?
+[11:54] CLIENTE: Bom dia
+[11:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:54] CLIENTE: Estou chegando em luziania
+[11:54] CLIENTE: Mais já consegui trocar os pneus
+[11:54] CLIENTE: Obgdo
+[11:54] LOJA: Séeeeerio?
+[11:55] LOJA: Fico feliz, mas fico triste rsrs...
+[11:55] LOJA: Obrigada pelo retorno, bom final de semana!
+[11:56] CLIENTE: Obgdo ☺️🫱🏽‍🫲🏽

@@ -1,0 +1,58 @@
+CONVERSA 88b6fcd099 | contato: Mark | 13/10/2026 19:26 até 15/10/2026 14:40 | 20 msgs do cliente, 25 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[19:26] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[19:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:26] CLIENTE: 215x65x16
+--- 14/10/2026 (Wed) ---
+[08:12] LOJA: [foto]
+[08:12] LOJA: No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:11] CLIENTE: Manda a localização de vcs
+[10:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:11] CLIENTE: Por favor
+[10:12] LOJA: Clato!
+[10:12] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 15/10/2026 (Thu) ---
+[11:53] CLIENTE: Bom dia
+[11:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:53] CLIENTE: Faz outro orçamento, por favor
+[11:53] CLIENTE: 235x60x16
+[11:53] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[11:53] CLIENTE: Ok
+[12:09] LOJA: [foto]
+[12:12] CLIENTE: Ok
+[12:13] LOJA: Por ora consegui retorno da Dunlop e Goodyear
+[12:13] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:54] CLIENTE: São pneus novos ou não,?
+[12:55] LOJA: [áudio] "O pneu da marca chinesa, ele é um pneu novo. Já o da marca GP Premium, o pneu ecológico que a nossa empresa fabrica, ele vai entrar na categoria de remodelagem, só que é linha Premium, que não tem nada a ver com os pneus remoldes convencionais, justamente por isso os pneus dispõem de 2 anos de garantia, com questão a quilometragem, ele vai rodar a mesma coisa que pneus de grandes marcas nacionais famosas rodam, porque ele é completamente diferente dos pneus que são remoldes convencionais, tá?"  {audio:midias/3EB08A2E6BBF8F678DE52F_650569.ogg}
+[12:56] CLIENTE: Qual a marca do chinês?
+[12:57] CLIENTE: Pq fico receoso em obter esses remolds
+[12:57] CLIENTE: E o preço tá quase igual
+[12:57] LOJA: [foto] Tracmax
+[12:58] LOJA: Posso gravar um video para você?
+[12:58] CLIENTE: Pode
+[12:58] CLIENTE: Claro
+[13:06] LOJA: Ok
+[13:10] LOJA: [vídeo]
+[13:13] CLIENTE: [áudio] "Não, eu gostei. Eu já fui na loja de vocês aí uma vez, só que não me explicaram tão bem igual você tá me explicando. É... Eu vou aí... Esse valor aí de 349, ele é líquido mesmo? Se eu comprar os quatro, tem alguma promoção? Se não me engano, tinha alguma coisa aí, mas era de outro aro. Você pagava três e ganhava um. Se eu não estiver enganado, era com vocês. Mas tem alguma coisa aí para facilitar um pouco mais, para não adquirir os quatro? Mas se eu"
+[13:14] LOJA: [áudio] "Sim, perfeitamente, Samaque. A promoção Compre 3 e Leve 4, ela é para pneus na medida do 195-65-15, que é para o Cobalt, né, carros pequenos, e 215-55-17. Deixa eu ver uma coisa aqui."  {audio:midias/3EB086AFABC8C6B19055FA_588067.ogg}
+[13:18] LOJA: [áudio] "Marque, vamos fazer o seguinte, se sua compra for no dinheiro em espécie, dinheiro físico, eu consigo fazer aqui a unidade para você por 335 reais, tá jóia? E já coloco esses pneus para você. Caso você queira parcelar, nós podemos negociar algo que lhe atenda, tá bom?"  {audio:midias/3EB07181D1161F9BDBC256_944356.ogg}
+[13:18] CLIENTE: [áudio] "Não, se eu for comprar é à vista, mas não pode ser no Pix também?"
+[13:18] CLIENTE: [áudio] "Tem dinheiro hoje em dia, né? Eu mesmo não gosto de andar com o dinheiro não. Eu não peguei o dinheiro, é só semana que vem, mas eu preciso colocar urgentemente. Aí vocês colocam, né? Ele, né? Não é isso?"
+[13:19] LOJA: [áudio] "Não, esse valor que eu te passei de 335, somente no dinheiro físico. Por quê? Toda a negociação que eu faço, passando ela tanto no débito quanto no Pix, para mim cobra. Então, é desvantajoso para mim e é desvantajoso para o cliente também, porque eu não consigo ter muita flexibilidade. Já no dinheiro físico, eu consigo ofertar esse desconto para o senhor, tá bom? E se for para parcelar, nós negociamos aqui algo que, de repente, dentro daquilo que eu encaminhei no orçamento, fique acessível para o senhor."  {audio:midias/3EB0142861E750BC2913DE_454100.ogg}
+[13:19] LOJA: [áudio] "E sim, colocamos os pneus sim, tá?"  {audio:midias/3EB0969E817F90417DC2A7_185741.ogg}
+[13:19] LOJA: [áudio] "A parte, nós podemos negociar com os meninos aqui da oficina os serviços de balanceamento e alinhamento, tá bom?"  {audio:midias/3EB04173145729B6B6163D_333382.ogg}
+[13:20] CLIENTE: Ok
+[13:20] CLIENTE: A semana que vem vou aí pra matar as dúvidas, pessoalmente
+[14:40] LOJA: [áudio] "Sim, perfeito, Mike. Ficamos combinados, tá?"  {audio:midias/3EB0AEA050441DAFE9A809_128089.ogg}
+[14:40] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:40] LOJA: [foto]

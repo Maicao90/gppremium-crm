@@ -1,0 +1,31 @@
+CONVERSA 4f7bc9b768 | contato: Sérgio Gabriel | 12/09/2026 11:34 até 16/09/2026 16:48 | 8 msgs do cliente, 12 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[11:34] CLIENTE: Bom dia, tudo bem?
+Quanto está custando os pneus aro 13?
+[11:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:34] CLIENTE: Pneu aro 13
+[11:35] LOJA: Bom dia, temos sim!
+[11:36] LOJA: Me de só um instante.
+[11:38] LOJA: [foto]
+[11:41] CLIENTE: E o aro 14
+[11:42] LOJA: [áudio] "Olá, bom dia. Tudo bem, Sérgio? No aro 14 eu tenho a partir de 239, depende da medida. Você mora aqui em Luziânia?"  {audio:midias/A5D225B3680CB32778355063880DB0A0_650722.ogg}
+[12:03] CLIENTE: Sim sou de Luziânia,
+[12:03] CLIENTE: 175/65 R14
+[12:03] LOJA: [áudio] "Ah, bacana, Sérgio. Olha só, eu tenho aqui, num preço muito bom, o pneu da marca GP Premium, ele está por apenas R$ 249,00, se for no débito ou no Pix."  {audio:midias/A5B88837786183A9D1A86604C8B8CF6E_159429.ogg}
+[12:03] LOJA: [áudio] "Você quer que eu te mande a localização da nossa loja?"  {audio:midias/A5A9C0CF28D75293AC6B979F13F2B177_740153.ogg}
+[12:04] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:32] CLIENTE: Sim sei onde fica
+--- 16/09/2026 (Wed) ---
+[12:32] LOJA: [áudio] "Oi Sérgio, tudo jóia? No sábado nós conversamos aí a respeito dos pneus, né? A princípio você disse que precisava de pneus aro 13 e posteriormente de aro 14. Você gostaria que eu deixasse os pneus reservados para você?"  {audio:midias/3EB06C3984AEAD2D68D34E_711952.ogg}
+[16:29] CLIENTE: Boa tarde,
+Tudo bem graças a Deus e você?
+Já passei seu contato pra o rapaz que me pediu indicação.
+[16:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:29] LOJA: *Josy:*
+Estou bem, obrigada por perguntar, Sérgio.
+[16:30] LOJA: *Josy:*
+Perfeito! Vou encerrar seu atendimento está bem! Precisando é só chamar 👋🏻
+[16:48] CLIENTE: Ok, muito obrigado pela atenção.

@@ -1,0 +1,30 @@
+CONVERSA a35d41f86b | contato: Gilberto Xavier | 27/08/2026 09:38 até 27/08/2026 11:43 | 8 msgs do cliente, 10 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[09:38] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:38] CLIENTE: 175/70/13
+[09:39] CLIENTE: Essa loja é da samambaia
+[09:40] LOJA: *Josy:*
+Somos de Luziânia-Go.
+[09:43] CLIENTE: Você tem o contato da loja de samambaia
+[09:43] LOJA: *Josy:*
+Não temos loja ai
+[09:43] LOJA: *Josy:*
+Somos de Luziânia-Go.
+[09:43] CLIENTE: Ok
+[09:44] CLIENTE: Qual o valor do pneu 175/70/13
+[09:44] LOJA: *Josy:*
+R$ 269,00
+[09:45] CLIENTE: Qual a marca dele
+[09:45] LOJA: *Josy:*
+GP Premium
+[09:46] CLIENTE: Esse é importado
+[09:46] LOJA: *Josy:*
+Nacional, nós que fazemos.
+[09:49] LOJA: *Josy:*
+É um pneu ecológico de primeira linha.
+[11:43] LOJA: [áudio] "Olá, bom dia, tudo jóia? Bem, eu vou encerrar aqui o seu atendimento para não ficar enchendo o seu WhatsApp de mensagens, tá? Eu vou mandar a localização aqui da nossa empresa, pois se houver a possibilidade, você vem cá para nós conversarmos pessoalmente, está bem?"  {audio:midias/3EB03F7DC346B4349D3ADE_713261.ogg}
+[11:43] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

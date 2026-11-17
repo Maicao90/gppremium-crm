@@ -1,0 +1,19 @@
+CONVERSA 4c19edce0a | contato: Renato papaleguas | 10/09/2026 07:48 até 10/09/2026 08:25 | 8 msgs do cliente, 4 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[07:48] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[07:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:49] CLIENTE: Tenho interesse em comprar pneus
+[07:49] CLIENTE: Bom dia pneu 🛞 pra BYD Dolphin GS 195/60/15
+[07:49] CLIENTE: Tem qual o valor?
+[07:58] CLIENTE: 195/60/16 byd dolphin gs
+[07:59] CLIENTE: Depende do valor
+[07:59] CLIENTE: E condições de pagamento
+[08:23] LOJA: [foto]
+[08:24] LOJA: [áudio] "Olá, bom dia. No dia de hoje eu tenho as duas últimas unidades do pneu da marca Ling Long. E à vista, cada um está por 469 reais. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0049B79F5D46014BF19_527844.ogg}
+[08:24] CLIENTE: Moro achei de 420 a und
+[08:25] LOJA: *Josy:*
+hmmm

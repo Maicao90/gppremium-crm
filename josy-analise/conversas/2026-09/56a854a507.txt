@@ -1,0 +1,42 @@
+CONVERSA 56a854a507 | contato: Ester Reis | 04/09/2026 16:32 até 09/09/2026 17:52 | 9 msgs do cliente, 13 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[16:32] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[16:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:32] CLIENTE: Olá boa tarde
+[16:33] CLIENTE: Pneu 215/65 R16
+[16:33] CLIENTE: Qual o valor?
+[16:33] CLIENTE: Pirelli
+Goodyear 
+Michelin
+[16:33] CLIENTE: [foto]
+[16:34] CLIENTE: Preciso de pneus para esse dois carros
+[16:34] CLIENTE: Poderia me mandar um orçamento por favor 🙏🏻
+[16:35] CLIENTE: 4 pneus para cada carro
+[16:59] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, moça? Olha, no dia de hoje, eu não disponho de nenhuma dessas marcas aí que você me solicitou, tá? Mas eu pedi um orçamento com os meus distribuidores, porque se eles tiverem, vai ser somente por encomenda. Aí, assim que eles me responderem, eu te passo direitinho qual das marcas que eles terão, qual que é o preço e o prazo de entrega, tá?"  {audio:midias/3EB0249B91A548C31C0E63_508110.ogg}
+[16:59] LOJA: [áudio] "A princípio, eu tenho aqui o pneu da marca GP Premium, que é o pneu mais vendido, que ele está por apenas R$ 349,00 a vista."  {audio:midias/3EB0C3B735B4F7C173DD92_211468.ogg}
+--- 05/09/2026 (Sat) ---
+[09:52] LOJA: *Josy:*
+Bom dia!
+[09:52] LOJA: *Josy:*
+215/65/16 👇🏻
+[09:52] LOJA: [foto]
+[09:52] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:53] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Bem, Esther, igual eu te falei ontem, eu não disponho das opções que você sugeriu à pronta entrega, então eu tive que aguardar a resposta dos distribuidores mesmo, tá? E eles me passaram aí que eles têm no estoque os pneus da Pirelli e da Goodyear. Aí elas são opções somente por encomenda e esse abaixo que você encaminhou também só por encomenda e o distribuidor não me passou as opções."  {audio:midias/3EB0D175F10185C1CBB374_854395.ogg}
+[09:54] LOJA: [áudio] "E, Esté, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0A08249F672EA679B51_423664.ogg}
+--- 08/09/2026 (Tue) ---
+[10:07] LOJA: *Josy:*
+Bom dia!
+[10:08] LOJA: *Josy:*
+Te encaminhei um orçamento, e gostaria de saber se pretende seguir com a negociação. Consegue me dar um retorno?
+--- 09/09/2026 (Wed) ---
+[17:52] LOJA: *Josy:*
+Boa tarde, imagino que esteja muito ocupada, por isso não consegue me responder.                                                                                                                                                                                 Bem, então para não ficar enchendo seu whatsapp de mensagem, vou encerrar seu atendimento.                                                                                                                                                                                                                                    Se precisar futuramente me chame, ou venha aqui na loja para conversar pessoalmente , obrigada  pela atenção. 👋🏻
+[17:52] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

@@ -1,0 +1,8 @@
+CONVERSA 018225dded | contato: Uyves | 19/07/2026 10:08 até 20/07/2026 09:50 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 19/07/2026 (Sun) ---
+[10:08] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:10] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 20/07/2026 (Mon) ---
+[09:48] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:50] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

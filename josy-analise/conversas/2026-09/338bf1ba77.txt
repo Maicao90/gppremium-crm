@@ -1,0 +1,30 @@
+CONVERSA 338bf1ba77 | contato: Pedro Silva | 29/09/2026 17:28 até 30/09/2026 09:25 | 8 msgs do cliente, 10 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[17:28] LOJA: 🙋🏼‍♀️
+[17:28] LOJA: *Josy:*
+Boa tarde!
+[17:28] CLIENTE: Boa tarde tudo bem ?
+[17:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:28] CLIENTE: [foto]
+[17:29] CLIENTE: Vcs tem esse pneu?
+[17:29] CLIENTE: E da toro 2027
+[17:30] LOJA: *Josy:*
+Boa tarde, temos sim!
+[17:30] LOJA: *Josy:*
+Um instante.
+[17:31] CLIENTE: Ok
+[17:31] CLIENTE: Tem dele? Não entendi
+[17:33] LOJA: *Josy:*
+Um instante, estou fazendo seu orçamento.
+[17:35] LOJA: [foto]
+[17:36] CLIENTE: Obg
+[17:36] CLIENTE: Vou passar para o meu amigo
+[17:36] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:44] LOJA: [áudio] "Olha, que essa opção que você está precisando, que é o 225-60, é uma opção que está bem difícil de ser encontrada, tá? Aí, os usuários da medida estão passando a utilizar as opções que são de mais fácil acesso, que são 215-60-17 e 225-65-17. Você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0138A7FD29503B2C91E_653011.ogg}
+--- 30/09/2026 (Wed) ---
+[09:25] LOJA: [áudio] "Oi, bom dia. Tudo bem com você? Pedro, eu te mandei um orçamento ontem e gostaria de saber se você é daqui de Luziânia. Eu vi que seu DDD é de outra localidade."  {audio:midias/3EB0EC910CAB37E90B9507_854639.ogg}

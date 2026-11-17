@@ -1,0 +1,78 @@
+CONVERSA 8048edf813 | contato: SILVIO | 03/09/2026 10:05 até 11/09/2026 16:02 | 15 msgs do cliente, 33 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[10:05] CLIENTE: [foto] 📢 [Anúncio] Converse conosco
+
+Olá! Posso ter mais informações sobre isso?
+[10:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:06] CLIENTE: 205 60 16
+[10:08] LOJA: *Josy:*
+Bom dia, obrigada por aguardar.
+[10:08] LOJA: [foto]
+[10:08] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:12] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[10:12] CLIENTE: Não em valparaiso
+[10:12] LOJA: *Josy:*
+Ah, sim!
+[10:12] LOJA: *Josy:*
+É proximo...
+[10:13] CLIENTE: Aqui tem filial de vocês?
+[10:13] LOJA: *Josy:*
+Não...somente aqui mesmo.
+[10:13] LOJA: *Josy:*
+Gostou de alguma opção esecifica?
+[10:14] CLIENTE: Tem as imagens dos penus
+[10:14] LOJA: *Josy:*
+	
+pneu 205/60/16 wanli su006 AT 82h👇🏻
+[10:14] LOJA: [foto]
+[10:15] LOJA: *Josy:*
+	
+pneu 205/60/16 92h rp203 aptany👇🏻
+[10:15] LOJA: [foto]
+[10:15] LOJA: *Josy:*
+pneu 205/60/16 GP Premium 👇🏻
+[10:17] LOJA: [foto]
+[10:17] LOJA: [foto]
+[10:18] CLIENTE: Qual faz menos barulho na rodagem?
+[10:21] CLIENTE: Esse é remold?
+[10:26] LOJA: [vídeo]
+[10:31] LOJA: *Josy:*
+Modelos lisos como o do vídeo.
+[10:32] LOJA: [áudio] "Sr. Silvio, ficou bem explicado para você?"  {audio:midias/3EB055BFFABCF1D38F4C91_689549.ogg}
+[10:34] CLIENTE: Sim
+[10:36] CLIENTE: Optando por este 
+
+Como funciona a troca
+[10:36] LOJA: *Josy:*
+Aqui o senhor pode comprar e levar para montar onde quiser.
+[10:37] CLIENTE: [áudio] "Caso, trocando aí, igual, por exemplo, essa montagem, né? Você tira o meu e coloca esse novo. Aí vocês pegam o meu aí na troca, tipo, pagam alguma coisa por ele ou não? E caso façam o alinhamento, vocês fazem também? Como é que funciona? Esse preço, você passou do período, está incluso o quê, na verdade?"
+[10:38] LOJA: [áudio] "Não, nós não trabalhamos a base de troca não, fique tranquilo. Ao desmontar os pneus do seu carro, você pode levar eles também, tá?"  {audio:midias/3EB06E2904BBD388DE6F4E_312182.ogg}
+[10:38] LOJA: [áudio] "Sim, aqui na nossa oficina são feitos serviços de balanceamento, alinhamento e tudo mais que for necessário, tá joia? Esses serviços, eles são cobrados, mas com questão aí a sua observação do pneu, né, da gente ficar ele à base de troca, nós não ficamos à base de troca não. O senhor pode desmontar, pode levar seus pneus de volta pra casa, pode ficar tranquilo quanto a isso, tá bom?"  {audio:midias/3EB06C22127909EFC45B18_268952.ogg}
+[10:39] LOJA: [áudio] "Esse preço é somente o preço do pneu. Serviços são à parte. Aqui nós não estamos aderindo à modalidade das outras empresas de dizer que no preço do pneu já está incluso todo tipo de serviço, porque é apenas para atrair o cliente e quando o cliente vai lá para fazer essa suposta montagem, já com todos os serviços inclusos, na verdade eles acabam cobrando um valor muito mais alto. Então nós não aderimos a essa modalidade. Aqui eu trabalho de maneira clara o preço dos pneus é X e serviços são preços Y."  {audio:midias/3EB0837CF91DCE053BC76C_725352.ogg}
+[10:42] CLIENTE: Entendi
+[10:42] CLIENTE: Por gentileza Pode enviar a localização pra eu ter uma ideia de onde fica ?
+[10:42] LOJA: *Josy:*
+Sim, claro!
+[10:43] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:43] LOJA: [foto]
+[12:42] LOJA: [áudio] "Oi, Sr. Silvio. E aí, o que a senhora achou? A distância ficou acessível?"  {audio:midias/3EB044A8F67E30B2470DB4_708731.ogg}
+[14:34] CLIENTE: [áudio] "Assim, eu conferi aqui, não entendi mais ou menos onde que é, é na BR, né? Frente a BR. Eu vou, só que essa semana eu acho que não vou dar conta de ir em Luziana, não. Mas semana que vem, provavelmente eu vou ter que ir lá e eu aproveito e já dou um pulo aí. Os pneus tá ruim aqui, mas ainda dá pra ir rodando, né? Então, corrido, eu tô olhando os preços pra ir me preparando aqui. Provavelmente eu vou, talvez, trocar os quatro, entendeu? Mas só me dá mais um tempo aí. Essa semana que vem, talvez eu dou um pulo aí."
+[14:35] LOJA: [áudio] "Seu Silvio, imagina, fica tranquilo, tá? Eu também não gosto de trabalhar pressionando as pessoas não, pelo contrário, eu gosto que a pessoa se sinta livre justamente pra poder resolver suas coisas, né? E eu entendo perfeitamente, fique tranquilo quanto a isso, tá? E vamos nos falando, nossa, vai ser uma satisfação imensa receber o Senhor aqui na nossa loja, caramba, sério mesmo. E o Senhor me parece ser uma pessoa muito simpática e só pelo timbre da voz."  {audio:midias/3EB074B1961F162729C86C_528799.ogg}
+--- 10/09/2026 (Thu) ---
+[16:45] LOJA: *Josy:*
+Oiii
+[16:45] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[14:24] LOJA: [áudio] "Oi Silvio, tudo jóia? Eu te mandei um vídeo aí ontem, mas imagino que na sua correria você não conseguiu me responder. Eu vou encerrar aqui o seu atendimento, tá jóia? Pra não ficar enchendo o seu WhatsApp de mensagens aí, porque eu sei que é chato. Aí como você tem a localização, quando tiver possibilidade, você faça aqui. Bom final de semana. Tchau, tchau."  {audio:midias/3EB00A7735539AAD7E315A_384691.ogg}
+[16:00] CLIENTE: Boa tarde senhorita
+[16:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:00] CLIENTE: Muita correria 😥
+[16:02] LOJA: [áudio] "Pois é, Silvia, e justamente por isso que eu te mandei um áudio, né, dizendo que eu vou encerrar o atendimento, justamente para não ficar enchendo o WhatsApp de mensagem, porque é chato, né, eu sei que você está ocupado, tem as coisas para fazer, e aí a gente acaba sendo inconveniente com as pessoas, eu não gosto disso. E, pois é, aí vê aí direitinho, tá, como que fica bom para você, eu te mandei a localização da nossa loja, e quando você estiver com disponibilidade, você passa aqui na loja para nós conversarmos, tá, jóia? E aí, vamos lá."  {audio:midias/3EB0A1BE3775C381539AEA_867249.ogg}

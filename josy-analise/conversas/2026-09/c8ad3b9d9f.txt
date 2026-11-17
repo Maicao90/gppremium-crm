@@ -1,0 +1,56 @@
+CONVERSA c8ad3b9d9f | contato: Geovani | 28/09/2026 10:51 até 29/09/2026 15:48 | 16 msgs do cliente, 18 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[10:51] CLIENTE: Bom dia
+[10:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:54] CLIENTE: 185/65/15
+[10:54] CLIENTE: Seria 2 pneus apenas
+[10:54] CLIENTE: Vcs também fazem alinhamento??
+[10:55] LOJA: *Josy:*
+Bom dia!
+[10:55] LOJA: *Josy:*
+Segue orçamento dos pneus...
+[10:57] LOJA: [foto]
+[10:57] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:57] LOJA: *Josy:*
+Mora aqui em Luziânia-Go mesmo?
+[11:07] CLIENTE: Moro no Valparaíso
+[11:07] CLIENTE: Faz alinhamento aí??
+[11:07] LOJA: *Josy:*
+Sim, sim!
+[11:08] LOJA: *Josy:*
+Qual é seu carro?
+[11:08] LOJA: *Josy:*
+E vai precisar somente de alinhamento?
+[11:08] CLIENTE: É um versa 2014
+[11:08] LOJA: *Josy:*
+Certo..um instante.
+[11:09] CLIENTE: Acredito que sim, mas coloca alinhamento e balanceamento por favor
+[11:10] CLIENTE: Ok
+[11:15] LOJA: *Josy:*
+* Balanceamento = 30,00 por roda
+* Alinhamento de direção  = 90,00
+--- 29/09/2026 (Tue) ---
+[08:03] CLIENTE: Bom dia
+[08:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:03] CLIENTE: Tudo jóia
+[08:03] CLIENTE: Vou aí hj fazer o serviço
+[08:04] LOJA: *Josy:*
+Bom dia, Giovani...
+[08:04] LOJA: *Josy:*
+Ficamos combinados está bem!
+[08:04] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:04] CLIENTE: Obrigado!
+[08:05] LOJA: [foto]
+[15:37] CLIENTE: Oioi
+[15:38] CLIENTE: To saindo do Valparaíso agora para ir aí
+[15:38] CLIENTE: Da tempo de fazer o serviço hj ainda?
+[15:48] LOJA: *Josy:*
+Dá sim!
+[15:48] LOJA: *Josy:*
+Pode vir!

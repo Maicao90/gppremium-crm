@@ -1,0 +1,45 @@
+OK   A1 medida da tabela -> libera -> [true,"medida_da_tabela","175/70/13"]
+OK   A2 medida da tabela escrita "185 65 r15" -> libera -> [true,"medida_da_tabela","185/65/15"]
+OK   A3 medida fora da tabela -> continua -> [false,"sem_medida_da_tabela",null]
+OK   A4 "vocês têm?" -> continua -> [false,"sem_medida_da_tabela",null]
+OK   A5 "???" -> continua -> [false,"sem_medida_da_tabela",null]
+OK   A6 pausa manual do painel -> nao mexe -> [false,"outro_motivo",null]
+OK   A7 pausa ∞ (painel) -> nao mexe -> [false,"outro_motivo",null]
+OK   A8 fora_da_lista mas longa demais (nao e a automatica) -> nao mexe -> [false,"pausa_longa",null]
+OK   A9 eco de atendente -> nao mexe -> [false,"outro_motivo",null]
+OK   A10 anti-loop/curriculo -> nao mexe -> [false,"outro_motivo",null]
+OK   A11 atendente escreveu depois da pausa -> nao mexe -> [false,"atendente_escreveu",null]
+OK   A12 atendente mandou audio depois da pausa -> nao mexe -> [false,"atendente_escreveu",null]
+OK   A13 so mensagens do robo/automatica desde a pausa -> libera -> [true,"medida_da_tabela","175/70/13"]
+OK   A14 pausa ja venceu -> nao e caso (conversa ja liberada) -> [false,"nao_pausada",null]
+OK   A15 sem pausa -> nao e caso -> [false,"nao_pausada",null]
+OK   A16 cita medida fora + medida da tabela -> libera pela da tabela -> [true,"medida_da_tabela","195/55/16"]
+OK   B1 "aro 16" -> "16"
+OK   B2 "e aro 16?" -> "16"
+OK   B3 "tem aro 16?" -> "16"
+OK   B4 "e no aro 14?" -> "14"
+OK   B5 "16" solto nao conta -> null
+OK   B6 "4 pneus aro 16" nao conta -> null
+OK   B7 "aro 16 em 10x?" nao conta -> null
+OK   B8 195/55/15 -> aro 16 existe -> {"aro":"16","larguraPerfil":"195/55","medida":"195/55/16","opcoes":[]}
+OK   B9 185/65/15 -> aro 16 nao existe, ate 4 opcoes -> {"aro":"16","larguraPerfil":"185/65","medida":null,"opcoes":["195/55/16","205/55/16","205/60/16","215/65/16"]}
+OK   B10 texto pedindo a medida -> ["Na 185/65 eu não tenho aro 16.","Qual é a medida completa do seu pneu aro 16? No aro 16 eu tenho 195/55/16, 205/55/16, 205/60/16 e 215/65/16."]
+OK   B11 mesmo aro -> nao e troca -> null
+OK   B12 aro sem nenhuma medida na tabela -> ["Na 185/65 eu não tenho aro 19.","Qual é a medida completa do seu pneu aro 19?"]
+OK   C1 caso real Marcelo -> ["Pra Gol 2010, a medida original mais comum é a *175/70/14*. Nela, o pneu *GP Premium* sai por *R$ 279,00 à vista*.","Quando você consegue passar aqui na loja?"]
+OK   C2 parcelamento ainda nao dito -> fica -> ["Sai por *R$ 279,00 à vista*.","Se preferir, você pode parcelar em até 10x no cartão!"]
+OK   C3 so sobraria nada -> mantem a 1a bolha original -> ["Você pode parcelar em até 10x no cartão!"]
+OK   C4 "que eu te mandei antes" sai -> ["Esse sai por R$ 279,00."]
+OK   C5 parcelamento dito ha mais de 10 msgs da loja -> fica -> ["Dá pra parcelar em até 10x no cartão!"]
+OK   C6 resposta sem nada disso -> intacta -> ["A gente fica na Avenida Perimetral."]
+OK   C7 lab 2a tentativa: "Se o seu for da medida 175/65/14, o valor continua..." sai -> ["Pro Gol 2010, a medida original mais comum é a *175/70/14*. Esse a gente tem da marca *GP Premium* por *R$ 279,00 à vista*."]
+OK   C8 cliente perguntou da medida antiga -> fica -> ["O 175/70/14 sai por R$ 279,00 à vista. O 175/65/14 continua R$ 249,00 à vista."]
+OK   C9 comparacao sem tom de justificativa -> fica -> ["O 175/70/14 sai por R$ 279,00 à vista.","O 175/65/14 sai por R$ 249,00 à vista."]
+OK   C10 lab: preco + parcelamento na mesma frase -> preco fica, parcelamento sai -> ["Pro Gol 2010 aro 14, a medida original é a *175/70/14*. Ela sai por *R$ 279,00 à vista*.","Quantos pneus você precisa?"]
+OK   C11 justificativa colada no preco NOVO -> sai so a justificativa -> ["O *175/70/14* sai por R$ 279,00."]
+OK   C13 lab: "Corrigindo o que te passei antes: ..." + "O 175/65/14 de R$ 249,00 é de Gol mais novo." -> ["Pro Gol 2010 aro 14, a medida original é *175/70/14*. Nessa medida o pneu *GP Premium* sai por *R$ 279,00 à vista*. Quando você consegue passar aqui pra gente fazer a troca?"]
+OK   C14 lab: "...R$ 279,00 a vista na GP Premium, entao vale esse valor no lugar da medida que te passei antes." -> ["Pro Gol 2010 aro 14, a medida original é a *175/70/14*. Ela sai por *R$ 279,00 à vista* na marca *GP Premium*.","Quando você consegue passar aqui na loja?"]
+OK   C15 sem ", " antes da justificativa e com preco -> frase inteira fica (preco nunca some) -> ["Sai por R$ 279,00 no lugar do que te passei antes."]
+OK   C12 cortar tiraria a medida principal -> nao corta nada -> ["A 175/70/14 que te passei antes é a original.","Quer agendar?"]
+
+43 ok, 0 falha(s)

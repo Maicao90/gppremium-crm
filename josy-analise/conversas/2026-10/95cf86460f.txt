@@ -1,0 +1,33 @@
+CONVERSA 95cf86460f | contato: Alaecio Pereira | 21/10/2026 12:49 até 22/10/2026 08:02 | 13 msgs do cliente, 8 da loja, 6 do robô
+
+--- 21/10/2026 (Wed) ---
+[12:49] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[12:50] CLIENTE: Estou precisando ver o preço de 4 penus
+[12:50] CLIENTE: Aro 17
+[12:50] CLIENTE: 215 60
+[12:50] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[12:51] ROBÔ: Temos o pneu *215/60/17* da marca *GP Premium* está saindo por *R$ 359,00 à vista*.
+[12:51] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[12:51] CLIENTE: Mas não é remold?
+[12:53] CLIENTE: Sua localização?
+[12:55] LOJA: [áudio] "Senhora Encio, os pneus da marca GP Premium, eles são pneus ecológicos que entrarão sim na categoria de remodelagem, só que é uma linha Premium completamente diferente dos pneus que são remoldes convencionais. Justamente por isso são os pneus que eu mais vendo por conta da qualidade e tem 2 anos de garantia."  {audio:midias/3EB0262FAEF746C8CBBDEF_88974.ogg}
+[13:45] CLIENTE: Ok
+[13:45] CLIENTE: Obrigado
+[13:45] ROBÔ: Tranquilo! Qualquer dúvida ou se quiser fechar, é só me chamar por aqui.
+[14:45] LOJA: [áudio] "Se você quer que mande uma foto, um vídeo do pneu, para que o senhor possa compreender melhor."  {audio:midias/3EB0BC273A149218DCB18F_975324.ogg}
+[17:46] ROBÔ: 🙋🏼‍♀️
+[17:49] CLIENTE: Deixa para próxima
+[17:49] CLIENTE: Obrigado
+[17:50] LOJA: [áudio] "Então, aqui eu não trabalho só com pneu remolde, né? Eu tenho pneu novo também. Se o senhor tiver interesse, eu faço aqui um orçamento para o senhor, tá bom? E o senhor é daqui de Luziânia?"  {audio:midias/3EB0313BDAC9B15F4DC01B_420495.ogg}
+[17:51] CLIENTE: Sim
+[17:51] CLIENTE: Mas vamos deixar para próxima
+[17:51] CLIENTE: Qualquer coisa te retorno
+[17:52] LOJA: [foto]
+[17:52] LOJA: Pneu da marca Sunny, novo 5 anos de garantia.
+[17:52] LOJA: No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:53] LOJA: Por ora vou encerrar seu atendimento caso mude de idéia, venha até nossa loja será uma satisfação receber você aqui!
+[17:53] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 22/10/2026 (Thu) ---
+[08:02] ROBÔ: 🙋🏼‍♀️

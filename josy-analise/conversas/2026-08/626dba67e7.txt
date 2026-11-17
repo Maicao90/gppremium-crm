@@ -1,0 +1,28 @@
+CONVERSA 626dba67e7 | contato: Geovanna Mantovani | 17/08/2026 14:40 até 18/08/2026 16:32 | 10 msgs do cliente, 14 da loja, 0 do robô
+
+--- 17/08/2026 (Mon) ---
+[14:40] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:40] CLIENTE: Tudo bem?
+[14:40] CLIENTE: A loja de vocês é em Luziânia?
+[14:40] CLIENTE: Gostaria de fazer um orçamento, quanto fica 4 pneus aro 13, para um uno 2006
+[14:40] CLIENTE: Já com alinhamento e balanceamento
+[14:41] CLIENTE: E qual seria a marca?
+[14:42] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Sim, somos aqui de Luziânia. Aqui é a Pneus GP Premium na BR-040. Inclusive, eu tenho aqui a oferta dos pneus, né, GP Premium. Na medida 165-70-13, a unidade está por apenas R$ 239,00 para o pagamento à vista. Então, os quatro pneus ficam por R$ 956,00. Já na medida 175-70-13, a unidade do pneu GP Premium está por R$ 269,00. Os quatro pneus ficam por R$ 1.076,00."  {audio:midias/3EB058453AAF8BFB764796_127730.ogg}
+[14:42] LOJA: [áudio] "Esses pneus eles já são colocados, aí os serviços de alinhamento e balanceamento são cobrados à parte, tá?"  {audio:midias/3EB0B97E4E56880A22B3F7_8313.ogg}
+[14:43] CLIENTE: Qual o valor?
+[14:44] LOJA: Serviçosb
+[14:44] CLIENTE: Isso
+[14:45] LOJA: Valores podem ser tratados com os rapazes da oficina, fica melhor conversar pessoalmente com eles.
+[14:46] CLIENTE: Certo, no pix teria desconto?
+[14:52] LOJA: Bem, os pneus realmente já estão no menor preço no Pix...  o mínimo 165/70/13 236,00 a unidade e o 175/70/13 266,00 a unidade.
+[15:02] LOJA: Te atende? ja posso separar para você
+[15:02] LOJA: caso queira
+[15:02] CLIENTE: Estou só aguardando meu esposo me responder
+[15:02] LOJA: ta certo, so chamar aqui
+[15:03] LOJA: Ah, sim... Quer uma foto dos pneus?
+[16:46] LOJA: oiii
+--- 18/08/2026 (Tue) ---
+[08:36] LOJA: Bom dia! Estou passando para saber se pretendem seguir com a negociação, consegue me dar um retorno?
+[16:32] LOJA: [áudio] "Oi Giovanna, tudo bem com você? Josi, aqui da Pneus GP Premium. Eu te encaminhei um orçamento ontem e gostaria de saber se você pretende seguir aqui com a negociação. Qual das opções que eu posso reservar aqui para vocês?"  {audio:midias/3EB0D1899AB8D8CCFE98B5_489979.ogg}

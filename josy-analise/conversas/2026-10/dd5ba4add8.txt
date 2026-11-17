@@ -1,0 +1,19 @@
+CONVERSA dd5ba4add8 | contato: Wesley | 22/10/2026 06:47 até 22/10/2026 09:10 | 4 msgs do cliente, 3 da loja, 5 do robô
+
+--- 22/10/2026 (Thu) ---
+[06:47] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Olá! Posso ter mais informações sobre isso?
+[06:48] ROBÔ: Oi, tudo bem?
+[06:48] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[06:48] CLIENTE: 245/70/16
+[06:48] ROBÔ: Temos o pneu *245/70/16* da marca *GP Premium* está saindo por *R$ 479,00 à vista*.
+[06:48] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[06:49] CLIENTE: Tem outras marcas ou só essa
+[06:49] ROBÔ: [áudio — sem transcrição]
+[06:50] CLIENTE: Seu áudio não abre
+[08:57] LOJA: Bom dia!
+[09:10] LOJA: [foto]
+[09:10] LOJA: No dia de hoje temos os pneus da marca Comforser e GP Premium essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

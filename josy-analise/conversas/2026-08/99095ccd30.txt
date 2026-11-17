@@ -1,0 +1,12 @@
+CONVERSA 99095ccd30 | contato: , | 26/08/2026 09:06 até 22/10/2026 11:00 | 1 msgs do cliente, 6 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[09:06] LOJA: *Josy :*
+Bom dia, sr Ely
+[09:13] LOJA: [foto]
+--- 22/10/2026 (Thu) ---
+[10:43] LOJA: Bom dia!
+[10:43] LOJA: [foto]
+[10:44] LOJA: No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:45] CLIENTE: [áudio] "Esse pneu de 559 aí, ele não é bom não, esse 559? Fala comigo."
+[11:00] LOJA: [áudio] "É porque acabou dele, senhora Eli."  {audio:midias/A51BC87C0F212A084BDFE39BB3715F70_987462.ogg}

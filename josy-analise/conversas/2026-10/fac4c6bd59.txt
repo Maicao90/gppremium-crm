@@ -1,0 +1,59 @@
+CONVERSA fac4c6bd59 | contato: Julio | 19/10/2026 15:21 até 21/10/2026 12:50 | 14 msgs do cliente, 23 da loja, 1 do robô
+
+--- 19/10/2026 (Mon) ---
+[15:21] LOJA: *Josy:*
+Oi, Julio...tudo bem?
+[15:22] CLIENTE: Oi, boa tarde
+[15:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:22] LOJA: *Josy:*
+215/55/17 certo?
+[15:22] CLIENTE: isso
+[15:22] CLIENTE: Sem ser remold, tá bom?
+[15:23] LOJA: [foto]
+[15:23] LOJA: *Josy:*
+No dia de hoje temos os pneus da marca  Comforser  a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:24] CLIENTE: [áudio] "Então, beleza, aí você tem 4 aí, deles, que eu tava precisando dos 4."
+[15:24] LOJA: [áudio] "Sim, tenho sim, Júlio."  {audio:midias/3EB081BA5E6E399A7FECC5_162335.ogg}
+[15:25] CLIENTE: Na compra dos 4, já ganha o alinhamento e o balanceamento?
+[15:25] LOJA: *Josy:*
+Esses serviços são todos cobrados.
+[15:25] CLIENTE: Entendi
+[15:26] LOJA: *Josy:*
+Mas os rapazes da oficina podem fazer um preço bom para você!
+[15:26] CLIENTE: Na Super via?
+[15:26] LOJA: *Josy:*
+Sim!
+[15:27] LOJA: *Josy:*
+Tem empresas que dizem que entregam o carro já com todos os serviços inclusos, só para atrair o cliente.
+[15:28] LOJA: *Josy:*
+Se você quiser comprar os pneus e levar para montar em outro lugar també pode!
+[15:30] CLIENTE: [áudio] "Eu vou levar os pneus, tá? Daqui uma meia hora eu chego aí. 20 minutos, meia hora."
+[15:30] LOJA: [áudio] "Beleza então, Júlio."  {audio:midias/3EB09098975373A2DDD3CF_679903.ogg}
+[15:30] LOJA: [áudio] "Você já quer me passar qual que é o seu CPF e me dizer qual que é a forma de pagamento? Porque eu já pego e já tiro ele de estoque para não correr o risco de outras pessoas venderem."  {audio:midias/3EB06BB7CF40D7C6A85ED6_254721.ogg}
+[15:50] CLIENTE: Vou comprar lá na Super Via
+[15:50] CLIENTE: Beleza?
+[15:50] CLIENTE: Consegui um desconto lá no balanceamento e no alinhamento
+[15:50] LOJA: *Josy:*
+Não...
+[15:50] LOJA: [áudio] "Mas os pneus estão aqui e o serviço você vai fazer lá do mesmo jeito."  {audio:midias/3EB04770246B245F3212F3_802727.ogg}
+[15:51] LOJA: *Josy:*
+De todo jeito os pneus estão aqui!!!
+[15:51] CLIENTE: Vou passar aí e converso pessoalmente
+[15:52] LOJA: *Josy:*
+O que combinaram vai permanecer.
+[15:54] LOJA: [foto]
+[15:54] CLIENTE: tá bom
+[16:15] LOJA: *Josy:*
+Julio...
+[16:16] LOJA: *Josy:*
+pode avaliar a nossa empresa e atendimento no Google, por gentileza. ☺️
+[16:16] LOJA: *Josy:*
+https://da.gd/gp-avaliar
+[16:23] CLIENTE: Feito 👊🏻
+[16:52] LOJA: *Josy:*
+Obrigada!
+--- 21/10/2026 (Wed) ---
+[12:50] ROBÔ: 🙋🏼‍♀️

@@ -1,0 +1,9 @@
+CONVERSA eea4e8ad71 | contato: Luiz Carlos Ferreira | 14/09/2026 11:55 até 14/09/2026 11:56 | 3 msgs do cliente, 2 da loja, 0 do robô
+
+--- 14/09/2026 (Mon) ---
+[11:55] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:55] CLIENTE: [áudio] "Alô, boa tarde. Deixa eu lhe perguntar, eu queria saber o valor de pneu recapado 1.000 por 20 de caminhão, se vocês têm aí e o valor."
+[11:56] LOJA: [áudio] "Oi, Sr. Luiz, tudo jóia? Aqui na nossa empresa em Luziânia, nós não trabalhamos com esses pneus."  {audio:midias/3EB0344EFE146ECF72B665_320238.ogg}
+[11:56] CLIENTE: [áudio] "Ah tá, tudo bem. Eu pensei que era que águas lindas que vocês tinham, é uma recapagem. Então tá bom, obrigado."

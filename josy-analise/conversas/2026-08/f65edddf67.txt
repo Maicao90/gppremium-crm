@@ -1,0 +1,31 @@
+CONVERSA f65edddf67 | contato: Deus e fiel | 19/08/2026 10:58 até 19/08/2026 12:08 | 12 msgs do cliente, 15 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[10:58] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:58] CLIENTE: Bom dia
+[10:58] CLIENTE: Qual e o valor do peneu aro 13
+[11:03] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu sou a Josi. Me dá só um instante que eu vou realizar o seu orçamento, tá bem?"  {audio:midias/3EB08A701A8BDB7CA36715_478520.ogg}
+[11:03] CLIENTE: Blz em Luziânia
+[11:17] LOJA: [foto]
+[11:18] LOJA: [áudio] "Obrigada por aguardar, está bem? Olha, o meu menor preço aqui é para o pneu da marca GP Premium. Ele está por R$ 269,00 à vista. E sim, somos de Luziânia."  {audio:midias/3EB004917EB6A636B9833D_356429.ogg}
+[11:28] LOJA: [áudio] "Você está precisando de quantos pneus? Fala aqui comigo, me diz qual é a forma de pagamento que eu ajeito aqui para você."  {audio:midias/3EB04B3575D10FE1441BF0_662767.ogg}
+[11:44] LOJA: 🙋🏼‍♀️
+[11:52] CLIENTE: [áudio] "Mas, igual eu falei, essa loja fica onde?"
+[11:53] LOJA: [áudio] "O senhor pode conferir, por favor, se os áudios que eu estou te encaminhando estão chegando? Que a minha linha está com problema, que eu não sei se está tudo certo. O senhor só pode conferir para mim, por favor?"  {audio:midias/3EB0CA0D70D7ED1891C117_669511.ogg}
+[11:53] LOJA: isso
+[11:56] CLIENTE: [áudio] "Não, chegou sim. É 175,70, 13."
+[11:56] CLIENTE: [áudio] "Mas tem desconto? Qual é o menor valor?"
+[11:56] CLIENTE: [áudio] "Vocês entregam pagando a taxa? Alguma coisinha ou não?"
+[11:56] LOJA: [áudio] "Onde você mora?"  {audio:midias/3EB05BCF851E9713DBBB2A_30766.ogg}
+[11:57] CLIENTE: Curunba 4
+[11:58] LOJA: [áudio] "Entregar, eu preciso ver se tem alguma empresa para poder fazer entrega, porque eu não disponho de veículo próprio para fazer isso. Aí, no caso, eu posso atender somente com pagamento via Pix, tá? Não tem como parcelar nem nada. E aí, eu tenho que ver com o pessoal da transportadora quanto que ele cobra para poder deixar os pneus aí. Eu acho que é mais fácil o senhor vir aqui na nossa loja."  {audio:midias/3EB006598CE41349B4BE1C_349141.ogg}
+[11:58] CLIENTE: [áudio] "Mas até um motoboy dá para trazer, não?"
+[11:59] LOJA: [áudio] "Sim, sim. Aí o senhor precisa contratar um motoboy que faça esse serviço de buscar os pneus aqui para o senhor."  {audio:midias/3EB0807720C0D4BF65ED26_57255.ogg}
+[11:59] CLIENTE: [áudio] "Eu sei, mas não tem desconto, não? Menos, assim?"
+[12:00] LOJA: [áudio] "Moça, igual o orçamento que eu te encaminhei, né? O menor preço é por um 75,70 a 13, o preço dele é 299. Tô fazendo aqui pra você por 269 cada."  {audio:midias/3EB05851F0173951A168CD_793387.ogg}
+[12:00] LOJA: [áudio] "O mínimo que eu consigo fazer é 266."  {audio:midias/3EB065D50348EBAE0A3E03_60447.ogg}
+[12:08] CLIENTE: Blz
+[12:08] LOJA: [áudio] "O senhor consegue vir aqui num sábado, por exemplo, que nós atendemos de 8 da manhã até o meio-dia?"  {audio:midias/3EB0D15EB608962A2F7618_440737.ogg}
+[12:08] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

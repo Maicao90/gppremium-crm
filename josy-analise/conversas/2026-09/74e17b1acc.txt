@@ -1,0 +1,46 @@
+CONVERSA 74e17b1acc | contato: Carlos Eduardo de Freitas | 15/09/2026 11:21 até 16/09/2026 12:42 | 7 msgs do cliente, 21 da loja, 0 do robô
+
+--- 15/09/2026 (Tue) ---
+[11:21] LOJA: *Josy:*
+Bom dia!
+[11:21] LOJA: *Josy:*
+Como posso ajudar?
+[11:24] LOJA: *Josy:*
+A ligação está caindo.
+[11:31] LOJA: *Josy:*
+🙋🏼‍♀️
+[13:22] CLIENTE: Boa tarde! Me chamo Carlos, gostaria de saber se tem pneu 205 /55 16
+[13:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:43] LOJA: *Josy:*
+Temos sim, Carlos...
+[13:45] LOJA: [áudio] "Oi Carlos, obrigada por aguardar. Eu vou mandar aqui para você todas as opções que eu tenho à pronta entrega no dia de hoje."  {audio:midias/3EB043EB6E27285A6DFD99_244068.ogg}
+[13:48] LOJA: [foto]
+[13:48] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:53] CLIENTE: Obrigado, gostaria do GP4  2  unidades, amanhã dou um pulo aí até mais👍🏻
+[14:07] LOJA: *Josy:*
+Sim! Venha sim!
+[14:07] LOJA: *Josy:*
+Se você trouxer o pagamento em *dinheiro*
+[14:16] CLIENTE: No caso seria no cartão de crédito
+[14:22] LOJA: *Josy:*
+Sem problemas.
+[14:22] LOJA: *Josy:*
+Vindo aqui negociamos.
+[14:23] LOJA: *Josy:*
+Sabe onde estamos localizados?
+--- 16/09/2026 (Wed) ---
+[10:38] LOJA: [áudio] "Oi Carlos, bom dia! Como é que você está? Eu estou entrando em contato para saber se você... Já quer que eu reserva aqui os pneus para ti?"  {audio:midias/3EB0A21FF8AD32383AF69D_837751.ogg}
+[10:38] LOJA: [foto]
+[12:30] CLIENTE: Boa tarde, hoje não vi o dá pra mim ir ai só amanhã tá bom
+[12:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:30] LOJA: [áudio] "Tudo bem, Carlos, sem problema."  {audio:midias/3EB0AAB078F6A31479B9C4_176736.ogg}
+[12:30] CLIENTE: Só uma pergunta o GP4  vcs não tem na loja?
+[12:31] LOJA: [áudio] "Temos, temos sim, por quê?"  {audio:midias/3EB034FAC6641A5C8D5A46_760140.ogg}
+[12:32] CLIENTE: Ata porque os meus pneus traseiro e GP 4, gostaria de colocar o mesmo
+[12:33] LOJA: [áudio] "Sim, tem sim. Tá jóia?"  {audio:midias/3EB09E183A9E9ED23FAE52_575646.ogg}
+[12:42] CLIENTE: 👍🏻

@@ -1,0 +1,47 @@
+CONVERSA 69d414aae5 | contato: Pedro Marques | 25/09/2026 19:26 até 28/09/2026 15:04 | 7 msgs do cliente, 15 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[19:26] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[19:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:26] CLIENTE: 235/60/16
+--- 26/09/2026 (Sat) ---
+[08:10] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu sou a Josi. E essa opção, ela não há com disponibilidade à pronta entrega, ela é somente por encomenda. Eu consigo verificar para você na segunda feira."  {audio:midias/3EB02D277CD50FA592A26C_983219.ogg}
+[08:10] LOJA: [áudio] "Posso te passar o orçamento de outra opção, que inclusive está sendo muito mais utilizada do que essa daí, do seu orçamento?"  {audio:midias/3EB0AE2EAC2FF7BC214C0C_953974.ogg}
+[08:13] CLIENTE: Por favor
+[08:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:16] LOJA: [foto]
+[08:16] LOJA: *Josy:*
+No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:18] CLIENTE: Essa medida nem por encomenda?
+[08:18] LOJA: 235/60/16 ☺️
+[08:19] CLIENTE: Eu espero sem problemas
+[08:19] LOJA: *Josy:*
+Pode ser?
+[08:19] LOJA: *Josy:*
+Combinado!
+[08:35] CLIENTE: Vc tem algum prazo ?
+[08:39] LOJA: *Josy:*
+Pedro... como eu disse, não temos a pronta entrega, preciso verificar com nossos distribuidores, hoje eles não estão trabalhando, conforme combinamos, vou falar com eles na *segunda-feira*, assim que eles me responderem te informo , *marca, preço e prazo de entrega*
+--- 28/09/2026 (Mon) ---
+[15:00] LOJA: *Josy:*
+OI.. boa tarde!
+[15:00] LOJA: *Josy:*
+Consegui um retorno a respeito da medida que precisa.
+[15:00] LOJA: [foto]
+[15:00] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:04] CLIENTE: Bom dia 
+
+Realizei já troca 
+
+Agradeço sua atenção
+[15:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

@@ -1,0 +1,15 @@
+CONVERSA 0ecb708474 | contato: Cleudismar Silva Leite | 20/10/2026 15:57 até 21/10/2026 11:07 | 1 msgs do cliente, 3 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[15:57] LOJA: 🙋🏼‍♀️
+[17:47] LOJA: 🙋🏼‍♀️
+[18:11] CLIENTE: [figurinha]
+[18:11] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+--- 21/10/2026 (Wed) ---
+[11:07] ROBÔ: 🙋🏼‍♀️

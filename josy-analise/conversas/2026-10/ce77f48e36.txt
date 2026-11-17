@@ -1,0 +1,40 @@
+CONVERSA ce77f48e36 | contato: Beto😎 | 06/10/2026 16:11 até 10/10/2026 09:40 | 6 msgs do cliente, 17 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[16:11] LOJA: *Josy:*
+Boa tarde!
+[16:11] LOJA: *Josy:*
+Como posso ajudar?
+[16:12] CLIENTE: Queria saber o valor do Pneu 205/60R15
+[16:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:12] CLIENTE: Vocês são uma loja física ou só fábrica?
+[16:13] LOJA: *Josy:*
+Ambos.
+[16:13] LOJA: [foto]
+[16:14] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:14] LOJA: [áudio] "Oi Berto, tudo bem? Você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0E84CABC2F8F84C3E57_865114.ogg}
+[16:15] CLIENTE: Ok muito obrigado por tirar minhas dúvidas!
+[16:15] CLIENTE: Tenha uma ótima tarde!
+[16:15] LOJA: [áudio] "E você mora aqui em Luziânia mesmo, Beto?"  {audio:midias/3EB0E051F97D3A32AB3C9F_471354.ogg}
+[16:15] LOJA: [áudio] "Pois se estiver por aqui, eu vou te encaminhar a nossa localização, para você passar aqui e nos conhecer."  {audio:midias/3EB0B9DAFACE3425814B5E_861446.ogg}
+[16:18] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:18] LOJA: [foto]
+[16:30] LOJA: *Josy:*
+1318
+--- 08/10/2026 (Thu) ---
+[10:00] CLIENTE: Olá vocês tem pneu 185/60R14
+[10:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:02] LOJA: [áudio] "Oi Beto, bom dia, tudo jóia?"  {audio:midias/3EB07EA53311985A63847A_781993.ogg}
+[10:04] LOJA: [foto]
+[10:04] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 10/10/2026 (Sat) ---
+[09:40] CLIENTE: Obrigado pelo esclarecimentos de minhas dúvidas!
+[09:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

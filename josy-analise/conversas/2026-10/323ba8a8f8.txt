@@ -1,0 +1,15 @@
+CONVERSA 323ba8a8f8 | contato: . | 20/10/2026 13:20 até 20/10/2026 14:02 | 1 msgs do cliente, 2 da loja, 0 do robô
+
+--- 20/10/2026 (Tue) ---
+[13:20] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Olá! Posso ter mais informações sobre isso?
+[13:20] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[14:02] LOJA: *Josy:*
+🙋🏼‍♀️

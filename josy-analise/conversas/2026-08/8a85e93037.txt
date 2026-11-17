@@ -1,0 +1,28 @@
+CONVERSA 8a85e93037 | contato: Diego | 26/08/2026 12:09 até 26/08/2026 16:31 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[12:09] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[12:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:09] CLIENTE: 195 65 15
+[12:09] CLIENTE: valor
+[12:09] CLIENTE: tem foto
+[12:10] LOJA: *Josy :*
+Boa tarde!
+[12:10] LOJA: [foto]
+[12:10] LOJA: *Josy :*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:10] LOJA: *Josy :*
+Pneu da marca GP Premium está na promoção compre 3 e leve 4
+[12:10] LOJA: *Josy :*
+Exemplo: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[12:11] CLIENTE: [áudio] "Calma aí, eu vou tirar o horário de almoço agora aqui. Eu já ligo para ver se eu consegui esse dinheiro para levar os quatro. Mas esse é o... esse de 329 é qual que tu fala? É o GP PNM."
+[12:13] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Isso mesmo, ele é o pneu da marca GP Premium, o qual você entrou no anúncio aqui para falar comigo, né, que ele está na promoção, compre 3 e leve 4. Se for à vista, né, a unidade 329, você só paga 3 pneus e leva o quarto. E se você estiver com o carro, já fazemos a montagem deles para você."  {audio:midias/3EB021B5205BCD36741DF4_513608.ogg}
+[12:13] LOJA: [áudio] "Você é daqui de Luziânia mesmo?"  {audio:midias/3EB07C6CEC293C2F1E7AE6_993323.ogg}
+[16:31] LOJA: [áudio] "Bem, como eu imagino que o senhor esteja bem ocupado e por essa razão não consegue responder a mensagem que eu te encaminhei, eu vou encerrar o seu atendimento por hora e caso o senhor precise futuramente é só chamar aqui novamente no WhatsApp ou vir até nossa loja para nós conversarmos pessoalmente, tá bem?"  {audio:midias/3EB05B9DB8505B29A73BC7_504769.ogg}
+[16:31] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

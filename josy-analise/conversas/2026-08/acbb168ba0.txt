@@ -1,0 +1,12 @@
+CONVERSA acbb168ba0 | contato: Joelves Simões . ' . | 18/08/2026 11:34 até 18/08/2026 11:43 | 3 msgs do cliente, 5 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[11:34] LOJA: Bom dia, Joel.
+[11:34] CLIENTE: Bom dia
+[11:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:34] CLIENTE: 175/65r14
+[11:42] LOJA: 61 3774-2115
+[11:42] LOJA: Nessa empresa vai ter.
+[11:43] CLIENTE: Obrigado
+[11:43] LOJA: Disponha.

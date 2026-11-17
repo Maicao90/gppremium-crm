@@ -1,0 +1,2152 @@
+{
+ "geradoEm": "2026-10-22T20:13:14.396Z",
+ "conversasLidas": 1921,
+ "propostas": [
+  {
+   "id": "pede_preco",
+   "titulo": "Cliente pede preço / orçamento de pneu",
+   "quando": "Cliente pergunta o valor do pneu ou pede orçamento, com ou sem a medida, muitas vezes vindo de anúncio ou do Instagram",
+   "frequencia": 1217,
+   "respondidasPelaLoja": 1162,
+   "taxaSucesso": 0.34,
+   "comoJosyFaz": "A Josy se apresenta rapidinho e vai direto ao ponto: se não tem medida, pergunta a medida ou o carro. Se a medida já veio, ela não pergunta de novo, avisa que está montando o orçamento e manda o valor unitário com à vista primeiro e parcelamento em até 10x. Logo em seguida pergunta quantos pneus e se o cliente mora em Luziânia, para puxar a negociação. O que mais trava é repetir a pergunta da medida quando o cliente já informou; o que mais avança é responder rápido com o valor e já perguntar quantidade e forma de pagamento.",
+   "exemplos": [
+    {
+     "cliente": "Mas qual o valor",
+     "loja": "Áudio dizendo que está carregando o orçamento (internet caiu) e perguntando o carro"
+    },
+    {
+     "cliente": "..",
+     "loja": "Enviou foto da tabela de orçamento com valor unitário à vista e parcelamento em até 10x, a pronta entrega."
+    },
+    {
+     "cliente": "Tem mais informações (via anúncio aro 13)",
+     "loja": "Josy se apresentou e perguntou a medida dos pneus"
+    },
+    {
+     "cliente": "Que valor do penel aro 15",
+     "loja": "Pediu novamente a medida do pneu"
+    },
+    {
+     "cliente": "vim do instagram e gostaria de fazer um orçamento",
+     "loja": "Apresentou-se como Josy e perguntou a medida dos pneus"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Tá, mas de todo modo vamos negociar aqui que vai dar certo, tá? Como que você gostaria de realizar esse pagamento, meu jovem? Seria à vista mesmo? Você gostaria de parcelar?",
+    "Mas eu faço aqui pra você, pelo valor do débito, tá bom? Eu faço esse valor pra você passar no crédito à vista",
+    "você vindo com o carro aqui, eu já coloco os pneus pra você.",
+    "14? 15?",
+    "Olái! Eu sou a *Josy* 👋\nQual a medida dos pneus que você precisa hoje?",
+    "Mora aqui em Luziânia-Go?",
+    "Pois o original é 205/55/16 podendo chegar até 205/60"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente pergunta quanto custa o pneu ou pede um orçamento",
+    "acao": "orientar",
+    "resposta": "Se o cliente NÃO informou a medida: responder curto, 'Olá! Eu sou a Josy 👋 Qual a medida dos pneus que você precisa hoje? Se não souber, me fala qual é o seu carro que eu vejo pra você.' Se ele disser só o aro, perguntar a medida completa ou o modelo do carro.\n\nSe o cliente JÁ informou a medida, NÃO perguntar de novo. Buscar o preço na TAB.7 e mandar o valor unitário do GP Premium a pronta entrega: primeiro o valor à vista em dinheiro (o menor), depois a opção em até 10x no cartão. Se a medida estiver na promoção compre 3 leve 4, avisar. Lembrar que é remold com garantia de 2 anos e 60 mil km.\n\nFechar sempre puxando a negociação: 'Você vai precisar de quantos pneus? Mora aqui em Luziânia mesmo?' Se a medida não existir na tabela, usar a resposta de medida inexistente.",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:preco_medida",
+   "audios": [
+    {
+     "midia": "/midias/3EB02333AFE6511263CF19_742550.ogg",
+     "transcricao": "Eu vou realizar aqui o seu orçamento, tá? Você vai precisar de quantos pneus e você mora aqui na cidade de Luziânia mesmo?",
+     "duracao": 6.6,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB0759AF69431345C171C_917967.ogg",
+     "transcricao": "Eu vou fazer o orçamento aqui para vocês e já te encaminho, tá bom?",
+     "duracao": 3.8,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB04B3575D10FE1441BF0_662767.ogg",
+     "transcricao": "Você está precisando de quantos pneus? Fala aqui comigo, me diz qual é a forma de pagamento que eu ajeito aqui para você.",
+     "duracao": 10.1,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "saudacao",
+   "titulo": "Saudação inicial: apresentar e pedir a medida",
+   "quando": "Primeira mensagem do cliente: oi, bom dia, boa tarde, 'vim pelo anúncio', 'vim do Instagram', 'quero um orçamento' ou 'quero mais informações'.",
+   "frequencia": 1165,
+   "respondidasPelaLoja": 1138,
+   "taxaSucesso": 0.77,
+   "comoJosyFaz": "A Josy responde rápido e curto: se apresenta pelo nome com um emoji simpático e já vai direto ao ponto, perguntando a medida dos pneus. Não enrola com formalidade nem despeja informação antes de saber o que o cliente precisa. Se o cliente não souber a medida, ela pede o modelo do carro para achar a opção original. Esse caminho funcionou na grande maioria das conversas, porque leva o cliente logo ao orçamento.",
+   "exemplos": [
+    {
+     "cliente": "Oi, tudo bem? (via anúncio aro 13)",
+     "loja": "Apresentou-se como Josy e perguntou a medida dos pneus"
+    },
+    {
+     "cliente": "vim do instagram e gostaria de fazer um orçamento",
+     "loja": "Se apresentou como Josy e perguntou a medida"
+    },
+    {
+     "cliente": "Vim pelo anúncio e gostaria de mais informações",
+     "loja": "Se apresentou como Josy e perguntou a medida dos pneus"
+    },
+    {
+     "cliente": "Oi bom dia",
+     "loja": "Repetiu a apresentação e perguntou a medida"
+    },
+    {
+     "cliente": "Oi, Tudo bem? (via anúncio aro 13)",
+     "loja": "Se apresentou como Josy e perguntou a medida dos pneus"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Olái! Eu sou a *Josy* 👋 Qual a medida dos pneus que você precisa hoje?",
+    "Qual a medida dos pneus que você precisa hoje?",
+    "eles estão na promoção Compre 3 e leve 4",
+    "Posso enviar os pneus para uma borracharia que me ajuda muito, fica ali no Novo Gama, se for de seu interesse me informa.",
+    "Mora aqui em Luziânia-Go?",
+    "Fiquei aqui aguardando ela vir aqui, mas eu creio que ela não veio. Vocês já realizaram a compra?",
+    "Sim, sábado abre sim. Oito horas nós já estamos com a loja aberta.",
+    "Eu estou com a promoção do 185-65-15, de 289 por 249 a vista, pneu da marca GP Premium."
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente manda só uma saudação ou diz que veio pelo anúncio ou Instagram e quer informações ou orçamento, sem informar a medida",
+    "acao": "responder",
+    "resposta": "Olái! Eu sou a *Josy* 👋\n\nQual a medida dos pneus que você precisa hoje? Se não souber, me fala qual é o seu carro que eu verifico pra você 😉",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:saudacao",
+   "audios": [
+    {
+     "midia": "/midias/3EB01641A284EDE91FAC40_871565.ogg",
+     "transcricao": "Oiê, tudo jóia?",
+     "duracao": 2.1,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB02B69EAA58C7EFDF6BA_753295.ogg",
+     "transcricao": "Olá, tudo bem com você?",
+     "duracao": 2.2,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "informa_medida",
+   "titulo": "Cliente informa a medida do pneu",
+   "quando": "Quando o cliente manda a medida do pneu (texto, foto ou áudio) pedindo preço ou disponibilidade",
+   "frequencia": 921,
+   "respondidasPelaLoja": 886,
+   "taxaSucesso": 0.42,
+   "comoJosyFaz": "A Josy confirma rápido se tem a medida e já manda o orçamento, explicando que o valor é unitário, com o à vista na primeira coluna e parcelamento em até 10x. Se a medida vem incompleta (sem aro ou só o aro), ela pergunta o que falta de forma curtinha, tipo '14? 15?'. Costuma perguntar se o cliente mora em Luziânia para puxar a visita à loja. Quando a medida está na promoção compre 3 leve 4, ela destaca isso. O que mais funciona é responder logo, com preço claro e uma pergunta que mantém a conversa andando.",
+   "exemplos": [
+    {
+     "cliente": "Enviou fotos do pneu: 'Preciso desse pneu, você tem esse?'",
+     "loja": "Perguntou se prefere áudio ou texto; cliente pediu texto"
+    },
+    {
+     "cliente": "185/60",
+     "loja": "Só respondeu no dia seguinte, às 08:20, perguntando se era aro 14 ou 15"
+    },
+    {
+     "cliente": "215/55/17 para Tracker",
+     "loja": "Áudio com promoção compre 3 leve 4: R$ 394,90 a unidade à vista, total R$ 1.185,00 pelos 4 colocados, loja em Luziânia"
+    },
+    {
+     "cliente": "Quero cotar o pneu 175/65 R14 GP Premium.",
+     "loja": "Saudação automática perguntando a medida, depois confirmou 'temos sim', enviou foto da tabela de preços e explicou que o valor é unitário, com coluna à vista e parcelamento em até 10x"
+    },
+    {
+     "cliente": "175/75/ar14",
+     "loja": "Perguntou se o cliente mora em Luziânia"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Olái! Eu sou a *Josy* 👋 Qual a medida dos pneus que você precisa hoje?",
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Qual é a medida dos pneus que você precisa?",
+    "14? 15?",
+    "eles estão na promoção Compre 3 e leve 4",
+    "Posso enviar os pneus para uma borracharia que me ajuda muito, fica ali no Novo Gama, se for de seu interesse me informa.",
+    "No dia de hoje temos todas essas opções a pronta entrega. No orçamento, está o valor UNITÁRIO do pneu. Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X",
+    "Vou deixar seu contato salvo, que assim que eu tiver os pneus aqui da GP Premium, eu aviso você, tá bom?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente informa a medida do pneu (por texto, foto ou áudio) querendo saber se tem ou quanto custa",
+    "acao": "orientar",
+    "resposta": "Se a medida estiver incompleta (faltando aro, largura ou perfil), pergunte só o que falta, bem curto, e, se o cliente não souber, peça o carro. Se estiver completa, consulte a TAB.7: confirme que tem a pronta entrega e passe o valor UNITÁRIO à vista (menor preço) e o parcelamento em até 10x no cartão; se a medida estiver na promoção compre 3 leve 4, destaque a promoção. Feche perguntando se o cliente mora em Luziânia. Se a medida não existir na tabela, diga 'só um instante' e passe para a atendente verificar com os distribuidores.",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:preco_medida",
+   "audios": [
+    {
+     "midia": "/midias/3EB0ABC83F90BC79789D0C_468904.ogg",
+     "transcricao": "No dia de hoje eu tenho todas essas opções de marcas à pronta entrega. Aí no orçamento está o valor de apenas uma unidade, tá bom? Na primeira coluna é o valor à vista, que já é o menor preço, e seguem as opções de parcelamento em até 10 vezes, caso você queira parcelar.",
+     "duracao": 18.2,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB036D23640971CBC59EA_48180.ogg",
+     "transcricao": "Eu só vou confirmar aqui, já te passo, tá bom?",
+     "duracao": 2.8,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB06D5C81CD96D622CBE9_312848.ogg",
+     "transcricao": "Olá, boa tarde. Tudo bem com você? Eu tenho aqui sim. Você mora aqui em Luziânia?",
+     "duracao": 8,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "sumiu",
+   "titulo": "Retomar cliente que sumiu",
+   "quando": "Cliente parou de responder depois do orçamento, da pergunta da medida ou de combinar visita",
+   "frequencia": 993,
+   "respondidasPelaLoja": 765,
+   "taxaSucesso": 0.16,
+   "comoJosyFaz": "A Josy não deixa o cliente esfriar: retoma de forma leve, com um 'Oi' ou 🙋🏼‍♀️, e depois um áudio curto lembrando da conversa. Ela pergunta direto se o cliente pretende seguir com a negociação e se alguma opção atendeu, oferecendo foto ou vídeo do pneu ou reservar os pneus. Se ainda faltava a medida, repete o pedido de forma simpática. Quando o cliente some por dias, ela encerra com educação, deixa a localização e convida a passar na loja, sem encher o WhatsApp.",
+   "exemplos": [
+    {
+     "cliente": "(sem resposta após o preço)",
+     "loja": "Áudio se apresentando e perguntando novamente se mora em Luziânia; depois mandou 👀"
+    },
+    {
+     "cliente": "(sem resposta à pergunta sobre auto center)",
+     "loja": "Áudio encerrando o atendimento, convidando a passar na loja, e enviou link de localização e foto"
+    },
+    {
+     "cliente": "(silêncio após orçamento)",
+     "loja": "Áudio de follow-up para continuar a negociação e outro perguntando se mora em Luziânia"
+    },
+    {
+     "cliente": "(sem resposta ao orçamento)",
+     "loja": "Áudio de follow-up perguntando se pretende seguir com a negociação"
+    },
+    {
+     "cliente": "(sem resposta)",
+     "loja": "Mandou 'Oi...' para retomar"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Olái! Eu sou a *Josy* 👋 Qual a medida dos pneus que você precisa hoje?",
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Qual é a medida dos pneus que você precisa?",
+    "14? 15?",
+    "No dia de hoje temos todas essas opções a pronta entrega. No orçamento, está o valor UNITÁRIO do pneu. Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X",
+    "Serve e muito!",
+    "Eu vou realizar aqui o seu orçamento, tá? Você vai precisar de quantos pneus e você mora aqui na cidade de Luziânia mesmo?",
+    "Olá, boa tarde. Tudo bem com você? Me chamo Josi. E você mora aqui na cidade de Luziânia mesmo?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente para de responder depois do orçamento ou da pergunta da medida e fica sem retorno",
+    "acao": "responder",
+    "resposta": "Oi, tudo bem? 🙋🏼‍♀️\n\nVamos dar continuidade aqui na sua negociação? Alguma das opções te atendeu? Se quiser, mando foto ou vídeo do pneu e já posso separar pra você 😉\n\nConsegue me dar um retorno, por gentileza?",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": null,
+   "audios": [
+    {
+     "midia": "/midias/3EB03F2871FA98C13E3A91_657358.ogg",
+     "transcricao": "Olá, vamos dar continuidade aqui na sua negociação?",
+     "duracao": 4.3,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB0285E5A561A46FF48A6_658569.ogg",
+     "transcricao": "Olá, tudo bem com você? Nós nos falamos há alguns dias atrás e eu vou encerrar aqui o seu atendimento, tá já? É para não ficar enchendo o WhatsApp de mensagens, como eu te mandei aí a localização da loja, caso haja a possibilidade, você passa aqui para conversarmos pessoalmente, tá bom? Obrigada aí pela atenção, até mais!",
+     "duracao": 23.3,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB0E0B234FE0EED4311A7_425280.ogg",
+     "transcricao": "Olá, tudo bem com você? Eu te encaminhei o orçamento do pneu que é apropriado para o seu veículo e gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?",
+     "duracao": 12.7,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "pergunta_localizacao",
+   "titulo": "Cliente pergunta onde fica a loja",
+   "quando": "Cliente pergunta endereço, localização, se a loja fica na BR ou se tem filial em outra cidade",
+   "frequencia": 513,
+   "respondidasPelaLoja": 498,
+   "taxaSucesso": 0.43,
+   "comoJosyFaz": "A Josy responde rápido e sem enrolação: confirma que a loja é a fábrica GP Premium em Luziânia-GO, na BR-040, ao lado do Hotel Goiás e da Goiás Diesel. Quando o cliente pede a localização, ela manda o link do Maps junto com a foto da fachada, porque às vezes o link não abre. Se o cliente pergunta de filial em outra cidade, ela diz com sinceridade que só tem a loja de Luziânia. Em seguida puxa a conversa para a venda, perguntando se o cliente mora por perto e qual a medida dos pneus. Isso mantém o cliente engajado em vez de só passar o endereço e deixar ele sumir.",
+   "exemplos": [
+    {
+     "cliente": "Sim santa fe",
+     "loja": "Disse 'Pertinho de nós!' e mandou áudio perguntando se o cliente só está orçando ou já pretende trocar em alguns dias"
+    },
+    {
+     "cliente": "Não, pode me passar o endereço?",
+     "loja": "Enviou link do Google Maps e uma foto"
+    },
+    {
+     "cliente": "Qual endereço da loja? Pronta entrega?",
+     "loja": "Enviou link do Google Maps e foto da loja"
+    },
+    {
+     "cliente": "A loja fica na avenida entre a rodovia e o posto Sansão?",
+     "loja": "Áudio dizendo que é a fábrica GP Premium na BR-040, ao lado do Hotel Goiás e da Goiás Diesel, mais link do Maps e foto"
+    },
+    {
+     "cliente": "Ok obrigado",
+     "loja": "Perguntou se o cliente mora em Luziânia (antes repetiu a mensagem automática de saudação)"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Qual é a medida dos pneus que você precisa?",
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Mora aqui em Luziânia-Go?",
+    "Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:\n👉 Seu *NOME*\n👉 *A MEDIDA* dos pneus que você precisa.",
+    "Olá, bom dia, tudo bem com você? Por gentileza, só preciso que você me diga qual que é a medida dos pneus que você precisa, que aí eu consigo realizar o seu orçamento.",
+    "Você sabe onde estamos localizados?",
+    "Claro! Posso sim!",
+    "No dia de hoje temos todas essas opções a pronta entrega."
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente pergunta onde fica a loja, pede o endereço ou a localização, ou quer saber se tem loja na cidade dele",
+    "acao": "responder",
+    "resposta": "Somos a fábrica GP Premium, aqui em Luziânia-GO! 😊 Fica na BR-040, do lado do Hotel Goiás e da Goiás Diesel. É nossa única loja.\n\nVou te mandar aqui a localização da loja, tá? Tem uma placa bem grandona na frente, não tem erro!\n\nVocê mora por aqui, perto de nós? Me diz qual a medida dos pneus que você precisa que já te passo o orçamento!",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:localizacao",
+   "audios": [
+    {
+     "midia": "/midias/3EB09B976F77786E9B558B_626936.ogg",
+     "transcricao": "Você mora por aqui, perto de nós, em Luziânia?",
+     "duracao": 3.5,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB0C05C97AB2C14355551_856530.ogg",
+     "transcricao": "Aí, às vezes, a minha localização não está abrindo, aí eu estou mandando a foto aqui da fachada da loja, e o senhor só me comunica, por gentileza, se está funcionando aí.",
+     "duracao": 11.4,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB049B94993F0BEF61228_330162.ogg",
+     "transcricao": "Vou te mandar aqui a localização da loja, tá?",
+     "duracao": 3.9,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "quer_agendar_ou_ir",
+   "titulo": "Cliente avisa que vem à loja / quer agendar",
+   "quando": "Cliente diz que vai passar na loja, buscar os pneus ou pergunta se pode vir (hoje, amanhã, outro dia)",
+   "frequencia": 353,
+   "respondidasPelaLoja": 331,
+   "taxaSucesso": 0.49,
+   "comoJosyFaz": "A Josy confirma na hora com um 'Combinado!' bem animado e já oferece deixar os pneus separados pro cliente. Logo em seguida manda a localização da loja, para ele não se perder. Se o cliente fala de montagem, ela pergunta se ele vem com o carro, porque a montagem é feita na oficina da loja. O que funciona é passar segurança de que tá tudo reservado e combinado, sem burocracia.",
+   "exemplos": [
+    {
+     "cliente": "Provavelmente amanhã pego lá; vai ser à vista",
+     "loja": "Confirmou envio, mandou localização da Borracharia Popular, procurar pelo Lázaro, 4 pneus 205/55/16"
+    },
+    {
+     "cliente": "Quinta de manhã vou buscar, pode deixar meus pneus aí que pago em dinheiro",
+     "loja": "Agradeceu o retorno por áudio e explicou que ligou como havia prometido"
+    },
+    {
+     "cliente": "Sim, vou buscar / Após o almoço vou buscar",
+     "loja": "Avisou que deixou os pneus reservados e que, se ela não estivesse, era só falar com quem estivesse na loja. Houve erro de digitação ('dar usa saída') e depois corrigiu"
+    },
+    {
+     "cliente": "(sem resposta ainda)",
+     "loja": "Ofereceu em áudio reservar os pneus"
+    },
+    {
+     "cliente": "(sem mensagem; loja pergunta se vem hoje)",
+     "loja": "Áudio perguntando se o cliente consegue vir ainda hoje"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "No dia de hoje temos todas essas opções a pronta entrega. No orçamento, está o valor UNITÁRIO do pneu. Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X",
+    "Fiquei aqui aguardando ela vir aqui, mas eu creio que ela não veio. Vocês já realizaram a compra?",
+    "Sim, sábado abre sim. Oito horas nós já estamos com a loja aberta.",
+    "Pois o original é 205/55/16 podendo chegar até 205/60",
+    "Eu posso mandar os pneus para o novo Gama, tá? Tem uma borracharia que me ajuda bastante nessas horas e eu posso mandar os pneus para lá, se for de seu interesse.",
+    "Consegui um desconto para ti!",
+    "Desse jeito aí te ajuda, que se te ajudar, nós já vamos dando continuidade aqui na negociação, tá?",
+    "Você me diz pra quando que você precisa, que eu ajeito pra você, tá?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente avisa que vai passar na loja, buscar os pneus ou pergunta se pode vir",
+    "acao": "responder",
+    "resposta": "Combinado! Será uma satisfação receber você aqui 😊\n\nQuer que eu deixe os pneus separadinhos pra você? Se for montar, é só vir com o carro que a oficina aqui da loja já faz a montagem.\n\nEstamos na BR-040, do lado do Hotel Goiás e da Goiás Diesel. Vou te mandar a localização!",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:visita_confirmada",
+   "audios": [
+    {
+     "midia": "/midias/3EB0D95E0BE18370CE0480_106858.ogg",
+     "transcricao": "Quer que eu reserve os pneus para você?",
+     "duracao": 3,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB0D6D27E9539943A5D91_48398.ogg",
+     "transcricao": "O senhor tá vindo com o carro já pra fazer a montagem, né?",
+     "duracao": 3.8,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB00EA313A64054372557_912361.ogg",
+     "transcricao": "Ai, beleza. Combinado então, tá joia?",
+     "duracao": 4.6,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "quer_outra_marca_ou_novo",
+   "titulo": "Cliente pede outra marca ou pneu novo/importado",
+   "quando": "Cliente pede uma marca específica (Pirelli, Michelin, Goodyear, Dunlop, Bridgestone, Continental etc.) ou pneu novo/importado, ou quer saber se tem outras marcas além das oferecidas",
+   "frequencia": 333,
+   "respondidasPelaLoja": 323,
+   "taxaSucesso": 0.31,
+   "comoJosyFaz": "A Josy não descarta o cliente quando ele quer outra marca. Ela diz com sinceridade o que tem a pronta entrega e oferece cotar a marca pedida com os distribuidores, voltando depois com modelo, prazo e preço. Quando falta a medida, pede primeiro a medida ou o aro, porque sem isso não consegue cotar. Também costuma perguntar se o cliente mora em Luziânia e lembrar do GP Premium como alternativa. Como envolve consulta a distribuidor, estoque variável e preço fora da tabela, quem conduz é a atendente.",
+   "exemplos": [
+    {
+     "cliente": "225/50/18 95v Dunlop sport Max 050",
+     "loja": "Disse por áudio que solicitou o orçamento e passaria assim que respondessem"
+    },
+    {
+     "cliente": "Só tem essas 3 marcas: chinês, Goodyear e Kelly?",
+     "loja": "Áudios explicando que hoje são essas opções, que o estoque é fluido e que até lá pode ter outras marcas"
+    },
+    {
+     "cliente": "Pneu 215x60x17 GP, teria ele mais cravudo",
+     "loja": "Disse que não tem e que há somente o modelo Adventure."
+    },
+    {
+     "cliente": "Pneus da Hilux, tem nacional? Qual o valor e os melhores importados?",
+     "loja": "Pediu a medida dos pneus e disse que o aro já ajuda"
+    },
+    {
+     "cliente": "Vou precisar de 2, queria o Goodyear quanto consegue fazer com alinhamento e balanceamento?",
+     "loja": "Perguntou qual era o carro"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Olái! Eu sou a *Josy* 👋 Qual a medida dos pneus que você precisa hoje?",
+    "Vou deixar seu contato salvo, que assim que eu tiver os pneus aqui da GP Premium, eu aviso você, tá bom?",
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Olha... aro 13 está em oferta!",
+    "Tem alguma específica que você está buscando? Pois, no dia de hoje, realmente, a opção que eu continuo tendo é a que eu tinha mandado para você no orçamento, mas eu posso ver se algum distribuidor meu tem o que você estiver buscando.",
+    "E você mora aqui em Luziânia mesmo, moço?",
+    "Mora aqui em Luziania, mesmo?",
+    "Aqui é a fábrica GP Premium. Fica aqui na BR-040, do lado do Hotel Goiás e da Goiás Diesel."
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente pede uma marca específica de pneu, pergunta se tem outras marcas ou quer pneu novo/importado em vez de remold",
+    "acao": "atendente",
+    "resposta": "Só um instante, que eu já vejo isso pra você! 😊",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:outra_marca",
+   "audios": [],
+   "status": "pendente"
+  },
+  {
+   "id": "retorno_depois_de_dias",
+   "titulo": "Cliente volta depois de alguns dias",
+   "quando": "Cliente que já foi atendido (orçamento ou conversa anterior) volta a mandar mensagem dias depois, com um oi, perguntando o valor que tinha ficado ou querendo seguir com a compra.",
+   "frequencia": 298,
+   "respondidasPelaLoja": 285,
+   "taxaSucesso": 0.34,
+   "comoJosyFaz": "A Josy recebe o cliente de volta com simpatia e mostra que lembra da conversa, sem recomeçar do zero de forma fria. Logo confirma a medida dos pneus para não errar o orçamento. Depois reenvia o valor atualizado da tabela, lembrando que é unitário, com à vista e parcelamento em até 10x. Quando o cliente já demonstra que vai comprar, ela facilita: pergunta quando ele pode vir, oferece separar os pneus e informa o horário. O que mais funciona é retomar rápido e já puxar para o próximo passo (vir à loja ou reservar).",
+   "exemplos": [
+    {
+     "cliente": "(sem resposta até o follow-up)",
+     "loja": "Áudio dizendo que aguardou a esposa, que não veio, e perguntando se já realizaram a compra"
+    },
+    {
+     "cliente": "Qual o valor que tinha ficado?",
+     "loja": "Mandou saudação padrão pedindo nome e medida, depois áudio: 205/55/16 R$ 289 no débito/Pix, parcelado muda pouco"
+    },
+    {
+     "cliente": "(sem mensagem do cliente; loja reenvia orçamento)",
+     "loja": "Enviou foto do orçamento e explicou que o valor é unitário, 1ª coluna à vista e depois parcelamento em até 10x"
+    },
+    {
+     "cliente": "Vc não me venderá os pneus mulher?",
+     "loja": "Respondeu em tom descontraído e lembrou que havia passado o preço do frete"
+    },
+    {
+     "cliente": "(sem mensagem; loja inicia)",
+     "loja": "Perguntou se pode dar continuidade ao atendimento e se o cliente é de Luziânia"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Fiquei aqui aguardando ela vir aqui, mas eu creio que ela não veio. Vocês já realizaram a compra?",
+    "Sim, sábado abre sim. Oito horas nós já estamos com a loja aberta.",
+    "Pois o original é 205/55/16 podendo chegar até 205/60",
+    "Eu posso mandar os pneus para o novo Gama, tá? Tem uma borracharia que me ajuda bastante nessas horas e eu posso mandar os pneus para lá, se for de seu interesse.",
+    "Consegui um desconto para ti!",
+    "Desse jeito aí te ajuda, que se te ajudar, nós já vamos dando continuidade aqui na negociação, tá?",
+    "Você me diz pra quando que você precisa, que eu ajeito pra você, tá?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente volta a falar depois de alguns dias de um atendimento ou orçamento anterior",
+    "acao": "orientar",
+    "resposta": "Cumprimente de forma curta e simpática, mostrando que lembra que vocês já conversaram sobre os pneus (ex.: \"Oi, que bom te ver por aqui de novo! Tudo bem?\"). Se a medida não estiver clara no histórico, peça para confirmar a medida dos pneus antes de passar qualquer valor. Com a medida confirmada, busque o preço atual na TAB.7 e informe que o valor é unitário, à vista em dinheiro com desconto e no cartão em até 10x; se couber, cite a promoção compre 3 leve 4. Em seguida, puxe o próximo passo: pergunte quando ele consegue vir à loja para montar ou se quer que você já deixe os pneus separados. Não prometa que o preço continua o mesmo sem conferir na tabela. Se o cliente pedir outra marca ou pneu novo/importado, diga \"só um instante\" e passe para a atendente.",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:saudacao_retorno",
+   "audios": [
+    {
+     "midia": "/midias/3EB0800149E7A61E107412_143993.ogg",
+     "transcricao": "Sim, pode falar. Qual é a mesma medida dos pneus que o senhor precisa?",
+     "duracao": 5.1,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "pneu_fora_da_tabela",
+   "titulo": "Medida fora do estoque: oferecer alternativa ou cotação com distribuidor",
+   "quando": "Cliente pede uma medida que não está na tabela de pronta entrega",
+   "frequencia": 281,
+   "respondidasPelaLoja": 273,
+   "taxaSucesso": 0.29,
+   "comoJosyFaz": "A Josy fala logo, sem rodeio, que não tem a medida a pronta entrega. Quando existe uma medida próxima que serve no carro, ela oferece na hora e pergunta se pode apresentar ou mandar foto. Quando não tem, promete verificar com os distribuidores marca, preço e prazo, deixando claro que seria por encomenda. Aproveita para perguntar o carro, quantos pneus e se o cliente mora em Luziânia, o que mantém a conversa viva. Funciona melhor quando ela já mostra uma opção concreta do estoque em vez de só pedir para esperar.",
+   "exemplos": [
+    {
+     "cliente": "Vcs tem desse pneu? [foto]",
+     "loja": "Disse que não tem essa opção à pronta entrega e perguntou o carro"
+    },
+    {
+     "cliente": "Jardim inga",
+     "loja": "Disse 'Pertinho!' e ofereceu a medida 215/65/16 a pronta entrega"
+    },
+    {
+     "cliente": "(aguardando orçamento)",
+     "loja": "Informou que a medida esgotou no estoque e prometeu consultar os distribuidores e mandar o orçamento no dia seguinte cedo"
+    },
+    {
+     "cliente": "Quero saber valor, seriam 3",
+     "loja": "Informou que só tem 1 pneu em estoque e perguntou se mora em Luziânia"
+    },
+    {
+     "cliente": "Valparaíso",
+     "loja": "Áudio explicando que pode verificar com distribuidores, levaria uns 3 dias, e perguntando se quer marca específica"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Vou deixar seu contato salvo, que assim que eu tiver os pneus aqui da GP Premium, eu aviso você, tá bom?",
+    "Serve e muito!",
+    "Eu vou realizar aqui o seu orçamento, tá? Você vai precisar de quantos pneus e você mora aqui na cidade de Luziânia mesmo?",
+    "Temos a pronta entrega o 215/65/16 posso te apresentar?",
+    "Aí, só confirma pra mim a medida dos pneus, por gentileza",
+    "No orçamento está o valor unitário do pneu, na primeira coluna está o valor à vista, que já é o menor e melhor preço, e seguem as opções de parcelamento em até 10 vezes, caso você queira parcelar.",
+    "Claro, tem sim. Você prefere ele no modelo para o asfalto ou naquele mais borrachudo um pouco?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente pede ou manda foto de uma medida de pneu que não existe na tabela de pronta entrega",
+    "acao": "orientar",
+    "resposta": "Diga de forma curta que essa medida não tem a pronta entrega. Se a TAB.7 tiver uma medida compatível muito usada nesse carro, ofereça como alternativa (\"Tenho a pronta entrega uma opção que serve, posso te apresentar?\") e pergunte se quer foto, com o preço calculado pela tabela. Se não houver alternativa, diga: \"Não temos essa medida a pronta entrega, mas posso verificar com nossos distribuidores marca, preço e prazo, seria por encomenda. Tudo bem?\" Em seguida pergunte qual é o carro, quantos pneus precisa e se mora em Luziânia, e passe para a atendente fazer a cotação. Não invente prazo nem preço de encomenda.",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:medida_inexistente",
+   "audios": [
+    {
+     "midia": "/midias/3EB093389CB83E012A80C7_711007.ogg",
+     "transcricao": "Assim que eu tiver resposta, eu te passo, tá?",
+     "duracao": 3.2,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB05111421C6C1E9B4D5B_475679.ogg",
+     "transcricao": "Certo. Como eu não tenho aqui a pronta entrega, eu estou aguardando a resposta dos meus distribuidores. Está bem? Assim que eles me responderem, eu te passo direitinho o preço, tá?",
+     "duracao": 10.2,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "vai_pensar",
+   "titulo": "Cliente vai pensar / pesquisar",
+   "quando": "Cliente diz que vai pensar, pesquisar, avaliar com alguém da família ou que passa depois na loja",
+   "frequencia": 303,
+   "respondidasPelaLoja": 266,
+   "taxaSucesso": 0.17,
+   "comoJosyFaz": "A Josy não pressiona: concorda com leveza e mostra que entende. Logo em seguida tenta manter a conversa viva, perguntando se o cliente mora em Luziânia ou oferecendo foto/vídeo do pneu. Deixa a localização da loja e convida para conversar pessoalmente, já que ver o pneu de perto ajuda a entender que é remold linha premium. Quando faz sentido, reforça a qualidade (padrão europeu, garantia) e que dá para parcelar em até 10x.",
+   "exemplos": [
+    {
+     "cliente": "Estou pesquisando valores. Obrigado",
+     "loja": "Mensagem automática repetida de saudação; no dia seguinte áudio perguntando se mora em Luziânia"
+    },
+    {
+     "cliente": "Agradeço o atendimento, Deus te abençoe",
+     "loja": "Agradeceu e enviou localização convidando a vir na loja"
+    },
+    {
+     "cliente": "Teve uma emergência no trabalho, vai passar só daqui uns 8 a 10 dias",
+     "loja": "Mensagem automática repetida pedindo a medida; em seguida, áudio compreensivo dizendo que imprevistos acontecem e que fica aguardando, além de uma foto"
+    },
+    {
+     "cliente": "Vou avaliar certinho e procuro vcs quando for aí",
+     "loja": "Enviou foto do pneu 225/65/17 e áudio convidando a passar na loja, reforçando padrão europeu, 10 anos de mercado e linha premium do aro 13 ao 18"
+    },
+    {
+     "cliente": "Certo, muito obrigada, depois passo aí",
+     "loja": "Enviou foto específica da 175/75/14 e perguntou por áudio se ela mora em Luziânia"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Tá, mas de todo modo vamos negociar aqui que vai dar certo, tá? Como que você gostaria de realizar esse pagamento, meu jovem? Seria à vista mesmo? Você gostaria de parcelar?",
+    "Mas eu faço aqui pra você, pelo valor do débito, tá bom? Eu faço esse valor pra você passar no crédito à vista",
+    "você vindo com o carro aqui, eu já coloco os pneus pra você.",
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Serve e muito!",
+    "Eu vou realizar aqui o seu orçamento, tá? Você vai precisar de quantos pneus e você mora aqui na cidade de Luziânia mesmo?",
+    "Tem alguma específica que você está buscando? Pois, no dia de hoje, realmente, a opção que eu continuo tendo é a que eu tinha mandado para você no orçamento, mas eu posso ver se algum distribuidor meu tem o que você estiver buscando.",
+    "E você mora aqui em Luziânia mesmo, moço?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente diz que vai pensar, pesquisar, avaliar com alguém ou que passa na loja depois",
+    "acao": "responder",
+    "resposta": "Tudo bem, entendo perfeitamente! 😊\n\nSe quiser, te mando foto ou vídeo do pneu pra você analisar com calma. É remold linha premium, padrão europeu, com garantia de 2 anos e 60 mil km ou seu dinheiro de volta. E dá pra parcelar em até 10x no cartão.\n\nVocê mora aqui em Luziânia mesmo? Vou te deixar nossa localização, aí quando der você passa aqui pra gente conversar pessoalmente, tá joia?",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:objecao",
+   "audios": [
+    {
+     "midia": "/midias/3EB0B2937D25C36C8670C3_567971.ogg",
+     "transcricao": "Eu vou te mandar aqui a nossa localização, pois aí, se houver a possibilidade, você passa aqui na loja para nós conversarmos pessoalmente. Pode ser?",
+     "duracao": 10.1,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB0FFBE9A1E3D467F3AD3_731550.ogg",
+     "transcricao": "Boa tarde, tudo jóia? Não tem problema, eu entendo perfeitamente como que é, tá bom? Eu vou deixar aqui na nossa conversa a localização da nossa empresa, que quando for o momento mais apropriado aí para o senhor, o senhor me manda só um oi aqui e fala, tô indo, que eu já separo os pneus para te aguardar, tá bom?",
+     "duracao": 23.1,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB085A7A2A4BE3A8699A8_994942.ogg",
+     "transcricao": "Sim, entendo perfeitamente.",
+     "duracao": 2.1,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "pergunta_se_e_remold",
+   "titulo": "Cliente pergunta se o GP Premium é remold",
+   "quando": "Cliente pergunta se o pneu (GP Premium ou o da tabela) é remold, recapado, novo ou importado",
+   "frequencia": 175,
+   "respondidasPelaLoja": 164,
+   "taxaSucesso": 0.3,
+   "comoJosyFaz": "A Josy confirma sem rodeio que o GP Premium entra na categoria de remodelagem, mas logo explica que é pneu ecológico linha Premium, feito pela própria loja, bem diferente do remold convencional. Reforça que é o mais vendido por causa da qualidade e cita a garantia de 2 anos e 60 mil km. Quase sempre oferece foto ou vídeo para o cliente ver de perto, o que ajuda a quebrar a desconfiança. Quando é a primeira mensagem, já puxa a medida para seguir com o orçamento.",
+   "exemplos": [
+    {
+     "cliente": "O da GP Premium é aquele remold ainda, né?",
+     "loja": "Explicou que os pneus são somente remoldados, de primeira linha, com qualidade aprimorada e garantia de 2 anos."
+    },
+    {
+     "cliente": "Pensava que os seus nem eram remold",
+     "loja": "Explicou que Goodyear e Dunlop são originais e o GP Premium é pneu ecológico da categoria remold, linha Premium diferente dos convencionais; ofereceu foto e vídeo"
+    },
+    {
+     "cliente": "É Remold?",
+     "loja": "Explicou em áudio que é um pneu ecológico de remodelagem premium, diferente dos remolds convencionais, e o mais vendido da loja. Ofereceu foto e vídeo"
+    },
+    {
+     "cliente": "Pode me dar mais informações sobre esse último pneu da tabela, quais as características?",
+     "loja": "Primeiro repetiu a mensagem automática pedindo medida; depois em áudio explicou que são pneus ecológicos fabricados pela empresa, remodelagem linha Premium, há 10 anos, os mais vendidos pela qualidade, e perguntou se mora em Luziânia"
+    },
+    {
+     "cliente": "É pneu mesmo né? Não é Remold não?",
+     "loja": "Disse que o GP Premium é pneu ecológico produzido por eles, entra na categoria de remodelagem mas foge do remold convencional, e ofereceu vídeo/foto; confirmou que o Adventure verde é o GP Premium e o outro é chinês"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Tá, mas de todo modo vamos negociar aqui que vai dar certo, tá? Como que você gostaria de realizar esse pagamento, meu jovem? Seria à vista mesmo? Você gostaria de parcelar?",
+    "Mas eu faço aqui pra você, pelo valor do débito, tá bom? Eu faço esse valor pra você passar no crédito à vista",
+    "você vindo com o carro aqui, eu já coloco os pneus pra você.",
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Olá, bom dia, tudo bem com você? Por gentileza, só preciso que você me diga qual que é a medida dos pneus que você precisa, que aí eu consigo realizar o seu orçamento.",
+    "Os pneus que nós fazemos, eles são somente remodelados, tá? Só que é o de primeira linha. E como nós aprimoramos ainda mais a qualidade dele, hoje ele está com garantia de 2 anos.",
+    "o GP Premium, que é a opção mais vendida que eu tenho",
+    "Agora, o pneu GP Premium ... ele é um pneu ecológico que nós fazemos. Sim, ele entrará na categoria de remodelagem, só que linha Premium, que é completamente diferente dos pneus que são remoldes convencionais. Se você quiser, eu te mando uma foto, faço um vídeo aqui para você poder analisar."
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente pergunta se o pneu GP Premium é remold, recapado ou se é novo",
+    "acao": "responder",
+    "resposta": "Sim, o GP Premium entra na categoria de remodelagem, mas é linha Premium: um pneu ecológico que nós mesmos fazemos, com borracha padrão europeu e controle de qualidade. Não tem nada a ver com os remolds convencionais, tá? 😉\n\nPor isso ele é o pneu mais vendido aqui da loja. Tem garantia de 2 anos e 60 mil km ou seu dinheiro de volta!\n\nSe quiser, te mando foto ou vídeo pra você ver de pertinho. E se ainda não me passou, me diz a medida do seu pneu que eu já faço seu orçamento 👍",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:remold",
+   "audios": [
+    {
+     "midia": "/midias/3EB07D93838FCA7005C415_57324.ogg",
+     "transcricao": "É o pneu GP Premium, ele é um pneu ecológico que nós fazemos, ele vai entrar na categoria de remodelagem Premium, que não tem nada a ver com os pneus remoldes, convencionais, tá? Justamente por isso são os pneus mais vendidos que nós temos.",
+     "duracao": 13.8,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB07656C93F5E8AB8CFE6_52693.ogg",
+     "transcricao": "E respondendo aqui a sua pergunta, esse pneu, né, o pneu GP Premium, ele é um pneu ecológico que nós fazemos, ele vai entrar na categoria de remodelagem Premium, que não tem nada a ver com os pneus que são remoldes convencionais, justamente por isso são os pneus mais vendidos que nós temos, tá, garantia aí de 2 anos e roda 60 mil km se seu carro estiver, né, com a manutenção em dia.",
+     "duracao": 25.9,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB0CF00ABB65B9C915EE9_597631.ogg",
+     "transcricao": "São pneus ecológicos que nós fazemos. Sim, eles entrarão na categoria de remodelagem, só que linha Premium, que não tem nada a ver com os pneus que são remoldes convencionais. Justamente por isso são os pneus mais vendidos que eu tenho, com garantia de 2 anos.",
+     "duracao": 13.7,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "pergunta_servico_oficina",
+   "titulo": "Cliente pergunta sobre montagem, balanceamento e alinhamento",
+   "quando": "Quando o cliente quer saber se a loja monta, troca ou instala os pneus, ou se balanceamento e alinhamento estão inclusos e quanto custam",
+   "frequencia": 150,
+   "respondidasPelaLoja": 146,
+   "taxaSucesso": 0.49,
+   "comoJosyFaz": "A Josy responde rápido e sem rodeio, geralmente com um 'sim, fazemos' logo de cara. Deixa claro que o preço passado é do pneu e que os serviços são feitos na oficina da própria loja. Explica com transparência que os valores dos serviços são combinados com os meninos da oficina e que dá pra negociar. Reforça que o balanceamento é importante e que o alinhamento só é feito se o carro precisar. Fecha convidando o cliente a vir até a loja com o carro, o que costuma levar ao agendamento.",
+   "exemplos": [
+    {
+     "cliente": "Esse valor é montado?",
+     "loja": "Áudio dizendo que a montagem está inclusa e que balanceamento e alinhamento são negociados à parte; mandou também foto do pneu"
+    },
+    {
+     "cliente": "Seis ainda da montagem?",
+     "loja": "Respondeu em áudio que a montagem é à parte e depois por texto que custa R$70,00"
+    },
+    {
+     "cliente": "Carro está no posto Nelore com pneu estourado, vocês trocam lá?",
+     "loja": "Disse que não tem carro para fazer serviço externo e mandou localização da loja"
+    },
+    {
+     "cliente": "Disseram que ganhava serviços, só não paguei montagem; vou mandar minha filha comprar um",
+     "loja": "Confirmou montagem grátis e balanceamento/alinhamento cobrados à parte"
+    },
+    {
+     "cliente": "Então a gente fecha assim... daqui a pouquinho a gente passa aí. Vocês trocam os pneus, né?",
+     "loja": "Respondeu 'Combinado!' e áudio 'Sim, trocamos.'"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Tá, mas de todo modo vamos negociar aqui que vai dar certo, tá? Como que você gostaria de realizar esse pagamento, meu jovem? Seria à vista mesmo? Você gostaria de parcelar?",
+    "Mas eu faço aqui pra você, pelo valor do débito, tá bom? Eu faço esse valor pra você passar no crédito à vista",
+    "você vindo com o carro aqui, eu já coloco os pneus pra você.",
+    "Olá, bom dia, tudo bem com você? Por gentileza, só preciso que você me diga qual que é a medida dos pneus que você precisa, que aí eu consigo realizar o seu orçamento.",
+    "Você sabe onde estamos localizados?",
+    "Claro! Posso sim!",
+    "Os pneus, eles já são colocados automaticamente, aí a parte nós negociamos o valor de balanceamento e alinhamento de direção, se realmente for necessário.",
+    "Se você conseguir trazer o dinheiro em espécie, eu consigo te dar um desconto."
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente pergunta se a loja faz a montagem, troca ou instalação dos pneus, ou se balanceamento e alinhamento estão inclusos no valor",
+    "acao": "responder",
+    "resposta": "Sim, fazemos sim! Montagem, balanceamento e alinhamento são feitos aqui na nossa oficina 😊\n\nO valor que eu passo é do pneu. Os serviços você combina direto com os meninos da oficina, e são valores negociáveis, pode ficar tranquilo(a)!\n\nO balanceamento é bem importante, já o alinhamento só se o carro realmente precisar. Vindo com o carro aqui, a gente já resolve tudo pra você!",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:servico_oficina",
+   "audios": [
+    {
+     "midia": "/midias/3EB0EDA69E258243B54F07_651678.ogg",
+     "transcricao": "O balanceamento é extremamente importante, tá? Agora, o alinhamento só se realmente for necessário, porque no mais...",
+     "duracao": 8.2,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB0FCD9308E2D728C0CD5_43708.ogg",
+     "transcricao": "Sim, fazemos sim.",
+     "duracao": 1.8,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "pede_foto_ou_video",
+   "titulo": "Cliente pede foto ou vídeo do pneu",
+   "quando": "Cliente pede para ver o pneu por foto ou vídeo (frente, lateral, desenho da banda, comparação entre modelos) antes de decidir",
+   "frequencia": 135,
+   "respondidasPelaLoja": 132,
+   "taxaSucesso": 0.58,
+   "comoJosyFaz": "A Josy sempre confirma na hora que consegue e pede um minutinho, sem enrolar. Depois vai ao estoque e manda fotos ou vídeo mostrando banda, lateral e marca GP Premium, às vezes dos dois modelos (asfalto e borrachudo). Quando ainda não sabe a medida ou o modelo, pergunta antes para mandar a foto certa. Ver o pneu de perto tira o medo de quem já teve experiência ruim com remold, e ela aproveita para convidar o cliente a vir à loja conhecer pessoalmente.",
+   "exemplos": [
+    {
+     "cliente": "Curiosidade no pneu Premium, teve experiência ruim com remold, pede fotos e vídeos, talvez vá no fim de semana",
+     "loja": "Pediu um tempinho e depois enviou vídeo do pneu"
+    },
+    {
+     "cliente": "Pode mandar a foto",
+     "loja": "Enviou duas fotos."
+    },
+    {
+     "cliente": "Pode ser",
+     "loja": "Enviou vídeo explicativo"
+    },
+    {
+     "cliente": "Manda foto do nacional de 279 pra ver o material",
+     "loja": "Perguntou se preferia modelo asfalto ou borrachudo e enviou 7 fotos dos dois"
+    },
+    {
+     "cliente": "Pode me mandar foto",
+     "loja": "Enviou fotos de dois modelos disponíveis e disse que iria ao depósito tirar foto dos outros"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Qual é a medida dos pneus que você precisa?",
+    "O senhor gostaria que gravasse um vídeo para poder explicar?",
+    "O senhor também pode vir aqui na loja para nós podemos fazer a análise, tá joia? Que se de repente estiver com alguma coisa anormal, nós já verificamos também.",
+    "Imagina... o senhor é sempre muito bem vindo.",
+    "Agora, o pneu GP Premium ... ele é um pneu ecológico que nós fazemos. Sim, ele entrará na categoria de remodelagem, só que linha Premium, que é completamente diferente dos pneus que são remoldes convencionais. Se você quiser, eu te mando uma foto, faço um vídeo aqui para você poder analisar.",
+    "De todo modo, eu vou te mandar aqui a nossa localização, pois se de repente houver a possibilidade, você vem aqui na loja, tá bom?",
+    "Você gostaria de agendar um dia, um horário que fica bom para você, para você vir aqui para nós conversarmos?",
+    "Somente no modelo Adventure"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente pede foto, vídeo ou imagem do pneu (frente, lateral, desenho da banda ou comparação entre modelos)",
+    "acao": "atendente",
+    "resposta": "Consigo sim! Só um minutinho que já te mando 😊",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:foto",
+   "audios": [
+    {
+     "midia": "/midias/3EB0BDAAE3322C82C2D21E_208564.ogg",
+     "transcricao": "Consigo sim, só um minutinho.",
+     "duracao": 2.2,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "compara_outra_loja",
+   "titulo": "Cliente comparando com outra loja",
+   "quando": "Quando o cliente diz que achou mais barato em outra loja, na internet ou no Marketplace, ou que está fazendo cotações",
+   "frequencia": 144,
+   "respondidasPelaLoja": 126,
+   "taxaSucesso": 0.14,
+   "comoJosyFaz": "A Josy não briga com o preço. Ela mostra que entende e pede para ver o orçamento ou anúncio, perguntando onde o cliente achou. Ela lembra que tudo é negociável, reforça a garantia, o parcelamento e o desconto em dinheiro, e alerta com jeito que oferta com 'tudo incluso' costuma cobrar por fora. O que mais funciona é manter a conversa aberta e puxar para a negociação. Não funciona encerrar seco ou mandar só a localização.",
+   "exemplos": [
+    {
+     "cliente": "Se for só para chamar cliente ele vai estar enrolado, eu tenho a conversa guardada",
+     "loja": "Confirmou que pela experiência no ramo é assim e se despediu. Depois o robô reforçou a garantia de 2 anos/60 mil km, o parcelamento e a negociação na loja, e ofereceu o valor parcelado."
+    },
+    {
+     "cliente": "Ia trocar no Mato Grosso, aqui está um pouco mais alto",
+     "loja": "Disse que entende, reforçou que os serviços são negociáveis e reenviou a foto da frente da loja"
+    },
+    {
+     "cliente": "Achei pneu por 250 com alinhamento/balanceamento; se cobrir, faço com vocês",
+     "loja": "Mensagem automática de saudação perguntando a medida, ignorando o que o cliente disse"
+    },
+    {
+     "cliente": "Tá caro, estou pesquisando, quero pelo menos um",
+     "loja": "Ofereceu 205/60/15 liso por 289 no débito/Pix, parcelamento, alertou sobre lojas com preço baixo e 'golpe', reforçou que é cliente antiga"
+    },
+    {
+     "cliente": "Encontrei um pouco mais barato que o seu",
+     "loja": "Perguntou em áudio se mora em Luziânia e se achou mais barato que 349"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Qual é a medida dos pneus que você precisa?",
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Mora aqui em Luziânia-Go?",
+    "Se você não souber a medida dos pneus me fala qual é seu carro",
+    "Como eu não sei qual é a medida que você está utilizando aí no seu carro, me diz qual é que eu verifico pelo menos com a opção original para fazer um orçamento para você, tudo bem?",
+    "Olá, vamos dar continuidade aqui na sua negociação?",
+    "Quer que eu já te passe o valor parcelado?",
+    "Se não souber a *medida* dos pneus me informa qual é seu carro, essa informação já me ajuda."
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente diz que encontrou pneu mais barato em outra loja, na internet ou em anúncio, ou que está fazendo outras cotações",
+    "acao": "responder",
+    "resposta": "Entendo perfeitamente! Me manda o orçamento ou anúncio que você achou, que eu vejo aqui o que consigo fazer pra te ajudar 😉\n\nO nosso GP Premium tem garantia de 2 anos e 60 mil km ou seu dinheiro de volta. Dá pra parcelar em até 10x no cartão, e em dinheiro tem desconto à vista.\n\nSó fica de olho em oferta com tudo incluso, que muitas vezes acaba cobrando por fora. Aqui é tudo transparente e os serviços a gente negocia, tá?",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:objecao",
+   "audios": [
+    {
+     "midia": "/midias/3EB0D3EC9F4849FA826E32_314386.ogg",
+     "transcricao": "É que eu mando aqui o preço, mas tudo é negociável.",
+     "duracao": 6.6,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB0DA86E420B3449A1C4F_302999.ogg",
+     "transcricao": "Sim, eu entendi. E sim, existem marcas aí que são muito baratas. O negócio é qualidade também, né?",
+     "duracao": 11.4,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB0D42FE3032A5B7BE5A0_271754.ogg",
+     "transcricao": "Se o senhor cotou, de repente eu posso ver aqui o que podemos fazer para poder te ajudar.",
+     "duracao": 9,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "pede_parcelamento",
+   "titulo": "Cliente pede parcelamento",
+   "quando": "Cliente pergunta se divide no cartão, em quantas vezes ou quanto fica parcelado",
+   "frequencia": 121,
+   "respondidasPelaLoja": 116,
+   "taxaSucesso": 0.44,
+   "comoJosyFaz": "A Josy confirma na hora que parcela em até 10x no cartão e avisa que no parcelado o valor muda um pouco, mas é pouca coisa. Em seguida pergunta em quantas vezes o cliente quer e quantos pneus vai levar, para calcular certinho. Costuma mandar a tabela com o valor à vista na primeira coluna e as parcelas ao lado. Quando o cliente quer pagar no crédito à vista, ela faz pelo valor à vista. O que funciona é não travar: responder rápido e já puxar a quantidade de parcelas.",
+   "exemplos": [
+    {
+     "cliente": "Só dá pra fazer 3 pneus, o limite é mil reais; ficaria 1.017",
+     "loja": "Disse que não tem problema pagar 3 e o quarto à parte. Explicou que na promoção cada pneu custa 395, então sai mais caro. Perguntou de novo o carro e depois pediu desculpas."
+    },
+    {
+     "cliente": "É o mais barato? No cartão fica quanto? Acho que vou pegar 2",
+     "loja": "Confirmou que é o GP Premium e explicou que em 10x a unidade fica R$380 (10x de R$76), diminuindo até R$339 à vista; perguntou em quantas vezes"
+    },
+    {
+     "cliente": "Seria só em duas vezes",
+     "loja": "Informou que em 2x fica R$350 por pneu"
+    },
+    {
+     "cliente": "Ver para mim o valor das parcelas",
+     "loja": "Áudio perguntando em quantas vezes quer parcelar"
+    },
+    {
+     "cliente": "Quanto ficaria 4 pneus eu passando metade no dinheiro e o restante no cartão",
+     "loja": "Enviou foto e áudio dizendo que no parcelamento o valor muda e pediu em quantas vezes quer parcelar"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Tá, mas de todo modo vamos negociar aqui que vai dar certo, tá? Como que você gostaria de realizar esse pagamento, meu jovem? Seria à vista mesmo? Você gostaria de parcelar?",
+    "Mas eu faço aqui pra você, pelo valor do débito, tá bom? Eu faço esse valor pra você passar no crédito à vista",
+    "você vindo com o carro aqui, eu já coloco os pneus pra você.",
+    "No dia de hoje temos todas essas opções a pronta entrega. No orçamento, está o valor *UNITÁRIO* do pneu. Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X",
+    "Quer que eu já te passe o valor parcelado?",
+    "Mora aqui em Luziânia-Go?",
+    "Boa tarde, essa medida é para qual carro?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente pergunta se parcela no cartão, em quantas vezes divide ou quanto fica o pneu parcelado",
+    "acao": "orientar",
+    "resposta": "Confirme que parcela em até 10x no cartão e avise, de forma leve, que no parcelado o valor muda um pouco, mas é pouca coisa. Se ainda não souber a medida ou a quantidade de pneus, pergunte antes de calcular.\n\nPergunte em quantas vezes o cliente quer parcelar e quantos pneus vai levar. Com isso, calcule pela tabela oficial (TAB.7): mostre o valor por pneu e o total na condição pedida, deixando claro que a primeira coluna é o valor à vista. Se pedir crédito em 1x, ofereça o valor à vista.\n\nFeche com uma pergunta para avançar, tipo: \"Posso separar os pneus pra você?\"",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:parcelamento_generico",
+   "audios": [
+    {
+     "midia": "/midias/3EB0FF9FF445EDC84F00F3_302955.ogg",
+     "transcricao": "Para parcelar, o valor muda um pouco, tá joia? Aí você só me diz em quantas que você quer parcelar que eu calculo aqui para você.",
+     "duracao": 8.5,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB034E4BAB6409CC97FED_452187.ogg",
+     "transcricao": "Eu vou te mandar aqui as opções de parcelamento, tá? Só um instantinho.",
+     "duracao": 3.8,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB00344D2BC90889D33CA_974818.ogg",
+     "transcricao": "Você quer parcelar em quantas?",
+     "duracao": 3.5,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "informa_carro",
+   "titulo": "Cliente informa o carro (sem a medida)",
+   "quando": "Cliente diz qual é o carro (modelo, ano ou aro), mas não passa a medida exata do pneu.",
+   "frequencia": 123,
+   "respondidasPelaLoja": 115,
+   "taxaSucesso": 0.47,
+   "comoJosyFaz": "A Josy aproveita o carro para puxar a medida original e pergunta se é essa que está instalada, porque muitos carros saem de fábrica com mais de um aro. Se o cliente não souber, ela mostra que a numeração fica na lateral do pneu. Com a medida confirmada, manda as opções à pronta entrega, explicando que o valor é unitário, à vista ou em até 10x. Ela aproveita para perguntar quantos pneus o cliente precisa e se é de Luziânia. Em picape ou utilitário, pergunta se transporta muita carga antes de sugerir.",
+   "exemplos": [
+    {
+     "cliente": "Megane, preciso dos 4",
+     "loja": "Informou que o original é 205/55/16 podendo ir até 205/60, mandou foto e preços: 205/55/16 R$ 289 e 205/60/16 R$ 329 à vista"
+    },
+    {
+     "cliente": "Tuckson",
+     "loja": "Explicou que a medida está difícil de achar e ofereceu 215/65/16"
+    },
+    {
+     "cliente": "Não sei a medida, é aro 15, C3 2012",
+     "loja": "Áudio agradecendo a informação e pedindo um instante"
+    },
+    {
+     "cliente": "Acabei pagando mais caro; acho que foi esse pneu",
+     "loja": "Perguntou se o carro do pai é híbrido/elétrico e pediu para confirmar a medida"
+    },
+    {
+     "cliente": "Sim. Seria par ao kiwid",
+     "loja": "Mandou foto e áudio com o preço: GP Premium a R$ 239,00 a unidade à vista"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Olái! Eu sou a *Josy* 👋\nQual a medida dos pneus que você precisa hoje?",
+    "Pois o original é 205/55/16 podendo chegar até 205/60",
+    "Eu posso mandar os pneus para o novo Gama, tá? Tem uma borracharia que me ajuda bastante nessas horas e eu posso mandar os pneus para lá, se for de seu interesse.",
+    "Consegui um desconto para ti!",
+    "Desse jeito aí te ajuda, que se te ajudar, nós já vamos dando continuidade aqui na negociação, tá?",
+    "Você me diz pra quando que você precisa, que eu ajeito pra você, tá?",
+    "Você pode fazer o Pix lá, o rapaz gera o QR Code para você, fica tranquilo."
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente informa o modelo do carro (ou só o aro) e pede pneu ou valor, sem passar a medida",
+    "acao": "orientar",
+    "resposta": "Use o carro informado para identificar a medida original na TAB.7. Pergunte de forma curta se é essa medida que está instalada hoje e lembre que a numeração fica na lateral do pneu. Se o modelo tiver mais de um aro de fábrica, cite que existem variações e peça para confirmar. Se for picape ou utilitário, pergunte se costuma levar muita carga.\n\nNa mesma mensagem, pergunte quantos pneus o cliente precisa e se ele é de Luziânia. Não passe preço antes de ter a medida confirmada, a não ser que o modelo tenha só uma medida original. Nesse caso, já mande as opções da TAB.7.\n\nQuando enviar as opções, diga que o valor é unitário, que tem desconto à vista no dinheiro e que dá para parcelar em até 10x no cartão. Termine com uma pergunta simples para seguir a conversa, por exemplo: 'Te atende?'",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:pedir_medida",
+   "audios": [
+    {
+     "midia": "/midias/A5E655063ACEC64B4BCF58D75D5BB5A6_422213.ogg",
+     "transcricao": "Você pode confirmar para mim qual é a medida dos pneus que você precisa?",
+     "duracao": 4,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "pede_desconto",
+   "titulo": "Cliente pede desconto",
+   "quando": "Cliente pede para melhorar o valor, quer desconto, pergunta o mínimo ou o melhor preço à vista, no Pix ou no cartão",
+   "frequencia": 116,
+   "respondidasPelaLoja": 112,
+   "taxaSucesso": 0.27,
+   "comoJosyFaz": "A Josy nunca fecha a porta. Ela mostra abertura (\"vamos negociar aqui que vai dar certo\") e logo pergunta como o cliente vai pagar. Deixa claro que no Pix e no débito o pneu já está no menor preço e que o desconto de verdade é no dinheiro em espécie. Quando o pedido envolve montagem, balanceamento ou alinhamento, ela manda negociar direto com os meninos da oficina. O que mais faz o cliente avançar é fechar com uma pergunta de próximo passo: a forma de pagamento, a quantidade ou quando ele vem com o carro.",
+   "exemplos": [
+    {
+     "cliente": "A vista no cartão",
+     "loja": "Explicou que no crédito à vista seria 346,53 cada, mas fez pelo valor do débito, 339 cada, total de 1.356 por 4 pneus, montando com o carro na loja."
+    },
+    {
+     "cliente": "Quero pagar à vista, o que consegue melhorar? Vê com o Charles",
+     "loja": "Perguntou se consegue sacar dinheiro; cliente não consegue; disse 'Vou ver aqui'. No dia seguinte ofereceu R$ 275 à vista"
+    },
+    {
+     "cliente": "(mesma solicitação de desconto para 4 pneus)",
+     "loja": "Áudio informando que os 4 ficam por R$ 1.096 já instalados"
+    },
+    {
+     "cliente": "No à vista em dinheiro consegue mais desconto?",
+     "loja": "Disse que já é o valor final"
+    },
+    {
+     "cliente": "Vê se consegue melhorar esse valor, vou pagar no Pix",
+     "loja": "Disse por áudio que só melhora no dinheiro e passou os valores: Débito/Pix 329,00 e dinheiro 310,00."
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Tá, mas de todo modo vamos negociar aqui que vai dar certo, tá? Como que você gostaria de realizar esse pagamento, meu jovem? Seria à vista mesmo? Você gostaria de parcelar?",
+    "Mas eu faço aqui pra você, pelo valor do débito, tá bom? Eu faço esse valor pra você passar no crédito à vista",
+    "você vindo com o carro aqui, eu já coloco os pneus pra você.",
+    "Pois o original é 205/55/16 podendo chegar até 205/60",
+    "Eu posso mandar os pneus para o novo Gama, tá? Tem uma borracharia que me ajuda bastante nessas horas e eu posso mandar os pneus para lá, se for de seu interesse.",
+    "Consegui um desconto para ti!",
+    "Desse jeito aí te ajuda, que se te ajudar, nós já vamos dando continuidade aqui na negociação, tá?",
+    "Você me diz pra quando que você precisa, que eu ajeito pra você, tá?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente pede desconto, pede para melhorar o valor ou pergunta qual o menor preço que a loja consegue fazer",
+    "acao": "orientar",
+    "resposta": "Responda com simpatia e abertura, sem negar de cara. Diga que dá pra negociar sim e pergunte como ele pretende pagar: dinheiro, Pix/débito ou parcelado no cartão.\n\nSe for Pix, débito ou cartão, explique que o pneu já está no menor preço nessas formas. Diga que o desconto à vista é só no dinheiro em espécie e passe o valor em dinheiro da TAB.7 para a medida e a quantidade que ele pediu. Se ele quiser desconto em montagem, balanceamento ou alinhamento, diga que esses valores são combinados direto com os meninos da oficina e que dá pra conversar com eles na loja.\n\nFeche puxando o próximo passo. Pergunte quantos pneus ele vai levar e quando pretende vir com o carro, e ofereça separar os pneus pra ele. Nunca invente valor fora da tabela. Se ele insistir num preço abaixo do da tabela, diga que vai verificar e passe para a atendente.",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:desconto_dinheiro",
+   "audios": [
+    {
+     "midia": "/midias/3EB0F949AB08E31061F3E6_816287.ogg",
+     "transcricao": "Esses pneus, eles já estão no menor preço realmente, tá?",
+     "duracao": 4.7,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB069DFB38DE9AA2D9DA1_21098.ogg",
+     "transcricao": "Ah, eles já estão no menor preço, realmente, para o débito, para o Pix, esse preço aí.",
+     "duracao": 7.7,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "pergunta_entrega",
+   "titulo": "Cliente pergunta se a loja faz entrega",
+   "quando": "Cliente quer saber se a loja entrega os pneus, quanto custa o frete ou qual é o prazo de entrega",
+   "frequencia": 86,
+   "respondidasPelaLoja": 85,
+   "taxaSucesso": 0.38,
+   "comoJosyFaz": "A Josy primeiro pergunta onde o cliente mora antes de prometer qualquer coisa. Depois explica que a loja fica só em Luziânia e que normalmente não faz entrega. Quando o cliente é do Entorno ou do DF, ela costuma oferecer deixar os pneus numa borracharia parceira, combinando o dia. Para clientes de longe, ela pede o CEP e cota o frete com a transportadora. Funciona quando ela não fecha a porta e mostra que ajeita uma saída, mas a decisão depende da rota e do carro do dia, por isso ela verifica antes de confirmar.",
+   "exemplos": [
+    {
+     "cliente": "Ajuda. Consegue deixar lá no Gama, onde?",
+     "loja": "Robô disse que não ouviu o áudio; depois a loja confirmou que deixa no Novo Gama e perguntou quando precisa"
+    },
+    {
+     "cliente": "Quero comprar 2 pneus, mas não consigo buscar. Vocês fazem entrega?",
+     "loja": "Perguntou de onde ele é; no dia seguinte disse que estava sem carro para entrega; depois mandou áudio dizendo que conseguiu um carro"
+    },
+    {
+     "cliente": "Não, em Santa Maria. Fazem entrega?",
+     "loja": "Ofereceu enviar os GP Premium para o Novo Gama"
+    },
+    {
+     "cliente": "Entregam só em 4 dias úteis? No sábado não chega, né?",
+     "loja": "Disse que ia verificar e perguntou se ela precisaria das 4 unidades. Depois informou que conseguia para sexta-feira e perguntou se podia encomendar"
+    },
+    {
+     "cliente": "Quanto tempo é entrega / E o valor??",
+     "loja": "Perguntou se morava em Luziânia e disse que verificaria com distribuidores marca, preço e prazo"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Qual a medida dos pneus que você precisa hoje?",
+    "eles estão na promoção Compre 3 e leve 4",
+    "Posso enviar os pneus para uma borracharia que me ajuda muito, fica ali no Novo Gama, se for de seu interesse me informa.",
+    "Pois o original é 205/55/16 podendo chegar até 205/60",
+    "Eu posso mandar os pneus para o novo Gama, tá? Tem uma borracharia que me ajuda bastante nessas horas e eu posso mandar os pneus para lá, se for de seu interesse.",
+    "Consegui um desconto para ti!",
+    "Desse jeito aí te ajuda, que se te ajudar, nós já vamos dando continuidade aqui na negociação, tá?",
+    "Você me diz pra quando que você precisa, que eu ajeito pra você, tá?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente pergunta se a loja faz entrega, quanto é o frete ou em quanto tempo os pneus chegam",
+    "acao": "atendente",
+    "resposta": "Você mora em qual cidade ou bairro? 😊\n\nMe fala aqui que eu vejo a melhor forma de te atender, só um instante!",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": null,
+   "audios": [],
+   "status": "pendente"
+  },
+  {
+   "id": "desconfia_qualidade",
+   "titulo": "Cliente desconfia da qualidade do pneu (remold)",
+   "quando": "Cliente pergunta se o pneu é bom, se é usado ou remold comum, se aguenta viagem ou carga, ou conta que já teve experiência ruim com remold",
+   "frequencia": 88,
+   "respondidasPelaLoja": 83,
+   "taxaSucesso": 0.34,
+   "comoJosyFaz": "A Josy responde com segurança e carinho, sem ficar na defensiva: afirma que o pneu é muito bom e o mais procurado pela qualidade. Explica que é um remold de primeira linha, diferente do remold convencional, feito com estrutura intacta, borracha padrão europeu e controle de qualidade. Reforça a garantia de 2 anos e 60 mil km ou dinheiro de volta. O que mais destrava é oferecer foto ou vídeo do pneu e lembrar que ela garante o produto.",
+   "exemplos": [
+    {
+     "cliente": "Esse pneu chinês é bom? Não conheço",
+     "loja": "Áudio explicando que quase não vende o chinês porque é de material sintético e não de borracha, por isso acaba mais rápido"
+    },
+    {
+     "cliente": "Passa em vistoria normal? Já tive experiências ruins com remold",
+     "loja": "Ofereceu e gravou vídeo explicativo"
+    },
+    {
+     "cliente": "Perguntou se tinha pegadinha de base de troca, ou seja, se precisava deixar os pneus velhos",
+     "loja": "Áudio dizendo que não é à base de troca, que o preço é aquele, que pode colocar os pneus na hora ou o cliente levar para montar em outro lugar"
+    },
+    {
+     "cliente": "A filha disse que o pneu não é novo, é usado",
+     "loja": "Explicou que é a mesma marca GP Premium que ela já usa desde 2023, que não é usado, e prometeu explicação"
+    },
+    {
+     "cliente": "Qual a diferença do chinês para o nacional? Qual é melhor?",
+     "loja": "Confirmou o 185 como melhor escolha. Disse que nacionais rodam mais e que o GP Premium, fabricado pela loja, tem 2 anos de garantia e 60 mil km, em oferta por R$249 à vista (normal R$289)"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Olái! Eu sou a *Josy* 👋 Qual a medida dos pneus que você precisa hoje?",
+    "Qual é a medida dos pneus que você precisa?",
+    "No orçamento, está o valor *UNITÁRIO* do pneu. Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X",
+    "O senhor gostaria que gravasse um vídeo para poder explicar?",
+    "O senhor também pode vir aqui na loja para nós podemos fazer a análise, tá joia? Que se de repente estiver com alguma coisa anormal, nós já verificamos também.",
+    "Imagina... o senhor é sempre muito bem vindo.",
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Mora aqui em Luziania, mesmo?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente desconfia da qualidade do pneu, pergunta se é bom, se é usado ou remold comum, ou diz que já teve experiência ruim com remold",
+    "acao": "responder",
+    "resposta": "Pode ficar tranquilo! O GP Premium é remold sim, mas de primeira linha, nada a ver com o remold convencional 😉 Usamos só estrutura intacta, borracha padrão europeu e tudo passa por controle de qualidade.\n\nE eu garanto meu produto: são 2 anos de garantia e 60 mil km ou seu dinheiro de volta!\n\nQuer que eu te mande uma foto ou um vídeo do pneu pra você ver de pertinho?",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:remold",
+   "audios": [
+    {
+     "midia": "/midias/3EB00673C6DC4F04FC58C8_105836.ogg",
+     "transcricao": "Sim, nós utilizamos uma estrutura. Entretanto, como aqui o padrão é bem criterioso, que é o mesmo do europeu, precisam ser estruturas que estejam completamente intactas, tá? E aí, nós fazemos o revestimento todo dela novamente. Então, assim, é um processo criterioso que não é o mesmo dos pneus remoldes convencionais.",
+     "duracao": 26.7,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB0BC273A149218DCB18F_975324.ogg",
+     "transcricao": "Se você quer que mande uma foto, um vídeo do pneu, para que o senhor possa compreender melhor.",
+     "duracao": 5,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB06D2428538C70A9C427_901360.ogg",
+     "transcricao": "Por aí você vai encontrar a preço de banana, mas a qualidade também vai ser igual. Aqui eu garanto o meu produto.",
+     "duracao": 9.2,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "pergunta_pix_dinheiro",
+   "titulo": "Pix x dinheiro: desconto só no dinheiro em espécie",
+   "quando": "Cliente pergunta se o Pix tem desconto, qual é o valor à vista, qual a diferença entre Pix e dinheiro ou pede a chave Pix para pagar.",
+   "frequencia": 83,
+   "respondidasPelaLoja": 83,
+   "taxaSucesso": 0.55,
+   "comoJosyFaz": "A Josy é direta: o valor do Pix é o mesmo do débito, e o desconto só sai no dinheiro em espécie. Ela sempre mostra os dois valores lado a lado para o cliente comparar, e muitas vezes pergunta se ele consegue sacar, o que puxa a venda para o dinheiro. Se o cliente pergunta por que o Pix não tem desconto, ela explica sem rodeio que o Pix também tem custo para a loja. Quando o cliente quer pagar no Pix, ela tranquiliza dizendo que dá para pagar na loja com QR Code e já deixa os pneus separados.",
+   "exemplos": [
+    {
+     "cliente": "Você manda o Pix pra eu pagar?",
+     "loja": "Informou que pode pagar no Pix lá, o rapaz gera o QR Code; confirmou que é borracharia e pode trocar lá"
+    },
+    {
+     "cliente": "Me manda valor à vista",
+     "loja": "Foto do orçamento e explicação das colunas; áudio dizendo que R$ 349 é no débito/Pix e R$ 330 em dinheiro"
+    },
+    {
+     "cliente": "Você consegue o Pix pra mim? Valor?",
+     "loja": "Explicou que o Pix é só dos pneus e que os serviços são pagos na hora, e enviou a chave CNPJ com o valor de R$ 698"
+    },
+    {
+     "cliente": "Esse valor à vista pode ser no Pix ou só no dinheiro?",
+     "loja": "Explicou que R$ 245 é só em dinheiro e no Pix a unidade fica R$ 259"
+    },
+    {
+     "cliente": "900 em dinheiro e o restante no Pix",
+     "loja": "Explicou que estava sem chave Pix e mandaria a máquina; confirmou forma de pagamento; avisou que estava saindo para entrega"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Pois o original é 205/55/16 podendo chegar até 205/60",
+    "Eu posso mandar os pneus para o novo Gama, tá? Tem uma borracharia que me ajuda bastante nessas horas e eu posso mandar os pneus para lá, se for de seu interesse.",
+    "Consegui um desconto para ti!",
+    "Desse jeito aí te ajuda, que se te ajudar, nós já vamos dando continuidade aqui na negociação, tá?",
+    "Você me diz pra quando que você precisa, que eu ajeito pra você, tá?",
+    "Você pode fazer o Pix lá, o rapaz gera o QR Code para você, fica tranquilo.",
+    "Somente no modelo Adventure",
+    "Sim, claro!"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente pergunta se no Pix tem desconto, qual o valor à vista ou qual a diferença entre pagar no Pix e em dinheiro",
+    "acao": "orientar",
+    "resposta": "Se o cliente ainda não informou a medida ou a quantidade, peça antes de passar qualquer valor. Com a medida em mãos, calcule pela TAB.7 os dois valores: o de débito/Pix (iguais, sem desconto) e o de dinheiro em espécie (com desconto). Mostre os dois juntos, de forma curta, por unidade e no total da quantidade pedida.\n\nDeixe claro, de forma simpática, que o desconto à vista vale só para dinheiro em espécie e que o Pix fica no mesmo valor do débito porque também tem custo para a loja. Em seguida, pergunte se ele consegue sacar o dinheiro para aproveitar o desconto.\n\nSe ele preferir o Pix, diga que pode pagar tranquilo na loja, onde o rapaz gera o QR Code na hora. Se ele pedir a chave Pix para pagar antes ou reservar, diga que vai separar os pneus e passe para a atendente.",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:desconto_pix",
+   "audios": [
+    {
+     "midia": "/midias/3EB08986356EE15DF3ACE8_78105.ogg",
+     "transcricao": "Você pode fazer o Pix lá, o rapaz gera o QR Code para você, fica tranquilo.",
+     "duracao": 4.8,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB08390C073A7FF02AD7A_552857.ogg",
+     "transcricao": "Você consegue sacar dinheiro pra trazer pra mim?",
+     "duracao": 3.5,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "acha_caro",
+   "titulo": "Cliente acha o preço caro",
+   "quando": "Depois que a loja passa o orçamento e o cliente reclama do valor, diz que está acima do orçamento, que achou mais barato em outro lugar ou que o preço subiu.",
+   "frequencia": 79,
+   "respondidasPelaLoja": 69,
+   "taxaSucesso": 0.14,
+   "comoJosyFaz": "A Josy acolhe sem drama e não deixa a conversa morrer com um 'compreendo'. O que funciona é seguir negociando: ela pergunta o carro e quantos pneus o cliente precisa, oferece uma opção mais em conta ou uma condição melhor, como dinheiro à vista, parcelamento ou o compre 3 leve 4. Quando o cliente compara com remold comum ou chinês, ela explica que o GP Premium é remold linha premium, com garantia de 2 anos e 60 mil km ou dinheiro de volta. Se o cliente diz que o preço mudou, ela confere se a medida é a mesma do orçamento anterior antes de qualquer outra coisa. O que não funciona é só lamentar, mandar a localização e encerrar ou repetir a saudação perguntando a medida.",
+   "exemplos": [
+    {
+     "cliente": "Antes era R$ 329, agora está R$ 349, está mais caro",
+     "loja": "Esclareceu a confusão de medida (205 x 215), confirmou que o carro é a Spin, manteve a 205/60/16 a R$ 329 e disse que iria conferir o estoque"
+    },
+    {
+     "cliente": "Problema é meu dinheiro que e pouco kk",
+     "loja": "Demonstrou compreensão, perguntou o carro e ofereceu a opção 185/65/15 por R$ 250 cada (R$ 500 os dois)."
+    },
+    {
+     "cliente": "Muito acima do que quer pagar, queria na faixa do chinês orçado antes",
+     "loja": "Ofereceu o GP Premium, 'mais vendido', modelo borrachudo, que ela usa na caminhonete do irmão"
+    },
+    {
+     "cliente": "Moro sim, marca específica não / Precisava de pneus mais em conta pra por nas rodas de trás",
+     "loja": "Repetiu por engano a saudação padrão. Depois perguntou quantos pneus o cliente precisava, ofereceu desconto para 1 ou 2 unidades e passou o preço de R$ 296 a unidade à vista."
+    },
+    {
+     "cliente": "Eita, aumentou bem desde da ultima vez",
+     "loja": "Confirmou em áudio que o pneu era 339 e aumentou cerca de 56 reais, destacando que na promoção ele paga 3 e leva 4"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Tem alguma específica que você está buscando? Pois, no dia de hoje, realmente, a opção que eu continuo tendo é a que eu tinha mandado para você no orçamento, mas eu posso ver se algum distribuidor meu tem o que você estiver buscando.",
+    "E você mora aqui em Luziânia mesmo, moço?",
+    "Agora, o pneu GP Premium ... ele é um pneu ecológico que nós fazemos. Sim, ele entrará na categoria de remodelagem, só que linha Premium, que é completamente diferente dos pneus que são remoldes convencionais. Se você quiser, eu te mando uma foto, faço um vídeo aqui para você poder analisar.",
+    "De todo modo, eu vou te mandar aqui a nossa localização, pois se de repente houver a possibilidade, você vem aqui na loja, tá bom?",
+    "Você gostaria de agendar um dia, um horário que fica bom para você, para você vir aqui para nós conversarmos?",
+    "Olái! Eu sou a  *Josy* 👋\nQual a medida dos pneus que você precisa hoje?",
+    "Você pode colocar o 205,60,15, que é o liso. Ele dá para fazer por 289, se for no débito ou no Pix, e tem as opções de parcelamento. Nós duas podemos negociar perfeitamente tudo isso, tá?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente diz que achou caro, que está acima do orçamento, que encontrou mais barato em outro lugar ou que o preço aumentou",
+    "acao": "orientar",
+    "resposta": "Acolha em uma frase curta e simpática, sem pedir desculpa pelo preço e sem só lamentar. Nunca repita a saudação nem peça a medida de novo se ela já foi informada.\n\nSe o cliente disser que o preço mudou, confira na conversa se a medida é a mesma do orçamento anterior e explique a diferença com calma. Senão, pergunte o carro e quantos pneus ele precisa, e ofereça pela TAB.7 uma condição melhor: a opção mais em conta compatível, o valor à vista em dinheiro (Pix não tem desconto), o parcelamento em até 10x ou o compre 3 leve 4, se valer para o pneu.\n\nSe ele comparar com remold comum, chinês ou preço de internet, reforce que o GP Premium é remold linha premium, com borracha padrão europeu e garantia de 2 anos e 60 mil km ou dinheiro de volta. Feche convidando a passar na loja ou perguntando qual dia fica bom pra ele vir.",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:objecao",
+   "audios": [
+    {
+     "midia": "/midias/3EB08DEF33C8A87A4A0FCF_128042.ogg",
+     "transcricao": "Na medida que você quer, eu tenho ele bem borrachudo. Nossa, pneu muito bom. Inclusive, eu uso aqui na caminhonete do meu irmão.",
+     "duracao": 9,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB08316E73B6B5A70E561_911913.ogg",
+     "transcricao": "É que eu trabalho com produtos que realmente são de qualidade, né? Mais barato nós sabemos que tem, só que...",
+     "duracao": 6.6,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "nao_sabe_medida",
+   "titulo": "Cliente não sabe a medida do pneu",
+   "quando": "Cliente diz que não sabe ou não lembra a medida, ou informa só o aro (ex.: 'aro 15')",
+   "frequencia": 72,
+   "respondidasPelaLoja": 68,
+   "taxaSucesso": 0.63,
+   "comoJosyFaz": "A Josy não trava a conversa esperando a medida: se o cliente não sabe, ela pede logo o carro para orçar com a medida original. Quando o cliente manda só o aro, ela explica de forma simples que aquilo é só o aro e pede a medida completa da lateral ou o modelo do carro. É curta e gentil, às vezes em áudio rápido tipo 'Qual é o seu carro?'. Se o cliente fica de olhar depois, ela concorda e retoma no dia seguinte com um bom dia pedindo a medida ou o carro.",
+   "exemplos": [
+    {
+     "cliente": "Aro 15",
+     "loja": "Repetiu a pergunta da medida por texto várias vezes e pediu o carro caso não soubesse a medida"
+    },
+    {
+     "cliente": "Áudio inaudível/sem sentido",
+     "loja": "Áudio pedindo o carro para verificar a medida original e fazer orçamento"
+    },
+    {
+     "cliente": "(sem nova mensagem)",
+     "loja": "Áudio curto: 'Qual é o seu carro?'"
+    },
+    {
+     "cliente": "É aro 16; o rapaz da entrada passou a numeração para você, parece que são dois tipos de aro 16",
+     "loja": "Respondeu em áudio que tem sim e que ele pode vir"
+    },
+    {
+     "cliente": "Não lembro, daqui a pouco olho e te mando",
+     "loja": "Perguntou o carro e se sabia ao menos o aro"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Se você não souber a medida dos pneus me fala qual é seu carro",
+    "Como eu não sei qual é a medida que você está utilizando aí no seu carro, me diz qual é que eu verifico pelo menos com a opção original para fazer um orçamento para você, tudo bem?",
+    "Olá, vamos dar continuidade aqui na sua negociação?",
+    "Alguns dias atrás nós estávamos conversando aqui a respeito dos pneus para o seu carro. Ainda está precisando?",
+    "Eu vou te mandar aqui sua localização só para ficar registrada na nossa conversa, tá bom? Aí o senhor vem aqui na fábrica GP Premium.",
+    "Sim, tem sim. Pode vir sim, tá?",
+    "O senhor tá vindo com o carro já pra fazer a montagem, né?",
+    "Você está com disponibilidade de conversarmos agora?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente diz que não sabe ou não lembra a medida do pneu, ou informa apenas o aro",
+    "acao": "responder",
+    "resposta": "Sem problema! 😊 O número do aro sozinho não basta, a medida completa vem escrita na lateral do pneu.\n\nSe não conseguir olhar agora, me diz qual é o seu carro (modelo e ano) que eu faço o orçamento com a medida original, tá bom?",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:pedir_medida_repetida",
+   "audios": [
+    {
+     "midia": "/midias/A523E375A8B5BDFDBBD8ED066A8DFB95_642619.ogg",
+     "transcricao": "Se você não souber a medida dos pneus que você precisa, me informa qual é o seu carro que eu faço um orçamento com a medida original.",
+     "duracao": 8.8,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB0257162238F3C66D1CE_774056.ogg",
+     "transcricao": "Qual é o seu carro?",
+     "duracao": 2,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB0DF3A6EF460263DBC1D_700598.ogg",
+     "transcricao": "Se você não souber a medida, me diz qual é o seu carro, que eu faço o orçamento com a medida original.",
+     "duracao": 6.8,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "pergunta_horario",
+   "titulo": "Horário de funcionamento da loja",
+   "quando": "Cliente pergunta que horas a loja abre ou fecha, se abre no sábado ou se fecha para o almoço, geralmente antes de passar na loja.",
+   "frequencia": 68,
+   "respondidasPelaLoja": 67,
+   "taxaSucesso": 0.64,
+   "comoJosyFaz": "A Josy responde rápido e direto, quase sempre por áudio curto, com o horário completo: segunda a sexta das 8h às 18h, sem fechar no almoço, e sábado das 8h ao meio-dia. Quando o cliente diz que vai passar, ela reforça que pode vir tranquilo e já oferece a localização ou manda foto da fachada. Isso funciona porque tira a dúvida de uma vez e deixa o cliente com o caminho pronto para ir à loja. Se ainda não sabe a medida, aproveita para perguntar e já deixar os pneus separados.",
+   "exemplos": [
+    {
+     "cliente": "Não comprei ainda, deixei pro final de semana; vocês abrem? Vou dar entrada e parcelar pra diminuir a prestação",
+     "loja": "Confirmou que sábado abre às 8h e respondeu 'Tá jóia, pode deixar'"
+    },
+    {
+     "cliente": "Amanhã vocês funcionam até que horas?",
+     "loja": "Mensagem automática repetida, depois informou sábado das 08:00 às 12:00 e mandou áudio dizendo que daria bom dia ao abrir e perguntando se sabia a localização"
+    },
+    {
+     "cliente": "Não dá para agendar, tenta hoje ou amanhã; ficam abertos até 18h?",
+     "loja": "Informou horário seg-sex 8h às 18h e sábado 8h ao meio-dia; mandou foto da fachada"
+    },
+    {
+     "cliente": "Vc abrem as 08:00hs?",
+     "loja": "Respondeu por áudio que no dia seguinte a loja abre às 8h e fecha ao meio-dia, enviou uma foto e confirmou a medida 215/65/16"
+    },
+    {
+     "cliente": "Volta das 11 estou subindo aí",
+     "loja": "Mandou mensagem padrão por engano e depois áudio confirmando que não fecham para o almoço"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Qual a medida dos pneus que você precisa hoje?",
+    "eles estão na promoção Compre 3 e leve 4",
+    "Posso enviar os pneus para uma borracharia que me ajuda muito, fica ali no Novo Gama, se for de seu interesse me informa.",
+    "Fiquei aqui aguardando ela vir aqui, mas eu creio que ela não veio. Vocês já realizaram a compra?",
+    "Sim, sábado abre sim. Oito horas nós já estamos com a loja aberta.",
+    "Pois o original é 205/55/16 podendo chegar até 205/60",
+    "Eu posso mandar os pneus para o novo Gama, tá? Tem uma borracharia que me ajuda bastante nessas horas e eu posso mandar os pneus para lá, se for de seu interesse.",
+    "Consegui um desconto para ti!"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente pergunta o horário de funcionamento, se a loja abre no sábado ou se fecha para o almoço",
+    "acao": "responder",
+    "resposta": "Nosso horário é de segunda a sexta, das 8h às 18h, sem fechar para o almoço 😊 Aos sábados atendemos das 8h ao meio-dia, e domingo é fechado.\n\nPode vir tranquilo! Quer que eu te mande a nossa localização?\n\nSe quiser, já me passa a medida do seu pneu que eu deixo tudo separadinho pra você.",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:horario",
+   "audios": [
+    {
+     "midia": "/midias/3EB081699BF5AE8D5C3EAB_272279.ogg",
+     "transcricao": "Sim, aos sábados nós atendemos de 8 da manhã até o meio-dia.",
+     "duracao": 5.2,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB00FB1AF323E7074E189_643078.ogg",
+     "transcricao": "Nós não fechamos para o almoço, não.",
+     "duracao": 2.4,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB04CCA7896E6C0E7CFC3_978109.ogg",
+     "transcricao": "O nosso horário de atendimento é de segunda a sexta, de 8 da manhã até as 18, nós não fechamos para o almoço, e aos sábados de 8 até o meio-dia.",
+     "duracao": 11.7,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "compre3leve4",
+   "titulo": "Promoção compre 3 leve 4",
+   "quando": "Cliente pergunta se a promoção compre 3 leve 4 está valendo, como funciona ou se vale para o pneu/medida dele",
+   "frequencia": 63,
+   "respondidasPelaLoja": 60,
+   "taxaSucesso": 0.28,
+   "comoJosyFaz": "A Josy confirma na hora que a promoção existe e é só do GP Premium, em algumas medidas específicas. Se a medida do cliente entra, ela já faz a conta dos 4 pelo preço de 3 e lembra que a montagem está inclusa. Se não entra, ela avisa sem enrolar e já puxa outra vantagem: desconto à vista no dinheiro ou parcelamento em até 10x. Quando não sabe a medida, pergunta antes de qualquer coisa. O que mais dá certo é emendar uma pergunta de fechamento, tipo como prefere pagar ou se quer o valor parcelado.",
+   "exemplos": [
+    {
+     "cliente": "(aguardando resposta sobre promoção aro 13)",
+     "loja": "Informou oferta: 165/70/13 de R$ 279 por R$ 239 e 175/70/13 de R$ 299 por R$ 279 à vista"
+    },
+    {
+     "cliente": "Está promoção válida até quando?",
+     "loja": "Disse que a promoção é por tempo indeterminado e perguntou se a cliente mora em Luziânia"
+    },
+    {
+     "cliente": "Essa promoção leva 4 e paga três, como funciona?",
+     "loja": "Explicou que a promoção vale só nas medidas 195/65/15 e 215/55/17"
+    },
+    {
+     "cliente": "A promoção de comprar 3 e ganhar um acabou?",
+     "loja": "Áudio dizendo que a promoção não acabou e vale para 195/65/15 e 215/55/17"
+    },
+    {
+     "cliente": "GP premium comprando os 4 dá o valor de 1.000 isso?",
+     "loja": "Confirmou e disse que já faz a montagem"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Tá, mas de todo modo vamos negociar aqui que vai dar certo, tá? Como que você gostaria de realizar esse pagamento, meu jovem? Seria à vista mesmo? Você gostaria de parcelar?",
+    "Mas eu faço aqui pra você, pelo valor do débito, tá bom? Eu faço esse valor pra você passar no crédito à vista",
+    "você vindo com o carro aqui, eu já coloco os pneus pra você.",
+    "Olha... aro 13 está em oferta!",
+    "Quer que eu já te passe o valor parcelado?",
+    "Mora aqui em Luziânia-Go?",
+    "Se quiser gravo um video...mando foto para ficar mais claro.",
+    "Tem garantia de 2 anos!"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente pergunta sobre a promoção compre 3 leve 4 (se está valendo, como funciona ou se vale para o pneu dele)",
+    "acao": "orientar",
+    "resposta": "Confirme de forma curta e simpática que a promoção compre 3 leve 4 está valendo e é para o pneu GP Premium, mas só em algumas medidas. Se ainda não souber a medida do cliente, peça a medida antes de falar de valor.\n\nCom a medida em mãos, confira na TAB.7 se ela entra na promoção. Se entrar, mostre o total dos 4 pneus pagando 3, lembre que a montagem está inclusa e que tem garantia de 2 anos e 60 mil km. Se não entrar, explique com gentileza que nessa medida a promoção não vale e ofereça o preço da medida dele, com o desconto à vista no dinheiro e a opção de até 10x no cartão.\n\nFeche com uma pergunta: como o cliente prefere pagar, à vista ou parcelado, e se quer já deixar o orçamento encaminhado.",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:promocao_leve4",
+   "audios": [
+    {
+     "midia": "/midias/3EB06E4B990276462DBC82_596344.ogg",
+     "transcricao": "Certo, perfeito. Por que você não aproveita a promoção, compre 3 e leve 4? Sai mais no lucro para você.",
+     "duracao": 9.5,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "pergunta_garantia",
+   "titulo": "Pergunta sobre garantia do pneu",
+   "quando": "Cliente pergunta se o pneu tem garantia, quanto tempo dura ou quantos km roda",
+   "frequencia": 38,
+   "respondidasPelaLoja": 37,
+   "taxaSucesso": 0.46,
+   "comoJosyFaz": "A Josy responde na hora, curto e seguro: 2 anos de garantia, e quase sempre já emenda que roda 60 mil km, igual às marcas nacionais. Quando faz sentido, reforça que o GP Premium é o pneu mais vendido. Explica que a garantia cobre defeito de fabricação e que, com o carro alinhado e os pneus calibrados, ele roda tranquilo. O que mais funciona é responder direto e logo puxar a conversa de volta para a medida ou a visita, sem textão.",
+   "exemplos": [
+    {
+     "cliente": "Tem alguma garantia ou prazo?",
+     "loja": "Respondeu que tem garantia de 2 anos"
+    },
+    {
+     "cliente": "E a garantia?",
+     "loja": "Informou garantia de 2 anos e perguntou se mora em Luziânia"
+    },
+    {
+     "cliente": "Se der defeito ou rasgo, como fica?",
+     "loja": "Explicou garantia para defeito de fabricação, rasgo é causa externa; mandou texto com o que não é defeito (bolhas, desgaste, cortes)"
+    },
+    {
+     "cliente": "Consegue colocar no nome dele a garantia?",
+     "loja": "Aceitou, pediu o nome e confirmou por áudio se era ele quem iria buscar"
+    },
+    {
+     "cliente": "Esse de 265.00 tem garantia de quanto tempo?",
+     "loja": "Respondeu: 2 anos"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Olá, bom dia, tudo bem com você? Por gentileza, só preciso que você me diga qual que é a medida dos pneus que você precisa, que aí eu consigo realizar o seu orçamento.",
+    "Somente no modelo Adventure",
+    "Sim, claro!",
+    "Se quiser gravo um video...mando foto para ficar mais claro.",
+    "Tem garantia de 2 anos!",
+    "os pneus, eles são todos testados e aprovados pelo Inmetro, e a Maverick é uma caminhonete, diga-se de passagem bem pesada, né, e eu utilizei tranquilamente.",
+    "Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe: 👉 Seu *NOME* 👉 *A MEDIDA* dos pneus que você precisa.",
+    "Qual a medida dos pneus que você precisa hoje?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente pergunta se o pneu tem garantia, quanto tempo de garantia ou quantos km o pneu roda",
+    "acao": "responder",
+    "resposta": "Tem sim! O GP Premium tem garantia de 2 anos e 60 mil km ou seu dinheiro de volta 😊\n\nA garantia cobre defeito de fabricação. Com o carro bem alinhado e os pneus calibrados, ele roda tranquilo, igual às grandes marcas nacionais. É o pneu mais vendido aqui da loja!\n\nQual a medida que você precisa? Já te passo as opções 😉",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:garantia",
+   "audios": [
+    {
+     "midia": "/midias/3EB0D0822F91DE7FB924E7_94325.ogg",
+     "transcricao": "Garantia de 2 anos se, porventura, acontecer algum defeito de produto.",
+     "duracao": 6,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB0CF21218B843D0FDB9E_983096.ogg",
+     "transcricao": "Dois anos de garantia e se seu carro estiver bem alinhado, se mantiver os pneus sempre bem calibrados, vida útil dele é de 60 para 70 mil km tranquilamente, tá?",
+     "duracao": 13.7,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB06CA4BC3F99D1112762_300370.ogg",
+     "transcricao": "Os pneus têm garantia de 2 anos e, com questão à quilometragem, eles rodam 60 mil km, assim como grandes marcas nacionais famosas.",
+     "duracao": 10.3,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "informa_cidade",
+   "titulo": "Cliente informa a cidade onde mora",
+   "quando": "Depois que a loja pergunta se o cliente é de Luziânia, ou quando ele conta espontaneamente de onde é",
+   "frequencia": 36,
+   "respondidasPelaLoja": 35,
+   "taxaSucesso": 0.4,
+   "comoJosyFaz": "A Josy reage na hora, de forma curta e calorosa: se for Luziânia ou o Entorno, diz que é pertinho; se for mais longe, diz que estão relativamente próximos. O que fez a conversa andar foi emendar logo o próximo passo: pedir a medida, mandar o orçamento, oferecer parcelamento ou convidar para vir à loja sem precisar agendar. Quando ela respondia só 'Ah, sim!' ou 'Pertinho!' e parava, o cliente sumia. Responder rápido também conta: as respostas que demoraram horas não deram certo.",
+   "exemplos": [
+    {
+     "cliente": "Sim, aqui mesmo em Luziânia",
+     "loja": "Áudio oferecendo calcular parcelamento se quiser"
+    },
+    {
+     "cliente": "Gama DF",
+     "loja": "Áudio dizendo que estão relativamente próximos"
+    },
+    {
+     "cliente": "Jardim ingá",
+     "loja": "Repetiu por engano a saudação pedindo medida e disse 'Pertinho!'"
+    },
+    {
+     "cliente": "Sou de Valparaíso",
+     "loja": "Áudio dizendo 'Ah, é pertinho.'"
+    },
+    {
+     "cliente": "Sim Valparaíso",
+     "loja": "Áudio reforçando que precisa da medida, chamando pelo nome, e texto com exemplos de medida (235/75/15? 31x10,5R15?)"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Tem alguma específica que você está buscando? Pois, no dia de hoje, realmente, a opção que eu continuo tendo é a que eu tinha mandado para você no orçamento, mas eu posso ver se algum distribuidor meu tem o que você estiver buscando.",
+    "E você mora aqui em Luziânia mesmo, moço?",
+    "Qual a medida dos pneus que você precisa hoje?",
+    "No orçamento, está o valor UNITÁRIO do pneu. Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X",
+    "Se o senhor quiser parcelar, o senhor me fala que eu faço cálculo aqui, tá bom?",
+    "Certo, mas em quantos você quer parcelar?",
+    "Você é daqui de Luziânia mesmo?",
+    "Eu preciso que, por gentileza, você me diga qual que é a medida dos pneus que você precisa, pois 16 é apenas um aro. E nós somos aqui de Luziânia, Goiás."
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente informa a cidade ou o bairro onde mora ou trabalha",
+    "acao": "orientar",
+    "resposta": "Reaja de forma curta e simpática à cidade. Para Luziânia, Jardim Ingá, Valparaíso, Cidade Ocidental, Novo Gama ou Gama, diga que é pertinho de nós. Para Brasília, Taguatinga, Ceilândia, Recanto ou cidades mais distantes, diga que estamos relativamente próximos e que vale a pena vir, sem dizer 'pertinho'. NUNCA pare só no comentário: na mesma resposta, puxe o próximo passo. Se ainda não tem a medida, peça a medida dos pneus com um exemplo do formato. Se já tem a medida e ainda não mandou preço, mande o orçamento da tabela oficial e ofereça calcular o parcelamento em até 10x. Se o preço já foi enviado, convide para vir à loja, dizendo que não precisa agendar e que é só chegar para ser atendido, e ofereça mandar a localização. No máximo 3 bolhas, tom leve e sem formalidade.",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": null,
+   "audios": [
+    {
+     "midia": "/midias/3EB0D27856AC708936B7A8_356228.ogg",
+     "transcricao": "Ah, é aqui pertinho de nós.",
+     "duracao": 2.8,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "pede_preco_repetido",
+   "titulo": "Cliente repete pedido de preço sem informar a medida",
+   "quando": "Quando o cliente manda de novo a mesma mensagem pedindo preço de pneu, sem ter respondido à pergunta sobre aro ou medida",
+   "frequencia": 32,
+   "respondidasPelaLoja": 29,
+   "taxaSucesso": 0,
+   "comoJosyFaz": "Nos registros, a loja repetiu sempre a mesma pergunta sobre o aro, e isso não funcionou em nenhum caso: o cliente sumiu antes de receber o preço. O que falta é mudar a abordagem e facilitar a vida do cliente. Em vez de só perguntar o aro, explique onde achar a medida (na lateral do pneu) e ofereça caminhos mais fáceis: mandar uma foto da lateral ou dizer o modelo e o ano do carro. O tom continua curto e simpático, sem cobrar o cliente por não ter respondido. Se a mesma mensagem continuar chegando igualzinha todo dia, provavelmente é um envio automático, e não vale a pena responder sempre.",
+   "exemplos": [],
+   "frasesQueFuncionaram": [],
+   "sugestao": {
+    "situacao": "quando o cliente repete o pedido de preço de pneu sem ter informado o aro ou a medida",
+    "acao": "responder",
+    "resposta": "Oi! Pra te passar o preço certinho eu preciso saber a medida do pneu 😊\n\nEla vem escrita na lateral do pneu. Se ficar mais fácil, me manda uma foto da lateral do pneu ou me fala o modelo e o ano do carro que eu vejo pra você!",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:pedir_medida_repetida",
+   "audios": [],
+   "status": "pendente"
+  },
+  {
+   "id": "desistiu",
+   "titulo": "Cliente desistiu ou já resolveu",
+   "quando": "Quando o cliente avisa que não vai mais querer, que já resolveu em outro lugar ou agradece encerrando a conversa",
+   "frequencia": 34,
+   "respondidasPelaLoja": 25,
+   "taxaSucesso": 0,
+   "comoJosyFaz": "Nas conversas reais, o que mais atrapalhou foi reenviar a saudação pedindo a medida, como se nada tivesse acontecido, ou insistir com outra oferta e com preço logo depois do 'não'. Respostas secas como 'Certo.' ou 'Não tem.' também deixam um clima frio. O melhor é aceitar com simpatia, agradecer e deixar a porta aberta, lembrando de leve o diferencial da garantia sem pressionar. Assim o cliente sai com uma boa impressão e volta a chamar numa próxima necessidade.",
+   "exemplos": [],
+   "frasesQueFuncionaram": [
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Olái! Eu sou a *Josy* 👋 Qual a medida dos pneus que você precisa hoje?",
+    "Se for de seu intresse, os pneus da marca GP Premium, consigo enviar para o Novo Gama., Ficará mais proximo a você.",
+    "Quer foto dos pneus?",
+    "789,00 o distribuidor disse que faz esse preço no crédito a vista.",
+    "Precisa de quantos?",
+    "Esse é o pneu da marca GP Premium.",
+    "Você é mora aqui em Luziânia mesmo?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente diz que desistiu, que não vai querer, que já resolveu ou que fica para a próxima, agradecendo pela atenção",
+    "acao": "responder",
+    "resposta": "Tudo bem, sem problema! Obrigada pelo retorno 😊\n\nSe mudar de ideia ou precisar de pneu mais pra frente, é só chamar aqui. O GP Premium tem 2 anos de garantia ou 60 mil km, ou seu dinheiro de volta. Vai ser um prazer te atender!",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": null,
+   "audios": [],
+   "status": "pendente"
+  },
+  {
+   "id": "desistiu_comprou_outro_lugar",
+   "titulo": "Cliente avisa que já comprou em outro lugar",
+   "quando": "Cliente informa que desistiu, já comprou, já trocou ou já resolveu o pneu em outra loja",
+   "frequencia": 36,
+   "respondidasPelaLoja": 25,
+   "taxaSucesso": 0,
+   "comoJosyFaz": "Quando funciona, a Josy reconhece o que o cliente disse, agradece o retorno com simpatia e deixa a porta aberta, sem insistir nem empurrar venda. O que mais deu errado foi o robô mandar de novo a saudação pedindo a medida, como se não tivesse lido a mensagem, e isso precisa ser evitado. Respostas curtas como 'Combinado! Até breve' e agradecer desejando uma boa semana fecham bem a conversa. Ela não discute preço nem tenta contornar a decisão, só deixa claro que a loja está à disposição na próxima.",
+   "exemplos": [],
+   "frasesQueFuncionaram": [
+    "Qual a medida dos pneus que você precisa hoje?",
+    "A numeração está escrita na lateral do pneu.",
+    "Olái! Eu sou a  *Josy* 👋 Qual a medida dos pneus que você precisa hoje?",
+    "Seja bem-vindo(a) à Pneus GP Premium 🚗 Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe: 👉 Seu *NOME* 👉 *A MEDIDA* dos pneus que você precisa.",
+    "No dia de hoje temos todas essas opções a pronta entrega. No orçamento, está o valor UNITÁRIO do pneu. Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X",
+    "R$ 35,00 por roda o balancamento e alinhamento R$ 120,00 , mas são valores negociáveis.",
+    "Eu te encaminhei um orçamento alguns dias atrás e gostaria de saber se você quer que reserve os pneus para você. Consegue mandar o retorno, por gentileza?",
+    "Posso enviar áudio?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente avisa que já comprou, já trocou ou já resolveu os pneus em outro lugar e não vai mais precisar",
+    "acao": "responder",
+    "resposta": "Ah, que bom que deu tudo certo! 😊 Obrigada por avisar!\n\nQuando precisar de novo, é só chamar aqui. Lembrando que nossos pneus têm garantia de 2 anos e 60 mil km, e dá pra parcelar em até 10x no cartão.\n\nBoa viagem e até breve! 🙋🏼‍♀️",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:agradecimento",
+   "audios": [],
+   "status": "pendente"
+  },
+  {
+   "id": "pos_venda_problema",
+   "titulo": "Pós-venda: cliente com problema no pneu ou serviço",
+   "quando": "Cliente que já comprou volta reclamando de defeito no pneu (bucho, corte, rachadura, desgaste, trepidação, carro puxando), de serviço da oficina ou de ter descoberto que o pneu é remold",
+   "frequencia": 24,
+   "respondidasPelaLoja": 24,
+   "taxaSucesso": 0.38,
+   "comoJosyFaz": "Quando funciona, a Josy acolhe sem discutir e chama o cliente para trazer o pneu e a garantia para análise na loja: 'Traz aqui para analisar, sem problemas!'. Ela não dá diagnóstico de cara e não fica defendendo o produto. Em reclamação de atendimento ou de oficina, ela agradece o retorno e diz que vai levar o caso para a gerência. O que deu errado foi ignorar a reclamação, mandar a saudação pedindo medida, responder só com emoji ou bater boca sobre remold. Por isso, o robô acolhe, convida para a análise e passa para a atendente.",
+   "exemplos": [
+    {
+     "cliente": "Pneu e step estouraram a 50 km, borracharia quer cobrar caro, consegue alguém para trazer os pneus?",
+     "loja": "Disse que não tem carro, mas foi ver; pediu a localização e conseguiu um Uber por R$ 160, passando o carro, o nome e o contato do motorista"
+    },
+    {
+     "cliente": "Comprou os pneus; mecânico da oficina de alinhamento deixou porca do terminal frouxa e foi mal-educado",
+     "loja": "Primeiro mandou a saudação automática pedindo medida; depois áudio agradecendo e dizendo que repassaria à gerência, e texto informando que encaminhou ao gerente para apurar e fazer reunião com a equipe"
+    },
+    {
+     "cliente": "Instalei os pneus, carro trepidando e pulando a traseira, alinhamento ok, o que faço?",
+     "loja": "Respondeu após cerca de 1h15 e só depois de o cliente cobrar: 'Traz aqui para analisar, sem problemas!'"
+    },
+    {
+     "cliente": "Vou colocar outro pneu em Brasília e trago esse na volta",
+     "loja": "Orientou por áudio ir à oficina Supervia para tirar o pneu para análise e informou os horários do técnico (manhã até 11h30, tarde a partir das 13h)."
+    },
+    {
+     "cliente": "E os pneus chegou",
+     "loja": "Disse que não chegou e propôs negociar um pneu de outra marca, pois o da mesma marca está em falta, pedindo que a cliente escolhesse a forma de pagamento para negociar preço melhor com o fornecedor"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "O senhor gostaria que gravasse um vídeo para poder explicar?",
+    "O senhor também pode vir aqui na loja para nós podemos fazer a análise, tá joia? Que se de repente estiver com alguma coisa anormal, nós já verificamos também.",
+    "Imagina... o senhor é sempre muito bem vindo.",
+    "Se você estiver com tempo, passa aqui que nós já averiguamos o que foi que aconteceu aí com esse pneu",
+    "disponha, estamos te aguardando para verificar o que houve",
+    "Os pneus, eles já são colocados automaticamente, aí a parte nós negociamos o valor de balanceamento e alinhamento de direção, se realmente for necessário.",
+    "Se você conseguir trazer o dinheiro em espécie, eu consigo te dar um desconto.",
+    "Não, você pode vir aqui que te atendo normalmente, tá? Que não fecha para o almoço, não."
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente que já comprou reclama de problema no pneu, na instalação ou no serviço da oficina, ou diz que não sabia que o pneu era remold",
+    "acao": "atendente",
+    "resposta": "Poxa, sinto muito por isso! 😕 Obrigada por avisar a gente.\n\nPode trazer o pneu aqui na loja para analisarmos, sem problemas. Se puder, traz a garantia junto.\n\nSó um instante que já vou te atender por aqui, tá bom?",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:garantia",
+   "audios": [],
+   "status": "pendente"
+  },
+  {
+   "id": "retorno_cliente_antigo",
+   "titulo": "Retorno de cliente antigo",
+   "quando": "Cliente avisa que já comprou na loja antes e volta querendo mais pneus ou pedindo o mesmo da compra anterior",
+   "frequencia": 18,
+   "respondidasPelaLoja": 18,
+   "taxaSucesso": 0.67,
+   "comoJosyFaz": "Recebe com alegria e valoriza o retorno, mostrando que lembra do cliente. Quando ele quer o mesmo pneu da compra anterior e não sabe a medida, pede o CPF para conferir no cadastro. O que funciona é não parar no 'que bom': ela já puxa a venda perguntando a medida, a quantidade e quando ele pode passar na loja. Responder só 'perfeito' sem dar continuidade faz o cliente sumir.",
+   "exemplos": [
+    {
+     "cliente": "Acho que o último comprei aí com vocês",
+     "loja": "Pediu o CPF e confirmou no sistema a compra de 205/55 em 2022"
+    },
+    {
+     "cliente": "Comprei 2 em dezembro do ano passado; no começo de dezembro entro em contato para comprar mais 2",
+     "loja": "Áudio combinando de agendar uma conversa no início de dezembro"
+    },
+    {
+     "cliente": "Somos os donos da Lince aqui na BR, compramos sempre",
+     "loja": "Explicou que o WhatsApp passa por atualizações e desconfigura os contatos"
+    },
+    {
+     "cliente": "É o Roger de Franca, comprei dois pneus da Toro, preciso de mais dois e de pneu 17 perfil baixo",
+     "loja": "Disse que lembrava dele, foi verificar e confirmou por áudio que tinha"
+    },
+    {
+     "cliente": "Sou caminhoneiro de Betim, já comprei com vocês",
+     "loja": "Respondeu que no dia havia aquelas opções"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Pois o original é 205/55/16 podendo chegar até 205/60",
+    "Eu posso mandar os pneus para o novo Gama, tá? Tem uma borracharia que me ajuda bastante nessas horas e eu posso mandar os pneus para lá, se for de seu interesse.",
+    "Consegui um desconto para ti!",
+    "Desse jeito aí te ajuda, que se te ajudar, nós já vamos dando continuidade aqui na negociação, tá?",
+    "Você me diz pra quando que você precisa, que eu ajeito pra você, tá?",
+    "Você pode fazer o Pix lá, o rapaz gera o QR Code para você, fica tranquilo.",
+    "Qual a medida dos pneus que você precisa hoje?",
+    "No dia de hoje temos todas essas opções a pronta entrega."
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente diz que já comprou na loja antes e está voltando para comprar mais pneus",
+    "acao": "responder",
+    "resposta": "Que bom te ver de volta! 😊 Obrigada pela confiança!\n\nMe passa a medida do pneu que você precisa hoje. Se não lembrar, me manda seu CPF que eu confiro aqui a sua última compra.\n\nE me diz quantos pneus vai querer, que eu já te passo as opções!",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:saudacao_retorno",
+   "audios": [
+    {
+     "midia": "/midias/3EB01AA134E012429D33F8_957641.ogg",
+     "transcricao": "Me fala qual que é o seu CPF.",
+     "duracao": 3.2,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB077568174C80A5FF652_407817.ogg",
+     "transcricao": "Sim, sim, eu lembro de você.",
+     "duracao": 3,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "pergunta_marca",
+   "titulo": "Cliente pergunta a marca do pneu",
+   "quando": "Quando o cliente pergunta qual é a marca do pneu do anúncio ou do orçamento",
+   "frequencia": 18,
+   "respondidasPelaLoja": 18,
+   "taxaSucesso": 0.22,
+   "comoJosyFaz": "A Josy responde direto que é GP Premium, o pneu mais vendido da loja. Quando só fala o nome, o cliente costuma sumir; funciona melhor quando ela completa explicando que é remold de qualidade, com garantia, e já puxa o próximo passo (foto, medida ou localização). Se o cliente quer outra marca específica, ela verifica com os distribuidores.",
+   "exemplos": [
+    {
+     "cliente": "Qual a marca do pneu",
+     "loja": "Respondeu GP Premium"
+    },
+    {
+     "cliente": "Qual a marca desse pneu mais barato?",
+     "loja": "Após ~6 min, áudio agradecendo a espera (loja lotada) e informando que é marca GP Premium"
+    },
+    {
+     "cliente": "Esqueci de perguntar qual a marca, se é Pirelli, Goodyear...",
+     "loja": "Respondeu que a marca é GP Premium, conforme o anúncio"
+    },
+    {
+     "cliente": "Qual é a marca do pneu?",
+     "loja": "Respondeu 'GP Premium', mandou foto e ofereceu localização"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Posso separar os pneus aqui para vocês?",
+    "A senhora vem mesmo, que eu tenho o último jogo desses pneus. Eu vou reservar eles aqui para a senhora.",
+    "Os 4, é o jogo que eu já estou reservando aqui para a senhora, porque esses pneus eles vendem demais",
+    "Se for à vista, dá pra fazer mil reais.",
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Mas eu vou fazer o seguinte, eu vou ver com o distribuidor se ele tem. Assim que ele me responder, eu te passo direitinho qual a marca que ele vai ter a pronta entrega e o preço também, tá?",
+    "No dia de hoje temos todas essas opções a pronta entrega.",
+    "Obrigada por aguardar que a nossa loja hoje está lotada. Esse é o pneu da marca GP Premium, tá?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente pergunta qual é a marca do pneu",
+    "acao": "responder",
+    "resposta": "É o pneu da marca GP Premium, o mais vendido aqui da loja! 😊\n\nÉ remold com borracha padrão europeu e controle de qualidade, com garantia de 2 anos e 60 mil km ou seu dinheiro de volta.\n\nSe estiver procurando alguma marca específica, me fala que eu verifico pra você. Quer que eu te mande uma foto do pneu?",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:remold",
+   "audios": [
+    {
+     "midia": "/midias/3EB0C4390C51FB4622ECED_901629.ogg",
+     "transcricao": "São os pneus da marca GP Premium.",
+     "duracao": 2.3,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "comprou_em_outro_lugar",
+   "titulo": "Cliente avisa que já comprou em outro lugar",
+   "quando": "Cliente informa que já comprou ou trocou os pneus em outra loja",
+   "frequencia": 14,
+   "respondidasPelaLoja": 11,
+   "taxaSucesso": 0,
+   "comoJosyFaz": "Quando a cliente avisa que já resolveu, o erro mais comum foi o robô mandar de novo a saudação pedindo a medida, o que soa como se ninguém tivesse lido. O que funciona é reconhecer na hora, agradecer o retorno com simpatia e deixar a porta aberta para a próxima vez, sem insistir nem discutir preço. Uma lembrança leve da garantia de 2 anos ajuda a marcar a loja para uma próxima compra.",
+   "exemplos": [],
+   "frasesQueFuncionaram": [
+    "Posso te passar o orçamento de outra opção, que inclusive está sendo muito mais utilizada do que essa daí, do seu orçamento?",
+    "Qual é o carro?",
+    "Que benção... temos sim! Estou finalizando o seu orçamento.",
+    "Até às 18, você chegando aqui até 5 e meia, mais ou menos, a tempo de já instalar os pneus para você.",
+    "Olái! Eu sou a  *Josy* 👋 Qual a medida dos pneus que você precisa hoje?",
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Para qual veiculo usa essa medida?",
+    "Pode ser outro modelo?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente avisa que já comprou ou já trocou os pneus em outro lugar",
+    "acao": "responder",
+    "resposta": "Que bom que deu tudo certo! Obrigada por avisar 😊\n\nQuando precisar de novo, é só chamar aqui. Nossos pneus têm garantia de 2 anos e 60 mil km, e dá pra parcelar em até 10x no cartão. Boa estrada! 🚗",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": null,
+   "audios": [],
+   "status": "pendente"
+  },
+  {
+   "id": "fora_da_regiao",
+   "titulo": "Cliente de fora da região",
+   "quando": "Cliente informa que mora em outra cidade ou estado, ou percebe que o anúncio/DDD é de Luziânia e não da cidade dele.",
+   "frequencia": 11,
+   "respondidasPelaLoja": 10,
+   "taxaSucesso": 0.2,
+   "comoJosyFaz": "A Josy é gentil e tranquiliza o cliente quando ele pede desculpa pelo engano. Explica que a loja fica em Luziânia e que não trabalha com entregas, por isso pergunta a região antes de mandar orçamento. O que funciona é agradecer o contato e deixar a porta aberta caso ele passe pela cidade. Respostas secas como 'Não somos' ou só confirmar a cidade, sem acolher, deixam o cliente sem saída e a conversa morre mal.",
+   "exemplos": [
+    {
+     "cliente": "Moro em Petrópolis, Rio de Janeiro.",
+     "loja": "Informou em áudio que não atendem a região dele"
+    },
+    {
+     "cliente": "Não vi que o anúncio era pra Luziânia, sou de Goiânia. Desculpa.",
+     "loja": "Tranquilizou o cliente, explicou que pergunta a região quando o DDD é de fora porque não trabalha com entregas, agradeceu e se despediu."
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Qual a medida dos pneus que você precisa hoje?",
+    "No aro 17, existem diversas opções. Eu gostaria de saber qual é a medida dos pneus que o senhor precisa. E o senhor também mora aqui na cidade de Luziânia mesmo?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente diz que mora em outra cidade ou região, ou que achou que a loja era da cidade dele",
+    "acao": "responder",
+    "resposta": "Imagina, sem problema nenhum! 😊 Nossa loja fica aqui em Luziânia-GO e infelizmente não trabalhamos com entregas.\n\nMas se você passar por Luziânia ou tiver como vir até a loja, é só me chamar que eu te atendo com o maior carinho!\n\nObrigada pelo contato, fico te devendo essa! 🙏",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:localizacao",
+   "audios": [
+    {
+     "midia": "/midias/3EB07F02A5F65886D987E0_364712.ogg",
+     "transcricao": "Não, infelizmente, nós não temos lojas aí, não. Fico te devendo.",
+     "duracao": 7.5,
+     "vezesUsado": 1
+    },
+    {
+     "midia": "/midias/3EB0A8F61E63FAFCFAE4E3_642646.ogg",
+     "transcricao": "Entendo. Pois é, aqui é Luziânia. Eu não atendo a sua região, infelizmente.",
+     "duracao": 6.5,
+     "vezesUsado": 1
+    }
+   ],
+   "status": "pendente"
+  },
+  {
+   "id": "pos_venda_avaliacao",
+   "titulo": "Pós-venda: pedir avaliação no Google",
+   "quando": "Depois da venda ou do serviço concluído, quando o cliente confirma que deu tudo certo, responde 'ok', 'feito', 'posso sim' ou pede o link para avaliar a loja.",
+   "frequencia": 9,
+   "respondidasPelaLoja": 9,
+   "taxaSucesso": 0.56,
+   "comoJosyFaz": "A Josy aproveita o fim do atendimento, com o cliente satisfeito, para pedir uma avaliação no Google. Ela é curta e carinhosa: agradece a preferência, pede a avaliação e manda o link na hora. Quando o cliente diz que avalia depois, ela reforça o pedido com simpatia, sem pressionar. Fecha desejando um bom dia ou um bom final de semana, deixando a porta aberta para voltar.",
+   "exemplos": [
+    {
+     "cliente": "Feito",
+     "loja": "Pediu avaliação pelo link e agradeceu, desejando bom final de semana"
+    },
+    {
+     "cliente": "Lá pelas 9, 10 da noite eu abro o link e avalio",
+     "loja": "Pediu avaliação no Google por texto (com link) e por áudio"
+    },
+    {
+     "cliente": "Posso sim",
+     "loja": "Pediu avaliação no Google com link"
+    },
+    {
+     "cliente": "Ok",
+     "loja": "Enviou link para avaliar a loja e agradeceu"
+    },
+    {
+     "cliente": "Respondeu ao 'deu tudo certo?'",
+     "loja": "Pediu avaliação no Google por áudio e enviou o link"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "No dia de hoje todas essas 2 opções a pronta entrega.",
+    "O GP Premium está por apenas R$ 479,00 a unidade a vista e já instalamos os pneus.",
+    "Quer que te mando foto.. videio para explicar melhor?",
+    "É o pneu GP Premium, ele é um pneu ecológico que nós fazemos, ele vai entrar na categoria de remodelagem Premium, que não tem nada a ver com os pneus remoldes, convencionais, tá? Justamente por isso são os pneus mais vendidos que nós temos.",
+    "Uns 20 min",
+    "Agora está tranquilo.",
+    "Já separei os pneus aqui para o senhor, temos sim!",
+    "E continua o mesmo preço, tá bom?"
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente confirma que deu tudo certo depois da compra ou do serviço, ou concorda em avaliar a loja",
+    "acao": "orientar",
+    "resposta": "Agradeça a preferência de forma curta e simpática e peça que o cliente avalie a Pneus GP Premium no Google, enviando o link oficial de avaliação da loja logo em seguida, sem inventar o link.\n\nSe o cliente disser que avalia depois, agradeça e reforce com leveza, por exemplo: 'Combinado! Sua avaliação ajuda muito a gente 🙏'.\n\nFeche desejando um ótimo dia ou um bom final de semana e dizendo que a loja está à disposição. Não fale de preço nem de medida.",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": null,
+   "audios": [],
+   "status": "pendente"
+  },
+  {
+   "id": "informa_quantidade",
+   "titulo": "Cliente informa quantos pneus precisa",
+   "quando": "Quando o cliente diz quantos pneus quer (ex.: 'preciso de 2', 'são 4'), com ou sem ter passado a medida antes.",
+   "frequencia": 10,
+   "respondidasPelaLoja": 8,
+   "taxaSucesso": 0.5,
+   "comoJosyFaz": "A Josy recebe a quantidade de forma leve e já puxa o próximo passo, sem repetir a saudação nem pedir de novo o que o cliente já falou. Se ainda falta a medida, ela pergunta só a medida. Se a medida já está na conversa, ela passa o orçamento de forma clara (valor unitário, à vista e parcelado) e mostra empenho, tipo 'vou ver se consigo te atender'. Quando são 3 ou 4 pneus, vale lembrar da promoção compre 3 leve 4. O que não funcionou foi repetir a mensagem de saudação ou já sair pedindo nome completo, CEP e endereço antes de o cliente ver o preço.",
+   "exemplos": [
+    {
+     "cliente": "Então na segunda-feira vc me passa o valor, preciso de 4",
+     "loja": "Respondeu 'Combinado!'"
+    },
+    {
+     "cliente": "2 pneus",
+     "loja": "Áudio de saudação perguntando se o cliente mora em Luziânia"
+    },
+    {
+     "cliente": "36.490.056",
+     "loja": "Áudio perguntando quantos pneus"
+    },
+    {
+     "cliente": "Preciso de no mínimo 6, mas queria mesmo era 7",
+     "loja": "Áudio dizendo que ia confirmar e que achava que conseguia agilizar"
+    }
+   ],
+   "frasesQueFuncionaram": [
+    "Olha, o Michelin, ele está em falta, tá? Mas na segunda-feira eu posso verificar com os meus distribuidores se eles terão, que provavelmente vai ser somente através de encomenda, tá?",
+    "Certo. e precisa de quantos pneus?",
+    "Pois se for 1... ou 2 , eu consigo te dar um desconto neles.",
+    "Está em busca de alguma marca específica?",
+    "O frete, eu preciso que você me informe qual que é o seu CEP para que eu possa encaminhar para a transportadora fazer esse cálculo, está bem?",
+    "E serão quantos pneus?",
+    "Qual a medida dos pneus que você precisa hoje?",
+    "Eu posso mandar os pneus ali para uma borracharia que fica no Novo Gama e se você tiver interesse, nós podemos alinhar aqui e você pode ir lá para fazer a retirada e pode até mesmo realizar o pagamento."
+   ],
+   "sugestao": {
+    "situacao": "quando o cliente informa quantos pneus precisa",
+    "acao": "orientar",
+    "resposta": "Confirme a quantidade com simpatia e sem repetir a saudação nem perguntas já respondidas. Se a medida ainda não foi informada, peça só a medida (ex.: 'Certo! E qual a medida dos pneus?'). Se a medida já está na conversa, consulte a TAB.7 e passe o valor unitário e o total para a quantidade pedida, à vista e em até 10x no cartão. Lembre que à vista no dinheiro tem desconto (Pix não tem). Se forem 3 ou mais pneus e a medida estiver na promoção compre 3 leve 4, destaque isso. Feche convidando a vir à loja para montar na hora, em no máximo 3 bolhas curtas. Não peça nome completo, CEP ou endereço nessa etapa.",
+    "lojas": [
+     "72213a6c-31c5-410d-a6b4-504dfd223e2f"
+    ]
+   },
+   "ligadoA": "categoria:preco_medida",
+   "audios": [],
+   "status": "pendente"
+  }
+ ]
+}

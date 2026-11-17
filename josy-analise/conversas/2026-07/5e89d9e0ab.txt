@@ -1,0 +1,8 @@
+CONVERSA 5e89d9e0ab | contato: victor souza | 19/07/2026 10:56 até 20/07/2026 09:38 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 19/07/2026 (Sun) ---
+[10:56] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:58] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 20/07/2026 (Mon) ---
+[09:36] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:38] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

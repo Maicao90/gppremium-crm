@@ -1,0 +1,9 @@
+
+# [marcelo#1] "2010" depois do preco 175/65/14 + parcelamento
+  via=ia_livre motivoLivre=assunto_sem_bloco chaves=[]
+  > Pro Gol 2010 a medida original é a *175/70/14* da marca *GP Premium*, que sai por *R$ 279,00 à vista*.
+  > Quando você consegue passar aqui na loja?
+
+# [marcelo#2] "2010" depois do preco 175/65/14 + parcelamento
+  via=ia_livre motivoLivre=assunto_sem_bloco chaves=[]
+  > Pro Gol 2010, a medida original mais comum é a *175/70/14*. Esse a gente tem da marca *GP Premium* por *R$ 279,00 à vista*. Se o seu for da medida 175/65/14, o valor continua R$ 249,00 à vista.

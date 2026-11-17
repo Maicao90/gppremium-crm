@@ -1,0 +1,45 @@
+CONVERSA 47144c47d2 | contato: auto mecânica | 15/09/2026 11:02 até 15/09/2026 12:45 | 15 msgs do cliente, 19 da loja, 0 do robô
+
+--- 15/09/2026 (Tue) ---
+[11:02] CLIENTE: Bom dia
+[11:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:02] CLIENTE: 265/60/18 AT
+[11:03] CLIENTE: Dunlop ou Bridgestone
+[11:03] LOJA: [foto] *Josy:*
+precisa dessas marcas conforme solicitação anteriror?
+[11:03] CLIENTE: Isso
+[11:03] CLIENTE: Tive q adiar a Comp
+[11:03] CLIENTE: Mais agora terei q fazer a substituição
+[11:04] LOJA: *Josy:*
+entendo... vou fazer a cotação novamente, assim que me redponderem te informo
+[11:05] CLIENTE: Se vc não tiver a pronta entrega não precisa fazer não pois irei por hj
+[11:05] LOJA: *Josy:*
+essas macas não temos a pronta entrega
+[11:05] CLIENTE: Agora se já tiver em estoque pode fazer q depende do valor fecharmos hj
+[11:05] CLIENTE: Tranquilo então
+[11:06] CLIENTE: Grato pelo retorno
+[11:41] LOJA: [foto]
+[11:43] LOJA: [áudio] "Oi, eu obtive o retorno aqui da Michelin e da Bridgestone. O da Michelin é aquele modelo mais borrachudo, já o Bridgestone é o modelo HT para o asfalto. No orçamento está o valor de apenas um pneu, na primeira coluna está o valor à vista, que é correspondente a débito e PIX e tem as opções de parcelamento em até 10 vezes. As opções continuam sendo apenas através de encomendas, chegam em 3 dias úteis e o distribuidor solicita um pagamento calção de R$ 200,00 para poder fazer a reserva dos pneus para ti. E assim que os pneus chegarem, você vindo aqui para realizar o restante do pagamento, esse valor do pagamento calção vai ser abatido do total da sua compra, tá?"  {audio:midias/3EB08DF292ADED3ADE203D_817749.ogg}
+[11:44] LOJA: [áudio] "O Dunlop, por hora, não obtive nenhum retorno, tá?"  {audio:midias/3EB0834D1E3A0BD22B12CB_173724.ogg}
+[11:44] LOJA: [áudio] "E assim, vejo que vocês têm busca de pneus de marcas nacionais, certo? Eu tenho aqui a pronta entrega, nessa medida, outras opções de marcas. Eu vou te mandar um orçamento aqui sem compromisso, apenas para você analisar, tá joia?"  {audio:midias/3EB00A6887CB66A1E541FE_654487.ogg}
+[11:45] LOJA: [foto]
+[11:46] LOJA: [áudio] "Aqui na nossa empresa, eu tenho a própria entrega, os pneus chineses da marca Maxx. A unidade está por R$ 663,00, se o pagamento for à vista. E tem os pneus da nossa empresa, que eles são os pneus mais vendidos. São pneus ecológicos que entram na categoria de remodelagem, porém, Premium. Eles estão no modelo ATR, por R$ 559,00, se o pagamento for à vista. E o modelo Brutz, que é aquele bem off-road, está por R$ 599,00. Essas opções, tenho elas aqui à pronta entrega, está bem? Sim."  {audio:midias/3EB0C1C826FF045EDA977F_441301.ogg}
+[11:52] CLIENTE: Esse carro e pra uso pessoal da minha família então colocarei peneus de qualidade
+[11:54] LOJA: *Josy:*
+Meu irmão usa na Amarok, não tem restrição de uso.
+[11:55] LOJA: [foto]
+[11:56] LOJA: [áudio] "Eu tenho aqui, conforme o orçamento que eu te encaminhei, a pronta entrega, a marca Maxx, que é um pneu para o asfalto, se for de seu interesse, eles eu tenho aqui a pronta entrega, agora, realmente, o Michelin, o Bridgestone, que as opções que o distribuidor me mandou, esses serão somente por encomenda, leva uns 3 dias úteis para poder chegar, tá? Aí, analisa e me dá um retorno, por gentileza."  {audio:midias/3EB095EC893D7F403387B3_516985.ogg}
+[12:27] LOJA: *Josy:*
+Oi... consegui retorno da Dunlop
+[12:27] LOJA: [foto]
+[12:27] CLIENTE: Agradecemos sua mensagem. Não estamos disponíveis no momento, mas responderemos assim que possível.
+[12:27] LOJA: *Josy:*
+🙋🏼‍♀️
+[12:30] LOJA: *Josy:*
+Oi... consegui retorno da Dunlop!
+[12:36] CLIENTE: Mais não posso esperar nao
+[12:37] CLIENTE: Já tô indo montado
+[12:37] CLIENTE: Montar preciso pra hj com urgência
+[12:45] LOJA: *Josy:*
+Certo...entendi.

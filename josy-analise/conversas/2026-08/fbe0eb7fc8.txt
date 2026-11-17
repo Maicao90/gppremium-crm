@@ -1,0 +1,64 @@
+CONVERSA fbe0eb7fc8 | contato: Pedro | 26/08/2026 11:15 até 11/09/2026 16:50 | 13 msgs do cliente, 30 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[11:15] LOJA: *Josy :*
+Bom dia, sr Pedro Paulo!
+[11:15] LOJA: [foto]
+--- 29/08/2026 (Sat) ---
+[09:38] LOJA: *Josy:*
+Bom dia, Pedro...como vai? dias atrás você passou aqui por nossa loja em Luziania...
+[09:42] LOJA: *Josy:*
+Ainda tem interesse nos pneus?
+[09:52] CLIENTE: Bom dia tive sim
+[09:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:52] LOJA: *Josy:*
+Ah, muito bom!
+[09:53] CLIENTE: Semana q vem passo aí ok
+[09:53] CLIENTE: Não deu pra mim ir aí
+[09:53] LOJA: *Josy:*
+É corrido realmente, te entendo perfeitamente.
+[09:54] CLIENTE: Olhei uns Peneus aí vc pode me mandar uma foto deles por favor só pra mim fazer uma comparação aq
+[09:56] LOJA: *Josy:*
+Claro! Posso sim!
+[10:01] LOJA: [vídeo]
+[10:33] CLIENTE: [áudio] "Isso, foi esse aí mesmo que eu olhei. Eu vou ver se o Luz passa aí na segunda-feira e pega esse pneu para mim, aí ele já passa no cartão aí, vou ver com ele aqui, tá bom?"
+[10:34] LOJA: [áudio] "Combinado, seu Pedro. Nossa, se o senhor viesse aqui com a caminhonete, seria ainda melhor que nós já fazemos a instalação deles, né? Você podia aproveitar."  {audio:midias/3EB089E1BD9FCC80C596D5_873303.ogg}
+[10:54] LOJA: [áudio] "Aí, Sr. Pedro, eu sei que o senhor lembra onde é aqui a nossa empresa, mas eu vou deixar a nossa localização aqui na conversa, tá bom?"  {audio:midias/3EB01527671E63C54A9B39_752545.ogg}
+[12:01] CLIENTE: [áudio] "Eu vou ver o que eu consigo fazer aqui. Eu vou sempre indo em Brasília, toda semana. Eu moro no município de Cristalina. Eu vou ver se dá de eu ir. Eu já vou nela."
+[12:02] LOJA: *Josy:*
+Si, perfeito!
+[12:02] LOJA: [foto]
+--- 01/09/2026 (Tue) ---
+[12:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:28] CLIENTE: [áudio] "Oi, Jorge. Boa tarde, tudo bom? A semana passada, a respeito dos pneus, não deu pra mim ir na Luziânia essa semana, eu acho que eu vou ir segunda-feira da semana que vem, tá? Você pode deixar os pneus aí pra mim, eu vou, passo o cartão, vocês já fazem a montagem deles pra mim, eu não vou dar conta de ir antes. Só consigo, eu acho que na segunda-feira, que eu tenho que levar minha filha no México, em Brasília, aí eu já passo aí na loja, pode ser?"
+[12:28] LOJA: [áudio] "Oi, seu Pedro, tudo jóia?"  {audio:midias/3EB0923E7C3CE6B67CD3E6_398798.ogg}
+[12:28] LOJA: *Josy:*
+Pode deixar
+[12:29] CLIENTE: [áudio] "Minha caminhonete eu nem estou andando, porque para mim ir eu acho que vou ter que colocar o estepe, eu saí aqui, acho que pegou uma pedra no pneu, já não estava muito bom, aí abriu um buraco, não deu conserto, eu vou pôr... já estou encostado aqui na garagem, mas eu vou pôr o estepe para mim ir até aí, mas deve ser na segunda mesa, tá bom? Se resolver antes eu te aviso."
+[12:32] LOJA: [áudio] "Sim, ficamos combinados, tá, Joia?"  {audio:midias/3EB0327000BF73ED40C5D4_238849.ogg}
+--- 03/09/2026 (Thu) ---
+[10:45] CLIENTE: Bom dia vê pra mim o preço desses Peneus aí pra um rapaz q trabalha comigo aq 175/70/13
+[10:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:47] LOJA: [áudio] "Oi Pedro, tudo jóia? Como é que você está?"  {audio:midias/3EB0CA0EF488DFE0CBFF09_856752.ogg}
+[10:47] LOJA: [áudio] "Olha, no aro 13, eu tenho aqui o pneu da GP Premium, né, que se for no débito ou no Pix, cada pneu está por R$ 269,00, mas se o pagamento for em dinheiro em espécie, ele já cai para R$ 265,00 cada."  {audio:midias/3EB022314D02D6A403B3E1_861812.ogg}
+[10:48] LOJA: [foto]
+[10:49] CLIENTE: [áudio] "Não, Jorge. Beleza, obrigado. Eu vou ver com ele aqui, que aí conforme for segunda eu vou ir para a pouso da caminhonete e eu trago para ele, tá bom?"
+[10:49] LOJA: [áudio] "Tá, Jó, então. Obrigada."  {audio:midias/3EB091C3F239CC32B15DB5_959997.ogg}
+[10:49] CLIENTE: [áudio] "É, mas eu esqueci, né? Segunda-feira é feriado, né? Vai ter que ser depois. Não tem essa feira?"
+[10:51] LOJA: [áudio] "Isso, segunda-feira é feriado."  {audio:midias/3EB0D6520F197EFB213CAC_705728.ogg}
+[10:51] LOJA: [áudio] "Ah, e pode passar aqui na terça, então."  {audio:midias/3EB016609680FDFF6DDBD3_333584.ogg}
+[10:52] CLIENTE: Ok obrigado
+[10:52] LOJA: [áudio] "Imagina, desde já tem aí um bom final de semana, tá bom?"  {audio:midias/3EB075B5CCCBA3C371068B_226757.ogg}
+--- 10/09/2026 (Thu) ---
+[16:36] LOJA: *Josy:*
+Oiii
+[16:37] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[14:23] LOJA: [áudio] "Oi Pedro, tudo joia? Vi que você viu o vídeo que eu fiz aí pra ti, né? Mas sei que na correria você não pode me responder. Eu vou encerrar aqui o seu atendimento, tá? Justamente pra não ficar enchendo esse WhatsApp de mensagens, porque fica chato. E como você já tem aí a nossa localização, né? A foto aqui da frente da loja, quando haverá possibilidade você vem aqui, tá bom? Obrigada pela atenção, bom final de semana."  {audio:midias/3EB0A73963C954758F7D44_941801.ogg}
+[16:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:46] CLIENTE: [áudio] "Oi Jorge, boa tarde, tudo bom? Eu não te respondi, ontem eu vi o vídeo mesmo, mas eu tava na estrada, aí não deu pra mim te responder, então eu tô meio sem tempo pra ir aí, mas assim que eu tirar um tempo aqui que eu puder, eu fui em Brasília, eu te mando mensagem te avisando, tá bom? É porque realmente agora, esses dias tá meio difícil de eu sair aqui da fazenda, é, eu até em Brasília toda semana, mas agora eu não tô indo mais, esses dias eu dei uma parada, mas assim que eu fui eu te falo aí, viu? Obrigado, desculpa não ter te respondido aí."
+[16:50] LOJA: [áudio] "Eu sei, homem, é corrido de manda-conta. Aí por isso que eu falei, olha, eu vou encerrar aqui o contato justamente para não ficar enchendo seu WhatsApp de mensagem, porque eu sei que acaba que atrapalha na correria aí, tá bom? Mas aí você, assim que tiver um tempo, como você tem aí a localização da nossa loja, você passa aqui, tá joia?"  {audio:midias/3EB0C76680321852799CF4_458187.ogg}

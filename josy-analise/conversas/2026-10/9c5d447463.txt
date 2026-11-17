@@ -1,0 +1,38 @@
+CONVERSA 9c5d447463 | contato: Magnum Rex | 06/10/2026 14:12 até 06/10/2026 17:24 | 11 msgs do cliente, 13 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[14:12] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:12] CLIENTE: Vcs tem pneu 205 40/17
+[14:12] CLIENTE: Jogo
+[14:13] CLIENTE: E vcs são de Luziânia
+[14:16] LOJA: *Josy:*
+Boa tarde!
+[14:16] LOJA: *Josy:*
+Sim, somos sim!
+[14:17] CLIENTE: Então posso ligar aí
+[14:17] LOJA: [foto]
+[14:17] LOJA: *Josy:*
+sim!
+[16:47] LOJA: *Josy:*
+Fabricio...
+[16:48] CLIENTE: Ola
+[16:49] CLIENTE: Minha mãe ia passar o cartão
+[16:49] CLIENTE: Mas ela em posse
+[16:49] LOJA: *Josy:*
+Entendo...
+[16:49] CLIENTE: Divisa da Bahia com minas
+[16:49] CLIENTE: Eu tô esperando ela
+[16:50] LOJA: *Josy:*
+já ouvi falar de Posse , mas não conheço...
+[16:50] CLIENTE: E perto da Bahia divisa com minas gerais
+[16:51] LOJA: *Josy:*
+Ah, sim!
+[17:23] LOJA: *Josy:*
+Bem, por ora vou encerrar seu atendimento para não encher seu whatsapp de mensagens.
+[17:23] LOJA: *Josy:*
+Assim que possível, venha até nossa loja, será um prazer receber você aqui!
+[17:23] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:24] LOJA: [foto]

@@ -1,0 +1,18 @@
+CONVERSA 2bfbbbfe80 | contato: Junio Gomes | 07/10/2026 22:30 até 08/10/2026 08:45 | 3 msgs do cliente, 5 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[22:30] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[22:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[22:31] CLIENTE: 195 55 r15
+--- 08/10/2026 (Thu) ---
+[08:17] LOJA: Bom dia, Junio
+[08:18] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:18] LOJA: [foto]
+[08:45] CLIENTE: 👍🏽
+[08:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

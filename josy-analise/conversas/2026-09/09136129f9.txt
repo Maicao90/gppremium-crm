@@ -1,0 +1,34 @@
+CONVERSA 09136129f9 | contato: Jhon Jhon 🇧🇷🖤 | 10/09/2026 06:54 até 18/09/2026 18:08 | 4 msgs do cliente, 14 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[06:54] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[06:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[06:55] CLIENTE: 195/65
+[07:23] CLIENTE: pneu 15
+[08:01] LOJA: *Josy:*
+Bom dia!
+[08:02] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:02] LOJA: [foto]
+[08:02] LOJA: *Josy:*
+Os pneus da marca GP Premium, estão em promoção compre 3 e leve 4
+[08:02] LOJA: *Josy:*
+Exemplo: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[08:05] CLIENTE: esse valor divide em quantas vezes ?
+[08:05] LOJA: *Josy:*
+Aqui seguem as opções de parcelamento.
+[08:07] LOJA: [áudio] "Oi bom dia, tudo bem? Um exemplo de pagamento para o pagamento à vista. Para parcelar, seguem as opções de parcelamento que são em até 10 vezes. O valor sofre uma pequena alteração, aumenta cerca de 3 reais por parcela apenas."  {audio:midias/3EB097984FE6BA1A120A8D_975061.ogg}
+[08:07] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0A33D02C034725C1C85_880198.ogg}
+--- 11/09/2026 (Fri) ---
+[13:24] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você?"  {audio:midias/3EB044087D4475AE27A7A4_557262.ogg}
+[13:25] LOJA: [vídeo]
+--- 18/09/2026 (Fri) ---
+[18:08] LOJA: *Josy:*
+Boa tarde!
+[18:08] LOJA: Eu vou encerrar seu atendimento para não encher seu whatsapp de mensagem.                                                                                                                   Se precisar futuramente é só chamar. Ou se possivel, venham até nossa loja.                                                                                                  Obrigada 👋🏻
+[18:08] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

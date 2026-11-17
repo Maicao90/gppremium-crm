@@ -1,0 +1,21 @@
+CONVERSA 592bf9cd32 | contato: José adrinezio | 07/10/2026 14:18 até 07/10/2026 14:23 | 3 msgs do cliente, 6 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[14:18] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[14:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:19] CLIENTE: Qual valor do pneu 195/60/15
+[14:19] CLIENTE: Mais em conta
+[14:20] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:20] LOJA: [foto]
+[14:21] LOJA: *Josy:*
+!Qula é seu carro?
+[14:22] LOJA: *Josy:*
+Pois tenho aqui pneus na medida 185/65/15 da marca GP Premium que estão em oferta...
+[14:23] LOJA: *Josy:*
+De R$ 289,00 por R$ 249,00 a vista

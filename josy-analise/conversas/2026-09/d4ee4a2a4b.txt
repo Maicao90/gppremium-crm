@@ -1,0 +1,21 @@
+CONVERSA d4ee4a2a4b | contato: Wilson Brandão | 10/09/2026 10:45 até 10/09/2026 15:28 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[10:45] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:45] CLIENTE: Pneu Speedmax Aro 20 Control SUV-S 255/55R20 110Y
+[10:45] CLIENTE: Você teria?
+[10:50] LOJA: *Josy:*
+Bom dia!
+[10:50] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[10:50] LOJA: *Josy:*
+E você mora aqui em Luziânia-Go?
+[10:51] CLIENTE: Moro no sudoeste
+[10:51] CLIENTE: Bsb
+[10:51] LOJA: *Josy:*
+ah, sim!
+[15:28] LOJA: [áudio] "Oi Wilson, tudo bom? Eu sou a Josi. Wilson, eu vou encerrar aqui o seu atendimento, está bem? Pois, infelizmente, eu não consegui te ajudar, mas em uma próxima ocasião, se você estiver aqui na nossa região, passa aqui na nossa loja, que será uma satisfação receber você aqui, está bem? Obrigada aí por ter entrado em contato conosco e tenha um bom final de semana, né?"  {audio:midias/3EB0673396DD9295C1BCAC_61301.ogg}
+[15:28] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

@@ -1,0 +1,45 @@
+CONVERSA a24f226d6e | contato: Dani  | 08/09/2026 09:56 até 11/09/2026 15:21 | 14 msgs do cliente, 15 da loja, 0 do robô
+
+--- 08/09/2026 (Tue) ---
+[09:56] CLIENTE: Olá
+[09:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:58] CLIENTE: Gostaria de saber se tem esse pneu
+[09:58] CLIENTE: [foto]
+[10:01] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa hoje?
+[10:03] CLIENTE: [foto]
+[10:04] LOJA: *Josy:*
+Não temos a pronta entrega. Será uma opção somente por encomenda.
+[10:04] CLIENTE: Quanto tempo é entrega
+[10:04] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[10:04] CLIENTE: E o valor ??
+[10:04] CLIENTE: Sim
+[10:05] LOJA: *Josy:*
+ão temos a pronta entrega
+[10:05] LOJA: *Josy:*
+Mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[10:05] CLIENTE: Tudo bem
+[10:19] LOJA: [foto]
+[10:19] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:19] CLIENTE: Quantos dias pra chegar ??
+[11:00] LOJA: *Josy:*
+3
+[11:09] CLIENTE: Tá deixa eu ver aqui
+[11:09] LOJA: *Josy:*
+Ok!
+--- 11/09/2026 (Fri) ---
+[15:14] LOJA: [áudio] "Oi, tudo bom com você? Alguns dias atrás eu te encaminhei ao orçamento dos pneus da XBRI e gostaria de saber se você pretende seguir com a negociação ou você consegue me dar um retorno para gentileza, Dani?"  {audio:midias/3EB090BC2CF6F4D965AE15_140357.ogg}
+[15:16] CLIENTE: Oiii tudo bem 🙏🏼
+[15:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:16] CLIENTE: Na verdade só estava fazendo uma pesquisa por enquanto 😬
+[15:18] LOJA: [áudio] "Certo. Bem, então vou encerrar aqui o seu atendimento, tá já, para não fechar no seu WhatsApp de mensagens, e vou te mandar a localização. Se houver a possibilidade, você passa aqui, tá, jóia? Obrigada pelo retorno, bom final de semana."  {audio:midias/3EB0839E6EA5DC269CD5F6_730667.ogg}
+[15:18] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:21] CLIENTE: Obrigada 🙏🏼
+[15:21] CLIENTE: Pra você tb

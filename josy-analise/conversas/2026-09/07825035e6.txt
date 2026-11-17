@@ -1,0 +1,26 @@
+CONVERSA 07825035e6 | contato: Alexandre Bueno | 16/09/2026 12:14 até 17/09/2026 17:46 | 2 msgs do cliente, 13 da loja, 0 do robô
+
+--- 16/09/2026 (Wed) ---
+[12:14] LOJA: *Josy:*
+Bom dia, Alexandre
+[12:16] LOJA: [foto]
+[12:17] LOJA: *Josy:*
+Pneu da marca GP Premium 235/70/16 se você trouxer  o pagamento em *dinheiro*  a unidade fica por R$ 471,00
+[12:18] LOJA: *Josy:*
+Já na medida 245/70/16 se você trouxer  o pagamento em *dinheiro*  a unidade fica por R$ 462,00 cada
+[12:23] LOJA: *Josy:*
+235/70/16 Brutus 👇🏻
+[12:23] LOJA: [foto]
+[12:23] LOJA: *Josy:*
+245/70/16 ATR 👇🏻
+[12:23] LOJA: [foto]
+[12:24] LOJA: *Josy:*
+Fabrica GP Premium
+[12:24] LOJA: [foto]
+--- 17/09/2026 (Thu) ---
+[09:34] LOJA: [áudio] "Oi Alexandre, bom dia, tudo jóia? Nós conversamos ontem a respeito dos pneus para sua caminhonete e eu gostaria muito de saber se você pretende seguir aqui com a negociação. Me dá o retorno, por gentileza, que eu já deixo os pneus separados para você, tudo bem?"  {audio:midias/3EB09B64A243268D0223AB_649169.ogg}
+[17:22] CLIENTE: Passei para meu colega que está interessado e ele ainda não decidiu.
+[17:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:22] CLIENTE: Boa tarde!
+[17:46] LOJA: [áudio] "Está bem, Alexandre. Como eu te mandei a foto na frente da nossa loja, se houver a possibilidade, já pede para ele vir aqui diretamente para nós conversarmos, está bem?"  {audio:midias/3EB0B2DBEBAA0F2190C5FC_476845.ogg}

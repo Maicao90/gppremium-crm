@@ -1,0 +1,33 @@
+CONVERSA 469e9fa1de | contato: Lucíllio Almeida | 13/10/2026 12:00 até 13/10/2026 14:56 | 11 msgs do cliente, 18 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[12:00] CLIENTE: Bom dia
+[12:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:00] CLIENTE: Você tem esse pneu
+[12:01] CLIENTE: [foto] Só que 235/70/R16?
+[12:01] CLIENTE: 235
+[12:01] CLIENTE: Valor?
+[12:13] LOJA: Bom dia, temos sim!
+[12:13] LOJA: Mas no modelo Brutus...
+[12:13] CLIENTE: Qual é esse modelo? Tem foto?
+[12:14] LOJA: [foto]
+[12:14] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:14] LOJA: 235/70/16 Brutus👇🏻
+[12:15] LOJA: [foto]
+[12:16] LOJA: [áudio] "Oi Lucilio, boa tarde, tudo bem contigo? Bem, o 235 vai ser nesse modelo Brutus, que ele é mais cravudo, tá? E ele tem aí um aumento de 10 reais no preço dele. Já o 245-70, ele é exatamente no modelo aí da foto que te encaminharam."  {audio:midias/3EB0D919CE57B52191894D_498080.ogg}
+[12:19] CLIENTE: O problema desse é que faz muito barulho né?
+[12:27] LOJA: Um pouco!
+[12:43] LOJA: Mas é muito particular essa questão de barulho, tem aqui na Amarok e a gente nem presta atenção.
+[14:07] LOJA: [áudio] "Você quer que reserva para você o 245?"  {audio:midias/3EB007EEC69BB845496E4B_687824.ogg}
+[14:22] CLIENTE: Ainda não
+[14:23] LOJA: Certo...
+[14:23] LOJA: Vou te encmainhar a nossa localização.
+[14:23] LOJA: Passa aqui para conversarmos pessoalmente!
+[14:32] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:34] LOJA: [foto]
+[14:44] CLIENTE: Sei onde é
+[14:44] CLIENTE: Na beira da BR 040
+[14:44] CLIENTE: Em Luziânia
+[14:56] LOJA: [áudio] "Isso, isso mesmo."  {audio:midias/3EB0C68A0F51805E3C6448_462584.ogg}
+[14:56] LOJA: [áudio] "Então, quando for o melhor momento para você, passa aqui, me procura, tá bom? Me chamo Josi."  {audio:midias/3EB0911FB38E1886CB4C80_379626.ogg}

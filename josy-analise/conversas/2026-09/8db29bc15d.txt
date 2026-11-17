@@ -1,0 +1,118 @@
+CONVERSA 8db29bc15d | contato: ANTÔNIO MATOS | 11/09/2026 19:06 até 19/09/2026 08:08 | 30 msgs do cliente, 49 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[19:06] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[19:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:06] CLIENTE: [áudio] "Pneus parece W4 2015, pneus originais. Dois pneus dianteiro, fica com a vista."
+--- 12/09/2026 (Sat) ---
+[08:12] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? O senhor mora aqui em Luziânia mesmo? Pode confirmar para mim só qual que é o aro da caminhonete do senhor?"  {audio:midias/A56277A9F2FCA462CB021BC6FAF127E0_867684.ogg}
+[09:27] CLIENTE: Sw4 2015 17 265
+[09:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:09] LOJA: [áudio] "Olá, bom dia, tudo jóia? Olha, para SW4 eu tenho aqui por 559 no modelo ATR, o pneu da marca GP Premium."  {audio:midias/A5FB2A24D2BA0DE9E321554C71782C15_274097.ogg}
+[10:25] LOJA: [áudio] "Você mora aqui em Luziânia, moço?"  {audio:midias/A59DABCA26A55939FF5EA51C1B9DFA06_317059.ogg}
+[10:45] CLIENTE: 265/65
+[10:45] CLIENTE: 17
+[10:46] CLIENTE: 112H
+[10:50] LOJA: A vista esse preço.
+Quer uma foto do pneu?
+[10:50] LOJA: Mora aqui em Luziânia?
+[13:22] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+--- 16/09/2026 (Wed) ---
+[15:20] LOJA: [áudio] "Oi Antônio, tudo jóia? No sábado nós estávamos conversando aqui a respeito dos pneus da caminhonete, eu até te mandei um áudio aí falando do preço dela, só que depois eu fiquei sem o WhatsApp aqui e hoje eu gostaria de saber se você pretende dar continuidade na negociação, se você mora aqui em Luziânia mesmo, assim que possível me dá o retorno, por gentileza."  {audio:midias/3EB0ED3DB0453C79FD14CF_487760.ogg}
+[16:54] LOJA: *Josy:*
+Oi... tudo bem?
+[16:54] LOJA: *Josy:*
+Pode me mandar áudio?
+[16:54] LOJA: *Josy:*
+Não consigo atender ligação.
+[16:55] LOJA: *Josy:*
+🙋🏼‍♀️
+[16:55] CLIENTE: Liga aqui
+[16:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:55] CLIENTE: Quero falar
+[16:55] CLIENTE: Qual número
+[16:56] CLIENTE: Tem pneus Goodyear 265/65 17
+[16:57] CLIENTE: Quanto
+[16:57] CLIENTE: Ou liga
+[17:01] LOJA: *Josy:*
+Não dispomos dessa opção de marca a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[17:01] LOJA: *Josy:*
+é neste aqui mesmo...é que meu fone não está conectando.
+[17:02] LOJA: *Josy:*
+O senhor mora aqui em Luziania-Go mesmo?
+[17:02] LOJA: *Josy:*
+E precisa deles para asfalto ou terra?
+[17:04] CLIENTE: [áudio] "Opa, não, eu moro aqui no Gama, meu jovem. Eu até tenho a opção aqui, já. Eu ia colocar hoje, mas não fui amanhã, eu vou descorrer do carro. Quero ver seu preço aí. É para asfalto, tá? Pode botar a opção dos dois valores aí, mas para asfalto. É pagamento à vista no Pix, tá bom? Ou dinheiro expresso, se quiser. Aí quando fica, eu vou viajar agora semana que vem, eu vou para a oficina de manhã, no caso, amanhã quinta, combinar aí, eu posso dar um pulo aí. Amanhã, depois do meio-dia, ou... ou sexta, cedinho. Dependendo do preço, tá? Você não... Por que não me ligou no seu telefone de outro ou passa o número? O negócio de zap fica muito ruim para a gente conversar. Pelo menos falar, né? O negócio de ficar escrevendo não dá certo, não. Sou do tempo, do tempo do novinho. Há, há, há, há. Vá, há."
+[17:05] CLIENTE: [áudio] "Tem outras marcas brasileiras também, bom ver os preços aí. Manda foto para mim do pneu com o valor. Coisa, é pagamento à vista, tá? Se der tempo eu boto amanhã mesmo, que eu vou para a oficina cedo, fazer revisão."
+[17:05] CLIENTE: [áudio] "É um SW4, SW4 2015, beleza? Pneus originais. Se tiver um mais larguinho também eu podia até pôr, mas é 2005, 65, 70."
+[17:05] LOJA: *Josy:*
+Não tenho da Goodyear, mas tenho da marca GP Premium. Vou te enviar o orçamento e foto para o senhor.
+[17:07] LOJA: [foto]
+[17:07] LOJA: *Josy:*
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:07] LOJA: *Josy:*
+Vou te mandar a foto.
+[17:11] CLIENTE: Ok
+[17:11] CLIENTE: [áudio] "Opa, tá bom. Aí vocês dão o colocado, a base de troca, né? E faz o quê? Faz alinhamento, balanceamento, cambagem por conta aí. Marca o horário aí. É dentro de Luziânia mesmo, é antes."
+[17:20] LOJA: *Josy:*
+265/65/17 da marca GP Premium ATR👇🏻
+[17:21] LOJA: [foto]
+[17:21] LOJA: 265/65/17 *Josy:*
+[17:21] LOJA: [foto]
+[17:22] LOJA: *Josy:*
+Não é a base de troca não,  a montagem já faço automaticamente, serviços de alinhamento...balanceamento e demais são cobrados a parte
+[17:23] CLIENTE: [áudio] "Não, pois é. Você só tem esses dois ou tem algum nacional aí?"
+[17:23] LOJA: [foto] *Josy:*
+Eles são nacionais.
+[17:24] CLIENTE: [áudio] "Olha, são nacionais essa marca? Eles são retificados? Recapados? Como é que é? Ou é no..."
+[17:25] CLIENTE: [áudio] "É, o endereço aí, eu perguntei, é antes de Luziânia quem vai do Gama, ou é dentro de Luziânia? Estava pensando, de repente eu podia ter pôr os 4 novo aí, pagamento à vista aí, no Pix, quanto ficaria, né?"
+[17:27] LOJA: *Josy:*
+Só um minuto... vou ver se meu microfone, arruma para te m andar áudio...
+[17:33] LOJA: [áudio] "Oi, Sr. Antônio, tudo jóia? Não, eles não são pneus recapados. Eles são pneus que nós produzimos, eles são de uma linha ecológica, tá? Ele entra na categoria de remodelagem apenas por questão técnica. Estamos há 10 anos no mercado e aqui eu faço pneus desde o aro 13 até o 18 de caminhonete. São pneus muito, muito bons mesmo, tá?"  {audio:midias/3EB099CE0BD130194A6950_472600.ogg}
+[17:33] LOJA: [áudio] "Aqui é na BR-040. Digamos que o senhor saiu aqui de Luziânia e está voltando aí para a sua cidade, então fica no sentido que volta, tá? Fica aqui do lado da Goiás Diesel e do Hotel Goiás."  {audio:midias/3EB087D95C7E06C23FADEC_747472.ogg}
+[17:34] LOJA: *Josy:*
+Meu irmão usa na Amarok, não tem restrição de uso, instalamos o modelo Brutus.
+[17:34] LOJA: [foto]
+[17:34] LOJA: [áudio] "Eu vou te mandar aqui a localização com a foto da nossa loja, tá?"  {audio:midias/3EB00E8627AB9FFAB93E7D_722545.ogg}
+[17:34] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:35] LOJA: [áudio] "Na BR, quando estiver quase chegando aqui em Luziânia, o senhor vai ver que tem uma bandeira amarela que está escrito, compre aqui. Aí vai ser bem na frente."  {audio:midias/3EB05F358F809F80739743_856256.ogg}
+[17:36] LOJA: [vídeo]
+[17:55] CLIENTE: Ok
+--- 17/09/2026 (Thu) ---
+[08:21] LOJA: [áudio] "Bom dia, Sr. Antônio. Tudo jóia?"  {audio:midias/3EB01730D435CF2E93844F_627160.ogg}
+[08:23] LOJA: [áudio] "Oi, Sra. Antônio. Estou passando para saber se o senhor vai conseguir vir aqui hoje. A senhora até me perguntou quanto que ficam os quatro pneus, né, para o pagamento Mupix. No modelo ATR, os quatro pneus ficam por R$ 2.236,00. E no modelo mais borrachudo, os quatro pneus ficam por R$ 2.396,00. Apenas alguns reais a mais."  {audio:midias/3EB09A2CE37A64FCBA537E_565661.ogg}
+[08:30] CLIENTE: [áudio] "Oi, fio, avô não. Pneus pra mim, eu só pego pneu de marca, é gudi, é outro. Você não tem, né?"
+[08:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:31] CLIENTE: [áudio] "Opa, é da godinha que eu quero. É 265-65, é 17."
+[08:31] LOJA: [áudio] "Neste momento eu não tenho, só que esse pneu aqui é o pneu mais vendido que eu tenho justamente por conta da qualidade, seu Antônio."  {audio:midias/3EB07E7B135DB5FDCC4DFE_627135.ogg}
+[08:31] CLIENTE: [áudio] "Parece que não tem, né? Eu liguei ontem."
+[08:31] LOJA: [áudio] "Dessa marca específica eu não tenho não, mas esse pneu aqui é o pneu mais vendido que eu tenho, igual eu te mostrei aí, usa na caminhonete do meu irmão, usa na caminhonete do meu pai, porque o pneu é bom mesmo."  {audio:midias/3EB0D989AADB0F20371F0A_960982.ogg}
+[08:33] LOJA: [foto]
+[08:34] LOJA: [áudio] "Olha, a pronta entrega eu não tenho, mas se o senhor quiser encomendar, eu consigo, tá? Aí, a unidade do pneu Goodyear vai ser naquele modelo Hangler. Está por R$ 1.234,00, tá? Se for pro pagamento no débito ou no Pix. Cada um está por R$ 1.234,00. Os quatro pneus vão ficar por R$ 4.936,00. Se o senhor quiser, eu encomendo esses pneus pro senhor, tá? E... Chega em três dias úteis. Aí, o distribuidor pede um pagamento calção de R$ 300,00 pra poder reservar os pneus pro senhor e mandar aqui pra nossa loja, tá?"  {audio:midias/3EB095DD9303B86CDB1856_970113.ogg}
+[08:36] CLIENTE: [áudio] "Não pode deixar, eu tô no Gama. Feito aí ecológico, não presta não. Pra mim não serve. Obrigado."
+[08:36] LOJA: [áudio] "O senhor já usou, por acaso, para eu falar que não presta. Então, eu trabalho com esses pneus há 10 anos. Os pneus que eu produzo aqui há 10 anos são pneus de primeira linha. Como o senhor não tem interesse neles, acabei de te falar que eu consigo os pneus da Goodyear para o senhor."  {audio:midias/3EB04D3A1F7F285A9892EF_599160.ogg}
+[08:37] CLIENTE: [áudio] "Não, filho. É porque eu não uso isso aí. Não é que não presta. Eu falei errado. Tá bom? É eu que não uso. Já tem os outros aqui no meu carro. Eu vou comprar só dois."
+[08:38] LOJA: [áudio] "Então, Sr. Antônio, vou repetir aqui mais uma vez. Eu consigo os pneus da Goodyear, tá? É o modelo Hangler. Se, de repente, for de seu interesse, nós podemos fazer a encomenda para o senhor, tá bom?"  {audio:midias/3EB06AA1F57DC6C231FF89_892213.ogg}
+[09:05] CLIENTE: Ok
+--- 18/09/2026 (Fri) ---
+[19:12] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[19:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:13] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+265.65.17
+--- 19/09/2026 (Sat) ---
+[08:08] LOJA: *Josy:*
+Bom dia, sr Antônio
+[08:08] LOJA: O Goodyear, lembra que informei que é somente por encomenda ☺️

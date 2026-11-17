@@ -1,0 +1,20 @@
+CONVERSA ac63ed3167 | contato: Shau Shau | 21/09/2026 10:21 até 21/09/2026 10:30 | 7 msgs do cliente, 6 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[10:21] CLIENTE: Ola boa tarde vc tem esse pneu 225/75
+[10:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:21] CLIENTE: [foto]
+[10:25] LOJA: *Josy:*
+Está em falta, no momento.
+[10:29] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB05B80A73D38DD10580F_248577.ogg}
+[10:29] CLIENTE: Valparaiso
+[10:29] LOJA: [áudio] "Se você não estiver com urgência, assim que eu tiver esses pneus no meu estoque, eu te informo."  {audio:midias/3EB0E8F00613AB7496FD75_137371.ogg}
+[10:29] CLIENTE: Ok
+[10:29] CLIENTE: Fico no aguardo
+[10:29] CLIENTE: Ta saindo a qt$
+[10:30] LOJA: *Josy:*
+🤷🏼‍♀️
+[10:30] LOJA: *Josy:*
+Como não temos a pronta entrega e não sei qual marca vai chegar, não consigo te passar um preço.
+[10:30] CLIENTE: Assim ok

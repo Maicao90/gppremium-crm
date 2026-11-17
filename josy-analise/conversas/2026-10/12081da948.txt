@@ -1,0 +1,14 @@
+CONVERSA 12081da948 | contato: Wemerson | 09/10/2026 15:18 até 09/10/2026 15:20 | 5 msgs do cliente, 5 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[15:18] CLIENTE: Boa tarde
+[15:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:18] LOJA: [áudio] "Oi, o Emerson, boa tarde. Como é que você está?"  {audio:midias/3EB0F0C01D2A3235BCEF5F_617492.ogg}
+[15:18] CLIENTE: 195/35/18
+[15:19] CLIENTE: Boa tarde tudo bem
+[15:19] LOJA: Teremos 185/35/18 te atende?
+[15:19] CLIENTE: Infelizmente não
+[15:20] CLIENTE: Qual o valor?? Desse 185
+[15:20] LOJA: [foto]
+[15:20] LOJA: No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

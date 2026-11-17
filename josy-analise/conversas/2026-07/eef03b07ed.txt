@@ -1,0 +1,8 @@
+CONVERSA eef03b07ed | contato: 556181395457 | 19/07/2026 10:24 até 20/07/2026 09:06 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 19/07/2026 (Sun) ---
+[10:24] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:26] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 20/07/2026 (Mon) ---
+[09:04] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:06] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

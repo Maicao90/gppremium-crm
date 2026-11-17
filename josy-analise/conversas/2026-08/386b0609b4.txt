@@ -1,0 +1,11 @@
+CONVERSA 386b0609b4 | contato: Radrielly | 20/08/2026 10:52 até 20/08/2026 10:54 | 4 msgs do cliente, 3 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[10:52] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:52] CLIENTE: Gostaria de ver o valor de um pneu
+[10:53] CLIENTE: 195/ 65 15
+[10:53] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu tenho aqui, sim, os pneus da marca GP Premium que estão na promoção Compre 3 e Leve 4. A unidade está por R$ 329,00 a vista. E você mora aqui na cidade de Luziânia, Goiás mesmo?"  {audio:midias/3EB0D4F40A58F65653383A_224390.ogg}
+[10:53] CLIENTE: Mandei errado
+[10:54] LOJA: [áudio] "Imagina, o que é isso?"  {audio:midias/3EB0008FF8E240A729FBE5_728755.ogg}

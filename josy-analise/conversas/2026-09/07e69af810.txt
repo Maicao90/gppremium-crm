@@ -1,0 +1,39 @@
+CONVERSA 07e69af810 | contato: sara | 27/09/2026 07:52 até 28/09/2026 10:02 | 6 msgs do cliente, 14 da loja, 0 do robô
+
+--- 27/09/2026 (Sun) ---
+[07:52] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[07:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:52] CLIENTE: 165/70/R13
+--- 28/09/2026 (Mon) ---
+[08:12] LOJA: *Josy:*
+Bom dia!
+[08:12] LOJA: *Josy:*
+Temos sim, pneus da marca GP Premium
+[08:13] CLIENTE: Poderia me dizer o valor
+[08:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:13] LOJA: *Josy:*
+DE R$ 279,00 por apenas R$ 239,00 a vista
+[08:13] LOJA: [foto]
+[08:13] LOJA: *Josy:*
+Estava fazendo o orçamento para você.
+[08:13] LOJA: *Josy:*
+ 
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:14] CLIENTE: Teria pneus da marca Dunlop
+[08:16] LOJA: *Josy:*
+No dia de hoje, somente essa marca.
+[08:29] LOJA: *Josy:*
+A senhor amora aqui em Luziânia-Go?
+[08:40] CLIENTE: Não, em novo gama
+[08:40] LOJA: *Josy:*
+Se eu conseguir Dunlop, a senhora consegue vir aqui?
+[08:41] CLIENTE: Fica longe?
+[10:02] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:02] LOJA: *Josy:*
+Essa é a nossa localização.

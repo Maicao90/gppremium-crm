@@ -1,0 +1,27 @@
+CONVERSA 30a4bcb01a | contato: Nizo 💈 | 07/10/2026 14:58 até 08/10/2026 12:59 | 8 msgs do cliente, 11 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[14:58] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[14:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:59] CLIENTE: [áudio] "Olá, boa tarde. O pneu do meu carro é 185, aro 15, no Cobalt. Onde é que fica cada um desses aí colocado? Onde fica a loja? Passa pra mim aí, por favor."
+[15:03] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Niso? Nós somos aqui de Luziânia. E você de onde?"  {audio:midias/3EB042250D3128BD929D48_9536.ogg}
+[15:04] CLIENTE: [áudio] "Ah, eu moro aqui no Novo Gama. Sou daqui do Novo Gama. Aí, esse pneu de vocês aí, por esse preço aí, é só a vista, como é que é? Passa de cartão, divide, como é que é? Entra em contato comigo aí, fala pra mim aí a forma de pagamento aí, tá bom? Obrigado, tem uma boa tarde."
+[15:05] LOJA: [áudio] "Eu não consegui entender direito aqui qual que é o seu carro, mas é o Cobalt, é isso?"  {audio:midias/3EB0A3A4138CA5A66C74B2_198622.ogg}
+[15:06] CLIENTE: Sim
+[15:07] LOJA: [foto]
+[15:08] LOJA: [áudio] "Eu tenho aqui a promoção dos pneus da marca GP Premium, que é a medida aí para o seu Cobaltão 9565-15, tá? Ele está na promoção Compre 3 e Leve 4, a unidade está por 329 reais, se o seu pagamento for no débito ou no Pix."  {audio:midias/3EB09984442F1CFDCB0A37_704688.ogg}
+--- 08/10/2026 (Thu) ---
+[12:28] LOJA: [áudio] "Oi, Sr. Niso. Boa tarde. Tudo jóia? Ontem nós conversamos aqui a respeito dos pneus 195-65-15, né? O senhor disse que mora no Novo Gama. Eu gostaria de saber se o senhor pretende seguir com a negociação, se o senhor consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0F4C696D8222C77C045_181089.ogg}
+[12:41] CLIENTE: [áudio] "A loja de vocês é onde? É Luziânia, é? Você falou ontem pra mim?"
+[12:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:41] CLIENTE: [áudio] "Nosso pneu meu é 195-65, aro 15."
+[12:42] LOJA: [áudio] "Isso, isso, nós somos aqui de Luziânia."  {audio:midias/3EB0C2FAABEDA10EB76241_495023.ogg}
+[12:42] LOJA: [áudio] "Aí eu te mandei o orçamento ontem, né, que 195-65 está na promoção, compre 3 e leve 4."  {audio:midias/3EB07D92555A341128EF8D_94537.ogg}
+[12:43] CLIENTE: [áudio] "Só que pra me sair daqui do Novo Gama aqui, eu sei que não é longe, né? Mas também não é pertinho também. É porque eu trabalho com agenda também, com clientes. Aí fica difícil eu sair, sabe? E eu queria só ir aí comprar e trazer, não queria montar aí, entendeu? Só comprar e trazer. Mas assim, aí até pra me sair tá difícil pra caramba daqui. Aí esses dias de pagamento, esses dias fica difícil pra me sair, entendeu?"
+[12:53] LOJA: [áudio] "É porque, como o senhor mora no Novo Gama, eu consigo mandar os pneus pra uma borracharia que fica justamente no Novo Gama. Eles me ajudam muito pra poder atender os clientes aí da região do entorno de Brasília. Aí, se for de seu interesse, nós podemos negociar aqui, né, pelo WhatsApp, eu mando os pneus pra lá. O senhor me informa como que vai ser a forma de pagamento, o senhor pode realizar o pagamento lá também, não tem problema. Se o senhor já quiser aproveitar e fazer a instalação dos pneus, a instalação é o pago. Aí, o senhor só negocia com o menino lá o balanceamento e a troca de válvula de ar. Só isso."  {audio:midias/3EB0B46310EB48FBFA9FC7_247933.ogg}
+[12:57] CLIENTE: [áudio] "Tá bom, e aí vai custar quanto cada pneu desses aí pra mim?"
+[12:59] LOJA: [áudio] "Assim que o senhor tiver um tempo, o senhor dá uma analisada aí no orçamento que eu te encaminhei, que, conforme eu disse, né, a promoção é cumpre 3, mas leve 4. Se o pagamento for à vista, que é débito e PIX, a unidade está por 329 reais, vezes 3 pneus dá um total de 987. Se for para parcelar, aí o valor muda um pouco, depende da quantidade de parcelas. Aí o senhor me informa que eu verifico direitinho aqui como que fica para o parcelamento, tá, Joia? ."  {audio:midias/3EB07042E6A637F3B68C4F_924466.ogg}

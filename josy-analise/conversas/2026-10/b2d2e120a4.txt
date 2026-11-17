@@ -1,0 +1,32 @@
+CONVERSA b2d2e120a4 | contato: cassio santos | 15/10/2026 13:27 até 19/10/2026 12:06 | 9 msgs do cliente, 12 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[13:27] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[13:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:27] CLIENTE: [foto]
+[13:27] LOJA: Boa tarde!
+[13:27] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[13:27] CLIENTE: Quanto estar um pene nessa medida para o Kia cerato 2011/2012
+[13:28] CLIENTE: 👍
+[13:28] LOJA: Pode por 225/45/17
+[13:29] CLIENTE: N
+[13:29] LOJA: [áudio] "Oi, boa tarde, tudo bem com você? Cássio, né? Cássio, aí no que é Cerato? Você pode colocar o 225-45-17, pode colocar também o 205-50, que vai lhe atender extremamente bem. Se você quiser, eu te mando um orçamento referente a essas medidas, pois, conforme a foto que você encaminhou, não tenho aqui a pronta entrega, mas eu posso verificar com os meus distribuidores, se você realmente estiver interessado."  {audio:midias/3EB06CE2C49F9C26853791_639211.ogg}
+[13:34] CLIENTE: E tem q ser o 215/45 R17  91w xl estou fazendo alguns orçamentos aonde estiver melhor
+[13:34] CLIENTE: Entendi
+[13:35] LOJA: [áudio] "Se vocês tiverem busca de alguma marca específica, você me fala que eu peço um orçamento para você."  {audio:midias/3EB0067B01D8801C02E144_328622.ogg}
+--- 19/10/2026 (Mon) ---
+[12:02] LOJA: [áudio] "Olá, bom dia, tudo bem contigo? Hoje eu consegui os retornos a respeito da medida que você está buscando, tá joia?"  {audio:midias/3EB052E6979733684CCE98_444700.ogg}
+[12:02] LOJA: [foto]
+[12:02] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor UNITÁRIO do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:05] CLIENTE: Entendi mais parcelar TD com juros e isso msm
+[12:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:05] LOJA: [áudio] "Sim, sim. Para parcelar é com juros."  {audio:midias/3EB0B319898C351AB5B540_123551.ogg}
+[12:06] LOJA: [áudio] "Por exemplo, a unidade do Xampiro, em 8 vezes, é 835. Digamos que você queira os 4 pneus, dá um total de 3.340. Então, você vai pagar 8 parcelas de 417,50."  {audio:midias/3EB04D816137F21CC10A4A_943515.ogg}
+[12:06] CLIENTE: Entendi agradeço tá tenha uma boa tarde

@@ -1,0 +1,73 @@
+CONVERSA 9b9e61c8a4 | contato: Jéfferson Dias | 24/09/2026 11:47 até 25/09/2026 14:56 | 16 msgs do cliente, 34 da loja, 0 do robô
+
+--- 24/09/2026 (Thu) ---
+[11:47] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[11:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:48] CLIENTE: Roda 15  195/60
+[11:49] LOJA: [foto]
+[11:49] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:50] LOJA: *Josy:*
+Os pneus da promoção compre 3 e leve 4 são pneus da marca GP Premium na medida 195/65/15
+[11:51] LOJA: *Josy:*
+Qual é seu carro?
+[14:47] CLIENTE: Voyagen 2011
+[14:48] CLIENTE: [áudio] "Os seus pneus são remolde ou são novo?"
+[14:54] LOJA: [áudio] "Os pneus da marca GP Premium são pneus ecológicos que nós fazemos, eles entram na categoria de remodelagem, só que linha Premium, que não tem nada a ver com pneus remoldes, por isso estamos há 10 anos no mercado, os pneus tem 2 anos de garantia e com questão da quilometragem eles rodam 60 mil km."  {audio:midias/3EB0CDE7FD37A7ABAA738D_250990.ogg}
+[14:55] LOJA: *Josy:*
+195/65/15 não dá para usar no Voyage.
+[15:10] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0BD3DE9ED5280FE8F6B_581745.ogg}
+[15:17] CLIENTE: 195/60 
+
+R 15
+[15:18] LOJA: *Josy:*
+Te mandei o orçamento.
+[15:19] LOJA: [foto]
+[15:24] LOJA: *Josy:*
+Balanceamento 35
+[15:25] LOJA: *Josy:*
+Alinhamento 90
+[15:32] LOJA: [áudio] "Já te mando a foto do pneu, só um instante, tá?"  {audio:midias/3EB02A8BC22CB3DA65BD53_249207.ogg}
+[15:32] CLIENTE: Me manda aqui escrito por gentileza o valor do Penha e o valor sendo no dinheiro e não no pix
+[15:33] CLIENTE: R$275,00 no dinheiro?
+[15:47] LOJA: *Josy:*
+Isso, para pagamento em *dinheiro* 275,00 cada
+[15:48] CLIENTE: E no pix ?
+[15:51] LOJA: *Josy:*
+R$ 289,00 cada
+[15:55] LOJA: [áudio] "Se quiser, pessoal, já te mando a foto, que meu WhatsApp travou, não estou conseguindo mandar imagem, tá?"  {audio:midias/3EB030ACDC19D3C36E034C_992305.ogg}
+[15:55] LOJA: [áudio] "Olha, no Pix eu consigo pelo menos 286 cada pneu, tá? Porque pra mim cobra taxa, mas eu consigo deixar pra você por 286."  {audio:midias/3EB02E675ECBE6AD894FA2_420683.ogg}
+[15:59] LOJA: [foto]
+[15:59] LOJA: [foto]
+[15:59] LOJA: [foto]
+[16:04] LOJA: [foto]
+[16:13] LOJA: *Josy:*
+Te esperando.
+[16:14] LOJA: [áudio] "Oi Jefferson!"  {audio:midias/3EB064E05DABC037B02136_670525.ogg}
+[16:30] LOJA: 👀
+[17:51] CLIENTE: [foto]
+[17:51] CLIENTE: [áudio] "Eu vim aqui arrumar um... eu vim na oficina com um carro aqui. O pneu vai ser só amanhã, para não trocar esse pneu."
+[17:53] LOJA: [áudio] "Estou tranquilo, tá bom? E aí você passa aqui para nós conversarmos pessoalmente."  {audio:midias/3EB08589C2F55C02D8C5D7_765625.ogg}
+[17:53] CLIENTE: Beleza
+[21:21] CLIENTE: [foto]
+--- 25/09/2026 (Fri) ---
+[08:01] LOJA: *Josy:*
+bom dia, bom dia!
+[08:01] LOJA: [foto]
+[10:26] CLIENTE: [áudio] "Esse pneu está no Voyage, ó. Você consegue fazer quanto no WhatsApp para mim?"
+[10:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:35] LOJA: [áudio] "A mesma questão de ontem, que nós conversamos, se for no débito ou no Pix, 289. Agora, se for no dinheiro, permanece dessa maneira aqui que nós tínhamos combinado. E se você for para parcelar, vem cá que nós conversamos e ajustamos algo que fique bom para poder te atender, tá joia?"  {audio:midias/3EB02AF78D6879A12C6816_575499.ogg}
+[10:52] CLIENTE: [áudio] "Mulher, mulher, doido de paixão que tá naquela promoção lá. Compra 3, ganha 1."
+[10:52] CLIENTE: Kkk
+[10:53] LOJA: ☺️
+[10:55] LOJA: [áudio] "O que é da promoção é o 195-65-15. Mas igual eu estou te falando, se você for parcelar, vem cá que nós negociamos algo que fique bom para você. Tá jóia?"  {audio:midias/3EB0DA2C4FE92A6CE0B877_127134.ogg}
+[11:08] LOJA: [áudio] "Posso separar os pneus aqui para você, Jefferson?"  {audio:midias/3EB073F30746FF7B13D2B7_886593.ogg}
+[12:21] LOJA: [áudio] "Jefferson, eu estava ligando para ti, para dizer o seguinte, que se de repente você tiver interesse, como você vai trocar as 4 unidades, dá para você instalar aí o 185-6015, que ele está na promoção, não é compre 3, leve 4, mas ele está com um preço bem bacana, de R$ 289,00, eu consigo fazer aqui para você por R$ 249,00 cada. E é uma opção que usa bastante aí no seu carro também."  {audio:midias/3EB05067059B8E664F0ED3_655690.ogg}
+[12:23] LOJA: [foto]
+[14:56] CLIENTE: [foto]

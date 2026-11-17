@@ -1,0 +1,13 @@
+CONVERSA 6dddf8384a | contato: Ramon Gonçalves | 01/10/2026 14:13 até 01/10/2026 14:26 | 3 msgs do cliente, 5 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[14:13] CLIENTE: Boa tarde! Vocês estão tendo pneu 205 55 r17?
+[14:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:17] LOJA: [áudio] "Oi, boa tarde. Tudo já é, Ramon? Eu sou a Josi e eu tenho a Xim. Você mora em Luziânia, Goiás?"  {audio:midias/3EB0BD4657048D473B1658_529728.ogg}
+[14:19] LOJA: *Josy:*
+🙋🏼‍♀️
+[14:25] CLIENTE: Moro
+[14:25] CLIENTE: Estou querendo duas unidades, quanto está saindo?
+[14:26] LOJA: [foto]
+[14:26] LOJA: [áudio] "No dia de hoje eu tenho essas três opções de marcas a pronta e entrega, está bem? Ramon, na primeira coluna está o valor à vista, que é correspondente a débito e Pix. E aí seguem também as opções de parcelamento em até 10 vezes, caso você queira parcelar."  {audio:midias/3EB0B4184B9513698BB0E3_369900.ogg}

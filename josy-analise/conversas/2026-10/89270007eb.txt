@@ -1,0 +1,28 @@
+CONVERSA 89270007eb | contato: Daiany Lopes 🧚🏽‍♀️ | 17/10/2026 13:15 até 20/10/2026 12:35 | 6 msgs do cliente, 12 da loja, 0 do robô
+
+--- 17/10/2026 (Sat) ---
+[13:15] CLIENTE: Boa tarde
+[13:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:20] CLIENTE: Qual os valores dos pneus
+[13:20] CLIENTE: Aro 14
+[13:31] CLIENTE: ?
+--- 19/10/2026 (Mon) ---
+[08:07] LOJA: Bom dia!
+[08:07] LOJA: Pode confirmar a medida que precisa. Exemplo 185/70/14
+[09:41] LOJA: 🙋🏼‍♀️
+[09:57] CLIENTE: 175/65/14
+[09:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:57] LOJA: [foto]
+[09:57] LOJA: *Josy:*
+No dia de hoje temos os pneus da marca  Maxzez e GP Premium essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:58] CLIENTE: Tem desconto para comprar de 4pneus ?
+[09:59] LOJA: *Josy:*
+O pneu da marca GP Premium já está em oferta, de R$ 279,00 por apenas 249,00 a vista, valor para débito e pix
+[10:00] LOJA: *Josy:*
+Se o pagamento for em *dinheiro fisico* a unidade fica por R$ 235,00
+--- 20/10/2026 (Tue) ---
+[12:35] LOJA: [áudio] "Oi Daiane, tudo bem contigo? Você me solicitou um orçamento aqui alguns dias atrás e eu te mandei as opções que eu tenho a pronta entrega, entretanto eu não obtive mais um retorno, né? Eu gostaria de saber se você pretende seguir com a negociação, se você mora aqui em Luziânia mesmo, você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB024D333F9EDE2E68E64_488575.ogg}

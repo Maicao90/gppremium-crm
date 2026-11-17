@@ -1,0 +1,51 @@
+CONVERSA 01439ff2ef | contato: Lucas leandro | 24/09/2026 13:26 até 13/10/2026 11:02 | 13 msgs do cliente, 20 da loja, 0 do robô
+
+--- 24/09/2026 (Thu) ---
+[13:26] CLIENTE: Boa tarde
+[13:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:26] CLIENTE: 215/65 R16
+[13:26] CLIENTE: Os da frente.  Os de traz são 205/75 R16
+[13:27] CLIENTE: [áudio] "Boa tarde, tudo bem? Tô precisando de pneu da van. Nessas medidas aí pode ser tudo de uma medida só, os quatro existem aí, com marca e valores."
+[14:11] LOJA: [foto]
+[14:11] LOJA: [áudio] "Olha, eu tenho aqui o 205-75. Eu tenho os dois últimos no momento. A unidade está por 516 reais para o pagamento à vista."  {audio:midias/3EB08C5F7C56426E987F21_983246.ogg}
+[14:19] LOJA: [áudio] "Você quer que eu reserve os dois pra você?"  {audio:midias/3EB01259FD3966A2E4C85B_80860.ogg}
+[14:56] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 25/09/2026 (Fri) ---
+[14:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:23] CLIENTE: [áudio] "Esses pneus de vocês são remolde?"
+[15:05] LOJA: PNEU NOVO
+[15:13] LOJA: Ainda tenho os 2 últimos
+--- 06/10/2026 (Tue) ---
+[08:11] CLIENTE: Bom dia chegou pneu de van aí ?
+[08:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:14] LOJA: *Josy:*
+Bom dia!
+[08:14] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa hoje, Leandro?
+[08:15] CLIENTE: 205 75 
+225 65 
+215 65
+[08:15] CLIENTE: Preciso de 04 pneu pra van
+[08:15] LOJA: [foto]
+[08:16] CLIENTE: Tem 04 unidades
+[08:17] LOJA: *Josy:*
+Neste momento vi que teremos 2 e não 47 unidades.... Creio que eu tenha o 225/65/16 C da GP Premium
+[08:17] LOJA: *Josy:*
+É van escolar?
+[08:19] CLIENTE: É pra trabalho
+[08:19] CLIENTE: Leva colaboradores
+[08:19] CLIENTE: E remolde ou normal ?
+[08:20] LOJA: *Josy:*
+225/65/16 é o remold premium, e é o pneu mais vendido que tenho.
+[08:21] LOJA: [foto]
+[08:22] LOJA: [áudio] "Bom dia, tudo jóia? Olha, o pneu GP Premium, conforme eu escrevi aqui, digitei, ele é o mais vendido que eu tenho. E no caso, ele é justamente para transporte de pessoas."  {audio:midias/3EB02CE2CF05E8417966BF_937403.ogg}
+[08:39] LOJA: *Josy:*
+🙋🏼‍♀️
+--- 13/10/2026 (Tue) ---
+[11:02] LOJA: [áudio] "Oi Lucas, tudo jóia? Lucas, nós estávamos conversando há alguns dias atrás e eu gostaria de saber se você pretende seguir com a negociação, consegue me dar um retorno por gentileza?"  {audio:midias/3EB041A984A89B69C6CA2C_565845.ogg}
+[11:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:02] CLIENTE: [áudio] "Oi, bom dia, tudo bem? Eu consegui os 4 pneus, tava pisando os 4, eu consegui já, tá bom? Valeu, obrigado."

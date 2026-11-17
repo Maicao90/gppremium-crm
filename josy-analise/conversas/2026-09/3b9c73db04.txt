@@ -1,0 +1,15 @@
+CONVERSA 3b9c73db04 | contato: Samuel | 07/09/2026 08:15 até 08/09/2026 09:15 | 3 msgs do cliente, 4 da loja, 0 do robô
+
+--- 07/09/2026 (Mon) ---
+[08:15] CLIENTE: Hj e fechado?
+[08:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:17] CLIENTE: 205/60 -15  atr
+--- 08/09/2026 (Tue) ---
+[08:38] CLIENTE: Oi bom dia
+[08:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:43] LOJA: *Josy:*
+Bom dia, Samuel...obrigada por aguardar, estou realizando seu orçamento
+[09:15] LOJA: *Josy:*
+Obrigada , Samuel... 🙏🏻

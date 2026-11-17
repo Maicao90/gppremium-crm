@@ -1,0 +1,33 @@
+CONVERSA 5543b92c5f | contato: Ramon | 22/10/2026 11:48 até 22/10/2026 12:02 | 9 msgs do cliente, 5 da loja, 14 do robô
+
+--- 22/10/2026 (Thu) ---
+[11:48] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Olá! Posso ter mais informações sobre isso?
+[11:48] ROBÔ: Oi, tudo bem?
+[11:48] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[11:48] CLIENTE: Quanto tá o pneu 265 70/16
+[11:48] ROBÔ: Temos o pneu *265/70/16* da marca *GP Premium* (modelo *ADVENTURE ATR*) está saindo por *R$ 559,00 à vista*.
+[11:48] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[11:49] CLIENTE: Qual local da loja
+[11:49] ROBÔ: Segue a nossa localização:
+[11:49] ROBÔ: [localização] -16.2334867,-47.9120936 — Pneus GP Premium
+[11:49] ROBÔ: [foto] Pneus GP Premium
+[11:49] CLIENTE: Não é remolde né?
+[11:49] ROBÔ: Vou ser sincero com você: sim, é remold — mas não é um remold comum.
+[11:50] ROBÔ: O GP Premium é feito com borracha padrão europeu e passa por controle rígido de qualidade.
+[11:50] ROBÔ: A gente dá garantia de 2 anos e 60 mil km ou seu dinheiro de volta. Muitos clientes já aprovaram esse modelo.
+[11:51] CLIENTE: Ok, bom saber
+[11:51] ROBÔ: Tranquilo! Qualquer dúvida ou se quiser fechar, é só me chamar por aqui.
+[11:51] CLIENTE: Acredito que precisarei de 2 aí então divide pelo mesmo valor
+[11:51] CLIENTE: ?
+[11:52] ROBÔ: Temos os 2 pneus *265/70/16* da marca *GP Premium* (modelo *ADVENTURE ATR*) saem por *R$ 1.118,00 à vista* (valor total).
+[11:52] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[11:52] ROBÔ: Sim, parcelamos em até 10x no cartão.
+[11:52] CLIENTE: Obrigado pelas informações
+[11:53] LOJA: Também temos pneus novos importados, vou te mandar o orçamento.
+[11:53] CLIENTE: Ok
+[11:53] LOJA: [foto]
+[11:53] LOJA: No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:00] LOJA: [áudio] "Oi Ramon, tudo bom? Eu sou a Josi. Perdão aí que na correria eu digitei aqui para você, mas eu vou te mandar um áudio. Com questão ao pneu, né, a sua pergunta, o pneu GP Premium, como ele é um pneu ecológico que nós fazemos, sim, ele vai entrar na categoria de remodelagem, só que linha Premium. E ele é o pneu mais vendido que eu tenho. E eu fui te respondendo aqui no automático, depois que eu me recordei, esse pneu ele já esgotou no meu estoque. tem uma lista de espera para poder chamar o cliente assim que ele produz, porque o pneu é bom de verdade, tá? Aí eu tenho as opções dos pneus importados para poder te atender, caso você tenha interesse. Eles são pneus novos, tá?"  {audio:midias/3EB0484EBD73A10CC3CF46_784614.ogg}
+[12:02] LOJA: [áudio] "Queria que eu te encaminhasse a nossa localização?"  {audio:midias/3EB06399FF96B942BB671B_8835.ogg}

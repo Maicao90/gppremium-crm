@@ -1,0 +1,36 @@
+CONVERSA ef90dc4fed | contato: paulo cezar Rocha | 20/08/2026 15:18 até 20/08/2026 15:47 | 15 msgs do cliente, 11 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[15:18] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[15:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:18] LOJA: Muito boa tarde! Como vai?
+[15:19] CLIENTE: [foto]
+[15:19] CLIENTE: Preciso de 4 unidades desse
+[15:19] CLIENTE: 215/60R17 certo?
+[15:19] LOJA: Somente da marca Hifly que te atende?
+[15:20] CLIENTE: Qual vc tem? E valores?
+[15:21] LOJA: [foto]
+[15:21] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:21] LOJA: Mora aqui em Luziânia-Go, mesmo?
+[15:22] CLIENTE: Não
+[15:22] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu sou a Josi. Pois é, a nossa loja fica aqui em Luziânia. Consegue vir até aqui?"  {audio:midias/3EB00A6DFBC6F67161A125_520579.ogg}
+[15:23] CLIENTE: Esse último nacional é 359
+[15:24] LOJA: Isso!
+[15:24] CLIENTE: [áudio] "Oi Josu, muito boa tarde. Esse de 359, nacional, qual a marca dele? Você fala nacional é a marca ou ele é nacional, não é importado?"
+[15:25] CLIENTE: [áudio] "Tá escrito Adventure em verde. Não entendi nada, essa nacional que você colocou no último aí. É por um Creta. Um SV Creta."
+[15:26] CLIENTE: [áudio] "E ele não é remolde não, né?"
+[15:43] LOJA: Quer ver?
+[15:44] CLIENTE: [áudio] "Não moço, valeu, obrigado, eu já resolvi aqui, tá bom? Mas valeu demais, obrigado pela atenção."
+[15:44] CLIENTE: [foto]
+[15:44] CLIENTE: MAXZEZ	
+ PNEU 215/60R17 100H PEAKGRIP HT
+
+De R$	560,87	Por R$	496,97	Retirar ou montar em loja				
+Por R$	443,73	Para montar em loja deixando os pneus velhos a base de troca.
+[15:44] CLIENTE: Essa marca
+[15:46] LOJA: [áudio] "Certo, compreendo perfeitamente. Espero que realmente seja dessa maneira, que não fique inventando serviços no seu veículo para que atenda você da maneira que você merece."  {audio:midias/3EB0E1AB31E3FBBEE437C4_885931.ogg}
+[15:47] CLIENTE: [áudio] "Tá bom, obrigado, viu? Mas eu vou só montar os pneus lá, só vou montar os pneus lá mesmo, tá? Pode ficar tranquilo, eu já sou galato escaldado com esses negócios aí. Muito obrigado pela atenção aí, tá? Bom trabalho para você."
+[15:47] LOJA: Boa compra!

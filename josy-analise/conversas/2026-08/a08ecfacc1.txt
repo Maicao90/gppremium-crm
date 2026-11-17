@@ -1,0 +1,26 @@
+CONVERSA a08ecfacc1 | contato: . | 20/08/2026 15:37 até 20/08/2026 15:56 | 11 msgs do cliente, 10 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[15:37] LOJA: Boa tarde
+[15:37] CLIENTE: Ford ranger 2.2, ano 2019
+[15:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:37] CLIENTE: Aro 17
+[15:37] LOJA: [áudio] "Olá, boa tarde, tudo bem com vocês?"  {audio:midias/3EB07218F7168526FCE4B6_42347.ogg}
+[15:38] LOJA: [áudio] "Eu me chamo Josi e eu gostaria de saber se você mora aqui na cidade de Luziânia, Goiás."  {audio:midias/3EB09B7E99FC9BB161FF59_274561.ogg}
+[15:38] CLIENTE: Boa tarde
+[15:38] CLIENTE: Brasília
+[15:38] LOJA: 265/65/17?
+[15:38] CLIENTE: Gostaria de ver o valor .
+[15:38] LOJA: Está em busca de alguma marca especifica?
+[15:38] CLIENTE: Sim.
+[15:39] CLIENTE: Michelin
+[15:39] LOJA: Não dispomos a pronta entrega, mas posso cotar para você.
+[15:39] CLIENTE: Obrigado
+[15:39] CLIENTE: Pode enviar, por favor.
+[15:54] LOJA: [foto]
+[15:55] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 5000,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:56] CLIENTE: Blz
+[15:56] CLIENTE: Muito obrigado

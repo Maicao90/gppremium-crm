@@ -1,0 +1,15 @@
+CONVERSA b9f83c7fd1 | contato: Kaio Victor | 07/10/2026 14:32 até 07/10/2026 17:19 | 5 msgs do cliente, 5 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[14:32] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:32] CLIENTE: Boa tarde blz?
+[14:32] CLIENTE: Vcs tem pneus aro 13 letra branca?
+[14:38] LOJA: *Josy:*
+Boa tarde, não temos!
+[14:42] LOJA: [áudio] "Você mora aqui em Luziânia mesmo, Caio?"  {audio:midias/3EB091F978BE25FF8701E0_458942.ogg}
+[17:01] LOJA: 🙋🏼‍♀️
+[17:18] CLIENTE: Moro nao
+[17:18] CLIENTE: Sou de catalao
+[17:19] LOJA: Ah, sim!

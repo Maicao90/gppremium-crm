@@ -1,0 +1,25 @@
+CONVERSA 78d000ad9b | contato: Robério | 29/08/2026 11:15 até 31/08/2026 18:10 | 4 msgs do cliente, 12 da loja, 0 do robô
+
+--- 29/08/2026 (Sat) ---
+[11:15] LOJA: [áudio] "Oi Sr. Robério, tudo jóia? Alguns dias atrás nós conversamos a respeito dos pneus para o seu carro e eu gostaria de saber se o senhor pretende seguir com a negociação? O senhor consegue me dar um retorno por gentileza?"  {audio:midias/3EB04A472E416F54919433_263386.ogg}
+[13:33] CLIENTE: [áudio] "Oi, boa tarde, tudo bem? Não, então eu não fiz a troca, não, dos pneus, né? É porque eu estive pesquisando os aqui, eu pesquisei uns aqui, eu achei uns mais em conta. Achei uns pneus aqui de, na verdade, 250. 250. Aí o rapaz me dava o... Ele me fez 250 e me deu o balanceamento. Balanceamento, não. Eu acho que ele expõe o pneu, né? E me dá mais o... o alinhamento, o balanceamento, alguma coisa assim. Aí, não sei se você cobre, se você cobrir, eu faço com vocês aí."
+[13:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:34] CLIENTE: [áudio] "Do 13, né? Pneu 13. 13. É porque eu tô dirigindo agora e tô mandando áudio, não tem como escrever. É o pneu 13, do Mobi. Pro Mobi, pneu 13."
+--- 31/08/2026 (Mon) ---
+[08:11] LOJA: [áudio] "Bom dia, tudo bem, Robério? 250 eu faço sim, com o pagamento em dinheiro em espécie, tá bom?"  {audio:midias/3EB073B9B492C1B113EBE4_221804.ogg}
+[08:12] LOJA: [áudio] "E aqui os pneus são colocados também, tá joia?"  {audio:midias/3EB0BD27D5F78F12AFBA68_400833.ogg}
+[08:12] LOJA: [áudio] "O alinhamento e balanceamento, eu não consigo dar, porque eu tenho que pagar os meninos aqui da oficina, tá? E eu conversei com eles aqui o valor mínimo, que é 25 o balanceamento e 90 o alinhamento. Mas nada impede que você venha aqui e negocie com eles, tá joia?"  {audio:midias/3EB06D1BF82EC072042DB2_750584.ogg}
+[17:36] LOJA: *Josy:*
+Tenho aqui também a opção de 165/70/13 que atende muito bem ao Mobi ele fica a vista por 239,00 cada
+[17:36] LOJA: *Josy:*
+Se for de seu interesse, me de um retorno.
+[17:39] CLIENTE: Esse é remold
+[17:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:39] LOJA: [áudio] "Sim, é um pneu ecológico, ele entra assim na categoria de remodelagem, só que é o de primeira linha, não tem nada a ver com aqueles pneus remoldes que nem balanceamento não, tá? Esse pneu aqui tem garantia de 2 anos."  {audio:midias/3EB04D8C0EFFF466329F4B_304004.ogg}
+[18:05] LOJA: *Josy:*
+Quer que eu faça um video...ou mande fotos?
+[18:06] CLIENTE: [áudio] "Esses remolds eu não tenho interesse não, porque eles são perigosos, né? Pra pegar estrada. Eu não me interesso nos remolds não, porque o remold eu achei até de 215 aqui no Gama, mas eu não me interessei não."
+[18:10] LOJA: [áudio] "Roberto, quando o remolde é aquele que parece plástico, sim, é extremamente perigoso. Agora, os pneus que nós produzimos, ressalto mais uma vez, eles são pneus ecológicos, eles apenas recebem o título de remolde bem escrito na lateral dele, apenas por questão técnica. Eles têm o selo do Inmetro, são todos testados e aprovados. Por quê? Porque ele não tem nada a ver com os pneus que são remoldes convencionais. Aí, justamente por isso que eu estou te perguntando, você quer que eu faça um vídeo e mande foto pra você? Que aí você vai entender melhor."  {audio:midias/3EB034AD3E254083FAAA55_350983.ogg}
+[18:10] LOJA: [áudio] "E é justamente, ó, esses baratinhos de mar da conta aí, rapaz, vigia!"  {audio:midias/3EB07B09193D569502D5FC_36742.ogg}

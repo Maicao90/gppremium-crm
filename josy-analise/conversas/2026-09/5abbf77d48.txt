@@ -1,0 +1,39 @@
+CONVERSA 5abbf77d48 | contato: Daniel | 02/09/2026 14:29 até 02/09/2026 16:41 | 10 msgs do cliente, 17 da loja, 0 do robô
+
+--- 02/09/2026 (Wed) ---
+[14:29] CLIENTE: Boa tarde
+[14:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:29] LOJA: [áudio] "Oi Daniel, boa tarde, como é que você está?"  {audio:midias/3EB088797A019F7BC3EECE_381917.ogg}
+[14:30] CLIENTE: Gostaria blz
+[14:31] CLIENTE: Gostaria de saber quanto tá os pneus 175/70/13
+[14:31] LOJA: *Josy:*
+Temos sim!
+[14:31] LOJA: *Josy:*
+Vou fazer seu orçamento.
+[14:31] LOJA: *Josy:*
+Pneu 175/70/13 r1 Dunlop R$ 371,69 (débito/pix)
+Pneu 175/70/13 82t Kelly Goodyear R$ 357,66 (débito/pix)
+Pneu GP Premium em *oferta* R$ 269,00 (débito/pix) Ou R$ 252,00 em *dinheiro*
+[14:33] CLIENTE: E no cartão, 2 pneus GP Premium?
+[14:34] LOJA: *Josy:*
+Vou te encaminhar as opções de parcelamento.
+[14:34] LOJA: [foto]
+[14:34] LOJA: [áudio] "Daniel, para parcelar, o valor mudou um pouco, tá? Você quer parcelar em quantos? Eu calculo aqui para você."  {audio:midias/3EB049B0944DF51615382D_141832.ogg}
+[14:37] CLIENTE: Eu ia parcelar em 3
+[14:37] LOJA: *Josy:*
+Ficam 3 de R$ 186,66
+[14:40] CLIENTE: Cada um?
+[14:41] LOJA: [áudio] "Não, Daniel, você vai querer 2 pneus, certo? Então, 2 pneus, você vai pagar 3 parcelas de 186 e 66, é isso."  {audio:midias/3EB017AB19B99E6B6F130F_173835.ogg}
+[14:41] CLIENTE: Intendi
+[14:44] CLIENTE: [áudio] "Não, beleza, então, eu vou até esse final de semana, eu vou mandar mensagem pra vocês de novo, e eu vou ir buscar dois pneus, tá bom? Aí eu vou parcelar em três, às vezes eu parcelo em duas, mas eu vou ver se eu parcelo por enquanto em três, tá bom? Até final de semana eu vou ir, tá? Obrigadão, hein?"
+[14:45] LOJA: [áudio] "Combinado, Daniela, do jeito que fica melhor pra você, tá bom?"  {audio:midias/3EB06FF7FEC40DC8470289_530705.ogg}
+[16:39] LOJA: *Josy:*
+Passa aqui na fábrica , está bem!
+[16:39] LOJA: [foto]
+[16:40] CLIENTE: Sábado vcs abrem?
+[16:40] LOJA: *Josy:*
+Sim! As 08:00
+[16:41] CLIENTE: Blz então sábado vou aí pegar os pneus
+[16:41] LOJA: *Josy:*
+Combinado! E vem no carro que já colocamos os pneus.

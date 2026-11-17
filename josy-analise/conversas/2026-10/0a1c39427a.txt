@@ -1,0 +1,42 @@
+CONVERSA 0a1c39427a | contato: Kalzinho | 20/10/2026 18:28 até 21/10/2026 15:31 | 11 msgs do cliente, 6 da loja, 13 do robô
+
+--- 20/10/2026 (Tue) ---
+[18:28] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[18:28] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[18:29] CLIENTE: Claudiney
+[18:29] CLIENTE: Aro 15
+[18:29] CLIENTE: 4 peneus
+--- 21/10/2026 (Wed) ---
+[08:18] LOJA: Bom dia, Claudiney
+[08:18] LOJA: Para que eu possa gerar o orçamento para você, poderia me informar a medida do pneu que você precisa (ex: 31x10,5 R 15)
+[11:00] LOJA: 🙋🏼‍♀️
+[13:39] CLIENTE: Normal  mesmo mais istabilidade
+[13:39] ROBÔ: Fechado, Claudiney! Pra aro 15 a gente tem pneu de uso normal, de rua, em várias medidas.
+[13:40] ROBÔ: Pra te indicar a certa pra ter mais estabilidade, preciso saber qual serve no seu carro.
+[13:40] ROBÔ: Me diz o *modelo e o ano do carro*, ou a medida que está na lateral do pneu (ex.: 195/55/15), que já te passo o valor dos 4.
+[13:43] CLIENTE: Grande siena
+[13:43] CLIENTE: 2018
+[13:43] ROBÔ: Pro Grand Siena aro 15, a medida certa é a *185/65/15*. É a original do carro e dá boa estabilidade no dia a dia.
+[13:44] ROBÔ: Temos o pneu *185/65/15* da marca *GP Premium* saindo por *R$ 249,00 à vista* cada, e dá pra parcelar em até 10x no cartão!
+[13:44] ROBÔ: Só confere na lateral do seu pneu se a medida é essa mesma, combinado?
+[13:44] ROBÔ: Quando você consegue vir até a loja pra trocar os 4?
+[13:44] CLIENTE: Me passa o endereço
+[13:44] ROBÔ: Segue a nossa localização:
+[13:44] ROBÔ: [localização] -16.2334867,-47.9120936 — Pneus GP Premium
+[13:44] CLIENTE: Ai faz tudo o serviço
+[13:44] ROBÔ: [foto] Pneus GP Premium
+[13:45] ROBÔ: Aqui a gente trabalha só com pneus — serviço de mecânica não fazemos, não.
+[13:45] CLIENTE: So peneu mesmo cambagem alinhamento
+[13:45] ROBÔ: A loja não faz alinhamento, não — só balanceamento.
+[13:45] CLIENTE: Ok
+[13:46] ROBÔ: Tranquilo! Qualquer dúvida ou se quiser fechar, é só me chamar por aqui.
+[14:54] LOJA: [áudio] "Oi, boa tarde, tudo bem contigo? Perdão, tá, que eu tinha pedido para outra pessoa analisar aqui o orçamento para mim, aí o senhor perguntou se aqui fazia o serviço, né? Sim, aqui na nossa oficina faz sim o serviço, tá? Eles são cobrados à parte. O balanceamento por roda é R$35,00, mas é valor completamente negociável. o alinhamento de direção 120, tá? A cambagem. Antes de fazer, vai precisar ver se realmente precisa ser feito, vai analisar o grau, tá, jóia?"  {audio:midias/3EB0725518DD5A201EFE31_818374.ogg}
+[15:31] LOJA: 🙋🏼‍♀️

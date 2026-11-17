@@ -1,0 +1,26 @@
+CONVERSA 10251aba1b | contato: Helio 2020 Braga m | 26/08/2026 08:31 até 26/08/2026 17:41 | 3 msgs do cliente, 10 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[08:31] LOJA: *Josy :*
+Oi, Tudo bem ?
+[08:32] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[08:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:32] CLIENTE: Bom dia
+[08:36] LOJA: *Josy :*
+Bom dia.
+[08:36] LOJA: *Josy :*
+Por gentileza...pode me dizer qual a medida dos pneus que você precisa hoje?
+[08:38] CLIENTE: 185/70/14
+[08:46] LOJA: *Josy :*
+Obrigada por aguardar!
+[08:46] LOJA: [foto]
+[08:46] LOJA: *Josy :*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:03] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Alguma dessas opções aí do orçamento te atendem?"  {audio:midias/3EB0CFBFF9F01BD3D4151F_532339.ogg}
+[17:41] LOJA: [áudio] "Olá, tudo bem? Eu sou a Josi e, quando possível, me diz qual é o seu nome. Bem, eu te encaminhei um orçamento mais cedo, mas imagino que o seu dia tenha sido extremamente corrido, por essa razão você não conseguiu me responder. Então, eu vou fazer o seguinte, tá? Para não encher seu WhatsApp de mensagens, eu vou encerrar o seu atendimento e, caso você precise, você me chama novamente. Ou então, vou melhorar aqui a situação, eu vou te mandar a localização da nossa loja, pois, se houver a possibilidade, você vem aqui diretamente para nós podermos conversar pessoalmente, está bem? Obrigada e até breve."  {audio:midias/3EB09472E05AC5506A5D7A_298746.ogg}
+[17:41] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

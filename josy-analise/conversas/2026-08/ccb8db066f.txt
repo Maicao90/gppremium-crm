@@ -1,0 +1,28 @@
+CONVERSA ccb8db066f | contato: Geová Lima Soares | 26/08/2026 14:20 até 26/08/2026 15:16 | 5 msgs do cliente, 11 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[14:20] CLIENTE: [foto] 📢 [Anúncio] Converse conosco
+
+Olá! Posso ter mais informações sobre isso?
+[14:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:21] CLIENTE: Pneus 215/55 Aro 17
+[14:23] LOJA: *Josy :*
+Boa tarde!
+[14:24] LOJA: [foto]
+[14:24] LOJA: *Josy :*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:35] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu sou a Josi e você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB00411759BE476B34468_954419.ogg}
+[14:46] CLIENTE: No Valparaiso
+[14:50] LOJA: *Josy :*
+Pertinho de nós!
+[14:55] CLIENTE: Sim
+[14:58] LOJA: [áudio] "Ah, o senhor, só me desculpe o seguinte, o que eu vi aqui para mim era 215,50,17, mas o senhor está precisando do 215,55, então desconsidere o orçamento acima, tá?"  {audio:midias/3EB01D8481D5220B779B68_984125.ogg}
+[14:58] LOJA: [foto]
+[14:59] LOJA: [áudio] "Vai ser este aqui. Aí eu tenho essas duas opções de marcas e na promoção está o pneu da marca GP Premium, remold de primeira linha, que é o pneu mais vendido que eu tenho. A unidade está por 395 reais e ela está na promoção compre 3, mas leve 4. Então, digamos que seu pagamento fosse à vista, 395 vezes 3 reais, não, dos 3 reais, não, perdão, dos 3 pneus, fica um total de 1.185 reais. Aí, por esse preço, o senhor leva as 4 unidades."  {audio:midias/3EB0CE89F81771E04256AC_735661.ogg}
+[15:13] CLIENTE: Entendi
+[15:16] LOJA: Vou te encaminhar a nossa localização., venha aqui na loja para conversarmos pessoalmente!
+[15:16] LOJA: *Josy :*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

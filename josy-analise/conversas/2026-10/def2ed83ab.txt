@@ -1,0 +1,31 @@
+CONVERSA def2ed83ab | contato: 😎 | 05/10/2026 16:31 até 05/10/2026 19:17 | 10 msgs do cliente, 10 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[16:31] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[16:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:31] CLIENTE: 165/60/15
+[16:32] CLIENTE: 4 unidades
+[16:32] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu me chamo Josi e eu tenho aqui 185-6015. Te atende?"  {audio:midias/3EB032D420D4963F88FAFF_313180.ogg}
+[16:32] CLIENTE: [áudio] "Boa tarde, tudo bem?"
+[16:33] CLIENTE: [áudio] "Aí no caso 185, ele seria mais alto ou mais baixo?"
+[16:34] CLIENTE: ?
+[16:34] LOJA: *Josy:*
+Largo
+[16:34] LOJA: *Josy:*
+Qual é seu carro?
+[16:35] CLIENTE: Meu carro e um JAC j3  turin
+[16:38] LOJA: *Josy:*
+A medida a ser usada é 185/60/15
+[16:38] LOJA: [foto]
+[16:38] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:43] LOJA: [áudio] "E você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0A3593C680E005EBC89_349931.ogg}
+[16:44] CLIENTE: [áudio] "Vixe, pai, é Luziana. Não, não, não, não. Moro na Ceilante, ó. Eu peguei o anúncio errado, filho. Desculpa."
+[16:45] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:45] LOJA: [foto]
+[19:17] CLIENTE: [áudio] "Não, não dá, não. Eu fechei com o pessoal do... a cidade."
+[19:17] CLIENTE: [áudio] "Depois chego pelo Brasília, no Celanjo, mais perto. Aí é muito contra a mão pra mim, tá? Mas muito obrigado, viu?"

@@ -1,0 +1,19 @@
+CONVERSA d137664cfd | contato: Reinaldo | 09/10/2026 17:48 até 09/10/2026 17:55 | 6 msgs do cliente, 7 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[17:48] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+Olá! Tenho interesse e queria mais informações, por favor.
+[17:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:48] CLIENTE: Onde fica a loja
+[17:49] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Reinaldo? Nós somos aqui de Luziânia, Goiás. Você mora onde?"  {audio:midias/3EB0086DC08E2C67F45F0E_424735.ogg}
+[17:52] CLIENTE: [áudio] "Não, o maior aqui em Luziânia é mesmo. Esse pneu que tá na promoção que eu vi é o Brutus 265-65-17, que tá 600 reais. Eu queria dar uma olhada nele, por isso que eu perguntei onde é que é. Se é daqui de Luziânia, é a que é descendo aqui na Alfredo Nasso, né?"
+[17:53] LOJA: [áudio] "Vou te mandar a foto agora dele, tá bom?"  {audio:midias/3EB0DACCD82E8F0131A652_39578.ogg}
+[17:53] LOJA: [áudio] "Aqui é na fábrica mesmo, aqui na BR-040."  {audio:midias/3EB082D8B5E4EF0590A5D8_67933.ogg}
+[17:53] LOJA: [áudio] "Eu vou gravar um vídeo aqui para o senhor ver como que chega aqui na loja, tá bom? Fica aqui depois da... Ai, gente, tem ali a Vital, um pouquinho para frente tem um motel, acho que Vegas o nome, mas para frente tem um posto de gasolina, depois passa Goiás Diesel e o Hotel Goiás, tá bom?"  {audio:midias/3EB00F505A788C3081F508_950461.ogg}
+[17:53] CLIENTE: Entendi
+[17:54] CLIENTE: Ok
+[17:54] CLIENTE: [áudio] "Eu sei onde é, então, aí, eu passo aí, quando eu vou pro lado do Valparaíso, direto, eu passo aí de frente, frente a 040 aí. Eu sei, aí, manda pra mim ouvir do pneu, qualquer coisa, eu dou uma passadinha aí, ó."
+[17:54] LOJA: [vídeo]
+[17:55] LOJA: [vídeo]

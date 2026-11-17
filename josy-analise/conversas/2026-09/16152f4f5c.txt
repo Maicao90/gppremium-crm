@@ -1,0 +1,14 @@
+CONVERSA 16152f4f5c | contato: Cristiano | 17/09/2026 14:01 até 17/09/2026 14:43 | 4 msgs do cliente, 4 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[14:01] CLIENTE: Boa tarde
+[14:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:02] CLIENTE: 265/65 R17
+[14:02] CLIENTE: 4 pneus
+[14:18] LOJA: *Josy:*
+Oi!
+[14:18] LOJA: *Josy:*
+A Ana me mandou mensagem aqui !
+[14:41] CLIENTE: Estou indo aí na loja
+[14:43] LOJA: [foto]

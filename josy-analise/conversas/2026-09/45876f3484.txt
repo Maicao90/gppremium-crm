@@ -1,0 +1,42 @@
+CONVERSA 45876f3484 | contato: 🏔️ | 08/09/2026 11:32 até 08/09/2026 12:58 | 10 msgs do cliente, 14 da loja, 0 do robô
+
+--- 08/09/2026 (Tue) ---
+[11:32] CLIENTE: Bom dia.
+[11:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:33] LOJA: *Josy:*
+🙋🏼‍♀️
+[11:34] CLIENTE: Preciso de um dois pneus 225/70 R17 , mas procuro da marca WANLI.
+[11:34] CLIENTE: Desculpa.
+[11:35] CLIENTE: 225/65 R17 - WANLI
+[11:49] LOJA: *Josy:*
+Oi!
+[11:49] LOJA: *Josy:*
+De carga?
+[11:49] CLIENTE: Não. Normal
+[11:50] LOJA: *Josy:*
+Ah, sim!
+[11:52] LOJA: *Josy:*
+Obrigada por aguardar!
+[11:52] LOJA: [foto]
+[11:52] LOJA: *Josy:*
+No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:56] CLIENTE: Mas vcs trabalham com a marca wanli?
+[11:57] LOJA: *Josy:*
+No dia de hoje não temos, essa marca está me falta. Mas vou ver com eles.
+[11:57] CLIENTE: Obrigado.
+[12:37] LOJA: [foto]
+[12:37] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:42] CLIENTE: Obrigado pelo retorno.
+[12:55] LOJA: [áudio] "Olá, tudo bem com você? Gostaria de realizar a encomenda dos pneus da Van Lee."  {audio:midias/3EB023FFFC0DBC699595DD_762113.ogg}
+[12:56] CLIENTE: Agradeço. Não vou encomendar.
+[12:57] LOJA: *Josy:*
+Caso mude de idéia, e se as marcas que te encaminhei te atenderem, passa aqui em nossa loja. será uma satisfação receber você aqui.
+[12:57] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:58] CLIENTE: Muito obrigado. Vou salvar aqui.

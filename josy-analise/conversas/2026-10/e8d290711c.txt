@@ -1,0 +1,43 @@
+CONVERSA e8d290711c | contato: Guinch🛞 | 07/10/2026 21:18 até 13/10/2026 09:04 | 12 msgs do cliente, 19 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[21:18] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+Olá! Tenho interesse e queria mais informações, por favor.
+[21:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[21:19] CLIENTE: 245 70 16
+--- 08/10/2026 (Thu) ---
+[08:11] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu me chamo Josi. Assim que possível, você apenas me diz qual seu nome para poder salvar seu contato?"  {audio:midias/3EB007835C86C82D07B127_892928.ogg}
+[08:12] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+[08:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:12] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+[08:13] LOJA: [foto]
+[08:13] LOJA: Pneu da marca GP Premium
+[08:13] LOJA: A unidade a vista está por apenas R$ 479,00
+[08:13] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+[08:13] LOJA: [foto]
+[08:13] LOJA: [áudio] "Nós somos aqui de Luziânia, Goiás. O senhor mora onde, senhora Hélio?"  {audio:midias/3EB020FE30509EDFF05B71_273242.ogg}
+[08:14] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+[08:14] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+[08:15] LOJA: [áudio] "No caso, eu só tenho esse no momento, na medida que o senhor está buscando."  {audio:midias/3EB01476EF8D06151FDD92_74455.ogg}
+[08:15] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:15] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+[08:16] LOJA: [foto]
+[08:16] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+[08:16] LOJA: [áudio] "Eu só vou averiguar se eu tenho 255, porque até então ele já tinha esgotado no meu estoque, tá?"  {audio:midias/3EB0194A683D11EB27AA00_885181.ogg}
+[08:17] LOJA: [áudio] "Sr. Helio, esse pneu é um pneu que nós fazemos. Ele é um pneu ecológico. Ele vai entrar na categoria de remodelagem, só que linha Premium. Ele é completamente diferente dos pneus que são remotes convencionais. Justamente por isso são os pneus mais vendidos que eu tenho. Eu tenho no Brasil todo com eles."  {audio:midias/3EB0E8BC04DA382DC45D34_476008.ogg}
+[08:18] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+[08:18] LOJA: [áudio] "Sim, tem garantia. Aí, se porventura o senhor sentir que tem alguma normalidade, pode vir aqui na loja que nós averiguamos para o senhor, tá bom?"  {audio:midias/3EB0EA0F597ACBFD6DF2E9_492918.ogg}
+--- 13/10/2026 (Tue) ---
+[09:01] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+bom dia
+[09:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:01] CLIENTE: já foi feito a encomenda
+[09:02] LOJA: Está prosseguindo em outra loja, certo... então está bem. Obrigada.
+[09:03] LOJA: De todo modo vou deixar aqui a nossa localização, espero poder atende-lo em um aproxima ocasião. Boa semana.
+[09:03] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:04] LOJA: [foto]

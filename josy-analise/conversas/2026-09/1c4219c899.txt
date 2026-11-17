@@ -1,0 +1,17 @@
+CONVERSA 1c4219c899 | contato: Joao | 29/09/2026 17:26 até 30/09/2026 09:21 | 2 msgs do cliente, 8 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[17:26] LOJA: *Josy:*
+Boa tarde!
+[17:26] LOJA: [foto]
+[18:08] CLIENTE: Olá! Quero um orçamento de pneus.
+[18:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:08] CLIENTE: 175/70ar13
+--- 30/09/2026 (Wed) ---
+[08:02] LOJA: [áudio] "Oi, seu João. Bom dia. Tudo bem com você? Olha, eu te mandei justamente o orçamento dos pneus ontem, tá? Que são essas três opções de marcas que eu tenho à pronta entrega. Aí, no orçamento, está o valor de apenas um pneu. Na primeira coluna está o valor à vista e aí seguem as opções de parcelamento em até 10 vezes."  {audio:midias/3EB091FCCA51F962D6B506_553712.ogg}
+[08:48] LOJA: [áudio] "Seu João, essas opções aí te atendem, eu também tenho aqui na oferta o pneu na medida 165-7013, que ele dá para fazer aqui de 279, deixa eu ver, eu consigo fazer por 239 cada pneu, se o senhor vai pagando débito ou no Pix."  {audio:midias/3EB0F481C3E85E371B41A1_947590.ogg}
+[08:48] LOJA: [áudio] "Moro aqui em Luziânia mesmo?"  {audio:midias/3EB01327E76973FFD4FE2C_158995.ogg}
+[09:21] LOJA: [áudio] "Bem, eu vou te mandar aqui a nossa localização, pois se houver a possibilidade, você vem aqui, tá joia?"  {audio:midias/3EB0865F9C7FB7D5398342_640982.ogg}
+[09:21] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

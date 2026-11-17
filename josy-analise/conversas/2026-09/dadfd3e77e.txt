@@ -1,0 +1,20 @@
+CONVERSA dadfd3e77e | contato: Alemão Adaptações 😎 | 30/09/2026 14:59 até 30/09/2026 15:19 | 7 msgs do cliente, 6 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[14:59] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:59] CLIENTE: [áudio] "Dois pneus, 165, 55, R16."
+[15:02] CLIENTE: 205/55 R16
+[15:02] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu me chamo Josi e você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0ADA9B9272EF9606F74_876437.ogg}
+[15:02] CLIENTE: Taguatinga
+[15:05] LOJA: [áudio] "Certo, e você conseguiria vir até nossa loja aqui em Luziânia?"  {audio:midias/3EB0C3C2238D5C861F40E5_404347.ogg}
+[15:11] CLIENTE: Tem um amigo meu que mora aí pode trazer para mim
+[15:12] CLIENTE: Sempre tá vindo aqui pelo lado de cá
+[15:12] LOJA: [áudio] "Ah, sim, perfeito. Eu vou te mandar aqui todas as opções que eu tenho no dia de hoje, tá bom?"  {audio:midias/3EB06A65B3B77696AA378D_684805.ogg}
+[15:12] CLIENTE: Ótimo
+[15:19] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:19] LOJA: [foto]

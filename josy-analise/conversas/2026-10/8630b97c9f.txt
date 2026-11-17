@@ -1,0 +1,29 @@
+CONVERSA 8630b97c9f | contato: Danilo Filho | 15/10/2026 11:52 até 15/10/2026 12:07 | 9 msgs do cliente, 14 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[11:52] CLIENTE: Bom dia
+[11:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:52] CLIENTE: Qual valor do pneu aro 15
+[11:52] CLIENTE: 195/65
+[11:53] CLIENTE: Se tiver outra promoção aro 15 me passa
+[11:53] LOJA: [foto]
+[11:53] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:53] LOJA: Os pneus da GP Premium estão na promoção compre 3 e leve 4
+[11:53] LOJA: Digamos que seja a vista: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[11:54] CLIENTE: Ok obrigado
+[11:55] CLIENTE: Vcs fazem alinhamento e balanceamento
+[11:55] LOJA: Sim!
+[11:55] LOJA: * Balanceamento = 35,00 (por pneu)
+* Alinhamento = 120,00 (Alinhamento de Direção)
+[11:55] LOJA: Mora aqui em Luziânia-Go, mesmo?
+[11:55] CLIENTE: Sim jardim inga
+[12:05] LOJA: Pertinho!
+[12:06] LOJA: Vou te encaminhar a nossa localização.
+[12:06] LOJA: Passa aqui!
+[12:07] CLIENTE: Ok
+[12:07] CLIENTE: Envia por favor
+[12:07] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:07] LOJA: [foto]

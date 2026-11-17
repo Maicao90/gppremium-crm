@@ -1,0 +1,11 @@
+CONVERSA 1ace03d812 | contato: Manoel Missias | 20/08/2026 13:51 até 20/08/2026 14:37 | 3 msgs do cliente, 2 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[13:51] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:51] CLIENTE: 195
+60
+15
+[13:55] CLIENTE: Oi
+[14:37] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu sou a Josi e eu tenho aqui sim o pino da marca GP Premium, lista por apenas R$ 289 a vista. Você é daqui de Luziânia mesmo?"  {audio:midias/3EB07E1ED0FEE63F842B88_563378.ogg}

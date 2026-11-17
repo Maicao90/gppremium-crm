@@ -1,0 +1,13 @@
+CONVERSA 6ce2d8038f | contato: Giva santos | 27/08/2026 13:47 até 27/08/2026 17:51 | 3 msgs do cliente, 4 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[13:47] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi
+[13:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:48] CLIENTE: [áudio] "Tá quanto? Os pneus aro 13."
+[14:38] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu sou a Josi e eu tenho aqui a partir de R$ 269 a vista. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0FF3E1033D5E64069FC_604463.ogg}
+[14:58] CLIENTE: [áudio] "Sim, moro em Luziânia. Fica na fábrica mesmo? É perto do... Quase perto da Coca aí, né? Eu moro depois de lá, moro no Milaguará. Depois eu dou uma passadinha aí, beleza?"
+[17:51] LOJA: [áudio] "Olá, tudo bem? Isso, isso mesmo. Aqui é pertinho da Coca-Cola."  {audio:midias/3EB02448DC2EF8C14BA1B8_731169.ogg}
+[17:51] LOJA: [foto]

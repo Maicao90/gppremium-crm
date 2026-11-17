@@ -1,0 +1,33 @@
+CONVERSA 066a24de35 | contato: Vital | 01/10/2026 08:47 até 01/10/2026 11:54 | 8 msgs do cliente, 10 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[08:47] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[08:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:48] CLIENTE: 225/65 17
+[08:48] LOJA: *Josy:*
+Bom dia, temos sim! Vou realizar seu orçamento.
+[08:49] CLIENTE: Qual marcas, valores e fotos?
+[08:50] CLIENTE: Vcs ficam aonde?
+[08:52] LOJA: *Josy:*
+Luziânia-Go
+[08:52] LOJA: [foto]
+[08:52] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:54] CLIENTE: Tranquilo! Estou fazendo orçamento, vamos ver qual será a melhor opção. Obrigado!
+[08:59] LOJA: *Josy:*
+Você é de onde?
+[11:52] CLIENTE: Valparaiso
+[11:52] LOJA: *Josy:*
+Ah, sim! É perto.
+[11:53] CLIENTE: Achei pneus mais em conta e sem juros parcelado
+[11:54] LOJA: *Josy:*
+Caso mude de idéia...
+[11:54] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:54] CLIENTE: Tranquilo
+[11:54] LOJA: [foto]

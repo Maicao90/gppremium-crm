@@ -1,0 +1,26 @@
+CONVERSA c39089e834 | contato: 🅢🅤🅡🅐🅜🅐 | 18/09/2026 15:03 até 18/09/2026 15:07 | 8 msgs do cliente, 8 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[15:03] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[15:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:03] LOJA: *Josy:*
+🙋🏼‍♀️
+[15:03] CLIENTE: Vcs fazem alinhamento em carros
+[15:04] LOJA: *Josy:*
+Você mora aqui em Luziania-Go?
+[15:04] CLIENTE: Sim
+[15:04] LOJA: *Josy:*
+Em qual bairro?
+[15:04] CLIENTE: Santa fé
+[15:05] LOJA: *Josy:*
+Certo... precisa somente de alinhamento mesmo?
+[15:05] CLIENTE: Só
+[15:05] LOJA: *Josy:*
+Vou pedir para o rapaz da oficina entrar em contato direto com você.
+[15:05] LOJA: *Josy:*
+Super Via é a oficina, está bem!
+[15:06] CLIENTE: Blz  eu já consegui uma aqui
+[15:06] CLIENTE: Muito obg
+[15:06] CLIENTE: Agradeço
+[15:07] LOJA: [áudio] "É porque aqui nesta empresa eu não faço esse serviço, mas tem a Supervia, eu pedi para eles falarem com vocês, tá bem?"  {audio:midias/3EB029BB30A7D823179913_75794.ogg}

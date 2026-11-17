@@ -1,0 +1,40 @@
+CONVERSA 49ffee9b3f | contato: lusivan brandao | 22/10/2026 06:33 até 22/10/2026 10:24 | 12 msgs do cliente, 6 da loja, 17 do robô
+
+--- 22/10/2026 (Thu) ---
+[06:33] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[06:33] ROBÔ: Oi, tudo bem?
+[06:33] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[08:40] CLIENTE: Bravo
+[08:40] ROBÔ: Show, Bravo! 👍
+[08:40] ROBÔ: Ela vem com rodas de aros diferentes, dependendo da versão.
+[08:40] ROBÔ: Você consegue olhar na lateral do pneu e me falar a medida (ex.: 195/55/16) ou só o aro da sua roda?
+[08:40] ROBÔ: Assim já te passo o valor certinho.
+[08:49] CLIENTE: 17
+[08:50] ROBÔ: Fechou, aro 17! No Bravo essa roda costuma vir com 215/45/17, e essa medida a gente não tem.
+[08:50] ROBÔ: A que mais se aproxima e serve na sua roda é a *225/45/17*, que tem praticamente o mesmo diâmetro.
+[08:50] ROBÔ: Temos o pneu *225/45/17* da marca *GP Premium* saindo por *R$ 339,00 à vista*.
+[08:50] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[08:50] ROBÔ: Dá uma olhadinha na lateral do seu pneu pra confirmar a medida? E me diz quantos pneus você precisa.
+[08:50] CLIENTE: 2
+[08:51] ROBÔ: Temos os 2 pneus *225/45/17* da marca *GP Premium* saem por *R$ 678,00 à vista* (valor total).
+[08:51] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[08:52] CLIENTE: Vc fica onde
+[08:52] ROBÔ: Segue a nossa localização:
+[08:52] ROBÔ: [localização] -16.2334867,-47.9120936 — Pneus GP Premium
+[08:52] ROBÔ: [foto] Pneus GP Premium
+[08:53] CLIENTE: Blzz tô fazendo ums orçamentos dps te aviso
+[08:53] ROBÔ: Tranquilo! Qualquer dúvida ou se quiser fechar, é só me chamar por aqui.
+[08:53] CLIENTE: A vista menor valor
+[08:53] LOJA: Está em busca de alguma marca especifica?
+[08:53] CLIENTE: Não
+[08:53] CLIENTE: Custo benefício
+[08:55] LOJA: Se o pagamento for em *dinheiro* fica por R$ 325,00 cada
+[10:23] CLIENTE: Esse pneu é remolde?
+[10:23] LOJA: [áudio] "O pneu GP Premium é um pneu ecológico que nós produzimos. Sim, ele vai entrar na categoria de remodelagem, só que linha Premium, que é completamente diferente dos pneus que são remolds mesmo."  {audio:midias/3EB01C148A33198CAA0DBD_822409.ogg}
+[10:23] LOJA: [áudio] "Você quer que eu grave um vídeo para você ver a diferença?"  {audio:midias/3EB020E61F1C501AF3BB47_680005.ogg}
+[10:24] CLIENTE: Não obrigado
+[10:24] LOJA: [áudio] "Também tem pneus novos."  {audio:midias/3EB031F06B64E1C4B2237C_131610.ogg}
+[10:24] LOJA: [áudio] "Tem interesse?"  {audio:midias/3EB079944C715E1AC88A7A_245156.ogg}
+[10:24] CLIENTE: Não

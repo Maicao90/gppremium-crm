@@ -1,0 +1,8 @@
+CONVERSA aea7181524 | contato: Direcional Pneus - GOODYEAR | 26/09/2026 07:56 até 26/09/2026 08:16 | 3 msgs do cliente, 1 da loja, 0 do robô
+
+--- 26/09/2026 (Sat) ---
+[07:56] CLIENTE: bom diaaa
+[07:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:56] CLIENTE: [foto] desce pra gente por favor
+[08:16] CLIENTE: oie bom dia

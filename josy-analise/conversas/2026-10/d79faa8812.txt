@@ -1,0 +1,27 @@
+CONVERSA d79faa8812 | contato: Marcos Santos | 02/10/2026 09:01 até 02/10/2026 11:23 | 9 msgs do cliente, 14 da loja, 0 do robô
+
+--- 02/10/2026 (Fri) ---
+[09:01] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:01] CLIENTE: [foto]
+[09:08] CLIENTE: É prá frontier
+[10:01] LOJA: [áudio] "Olá, bom dia, Marcos. Muito obrigada por aguardar. Olha, essa medida, eu não tenho ela aqui a pronta entrega, tá? Mas eu posso fazer uma cotação para você e assim que os meus distribuidores responderem, eu te passo direitinho aqui a marca, o preço e o prazo de entrega, tá bem? Você mora aqui em Luziânia?"  {audio:midias/3EB0301ED4CE46D9936E4A_463847.ogg}
+[10:03] CLIENTE: [áudio] "Bom dia, tudo bom? Não, eu moro aqui em Cristalina. Eu moro em Cristalina. Por um acaso, você teria um outro modelo que substituísse esse? Por um acaso, você teria um outro aí, um X-Bri, tipo o modelo X-Bri, um outro, às vezes até mais borrachudo, um tiquinho, e preço. Quais que você tem aí que pudesse substituir esses meus aqui? Que a minha fronteira está usando esses, mas eles têm outros modelos, né? Quais que você teria, no caso, aí no seu estoque?"
+[10:05] LOJA: [foto]
+[10:06] LOJA: [áudio] "Então, Marcos, eu tenho aqui o 265-7016 da marca Conforce, ele é naquele modelo borrachuro, daqui a pouco eu te mando a foto, a unidade está por R$ 756,00 à vista, e tenho o 255-7016 da marca GP Premium, que inclusive é o pneu mais vendido que eu tenho, está na oferta de R$ 599,00, ele está por R$ 539,00 para o pagamento à vista, tá?"  {audio:midias/3EB00470A4B8AB982C4FFE_318865.ogg}
+[10:07] CLIENTE: [áudio] "Então, beleza. Me manda as fotos. Mesmo assim, eu acredito que eu vou dar uma passadinha na loja aí. Você só me manda a localização da sua loja, porque são duas, né? É a primeira e a segunda loja. Me manda a localização da sua, porque uma vez eu fui aí, tinha ligado, aí eu fui na outra. Aí, você me manda a localização certinho da sua loja aí, tá? Acredito que mais para depois do almoço. Eu vou dar uma passadinha aí na loja também. Me manda as fotos, por gentileza? Desse 255 que você tem aí."
+[10:12] LOJA: [áudio] "A nossa loja é somente essa daqui que você tá falando comigo, tá? Que é a fábrica GP Premium mesmo, aí existem outras empresas que elas compram os meus pneus pra poder revender, tá jóia?"  {audio:midias/3EB0A7535DD802543540C6_838830.ogg}
+[10:12] LOJA: [áudio] "Vou te mandar a localização sim e já te mando as fotos dos pneus, tá bom?"  {audio:midias/3EB0CEB176D37929629F66_891275.ogg}
+[10:12] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:12] LOJA: [foto]
+[10:12] CLIENTE: Blz obrigado 🫂
+[10:39] LOJA: [vídeo]
+[10:40] LOJA: [vídeo]
+[10:43] CLIENTE: Vou aí na sua loja
+[10:43] LOJA: [áudio] "Olha, eu consegui aqui um retorno das marcas dos pneus na medida mesmo que o senhor está buscando, que é o 265-75-16, tá? Aí o orçamento que eu vou te mandar, ele é de valor unitário, igual a outra opção aí que eu te encaminhei, tá? E como é uma opção somente por encomenda, leva três dias úteis para poder chegar, caso o senhor queira alguma delas, e o distribuidor pede um pagamento cálcio. uma opção de 300 reais para poder reservar a opção desejada, tá bom? Vou mandar aqui embaixo."  {audio:midias/3EB01491954B3AF31FF8F7_788408.ogg}
+[10:44] LOJA: [foto]
+[10:45] CLIENTE: [áudio] "Tá, eu vou na loja sua aí, depois do almoço, vou sair daqui o meio-dia mais ou menos, aí depois do almoço eu vou aí, pra gente ver esse, esse GP, o 245, eu acho que não vai ficar tão, tão ruim nela né, você já usou deles, nessas caminhonetes, eu vou aí, eu vou aí na loja, beleza? Obrigado por enquanto."
+[11:20] LOJA: [áudio] "Sim, vem assim, Sr. Marcos. Eu te mandei a localização, mas como eu não sei se ela está abrindo direito, que o WhatsApp está com instabilidade, eu te mandei a foto aqui da frente da nossa loja, tá? Aqui fica do lado da... Aqui é na BR-040, né? Aí o senhor vindo vai ser do seu lado direito. O senhor vai passar ali... Na BR tem a Vipal, daí logo adiante tem aquele... Acho que é Motel Las Vegas, alguma coisa assim, mas adiante o senhor vai ver o posto de combustível. E logo um pouquinho mais adiante o senhor entra... Vendo o posto, logo o senhor se ajeita para entrar à sua direita, tá? Que passando um pouquinho o posto, o senhor já entra à direita, que o senhor vai ver o Hotel Goiás, a Goiás Diesel e a GP Premium. Aí tem uma placa bem grandona aqui escrito com tripneus. e aí tem uma placa, beleza? E aí tem uma placa. E aí Aqui temos uma placa... Vamos lá."  {audio:midias/3EB05F3E5AA3E2EBF8DF25_265806.ogg}
+[11:22] LOJA: [vídeo]
+[11:23] CLIENTE: [figurinha]

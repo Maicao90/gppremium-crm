@@ -1,0 +1,68 @@
+CONVERSA f335743f92 | contato: gadelhacrcgo@gmail.com | 08/10/2026 23:19 até 21/10/2026 17:11 | 21 msgs do cliente, 27 da loja, 11 do robô
+
+--- 08/10/2026 (Thu) ---
+[23:19] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[23:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 09/10/2026 (Fri) ---
+[00:08] CLIENTE: Olá! vim do instagram e gostaria de fazer um orçamento
+[00:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:56] LOJA: 🙋🏼‍♀️
+[08:56] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Por gentileza, só preciso que você me diga qual que é a medida dos pneus que você precisa, que aí eu consigo realizar o seu orçamento."  {audio:midias/3EB0AF80AC7E990228F6CD_334250.ogg}
+[09:06] CLIENTE: Tá bom vou ver aqui
+[15:07] LOJA: 👀
+[15:20] CLIENTE: [foto]
+[15:20] CLIENTE: [foto]
+[15:21] LOJA: certo... 1 instante...
+[15:22] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:22] LOJA: [foto]
+[15:23] LOJA: Mora aqui em Luziania-Go?
+[15:25] CLIENTE: Ok blz obrigado
+[15:25] CLIENTE: Vou ver aqui e te falo
+[15:25] LOJA: Mora aqui em Luziania-Go?
+[15:27] CLIENTE: Valparaíso
+[15:29] LOJA: É pertinho de nós!
+[15:29] CLIENTE: Esse pneus nacional gp1 de 249 é bom tem quantos anos de garantia?
+[15:30] LOJA: Ele é o pneu mais vendido que temos, tem 2 anos de garantia, é da marca GP Prmeium.
+[15:30] CLIENTE: Como funciona a venda?
+   Quais são os benefícios?
+[15:31] CLIENTE: Quais os serviços que eu tenho direito
+[15:31] CLIENTE: Ao é a base de troca não né?
+[15:31] LOJA: Não.
+[15:32] LOJA: Montagem é por nossa conta, serviços de alinhamento e balancramento são cobrados a parte.
+[15:33] CLIENTE: Não são remoudes não né?
+[15:33] LOJA: É
+[15:33] LOJA: Porém o de primeira linha, vou te mostrar a diferença
+[15:33] LOJA: 1 instante.
+[15:33] CLIENTE: Quanto vocês cobra para alinhar e balançar ?
+[15:39] LOJA: [vídeo]
+[15:42] LOJA: * Balanceamento = 35,00 (por pneu)
+* Alinhamento = 120,00 ( Alinhamento de Direção) valores completamente negociáveis.
+[16:32] CLIENTE: OK blz obrigado Deus abençoe sempre
+[16:44] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 21/10/2026 (Wed) ---
+[13:49] CLIENTE: Olá! vim do instagram e gostaria de fazer um orçamento
+[13:49] ROBÔ: Oi, tudo bem?
+[13:49] ROBÔ: Poderia me informar a *medida do pneu* (ex.: 175/65/14) ou o *modelo do seu carro*?
+[13:55] CLIENTE: Spin
+[13:55] ROBÔ: ["Pra Spin, a medida mais comum é a *185/65/15*.", "Temos o pneu *185/65/15* da marca *GP Premium* está saindo por *R$ 249,00 à vista*.", "Se preferir, você pode parcelar em até 10x no cartão!", "Só confere pra mim a medida na lateral do seu pneu pra gente ter certeza que é essa mesma?"]
+[14:00] CLIENTE: Que pneu é esse?
+[14:00] CLIENTE: Original?
+[14:00] ROBÔ: É o pneu *GP Premium* na medida *185/65/15*, que é a indicada pra sua Spin.
+[14:01] ROBÔ: O valor é *R$ 249,00 à vista* e dá pra parcelar em até 10x no cartão.
+[14:01] ROBÔ: Vou ser sincero com você: sim, é remold — mas não é um remold comum.
+[14:01] ROBÔ: O GP Premium é feito com borracha padrão europeu e passa por controle rígido de qualidade.
+[14:01] ROBÔ: A gente dá garantia de 2 anos e 60 mil km ou seu dinheiro de volta. Muitos clientes já aprovaram esse modelo.
+[14:01] CLIENTE: Não entendi remoudes não né?
+[14:01] ROBÔ: Entendo sua preocupação. Por isso a gente oferece a garantia de 2 anos e 60 mil km ou seu dinheiro de volta.
+[14:01] ROBÔ: Se quiser, vem até a loja ver o pneu de perto antes de decidir.
+[14:03] LOJA: [áudio] "Olá, boa tarde. Eu sou a Josi, assim que possível me diz qual é o seu nome? Bem, eu creio que nós até conversamos, já tem um tempo atrás, que eu te mandei aqui um orçamento com todas as opções de marcas que eu disponho até então, né? Hoje você apenas falou aqui para mim que precisava do pneu da Spin, aí eu gostaria de saber qual que é o aro, tudo direitinho para poder te passar um orçamento mais completo. No caso do pneu GP Premium, eu até te enviei um vídeo também para poder explicar para você qual que é a diferença dos pneus que são remoldes, né, para a linha GP Premium. O senhor chegou a avaliar a vez passada?"  {audio:midias/3EB00F4964CCF16BC7161A_785424.ogg}
+[14:03] LOJA: [áudio] "Senhora, ainda tem o vídeo que eu te mandei?"  {audio:midias/3EB08611EA1E4F92B2ED09_65747.ogg}
+[14:04] CLIENTE: OK blz entendi
+[14:09] LOJA: [foto]
+[17:11] ROBÔ: 🙋🏼‍♀️

@@ -1,0 +1,29 @@
+CONVERSA 7ffbd79708 | contato: MotaNeto | 24/09/2026 21:45 até 25/09/2026 09:00 | 4 msgs do cliente, 11 da loja, 0 do robô
+
+--- 24/09/2026 (Thu) ---
+[21:45] CLIENTE: Quero cotar o pneu 185/60 R15 GP Premium. Duas unidades.
+[21:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[21:46] CLIENTE: 185/60 R15
+--- 25/09/2026 (Fri) ---
+[08:08] LOJA: *Josy:*
+Bom dia!
+[08:08] LOJA: *Josy:*
+Temos sim!
+[08:08] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:08] LOJA: [foto]
+[08:08] LOJA: *Josy:*
+Você mora aqui em Luziania-Go?
+[08:34] CLIENTE: Bom dia.
+Moro sim.
+[08:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:43] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Gostaria de saber se eu posso reservar alguma dessas opções? Assim que você tiver um tempinho, você me dá um retorno, por gentileza?"  {audio:midias/3EB0076B73E84942F88F78_115999.ogg}
+[08:48] CLIENTE: [áudio] "Bom dia, tudo bem? Obrigado a você. Essa semana não tem vídeo aí, não. É semana que vem que eu vou resolver esse trem, que tipo de pneu que eu vou comprar. Eu tô só fazendo os orçamentos por enquanto, porque eu vou viajar agora, logo após o almoço, e só retorno na terça-feira. A semana que vem eu resolvo o que que eu vou fazer, tá bom? Obrigado, viu?"
+[08:50] LOJA: [áudio] "Sim, compreendo perfeitamente. Qual é mesmo o seu nome?"  {audio:midias/3EB061FCA2D0A6B58459CC_591236.ogg}
+[09:00] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:00] LOJA: [foto]

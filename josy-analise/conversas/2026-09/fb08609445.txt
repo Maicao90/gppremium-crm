@@ -1,0 +1,27 @@
+CONVERSA fb08609445 | contato: Jonas | 04/09/2026 07:15 até 04/09/2026 09:15 | 7 msgs do cliente, 8 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[07:15] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[07:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:04] CLIENTE: Valor do pneu 215/55/R17
+[08:10] LOJA: [áudio] "Olá, bom dia. Seja bem-vindo ao Pneus GP Premium. Eu me chamo Josi e, justamente, nós estamos com uma promoção dos pneus da marca GP Premium para essa medida. A promoção é Compre 3 e Leve 4. A unidade, se for para o pagamento à vista, está por apenas R$ 395,00. Digamos que seja à vista o seu pagamento, então, R$ 395,00 vezes 3 pneus, num total de R$ 1.185,00. E, por esse preço, então, você vai levar as 4 unidades. E esses pneus já são instalados. Eu vou te mandar as opções de parcelamento, está bem?"  {audio:midias/3EB0711CF84390EEAAED10_8781.ogg}
+[08:13] CLIENTE: 395,00
+[08:13] CLIENTE: Endereço de vcs
+[08:13] LOJA: *Josy:*
+Somos de Luziânia- Go, e você?
+[08:13] CLIENTE: Brasília
+[08:14] CLIENTE: Qual é a média de quilometragem desses pneus
+[08:15] LOJA: [foto]
+[08:15] LOJA: *Josy:*
+
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:17] LOJA: *Josy:*
+Se seu carro estiver bem alinhado, para não ocorrer desgastes irregulares, 60.000 km
+[09:11] LOJA: [áudio] "Sr. Jonas, eu vou te encaminhar aqui a nossa localização, pois se houver a possibilidade, só vem aqui na nossa empresa, tá bom? O nosso horário de atendimento é de segunda a sexta, de 8 da manhã às 18 e aos sábados de 8 até o meio-dia."  {audio:midias/3EB062E9132C6F70B771AC_981767.ogg}
+[09:11] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:15] CLIENTE: Meu carro é um BYD King

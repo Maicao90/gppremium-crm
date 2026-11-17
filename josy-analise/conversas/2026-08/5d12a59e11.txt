@@ -1,0 +1,20 @@
+CONVERSA 5d12a59e11 | contato: Francisco | 20/08/2026 13:48 até 20/08/2026 17:48 | 7 msgs do cliente, 9 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[13:48] CLIENTE: Boa tarde
+[13:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:48] CLIENTE: 205/70/15c
+[14:39] LOJA: Boa tarde, obrigada por aguardar.
+[14:39] LOJA: Temos sim!
+[14:39] LOJA: [foto]
+[14:39] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:39] CLIENTE: Ok
+[15:18] LOJA: Te atende?
+[15:19] CLIENTE: Vou olhar
+[15:19] CLIENTE: Tô dirigindo
+[15:19] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0BF7B2E2968850A5373_86387.ogg}
+[15:19] CLIENTE: [áudio] "Não, eu não moro em Luziânia, não. Mas moro próximo."
+[17:39] LOJA: Passa aqui na nossa loja! Será uma satisfação receber você aqui.
+[17:39] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:48] CLIENTE: Obrigado

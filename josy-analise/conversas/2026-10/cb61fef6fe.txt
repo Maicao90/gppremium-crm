@@ -1,0 +1,20 @@
+CONVERSA cb61fef6fe | contato: Helise Ogata | 09/10/2026 10:06 até 09/10/2026 10:16 | 7 msgs do cliente, 7 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[10:06] LOJA: Bom dia!
+[10:06] CLIENTE: Olá! Bom dia
+[10:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:07] LOJA: [áudio] "Olá, bom dia. Tudo bem? É que você me ligou aqui e a ligação caiu. Você está aqui em Luziânia, Goiás?"  {audio:midias/3EB0FC5A28E29107B94A76_832880.ogg}
+[10:07] CLIENTE: 185/60 R15
+[10:07] CLIENTE: Sim, foi para salvar o contato
+[10:07] CLIENTE: Rsrs
+[10:08] CLIENTE: Ia chamar vcs depois para saber o valor do pneu
+[10:09] LOJA: [foto]
+[10:09] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:12] CLIENTE: Certo, obrigada
+[10:12] CLIENTE: Irei passar para meu esposo
+[10:16] LOJA: Perfeito!
+[10:16] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

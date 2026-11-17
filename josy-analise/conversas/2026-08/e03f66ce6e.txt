@@ -1,0 +1,22 @@
+CONVERSA e03f66ce6e | contato: ✌️ | 18/08/2026 14:09 até 18/08/2026 14:27 | 8 msgs do cliente, 10 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[14:09] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:09] CLIENTE: [áudio] "Eu gostaria de ver com vocês um pneu 265, 65, 17."
+[14:13] LOJA: sim entendi, é so pela questão de não entregar pra longe
+[14:13] LOJA: mesmo
+[14:13] LOJA: vou ve aqui seu orçamento
+[14:14] CLIENTE: [áudio] "Ok, eu vou ficar na guarda aqui. Manda para nós aí fazendo favor. Quero 4, 265-65, aro 17, ok? Se tiver da escrita branca, bruto, se algum outro tenha letra branca, as listas do lado, melhor ainda, beleza?"
+[14:15] CLIENTE: [áudio] "Não, moça, não vai entregar em lugar nenhum, não. Eu vou ir para estar colocando os pneus. Eu quero saber o melhor valor que você tem desses escritas brancas. Uma marca boa."
+[14:20] LOJA: [foto]
+[14:20] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:21] LOJA: esse não tem letra branca
+[14:24] CLIENTE: [áudio] "Então, mas você tem algum que tem a escrita branca? Porque esse Brutus da Xibri aí, ó, todos os que eu vejo têm a escrita branca. Por que que o de vocês não tem? É porque é nacional? Nacional eu não conheço da Xibri, não. Do Brutus, não."
+[14:24] CLIENTE: [áudio] "Daí você não tem nenhum com a escrita branca? Nenhuma marca?"
+[14:25] LOJA: Não.
+[14:25] LOJA: Não temos.
+[14:26] CLIENTE: Ok
+[14:26] CLIENTE: Obrigada pela sua atenção
+[14:27] LOJA: disponha

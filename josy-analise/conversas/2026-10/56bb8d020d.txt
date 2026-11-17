@@ -1,0 +1,20 @@
+CONVERSA 56bb8d020d | contato: Ana | 16/10/2026 14:40 até 17/10/2026 11:06 | 4 msgs do cliente, 10 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[14:40] CLIENTE: Boa tarde
+[14:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:40] CLIENTE: Vc tem pneu 14
+[14:43] CLIENTE: Qual valor?
+[14:53] LOJA: Boa tarde
+[14:53] LOJA: Temos sim!
+Qual a medida que você precisa?
+[14:55] CLIENTE: Aro 14
+[15:02] LOJA: [áudio] "Oi, boa tarde. Tudo bem com você, Ana? 14 é apenas o aro do pneu. Os pneus possuem medidas. Por exemplo, 175-65-14, 175-70-14, 185-60. A numeração está gravada na lateral da borracha. Você está perto do carro? Se você não estiver, me diz qual é o carro que eu faço o orçamento com base na medida original."  {audio:midias/A5F7276BBA669207B54DBE95F3892AC7_632748.ogg}
+[15:18] LOJA: [áudio] "Bem, como eu não sei qual é a medida dos pneus que você precisa, que estão instalados aí no seu carro, eu vou te mandar uma medida aqui, que se de repente não for o que você está precisando, você me fala que eu resolvo o meu orçamento, tá bom? Apenas para poder te dar um parecer."  {audio:midias/A57EFE55F37E72732AF9D5F3FE7949F1_298114.ogg}
+[15:19] LOJA: [foto]
+[15:19] LOJA: [áudio] "No dia de hoje nós temos todas essas opções de marcas à pronta entrega. No orçamento está o valor unitário do pneu, na primeira colônia está o valor à vista, que é correspondente a Débito ou Pix, e seguem as opções de parcelamento em até 10 vezes, caso você queira parcelar."  {audio:midias/A55F788BD66C2B458E3330C84F113F84_317248.ogg}
+--- 17/10/2026 (Sat) ---
+[11:06] LOJA: Bom dia, vou te encaminhar a nossa localziação.
+[11:06] LOJA: [foto]
+[11:06] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

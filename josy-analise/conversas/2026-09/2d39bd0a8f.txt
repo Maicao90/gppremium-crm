@@ -1,0 +1,26 @@
+CONVERSA 2d39bd0a8f | contato: Senhor  Minha Fortaleza | 29/09/2026 12:36 até 29/09/2026 13:06 | 8 msgs do cliente, 9 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[12:36] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:37] CLIENTE: 205 65 15
+[12:37] CLIENTE: Scorpions
+[12:40] LOJA: *Josy:*
+Bom dia, tudo joia?
+[12:40] LOJA: *Josy:*
+Você mora aqui em Luziania-Go?
+[12:41] LOJA: *Josy:*
+Pois, Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[12:41] CLIENTE: Não
+[12:41] LOJA: *Josy:*
+Mas se eu conseguir, a retirada é so aqui.
+[12:41] LOJA: *Josy:*
+Consegue vir aqqui?
+[12:41] CLIENTE: Achei q vcs  ery de itaberai
+[12:41] LOJA: *Josy:*
+Não somos...uma pena.
+[12:42] CLIENTE: Não
+[12:42] CLIENTE: Mais muito obrigada
+[13:05] LOJA: [áudio] "Imagina que é isso, tá? Eu entendo e agradeço aí pela sua compreensão. Boa semana pra você."  {audio:midias/3EB0CCE6C2D57AD06EDAB8_536261.ogg}
+[13:06] CLIENTE: [figurinha]

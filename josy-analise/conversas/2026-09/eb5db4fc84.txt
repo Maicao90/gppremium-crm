@@ -1,0 +1,16 @@
+CONVERSA eb5db4fc84 | contato: Prof De Libras Weslecley | 03/09/2026 16:29 até 03/09/2026 16:30 | 3 msgs do cliente, 5 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[16:29] CLIENTE: Boa tarde
+[16:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:30] CLIENTE: Tem pneu pra moto também?
+[16:30] LOJA: *Josy:*
+🙋🏼‍♀️
+[16:30] LOJA: *Josy:*
+Boa tarde...
+[16:30] LOJA: *Josy:*
+Infelizmente não.
+[16:30] CLIENTE: Obrigado
+[16:30] LOJA: *Josy:*
+Disponha.

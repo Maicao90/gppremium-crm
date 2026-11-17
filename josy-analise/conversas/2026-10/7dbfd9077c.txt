@@ -1,0 +1,34 @@
+CONVERSA 7dbfd9077c | contato: Beto | 20/10/2026 09:55 até 20/10/2026 10:54 | 14 msgs do cliente, 8 da loja, 0 do robô
+
+--- 20/10/2026 (Tue) ---
+[09:55] CLIENTE: Bom dia!
+Quero cotar o pneu 215/50 R17 GP Premium.
+[09:55] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[09:55] CLIENTE: Marco
+[09:55] CLIENTE: 215/50 aro 17
+[10:03] LOJA: [áudio] "Oi Marco, bom dia. Tudo bem? Obrigada por aguardar. Marco, o pneu da marca GP Premium, ele está por apenas 329 reais a unidade para o pagamento à vista, tá? Você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB01553CC3C296BF5BD82_154521.ogg}
+[10:31] CLIENTE: Eu moro em São Gonçalo/RJ
+[10:35] LOJA: *Josy:*
+Ah, sim!
+[10:35] CLIENTE: Entrega?
+[10:36] LOJA: [áudio] "Olha, nós não estamos trabalhando com entregas por conta do frete, que está muito alto."  {audio:midias/3EB039AD8A61A251506DE3_624844.ogg}
+[10:36] CLIENTE: Ah sim. Que pena! Mas tudo bem 😊
+[10:37] LOJA: [áudio] "Sim, realmente, é uma pena. Nós estávamos atendendo, mas como o frete subiu demais da conta, acaba que o envio se torna inviável para o cliente."  {audio:midias/3EB03971F0AD2A8F0262A8_311152.ogg}
+[10:37] CLIENTE: Vc consegue simular? Só pra ter uma ideia...
+[10:40] LOJA: [áudio] "Sim, sim. Olha, os pneus da marca GP Premium são pneus remoldes de primeira linha. Eu preciso que você me informe qual é o CEP, o endereço e a quantidade de pneus para que realize a simulação."  {audio:midias/3EB08C5E778F16CD59CF9C_417180.ogg}
+[10:41] CLIENTE: Eu conheço. Um tempo atrás, já comprei com vcs 😉
+[10:41] CLIENTE: 4 pneus 215/50 aro 17
+[10:42] CLIENTE: CEP: 24.436-410
+[10:49] LOJA: [foto] *Josy:*
+A unidade do pneu é R$ 329,00 x 4  = 1316,00 * frete de 314,46 = Total R$ 1.630,46
+[10:51] CLIENTE: Ok. Tá ótimo
+[10:51] CLIENTE: Até dia 04/11 te dou uma resposta
+[10:51] CLIENTE: Agradeço a atenção
+[10:53] LOJA: [áudio] "Vamos nos falando, está bem?"  {audio:midias/3EB070AAA5B12F2411ED95_201228.ogg}
+[10:54] CLIENTE: Tá bem. Obrigado

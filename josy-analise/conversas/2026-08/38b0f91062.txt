@@ -1,0 +1,39 @@
+CONVERSA 38b0f91062 | contato: Bill | 28/08/2026 12:56 até 28/08/2026 17:34 | 7 msgs do cliente, 16 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[12:56] CLIENTE: Boa tarde
+[12:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:56] CLIENTE: 185/60r15
+[13:19] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu sou a Josi e eu tenho aqui sim o pneu da marca GP Premium, que ele está por apenas R$ 249 a vista. Você mora aqui em Luziânia?"  {audio:midias/3EB062D13ABEA24A5ACE44_818741.ogg}
+[13:21] CLIENTE: [áudio] "Olá, boa tarde. Eu moro em Senador Canedo. Você consegue encaminhar e mandar esses... Eu preciso de 4 pneus, pagamento à vista. Você consegue mandar esses pneus aí para mim?"
+[13:22] LOJA: [áudio] "Eu preciso ver com alguma transportadora se há essa possibilidade."  {audio:midias/3EB0B9B339659F018D3D7B_971368.ogg}
+[13:22] LOJA: *Josy:*
+Os pneus que temos são remold
+[13:39] CLIENTE: Todos os pneus que vc vendem são remold?
+[13:40] LOJA: *Josy:*
+Somente o de R$ 559,00 que é remold moço.
+[13:40] LOJA: *Josy:*
+Daqui a pouco te mando as fotos.
+[14:54] LOJA: *Josy:*
+temos de outras marcas mas não fazemos entregas.
+[14:57] CLIENTE: Quais as marcas e quais os valores?
+[14:58] LOJA: *Josy:*
+	
+pneu 185/60/15 88h edge sport goodyear R$ 573,00 em 10 x
+[14:58] LOJA: *Josy:*
+	
+pneu 185/60/15 88h fm800 dunlop R$ 587,00 em 10x
+[17:13] LOJA: [áudio] "Eu vou deixar aqui a nossa localização, pois se houver a possibilidade, passa aqui na nossa loja, tá bom?"  {audio:midias/3EB08EA4C782066CE59641_18519.ogg}
+[17:13] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:25] CLIENTE: Eu não entendi uma coisa, o pneu seus original custa 250,00 e o remold custa mais de 500,00. Me explica isso
+[17:26] LOJA: *Josy:*
+O remold é 249,00
+[17:27] LOJA: *Josy:*
+GOODYEAR
+[17:27] LOJA: *Josy:*
+DUNLOP
+[17:29] LOJA: [áudio] "E a nossa empresa está há 10 anos no mercado produzindo pneus de primeira linha, porque ele não é como o remold convencional, ele realmente é fora de série. Pneu muito bom. E segue a nossa localização, caso haja possibilidade, venha até nossa loja, venha nos conhecer, será uma satisfação recebê-la aqui."  {audio:midias/3EB098E932A84A17BBC3D4_665422.ogg}
+[17:30] CLIENTE: [áudio] "Não, beleza, porque eu já comprei pneu de vocês aí, e aí paguei o preço de um pneu convencional, eu não sabia que era remold não. Se eu soubesse eu tinha, talvez tinha repensado. Mas foi bom você me dizer que o pneu GP Premium, quando me venderam, disse que era competidor da Gudia, que era pneu de primeira linha, mas aí agora eu entendi, ele é, o GP Premium, ele é um pneu remold diferenciado. Beleza, não tá ótimo."
+[17:34] LOJA: [áudio] "Sim, e ele compete, porque a matéria-prima é a mesma. Como ele é um pneu ecológico, ele entra na categoria de remodelagem Premium. Então, ele compete."  {audio:midias/3EB00C8A1A5809C838536C_402012.ogg}

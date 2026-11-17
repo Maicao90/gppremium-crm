@@ -1,0 +1,25 @@
+CONVERSA 9566a25757 | contato: Antônio | 19/10/2026 11:16 até 19/10/2026 11:23 | 7 msgs do cliente, 8 da loja, 0 do robô
+
+--- 19/10/2026 (Mon) ---
+[11:16] LOJA: *Josy:*
+Olá, bom dia!
+[11:16] LOJA: *Josy:*
+Sou a Josy...com posso ajudar?
+[11:18] CLIENTE: tudo bem
+[11:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:18] CLIENTE: queria ver com fuciona pra trabalhar com vc
+[11:18] LOJA: *Josy:*
+Trabalhar aqui na fabrica?
+[11:19] CLIENTE: tenho um boracharia no Inga
+[11:19] LOJA: *Josy:*
+Ah, sim! Para revenda, certo?
+[11:19] LOJA: No caso seria por atacado, mas no momento não estamos atendendo a essa modalidade.
+[11:20] CLIENTE: como esta sendo
+[11:20] LOJA: *Josy:*
+somente venda direta para consumidor final, sendo ele CPF e CNPJ
+[11:22] CLIENTE: entendi
+[11:23] CLIENTE: vcs nao deixa consignado na loja ?
+[11:23] LOJA: *Josy:*
+Por ora, não.
+[11:23] CLIENTE: blz

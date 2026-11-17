@@ -1,0 +1,23 @@
+CONVERSA 53ff23aecb | contato: Tiago | 28/09/2026 18:33 até 29/09/2026 10:06 | 4 msgs do cliente, 10 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[18:33] CLIENTE: Boa noite !
+[18:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:34] CLIENTE: 195/60 aro 16
+--- 29/09/2026 (Tue) ---
+[08:18] LOJA: [áudio] "Olá! Bom dia, Thiago! Tudo jóia? Qual que é o seu carro?"  {audio:midias/3EB03F7902615C3BD98464_151583.ogg}
+[09:10] CLIENTE: Pulse
+[09:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:13] LOJA: [foto]
+[09:15] LOJA: [áudio] "Olá, tudo bem com você, Thiago? Olha, para o Fiat Pulse, você pode utilizar todas essas medidas aí que eu te encaminhei, tá? No aro 16, eu tenho aqui na medida que você está buscando mesmo, o pneu da marca Linglong. A unidade está por apenas R$ 469,00 por pagamento à vista, tá joia? Neste momento, eu disponho de duas unidades aqui no meu estoque."  {audio:midias/3EB0D0D0E3586A4B0D3ED8_251465.ogg}
+[09:21] LOJA: [áudio] "Tiago, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB091AF50B1294853CE98_695145.ogg}
+[09:27] CLIENTE: Sim . Amanhã passo aí .
+[10:05] LOJA: *Josy:*
+Combinado, Tiago...
+[10:06] LOJA: *Josy:*
+Vou te encaminhar a nossa localização!
+[10:06] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:06] LOJA: [foto]

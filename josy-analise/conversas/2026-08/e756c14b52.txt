@@ -1,0 +1,19 @@
+CONVERSA e756c14b52 | contato: Deus 🔐 Minha Família🙏 | 20/08/2026 17:13 até 20/08/2026 17:41 | 8 msgs do cliente, 8 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[17:13] CLIENTE: Olá boa tarde!
+[17:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:13] CLIENTE: Pneus R13 165/70
+[17:17] LOJA: Olá boa tarde!
+[17:17] LOJA: Está em busca de alguma marca especifica?
+[17:19] CLIENTE: Vcs trabalham com essas marcas,Pirelli, Bridgestone, Goodyear ?
+[17:23] LOJA: A pronta entrega não... Mora aqui em Luziania-Go?
+[17:23] CLIENTE: Valparaiso
+[17:23] CLIENTE: Qual os valores?
+[17:25] CLIENTE: Qual vc tem para que eu possa retirar?
+[17:26] LOJA: Pneu da marca GP Premium R$ 239,00 a unidade a vista tenho apenas 3 unidades nesse nmomento.
+[17:26] CLIENTE: Ok
+[17:26] CLIENTE: Obrigada
+[17:32] LOJA: Não te atende?
+[17:41] LOJA: Bem... por ora vou encerrar seu atendimento. Caso precise novamente é só chamar. 👋🏻

@@ -1,0 +1,11 @@
+CONVERSA b3e19d1627 | contato: Francisco | 25/09/2026 08:01 até 25/09/2026 08:38 | 1 msgs do cliente, 6 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[08:01] LOJA: [áudio] "Oi, Sr. Francisco, bom dia. Em que eu posso te ajudar?"  {audio:midias/3EB00641AB572013149183_216429.ogg}
+[08:06] LOJA: 🙋🏼‍♀️
+[08:07] CLIENTE: [áudio] "Bom dia, moço. Eu queria saber quanto é que tá o pneu da Range, 17. Vê pra mim aí quanto é que tá. Pagar a vista."
+[08:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:09] LOJA: [foto]
+[08:09] LOJA: [áudio] "Senhor Francisco, eu vou ter aqui no modelo ATR, que dá para fazer por 559 a vista, tá? E já faz a instalação dele para o senhor, e vou ter também no modelo Brutz, que é aquele bem borrachudo, bem caroçudo, esse está na promoção também, dá para fazer por 599 cada, e coloca os pneus aí no seu caminhonete."  {audio:midias/3EB0F7222249C8902F002E_96221.ogg}
+[08:38] LOJA: [foto]

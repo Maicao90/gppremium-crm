@@ -1,0 +1,22 @@
+CONVERSA 8dd0ed0be0 | contato: . | 05/10/2026 14:55 até 07/10/2026 16:00 | 4 msgs do cliente, 9 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[14:55] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:55] CLIENTE: Boa tarde
+[14:56] CLIENTE: Tem pneus 165/60/14
+[14:56] LOJA: *Josy:*
+Boa tarde!
+[14:57] LOJA: *Josy:*
+Terei 165/70/14 te atende?
+[14:57] CLIENTE: Não, obrigado
+[14:58] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Bem, no momento eu não disponho da opção que você precisa pronta entrega, mas eu consigo fazer uma cotação com os meus distribuidores, tá? Eu posso cotar e assim que eles me responderem eu te faço direito a marca o preço e prazo de entrega."  {audio:midias/3EB0AA247620E8514DFE2D_175141.ogg}
+[14:58] LOJA: [áudio] "Você mora aqui em Luziânia?"  {audio:midias/3EB0BB52BE73DCBFA2934C_301057.ogg}
+--- 07/10/2026 (Wed) ---
+[15:59] LOJA: Boa tarde, hoje consegui um retorno a respeito da medida solicitada.
+[16:00] LOJA: Pneu será da marca Sunwide
+[16:00] LOJA: [foto]
+[16:00] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 150,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

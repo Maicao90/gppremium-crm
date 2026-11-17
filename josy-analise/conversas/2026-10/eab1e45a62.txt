@@ -1,0 +1,14 @@
+CONVERSA eab1e45a62 | contato: Wylgner | 13/10/2026 19:35 até 14/10/2026 13:08 | 2 msgs do cliente, 5 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[19:35] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[19:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:36] CLIENTE: 205/65/15
+--- 14/10/2026 (Wed) ---
+[08:12] LOJA: Bom dia!
+[08:13] LOJA: [foto]
+[08:13] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:08] LOJA: [áudio] "Oi, Will, Guilherme. Tudo bem com você? Eu te mandei um orçamento a respeito da medida que você está precisando e gostaria de saber se a sua opção te atende, se vocês têm busca de alguma marca específica. Assim que possível, me dê um retorno, tá bom?"  {audio:midias/3EB03BCD94124B10A2ADEE_963022.ogg}

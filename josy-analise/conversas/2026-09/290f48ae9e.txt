@@ -1,0 +1,24 @@
+CONVERSA 290f48ae9e | contato: ⚖️Ranieri Aguiar | 30/09/2026 12:09 até 30/09/2026 15:09 | 9 msgs do cliente, 11 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[12:09] CLIENTE: [foto]
+[12:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:10] CLIENTE: Pneu 🛞 do Voyage 92
+[12:10] CLIENTE: 175/75 R 13
+[12:11] LOJA: [áudio] "Oi, boa tarde, tudo bem com você? Eu tenho aqui sim, eu estou finalizando o seu orçamento, já vou te encaminhar, tá bom?"  {audio:midias/3EB00652081FB9E92F11A8_828049.ogg}
+[12:11] CLIENTE: Ok.
+[12:17] LOJA: [áudio] "Aguarda só mais um instante, que como a internet está com instabilidade, eu não estou conseguindo carregar o orçamento para te encaminhar, tá? Mas a princípio, eu tenho aqui os pneus da marca Conforcer. A unidade está por R$290,00 para o pagamento correspondente a débito ou Pix."  {audio:midias/3EB0E5CC2501097B9CEAA9_409578.ogg}
+[12:17] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0BA6B69CC8EBDFBAD83_592445.ogg}
+[12:18] CLIENTE: Ok.Fico no Aguardo.Moro no Jardim Ingá
+[12:18] CLIENTE: Caro né.
+[12:18] CLIENTE: Eu queria uma marca mais em conta
+[12:19] LOJA: [áudio] "Sim, exatamente. Pneus aro 13, eles têm esse preço justamente porque as montadoras pararam de produzir carros saídos de fábrica com aro 13 e 14, né? Então, os pneus que são nessa medida, eles têm realmente a tendência de ser mais caros."  {audio:midias/3EB0AA299E8651D8024B90_669863.ogg}
+[12:19] CLIENTE: E tem alguma medida que serve para o Voyage sem ser essa?
+[12:20] LOJA: [áudio] "Sim, tem sim. Tem o 165-7013, tá? A questão vai ser apenas a largura, que ele vai ser um pneu que é um centímetro estreito a esse. Inclusive, é a medida original de fábrica do pneu do seu carro."  {audio:midias/3EB0811A65219B854FA2AB_190509.ogg}
+[12:20] LOJA: [áudio] "Aí, na medida 165-70, ele está na oferta para esse final de mês, tá? De 279, estou fazendo por apenas 239 a unidade para pagamento à vista."  {audio:midias/3EB091F6634D86D2A4C328_164109.ogg}
+[12:21] CLIENTE: Ok.Vou analisar
+[15:08] LOJA: [foto]
+[15:09] LOJA: [áudio] "Oi, seu Ranieri, tudo bom? Agora que eu consegui fazer direito aqui o orçamento para você, que hoje a internet está misericórdia, eu tenho essas três opções, a pronta entrega, tá? Aí no orçamento está o valor de apenas um pneu, na primeira colonel, o valor à vista, e aí seguem as opções de parcelamento em até 10 vezes, caso você queira parcelar, tá bom?"  {audio:midias/3EB0F8D2077DAD18C1AA71_226724.ogg}
+[15:09] LOJA: [áudio] "Eu vou aproveitar aqui e já vou deixar nossa localização na conversa, que caso o senhor tenha a possibilidade de vir aqui, será uma satisfação recebê-lo, tá joia?"  {audio:midias/3EB0770EB4BA24D4BE6C57_906377.ogg}
+[15:09] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

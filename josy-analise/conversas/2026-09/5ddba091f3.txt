@@ -1,0 +1,30 @@
+CONVERSA 5ddba091f3 | contato: Edvandrio Rodrigues Da Si | 04/09/2026 06:56 até 11/09/2026 17:55 | 2 msgs do cliente, 12 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[06:56] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[06:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[06:57] CLIENTE: 175/70/14
+[08:36] LOJA: *Josy:*
+Bom dia!
+[08:36] LOJA: *Josy:*
+Temos sim!
+[08:36] LOJA: *Josy:*
+NO dia de hoje seguem as seguintes opções:
+[08:36] LOJA: *Josy:*
+/14Pneu 175/70/14 Kelly Goodyear  R$ 446,48 (débito/pix).
+Pneu r1xl Dunlop 175/70/14 R$ 446,48  (débito/pix)..
+Pneu Hifly 175/70/14 307,37 (débito/pix). 
+
+Pneu GP Premium 175/70/14  em *oferta*  R$ 279,00 (débito/pix) Ou 263,00 em *dinheiro*.
+[08:56] LOJA: [áudio] "Olá, bom dia. Os senhores moram aqui em Luziânia mesmo?"  {audio:midias/3EB019C891E1BDF14F74A7_23171.ogg}
+[18:31] LOJA: [áudio] "Olá, boa noite, tudo bem contigo? Você pediu um orçamento aqui pela manhã e eu te encaminhei as opções que eu tenho, só não consegui falar com você posteriormente, porque eu fiquei sem dados aqui para falar com os clientes, tá? Ficamos com instabilidade na nossa linha telefônica, mas assim que possível, me dá um retorno, por gentileza, me diz se essas opções te atendem, Tchau, tchau!"  {audio:midias/3EB03A2A56D5DA968F8569_336668.ogg}
+--- 10/09/2026 (Thu) ---
+[17:19] LOJA: [áudio] "A gente fala em bruto do Zoya."  {audio:midias/3EB0642AC15E0BD85846B6_537680.ogg}
+[17:19] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[17:55] LOJA: [áudio] "Oi Edivandra, tudo bem? Ontem eu fiz um vídeo, né, pra tentar falar contigo, mas imagino que na correria, né, você viu aí, mas não conseguiu me responder. Então, pra não ficar justamente enchendo seu WhatsApp de mensagens, porque eu sei que é chato, eu vou encerrar seu atendimento, tá bom? Se houver a possibilidade, você passa aqui na nossa empresa pra conversarmos pessoalmente. Muitíssimo obrigada pela atenção. Bom final de semana."  {audio:midias/3EB056977525EEEF2EAC22_256634.ogg}
+[17:55] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

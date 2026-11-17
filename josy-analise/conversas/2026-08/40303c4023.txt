@@ -1,0 +1,33 @@
+CONVERSA 40303c4023 | contato: Gustavo Maia | 26/08/2026 17:53 até 28/08/2026 09:46 | 6 msgs do cliente, 16 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[17:53] CLIENTE: Quero cotar o pneu 205/70 R15 GP Premium.
+[17:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:53] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Eu sou a Josi. Você precisa realmente dessa medida para pneu de carro de passeio ou é para algum outro tipo de veículo?"  {audio:midias/3EB0FC1171607218F5A3EC_534677.ogg}
+[17:54] CLIENTE: saveiro
+[17:54] CLIENTE: quero off road
+[17:55] CLIENTE: adventure at
+[18:05] LOJA: [foto]
+[18:05] LOJA: Pneu da marca GP Premium
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[18:06] LOJA: [foto]
+[18:12] CLIENTE: tem foto da lateral do pneu
+--- 27/08/2026 (Thu) ---
+[08:04] LOJA: Bom dia!
+[08:04] LOJA: [vídeo]
+[11:41] LOJA: *Josy:*
+🙋🏼‍♀️
+[11:53] LOJA: [áudio] "Você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB01D3EED974727C614C5_260407.ogg}
+[17:29] LOJA: [áudio] "Olá, tudo jóia? Você mora aqui na cidade de Luziânia mesmo? Mas cedo eu te encaminhei o vídeo aí do pneu, gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno?"  {audio:midias/3EB0E463AA0206A7DB6927_568299.ogg}
+[18:55] CLIENTE: [áudio] "Não, não, eu sou de Brasília, mas eu sempre trabalhei no entorno. Então, quando eu tiver aí, eu realmente vou querer. E aí, esse valor aí é dividido, você mandou a tabela lá dividida. Tem como pagar pelo site, gerar um link, alguma coisa assim? Ou só presencial?"
+[18:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 28/08/2026 (Fri) ---
+[08:06] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? O parcelamento é só presencial mesmo, um cartão de crédito."  {audio:midias/3EB036BDB452C114E3B1FC_410285.ogg}
+[08:06] LOJA: [áudio] "E você vindo com o carro, nós já realizamos a instalação dos pneus, tá?"  {audio:midias/3EB0754629A4A4A6098301_292449.ogg}
+[08:07] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:46] LOJA: [áudio] "Qual é o seu nome mesmo, moço? Para eu salvar aqui o seu contato e venha aqui sim que vai ser uma satisfação receber você na nossa loja, tá?"  {audio:midias/3EB006B4978C85817C9F27_700457.ogg}
+[09:46] LOJA: [foto]

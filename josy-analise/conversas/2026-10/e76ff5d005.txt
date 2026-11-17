@@ -1,0 +1,25 @@
+CONVERSA e76ff5d005 | contato: Carlosed  | 16/10/2026 14:09 até 17/10/2026 11:12 | 7 msgs do cliente, 11 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[14:09] CLIENTE: Boa tarde
+[14:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:09] CLIENTE: Queria fazer um orçamento de pneu aro 14
+[14:14] LOJA: Qual a medida dos pneus que você precisa?
+[14:17] CLIENTE: Eita
+[14:17] CLIENTE: Isso não sei
+[14:17] CLIENTE: É pra um onix
+[14:20] CLIENTE: 185/70
+[14:29] LOJA: [foto]
+[14:29] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:35] CLIENTE: Eu quero os 4 pneus
+[14:35] LOJA: Perfeito!
+[14:35] LOJA: Somos de Luziânia-Go, e você também?
+[15:26] LOJA: [áudio] "Carlos, qual das opções você quer que eu reserve para ti? Carlos, qual das opções você quer que eu reserve para ti?"  {audio:midias/A53EC06429FD0FD9A3EFD50561C16B14_114407.ogg}
+[17:38] LOJA: [áudio] "Bem, eu vou encerrar aqui o nosso atendimento, mas eu vou deixar nossa localização, que aí você vem direto aqui na loja para nós conversarmos. Está bem, Carlos?"  {audio:midias/3EB083F6F72249DA7AE341_555424.ogg}
+[17:39] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:39] LOJA: [foto]
+--- 17/10/2026 (Sat) ---
+[11:12] LOJA: OI...sr Carlos...

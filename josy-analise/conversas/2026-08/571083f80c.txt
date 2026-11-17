@@ -1,0 +1,27 @@
+CONVERSA 571083f80c | contato: Henrique | 18/08/2026 14:43 até 29/08/2026 10:57 | 10 msgs do cliente, 10 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[14:43] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[14:43] CLIENTE: Fica aonde a loja de vocês?
+[14:43] LOJA: [áudio] "Olá, boa tarde. Tudo bem? Nós somos aqui de Luziânia, Goiás. E você?"  {audio:midias/A508EBB3E5B1177D65F9BC7DDCDC99E0_877550.ogg}
+[14:43] CLIENTE: Valparaíso
+[14:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:44] CLIENTE: Aro 13 175/ 70
+[14:46] LOJA: Boa tarde!
+[14:46] LOJA: Temos sim. Vou encaminhar seu orçamento.
+[14:47] CLIENTE: Ok
+[14:47] LOJA: [foto]
+[14:48] LOJA: [áudio] "No dia de hoje nós temos todas essas opções de marcas à pronta entrega. No orçamento está o valor unitário do pneu, onde na primeira coluna já deixei o valor à vista, que é o menor e melhor preço. Seguem também as opções de parcelamento em até 10 vezes, caso você queira parcelar."  {audio:midias/A53A7FC5FAD93378248315BF66868FEE_775317.ogg}
+[14:49] CLIENTE: Ok
+[14:52] LOJA: Mora aqui em Luziânia mesmo?
+[15:18] CLIENTE: Valparaíso
+[15:22] LOJA: [áudio] "Olá, tudo bem? Então, é bem próximo. Você consegue vir até aqui?"  {audio:midias/3EB0E8295D0C1FB5355668_710451.ogg}
+[15:23] CLIENTE: Sábado sim
+[15:23] CLIENTE: Pq trabalho aqui em Brasília
+[15:30] LOJA: [áudio] "Eu vou te mandar nossa localização. Então, ok? Você passa aqui."  {audio:midias/3EB014B4240986B68FC36A_514445.ogg}
+[15:32] CLIENTE: [figurinha]
+--- 29/08/2026 (Sat) ---
+[10:57] LOJA: [áudio] "Oi Henrique, tudo jóia? Como é que você está? Há alguns dias atrás nós conversamos, né, a respeito dos pneus aí para o seu carro e gostaria de saber se você ainda está precisando, se hoje você está aqui em Luziânia já para fazer a montagem dos mesmos. Você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB086C124E8DDA4DECF9C_552867.ogg}

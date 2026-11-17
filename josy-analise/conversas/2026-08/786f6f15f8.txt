@@ -1,0 +1,23 @@
+CONVERSA 786f6f15f8 | contato: José Anderson Miguel da S | 28/08/2026 11:42 até 28/08/2026 11:58 | 5 msgs do cliente, 4 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[11:42] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:44] CLIENTE: VDM CARGAS EIRELI
+CNPJ: 22.740.993/0003-32
+RUA JOSE BENICIO DE SOUZA, 16
+JARDIM SAO JORGE
+PARANAVAÍ - PR
+CEP: 87.710-540
+IE: 90.855931-26
+CAIXA POSTAL 438 
+FONE 44 3423-8708 
+EMAIL = financeiro@rodovini.com.br
+[11:45] CLIENTE: [áudio] "Bom dia, bom? Um rapaz de vocês veio buscar um pneu aqui no Japo, em Braslândia. Eu mandei o CNPJ, ele mandou uma foto para aí e disse que deu erro nesse CNPJ."
+[11:52] LOJA: *Josy:*
+Bom dia, bom dia!
+[11:53] CLIENTE: Bom dia
+[11:57] LOJA: [áudio] "Moço, bom dia. Eu sou a Josi. Josi é seu nome, né? E eu sou a Josi. Mas eu creio que você está falando com outra empresa. Não é aqui, não."  {audio:midias/3EB0BE4B92CB2FA8EA00A9_886069.ogg}
+[11:58] CLIENTE: [áudio] "Aô, tudo bom, Josi? Eu salvei o número e deu esse de vocês aí. Mas tudo jóia, então."
+[11:58] LOJA: [áudio] "Beleza."  {audio:midias/3EB09492D145427E784217_64221.ogg}

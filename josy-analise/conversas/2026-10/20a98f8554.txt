@@ -1,0 +1,29 @@
+CONVERSA 20a98f8554 | contato: Queli | 03/10/2026 10:37 até 03/10/2026 11:09 | 7 msgs do cliente, 10 da loja, 0 do robô
+
+--- 03/10/2026 (Sat) ---
+[10:37] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:38] CLIENTE: Tem peneu Goodyear aro 13?
+[10:54] LOJA: *Josy:*
+Bom dia!
+[10:54] LOJA: *Josy:*
+Obrigada por aguardar!
+[10:55] LOJA: [foto]
+[10:55] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:56] LOJA: [foto]
+[11:06] CLIENTE: Onde fica a loja de vcs?
+[11:07] LOJA: *Josy:*
+Somos de Luziânia-Go
+[11:07] CLIENTE: Muito longe!
+[11:08] CLIENTE: Moro me Taguatinga DF
+[11:08] LOJA: *Josy:*
+Caso mude de ideia...
+[11:08] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:08] LOJA: *Josy:*
+Bom final de semana
+[11:09] CLIENTE: Pra vc também.

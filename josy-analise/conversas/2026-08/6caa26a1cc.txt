@@ -1,0 +1,28 @@
+CONVERSA 6caa26a1cc | contato: Márcio | 18/08/2026 17:24 até 29/08/2026 11:37 | 7 msgs do cliente, 15 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[17:24] CLIENTE: Pneus 205/65. Aro 15
+[17:25] LOJA: [foto]
+[17:27] CLIENTE: Me manda outra vez a tabela de preços, não consegui abrir esse que vc mandou
+[17:28] LOJA: [foto]
+--- 19/08/2026 (Wed) ---
+[09:45] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu sou a Josi e quando possível me diz qual é o seu nome, eu te encaminhei aí novamente o orçamento e você pode confirmar para mim se realmente chegou para você?"  {audio:midias/3EB03793CDA8FB36C994B0_551825.ogg}
+[15:15] LOJA: Oi!
+[15:15] LOJA: [vídeo]
+[16:33] LOJA: [áudio] "Oi, Márcio. Tudo bem? Você conseguiu verificar o orçamento que eu tinha te encaminhado? Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB04F84A828AFE115F88A_952510.ogg}
+[16:36] CLIENTE: [áudio] "Boa tarde, tudo bem? Aqui eu tô no trabalho. Trabalho a semana toda, só cheguei em casa só à noite, vou arrumar um jeitinho de ir na loja, pra ele ter contato contigo, pra gente tentar fechar negócio. Pode ser? Porque essa semana eu não vou ter tempo de jeito nenhum, só vou ter a semana que vem. Mas eu tô precisando desses pneus, entendeu?"
+[16:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:38] LOJA: [áudio] "Oi, Márcio. Tudo jóia? Nossa, eu entendo completamente. Os dias da gente são bem corridos, realmente, tá? Não tem problema. Super entendo a situação. Eu vou fazer o seguinte. A princípio, eu vou te mandar aqui a nossa localização, pois se houver a possibilidade, você vem aqui na nossa loja, tá? Aqui nós atendemos aos sábados de 8 da manhã até ao meio-dia."  {audio:midias/3EB0975D25FEA0710A32FD_813355.ogg}
+[16:38] LOJA: [áudio] "Você é daqui de Luziânia mesmo?"  {audio:midias/3EB05337F0895B978DEEEB_215269.ogg}
+[16:38] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:45] CLIENTE: Valparaíso
+[16:45] LOJA: [áudio] "Ah, sim, é bem perto."  {audio:midias/3EB0D1786AA0FC5335D5A3_742865.ogg}
+[16:50] CLIENTE: [áudio] "Eu vou arrumar um jeito aí essa semana. Aí eu pego e... pode mandar mensagem nesse número mesmo? Como é que é?"
+[16:50] LOJA: [áudio] "Sim, você pode mandar mensagem aqui sim."  {audio:midias/3EB038361547D1F64DF736_260851.ogg}
+[16:51] LOJA: [áudio] "Só falar, tô indo que eu já reservo aqui os pneus pra você de imediato, tá bom?"  {audio:midias/3EB09002B4DDEF834E1523_936169.ogg}
+[16:51] CLIENTE: Ok
+[16:51] CLIENTE: Obrigado
+[16:51] LOJA: [áudio] "Imagina que é isso. Eu que agradeço por você ter entrado em contato conosco, está bem?"  {audio:midias/3EB097FEEFA68FFB3E80D7_999243.ogg}
+--- 29/08/2026 (Sat) ---
+[11:37] LOJA: [áudio] "Oi Márcio, tudo jóia? Alguns dias atrás nós conversamos aí a respeito dos pneus para o seu carro, né? Você disse que ia tentar vir aqui durante a semana. Assim que possível, você me dá um retorno, por gentileza, para eu separar os pneus para você, tá jóia? Espero aí que você tenha um bom final de semana. Até mais!"  {audio:midias/3EB0277E39E9B420FF8885_232313.ogg}

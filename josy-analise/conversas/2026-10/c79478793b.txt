@@ -1,0 +1,64 @@
+CONVERSA c79478793b | contato: Rápido Iporá | 01/10/2026 10:11 até 01/10/2026 10:14 | 9 msgs do cliente, 7 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[10:11] LOJA: *Josy:*
+Bom dia, tudo bem?
+[10:11] CLIENTE: Olá, tudo bem? 
+Somos a RIT! 🚛
+Ficamos felizes com o seu contato e vamos facilitar o seu atendimento. Digite o número da  opção que melhor lhe atende 
+
+
+1- Rastreamento e filiais
+2 - Comercial
+3 - Cotação
+4 - SAC
+
+
+Para retornar, basta digitar Menu.
+[10:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:11] CLIENTE: Olá, tudo bem? 
+Somos a RIT! 🚛
+Ficamos felizes com o seu contato e vamos facilitar o seu atendimento. Digite o número da  opção que melhor lhe atende 
+
+
+1- Rastreamento e filiais
+2 - Comercial
+3 - Cotação
+4 - SAC
+
+
+Para retornar, basta digitar Menu.
+[10:11] LOJA: *Josy:*
+Vocês atendem  a cidade de Luziânia-Go?
+[10:11] CLIENTE: Olá, tudo bem? 
+Somos a RIT! 🚛
+Ficamos felizes com o seu contato e vamos facilitar o seu atendimento. Digite o número da  opção que melhor lhe atende 
+
+
+1- Rastreamento e filiais
+2 - Comercial
+3 - Cotação
+4 - SAC
+
+
+Para retornar, basta digitar Menu.
+[10:11] LOJA: *Josy:*
+3
+[10:11] CLIENTE: Estamos encaminhando você para o setor, por favor, aguarde.
+[10:12] LOJA: *Josy:*
+Vocês atendem  a cidade de Luziânia-Go?
+[10:13] CLIENTE: *Brenda Barretos*:
+ /o
+[10:13] CLIENTE: *Brenda Barretos*:
+ Olá, tudo bem?
+[10:13] LOJA: *Josy:*
+Tudo bem!
+[10:14] CLIENTE: [foto] *Brenda Barretos*:
+ infelizmente não atendo essa região, vou te enviar minha rota atendida, estou a disposição para cotar na rota abaixo
+[10:14] CLIENTE: *Brenda Barretos*:
+ 62 9690-9273 DO VALLE
+[10:14] LOJA: *Josy:*
+Já falei com eles obrigada, Brenda.
+[10:14] CLIENTE: *Brenda Barretos*:
+ meu parceiro atende nesse telefone

@@ -1,0 +1,72 @@
+CONVERSA 3f2e3771e6 | contato: Elisandia Soares Barbosa | 14/10/2026 06:14 até 17/10/2026 11:57 | 22 msgs do cliente, 38 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[06:14] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Bom dia
+[06:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[06:15] CLIENTE: Qual o valor do pneu 175/70/14
+[08:05] LOJA: [foto]
+[08:05] LOJA: Bom dia!
+[08:05] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:06] LOJA: [áudio] "Olá, tudo bem com você? Elisândia, você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB055A7914406BFBB6702_223593.ogg}
+--- 16/10/2026 (Fri) ---
+[17:14] CLIENTE: [áudio] "Oi, boa tarde. Eu moro no Jardim Gá."
+[17:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:14] CLIENTE: [áudio] "Eu já enviei a medida do pneu, só que eu tô achando caro."
+[17:16] LOJA: [áudio] "Oi, tudo bem? Olha, essa mensagem aqui é uma mensagem automática que vai quando demora um pouquinho para poder responder, tá bom? Então, desconsidere."  {audio:midias/3EB0F42912727278084CB2_826557.ogg}
+[17:16] LOJA: [áudio] "Moça, qual é o seu carro?"  {audio:midias/3EB0EFCEA28281C2D1437F_84858.ogg}
+[17:20] CLIENTE: Kwid
+[17:21] LOJA: A medida original do Kwid é 165/70/14
+[17:21] LOJA: [foto]
+[17:21] LOJA: De R$ 279,00 por R$ 249,00 a vista
+[17:23] LOJA: [áudio] "Eu vou te mandar a nossa localização, tá bom, Elisânia? Que se de repente você mudar de ideia, você passa aqui na loja, que nós já fazemos a instalação dos pneus para você, que aí, para o seu carro, a medida original é 165-70, e ele acabou de entrar na oferta de 279 para apenas 249 a vista."  {audio:midias/3EB0EB2D1BCA191E1B97B5_897180.ogg}
+[17:24] CLIENTE: [áudio] "Mas esse valor de R$ 279,00... Porque eu não posso comprar à vista, né? Eu iria comprar no cartão. Esse valor de R$ 279,00... No caso, eu iria comprar dois pneus. Eu queria saber se esse valor divide. E em quantas vezes? Sem juros, né?"
+[17:26] CLIENTE: É isso mesmo 165/70/14
+[17:26] CLIENTE: Manda a localização por favor
+[17:30] CLIENTE: [áudio] "Moça, eu queria saber se eu comprando dois pneus, vocês dividem e em quantas vezes divide? Mas eu queria saber assim, é até cinco vezes ou três vezes sem juros?"
+[17:31] LOJA: Claro!
+[17:31] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:31] LOJA: [foto]
+[17:32] LOJA: [áudio] "Olha, eu te mandei o orçamento, Elisânia, justamente com as opções de parcelamento, que nós parcelamos em até 10 vezes. Digamos que você queira parcelar nessas 10 vezes, tá? Que é o meu limite máximo. Então, você vai pagar 10 parcelas de 55 reais e 80 centavos."  {audio:midias/3EB05ABBF52A96B1E79E13_243293.ogg}
+[17:32] LOJA: [áudio] "Aí, se você quiser em menos vezes, você me fala que eu calculo aqui pra ti, tá bom?"  {audio:midias/3EB0F32ABDA03A4DF7B79B_860265.ogg}
+[17:40] CLIENTE: [áudio] "Não, eu não vou querer em tudo isso, não. Vou querer só no máximo em cinco vezes. Quatro ou cinco vezes. Ficaria quanto, os dois pneus?"
+[17:42] LOJA: [áudio] "Em 5 vezes, ficam 5 de R$106,00. Em 4 vezes, vão ficar 4 de R$131,00."  {audio:midias/3EB05E987E3E91CAFCE4A6_327194.ogg}
+[17:47] LOJA: [áudio] "Aí, amanhã, assim que eu abrir a loja, eu te mando um bom dia, tá bom?"  {audio:midias/3EB098E5D293268C7E6046_60887.ogg}
+[17:51] CLIENTE: [áudio] "Mas você não me passou o valor dos 2 pneus. Eu vou querer 2 pneus. Eu queria saber o valor cheio dos 2 pneus e dividido em 5 vezes."
+[17:54] LOJA: [áudio] "Eu te passei o valor, tá nos áudios que eu te mandei."  {audio:midias/3EB0AF81BCCEAAAB5C74B0_359267.ogg}
+[17:54] LOJA: aqui !
+[17:55] CLIENTE: Mas é o valor dos 2 pneus?
+[17:55] LOJA: [áudio] "Sim, é isso mesmo. É o valor dos dois pneus."  {audio:midias/3EB09AC3DF9F7FEBDEA8B3_815807.ogg}
+[17:55] CLIENTE: Ah tá entendi
+[17:57] LOJA: 5 x de  106,00  valor para 2 pneus    4x de 131,00 para 2 pneus
+[17:58] CLIENTE: Ok obrigada
+[17:58] LOJA: Disponha!
+[17:58] CLIENTE: Seu nome por favor
+[17:58] LOJA: JOsy!
+[17:59] CLIENTE: Amanhã vou ai
+[17:59] LOJA: Combinado!
+[17:59] LOJA: Bom descanso!
+[17:59] CLIENTE: Obrigada ♥️ pra vc também
+--- 17/10/2026 (Sat) ---
+[09:26] CLIENTE: Bom dia ! Vou sair daqui às 10:00
+[09:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:46] LOJA: OI
+[11:38] LOJA: Oi...
+[11:39] LOJA: se estiverem usando 205/55/16 , segue o orçamento!
+[11:39] LOJA: [foto]
+[11:39] LOJA: Ahhh... se possivel, avalie a nossa loja e atendimento no Google por gentielza.
+[11:40] CLIENTE: Ok vou avaliar
+[11:40] CLIENTE: Obrigada ♥️
+[11:40] LOJA: Segue o link para avaliar
+[11:40] LOJA: https://da.gd/gp-avaliar
+[11:40] LOJA: Muito obrigada por terem vindo, a senhora é muito gentil!
+[11:49] LOJA: [foto] É Sua bolsa?
+[11:52] CLIENTE: Obrigada por me lembrar
+[11:52] LOJA: Imagina!...
+[11:57] CLIENTE: [figurinha]

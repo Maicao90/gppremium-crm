@@ -1,0 +1,33 @@
+CONVERSA bf93348626 | contato: werick 😎 | 17/08/2026 17:54 até 19/08/2026 14:51 | 11 msgs do cliente, 12 da loja, 0 do robô
+
+--- 17/08/2026 (Mon) ---
+[17:54] LOJA: 🙋🏼‍♀️
+[18:55] CLIENTE: [áudio] "Opa, boa noite, tudo bem? Moço, eu tô com um bom breminha na empresa. O que acontece? Só tô esperando receber a parte de uma rescissão lá, e o tal do TRRCT, eles não vão me pagar até hoje, já tem que fazer quase um mês, e a gente tá com uma justiça ainda, tá?"
+[18:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:55] CLIENTE: [áudio] "Mas eu acredito que eles vão pagar uma parte do salário para a gente essa semana."
+[18:55] CLIENTE: [áudio] "Queria saber quais modelos você tem aí na promoção, os pneus?"
+--- 18/08/2026 (Tue) ---
+[08:02] LOJA: Bom dia, bom dia rsrsrsrs
+[08:03] LOJA: [áudio] "Olá Erick, bom dia, como é que você está? Olha, por hora, ainda estou com aquela promoção que eu tinha falado contigo, do Compre 3 e Leve 4. Você estava precisando do 1-95-65-15, né? Então, por hora, continua do mesmo jeito."  {audio:midias/3EB0D3F366599775E05B10_98292.ogg}
+[09:14] CLIENTE: [áudio] "Bom dia, bom dia, bom dia, bom dia. Deixa eu te falar, aquela medida de 205, vocês têm ela?"
+[09:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:14] CLIENTE: [áudio] "Assim, eu queria um... Ai! Eu queria um... Um pneu bom, top, bonzinho, bonzinho, sem ser aquele C-remold, esse pneu vagabundo aí não, porque eu já tive um, já tive dor de cabeça."
+--- 19/08/2026 (Wed) ---
+[14:45] LOJA: [áudio] "Oi, Eric, tudo bem com você? Ontem eu tive instabilidade aqui na minha pinha de WhatsApp, eu não consegui ouvir o seu último áudio. Só que tem uma coisa aí, que agora que eu consegui ouvir, o pneu GP Premium não é pneu vagabundo, não, tá? Não é do jeito que você disse aí, não. Ele é o pneu mais vendido que eu tenho, justamente por conta da qualidade que ele tem. O pneu aí com garantia de 2 anos, roda 60 mil km, então, não tem nada a ver com o pneu que você já utilizou na sua vida e não."  {audio:midias/3EB0C11244498E4E621071_222703.ogg}
+[14:46] LOJA: 205/60/15?
+[14:47] CLIENTE: isso
+[14:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:48] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:48] LOJA: [foto]
+[14:49] CLIENTE: esse pneu é bom??
+[14:50] LOJA: Todos são.
+[14:50] CLIENTE: esse nacional é remold??
+[14:50] LOJA: isso
+[14:51] CLIENTE: shines é melhor entoa
+[14:51] CLIENTE: vou se recebo essa semana ..
+[14:51] CLIENTE: do aviso previo

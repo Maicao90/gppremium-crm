@@ -1,0 +1,36 @@
+CONVERSA 52d55e3314 | contato: Vamir | 21/10/2026 10:26 até 21/10/2026 17:05 | 7 msgs do cliente, 5 da loja, 13 do robô
+
+--- 21/10/2026 (Wed) ---
+[10:26] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[10:26] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[10:26] CLIENTE: Carlos
+[10:27] CLIENTE: Aro 15 / 185/60
+[10:46] ROBÔ: Oi, Carlos! Temos o pneu *185/60/15* da marca *GP Premium* está saindo por *R$ 249,00 à vista*.
+[10:46] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[11:14] LOJA: Está em busca de alguma marca especifica?
+[13:56] CLIENTE: Não
+[13:56] ROBÔ: Perfeito, Carlos! O 185/60/15 é uma ótima escolha, e a montagem é grátis na compra.
+[13:56] ROBÔ: Quantos pneus você precisa e quando consegue vir até a loja?
+[13:56] CLIENTE: Moro no gama gual e a loja mais próxima?
+[13:57] ROBÔ: Segue a nossa localização:
+[13:57] ROBÔ: [localização] -16.2334867,-47.9120936 — Pneus GP Premium
+[13:57] CLIENTE: 2 pneus
+[13:57] ROBÔ: [foto] Pneus GP Premium
+[13:57] ROBÔ: 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+[13:57] ROBÔ: Temos os 2 pneus *185/60/15* da marca *GP Premium* saem por *R$ 498,00 à vista* (valor total).
+[13:57] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[13:58] CLIENTE: Tem loja aqui no DF?
+[13:58] ROBÔ: Te mandei o pino da localização aqui em cima na conversa.
+[13:58] ROBÔ: A gente fica na Avenida Perimetral, na Vila Guará, em Luziânia-GO.
+[17:01] ROBÔ: 🙋🏼‍♀️
+[17:02] LOJA: Somente aqui!
+[17:02] LOJA: Mas ... posso mandar para uma borracharia que fica no Novo Gama
+[17:05] LOJA: Te ajuda dessa forma??

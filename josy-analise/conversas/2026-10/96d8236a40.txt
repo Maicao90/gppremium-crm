@@ -1,0 +1,20 @@
+CONVERSA 96d8236a40 | contato: Weberson | 21/10/2026 09:34 até 21/10/2026 12:47 | 3 msgs do cliente, 3 da loja, 1 do robô
+
+--- 21/10/2026 (Wed) ---
+[09:34] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[09:34] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[09:39] LOJA: 🙋🏼‍♀️
+[09:42] CLIENTE: Weberson 
+
+Aro 14
+[09:42] CLIENTE: Vcs são de sinop
+[09:44] LOJA: Luziânia-Go!
+[12:47] ROBÔ: 🙋🏼‍♀️

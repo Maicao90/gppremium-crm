@@ -1,0 +1,27 @@
+CONVERSA aa109643f2 | contato: Lucas Augusto | 14/09/2026 11:45 até 14/09/2026 12:08 | 9 msgs do cliente, 12 da loja, 0 do robô
+
+--- 14/09/2026 (Mon) ---
+[11:45] CLIENTE: Bom dia
+[11:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:45] CLIENTE: Vocês trabalha com pneus usados ?
+[11:45] LOJA: [áudio] "Olá, bom dia. Tudo bem com você, Lucas? Depende da medida. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB006D57D3D473F935763_149570.ogg}
+[11:46] CLIENTE: 185/60 aro 15
+[11:46] LOJA: [áudio] "Você mora aqui em Luziânia mesmo, moço?"  {audio:midias/3EB0A3CA41654F7269E0E9_728556.ogg}
+[11:47] CLIENTE: Moro na ocidental
+[11:50] LOJA: [áudio] "Um minutinho que eu vou verificar aqui para você, tá bom?"  {audio:midias/3EB0EF01EA7F037B11AD6F_653221.ogg}
+[11:50] LOJA: [áudio] "Ou melhor, eu vou fazer o seguinte, tem uma borracharia que eu conheço aí na cidade ocidental, que eu vou te passar o número do contato deles, é mais prático você verificar aí do que vem aqui para Luziânia para comprar pneus meia vida."  {audio:midias/3EB0C0200BD9FF3BF8ADDE_541346.ogg}
+[11:50] LOJA: *Josy:*
+ 61 3774-2112
+[11:51] LOJA: [áudio] "E lá vai ter pneus a partir de 139, tá?"  {audio:midias/3EB009D1CAF033A6298F1A_891114.ogg}
+[12:01] CLIENTE: Eu pesquisei em Luziânia , pq daqui a pouco tenho q ir aí
+[12:01] CLIENTE: Aí já compraria
+[12:01] CLIENTE: Se vc tivesse
+[12:01] LOJA: [áudio] "Ah, sim. Perfeito. Achei que você estaria aí."  {audio:midias/3EB06BAA55FB3C38D8A087_103396.ogg}
+[12:06] LOJA: [áudio] "Olha, eu consegui verificar com uma empresa e me parece que eles terão dois pneus. Vou te passar aqui o contato, tá joia?"  {audio:midias/3EB0A7C249C1B190CADBBE_132356.ogg}
+[12:06] LOJA: *Josy:*
+ 61 3774-2115
+[12:06] LOJA: [áudio] "E eu acho que lá é 150 a cada."  {audio:midias/3EB07326AD5F2DF46A95E9_891452.ogg}
+[12:07] CLIENTE: [áudio] "Ah, sim, tá bom. Eu vou entrar em contato aqui com eles então. Obrigado, viu?"
+[12:07] LOJA: [áudio] "Beleza, moço. Isso foi o máximo que eu consegui para poder te ajudar, tá bom? Boa semana para você. Tchau, tchau."  {audio:midias/3EB0F516689692A3E1FBB7_121116.ogg}
+[12:08] CLIENTE: [áudio] "Pô, muito obrigado, viu, pelo atendimento. Boa semana também."

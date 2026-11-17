@@ -1,0 +1,26 @@
+CONVERSA def34cd99c | contato: Italo | 26/08/2026 08:30 até 29/08/2026 12:15 | 1 msgs do cliente, 11 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[08:30] LOJA: *Josy :*
+Bom dia!
+[08:30] LOJA: *Josy :*
+Qual a medida dos pneus que você precisa hoje?
+[08:44] CLIENTE: [áudio] "O pneu 175, 65, 14, tá quanto? Não é a barra de troca não, porque eu não tenho barra de troca não, é o pneu, comprar o pneu e eu mesmo coloco."
+[08:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:50] LOJA: *Josy :*
+Bom dia, não é a base de troca.
+[08:50] LOJA: [foto]
+[08:50] LOJA: *Josy :*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:06] LOJA: [áudio] "E o senhor mora aqui na cidade de Luziânia mesmo? Fala comigo assim que possível, tá bom?"  {audio:midias/3EB0B7F9488732CD8C99B8_201368.ogg}
+--- 28/08/2026 (Fri) ---
+[12:30] LOJA: *Josy:*
+Boa tarde!
+[12:30] LOJA: [vídeo]
+--- 29/08/2026 (Sat) ---
+[12:15] LOJA: [áudio] "Oi Ítalo, tudo joia? Eu te mandei um áudio aí, um áudio não, um vídeo, mas você não viu, imagino que você esteja bem ocupado, super compreendo, porque é corrido mesmo. Eu vou encerrar aqui o seu atendimento e vou te mandar a localização da nossa empresa, se houver a possibilidade, você passa aqui para conversarmos pessoalmente, tá, Joia? Obrigada por sua atenção e bom final de semana."  {audio:midias/3EB0A88EEE7DF0E72EBD92_268349.ogg}
+[12:15] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

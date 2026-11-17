@@ -1,0 +1,34 @@
+CONVERSA e5d7aa6980 | contato: Marlon Braga | 26/08/2026 13:11 até 26/08/2026 15:15 | 10 msgs do cliente, 14 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[13:11] LOJA: *Josy :*
+Boa tarde!
+[13:12] CLIENTE: 215/55/17
+[13:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:15] CLIENTE: [foto]
+[13:15] CLIENTE: Qual valor de 1 pneu ?
+[13:21] LOJA: *Josy :*
+A vista R$ 355,50
+[13:25] LOJA: [áudio] "Oi Marlon, tudo jóia? Olha, esse pneu aí, como ele tá na promoção, compre 3 e leve 4, a unidade é 394,90 a vista. Aí como você tá precisando só de uma unidade, vou te dar um desconto aqui, ele fica por 355,50, tá jóia?"  {audio:midias/3EB0A206075FA966E4CE33_756989.ogg}
+[13:25] LOJA: [foto]
+[13:25] LOJA: [áudio] "Eu tenho o pneu aqui a pronta entrega, quer que reserva para você?"  {audio:midias/3EB01C95877F1E040ACC6A_85272.ogg}
+[13:25] LOJA: *Josy :*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[13:26] CLIENTE: [áudio] "Tá, e caso eu leve uns 4 pneus, no caso uns 3, né, porque 3 leve 4, sairia por quanto? Obrigado."
+[13:28] LOJA: [foto]
+[13:28] CLIENTE: [áudio] "E quais as marcas de pneus que vocês têm aí? É o Premium? Esse aí é o que você já tá falando, não é o reencapado não, né? É o Premium de vocês, certo? É isso?"
+[13:28] LOJA: *Josy :*
+Na medida 215/55/17 se o  pagamento for a vista a  unidade  é  R$ 395,00 x 3 pneus = R$ 1.185,00 por esse preço você vai levar os 4
+[13:28] LOJA: [áudio] "É exatamente esse que você está utilizando aí no seu carro, tá? Esse pneu aí é o que está na promoção, o pneu da marca GP Premium."  {audio:midias/3EB0E6367DD73F2A052035_342024.ogg}
+[13:29] CLIENTE: [áudio] "Você tem que conseguir um desconto, né, aí nos pneus."
+[13:30] CLIENTE: [áudio] "Eu queria uma marca importada, que o pneu não seja remolde. Se tiver outras também mais baratas e quiser me apresentar."
+[14:23] LOJA: *Josy :*
+Terei apenas Dunlop
+[14:23] LOJA: [foto]
+[14:23] LOJA: *Josy :*
+Preço final da unidade a vista R$ 628,75
+[15:13] CLIENTE: O hifly você tem ?
+[15:13] CLIENTE: Qual valor dele ?
+[15:15] LOJA: [áudio] "Marlon, no dia de hoje, realmente a opção que eu tenho, né, além do GP Premium, é do MOP."  {audio:midias/A57BB7049953909069132C00B0A4C84C_313544.ogg}
+[15:15] CLIENTE: Entendi

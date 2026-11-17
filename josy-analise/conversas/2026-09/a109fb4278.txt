@@ -1,0 +1,65 @@
+CONVERSA a109fb4278 | contato: MG trasporte🚘🚚🛻 | 11/09/2026 16:43 até 16/09/2026 12:05 | 23 msgs do cliente, 25 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[16:43] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[16:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:44] CLIENTE: 205/55R16
+[16:44] CLIENTE: Tem deste
+[16:45] LOJA: *Josy:*
+Precisa de quantos pneus?
+[16:45] CLIENTE: 2
+[16:48] LOJA: [foto]
+[16:49] LOJA: [foto]
+[16:49] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:49] CLIENTE: Este de 289 não e remld não né ?
+[16:50] CLIENTE: Gp 289,00
+[16:50] LOJA: *Josy:*
+já te respondo
+[16:50] LOJA: *Josy:*
+1 instante
+[16:51] LOJA: [áudio] "Olá, tudo bem com você? Sim, o pneu GP Premium é um pneu ecológico que nós fazemos e ele entra na categoria de remodelagem Premium, que é completamente diferente dos remoldes convencionais, justamente por isso ele é o pneu mais vendido que eu tenho, por conta da qualidade, está bem? Se quiser eu faço um vídeo aqui para você e te mando a foto para você poder entender."  {audio:midias/3EB0B84D90341C706CBD7B_387972.ogg}
+[16:52] CLIENTE: Isso
+[16:52] CLIENTE: Ele é para quantos km
+[16:52] LOJA: [áudio] "Se o seu carro estiver bem alinhado, você mantiver os pneus bem calibrados, 60 mil, assim como as marcas nacionais aí do orçamento, tá? Que a qualidade vai ser a mesma."  {audio:midias/3EB0AAC4166609777361D9_646761.ogg}
+[16:53] CLIENTE: [áudio] "Eu rodo 10 mil km a cada 15 dias. Então a minha troca de pneu é muito alta. Aí eu estou indo em preço e mais durabilidade, né?"
+[16:54] LOJA: [áudio] "Mas aí, justamente porque você roda bastante, qualquer marca de pneu que você colocar vai ser do mesmo jeito."  {audio:midias/3EB01C070FBC22EB57DDE3_890357.ogg}
+[16:55] CLIENTE: [áudio] "Não, sim. Se ela durar 60 mil km, tá de boa. Essas marcas, outras marcas aí, a gente alonga um pouquinho mais, né? Sempre alonga um pouquinho mais, né? Mas se durar 60 mil km, tá de boa."
+[16:55] CLIENTE: [áudio] "Beleza, colocando esses dois pneus, a gente ganhou um alinhamento na frente."
+[16:55] CLIENTE: [áudio] "Eu boto 2 agora, faço o rodízio, jogo para trás, 2, aí na semana que vem eu boto mais 2 e jogo para trás."
+[16:55] LOJA: [áudio] "Dura, dura tranquilamente, igual eu te falei. Manutenção conta muito, então se tiver bem alinhadinho o seu carro, para não dar aqueles desgastes irregulares, vá embora."  {audio:midias/3EB061B39FEDEB05953E41_395712.ogg}
+[16:56] CLIENTE: Blz então vou agilizar marcar de ir troca
+[16:56] LOJA: [áudio] "Certo, sem problemas. Olha, o pneu GP Premium eu consigo entregar ele colocado para você, aí negocia com os meninos aqui da oficina o valor do balanceamento para ti."  {audio:midias/3EB057E8E7C3F2B67C3728_424734.ogg}
+[16:56] LOJA: [áudio] "Perfeito. Qual é mesmo o seu nome?"  {audio:midias/3EB01E94B3768747EF2CDB_795745.ogg}
+[16:56] CLIENTE: Marcos
+[16:57] LOJA: [áudio] "Certo, Marcos. Eu vou te encaminhar aqui a localização da loja, pois eu não sei se você sabe onde é que ficamos, tá? E você vem aqui quando? Amanhã?"  {audio:midias/3EB02C280BA121AF905243_974373.ogg}
+[16:57] CLIENTE: Na segunda
+[16:57] LOJA: [áudio] "Perfeito. Ficamos combinados. Joia."  {audio:midias/3EB0EA57B72311D7DBF912_90331.ogg}
+[16:58] LOJA: [áudio] "O pagamento será à vista mesmo ou você prefere parcelar?"  {audio:midias/3EB0A3761AD7FB17767E6D_235388.ogg}
+[16:58] CLIENTE: Pix
+[16:58] LOJA: *Josy:*
+Consegue sacar o *dinheiro* ?
+[16:59] CLIENTE: Sim
+[16:59] CLIENTE: Tem desconto
+[17:00] LOJA: *Josy:*
+Sim!
+[17:01] LOJA: *Josy:*
+Fica por R$ 275,00 cada
+[17:07] CLIENTE: Blz
+[17:08] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:08] CLIENTE: Aqui perto
+[17:08] CLIENTE: Só do dois
+[17:08] LOJA: [áudio] "Você mora onde?"  {audio:midias/3EB0A19D9195935725764B_240843.ogg}
+[17:09] CLIENTE: Dalva 2
+[17:09] LOJA: [áudio] "Ah, pertinho!"  {audio:midias/3EB073DD21D726F975718F_810513.ogg}
+[17:20] LOJA: [áudio] "Marcos, na segunda-feira, 5 de abril, a gente manda um bom dia, tá joia? Nossa mãe, muito obrigada aí por entrar em contato conosco e tenha um bom final de semana, tá joia?"  {audio:midias/3EB078ADD1AE792AC8B83B_306107.ogg}
+[17:21] CLIENTE: [áudio] "Valeu, obrigado, vou no final de semana vocês também."
+--- 16/09/2026 (Wed) ---
+[12:05] LOJA: [áudio] "Oi, Marcos, tudo jóia? Marcos, nós nos falamos aí na sexta-feira, né? E eu gostaria de saber se eu posso separar os pneus para ti. Você consegue passar aqui na loja hoje?"  {audio:midias/3EB09533B0EA2023492C1B_474085.ogg}
+[12:05] LOJA: [foto]

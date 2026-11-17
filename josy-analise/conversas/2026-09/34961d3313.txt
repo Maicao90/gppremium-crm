@@ -1,0 +1,49 @@
+CONVERSA 34961d3313 | contato: Tiago Gallos | 01/09/2026 11:14 até 10/09/2026 16:27 | 8 msgs do cliente, 27 da loja, 0 do robô
+
+--- 01/09/2026 (Tue) ---
+[11:14] LOJA: *Josy:*
+Bom dia, Thiago...
+[11:14] LOJA: *Josy:*
+/lhttps://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:15] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6 *Josy:*
+[11:15] LOJA: [foto]
+[11:33] LOJA: [áudio] "Oi Thiago, tudo jóia?"  {audio:midias/3EB01CC579CFD42A956A45_445779.ogg}
+[11:34] LOJA: [áudio] "Vocês têm busca de alguma marca específica ou as opções que eu falei contigo aqui na ligação te atendem?"  {audio:midias/3EB0CFFEF23AD377BC6D1D_382195.ogg}
+[11:39] CLIENTE: [áudio] "Não, eu acho que me atende, só tenho uma dúvida. Esse pneu GP, ele não é remolde não, é?"
+[11:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:39] CLIENTE: [áudio] "Se você tiver até uma foto dele aí para mim, manda para mim, por favor, do modelo dele."
+[11:40] LOJA: [áudio] "Ele é um pneu ecológico que nós fazemos, ele vai entrar na categoria de remodelagem, só que Premium, que é completamente diferente dos remolds convencionais. Justamente por isso são os pneus mais vendidos que nós temos."  {audio:midias/3EB060695D3B913A14CF92_358560.ogg}
+[11:41] LOJA: *Josy:*
+265/60/18 HT👇🏻
+[11:41] CLIENTE: Isso
+[11:41] LOJA: [foto]
+[11:41] LOJA: [foto]
+[11:41] CLIENTE: Tem garantia
+[11:41] CLIENTE: ?
+[11:41] LOJA: *Josy:*
+265/60/18 Brutus 👇🏻
+[11:41] LOJA: [foto]
+[11:41] LOJA: [foto]
+[11:41] LOJA: *Josy:*
+Sim
+[11:42] LOJA: *Josy:*
+Tem garantia sim!
+[11:45] LOJA: [áudio] "É porque as duas caminhonetes não estão aqui no momento, senão eu ia gravar um vídeo aqui pra você, que eu utilizo no Aro 17, esse modelo Brutus na Amarok, e também uma outra medida, eu uso o pneu de uma Fiat Toro na Maverick, a Maverick é enorme, é bem pesada. Elas não estão aqui agora, senão eu ia gravar o vídeo aqui pra você ver como que fica tudo montado. Se você estiver com disponibilidade de tempo, Thiago, passa aqui na loja pra nós conversarmos pessoalmente."  {audio:midias/3EB0FDBF94B48737150575_389407.ogg}
+[11:46] CLIENTE: [áudio] "É, eu vou passar aí, eu vou, eu acho que eu devo passar aí pessoalmente aí. Eu vou aí que eu dou uma olhada, tá bom?"
+[11:46] LOJA: [áudio] "Sim, vem assim."  {audio:midias/3EB0C6D4F9AD3680E9500E_767635.ogg}
+[11:47] LOJA: [áudio] "Vai ser uma satisfação receber você aqui, tá joia? Te mandei a localização, a foto aqui da frente da nossa loja. Pode vir cá que nós não fechamos para almoço não, tá?"  {audio:midias/3EB0BC8DC84896BCC9AFD5_587253.ogg}
+[15:02] LOJA: *Josy:*
+oooi
+[15:02] LOJA: *Josy:*
+Está chegando aqui?
+[15:04] LOJA: [foto]
+[15:17] LOJA: *Josy:*
+Terei também no modelo ATR
+[15:55] CLIENTE: [áudio] "Ô, amiga, o que que acontece? É... Eu tô longe, eu não vou conseguir chegar aí há tempo hoje, mas amanhã eu passo aí na loja e compro, tá bom?"
+[15:56] LOJA: [áudio] "Sem problemas, Thiago, mas vem assim, aqui nós não fechamos para almoço, abrimos às 8 e fechamos apenas às 6 da tarde, tá bom?"  {audio:midias/3EB026555AF03BD54ACB80_141440.ogg}
+--- 10/09/2026 (Thu) ---
+[16:19] LOJA: [áudio] "Oi Tiago, tudo jóia? Tiago, nós conversamos já alguns dias atrás, te mandei um orçamento de fotos de uns pneus e gostaria muito de saber se você pretende seguir aqui com a negociação. Você ficou de passar por aqui, mas eu entendo que é corrido demais da conta e sei que por essa razão você não conseguiu dar um retorno aqui na loja. Mas fala aqui comigo, me diz aí como é que são as coisas."  {audio:midias/3EB08C301FBCB67DE7771A_758575.ogg}
+[16:27] CLIENTE: [áudio] "Pô, na realidade eu tenho que ir aí, mas não tive mesmo foi tempo ainda pra ir aí, mas assim que eu tiver eu passo aí, tá bom?"
+[16:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

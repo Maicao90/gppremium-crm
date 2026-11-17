@@ -1,0 +1,27 @@
+CONVERSA fc6361d14c | contato: Antonio | 10/10/2026 07:14 até 13/10/2026 15:01 | 6 msgs do cliente, 12 da loja, 0 do robô
+
+--- 10/10/2026 (Sat) ---
+[07:14] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[07:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:14] CLIENTE: 15
+[07:15] CLIENTE: Qual valo
+[08:33] LOJA: Por gentileza...preciso saber qual é  a medida dos pneus que você precisa.
+[08:36] CLIENTE: Aro 015
+[08:49] LOJA: 15 é apenas o ARO do pneu... preciso saber a medida. Exemplo 235/75/15... 31x10,5R 15
+[08:51] LOJA: Me diz qual é seu carro que faço o orçamento da medida original.
+[08:52] CLIENTE: 185,65 R 15
+[09:05] LOJA: Certo!
+[09:06] LOJA: [foto]
+[09:13] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:47] LOJA: [áudio] "O senhor mora aqui em Luziânia mesmo?"  {audio:midias/3EB0FA4AB1C9524664AE8C_247398.ogg}
+[13:07] CLIENTE: Marajó goias
+--- 13/10/2026 (Tue) ---
+[08:15] LOJA: [áudio] "Oi, bom dia, bom dia. Certo, perfeito. Acho que é Cristalini, né? Pois bem, gostaria de agendar para vir a re-re-repenha no final de semana para poder instalar a função dos pneus."  {audio:midias/3EB01133527A803DBBA8B4_666650.ogg}
+[15:01] LOJA: [áudio] "Antônio, eu vou encerrar aqui o seu atendimento para não ficar enchendo o seu WhatsApp de mensagens e eu vou te enviar a nossa localização. Quando você vier aqui para Luziânia, você passa aqui na nossa loja para conversarmos pessoalmente."  {audio:midias/3EB0365E0DE448F5201110_719927.ogg}
+[15:01] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:01] LOJA: [foto]

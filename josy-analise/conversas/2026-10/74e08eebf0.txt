@@ -1,0 +1,47 @@
+CONVERSA 74e08eebf0 | contato: Fernando Gabriel | 05/10/2026 09:36 até 05/10/2026 10:50 | 14 msgs do cliente, 18 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[09:36] CLIENTE: Bom diua
+[09:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:37] LOJA: *Josy:*
+Bom dia!
+[09:37] CLIENTE: Bom dia Josy
+[09:38] CLIENTE: qual valor do penu R14
+[09:38] CLIENTE: 175/70
+[09:40] LOJA: [foto]
+[09:40] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:49] CLIENTE: ta bo
+[10:33] LOJA: [áudio] "Oi Fernando, bom dia! Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB065804773E1C272E1F1_293551.ogg}
+[10:37] CLIENTE: Sim
+[10:44] LOJA: *Josy:*
+Que bacana, pretende realizar a troca dos pneus por esses dias?
+[10:44] CLIENTE: Estou pesquisando preços
+[10:44] CLIENTE: Montagem
+[10:46] LOJA: *Josy:*
+Na compra dos pneus GP Premium, os pneus já são colocados a parte, negociamos os serviços de balancemento e alinhamento.
+[10:47] LOJA: *Josy:*
+* Balanceamento = 35,00 (por pneu)
+* Alinhamento = 120,00 (somente Alinhamento de Direção)
+[10:47] CLIENTE: Qual a média de valor ?
+[10:47] LOJA: *Josy:*
+Valores completamente negociaveis.
+[10:47] CLIENTE: Certo
+[10:47] CLIENTE: Para colocar e cobrado ?
+[10:48] LOJA: *Josy:*
+não.
+[10:48] CLIENTE: Tá bom
+[10:49] LOJA: *Josy:*
+Vou te encaminhar a nossa localziação.
+[10:49] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:49] LOJA: [foto]
+[10:50] CLIENTE: Ta ok
+[10:50] CLIENTE: Qualquer coisa vou ai
+[10:50] LOJA: *Josy:*
+Venha sim!
+[10:50] LOJA: *Josy:*
+Será uma satisfação recebe-lo em nossa loja.

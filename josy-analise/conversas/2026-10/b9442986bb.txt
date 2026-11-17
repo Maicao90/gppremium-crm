@@ -1,0 +1,39 @@
+CONVERSA b9442986bb | contato: Kauazin | 07/10/2026 15:39 até 07/10/2026 16:18 | 13 msgs do cliente, 17 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[15:39] CLIENTE: Olá! Quero um orçamento de pneus.
+[15:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:40] CLIENTE: Pneus aro 14 valor dos 4
+[15:40] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa hoje?
+[15:41] LOJA: [áudio] "Oi Calama, boa tarde, tudo bem? Eu gostaria muito de saber qual que é a medida dos pneus que você precisa para que assim eu possa fazer o orçamento para você, porque existem diversos, né? Mas se você não souber qual que é a medida dos pneus, me diz qual que é o seu carro, que eu faço o orçamento com a medida original."  {audio:midias/3EB0B26A6233DDCBFF2A8A_244061.ogg}
+[15:41] CLIENTE: Palio 2006
+[15:42] LOJA: [foto]
+[15:43] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:43] LOJA: [foto]
+[15:44] LOJA: [áudio] "E você é daqui de Luziânia mesmo?"  {audio:midias/3EB0309960B87A67592F9E_726788.ogg}
+[15:44] CLIENTE: [áudio] "Aí, no caso, quanto ficaria os quatro com alinhamento e balanceamento? Sabe dizer?"
+[15:45] LOJA: [áudio] "Sim, eu sei te dizer. Digamos que você queira um 7570 aro 14 da Godia para pagar à vista. A unidade é 446 cada pneu, certo? Vezes 4 pneus, R$ 1.784. Esse valor é para o pagamento à vista. O balanceamento é 35 por roda e o alinhamento R$ 120. Mas no caso dos serviços, os valores são negociáveis, tá?"  {audio:midias/3EB0D49FC5F3E3E8F89AB3_88264.ogg}
+[16:05] CLIENTE: Entendi
+[16:05] LOJA: [áudio] "Se você é daqui de Luziânia, é o mesmo calão?"  {audio:midias/3EB0B2466E88A094E5B4F0_183570.ogg}
+[16:06] CLIENTE: Então o valor total dos 4 pneus aro 14 gp-1 de 250 a unidade daria quanto o total? Ja com alinhamento e balanceamento?
+[16:06] CLIENTE: Consegue me informar?
+[16:06] CLIENTE: Sou do jardim inga
+[16:09] LOJA: 4 x  250 -= 1.000,00
+[16:10] LOJA: * Balanceamento = 35,00 por roda total R$ 140,00
+* Alinhamento = 120,00 alinhamento de direção.
+[16:10] LOJA: Valores dos serviços são completamente negociáveis , está bem!
+[16:10] CLIENTE: Então consegue baixar?
+[16:11] LOJA: [áudio] "Vou mandar áudio que fica mais prático, tá? Olha só, como o pneu já está no menor preço, 250, esse valor é para o débito e para o Pix. Se você trouxer o pagamento em dinheiro em espécie para mim, nos pneus eu faço por 238 a unidade. E os serviços de balanceamento e alinhamento, que eu te passei o preço aí, aí você vem aqui na loja para poder negociar com os mecânicos, está bem?"  {audio:midias/3EB097046E847D6D3C7968_445824.ogg}
+[16:11] CLIENTE: Agora entendi
+[16:11] LOJA: [áudio] "Só para ficar alinhado aqui também, esse pneu aqui é na medida 175-65-14, certo?"  {audio:midias/3EB06BDCC21344BDE2BF8B_163299.ogg}
+[16:12] CLIENTE: Ok
+[16:15] LOJA: [áudio] "Você gostaria de agendar para vir aqui para fazer a instalação dos pneus, Cauã?"  {audio:midias/3EB073956F9946D24734BE_475255.ogg}
+[16:17] CLIENTE: No momento so orçamento
+[16:17] CLIENTE: Muito obgd
+[16:17] LOJA: [áudio] "Certo. Por hora eu vou encerrar o seu atendimento, mas eu vou deixar aqui a nossa localização, que se houver a possibilidade, você vem aqui na nossa loja, tá bom?"  {audio:midias/3EB0F3F54DF543D407FC56_598290.ogg}
+[16:18] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

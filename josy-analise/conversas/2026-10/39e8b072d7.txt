@@ -1,0 +1,30 @@
+CONVERSA 39e8b072d7 | contato: José Ismail | 14/10/2026 06:24 até 14/10/2026 09:04 | 10 msgs do cliente, 15 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[06:24] CLIENTE: Quero cotar o pneu 205/55 R17 GP Premium.
+[06:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[06:24] CLIENTE: 205 55 17
+[06:24] CLIENTE: Bom dia
+[08:31] LOJA: Bom dia!
+[08:33] LOJA: [foto]
+[08:33] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:37] CLIENTE: Mas esse perneu e renolde  original da marca
+[08:37] LOJA: Aqui segue o orçamento, pode conferir por gentileza se realmente chegou?
+[08:38] LOJA: [foto] NOVOS
+[08:38] LOJA: [foto] GP Premium remold de Primeira linha , e é o pneu mais vendido.
+[08:40] CLIENTE: Blz
+[08:40] LOJA: Mora aqui em Luziania-Go?
+[08:40] LOJA: Os pneus  novos não t atendem?
+[08:41] CLIENTE: [áudio] "Tem como mandar uma foto do emblema desse pneu aí chinês? Desconva isso aí para mim, por favor. Esse aí é novo, né? Nem remoldo não."
+[08:41] CLIENTE: [áudio] "324. O pneu que eu estou falando é o 205, 56, roda 17. Esse aí está 16."
+[08:42] LOJA: [áudio] "Bom dia, José. Sim, é novo, mas pneus GP Premium, ele vai rodar a mesma coisa que o Dunlop, porque a matéria primutilizada é a mesma."  {audio:midias/3EB08A7C079592B7883E3C_560169.ogg}
+[08:53] LOJA: [foto]
+[08:55] CLIENTE: [áudio] "Vou mandar uma foto daquele papel fio guardado nele e a especificação dele, que é a minha ver se dá certo."
+[08:58] LOJA: [foto]
+[08:59] CLIENTE: Sexta a tarde vou ai ..ver  eles se der compro eles ..
+[09:00] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:00] LOJA: [foto]
+[09:04] CLIENTE: Ta certo

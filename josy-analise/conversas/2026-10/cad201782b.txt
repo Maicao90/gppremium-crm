@@ -1,0 +1,7 @@
+CONVERSA cad201782b | contato: montagem de moveis | 08/10/2026 09:43 até 08/10/2026 09:43 | 1 msgs do cliente, 2 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[09:43] CLIENTE: Quero cotar o pneu 175/70 R14 GP Premium.
+[09:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:43] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu me chamo Josi. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB006C19D41199F41367F_934372.ogg}

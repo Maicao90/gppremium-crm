@@ -1,0 +1,40 @@
+CONVERSA ddf31a7bdb | contato: Anderson 🎶🎥🎛️ | 10/09/2026 09:18 até 10/09/2026 15:03 | 10 msgs do cliente, 15 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[09:18] CLIENTE: Olá! vim do instagram e gostaria de fazer um orçamento
+[09:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:18] CLIENTE: Pneu pra Haval h6 phev34, tem? Valor ?
+[09:26] LOJA: *Josy:*
+Qual a medida dos pneus que estão instalados no Haval h6?
+[09:27] CLIENTE: 235/55 R19
+[09:27] CLIENTE: Para carros híbrido
+[09:28] LOJA: *Josy:*
+Precisa de quantos pneus?
+[09:28] LOJA: *Josy:*
+Pois creio que vou precisar encomendar
+[09:33] CLIENTE: Quero saber valor, vc já tem Seriam 3
+[09:36] LOJA: *Josy:*
+Estava conferindo o estoque terei apenas1 pneu
+[09:37] LOJA: *Josy:*
+Mora aqui em Luziânia-Go?
+[09:37] CLIENTE: Valparaiso
+[09:41] LOJA: [áudio] "Bem, se você não estiver com pressa, eu posso verificar com os meus distribuidores e aí se eles estiverem, vai levar uns 3 dias realmente para poder chegar, tá? E se você estiver em busca de alguma marca específica, você me fala que eu já verifico diretamente, está bem?"  {audio:midias/3EB0BA223FEDE8D33785E7_214742.ogg}
+[11:35] CLIENTE: Veja , por favor!
+[11:36] LOJA: [áudio] "Sim, eu estou aguardando a resposta aqui do distribuidor."  {audio:midias/3EB0EEE2D7EBEF040CB693_440511.ogg}
+[11:36] CLIENTE: Ok
+[12:36] LOJA: *Josy:*
+Oi
+[12:36] LOJA: [foto]
+[12:36] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:37] CLIENTE: Esse pneu é priorio pra carro híbrido ?
+[12:48] LOJA: *Josy:*
+Oi... desconsidere o orçamento acima, me passaram um que não é
+[12:48] LOJA: *Josy:*
+Mas esse logo abaixo é para hibrido 👇🏻
+[12:49] LOJA: [foto]
+[14:23] LOJA: [áudio] "Olá, tudo bem com você? Eu te encaminhei o orçamento do pneu que é apropriado para o seu veículo e gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0E0B234FE0EED4311A7_425280.ogg}
+[15:03] CLIENTE: Só orcabdo por enquanto

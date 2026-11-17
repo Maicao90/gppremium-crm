@@ -1,0 +1,45 @@
+CONVERSA 580644a1b9 | contato: Pr. Francisco | 03/09/2026 09:16 até 11/09/2026 17:37 | 6 msgs do cliente, 18 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[09:16] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[09:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:16] CLIENTE: 225/45 R16 c4 loung thp 2014!
+[09:22] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[09:23] CLIENTE: Ok
+[10:27] LOJA: *Josy:*
+Em falta essa medida,
+[10:27] LOJA: *Josy:*
+Mas você usa ela mesmo em seu carro?
+[10:27] LOJA: *Josy:*
+Pois a medida original é 205/55/16
+[10:29] LOJA: [foto]
+[10:29] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:08] CLIENTE: Não!
+A medida original é 225/45 R 17 (tá no manual).
+[11:14] LOJA: *Josy:*
+Ahhhh, certo... vou refazer o orçamento.
+[11:19] LOJA: [foto]
+[11:58] CLIENTE: [áudio] "Tá, eu vou ver aqui que eu fiz outros orçamentos, aí o que ficar aqui mais próximo aqui eu te mando aí, beleza? Qualquer coisa eu falo contigo. Muito obrigado."
+[12:02] LOJA: [áudio] "Té Joia, você mora onde?"  {audio:midias/3EB0E9CAD1720051730702_659616.ogg}
+--- 04/09/2026 (Fri) ---
+[05:44] CLIENTE: Valparaíso de Goiás
+[05:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:11] LOJA: [áudio] "Olá, tudo bem contigo? Bem, eu vou fazer o seguinte, eu vou te encaminhar aqui a nossa localização, pois se houver a possibilidade, venha aqui na nossa loja, não é muito longe do Val, fica próximo aqui, dá para você ver tranquilo. Tchau, tchau."  {audio:midias/3EB06DD9A622F787E5AFB0_941073.ogg}
+[18:11] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[18:12] LOJA: [foto]
+--- 10/09/2026 (Thu) ---
+[17:17] LOJA: [áudio] "Olá, seu Francisco, tudo bem?"  {audio:midias/3EB0BB1E2C3A61A9259E8D_651191.ogg}
+[17:17] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[17:37] LOJA: [áudio] "Oi, tudo bem com você? Eu até fiz um vídeo aí, né, pra tentar mais uma interação, mas imagino que na correria você não tenha conseguido visualizar. Eu vou encerrar aqui o seu atendimento, justamente pra não ficar enchendo o seu WhatsApp de mensagens, tá jóia? Se tiver a possibilidade, você passa aqui na nossa loja pra conversarmos pessoalmente. Muito obrigada por sua atenção. Bom final de semana."  {audio:midias/3EB016FB96694FC40F0339_660293.ogg}
+[17:37] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

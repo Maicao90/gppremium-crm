@@ -1,0 +1,19 @@
+CONVERSA 4e4fd893b7 | contato: amandaanf | 15/10/2026 16:15 até 15/10/2026 16:40 | 6 msgs do cliente, 5 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[16:15] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[16:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:15] CLIENTE: 175 65 14
+[16:17] LOJA: [foto]
+[16:17] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:19] CLIENTE: Blz 👍🏻
+[16:19] CLIENTE: Devo pagar a fatura essa semana
+[16:19] CLIENTE: Aí volto a falar com vocês
+[16:19] LOJA: MOra aqui em Luziânia-Go?
+[16:19] CLIENTE: Santa Maria
+[16:40] LOJA: [áudio] "Olá, tudo bem contigo? Amanda, pois é, não é tão longe assim, né?"  {audio:midias/3EB0D27B075318A4B7D17F_155403.ogg}

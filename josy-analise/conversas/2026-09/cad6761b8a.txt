@@ -1,0 +1,33 @@
+CONVERSA cad6761b8a | contato: Pessoal | 28/09/2026 05:05 até 28/09/2026 18:00 | 7 msgs do cliente, 12 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[05:05] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[05:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[05:05] CLIENTE: 235 50 19
+[08:30] LOJA: *Josy:*
+Bom dia!
+[08:30] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[08:50] CLIENTE: Ok
+[08:50] CLIENTE: Veja tmb se tem a medida a baixo e outra opção
+[08:50] CLIENTE: 235 45 20
+[10:28] LOJA: *Josy:*
+Consegui retorno do 235/45/20
+[10:28] LOJA: [foto]
+[10:28] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:31] LOJA: *Josy:*
+235/50/19 👇🏻
+[10:31] LOJA: [foto]
+[16:31] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Eu te mandei um orçamento mais cedo e gostaria de saber se pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0A443DF026DD13F07B9_546878.ogg}
+[16:44] CLIENTE: Por hora ainda não
+[16:44] CLIENTE: Estou pensando com calma
+[16:45] LOJA: [áudio] "Tudo bem, tudo bem. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB05567DE0D9402C63730_674808.ogg}
+[18:00] LOJA: [áudio] "Bem, por hora eu vou encerrar o seu atendimento, tá joia? Justamente para não ficar enchendo seu WhatsApp de mensagens e vou deixar aqui a nossa localização, que se de repente haverá possibilidade, você passa aqui na loja para conversarmos pessoalmente e negociarmos os pneus para vocês, tá bem? Obrigada pelo seu contato, que você tenha uma boa semana."  {audio:midias/3EB00E79B5DCE06FFF15F2_583762.ogg}
+[18:00] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

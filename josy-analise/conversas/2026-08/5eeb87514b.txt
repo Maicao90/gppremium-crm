@@ -1,0 +1,25 @@
+CONVERSA 5eeb87514b | contato: Agora Vai.... | 21/08/2026 14:09 até 21/08/2026 14:50 | 12 msgs do cliente, 10 da loja, 0 do robô
+
+--- 21/08/2026 (Fri) ---
+[14:09] CLIENTE: Baun
+[14:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:09] CLIENTE: Pneus
+[14:09] CLIENTE: 295 Firestone
+[14:09] CLIENTE: Tem
+[14:09] CLIENTE: Qual valor
+[14:13] LOJA: Boa tarde!
+[14:13] LOJA: Infelizmetne , não temos
+[14:21] CLIENTE: Qual vc tem ai
+[14:21] CLIENTE: Pra dianteira
+[14:21] LOJA: Infelizmetne , não temos
+[14:22] CLIENTE: Só carro pequeno
+[14:36] LOJA: [áudio] "Moço, aqui em Luziânia, infelizmente eu não sei te dizer, porque eu sou nova aqui na área, eu não tenho referência alguma."  {audio:midias/3EB0614A1D0E987A4241E2_145796.ogg}
+[14:36] CLIENTE: Vó ver aqui
+[14:37] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:37] CLIENTE: Auto giro
+[14:37] LOJA: Rsrs...
+[14:38] LOJA: [foto]
+[14:41] CLIENTE: Vlw kk
+[14:50] LOJA: Tranquilo moço.
+[14:50] LOJA: Bom final de semana.

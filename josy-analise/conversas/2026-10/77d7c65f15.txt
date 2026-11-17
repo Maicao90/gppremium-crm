@@ -1,0 +1,20 @@
+CONVERSA 77d7c65f15 | contato: rsouza913@gmail.com | 16/10/2026 11:51 até 17/10/2026 14:00 | 5 msgs do cliente, 5 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[11:51] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[11:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:51] CLIENTE: Fica anode
+[11:51] CLIENTE: Onde
+[11:52] LOJA: Somos de Luziânia-Go, e você?
+[13:46] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[14:35] LOJA: Prossiga
+[15:16] LOJA: [áudio] "Oi, boa tarde, tudo bem com você? Você entrou em contato aqui comigo, me mandou um oi, tudo bem? Fica hoje, solicitou aqui um orçamento, mas para que eu possa realizar um orçamento para você, Renato, eu preciso que você me diga qual que é a medida dos pneus que você está buscando. Você consegue me responder, por gentileza?"  {audio:midias/A5AD4FC7F6C268F63DBF1E1A785BD3C5_236120.ogg}
+--- 17/10/2026 (Sat) ---
+[14:00] CLIENTE: Valparaíso
+[14:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

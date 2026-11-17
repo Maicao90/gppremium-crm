@@ -1,0 +1,24 @@
+CONVERSA cd928eaf87 | contato: Armando Luiz | 10/10/2026 10:11 até 13/10/2026 16:40 | 5 msgs do cliente, 14 da loja, 0 do robô
+
+--- 10/10/2026 (Sat) ---
+[10:11] CLIENTE: Bom dia
+[10:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:11] CLIENTE: 185/60 r 15
+[10:16] LOJA: Bom dia!
+[10:16] LOJA: [foto]
+[10:16] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:16] CLIENTE: Ainda está na promoção?
+[10:16] LOJA: Mora aqui em Luziânia-Go?
+[10:16] CLIENTE: Compra 4 e paga 3 ?
+[10:17] LOJA: s pneus da promoção compre 3 e leve 4 são pneus da marca GP Premium na medida 195/65/15 e 215/55/17
+[10:17] CLIENTE: No anúncio está aro 15 acima
+[11:15] LOJA: No caso do anuncio essa medida é a que está por R$ 249,00
+[11:16] LOJA: Já os  pneus da promoção compre 3 e leve 4 são pneus da marca GP Premium na medida 195/65/15 e 215/55/17
+[11:35] LOJA: Você mora aqui em Luziânia-Go?
+[11:35] LOJA: Você mora aqui em Luziânia-Go?
+--- 13/10/2026 (Tue) ---
+[09:29] LOJA: [áudio] "Oi, Amanda, bom dia, tudo bom? Nós estávamos conversando aí no final de semana, te mandei um orçamento, perguntei se você mora aqui em Luziânia, entretanto você não me respondeu, imagino que você estava aí na correria, né? Mas e aí, você teve a oportunidade de analisar o orçamento, a opção que eu te encaminhei te atende? Assim que possível, me dá um retorno, por gentileza, está bem?"  {audio:midias/3EB04E36A5FC55BF775427_405834.ogg}
+[16:40] LOJA: Sr, Armando...

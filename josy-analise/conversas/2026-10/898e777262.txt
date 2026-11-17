@@ -1,0 +1,25 @@
+CONVERSA 898e777262 | contato: Wilton | 19/10/2026 13:20 até 21/10/2026 12:56 | 3 msgs do cliente, 9 da loja, 1 do robô
+
+--- 19/10/2026 (Mon) ---
+[13:20] CLIENTE: Boa tarde
+[13:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:21] CLIENTE: Qual o valor do seu pneu 175/70/14
+[13:21] CLIENTE: ?
+[13:37] LOJA: *Josy:*
+Boa tarde, obrigada por aguardar!
+[13:37] LOJA: [foto]
+[13:37] LOJA: *Josy:*
+No dia de hoje temos os pneus da marca  Maxzez e GP Premium essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 20/10/2026 (Tue) ---
+[08:43] LOJA: *Josy:*
+Bom dia, como vai?
+[08:44] LOJA: *Josy:*
+Posso reservar alguma dessas opções para você?
+--- 21/10/2026 (Wed) ---
+[09:48] LOJA: Bom dia!
+[09:48] LOJA: Vou encerrar seu atendimento, caso precise novamente é só chamar, ou venha até nossa loja, será uma satisfação reeber você aqui!
+[09:48] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:56] ROBÔ: 🙋🏼‍♀️

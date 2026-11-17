@@ -1,0 +1,25 @@
+CONVERSA 3c24a9c745 | contato: Franciele Matos✨ | 15/10/2026 17:26 até 15/10/2026 17:35 | 7 msgs do cliente, 12 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[17:26] CLIENTE: Oi
+[17:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:26] CLIENTE: Oi
+[17:27] LOJA: Oi
+[17:27] CLIENTE: [áudio] "Boa tarde, tudo bem? O Glossário quer saber o valor do pneu aro 14, 175."
+[17:27] LOJA: [áudio] "Oi, boa tarde! Tudo bem com você, Pracieli?"  {audio:midias/3EB005F3360F3BAA88BD95_857935.ogg}
+[17:27] LOJA: [áudio] "Eu tenho AXIM, mas aí eu preciso saber qual é o perfil que você está precisando."  {audio:midias/3EB01A977EED88EF1493A2_11327.ogg}
+[17:28] CLIENTE: [áudio] "É o aro 14, 175, 70."
+[17:29] LOJA: [foto]
+[17:29] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:30] LOJA: 🙋🏼‍♀️
+[17:31] LOJA: [áudio] "Se você mora aqui em Luziânia mesmo, aqui no dia de hoje eu tenho todas essas opções, aí a pronta entrega tá, o menor preço é para o pneu da marca GP Premium, que no débito ou Pix ele está por 279, e se você conseguir trazer o pagamento em dinheiro em espécie, eu consigo fazer a unidade aqui por 265 para você."  {audio:midias/3EB08B7082557FA5E0B57B_819283.ogg}
+[17:31] CLIENTE: Tá ok
+[17:31] CLIENTE: Vou vê aqui certinho
+[17:32] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0434099AEF2AEBC9156_544888.ogg}
+[17:32] CLIENTE: Sim
+[17:33] LOJA: [áudio] "Eu vou te mandar a nossa localização, tá? E quando você ligou aqui eu não consegui atender porque é no computador, tá, Joia?"  {audio:midias/3EB0D5FA3D540DA33B4B5A_772645.ogg}
+[17:35] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:35] LOJA: [foto]

@@ -1,0 +1,15 @@
+CONVERSA d7de1df23b | contato: Sousa | 16/09/2026 10:34 até 22/09/2026 15:26 | 2 msgs do cliente, 6 da loja, 0 do robô
+
+--- 16/09/2026 (Wed) ---
+[10:34] CLIENTE: Bom dia
+[10:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:35] LOJA: *Josy:*
+Bom dia!
+[10:35] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa hoje?
+[10:36] CLIENTE: 205/50/17
+[10:36] LOJA: [foto]
+[10:37] LOJA: [áudio] "No dia de hoje, eu tenho aqui os pneus da marca GP Premium, onde a unidade está por apenas R$ 339,00, se o seu pagamento for à vista. Caso você queira parcelar, tem as opções de parcelamento em até 10 vezes. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB03DB559D5F35B39E9E5_275161.ogg}
+--- 22/09/2026 (Tue) ---
+[15:26] LOJA: [foto]

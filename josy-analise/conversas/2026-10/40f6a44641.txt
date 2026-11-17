@@ -1,0 +1,16 @@
+CONVERSA 40f6a44641 | contato: Leonardo | 13/10/2026 22:00 até 14/10/2026 13:22 | 2 msgs do cliente, 5 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[22:00] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[22:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[22:00] CLIENTE: 185 65 15
+--- 14/10/2026 (Wed) ---
+[08:28] LOJA: Bom dia!
+[08:28] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:28] LOJA: [foto]
+[13:22] LOJA: [áudio] "Olá, tudo bem com você, Leonardo? Eu te mandei um orçamento mais cedo e gostaria muito de saber se você teve a oportunidade de analisar. Você mora aqui em Luziânia?"  {audio:midias/3EB061FEE49B41A8FA8764_682503.ogg}

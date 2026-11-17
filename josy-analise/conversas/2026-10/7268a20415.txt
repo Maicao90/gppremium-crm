@@ -1,0 +1,65 @@
+CONVERSA 7268a20415 | contato: Sérgio Ferreira Bispo | 20/10/2026 12:51 até 21/10/2026 11:15 | 14 msgs do cliente, 23 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[12:51] CLIENTE: Boa tarde.
+[12:51] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[12:51] LOJA: *Josy:*
+Boa tarde.!
+[12:52] CLIENTE: Ainda estar promoção na compra de três peneu ganha o quarto.
+[12:53] LOJA: *Josy:*
+Sim,  a promoção existe e é válida para os pneus da marca GP Premium nas medidas 195/65/15 e 215/55/17.
+[12:54] CLIENTE: Preço do pneu 195/ 65 /15
+[12:56] LOJA: [foto]
+[12:56] LOJA: *Josy:*
+Digamos que seja a vista: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[12:57] CLIENTE: Vcs trabalha com  a medida 195/55/15 .
+[12:58] LOJA: *Josy:*
+Sim!
+[12:58] LOJA: [foto]
+[12:58] LOJA: *Josy:*
+
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:00] LOJA: *Josy:*
+195/55/15 se  o pagamento for a vista a unidade está por 289,00
+[13:00] CLIENTE: Certo.
+[13:00] LOJA: *Josy:*
+Qual é seu carro?
+[13:01] CLIENTE: Gol
+[13:01] LOJA: *Josy:*
+Instala o 185/65/15 ! Vai te atender super bem e está na oferta.
+[13:02] LOJA: [áudio] "Olha, 185-65, inclusive, é uma das medidas muito utilizadas no carro da Joia. E aí, o que acontece? O preço normal dele estava por R$ 289,00. Aí, neste mês, ele está por apenas R$ 249,00 à vista."  {audio:midias/3EB0109E6F3543F938B83D_757217.ogg}
+[13:03] LOJA: *Josy:*
+Você é daqui de Luziânia-Go?
+[13:03] CLIENTE: Sim
+[13:03] LOJA: *Josy:*
+Que bacana!
+[13:03] CLIENTE: Esse peneu não é remolde.
+[13:04] CLIENTE: Somente pra saber.
+[13:04] LOJA: [áudio] "Sim, é sim. Ele é um remolde de primeira linha, inclusive é o pneu mais vendido que eu tenho justamente por conta da qualidade. Eu vou gravar um vídeo aqui para que você possa compreender a diferença dos pneus, tá?"  {audio:midias/3EB05D45E3718E45679F8A_553027.ogg}
+[13:04] CLIENTE: Ok.
+[13:06] LOJA: [vídeo]
+[13:08] LOJA: *Josy:*
+De todo modo se não te interessar, vou verificar se temos outras opçôes de marca aqui. é que estou sem sistema.
+[13:09] CLIENTE: Ok obrigado.
+[14:53] LOJA: [foto]
+[14:53] LOJA: [foto]
+[14:53] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:25] CLIENTE: Ok obrigado.
+[15:29] LOJA: [áudio] "Sérgio, você mora aqui em Luziânia?"  {audio:midias/3EB091A30CE967B1AA6694_956021.ogg}
+[15:29] CLIENTE: Sim
+[15:29] LOJA: [áudio] "Ah, que bacana! Pai, passa aqui na nossa loja para nós conversarmos pessoalmente."  {audio:midias/3EB07C25C3833462C5499B_409925.ogg}
+[15:30] CLIENTE: Ok depois irei passar pra ver.
+[15:32] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 21/10/2026 (Wed) ---
+[11:15] ROBÔ: 🙋🏼‍♀️

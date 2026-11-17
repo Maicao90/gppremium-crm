@@ -1,0 +1,11 @@
+CONVERSA ec0ea418fa | contato: Evandro Almeida Lopes | 21/09/2026 14:45 até 21/09/2026 14:47 | 4 msgs do cliente, 2 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[14:45] CLIENTE: Boa tarde
+[14:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:46] CLIENTE: Preciso da camara de ar do pneu 16/12.5
+[14:46] CLIENTE: Preço
+[14:46] LOJA: *Josy:*
+Não trabalhamos com camaras de ar.
+[14:47] CLIENTE: Ok obrigado

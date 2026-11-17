@@ -1,0 +1,24 @@
+CONVERSA 97c75109d9 | contato: Antônio Carlos | 13/10/2026 20:35 até 14/10/2026 12:37 | 7 msgs do cliente, 7 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[20:35] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[20:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:35] CLIENTE: Aro 17
+--- 14/10/2026 (Wed) ---
+[08:26] LOJA: Qual a medida dos pneus que você precisa ?
+[08:26] CLIENTE: Opa
+[08:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:26] CLIENTE: Bom dia, aro 17
+[08:27] LOJA: 17 é apenas *aro* preciso que me informe a medida dos pneus, Exemplo : 265/65/*17*
+[08:43] CLIENTE: Opa
+[08:43] CLIENTE: Vou checar direitinho e repasso
+[08:43] CLIENTE: É pranum i30 2.0 2012
+[09:01] LOJA: [foto]
+[09:01] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:37] LOJA: [áudio] "Oi, Antônio, tudo jóia? Eu te encaminhei um orçamento mais cedo, conseguiu avaliar a proposta?"  {audio:midias/3EB0DA8063AB85FCAD0E14_458416.ogg}

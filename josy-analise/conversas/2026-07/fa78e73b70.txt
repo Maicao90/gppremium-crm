@@ -1,0 +1,41 @@
+CONVERSA fa78e73b70 | contato: Wendell Alves | 25/07/2026 12:32 até 08/08/2026 06:54 | 13 msgs do cliente, 13 da loja, 0 do robô
+
+--- 25/07/2026 (Sat) ---
+[12:32] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[12:34] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 26/07/2026 (Sun) ---
+[11:12] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[11:14] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 27/07/2026 (Mon) ---
+[10:52] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:54] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 28/07/2026 (Tue) ---
+[09:32] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:34] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 29/07/2026 (Wed) ---
+[08:12] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[08:14] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 30/07/2026 (Thu) ---
+[07:52] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[07:54] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 31/07/2026 (Fri) ---
+[06:32] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[06:34] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 01/08/2026 (Sat) ---
+[05:12] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[05:14] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 02/08/2026 (Sun) ---
+[12:52] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[12:54] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 03/08/2026 (Mon) ---
+[11:32] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[11:34] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 04/08/2026 (Tue) ---
+[10:12] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:14] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 05/08/2026 (Wed) ---
+[09:52] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:54] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 08/08/2026 (Sat) ---
+[06:52] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[06:54] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

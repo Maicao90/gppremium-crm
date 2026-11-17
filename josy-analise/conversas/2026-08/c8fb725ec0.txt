@@ -1,0 +1,18 @@
+CONVERSA c8fb725ec0 | contato: Vivi | 27/08/2026 11:21 até 27/08/2026 11:25 | 4 msgs do cliente, 6 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[11:21] CLIENTE: Bom dia. Hoje busco pneus na seguinte medida: 215 60 R17 100H
+[11:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:21] LOJA: *Josy:*
+Bom dia, Viviane...
+[11:22] LOJA: *Josy:*
+Como conversamos vez passada, com referência as marcas solicitadas , não temos a pronta entrega.
+[11:24] CLIENTE: Quais vc teria?
+[11:24] LOJA: *Josy:*
+Somente remold
+[11:24] LOJA: [foto]
+[11:24] LOJA: *Josy:*
+R$ a unidade está por R$ 359,00 a vista
+[11:25] CLIENTE: quero novos
+[11:25] CLIENTE: Obrigada

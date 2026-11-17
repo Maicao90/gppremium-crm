@@ -1,0 +1,19 @@
+CONVERSA f47a21282e | contato: bispo | 08/10/2026 12:57 até 08/10/2026 13:25 | 8 msgs do cliente, 5 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[12:57] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+Olá! Tenho interesse e queria mais informações, por favor.
+[12:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:57] LOJA: 🙋🏼‍♀️
+[12:58] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Me diz, por gentileza, qual a medida dos pneus que você precisa."  {audio:midias/3EB009C34AD65DBAE1BE85_77479.ogg}
+[13:02] CLIENTE: 255 70 26
+[13:02] CLIENTE: 16
+[13:02] CLIENTE: Ford ranger
+[13:02] CLIENTE: Pneu at
+[13:04] LOJA: 255/70/16 certo?
+[13:15] CLIENTE: Certo
+[13:15] CLIENTE: Vcs tão localizados onde em Brasília
+[13:23] LOJA: Somos de Luziânia-Go.
+[13:25] CLIENTE: Ok

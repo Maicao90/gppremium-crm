@@ -1,0 +1,29 @@
+CONVERSA 934e2d2a97 | contato: Pedro Grego | 15/10/2026 12:39 até 15/10/2026 15:45 | 6 msgs do cliente, 13 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[12:39] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[12:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:39] LOJA: 🙋🏼‍♀️
+[12:56] CLIENTE: Vc tem o pneu 225/50/aro 16
+[12:57] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Pedro? Em qual carro que você está utilizando essa medida?"  {audio:midias/3EB06442AB265F871150D8_562167.ogg}
+[12:58] CLIENTE: Vectra elegante
+[12:58] CLIENTE: O que eu uso é 205/50/16
+[12:59] LOJA: 🤔 205/55/16 certo?
+[13:00] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:00] LOJA: [foto]
+[13:00] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[13:31] LOJA: [áudio] "Pedro, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB00361C9D772978DBD75_95958.ogg}
+[13:41] CLIENTE: O pneu que está neles é 205/55 Aro 16
+[13:42] CLIENTE: O que eu quero é 225/55/16
+[14:29] LOJA: Olha... vou ser sincera contigo, nunca ví ninguém usando essa medida no  Vectra Elegance, é um pneu muito grande!
+[14:29] LOJA: Mas vou cotar para você.
+[15:44] LOJA: Pedro... tive um unico retorno da marca Comforser
+[15:45] LOJA: [foto]
+[15:45] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

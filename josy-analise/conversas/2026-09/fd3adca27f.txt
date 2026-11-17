@@ -1,0 +1,19 @@
+CONVERSA fd3adca27f | contato: Escolar tio Wilson | 08/09/2026 08:33 até 08/09/2026 11:08 | 2 msgs do cliente, 8 da loja, 0 do robô
+
+--- 08/09/2026 (Tue) ---
+[08:33] LOJA: *Josy:*
+Bom dia, wilson!
+[08:34] LOJA: [foto]
+[08:34] LOJA: *Josy:*
+O pneus 215/55/17  se o  pagamento for a vista a  unidade  é  R$ 395,00 x 3 pneus = R$ 1.185,00 por esse preço você vai levar os 4
+[08:46] LOJA: [foto]
+[08:46] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:14] LOJA: [áudio] "Senhor Wilson, eu só não te mandei um orçamento de outras marcas na medida 215,55 e 215,60, porque realmente eu não tenho nenhuma outra opção aqui no meu estoque, tá? Já para um 85,70, tem todas essas opções que eu te encaminhei."  {audio:midias/3EB07995A9659EDF41D828_607234.ogg}
+[10:48] CLIENTE: [áudio] "Tá bom, fi, obrigado, só pude ver agora. Tá bom, vou dar uma olhada aqui, dar uma pensadinha, tá? Vou ver meu seguro como é que é, pra gente dar uma olhadinha direitinho, mas pode ficar tranquilo. Obrigado pela atenção, viu?"
+[10:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:56] LOJA: [áudio] "Imagina, Sr. Wilson, que é isso, tá? Precisa do céu falar aqui comigo. Tranquilo, tranquilo."  {audio:midias/3EB01E870437BB3090C000_829167.ogg}
+[11:08] CLIENTE: Ok

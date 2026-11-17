@@ -1,0 +1,8 @@
+CONVERSA 3d49dce2f3 | contato: Hosana | 11/09/2026 13:10 até 11/09/2026 13:11 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[13:10] CLIENTE: Boa tarde vcs vendem pneus para caminhão ?
+[13:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:11] CLIENTE: 900 por 20. Borrachudo
+[13:11] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Aqui em nossa empresa nós não temos não."  {audio:midias/3EB0D1B74C993357069132_332266.ogg}

@@ -1,0 +1,29 @@
+CONVERSA 5be5e37b51 | contato: Alisson Sérgio | 29/08/2026 12:10 até 22/09/2026 15:50 | 6 msgs do cliente, 10 da loja, 0 do robô
+
+--- 29/08/2026 (Sat) ---
+[12:10] LOJA: [áudio] "Senhora Alisson, boa tarde. Na segunda-feira, perdão, na terça, eu vi que o senhor tinha mandado um boa noite aí, né, e tentei aqui falar contigo pra saber se eu podia te ajudar, mas o senhor não me respondeu mais, tá tudo bem? Tá precisando de alguma coisa? Fala aqui comigo."  {audio:midias/3EB09BEEC1F210ACBEB5ED_644722.ogg}
+--- 18/09/2026 (Fri) ---
+[08:59] CLIENTE: Bom dia
+[08:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:59] CLIENTE: Pneu aro 14, consegue fazer quanto ?
+[09:00] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa hoje?
+[09:00] CLIENTE: O que for mais em conta
+[09:00] CLIENTE: 175, 185
+[09:00] LOJA: *Josy:*
+165/70/14 R$ 239,00
+[09:01] LOJA: *Josy:*
+175/65/14 R$ 249,00
+[09:01] CLIENTE: Esse é o remold né ?
+[09:01] LOJA: *Josy:*
+Isso
+[09:01] LOJA: *Josy:*
+Estão em oferta no momento!
+[15:00] LOJA: *Josy:*
+Oi...Alisson. Esse pneu vai te atender, ou está em busca de alguma marca especifica?
+--- 22/09/2026 (Tue) ---
+[15:42] LOJA: [áudio] "Oi Alisson, tudo jóia? Nós nos falamos há alguns dias atrás, se você quer que separe os pneus para você, até te perguntei se vocês têm busca de alguma marca específica, então não me respondeu mais. Quando você tiver um tempinho me dá um retorno, tá bom?"  {audio:midias/3EB0DD99950A01E9EE87FC_489884.ogg}
+[15:50] CLIENTE: [áudio] "Minha amiga, é porque tá caro, por isso que eu não falei nada aí. Eu achei já pneu 250 novo aqui, sem ser remolde, entendeu? Aí não compensa, não. Mas eu agradeço. Obrigado."
+[15:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

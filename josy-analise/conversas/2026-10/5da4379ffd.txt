@@ -1,0 +1,11 @@
+CONVERSA 5da4379ffd | contato: Raimundo Nonato | 10/10/2026 06:30 até 13/10/2026 16:40 | 1 msgs do cliente, 3 da loja, 0 do robô
+
+--- 10/10/2026 (Sat) ---
+[06:30] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[06:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:32] LOJA: 🙋🏼‍♀️
+--- 13/10/2026 (Tue) ---
+[16:40] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Raimundo? Você entrou em contato aqui conosco no final de semana e solicitando um orçamento e eu gostaria muito de saber qual é a medida dos pneus que você precisa. Será que você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB083F3F2F0A36D3D36BE_724696.ogg}

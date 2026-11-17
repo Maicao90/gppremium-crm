@@ -1,0 +1,8 @@
+CONVERSA ac1dda793c | contato: Luiz | 14/08/2026 08:00 até 16/08/2026 06:22 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 14/08/2026 (Fri) ---
+[08:00] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[08:02] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 16/08/2026 (Sun) ---
+[06:20] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[06:22] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

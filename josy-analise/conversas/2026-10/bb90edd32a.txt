@@ -1,0 +1,28 @@
+CONVERSA bb90edd32a | contato: Ubiratan Pereira da Silva | 09/10/2026 08:49 até 13/10/2026 11:07 | 6 msgs do cliente, 13 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[08:49] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[08:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:50] CLIENTE: Pneu 205/50 /17 qual valor
+[08:50] CLIENTE: Onde fica está loja
+[08:53] LOJA: [áudio] "Olá, bom dia. Tudo bem com você, Ubiratã? Me chamo Josi e nós somos aqui de Luziânia, Goiás. Você fala de onde?"  {audio:midias/3EB025F2746B03814DA62A_454603.ogg}
+[11:25] CLIENTE: Gama
+[11:26] LOJA: [foto]
+[11:26] LOJA: No dia de hoje temos essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:27] CLIENTE: [áudio] "Tudo bem. Qual a garantia desses pneus seus aí? Quanto tempo de garantia de rodagem desse pneu da loja? Qual a garantia?"
+[11:28] LOJA: [áudio] "Oi, Biretão. Bom dia, como é que você está? Olha, o pneu aqui da marca GP Premium, que é o pneu que nós fazemos, ele tem garantia de 2 anos, tá? Em questão a quilometragem, ele roda 60 mil, 70 mil tranquilamente. Já o pneu da marca Porcelain é um pneu importado, ele roda menos e, assim, isso é para qualquer marca de importado, tá? E ele tem 5 anos de garantia. Entretanto, ambos, a garantia é válida se porventura ocorrer algum tipo de defeito de fabricação, tá? E aí"  {audio:midias/3EB00447723286B5C9B4C0_892900.ogg}
+[11:54] CLIENTE: [áudio] "Tá, entendi. Esse pneu seu é remolde. Vou pegar a pistola lá em cima. Esse pneu seu é remolde, ele..."
+[11:56] LOJA: [áudio] "O Biratã, os pneus da marca GP Premium são pneus ecológicos que nós fazemos. Ele vai entrar na categoria de remodelagem apenas por questão técnica. Friso, eles são os pneus mais vendidos que eu tenho justamente por conta da qualidade, tá?"  {audio:midias/3EB08FA0E4A99A932049B8_908120.ogg}
+[11:56] LOJA: [áudio] "Você me dá só um instantinho que eu vou gravar um vídeo aqui para você poder entender, tá joia?"  {audio:midias/3EB099BD6658051A933714_396161.ogg}
+[17:48] LOJA: [áudio] "Oi, seu Viratã, tudo bem? Fiquei de te mandar aqui o vídeo, só que somente agora, neste exato momento, eu consegui uma pausa. Dia bem intenso por aqui, graças a Deus."  {audio:midias/3EB0AF20B70CAF2BF677EE_249317.ogg}
+[17:51] LOJA: [foto]
+[17:52] LOJA: Esse é o pneu GP Premium
+[17:52] LOJA: 2 anos de garantia, e é o pneu mais vendido.
+[17:52] LOJA: tem a opção do importado, se preferir.
+--- 13/10/2026 (Tue) ---
+[11:07] LOJA: [áudio] "Professor Obiratão, tudo jóia? Eu te mandei um orçamento aí, né, alguns dias atrás, e gostaria de saber se pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB028709D3D910729124A_857759.ogg}

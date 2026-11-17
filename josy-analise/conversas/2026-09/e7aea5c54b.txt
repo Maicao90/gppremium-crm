@@ -1,0 +1,23 @@
+CONVERSA e7aea5c54b | contato: Deivid Lino | 21/09/2026 18:23 até 22/09/2026 11:23 | 5 msgs do cliente, 8 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[18:23] CLIENTE: Opa
+[18:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:23] CLIENTE: 175/70
+--- 22/09/2026 (Tue) ---
+[05:28] CLIENTE: 14
+[05:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[05:29] CLIENTE: 175/70 14
+[08:00] LOJA: [foto]
+[08:00] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:34] LOJA: [áudio] "Oi David, bom dia, tudo jóia? Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0532768817260F38BAB_456491.ogg}
+[09:04] CLIENTE: Sim
+[09:20] LOJA: [áudio] "E você pretende realizar a troca dos pneus por agora? Vai ser mais daqui a alguns dias? E essas opções que eu te encaminhei aí te atendem?"  {audio:midias/3EB06D810A51D029228F15_724636.ogg}
+[11:23] LOJA: *Josy:*
+Bem...se for possivel, passa aqui na nossa loja, que na compra dos pneu GP Premium, já deixamos eles colocados para você.
+[11:23] LOJA: [foto]

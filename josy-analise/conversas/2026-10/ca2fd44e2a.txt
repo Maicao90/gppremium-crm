@@ -1,0 +1,26 @@
+CONVERSA ca2fd44e2a | contato: Tiago | 07/10/2026 09:19 até 07/10/2026 09:42 | 9 msgs do cliente, 10 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[09:19] LOJA: *Josy:*
+Bom dia, Tiago... tudo bem?
+[09:20] CLIENTE: Bom dia
+[09:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:20] LOJA: *Josy:*
+Já tem um tempo que nos falamos.
+[09:22] LOJA: *Josy:*
+Realizei um orçamento certa vez, e gostaria de saber se nos dias atuais está precisando de algum tipo de pneu.
+[09:28] CLIENTE: Sim
+[09:28] CLIENTE: 205/60/16
+[09:28] CLIENTE: ATR
+[09:28] CLIENTE: Strada
+[09:29] LOJA: [áudio] "Oi Thiago, bom dia. Tudo bem com você? Bem, não estou tendo no modelo ATR, tá? Eu tenho ele somente no modelo liso. A princípio, eu tenho aqui o pneu da marca GP Premium, que ele está por R$ 329,00, se o pagamento foi no débito ou no Pix."  {audio:midias/3EB0382C102AA787BAEA9C_684356.ogg}
+[09:29] LOJA: [foto]
+[09:30] LOJA: [foto]
+[09:30] LOJA: [áudio] "No modelo ATR, vocês estão em busca de alguma marca específica? Porque como ele realmente está em falta, eu posso verificar com os meus distribuidores se eles têm alguma marca que de repente lhe agrade. Assim que eles me responderem eu te passo marca por esse prazo de entrega."  {audio:midias/A5C0B18C914F29688B8A0C41B8164FA7_436105.ogg}
+[09:31] CLIENTE: [áudio] "Bom dia. Então, eu tô usando do ATR, que eu vou usar só dois, eu já tô usando do ATR, né? Do GP Premium. Aí, como eu colocar só dois, tem que ser do mesmo modelo, né?"
+[09:31] LOJA: [áudio] "O ATR GP Premium está em falta, por hora não tem previsão de entrega."  {audio:midias/3EB056D7937FAF1726F079_276747.ogg}
+[09:35] CLIENTE: Tá bom
+[09:35] CLIENTE: Obrigado
+[09:37] LOJA: [áudio] "Mas, Thiago, assim que eu tiver, se você quiser, eu te informo, tá bom?"  {audio:midias/3EB05B52254FB2311CE327_850589.ogg}
+[09:42] CLIENTE: Ok

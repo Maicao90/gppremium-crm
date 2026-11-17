@@ -1,0 +1,17 @@
+CONVERSA 8046420f4c | contato: Massas Oliveira | 02/09/2026 13:27 até 02/09/2026 15:04 | 3 msgs do cliente, 6 da loja, 0 do robô
+
+--- 02/09/2026 (Wed) ---
+[13:27] LOJA: *Josy:*
+Boa tarde!
+[13:28] LOJA: *Josy:*
+R$ 559,00 a vista
+[13:28] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:28] LOJA: *Josy:*
+Oi... está vindo?
+[15:02] CLIENTE: Oi
+[15:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:02] CLIENTE: Só amanhã
+[15:03] LOJA: [áudio] "Olá, tudo bem com você? Sem problemas, tá? Igual eu te disse, no WhatsApp deu problema e eu fiquei sem rumo aqui. É por isso que eu te liguei, tá bom? Obrigada pelo seu retorno e bom final de tarde para você."  {audio:midias/3EB0DF1FB3BF23F4CE998C_202602.ogg}
+[15:04] CLIENTE: Ok

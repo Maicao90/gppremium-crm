@@ -1,0 +1,9 @@
+CONVERSA 5c66877b4b | contato: 🫡 | 18/09/2026 09:30 até 18/09/2026 09:44 | 3 msgs do cliente, 2 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[09:30] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:30] CLIENTE: Opa bom dia
+[09:31] CLIENTE: Vcs vendem pneus novos no atacado ?
+[09:44] LOJA: [áudio] "Olá, bom dia, tudo bem? Por ora, não estamos vendendo no atacado."  {audio:midias/3EB05FFDB493B1ACB308FB_206650.ogg}

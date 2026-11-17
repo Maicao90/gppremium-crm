@@ -1,0 +1,26 @@
+CONVERSA fb8b10bd3f | contato: . | 10/09/2026 10:06 até 12/09/2026 08:11 | 4 msgs do cliente, 9 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[10:06] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso?
+[10:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:06] CLIENTE: Pneu 185/60 r15
+[10:10] LOJA: [foto]
+[10:10] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 11/09/2026 (Fri) ---
+[13:26] LOJA: [áudio] "Olá, tudo bem com você?"  {audio:midias/3EB0AE836FF35E3E5CD630_856324.ogg}
+[13:26] LOJA: [vídeo]
+[13:48] CLIENTE: Boa tarde! Ainda estou orçando.
+[13:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:56] LOJA: [áudio] "Certo, perfeito, compreendo. Eu vou encerrar aqui o seu atendimento, justamente para não ficar enchendo seu WhatsApp de mensagens, tá bom? E vou te encaminhar a nossa localização. Se tiver a possibilidade, venha até a nossa empresa, que será uma satisfação receber você aqui. Até mais!"  {audio:midias/3EB00F93FB7BE3CEF07FFC_613842.ogg}
+[13:56] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[18:18] CLIENTE: Tem pneu 185/60 r15 P1 Pirelli Cinturato?
+--- 12/09/2026 (Sat) ---
+[08:11] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Você mora aqui em Luziânia? Porque eu não tenho pirelha pronta a entrega, não."  {audio:midias/A5184BA54BE901F7E3E5FD90D998FE1C_583035.ogg}

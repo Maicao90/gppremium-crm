@@ -1,0 +1,36 @@
+CONVERSA df4d6fcd34 | contato: 999363103rodrigo | 04/09/2026 10:57 até 11/09/2026 17:50 | 8 msgs do cliente, 14 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[10:57] CLIENTE: Ola
+[10:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:57] CLIENTE: Fica em Luziânia a loja
+[11:02] LOJA: *Josy:*
+Somo sim!
+[11:02] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:08] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa hoje?
+[11:12] CLIENTE: E só remoud
+[11:12] CLIENTE: Que vocês mechem
+[11:18] LOJA: *Josy:*
+Temos de todo so stipos
+[11:18] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa hoje?
+[11:31] LOJA: *Josy:*
+🙋🏼‍♀️
+[11:35] CLIENTE: Aro 13
+[11:35] CLIENTE: Sem ser remoud
+[11:36] LOJA: *Josy:*
+Pneu 175/75/13 85t cf510 comforser R$ 290,87 (debito/pix )                                                                Pneu 175/70/13 r1 Dunlop R$ 371,69 (débito/pix)
+Pneu 175/70/13 82t Kelly Goodyear R$ 357,66 (débito/pix)
+[11:43] CLIENTE: Obg
+[11:43] LOJA: *Josy:*
+Mora aqui em Luziania?
+[11:47] CLIENTE: Sim
+[15:17] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Gostaria de saber se quer que eu separe alguma dessas opções que eu te encaminhei. Você consegue me dar um retorno, por gentileza?"  {audio:midias/A5787357B9682F993FA41DA8ABA6B4D0_776920.ogg}
+--- 10/09/2026 (Thu) ---
+[17:09] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Rodrigo?"  {audio:midias/3EB0A35C5AFB599E5848C8_317153.ogg}
+[17:10] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[17:50] LOJA: [áudio] "Oi Rodrigo, tudo bom? Eu tentei falar contigo aí, mas imagino que na correria você não conseguiu ver aí as mensagens, então vou encerrar seu atendimento, tá jóia? Se houver a possibilidade, você passa aqui na loja para conversarmos pessoalmente. Muitíssimo obrigada pela atenção, bom final de semana."  {audio:midias/3EB0231932BE751303700E_754219.ogg}

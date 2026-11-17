@@ -1,0 +1,39 @@
+CONVERSA b5e293bde7 | contato: Sileide | 02/09/2026 16:27 até 02/10/2026 11:24 | 8 msgs do cliente, 19 da loja, 0 do robô
+
+--- 02/09/2026 (Wed) ---
+[16:27] LOJA: *Josy:*
+Boa tarde! Eu me chamo Josy
+[16:27] LOJA: *Josy:*
+Precisa de pneus 235/75/15 certo?
+[16:30] CLIENTE: Sim
+[16:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:31] CLIENTE: Está
+[16:31] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? E você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB0B1BD83C9B791856723_45726.ogg}
+[16:31] CLIENTE: Não
+[16:31] LOJA: [áudio] "Certo, e você tem a possibilidade de vir até nossa loja para realizar a compra dos pneus?"  {audio:midias/3EB01571C2C55C9CE65DFA_719525.ogg}
+[16:32] CLIENTE: Sim
+[16:36] LOJA: [foto]
+[16:36] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:41] LOJA: [foto]
+[16:41] LOJA: [foto]
+[16:42] CLIENTE: Aqui em Paracatu está bem mais em conta
+[16:42] CLIENTE: Obrigada
+--- 02/10/2026 (Fri) ---
+[06:26] CLIENTE: 235/75R15  Pneu
+[06:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[06:26] CLIENTE: Preciso de 1
+Bom dia
+[07:59] LOJA: /15
+[08:00] LOJA: [áudio] "Oi Lei Lei, bom dia, como é que você está? Oi Nene, o enoom, o enoom, o enoom, o enoom. O que que é por aí, por aqui? Como que você está?"  {audio:midias/3EB0F6A76A8AD9CF799313_963191.ogg}
+[08:30] LOJA: [áudio sem fala]  {audio:midias/A5AF15D500228E27141E1E76C46ADC78_988886.ogg}
+[08:30] LOJA: [áudio] "E, Fleide, o preço continuou o mesmo que nós tínhamos conversado no início do mês, tá bom?"  {audio:midias/3EB007F316E7FD58CCD58F_460541.ogg}
+[10:14] LOJA: 🙋🏼‍♀️
+[11:23] LOJA: [áudio] "Oi, Sileide."  {audio:midias/3EB06A974B99950B28D4A5_520276.ogg}
+[11:23] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:24] LOJA: [foto]

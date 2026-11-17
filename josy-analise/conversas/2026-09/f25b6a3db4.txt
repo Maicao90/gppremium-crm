@@ -1,0 +1,41 @@
+CONVERSA f25b6a3db4 | contato: Telefone Comercial | 30/09/2026 18:49 até 01/10/2026 14:25 | 12 msgs do cliente, 13 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[18:49] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[18:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:17] CLIENTE: Vocês são de onde ?
+[19:17] CLIENTE: 195-65 R15
+--- 01/10/2026 (Thu) ---
+[07:56] CLIENTE: ?
+[07:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:06] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu me chamo Josi e nós somos aqui de Luziânia, Goiás. Você mora onde?"  {audio:midias/3EB0427193003854674C05_175112.ogg}
+[08:24] CLIENTE: Bom dia Josy
+[08:24] CLIENTE: Cidade ocidental
+[08:26] LOJA: *Josy:*
+pERTINHO
+[08:48] CLIENTE: Sim
+[08:49] CLIENTE: Qual o valor
+[08:49] CLIENTE: ?
+[08:55] LOJA: [foto]
+[08:55] LOJA: *Josy:*
+Obrigada por aguardar.
+[08:55] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:56] LOJA: *Josy:*
+Os pneus da marca GP Premium estão em promoção compre 3 e leve 4
+[08:56] LOJA: *Josy:*
+Digamos que seja a vista: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[09:07] CLIENTE: Entendi
+[09:09] CLIENTE: Tem muitos juros
+[09:09] LOJA: *Josy:*
+tem um pouco sim!
+[09:30] LOJA: [áudio] "Bem, eu vou te encaminhar aqui a nossa localização, pois se de repente você estiver com a disponibilidade de tempo, passa aqui na nossa empresa para nós conversarmos pessoalmente, está bem?"  {audio:midias/3EB01C8EE42560E2DBC9E5_309775.ogg}
+[09:30] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:30] LOJA: [foto]
+[14:25] CLIENTE: Fica puxado pra mim

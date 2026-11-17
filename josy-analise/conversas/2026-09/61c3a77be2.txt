@@ -1,0 +1,30 @@
+CONVERSA 61c3a77be2 | contato: William 👷🏻 | 04/09/2026 22:48 até 05/09/2026 10:09 | 8 msgs do cliente, 11 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[22:48] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso?
+[22:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 05/09/2026 (Sat) ---
+[08:26] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu estou aqui aguardando suas informações."  {audio:midias/3EB0F744D18584AA41E1A5_593072.ogg}
+[08:26] CLIENTE: Tá bom
+[08:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:27] CLIENTE: E 16
+[08:27] CLIENTE: Já mando o resto
+[08:37] LOJA: *Josy:*
+Qual é seu carro moço?
+[09:14] CLIENTE: Civic
+[09:15] CLIENTE: 205 55 16
+[09:23] LOJA: *Josy:*
+Certo...
+[09:27] LOJA: [foto]
+[09:28] LOJA: [áudio] "Obrigada por aguardar. No dia de hoje eu tenho todas essas opções de marcas à pronta entrega. No orçamento está o valor unitário do pneu, onde na primeira coluna já deixei o valor à vista, que é o menor e melhor preço. Seguem também as opções de parcelamento em até 10 vezes, caso queira parcelar."  {audio:midias/3EB0A4437971127BF3D9A7_969941.ogg}
+[09:28] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB08DBFE3657158DC87B2_240608.ogg}
+[09:30] CLIENTE: Sim
+[09:37] LOJA: [áudio] "E olha, o pneu da marca GP Premium, se você trouxer o pagamento em dinheiro pra mim, eu ainda consigo te oferecer 5% de desconto, então a unidade vai ficar por 274 reais, tá? Mas essa opção é somente em dinheiro."  {audio:midias/3EB0CD7025A9EA907D1112_369403.ogg}
+[09:38] CLIENTE: Tá bom
+[10:09] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:09] LOJA: [foto]

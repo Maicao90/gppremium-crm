@@ -1,0 +1,23 @@
+CONVERSA e332b30525 | contato: Cristiano😁😁 | 05/09/2026 09:36 até 08/09/2026 15:03 | 2 msgs do cliente, 10 da loja, 0 do robô
+
+--- 05/09/2026 (Sat) ---
+[09:36] LOJA: *Josy:*
+Bom dia, Cristiao
+[09:36] CLIENTE: Bom dia
+[09:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:36] LOJA: [áudio] "Oi Cristiano, tudo bom? Olha, na terça-feira eu consigo uma resposta aqui para você a respeito desse pneu, tá?"  {audio:midias/3EB0DAF2663DCD5C11EC86_811856.ogg}
+--- 08/09/2026 (Tue) ---
+[11:06] LOJA: *Josy:*
+Oi, Cristiano...tudo jóia:
+[11:06] LOJA: *Josy:*
+Os pneus 215/45/18 estão previstos para chegar essa semana
+[11:06] LOJA: [foto]
+[11:06] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:59] LOJA: *Josy:*
+Quer que eu te avise o dia em que eles de fato estiverem aqui?
+[15:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:02] CLIENTE: [áudio] "Pô, meu amor, infelizmente, muito obrigado pela atenção. Eu acabei comprando no sábado mês, porque eu precisei viajar, tá? Aí nas próximas aí a gente vê direitinho, falou?"
+[15:03] LOJA: [áudio] "Tá bom, então, Cristiano. Obrigada."  {audio:midias/3EB077616BD939F5146861_891735.ogg}

@@ -1,0 +1,62 @@
+CONVERSA 46961afba4 | contato: Hugo Costa | 28/08/2026 07:27 até 01/09/2026 14:16 | 12 msgs do cliente, 21 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[07:27] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[07:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:29] CLIENTE: 195/65R15
+[08:09] LOJA: *Josy:*
+Bom dia!
+[08:09] LOJA: [foto]
+[08:09] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:10] LOJA: *Josy:*
+Os pneus da marca GP Premium estão na promoção compre 3 e leve 4
+[08:10] LOJA: *Josy:*
+Exemplo: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[08:46] CLIENTE: Ok
+
+Obrigado
+[10:14] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0916BA0AA0993BD2E43_693651.ogg}
+[10:33] CLIENTE: Sim
+[10:35] LOJA: *Josy:*
+Que bacana!
+[10:36] LOJA: *Josy:*
+E, quer que eu deixe alguma daquelas opções reservadas para você?
+[14:37] CLIENTE: Depois passo lá
+[14:37] CLIENTE: Obrigado
+[14:48] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:48] LOJA: [foto]
+--- 01/09/2026 (Tue) ---
+[13:30] CLIENTE: Boa tarde
+[13:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:30] CLIENTE: Qual valor do pneu 205/65 R15
+?
+[14:06] LOJA: *Josy:*
+Boa tarde, Hugo.
+[14:07] LOJA: *Josy:*
+O pneu da marca GP premium no modelo ATR está por 339,00 no debito/pix.
+[14:08] LOJA: *Josy:*
+Se o pagamento for em *dinheiro* a unidade fica por 319,00
+[14:08] LOJA: [foto]
+[14:14] CLIENTE: Obrigado
+[14:14] LOJA: *Josy:*
+Imagina...
+[14:14] CLIENTE: Tem de outras marcas?
+[14:15] LOJA: *Josy:*
+Pneu 205/65/15 hf201 hifly R$ 471,00 a unidade a vista.
+[14:15] LOJA: *Josy:*
+Temos os 2 ultimos.
+[14:16] LOJA: *Josy:*
+Passa aqui na loja!
+[14:16] LOJA: [foto]
+[14:16] CLIENTE: Blz
+[14:16] CLIENTE: Ok
+
+Muito obrigado

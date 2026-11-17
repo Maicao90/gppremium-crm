@@ -1,0 +1,21 @@
+CONVERSA 0a48284a32 | contato: Danilo | 16/10/2026 08:22 até 17/10/2026 11:05 | 3 msgs do cliente, 7 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[08:22] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[08:22] CLIENTE: Danilo 185 /70/14
+[08:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:22] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[08:23] LOJA: Bom dia, Danilo.
+[08:24] LOJA: [foto]
+[08:24] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 17/10/2026 (Sat) ---
+[11:05] LOJA: Danilo... vou te encaminhar a nossa localziação!
+[11:05] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:05] LOJA: [foto]

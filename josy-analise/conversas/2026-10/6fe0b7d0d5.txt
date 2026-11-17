@@ -1,0 +1,15 @@
+CONVERSA 6fe0b7d0d5 | contato: Marcos Marquinhos | 14/10/2026 09:42 até 14/10/2026 12:58 | 5 msgs do cliente, 4 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[09:42] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+Bom dia
+[09:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:42] CLIENTE: 235 75 15
+[09:45] LOJA: Bom dia, temos sim!
+[09:46] CLIENTE: Qual o valor
+[09:46] LOJA: [foto]
+[09:47] CLIENTE: Ata
+[09:47] CLIENTE: Obrigado
+[12:58] LOJA: [áudio] "Oi, Marcos, tudo bom? No dia de hoje, a única opção que eu tenho aqui a pronta entrega é o pneu da marca Conforcer. Você está em busca de alguma marca específica?"  {audio:midias/3EB0DF4CFDDE1115000D04_822303.ogg}

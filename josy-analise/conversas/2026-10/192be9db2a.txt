@@ -1,0 +1,25 @@
+CONVERSA 192be9db2a | contato: José Humberto | 15/10/2026 17:08 até 15/10/2026 17:49 | 7 msgs do cliente, 10 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[17:08] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[17:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:12] CLIENTE: 195/60/15
+[17:13] LOJA: Boa tarde!
+[17:13] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:13] LOJA: [foto]
+[17:22] LOJA: [áudio] "Olá Humberto, tudo jóia? E você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB03CEF669D51CAA11693_831712.ogg}
+[17:26] CLIENTE: Não eu moro em Cidade Ocidental-GO
+[17:27] LOJA: Pertinho
+[17:34] LOJA: [áudio] "E qual é o seu carro, Humberto?"  {audio:midias/3EB0303ACD3ACAFB72527E_781797.ogg}
+[17:46] CLIENTE: Que cor?
+[17:46] CLIENTE: Prata
+[17:46] LOJA: Qual é seu carro?
+[17:46] CLIENTE: Sandero
+[17:47] LOJA: O áudio ficou péssimo desculpa...
+[17:47] CLIENTE: Sem problemas
+[17:49] LOJA: tenho em oferta o 185/65/15 da marca GP Premium , essa medida fica mesma altura , está por apenas R$ 249,00 a vista.

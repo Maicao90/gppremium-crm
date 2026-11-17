@@ -1,0 +1,40 @@
+CONVERSA b369d9ded0 | contato: Mariasil | 05/09/2026 08:16 até 05/09/2026 09:44 | 12 msgs do cliente, 16 da loja, 0 do robô
+
+--- 05/09/2026 (Sat) ---
+[08:16] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso?
+[08:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:16] CLIENTE: Bom dia 🌞
+[08:16] CLIENTE: Acho que é 15
+[08:17] LOJA: *Josy:*
+Mas, Qual a medida dos pneus? 15 é somente o aro.
+[08:17] CLIENTE: [áudio] "Vixe moça, o carro não tá aqui, meu filho foi na fazenda com ele e eu esqueci de olhar, mas depois eu entro em contato, mas é um crônus que eu peguei desse ano, aí eu preciso comprar dois pneus."
+[08:17] LOJA: *Josy:*
+Quaç é o seu carro?
+[08:18] CLIENTE: Cronus
+[08:18] LOJA: *Josy:*
+Entrendi
+[08:18] CLIENTE: 2024/2025
+[08:18] LOJA: [foto]
+[08:19] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi e a medida original para o seu veículo é 185-6015. No dia de hoje eu tenho todas essas opções à pronta entrega. Aí no orçamento está o valor de apenas uma unidade, onde na primeira coluna está o valor à vista, que já é o menor preço, e seguem também as opções de parcelamento em até 10 vezes, caso queira parcelar."  {audio:midias/3EB0080247E6ECBEB532FC_814802.ogg}
+[08:19] LOJA: [áudio] "Vocês moram aqui em Luziânia mesmo?"  {audio:midias/3EB0348BDF52AE89F44FEE_7039.ogg}
+[08:19] CLIENTE: [áudio] "Né, amor? Aqui não foi o paraíso."
+[08:21] LOJA: [áudio] "Ah, de todo modo é pertinho aqui de nós."  {audio:midias/3EB05BB26A47E66146FB24_826492.ogg}
+[08:27] CLIENTE: O pneu é 185/60R15
+[08:34] LOJA: *Josy:*
+Te encaminhei o orçamento...pode conferir por gentileza!
+[08:35] CLIENTE: Tá $249,00 à vista cada um pneu?
+[08:37] LOJA: *Josy:*
+Isso, pneu da marca GP Premium. Ele está em promoção de R$ 289,00 por R$ 249,00
+[09:20] CLIENTE: A tá
+[09:31] LOJA: [áudio] "Você quer que eu te mande a nossa localização?"  {audio:midias/3EB0CF2EDC3E5AD421665B_348924.ogg}
+[09:40] LOJA: *Josy:*
+🙋🏼‍♀️
+[09:43] CLIENTE: [áudio] "Oi, estou pedalando, mas para mandar."
+[09:44] LOJA: [áudio] "Ah, que bacana! Aproveitar o dia que tá ensolarado, né? Tá certo, é você."  {audio:midias/3EB08CB3251BD01D390732_827582.ogg}
+[09:44] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:44] LOJA: [foto]
+[09:44] CLIENTE: Ok obrigada

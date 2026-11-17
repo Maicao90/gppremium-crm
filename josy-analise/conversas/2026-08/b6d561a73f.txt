@@ -1,0 +1,54 @@
+CONVERSA b6d561a73f | contato: Trindade | 28/08/2026 14:55 até 07/10/2026 09:06 | 12 msgs do cliente, 24 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[14:55] LOJA: *Josy:*
+Oi!
+[14:55] LOJA: *Josy:*
+Sr Trindade...
+[14:55] LOJA: *Josy:*
+Chegaram pneus 31x10,5r15
+[14:56] LOJA: [foto]
+--- 01/09/2026 (Tue) ---
+[09:38] LOJA: *Josy:*
+🙋🏼‍♀️
+[10:15] CLIENTE: [áudio] "Oi, Josi. Bom dia. Você está bem? Josi, eu não estou em Brasília. Vou estar em Brasília depois do dia 10 de setembro, tá? Assim que eu chegar de lá de... Eu estou no Tocantins. Assim que eu chegar em Brasília, eu vou dar um pulinho aí, tá bom? Abraço, Josi. Tudo de bom."
+[10:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:15] CLIENTE: [áudio] "Se inscreva no canal e ative o sininho."
+[10:16] LOJA: [áudio] "Ah, que legal, Sr. Trindade. Não? Beleza, então, tá? Quando o Sr. volta, o Sr. passa. Aqui?"  {audio:midias/3EB090A3610B3F68F4F603_350672.ogg}
+--- 30/09/2026 (Wed) ---
+[07:14] CLIENTE: Bom dia JOSY , vc está bem
+[07:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:16] CLIENTE: Chegou
+[07:16] CLIENTE: *Josy:*
+Chegaram pneus 31x10,5r15
+[07:17] CLIENTE: Preço pra pegar amanhã
+[08:00] LOJA: *Josy:*
+Bom dia!
+[08:00] LOJA: [foto]
+[10:38] CLIENTE: [áudio] "Oi, Josi. Bom dia novamente. Josi, que hora que vocês abrem aí amanhã cedo? Eu vou dar um pulinho aí amanhã cedo, tá? Depois das noito e meia. Ou a partir das oito horas eu devo estar chegando por aí. Eu acho, tá? Esse pneu, ele é 50-50? Ou ele é 30-70? Me diz aí. Você sabe essa nomenclatura, não sabe se é 50 chão e 50 ter asfalto, tá bom? Me diz aí. Quando chegar aí, vamos ver. Negociar o preço desses pneus aí, tá bom? Esse, esse..."
+[10:39] LOJA: [áudio] "Oi, Sr. Trindade, tudo jóia? Aqui nós abrimos às 8 da manhã."  {audio:midias/3EB08B85CB4631499A8D8B_49405.ogg}
+[10:40] LOJA: [áudio] "Eles são aqueles pneus cravudos da Trindade. Vou te mandar a foto aqui."  {audio:midias/3EB0BAEEE6CCFC0F17502F_850106.ogg}
+[10:40] LOJA: [foto]
+[10:40] CLIENTE: [áudio] "Você tá dizendo que esse pneu cravudo é aquele mais pra terra mesmo, não é isso? Esse pneu é muito pesado e muito baruento, tá? Eu queria que fosse pelo menos 50-50 ou 30-70. Já tô vendo a foto aqui desse aí não, viu, Josi? Desse daí não. Não tem aquele 50-50? Não tem aquele 50-50."
+[10:43] LOJA: [áudio] "Eu só tô aguardando a resposta aqui do meu distribuidor pra saber se ele vai ter do pneu de outro modelo, mas eu creio que vai ser só por encomenda, tá?"  {audio:midias/3EB09F28584EED2A80D27B_131429.ogg}
+[10:44] CLIENTE: [áudio] "Pois bem, você me mandou a foto aqui, é do 1100, né? Esse do 1000, do 1000 você não tem também?"
+[10:55] LOJA: [foto]
+[10:55] LOJA: [áudio] "Seu Trindade, sua desculpa aí, é porque a nossa internet, ela tá com muita instabilidade hoje, aí eu tentei mandar a foto mais cedo, mas acabou que não foi, tá joia? Mas o CF1000 é esse daí."  {audio:midias/A5BAF8F6A5D18028FC3483BA644A6497_456792.ogg}
+[10:55] LOJA: [foto]
+[10:57] CLIENTE: [áudio] "Pois é, Jú, senão a foto veio sim, só que veio do SEF, a foto que veio foi a do SEF 1100."
+[10:58] CLIENTE: [áudio] "Pois tudo bem, amanhã cedo eu chego aí então, tá bom? Aí a gente conversa direitinho, tá? Até amanhã cedo."
+[11:07] LOJA: *Josy:*
+CF 1000
+--- 01/10/2026 (Thu) ---
+[10:36] CLIENTE: [áudio] "Oi, Josi. Bom dia. Desculpe aí, tá? Eu moro aqui perto da cidade dos automóveis e eu achei os pneus aqui também, né? No mesmo preço de vocês aí. Inclusive, eu ia trocar só dois e acabei trocando os quatro. Eu consegui aqui os quatro por 2.700, tá? Ou seja, eu saí daqui pra ir aí e de repente ficava inviável. Tem em termos de combustível ou não. É a situação que tá aqui. Consegui aqui pertinho de casa, tá bom? Desculpe aí, tá? Tudo bom pra vocês aí."
+[10:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:37] LOJA: *Josy:*
+Boooom dia!
+[10:45] LOJA: [áudio] "Tudo bem, Sr. Trindade? Compreendo."  {audio:midias/3EB0D688894AA7CF36D85F_343784.ogg}
+--- 07/10/2026 (Wed) ---
+[08:49] LOJA: [áudio] "Bom dia, Sra. Trindade, como é que vai?"  {audio:midias/3EB081A7DEF557CB4C4DEC_326781.ogg}
+[08:50] LOJA: *Josy:*
+uai...rsrs... creio que sim.

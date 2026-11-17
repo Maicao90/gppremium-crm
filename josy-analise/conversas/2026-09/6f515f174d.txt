@@ -1,0 +1,31 @@
+CONVERSA 6f515f174d | contato: Jeova Paiva | 04/09/2026 08:30 até 11/09/2026 17:30 | 3 msgs do cliente, 12 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[08:30] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[08:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:31] CLIENTE: 205/55/16
+[08:32] LOJA: *Josy:*
+Bom dia, sr Francisco!
+[08:33] LOJA: [foto]
+[08:33] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:36] CLIENTE: Essa promoção de comprar 3 é levar 4 tá valendo?
+[08:42] LOJA: *Josy:*
+Sim. está valendo.
+[08:42] LOJA: *Josy:*
+A promoção compre 3 e leve 4 é válida para pneus da marca GP Premium, mas na medida 195/65/15 e 215/55/17 😉
+[08:46] LOJA: *Josy:*
+Da marca GP Premium, como ele é 289,00 no debito/pix, se o senhor trouxer o pagamento em *dinheiro*  a unidade fica por 275,00
+[18:21] LOJA: [áudio] "Oi, Sr. Francisco, tudo jóia? Pela manhã, eu te encaminhei em orçamento e depois eu não consegui mais falar contigo, porque nós ficamos sem energia e agora que eu estou repassando os atendimentos, eu te mandei o orçamento dos pneus na medida 205, 55, 16 e gostaria de saber se alguma das opções te atende, né, e que de repente eu possa separar aqui para o Senhor. Quando possível, consegue me dar um retorno, por gentileza?"  {audio:midias/3EB06ED3EB748247433414_666787.ogg}
+--- 10/09/2026 (Thu) ---
+[17:18] LOJA: [áudio] "Oi, Sr. Francisco, tudo jóia?"  {audio:midias/3EB0FC4C941E7526AAB66C_772361.ogg}
+[17:19] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[17:30] LOJA: [áudio] "Oi, Sr. Francisco, tudo jóia? Eu te encaminhei um vídeo aí para nós tentarmos uma interação, mas eu imaginei que na correria o senhor viu o vídeo e não conseguiu me responder. Eu vou finalizar aqui o seu atendimento, tá? Justamente para não ficar enchendo o seu WhatsApp de mensagens, eu sei que é chato, acaba que a gente se torna inconveniente, então vou finalizar aqui, caso o senhor precise, só vir aqui na nossa loja, tá bom? Obrigada aí pela sua atenção, bom final de semana."  {audio:midias/3EB026D551094EF30EBA12_458863.ogg}
+[17:30] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

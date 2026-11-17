@@ -1,0 +1,14 @@
+CONVERSA 2f29e33135 | contato: Rejaine | 21/09/2026 10:08 até 22/09/2026 15:34 | 2 msgs do cliente, 6 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[10:08] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:09] CLIENTE: 185/70 14
+[10:13] LOJA: *Josy:*
+Bom dia!
+[10:13] LOJA: [foto]
+[10:53] LOJA: [áudio] "Olá, tudo bem? Rejane, no dia de hoje eu tenho todas essas opções de marcas à pronta entrega e aí no orçamento está o valor de apenas um pneu, aí na primeira colônia está o valor à vista e seguem também as opções de parcelamento em até 10 vezes caso queira parcelar. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0BB33CE35D2A27FF034_790042.ogg}
+--- 22/09/2026 (Tue) ---
+[10:16] LOJA: [áudio] "Oi, Rejaine. Bom dia. Tudo bom? Eu te encaminhei um orçamento ontem e gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB003E3775CFCE8A6CBD2_491754.ogg}
+[15:34] LOJA: [foto]

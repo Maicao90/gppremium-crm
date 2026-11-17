@@ -1,0 +1,32 @@
+CONVERSA b16b3a58e8 | contato: ROBSON MELO🤪🤪 | 27/08/2026 15:28 até 27/08/2026 16:05 | 11 msgs do cliente, 11 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[15:28] CLIENTE: Boa tarde
+[15:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:28] LOJA: *Josy:*
+Boa tarde
+[15:28] LOJA: *Josy:*
+Reside aqui em Luziânia. mesmo?
+[15:29] CLIENTE: Aq ficaram de me mandar uma nota fiscal de 2 pneus q comprei ai e nao mandaram
+[15:30] LOJA: *Josy:*
+E foi aqui?
+[15:30] LOJA: *Josy:*
+Ah... foi no meu horário de almoço... perdão ... não me informaram.
+[16:00] CLIENTE: Sim na loja de Luziânia
+[16:00] CLIENTE: Olha ai pra mim pq preciso dela
+[16:00] LOJA: [documento]
+[16:01] CLIENTE: Titular e Ramon Hudson de melo
+[16:01] CLIENTE: Nao e essa
+[16:02] LOJA: *Josy:*
+Ahhhhh
+[16:02] LOJA: *Josy:*
+Perdão...
+[16:02] CLIENTE: Cpf 01250905605
+[16:03] LOJA: [documento]
+[16:04] CLIENTE: Isso e a garantia de 5 anos ne
+[16:04] LOJA: [áudio] "Ai, desculpa, eu tinha mandado errado aí pra você."  {audio:midias/3EB07EB019026857BD66F3_548943.ogg}
+[16:04] LOJA: [áudio] "Isso, isso mesmo. Sabe o que eu achei estranho, Ramon? Porque assim, você ficou de vir por conta da garantia do pneu, certo? E aí, né, eu estava conversando com o meu gestor aqui, e ele até me fez umas observações, eu só achei estranho porque você sempre utilizou o pneu da marca GP Premium aí no seu carro, né? Então, quando nos falamos, eu fui lá no seu histórico de compra, você mesmo disse que compra sempre aqui conosco, aí pra mim tava tudo ok, tudo certo que você já usa os pneus, mas ele falou que mudou aí pra um pneu de carga, né?"  {audio:midias/3EB0FFE2C185BBCDD861CB_613911.ogg}
+[16:05] CLIENTE: Isso
+[16:05] CLIENTE: Agora ta tudo certinho
+[16:05] CLIENTE: Obg viu

@@ -1,0 +1,12 @@
+--- originais/MapaCerebro.css	2026-10-22 17:42:23.167620776 +0000
++++ /root/aprendizado-lab-painel/src/components/MapaCerebro.css	2026-10-22 20:08:52.471573039 +0000
+@@ -125,6 +125,9 @@
+ .mc-forma-categoria { width: 10px; height: 10px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #fff, #A78BFA 45%); box-shadow: 0 0 8px #A78BFA; }
+ .mc-forma-ensinamento { width: 12px; height: 12px; background: #2DD4BF; clip-path: polygon(50% 0, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%); }
+ .mc-forma-achado { width: 12px; height: 11px; background: #FB923C; clip-path: polygon(50% 0, 100% 100%, 0 100%); animation: mc-pisca 1.2s ease-in-out infinite; }
++.mc-forma-aprendizado { width: 11px; height: 13px; background: #E879F9; clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); box-shadow: 0 0 8px #E879F9; }
++.mc-resumo-josy { color: #F5D0FE; }
++.mc-resumo-josy b { color: #E879F9; }
+ .mc-pulso { width: 22px; height: 2px; background: linear-gradient(90deg, transparent, #fff 60%, transparent); display: inline-block; }
+ @keyframes mc-pisca { 50% { opacity: 0.35; } }
+ 

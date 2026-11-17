@@ -1,0 +1,52 @@
+CONVERSA 7c1b140793 | contato: Ecio Carlos | 28/09/2026 14:29 até 29/09/2026 08:16 | 17 msgs do cliente, 23 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[14:29] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[14:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:29] LOJA: [áudio] "Oi, Aécio, tudo bom?"  {audio:midias/3EB02BF0BA3779E6177336_293566.ogg}
+[14:29] CLIENTE: Pneu 265/70/16
+[14:29] CLIENTE: Valor ?
+[14:29] CLIENTE: 4 unidades
+[14:29] LOJA: *Josy:*
+Ok
+[14:32] LOJA: [foto]
+[14:34] LOJA: *Josy:*
+No aro 16 temos essas  opções.
+[14:39] CLIENTE: Compra 4 paga 3 e essa a promoção ?
+[14:40] LOJA: *Josy:*
+A promoção compre 3 e leve 4 é válida para pneus da marca GP Premium, mas na medida 195/65/15 e 215/55/17 😉
+[14:44] CLIENTE: Esse q estou cotando não é gp premium?
+[14:46] LOJA: [áudio] "Ô, Sr. Écio, olha só, que o 265-7016 aqui da GP Premium, ele já esgotou no nosso estoque. Eu creio que eu tenha ele novamente daqui uns 30 dias, mais ou menos, tá? Aí, da marca GP Premium, as opções que eu vou ter no aro 16 serão os pneus 235-7016 brutos, que a unidade está por R$ 489,00 à vista. Vou ter também o 245-7016, que está por R$ 479,00 à vista, e o 255-7016, que está por R$ 539,00 à vista. Vou até te mandar a foto deles aqui, está bem?"  {audio:midias/3EB05960F54403A990E296_389139.ogg}
+[14:46] LOJA: [áudio] "E igual o senhor fez a pergunta aqui, e esse que estou cotando não é o GP Premium? No orçamento que eu te mandei, tem uma marca que não é. Entretanto, de todo jeito, elas não se aplicam à promoção Compre 3, Leve 4, que igual explicado aí, a promoção é válida para os pneus GP Premium sim, só que nas medidas, o 956 a 515 e 215-55-17, tá?"  {audio:midias/3EB0AE785557D3362A5846_586262.ogg}
+[14:48] LOJA: 235/70/16 e 255/70/16 GP Premium Brutus 👇🏻
+[14:48] LOJA: [foto]
+[14:48] LOJA: *Josy:*
+245/70/16 GP Premium ATR 👇🏻
+[14:48] LOJA: [foto]
+--- 29/09/2026 (Tue) ---
+[08:08] CLIENTE: Bom dia vc disse que não tem 265/70/16
+[08:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:08] CLIENTE: Olha a mensagem que encaminhei
+[08:09] CLIENTE: 265/70/16
+[08:10] LOJA: [áudio] "Oi, Serécio. Bom dia. Tudo bem? Sim, eu ouvi sua mensagem. O senhor também viu a minha? Que no orçamento que eu te encaminhei, tem a opção da marca importada na medida 265, 70 a 16. Da marca GP Premium, no orçamento, logo abaixo, estão as opções diário 16, 235, 70 a 16. Tem o 245, 70 a 16, 255, 70 a 16, que são todas as opções que podem ser instaladas na sua caminhonete."  {audio:midias/3EB0C33899EEB9A5D895FD_881432.ogg}
+[08:11] LOJA: [áudio] "70 dezesseis da GP Premium, ele vai ser produzido mais daqui a alguns dias. Como o senhor está utilizando as quatro unidades, o senhor pode colocar o 205 também, que eles atendem normalmente, tá?"  {audio:midias/3EB012F4CB0C709642818D_543479.ogg}
+[08:11] CLIENTE: Não tenho interesse
+[08:11] CLIENTE: No importado
+[08:11] LOJA: [áudio] "Se o senhor tiver interesse, então, daqui uns 20 dias, 30 dias, eu entre em contato com o senhor, assim que produzir. Pode ser?"  {audio:midias/3EB067AE9CD89F11975E9A_114032.ogg}
+[08:12] CLIENTE: Não
+[08:12] LOJA: [áudio] "Mas, igual eu falei para o senhor, tem a opção do 245 e do 255 que o senhor pode instalar no seu carro."  {audio:midias/3EB089155AE80786706D9B_652182.ogg}
+[08:12] LOJA: [áudio] "E esses são os pneus da marca GP Premium."  {audio:midias/3EB0B0043E8A7C3794710D_707946.ogg}
+[08:13] CLIENTE: [áudio] "Oi, deixa eu te falar, eu acho que você tá entendendo, eu tô colocando na caminhonete, como é que eu vou colocar o pneu mais baixo que o original da minha caminhonete? Vai ficar esquisito, entendeu? É 265, eu não vou colocar 245 ou 255. Não tem como, é o original da caminhonete. É a mesma coisa, eu calço 42 e querer colocar um sapato 40 e vai ficar diferente, não vai dar certo. Obrigado aí, tá? Obrigado."
+[08:13] CLIENTE: [áudio] "Eu não sei se é mais baixo ou se é mais estreito. Eu acho que é mais estreito. Eu não vou fazer isso. Obrigado, viu?"
+[08:13] LOJA: [áudio] "Não vai ficar esquisito, senhora Écio, porque eles, o 245, tudo bem, mas o 255 não vai mudar nada, porque ele não é mais baixo, a questão é a largura do pneu, que vai ser um dedinho meu apenas de diferença, meu dedinho mindinho apenas de diferença, somente isso, então não vai impactar nada."  {audio:midias/3EB0CB3032A60847E1B8D2_461659.ogg}
+[08:14] LOJA: [áudio] "No caso da caminhonete, entendo sua analogia aí do calçado, mas no caso da caminhonete, esse daqui não vai alterar em nada. É apenas um dedinho, um mindinho meio de diferença com questão da largura do pneu. O perfil é o mesmo, o ar é o mesmo, é uma troca super normal, não vai mudar em nada."  {audio:midias/3EB007C19AB119C1B7F329_484171.ogg}
+[08:14] CLIENTE: [áudio] "Não tem interesse, tá bom, meu bem? Eu quero o original que já está lá. Aí eu vou ter que trocar pneu de estepe, que é do tamanho original, mas te agradeço, tá bom? Obrigado, bom dia."
+[08:15] LOJA: [áudio] "Senhora S, vamos fazer o seguinte, passa aqui na loja, para o senhor poder compreender melhor, eu vou até, que assim, se eu tirar a foto aqui do 265, desse importado e colocar do lado do 255, o senhor vai ver que não tem diferença nenhuma, passa aqui na loja para nós conversarmos pessoalmente, que fica mais prático do que a gente fica falando aqui no WhatsApp."  {audio:midias/3EB03FBB23E180AEBDBEB8_250472.ogg}
+[08:15] LOJA: [foto]
+[08:16] CLIENTE: [áudio] "Meu bem, eu acho que você não está me entendendo. Você não vai me convencer colocar um pneu mais estreito da minha caminhonete. Eu não vou fazer isso, tá bom? Você não vai me convencer. Obrigado, tá bom? Se você tivesse o tamanho que eu estou precisando, ótimo. Agora você não vai me convencer que eu vou colocar um pneu mais estreito do que o original. Obrigado, bom dia, tá bom?"
+[08:16] CLIENTE: [figurinha]
+[08:16] LOJA: [áudio] "E assim, Suresse, eu não estou tentando te convencer. Eu gostaria apenas que o senhor entendesse. Mas obrigada, tá joia? Boa semana!"  {audio:midias/3EB0A9B1EA1B5D136FA276_692233.ogg}

@@ -1,0 +1,6 @@
+tsc exit=0
+unit exit=0
+lab 200
+◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+[BotService] rodando isolado na porta 3011 (nao afeta conexoes de WhatsApp)
+FIM

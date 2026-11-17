@@ -1,0 +1,25 @@
+CONVERSA e9f944a7c3 | contato: Júnior Coelho | 10/09/2026 16:36 até 11/09/2026 14:28 | 5 msgs do cliente, 11 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[16:36] CLIENTE: Quero cotar o pneu 175/70 R14 GP Premium.
+[16:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:36] CLIENTE: Boa tarde
+[16:36] LOJA: *Josy:*
+Boa tarde
+[16:37] LOJA: *Josy:*
+Estou finalizando seu orçamento 1 instante por gentileza.
+[16:37] LOJA: [foto]
+[16:38] CLIENTE: Esse valor é já montado?
+[16:38] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Júnior? Sim, o pneu GP Premium já é colocado sim."  {audio:midias/3EB0B863ADFE82263A3563_683992.ogg}
+[16:39] CLIENTE: [áudio] "Aí ele não vem alinhado nem balanceado não, né? Aí é a parte. Ou já é incluso. Tá precisando trocar dois."
+[16:39] LOJA: [áudio] "Isso, isso mesmo. Serviços de balanceamento, alinhamento são a parte."  {audio:midias/3EB0D9DFC8539141380145_875948.ogg}
+--- 11/09/2026 (Fri) ---
+[14:26] LOJA: [áudio] "Oi, Júnior!"  {audio:midias/3EB0AA191CA74DE28E538C_780910.ogg}
+[14:27] LOJA: [vídeo]
+[14:28] CLIENTE: [áudio] "Oi, boa tarde. Não, eu tô dando uma olhadinha aqui, tá? Se eu vou conseguir fazer por agora, eu vou. Vou dar uma esperada ainda. Tô só mais olhando o preço mesmo."
+[14:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:28] LOJA: [áudio] "Certo, Júnior. Eu vou encerrar aqui o seu atendimento, justamente para não ficar enchendo seu WhatsApp de mensagem, porque acaba se tornando inconveniente, e vou te mandar aqui a localização da nossa loja, se houver a possibilidade de você passar aqui, tá bom? Obrigada pela sua atenção e bom final de semana."  {audio:midias/3EB013EA8B8C7EB71C7512_180385.ogg}
+[14:28] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

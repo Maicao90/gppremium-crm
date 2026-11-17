@@ -1,0 +1,20 @@
+
+# [marcelo#1] "2010" depois do preco 175/65/14 + parcelamento
+  via=ia_livre motivoLivre=assunto_sem_bloco chaves=[]
+  > Show! Pro Gol 2010 aro 14 a medida é a *175/65/14* mesmo, e continua os *R$ 249,00 à vista* que te passei.
+  > Quantos pneus você precisa? E quando consegue vir até a loja?
+
+# [marcelo#2] "2010" depois do preco 175/65/14 + parcelamento
+  via=ia_livre motivoLivre=assunto_sem_bloco chaves=[]
+  > Show, pro Gol 2010 aro 14 o *175/65/14* é o certo, e continua *R$ 249,00 à vista* cada um. 👍
+  > Quantos pneus você vai precisar? E quando consegue passar aqui pra gente fazer a montagem?
+
+# [marcelo#1] "2010" depois do preco 175/65/14 + parcelamento
+  via=ia_livre motivoLivre=assunto_sem_bloco chaves=[]
+  > Pro Gol 2010 aro 14, a medida original é a *175/70/14*. Ela sai por *R$ 279,00 à vista* na *GP Premium*.
+  > Quando você consegue passar aqui na loja?
+
+# [marcelo#2] "2010" depois do preco 175/65/14 + parcelamento
+  via=ia_livre motivoLivre=assunto_sem_bloco chaves=[]
+  > Pro Gol 2010 a medida original é *175/70/14*, e nela o pneu *GP Premium* sai por *R$ 279,00 à vista*.
+  > Quantos pneus você vai precisar?

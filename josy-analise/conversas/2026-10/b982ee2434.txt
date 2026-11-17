@@ -1,0 +1,30 @@
+CONVERSA b982ee2434 | contato: Muriel Martins | 20/10/2026 16:39 até 21/10/2026 11:12 | 9 msgs do cliente, 10 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[16:39] CLIENTE: Olá
+[16:39] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[16:40] CLIENTE: [foto]
+[16:40] CLIENTE: é para um ecosport
+[16:40] LOJA: [áudio] "Oi, Muriel. Boa tarde. Como é que você está? Eu tenho sim. Me deu instante que eu vou realizar o seu orçamento."  {audio:midias/3EB0E6ECE7128242BF6A23_741204.ogg}
+[16:40] CLIENTE: ta boom
+[16:41] LOJA: [foto]
+[16:41] LOJA: Se o pagamento for em *dinheiro* a unidade fica por R$ 305,00
+[16:42] CLIENTE: é remold?
+[16:43] LOJA: Posso enviar áudio?
+[16:43] CLIENTE: claro
+[16:44] LOJA: [áudio] "Oi, Muriel. Depois que eu já tinha enviado o primeiro áudio, eu venho e pergunto se eu posso mandar, né? Perdão, tá? Muriel, então, o pneu GP Premium, ele é um pneu ecológico que a nossa empresa faz, tá? Ele vai entrar, sim, na categoria de remodelagem, só que da linha Premium, que é completamente diferente dos pneus que são remoldes convencionais, tá? Por questão técnica, ele vai entrar na categoria de remodelagem, sim. Entretanto, nos dias de hoje, o pneu GP Premium dispõe de garantia de 2 anos, tá? Com questão a quilometragem, eles estão rodando 60 mil km, e assim, é a opção mais vendida que eu tenho."  {audio:midias/3EB0C3689AFCADB4C5F443_497570.ogg}
+[16:44] LOJA: [áudio] "Se você quiser, eu até gravo um vídeo aqui pra poder explicar pra você qual que é a diferença dos pneus, que são remolds mesmo, para a marca GP Premium, porque existe uma grande diferença, tá?"  {audio:midias/3EB035767CE0E4230DCA0F_22939.ogg}
+[16:45] CLIENTE: precisa não, vou ver aqui e jaja te falo
+[16:46] LOJA: [áudio] "Tudo bem, perfeito. Inclusive, como essa é uma marca bem conhecida, várias empresas aqui de Luziânia e Valparaíso, Cidade Ocidental, revendem a nossa marca, porque os pneus são muito bons realmente, tá? Mas aqui o preço de fábrica, eu consigo negociar algo que fique mais flexível para você, tá bom?"  {audio:midias/3EB07740E21F41EA664C83_122711.ogg}
+[16:46] CLIENTE: ah otimo
+[17:00] LOJA: Ah, e os pneus já são instalados.
+[17:00] CLIENTE: nesse valor?
+[17:02] LOJA: Isso
+--- 21/10/2026 (Wed) ---
+[11:12] ROBÔ: 🙋🏼‍♀️

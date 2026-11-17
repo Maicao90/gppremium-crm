@@ -1,0 +1,28 @@
+CONVERSA 0236444d68 | contato: Dyhefferson P Cavalcante | 05/10/2026 09:09 até 05/10/2026 09:11 | 5 msgs do cliente, 11 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[09:09] CLIENTE: Bom dia
+[09:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:10] LOJA: *Josy:*
+Bom dia
+[09:10] CLIENTE: 235/75/15
+[09:10] LOJA: *Josy:*
+Temos sim!
+[09:10] LOJA: *Josy:*
+MOra aqui em Luziânia-Go?
+[09:10] CLIENTE: Não
+[09:10] CLIENTE: Niquelândia GO
+[09:11] LOJA: *Josy:*
+Entendi...
+[09:11] LOJA: [foto]
+[09:11] LOJA: *Josy:*
+a.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:11] CLIENTE: Ok
+[09:11] LOJA: *Josy:*
+Se houver a possibilidade... venha até nossa loja!
+[09:11] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:11] LOJA: [foto]

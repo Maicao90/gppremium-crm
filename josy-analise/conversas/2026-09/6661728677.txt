@@ -1,0 +1,23 @@
+CONVERSA 6661728677 | contato: Quênia Leal | 21/09/2026 13:19 até 21/09/2026 13:32 | 3 msgs do cliente, 9 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[13:19] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:19] CLIENTE: Onde fica a loja?
+[13:21] LOJA: *Josy:*
+Luziânia-Go
+[13:22] LOJA: *Josy:*
+Mora onde?
+[13:22] CLIENTE: Qual o valor do pneu 
+205/65/16
+[13:23] LOJA: [foto]
+[13:23] LOJA: *Josy:*
+	
+Pneu 205/65/16 95h dk558 luistone R$ 483,19 a unidade a vista.
+[13:29] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[13:31] LOJA: *Josy:*
+Bem... caso haja a possibilidade, venha até nossa loja 👋🏻
+[13:31] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[13:32] LOJA: [foto]

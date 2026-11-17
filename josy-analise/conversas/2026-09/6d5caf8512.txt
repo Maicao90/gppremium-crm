@@ -1,0 +1,22 @@
+CONVERSA 6d5caf8512 | contato: Jabson | 25/09/2026 08:03 até 08/10/2026 09:53 | 3 msgs do cliente, 9 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[08:03] CLIENTE: Bom dia, qual o valor d pneu 245 70 16
+[08:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:03] CLIENTE: Pneu 245 70 16
+[08:04] LOJA: [áudio] "Bom dia, seu Javson. Tenho aqui sim, vou te mandar o orçamento, tá?"  {audio:midias/3EB02DD077459878F19C96_386795.ogg}
+[08:05] LOJA: [foto]
+[08:05] LOJA: *Josy:*
+No dia de hoje  todas essas 2  opções a pronta entrega.  Pneus Lanvigator e GP Premium
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:06] LOJA: *Josy:*
+O GP Premium  está por apenas R$ 479,00 a unidade a vista e já instalamos os pneus.
+[08:07] CLIENTE: Blz, passo aí, estourou um pneu ontem à noite
+[08:07] LOJA: *Josy:*
+Combinado!
+[08:07] LOJA: [foto]
+--- 08/10/2026 (Thu) ---
+[09:52] LOJA: Sr Jabson... não esquece de fazer a avaliação 🙏🏻  desde já grata!
+[09:53] LOJA: 👉 https://da.gd/gp-avaliar

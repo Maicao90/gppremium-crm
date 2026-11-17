@@ -1,0 +1,23 @@
+CONVERSA b32ff1b912 | contato: Valteir Almeida | 01/10/2026 19:40 até 02/10/2026 08:26 | 5 msgs do cliente, 6 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[19:40] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[19:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:41] CLIENTE: 205/60/16
+--- 02/10/2026 (Fri) ---
+[08:05] LOJA: *Josy:*
+Bom dia!
+[08:06] LOJA: [foto]
+[08:06] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:19] CLIENTE: Bom dia vcs não trabalham com o pneu Pirelli Scorpions não
+[08:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:20] CLIENTE: 205/60/16
+[08:24] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Voltei. Bem, você me solicitou aqui apenas a medida, não foi especificado o maca. No dia de hoje, as opções que eu tenho à pronta entrega serão essas. Como vocês têm busca de algo específico, eu vou pesquisar aqui com os meus distribuidores. Então, assim que eles me responderem, eu te passo o preço e o prazo de entrega, está bem?"  {audio:midias/3EB0BD993405607A637FE6_651434.ogg}
+[08:26] CLIENTE: [áudio] "Bom dia, tudo bem. Eu vou, enquanto isso também, eu estou precisando também que o menino estava comentando que ele comprou pelo Mercado Livre que achou os pneus Pirelli Scorpa um excelente preço e condições boas também, com desconto à vista e com desconto também, e com parcelamento também, está em 10 vezes, mas eu tenho que ver o que é melhor, entendeu? Se você tiver o pneu também e for o valor do mesmo jeito, ou menos um pouco, com certeza eu vou comprar de vocês, entendeu? Eu preciso colocar os 4 pneus no carro e não posso demorar muito porque o mês de novembro agora eu vou estar de férias e eu preciso de viajar, entendeu? Então eu quero fazer uma revisão geral no carro, por isso eu tenho que trocar os pneus e arrumar tudo."

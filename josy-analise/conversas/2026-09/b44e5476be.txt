@@ -1,0 +1,27 @@
+CONVERSA b44e5476be | contato: Tiago Brandão | 03/09/2026 19:40 até 11/09/2026 17:52 | 4 msgs do cliente, 9 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[19:40] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[19:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:41] CLIENTE: Gostaria do pneu para Ford Ka sedam Sigma ano 2015
+[19:41] CLIENTE: Aro 14
+[19:41] CLIENTE: 185/70/14
+--- 04/09/2026 (Fri) ---
+[08:24] LOJA: *Josy:*
+Bom dia!
+[08:24] LOJA: [foto]
+[08:24] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[18:09] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu sou a Josi. Eu te encaminhei um orçamento mais cedo e gostaria de saber se alguma dessas opções te atendem. Você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB035AF72412C31D2FEB2_671697.ogg}
+--- 10/09/2026 (Thu) ---
+[17:16] LOJA: [áudio] "Oi Thiago, tudo bem?"  {audio:midias/3EB00D979C908A1851ACD6_625736.ogg}
+[17:16] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[17:52] LOJA: [áudio] "Oi, Tiago, tudo bom? Tiago, eu tentei falar contigo, mas imagino que na correria aí você não tenha conseguido, né, visualizar as mensagens, e justamente para não ficar enchendo o seu WhatsApp de mensagem aí, eu vou encerrar o seu atendimento, tá bom? Se houver a possibilidade, você passa aqui na nossa empresa para conversarmos pessoalmente. Muitíssimo obrigada pela atenção, um bom final de semana."  {audio:midias/3EB088D2CCC18F0745BD12_35838.ogg}
+[17:52] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

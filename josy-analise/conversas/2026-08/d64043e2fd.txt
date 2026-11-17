@@ -1,0 +1,13 @@
+CONVERSA d64043e2fd | contato: As | 27/08/2026 16:15 até 27/08/2026 17:02 | 3 msgs do cliente, 6 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[16:15] CLIENTE: Olá
+[16:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:15] CLIENTE: Já tem pneu disponível ?
+[16:32] LOJA: [áudio] "Oi Alessandro, tudo jóia? Rapaz, não tá tendo até agora os pneus. Não está tendo."  {audio:midias/3EB0FE425A8DE25670AE34_683072.ogg}
+[16:33] LOJA: [áudio] "Eu vou ter aqui somente pneus importados."  {audio:midias/3EB060D6923E6475DEE3DD_826531.ogg}
+[16:33] LOJA: [foto]
+[17:01] CLIENTE: [áudio] "Ah, tá bem. Aqueles outros eram o melhor de preço que você tinha. Não que eles aí estejam ruins, mas aqueles eram quentes, alguma coisa, se não me engano."
+[17:02] LOJA: [áudio] "Isso, isso mesmo, 559 o pneu aqui da GP Premium."  {audio:midias/3EB009BBD4D388CA6D7FFD_809713.ogg}
+[17:02] LOJA: [áudio] "Mas por agora, assim, tenham uns bons dias que estamos sem, né? Nós estamos conversando há cerca de dois meses, mais ou menos, e está em falta realmente, viu, Alessandro?"  {audio:midias/3EB063BE36AED4A4D018EC_353152.ogg}

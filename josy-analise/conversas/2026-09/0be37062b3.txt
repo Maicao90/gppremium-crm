@@ -1,0 +1,25 @@
+CONVERSA 0be37062b3 | contato: คdεмir | 24/09/2026 10:42 até 24/09/2026 12:00 | 2 msgs do cliente, 11 da loja, 0 do robô
+
+--- 24/09/2026 (Thu) ---
+[10:42] LOJA: *Josy:*
+🙋🏼‍♀️
+[10:43] CLIENTE: Os pneus 13 tá q valor
+[10:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:43] LOJA: *Josy:*
+175/70/13
+[10:43] LOJA: [foto]
+[10:43] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:45] LOJA: *Josy:*
+Temos também 165/70/13 que está em oferta, apenas R$ 239,00 a unidade a vista.
+[10:45] LOJA: [foto]
+[10:45] LOJA: [áudio] "Ademir, bom dia, eu sou a Josi. Vocês moram aqui em Luziânia mesmo?"  {audio:midias/3EB099DBE9DD085A8145DB_65730.ogg}
+[10:46] CLIENTE: Não Jardim inga
+[10:49] LOJA: *Josy:*
+É pertinho de nós!
+[11:33] LOJA: [áudio] "Eu vou deixar aqui a nossa localização, pois se houver a possibilidade, você passa aqui na nossa loja, tá? Olha, os pneus, esses que estão na oferta, que é o de 239 e o de 269, eu já entrego eles instalados para você."  {audio:midias/3EB03B2916E51E213C4827_107362.ogg}
+[12:00] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

@@ -1,0 +1,6 @@
+CONVERSA d384e434b7 | contato: I | 19/08/2026 10:09 até 19/08/2026 10:09 | 1 msgs do cliente, 1 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[10:09] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

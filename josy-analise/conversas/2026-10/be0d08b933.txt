@@ -1,0 +1,19 @@
+CONVERSA be0d08b933 | contato: Roberto Carlos Martins | 07/10/2026 18:05 até 09/10/2026 12:16 | 3 msgs do cliente, 6 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[18:05] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[18:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:05] CLIENTE: Boa tarde! Vc tem o Pneu Continental- Extreme - 225/45 zR 17, do Jetta ! ??
+[18:06] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Não, da Continental nós não temos aqui a pronta entrega. O senhor mora aqui em Luziânia?"  {audio:midias/A5D68F8373579D543B8AF6597F3551E8_91354.ogg}
+[18:07] CLIENTE: Não, em Brasília
+--- 08/10/2026 (Thu) ---
+[08:41] LOJA: [foto]
+[08:41] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 09/10/2026 (Fri) ---
+[12:16] LOJA: Boa tarde!  Vou encerrar seu atendimento para não encher seu whatsapp de mensagem.                                                                                                                   Se precisar futuramente é só chamar. Ou se possivel, venham até nossa loja.                                                                                                  Obrigada 👋🏻
+[12:16] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

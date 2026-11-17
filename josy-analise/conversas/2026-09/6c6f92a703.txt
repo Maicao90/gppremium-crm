@@ -1,0 +1,46 @@
+CONVERSA 6c6f92a703 | contato: Eurides Santos Aragão | 02/09/2026 22:21 até 10/09/2026 14:30 | 5 msgs do cliente, 17 da loja, 0 do robô
+
+--- 02/09/2026 (Wed) ---
+[22:21] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[22:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[22:22] CLIENTE: 195/ 70 aro 15
+--- 03/09/2026 (Thu) ---
+[08:07] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Este pneu que você está precisando é de carga?"  {audio:midias/3EB0B3A4D4131AA7A64427_576189.ogg}
+[10:32] LOJA: *Josy:*
+🙋🏼‍♀️
+[10:59] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Não
+[10:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:22] LOJA: [áudio] "Bem, essa opção, eu não consegui ela sem ser pneu de carga."  {audio:midias/3EB0A6DC2D06E6786385D1_627844.ogg}
+[12:22] LOJA: [áudio] "Para qual carro que o senhor está precisando? Que eu tenho aqui é 195-65-15, não te atende?"  {audio:midias/3EB08B57A3623F46919D2B_789090.ogg}
+[12:57] LOJA: *Josy:*
+195/65/15 te atende?
+[17:43] LOJA: *Josy:*
+🙋🏼‍♀️
+--- 04/09/2026 (Fri) ---
+[06:47] CLIENTE: Bom dia Josy!
+[06:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[06:48] CLIENTE: 195/60. 15
+É para um prisma Chevrolet.
+[08:34] LOJA: *Josy:*
+Bom dia!
+[08:35] LOJA: [foto]
+[08:35] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[18:16] LOJA: [áudio] "Olá, Eurides. Tudo jóia? Mais cedo eu te encaminhei um orçamento aí a respeito dos pneus na medida que você precisa e gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB08696BF66909118672E_786187.ogg}
+--- 08/09/2026 (Tue) ---
+[10:09] LOJA: *Josy:*
+Bom dia!
+[10:10] LOJA: [áudio] "Olá, bom dia, tudo jóia? Eu te encaminhei um acimento no final de semana e gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB090479FD8B1AB54482D_389884.ogg}
+--- 10/09/2026 (Thu) ---
+[14:30] LOJA: [áudio] "Oi, Ori, tudo jóia? Bem, eu imagino que você esteja extremamente ocupada e por essa razão que você não conseguiu me responder, eu vou encerrar aqui o seu atendimento, está bem justamente para não ficar enchendo esse WhatsApp de mensagens. Quando haverá possibilidade, passe aqui na loja para conversarmos pessoalmente, tá, jóia? Obrigada pela sua atenção e até mais."  {audio:midias/3EB08775A3361B16FF5A92_878941.ogg}
+[14:30] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

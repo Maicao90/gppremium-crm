@@ -1,0 +1,33 @@
+CONVERSA c676935626 | contato: Daniel | 18/08/2026 11:50 até 21/10/2026 12:19 | 3 msgs do cliente, 10 da loja, 1 do robô
+
+--- 18/08/2026 (Tue) ---
+[11:50] LOJA: Bom dia, Francisco.
+[11:51] LOJA: [foto]
+[11:51] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:21] LOJA: [áudio] "Oi, Francisco, tudo jóia? E aí, quando você vai conseguir vir aqui na loja?"  {audio:midias/3EB00BAA294BAD43C499FE_316362.ogg}
+--- 19/08/2026 (Wed) ---
+[14:13] LOJA: 🙋🏼‍♀️
+--- 20/10/2026 (Tue) ---
+[13:05] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[13:05] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[13:06] CLIENTE: 170/65 R14
+[13:07] LOJA: [foto]
+[13:07] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:08] LOJA: *Josy:*
+Daniel,  mora aqui em Luziânia-Go mesmo?
+[13:30] CLIENTE: No Jardim inga
+[14:25] LOJA: *Josy:*
+Pertinho , daniel!
+--- 21/10/2026 (Wed) ---
+[12:19] ROBÔ: 🙋🏼‍♀️

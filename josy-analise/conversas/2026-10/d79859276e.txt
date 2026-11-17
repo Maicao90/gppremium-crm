@@ -1,0 +1,60 @@
+CONVERSA d79859276e | contato: Leonardo Barbosa De Souza | 20/10/2026 16:39 até 22/10/2026 12:09 | 10 msgs do cliente, 28 da loja, 3 do robô
+
+--- 20/10/2026 (Tue) ---
+[16:39] LOJA: 🙋🏼‍♀️
+[16:39] LOJA: [foto]
+[16:39] LOJA: [foto]
+[16:39] LOJA: No dia de hoje temos essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:42] LOJA: [foto]
+[16:42] LOJA: [foto]
+[16:42] LOJA: [foto]
+[16:53] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[16:53] CLIENTE: [áudio] "Qual que é a diferença dos dois pneus em questão de preço?"
+[16:55] LOJA: [áudio] "Olha, esse aí que eu te mandei a foto, foi o que eu consegui ali no estoque, ele é o da Conforcer, ele vai ser 618 reais a unidade para o pagamento à vista, esse modelo borrachudo, aí o outro ele vai ser no modelo HT, que é para asfalto, então ele é um pneu liso."  {audio:midias/3EB089F154D47932BF7B5D_587542.ogg}
+[16:56] CLIENTE: [áudio] "Os dois você me mandou, os dois é cravudo, ó. Os dois é de cravo."
+[16:56] LOJA: [áudio] "Não, moça, você não entendeu. Eu mandei a foto somente do Conforcer, que é cravudo, o do modelo HT, eu não mandei a foto para você ainda."  {audio:midias/3EB0DDDBB3D0EC93473E8D_660454.ogg}
+[17:01] CLIENTE: [áudio] "Ah, entendi, entendi. Você mandou só do mais caro, por enquanto."
+[17:03] LOJA: Vou te mandar a foto do outro agora
+[17:03] LOJA: Só 1 min
+[17:04] LOJA: [foto]
+[17:04] LOJA: [foto]
+[17:04] LOJA: [foto]
+[17:06] LOJA: [áudio] "Na verdade, o borrachudo é o que está mais barato."  {audio:midias/3EB0C5FA1DEF08ADDB6B60_196130.ogg}
+--- 21/10/2026 (Wed) ---
+[08:17] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[08:17] CLIENTE: [áudio] "Bom dia, tudo bem? Esse 225, 235, como é que ele? Muda a largura dele, né? De fora do carro para dentro do carro, ou ele muda a altura? Como é que é?"
+[08:19] LOJA: Isso 225 e 235 é largura
+[08:20] CLIENTE: [áudio] "Entendi, entendi. Eu vou dar um pulo aí após o almoço. Eu moro no Grisalino, eu vou dar um pulo aí após o almoço. Pode segurar esses pneus pra mim, dando um favor. Eu vou dar um pulo aí, nós acabamos de negociar, tá bom?"
+[08:21] LOJA: [áudio] "Qual que é o seu carro mesmo, Leonardo?"  {audio:midias/3EB08ED7B719B501DE4B62_872496.ogg}
+[08:22] CLIENTE: [áudio] "Meu carro é uma Fiat Toro, 2019-2020."
+[08:23] LOJA: [áudio] "Ah, não. É o 225 mesmo. São essas opções aí que eu te mandei. Pode colocar tranquilo, tá?"  {audio:midias/3EB044A4468E1A9D797E9F_955274.ogg}
+[10:57] LOJA: Vou te encaminhar a nossa localziação!
+[10:57] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:02] ROBÔ: 🙋🏼‍♀️
+--- 22/10/2026 (Thu) ---
+[09:12] CLIENTE: Bom dia
+[09:12] CLIENTE: Os pneu ainda esta ai?
+[09:12] ROBÔ: O GP Premium usa borracha padrão europeu e passa por um controle rígido de qualidade.
+[09:12] ROBÔ: E tem garantia de 2 anos e 60 mil km ou seu dinheiro de volta. Se quiser, vem ver o pneu de perto aqui na loja.
+[09:13] LOJA: Bom dia!
+[09:13] LOJA: Sim, está!
+[12:08] LOJA: Oi!
+[12:08] LOJA: Segue sua nota fiscal, naquela hora a Sefaz estava fora do ar
+[12:08] LOJA: [documento]
+[12:09] CLIENTE: Obrigado minha querida
+[12:09] CLIENTE: Otimo atendimento, super gentil…
+[12:09] LOJA: Obrigada!

@@ -1,0 +1,30 @@
+CONVERSA 6578fea2dd | contato: Jeova Pereira | 17/09/2026 17:22 até 23/09/2026 15:40 | 6 msgs do cliente, 13 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[17:22] LOJA: *Josy:*
+Boa tarde, sr Jeová!
+[17:22] LOJA: *Josy:*
+235/70/16 Goodyear
+[17:41] LOJA: [foto]
+[17:41] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 23/09/2026 (Wed) ---
+[12:40] LOJA: *Josy:*
+🙋🏼‍♀️
+[12:40] CLIENTE: [áudio] "Boa tarde, Luzi. Conseguiu arrumar os pneus para mim?"
+[12:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:41] CLIENTE: [áudio] "O pneu que eu preciso é 235-70-16, mas eu queria ele, qual que você viu com seus amigos lá, se tem lá, a não ser remote?"
+[12:41] LOJA: [áudio] "Oi, Sr. Jeová, tudo bom? Ah, então, eu tinha até mandado o orçamento aí dos pneus para o senhor, né, que o senhor queria dar o dia, e eu te mandei o orçamento, aí o senhor já não respondeu mais, que dar o dia vai ser só por encomenda mesmo."  {audio:midias/3EB03241F93778301FC7F2_499327.ogg}
+[12:41] LOJA: 👆🏻
+[12:41] CLIENTE: [áudio] "É, eu queria mesmo, é good, vou olhar aqui direitinho e te falo, tá bom?"
+[12:42] LOJA: [áudio] "Tá, já, então, Seu Jeová!"  {audio:midias/3EB03921BBB6B263C3B6D9_156165.ogg}
+[15:29] CLIENTE: [áudio] "Boa tarde, eu estava olhando aqui, fica 1.237, em 4 vezes. Aí se eu pedir, você encomenda para mim, eu passo o cartão com você em 4 vezes."
+[15:30] CLIENTE: [áudio] "Esses 1.237 são os dois, né?"
+[15:37] LOJA: [áudio] "Senhor Jová, igual eu coloquei aqui, no orçamento, é o valor unitário do pneu. Então, em 4 vezes cada um, é 1.237, vezes 2 pneus, no total de 2.474, que dividido por 4 vezes, o senhor vai pagar 4 parcelas de 618,50 reais."  {audio:midias/3EB070AD684A14BCC0B7A8_541969.ogg}
+[15:38] LOJA: No orçamento, está o valor *UNITÁRIO* do pneu.
+[15:38] LOJA: [áudio] "Esses pneus da Gutierrez tem um preço bem diferenciado, digamos assim."  {audio:midias/3EB0D39FBE94C76529E3AB_251094.ogg}
+[15:39] CLIENTE: [áudio] "Não, então eu entendi errado, minha Siana. Então tá, muito obrigado, viu? Eu não vou querer não. Beleza? Muito obrigado pelo atendimento, pela atenção. Tá bom? Entendi errado."
+[15:40] LOJA: [figurinha]

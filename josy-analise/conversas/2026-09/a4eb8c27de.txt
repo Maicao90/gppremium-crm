@@ -1,0 +1,17 @@
+CONVERSA a4eb8c27de | contato: Roberto | 11/09/2026 12:24 até 22/09/2026 15:24 | 4 msgs do cliente, 5 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[12:24] CLIENTE: Aro 16 não quero remold
+[12:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:24] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[12:24] CLIENTE: 205 60 16
+[12:28] CLIENTE: Vcs tem aro 16 60 205
+[12:42] LOJA: [áudio] "Olá, tudo bem com você? Eu sou a Josi. E você me dá o estágio que eu vou verificar aqui as opções que eu tenho a Pronto Interregs, tá bem?"  {audio:midias/3EB02ADF8517C140137041_255137.ogg}
+[12:45] LOJA: [foto]
+[12:45] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 22/09/2026 (Tue) ---
+[15:24] LOJA: [foto]

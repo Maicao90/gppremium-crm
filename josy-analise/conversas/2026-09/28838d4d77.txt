@@ -1,0 +1,19 @@
+CONVERSA 28838d4d77 | contato: Jansenfg | 16/09/2026 09:54 até 16/09/2026 10:17 | 4 msgs do cliente, 8 da loja, 0 do robô
+
+--- 16/09/2026 (Wed) ---
+[09:54] CLIENTE: Bom dia, tudo bem? Gostaria de  cotar o pneu 225/50 R17 GP Premium, bem como as condições de frete e pagamento. grato.
+[09:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:54] LOJA: [áudio] "Olá, bom dia, tudo bem com você?"  {audio:midias/3EB03F98D92CB89FC46066_771659.ogg}
+[09:55] LOJA: [áudio] "Bem, os pneus GP Premium, eles se tratam de pneus remoldes de primeira linha, tá? O frete, eu preciso que você me informe qual que é o seu CEP para que eu possa encaminhar para a transportadora fazer esse cálculo, está bem?"  {audio:midias/3EB02C41276A99BF49F308_229214.ogg}
+[09:56] CLIENTE: 36.490.056
+[09:56] LOJA: [áudio] "E serão quantos pneus?"  {audio:midias/3EB0038E722A2CCF126010_545471.ogg}
+[09:56] CLIENTE: 2 unidades
+[10:14] LOJA: *Josy:*
+Frete Rodonaves
+[10:14] LOJA: [foto]
+[10:15] LOJA: *Josy:*
+Pneus 225/50/17 R$ 698,00 + frete de R$ 147,50 = R$ 845,50 pagamento via pix.
+[10:16] CLIENTE: Ok... Vou continuar cotando preços e caso saia mais em conta o custo benefício volto a fazer contato contigo pelo whatsapp , muito obrigado, tenha um bom dia e fique com Deus...
+[10:17] LOJA: *Josy:*
+Que Ele esteja contigo! 👋🏻

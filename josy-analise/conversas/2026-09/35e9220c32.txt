@@ -1,0 +1,12 @@
+CONVERSA 35e9220c32 | contato: Fernando | 18/09/2026 09:59 até 18/09/2026 10:23 | 3 msgs do cliente, 4 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[09:59] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:00] CLIENTE: 205/55/16
+[10:03] LOJA: [áudio] "Olá, bom dia, tudo bem com você, Fernanda? Eu sou a Josi e eu tenho assim os pneus da marca GP Premium. A unidade está por R$ 289,00 a vista. Você mora aqui em Luziânia?"  {audio:midias/3EB074560D9F392602521F_953602.ogg}
+[10:19] LOJA: *Josy:*
+🙋🏼‍♀️
+[10:23] CLIENTE: Achei que era em Goiânia
+[10:23] LOJA: [áudio] "Somos de Luziânia."  {audio:midias/3EB0FA25DBEB03C7CB5E89_820167.ogg}

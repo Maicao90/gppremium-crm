@@ -1,0 +1,43 @@
+CONVERSA 039297e0b6 | contato: Elizeu Souza | 20/10/2026 13:08 até 21/10/2026 14:03 | 8 msgs do cliente, 10 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[13:08] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+Olá! Tenho interesse e queria mais informações, por favor.
+[13:08] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[13:08] LOJA: *Josy:*
+🙋🏼‍♀️
+[13:23] CLIENTE: Qual valor do 265/60r 18
+[13:27] CLIENTE: Elizeu
+[14:08] LOJA: [foto]
+[14:08] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:25] CLIENTE: 195/65/15 pneu
+[14:25] CLIENTE: Vê esse outro por favor
+--- 21/10/2026 (Wed) ---
+[10:09] LOJA: Oi... bom dia! Elizeu... ficamos sem internet!
+[10:09] CLIENTE: Bom dia
+[10:09] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[10:10] CLIENTE: Elizeu
+[10:10] CLIENTE: 195/65/15 pneu
+[10:13] LOJA: [foto]
+[10:13] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:13] LOJA: O pneu da marca GP Premium está na promoção compre 3 e leve 4
+[10:13] LOJA: Digamos que seja a vista: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[14:03] ROBÔ: 🙋🏼‍♀️

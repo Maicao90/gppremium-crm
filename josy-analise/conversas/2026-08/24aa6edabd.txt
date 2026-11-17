@@ -1,0 +1,42 @@
+CONVERSA 24aa6edabd | contato: Deivid | 26/08/2026 10:01 até 01/09/2026 08:54 | 9 msgs do cliente, 17 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[10:01] CLIENTE: Bom dia 
+Quanto tá saindo pneu 195/55/15
+[10:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:01] CLIENTE: 195/55/15
+[10:01] LOJA: *Josy :*
+Bom dia!
+[10:01] LOJA: *Josy :*
+Temos aqui o pneu da marca GP Premium, a R$ 289,00 a vista.
+[10:01] LOJA: *Josy :*
+Mora aqui em Luziânia-Go?
+[10:02] CLIENTE: E novo
+[10:03] LOJA: *Josy :*
+Remold
+[10:04] LOJA: *Josy :*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:04] LOJA: *Josy :*
+Essa é a nossa localização.
+[10:05] CLIENTE: [áudio] "Oi, Josi. Eu não moro aqui não, mas eu sempre passo aqui, aí eu resolvi entrar em contato para ver como está saindo o pneu, mas vocês só tem remold? Aí vocês mexem aí, né? Vocês nem fabricam, né? Eu estava querendo novo."
+[10:06] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Assim que você me diz o seu nome? Sim, exatamente, são os que nós produzimos. Ele é de uma categoria completamente diferente dos que são convencionais. Assim que eu tiver um tempo, eu mando para você o vídeo, para você já perceber a diferença dos pneus que nós produzimos, está bem?"  {audio:midias/3EB06E76384A3CDC9B7B16_215161.ogg}
+[10:06] CLIENTE: Tá bom
+[10:32] LOJA: [vídeo]
+[12:02] LOJA: [áudio] "Você vai passar aqui pela nossa empresa quando, mais ou menos?"  {audio:midias/3EB0E24B7BFA24B543CD82_194499.ogg}
+[12:03] CLIENTE: [áudio] "Oi, Josi. É... Mas eu creio que amanhã... amanhã eu devo estar passando aí."
+[12:04] LOJA: [áudio] "Certo, certo. Qual é o seu nome mesmo?"  {audio:midias/3EB0F70772BB91157642CE_999280.ogg}
+[12:04] CLIENTE: Deivid
+[12:04] LOJA: [áudio] "Que aí, você vindo aqui, você me procura? E, igual eu te falei, né, a câmera do meu celular aqui, ela não é boa, então, acaba que não dá pra ter tanta percepção, assim, do produto, mas você vindo aqui fica até mais prático de nós conversarmos."  {audio:midias/3EB0A79F519F2B437FC383_742125.ogg}
+[12:05] CLIENTE: [áudio] "O Josnão, beleza. Eu vou passar aí, eu vou dar uma olhada aí."
+[12:05] LOJA: [áudio] "Não sei se a localização que eu te encaminhei abriu, porque o meu sistema está com um pouco de instabilidade, mas eu vou mandar a localização de novo, tá? Aqui fica do lado da Goiás Diesel e do Hotel Goiás."  {audio:midias/3EB0AE5AF725A008DA4A0F_46263.ogg}
+[12:06] LOJA: *Josy :*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:07] CLIENTE: [áudio] "Põe, Luziânia, abriu sim, abriu aqui, oi, oi. Muito obrigado, hein."
+[12:07] LOJA: *Josy :*
+Até amanhã!
+--- 01/09/2026 (Tue) ---
+[08:54] LOJA: *Josy:*
+Bom dia, bom dia, Deivid...como vai você?
+[08:54] LOJA: *Josy:*
+Está passando aqui pela nossa região?

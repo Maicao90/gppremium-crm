@@ -1,0 +1,19 @@
+CONVERSA 4fe4164457 | contato: Adilson | 30/09/2026 16:23 até 30/09/2026 16:27 | 3 msgs do cliente, 7 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[16:23] LOJA: *Josy:*
+Boa tarde!
+[16:24] LOJA: *Josy:*
+Estamos com instabilidade da rede, não consegui te ouvir na ligação.
+[16:24] CLIENTE: Boa tarde !
+[16:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:24] LOJA: *Josy:*
+Como posso ajudar?
+[16:24] CLIENTE: [foto]
+[16:25] LOJA: *Josy:*
+Infelizmente não temos...
+[16:25] CLIENTE: Você tem para caminhão 3/4
+[16:26] LOJA: *Josy:*
+Infelizmente não temos..
+[16:27] LOJA: 🙋🏼‍♀️

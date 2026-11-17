@@ -1,0 +1,10 @@
+CONVERSA 2504034c12 | contato: $dudu$ | 28/09/2026 14:27 até 28/09/2026 14:27 | 3 msgs do cliente, 1 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[14:27] CLIENTE: albumMessage
+[14:27] CLIENTE: [foto] Olá! Qmmmbb8mkmoikmokk
+Mkmmk.mkm
+L
+[14:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:27] CLIENTE: [foto]

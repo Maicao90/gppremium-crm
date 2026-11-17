@@ -1,0 +1,14 @@
+CONVERSA c0f0754a0d | contato: Marco Santos | 09/10/2026 09:37 até 09/10/2026 15:22 | 3 msgs do cliente, 5 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[09:37] CLIENTE: Bom dia
+[09:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:37] CLIENTE: 185/65/15
+[09:37] CLIENTE: Ou 195/65/15
+[09:41] LOJA: [foto]
+[09:42] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:42] LOJA: [foto]
+[15:22] LOJA: [áudio] "Oi, Marco, tudo jóia? Marco, mas eu realizei um orçamento aí para você com todas as opções que eu tenho à pronta entrega. Eu gostaria muito de saber qual das opções que eu posso reservar aqui para você. Inclusive, uma observação a respeito da medida 195-65, o pneu aqui da marca GP Premium, ele está na oferta, na verdade, na promoção, tá? A promoção é cumpre 3 e leve 4. Então, é o seguinte, digamos que você queira pagar o pagamento no débito ou no Pix, como a unidade é 329 vezes 3 pneus, dá um total de 987 reais. E por esse preço, você vai levar os 4."  {audio:midias/3EB0A919D1EE5F6A0BB144_482619.ogg}

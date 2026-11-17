@@ -1,0 +1,13 @@
+CONVERSA 1f704f94da | contato: Gessica Quintino D’Oliveira Ribeiro | 07/10/2026 13:28 até 07/10/2026 13:51 | 5 msgs do cliente, 3 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[13:28] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:28] CLIENTE: A loja é em Jussara ??
+[13:50] LOJA: *Josy:*
+Somos de Luziania-Go
+[13:51] CLIENTE: Ata
+[13:51] CLIENTE: Foi engano
+[13:51] CLIENTE: Desculpa
+[13:51] LOJA: [áudio] "Imagina, o que é isso?"  {audio:midias/3EB0D1B2178974F3F7C4E8_972997.ogg}

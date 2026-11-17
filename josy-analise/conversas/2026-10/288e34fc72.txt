@@ -1,0 +1,56 @@
+CONVERSA 288e34fc72 | contato: RD.Imports | 15/10/2026 13:36 até 22/10/2026 08:01 | 18 msgs do cliente, 27 da loja, 1 do robô
+
+--- 15/10/2026 (Thu) ---
+[13:36] CLIENTE: [foto] 📢 [Anúncio] Pneus de Passeio em Oferta
+
+Quais são os preços dos pneus?
+[13:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:36] CLIENTE: 225/35/20
+[13:37] CLIENTE: Qual valor
+[13:37] LOJA: Temos sim!
+[13:37] LOJA: [foto]
+[13:37] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:38] CLIENTE: Menor valor avista pegando os 4 ?
+[13:38] CLIENTE: Vocês pega os meus a base de troca ?
+[13:39] CLIENTE: Quero os 4 tem algum desconto
+[13:39] LOJA: Já está no melhor preço
+[13:39] LOJA: [áudio] "Olá, tudo bem com você? Não, nós não trabalhamos a base de troca."  {audio:midias/3EB0F1E490C67D07571E98_176263.ogg}
+[13:40] CLIENTE: Certo
+[13:40] CLIENTE: Esse seria o melhor valor avista pegando os 4 aí
+[13:40] LOJA: [áudio] "Isso, exatamente, que já está no melhor preço, preço final, tá?"  {audio:midias/3EB07174F22C3E8A6700C3_851747.ogg}
+[14:26] CLIENTE: 225/40/20
+[14:26] CLIENTE: Tá quanto
+[14:26] CLIENTE: E o 225/30/20
+[14:46] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[14:47] LOJA: pneu 225/30/20 85w cf710 comforser 👇🏻
+[14:47] LOJA: [foto]
+[14:47] CLIENTE: Me manda a localização
+[14:47] LOJA: Claro!
+[14:48] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:48] LOJA: [foto]
+[14:49] LOJA: São daqui de Luziânia-Go?
+[14:49] CLIENTE: Sou de valparaíso
+[14:50] LOJA: Ah, sim! Pertinho.
+[14:50] LOJA: Posso reservar os 225/30/20 85w cf710 comforser ?
+[14:50] CLIENTE: Pode reserva os 4 225/35/20
+[14:51] LOJA: Ok!
+[14:51] LOJA: Quem é a pessoa que está vindo aqui?
+[14:51] CLIENTE: Eu mesmo
+[14:52] LOJA: Seu nome?
+[14:52] CLIENTE: Nury
+[14:53] LOJA: Perfeito, Nury!
+[14:53] LOJA: Estou te aguardando!
+[16:04] LOJA: Está a caminho, Nury?
+--- 16/10/2026 (Fri) ---
+[16:03] LOJA: [áudio] "Olá Nuri, boa tarde. Tudo bem com você? Nós estávamos conversando ontem aqui a respeito de uns pneus para o seu carro e eu gostaria muito de saber se você ainda pretende seguir com a negociação. Você consegue me dar um retorno, por gentileza?"  {audio:midias/A5FF2DB76170FC2D458D3E1C673B066B_744838.ogg}
+--- 17/10/2026 (Sat) ---
+[08:40] LOJA: Bom dia! Eu vou encerrar seu atendimento para não encher seu whatsapp de mensagem.                                                                                                                   Se precisar futuramente é só chamar. Ou se possivel, venham até nossa loja.                                                                                                  Obrigada pela atenção, bom final de semana ! 👋🏻
+--- 21/10/2026 (Wed) ---
+[17:59] CLIENTE: Boa tarde
+[17:59] LOJA: Oi!
+[18:00] LOJA: Boa tarde!
+[18:00] CLIENTE: Vcs entrega ?
+[18:02] LOJA: [áudio] "Nossa, Nuri, nós não fizemos entregas."  {audio:midias/3EB0B98D5DA3056CCD030D_275750.ogg}
+--- 22/10/2026 (Thu) ---
+[08:01] ROBÔ: 🙋🏼‍♀️

@@ -1,0 +1,17 @@
+CONVERSA ea7c313456 | contato: Poly | 17/08/2026 12:30 até 17/08/2026 12:34 | 8 msgs do cliente, 6 da loja, 0 do robô
+
+--- 17/08/2026 (Mon) ---
+[12:30] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:30] CLIENTE: tem pneu 608 750/16
+[12:31] LOJA: Boa tarde!
+[12:32] LOJA: Você é daqui de Luziania-Go, mesmo?
+[12:32] CLIENTE: Nao
+[12:32] CLIENTE: estamos no sia
+[12:32] CLIENTE: e moramos Em São Sebastião
+[12:32] LOJA: Ah, sim!
+[12:33] LOJA: Estamos a 70 km de distância praticamente.
+[12:33] CLIENTE: Vcs tem ?
+[12:33] LOJA: Acabaram de ser vendidos os 2 ultimos.
+[12:34] CLIENTE: ta bom
+[12:34] CLIENTE: muito obrigada
+[12:34] LOJA: Disponha...boa semana!

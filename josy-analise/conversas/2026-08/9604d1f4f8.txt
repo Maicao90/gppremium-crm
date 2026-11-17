@@ -1,0 +1,17 @@
+CONVERSA 9604d1f4f8 | contato: Reinaldo ( Branco) | 19/08/2026 07:10 até 19/08/2026 09:03 | 8 msgs do cliente, 5 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[07:10] CLIENTE: Bom dia
+[07:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:11] CLIENTE: Gostaria de saber sobre seus pneus pra revenda
+[07:11] CLIENTE: 13/14 e 16 carga
+[07:12] CLIENTE: Gostaria de saber como funciona pra falar com um vendedor pra pneus pra revenda.
+[08:05] LOJA: Bom dia!
+[08:05] LOJA: É  comigo mesma
+[08:06] LOJA: Entretanto não estamos atendendo no atacado, por tempo indeterminado.
+[08:47] CLIENTE: Ok
+[08:47] CLIENTE: Mas quais seus preços a verejo?
+[08:47] CLIENTE: Aro 13 aro 14
+[08:49] LOJA: 13 e 14 a partir de 239,00
+[09:03] CLIENTE: Obrigado

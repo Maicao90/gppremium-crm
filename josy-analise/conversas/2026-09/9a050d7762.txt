@@ -1,0 +1,7 @@
+CONVERSA 9a050d7762 | contato: Thiago Ribeiro | 23/09/2026 09:57 até 23/09/2026 09:57 | 2 msgs do cliente, 1 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[09:57] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:57] CLIENTE: Bom dia

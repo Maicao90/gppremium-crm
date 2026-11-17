@@ -1,0 +1,9 @@
+CONVERSA 24596026bd | contato: Luis Silva | 26/08/2026 08:38 até 26/08/2026 17:05 | 2 msgs do cliente, 3 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[08:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:38] CLIENTE: [documento]
+[08:38] CLIENTE: [áudio] "Oi, bom dia! Daqui a pouco eu vou pedir para o menino passar para pegar para mim, tá?"
+[08:39] LOJA: [áudio] "Oi, tudo jóia? Perfeito, então, ficamos combinados, tá?"  {audio:midias/3EB08279E74EF7CCBA352D_997815.ogg}
+[17:05] LOJA: [áudio] "Oi, Luiz, tudo jóia? Tentei falar contigo mais cedo, mas não dei conta de ocorrido, graças a Deus. Seu pai passou aqui, levou os pneus, deu tudo certo. E, mais uma vez, muito obrigada por entrar em contato conosco. Que você tenha uma boa semana."  {audio:midias/3EB0516188A7780764B8ED_296190.ogg}

@@ -1,0 +1,24 @@
+CONVERSA deabee99a6 | contato: André Arantes | 16/10/2026 07:43 até 16/10/2026 10:31 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[07:43] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[07:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:43] CLIENTE: Bom.dia 
+Pneu 195/45-16
+[08:18] LOJA: Bom dia!
+[08:18] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[08:40] CLIENTE: Bom dia .
+Ok,fico no aguardo .
+Obrigado
+[09:48] LOJA: Em qual carro usa essa medida?
+[10:22] CLIENTE: New fiesta
+[10:23] LOJA: Ah sim!
+[10:25] LOJA: Enquanto aguardamos a resposta do 195, 45, vou te encaminhar a opção 195/55/16
+[10:25] LOJA: [foto]
+[10:26] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:26] CLIENTE: Montado e balancedo?
+[10:27] LOJA: Balanceamento...alinhamento serviços de modo geral são cobrados a parte.
+[10:31] LOJA: [áudio] "André, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0B5E0FC10D2BF4B04BF_841533.ogg}

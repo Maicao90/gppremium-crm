@@ -1,0 +1,26 @@
+CONVERSA b5a57e4b67 | contato: Johnny Bastos | 16/10/2026 12:11 até 16/10/2026 15:20 | 8 msgs do cliente, 9 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[12:11] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[12:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:12] CLIENTE: Pneus 185 60 15
+Valor
+[12:12] CLIENTE: E marca?
+[12:12] LOJA: [foto]
+[12:12] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:13] CLIENTE: Blz
+[12:14] LOJA: [áudio] "Johnny, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0D07F1F11CE9B7A7E15_198291.ogg}
+[15:02] CLIENTE: Não
+[15:02] CLIENTE: Mas sempre estou ai
+[15:03] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Ah, bacana, bacana. Você quer que eu te encaminhe a nossa localização?"  {audio:midias/A5BEC894CB379F09CCBB1053B9ED2759_627731.ogg}
+[15:03] CLIENTE: Manda por gentileza
+[15:03] LOJA: Claro!
+[15:04] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:05] LOJA: [foto]
+[15:16] LOJA: [áudio] "Johnny, por hora vou encerrar aqui o seu atendimento, tá? Pra não ficar enchendo o seu WhatsApp de mensagens. E vamos fazer o seguinte, assim que possível, você faça aqui na loja, tá bom? Me chamo Josi. Obrigada pela sua atenção e bom final de semana."  {audio:midias/A568A567A32BD8D9F9B19128D2744212_580353.ogg}
+[15:20] CLIENTE: Te procuro Josi, obrigada para vc também

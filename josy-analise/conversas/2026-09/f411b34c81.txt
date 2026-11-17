@@ -1,0 +1,35 @@
+CONVERSA f411b34c81 | contato: Cláudio M. | 19/09/2026 11:38 até 21/09/2026 08:02 | 12 msgs do cliente, 12 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[11:38] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[11:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:39] CLIENTE: Qual preço pneu novo mais em conta. 185 65 R15
+[11:39] CLIENTE: Preciso dos 4
+[11:39] LOJA: *Josy:*
+Bom dia!
+[11:39] LOJA: *Josy:*
+R$ 249,00 cada se for a vista , pneus da marca GP Premium.
+[11:40] CLIENTE: É remold
+[11:40] LOJA: [áudio] "Oi Cláudia, bom dia, tudo bem com você? Eu sou a Josi. Esse é o pneu da marca GP Premium, tá? Ele é um pneu ecológico que nós produzimos, ele entra na categoria de remodelagem, só que linha Premium, tá? Que não tem nada a ver com os pneus remoldes convencionais. Se você quiser, eu faço um vídeo pra eu poder te mostrar a diferença de pneus, tá?"  {audio:midias/3EB04552AF4AF573F9E2F9_468782.ogg}
+[11:42] CLIENTE: Me manda um vídeo
+[11:45] LOJA: [vídeo]
+[11:46] LOJA: [vídeo]
+[12:04] CLIENTE: Ótimo 
+Gostei
+[12:04] CLIENTE: Onde é a loja
+[12:06] LOJA: *Josy:*
+Somos de Luziânia-Go, e você?
+[12:08] LOJA: [áudio] "Sim, os pneus são muito bons, tem 2 anos de garantia, tá Joia? E você me diz onde você mora, que nós vamos alinhando aqui uma maneira de te atender, tá Joia?"  {audio:midias/3EB03D75A1E4C97070007C_592448.ogg}
+[12:10] CLIENTE: Cristalina
+[12:10] CLIENTE: Vou ai na semana que vem colocar 4.
+[12:11] LOJA: [áudio] "Ah, bacana! Nossa, e o pessoal aí de Cristalina compra muito aqui comigo, justamente, esses pneus, tá joia? Vai ser uma satisfação imensa receber você aqui. Eu já vou deixar aqui a nossa localização, tá bom?"  {audio:midias/3EB07F7838491DB2FEF177_578532.ogg}
+[12:11] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:11] LOJA: [foto]
+[12:13] CLIENTE: Seu onde fica. Passei aí na frente.
+[12:15] CLIENTE: Montagem e alinhamento faz aí também
+--- 21/09/2026 (Mon) ---
+[08:02] LOJA: [áudio] "Oi Claudio, bom dia, tudo bem? É... Faço todo tipo de serviço, tá aqui na nossa oficina. Ah, monta, tá já já já. Eu já falo, alô, matemática não, não, ó, ó, ó. Aí, o alinhamento, balanceamento, não abram, bramos a parte, fica tranquilo, nós faremos um subsídio bacana, tá já?"  {audio:midias/3EB0E98430C83B1DB7B976_966984.ogg}

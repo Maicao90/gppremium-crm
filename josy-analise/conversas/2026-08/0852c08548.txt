@@ -1,0 +1,21 @@
+CONVERSA 0852c08548 | contato: Vinicius Santos | 18/08/2026 16:18 até 27/08/2026 16:14 | 3 msgs do cliente, 10 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[16:18] CLIENTE: Algum retorno ?
+[16:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:20] CLIENTE: 225/75 r16
+[16:20] CLIENTE: Sim
+[16:20] LOJA: Não chegou.
+--- 21/08/2026 (Fri) ---
+[10:44] LOJA: Vinicius.. bom dia!
+[10:53] LOJA: [áudio] "Oi Vinícius, tudo jóia? Eu gostaria de saber se você ainda está precisando dos pneus, porque eles ainda não chegaram, mas eu quero ver uma situação aqui contigo."  {audio:midias/3EB0CD3E5CC4E5AA574CC3_122551.ogg}
+[11:02] LOJA: 🙋🏼‍♀️
+[14:57] LOJA: [áudio] "Oi, Vinícius, tudo bem? Olha, eu consegui aqui os pneus da marca Linglong, mas vai ser por encomenda. Eu tô negociando aqui com o fornecedor pelo preço de 670 a vista, tá? Pra eu poder entregar, digamos que, diretamente pra você. Se você tiver interesse, você me fala aqui que nós damos continuidade e ele pede um pagamento calção pra poder reservar os pneus exclusivos pra você, porque quando eles chegarem aqui na próxima semana, eu vi que vai ter um reajuste à vista, ele vai estar por 745. Então, eu já tô negociando direto com ele pra fazer esse preço aqui pra poder te atender. Vamos prosseguir?"  {audio:midias/3EB03C9A22E2BA47021138_634990.ogg}
+--- 27/08/2026 (Thu) ---
+[16:12] LOJA: *Josy:*
+Boa tarde... vou digitar pois imagino que você deve ter cansado de ouvir meus áudios rsrs
+[16:13] LOJA: *Josy:*
+Chegaram pneus da marca Comforser.
+[16:13] LOJA: [foto]
+[16:14] LOJA: [foto]

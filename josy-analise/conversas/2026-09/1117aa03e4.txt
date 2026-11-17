@@ -1,0 +1,28 @@
+CONVERSA 1117aa03e4 | contato: Diego Barros | 25/09/2026 09:48 até 25/09/2026 10:23 | 6 msgs do cliente, 12 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[09:48] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[09:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:49] CLIENTE: Quanto
+Tá saindo aro 15 do Fiat argo
+[09:50] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Você usa aí para caso o 185-6015?"  {audio:midias/3EB0EFD37B83F7A9B01F4E_606929.ogg}
+[09:50] CLIENTE: Isso
+[09:50] LOJA: [foto]
+[09:50] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:51] CLIENTE: [áudio] "Aí essa promoção aí eu compro 3 e ganho 1."
+[09:51] LOJA: [áudio] "A promoção Compre 3 e Leve 4 é válida para os pneus da marca GP Premium na medida 195, 65, 15 e 215, 55, 17."  {audio:midias/3EB0661BE4D94460DC057E_893595.ogg}
+[09:51] LOJA: [áudio] "Já na medida que você está buscando o pneu GP Premium, ele valor normal R$ 289,00, mas ele está na promoção, a unidade por R$ 249,00 e já colocamos o pneu para você, se assim você quiser."  {audio:midias/3EB05665D7C3C89451EA09_278398.ogg}
+[09:52] CLIENTE: [áudio] "Não, não. Quero comprar para guardar aqui, que eu vou viajar a dezembro, mas vou deixar guardado já. Eu vou analisar a sede aqui e entre em contato, tá bom?"
+[09:52] LOJA: [áudio] "Não tem problema, pode comprar e deixar guardado. Aqui nós temos a opção, se você quiser instalar, já fazemos esse service para você."  {audio:midias/3EB0E2E39EC2DB3DCD4CA6_242632.ogg}
+[09:52] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB051A9B9E7530B77E800_272209.ogg}
+[09:53] CLIENTE: Valparaiso
+[09:53] LOJA: *Josy:*
+Pertinho de n´so!
+[10:23] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:23] LOJA: [foto]

@@ -1,0 +1,20 @@
+CONVERSA 5e3d3c5643 | contato: 556199878022 | 10/08/2026 12:32 até 16/08/2026 06:34 | 6 msgs do cliente, 6 da loja, 0 do robô
+
+--- 10/08/2026 (Mon) ---
+[12:32] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[12:34] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 12/08/2026 (Wed) ---
+[10:52] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:54] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 13/08/2026 (Thu) ---
+[09:32] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:34] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 14/08/2026 (Fri) ---
+[08:12] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[08:14] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 15/08/2026 (Sat) ---
+[07:52] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[07:54] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 16/08/2026 (Sun) ---
+[06:32] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[06:34] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

@@ -1,0 +1,18 @@
+CONVERSA a94c638baf | contato: Lucas Cardoso | 22/10/2026 08:36 até 22/10/2026 09:33 | 4 msgs do cliente, 4 da loja, 3 do robô
+
+--- 22/10/2026 (Thu) ---
+[08:36] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[08:36] ROBÔ: Oi, tudo bem?
+[08:36] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[08:37] CLIENTE: 175/65/15
+[08:37] ROBÔ: [áudio — sem transcrição]
+[08:38] CLIENTE: Áudio não disponível
+[08:41] LOJA: Teremos 185/65/15 te atende?
+[09:18] CLIENTE: Qual o valor?
+[09:31] LOJA: Vou te mandar
+[09:33] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:33] LOJA: [foto]

@@ -1,0 +1,29 @@
+CONVERSA dbbfc6ba45 | contato: Elinaldo Cunha | 26/08/2026 17:24 até 28/08/2026 09:45 | 3 msgs do cliente, 14 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[17:24] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[17:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:25] CLIENTE: Aro 15 185/60
+[17:25] CLIENTE: São originais?
+[17:25] LOJA: Boa tarde.
+[17:25] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:25] LOJA: [foto]
+[17:26] LOJA: Somente o de 249,00 entra na categoria de remodelagem. Porém da linha Premium , é o pneu mais vendido.
+[17:28] LOJA: Se quiser foto / video dele te encaminho.
+[17:31] LOJA: [vídeo]
+[17:35] LOJA: [áudio] "O senhor mora aqui em Luziânia mesmo?"  {audio:midias/3EB07E16A692FC41474233_728046.ogg}
+--- 27/08/2026 (Thu) ---
+[17:49] LOJA: *Josy:*
+🙋🏼‍♀️
+[17:49] LOJA: *Josy:*
+Por gentileza...me de um retorno.
+[17:50] LOJA: [vídeo]
+--- 28/08/2026 (Fri) ---
+[09:44] LOJA: *Josy:*
+Bom dia, imagino que seu dia tenha sido muito corrido por esse motivo você não teve a oportunidade de me dar um retorno.  Então vou encerrar seu atendimento, caso precise futuramente é só chamar ou melhor, venha até nossa loja. 👋🏻
+[09:44] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6 *Josy:*

@@ -1,0 +1,28 @@
+CONVERSA 4647c7a84e | contato: Kelly Cristina | 11/09/2026 11:17 até 17/09/2026 09:21 | 6 msgs do cliente, 10 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[11:17] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[11:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:30] CLIENTE: Bom dia
+[11:30] CLIENTE: 185/70 r14
+[11:30] LOJA: *Josy:*
+Bom dia!!
+[11:30] LOJA: *Josy:*
+Temos sim! Vou realizar seu orçamento, 1 instante!
+[11:31] CLIENTE: Ok
+[11:31] LOJA: [foto]
+[11:31] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:33] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB06BC5D32C3A1BC4E683_167993.ogg}
+[11:34] CLIENTE: E a promoção de comprar 3 unidades e ganhar a terceira ?
+[11:34] LOJA: [áudio] "A promoção é válida para os pneus da marca GP Premium nas medidas 195-65-15 e 215-55-17."  {audio:midias/3EB0BE0F8BCDF0DC9DB496_865648.ogg}
+[11:34] CLIENTE: Ok
+[11:38] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB04A6F47B18B43E9FD01_471452.ogg}
+[11:38] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB000446C162994216C33_784940.ogg}
+--- 17/09/2026 (Thu) ---
+[09:21] LOJA: [áudio] "Oi Kelly, bom dia, tudo bem com você? Há alguns dias atrás nós conversamos a respeito de uns pneus aqui para o seu carro e eu gostaria muito de saber se você pretende seguir com a negociação. Será que você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0413A644B430637821A_81181.ogg}

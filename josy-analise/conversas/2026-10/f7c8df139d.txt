@@ -1,0 +1,9 @@
+CONVERSA f7c8df139d | contato: Eduardo Silva | 14/10/2026 09:40 até 14/10/2026 09:40 | 2 msgs do cliente, 1 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[09:40] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[09:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:40] CLIENTE: [foto]

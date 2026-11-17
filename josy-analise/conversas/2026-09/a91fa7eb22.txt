@@ -1,0 +1,20 @@
+CONVERSA a91fa7eb22 | contato: Marcos Joaquim | 23/09/2026 16:08 até 24/09/2026 11:32 | 5 msgs do cliente, 8 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[16:08] CLIENTE: Quero cotar o pneu 225/65 R17 GP Premium.
+[16:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:08] CLIENTE: Boa  tarde!
+[16:08] CLIENTE: Quero cotar o pneu 225/65 R17 GP Premium.
+[16:14] LOJA: [áudio] "Olá Marcos, tudo bem? Eu sou a Josi. Eu tenho que ser o pneu da marca GP Premium. Ele, na medida que você está buscando, ele está por apenas R$ 399,00 para o pagamento à vista. Eu vou te mandar aqui as opções de parcelamento, está bem?"  {audio:midias/3EB0AD498D31E3D1A9D44E_9745.ogg}
+[16:15] LOJA: [foto]
+[16:33] CLIENTE: Obrigado!
+[16:33] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0AFA41911DB4322FAD3_545332.ogg}
+[17:19] LOJA: *Josy:*
+🙋🏼‍♀️
+[17:20] LOJA: *Josy:*
+Marcos...
+[19:32] CLIENTE: Moro em Brasília
+--- 24/09/2026 (Thu) ---
+[11:32] LOJA: [áudio] "Oi, Marcos, tudo jóia? E você tem a possibilidade de vir até nossa loja? Eu vou te mandar aqui a nossa localização, está bem?"  {audio:midias/3EB064547B34AB5E3B10F6_197993.ogg}
+[11:32] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

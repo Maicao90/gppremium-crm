@@ -1,0 +1,84 @@
+CONVERSA 7ace1b6949 | contato: Joao Paulo Rocha Araujo | 20/10/2026 15:03 até 21/10/2026 12:17 | 28 msgs do cliente, 32 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[15:03] CLIENTE: Olá! Tenho interesse e queria mais informações, por favor.
+[15:03] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[15:04] CLIENTE: João Paulo
+[15:04] CLIENTE: Pq eu 265/60 R18
+[15:10] LOJA: [foto]
+[15:10] LOJA: No dia de hoje temos os pneus da marca  Maxzez e GP Premium essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:10] LOJA: [vídeo]
+[15:10] LOJA: [foto]
+[15:11] CLIENTE: Onde se encontra a loja ?
+[15:13] LOJA: *Josy:*
+Somos de Luziânia-Go!
+[15:19] CLIENTE: 235/65 18
+[15:19] CLIENTE: A medida é essa
+[15:20] CLIENTE: Qual é que tem
+[15:20] LOJA: *Josy:*
+Rogério...Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[15:20] CLIENTE: Joia
+[15:20] LOJA: *Josy:*
+Somos de Luziânia-Go, mora por aqui?
+[15:21] LOJA: *Josy:*
+para qual carro?
+[15:21] CLIENTE: Suzuki gran cotara
+[15:23] CLIENTE: Ano 2016
+[15:23] LOJA: *Josy:*
+ Suzuki Grand Vitara 225/60/18
+[15:24] LOJA: [foto]
+[15:24] LOJA: *Josy:*
+Pneu da marca Dunny
+[15:24] LOJA: *Josy:*
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:24] CLIENTE: Eu ando muito em estrada de chão
+[15:24] CLIENTE: Queria um mas alto
+[15:24] CLIENTE: Igual esse Brutus
+[15:26] LOJA: [foto]
+[15:26] LOJA: *Josy:*
+Daqui a pouco te mando foto
+[15:28] CLIENTE: Ok
+[15:42] LOJA: [foto]
+[15:42] LOJA: [foto]
+[15:42] LOJA: [foto]
+[15:51] CLIENTE: Qual valor do pneus ?
+[15:55] CLIENTE: E Montagem aliamento e combage ?
+[15:57] LOJA: No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:58] CLIENTE: Ahh tá
+[15:59] CLIENTE: ?
+[15:59] LOJA: 1 MIN POR GENTILEZA AMIGO!
+[16:00] CLIENTE: Ok
+[16:18] LOJA: Obrigada por aguardar!
+[16:19] LOJA: A cambajem precisa avaliar o grau para te passar o valor.
+[16:19] LOJA: * Balanceamento = 45,00 (por pneu)
+* Alinhamento = 140,00 ( Alinhamento de Direção) , mas os valores são bem negociaveis fique tranquilo.
+[17:05] LOJA: Está em busca de alguma marca especifica?
+--- 21/10/2026 (Wed) ---
+[08:38] CLIENTE: Bom dia
+[08:38] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[08:38] CLIENTE: Estou em viagem
+[08:38] CLIENTE: Quando chegar
+[08:38] CLIENTE: Agente ver
+[08:38] CLIENTE: Mas eu preciso trocar
+[08:38] CLIENTE: Os pneus
+[08:39] CLIENTE: Preço estão bons
+[09:07] LOJA: Ficamos combinados, sr João.
+[09:07] LOJA: Vou deixar aqui a nossa localização.
+[09:07] LOJA: Quando possível, passa aqui!
+[09:07] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:08] LOJA: [foto]
+[12:17] ROBÔ: 🙋🏼‍♀️

@@ -1,0 +1,13 @@
+CONVERSA 2aa979edf8 | contato: José | 25/08/2026 22:11 até 26/08/2026 08:31 | 1 msgs do cliente, 3 da loja, 0 do robô
+
+--- 25/08/2026 (Tue) ---
+[22:11] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá
+[22:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 26/08/2026 (Wed) ---
+[08:31] LOJA: *Josy :*
+Bom dia!
+[08:31] LOJA: *Josy :*
+Qual a medida dos pneus que você precisa hoje?

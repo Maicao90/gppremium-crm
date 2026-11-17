@@ -1,0 +1,35 @@
+CONVERSA 092d709bcc | contato: Nenem⚽️ | 20/10/2026 12:32 até 21/10/2026 09:47 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 20/10/2026 (Tue) ---
+[12:32] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[12:32] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[12:32] CLIENTE: Pneu 14 saindo a quanto
+[12:32] LOJA: *Josy:*
+Qual *A MEDIDA* dos pneus que você precisa?
+[12:33] CLIENTE: 175
+[12:33] LOJA: *Josy:*
+65?
+[12:33] LOJA: *Josy:*
+70?
+[12:34] CLIENTE: Isso
+[12:34] CLIENTE: Manda valor dos 2 prfv
+[12:34] LOJA: [foto]
+[12:34] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:34] LOJA: *Josy:*
+O Goodeyar se for a vista a unidade está por  R$ 446,00 x 2 = R$ 924,00
+[12:36] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Assim que possível me diz qual é o seu nome e eu te mandei o orçamento com as opções, aí você me diz qual delas, né, que é do seu interesse, qual a forma de pagamento que eu realizo o cálculo aqui pra ti, está bem?"  {audio:midias/3EB0EB01A0D81761FBBB8B_21314.ogg}
+[12:49] LOJA: *Josy:*
+Qual das marcas acima você prefere?
+--- 21/10/2026 (Wed) ---
+[09:47] LOJA: 🙋🏼‍♀️

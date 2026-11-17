@@ -1,0 +1,48 @@
+CONVERSA 51754706f4 | contato: Mandaka Compras | 05/10/2026 09:44 até 05/10/2026 12:05 | 7 msgs do cliente, 24 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[09:44] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu me chamo Josi e o Pedro me pediu para falar contigo. Eu sou aqui da Pneus GP Premium de Luziânia."  {audio:midias/3EB0A68A1A142E821E9604_995591.ogg}
+[09:44] LOJA: [áudio] "Ele me pediu para te passar o orçamento do pneu 235-75-15."  {audio:midias/3EB0951C7323131C117046_943017.ogg}
+[09:44] LOJA: [foto]
+[09:45] LOJA: *Josy:*
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:45] CLIENTE: Condição de pagamento?
+[09:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:46] CLIENTE: Índice de carga / velocidade?
+[09:46] CLIENTE: 4 pneus para Ranger
+
+Medida: 235x75R15
+[09:49] LOJA: *Josy:*
+Aqui está o orçamento, pode por gentileza conferir e me dizer se chegou para voc~e?
+[09:49] CLIENTE: ?
+[09:52] LOJA: [áudio] "Oi, bom dia. Por gentileza, você pode me dizer apenas se o orçamento chegou para você? Porque hoje o WhatsApp está com instabilidade."  {audio:midias/3EB02C9D098FC56631D414_741276.ogg}
+[09:53] CLIENTE: [áudio] "Sim, chegou. Só que eu preciso saber o índice de carga e a velocidade que esses pneus..."
+[09:54] LOJA: [foto]
+[09:54] LOJA: [foto]
+[09:55] LOJA: [foto]
+[09:57] LOJA: *Josy:*
+Índice de Carga 105: Suporta até 925 kg por pneu.
+[09:57] LOJA: *Josy:*
+Índice de Velocidade S: Certificado para velocidades de até 180 km/h.
+[10:08] CLIENTE: a montagem na compra dos penus ganha o balanceamento gratis?
+[10:08] LOJA: [áudio] "Não."  {audio:midias/3EB0458CE3A206BA396C48_742676.ogg}
+[10:09] LOJA: [áudio] "Quando as empresas adotam, né, de dizer para o cliente que os serviços já estão inclusos no preço do pneu, é apenas um atrativo só para chamar o cliente para a loja, porque de modo geral não é assim que acontece. Aqui, os serviços todos eles têm seu preço, tá bom?"  {audio:midias/3EB0F4DEEBF931A245AAA1_550669.ogg}
+[10:13] LOJA: *Josy:*
+* Balanceamento = 45,00 (por pneu)
+* Alinhamento = 140,00 ( Alinhamento de Direção)
+[10:14] LOJA: *Josy:*
+Montagem R$ 30,00 por roda
+[10:18] CLIENTE: Tem ser para ASFALTO. Quase não anda em estrada de terra.
+[10:18] LOJA: *Josy:*
+Esse é modelo para asfalto!
+[10:19] LOJA: Para terra é bem borrachudo, é como a foto abaixo👇🏻
+[10:20] LOJA: [foto]
+[10:45] LOJA: *Josy:*
+Posso reservar os pneus para vocês?
+[12:05] LOJA: *Josy:*
+Bem, para não ficar enchendo seu whatsapp de mensagem, vou encerrar seu atendimento. Caso precise é só chamar, ou se houver a possibilidade, venham até nossa loja. será uma satisfação receber vocês aqui.
+[12:05] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:05] LOJA: [foto]

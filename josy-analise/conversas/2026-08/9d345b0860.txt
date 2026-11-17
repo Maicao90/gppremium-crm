@@ -1,0 +1,39 @@
+CONVERSA 9d345b0860 | contato: Eugênio | 26/08/2026 20:04 até 27/08/2026 12:53 | 7 msgs do cliente, 15 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[20:04] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[20:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:05] CLIENTE: 175/70/14 gol
+175/65/14 corsa
+--- 27/08/2026 (Thu) ---
+[08:08] LOJA: Bom dia!
+[08:09] LOJA: Pneus da marca *GP Premium*
+[08:09] LOJA: [foto]
+[08:10] LOJA: Estão em oferta. 175/65/14 de R$ 279,00 por R$ 249,00 a vista e 175/70/14 de R$ 299,00 por R$ 279,00 a vista .
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:48] CLIENTE: qual a marca dos pneus?
+[08:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:54] LOJA: *Josy:*
+☺️
+[08:54] LOJA: *Josy:*
+Mora aqui em Luziânia-Go, mesmo?
+[08:55] CLIENTE: 3 vendas
+[08:55] CLIENTE: sim
+[08:55] LOJA: *Josy:*
+Ah, sim!
+[08:55] LOJA: *Josy:*
+É bem pertinho de nós!
+[08:56] LOJA: *Josy:*
+Somos da fabrica GP Premium, aqui na BR 040
+[12:08] LOJA: [áudio] "Senhor Eugênio, eu vou fazer o seguinte, o senhor pretende realizar a troca desses pneus por agora?"  {audio:midias/3EB04EB24AB61BA5EBC7C0_498987.ogg}
+[12:49] CLIENTE: sim
+[12:49] LOJA: [áudio] "Ah, excelente! O senhor já gostaria de agendar aqui a troca dos pneus? Que eu vou aproveitar e já vou te mandar a localização. Se o senhor estiver com o tempo, o senhor passa aqui para nós conversarmos pessoalmente."  {audio:midias/3EB046009FF620A381DD9A_379609.ogg}
+[12:50] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:51] CLIENTE: sei onde fica...
+tô fazendo uma pesquisa e pretendo trocar na próxima semana
+[12:53] LOJA: [áudio] "E aí o meu gerente disse que se o senhor conseguir sacar o dinheiro para trazer aqui para nós, o pneu que é de 249, que é o valor de débito e Pix, ele faz a unidade por 237 reais e o pneu que ele está por 279, ele faz a unidade por 266. Esses valores são para o dinheiro mesmo, tá? Se for débito ou Pix, fica conforme o orçamento que eu te encaminhei."  {audio:midias/3EB0C011064C9D7FC02423_972072.ogg}

@@ -1,0 +1,19 @@
+CONVERSA d5a64807d9 | contato: Renato | 04/09/2026 08:22 até 11/09/2026 17:54 | 2 msgs do cliente, 8 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[08:22] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[08:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:22] CLIENTE: [áudio] "185-65-15. Qual é a promoção que tá tendo aí, meu jovem?"
+[08:44] LOJA: [áudio] "Bom dia, tudo bem com você? Eu sou a Josi. E a promoção é a seguinte, eu tenho aqui o pneu da marca GP Premium, que ele está com uma super oferta. De R$ 289,00, ele está por apenas R$ 249,00 a vista e já fazemos a instalação deles para você. Mora aqui em Luziânia mesmo?"  {audio:midias/3EB0507185ED3D317C6F62_780160.ogg}
+[18:18] LOJA: [foto]
+[18:19] LOJA: [áudio] "Oi Renato, tudo jóia? Pela manhã eu não consegui encaminhar o orçamento com todas as opções que nós tínhamos, que nós temos, né, no caso, porque eu estava sem sistema, tá? Mas até o presente momento eu disponho de todas essas opções de marcas, onde no orçamento está o valor de apenas um pneu. Na primeira coluna é o valor à vista, que é correspondente a Debit ou Pix, e seguem também as opções de parcelamento em até 10 vezes, caso você queira parcelar. Conforme eu te disse, o pneu da marca GP Premium, o preço dele é R$ 289,00 à vista, mas estou fazendo ele aqui por R$ 249,00 apenas, e já realizamos a instalação deles para você. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0AD02ED8F52B8CF898D_761563.ogg}
+--- 10/09/2026 (Thu) ---
+[17:18] LOJA: [áudio] "Oi Renata, tudo bom?"  {audio:midias/3EB0E155245348A94F20DB_267672.ogg}
+[17:18] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[17:54] LOJA: [áudio] "Oi, Renato, tudo bom? Eu vou encerrar aqui o seu atendimento, que até te mandei um vídeo, né, pra ter contato contigo, mas sei que na correria aí você deve ter esquecido de me responder. Então, pra não ficar justamente enchendo seu WhatsApp de mensagens, né, que eu sei que é chato, eu vou encerrar seu atendimento, se houver a possibilidade, você passa aqui na loja, tá bom? Obrigada por sua atenção, até mais."  {audio:midias/3EB0511C359223A55D00F8_996876.ogg}
+[17:54] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

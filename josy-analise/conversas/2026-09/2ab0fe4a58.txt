@@ -1,0 +1,68 @@
+CONVERSA 2ab0fe4a58 | contato: Antenor | 02/09/2026 10:07 até 22/10/2026 09:06 | 19 msgs do cliente, 28 da loja, 3 do robô
+
+--- 02/09/2026 (Wed) ---
+[10:07] LOJA: *Josy:*
+Bom dia!
+[10:07] LOJA: *Josy:*
+Pode enviar um áudio por gentileza?
+[10:08] LOJA: *Josy:*
+Temos sim!
+[10:08] LOJA: *Josy:*
+Já vou te encaminhar o orçamento está bem!
+[10:09] CLIENTE: 👍
+[10:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:10] CLIENTE: Aro 15 perfil 65 espessura 205
+[10:17] LOJA: *Josy:*
+Certo....
+[10:20] LOJA: [áudio] "Você está utilizando essa medida aqui realmente?"  {audio:midias/3EB08D0E516A343BB8EB79_253544.ogg}
+[10:21] LOJA: [áudio] "Porque essa medida é uma medida extremamente grande para usar no Gol. Ela não dá certo, não. No Gol, você pode utilizar aí, que inclusive eu tenho a opção do 185-65-15, que está aqui na oferta, vou de 289 por 249 à vista, vou ter também 195-55-15 e 195-60-15, e 89 também no Valor à Vista, que é Debit PIX."  {audio:midias/3EB055346B162C67471EBE_183925.ogg}
+[10:25] CLIENTE: [áudio] "Pois é, amor. Eu queria esse aí da oferta aí, entendeu? Esse da oferta aí você divide no cartão, não? No valor da oferta? Você não consegue dividir ele no cartão, não? Fala aí pra mim."
+[10:25] LOJA: [áudio] "Eu vou te mandar aqui as opções de parcelamento, tá? Só um instantinho."  {audio:midias/3EB034E4BAB6409CC97FED_452187.ogg}
+[10:26] CLIENTE: [áudio] "Beleza, moça, manda aí pra mim, tá?"
+[10:26] LOJA: [foto]
+[10:26] LOJA: [áudio] "Ó, pra parcelar, você pode observar que muda muito pouca coisa de uma parcela pra outra. É R$ 3,00. É muito pouca coisa mesmo. Você quer que eu separo quantos pneus aqui pra você hoje? Esse daí é na medida 185-65-15."  {audio:midias/3EB025390AC178E57F1936_210268.ogg}
+[10:28] CLIENTE: [áudio] "Ouvir aqui, moço, aí, que esse carro era minha filha, entendeu? Aí, eu vou ver com ela aqui, aí nós vai, tá? Pra nós botar esses pneus. Aí, é... Deixa eu te perguntar, aí vocês dá a colocar, né? A mão de obra de colocar já inclui isso aí, né? Como é que é? Fala aí pra nós."
+[10:34] LOJA: [áudio] "Sim, isso mesmo. A mão de obra de colocar os pneus já está inclusa. Pode ficar tranquila que eu faço, tá bom?"  {audio:midias/3EB0C46854A60C35C17106_583476.ogg}
+[10:35] CLIENTE: [áudio] "Então tá bom, moço. Daqui a pouco eu vou aí, tá? Pra nós botar esses pneus. Beleza? Então tá, moço. Obrigado."
+[10:38] LOJA: *Josy:*
+Beleza!
+[10:39] LOJA: [foto]
+[10:39] LOJA: [áudio] "Aí, como eu vi que você quer parcelar, nós negociamos aqui de uma maneira que fique boa para vocês, tá bem?"  {audio:midias/3EB019DFA119F33C6115C8_784134.ogg}
+[10:45] CLIENTE: [áudio] "Beleza, moço? Obrigado, viu? Mais tarde eu tô aí, beleza?"
+--- 20/09/2026 (Sun) ---
+[11:11] CLIENTE: Opa tô querendo comprar dois pneus
+[11:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:11] CLIENTE: O aro é
+[11:11] CLIENTE: 235/75r15
+--- 21/09/2026 (Mon) ---
+[08:28] LOJA: [áudio] "Bom dia, Sra. Antenor. Tudo jóia?"  {audio:midias/3EB0219867B48F38A41B56_154187.ogg}
+[08:28] LOJA: [foto]
+[08:28] LOJA: [áudio] "Eu tenho aqui o pneu novo importado da marca Conforce. A unidade está por R$ 728 a vista."  {audio:midias/3EB02E2289DBC306BC71B3_674028.ogg}
+[08:39] CLIENTE: Não é pra mim ai eu vou falar pra ele o preço
+[08:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 21/10/2026 (Wed) ---
+[15:55] CLIENTE: Opa boa tarde
+[15:55] ROBÔ: Oi, tudo bem? Em que posso te ajudar?
+[15:56] CLIENTE: Queria ver os pneus aro 15 195 45
+[15:56] ROBÔ: [áudio — sem transcrição]
+[15:57] CLIENTE: Não tou conseguindo ouvir o ceu áudio
+[16:00] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[16:01] CLIENTE: Nem  o 15 195 55
+[16:01] LOJA: esse temos!
+[16:02] CLIENTE: Qual valor
+[16:03] LOJA: 1 instante por gentileza!
+[16:03] LOJA: [foto]
+[16:03] LOJA: No dia de hoje temos Dunlop e GP Premium opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:04] CLIENTE: O valor avista é 289
+[16:11] LOJA: Isso ... valor para débito/pix  se for em *dinheiro* fica por R$ 275,00
+[16:15] CLIENTE: Talvez amanhã eu vou aí comprar
+[16:15] LOJA: Sabe onde fica nossa loja?
+[16:16] CLIENTE: Sou cliente compro direto aí
+[16:18] LOJA: Beleza então...ficamos combinados!
+--- 22/10/2026 (Thu) ---
+[09:06] ROBÔ: 🙋🏼‍♀️

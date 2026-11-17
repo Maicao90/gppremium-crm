@@ -1,0 +1,13 @@
+CONVERSA 0800a9b5c7 | contato: Frederico Vasconcelos | 19/08/2026 13:09 até 19/08/2026 13:11 | 6 msgs do cliente, 3 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[13:09] CLIENTE: Boa tarde
+[13:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:09] CLIENTE: 265/60/R18
+[13:09] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi e você mora aqui na cidade de Luziânia, Goiás mesmo?"  {audio:midias/3EB04DB14403D8F609546F_910816.ogg}
+[13:10] CLIENTE: Não
+[13:10] CLIENTE: Em Goiânia
+[13:11] LOJA: [áudio] "Ah, sim, perfeito. Eu vi que o seu DDD é de outra localidade e nós não atendemos essa região."  {audio:midias/3EB032FE5F619FD9CBA112_710389.ogg}
+[13:11] CLIENTE: Ok
+[13:11] CLIENTE: Obrigado

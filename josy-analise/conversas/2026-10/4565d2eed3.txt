@@ -1,0 +1,30 @@
+CONVERSA 4565d2eed3 | contato: E.David | 08/10/2026 16:18 até 08/10/2026 16:38 | 6 msgs do cliente, 16 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[16:18] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Boa tarde queria saber quanto está o peneu 205 65 16 e o 205 60 16
+[16:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:20] LOJA: Oi!
+[16:20] LOJA: Tudo bem Elvis!
+[16:20] LOJA: Vou fazer seu orçamento.
+[16:21] LOJA: Teremos 205/60/16
+[16:21] LOJA: [foto]
+[16:21] LOJA: Pneu da marca GP Premium
+[16:22] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:22] LOJA: [foto]
+[16:23] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Eles são sem câmara ?
+[16:23] LOJA: [áudio] "Exatamente. Não são produzidos mais pneus com câmera já tem muitos anos."  {audio:midias/3EB08BB1FD96F9DD143577_529356.ogg}
+[16:24] CLIENTE: [áudio] "Não, tá ok. O preço tá até mais em conta. É porque eu tô fazendo orçamento que eu vou ter que comprar 2, 205, 60, 16 e 2, 205, 65, 16 também. O 65 faz de quanto?"
+[16:26] LOJA: [foto]
+[16:26] LOJA: [áudio] "Bem, no dia a dia eu já tenho as duas últimas unidades do pneu no perfil 65. Cada pneu está por R$ 483,00, se o pagamento for à vista."  {audio:midias/3EB0F394605FAED07EF9E3_347751.ogg}
+[16:27] CLIENTE: [áudio] "Me tira mais uma dúvida, é porque meu carro tem um jogo de rodar aro 20, só que eles são perfis baixos. Aí eu coloquei esses mais altos porque eu precisei ir numa roça, só que os pneus estão meia vida, aí daqui a uns dias eu vou ter que trocar, principalmente os de trás. Aí eu queria saber se você também tem um 205, 35, 20. É porque eu vou ter que trocar os dois de trás porque eles estão no perfil 30, só que tá danificando muito o pneu por causa do peso do carro, que tem som lá pra trás, aí é muito pesado, aí tá danificando uns 30, eu tenho que colocar uns 35."
+[16:28] LOJA: Hoje temos também!
+[16:28] LOJA: [foto]
+[16:29] CLIENTE: Vcs trabalha com a marca Delint
+[16:30] LOJA: [áudio] "No dia de hoje, especificamente, a opção que eu tenho é essa, tá? O delinte, se meu distribuidor tiver somente por encomenda, tá? Aí, mais adiante, quando você for fazer a troca, né, deles, você me comunica que eu faço um orçamento pra você, porque os valores sempre mudam, então, se você quiser mais daqui uns dias próximo, quando você precisar, eu realizo um orçamento pra você. Tchau, tchau, tchau."  {audio:midias/3EB076B33860A349CB009A_542351.ogg}
+[16:37] CLIENTE: [áudio] "Não, tá ok, entendi. É porque, assim, esse tá tudo delinte, né? São os 4 delintes, só que eu vou trocar só os dois de trás. Aí eu consigo os 2 delintes também, porque tá pelo menos na mesma marca, é tudo novo, só que tá dando problema demais. Aí assim que eu for comprar, eu te aviso, tá bom? Muito obrigado."
+[16:38] LOJA: [áudio] "Sim, entendo perfeitamente."  {audio:midias/3EB085A7A2A4BE3A8699A8_994942.ogg}

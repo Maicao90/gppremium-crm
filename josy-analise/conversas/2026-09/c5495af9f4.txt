@@ -1,0 +1,24 @@
+CONVERSA c5495af9f4 | contato: Assis Bispo | 29/09/2026 14:24 até 29/09/2026 16:58 | 5 msgs do cliente, 9 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[14:24] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[14:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:24] CLIENTE: 175 70 13
+[14:25] LOJA: *Josy:*
+Temos sim!
+[14:25] LOJA: [foto]
+[14:26] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:45] LOJA: [áudio] "Você mora aqui em Luziânia mesmo ou cis?"  {audio:midias/3EB0EEBE7EDCBE1B50CC5B_974765.ogg}
+[15:17] CLIENTE: [áudio] "Oi, boa tarde. Sim, moro aqui em Luziânia."
+[15:18] LOJA: [áudio] "Ah, que bacana! E senhora Assis, quer que eu reservo alguma dessas opções aí para o senhor?"  {audio:midias/3EB043C1EC49E8DA52C0E2_597471.ogg}
+[15:18] CLIENTE: [áudio] "Não, não, eu quero um pneu mais em conta, é pra carretinha. Esse aí tá fora do meu orçamento. Por hora, não. Obrigado."
+[15:20] LOJA: [áudio] "Eu tenho 165,70 a 13. Se o senhor trouxer o pagamento em dinheiro pra mim, sacar e trazer aqui pra mim, eu faço por 227 cada pneu. É porque pneu é bom também, tem que aguentar e o serviço da carretinha, né?"  {audio:midias/3EB0518165835919CADF3D_142208.ogg}
+[16:34] LOJA: [áudio] "Eu compreendo. De todo modo, eu vou fazer o seguinte, seu Assis, a priori vou encerrar aqui o seu atendimento, tá, jóia? Mas eu vou deixar aqui a nossa localização. Caso o senhor mude de ideia, o senhor passa aqui para nós conversarmos pessoalmente, tá, jóia?"  {audio:midias/3EB0E19D0C7BF30FA96990_681176.ogg}
+[16:34] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:58] CLIENTE: Ok muito obrigado pela atenção

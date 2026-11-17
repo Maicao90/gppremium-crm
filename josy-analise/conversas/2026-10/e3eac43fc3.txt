@@ -1,0 +1,37 @@
+CONVERSA e3eac43fc3 | contato: Dj Davi Connection Sound | 20/10/2026 19:23 até 21/10/2026 14:04 | 6 msgs do cliente, 12 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[19:23] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[19:23] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[19:23] CLIENTE: 205/70 r15 scorpion para palio adventure
+--- 21/10/2026 (Wed) ---
+[08:19] LOJA: Bom dia!
+[08:20] LOJA: Tenho a pronta entrega os pneus da marca GP Premium .
+[08:20] LOJA: [foto]
+[08:20] LOJA: No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:21] LOJA: [foto]
+[08:22] CLIENTE: E Remold?
+[08:22] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[08:23] CLIENTE: E Remold?
+[08:23] LOJA: [áudio] "Esse é o GP Premium, que é um pneu ecológico que a nossa empresa faz. Ele vai entrar na categoria de remodelagem apenas por questão técnica. Se você quiser, eu faço um vídeo para poder te explicar o que é um pneu remold mesmo, da diferença dele para o pneu GP Premium."  {audio:midias/3EB023E3A7189B9317AD81_390525.ogg}
+[08:45] CLIENTE: Manda vídeos
+[08:46] CLIENTE: Não conhecia esse
+[08:55] LOJA: Vou mandar sim!
+[09:24] LOJA: [áudio] "Senhor Davi, eu só estou aguardando os meninos finalizarem, porque como nós fazemos ele aqui mesmo, né, nossa produção é diária. Eu só estou aguardando eles terminarem de fazer o pneu ali, que aí eu já faço vídeo para você, tá?"  {audio:midias/3EB0738BFFEB998187451D_240698.ogg}
+[10:05] LOJA: Acabou de ser produzido
+[10:05] LOJA: [vídeo]
+[14:04] ROBÔ: 🙋🏼‍♀️

@@ -1,0 +1,36 @@
+CONVERSA dac7dabbf7 | contato: Elber Guimarães | 04/09/2026 09:39 até 11/09/2026 08:47 | 6 msgs do cliente, 14 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[09:39] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso?
+[09:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:39] CLIENTE: Pneu aro 18 para creta 2.0
+[09:47] LOJA: *Josy:*
+Voc~e usa aí
+[09:47] LOJA: [foto]
+[09:47] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:49] CLIENTE: Aonde fica a loja de bcs?
+[09:53] LOJA: [áudio] "Olá, bom dia, tudo bem? Nós estamos aqui de Luziânia, Goiás. Você fala de onde?"  {audio:midias/A5D9FC45395EE5FC07067F243052B50B_732293.ogg}
+[10:04] CLIENTE: Brasília, mas moro em valparaiso
+[10:07] LOJA: [áudio] "Ah, sim. Perfeito. Eu vou te mandar aqui a nossa localização, ok? Você passa aqui na loja para nós conversarmos pessoalmente."  {audio:midias/3EB0087934EB4CA3550984_234131.ogg}
+[10:07] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 10/09/2026 (Thu) ---
+[16:54] LOJA: [áudio] "Oi, Elber. Tudo bem com você?"  {audio:midias/3EB067ACCCF6ECABB3F03C_110060.ogg}
+[16:54] LOJA: [vídeo]
+[20:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:35] CLIENTE: [áudio] "Oi Josi, eu não consegui, foi tempo de ir até aí Josi, mas sim, eu quero, vou comprar o pneu e não sei se eu consigo ir esse final de semana, se eu não for esse final de semana eu vou no outro, mas eu só consigo ir no final de semana, tá bom? Aí provavelmente eu vá, sem ser nesse sábado, no outro aí em vocês. Você é de Luziana, se não me engano, é isso?"
+--- 11/09/2026 (Fri) ---
+[08:02] LOJA: [áudio] "Olá, bom dia. Sim, nós somos aqui de Luziânia."  {audio:midias/3EB0FAFA7BB9558732C67B_91725.ogg}
+[08:02] LOJA: [áudio] "Ainda tem a localização na nossa conversa?"  {audio:midias/3EB069DF5CD066F812B5CF_258198.ogg}
+[08:44] CLIENTE: Tenho sim
+[08:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:47] LOJA: *Josy:*
+Bom final de semana.

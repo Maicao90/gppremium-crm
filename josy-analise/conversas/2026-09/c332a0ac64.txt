@@ -1,0 +1,27 @@
+CONVERSA c332a0ac64 | contato: Gilberto | 08/09/2026 11:54 até 22/09/2026 15:46 | 2 msgs do cliente, 10 da loja, 0 do robô
+
+--- 08/09/2026 (Tue) ---
+[11:54] CLIENTE: Bom dia!
+[11:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:55] CLIENTE: Pneu 195/55 r15
+Qual é o valor?
+[12:00] LOJA: *Josy:*
+Obrigada por aguardar!
+[12:00] LOJA: [foto]
+[12:00] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:19] LOJA: [áudio] "Olá, tudo bem com você? Eu te encaminhei um orçamento com as opções que nós temos aqui no dia de hoje e eu gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB076CAC4339B9908A50A_635735.ogg}
+[16:38] LOJA: *Josy:*
+Gilberto...
+--- 10/09/2026 (Thu) ---
+[12:29] LOJA: [áudio] "Oi Gilberto, tudo bom? Eu te encaminhei um orçamento ontem e gostaria de saber se você teve a oportunidade de analisar e se também gostaria de seguir com a negociação. Você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB07800264BC013E7BA4E_560076.ogg}
+--- 11/09/2026 (Fri) ---
+[13:42] LOJA: *Josy:*
+Oi!
+[13:42] LOJA: [vídeo]
+--- 22/09/2026 (Tue) ---
+[15:46] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

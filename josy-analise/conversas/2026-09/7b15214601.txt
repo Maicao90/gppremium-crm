@@ -1,0 +1,16 @@
+CONVERSA 7b15214601 | contato: Filipe | 12/09/2026 10:51 até 22/09/2026 15:45 | 4 msgs do cliente, 5 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[10:51] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:51] CLIENTE: Tem remold?
+[10:57] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Felipe, eu preciso saber qual é a medida dos pneus que você precisa aqui e aí eu te passo o preço."  {audio:midias/A525BB6602A61EAEDC7A42C4BB87B5FF_851112.ogg}
+[11:02] CLIENTE: 185 60 15
+[11:04] CLIENTE: ?
+[11:06] LOJA: [áudio] "Nossa, moço, obrigada por aguardar. A loja encheu, aqui eu não consegui te responder de imediato, tá? Está por apenas R$ 249,00 e já faz a instalação para você."  {audio:midias/A58FD442210D53673A43487777152F9B_107544.ogg}
+--- 16/09/2026 (Wed) ---
+[11:59] LOJA: [áudio] "Oi Felipe, tudo bom contigo? Felipe, te encaminhei o orçamento aí na segunda-feira e eu gostaria muito de saber se você pretende seguir com a negociação. Você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0A8808011DC64FEE392_47706.ogg}
+--- 22/09/2026 (Tue) ---
+[15:45] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

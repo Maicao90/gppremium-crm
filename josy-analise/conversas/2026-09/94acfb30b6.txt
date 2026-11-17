@@ -1,0 +1,16 @@
+CONVERSA 94acfb30b6 | contato: Sideney Santos🚛 | 19/09/2026 09:21 até 19/09/2026 10:34 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[09:21] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:22] CLIENTE: 235/45 R19
+[09:22] LOJA: Oi
+[09:24] LOJA: [foto]
+[09:25] LOJA: [áudio] "Oi, tudo bom? Eu tenho aqui sim, tá joia? E vai ser o pneu da marca Linglong. Cada pneu está por 676 reais à vista. Você está aqui em Luziânia?"  {audio:midias/3EB014615A3209A579D3C9_661855.ogg}
+[09:32] CLIENTE: [áudio] "Minha amiga, deixa eu te perguntar, esse é o seu mais em conta que você tenha pronta entrega?"
+[09:41] LOJA: [áudio] "Sim, esse é o mais em conta que eu tenho a pronta entrega."  {audio:midias/3EB09E2CBBCB3EF2C82DC0_636752.ogg}
+[09:41] CLIENTE: [áudio] "Minha amiga, eu te agradeço, vou contar aqui em algumas outras lojas, mas de antemão eu te agradeço muito pelo atendimento, tá? Um bom dia, um bom trabalho."
+[09:53] LOJA: [áudio] "Bom dia, bom dia. Eu ia falar, vou trabalhar, não sei se você tá trabalhando hoje. Mas enfim, de todo modo, eu vou te mandar aqui a nossa localização, porque aqui pra mim não aparece o nome da pessoa, né, não tenho referência. Então, eu vou encerrar aqui o seu atendimento, mas eu vou mandar nossa localização, que se porventura a minha opção te atender, você passa aqui pra nós conversarmos pessoalmente, tá joia?"  {audio:midias/A5A9652ABA7E656D7B300A7719BDA302_705340.ogg}
+[09:54] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:34] CLIENTE: [áudio] "Opa, bom dia. Tranquilo. Eu vou salvar aqui o número de vocês. Já está salvo, na verdade, né? E eu conheço um pouquinho aí a Luziana aí. Assim que eu tiver uma oportunidade, eu passo aí para a gente negociar em dois aí. Porque agora, no momento, eu achei o precinho meio salgado. Deixa para a próxima, tá bom?"

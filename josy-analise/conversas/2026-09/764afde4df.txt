@@ -1,0 +1,14 @@
+CONVERSA 764afde4df | contato: Elizeu Lemos | 30/09/2026 08:49 até 30/09/2026 08:53 | 5 msgs do cliente, 4 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[08:49] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[08:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:49] CLIENTE: Bom dia
+[08:49] LOJA: *Josy:*
+Bom dia!
+[08:50] CLIENTE: [foto] 275/60-20
+[08:50] CLIENTE: Tem esse pneu Yokohama
+[08:50] LOJA: [áudio] "Olá, bom dia. Tudo bem? Meu nome é Josi e nós somos aqui de Luziânia, Goiás. Você mora por aqui?"  {audio:midias/3EB00BBAF211F1638B314B_986858.ogg}
+[08:52] CLIENTE: [áudio] "Não, mano, não. Pensei de ser exposto de Goiânia."
+[08:53] LOJA: [áudio] "Infelizmente, não somos."  {audio:midias/3EB0DDC952F2D6DBF46B19_492279.ogg}

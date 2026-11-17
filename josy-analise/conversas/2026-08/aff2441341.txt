@@ -1,0 +1,29 @@
+CONVERSA aff2441341 | contato: Matheus Doria | 20/08/2026 13:19 até 02/09/2026 18:12 | 10 msgs do cliente, 11 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[13:19] LOJA: Bom dia!
+[13:27] CLIENTE: [áudio] "E aí, eu consigo te passar a informação, se eu vou ficar com os pneus ou não, até mais ou menos o finalzinho da tarde, que eu tô só resolvendo aqui uma logística, eu tô muito corrido, pode ser?"
+[13:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:28] CLIENTE: Era 225 45 r17
+[14:39] LOJA: [áudio] "Perfeito, Matheus, vamos nos falando, está bem?"  {audio:midias/3EB0A84815D94FE712DBE1_725515.ogg}
+--- 21/08/2026 (Fri) ---
+[06:49] CLIENTE: Bom dia
+[06:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[06:49] CLIENTE: Tudo bem ?
+[06:49] CLIENTE: Ai que horas o caminhão vai vim para o mais perto de águas ?
+[07:57] LOJA: Bom dia!
+[07:58] LOJA: Consigo chegar apenas até i Novo Gama. E ainda preciso verificar se haverá entregas.
+[09:43] CLIENTE: [áudio] "Não, tranquilo então. Qual é a coisa? Eu dou um pulo aí na sua loja. Fica aberto até que horas?"
+[09:43] LOJA: [áudio] "Matheus, aqui é de 8 da manhã às 18, não fecha em horário algum."  {audio:midias/3EB0CEEB40488D3CF4724F_673721.ogg}
+[09:43] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:43] CLIENTE: [áudio] "Não, beleza, então. Eu vou ver o que eu consigo e te aviso."
+--- 02/09/2026 (Wed) ---
+[17:40] LOJA: [áudio] "Oi Matheus, tudo jóia? Nós conversamos aí alguns dias atrás, você ficou de vir aqui, acabou que não veio. E aí, o que você decidiu a respeito dos pneus?"  {audio:midias/3EB08FCBF3A7EFCE919C50_864843.ogg}
+[18:02] CLIENTE: [áudio] "E aí, tudo bom? Então, o que aconteceu foi o seguinte, foi por causa que eu tive um... teve a corrida, né? Aí acabou que eu não consegui dar um pulo aí, entendeu?"
+[18:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:02] CLIENTE: [áudio] "Mas aí eu vou ter outra corrida lá no Naí, aí eu vou tentar esquematizar para o próximo pneu também."
+[18:11] LOJA: [áudio] "Fechou, meu jovem? Vamos nos falando, tá bom?"  {audio:midias/3EB0B7A4B076634789B3E1_235855.ogg}
+[18:12] CLIENTE: Blz

@@ -1,0 +1,36 @@
+CONVERSA 0f61dd4054 | contato: Kleber  lutar sempre vencer talvez mais nunca desistir Deus acima de tudo | 12/09/2026 08:16 até 12/09/2026 10:21 | 18 msgs do cliente, 14 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[08:16] CLIENTE: [áudio] "Bom dia, bom dia."
+[08:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:17] CLIENTE: [áudio] "Vocês tem um pneu da S10? Flex 2010 gabina dupla?"
+[08:18] CLIENTE: r16
+[08:18] CLIENTE: 235
+[08:25] LOJA: [áudio] "Se for 235-70 aro 16, tenho aqui sim o pneu da marca GT Premium, naquele modelo off-road, a unidade está por apenas, deixa eu verificar aqui para ti moço, 235-70 aro 16, ele vai estar por apenas 489 reais à vista."  {audio:midias/A5EAC7D717620E205C22974CB1755B8F_873578.ogg}
+[08:25] LOJA: [áudio] "Você mora aqui em Luziânia?"  {audio:midias/A5BF046D76A23D7B1D8F4CA855783232_726187.ogg}
+[08:26] CLIENTE: [áudio] "No Ornão, moro em Cunhabá, mas eu tô aqui na Luziânia, tô no ônibus, e aí tô com o pessoal aqui até amanhã. Eu vou ver a marca do outro lá, que eu tenho lá, que eu comprei, tem que ser do mesmo modelo, senão vai ficar diferente. Comprei dois aí, dependendo do preço eu compro mais dois aqui."
+[08:27] LOJA: [áudio] "Eu vou te mandar aqui a foto do modelo que eu tenho, tá, Jaya?"  {audio:midias/A563B28955583508D178237BB403A423_884378.ogg}
+[08:27] LOJA: [foto]
+[08:27] CLIENTE: [foto]
+[08:28] CLIENTE: [áudio] "Ah, esse é borrachudo, né? Agora o meu outro lá tá meio liso. Só que é pra traseira, né? Vai ficar ruim, vai ficar diferente."
+[08:28] LOJA: Isso
+[08:29] CLIENTE: [áudio] "Você não tem mais ou menos desse modelo, porque se eu colocar esse aí vai ser borrachudo, aí na frente tá liso, aí ela vai ficar, não vai ficar padrão, vai ficar feia a caminhonete."
+[08:31] LOJA: [áudio] "E eu só tenho nesse modelo, no modelo mais liso, eu vou ter o 245-70."  {audio:midias/A50FE1FFC2FD34896C1A08CCF66F9A17_959089.ogg}
+[08:32] CLIENTE: [áudio] "Manda foto dele para mim. Traseira não tem importância não, ficar mais alto só um pouquinho, né, a traseira lá não tem importância não. Na frente o 245 ela pega lá porque não é distersar, mas na traseira não tem importância não."
+[08:33] LOJA: [foto]
+[08:33] LOJA: [foto]
+[08:47] CLIENTE: [foto]
+[08:47] CLIENTE: [áudio] "É o mesmo que eu coloquei na frente. Estou passando aí para mim dar uma olhada."
+[08:51] LOJA: [áudio] "Beleza, vou te mandar a localização, tá bom?"  {audio:midias/A53B5E3053D831516A9A64F9137A467C_961895.ogg}
+[08:52] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:52] LOJA: [áudio] "Ó, aí tem a foto da frente da nossa loja, jóia? É a pneus GP Premium. E a porta tá aberta, tá bom?"  {audio:midias/A55ED38CF6936D1B96B2ED72F938D7C4_192297.ogg}
+[08:58] CLIENTE: [áudio] "Tá bom? Tomei um cafezinho aí da manhã hoje, um blackout. Já indiquei pro pessoal lá do Cuiabá lá, vai te ligar aí. Aí já tô encostando aí."
+[08:58] CLIENTE: [foto]
+[09:40] CLIENTE: [documento]
+[10:19] CLIENTE: O 215-65-16
+[10:19] CLIENTE: Liso
+[10:19] CLIENTE: valor
+[10:19] CLIENTE: desse ai
+[10:20] LOJA: [foto]
+[10:21] LOJA: [áudio] "Tem nesse modelo liso sim, tá? E ele está por 349 reais."  {audio:midias/A56B73FAE2E55DCEFFDF713BF7F969E9_53541.ogg}

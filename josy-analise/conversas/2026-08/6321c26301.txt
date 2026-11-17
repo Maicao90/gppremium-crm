@@ -1,0 +1,18 @@
+CONVERSA 6321c26301 | contato: Régis 🌴😎 | 28/08/2026 11:58 até 28/08/2026 12:20 | 2 msgs do cliente, 6 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[11:58] CLIENTE: Bom dia
+[11:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:59] LOJA: *Josy:*
+[11:58, 28/08/2026] +55 61 9275-2206: Bom dia
+[11:58, 28/08/2026] pneus gp premium:
+[11:59] LOJA: *Josy:*
+Bom dia!
+[12:15] LOJA: *Josy:*
+Por gentileza...Qual a medida dos pneus que você precisa hoje?
+[12:17] CLIENTE: Foi mns errada
+[12:20] LOJA: *Josy:*
+Ah, sim!
+[12:20] LOJA: *Josy:*
+Bom final de semana

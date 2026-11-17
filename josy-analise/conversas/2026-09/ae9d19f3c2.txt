@@ -1,0 +1,23 @@
+CONVERSA ae9d19f3c2 | contato: Tiago Silva oliveira | 18/09/2026 10:01 até 22/09/2026 15:15 | 2 msgs do cliente, 11 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[10:01] LOJA: *Josy:*
+Bom dia, Tiago.
+[10:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:03] CLIENTE: [áudio] "Opa, bom dia, tudo bem? Eu sou o rapaz que falei com você agora. Eu esqueci de perguntar, o Thiago, eu esqueci de perguntar qual seria a marca dos pneus. Se ele era Pirelli, se ele era Goldia..."
+[10:04] LOJA: *Josy:*
+Marca GP Premium, confotmr o anúncio.
+[10:04] CLIENTE: 195/55/15
+[10:05] LOJA: [foto]
+[10:11] LOJA: [áudio] "Tiago, são os pneus da marca GP Premium, exatamente conforme o anúncio, tá? O 185-65, eu só digitei aqui errado, ele é R$249,00, se for pro débito ou no Pix, tá? E o 195-55-15, ele está por R$289,00. Ambas as opções já entregamos colocadas pra você. Se eu estou aguardando os meninos aqui da oficina me passarem o valor de serviços, tá bom?"  {audio:midias/3EB00C039B8485C3AE5C65_114420.ogg}
+[10:12] LOJA: *Josy:*
+* Balanceamento = 30,00
+* Alinhamento = 100,00
+[10:12] LOJA: *Josy:*
+Valores negociaveis.
+[10:19] LOJA: *Josy:*
+Vou te encaminhar a nossa localização, está bem!
+[11:00] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 22/09/2026 (Tue) ---
+[15:15] LOJA: [áudio] "Oi Thiago, tudo jóia? Thiago, nós nos falamos no final de semana passada e eu gostaria de saber se você ainda está precisando dos pneus, até te mandei aqui a nossa localização, mas creio eu que você não tenha conseguido vir aqui. Assim que possível me dá um retorno, me diz se ainda precisa desses pneus e se até mesmo já realizou a compra deles, somente para eu pausar aqui o meu WhatsApp, tá jóia?"  {audio:midias/3EB0573C5EFDC8DB7BA714_843429.ogg}

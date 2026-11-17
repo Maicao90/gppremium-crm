@@ -1,0 +1,69 @@
+--- originais/CerebroRobo.jsx	2026-10-22 17:42:23.167620776 +0000
++++ /root/aprendizado-lab-painel/src/pages/CerebroRobo.jsx	2026-10-22 20:08:52.465573023 +0000
+@@ -1,14 +1,16 @@
+ import { useCallback, useEffect, useMemo, useState } from 'react';
+ import { Brain, Check, X, Play, RefreshCw, Trash2, Pencil, Send } from 'lucide-react';
+ import { api } from '../atendimento/api';
+-import { ACOES, COR_GRAVIDADE, TIPOS, dataBR, vazio } from '../components/cerebroConstantes';
++import { ACOES, COR_GRAVIDADE, ORIGEM, RE_MARCADOR_AUDIO, TIPOS, dataBR, paragrafos, vazio } from '../components/cerebroConstantes';
+ import { FormLicao, Bolhas } from '../components/cerebroComum';
+ import { MapaCerebro } from '../components/MapaCerebro';
++import { AprendizadoJosy } from '../components/AprendizadoJosy';
+ import './FluxoAtendimento.css';
+ 
+ // CEREBRO DO ROBO (22/10): o dono ensina o robo ("quando o cliente X, faca Y"), testa, e aprova as correcoes que a
+ // revisao diaria das conversas sugere. O robo so muda com aprovacao — nada se ensina sozinho.
+ // Aba "Mapa do cerebro" (22/10, pedido do dono: "todo interativo, tipo com neuronios") em components/MapaCerebro.jsx.
++// Aba "Aprendizado da Josy" (22/10): respostas fixas do jeito da atendente, com os audios dela, em components/AprendizadoJosy.jsx.
+ 
+ function Testar({ lojas, rascunho }) {
+   const [msg, setMsg] = useState('');
+@@ -114,6 +116,7 @@
+   const lojas = dados?.lojas || [];
+   const ativas = (dados?.licoes || []).filter((l) => l.ativo).length;
+   const pendentesHoje = dados?.revisoes?.[0]?.pendentes || 0;
++  const pendentesJosy = dados?.aprendizado?.pendente || 0;
+   const achados = useMemo(() => (rev?.achados || []).filter((a) => !soPendentes || a.status === 'pendente'), [rev, soPendentes]);
+ 
+   const revisarAgora = async () => {
+@@ -147,6 +150,7 @@
+         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
+           <span className="badge">{ativas} ensinamento{ativas === 1 ? '' : 's'} ativo{ativas === 1 ? '' : 's'}</span>
+           {dados.revisoes?.[0] && <span className="badge" style={{ background: 'rgba(217,137,42,0.15)', color: '#d9892a' }}>{pendentesHoje} correç{pendentesHoje === 1 ? 'ão' : 'ões'} pra revisar ({dataBR(dados.revisoes[0].data)})</span>}
++          {pendentesJosy > 0 && <button type="button" className="badge" style={{ background: 'rgba(232,121,249,0.14)', color: '#F0ABFC', border: 0, cursor: 'pointer' }} onClick={() => setAba('josy')}>{pendentesJosy} proposta{pendentesJosy === 1 ? '' : 's'} do jeito da Josy</button>}
+           {dados.rodando
+             ? <span className="badge" style={{ background: 'rgba(29,158,94,0.14)', color: 'var(--success-color)' }}><RefreshCw size={12} style={{ verticalAlign: -2 }} /> revisando as conversas de {dataBR(dados.rodando.data)}…</span>
+             : <button type="button" className="btn btn-secondary" onClick={revisarAgora}><Play size={14} /> Revisar as conversas de hoje agora</button>}
+@@ -156,6 +160,7 @@
+ 
+       <div className="fx-abas" role="tablist">
+         <button type="button" className={`fx-aba ${aba === 'mapa' ? 'fx-aba-ativa' : ''}`} onClick={() => setAba('mapa')}>Mapa do cérebro</button>
++        <button type="button" className={`fx-aba ${aba === 'josy' ? 'fx-aba-ativa' : ''}`} onClick={() => setAba('josy')}>Aprendizado da Josy{pendentesJosy > 0 ? ` (${pendentesJosy})` : ''}</button>
+         <button type="button" className={`fx-aba ${aba === 'revisao' ? 'fx-aba-ativa' : ''}`} onClick={() => setAba('revisao')}>O que errou (revisão diária)</button>
+         <button type="button" className={`fx-aba ${aba === 'ensinar' ? 'fx-aba-ativa' : ''}`} onClick={() => setAba('ensinar')}>Ensinamentos</button>
+         <button type="button" className={`fx-aba ${aba === 'testar' ? 'fx-aba-ativa' : ''}`} onClick={() => setAba('testar')}>Testar o robô</button>
+@@ -163,6 +168,8 @@
+ 
+       {aba === 'mapa' && <MapaCerebro lojas={lojas} onMudou={carregar} />}
+ 
++      {aba === 'josy' && <AprendizadoJosy lojas={lojas} onMudou={carregar} />}
++
+       {aba === 'revisao' && (
+         <div style={{ display: 'grid', gap: 12 }}>
+           <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
+@@ -200,11 +207,13 @@
+                 <>
+                   <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
+                     <b style={{ flex: 1 }}>Quando o cliente {l.situacao.replace(/^quando o cliente\s*/i, '')}</b>
+-                    <span className="badge">{l.origem === 'revisao' ? 'veio da revisão' : 'você ensinou'}</span>
++                    <span className="badge">{ORIGEM[l.origem] || ORIGEM.dono}</span>
+                     <span className="muted-hint" style={{ margin: 0 }}>usado {l.usos || 0}x</span>
+                   </div>
+                   <div className="muted-hint" style={{ margin: 0 }}>→ {ACOES[l.acao]}{l.lojas?.length ? ` · ${l.lojas.map((id) => lojas.find((x) => x.id === id)?.nome || id).join(', ')}` : ' · todas as lojas'}</div>
+-                  {l.resposta && <div style={{ whiteSpace: 'pre-wrap', fontSize: '0.9rem' }}>{l.resposta}</div>}
++                  {l.resposta && (l.acao === 'responder' && paragrafos(l.resposta).some((x) => RE_MARCADOR_AUDIO.test(x))
++                    ? <Bolhas partes={paragrafos(l.resposta)} />
++                    : <div style={{ whiteSpace: 'pre-wrap', fontSize: '0.9rem' }}>{l.resposta}</div>)}
+                   <div style={{ display: 'flex', gap: 8 }}>
+                     <button type="button" className="btn btn-secondary" style={{ padding: '4px 10px', fontSize: '0.78rem' }} onClick={() => alternar(l)}>{l.ativo ? 'Desligar' : 'Ligar'}</button>
+                     <button type="button" className="btn btn-secondary" style={{ padding: '4px 10px', fontSize: '0.78rem' }} onClick={() => setEditando({ ...l })}><Pencil size={12} /> Editar</button>

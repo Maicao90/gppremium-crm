@@ -1,0 +1,53 @@
+CONVERSA 00372380fc | contato: Wanderson | 03/09/2026 11:41 até 08/09/2026 15:04 | 14 msgs do cliente, 20 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[11:41] CLIENTE: Bom dia , gostaria de fazer um orçamento,  quanto está saindo o pneu 215/65 R16 ?
+[11:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:42] LOJA: *Josy:*
+Bom dia!
+[11:43] LOJA: [foto]
+[11:44] LOJA: *Josy:*
+No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:58] CLIENTE: Estou aguardando resposta
+[11:59] CLIENTE: E por que é pra um amigo meu , assim que ele der a resposta eu confirmo aí
+[11:59] CLIENTE: Posso fazer orçamento também dos pneus aro 13 ?
+[11:59] CLIENTE: A quanto estaria saindo
+[11:59] LOJA: *Josy:*
+Te encaminhei o orçamento...
+[11:59] LOJA: *Josy:*
+Pode conferir
+[12:00] LOJA: *Josy:*
+Sim...
+[12:00] LOJA: *Josy:*
+Pneu 175/70/13 r1 Dunlop R$ 371,69 (débito/pix)
+Pneu 175/70/13 82t Kelly Goodyear R$ 357,66 (débito/pix)
+Pneu GP Premium em *oferta* R$ 269,00 (débito/pix) Ou R$ 252,00 em *dinheiro*
+[12:06] LOJA: [áudio] "Você mora aqui em Luziânia mesmo, moço?"  {audio:midias/3EB09E25BD1614D439F222_543554.ogg}
+[12:07] CLIENTE: [áudio] "Sim, eu sou de Luziânia, moro aqui perto da loja de vocês. Poucas ruas para dentro, né? É porque esse primeiro que eu fiz o orçamento é para um amigo meu de Brasília, né? E esse outro aí seria para minha irmã, só que no momento ela só está fazendo o orçamento mesmo. Aí esse de Brasília eu estou esperando porque ele estava vendo com outro rapaz aqui também, né? Daqui de Luziânia. Aí ele vai ver qual compensa mais em questão de valor."
+[12:07] CLIENTE: [áudio] "Mas daqui para mais tarde, eu confirmo com você. Assim que ele me confirmar lá, eu te aviso, viu?"
+[12:09] LOJA: [áudio] "Ah, sim. Perfeito, então. Olha, aí no dia de hoje, as opções que eu tenho são essas duas marcas, né, do 215, 65, 16, os pneus importados da marca TrackMax e os pneus da marca GP Premium, os pneus aqui da nossa empresa. Aí, o pneu da nossa empresa, ele é 349, se o pagamento for no débito ou Pix. Se trouxer o pagamento em dinheiro em espécie, ele já vai ficar por 329 cada. E caso você queira parcelar, mesmo que eu tenha mandado aí as opções de parcelamento em até 10 vezes, nós podemos negociar aqui uma opção que fique boa pra vocês."  {audio:midias/3EB0DE49C05984EDC10CFC_126987.ogg}
+[12:10] CLIENTE: [áudio] "Ah, entendi. Não, combinado. Eu acho que no caso dele seria no Pix, né? O dinheiro, tava um jeito de sacar. Eu vou confirmar com ele aqui direitinho. Eu vou mandar esse áudio que você me mandou agora pra ele. Às vezes até faz ele pensar melhor, né? Pra pegar um pneu já novo. Que o outro que ele tá vendo aqui com o rapaz daqui de Luziânia é usado já."
+[12:11] LOJA: [áudio] "O pneu da marca GP Premium, ele é um pneu ecológico que nós fazemos, tá? Então, ele entrará na categoria de remodelagem, só que é linha Premium, que não tem nada a ver com os pneus que são remolds convencionais. Então, é esse pneu de R$ 349,00 que eu estou te falando, tá? Se você quiser, eu gravo um vídeo para você poder entender a diferença do pneu que nós fazemos, que é a linha Premium, e de um pneu remote convencional, que esse pneu aqui, justamente, é o pneu que eu mais vendo por conta da qualidade."  {audio:midias/3EB020A2EF1BB28B1E512F_461996.ogg}
+[12:16] CLIENTE: Eu sou cliente
+[12:16] CLIENTE: Comprei os meus a 2 anos com vocês!
+[12:16] CLIENTE: Sempre indico por conta da qualidade 😄
+[12:17] LOJA: *Josy:*
+Obrigada!
+[12:18] LOJA: [áudio] "Obrigada pela preferência. Se você quiser, eu mando a foto aqui do pneu para o seu amigo poder ver."  {audio:midias/3EB0A6BC1A4CD0E29F02E2_696574.ogg}
+[12:18] LOJA: [foto]
+[12:23] CLIENTE: [áudio] "Eu encaminhei aqui para ele. É bom, às vezes, eu até facilito ele tomar a decisão, né? É porque ele tá trabalhando agora e às vezes ele vê as mensagens, mas demora a responder. Mas assim que ele me passar, eu te confirmo aí, viu?"
+[12:24] LOJA: [áudio] "Sem problemas."  {audio:midias/3EB0D0C5954D3C6EC49352_872869.ogg}
+[15:01] LOJA: *Josy:*
+Wanderson...qual é o nome de seu amigo?
+--- 08/09/2026 (Tue) ---
+[14:16] LOJA: [áudio] "Oi, Vanderson, tudo jóia? Alguns dias atrás, precisamente na quinta-feira, nós estávamos conversando aqui a respeito dos pneus, eu gostaria de saber se o seu amigo pretende seguir aqui com a negociação, você consegue me dar o retorno?"  {audio:midias/3EB04CB8ED9D86107E15EA_119456.ogg}
+[14:26] CLIENTE: Tudo bem , eu falei com ele só que ele não seguiu em frente
+[14:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:27] CLIENTE: Provável que ele esteja sem o dinheiro no momento
+[14:46] LOJA: [áudio] "Poxa vida, eu entendo perfeitamente como que é."  {audio:midias/3EB083563A4FFCA0DCBE7D_26106.ogg}
+[15:04] LOJA: *Josy:*
+Obrigada pela atenção, boa semana!

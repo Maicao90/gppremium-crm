@@ -1,0 +1,12 @@
+CONVERSA 11e4394750 | contato: Jonatan✌🏻 | 08/10/2026 17:30 até 08/10/2026 17:32 | 2 msgs do cliente, 6 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[17:30] LOJA: [áudio] "Oi, Jonathan. Tudo jóia?"  {audio:midias/3EB09FE29BF43B86C3B8FC_838947.ogg}
+[17:30] LOJA: 215/35/19
+[17:30] LOJA: [áudio] "Aí você exclui aquele número lá, tá? Fala comigo só por este daqui, que aquele lá é apenas para marketing."  {audio:midias/3EB05762443CD05B605356_343833.ogg}
+[17:31] CLIENTE: Tá ok
+[17:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:32] CLIENTE: Vc n vai ter ?
+[17:32] LOJA: [áudio] "Não, igual te falei na ligação, não tenho, mas eu solicitei um orçamento com meu distribuidor, é assim que ele me respondeu, eu te passo marca, preço e prazo de entregues, tá bem?"  {audio:midias/3EB00EBFE24D8BF3D3701C_42372.ogg}
+[17:32] LOJA: [áudio] "Você é daqui de Luziânia?"  {audio:midias/3EB098E06392E9C4FF9215_308378.ogg}

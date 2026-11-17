@@ -1,0 +1,11 @@
+CONVERSA 9aa514c6f2 | contato: Vinicios | 20/08/2026 22:18 até 21/08/2026 07:57 | 3 msgs do cliente, 3 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[22:18] CLIENTE: Boa noite tudo bem
+[22:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[22:18] CLIENTE: Você tem na medida 275/80 22.5
+[22:18] CLIENTE: Pneu para ônibus
+--- 21/08/2026 (Fri) ---
+[07:56] LOJA: Bom dia, Vinicius...como vai?
+[07:57] LOJA: Infelizmente não estamos mais trabalhando com pneus de onibus.

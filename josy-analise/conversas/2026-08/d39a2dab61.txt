@@ -1,0 +1,35 @@
+CONVERSA d39a2dab61 | contato: jj construção | 27/08/2026 16:42 até 27/08/2026 17:20 | 11 msgs do cliente, 11 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[16:42] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[16:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:42] CLIENTE: 175/70 r14
+[16:43] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB0CB6C2FE0E0F400070C_407012.ogg}
+[16:46] CLIENTE: Boa tarde
+[16:46] CLIENTE: Tudo bem graças à Deus
+[16:46] CLIENTE: Moro sim
+[16:47] CLIENTE: Em Luziânia
+[16:47] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:47] LOJA: [foto]
+[16:48] LOJA: *Josy:*
+Esqueci de perguntar, é pneu para carro mesmo certo? não é o de carga.
+[16:49] CLIENTE: No anúncio mostra valores a partir de 219,00
+[16:50] CLIENTE: Pra carro mesmo
+[16:51] LOJA: *Josy:*
+a partir realmente, pois depende da medida. No caso de 175/70/14 serão as opções acima.
+[16:54] CLIENTE: Entendi
+[16:55] LOJA: *Josy:*
+Se você estiver com disponibilidade de tempo, passa aqui em nossa empresa. Será uma satisfação recebe-lo aqui.
+[16:55] CLIENTE: Vc faz a montagem e dar o alimento?
+[16:55] LOJA: *Josy:*
+Não. Não damos. Serviços são cobrados.
+[16:57] LOJA: *Josy:*
+Assim, no mercado tem a modalidade em  dizer que os serviços são inclusos, mas aqui, preferimos ser claros, os serviços são a parte.
+[17:19] CLIENTE: Ok
+[17:20] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:20] LOJA: [foto]

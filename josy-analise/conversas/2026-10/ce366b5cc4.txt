@@ -1,0 +1,22 @@
+CONVERSA ce366b5cc4 | contato: Fellipe Vitor | 15/10/2026 14:41 até 15/10/2026 15:01 | 6 msgs do cliente, 9 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[14:41] CLIENTE: [foto] 📢 [Anúncio] Pneus de Passeio em Oferta
+
+Quais são os preços dos pneus?
+[14:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:41] CLIENTE: Vocês são do Valparaiso?
+[14:41] LOJA: Luziânia-Go
+[14:44] LOJA: [áudio] "Oi Felipe, tudo bom? Para que eu possa fazer um orçamento para você, eu preciso que você me diga o que é que você está precisando."  {audio:midias/3EB0F0FA1935B1B37E4B8D_282711.ogg}
+[14:46] CLIENTE: Seriam 4 pneus 225 45 17
+[14:49] LOJA: [foto]
+[14:50] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:51] CLIENTE: Certo
+[14:51] CLIENTE: Esse GP7 Nacional é remold?
+[14:52] LOJA: Isso, remold , mas de 1ª linha . Inclusive é o pneu mais vendido que temos por conta da qualidade. Tem 2 anos de garantia.
+[14:52] LOJA: Quer fot...video?
+[14:52] CLIENTE: Quero sim
+[15:01] LOJA: [vídeo]

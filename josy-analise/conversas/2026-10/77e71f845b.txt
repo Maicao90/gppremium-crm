@@ -1,0 +1,36 @@
+CONVERSA 77e71f845b | contato: Wesley Freitas | 19/10/2026 13:53 até 21/10/2026 12:39 | 6 msgs do cliente, 12 da loja, 1 do robô
+
+--- 19/10/2026 (Mon) ---
+[13:53] CLIENTE: Boa tarde
+[13:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:53] LOJA: *Josy:*
+Boa tarde!
+[13:53] LOJA: *Josy:*
+🙋🏼‍♀️
+[13:54] CLIENTE: Pneu 215/60 R 17
+[13:54] CLIENTE: Você tem ?
+[13:54] LOJA: *Josy:*
+Sim, Wesley... temos sim!
+[13:55] LOJA: [foto]
+[13:55] LOJA: *Josy:*
+No dia de hoje temos os pneus da marca  Sunny e GP Premium essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:56] CLIENTE: Gp Premium roda mais ou menos quantos km ?
+[13:56] LOJA: *Josy:*
+60.000 km
+[13:57] CLIENTE: Ele está mais em conta que o chinês e isso ?
+[13:57] LOJA: *Josy:*
+Sim, pois está em oferta!
+[14:02] CLIENTE: E fabricação própria ??
+[14:03] LOJA: *Josy:*
+Sim! Isso mesmo!
+[14:56] LOJA: *Josy:*
+Quer que eu te encaminhe a nossa localziação?
+--- 20/10/2026 (Tue) ---
+[09:01] LOJA: [áudio] "Oi Wesley, bom dia, tudo bem com você? Ontem nós estávamos conversando aqui e eu te perguntei se você gostaria que eu te encaminhasse a nossa localização. Eu já vou fazer isso, tá? E o nosso horário de atendimento é de segunda a sexta, de 8 da manhã até às 18 e aos sábados de 8 até o meio-dia."  {audio:midias/3EB0D773577C6BD15B4BA8_76241.ogg}
+[09:02] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 21/10/2026 (Wed) ---
+[12:39] ROBÔ: 🙋🏼‍♀️

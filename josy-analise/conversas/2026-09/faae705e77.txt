@@ -1,0 +1,68 @@
+CONVERSA faae705e77 | contato: Piui Marques Cantor | 03/09/2026 20:42 até 11/09/2026 12:36 | 14 msgs do cliente, 23 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[20:42] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[20:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:42] CLIENTE: Queria 4 Peneus 
+225 70 15 
+Para uma vam 
+
+Ou 205 70 15 ok
+--- 04/09/2026 (Fri) ---
+[08:28] LOJA: *Josy:*
+Bom dia!
+[08:28] LOJA: *Josy:*
+Teremos o 205/70/15C
+[08:29] LOJA: [foto]
+[08:29] LOJA: *Josy:*
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[18:15] LOJA: [áudio] "Olá, tudo bem com você? No decorrer do dia, eu te encaminhei aí o orçamento do pneu 205-70-15 e gostaria de saber se a opção que te encaminhei te atende, se pretende seguir com a negociação. Quando possível, consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0858786D59E0F8A8878_245821.ogg}
+[18:20] CLIENTE: [áudio] "Olá, tudo bem? Deixa eu te falar... Tem um desconto aí, mais ou menos? Onde é que fica a loja também? Esses pneus de vocês, ele é importado ou são... ou são aquele pneu recapado que falam? É para um Havan, viu?"
+[18:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:22] LOJA: [áudio] "Esse é um pneu novo, importado e o preço é esse mesmo. Nossa loja fica aqui em Luziânia, Goiás."  {audio:midias/3EB0FC6F6081BC16584C69_413925.ogg}
+[18:23] CLIENTE: Ata não é recapado
+[18:23] LOJA: [áudio] "Não, moça, é pneu novo."  {audio:midias/3EB003E50144481AD6E0A5_532990.ogg}
+[18:23] CLIENTE: Ok 
+Eu não tô na cidade moro aí no novo gama 
+Aí por quanto dá pra nois negociar os 4
+[18:23] CLIENTE: Ok
+[18:24] LOJA: *Josy:*
+A vista R$ 444,00 cada  total R$ 1.776,00
+[18:24] LOJA: *Josy:*
+Vou te encaminhar a nossa localização.
+[18:24] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[18:25] CLIENTE: Ai por acaso vcs fazem 
+Alianhamento balanceamento 
+Trocam os bicos também
+[18:25] CLIENTE: Ata então é marca própria né isso 
+GP PREMIL
+[18:25] LOJA: [áudio] "Sim, esses serviços são todos feitos aqui na nossa oficina."  {audio:midias/3EB04D52E3E14A7341DC6C_869720.ogg}
+[18:25] LOJA: [áudio] "No caso dessa medida, não, pois os pneus GP Premium acabaram todos, tá? Aí é o pneu importado mesmo."  {audio:midias/3EB01DDA8A0391FF8A6221_553276.ogg}
+[18:26] CLIENTE: [áudio] "Ah, tá certo. Eu não tô na cidade, eu tô viajando. Eu vou chegar para segunda ou terça-feira. Eu queria ver como é que dava para nós negociar aí, o que é que... os bicos, né? Porque tem que trocar lá os bicos, né? Tem que trocar os bicos, tem que fazer alinhamento, balanceamento. Aí, nesse valor aí, é incluso ou é fora parte?"
+[18:29] LOJA: [áudio] "É a parte."  {audio:midias/3EB0B8709D9A0838F91B9A_726020.ogg}
+[18:31] CLIENTE: Ok 👍🏽
+[18:33] LOJA: [áudio] "E assim, aqui nós não obrigamos o cliente a fazer o serviço. Você pode comprar o pneu e levar para montar onde você quiser."  {audio:midias/3EB03C0E0EAEC20F647B82_253421.ogg}
+--- 10/09/2026 (Thu) ---
+[17:19] LOJA: [áudio] "Oi, Marques, como é que você está?"  {audio:midias/3EB0B5666DED3D59C5C93D_353936.ogg}
+[17:19] LOJA: [vídeo]
+[18:11] CLIENTE: Tô na estrada é ruim de sinal
+[18:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:11] CLIENTE: Mais deixa eu chegar que vamos negociar os Peneus estou presisando
+[18:11] CLIENTE: Ok
+--- 11/09/2026 (Fri) ---
+[07:59] LOJA: *Josy:*
+Bom dia!
+[07:59] LOJA: *Josy:*
+Tudo bem então...
+[08:00] LOJA: *Josy:*
+Você ainda tem a nossa localziação?
+[12:36] CLIENTE: Chegando mando mensagem pra vc ok
+[12:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

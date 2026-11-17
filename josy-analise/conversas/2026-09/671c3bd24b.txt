@@ -1,0 +1,17 @@
+CONVERSA 671c3bd24b | contato: Porto Conect.buggy | 14/09/2026 13:19 até 14/09/2026 14:17 | 8 msgs do cliente, 4 da loja, 0 do robô
+
+--- 14/09/2026 (Mon) ---
+[13:19] CLIENTE: Quero cotar o pneu 235/75 R15 GP Premium.
+[13:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:20] CLIENTE: 31/10 r 15
+[13:20] CLIENTE: 235/ 75 r 15
+[14:06] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Eu sou a Josi e aqui na nossa empresa em Luziânia, nós temos sim. Você mora por aqui?"  {audio:midias/3EB0E6A579E970465A0D85_769751.ogg}
+[14:09] CLIENTE: [áudio] "Oi, Josi, tudo bom? Boa tarde. Eu sou de Recife, Josi. A gente tem uma empresa aqui, ela tem CNPJ, tem tudo, e trabalhamos com turismo, com passeios de buggy, e aí nossos bugueiros, eles sempre precisam de pneus, e a gente queria ver com vocês quando é que sairia, né, o pneu com o frete para Recife."
+[14:10] CLIENTE: Cnpj subi 42.438253/0001-91
+[14:10] CLIENTE: [áudio] "Precisamos saber se precisamos fazer o cadastro da empresa para a gente poder comprar de grande quantidade."
+[14:16] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Compreendo perfeitamente. Entretanto, justamente à medida que você está solicitando, ela esgotou no nosso estoque e nós não estamos conseguindo realizar as entregas justamente por questão do frete, que está assim exorbitante. O envio está completamente inviável."  {audio:midias/3EB0DA437A0D03FA29B649_701291.ogg}
+[14:17] CLIENTE: Tem alguma empresa parceira em recife
+[14:17] CLIENTE: ?
+[14:17] LOJA: *Josy:*
+Infelizmente não temos.

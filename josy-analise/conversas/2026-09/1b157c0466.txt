@@ -1,0 +1,28 @@
+CONVERSA 1b157c0466 | contato: Grego😎✌🏻 | 03/09/2026 16:12 até 11/09/2026 17:36 | 5 msgs do cliente, 9 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[16:12] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem
+[16:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:13] CLIENTE: Quanto esta custando o pneu aro 14 medida 175/65/14
+[16:13] LOJA: *Josy:*
+Pneu 175/65/14 86h Kelly Goodyear R$ 371,00 (débito/pix)
+Pneu 175/65/14 86t  Roadtrack R$ 308,34 (débito/pix)
+Pneu GP Premium 175/65/14 em *oferta*  R$ 249,00 (débito/pix) Ou R$ 235,00 em *dinheiro*
+[16:13] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.
+[16:14] CLIENTE: Ok
+[16:14] CLIENTE: Obrigado
+[16:14] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB06CCB9DDB8D68DE2777_168175.ogg}
+[16:15] CLIENTE: No valparaiso
+[16:15] LOJA: *Josy:*
+Pertinho!
+--- 10/09/2026 (Thu) ---
+[16:52] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você?"  {audio:midias/3EB03FA40F282BA1C8EE1B_351449.ogg}
+[16:52] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[17:36] LOJA: [áudio] "Oi moço, tudo jóia? Eu te mandei um vídeo, né, para nós tentarmos uma interação, vi que você visualizou, mas na correria, creio que você não tenha conseguido me responder. Então, vou encerrar o seu atendimento, justamente para não ficar enchendo o seu WhatsApp de mensagens, porque acaba que se torna chato, né? Vou te mandar aqui a localização da loja, se houver a possibilidade, você passa aqui, tá bom? Muitíssimo obrigada pela sua atenção e tenha um bom final de semana."  {audio:midias/3EB01E99D995A98E7A8280_820036.ogg}
+[17:36] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

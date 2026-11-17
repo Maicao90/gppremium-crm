@@ -1,0 +1,11 @@
+CONVERSA e8d352dd5e | contato: Jeminimen | 05/09/2026 00:20 até 05/09/2026 09:46 | 1 msgs do cliente, 3 da loja, 0 do robô
+
+--- 05/09/2026 (Sat) ---
+[00:20] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[00:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:26] LOJA: [áudio] "Olá, bom dia! Como posso ajudar?"  {audio:midias/3EB0F37FAF8F4F78F8454C_679725.ogg}
+[09:46] LOJA: *Josy:*
+🙋🏼‍♀️

@@ -1,0 +1,23 @@
+CONVERSA 665145532c | contato: Lucas | 09/10/2026 12:24 até 09/10/2026 12:55 | 11 msgs do cliente, 8 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[12:24] CLIENTE: Nesse Promoção qual Valor do Aro R 15?
+[12:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:24] LOJA: Lucas... Qual a medida dos pneus que você precisa hoje?
+[12:25] CLIENTE: Se não me engano 195 50 15
+[12:25] LOJA: Qual é o seu carro?
+[12:26] CLIENTE: Passat com Orbital Aro 15
+[12:29] LOJA: [áudio] "Lucas, se eu não me engano, realmente é o 9550 15, tá? Essa opção, eu não tenho aqui a pronta entrega, vai ser somente através de encomenda, e se meu distribuidor tiver, vai ser um pneu importado, leva uns 3 dias úteis para chegar. Tem uma outra opção que usa aí no Passat, que é o 9555 15, esse eu tenho aqui."  {audio:midias/3EB03EE9ABE3E931D3E9A2_891979.ogg}
+[12:30] CLIENTE: [áudio] "Não, então, no caso desse dia seria dessa promoção, porque eu fiquei interessado nessa promoção, hein? De Pag3 Live 4, né?"
+[12:31] LOJA: [áudio] "Então, aí no vídeo que eu postei, justamente, o pneu 215 e 55-17, que a promoção compre 3 e leve 4."  {audio:midias/3EB0A7F2745B0D64FC9EC3_37108.ogg}
+[12:31] LOJA: [áudio] "Aí tem também o 195-65-15, promoção COMPRE-3, LEVE-4, são para essas duas medidas."  {audio:midias/3EB0590A77359286B4EBB3_419236.ogg}
+[12:32] CLIENTE: A Intendi
+[12:33] CLIENTE: Vou aguardar uma Promoção então pra Medida 195/55 15
+[12:33] CLIENTE: O carro tá parado aqui na Garagem
+[12:33] CLIENTE: Eu comprei os 4 pro Mobi com você
+[12:37] LOJA: [áudio] "Sim, sim, eu lembro de você."  {audio:midias/3EB077568174C80A5FF652_407817.ogg}
+[12:37] LOJA: [áudio] "Ai, Luquinha, por hora, ainda não vai ter a promoção desse aí, não. Eu não tenho nem previsão assim, nem nada, sabe?"  {audio:midias/3EB0027CB43BC02A8C4F8B_177385.ogg}
+[12:54] CLIENTE: Tranquilo
+[12:55] CLIENTE: Sem Pressa
+[12:55] CLIENTE: O carro tá Parado aqui em Casa, vou acompanhando os Status

@@ -1,0 +1,84 @@
+CONVERSA 693d076fa6 | contato: Daisy Queiroz Presentes | 02/10/2026 13:34 até 02/10/2026 17:24 | 26 msgs do cliente, 39 da loja, 0 do robô
+
+--- 02/10/2026 (Fri) ---
+[13:34] CLIENTE: Oi
+[13:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:34] CLIENTE: Qual o valor do pneu 205 60 17?
+[14:22] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Eu me chamo Josi e, Deise, você utiliza esse pneu em qual carro?"  {audio:midias/3EB08725FAF3CE3042E898_682904.ogg}
+[14:23] LOJA: *Josy:*
+Prefere mensagem de áudio ou texto?
+[14:25] CLIENTE: Pode ser áudio
+[14:25] CLIENTE: Fastback
+[14:33] LOJA: [áudio] "Entendi, Daisy. Mas só uma pergunta, você já usa essa medida aí no seu carro? Porque o original dele é o 205,50."  {audio:midias/3EB04BE1B81EF40F69D026_511211.ogg}
+[14:41] LOJA: [foto]
+[14:42] CLIENTE: Uso o 50
+[14:43] CLIENTE: Mas meu marido pediu pra colocar 60
+[14:43] LOJA: [áudio] "Olha, a medida original aí para o seu carro é essa que eu acabei de te encaminhar, que é o 205-50-17, tá? No dia de hoje eu tenho os pneus da marca Forestland, a unidade está por R$355,00 e eu tenho aqui também os pneus da marca GT Premium, que eles estão por R$339,00 a unidade também para o pagamento a vida. tem outras duas opções que dá para você colocar aí também, tá joia? Deixa eu ver aqui, que é o 205-55 e também o 215-50-17, tá? Então, essas são as opções que você pode estar instalando tranquilamente aí no seu carro."  {audio:midias/3EB02EBB47C6093C19A7A9_669323.ogg}
+[14:45] CLIENTE: Esses não são remolds né?
+[14:45] LOJA: [áudio] "O de 339 é o pneu ecológico que nós fazemos. Ele vai entrar na categoria de remodelagem, sim. Agora, esse outro aí, o de 355, ele é de marca original."  {audio:midias/3EB0A6A58F19DEC1FCAFCF_578257.ogg}
+[14:47] CLIENTE: Entendi
+[14:48] LOJA: [áudio] "E, Deise, se eu não estiver equivocada, eu creio realmente que o 205-60 não dá certo aí no carro de vocês, não, tá? Eu tô tentando só dar um confere aqui no manual da Fiat, mas não tá carregando. Mas, de antemão, eu particularmente nunca instalei essa medida em nenhum test-back. Realmente, todo mundo coloca. É 205-50, 205-55 e 215-50-17, tá?"  {audio:midias/3EB0FFD7EE30CD7C46FA62_807279.ogg}
+[14:48] LOJA: [áudio] "E eu vou fazer o seguinte, aí para o seu carro, eu vou fazer um orçamento, então, com todas as opções que eu tenho aqui, a pronta entrega aqui, podem ser usadas aí, tá joia?"  {audio:midias/3EB017396FED93024C8AFD_706114.ogg}
+[14:49] CLIENTE: Ta bom
+[14:53] LOJA: Pneus Novos 👇🏻
+[14:53] LOJA: [foto]
+[14:54] LOJA: [foto]
+[14:57] LOJA: *Josy:*
+*Pneus GP Premium Remold 1ª Linha*  👇🏻
+[14:58] LOJA: [foto]
+[14:59] LOJA: [áudio] "Dos pneus novos que nós temos aqui, tem nas medidas 205,50, 205,55, 215,50 e 225,45,17. Eu deixei a setinha indicando, tá? E os pneus da marca GP Premium, que são os remoldes de primeira linha, inclusive são os pneus mais vendidos que eu tenho, porque eles são tão bons quanto as opções de pneus novos aí em cima. Ele tem um comparativo justamente com os pneus de marcas nacionais que estão aí no orçamento, porque eles são muito bons, tá? Se porventura vocês estiverem em busca de alguma marca específica, podem me falar que eu verifico com os nossos distribuidores, tá bom?"  {audio:midias/3EB033C64E89C21FB732FA_447061.ogg}
+[14:59] CLIENTE: Quero colocar novo mesmo
+[14:59] CLIENTE: Esse de 55
+[15:00] CLIENTE: [áudio] "De 60 você não consegue, né? De jeito nenhum."
+[15:01] LOJA: [áudio] "Aí, como essa medida aqui é a inicial que você falou comigo, né, é uma opção, assim, que é muito difícil de encontrar, quando você me mandou aqui a medida, eu já solicitei com os meus distribuidores de todas as redes de nacionais importados e ninguém tem, tá? Então, só pra te dar um parecer também a respeito dessa medida, né, pra não ficar aqui, assim, tô tentando te empurrar o que eu tenho aqui a pronta entrega, porque eu faço um serviço por trás justamente pra poder verificar a possibilidade que o cliente me pede, tá?"  {audio:midias/3EB0285E7D208FB8B7D512_186685.ogg}
+[15:01] LOJA: *Josy:*
+Eu estava te enviando a áudio, o seu chegou primeiro. Mas não tem em lugar nenhum.
+[15:02] CLIENTE: [áudio] "E esse de 55, eu não preciso deixar o meu usado, né?"
+[15:02] CLIENTE: [áudio] "Vocês já conseguem deixar ele instalado para mim, os dois?"
+[15:03] LOJA: [áudio] "Não, com nenhuma dessas opções, tá? Aqui nós não trabalhamos a base de troca, não."  {audio:midias/3EB05B74AC8DAC7DF19F83_795104.ogg}
+[15:04] CLIENTE: Amanhã vcs trabalham?
+[15:04] LOJA: *Josy:*
+Sim!
+[15:04] LOJA: *Josy:*
+Trabalhamos sim!
+[15:05] LOJA: *Josy:*
+Das 08:00 às 12:00
+[15:07] CLIENTE: E hoje até que horas vcs recebem o carro?
+[15:08] LOJA: *Josy:*
+Estamos com a loja aberta até as 18:00
+[15:09] CLIENTE: Ok
+[15:09] CLIENTE: Amanhã eu vou
+[15:09] LOJA: *Josy:*
+Combinado, já vou te encaminhar a nossa localização.
+[15:10] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:11] LOJA: [foto]
+[16:18] CLIENTE: Demora quanto tempo p trocar
+[16:18] CLIENTE: Vou conseguir ir agora
+[16:19] LOJA: *Josy:*
+Uns 20 min
+[16:19] CLIENTE: Ok
+[16:20] LOJA: [áudio] "Ah, sim, Deise. E você perguntou a respeito do valor da montagem, né? A montagem, ela é cobrada à parte e é 20 reais por pneu, tá joia?"  {audio:midias/3EB0989E7595FA932454BA_712527.ogg}
+[16:20] LOJA: *Josy:*
+montagem R$ 20,00 cada
+[16:20] CLIENTE: Ok
+[16:20] LOJA: *Josy:*
+* Balanceamento = 35,00 (por pneu)
+* Alinhamento = 120,00 (somente Alinhamento de Direção)
+[16:20] LOJA: *Josy:*
+Mas é tudo negociável, fique tranquila.
+[16:21] CLIENTE: [áudio] "Mas, quando eu troco o pneu, eu tenho que fazer balanceamento e alinhamento?"
+[16:21] LOJA: [áudio] "O balanceamento é extremamente importante, tá? Agora, o alinhamento só se realmente for necessário, porque no mais..."  {audio:midias/3EB0EDA69E258243B54F07_651678.ogg}
+[16:21] CLIENTE: [áudio] "Me dá um desconto aí para eu fazer a montagem e o balanceamento?"
+[16:22] LOJA: [áudio] "Aí, Deise, como esse já é o valor que os meninos aqui da oficina passam, assim, pode vir e conversar diretamente com eles, até se seu marido quiser vir aqui e já alinhar com eles, tá bom? Porque esse é o valor que eles passam aí, com questão a negociação, dar desconto, fazer isso aqui, como vai ter uma demanda maior aí de tempo, eu imagino, pode conversar direto aqui com os meninos. menos da oficina, mas fique tranquilo que realmente é tudo bem negociável, tá?"  {audio:midias/3EB079E80CAA0D3A3B9F61_521639.ogg}
+[17:01] LOJA: *Josy:*
+Me passa seu pix...
+[17:01] CLIENTE: 018.518.331-02
+[17:19] LOJA: [documento]
+[17:19] LOJA: [documento] SICOOB_2026_02_10_17_16_51_PIX.pdf
+[17:19] LOJA: *Josy:*
+Muitp obrigada, Daisy!!
+[17:20] LOJA: *Josy:*
+Bom final de semana para tí!
+[17:24] CLIENTE: [figurinha]

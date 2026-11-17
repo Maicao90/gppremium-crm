@@ -1,0 +1,54 @@
+CONVERSA e3ae319642 | contato: Evandro Cardoso | 17/09/2026 14:29 até 24/09/2026 13:34 | 13 msgs do cliente, 27 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[14:29] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:29] LOJA: *Josy:*
+🙋🏼‍♀️
+[14:29] CLIENTE: Preciso 4 pneu 265/60/18
+[14:32] LOJA: *Josy:*
+Posso enviar áudio?
+[14:32] CLIENTE: Pode
+[14:32] LOJA: [foto]
+[14:33] LOJA: [áudio] "Oi, Evandro, tudo bem com você? Eu sou a Josi. E no dia de hoje, nós temos duas opções de marcas aqui à pronta entrega, tá? Temos os pneus importados da marca Maxdex, onde a unidade está por R$ 663,00 se o seu pagamento foi correspondente a débito ao Pix e tem as opções de parcelamento em até 10 vezes. Então, como você precisa das 4 unidades para o pagamento à vista, Então, R$ 663,00 vezes os 4 pneus, dá um total de R$ 2.652,00. Tenho aqui também os pneus da marca GP Premium, no modelo ATR, por R$ 559,00 a vista e no modelo Brutus, que é aquele mais off-road, por R$ 599,00 a unidade à vista."  {audio:midias/3EB0B4E43A56735AABC8BB_799183.ogg}
+[14:33] LOJA: [áudio] "Você mora aqui em Luziânia?"  {audio:midias/3EB0320C8602997FC81788_362545.ogg}
+[14:35] CLIENTE: [áudio] "Não, não. Brasília, Distrito Federal. Tá, é... Vocês conseguem... Qual que é o menor preço? Vocês tem loja em Brasília? Qual que é o menor preço que vocês conseguem nesse aí, de 559 aí? Eu preciso de 4."
+[14:36] LOJA: [áudio] "Evandro, nossa loja é somente aqui em Luziânia mesmo. Estamos com um projeto aí para o ano que vem, quem sabe. Mas por hora, somente por aqui. Então, esses valores realmente já estão nos valores finais, tá? E se você quiser, eu te mando na sua localização."  {audio:midias/3EB0FEB87FF99AA3A7E712_511774.ogg}
+[14:38] CLIENTE: [áudio] "Fica muito distante, né? Por exemplo, o preço aí, a gente tá próximo que eu consegui até um pouco mais barato, mas acredito que a gente conseguiu conversar pra vocês de quatro à vista. Vocês conseguem entregar aqui não, em Brasília? Ou não tem nenhum parceiro que pegue e deixe isso aí pra mim, aqui? Ou se vocês conseguirem fazer um preço mais barato, eu posso até ir aí, mas gasta provavelmente pra ir e voltar aí com um chique pesado, né?"
+[14:40] LOJA: [áudio] "É, realmente, é uma pequena caminhada aí, hein, Evandro? Mas, deixa eu ver aqui, se eu conseguir enviar os pneus para um novo Gama, se eu te mandar a localização, você consegue chegar até lá? Fica mais próximo para você? Eu só não consigo fazer o despacho desses pneus hoje, mas nós podemos alinhar aqui para ti. E se você quiser também, eu faço um vídeo aqui para você como que é o pneu, né, que eu estou te ofertando. E com questão ao valor, a gente vê aqui também, se for de seu interesse, realmente um preço aí que te atenda."  {audio:midias/3EB0769F259B191E15C9E1_500929.ogg}
+[14:41] CLIENTE: [áudio] "Não, não avogamos e fica longe. Eu vou alinhar com as claras. Mas o seguinte, vamos lá, meu primeiro, eu não te perguntei. Esse preço seu aí, qual que é o mínimo? E se vocês fazem já com alinhamento, balanceamento, tudo prontinho, eu dou a melhor base de troca. Dependendo do que a gente conversar aqui, talvez eu possa dar um pulo aí e faça esse trem."
+[14:43] LOJA: [áudio] "Olha, não é a base de troca, tá joia? Mas se os seus pneus forem nacionais e estiverem em boas condições, nós podemos fazer uma avaliação e acabar comprando eles de tipo, tá joia? Aqui na nossa oficina, comprando os pneus da GP Premium, a montagem já é inclusa, aí a parte você paga o valor do balanceamento e alinhamento, tá joia? Mas nós também podemos negociar um preço bacana aí pra ti. Com questão a pagamento, né? Eu consigo um desconto pra você se o pagamento for em dinheiro em espécie, tá? Aí, de 559 reais, que é o valor de débito e PIX, no dinheiro pago, né? Você realizando o saque e trazendo dinheiro pra mim, eu consigo a unidade aqui pra você por 530 reais, tá joia? E pra parcelar, né, que eu mandei aí as opções de parcelamento, nós podemos negociar, de repente, alguma parcela que fique bacana aí pra ti. Tchau. Tchau. Tchau."  {audio:midias/3EB0AE747AF4DDEF5723FC_377044.ogg}
+[14:45] CLIENTE: [áudio] "Tá, enquanto que fica aí no dinheiro, já com balanceamento, tudo pronto, eu vou tirar foto dos meus pneus aqui e vou mandar a marca dele aí, vocês aceitam ou não."
+[14:46] CLIENTE: [foto]
+[14:51] LOJA: [áudio] "Evandro, confirma aqui comigo qual é a sua caminhonete, que eu já vou falar aqui com os meninos da oficina a respeito de balanceamento e alinhamento, tá?"  {audio:midias/3EB0B9BD6940B5152DC72D_777577.ogg}
+[14:55] CLIENTE: Hillux 2023 SRX
+[14:57] LOJA: *Josy:*
+Balanceamento R$ 45,00 por roda e alinhametno R$ 45 e 140
+[15:15] LOJA: [foto]
+[15:15] LOJA: [foto]
+[15:15] LOJA: [foto]
+[15:25] LOJA: Esse pneu é um pneu ecológico que entra na categoria de remodelagem.
+E eu uso na camionete.
+[15:25] CLIENTE: [áudio] "Tá, eu só tô vendo. Quanto que você vai fazer tudo aí, pra gente ver o que tu faz, pra ver se compensa eu ir aí, entendeu? Eu tenho que ver também como é que tá o meu tempo. Já com balanceamento, alinhamento, vamos ver se compensa."
+[15:26] LOJA: *Josy:*
+já te ouço
+[15:36] LOJA: [áudio] "Até já, Evandro. Obrigada por aguardar, que eu estava justamente colocando os pneus em uma caminhonete, que veio também, curiosamente, de Brasília. Atendo bastante aí, o rapaz veio aqui. Vamos lá. Qual que é a forma de pagamento que vai ficar boa para você? Vai ser à vista mesmo, igual eu te falei, né? Se o pagamento for em dinheiro, eu consigo disponibilizar daquela forma para ti. Para parcelar, você quer parcelar em quantas? Que eu verifico aqui para você o que vai te atender de maneira mais efetiva."  {audio:midias/3EB0045F56E1F967947AF2_38155.ogg}
+[15:37] CLIENTE: a mais barata
+[16:04] LOJA: *Josy:*
+Certo... conversei com meu gerente,  vamos alinhar da seguinte forma: pagamento em *dinheiro*  em espécie os pneus ficam por  R$ 525,00 cada no modelo ATR , Se for parcelar,  posso usar  o valor de crédito a vista R$ 571,00 e parcelo em  4 x sem juros para você.
+[16:06] CLIENTE: [áudio] "Esse até é tudo mais borrachudo, né? Devia ser mais barato. Mas esse 525, então, dá tudo com os 4, 2.100, já com balanceamento, alinhamento, tudo certinho, que aí eu vou fazer as contas aqui."
+[16:06] LOJA: *Josy:*
+é esse aqui...
+[16:07] LOJA: [áudio] "Não, eu só te passei o valor dos pneus, tá? O valor de balanceamento por roda é 45 cada. Então, 45 vezes os 4 dá 180 mais 140 de alinhamento, 320."  {audio:midias/3EB001D69AFDBFC1900933_474106.ogg}
+[16:08] LOJA: *Josy:*
+Total R$ 2.460,00
+[16:32] LOJA: [áudio] "Evandro, eu vou deixar aqui a nossa localização, está bem?"  {audio:midias/3EB0E1AF11D6B6926CCE42_487999.ogg}
+[16:32] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:32] LOJA: [foto]
+--- 24/09/2026 (Thu) ---
+[12:39] LOJA: [áudio] "Oi Evandro, boa tarde, tudo bem com você? Há alguns dias atrás nós estávamos conversando aqui a respeito de uns pneus para sua caminhonete. Eu gostaria de saber se você pretende seguir com a negociação, consegue me dar um retorno?"  {audio:midias/3EB0B9DD55B2D090E938ED_54874.ogg}
+[13:34] CLIENTE: [áudio] "Olá, boa tarde. Tudo jóia, e você? Eu comprei, né? Porque lembra que eu te falei que ficava muito longe para mim? Infelizmente, tive que comprar um pouquinho mais caro, mas ficava muito longe, né? Ficou mais de 100 km para ele voltar, mas obrigado pela atenção."
+[13:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

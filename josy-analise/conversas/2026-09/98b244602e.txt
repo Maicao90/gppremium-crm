@@ -1,0 +1,32 @@
+CONVERSA 98b244602e | contato: . | 25/09/2026 09:18 até 25/09/2026 11:52 | 11 msgs do cliente, 11 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[09:18] CLIENTE: Bom dia. Josy
+[09:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:18] LOJA: *Josy:*
+Bom dia, Bom dia, Luiz!
+[09:18] LOJA: *Josy:*
+Como v ocê está?
+[09:18] CLIENTE: Estou com um pneu comprado aí que está na garantia e está deslocado
+[09:19] CLIENTE: Você troca ele pra mim.
+[09:19] CLIENTE: Já sou cliente
+[09:22] LOJA: *Josy:*
+Deixa eu ver aqui luiz
+[09:25] CLIENTE: Vou viajar no sábado pela manhã
+[09:26] LOJA: [áudio] "Luiz, venha aqui para poder fazer a análise do pneu, tá? O rapaz está aqui de, né, agora na parte da manhã até às 11 e meia e na parte da tarde de uma até às 17, tá bom?"  {audio:midias/3EB099696EB4D3188732FE_666502.ogg}
+[09:26] LOJA: [áudio] "E ele está aqui só hoje."  {audio:midias/3EB0A28A0429A5E395DE68_351633.ogg}
+[09:31] CLIENTE: Já estou a caminho ok
+[11:19] CLIENTE: Espero que não demore.  Eu tenho uma Aula 14 horas ok
+[11:42] CLIENTE: Tenho diabetes.  E minha injeção insulina está Valparaiso
+[11:43] LOJA: *Josy:*
+Está finalizando... 1 instante por gentileza.
+[11:46] LOJA: *Josy:*
+Prontinho...indo.
+[11:52] CLIENTE: Posso ir direto embora daqui eu tenho.passar ai
+[11:52] LOJA: *Josy:*
+Pode ir ...
+[11:52] LOJA: *Josy:*
+Bom final de semana!
+[11:52] CLIENTE: [figurinha]
+[11:52] CLIENTE: Obrigado

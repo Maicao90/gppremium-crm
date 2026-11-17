@@ -1,0 +1,41 @@
+CONVERSA 33677d6a2a | contato: Lucas Lopes’ | 14/09/2026 13:55 até 23/09/2026 13:25 | 13 msgs do cliente, 14 da loja, 0 do robô
+
+--- 14/09/2026 (Mon) ---
+[13:55] CLIENTE: Boa tarde
+[13:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:55] CLIENTE: Tudo joia?
+[13:55] CLIENTE: Tem pneu 175/65/14
+[13:55] CLIENTE: ?
+[14:00] LOJA: *Josy:*
+Oi, Lucas obrigada por aguardar. o whatsapp está com instabilidade.
+[14:01] LOJA: [foto]
+[14:01] LOJA: *Josy:*
+No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:01] CLIENTE: Tem dunlop
+[14:02] CLIENTE: ?
+[14:02] LOJA: *Josy:*
+Hoje somente as 2 opções do orçametno.,
+[14:02] CLIENTE: Comprei uns aí com vcs a um tempo
+[14:02] LOJA: *Josy:*
+Sim, sim!
+[14:03] CLIENTE: [áudio] "Não, então tá bom. Eu vou ver se eu encontro, senão eu retorno aí com vocês. Obrigado, viu?"
+[14:05] LOJA: [áudio] "Lucas, eu só vou confirmar aqui com o meu departamento de compras para ver se vai estar chegando o Dunlop por agora, tá? Me dá só um instantinho."  {audio:midias/3EB0DE168E5A2E42AB3D51_290834.ogg}
+[14:05] CLIENTE: Ta bom
+[14:16] LOJA: [áudio] "Lucas, olha, eu perguntei ali para o pessoal, está previsto para chegar na parte da tarde, aí a unidade está por R$ 397,00 a vista."  {audio:midias/3EB0AC7593AEB3D0A51461_212684.ogg}
+[14:19] LOJA: [foto]
+[14:20] CLIENTE: Hoje ?
+[14:21] LOJA: *Josy:*
+Sim, no final do dia, se quiser te aviso assim que chegar.
+[15:09] CLIENTE: Ta bom
+--- 16/09/2026 (Wed) ---
+[12:08] LOJA: [áudio] "Oi, Lucas."  {audio:midias/3EB0BEE2208FEB29BFDF7B_275721.ogg}
+[12:08] LOJA: *Josy:*
+Vai precisar dos pneus?
+--- 23/09/2026 (Wed) ---
+[13:25] CLIENTE: Meu pai comprou aí com você
+[13:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:25] CLIENTE: Obrigado

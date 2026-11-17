@@ -1,0 +1,31 @@
+CONVERSA 96b588f894 | contato: Kaic Agrocampo | 15/09/2026 10:22 até 15/09/2026 11:56 | 11 msgs do cliente, 11 da loja, 0 do robô
+
+--- 15/09/2026 (Tue) ---
+[10:22] CLIENTE: Bom dia!
+[10:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:23] CLIENTE: Pneu 265/70r16it Xbri brutos 121/118s T/a
+[10:23] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Eu não trabalho com a XBria, que é a pronta entrega. Você mora aqui em Luziânia mesmo, Kaique?"  {audio:midias/3EB0BD85386B7E9C308E70_286622.ogg}
+[10:23] CLIENTE: Valparaíso
+[10:33] LOJA: [áudio] "Certo, só estou finalizando aqui a resposta do distribuidor e já te retorno, tá bom?"  {audio:midias/3EB0DBAFA80FA6B82C281E_883283.ogg}
+[10:34] CLIENTE: Ok
+[10:50] LOJA: *Josy:*
+Oi!
+[10:50] LOJA: [foto]
+[10:50] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:51] CLIENTE: Preciso pra hoje
+[10:51] CLIENTE: Agradeço, obrigado
+[11:48] LOJA: [áudio] "Moço, eu tenho aqui os pneus da marca GP Premium, na medida 255-7016, que ele é um modelo bem off-road. Se for de seu interesse..."  {audio:midias/3EB0371F505705F2C2186C_514007.ogg}
+[11:49] LOJA: [foto]
+[11:50] CLIENTE: [áudio] "Deixa eu explicar o que aconteceu. Eu pedi no Mercado Livre os 4 pneus, e aí só me entregaram 3, faltou um. E como eu não sou daqui, tenho que viajar amanhã, entendeu? Tocar os pneus e viajar. Aí eu só preciso de um para a mesma marca, entendeu?"
+[11:50] LOJA: [foto]
+[11:50] LOJA: *Josy:*
+Entendi...
+[11:51] CLIENTE: [foto]
+[11:51] CLIENTE: Desse modelo
+[11:52] LOJA: [áudio] "Sim, sim. A única diferença que a minha opinião aqui não vai ser essa escrita lateral, mas o desenho da banda de rodagem é o mesmo."  {audio:midias/3EB015DB09C7D98D6D599F_763108.ogg}
+[11:56] CLIENTE: Isso
+[11:56] CLIENTE: Vai ficar diferente

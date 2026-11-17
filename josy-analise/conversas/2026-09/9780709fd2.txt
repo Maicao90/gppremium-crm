@@ -1,0 +1,30 @@
+CONVERSA 9780709fd2 | contato: Paulo | 22/09/2026 13:31 até 24/09/2026 11:12 | 7 msgs do cliente, 12 da loja, 0 do robô
+
+--- 22/09/2026 (Tue) ---
+[13:31] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:31] CLIENTE: Boa tarde
+[13:31] CLIENTE: Quanto que está seu pneu aro 14
+[13:32] CLIENTE: Remolde
+[14:04] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Paula? Eu sou a Josi. Bem, 14 é apenas o aro, né? Eu gostaria de saber qual é a medida dos pneus que você precisa para poder te passar o preço certinho. Pode me dizer?"  {audio:midias/3EB02BB6EB30B0E60B55FE_782163.ogg}
+[14:05] LOJA: *Josy:*
+Oiii
+[14:06] LOJA: *Josy:*
+🙋🏼‍♀️
+[14:25] CLIENTE: 175 65 aro 14
+[14:27] LOJA: [foto]
+[14:27] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:28] LOJA: [áudio] "No dia de hoje nós temos todas essas opções de marcas, está bem Paulo? E o pneu remold, ele de R$ 279,00, ele está por apenas R$ 249,00 a vista. E já fez a instalação para você."  {audio:midias/3EB01A2708B31A0A41206D_343124.ogg}
+[14:29] CLIENTE: [áudio] "Tá bom, então. Eu vou ou hoje no final da tarde ou amanhã pela manhã, tá bom? Porque o carro tá no serviço."
+[14:30] LOJA: [áudio] "Tá, Joa, então. Você vai pagar no Pix mesmo? Pois se você conseguir trazer o dinheiro pra mim, se você sacar o dinheiro e trazer ele aqui pra mim, eu ainda consigo um desconto pra você, tá? Dá pra fazer aqui o pneu por R$238,00 cada. Mas esse valor de R$238,00 é no dinheiro, tá bom?"  {audio:midias/3EB02F8F93405408446217_13170.ogg}
+[14:30] LOJA: [foto]
+--- 24/09/2026 (Thu) ---
+[10:33] LOJA: [áudio] "Oi Paulo, tudo jóia? Como é que são as coisas? Nós nos falamos no decorrer da semana, né? E gostaria de saber se quer que deixe os pneus reservados aqui para você fazer a instalação. Você me dá um retorno, por gentileza?"  {audio:midias/3EB0E30F4B3ABD7DF855F5_699559.ogg}
+[11:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:11] CLIENTE: [áudio] "Bom dia, Josi. É Josi, né? Ontem à tarde eu peguei os pneus aí, foram duas compras de pneus e eu passei ontem à tarde e peguei, tá? Obrigado."
+[11:12] LOJA: [áudio] "Ah, verdade, o senhor estava com a moça, né? Ai, meu Deus, que ontem deu instabilidade no WhatsApp, não sei se o senhor percebeu, e aí eu perdi aqui as conversas que eu estava, e por isso que eu estou retornando, me perdoe."  {audio:midias/3EB034E4F767055490E67F_279552.ogg}

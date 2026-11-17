@@ -1,0 +1,9 @@
+CONVERSA 4f75f63c2b | contato: Willian Santana | 18/09/2026 12:51 até 18/09/2026 12:53 | 2 msgs do cliente, 3 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[12:51] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:52] LOJA: 🙋🏼‍♀️
+[12:53] CLIENTE: Pneu PCX 130/70/13 traseiro, qual valor?
+[12:53] LOJA: [áudio] "Oi William, tudo bem? Aqui nós não trabalhamos com pneus de moto."  {audio:midias/3EB0F8674DBC3474CE4F66_998285.ogg}

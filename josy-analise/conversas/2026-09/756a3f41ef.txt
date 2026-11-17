@@ -1,0 +1,9 @@
+CONVERSA 756a3f41ef | contato: João Victor Pio | 12/09/2026 18:43 até 12/09/2026 18:44 | 2 msgs do cliente, 1 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[18:43] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[18:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:44] CLIENTE: 205/55R16

@@ -1,0 +1,46 @@
+CONVERSA b61b9e50d0 | contato: Robledo Oliveira | 14/10/2026 16:11 até 16/10/2026 15:44 | 14 msgs do cliente, 21 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[16:11] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[16:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:12] CLIENTE: 205/45/17
+[16:16] LOJA: Temos sim!
+[16:16] LOJA: [foto]
+[16:16] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:30] CLIENTE: Somente esta marca?
+[16:30] LOJA: No momento, somente!
+[16:31] LOJA: [áudio] "Vocês têm busca de alguma marca específica?"  {audio:midias/3EB02D044AECFB6632F47F_422216.ogg}
+[16:33] LOJA: 🙋🏼‍♀️
+[18:37] CLIENTE: Dunlop, Pirelli, Bridgestone, hankook, continental...
+--- 15/10/2026 (Thu) ---
+[18:05] LOJA: Consegui o retorno das marca abaixo
+[18:05] LOJA: [foto]
+[18:06] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[18:06] LOJA: O Pirelli chega com 10 dias
+--- 16/10/2026 (Fri) ---
+[11:16] LOJA: [áudio] "Bom dia, Robledo. Tudo jóia? Eu te encaminhei um orçamento e gostaria de saber se você pretende seguir com a negociação. Você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0EE45CBBD1032ECAD68_316253.ogg}
+[14:01] CLIENTE: [áudio] "Oi, moço, boa tarde. Eu estou pesquisando nas redes sociais, principalmente no Insta, e volta e meia aparece que vocês estão com uma promoção, não sei o que, promoção, aí eu clico para ver se é promoção, é sempre os mesmos valores, mas assim, ainda mais que o senhor tem que encomendar e pagar calção, assim, eu pego no Mercado Livre, que não tem calção, não tem nada disso, beleza? Agradeço seu tempo e sua atenção aí, tá, moço? Muito obrigado, bom trabalho."
+[14:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:31] LOJA: [áudio] "Mas, seu Robledo, é porque é o seguinte, a medida específica que o senhor está buscando é uma opção na qual eu não faço a produção, entendeu? É uma outra marca e para poder atendê-lo, eu precisei fazer uma cotação, aí precisa ser dessa forma, se o pneu fosse de alguma medida na qual os pneus da marca GP Premium te atendessem, Ah, eu tenho a pronta entrega aí, dependendo da medida eu tenho promoção, mas exclusivamente, a medida que o senhor está buscando, nós não produzimos aí por essa questão, que é esse trâmite aí, entendeu?"  {audio:midias/A51F7DCC561D3BB80B3965A7E9EAB6D8_25692.ogg}
+[15:32] LOJA: [áudio] "Inclusive, nós já conversamos outras vezes, né? Já passei outros orçamentos aqui pro senhor, é... Alguns meses atrás, foi em abril, o senhor queria um pneu e eu tinha aqui a pronta entrega, te mandei o orçamento, aí o senhor não ficou satisfeito, né, com a marca que eu tinha. Então, assim, eu busco atendê-lo da melhor forma possível. A questão é que com esse perfil específico que o senhor está buscando, a minha empresa não produz, infelizmente."  {audio:midias/A5BC34130525007FDB488DA580D0F478_766032.ogg}
+[15:33] LOJA: [áudio] "Inclusive, o senhor solicitou para mim um orçamento de marcas específicas e eu te mandei o orçamento conforme a sua solicitação."  {audio:midias/A5FF4E275E4E9ABE8B2F083BB86952D1_216766.ogg}
+[15:35] CLIENTE: [áudio] "Beleza, José, até aí eu te entendo. É porque assim, eu tô olhando os réus, aí fica, aí a empresa aí de vocês fica fazendo propaganda. Agora baixou, agora não sei o que, promoção, não sei o que, eu falo, eu vou clicar pra ver se diminuiu o valor. Mas não diminui, não. Você faz propaganda daqui de promoção, aí a promoção tá acabando, aí acabou a promoção, tá acabando, aí beleza. Aí passa um mês, você falou, aí começa a fazer propaganda de novo. Eu falei, opa, vamos ver se baixou. Mas não abaixa, é só propaganda. Mas o valor não diminui. Mas de qualquer forma eu te agradeço, beleza? As marcas que eu quero, as marcas que eu coloquei aí, são as que eu prefiro, entendeu? A marca que você representa, não tem na medida, então a gente para por aqui. Beleza? Mas de qualquer forma eu te agradeço muito a sua atenção e seu tempo aí. Eu prometo pra você que eu vou clicar mais no seu, no link lá do Insta Seus. Beleza? Obrigado, boa tarde. Obrigado."
+[15:37] LOJA: [áudio] "Entendo o seu ponto de vista. Só que, igual eu estou te explicando, essas marcas aí, como eu não faço elas, como eu não produzo elas, eu não consigo ofertar um preço diferenciado, tá? Agora, se fosse o pneu da marca GP Premium, aí é outra história. Por exemplo, na medida 205,50 e 17, que é o pneu da nossa marca, o preço normal dele é 399, mas estou fazendo ele por 339 a vista. Aí já é outra coisa, mas é um 205,50, porque nós fazemos esse pneu. Já o 205,45 eu só conto com outras opções de marcas mesmo, tá bom? Mas vamos fazer o seguinte, quando o senhor tiver um tempinho, o senhor passa aqui na nossa loja para nós conversarmos pessoalmente, tá bom? Acho que vai ser bem bacana poder recebê-lo aqui."  {audio:midias/A5F975FEC574E5FCE5A49ECA8574E9CE_550146.ogg}
+[15:40] CLIENTE: [figurinha]
+[15:40] CLIENTE: Kkkk
+[15:40] CLIENTE: Desculpa.
+[15:40] CLIENTE: Mandei errado!
+[15:40] LOJA: [áudio] "Relaxa, imagina."  {audio:midias/A571EDAD19E0C99B56B67BE251B7DC12_840836.ogg}
+[15:40] CLIENTE: Era para meu filho.
+[15:41] LOJA: [figurinha]
+[15:41] LOJA: Tranquilo!
+[15:41] LOJA: Não se preocupa!
+[15:44] CLIENTE: [figurinha]
+[15:44] CLIENTE: [figurinha]
+[15:44] CLIENTE: Obrigado pela atenção!!

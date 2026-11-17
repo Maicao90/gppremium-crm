@@ -1,0 +1,11 @@
+CONVERSA 39c3721142 | contato: Raphael Macedo | 02/10/2026 10:02 até 02/10/2026 10:03 | 3 msgs do cliente, 4 da loja, 0 do robô
+
+--- 02/10/2026 (Fri) ---
+[10:02] CLIENTE: Bom dia!
+[10:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:02] CLIENTE: Qual valor do pneu 175/70 r 14
+[10:02] CLIENTE: ?
+[10:02] LOJA: [áudio] "Oi, Rafael, tudo jóia? Temos aqui sim, tá?"  {audio:midias/3EB0B6109E28306036462F_771732.ogg}
+[10:03] LOJA: [foto]
+[10:03] LOJA: [áudio] "Rafa, de 299, esse pneu entrou na oferta este mês. Ele está por 279, se o pagamento foi no débito ou no Pix, está bem?"  {audio:midias/3EB0BC08CCC7C6724B3A5F_405090.ogg}

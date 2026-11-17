@@ -1,0 +1,59 @@
+CONVERSA 4c2f4a371e | contato: Monteiro | 20/10/2026 13:24 até 20/10/2026 14:26 | 16 msgs do cliente, 18 da loja, 0 do robô
+
+--- 20/10/2026 (Tue) ---
+[13:24] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[13:24] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[13:24] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[13:24] CLIENTE: Esse pneu aro 15
+[14:06] LOJA: *Josy:*
+Claro! Para que eu possa gerar o orçamento para você, poderia me informar a *medida* do pneu que você precisa (ex: 235/75/15)
+[14:07] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Sim e essa medida
+[14:07] CLIENTE: Preciso de 4 unidades
+[14:08] LOJA: [foto]
+[14:08] LOJA: [foto]
+[14:08] LOJA: [foto]
+[14:08] CLIENTE: Esse pneu é importado
+[14:09] LOJA: *Josy:*
+Sim!
+[14:09] LOJA: *Josy:*
+
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:12] CLIENTE: Esse valor é unidade
+[14:13] CLIENTE: [foto]
+[14:14] CLIENTE: Esse de 249
+[14:19] CLIENTE: Responde
+[14:20] CLIENTE: Vc tem
+[14:22] LOJA: [áudio] "Nossa, muitíssimo obrigada por aguardar, senhor Monteiro. Obrigada mesmo, tá?"  {audio:midias/3EB0CA9D2878E4DFA7458B_456987.ogg}
+[14:22] LOJA: [áudio] "Tem, tem sim. Tem esse pneu. Ele é na medida 185-60-15 e 185-65-15."  {audio:midias/3EB0A07AE4557343A1CD9A_951039.ogg}
+[14:24] LOJA: [foto]
+[14:24] LOJA: *Josy:*
+Pneus da marca GP Premium
+[14:24] LOJA: *Josy:*
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:24] LOJA: *Josy:*
+É *UNIDADE*
+[14:25] CLIENTE: A minha medida é 195/65 15
+[14:25] CLIENTE: [áudio] "O 8.5, ele é o quê? Ele é mais baixo ou mais estreito?"
+[14:25] LOJA: [áudio] "Ah, sim, que ótimo. Eu tinha perguntado aqui para o senhor qual é a medida que o senhor precisa e como o senhor não disse nada, me dê um instante que eu vou fazer o orçamento para você, tá joia?"  {audio:midias/3EB0FC2632730B0DE7C5AF_479807.ogg}
+[14:25] LOJA: *Josy:*
+185 é largura!
+[14:25] LOJA: *Josy:*
+195/ é largura
+[14:26] CLIENTE: [áudio] "Você acha que a diferença é muito grande? Essa largura aí, do 8,5 para o 9,5?"
+[14:26] LOJA: [áudio] "Dê só um instante que eu vou fazer seu orçamento, tá bom?"  {audio:midias/3EB008E4300F34654465C6_436488.ogg}
+[14:26] CLIENTE: [áudio] "Tá bom, faça para mim esse orçamento aí, se você tiver nessa medida de 195, qual o valor que fica?"
+[14:26] LOJA: [áudio] "Você vai fazer o seguinte, me diz qual que é o seu carro?"  {audio:midias/3EB0EEF3BA50D273EFE116_945974.ogg}
+[14:26] CLIENTE: [áudio] "É uma estradinha, Fiat Estrada."

@@ -1,0 +1,31 @@
+CONVERSA 226a79be0e | contato: Perpetua | 26/08/2026 20:11 até 28/08/2026 11:35 | 4 msgs do cliente, 12 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[20:11] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem
+[20:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:11] CLIENTE: Tem pra fontier
+[20:11] CLIENTE: 2014
+--- 27/08/2026 (Thu) ---
+[08:12] LOJA: Bom dia.
+[08:13] LOJA: Pode por gentileza me informar qual é o aro?
+[11:56] LOJA: *Josy:*
+🙋🏼‍♀️
+[17:38] LOJA: *Josy:*
+Bem, na Frontier existem diversas medidas para varios aros, como não sei que você está buscando, para não deixa-lo sem resposta, vou te encaminhar uma opção de 245/70/16
+[17:39] LOJA: [foto]
+[17:40] LOJA: *Josy:*
+Assim que estiver com tempo, me de um retorno por gentileza.
+[17:55] CLIENTE: Aro 16
+[17:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 28/08/2026 (Fri) ---
+[08:10] LOJA: *Josy:*
+Bom dia!
+[08:11] LOJA: *Josy:*
+É essa medida mesmo?
+[11:35] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu vou encerrar aqui o seu atendimento e se você precisar novamente, você me manda uma mensagem ou até mesmo vem aqui na nossa loja para nós conversarmos pessoalmente e verificarmos o que é que você está utilizando aí na sua caminhonete, tá bom? Por ora, agradeço muito pelo contato e que você tenha um bom final de semana."  {audio:midias/3EB07E2E8460368260328F_370844.ogg}
+[11:35] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

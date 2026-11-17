@@ -1,0 +1,13 @@
+CONVERSA d1c7653cca | contato: L.A Mecânica Agrícola | 18/08/2026 13:27 até 18/08/2026 13:34 | 5 msgs do cliente, 4 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[13:27] CLIENTE: Boa tarde
+[13:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:27] CLIENTE: Pneu 195/45/15
+[13:27] CLIENTE: Tem ?
+[13:33] LOJA: não
+[13:34] LOJA: esse não trabalhamos infelizmente
+[13:34] CLIENTE: Ok
+[13:34] CLIENTE: Obrigado
+[13:34] LOJA: disponha

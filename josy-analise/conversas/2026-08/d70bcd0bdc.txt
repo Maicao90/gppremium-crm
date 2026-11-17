@@ -1,0 +1,13 @@
+CONVERSA d70bcd0bdc | contato: Fé Inabalável | 26/08/2026 12:40 até 26/08/2026 12:42 | 2 msgs do cliente, 4 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[12:40] LOJA: *Josy :*
+Bom dia!
+[12:41] LOJA: *Josy :*
+Pode me mandar aúdio
+[12:41] CLIENTE: [áudio] "Boa tarde, meu amigo. Deixa eu te falar. Você tem pneu 295 aí?"
+[12:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:42] LOJA: *Josy :*
+Não trabalhamos com pneus de caminhão.
+[12:42] CLIENTE: A sim

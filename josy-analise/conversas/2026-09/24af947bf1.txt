@@ -1,0 +1,52 @@
+CONVERSA 24af947bf1 | contato: Ronaldo | 01/09/2026 17:01 até 01/09/2026 17:29 | 11 msgs do cliente, 19 da loja, 0 do robô
+
+--- 01/09/2026 (Tue) ---
+[17:01] CLIENTE: Olá
+[17:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:02] LOJA: *Josy:*
+Oi!
+[17:02] LOJA: *Josy:*
+Como vai, Ronaldo?
+[17:02] CLIENTE: Bem  graças a Deus
+[17:02] CLIENTE: Tô precisando de um pneu 205 40 18
+[17:03] LOJA: *Josy:*
+Vou verificar, pois da ultima vez estava em falta;
+[17:03] LOJA: *Josy:*
+Assim que eles me responderem te informo a marca , preço e prazo de entrega.
+[17:04] CLIENTE: 👍
+[17:04] CLIENTE: Pode ser 195 35 18 ou 205 40 18
+[17:06] LOJA: *Josy:*
+A pronta entrega temos apenas 185/35/18
+[17:06] LOJA: [foto]
+[17:07] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:14] CLIENTE: E o 205 40 18
+[17:14] LOJA: *Josy:*
+☺️
+[17:15] LOJA: *Josy:*
+Está bem!?
+[17:20] LOJA: *Josy:*
+🙋🏼‍♀️
+[17:20] LOJA: [foto]
+[17:20] LOJA: *Josy:*
+Pneu da marca Delinte.
+[17:20] LOJA: *Josy:*
+Opção somente por encomenda , chega em 7 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:24] LOJA: *Josy:*
+Te atende essa opção?
+[17:25] LOJA: *Josy:*
+Se preferir pode enviar áudio ☺️
+[17:26] CLIENTE: Vou ver outras opções e ti aviso
+[17:26] CLIENTE: Pq seria dois 205
+[17:26] CLIENTE: Ou quatro 195
+[17:26] LOJA: *Josy:*
+Esse é 205/40/18
+[17:27] CLIENTE: Pois é achei um pouco puxado
+[17:27] CLIENTE: Mais até amanhã eu te aviso
+[17:28] LOJA: *Josy:*
+É que Delinte é uma das melhores marcas...
+[17:29] LOJA: *Josy:*
+Então, o preço é diferenciado...

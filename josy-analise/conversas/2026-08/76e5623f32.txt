@@ -1,0 +1,12 @@
+CONVERSA 76e5623f32 | contato: Cellmaster Informática | 26/08/2026 13:57 até 26/08/2026 14:30 | 1 msgs do cliente, 4 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[13:57] CLIENTE: boa tarde sim sou de luziania so estava querendo um orcamento mesmo !
+[13:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:30] LOJA: *Josy :*
+Ah, sim! Perfeito!
+[14:30] LOJA: *Josy :*
+Caso seja possivel, e quando possivel, passa aqui na nossa loja.
+[14:30] LOJA: *Josy :*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

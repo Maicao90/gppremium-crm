@@ -1,0 +1,19 @@
+CONVERSA 52c7beb67f | contato: Marques | 04/09/2026 09:22 até 04/09/2026 09:28 | 4 msgs do cliente, 5 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[09:22] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[09:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:22] CLIENTE: Ja entrega montado? Ganha balanceamento e alinhamento?
+[09:23] LOJA: *Josy:*
+Serviços são cobrados a parte.
+[09:24] CLIENTE: Ok
+[09:24] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa hoje?
+[09:25] CLIENTE: Pode deixar, achei um pouquinho mais caro, mais ganho os serviços
+[09:28] LOJA: *Josy:*
+Apenas fique atento a promessas de ganhar serviços.
+[09:28] LOJA: *Josy:*
+👋🏻

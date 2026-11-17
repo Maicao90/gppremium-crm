@@ -1,0 +1,20 @@
+CONVERSA 2e5d835ce7 | contato: Gleice Sousa | 27/08/2026 06:37 até 27/08/2026 17:54 | 3 msgs do cliente, 7 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[06:37] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[06:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[06:39] CLIENTE: Eu preciso de rodas aro 17 225/50
+[08:22] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu sou a Josi. E você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0FF036D70FA9DF49A8B_230742.ogg}
+[12:56] LOJA: *Josy:*
+E aqui não trabalhamos com rodas, infelizmente.
+[13:12] CLIENTE: E o pneu
+[14:39] LOJA: [foto]
+[14:40] LOJA: *Josy:*
+Pneu da marca Sunny
+[17:54] LOJA: *Josy:*
+Vou te encaminhar a nossa localização.
+[17:54] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

@@ -1,0 +1,21 @@
+CONVERSA 0bf1884337 | contato: Jose Faria Damasio Faria | 10/09/2026 09:40 até 10/09/2026 14:41 | 5 msgs do cliente, 6 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[09:40] CLIENTE: Olá! Vim pelo site e quero cotar pneus GP Premium.
+[09:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:40] CLIENTE: 215 60 16
+Bom dia.
+4 unidades
+[09:42] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu sou a Josi e eu tenho 215,65,16 que está por apenas R$ 349,00 à vista. Você mora aqui em Luziânia?"  {audio:midias/3EB0B7A556D725C50DF2E9_59822.ogg}
+[09:42] CLIENTE: Moro em Vianopolis.
+Vou retirar.
+Confirma a medida
+[09:43] LOJA: [áudio] "Você está utilizando essa medida na Fiat Toro, na Duster?"  {audio:midias/3EB0BF98CA239A31F4AE6B_651736.ogg}
+[09:43] CLIENTE: Tracker
+[09:43] CLIENTE: Marca do pneu
+[09:44] LOJA: *Josy:*
+Marca GP PREMIUM
+[14:41] LOJA: [áudio] "Eu vou te mandar aqui a nossa localização, Sr. José, pois sobrar a possibilidade, o senhor passa aqui na nossa empresa, está bem?"  {audio:midias/3EB02751A33755C376D761_173929.ogg}
+[14:41] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

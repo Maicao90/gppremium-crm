@@ -1,0 +1,37 @@
+CONVERSA a7b50e5d2b | contato: . | 20/10/2026 15:11 até 21/10/2026 12:01 | 4 msgs do cliente, 6 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[15:11] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[15:11] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[15:12] CLIENTE: Qual o valor do pneu 175/70 R14?
+[15:32] LOJA: *Josy:*
+OI
+[15:33] LOJA: *Josy:*
+Obrigada por aguardar!
+[15:33] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:33] LOJA: [foto]
+[15:48] CLIENTE: Ok.
+Obrigado!
+--- 21/10/2026 (Wed) ---
+[08:48] CLIENTE: Bom dia!!
+Já estou na loja realizando a troca dos pneus. 
+Obrigado!
+[08:48] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[12:01] ROBÔ: 🙋🏼‍♀️

@@ -1,0 +1,96 @@
+CONVERSA 43bea05f04 | contato: [@[H&@D@ | 01/10/2026 10:07 até 02/10/2026 10:38 | 36 msgs do cliente, 36 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[10:07] CLIENTE: Bom dia
+[10:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:08] LOJA: *Josy:*
+Bom dia!
+[10:08] CLIENTE: Orçamento do pneu aro 15
+[10:08] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa ?
+[10:09] CLIENTE: 185,65,15
+[10:09] LOJA: *Josy:*
+Estou com uma oferta para os pneus da marca GP Premium, de R$ 289,00 por apenas R$ 249,00 a vista!
+[10:09] LOJA: [foto]
+[10:10] LOJA: *Josy:*
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:10] CLIENTE: Entendi
+[10:12] LOJA: [áudio] "Você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0CED3556D301B3DE6F0_463892.ogg}
+[10:13] CLIENTE: Não, mais moro mais ou menos perto
+[10:15] LOJA: [áudio] "Ah, sim, perfeitamente. Uai, se você tiver a possibilidade, passa aqui na nossa loja, que aí nós podemos conversar pessoalmente, podemos ver aí uma opção de parcelamento, de repente, se você for parcelar, que fique boa para você."  {audio:midias/3EB03BB41DEF84D41E3975_821351.ogg}
+[10:16] CLIENTE: Se fosse no pix teria desconto?
+[10:16] LOJA: [áudio] "Esse pneu ele já está com desconto, então o valor dele para débito e Pix R$ 249,00 mesmo, tá?"  {audio:midias/3EB020D7E98EB15FA3B983_727612.ogg}
+[10:18] CLIENTE: Ta bom
+[10:19] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:19] LOJA: [foto]
+[10:22] LOJA: [áudio] "Olha, como para mim, no débito, no Pix e parcelamentos, todos têm taxa que cobram de mim, se você porventura conseguir trazer o dinheiro físico em espécie, dá para nós negociarmos, tá? No caso, dá para fazer aí a unidade por R$ 235,00, mas somente no dinheiro. Pneu, débito e Pix, parcelamentos exatamente conforme nós conversamos aí, tá joia? Porque o pneu, ele já tá na oferta mesmo, começamos o mês com essa promoção."  {audio:midias/3EB0E2FDB875F108F20929_562082.ogg}
+[10:25] CLIENTE: Ta bom
+[10:25] CLIENTE: Tô vendo aqui direitinho  e te falo
+[10:25] CLIENTE: Vcs montam?
+[10:26] CLIENTE: Eu preciso de 2 no momento
+[10:28] LOJA: [áudio] "Sim, montamos sim."  {audio:midias/3EB0099751AAD870F5C52C_100953.ogg}
+[10:30] CLIENTE: Tem algum custo?
+[10:32] LOJA: [áudio] "A instalação dos pneus não, porque quando eu passo o preço já é colocado. O custo é apenas para o balanceamento e alinhamento se o seu carro precisar fazer. O balanceamento hoje está em média de 35 por roda, mas são valores negociáveis, pode ficar tranquilo, tá? Vindo aqui, só conversar com os meninos da oficina."  {audio:midias/3EB04FB57F344FBDCB5959_182520.ogg}
+[10:33] CLIENTE: Ta bom
+[10:34] LOJA: *Josy:*
+Qual é seu nome?
+[10:34] CLIENTE: Aline
+[10:35] LOJA: *Josy:*
+Perfeito, Aline..assim que possivel, passa aqui!
+[10:37] CLIENTE: Ta bom 
+V3ndo aqui direitinho com meu marido
+[10:40] LOJA: *Josy:*
+Combinado!
+[12:32] CLIENTE: Oi
+[12:32] CLIENTE: Josy
+[12:32] CLIENTE: Vou aí mais tarde
+[12:32] LOJA: *Josy:*
+Oi, Aline!
+[12:33] LOJA: *Josy:*
+Combinado, está bem!
+[12:33] CLIENTE: Vou pagar em dinheiro com aquele desconto que vc me deu ta bom?
+[12:33] LOJA: *Josy:*
+Perfeito!
+[12:33] CLIENTE: Bgda
+[12:33] CLIENTE: Me manda a localização  por favor
+[12:34] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:34] LOJA: [foto]
+[12:35] CLIENTE: Ta bom bgda
+[12:35] LOJA: *Josy:*
+Disponha!
+[18:36] CLIENTE: Boa noite
+[18:48] CLIENTE: Ou bom dia
+[18:49] CLIENTE: Meu marido levou em um mecânico  que é  amigo dele , ele falou que os pneus são remods
+[18:49] CLIENTE: Pensei que os pneus fossem originais?
+--- 02/10/2026 (Fri) ---
+[08:01] LOJA: [áudio] "Oi Aline, bom dia, como é que você está? Os pneus GP Premium são produções nossas, são produções artesanais. Fique extremamente tranquila porque a especificação de remodelagem é apenas por questão técnica do pneu, tá jóia?"  {audio:midias/3EB07908329D1E7421F02D_134951.ogg}
+[08:02] LOJA: [áudio] "Igual eu te falei, esses pneus tem garantia e são os pneus mais vendidos que eu tenho. Nossa, fica extremamente tranquila com isso."  {audio:midias/3EB00DEFC3CBADD2EB6B52_242662.ogg}
+[08:03] LOJA: [áudio] "Você me dá só um tempinho que eu vou gravar um vídeo aqui para você poder entender muito melhor, tá joia? Fique de verdade extremamente tranquila."  {audio:midias/3EB024B67F31D87D1985B8_959973.ogg}
+[08:16] CLIENTE: E pq pneus originais não são remoldados eu não  entendi o pq ta remold?
+[08:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:23] LOJA: [foto] Aline... esse foi um dos 29 clientes que atendi ontem, usam os pneus desde que a empresa existe, eles conhecem perfeitamente a diferença dos pneus da GP Premium, esse é um cliente que veio de Aguas Claras, ontem veio um cliente de Boituva SP com a familia. Atendi a cliente Sileide que veio de Minas, Erika de Taguatinga, Anna Carolina daqui,  em fim...digo de coração, fique tranquila.
+[08:53] CLIENTE: [áudio] "Olá, bom dia, tudo bem? Aqui é o esposo Dalinho. Pois é, ontem foi tão corrido, né, que a gente nem percebeu, porque se eu tivesse percebido e visto, a gente, eu vou ser sincero com a senhora, a gente não ia pegar. Depois que eu cheguei aqui, né, que eu saí do trabalho, tem um amigo meu, que ele é mecânico e mexe que você tem gosto de pneu também. E aí ele que falou, comprou pneu novo, aí ele falou, rapaz, eu não tô vendo que o pneu é remold. Aí que eu fui ver escrito, né? Então, assim, qual é a garantia que vocês dão se o pneu deslocar? Né? Porque a gente vai fazer uma viagem e se o pneu deslocar? Porque o que acontece? É... Eu não entendo se é da empresa de vocês e é artesanal, né? Por que vem escrito remold, então? Então, no caso, me tira uma dúvida. Esse pneu de vocês é original ou são pneus que são remoldados, ou seja, que é de remold, né? É isso aí que eu não tô conseguindo entender, sabe? Porque não era pra vir escrito, né? Muito remold."
+[08:53] CLIENTE: [áudio] "E a minha esposa é leiga dessas coisas, né? Aquela que tava pesquisando. Eu tava no trabalho, não tinha como. Então, na correria de ontem, eu nem me atentei em olhar isso, né? E aí, eu queria ver com vocês. Vocês não têm um pneu aí, original, sem ser remold, sem ser escrito remold? Ou todos os pneus de vocês, que vocês vendem aí, vêm como remold?"
+[08:58] LOJA: [áudio] "Pois, eu vou explicar para vocês dois, tá? E que existe uma grande diferença dos pneus que são remoldes realmente para os pneus que nós fazemos, que eles apenas entram em categoria de remodelagem por questão técnica, por ser justamente um produto que nós fazemos, é um produto artesanal, o Inmetro fala, olha, vamos classificar ele aqui que ele vai entrar nessa categoria apenas para ter uma especificação, somente isso. E, de verdade, do fundo do meu coração, fiquem extremamente tranquilos, vocês podem viajar, não tem restrição de nada, tá? Se porventura, igual o senhor citou aí, a respeito de deslocamento, qualquer anormalidade que vocês sentirem, vocês podem vir aqui para conversar conosco, tá? E eu digo justamente com a confiança de que vocês vão voltar aqui apenas para comprar os outros dois pneus e instalar no carro de vocês, tá? Você me dá só mais um tempinho, que tem muita gente aqui no WhatsApp, no momento que eu estou mandando mensagens, e eu vou gravar o vídeo para vocês poderem compreender e ficar mais claro, tá, Joia? Porque realmente há um mal entendido justamente dos mecânicos e outras empresas que não desmerecendo o conhecimento dele, porque eu sei que ele conhece, senão ele não estaria há tanto tempo trabalhando com o que trabalha. Mas existe falta de informação das pessoas, tá? Então, me dá só mais um instante que eu já vou gravar para vocês."  {audio:midias/3EB0D0E57696820C959845_681353.ogg}
+[09:02] CLIENTE: Ta
+[10:10] LOJA: [vídeo]
+[10:11] LOJA: [áudio] "E assim, futuramente, se um amigo de vocês, né, que é mecânico, quiser trabalhar aqui com a nossa empresa, né, sendo parceiro pra poder comercializar os pneus da nossa marca, nossa, será uma satisfação imensa recebê-lo, tá? Se ele tiver a oportunidade de passar aqui um dia desses pra gente conversar, caramba, vai ser muito bom."  {audio:midias/3EB077670FAD2F15D1605C_660880.ogg}
+[10:27] CLIENTE: Ta sem áudio o vídeo
+[10:27] CLIENTE: Mais tudo bem
+[10:27] CLIENTE: Agente vai dar um voto de confiança
+[10:27] CLIENTE: Vamos ver como vai ser
+[10:28] LOJA: *Josy:*
+Fiquem em paz!
+[10:28] LOJA: *Josy:*
+Olha acabei de receber o casal Ed e Silvana...clientes que sempre compram aqui...
+[10:29] LOJA: [foto]
+[10:29] LOJA: *Josy:*
+Mas o áudio deu para ouvir?
+[10:33] CLIENTE: Sim
+[10:36] LOJA: [áudio] "No vídeo, né, não saiu o áudio, mas eu vou explicar aqui pra você rapidinho, tá? Eu disse o seguinte, que o pneu que é remold mesmo, é esse pneu que tava encostado na porta, que inclusive, ele parece um plástico, é um pneu que tem emendas perceptíveis, ele é feito de sucata. Aqui costuma se dizer, né, que são pneus feitos, pneus não, quando as coisas são feitas de qualquer jeito, se chama feito nas coxas, né? Então, o pneu que é remold mesmo, ele é, pelo amor de Deus, é, aí no vídeo não ficou muito claro, porque minha câmera não é boa, mas assim, é um plástico. Já o pneu, né, da marca GP Premium, como ele é feito com a mesma borracha, é, dos pneus de grandes marcas nacionais famosas, e ele é feito sobre um padrão de produção que é extremamente criterioso, que é um padrão europeu, então assim, os pneus são de primeira linha mesmo. Se seu carro estiver bem alinhado, pra não dar desgastes irregulares, se você mantiver os pneus sempre bem calibrados, não cheios demais, pra não gastar as laterais, e com calibragem baixa, pra não estragar o meio do pneu, e isso é regra não só pro pneu que está instalado no seu carro agora, mas pra qualquer marca. Então, você mantendo os cuidados básicos, a vida útil desse pneu, ela pode ultrapassar 60 mil quilômetros, tá? Então, assim, é um pneu de primeira linha, eu mostrei aí, né, que utiliza na caminhonete do meu pai, eu uso o pneu ali da Fiat Toro, na caminhonete, pra vocês terem noção de como esse pneu aguenta. O meu irmão usa na Amarok, lá fora tem carro de colaborador que usa, tem dois carros que eram de cliente que estava aqui dentro, conversando com o pessoal aqui, um cliente estava aqui no banheiro, o outro estava aqui do outro lado, aí ele não quis aparecer na filmagem, mas assim, de gente que compra aqui comigo. E nós produzimos pneus desde o ano 13 e até o 18, tá joia? E reforço mais uma vez, se seu amigo aí tiver interesse de trabalhar, né, futuramente aí com a nossa empresa, pode vir aqui, que será uma satisfação ter ele como parceiro também, pra poder conhecer melhor aqui os nossos trabalhos, tá bom?"  {audio:midias/3EB0E15DBF59B23C942DCF_44770.ogg}
+[10:38] CLIENTE: Ta bom 
+Bgda

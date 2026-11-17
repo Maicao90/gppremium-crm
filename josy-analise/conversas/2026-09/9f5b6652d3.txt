@@ -1,0 +1,37 @@
+CONVERSA 9f5b6652d3 | contato: Getulio | 21/09/2026 09:25 até 20/10/2026 11:03 | 11 msgs do cliente, 11 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[09:25] CLIENTE: Bom Dia
+[09:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:25] LOJA: *Josy:*
+Bom dia!
+[09:25] CLIENTE: tem este pneu e quanto:
+[09:25] CLIENTE: [foto]
+[09:25] LOJA: [áudio] "Bom dia, Sr. Getúlio. Como é que está?"  {audio:midias/3EB01675240EDC976FA21D_395656.ogg}
+[09:26] CLIENTE: Tô bem?
+[09:26] LOJA: [áudio] "Nossa, essa opção, ela está em falta por hora."  {audio:midias/3EB0D65837A56540A0A716_500001.ogg}
+--- 20/10/2026 (Tue) ---
+[10:57] CLIENTE: [foto]
+[10:57] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[10:57] CLIENTE: Tá quanto?
+[10:57] LOJA: [áudio] "Eu sou Getúlio, tudo jóia!"  {audio:midias/3EB05D7CEAA35787D7B358_89100.ogg}
+[10:58] CLIENTE: Bom Dia
+[11:00] LOJA: [áudio] "Senhora Getúlio, só estou verificando aqui com os meus distribuidores, porque essa opção eu não vou ter aqui a pronta entrega, tá bom?"  {audio:midias/3EB00114E5EB422B70736E_754357.ogg}
+[11:01] CLIENTE: Entendi
+[11:02] LOJA: [foto]
+[11:02] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor UNITÁRIO do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:02] LOJA: [áudio] "Sr. Getúlio, essa opção, ela vai ser somente através de encomenda, tá joia?"  {audio:midias/3EB03DCABE102A75E02A95_736697.ogg}
+[11:02] CLIENTE: Preciso de urgência
+[11:02] CLIENTE: Tranquilo
+[11:02] CLIENTE: Era a vista
+[11:03] LOJA: [áudio] "Se pedir hoje chega até sexta-feira."  {audio:midias/3EB0B3BE6469FBE8C9166A_417685.ogg}

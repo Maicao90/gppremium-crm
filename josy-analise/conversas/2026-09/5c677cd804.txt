@@ -1,0 +1,17 @@
+CONVERSA 5c677cd804 | contato: Leandro Nunes | Eng Civil | 27/09/2026 12:11 até 28/09/2026 17:42 | 3 msgs do cliente, 5 da loja, 0 do robô
+
+--- 27/09/2026 (Sun) ---
+[12:11] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[12:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:12] CLIENTE: 185/60
+--- 28/09/2026 (Mon) ---
+[08:20] LOJA: *Josy:*
+14? 15?
+[08:21] CLIENTE: 15
+[08:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:22] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi e eu tenho aqui sim o pneu da marca GP Premium que ele está por apenas R$ 249,00 a unidade. Esse valor é promocional por tempo limitado. E você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB0B1AF8867D1F9260F17_781127.ogg}
+[17:42] LOJA: 🙋🏼‍♀️

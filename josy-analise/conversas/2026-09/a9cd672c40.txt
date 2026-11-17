@@ -1,0 +1,42 @@
+CONVERSA a9cd672c40 | contato: rubens | 03/09/2026 13:21 até 10/09/2026 17:00 | 18 msgs do cliente, 16 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[13:21] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[13:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:22] CLIENTE: 1856515
+[13:22] CLIENTE: [áudio] "Está aí, 185-65-15."
+[13:24] LOJA: [foto]
+[13:24] LOJA: [áudio] "Olá, tudo bem? No dia de hoje eu tenho todas essas opções de marcas que estão aí no orçamento. O orçamento, ele é composto de valor unitário, onde na primeira colônia eu deixei o valor à vista, que é o menor e melhor preço. E aí seguem as opções de parcelamento e até 10 vezes, caso o senhor queira parcelar. Moro aqui em Luziânia mesmo?"  {audio:midias/3EB06AC299501C5E1A11AA_629446.ogg}
+[13:27] CLIENTE: Sim
+[13:27] CLIENTE: Sexta feira eu vou passar aí
+[13:27] LOJA: [áudio] "Ai, que bacana! Aí, olha só, eu estou com a oferta do pneu da marca GP Premium, tá? Que inclusive ele já é instalado. De 289, estou fazendo ele por 249 no débito ou no Pix, mas se o senhor ainda conseguir trazer o pagamento no dinheiro em espécie, se o senhor sacar o dinheiro pra mim, eu faço por 237 cada um. E aí, olha só."  {audio:midias/3EB0915BAA562F9F8993CF_55872.ogg}
+[13:28] CLIENTE: [figurinha]
+[13:28] LOJA: [áudio] "O Sr. Sabe edifica aqui a nossa loja?"  {audio:midias/3EB00D9976A7FDC64FA622_30652.ogg}
+[13:28] CLIENTE: Sim
+[13:29] CLIENTE: Com e seu nome
+[13:30] CLIENTE: Pra mim procurar aí
+[13:30] LOJA: [áudio] "Eu me chamo Josi."  {audio:midias/3EB070B7ED19AB13886D59_69003.ogg}
+[13:30] LOJA: [foto]
+[13:30] CLIENTE: Tá bom obrigado
+[13:30] LOJA: [áudio] "Por nada!"  {audio:midias/3EB0B0C1EAC85FDAE46847_772843.ogg}
+[15:11] LOJA: [áudio] "Seu Rubens, o senhor vai conseguir vir aqui ainda hoje ou quer agendar para amanhã?"  {audio:midias/3EB00AC4AC91C19023B691_953488.ogg}
+[17:03] CLIENTE: [áudio] "Não, eu vou aí ou amanhã à tardezinha ou sábado de manhã, tá bom?"
+[17:08] LOJA: [áudio] "Combinado, Sr. Rubens, do jeito que fica melhor para o senhor, tá bom?"  {audio:midias/3EB0A809FB0C19F3449D9B_892045.ogg}
+[17:23] CLIENTE: [áudio] "Beleza, Biões, pode ficar tranquilo que amanhã, ou da manhã até depois eu apareço aí."
+[17:24] LOJA: [áudio] "Muito obrigada, Sr. Rubens. Te aguardo, tá? Eu te mandei aqui a foto da frente da fábrica. Então, te aguardo e desde já. Muito obrigada e bom descanso."  {audio:midias/3EB0ED28FA5653590FFB9B_765535.ogg}
+[17:24] CLIENTE: [áudio] "Obrigado, meu anjo. Para você também."
+--- 10/09/2026 (Thu) ---
+[16:50] LOJA: [áudio] "Oi, seu Rubens, como é que está? O senhor sumiu, está tudo bem? Como que passou aí esses dias?"  {audio:midias/3EB00AC913F0FE20676463_522672.ogg}
+[16:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:56] CLIENTE: [áudio] "Boa tarde, tudo bem. Graças a Deus só o ouro trabalhando muito, mas bem. E você também?"
+[16:57] CLIENTE: 1856515
+[16:57] LOJA: [áudio] "Graças a Deus, na santa paz. E seu Rubens, olha só, os pneus da GP Premium, por hora, ainda estão permanecendo no valor de R$ 249,00 à vista, que o preço dele, né, nos dias normais é R$ 289,00, mas, por hora, eu ainda deixo por R$ 249,00, se for no débito ou no Pix."  {audio:midias/3EB019D8D916DF27065E3F_55981.ogg}
+[16:58] LOJA: [áudio] "Aí, eu lembro que eu combinei com o senhor, se o senhor trouxer o pagamento no dinheiro de papel, eu faço o pneu por 237 cada."  {audio:midias/3EB0A36DF669D4C162A426_634405.ogg}
+[16:58] CLIENTE: [áudio] "Sim, eu vou dar uma olhadinha aqui, talvez sábado eu apareça por aí. Quem está mexendo com início de plantação, estranho, não aperto danado, sabe? Eu marquei dia aí semana passada, não deu. Aí eu vou ver se eu vou aí sábado."
+[16:59] CLIENTE: [áudio] "Não, beleza. Eu vejo aqui o que eu posso fazer. Hoje, dinheiro em espécie tá difícil, minha filha. Mas vou ver aqui como é que faz. Tá bom?"
+[16:59] LOJA: [áudio] "Ah, mas vai dar certo, se Deus quiser dar certo. Sempre dá, na verdade, né? A gente passa uns apertos, mas depois as coisas se ajeitam."  {audio:midias/3EB0052C3248E7A7D2AC85_473808.ogg}
+[17:00] CLIENTE: [áudio] "Todo ano é isso aí. Eu até acostumei. Todo ano, quando começa o início e final de colheta, a gente fica numa perda que eu vou contar pra você. É das cinco da manhã, meia-noite, quase todo dia. O tempo é curto."

@@ -1,0 +1,33 @@
+CONVERSA 476e10d1a6 | contato: Marquinho | 23/09/2026 16:53 até 24/09/2026 10:41 | 6 msgs do cliente, 15 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[16:53] CLIENTE: Quero cotar o pneu 185/65 R15 GP Premium.
+[16:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:53] CLIENTE: 1856515
+[16:54] LOJA: *Josy:*
+Pneu da marca GP Premium
+[16:54] LOJA: [foto]
+[16:54] LOJA: *Josy:*
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:54] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[16:55] CLIENTE: Trabalho na região
+[16:55] CLIENTE: Qual marca os peneu
+[16:55] CLIENTE: 4 pneus preciso
+[16:57] LOJA: *Josy:*
+Temos aqui a pronta entrega.
+[17:00] LOJA: [áudio] "Oi, Max. Tudo bem? Eu sou a Josi. E eu tenho os pneus aqui à pronta entrega, está bem? E se você estiver com o carro, se assim você quiser, nós já podemos até mesmo fazer a instalação dos pneus para vocês, está bem?"  {audio:midias/3EB0A2A8F1161FC825CA48_993129.ogg}
+[17:23] LOJA: *Josy:*
+Se estiver em busca de alguma marca especifica pode me falar...
+[17:30] CLIENTE: [áudio] "Oi Josi, eu estava ocupado ali. Mas o pneu teu ali é pneu remoto, isso aí? Ou não?"
+[17:32] LOJA: [áudio] "Esse daqui, ele é um pneu que nós fazemos, Marcos, ele é um pneu ecológico, produção própria, um inmetro, pede para classificá-lo como remolde, só que são coisas bem distintas, tá? Na lateral dele vem explicando, né, que ele é um pneu ecológico e ele entra na categoria de remodelagem, só que ele é a linha Premium. Se você quiser, até grava um vídeo aqui para poder te mostrar a diferença."  {audio:midias/3EB04D869280CF1520C912_410054.ogg}
+[17:37] LOJA: [vídeo]
+[17:38] LOJA: *Josy:*
+Temos essas outras opções de marcas abaixo, caso seja de seu interesse.
+[17:39] LOJA: [foto]
+--- 24/09/2026 (Thu) ---
+[10:40] LOJA: [áudio] "Oi, Max. Bom dia. Ontem nós estávamos nos falando aqui e justamente para não ficar enchendo seu WhatsApp de mensagens, eu vou encerrar aqui o seu atendimento, tá? Eu vou te mandar a nossa localização, como você disse que trabalha aqui pela região. Então, assim que possível, você passa aqui na loja para nós conversarmos pessoalmente, tá joia? Vai ser uma satisfação receber você aqui."  {audio:midias/3EB0260B7E15E3ECF663CB_636058.ogg}
+[10:40] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:41] LOJA: [foto]

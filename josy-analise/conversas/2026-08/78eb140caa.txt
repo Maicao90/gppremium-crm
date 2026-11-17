@@ -1,0 +1,104 @@
+CONVERSA 78eb140caa | contato: Erlando | 28/08/2026 08:51 até 23/09/2026 11:24 | 27 msgs do cliente, 51 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[08:51] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[08:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:52] CLIENTE: 215 50 17
+[08:56] LOJA: *Josy:*
+Bom dia! Obrigada por aguardar.
+[08:56] LOJA: [foto]
+[08:56] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:04] CLIENTE: Onde fica a loja
+[09:09] LOJA: *Josy:*
+Somos de Luziânia-Go, mora por aqi?
+[09:33] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu sou a Josi. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0479F5CE1B44FD652C8_182757.ogg}
+[10:11] CLIENTE: [áudio] "Meu nome não. Sei que era tipo mais forte do próximo Brasil."
+[10:12] LOJA: [áudio] "Ah, sim, compreendo perfeitamente. Bem, de todo modo, eu vou deixar aqui na nossa conversa a localização da nossa empresa, pois se houver a possibilidade, passa aqui para nos conhecer. Até joia, obrigada pelo seu contato e tenha um bom final de semana."  {audio:midias/3EB0E19D09F49B8F704239_463079.ogg}
+[10:13] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:48] CLIENTE: [áudio] "Que marca é esse pneu aí, esse que está de promoção de 399, que está dizendo que é nacional? É remolde, né?"
+[10:51] LOJA: [áudio] "É da marca GP Premium, ele é um pneu ecológico que nós fazemos, ele entra na categoria de remodelagem, só que linha Premium, que não tem nada a ver com os pneus remoldos convencionais. E já estamos aí há 10 anos no mercado, pneus de primeira linha mesmo."  {audio:midias/3EB0ED0BC45651C58D4853_508354.ogg}
+[11:48] CLIENTE: [áudio] "E vocês entregam não aqui na Santa Maria? Sem qualquer como eu pagava a montanha, porque eu acho que estava mais barato para mim, porque eu ia montar aí, eu queria 2."
+[11:53] CLIENTE: [áudio] "E quanto custa o pneu R$ 215? R$ 215 não, R$ 85,75."
+[11:58] LOJA: [áudio] "1, 8, 5, 70, 15, isso mesmo? Eu não tenho essa opção aqui. É pra carga?"  {audio:midias/3EB0886E913154958A9FA3_656364.ogg}
+[12:14] CLIENTE: [áudio] "Qual os pneus 15 que você tem? Fala aí."
+[12:14] LOJA: [áudio] "Eu preciso saber para qual carro que o senhor precisa."  {audio:midias/3EB0934E433294EF58060F_450976.ogg}
+--- 09/09/2026 (Wed) ---
+[07:42] CLIENTE: Bom dia
+[07:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:02] LOJA: *Josy:*
+Bom dia, como vai Erlano?
+[08:03] LOJA: *Josy:*
+🙋🏼‍♀️
+[08:03] CLIENTE: Pneu 17
+[08:03] LOJA: *Josy:*
+Preciso saber a medida dos pneus.
+[08:04] LOJA: *Josy:*
+Vez passada o senhor precisava dessa opção.
+[08:04] CLIENTE: 215/50/17
+[08:04] CLIENTE: 2 unidades
+[08:04] LOJA: 3*Josy:*
+E por ora os preços permanecem os mesmos.
+[08:05] LOJA: *Josy:*
+Ainda tem o orçamento?
+[08:06] CLIENTE: Sim
+[08:06] CLIENTE: Passsr ai em 15 minutos
+[08:07] LOJA: *Josy:*
+Perfeito!
+[08:07] LOJA: *Josy:*
+Vou te encaminhar a nossa localização !
+[08:08] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6 *Josy:*
+[08:08] LOJA: [foto]
+[08:10] LOJA: [áudio] "E te mandei aí a localização. O senhor mora onde mesmo?"  {audio:midias/3EB0DCB478A2F1A4F210B1_902501.ogg}
+[08:10] LOJA: [áudio] "Que aqui é em Luziânia."  {audio:midias/3EB03EF14F10DC7FE8EB76_752730.ogg}
+[08:11] CLIENTE: [áudio] "Não, sim, eu sei, você tinha me falado naquela vez. Eu moro em Brasília, mas é porque eu estou, eu estou na, eu vou pegar a estrada, eu vou ali no, eu venho aqui em Fistalino. Aí, eu passei agora, estou passando aqui no, chegando no engaio, olha."
+[08:11] CLIENTE: [áudio] "Seguileta, deixais de lado e tam. Marco chega do redão."
+[08:11] CLIENTE: [áudio] "Eu vou querer só duas unidades desse nacional aí, que tá naquela sua tabela de preço lá."
+[08:11] LOJA: [áudio] "Ah, entendo isso. Vai aproveitar a rota, né? Isso é bom demais."  {audio:midias/3EB0DA685F752FA31E7A78_780742.ogg}
+[08:11] LOJA: [áudio] "Sim, perfeito. Ficamos combinados, tá?"  {audio:midias/3EB0D600A56B17FC9BD64B_708614.ogg}
+[08:12] CLIENTE: [áudio] "É, eu sempre passo aí em Luziânia, por isso que eu peguei o preço daí também, entendeu? Aí o que tá rodando só aqui dentro, daí eu tô amarrando, se chegar aí..."
+[08:12] LOJA: [áudio] "Ah, vai dar tudo certo, fique tranquilo."  {audio:midias/3EB09CDACB8159D03329AA_169394.ogg}
+[09:06] LOJA: *Josy:*
+Oi...
+[09:07] LOJA: *Josy:*
+Pode me enviar áudio por gentileza
+[09:07] CLIENTE: So tem aqui pra montar
+[09:07] LOJA: *Josy:*
+isso
+[09:07] CLIENTE: [áudio] "É, não, é porque aqui tá no... Você falou que ia pagar o rodízio e eles não... Na verdade, essa oficina aqui eu não gostei, não. Você tem algum outro lugar pra trocar, não? Se não tiver, pode ir, eu vou pegar aqui o papel, não vou nem fazer nada aqui, não. Não tem problema não, eu pago pra montar em outro lugar."
+[09:07] LOJA: *Josy:*
+a montagem é paga
+[09:09] LOJA: [áudio] "Não, a montagem eu expliquei para o senhor, que para tirar os pneus do seu carro e colocar o que o senhor está colocando agora, eu que pago."  {audio:midias/3EB04AD9FCB5D83B9AA272_963385.ogg}
+[09:13] LOJA: *Josy:*
+Nossa loja fica na Av. Alfredo Nasser, Qd.60, Lt.15, Setor Mandú 2 em Luziânia-GO. Clique no link e vá direto para o Google Maps e navegue até a nossa loja. https://onbio.link/localizacao-direcionalpneuslza *Tel: 61 3209-2022*
+[09:13] LOJA: *Josy:*
+Direcional Pneus
+--- 23/09/2026 (Wed) ---
+[11:04] CLIENTE: Bom dia
+[11:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:04] LOJA: [áudio] "Oi, Erlando! Bom dia! Tudo jóia?"  {audio:midias/A561C73732AD2F6F92D6C44F22B40A8A_717094.ogg}
+[11:05] LOJA: [áudio] "Diga em que eu posso te ajudar."  {audio:midias/A580F291BC179933256C7CED85D95997_336845.ogg}
+[11:05] CLIENTE: [áudio] "Tô tentando te ajudar a vender pneus. Qual é o pneuzinho pro amigo meu que tem uma fábrica de carretinha aqui? Qual é o pneuzinho mais barato que você tem aí de roda 13? Aquele 165-6013, você tem ele aí?"
+[11:08] LOJA: [áudio] "Eu tenho 165,7013, que ele tá na oferta, tá? O preço normal dele é 280 reais, eu estou fazendo por 239."  {audio:midias/3EB09D2ADB01B0E58C24EA_492262.ogg}
+[11:09] CLIENTE: [áudio] "Pô, Jô, o seu tá mais caro do que o concorrente aqui. Ele usa o 60. Ele não fabrica aí o 60, né? Qual é o pneu mais barato, roda 13, que é pra botar em carretinha? É esse mesmo que você tem?"
+[11:09] LOJA: [áudio] "Quem que é o concorrente? Só para eu saber."  {audio:midias/3EB02058E3D84419A371BB_413941.ogg}
+[11:10] LOJA: [áudio] "E não, não tenho esse daí, que o perfil dele é muito baixo. Aí pensa em colocar um pneu 165,60. Que pneuzico de nada é esse? Não dá, não. Então eu tenho 165,70,13, tá? Que no débito ou no Pix é 239, mas se o senhor trouxer aqui no pagamento em dinheiro pra mim, eu faço por 225, porque o meu pneu, o senhor sabe que ele tem um diferencial. É pneu bom mesmo."  {audio:midias/3EB0CB5448C090800F26BF_393776.ogg}
+[11:10] CLIENTE: [áudio] "Aí você tá querendo saber demais, Luzi. Não, na verdade é um... Acho que um rapaz que loucou... Eu tô aqui na fábrica dele, um rapaz loucou uma carretinha, estourou, aí ele tá comprando pra repor, parece. Eu não sei o que que é, Luzi. Aí ele mandou aqui, eu não sei quem é o concorrente. De onde é, ô Clóvis? Onde é que a gente falou?"
+[11:10] CLIENTE: Siqueira campos parece
+[11:11] LOJA: [áudio] "Vixe, é pneu Xing Ling, com Plopotequize. Esses pneus aí, o senhor sabe que não vai rodar nada. O senhor paga mais barato, mas vem menos borracha também, tá? Não tenho explicado por que é mais barato. É pneu chinesinho."  {audio:midias/3EB071C56CB5B39EDD80ED_953838.ogg}
+[11:11] LOJA: [áudio] "Não, mas não tem problema não. Então, esses pneus aí são pequenos. Além de pequenos, vem menos borracha. E isso é para qualquer marca de pneu chinês. Já pode ver que o TWI dele, que é até onde o senhor deve usar o pneu, ele já vem beirando o final da borracha."  {audio:midias/3EB0094F2E2F170B337CDB_62843.ogg}
+[11:11] LOJA: [áudio] "Então dá realmente para fazer um menor preço aí porque o pneu dura menos, então você vai ter que comprar esse pneu duas vezes, ou seja, vai gastar mais."  {audio:midias/3EB0F00E43BAE2E04D0F3C_912216.ogg}
+[11:12] CLIENTE: [áudio] "Não, eu entendi, eu entendi. Mas, enfim, é só porque eu estou aqui na fábrica dele, eu vejo ele comprando pneu e não sei o que, e aí eu morri, eu fui bem atendido por você, eu disse, eu vou ver se a Ajoso tem preço aqui para a venda, porque aí seria uma venda meio que contínua, né? Porque assim, deve ter, não sei qual é a demanda dele aqui de pneu, mas a demanda dele é bem alta, né? De média para alta. Mas, enfim, valeu, viu? Tchau, tchau."
+[11:13] LOJA: *Josy:*
+Entendi
+[11:14] LOJA: [áudio] "Sim, sim, compreendo, Sra. Irlanda. Igual ontem veio aqui uma moça que ela comprou numa empresa aí, justamente esse pneuzinho aí. Aí ela chegou aqui com um pneu, né, que estourou, porque esses perfis que são baixos, eles estão propensos a danificar rápido, né? Aí eu falei, moça, mas por que que você tá colocando um pneu tão pequeno no seu carro? Dela, ai, porque me indicaram, eu falei, mas moça, você observou que quando você, por exemplo, passa num quebra-mola, você passa quase raspando? Dela, sim. Eu falei, pois é, porque esse, essa medida, ela é pequena demais pra colocar em qualquer veículo. Então, ela raspa, tá propenso a cortes, né, mais suscetíveis, porque realmente, esse 165-60 é um pneu muito pequenininho, muito pequenininho mesmo. Ainda mais aí, pra usar na carretinha? Nossa! É complicado. Mas, enfim, Sra. Irlanda, estou aqui, se precisar, só chamar ou então, vem aqui na loja ou chama seu amigo pra vir aqui na loja também, tá bom? E aí, porque eu tô aqui, se precisar, só chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou chamar ou cham"  {audio:midias/3EB0C82E5FB1AAF6D111D7_168184.ogg}
+[11:23] CLIENTE: [áudio] "Beleza, Júlio. Valeu. Obrigado. Boa sorte de vocês."
+[11:24] LOJA: [áudio] "Imagina, eu que agradeço pelo contato. Boa semana."  {audio:midias/3EB05B7C96EBF7D6A2E1A3_911366.ogg}

@@ -1,0 +1,34 @@
+CONVERSA 68877e3684 | contato: Almir | 14/09/2026 16:47 até 17/09/2026 09:57 | 5 msgs do cliente, 13 da loja, 0 do robô
+
+--- 14/09/2026 (Mon) ---
+[16:47] CLIENTE: Boa tarde
+[16:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:48] CLIENTE: Estou precisando de peneus 14 / 185/14
+[16:48] CLIENTE: Mim manda a tabela de preços
+[16:49] LOJA: *Josy:*
+Boa tarde.
+[16:49] LOJA: *Josy:*
+Enviarei sim, pode apenas me dar 1 instante por gentileza. Estou finalizando seu orçamento. ☺️
+[16:52] CLIENTE: Beleza
+[16:53] LOJA: [foto]
+[16:54] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:32] LOJA: *Josy:*
+🙋🏼‍♀️
+--- 15/09/2026 (Tue) ---
+[17:52] LOJA: [áudio] "Oi Elmi, tudo bom com você? Eu sou a Josi, aqui da Pneus GP Premium. Eu te encaminhei um orçamento ontem e eu gostaria muito de saber se você pretende seguir com a negociação. Você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0D269FDAD37F57E5979_905256.ogg}
+--- 16/09/2026 (Wed) ---
+[09:54] LOJA: *Josy:*
+Almir...
+[10:28] LOJA: [áudio] "Oi moço, bom dia, tudo bem com você? Eu te mandei um áudio ontem, mas eu imagino que na sua correria você tenha esquecido de me responder e eu gostaria de saber se as opções que eu te encaminhei no orçamento te atendem ou se você está em busca de alguma marca específica. Então, por gentileza, assim que possível, me dá um retorno, está bem?"  {audio:midias/3EB0AB801911D8587FD10D_729085.ogg}
+[10:29] CLIENTE: [áudio] "Bom dia Jorge, tudo bem? Estou só fazendo os orçamentos aqui, entendeu? Eu moro no Gama, é porque eu estava no Luziânia na casa de um amigo meu, meu amigo meu indicou vocês, é porque eu moro aqui no Gama. Estou só fazendo os orçamentos mesmo dos pneus, preciso trocar os pneus aí."
+[10:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:31] LOJA: *Josy:*
+Pode digitar, se for melhor.
+[10:35] LOJA: [áudio] "Sim, compreendo perfeitamente, Almir. Então, faz o seguinte, quando você estiver aqui em Luziana novamente, você entra aqui na loja para tomar um café com a gente, aí nós conversamos pessoalmente, você já vê os pneus."  {audio:midias/3EB0F6FDDD0FC7F7C19239_468927.ogg}
+--- 17/09/2026 (Thu) ---
+[09:57] LOJA: [foto]

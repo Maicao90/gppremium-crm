@@ -1,0 +1,14 @@
+CONVERSA b930fb6af3 | contato: Mendes | 14/09/2026 15:31 até 14/09/2026 15:56 | 2 msgs do cliente, 5 da loja, 0 do robô
+
+--- 14/09/2026 (Mon) ---
+[15:31] CLIENTE: Boa tarde
+[15:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:32] CLIENTE: Quanto tá o pneu 195/55/16
+[15:35] LOJA: *Josy:*
+Obrigada por aguardar...eu estava em outra ligação.
+[15:35] LOJA: [foto]
+[15:55] LOJA: *Josy:*
+Muuuito obrigada!
+[15:56] LOJA: *Josy:*
+Boa semana para ti!

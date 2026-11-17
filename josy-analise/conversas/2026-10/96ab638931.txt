@@ -1,0 +1,48 @@
+CONVERSA 96ab638931 | contato: Fernando | 13/10/2026 22:14 até 17/10/2026 10:57 | 6 msgs do cliente, 31 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[22:14] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+Olá! Tenho interesse e queria mais informações, por favor.
+[22:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 14/10/2026 (Wed) ---
+[08:28] LOJA: 🙋🏼‍♀️
+[12:56] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Fernando? Você me solicitou aqui um orçamento? Me diz, por gentileza, qual que é a medida dos pneus que você precisa?"  {audio:midias/3EB09DF7F4DE95215E4A21_488405.ogg}
+[13:18] CLIENTE: 265/60/18
+[13:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:18] CLIENTE: [foto]
+[13:18] CLIENTE: 4
+[13:19] LOJA: [foto]
+[13:19] LOJA: No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:19] LOJA: O mais borrachudo é o da marca GP Premium esse de R$ 599,00
+[13:20] LOJA: [foto]
+[13:22] LOJA: [áudio] "Se vocês estiverem em busca de alguma marca específica, você me fala, por gentileza, que eu verifico com os meus distribuidores, certo? E você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB0EE8931A834D064B1A7_42193.ogg}
+[13:37] CLIENTE: [áudio] "Moro, moro aqui em Luziânia. Essa loja tu é aonde, hein?"
+[14:25] LOJA: [áudio] "É aqui na BR-040."  {audio:midias/3EB068A474A3839E9F5084_626141.ogg}
+[14:25] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:25] LOJA: [foto]
+[14:27] CLIENTE: [áudio] "Esse pneu que você vende não é remold não, é? Porque eu rodo muito com o carro, com o cabelonete pesado, sabe?"
+[14:29] LOJA: Já te explico, inclusive uso aqui na Amarok
+[14:42] LOJA: [foto]
+[15:22] LOJA: Oi
+[15:26] LOJA: [vídeo]
+[15:29] LOJA: [áudio] "A caminhonete eu já mostro pra você que utilizou justamente o modelo Brutus nela. Tá bom que o menino deu uma saída com ela aqui, mas eu já mostro pra você."  {audio:midias/3EB055C3CDDC190FF96565_928882.ogg}
+[15:37] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 17/10/2026 (Sat) ---
+[09:39] LOJA: Bom dia!
+[09:39] LOJA: Bom dia!
+[09:48] LOJA: [áudio] "Oi Fernando, tudo bom? Você me ligou aqui, eu só não consegui te atender de imediato, mas me fala, o que você precisa?"  {audio:midias/3EB09363398581178C1877_422560.ogg}
+[09:52] LOJA: Sr... Fernando... me retorna aqui!
+[09:53] LOJA: Vou te ligar de novo
+[09:53] LOJA: Ok!
+[09:54] LOJA: Sr... Fernando...
+[09:56] LOJA: Se o senhor for vir aqui, fica do lado da Goias Diesel e Hotel Goias
+[09:56] LOJA: [foto]
+[10:55] LOJA: 🙋🏼‍♀️
+[10:56] LOJA: [áudio] "Oi Sr. Fernando, tudo bom? Estou tentando falar contigo desde mais cedo e vejo que as mensagens chegam aí. Gostaria de saber se o senhor pode me dar um retorno, que o senhor me ligou, aí eu não consegui aqui te atender o celular aqui no meu WhatsApp, ele é no computador, aí não dá para atender, entendeu? Aí eu estou tentando falar contigo, o senhor consegue falar comigo, por gentileza?"  {audio:midias/3EB0EC45FE88396196241A_338949.ogg}
+[10:57] LOJA: No computador eu consigo ouvir audio e ler mensagem.
+[10:57] LOJA: Pode me responder?

@@ -1,0 +1,10 @@
+CONVERSA 738b18aa2d | contato: 💪🔱Kevenny🔱💪 | 21/09/2026 13:50 até 21/09/2026 13:52 | 3 msgs do cliente, 3 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[13:50] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[13:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:51] CLIENTE: 225/45 17
+[13:51] LOJA: [áudio] "Olá, boa tarde, tudo bem? Você reside aqui em Luziânia, Boiás?"  {audio:midias/3EB09969DABC841597C78A_455117.ogg}
+[13:51] CLIENTE: Não pensei que esse número fosse de acreuna
+[13:52] LOJA: [áudio] "Não, não somos de Acriona."  {audio:midias/3EB0E6A4D9CA166DE9F5C8_725965.ogg}

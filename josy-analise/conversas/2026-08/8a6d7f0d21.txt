@@ -1,0 +1,50 @@
+CONVERSA 8a6d7f0d21 | contato: . | 31/08/2026 09:02 até 01/09/2026 17:40 | 19 msgs do cliente, 17 da loja, 0 do robô
+
+--- 31/08/2026 (Mon) ---
+[09:02] LOJA: *Josy:*
+Bom dia, Maxuel... Josy aqui da pneus GP Premium... Nos falamos ontem a respeito dos pneus 255/40/17.
+[09:03] LOJA: *Josy:*
+No caso os que conversamos ontem, realmente a comercialização deles é voltada apenas para o Drift .
+[09:08] LOJA: *Josy:*
+Será que podemos verificar outra medida para te atender?
+[10:14] CLIENTE: Bom dia
+[10:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:14] CLIENTE: Não entendi não tá disponível a venda ?
+[10:14] CLIENTE: .
+[10:15] LOJA: [áudio] "Oi, Maxwell. Bom dia. Tudo bem com você? Exato. Devido às normas que existem nas produções de pneus, eles são voltados realmente apenas para o drift no momento, tá?"  {audio:midias/3EB02D80EB7332A49144E9_382003.ogg}
+[10:16] CLIENTE: Uai kkkk
+[10:16] CLIENTE: E se eu quiser fazer Drifft ?
+[10:21] LOJA: *Josy:*
+São normativas... já te explico.
+[10:33] LOJA: [áudio] "Bem, para o Drift, sim, eles podem ser usados, pois existem normativas técnicas, conforme eu te disse, para a utilização e comercialização desses pneus, os quais, justamente pelas normativas técnicas, mediante os órgãos automobilísticos, digamos assim, esses pneus não podem circular em vias comuns, vias normais, como as nossas, assim, tá? Então, eles são exclusivos, realmente, para o Drift. Se você for utilizar no Drift, sim, você pode instalar esses pneus, mas para a utilização em vias públicas, não pode."  {audio:midias/3EB09812B0FAD72B9C06A6_205808.ogg}
+[15:42] CLIENTE: [áudio] "Não, entendi. Entendi, sim. Mas o que vocês exigem aí para comprovar que eu vou usar no Drist o carro, por exemplo? Porque esse pneu é justamente para montar num projeto, né? É um projeto V8 e etc e tal. O carro está fazendo reforma, né? Está sendo reformado, restaurado, etc e tal. Então, o que vocês exigem para poder comprovar que eu vou usar ele no Drift ou não?"
+[15:43] CLIENTE: [áudio] "Porque aí, nesse caso, não caberia os órgãos de fiscalização, fiscalizar se o veículo tá rodando na rua com esse tipo de pneu ou não, etc. Porque fica meio subjetivo, né? Você concorda comigo? Por exemplo, eu posso comprar o pneu falando que eu vou usar no drift e não usar. Ou então o carro é de carreira de coleção, só vai pra encontro e etc. Como é que fica? Não seria os órgãos de fiscalização que iriam fiscalizar isso aí, se o carro tá com esse tipo de pneu ou não? Põe o carro, né? Eu acho que tá ondulatinho. Tchau, mas eu tenho um pouco de pneu que há com esse tipo de pneu, para que rapidamente camada. Tchau, mas eu tenho um pouco de pneu de Heathrow e pronto o pneu, né? Eu tenho um pouco para dentro. Põe a quanto tempo para gente. Vou tentar mais o pneu emidão. Vou tentar mais para nós. Vamos lá também. Vamos lá, vamos lá."
+[15:43] CLIENTE: [áudio] "Ou alguém cadastrado na confederação de Drift, que pode comprar através de loja, de CNPJ, alguma coisa assim? Seria isso?"
+[15:48] LOJA: *Josy:*
+Entendo...
+[15:49] LOJA: [áudio] "Realmente, compreendo sua observação, ela é muito válida realmente, tá? Me dá só esta dica, assim, dentro da correria que eu vou tentando te responder essas perguntas, tá?"  {audio:midias/3EB025F9D24253480F1B23_504383.ogg}
+[15:51] CLIENTE: [áudio] "Não, tranquilo. Eu só queria saber quais são os meios para comprar. Quem é que pode? Se é por CNPJ, se é alguma credencial do Drift. Alguém compra, né? Eu queria saber quem é que está autorizado a comprar. Aí eu vejo os meios aqui também. Obrigado."
+[16:35] LOJA: [áudio] "Maxwell, obrigada aí por aguardar, tá? Hoje a loja, graças a Deus, encheu aqui. E agora que eu tô conseguindo dar atenção especial aqui pro WhatsApp. Olha, com questão a compra, ela é tanto pro CPF quanto CNPJ. Tem alguns pilotos que dispõe de CNPJ, outros não, e a venda é normal. Esses pneus, eles não são comercializados realmente pra uso no asfalto convencional, como eu te falei, tá? Por quê? Pra ele poder ser utilizado em vias públicas, né? Pra transitação normal do dia a dia. Esses pneus, como eles são desenvolvidos pro Drift, eles não têm as informações que os outros pneus têm. Como, por exemplo, né, nos pneus normais, tem aqui o nosso CNPJ de empresa, tem os dados todos de registro da utilização do pneu, tá joia? A observação, obviamente que não vai ficar ninguém dos órgãos de trânsito na sua cola pra inspecionar onde é que você está usando ou deixando de utilizar, né? Eles não fazem essa fiscalização dessa maneira. Mas aí nós já deixamos claro justamente que os pneus, por eles não terem essas informações, porque eles são feitos voltados justamente pra uma funcionalidade, então se porventura te pararem, recolherem pneu, te advertirem, né? Vai ser por conta disso e nós estamos isentos de quaisquer observação que venham a te fazer justamente por isso, tá? Obrigado. Obrigado. Obrigado. Obrigado. Obrigado."  {audio:midias/3EB0E81AEF39D0F6B2FFE2_563657.ogg}
+[16:38] CLIENTE: [áudio] "Não, sim, eu entendi. Eu entendi você já, tá? Você foi bem claro agora. Na verdade, eu já tinha entendido. Agora eu quero saber se eu posso comprar ou não o pneu, entendeu? Aí a responsabilidade é minha, eu sei disso, né? Vocês vão ficar isentos, né, da responsabilidade, com certeza. Entendi aí em relação à classificação lá do pneu e tal, daquelas informações que vem nele."
+[16:49] LOJA: *Josy:*
+Pode sim!
+[17:17] CLIENTE: Vocês tem a medida 245/50/17 ?
+[17:28] LOJA: [áudio] "Essa opção, eu não tenho ela pronta entrega, porque é somente de pneu importado, tá? Mas eu solicitei um orçamento com os meus distribuidores, assim que eles me responderem, eu te passo marca, preço e prazo de entrega, está bem?"  {audio:midias/3EB00CDF85C9C0DC01BF8C_397426.ogg}
+[17:29] CLIENTE: Ta bom
+[17:29] CLIENTE: Obrigado
+[17:37] LOJA: *Josy:*
+Oi... os distribuidores não tem essa opção.
+[17:38] CLIENTE: ta bom
+[17:39] CLIENTE: esse 255/45 ou 50/17 tem ?
+[17:40] LOJA: *Josy:*
+Os distribuidores não tem essa opção. A qual eu disse no áudio que iria verificar se teria importado.
+[17:42] CLIENTE: Então você só tem apenas os 255/40/17 é isso ?
+[17:42] CLIENTE: Não tem nenhuma opção mais alta
+[17:42] CLIENTE: 45 ou 50
+[17:47] LOJA: [áudio] "Bem, aí o que acontece? Eu tenho algumas opções de pneus menores, que são mais estreitos, com perfil 50, 55. Eu vou mandar aqui um orçamento para você, tá?"  {audio:midias/3EB007C1F83AECA3FD3548_607022.ogg}
+[17:49] LOJA: [áudio] "Aí, olha só, eu tenho aqui R$ 215,50,17 da marca aqui da nossa empresa, que ele está por R$ 329,00 à vista, tem a opção do R$ 215,55,17, que ele está na promoção Compre 3, Mas Leve 4, a unidade R$ 395,00 à vista, tem o R$ 225,45,17 por R$ 339,00 à unidade à vista, E o R$ 225,50,17, que ele está por R$ 349,00 à vista, mas eu estou aguardando aqui a confirmação do pessoal aqui do meu estoque, tá? Aí você, né, com certeza entende melhor que eu, então você sabe que tratam-se de proporções. Quanto mais largo o pneu, aí desce o perfil. Aí esses estreitos sobem o perfil, porque as coisas elas se compensam entre si, né?"  {audio:midias/3EB0BB324F2F70C2678573_868598.ogg}
+--- 01/09/2026 (Tue) ---
+[17:40] CLIENTE: [áudio] "Não, esses straights aí não fica bom para mim não. Isso aí é para um carro, para um Opala, né? Não é para esses carros de rua não. Esses carros de rua aí, normal, carro novo, que tem que ser uma medida exata ali, né? Porque senão, isso aí é para Opala. Opala cabe muito pneu, entendeu? Então tem que ser pneu largo. Esses pneus fininhos aí para mim... Tanto é que meus pneus nem está usados não. Estou com 4 pneus lá, que é 205,55,17. Está mais de meia vida. É porque esses pneus aí é para Opala, né? É para ficar largo mesmo. Eles, estreitos, não tem interesse nenhum, não. Tá bom? Mas obrigado pelo orçamento aí, tá?"
+[17:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

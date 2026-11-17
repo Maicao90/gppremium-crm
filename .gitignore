@@ -1,0 +1,8 @@
+# bibliotecas reinstalaveis
+.venv/
+__pycache__/
+node_modules/
+# acima do limite de 100 MB do GitHub (os audios soltos estao em josy-analise/audios)
+josy-analise/josy-audios.tgz
+# tem a senha do banco
+cerebro-mapa/conf/c05-aplicar-e-testar.sh

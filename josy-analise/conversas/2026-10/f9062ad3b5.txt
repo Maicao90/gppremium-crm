@@ -1,0 +1,25 @@
+CONVERSA f9062ad3b5 | contato: beto29707 | 15/10/2026 16:31 até 15/10/2026 16:58 | 7 msgs do cliente, 10 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[16:31] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[16:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:31] CLIENTE: 205 65 15
+[16:32] CLIENTE: Vcs parcelam em quantas vezes no cartão
+[16:41] LOJA: [áudio] "Olá, boa tarde, tudo bem contigo? Eu me chamo Josi. Beto, você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB0B99DCEB2853CACD4F1_840466.ogg}
+[16:48] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Moro no município de Luziânia
+[16:48] LOJA: Bacana!
+[16:48] CLIENTE: Mas qual o valor
+[16:49] LOJA: [áudio] "Sim, eu vou te passar, tá? É que eu tô fazendo meu orçamento porque a minha internet aqui, ela tinha caído aqui na hora, eu tô tentando carregar aqui pra você, tá? Uma última pergunta, qual é mesmo o seu carro?"  {audio:midias/3EB0D4DA9D22D82A17BC76_3598.ogg}
+[16:49] CLIENTE: Eco espor
+[16:49] LOJA: [foto] Só esperando meu sistema carregar.
+[16:52] LOJA: [foto]
+[16:52] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:55] CLIENTE: Não pode deixar tá caro
+[16:58] LOJA: Creio que ai mais próximo de onde mora , pode encontrar pneus 1/2 vida para te atender provizóriamente,  talvez tenha um preço razoável.
+[16:58] LOJA: Quando possível, venha até nossa loja para negociarmos, será uma satisfação receber você aqui.
+[16:58] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

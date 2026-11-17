@@ -1,0 +1,19 @@
+CONVERSA ab83e00b35 | contato: Rodrigo Soti | 18/09/2026 12:04 até 18/09/2026 12:57 | 2 msgs do cliente, 6 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[12:04] LOJA: *Josy:*
+Oi!
+[12:04] LOJA: *Josy:*
+DIRECIONAL PNEUS 61 99679-0022  3209-2022
+Nossa loja fica na Av. Alfredo Nasser, Qd.60, Lt.15, Setor Mandú 2 em Luziânia-GO. Clique no link e vá direto para o Google Maps e navegue até a nossa loja. https://onbio.link/localizacao-direcionalpneuslza *Tel: 61 3209-2022*
+[12:43] LOJA: *Josy:*
+Oi...
+[12:44] LOJA: *Josy:*
+O Bruno chegou...
+[12:44] CLIENTE: Estão terminando aqui
+Ja vou ai
+[12:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:56] LOJA: [áudio] "Eu só encostei aqui a porta porque eu estou indo almoçar, o Bruno ele tá aqui, tá? E também que ligamos o ar condicionado, mas vindo aqui você pode deixar que a gente abre a porta pra ti, tá bom? Estamos todos por aqui."  {audio:midias/3EB00197F3223F416FBE5C_587945.ogg}
+[12:57] CLIENTE: Ta bom
+Obrigado

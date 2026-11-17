@@ -1,0 +1,40 @@
+CONVERSA f29eb87dcb | contato: Fernando Neves Mercado Pago | 13/10/2026 11:55 até 14/10/2026 10:55 | 11 msgs do cliente, 9 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[11:55] CLIENTE: Bom dia Charles, tudo bem!
+Aqui é o Fernando, consultor especialista do Mercado Pago.
+
+Meu contato é referente ao *Sistema de Gestão* que você ativou na conta da empresa e estou aqui para iniciarmos a configuração, além de oferecer todo o suporte necessário durante a implantação do sistema.
+
+Identifiquei que já cadastrou produtos, realizou vendas teste pelo sistema e configurou a emissão de notas fiscais, ficou alguma dúvida nestas etapas ou nas demais funcionalidades?
+
+🎥 https://www.youtube.com/playlist?list=PLl8LGzRu2_sWpw4o6GuOZLw5KYszS2N8B
+[11:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:54] CLIENTE: Boa tarde, com que eu posso falar sobre o Sistema de Gestão do Mercado Pago?
+
+Quem é o responsável hoje que está configurando o sistema?
+[16:57] LOJA: [áudio] "Oi, Fernando, boa tarde, tudo bem? Eu me chamo Josi. Eu vi a sua mensagem, entretanto, como eu não sou a responsável por esse departamento, eu não tenho como te dar um parecer, tá? E justamente a pessoa que é responsável não se encontra até o presente momento."  {audio:midias/3EB0343D4D63D1C1187D6A_271338.ogg}
+[16:57] LOJA: [áudio] "E o contato é realmente somente este, tá?"  {audio:midias/3EB0BEAB2B209788ACF5F4_970722.ogg}
+[16:58] CLIENTE: [áudio] "Oi Josi, boa tarde, tudo bem? Muitíssimo obrigado pelo retorno, só para você entender um pouquinho. Meu nome é Fernando, eu sou especialista aqui do Mercado Pago, eu sou o responsável que vai acompanhar a empresa de vocês, para acompanhar no processo de configuração e implantação do sistema de gestão que vocês ativaram na conta da Pneus GP Premium. Eu tenho um contato aqui do Charles, até cheguei a mandar uma mensagem para ele, mas ainda não tive retorno, tá bom? Se você puder direcionar o meu contato para a pessoa responsável que está fazendo a configuração do sistema, por favor, vai ajudar muito, porque eu vou acompanhar vocês durante um período de 3 meses, tá bom?"
+[16:59] CLIENTE: Se puder me direcionar para a pessoa responsável pela conta de vocês no Mercado Pago, teremos uma ajuda mútua, pois justamente meu papel como consultor especialista é acompanhar vocês neste processo de configuração e implantação do Sistema de Gestão.
+[17:00] CLIENTE: Ou melhor, peça para o responsável pela conta do Mercado Pago, solicite o atendimento do especialista por dentro da conta, segue o caminho:
+- Sistema de Gestão, Fale com um Especialista, eu atendo você também por este canal, ok.
+[17:01] CLIENTE: Obrigado pelo retorno e agradeço se conseguir me direcionar para a pessoa certa.
+Abraço.
+[17:02] LOJA: [áudio] "Certo? Ouvi seu áudio, li aqui sua mensagem, mas vai ser justamente através deste canal aqui que nós estamos nos falando, tá bom? Então, justamente, você falou, mandou mensagem para a pessoa responsável, que é o Charles, você testou o nome dele, só que... Hoje está offline, então os únicos canais nos quais você consegue falar com ele é no número que você já tentou, né? E neste daqui, mas conforme eu te informei, ele não se encontra, tá bom?"  {audio:midias/3EB03CB7D5CA8A6581A44E_567433.ogg}
+[17:04] CLIENTE: Tudo bem Josy, retorno o contato amanhã contigo.
+Obrigado pelo retorno, abraço!
+[17:05] LOJA: Um abraço!
+--- 14/10/2026 (Wed) ---
+[10:47] CLIENTE: Bom dia Josy, tudo bem!
+Fernando aqui do Mercado Pago, consultor especialista do Sistema de Gestão.
+[10:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:48] CLIENTE: Hoje se encontra alguém na empresa responsável pela conta do Mercado Pago, por exemplo o Charles ou alguém do financeiro que eu consiga falar?
+[10:49] LOJA: Bom dia!
+[10:49] LOJA: Não...
+[10:51] CLIENTE: Que pena, preciso muito falar com os responsáveis pela conta para dar o suporte na configuração do sistema PDV.
+Bom, vou tentar novamente falar com o Charles.
+[10:51] CLIENTE: Tem algum outro número ou e-mail que eu posso entrar em contato com os responsáveis pela conta do Mercado Pago?
+[10:55] LOJA: Somente por aqui.

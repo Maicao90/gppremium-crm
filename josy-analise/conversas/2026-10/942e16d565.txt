@@ -1,0 +1,25 @@
+CONVERSA 942e16d565 | contato: Wellynton Natanael | 13/10/2026 07:59 até 14/10/2026 09:44 | 8 msgs do cliente, 13 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[07:59] CLIENTE: Bom dia vc tem medida 225/65 r16 cargo remold ?
+[07:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:59] CLIENTE: 225/65 r16
+[08:25] LOJA: Bom dia , temos sim!
+[08:25] LOJA: [foto]
+[08:25] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:30] CLIENTE: Vc vai ter ele remold?
+[08:30] LOJA: Deixa eu ver aqui, um isntante.
+[08:32] LOJA: Temos sim!
+[08:32] LOJA: [foto]
+[11:02] LOJA: [áudio] "Oi Wellington, tudo jóia? Eu te mandei aí o orçamento, né? O valor unitário do pneu GP Premium, ele está por R$ 449,00. Você gostaria de seguir com a negociação? Que eu já separo os pneus para você."  {audio:midias/3EB008B43664E5318A94E1_128438.ogg}
+[11:08] CLIENTE: Opa tudo certo eu estou dando uma pesquisada nos valores qualquer coisa eu retorno tá bom
+[11:09] LOJA: Certo...  vou encerrar seu atendimento para não encher seu whatsapp de mensagem.                                                                                                                   Se precisar futuramente é só chamar. Ou se possivel, venham até nossa loja, está bem! .                                                                                                  Obrigada 👋🏻
+[11:09] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:14] CLIENTE: Vc consegue um desconto pegando 2 pneus à vista ?
+[11:16] LOJA: Se o pagamento for em *dinheiro em espécie* sim,  a unidade do GP Premium fica por R$ 425,00
+[11:22] CLIENTE: Blz vou ver certinho e te aviso obrigado
+--- 14/10/2026 (Wed) ---
+[09:44] CLIENTE: Bom dia ainda estou pesquisando mas achei pneu bem mais em conta mas te agradeco mesmo assim
+[09:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

@@ -1,0 +1,16 @@
+CONVERSA 65e89171cf | contato: Anderson Oliveira | 16/09/2026 05:21 até 16/09/2026 10:28 | 2 msgs do cliente, 6 da loja, 0 do robô
+
+--- 16/09/2026 (Wed) ---
+[05:21] CLIENTE: Bom dia  Josy desculpa minha correria aqui é grande rsrsrs
+[05:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[05:21] CLIENTE: Mas muito obrigado pela atenção vc é muito gentil
+[08:09] LOJA: *Josy:*
+Bom dia!
+[08:32] LOJA: *Josy:*
+Tudo bem compreendo!
+[10:27] LOJA: *Josy:*
+Quando puder passa aqui!
+[10:27] LOJA: *Josy:*
+Boa semana.
+[10:28] LOJA: [foto]

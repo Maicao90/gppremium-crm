@@ -1,0 +1,28 @@
+CONVERSA 2f9fe6ddb0 | contato: Ene Kirk😎 | 29/09/2026 15:14 até 29/09/2026 17:51 | 9 msgs do cliente, 11 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[15:14] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem!!!
+Tô precisando 4 pneus 205/55 r16
+[15:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:15] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu me chamo Josi, assim que possível me diz o seu nome. Bem, o pneu da marca GP Premium, ele está por R$ 289,00 a unidade. Esse valor é para pagamento no débito e Pix também. Porém, ele não se enquadra aí nessa promoção Compre 3 e leve 4. Aí está especificado que são para pneus aro 15 e 17, tá? Vocês estão em busca de alguma marca específica?"  {audio:midias/3EB0C4EB9E62F823B6DE74_896347.ogg}
+[16:54] LOJA: [áudio] "Oi, obrigada por aguardar o WhatsApp travou e agora que restabeleceu aqui. Vou te mandar o orçamento com todas as opções que eu tenho no dia de hoje, tá bom?"  {audio:midias/3EB0B119DA602226E24045_307915.ogg}
+[16:55] LOJA: [foto]
+[16:56] LOJA: [áudio] "As opções que eu tenho aqui com 4 unidades são os pneus da marca Conforcer, onde a unidade está por R$ 324,00, se o seu pagamento for no débito ou Pix, correspondente à vista, e os pneus da marca GP Premium, que a unidade está por R$ 289,00, para o pagamento também correspondente a débito ou Pix. Para parcelar, seguem as opções de parcelamento em até 10 vezes, tá bom?"  {audio:midias/3EB06D52C2F5C4E4A467C0_35224.ogg}
+[17:43] CLIENTE: Ok obrigado
+[17:43] CLIENTE: Você é revendedora ou representante direto da GP Premium?
+[17:44] CLIENTE: Eu sou proprietário do auto center aqui no recanto eu trabalhei em uma época com vocês numa loja minha lá no pistão Sul Taguatinga
+[17:44] LOJA: [áudio] "Ah, que bacana! Qual que é o seu nome?"  {audio:midias/3EB0DDFCDFB4D798F53E66_20948.ogg}
+[17:44] LOJA: [áudio] "Sim, sim, nós somos a empresa representante, somos a fábrica GP Premium."  {audio:midias/3EB0124C675B3F63D10368_789227.ogg}
+[17:45] CLIENTE: Ene kirk
+[17:45] LOJA: [áudio] "Se preferir, pode enviar áudio."  {audio:midias/3EB0532CE35BCCA02A1033_778926.ogg}
+[17:45] CLIENTE: Pois é trabalhei com pneu de vocês há um tempo atrás gostei muito apesar de ser um pneu remodelado qualidade sempre foi muito boa
+[17:45] LOJA: [áudio] "Sim, e aprimoramos ainda mais."  {audio:midias/3EB0458B54C23F90D724C9_838116.ogg}
+[17:46] CLIENTE: [áudio] "Pois é, como é que a gente podia fazer para marcar uma visita? Eu tenho interesse de colocar pneus aqui para fazer uma revenda aqui na minha loja. Já cheguei a contar com algumas pessoas aqui, já alguns representantes. O meu autocentro, na verdade, ele é focado exclusivamente em lubrificantes, né? Mais suspensão, lubrificante e parte de motor, injeção e diagnóstico, né? Agora eu estou pensando já em botar uns pneus para poder vender aqui na minha loja. Pois é. Pois é."
+[17:49] LOJA: [áudio] "Sim, perfeitamente. É assim que a gente está ampliando o nosso leque de oportunidades. Eni, qual que é o nome da sua empresa? E faz tempo que você trabalhou aqui conosco e o dia que você estiver com disponibilidade e puder e quiser vir aqui na nossa empresa, estamos de portas abertas para poder recebê-lo."  {audio:midias/3EB04C04FC80D4B3C999C6_84806.ogg}
+[17:51] CLIENTE: RK2 SOLUÇÕES AUTOMOTIVAS
+[17:51] LOJA: *Josy:*
+Legal...
+[17:51] CLIENTE: [localização] -15.9119317,-48.05266501 — RK2 Solucoes Automotivas

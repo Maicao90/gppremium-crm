@@ -1,0 +1,482 @@
+
+# [g1#1] anuncio ARO 13 (frase padrao) + "195/55" -> pede aro (nao 195/55/13)
+  http=200 via=fluxo acao=PEDIR_ARO chaves=["pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# [g1#2] anuncio ARO 13 (frase padrao) + "195/55" -> pede aro (nao 195/55/13)
+  http=200 via=fluxo acao=PEDIR_ARO chaves=["pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# [g2#1] anuncio ARO 13 "Oi tudo bem" -> robo -> "195/55"
+  http=200 via=fluxo acao=PEDIR_ARO chaves=["pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# [g2#2] anuncio ARO 13 "Oi tudo bem" -> robo -> "195/55"
+  http=200 via=fluxo acao=PEDIR_ARO chaves=["pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# [g3#1] anuncio 185/65/R15 prefixado + "195/55"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"185/65/15"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *185/65/15* da marca *GP Premium* está saindo por *R$ 249,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [g3#2] anuncio 185/65/R15 prefixado + "195/55"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"185/65/15"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *185/65/15* da marca *GP Premium* está saindo por *R$ 249,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [h1#1] "195/55" -> pede aro -> "4 pneus aro 16" (qtd 4, nao 16)
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16","quantidade":4}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos os 4 pneus *195/55/16* da marca *GP Premium* saem por *R$ 1.036,00 à vista* (valor total).
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [h1#2] "195/55" -> pede aro -> "4 pneus aro 16" (qtd 4, nao 16)
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16","quantidade":4}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos os 4 pneus *195/55/16* da marca *GP Premium* saem por *R$ 1.036,00 à vista* (valor total).
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [h2#1] "195/55" -> pede aro -> "16" (sem a palavra aro)
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [h2#2] "195/55" -> pede aro -> "16" (sem a palavra aro)
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [h3#1] "195/55" + "15" rajada
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/15"}
+  > Temos o pneu *195/55/15* da marca *GP Premium* está saindo por *R$ 289,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [h3#2] "195/55" + "15" rajada
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/15"}
+  > Temos o pneu *195/55/15* da marca *GP Premium* está saindo por *R$ 289,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [i1#1] CEP "72855-000" + "aro 16"
+  http=200 via=ia_livre acao=undefined chaves=[] estado=sem_estado dados={}
+  > Anotado! Temos várias medidas no aro 16, de carro de passeio até picape e SUV.
+  > Me diz o *modelo do seu carro* (com o ano, se souber) que já te passo o valor certinho.
+
+# [i1#2] CEP "72855-000" + "aro 16"
+  http=200 via=ia_livre acao=undefined chaves=[] estado=sem_estado dados={}
+  > Perfeito, aro 16! Nesse aro a gente tem várias medidas.
+  > Me diz o *modelo do seu carro* (com o ano, se puder) que eu já te passo o valor certinho.
+
+# [i2#1] preco "vi por 195,50 na outra loja" + "aro 15"
+  http=200 via=cerebro acao=CEREBRO chaves=["cerebro"] estado=sem_estado dados={}
+  > [ENVIAR_AUDIO:josy-compara_outra_loja!1]
+  > Entendo perfeitamente! Me manda o orçamento ou o anúncio que você achou, que eu vejo aqui o que consigo fazer pra te ajudar 😉
+  > O nosso GP Premium tem garantia de 2 anos e 60 mil km ou seu dinheiro de volta, e dá pra parcelar em até 10x no cartão.
+
+# [i2#2] preco "vi por 195,50 na outra loja" + "aro 15"
+  http=200 via=cerebro acao=CEREBRO chaves=["cerebro"] estado=sem_estado dados={}
+  > [ENVIAR_AUDIO:josy-compara_outra_loja!1]
+  > Entendo perfeitamente! Me manda o orçamento ou o anúncio que você achou, que eu vejo aqui o que consigo fazer pra te ajudar 😉
+  > O nosso GP Premium tem garantia de 2 anos e 60 mil km ou seu dinheiro de volta, e dá pra parcelar em até 10x no cartão.
+
+# [i3#1] carro "peugeot 208 2016" + "aro 16"
+  http=200 via=ia_livre acao=undefined chaves=[] estado=sem_estado dados={}
+  > Deixa eu confirmar uma coisa com você — pode repetir, por favor?
+
+# [i3#2] carro "peugeot 208 2016" + "aro 16"
+  http=200 via=ia_livre acao=undefined chaves=[] estado=sem_estado dados={}
+  > Deixa eu confirmar uma coisa com você — pode repetir, por favor?
+
+# [i4#1] telefone "liga 61 99195-5512" + "aro 15"
+  http=200 via=ia_livre acao=undefined chaves=[] estado=sem_estado dados={}
+  > Oi, tudo bem? Aqui pelo WhatsApp eu já resolvo tudo pra você, com preço e condições.
+  > Pra aro 15, me diz o *modelo do seu carro* ou a *medida do pneu* (ex.: 195/60/15) que eu já te passo o valor.
+
+# [i4#2] telefone "liga 61 99195-5512" + "aro 15"
+  http=200 via=ia_livre acao=undefined chaves=[] estado=sem_estado dados={}
+  > Oi, tudo bem? Por ligação eu não consigo atender, mas aqui pelo WhatsApp eu resolvo tudo rapidinho pra você.
+  > Pra aro 15 me passa a medida completa do pneu (ex.: 195/60/15) ou o modelo do seu carro, que eu já te passo o valor.
+
+# [i5#1] "gol 2015" -> robo -> "195/55"
+  http=200 via=fluxo acao=PEDIR_ARO chaves=["pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# [i5#2] "gol 2015" -> robo -> "195/55"
+  http=200 via=fluxo acao=PEDIR_ARO chaves=["pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# [j1#1] "195 55 16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [j1#2] "195 55 16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [j2#1] "195-55-16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [j2#2] "195-55-16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [j3#1] "195/55r16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [j3#2] "195/55r16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [j4#1] "19555r16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [j4#2] "19555r16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [j5#1] "195 55" + "r16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [j5#2] "195 55" + "r16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [j6#1] "195-55" -> pede aro -> "16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [j6#2] "195-55" -> pede aro -> "16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [k1#1] fora da tabela "195/55" + "aro 13"
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["pedir_medida","pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# [k1#2] fora da tabela "195/55" + "aro 13"
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["pedir_medida","pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# [k2#1] cliente cita o anuncio "o aro 13 e esse preco?" + "e o 195/55?"
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["pedir_medida_repetida","pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# [k2#2] cliente cita o anuncio "o aro 13 e esse preco?" + "e o 195/55?"
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["pedir_medida_repetida","pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# [l1#1] troca: "195/55" -> pede aro -> "na verdade 205/55"
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["pedir_medida","pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 205/55! 👍
+  > Qual é o aro? Na 205/55 eu tenho aro 16 e aro 17.
+
+# [l1#2] troca: "195/55" -> pede aro -> "na verdade 205/55"
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["pedir_medida","pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 205/55! 👍
+  > Qual é o aro? Na 205/55 eu tenho aro 16 e aro 17.
+
+# [l2#1] troca: 195/55/16 cotado -> "e o 205/55?"
+  http=200 via=fluxo acao=PEDIR_ARO chaves=["pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 205/55! 👍
+  > Qual é o aro? Na 205/55 eu tenho aro 16 e aro 17.
+
+# [l2#2] troca: 195/55/16 cotado -> "e o 205/55?"
+  http=200 via=fluxo acao=PEDIR_ARO chaves=["pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 205/55! 👍
+  > Qual é o aro? Na 205/55 eu tenho aro 16 e aro 17.
+
+# [l3#1] troca: 195/55/16 cotado -> "e aro 15?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/15"}
+  > Temos o pneu *195/55/15* da marca *GP Premium* está saindo por *R$ 289,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [l3#2] troca: 195/55/16 cotado -> "e aro 15?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/15"}
+  > Temos o pneu *195/55/15* da marca *GP Premium* está saindo por *R$ 289,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [l4#1] troca: "aro 16" -> carro -> "195/55" -> "nao, 205/55"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"205/55/16"}
+  > Temos o pneu *205/55/16* da marca *GP Premium* está saindo por *R$ 289,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [l4#2] troca: "aro 16" -> carro -> "195/55" -> "nao, 205/55"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"205/55/16"}
+  > Temos o pneu *205/55/16* da marca *GP Premium* está saindo por *R$ 289,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [m1#1] remold: "195/55" -> pede aro -> "aro 16, é remold?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida","remold"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+  > [ENVIAR_AUDIO:pneu-gp-premium-remold!2]
+  > Vou ser sincero com você: sim, é remold — mas não é um remold comum. O GP Premium é feito com borracha padrão europeu e passa por controle rígido de qualidade.
+  > A gente dá garantia de 2 anos e 60 mil km ou seu dinheiro de volta. Muitos clientes já aprovaram esse modelo.
+
+# [m1#2] remold: "195/55" -> pede aro -> "aro 16, é remold?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida","remold"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+  > [ENVIAR_AUDIO:pneu-gp-premium-remold!2]
+  > Vou ser sincero com você: sim, é remold — mas não é um remold comum. O GP Premium é feito com borracha padrão europeu e passa por controle rígido de qualidade.
+  > A gente dá garantia de 2 anos e 60 mil km ou seu dinheiro de volta. Muitos clientes já aprovaram esse modelo.
+
+# [m2#1] desconto: "195/55" -> pede aro -> "aro 16 tem desconto no pix?"
+  http=200 via=fluxo acao=RESPONDER_DESCONTO chaves=["desconto_pix"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > O desconto de 5% é só pra pagamento em dinheiro — no PIX não tem desconto, mas dá pra parcelar em até 10x se preferir.
+
+# [m2#2] desconto: "195/55" -> pede aro -> "aro 16 tem desconto no pix?"
+  http=200 via=fluxo acao=RESPONDER_DESCONTO chaves=["desconto_pix"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > O desconto de 5% é só pra pagamento em dinheiro — no PIX não tem desconto, mas dá pra parcelar em até 10x se preferir.
+
+# [m3#1] localizacao: "195/55" -> pede aro -> "aro 16" + "onde fica a loja?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida","localizacao"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+  > Segue a nossa localização:
+  > [ENVIAR_LOCALIZACAO]
+
+# [m3#2] localizacao: "195/55" -> pede aro -> "aro 16" + "onde fica a loja?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida","localizacao"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+  > Segue a nossa localização:
+  > [ENVIAR_LOCALIZACAO]
+
+# [m4#1] visita: "195/55" -> pede aro -> "aro 16" + "passo ai amanha"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida","visita_confirmada"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+  > Combinado! Fica anotado aqui: te espero amanhã 😊
+  > Qualquer coisa é só me chamar por aqui.
+
+# [m4#2] visita: "195/55" -> pede aro -> "aro 16" + "passo ai amanha"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida","visita_confirmada"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+  > Combinado! Fica anotado aqui: te espero amanhã 😊
+  > Qualquer coisa é só me chamar por aqui.
+
+# [m5#1] horario: "aro 16" + "195/55" + "vcs abrem sabado?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida","horario"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+  > A gente atende de segunda a sexta, das 8h às 18h, e aos sábados, das 8h às 12h.
+
+# [m5#2] horario: "aro 16" + "195/55" + "vcs abrem sabado?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida","horario"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+  > A gente atende de segunda a sexta, das 8h às 18h, e aos sábados, das 8h às 12h.
+
+# [m6#1] disponibilidade: "195/55" -> pede aro -> "aro 16" + "tem a pronta entrega?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [m6#2] disponibilidade: "195/55" -> pede aro -> "aro 16" + "tem a pronta entrega?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [m7#1] saudacao: "boa tarde" + "195/55" + "aro 16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [m7#2] saudacao: "boa tarde" + "195/55" + "aro 16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [m8#1] parcelamento: "195/55" + "aro 16" + "parcela?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida","parcelamento_generico"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+  > Sim, parcelamos em até 10x no cartão.
+
+# [m8#2] parcelamento: "195/55" + "aro 16" + "parcela?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida","parcelamento_generico"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+  > Sim, parcelamos em até 10x no cartão.
+
+# [m9#1] balanceamento: "195/55" -> pede aro -> "aro 16" + "faz balanceamento?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida","balanceamento"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+  > Balanceamento é R$ 25,00 por roda.
+
+# [m9#2] balanceamento: "195/55" -> pede aro -> "aro 16" + "faz balanceamento?"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida","balanceamento"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+  > Balanceamento é R$ 25,00 por roda.
+
+# [n1#1] CITY: "195/55" + "aro 16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [n1#2] CITY: "195/55" + "aro 16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [n2#1] CITY: "195/55" sozinho
+  http=200 via=fluxo acao=PEDIR_ARO chaves=["pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# [n2#2] CITY: "195/55" sozinho
+  http=200 via=fluxo acao=PEDIR_ARO chaves=["pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# [o1#1] null/objeto no historico + "195/55" + "aro 16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [o1#2] null/objeto no historico + "195/55" + "aro 16"
+  http=200 via=fluxo acao=CONFIRMAR_PRECO chaves=["preco_medida"] estado=preco_confirmado dados={"medida":"195/55/16"}
+  > 🔥 Boa notícia: esse pneu está em *PROMOÇÃO*!
+  > Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [o2#1] foto placeholder + "195/55"
+  http=200 via=fluxo acao=PEDIR_ARO chaves=["pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# [o2#2] foto placeholder + "195/55"
+  http=200 via=fluxo acao=PEDIR_ARO chaves=["pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# [o3#1] "195/55" + audio sem texto
+  http=200 via=ia_livre acao=undefined chaves=[] estado=sem_estado dados={}
+  > Na medida 195/55 temos estas opções da marca *GP Premium*: / • *195/55/15* por *R$ 289,00 à vista* / • *195/55/16* por *R$ 259,00 à vista*
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [o3#2] "195/55" + audio sem texto
+  http=200 via=ia_livre acao=undefined chaves=[] estado=sem_estado dados={}
+  > Temos o pneu da marca *GP Premium* nestas medidas com esse começo: / • *195/55/15*: *R$ 289,00 à vista* / • *195/55/16*: *R$ 259,00 à vista*
+  > Se preferir, você pode parcelar em até 10x no cartão!
+
+# [o4#1] dadosPreco invalido + "195/55"
+  http=200 via=fluxo acao=PEDIR_ARO chaves=["pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# [o4#2] dadosPreco invalido + "195/55"
+  http=200 via=fluxo acao=PEDIR_ARO chaves=["pedir_aro"] estado=aguardando_medida dados={}
+  > Show, 195/55! 👍
+  > Qual é o aro? Na 195/55 eu tenho aro 15 e aro 16.
+
+# [p1#1] regressao: "quanto custa?" sozinho
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["pedir_medida"] estado=aguardando_medida dados={}
+  > Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+
+# [p1#2] regressao: "quanto custa?" sozinho
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["pedir_medida"] estado=aguardando_medida dados={}
+  > Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+
+# [p2#1] regressao: "195/55/15" cotado -> "é remold?"
+  http=200 via=fluxo acao=RESPONDER_REMOLD chaves=["remold"] estado=preco_confirmado dados={"medida":"195/55/15"}
+  > [ENVIAR_AUDIO:pneu-gp-premium-remold!2]
+  > Vou ser sincero com você: sim, é remold — mas não é um remold comum. O GP Premium é feito com borracha padrão europeu e passa por controle rígido de qualidade.
+  > A gente dá garantia de 2 anos e 60 mil km ou seu dinheiro de volta. Muitos clientes já aprovaram esse modelo.
+
+# [p2#2] regressao: "195/55/15" cotado -> "é remold?"
+  http=200 via=fluxo acao=RESPONDER_REMOLD chaves=["remold"] estado=preco_confirmado dados={"medida":"195/55/15"}
+  > [ENVIAR_AUDIO:pneu-gp-premium-remold!2]
+  > Vou ser sincero com você: sim, é remold — mas não é um remold comum. O GP Premium é feito com borracha padrão europeu e passa por controle rígido de qualidade.
+  > A gente dá garantia de 2 anos e 60 mil km ou seu dinheiro de volta. Muitos clientes já aprovaram esse modelo.
+
+# [p3#1] regressao: "185/65/15 em 10x"
+  http=200 via=fluxo acao=RESPONDER_PARCELAMENTO_ESPECIFICO chaves=["parcelamento_especifico"] estado=preco_confirmado dados={"medida":"185/65/15"}
+  > 185/65/15 / Em 10x fica R$ 27,94 cada, total de R$ 279,40.
+
+# [p3#2] regressao: "185/65/15 em 10x"
+  http=200 via=fluxo acao=RESPONDER_PARCELAMENTO_ESPECIFICO chaves=["parcelamento_especifico"] estado=preco_confirmado dados={"medida":"185/65/15"}
+  > 185/65/15 / Em 10x fica R$ 27,94 cada, total de R$ 279,40.
+
+# [p4#1] regressao: "bom dia"
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["saudacao","pedir_medida"] estado=aguardando_medida dados={}
+  > Oi, tudo bem?
+  > Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+
+# [p4#2] regressao: "bom dia"
+  http=200 via=fluxo acao=PEDIR_MEDIDA chaves=["saudacao","pedir_medida"] estado=aguardando_medida dados={}
+  > Oi, tudo bem?
+  > Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+
+# [p5#1] regressao: preco dado -> "tem desconto a vista?"
+  http=200 via=fluxo acao=RESPONDER_DESCONTO chaves=["desconto_dinheiro"] estado=preco_confirmado dados={"medida":"175/70/13"}
+  > 175/70/13 / À vista em dinheiro sai com 5% de desconto: R$ 255,55 (de R$ 269,00).
+
+# [p5#2] regressao: preco dado -> "tem desconto a vista?"
+  http=200 via=fluxo acao=RESPONDER_DESCONTO chaves=["desconto_dinheiro"] estado=preco_confirmado dados={"medida":"175/70/13"}
+  > 175/70/13 / À vista em dinheiro sai com 5% de desconto: R$ 255,55 (de R$ 269,00).

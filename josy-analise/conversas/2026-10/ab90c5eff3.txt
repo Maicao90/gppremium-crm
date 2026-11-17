@@ -1,0 +1,20 @@
+CONVERSA ab90c5eff3 | contato: Luiz Neto | 03/10/2026 09:22 até 03/10/2026 10:11 | 4 msgs do cliente, 8 da loja, 0 do robô
+
+--- 03/10/2026 (Sat) ---
+[09:22] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:23] CLIENTE: Preciso do pneu 185/65 15
+[09:23] CLIENTE: Qual o valor?
+[09:31] LOJA: [áudio] "Oi, Luiz. Tudo jóia? Eu sou a Josi."  {audio:midias/3EB078DFFF41CA92F19436_842742.ogg}
+[09:31] LOJA: [foto]
+[09:31] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:32] LOJA: [áudio] "E você mora aqui em Luziânia mesmo?"  {audio:midias/3EB05D0E20D5A927592557_259767.ogg}
+[09:32] CLIENTE: Sou de samambaia
+[09:38] LOJA: *Josy:*
+Entendo!
+[10:11] LOJA: [áudio] "E, Luiz, vir até aqui para você seria um ponto complicado, né?"  {audio:midias/3EB0D8C62091FFCF5308B5_129262.ogg}
+[10:11] LOJA: [áudio] "Ou se eu te encaminhar a localização, você tem a possibilidade de vir até aqui?"  {audio:midias/3EB0C4D48D58B78D44415A_651823.ogg}

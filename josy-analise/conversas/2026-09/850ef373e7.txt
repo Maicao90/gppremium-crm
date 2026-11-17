@@ -1,0 +1,26 @@
+CONVERSA 850ef373e7 | contato: Tibério Santana | 10/09/2026 08:20 até 10/09/2026 08:48 | 7 msgs do cliente, 10 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[08:20] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[08:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:20] CLIENTE: Bom dia 
+Qual valor do Pneu mais em conta ai
+[08:21] CLIENTE: 205/55/R16
+[08:21] LOJA: [áudio] "Oi Tibério, tudo bom?"  {audio:midias/3EB00EBACCCB894AFD3B3B_519880.ogg}
+[08:21] LOJA: [áudio] "É o GP Premium, que está por apenas R$ 289,00, se o pagamento for à vista."  {audio:midias/3EB0D19C0383F5DA48B9B8_173265.ogg}
+[08:21] CLIENTE: Tem algum mais em conta 
+Pode ser de qualquer marca 😊
+[08:22] LOJA: [áudio] "Esse é o mais em conta. Aí eu vou ter um 955516, que ele também é 289, mas eu consigo fazer por 259 à vista, se for de seu interesse."  {audio:midias/3EB0F782AED80B1A846FDE_195266.ogg}
+[08:23] CLIENTE: 205 msm que preciso.
+[08:24] LOJA: [áudio] "Tiberius, se você conseguir sacar o dinheiro para mim, eu faço, mas é dinheiro mesmo, eu faço por 275, esse pneu 255-16, tá? Mas é no dinheiro. Se for no débito ou Pix, 289."  {audio:midias/3EB01D2DB6DB3EB874A6FE_306846.ogg}
+[08:24] LOJA: [áudio] "E você vindo com o carro já fez a instalação."  {audio:midias/3EB0DA118E289EF9CF07C6_80077.ogg}
+[08:32] CLIENTE: [áudio] "Dá na mesma aí, diferença pouca, né? Passar quantas vezes esse valor do cartão?"
+[08:33] LOJA: [foto]
+[08:33] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:34] LOJA: *Josy:*
+R$ 275,00 é para pagamento apenas em *dinheiro* fisico.
+[08:39] CLIENTE: [áudio] "Eu tô indo aí, eu tô indo aí. Esse preço aí até eu chegar aí vai ser 200 reais, tenho certeza. Só tô precisando de um mesmo."
+[08:48] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

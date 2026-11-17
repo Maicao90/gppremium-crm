@@ -1,0 +1,22 @@
+CONVERSA a5cd14e2f9 | contato: Nilton | 17/09/2026 10:42 até 17/09/2026 10:55 | 2 msgs do cliente, 9 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[10:42] LOJA: *Josy:*
+Bom dia!
+[10:44] LOJA: [foto]
+[10:44] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:51] LOJA: *Josy:*
+Oi...
+[10:52] LOJA: *Josy:*
+Balanceamento R$ 35,00 por roda e  alinhamento de direção R$ 120,00
+[10:54] CLIENTE: Ok
+[10:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:54] CLIENTE: Obrigado
+[10:54] LOJA: [áudio] "Imagina, de Espanha. Vou te mandar aqui a nossa localização."  {audio:midias/3EB0C719169D8EE9143C0C_359659.ogg}
+[10:54] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:55] LOJA: [foto]

@@ -1,0 +1,27 @@
+CONVERSA a5e733ee66 | contato: Marcinho Cruz | 27/08/2026 15:06 até 28/08/2026 10:18 | 5 msgs do cliente, 8 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[15:06] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[15:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:09] LOJA: *Josy:*
+🙋🏼‍♀️
+[15:11] CLIENTE: Pneu 195 45 roda 15
+[15:11] CLIENTE: Tá quanto
+[15:24] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu sou a Josi e eu não disponho dessa opção à pronta entrega, mas eu posso realizar uma cotação para você. Vocês têm busca de alguma marca específica? Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB02380825791105FFE16_160456.ogg}
+[15:37] CLIENTE: Moro jardim Ingá
+[15:37] CLIENTE: Queria sabe os preços dessa medida que mandei aí
+[15:41] LOJA: *Josy:*
+Não disponho dessa opção a pronta. Estou aguardando algum distribuidor me responder.
+[15:46] LOJA: [foto]
+[15:46] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:40] LOJA: *Josy:*
+Quer fazer a encomenda?
+--- 28/08/2026 (Fri) ---
+[10:18] LOJA: *Josy:*
+Bom dia,  vou encerrar seu atendimento, caso precise futuramente é só chamar 👋🏻

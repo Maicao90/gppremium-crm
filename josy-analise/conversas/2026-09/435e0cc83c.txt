@@ -1,0 +1,26 @@
+CONVERSA 435e0cc83c | contato: Facilita Veiculos | 30/09/2026 16:14 até 15/10/2026 16:37 | 3 msgs do cliente, 14 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[16:14] CLIENTE: Opa
+[16:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:19] LOJA: *Josy:*
+Oiê!
+[16:47] LOJA: [foto]
+[16:47] LOJA: *Josy:*
+Consegue trazer o pagamento em *dinheiro* ?
+--- 01/10/2026 (Thu) ---
+[08:20] LOJA: 🙋🏼‍♀️
+[08:20] LOJA: [áudio] "Bom dia, bom dia, meu amigo. Como é que você está?"  {audio:midias/3EB0CD0D1258D10DE8A0A2_798644.ogg}
+[17:32] LOJA: 👀
+--- 15/10/2026 (Thu) ---
+[16:21] LOJA: Oie!
+[16:21] LOJA: Pode me mandar áudio!
+[16:21] CLIENTE: [áudio] "Tudo bem, Joia? Chus, vou precisar de 2 pneus. Aro 14, 175, 65, eu acho. Vou olhar aqui a foto, vou te mandar aí."
+[16:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:21] CLIENTE: [áudio] "Gostaria agora."
+[16:21] LOJA: Joia meu amigo!
+[16:21] LOJA: Pode vir!
+[16:37] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:37] LOJA: [foto]

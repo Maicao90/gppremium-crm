@@ -1,0 +1,18 @@
+CONVERSA 2eec078135 | contato: Gilbalacz🙏🏽 | 09/09/2026 08:20 até 09/09/2026 09:13 | 4 msgs do cliente, 6 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[08:20] LOJA: *Josy:*
+Bom dia!
+[08:20] LOJA: *Josy:*
+Sou a Josy da pneus GP Premium, você nos ligou agora a pouco.
+[08:32] CLIENTE: Bom dia
+[08:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:32] CLIENTE: Liguei não
+[08:34] LOJA: [foto]
+[08:35] LOJA: *Josy:*
+está como não atendido .
+[08:35] CLIENTE: Desculpa ai
+[08:51] LOJA: *Josy:*
+Tudo bem.
+[09:13] CLIENTE: Tranquilo

@@ -1,0 +1,12 @@
+CONVERSA 606535c837 | contato: Hassan | 27/08/2026 10:29 até 27/08/2026 10:31 | 2 msgs do cliente, 5 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[10:29] CLIENTE: [áudio] "Josiano, bom dia, tudo bem? É o Hassan. Josiano, queria saber quanto é que está o seu pneu? 15, 195-55-15."
+[10:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:29] LOJA: *Josy:*
+Bom dia! Hassan!
+[10:29] LOJA: [áudio] "Eu vou fazer o orçamento aqui para vocês e já te encaminho, tá bom?"  {audio:midias/3EB0759AF69431345C171C_917967.ogg}
+[10:30] LOJA: [foto]
+[10:30] LOJA: [áudio] "No dia de hoje eu tenho todas essas opções de marcas à pronta entrega. Aí no orçamento está o valor de apenas uma unidade, tá bom? Na primeira coluna é o valor à vista, que já é o menor preço, e seguem as opções de parcelamento em até 10 vezes, caso você queira parcelar."  {audio:midias/3EB0ABC83F90BC79789D0C_468904.ogg}
+[10:31] CLIENTE: [áudio] "Não, beleza, tranquilo, vou dar uma pesquisada aqui e a gente se fala."

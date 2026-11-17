@@ -1,0 +1,23 @@
+CONVERSA 906411b9ff | contato: Ismael Santos | 15/10/2026 11:20 até 15/10/2026 15:44 | 7 msgs do cliente, 8 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[11:20] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[11:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:20] CLIENTE: 215 45 18
+[11:21] CLIENTE: Pode ser o de perfil 50 também
+[11:29] LOJA: [áudio] "Olá, tudo bem com você, Ismael? Olha, sua opção está em falta no momento, mas eu vou solicitar um orçamento com os meus distribuidores, tá joia?"  {audio:midias/3EB087BF62264EE6599B50_68069.ogg}
+[11:40] LOJA: Consegui o retorno da marca Delinte e Continental
+[11:40] LOJA: [foto]
+[11:40] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:50] CLIENTE: Obrigado
+[14:51] LOJA: Vocês são aqui de Luziânia-Go?
+[15:12] CLIENTE: Não
+[15:12] CLIENTE: Já resolvi aqui
+[15:12] CLIENTE: Valeu mesmo
+[15:13] LOJA: Excelente!
+[15:44] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

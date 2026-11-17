@@ -1,0 +1,9 @@
+CONVERSA 6829ccf4c4 | contato: EDURDO POLCENA | 25/09/2026 11:30 até 25/09/2026 11:33 | 1 msgs do cliente, 2 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[11:30] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[11:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:33] LOJA: [áudio] "Eduardo, bom dia, tudo bem? Você é daqui de Luziânia mesmo?"  {audio:midias/3EB0E81106BCE943D4328B_257364.ogg}

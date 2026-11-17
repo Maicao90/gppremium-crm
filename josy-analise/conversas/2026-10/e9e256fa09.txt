@@ -1,0 +1,33 @@
+CONVERSA e9e256fa09 | contato: Juliano Garcez 😍 | 03/10/2026 11:53 até 06/10/2026 09:03 | 7 msgs do cliente, 12 da loja, 0 do robô
+
+--- 03/10/2026 (Sat) ---
+[11:53] CLIENTE: Bom dia 
+Queria falar com Josiane
+[11:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:53] LOJA: *Josy:*
+Bom dia!
+[11:53] CLIENTE: Bom dia 
+Tudo bem
+[11:53] LOJA: *Josy:*
+Como posso ajudar?
+[11:53] CLIENTE: O vãndereley passou seu contato
+[11:54] LOJA: [áudio] "Oi Juliano, bom dia! Como é que você está? Eu sou a Josi."  {audio:midias/3EB0165D4AD52E54027F52_532364.ogg}
+[11:54] CLIENTE: Vc tem pneu michelan 215 55 17
+[11:54] LOJA: [áudio] "Pode chamar de Josi, fica mais prático, tá bom?"  {audio:midias/3EB06F5541A2CC7D628120_662783.ogg}
+[11:54] LOJA: [áudio] "Olha, o Michelin, ele está em falta, tá? Mas na segunda-feira eu posso verificar com os meus distribuidores se eles terão, que provavelmente vai ser somente através de encomenda, tá?"  {audio:midias/3EB0A4132D25FFD683BC3D_795064.ogg}
+[11:55] CLIENTE: Vc pode ver isso pra mim
+[11:55] CLIENTE: Vc tem ideia mais ou menos quanto ta o valor de cada pneu
+[11:57] LOJA: *Josy:*
+Prefere mensagem de áudio ou texto?
+[12:00] LOJA: Infelizmente, não... pois sempre ocorre alteraçôes de valor.
+[12:01] CLIENTE: Tá bom 
+Então na segunda-feira vc me passar o valor 
+Preciso de 4 
+Fico no aguardo 
+Obrigado
+[12:02] LOJA: *Josy:*
+Combinado!
+--- 06/10/2026 (Tue) ---
+[09:02] LOJA: [foto]
+[09:03] LOJA: [áudio] "Oi Juliano, bom dia, tudo bem contigo? Juliano, agora que eu consegui a resposta dos pneus, sobre os pneus da Michelin, tá? O meu distribuidor vai ter sim o Prima C5, a unidade está por R$ 950,00, se o pagamento for para o débito ou Pix, e para parcelar tem as opções de parcelamento em até 10 vezes. Como é uma opção somente através de encomendas, cheguem até 3 dias úteis, mediante um pagamento calção de R$ 300,00, para poder reservar a opção para você. O pneu, você fazendo o pagamento, o pneu chegando aqui, assim que chegar eu te aviso, obviamente, né? E você vindo para realizar o residente do pagamento, esse valor vai ser abatido do total da sua compra."  {audio:midias/3EB086AB8C073C4B5A9349_335447.ogg}

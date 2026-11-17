@@ -1,0 +1,72 @@
+CONVERSA 6c2455541c | contato: Geise ❤️ João Paulo ❤️🙏🏻 | 28/09/2026 13:35 até 03/10/2026 10:12 | 25 msgs do cliente, 28 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[13:35] CLIENTE: Boa tarde
+[13:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:36] CLIENTE: 175/70/14
+[13:37] CLIENTE: Tem essa numeração?
+[14:23] LOJA: *Josy:*
+Boa tarde, obrigada por aguardar.
+[14:23] LOJA: *Josy:*
+Temos sim!
+[14:24] LOJA: [foto]
+[14:24] LOJA: *Josy:*
+175/70/14No dia de hoje temos  a marca Goodyear e GP Premium a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:09] CLIENTE: Pneu gppremiu tá o mesmo valor do Goodyear?
+[15:09] LOJA: [foto]
+[15:10] LOJA: *Josy:*
+Goodyear a vista R$ 446,48
+[15:10] LOJA: *Josy:*
+GP Premium R$ 279,00
+[15:10] CLIENTE: Onde fica a loja?
+[15:11] LOJA: *Josy:*
+Somos aqui de Luziânia-Go!
+[15:11] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:11] LOJA: *Josy:*
+Na Br 040
+[15:12] CLIENTE: Melhor ainda eu moro em Luziânia no centro
+[15:12] LOJA: [áudio] "Ah, que bacana! Você é daqui de Luziânia mesmo. Participou do evento de ontem?"  {audio:midias/3EB0E9DCB2ADDA533AD569_463936.ogg}
+[15:13] CLIENTE: [áudio] "Eu participei ontem do evento dos carros lá. Foi lá que eu peguei essa... peguei a..."
+[15:13] CLIENTE: [áudio] "Eu participei, sim, lá do evento de ontem dos carros. Foi lá que eu consegui o número de vocês."
+[15:13] CLIENTE: [áudio] "Inclusive, eu até concorri a dois pneus também lá."
+[15:14] LOJA: [áudio] "Rapaz, que da hora! Pois é, lá todos os pilotos usam os pneus da GP Premium, porque os pneus são bons demais da conta. Pois é, e fizemos o sorteio e em próximos eventos nós sempre estaremos participando e faremos mais sorteios novamente. Então, sempre que você puder, participe."  {audio:midias/3EB0C2C66C677D3BBB6F92_948537.ogg}
+[15:15] LOJA: [áudio] "Pois é, aí o GP Premium, né, se for para o pagamento à vista, que é para débito e Pix, ele está por apenas R$ 279,00. Se o pagamento for em dinheiro em espécie, aí a unidade vai ficar por apenas R$ 265,00. Aí, se sacando o dinheiro e trazendo aqui para mim, eu faço R$ 265,00 cada e já faz a instalação deles para você."  {audio:midias/3EB0872BEA8D6B325C7339_460473.ogg}
+[15:16] CLIENTE: [áudio] "Pois é, Josi. Ontem foi muito bacana ir lá no evento e eu me diverti muito e, além de eu me divertir, eu ganhei um presente que foi uma grande referência de loja de pneus."
+[15:17] LOJA: [áudio] "Ah, que da hora! Caramba, muito bacana isso, hein? É bom saber. E, de verdade, sempre acompanhe aí o nosso Instagram, que nós sempre informamos onde nós estaremos com a nossa equipe, fazendo sorteios e tudo mais, e uma satisfação poder falar com você aí."  {audio:midias/3EB0B394F9BCE7A8BB6EBC_223092.ogg}
+[15:18] CLIENTE: [áudio] "Deixa eu perguntar para a senhora, ontem eu não fiquei para o sorteio, como que eu fico sabendo que eu ganhei ou não os pneus? Aí no caso eu não tenho o Instagram."
+[15:19] LOJA: [áudio] "Então, as pessoas que ganharam, elas estavam lá, foram duas mulheres."  {audio:midias/3EB0127FFF2F1B0F864BFF_491313.ogg}
+[15:19] LOJA: [áudio] "E elas até mesmo pegaram os prêmios ontem."  {audio:midias/3EB0E96E2B03D6C814F79C_219017.ogg}
+[15:19] CLIENTE: Ata
+[15:19] CLIENTE: [áudio] "Deixa eu perguntar para a senhora. No caso, eu trabalho e não consigo chegar antes das 6 horas. Eu estou de folga só no sábado. Aí, no sábado, a loja abre."
+[15:20] LOJA: [áudio] "Sim, aos sábados nós atendemos de 8 da manhã até o meio-dia."  {audio:midias/3EB081699BF5AE8D5C3EAB_272279.ogg}
+[15:21] CLIENTE: [áudio] "Então tá bom, então. Sábado eu tô aí, viu? Eu tô precisando de dois pneus. Vou colocar meu carro."
+[15:22] CLIENTE: Na compra de dois,vcs faz a troca pra mim
+[15:22] CLIENTE: É o mesmo valor?
+[15:24] LOJA: [áudio] "Sim, o valor, né, é igual te mandei no orçamento. Se for no débito ou no Pix, 279 cada pneu. Se for para parcelar, o valor muda, mas conforme o orçamento, muda muito pouca coisa para parcelar. Se for no dinheiro em espécie, eu consigo fazer por 265 reais cada, tá joia? Esses pneus, eles são colocados. Aí, a parte, nós vamos negociar os serviços de balanceamento, tá? E alinhamento somente se precisar."  {audio:midias/3EB01A95BCD0BB8982AA26_439349.ogg}
+[15:24] LOJA: [áudio] "O balanceamento por roda hoje está na faixa dos seus 30 reais cada, tá joia? Mas é um valor que nós podemos negociar tranquilamente."  {audio:midias/3EB00228E98A017FC54506_738732.ogg}
+[15:26] CLIENTE: [áudio] "Ah tá, entendi. No caso, só vai cobrar se precisar fazer o balanceamento das rodas. Se não precisar, não vai."
+[15:27] CLIENTE: [áudio] "Então tá bom, eu vou querer 2 pneus da GP Premium, essa marca que eu te mandei aí, 1,75, 70 a 14, e vou pagar no dinheiro à vista."
+[16:08] LOJA: [áudio] "O balanceamento, ele sempre é preciso ser feito, tá? Isso, por exemplo, se você estiver numa viagem lá para o Pará, por exemplo, e você precisa trocar um pneu do seu carro, você tem que fazer o serviço de balanceamento, tá? Agora, o alinhamento daí é outra situação, tá bom?"  {audio:midias/3EB07B2FC032A5BDDEBBCD_866168.ogg}
+[16:09] LOJA: [áudio] "Aí ficamos combinados. Então, já é sábado pela manhã, assim que eu abrir a loja, já te mando um bom dia."  {audio:midias/3EB02DE2058FE7EEF35FDF_24740.ogg}
+[16:09] LOJA: [áudio] "E qual é o seu nome mesmo?"  {audio:midias/3EB0619C2E5AE013ACCF3B_277800.ogg}
+[16:14] CLIENTE: João Paulo
+[16:15] CLIENTE: combinado pra sábado de manhã ok
+--- 03/10/2026 (Sat) ---
+[09:01] CLIENTE: Bom dia
+[09:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:01] CLIENTE: 175/70/14
+[09:34] LOJA: *Josy:*
+deu certo?
+[09:35] CLIENTE: Tô chegando
+[10:11] LOJA: *Josy:*
+Oi!
+[10:12] LOJA: *Josy:*
+Diga, sr João!
+[10:12] CLIENTE: Tô aqui na direcional
+[10:12] LOJA: *Josy:*
+Que bom que vai dar certo!
+[10:12] CLIENTE: Sim

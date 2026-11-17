@@ -1,0 +1,8 @@
+CONVERSA 32bf55c734 | contato: Antonio Ferreira Dias | 14/08/2026 08:44 até 16/08/2026 06:06 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 14/08/2026 (Fri) ---
+[08:44] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[08:46] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 16/08/2026 (Sun) ---
+[06:04] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[06:06] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

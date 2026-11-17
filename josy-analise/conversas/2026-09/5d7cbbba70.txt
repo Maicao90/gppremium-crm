@@ -1,0 +1,26 @@
+CONVERSA 5d7cbbba70 | contato: Ana Flávia | 25/09/2026 10:57 até 25/09/2026 12:17 | 4 msgs do cliente, 9 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[10:57] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[10:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:57] CLIENTE: 14 175
+[11:00] LOJA: *Josy:*
+65 ou 70?
+[11:08] LOJA: *Josy:*
+🙋🏼‍♀️
+[11:08] CLIENTE: 65
+[11:09] LOJA: [foto]
+[11:09] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:10] LOJA: [áudio] "Ana Flávia, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0C0AA187A777E90D166_920164.ogg}
+[11:23] CLIENTE: Valparaiso
+[11:57] LOJA: *Josy:*
+è pertinho de nós!
+[12:17] LOJA: [áudio] "Bem, eu vou te mandar aqui a nossa localização, Ana, que se houver a possibilidade, você vem aqui na loja para conversarmos pessoalmente, está bem?"  {audio:midias/3EB07E667161C0B02DCEB5_412881.ogg}
+[12:17] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

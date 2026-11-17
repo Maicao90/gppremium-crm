@@ -1,0 +1,27 @@
+CONVERSA 0d7b9a70b5 | contato: Gra | 15/10/2026 11:04 até 15/10/2026 14:36 | 10 msgs do cliente, 9 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[11:04] CLIENTE: 175 55 16
+[11:04] CLIENTE: 185 55 16
+[11:04] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[11:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:04] CLIENTE: 175 55 16
+[11:04] CLIENTE: 185 55 16
+[11:08] LOJA: [áudio] "Olá, tudo bem com você? Eu sou a Josi. Você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB0C13580A30A5E3FB830_280941.ogg}
+[11:10] CLIENTE: Nao, moro perto de val paraiso
+[11:11] LOJA: A medida 195/55/16 te atende?
+[11:11] CLIENTE: Nao, teria q ser um dos dois q te mandei
+[11:12] CLIENTE: É p dolphin mini
+[11:33] LOJA: Entendi...
+[11:33] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[12:35] LOJA: [foto]
+[12:36] LOJA: Somente marcas nacionais
+[12:36] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:42] CLIENTE: Ta joia, estou fazendo os orçamentos e te aviso ta
+[12:43] CLIENTE: Obg
+[14:36] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

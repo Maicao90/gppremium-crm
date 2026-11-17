@@ -1,0 +1,15 @@
+CONVERSA 339ea5d658 | contato: Marcos Vieira | 19/10/2026 09:39 até 20/10/2026 08:58 | 1 msgs do cliente, 6 da loja, 0 do robô
+
+--- 19/10/2026 (Mon) ---
+[09:39] CLIENTE: Oi
+[09:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:40] LOJA: *josy:*
+Bom dia, Marcos!
+[09:40] LOJA: *josy:*
+Como vai?
+[14:05] LOJA: Sr, Marcos... como posso ajudar?
+[14:32] LOJA: *Josy:*
+O senhor me mandou um OI mais cedo...
+--- 20/10/2026 (Tue) ---
+[08:58] LOJA: [áudio] "Oi, seu Marcos, bom dia, tudo bom? Ontem só me mandou um oi aqui no WhatsApp e eu tentei, por algumas vezes, falar contigo. Gostaria de saber se eu posso te ajudar. Assim que possível, me dá um retorno, por gentileza."  {audio:midias/3EB0D95B52D515FEBCF506_373084.ogg}

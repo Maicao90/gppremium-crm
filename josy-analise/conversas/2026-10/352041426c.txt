@@ -1,0 +1,52 @@
+CONVERSA 352041426c | contato: Roberilson Araujo | 09/10/2026 06:46 até 20/10/2026 09:42 | 14 msgs do cliente, 25 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[06:46] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[06:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[06:46] CLIENTE: 295
+[08:16] LOJA: Bom dia, obrigada por aguardar, não trabalhamos com essa medida.
+[16:53] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Olá! Posso ter mais informações sobre isso?
+[16:53] CLIENTE: 265/60/18
+[17:00] LOJA: Temos sim!
+[17:01] CLIENTE: Valor
+[17:01] LOJA: 1 instante.
+[17:01] LOJA: [foto]
+[17:01] LOJA: Pneus da marca GP Premium
+[17:01] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:02] CLIENTE: Manda as fotos
+[17:02] LOJA: 1 instante.
+[17:15] LOJA: Obrigada por aguardar!
+[17:15] LOJA: Pneus da marca GP Premium modelo ATR 👇🏻
+[17:15] LOJA: Pneus da marca GP Premium modelo Brutus👇🏻
+[17:16] LOJA: [foto]
+[17:19] LOJA: [áudio] "Wilson, você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB0348CAD0F30D50D776B_413576.ogg}
+[17:21] CLIENTE: Sim
+[17:22] LOJA: Passa aqui na loja para nos conhecer!
+[17:33] LOJA: [áudio] "E se porventura vocês tiverem busca de alguma marca específica, você pode me falar que eu verifico com os meus distribuidores, está bem?"  {audio:midias/3EB06D3DC72FA4F9DB3D36_250424.ogg}
+[17:48] CLIENTE: Ok
+[17:49] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 13/10/2026 (Tue) ---
+[11:07] LOJA: [áudio] "Oi, Roberilson, tudo jóia? Eu te mandei um orçamento alguns dias atrás e gostaria de saber se você pretende seguir com a negociação. Você tinha falado comigo a respeito dos pneus de caminhonete, né? Alguma das opções de fotos que eu te mandei te atende?"  {audio:midias/3EB08C8C8C7C742462A196_89351.ogg}
+--- 14/10/2026 (Wed) ---
+[08:08] CLIENTE: Opa
+[08:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:09] CLIENTE: Esses pneus são remold?
+[08:10] CLIENTE: 265/60/18
+[08:10] LOJA: Sim
+[08:10] LOJA: E são os mais vendidos.
+[13:04] LOJA: [foto]
+[13:04] LOJA: [áudio] "Robert Wilson, eu vou ter aqui também um pneu novo e importado da marca Maxx. Cada pneu está por R$664,00, se o seu pagamento for à vista. Ele acabou de chegar aqui, tá?"  {audio:midias/3EB0789D211F8EFD440F2E_561378.ogg}
+[13:04] LOJA: 🙋🏼‍♀️
+[13:04] CLIENTE: Tá bom
+[13:05] CLIENTE: Vou analisar aqui
+[13:05] CLIENTE: Qualquer coisa falo com vc
+[13:05] LOJA: [áudio] "Passo aqui na loja para conversarmos, creio que fique mais prático, está bem?"  {audio:midias/3EB06893845D2ECF3DA2C1_873.ogg}
+--- 20/10/2026 (Tue) ---
+[09:42] LOJA: *Josy:*
+Esse aqui em *dinheiro* fica por 520,00 a unidade.

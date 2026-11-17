@@ -1,0 +1,24 @@
+CONVERSA 294832387c | contato: Fernanda Fernandes 💫 | 29/09/2026 14:58 até 29/09/2026 16:03 | 6 msgs do cliente, 9 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[14:58] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:59] CLIENTE: 175/70 R14
+[15:00] LOJA: *Josy:*
+Boa tarde, temos sim!
+[15:00] LOJA: [foto]
+[15:01] LOJA: No dia de hoje temos pneus da marca Goodyear e GP Premium  a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:01] CLIENTE: Tem a tabela?
+[15:02] LOJA: *Josy:*
+Te mandei
+[15:02] CLIENTE: Do inmetro?
+[15:06] LOJA: Ah, sim.
+Você quer a etiqueta.
+[15:07] LOJA: [foto]
+[15:24] CLIENTE: Desse mais barato?
+[15:27] LOJA: [foto]
+[15:43] CLIENTE: Esse não tem a classificação?
+[16:03] LOJA: [áudio] "Não, ele é exatamente desse jeito. Aqui no cantinho tem a letrinha A. Como ele é um pneu ecológico que nós fazemos, então a descrição técnica dele é extremamente simplificada. O Inmetro pede para colocar dessa forma mesmo."  {audio:midias/3EB0929332517440A72713_707972.ogg}

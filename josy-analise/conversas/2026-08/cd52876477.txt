@@ -1,0 +1,8 @@
+CONVERSA cd52876477 | contato: Gilliard Santos | 18/08/2026 10:13 até 18/08/2026 10:15 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[10:13] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:13] CLIENTE: 295 liso
+[10:15] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Eu sou a Josi e, infelizmente, nós não trabalhamos com pneus de caminhão."  {audio:midias/3EB0ED2A2C5EB78A3808C3_58109.ogg}

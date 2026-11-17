@@ -1,0 +1,33 @@
+CONVERSA f41330e0bd | contato: Rabelo | 01/10/2026 09:25 até 01/10/2026 10:02 | 8 msgs do cliente, 13 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[09:25] CLIENTE: Quero cotar o pneu 205/55 R17 GP Premium.
+[09:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:25] LOJA: *Josy:*
+Bom dia, temos sim!
+[09:25] CLIENTE: Quero cotar o pneu 215/50 R17 GP Premium.
+[09:25] LOJA: *Josy:*
+Vou fazer seu orçamento.
+[09:26] CLIENTE: Quero cotar as duas medidas
+[09:26] LOJA: *Josy:*
+Vou fazer seu orçamento.
+[09:27] LOJA: [foto]
+[09:27] LOJA: *Josy:*
+Pneus da marca GP Premium
+[09:27] LOJA: *Josy:*
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:28] LOJA: [áudio] "Bom dia, Sr. Rabel, como é que vai? Eu me chamo Josi, tá? E o céu mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB091951F84747B57D02F_765044.ogg}
+[09:42] CLIENTE: Sim
+[09:43] CLIENTE: Moro aqui em Luziânia
+[09:43] LOJA: [áudio] "E, Sr. Rabelo, agora que apareceu a sua foto aqui no WhatsApp, eu te conheço lá da feirinha, lá do pastel. Que legal!"  {audio:midias/3EB09E67CEE691AB7DD743_720775.ogg}
+[09:44] CLIENTE: Rs
+[09:44] CLIENTE: Estou precisando de 2 pneus
+[09:44] LOJA: *Josy:*
+Perfeito! tenho eles aqui.
+[09:45] CLIENTE: [áudio] "Ok, Josi. Eu irei aí no começo da semana, na segunda ou na terça-feira, eu irei aí na loja para comprar esses dois pneus. Tá bom? Obrigado pela atenção."
+[10:02] LOJA: [áudio] "Imagina que é isso, eu que agradeço pelo seu contato, será uma satisfação receber o Senhor aqui, está bem?"  {audio:midias/3EB02D8FA54984B6E0D357_39670.ogg}
+[10:02] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:02] LOJA: [foto]

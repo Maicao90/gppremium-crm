@@ -1,0 +1,12 @@
+CONVERSA 344611cabc | contato: Greisson | 24/09/2026 11:10 até 24/09/2026 14:24 | 3 msgs do cliente, 4 da loja, 0 do robô
+
+--- 24/09/2026 (Thu) ---
+[11:10] LOJA: *Josy:*
+Bom dia...como vai?   O sr Rubens me passou seu contato.
+[13:07] CLIENTE: Opa
+[13:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:15] CLIENTE: [áudio] "Opa, boa tarde, meu jovem. Hoje não, mas deixa pra semana que vem. Beleza? Estou até precisando uns pneuzinhos aqui. Mas qual os pneus que estão tendo na medida boa, no preço e na promoção?"
+[14:10] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Eu me chamo Josi. Eu tenho diversas opções. Eu preciso saber o que você está precisando para eu poder fazer o orçamento, tá bom?"  {audio:midias/3EB049A0884B4E680430BB_740194.ogg}
+[14:22] CLIENTE: [áudio] "Beleza então, aí então faz o seguinte, semana que vem eu dou uma ligadinha para você, essa semana meia corrida comigo aqui."
+[14:24] LOJA: [áudio] "Beleza, combinado, Grayson."  {audio:midias/3EB0197DCF651DDBF304B4_176310.ogg}

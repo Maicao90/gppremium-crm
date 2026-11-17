@@ -1,0 +1,33 @@
+CONVERSA 553d29d0fd | contato: contato djdeda | 26/08/2026 17:05 até 27/08/2026 11:45 | 6 msgs do cliente, 12 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[17:05] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[17:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:07] LOJA: Estou ao seu aguardo.
+[17:07] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Qual as marcas de pneu que você tem aro 15 
+185/65 e os valores?
+[17:08] LOJA: [foto]
+[17:08] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:08] LOJA: Mora aqui em Luziânia-Go, mesmo?
+[17:09] CLIENTE: Novo Gama.
+[17:09] LOJA: Pertinho de nós!
+[17:10] CLIENTE: Fazem entrega aqui?
+[17:17] LOJA: Qual das opções?
+--- 27/08/2026 (Thu) ---
+[11:41] LOJA: *Josy:*
+Bom dia!
+[11:42] LOJA: [vídeo]
+[11:44] CLIENTE: Estou analisando Josy.
+[11:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:44] CLIENTE: Bom dia!
+[11:45] LOJA: [áudio] "Então, por hora, eu vou encerrar aqui o seu atendimento, para não ficar justamente enchendo o seu WhatsApp de mensagens, e eu vou enviar para você a nossa localização, tá? A princípio aqui de Luziânia, que se você estiver passando por aqui, você vai na loja para nós conversarmos pessoalmente, tá bem?"  {audio:midias/3EB09270E692CE72128FED_162590.ogg}
+[11:45] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

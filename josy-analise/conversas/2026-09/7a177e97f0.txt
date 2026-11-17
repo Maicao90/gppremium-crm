@@ -1,0 +1,23 @@
+CONVERSA 7a177e97f0 | contato: Jhonatan Santana | 10/09/2026 13:18 até 11/09/2026 14:07 | 3 msgs do cliente, 8 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[13:18] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Opa boa tarde
+[13:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:18] CLIENTE: Vcs são de onde
+[13:27] CLIENTE: 175/70 13
+[14:09] LOJA: *Josy:*
+Boa tarde, obrigada por aguardar! somo de Luziania-Go
+[14:09] LOJA: [foto]
+[14:09] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:53] LOJA: [áudio] "Olá, tudo bem com você?"  {audio:midias/3EB03BD4DC03069BB66366_200318.ogg}
+[14:54] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[14:07] LOJA: [áudio] "Oi, Jonathan. Tudo jóia? Eu imagino que você esteja com um dia extremamente corrida, e por essa razão que você não consegue me responder, então eu vou encerrar aqui o seu atendimento, tá, jóia? E vou te mandar aqui a nossa localização, pois sobra a possibilidade de você vencer na loja para conversarmos pessoalmente. Obrigada pela atenção e até mais."  {audio:midias/3EB0DCA875393A080139BF_465261.ogg}
+[14:07] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

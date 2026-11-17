@@ -1,0 +1,43 @@
+CONVERSA b06255e3e0 | contato: Roberto | 11/09/2026 16:21 até 11/09/2026 16:31 | 14 msgs do cliente, 16 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[16:21] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[16:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:21] LOJA: *Josy:*
+Oi...tudo bem?
+[16:21] LOJA: Qual a medida dos pneus que você precisa hoje?
+[16:22] CLIENTE: Do Siena tô vendo aqui o tamanho dele
+[16:22] LOJA: [áudio] "Certo, por gentileza me confirma pelo menos qual que é o aro que já me ajuda bastante."  {audio:midias/3EB0C9101DB689D541EF8E_73025.ogg}
+[16:23] CLIENTE: 175 70 14
+[16:23] CLIENTE: Aro 14
+[16:24] CLIENTE: Qual é o valor
+[16:25] LOJA: *Josy:*
+1 instante por gntileza.
+[16:25] LOJA: [foto]
+[16:26] LOJA: No dia de hoje temos  essas 2 opções a pronta entrega.  *Josy:*
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:28] CLIENTE: Não obrigado os seus preços tá muito puxado eu queria os quatro tem pneu de 250 aí
+[16:28] CLIENTE: Hoje eu fiz vários orçamento os seus tá puxado obrigado viu
+[16:29] LOJA: *Josy:*
+Tenho 175/65/14 por R$ 249,00 a vista e não é a base de troca.
+[16:30] LOJA: *Josy:*
+Não está puxado, trabalhamos com preços reais que são correspondentes as marcas, sem ficar enganando ninguém.
+[16:30] CLIENTE: Pois é mas esse preço aí eu já encontrei no Valparaíso tô com vários orçamento aqui
+[16:30] LOJA: *Josy:*
+Pois é...
+[16:30] CLIENTE: No máximo que eu encontrei foi pneu original por 299
+[16:30] CLIENTE: Dividido ainda cinco vezes sem juros é a real
+[16:30] LOJA: *Josy:*
+pneu chines tem a preço de banan
+[16:31] CLIENTE: Pior que não é o preço mesmo
+[16:31] LOJA: *Josy:*
+ahhhh
+[16:31] CLIENTE: [foto]
+[16:31] CLIENTE: Pneu nacional 299
+[16:31] LOJA: *Josy:*
+Boas compras!
+[16:31] CLIENTE: Obrigada

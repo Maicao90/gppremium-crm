@@ -1,0 +1,14 @@
+CONVERSA f740c671ff | contato: artsmarcenariaa | 23/09/2026 13:16 até 24/09/2026 10:51 | 2 msgs do cliente, 5 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[13:16] CLIENTE: [áudio] "Boa tarde, tudo bem? Eu coloquei 4 pneus aí no mês 3, no carro, e agora começou a tremer muito a roda, na verdade começou aos poucos, só que agora já está de um jeito que não está dando nem para andar, aí eu fui levar para alinhar, balancear, ver o que precisava fazer, aí o rapaz constatou que há um deslocamento no pneu, Então, a olho nu a gente não vê, não é na lateral, não é nada, é na face dele, aí era na questão da gente ver a garantia aí, né, para ir para trocar esse pneu, tá bom?"
+[13:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:59] LOJA: [áudio] "Oi, seu Jânio, como é que vai?"  {audio:midias/3EB095E9C1471EA7C53388_376225.ogg}
+[13:59] LOJA: [áudio] "Pode trazer aqui para nós analisarmos, está bem?"  {audio:midias/3EB0DBDB978F70DDA58AD9_247260.ogg}
+--- 24/09/2026 (Thu) ---
+[10:51] CLIENTE: [áudio] "Bom dia, tudo bem? Daqui uns 10 minutinhos eu tô chegando aí, tá? Pra avaliar a questão do pneu lá do carro. Eu tô levando o carro aí."
+[10:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:51] LOJA: *Josy:*
+Ok!

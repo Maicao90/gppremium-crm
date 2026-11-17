@@ -1,0 +1,20 @@
+CONVERSA 151a39a282 | contato: Jose Diogo 🇧🇷 | 14/09/2026 14:17 até 16/09/2026 12:27 | 1 msgs do cliente, 8 da loja, 0 do robô
+
+--- 14/09/2026 (Mon) ---
+[14:17] LOJA: *Josy:*
+Boa tarde, José
+[14:17] LOJA: [foto]
+[14:18] LOJA: *Josy:*
+
+
+
+https://goo.gl/maps/96rnXxTkVtPWzXzw6 
+/l
+--- 16/09/2026 (Wed) ---
+[12:07] LOJA: [áudio] "Oi, Sr. José, tudo jóia? Nós conversamos há alguns dias atrás e eu gostaria de saber se eu posso reservar os pneus aqui para o senhor, assim que possível me dar o retorno, por gentileza?"  {audio:midias/3EB0ABB057194D1773F562_410207.ogg}
+[12:07] LOJA: [foto]
+[12:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:25] CLIENTE: [áudio] "Oi, boa tarde, tudo bem? Eu estive ontem, eu peguei os pneus ontem, José Diogo, lembra? Eu falei com você, eu já até arrumei, eu troquei ele, já arrumei uma roda que estava com problema."
+[12:26] LOJA: [áudio] "Seu José Diogo, perdão, que meu WhatsApp bugou aqui. Agora tá tudo perdido. Não gravou o seu nome, é por isso que eu mandei mensagem. Me perdoa, tá joia?"  {audio:midias/3EB0CFB5585EF49C6895BB_981432.ogg}
+[12:27] LOJA: [áudio] "Obrigada pela sua atenção. Que você tenha uma boa semana. Joia!"  {audio:midias/3EB048D2E8354F2434D424_676959.ogg}

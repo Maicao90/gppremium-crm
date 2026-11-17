@@ -1,0 +1,25 @@
+CONVERSA 30361a14ad | contato: Carmen Castillo 💕 | 07/10/2026 11:30 até 08/10/2026 11:36 | 4 msgs do cliente, 12 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[11:30] LOJA: *Josy:*
+Bom dia, Carmem
+[11:30] LOJA: *Josy:*
+215/65/16
+[11:30] LOJA: *Josy:*
+R$ 356,00 a unidade , parcelo esse valor em 4 X sem juros .
+[11:31] LOJA: *Josy:*
+* Balanceamento = 45,00 (por pneu)
+* Alinhamento = 140,00 ( Alinhamento de Direção) valores completamente negociáveis.
+[11:36] LOJA: *Josy:*
+Balanceamento e alinhamento R$ 300,00 e parcelo em 3 x  sem juros
+--- 08/10/2026 (Thu) ---
+[11:26] LOJA: Oi... Carmem...
+[11:30] CLIENTE: [áudio] "Oi, minha amiga, tudo bem? Ai, amiga, desculpa. Estava no UPA, estava muito doente. Me deu muito dor de cabeça, dor nos ossos, febre. E agora é que me estão liberando do UPA. Minha amiga, desculpa, mas eu amanhã estou indo para lá. Eu já dei minha palavra para você e eu vou cumprir, tá bom? Desculpa novamente, minha amiga."
+[11:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:33] LOJA: [áudio] "Olá, bom dia, como vai? Espero que se me llore, dona Carmen. Intente tomar muita água, isso ajuda a baixar a fiebre e aliviar o dolor de cabeça também."  {audio:midias/3EB09D5CFFB535F1C8A3C8_633616.ogg}
+[11:34] CLIENTE: [áudio] "Sim, sim amiga, tem razão, eu estou tomando muito chá de sinxibre e de limão e mer, isso me ajudou bastante, mas tenho muito dor de cabeça, meu Deus, agora vengo chegando a minha casa de lupa, colocaram por minhas veias, meditación, e, bom, melhorou um pouquinho. Obrigado por a informação."
+[11:35] LOJA: [áudio] "Por la voz parece estar resfriada."  {audio:midias/3EB00B0891F1BDF947C430_921665.ogg}
+[11:36] LOJA: Vas a mejorar!
+[11:36] CLIENTE: [figurinha]
+[11:36] CLIENTE: [figurinha]

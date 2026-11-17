@@ -1,0 +1,29 @@
+CONVERSA fb1d83d4c7 | contato: Júlia Menêzes | 27/08/2026 10:45 até 27/08/2026 11:59 | 8 msgs do cliente, 8 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[10:45] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+
+Meu pneu furou na rodovia
+Vocês são 061, é Cristalina ?
+[10:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:46] CLIENTE: É atendimento automático ou é uma pessoa?
+[10:46] LOJA: Sou uma pessoa.
+[10:47] LOJA: Somos de Luziânia-Go.
+[10:48] CLIENTE: Eu estou bem perto de cristalina
+[10:48] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu sou a Josi. Pois é, e eu não consigo atender aí."  {audio:midias/3EB0800E6F7100FF3E8CBD_758233.ogg}
+[10:48] LOJA: [áudio] "Estamos a praticamente 80 km adiante de Cristalina, já rumo a Brasília mesmo."  {audio:midias/3EB0A52AD34DA26A295737_524296.ogg}
+[11:54] CLIENTE: Ok
+Estamos seguindo 
+Você tem Dunlop?
+[11:55] CLIENTE: Para uma TORO
+[11:55] LOJA: *Josy:*
+Qual a medida?
+[11:56] CLIENTE: [foto]
+[11:57] CLIENTE: 255/60 aro 18
+[11:57] LOJA: *Josy:*
+225/60/18, vou ver aqui as opções.
+[11:58] CLIENTE: Precisa ser exatamente esse
+Dunlop
+[11:59] LOJA: *Josy:*
+Não temos.

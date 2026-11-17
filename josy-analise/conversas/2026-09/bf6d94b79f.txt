@@ -1,0 +1,65 @@
+CONVERSA bf6d94b79f | contato: EDU CARINHOSO❤️ | 09/09/2026 19:05 até 10/09/2026 14:35 | 19 msgs do cliente, 21 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[19:05] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[19:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:05] CLIENTE: Boa noite
+[19:05] CLIENTE: 175 70 14
+[19:06] CLIENTE: 4 unidades 
+Mais barato
+[19:06] CLIENTE: Pra retirada
+--- 10/09/2026 (Thu) ---
+[08:08] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi e eu tenho aqui na nossa loja um 7570 14, o menor preço do pneu GP Premium, que está por R$ 279,00 para o pagamento à vista. Você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB0E02D0E182AE5E1302B_512758.ogg}
+[08:26] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Bom dia
+JOSY
+eu moro em uruacu Goiás 
+Mais estou fazendo um serviço em luziania 
+E um no gama
+[08:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:26] LOJA: [áudio] "Ai, que bacana! Sério! Então seja muito bem-vindo à nossa cidade. Pois é, eu vou te mandar aqui a nossa localização, que você vem cá na loja para conversar mais pessoalmente. Pode ser?"  {audio:midias/3EB0F288F0E1B4B4FC5B3F_780215.ogg}
+[08:26] CLIENTE: Eu vi ele no anúncio 
+Mais barato
+[08:27] CLIENTE: Pode sim
+[08:27] CLIENTE: Eu ja quero ir com dinheiro preparado
+[08:27] CLIENTE: Queria saber quanto vc faz os 4 avista
+[08:28] LOJA: [áudio] "No anúncio, é a partir de... No caso da medida 175-70-14, é 279 cada."  {audio:midias/3EB02B392607344934BBC9_416735.ogg}
+[08:29] LOJA: [áudio] "Então, os quatro pneus ficam por R$ 1.116,00."  {audio:midias/3EB0EDD1CCD09A77560AAF_824378.ogg}
+[08:29] LOJA: [áudio] "Qual que é o seu carro, Edu?"  {audio:midias/3EB02078D04CB606BC6CE1_98240.ogg}
+[08:30] CLIENTE: [foto] Passat
+[08:32] LOJA: *Josy:*
+Tem a opção de 175/65/14 que de R$ 279,00 posso fazer para você por R$ 249,00
+[08:34] CLIENTE: Esse ta melhor o preço
+[08:34] LOJA: [áudio] "Que assim, o 175-70 aro 14, o preço dele é 299, mas eu faço à vista por 279, tá?"  {audio:midias/3EB0AA7222E1D2503EF9F2_891117.ogg}
+[08:34] CLIENTE: Vc observou
+[08:34] LOJA: [áudio] "Eu vou mandar aqui para você a tabela com as condições de parcelamento, tá Joia?"  {audio:midias/3EB0367379103C39F0A4E8_119153.ogg}
+[08:34] LOJA: [áudio] "Sim, observei sim."  {audio:midias/3EB0028DED68C0F1E72120_272583.ogg}
+[08:35] CLIENTE: Blz
+[08:35] LOJA: [foto]
+[08:36] LOJA: [áudio] "Aí nesse orçamento é o valor de apenas um pneu, está bem? Aí na primeira coluna é o valor à vista, que eu já combinei contigo, e aí seguem as opções de parcelamento em até 10 vezes, caso você queira parcelar."  {audio:midias/3EB0D24907A0593C0749FC_30506.ogg}
+[08:37] CLIENTE: Entendi
+[08:37] CLIENTE: Sai quais pneus 
+Qual marca
+[08:38] LOJA: *Josy:*
+GP PREMIUM
+[08:39] CLIENTE: Eles são remolde 
+Importado 
+Ou
+Nacional
+[08:41] LOJA: *Josy:*
+Pneu ecológico que nós fazemos, entra na categoria de remodelagem sim, mas premium, estamos no ramo a 10 anos. Se quiser te mando foto /video...
+[08:42] CLIENTE: Ok
+[08:54] LOJA: *Josy:*
+Tenho pneus nacionais e importados também, vou te mandar todas as opções.
+[08:54] LOJA: [foto]
+[08:55] LOJA: [foto]
+[08:55] LOJA: [áudio] "Os pneus GP Premium, que são esses que eu te mandei anteriormente, eu vendo ele muito mais do que as outras opções, eu vendo ele até mais do que o próprio Goodyear. Por quê? Porque a qualidade é a mesma e o preço muito acessível, tá? Então, realmente são pneus muito bons."  {audio:midias/3EB0B5D9073FB4DBFB689A_588978.ogg}
+[08:56] CLIENTE: Vou querer esses mesmo de 249
+[09:44] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:35] LOJA: [áudio] "Olá, tudo bem? O senhor ainda vai passar por aqui?"  {audio:midias/3EB0F0E5569A7F821295B0_641336.ogg}

@@ -1,0 +1,48 @@
+CONVERSA cb53fa34ec | contato: 𝐉𝐎𝐇𝐍𝐀𝐓𝐀𝐍 𝐂𝐄𝐒𝐀𝐑 | 20/10/2026 12:37 até 21/10/2026 13:10 | 9 msgs do cliente, 20 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[12:37] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Ola
+[12:37] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[12:38] CLIENTE: Quero falar com a vendedora.
+[12:38] LOJA: *Josy:*
+Pois não.
+[12:38] CLIENTE: Esqueci o nome dela.
+[12:38] LOJA: *Josy:*
+Como posso ajudar?
+[12:40] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Me diz como eu posso te ajudar?"  {audio:midias/3EB0C84E4AD0D605A145BB_724494.ogg}
+[12:41] LOJA: *Josy:*
+Ooooi
+[12:42] CLIENTE: [contato] 👤 Genaldo José Melo
+[12:42] CLIENTE: Uma indicação. 
+Meu padrasto quer comprar pneus.
+[12:43] LOJA: [áudio] "Ah, sim, Jonathan. Eu estou falando com ele aqui, que ele está querendo o pneu 015, né? Aí eu estou fazendo o orçamento para ele."  {audio:midias/3EB05E16B131FBD5C03CE8_364253.ogg}
+[12:43] CLIENTE: Indicação, Johnatan César
+[12:43] CLIENTE: Ah, tá
+[12:44] CLIENTE: Show.
+[12:44] CLIENTE: Obrigadão!
+[12:50] LOJA: *Josy:*
+Vou te encaminhar as opções que temos.
+[12:50] LOJA: 31x10,5 👇🏻
+[12:51] LOJA: [foto]
+[12:51] LOJA: [áudio] "Olha, no dia de hoje eu tenho apenas o pneu da marca Conforcer. Ele é um pneu bem resistente, de 6 lonas, tá? À vista, cada um está por R$779,00. Tá, Joia? Vou te mandar a foto dele aqui."  {audio:midias/3EB08E8A342D1731DB6F8E_150863.ogg}
+[12:51] LOJA: [foto]
+[12:51] LOJA: [foto]
+[12:51] LOJA: [foto]
+[12:51] LOJA: *Josy:*
+235/75/15 👇🏻
+[12:51] LOJA: [foto]
+[12:51] LOJA: [foto]
+[12:51] LOJA: [foto]
+--- 21/10/2026 (Wed) ---
+[09:50] LOJA: [áudio] "Bom dia, Jonathan. Tudo bem? Eu só vou deixar aqui na nossa conversa a localização da loja, que eu sei que você sabe onde fica, mas é só para poder encerrar aqui meu atendimento por hora, tá bom? Quando você estiver vindo para cá, aí você me avisa, fala qual das opções que é para reservar aqui para o seu Genaldo, tá bom? Obrigada aí pela atenção e até breve."  {audio:midias/3EB00EC8B4F8EDE5BAFBF4_445745.ogg}
+[09:51] LOJA: [foto]
+[12:56] ROBÔ: 🙋🏼‍♀️
+[13:10] LOJA: Perdão , Johnatan, mandei errado.

@@ -1,0 +1,33 @@
+CONVERSA a78da27172 | contato: Guardinha | 25/09/2026 09:22 até 29/09/2026 12:35 | 10 msgs do cliente, 11 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[09:22] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[09:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:22] CLIENTE: 195/60/15
+[09:22] CLIENTE: Valor
+[09:22] CLIENTE: Pra retirada
+[09:26] LOJA: [foto]
+[09:27] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi e no dia de hoje temos todas essas opções de marcas, a pronta entrega. Aí no orçamento está o valor de apenas um pneu e na primeira coluna está o valor à vista, que é correspondente a débito ou Pix. Seguem também as opções de parcelamento em até 10 vezes, caso você queira parcelar, está bem?"  {audio:midias/3EB0C373CE26B54097B266_852145.ogg}
+[10:21] CLIENTE: [áudio] "Aí tem uma para retirada, para sair e pegar dois. Dois. Esse chinês que você fala, é o que o pessoal fala, é importado, né? Aí tem garantia, tem tudo, né? É desse, né? Só me explica aí, que eu não sei muito dessas coisas. Aí eu vi aqui, tá bom?"
+[10:21] LOJA: [áudio] "Todos eles têm garantia e todas as opções que eu te encaminhei eu tenho aqui a pronta entrega, tá?"  {audio:midias/3EB0512A75F40D41F87769_206183.ogg}
+[10:22] LOJA: [áudio] "Eu vou te mandar aqui a nossa localização, está bem? Qual é o seu nome?"  {audio:midias/3EB0E8743DCED64CF7F2C3_118530.ogg}
+[10:22] CLIENTE: [áudio] "Ô filho, é porque eu não sei, assim, que tem uns que eu mandei mensagem aqui, aí eles disseram, não, é só se trazer para colocar, entendeu? Eu quero passar para pegar e trazer os pneus, que eu sou de longe. Eu sou, não moro perto aí, da onde você tem a loja, aí eu passo aí e pego aí, entendeu? Tá bom? É que eu não... Tá."
+[10:22] CLIENTE: Luiz
+[10:23] LOJA: [áudio] "Não, aqui não tem isso não. O senhor pode comprar os pneus e levar, tá joia?"  {audio:midias/3EB01E5D302BDAEC3B21D7_981299.ogg}
+[10:23] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:23] LOJA: [foto]
+[10:24] CLIENTE: [áudio] "Ah, em Luziana, né? Ah, então beleza, tá bom? Aí liga aí seu nome aí também, Ju. Tá bom."
+[10:28] CLIENTE: Pura coisa e remode e?
+[10:36] LOJA: [áudio] "Os pneus da marca Goodyear e Conforcer são pneus de marcas normais. O GP Premium é um pneu ecológico, esse de 289 é um pneu ecológico que nós fazemos. Ele entra na categoria de remodelagem, só que linha Premium é o pneu mais vendido que nós temos."  {audio:midias/3EB04B75809A442C964D4C_338012.ogg}
+--- 26/09/2026 (Sat) ---
+[08:06] CLIENTE: Agradecemos sua mensagem. Não estamos disponíveis no momento, mas responderemos assim que possível.
+Mas se quiser falar com urgência é só ligar nesse número 6199399-2063 
+61995020947
+[08:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 29/09/2026 (Tue) ---
+[12:35] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Eu te encaminhei o orçamento aí no final de semana e eu gostaria muito de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB02DB15E8C460E2B1660_319135.ogg}

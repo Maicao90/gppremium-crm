@@ -1,0 +1,15 @@
+CONVERSA a5bf164d80 | contato: Nhay | 09/10/2026 14:20 até 09/10/2026 15:36 | 1 msgs do cliente, 7 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[14:20] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+Pneu 175/75 aro 13
+[14:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:20] LOJA: Temos sim!
+[14:20] LOJA: Vou fazer seu orçamento.
+[14:23] LOJA: [foto]
+[14:24] LOJA: No dia de hoje teremos os pneus da marca Comforser.
+[14:24] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:36] LOJA: [áudio] "Você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/A59DF41E86392180858D41E28FDADA61_104149.ogg}

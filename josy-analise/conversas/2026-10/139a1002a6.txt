@@ -1,0 +1,56 @@
+CONVERSA 139a1002a6 | contato: Carla Hamu | 17/10/2026 08:23 até 19/10/2026 11:13 | 19 msgs do cliente, 20 da loja, 0 do robô
+
+--- 17/10/2026 (Sat) ---
+[08:23] CLIENTE: Bom dia
+[08:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:23] CLIENTE: Vc tem pneu para X1 ano 2022 BMW ?
+[08:23] CLIENTE: Pneu retrofit
+[08:25] LOJA: Qual a medida dos pneus que você precisa?
+[08:25] CLIENTE: Onde eu verifico isso ?
+[08:25] LOJA: Na lateral do pneu.
+[08:26] CLIENTE: Irei lá olhar. Um minuto
+[08:26] LOJA: [foto] Desse jeito
+[08:26] CLIENTE: Ok. Obrigada.
+[08:58] CLIENTE: albumMessage
+[08:58] CLIENTE: [foto]
+[08:58] CLIENTE: [foto]
+[08:58] CLIENTE: [foto]
+[09:06] LOJA: 225/50/19... vou verificar para você.
+[09:07] CLIENTE: Obrigada
+[09:21] LOJA: Carla... fui verificar em nosso estoque e já esgotou.
+[09:21] CLIENTE: vcs nao conseguem fazer pedido?
+[09:21] LOJA: Mas vou verificar com nossos distribuidores, na segunda feira  assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[09:22] CLIENTE: muito obrigada
+[09:22] CLIENTE: irei aguradar
+[09:22] LOJA: Está em busca de alguma marca especifica?
+[09:27] CLIENTE: nao tenho preferencia  qual vc tem?
+[09:28] CLIENTE: o meu hoje e bridgestone
+[09:33] LOJA: Ok
+--- 19/10/2026 (Mon) ---
+[10:31] LOJA: *Josy:*
+Bom dia, Carla...como vai?
+[10:32] LOJA: *Josy:*
+Consegui um retorno da Bridgestone.
+[10:32] LOJA: [foto]
+[10:32] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor UNITÁRIO do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:32] CLIENTE: Bom dia Josy
+[10:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:33] CLIENTE: Preciso comprar 4. 
+Assim gostaria de uma opção de pagamento com desconto em razão da quantidade
+[10:39] LOJA: *Josy:*
+Certo... vou verificar.
+[10:46] LOJA: [foto]
+[10:47] LOJA: *Josy:*
+E acabaram de me informar que terão apenas 1 pneu.
+[10:55] LOJA: *Josy:*
+O modelo que você quer tem de ser runflat mesmo?
+[11:02] LOJA: *Josy:*
+Pois consegui o Bridgestone Allenza por  R$ 1.190,00 a unidade a vista na oferta!
+[11:12] CLIENTE: Sim. Tem
+[11:13] LOJA: *Josy:*
+Ah, sim... perfeito!

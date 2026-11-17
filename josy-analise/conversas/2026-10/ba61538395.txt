@@ -1,0 +1,15 @@
+CONVERSA ba61538395 | contato: Construções Art Decor Ltda | 09/10/2026 10:57 até 09/10/2026 17:45 | 2 msgs do cliente, 9 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[10:57] LOJA: Bom dia, Eder!
+[10:57] LOJA: [foto]
+[11:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:00] CLIENTE: [áudio] "Qual que é a marca desse pneu aí, da promoção? O 245x265 é 20 milímetros menor, né, o 245. É isso mesmo, né? 20 milímetros vai dar 2 centímetros menor na largura, né?"
+[11:00] LOJA: [áudio] "É o pneu da marca GP Premium, é, Éder?"  {audio:midias/3EB086C51B3D173BF80242_263296.ogg}
+[11:01] CLIENTE: [áudio] "Mas não é pneu remold não, né? Esse pneu aí da promoção, né? Ela é primeira linha, né?"
+[11:04] LOJA: [áudio] "O pneu da marca GP Premium é um pneu ecológico. Ele é, sim, remold, só que de primeira linha, que são coisas completamente diferentes. Nós produzimos eles há 10 anos, nossa empresa existia há 10 anos, eu atendo o Brasil todo com eles, porque realmente eles têm um diferencial."  {audio:midias/3EB02911DF50150D3C9011_234709.ogg}
+[11:04] LOJA: [áudio] "A nossa marca é tão grande que justamente os clientes de outros estados, eles vêm aqui justamente por recomendação das pessoas que utilizam."  {audio:midias/3EB0FF3CDA7C46D2FA0EB8_324504.ogg}
+[11:04] LOJA: [áudio] "Caso você não tenha interesse nele, eu te mandei no orçamento 265-70-16 da marca Navigator, que é um pneu novo chinês."  {audio:midias/3EB01A02BEB39E424AF6E8_207665.ogg}
+[17:45] LOJA: [áudio] "Senhora Edna, eu vou por hora encerrar aqui o seu atendimento, tá joia? E vou deixar aqui registrada a nossa localização. Se houver a possibilidade, o senhor passa aqui na loja para nós conversarmos pessoalmente, tá joia? Desde já agradeço muito pelo seu contato, esperei que tenha um bom final de semana e bom feriado."  {audio:midias/3EB08B5A7D26C443FE9A90_18783.ogg}
+[17:45] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

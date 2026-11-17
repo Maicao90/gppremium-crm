@@ -1,0 +1,26 @@
+CONVERSA 84b80cef87 | contato: Bruno Albernaz | 16/10/2026 15:59 até 17/10/2026 11:03 | 7 msgs do cliente, 13 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[15:59] CLIENTE: [foto]
+[15:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:59] CLIENTE: Boa tarde
+[15:59] CLIENTE: Quanto ficaria para trocar 2 ou 4 pneus com alinhamento e balanceamento?
+[16:00] LOJA: [áudio] "Boa tarde, tudo bem com vocês?"  {audio:midias/A553C870808386C7CDE9A49009C447F1_793384.ogg}
+[16:00] LOJA: [foto]
+[16:00] LOJA: [áudio] "E aí, Bruno, tudo jóia? Olha, no dia de hoje eu tenho todas as opções de marcas a pronta entrega e aí no orçamento está o valor de apenas um pneu. Na primeira coluna está o valor à vista, que é correspondente à débito e fixe e seguem também as opções de parcelamento e até às vezes, caso você queira parcelar."  {audio:midias/A51797E5A64719145FCE684A7A590919_998183.ogg}
+[16:00] LOJA: [áudio] "Para quem diz, Luziânia."  {audio:midias/A5BACEC8823101F6F2E241F185A91ED9_388104.ogg}
+[16:01] CLIENTE: Sim
+[16:01] CLIENTE: Qual vc recomendaria? Não entendo de marca
+[16:01] LOJA: [áudio] "Bruno, eu acho que eu até já te atendi alguma vez, há um tempo atrás."  {audio:midias/A51E7B4AEDCA09AFAA752B53CF77912A_500718.ogg}
+[16:02] LOJA: [áudio] "Bem, todas as opções são muito boas, tá? A marca GP Premium, que é esse pneu que está por R$ 249,00, é a opção mais vendida que eu tenho, justamente por conta da qualidade."  {audio:midias/A5F6A06870DFF9BDB7A4823263C77F5C_384420.ogg}
+[16:08] CLIENTE: Vcs fazem a montagem, alinhamento e balanceamento?
+[16:16] LOJA: Sim!
+[16:16] LOJA: * Balanceamento = 35,00 (por pneu)
+* Alinhamento = 120,00 ( Alinhamento de Direção) vamores completamente negociáveis.
+[17:24] LOJA: Sabe onde fica a loja?  Quer a localização?
+[17:25] CLIENTE: [áudio] "Amanhã, se eu tiver tempo, eu dou uma passadinha aí na loja, tá? Obrigado."
+[17:32] LOJA: [áudio] "Imagina, Bruno, eu que agradeço pelo seu contato."  {audio:midias/3EB07726E40AF49A1636B3_216264.ogg}
+[17:32] LOJA: [foto]
+--- 17/10/2026 (Sat) ---
+[11:03] LOJA: Bom dia, Bruno ! Vai conseguir vir hoje para montar os pneus?

@@ -1,0 +1,8 @@
+CONVERSA 9d297be1cb | contato: Geraldo Gutemberg | 17/08/2026 12:09 até 17/08/2026 12:27 | 1 msgs do cliente, 2 da loja, 0 do robô
+
+--- 17/08/2026 (Mon) ---
+[12:09] LOJA: [áudio] "Oi Geraldo, tudo jóia? Eu te encaminhei aí o orçamento dos pneus que eu tenho, então assim que possível você me dá um retorno por gentileza, me diz se eu posso reservar aqui pra vocês, tá bem?"  {audio:midias/3EB09B2B8247A4D3893FBE_245974.ogg}
+[12:26] CLIENTE: Eu estou fazendo uma pesquisa de preço
+[12:27] LOJA: Vou encerrar seu atendimento, caso precise futuramente,  é só chamar,  Ou se possivel, venha até nossa loja que será uma satisfação receber você aqui,
+
+Obrigada  👋

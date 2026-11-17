@@ -1,0 +1,21 @@
+CONVERSA 2c67e824af | contato: Edvaldo | 20/08/2026 08:55 até 20/08/2026 13:30 | 8 msgs do cliente, 9 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[08:55] CLIENTE: Bom dia!
+[08:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:56] LOJA: Bom dia!
+[08:56] LOJA: Como vai, Edvaldo.
+[08:56] CLIENTE: [áudio] "Oi, bom dia. Eu falei com vocês tem um tempo aí, até agora eu ainda não consegui fazer a troca dos meus pneus, queria fazer o orçamento novamente aí com vocês."
+[08:57] LOJA: [áudio] "Sim, pode falar. Qual é a mesma medida dos pneus que o senhor precisa?"  {audio:midias/3EB0800149E7A61E107412_143993.ogg}
+[08:57] CLIENTE: Esse
+[08:58] LOJA: [foto]
+[08:59] LOJA: [áudio] "Sr. Edivaldo, o pneu aqui que está com o melhor preço é o da marca GP Premium. A unidade está por R$ 329,00, se o seu pagamento for à vista."  {audio:midias/3EB021DCFF2B8E0DBD1116_396501.ogg}
+[09:00] CLIENTE: [áudio] "Sim, seria à vista mesmo. Ontem eu fiz todo o serviço que precisava fazer nele. Fez até alinhamento, troquei espécie de amortecedor, fiz a suspensão dele todinha. É um EcoSport 2013. Agora só faltam os pneus novos. Aí eu já queria aproveitar que eu fiz o serviço ontem e já colocar os pneus. Eu vou verificar aqui se vai ser à vista e eu tenho um... Hoje à tarde teria como?"
+[09:01] LOJA: [áudio] "Sim, tem como sim, Sr. Edivaldo, com certeza."  {audio:midias/3EB0765B1F5B5735086C9C_468488.ogg}
+[09:02] CLIENTE: [áudio] "Não, vamos fazer o seguinte, hoje não dá não, esqueci, eu vou acompanhar meu irmão na consulta, e aí ele não conseguiu ninguém, eu vou ter que acompanhar ele, eu vou deixar para marcar para amanhã de manhã, amanhã de manhã eu estarei aí, tá bom? Aí vamos deixar tudo certo para amanhã então."
+[09:03] LOJA: [áudio] "Perfeito, então, ficamos combinados. O senhor ainda tem a localização aqui da nossa loja?"  {audio:midias/3EB06893DD0835F2834D2D_523809.ogg}
+[09:04] LOJA: Se a localização não estiver abrindo me informa.
+[09:09] CLIENTE: Ok
+[13:29] CLIENTE: Oii
+[13:30] CLIENTE: Boa tarde!

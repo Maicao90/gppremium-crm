@@ -1,0 +1,115 @@
+CONVERSA 2c843c9df4 | contato: Antunes | 26/08/2026 08:24 até 01/09/2026 09:34 | 44 msgs do cliente, 44 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[08:24] LOJA: *Josy :*
+Bom dia, somos de Luziânia-Go
+[09:04] LOJA: *Josy :*
+Como posso ajudar?
+[09:16] CLIENTE: Pneu aro 15
+[09:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:16] CLIENTE: Valor
+[09:16] LOJA: *Josy :*
+Qual a medida dos pneus que você precisa hoje?
+[09:17] CLIENTE: São 4 para um Sandero estapuei
+[09:17] CLIENTE: Parcela
+[09:17] CLIENTE: De crantas vezes
+[09:18] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Me chamo Josi. Eu gostaria apenas que você me dissesse qual é a medida que você está utilizando aí no seu carro para fazer o orçamento assim bem, né, da maneira que você precisa, que aí no seu carro existem diversas opções. Eu posso mandar qualquer uma aqui para ti, vai te atender tranquilo."  {audio:midias/3EB059A663D60399B27D29_307848.ogg}
+[09:19] LOJA: *Josy :*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:19] LOJA: [foto]
+[09:20] LOJA: *Josy :*
+Pneu da marca GP Premium está na promoção compre 3 e leve 4
+[09:20] LOJA: *Josy :*
+Exemplo: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[09:21] LOJA: *Josy :*
+Caso não seja essa medida, assim que possivel, me informa que refaço o orçamento.
+[09:27] CLIENTE: [foto]
+[09:27] CLIENTE: [foto]
+[09:28] CLIENTE: [foto]
+[09:28] CLIENTE: [foto]
+[09:28] CLIENTE: [foto]
+[09:28] LOJA: [áudio] "Não, nenhuma dessas fotos tem a medida do pneu, só a marca que é Pirelli, o bote, somente essas informações que aparecem aí."  {audio:midias/3EB05CAABA1C4D289F2E07_825688.ogg}
+[09:29] CLIENTE: [foto]
+[09:30] LOJA: [foto] A medida do pneu vem escrita assim:
+[09:32] CLIENTE: [foto]
+[09:32] CLIENTE: [áudio] "185-65, radial, 15, é o que está escrito aqui."
+[09:33] LOJA: [áudio] "Agora sim deu pra ver, tá bom? Vou realizar o seu novo orçamento."  {audio:midias/3EB0992BE9618374064D29_288454.ogg}
+[09:33] CLIENTE: [áudio] "Um mais alto um pouco."
+[09:33] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0EFE68FE1C470BC6D93_179370.ogg}
+[09:33] CLIENTE: [áudio] "Maruval Paraíso, Maruval Paraíso. Mas, hoje, na parte da tarde, eu tô indo pra aí. Eu sou motorista de aplicativo e dirijo pra uma clínica de fazer emoldiados. É só no cartão que serve de vídeo?"
+[09:34] CLIENTE: [áudio] "Daí que eu vou começar a rodar de Uber, até chegar no Gama, para pegar o passeio de 11 horas. Eu vou falando com vocês, se eu não responder, porque eu estou no trânsito."
+[09:34] LOJA: [foto]
+[09:35] LOJA: [áudio] "Olha, no dia de hoje, na medida que o senhor está buscando, eu tenho todas essas opções que eu mandei aí no orçamento, tá? Eu estou com a promoção do pneu da marca GP Premium, que de R$ 299,00, na promoção de férias, ele está por apenas R$ 249,00 para o pagamento à vista, tá? Esse à vista é para débito e Pix também. Se for para parcelar, vai ter pequenos juros aí, tá bom? Eu vou fazer o seguinte, eu vou te mandar aqui a localização da nossa empresa, que aqui é a GP Premium. Fica do lado do Hotel Goiás e da Goiás Diesel, tá bom? Vou te mandar a localização."  {audio:midias/3EB04E39AEEAF5F0A12905_133907.ogg}
+[09:35] LOJA: *Josy :*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:36] CLIENTE: [áudio] "Beleza, eu dou um jeito de passar mais tarde. Obrigado, fico com Deus."
+[09:36] CLIENTE: [áudio] "Vou pegar o aplicativo agora, tá?"
+[09:36] LOJA: [áudio] "Imagina, eu quem agradeço. Qual que é o seu nome mesmo?"  {audio:midias/3EB01CC5BC1EA4AB75352E_349060.ogg}
+[09:37] CLIENTE: Wesley Antunes
+[13:09] CLIENTE: [áudio] "Boa tarde, boa tarde. Deixa eu te falar, Josi, que eu liguei com o chefão aqui. É provavelmente que amanhã sai pagamento, aí eu pedi um vale de 950 reais aqui pra ele. Vem o que é que você dá pra baixar nesse pneu, hein? Eu vou voltar pra Luziânia daqui a pouco. De repente, se ele mandar, a gente já coloca hoje na par da taxa. E aí, que você pode me ajudar?"
+[14:09] CLIENTE: Estes não remodi não né
+[14:15] CLIENTE: Amigo, tô numa reunião e ainda não recebemos da davita!
+[14:16] CLIENTE: Isto aí foi a resposta do chefe
+[14:16] CLIENTE: IAI
+[14:16] LOJA: [áudio] "Oi, eu estava almoçando agora que eu voltei."  {audio:midias/A51CEED6849CC227E8DDDF5999F4B30C_544538.ogg}
+[14:17] CLIENTE: Oi Oi Oi
+[14:17] CLIENTE: Diga
+[14:17] LOJA: [áudio] "Todos os pneus que te encaminhei já estão no menor preço, aí eu vou fazer um vídeo aqui para o senhor entender a respeito do pneu que eu te mostrei aqui, que é o pneu GP Premium, tá?"  {audio:midias/A53AB0F02EC7ACBC958BF3BD763C5A81_533991.ogg}
+[14:17] CLIENTE: Ok
+[14:19] LOJA: [vídeo]
+[14:22] CLIENTE: [áudio] "Eu estou querendo ficar. Estou querendo ficar. Estou querendo não. Vou ficar, se Deus quiser. Olha a dona Núbia! Queria de 4 vezes de quanto? Só para mim ver o negocinho, se eu arrumar o cartão."
+[14:31] LOJA: [áudio] "Gostei que o senhor utiliza de palavras realmente. Não é eu vou, é estou. Tá certíssimo."  {audio:midias/3EB050AEFE5BBDE02B701D_702930.ogg}
+[14:31] LOJA: [áudio] "Vão ficar 4 de R$ 257,29. Estou fazendo o valor de duas vezes para o senhor pagar nas quatro vezes sem juros, tá bom?"  {audio:midias/3EB0BF951C155684B84245_462034.ogg}
+[14:32] CLIENTE: Já estou correndo atrás pedindo pra um pra outro
+[14:33] CLIENTE: Ok
+[14:39] LOJA: *Josy :*
+Perfeito!
+[15:37] CLIENTE: [áudio] "Você não faz um boleto para vencer com seis dias, né? Eu passo aí agora para trocar o pneu, me responde aí."
+[15:37] LOJA: [áudio] "Ô, seu Wesley, uma pena que nós não estamos mais trabalhando com boletos, eu senão faria na hora para o senhor, mas não faz mais não."  {audio:midias/3EB01C825871BBC61F1F5D_306663.ogg}
+[15:37] CLIENTE: [áudio] "Trazer o paciente aqui agora, igual eu te falei. Vou ligar o aplicativo agora. Vou voltar."
+[15:37] LOJA: [áudio] "Sra, não para, hein, Sra. Wesley? Caramba, vai para onde agora?"  {audio:midias/3EB0785717DA5CAE919488_160923.ogg}
+[15:37] CLIENTE: Tá
+[15:38] LOJA: *Josy :*
+Corrido seu dia.
+[15:38] CLIENTE: [áudio] "Vou rodar, até umas 6, se Deus quiser."
+[15:38] LOJA: *Josy :*
+Amém!
+[15:38] LOJA: *Josy :*
+Vai dar tudo certo!
+[15:38] CLIENTE: Amém
+[19:01] CLIENTE: [áudio] "Boa noite, meu querido. Tô com medo desse pneu ser remolde. A fábrica aí, é? Eu sei que você já fechou aí, mas amanhã você vê essa mensagem."
+[19:01] CLIENTE: [áudio] "Porque eu rodo muito, entendeu? Esse carro meu aí, ó, ele é 2024, já tá com 165 mil."
+--- 27/08/2026 (Thu) ---
+[06:58] CLIENTE: [áudio] "Filho, eu sou sincero contigo, bom dia. Eu tô querendo comprar, mas tô com medo. Eu já comprei mais ou menos nesse estilo aí, e o bicho criou o bus, deslocou, e eu ando muito."
+[06:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:17] LOJA: 👆🏻👆🏻👆🏻👆🏻
+[08:17] LOJA: *Josy:*
+Bom dia!
+[08:25] CLIENTE: [áudio] "Bom dia, bom dia. Igual eu falei pra vocês juntos, eu tô com medo desse pneu, hein? Eu já tive decepção com outro carro, o Siena. O bicho criou bucho, criou, deslocou, entendeu?"
+[08:26] LOJA: [áudio] "Bom dia, senhora Wesley. Tudo bem? Hoje eu tô meio rouca, não tô conseguindo falar direito, mas igual eu te mandei um vídeo aí, eu acho que a senhora assistiu, justamente pra poder explicar o pneu que eu estou vendendo, tá? Igual o senhor disse que teve experiência ruim, né, com outro veículo, questão de bucho, de modo geral, é sempre porque bateu a lateral do pneu em uma pedra, uma quina, alguma coisa. E não é exclusividade do pneu que o senhor tinha colocado no seu carro. Acontece com qualquer um. Eu vendi um pneu aqui de 800 reais pro rapaz da marca Goodyear, e o que que aconteceu? Bateu o pneu, fez o bucho, a Goodyear recusou. Fora outras marcas aí também que vira e mexe, o cliente compra umas outras marcas aí, Pirelli, tem cliente que passa aqui que vem de outro estado, e mostra o pneu que ele tá usando no carro dele, que a empresa fabricante, né, Pirelli, de um ópio, o que quer que seja, recusou a garantia, porque impacto lateral não é defeito de nenhum tipo de produto, né? Então, tem essas observações aí. Tchau, tchau. Tchau."  {audio:midias/3EB04D546280AD08AC2EC6_777116.ogg}
+[08:27] LOJA: [áudio] "E aqui também eu te mandei o orçamento com todas as opções que eu tenho, então o senhor está livre para escolher a opção que mais te agrada."  {audio:midias/3EB0BDD3855D56BA924FDE_169961.ogg}
+[08:29] CLIENTE: [áudio] "O que eu estou pensando aqui? Vou te dar resposta quando eu tiver que o dia entrar, mano."
+[08:34] LOJA: [áudio] "Tudo bem, Sra. Wesley. Vê o que fica melhor aí para o senhor, tá joia? E eu sou o tipo de pessoa que não gosto de ficar forçando nada com ninguém. Então, o senhor é livre para escolher a melhor opção. Eu aí fiz o vídeo te mostrando, né, apenas para poder explicar, porque eu sempre explico para os meus clientes o que é um pneu remolde e o que é o pneu que nós fazemos. E tá aí, o senhor viu o vídeo, o senhor esteve aqui, o senhor viu o pneu presencialmente, o senhor já viu porque ele não tem nada a ver realmente, tá? Mas assim, eu vou deixar o senhor à vontade para fazer a sua melhor escolha, tá bom? Aqui não fecha para o almoço. Quando o senhor estiver com o tempo, passa aqui então, tá joia?"  {audio:midias/3EB0BFC92B6E7038BD901E_32448.ogg}
+--- 28/08/2026 (Fri) ---
+[11:37] LOJA: [áudio] "Oi, Sr. Wesley, bom dia. Tudo jóia? Passando só para saber qual foi a sua decisão. Fala aqui comigo."  {audio:midias/3EB0E185E1CA0EE6D13FDB_37264.ogg}
+[12:23] CLIENTE: [áudio] "Querido, eu tô pensativo ainda a respeito desse pneu aí."
+[12:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:24] LOJA: [áudio] "Tá tudo bem, senhora Weisley. Igual eu falei, né, aqui eu trabalho com as opções de marcas do orçamento, né, tem os pneus da Goodyear, tem dado um LOP, então, assim, todas as opções que eu tenho aqui são excelentes."  {audio:midias/3EB04C3B95CCE0EBFB7AC3_385493.ogg}
+[12:26] CLIENTE: [áudio] "Eu queria mais um pneu de, assim, não tô falando que esse não é de confiança, entendeu? Que tenha mais confiança, que tenha mais durabilidade, entendeu? Estagudi aí, Michelin, Faristão, sei bem assim, entendeu? Multiletal..."
+[12:28] LOJA: [áudio] "Mas esse pneu, ele é de confiança, ele é de durabilidade. Eu uso aqui no meu carro já tem 3 anos e eu ando para tudo que é lugar. Eu era motorista também. E aí tem uns 2 anos que eu estou só aqui. Mas, ixi, direto viagem para São Paulo, para o Sul, para um monte de lugar. Aqui, Goiânia, tudo, Brasília. Eu ando por tudo. E se você ver os pneus ali, está intactos. Eu não ando sozinha, não. Ando com a minha família, amigos. Então, assim, o pneu, ele é totalmente confiável."  {audio:midias/3EB0C89EAC93C694C2A1C1_99029.ogg}
+[12:28] LOJA: [áudio] "Os que eu tenho são esses que eu te mandei no orçamento mesmo, tá? Porque Firestone Continental, eles são muito mais caros."  {audio:midias/3EB09498BA68EEC4DFDA5D_649822.ogg}
+--- 01/09/2026 (Tue) ---
+[09:27] LOJA: [áudio] "Professor Wesley, tudo jóia? Como é que estão as coisas? Como é que passou aí o final de semana? Ah, eu peguei um resfriado, agora que eu tô melhorando."  {audio:midias/3EB0961B982C3A3F12E6F7_63585.ogg}
+[09:31] CLIENTE: [áudio] "Minha querida, tô bem, graças a Deus. Era pra mim te dar uma satisfação. Eu passei na borracharia, sábado, e aí eu comprei 4. Na borracharia que eu passei pra remendar um pneu, a pessoa tinha 4 lá e ele mexe com o seguro. Aí ele sempre tem pneu semi-novo. Eu peguei lá 4 Continental. Entendeu? Aí eu voltei os meus e um dinheiro. Tá bom? Era pra mim que eu te falo. Tá bom? Desculpa aí qualquer coisa."
+[09:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:32] LOJA: *Josy:*
+Entendi
+[09:33] CLIENTE: Desculpa aí qualquer coisa
+[09:34] LOJA: *Josy:*
+Tudo bem.

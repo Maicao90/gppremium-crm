@@ -1,0 +1,15 @@
+CONVERSA 4ff8beb4ad | contato: Romildo Francisco Gomes | 29/08/2026 11:57 até 31/08/2026 11:40 | 2 msgs do cliente, 7 da loja, 0 do robô
+
+--- 29/08/2026 (Sat) ---
+[11:57] LOJA: [áudio] "Oi Samildo, tudo bom? Alguns dias atrás eu te mandei um orçamento aí a respeito dos pneus e eu gostaria muito de saber se o senhor pretende seguir com a negociação, tá? Uma observação a respeito do último pneu do orçamento, que é o da marca GP Premium. O pagamento no débito ou no Pix, ele está por 279 reais, né? Mas se o senhor trouxer o pagamento em dinheiro, a unidade fica por 263 reais. Aí se de repente for interessante pro senhor, me dá um retorno aqui que eu já reservo os pneus, tá bom? E o senhor mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB012B20911BE63468FD4_903935.ogg}
+--- 31/08/2026 (Mon) ---
+[09:53] LOJA: [foto]
+[09:57] CLIENTE: Bom dia
+[09:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:57] CLIENTE: 175/70 14
+[09:57] LOJA: [áudio] "Oi, Sra. Romildo, tudo bom? Josi, aqui da Pneus GP Premium. Nós nos falamos alguns dias atrás, eu até te encaminhei o orçamento e peço que assim que possível, por gentileza, me confirme se o orçamento chegou, tá? Eu tenho aí as opções dos pneus da marca GP Premium, né, que estão na oferta. O senhor pode verificar as mensagens anteriores?"  {audio:midias/3EB0CA75B9B3FFC86D45F8_97743.ogg}
+[09:59] LOJA: [áudio] "E no áudio que eu te encaminhei, o pneu da marca GP Premium, né, eu expliquei que ele está por R$ 279,00, se o pagamento for no débito ou no Pix. Se o senhor conseguir sacar o dinheiro e trazer em espécie aqui pra mim, a unidade já vai ficar por R$ 263,00 apenas. O senhor era daqui de Luziânia mesmo?"  {audio:midias/3EB0042F03C33C7F449237_794580.ogg}
+[10:45] LOJA: [áudio] "Posso separar os pneus aqui para o senhor, seu Romildo?"  {audio:midias/3EB0FF7573AE2ED26F0FB9_65398.ogg}
+[11:40] LOJA: *Josy:*
+🙋🏼‍♀️

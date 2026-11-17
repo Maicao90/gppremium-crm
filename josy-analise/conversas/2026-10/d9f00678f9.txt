@@ -1,0 +1,34 @@
+CONVERSA d9f00678f9 | contato: ~ Fernanda Morais | 20/10/2026 15:57 até 21/10/2026 12:01 | 6 msgs do cliente, 7 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[15:57] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Olá! Posso ter mais informações sobre isso?
+[15:57] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[15:57] CLIENTE: Henrrique
+[15:58] CLIENTE: Pneu 205/75/16C
+[15:58] LOJA: Boa tarde, Henrique!
+[15:58] LOJA: [foto]
+[15:58] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor UNITÁRIO do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:59] CLIENTE: Obg
+[16:02] LOJA: Mora aqui em Luziânia-Go?
+[17:44] LOJA: 🙋🏼‍♀️
+[18:24] CLIENTE: Eu consegui já o pneu
+--- 21/10/2026 (Wed) ---
+[08:49] CLIENTE: Já encontrei um orçamento que queria e fechei
+[08:49] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[12:01] ROBÔ: 🙋🏼‍♀️

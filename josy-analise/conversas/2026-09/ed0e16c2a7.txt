@@ -1,0 +1,15 @@
+CONVERSA ed0e16c2a7 | contato: Aparecido | 11/09/2026 10:09 até 11/09/2026 10:23 | 5 msgs do cliente, 4 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[10:09] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:10] CLIENTE: [áudio] "Olá, bom dia. Os pneus é 175-7014. Qual que é o preço de vídeo no cartão? Fala pra gente aí."
+[10:10] CLIENTE: [áudio] "Eu gostaria de comprar os 4. Vê para mim se tem como se dividir aí, em quantas vezes se divide no cartão."
+[10:17] CLIENTE: ?
+[10:17] LOJA: *Josy:*
+Bom dia.
+[10:18] LOJA: *Josy:*
+1 instante por gentileza ☺️
+[10:21] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi, muito obrigada por aguardar, está bem? Eu tenho aqui a princípio os pneus da marca GP Premium, que, por exemplo, eu divido em até 10 vezes, e justamente em 10 vezes a unidade é 313 reais. E vocês moram aqui em Luziânia, Goiás?"  {audio:midias/3EB039C94B9E6A0FBA2FAD_388069.ogg}
+[10:23] CLIENTE: [áudio] "Oi moça, bom dia. Oi menina, eu acho que eu errei aqui, eu tava pesquisando aqui em Cachoeira Goiás, que eu tava aqui, a gente mora aqui no município de Cachoeira Goiás, você entendeu? Aí também é Leão Pneus também? Ô menina, se fosse aqui nós íamos fazer negócio, mas brigadão, viu? Desculpa aí. Eu queria o WhatsApp do Leão Pneus de Cachoeira Alta Goiás. Aí saiu aí pra você, mas tá bom. Brigadão, viu?"

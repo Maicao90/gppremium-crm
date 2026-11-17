@@ -1,0 +1,74 @@
+CONVERSA 8a4edfd1c6 | contato: Glauco Rota 61 | 02/09/2026 08:46 até 13/10/2026 13:05 | 26 msgs do cliente, 28 da loja, 0 do robô
+
+--- 02/09/2026 (Wed) ---
+[08:46] CLIENTE: Bom
+[08:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:46] CLIENTE: Agradecemos o contato. Um representante falará com você em breve.
+[08:46] CLIENTE: Dia
+[08:46] CLIENTE: Josy??
+[08:47] LOJA: [áudio] "Bom dia, meu amigo! Como é que você está?"  {audio:midias/3EB0254352648852EEAD05_696638.ogg}
+[08:47] CLIENTE: Bem graças à Deus e vocês ai?
+[08:48] LOJA: [áudio] "Estamos rompendo em fego a álcool. Aqui tava um calor, gente, o que que era isso? Mas hoje amanheceu mais fresquinho, caiu uma garoa pela madrugada."  {audio:midias/3EB0F70855A7D1E7647245_439012.ogg}
+[08:48] CLIENTE: [áudio] "Certinho, Juzi. Também lá tava meio complicado também, mesmo calor. Juzi, eu tô precisando de 2 pneus da mesma medida da última vez da Spin. Aí você separa pra mim aí, na volta eu passo pra pegar. Aí você consegue um preço bacana aí no Pix."
+[08:50] LOJA: [áudio] "Fechou! Já vou separar eles aqui para você, tá bom?"  {audio:midias/3EB0C5FA790805EF104716_36210.ogg}
+[08:51] CLIENTE: [figurinha]
+[08:51] CLIENTE: Valor
+[08:51] CLIENTE: E chave
+[08:52] LOJA: *Josy:*
+658,00
+[08:52] LOJA: *Josy:*
+24.289.955/0001-79
+[13:31] CLIENTE: Obrigado
+[14:29] LOJA: *Josy:*
+Imagina...eu quem agradeço.
+--- 23/09/2026 (Wed) ---
+[08:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:48] CLIENTE: [áudio] "Oi Josi, bom dia, tudo bem? Como é que você tá? Josi, você consegue faturar dois pneus pra mim aí hoje? Na mesma medida dos dois últimos?"
+[08:50] LOJA: *Josy:*
+Bom dia!
+[08:54] LOJA: *Josy:*
+Claro!
+[08:54] LOJA: *Josy:*
+Já vou deixar separados aqui!
+[08:55] CLIENTE: [áudio] "Vê que se consegue aí melhorar esse valor, hein? Eu vou pagar no Pix. Vê com o patrão aí o que ele consegue melhorar pra gente."
+[08:55] LOJA: [áudio] "Glauco, eu só consigo melhorar no pagamento em dinheiro."  {audio:midias/3EB0821BC6D553E7DF30BB_888050.ogg}
+[08:56] CLIENTE: [áudio] "Não, não vi saco ali. Se compensar, é um pouco."
+[08:56] LOJA: *Josy:*
+No Débito/Pix 329,00
+[08:57] LOJA: *Josy:*
+Em *dinheiro* 310,00
+[08:58] CLIENTE: [áudio] "Ah não, beleza, não compensa muito não, porque tem que achar um banco pra ele sacar o dinheiro aí, né? Deixa no Pix mesmo, então pode faturar no Pix, sabe que o Jorge é o banco."
+[08:59] LOJA: *Josy:*
+Certo... farei aqui a 320,00 para ti
+[09:13] CLIENTE: 😉
+[12:07] CLIENTE: [áudio] "Oi Josi, Josi, eu tô a caminho já, me manda pra mim a chave Pix, pra mim já te pagar logo."
+[12:07] LOJA: [áudio] "Oiê, tudo jóia?"  {audio:midias/3EB01641A284EDE91FAC40_871565.ogg}
+[12:07] LOJA: *Josy:*
+24.289.955/0001-79
+[12:07] LOJA: *Josy:*
+640,00
+[12:07] CLIENTE: [áudio] "R$ 640,00, é isso?"
+[12:10] CLIENTE: [documento]
+--- 09/10/2026 (Fri) ---
+[07:22] CLIENTE: [figurinha]
+[07:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:26] CLIENTE: Tudo bem?
+[07:51] CLIENTE: [áudio] "Oi, Josi. Bom dia, tudo jóia? Josi, eu instalei os pneus agora, semana passada, e eu viajei, ficou o motorista no meu carro, né, e eu tava sentindo uma trepidação no carro, aí eu pedi pra ele levar lá pro onde o rapaz montou os pneus pra mim, aí ele verificou, o alinhamento, o balanceamento tava tudo normal, aí ele falou que era pra mim ver o pneu, parece que o pneu tava meio ruim. Aí hoje eu tô vindo pra Brasília e hoje tá pulando o carro. Aí eu queria ver contigo o que que eu faço se eu coloco outro aqui lá em Brasília, porque eu não vou viajar no meu retorno, eu não vou fazer desse pneu não, tá pulando muito a traseira do carro. Aí eu queria saber se eu coloco, deixa esse aí, que eu vou ter que botar outro pneu pra mim poder voltar. Aí eu queria saber se eu deixei pra você dar uma olhada, ver o que que foi, e... Dá uma luz aí, por favor."
+[09:05] CLIENTE: ???
+[09:05] CLIENTE: Josy???
+[09:07] LOJA: Oie... bom dia!
+[09:08] LOJA: Traz aqui para analisar, sem problemas !
+[09:08] CLIENTE: [áudio] "Não, beleza, Josi, eu vou... Eu tô agora, eu tô passando Luziânia aqui, né? Saindo de Luziânia, no sentido Brasília, aí eu vou deixar os passageiros, aí lá eu vou organizar um outro pneu pra me botar no lugar, aí eu tiro e deixo ir na minha volta, beleza? Eu só não sei se eu tô com a notinha aqui, eu tenho que dar uma conferida no porta-luvas."
+[09:09] LOJA: [áudio] "Glauco, aí você vai fazer o seguinte, já para poder agilizar para você. Você vai aqui na oficina que se chama Supervia, tá? Chegando lá, você diz que precisa tirar o pneu para fazer a análise, tá jóia?"  {audio:midias/3EB0E733F090355310CD49_279738.ogg}
+[09:09] LOJA: [áudio] "Que aí os meninos trazem aqui pra mim. O técnico avalia agora de manhã até umas 11 e meia, e daí na parte da tarde ele avalia a partir das 13, tá?"  {audio:midias/3EB0B604D53F5A75EF486B_814972.ogg}
+[09:10] CLIENTE: [áudio] "Então eu vou lá e, ah, mas no centro de Brasília eu vou trocar. Vou colocar outro lá, aí eu trago ele já desmontado pra ti, tem um step desse carro, é aquele fininho, parece pneu de moto, eu não gosto daqui a treina, confio, aí eu vou lá em Brasília, vou ver se eu consigo outro, monto, ele traga ele desmontado pra ti."
+[09:10] CLIENTE: [áudio] "Não tem pressa não, deixa aí depois a gente, tá bom, eu devo passar e só pelo menos mais coisa, pelo mesmo horário, volta de meio-dia de meio, tá bom?"
+[09:12] LOJA: Ok
+--- 13/10/2026 (Tue) ---
+[09:08] LOJA: Bom dia!
+[09:08] LOJA: Está liberado o pneu novo.
+[13:04] LOJA: https://da.gd/gp-avaliar
+[13:05] LOJA: Oie...quando  possivel, avalia a empresa e o atendimento, por favor.

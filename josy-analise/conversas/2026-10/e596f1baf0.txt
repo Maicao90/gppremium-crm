@@ -1,0 +1,41 @@
+CONVERSA e596f1baf0 | contato: Régis | 20/10/2026 12:02 até 21/10/2026 14:32 | 10 msgs do cliente, 12 da loja, 4 do robô
+
+--- 20/10/2026 (Tue) ---
+[12:02] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[12:02] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[12:03] CLIENTE: Regis 
+Pneu 13 ,175
+[12:03] CLIENTE: Valores ?
+[12:04] LOJA: [foto]
+[12:11] CLIENTE: [áudio] "Vou baixar esse preço de vocês aí, que eu estou encontrando aqui, 270 aro 13. Mais encontro do que vocês aí. Pode baixar esse preço de vocês, tá caro demais."
+[12:11] CLIENTE: [áudio] "O 13175 aí tá muito caro. Tem que baixar, vocês não vão vender não."
+[12:12] CLIENTE: Obrigado
+[12:12] LOJA: *Josy:*
+Uai... no orçamento está por R$ 269,00 eu vendo igual agua
+[12:12] CLIENTE: Manda localização
+[12:13] LOJA: [áudio] "Mando, mando sim, claro."  {audio:midias/3EB05E01EF7C39F5E71836_402393.ogg}
+[12:13] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:13] LOJA: [foto]
+[12:14] LOJA: [áudio] "O senhor era aqui de Luziânia mesmo?"  {audio:midias/3EB04753C3A4B0ABD203A1_760251.ogg}
+[12:15] CLIENTE: [áudio] "Não, sou de Valparaíso."
+[17:35] LOJA: Pretende prosseguir com a negociação, sr Régis?
+[17:38] CLIENTE: Esperando virar o mês
+[17:39] LOJA: Sim, sim!
+[17:39] LOJA: Qual das opções o senhor achou mais atrativa?
+--- 21/10/2026 (Wed) ---
+[11:09] ROBÔ: 🙋🏼‍♀️
+[11:23] CLIENTE: Está em analise 😁
+[11:23] LOJA: Certo...
+[11:23] ROBÔ: Tranquilo, Régis! Pode analisar com calma 😁
+[11:23] ROBÔ: O 175/70/13 está R$ 269,00 à vista, dá pra parcelar em até 10x e a montagem é grátis. Quando o mês virar e você decidir, é só me chamar por aqui que eu te atendo.
+[14:25] ROBÔ: 🙋🏼‍♀️
+[14:32] LOJA: [áudio] "E por hora eu vou encerrar o seu atendimento, tá joia? E quando for um momento mais apropriado pra tia e o céu falar aqui conosco, tá joia? Obrigada aí pela atenção, até mais."  {audio:midias/3EB0070B0AB5B7E5C350AB_295041.ogg}

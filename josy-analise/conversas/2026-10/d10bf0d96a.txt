@@ -1,0 +1,16 @@
+CONVERSA d10bf0d96a | contato: Mira | 08/10/2026 21:55 até 09/10/2026 15:04 | 3 msgs do cliente, 4 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[21:55] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[21:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[21:55] CLIENTE: 15/165
+[21:56] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+--- 09/10/2026 (Fri) ---
+[08:54] LOJA: [áudio] "Oi, bom dia, tudo bem? Você pode, por gentileza, confirmar essa medida para mim? Qual que é o perfil? Tudo direitinho?"  {audio:midias/3EB0B789FC33758948C14A_946106.ogg}
+[15:04] LOJA: 👀
+[15:04] LOJA: Estou aguardando a sua confirmação para poder atende-lo.

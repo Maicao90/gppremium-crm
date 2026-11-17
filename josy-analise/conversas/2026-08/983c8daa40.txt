@@ -1,0 +1,914 @@
+CONVERSA 983c8daa40 | contato: Maicon | 17/08/2026 12:25 até 22/10/2026 12:11 | 170 msgs do cliente, 329 da loja, 2 do robô
+
+--- 17/08/2026 (Mon) ---
+[12:25] CLIENTE: confere se voltou
+[12:25] CLIENTE: da f5
+[12:25] LOJA: Voltou faz tempo .
+[12:28] LOJA: Tudo certo.
+--- 18/08/2026 (Tue) ---
+[10:22] LOJA: Jovem... não encontrei o atendimento do cliente dos pneus da camionete lá não.
+--- 20/08/2026 (Thu) ---
+[12:16] LOJA: Jovem... pode chamar o Diogo hoje, consigo ajuar.
+[12:28] CLIENTE: que horas posso chamar v
+[12:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:28] CLIENTE: ?
+[13:18] LOJA: As 14:30 eu estarei aqui
+[14:48] LOJA: 6121047090
+[14:53] CLIENTE: VOETUR TURISMO E REPRESENTACOES LTDA
+CPF:
+1017250000105
+DATA DE NASCIMENTO:
+Sem Informação
+[15:04] LOJA: 6136012398
+[15:06] CLIENTE: ══════════════════════════════════════════════════════
+     Unix Grupos — RESULTADO DA CONSULTA TELEFONE
+══════════════════════════════════════════════════════
+
+
+── 1. REGISTRO 1 ──────────────────────────────
+
+   ▸ DADOS PESSOAIS
+   NOME....................: ANTONIO MARTINS FREIRE
+   CPF.....................: 09678476134
+   DATA DE NASCIMENTO......: 16/05/1949
+   SEXO....................: Masculino
+   NOME DA MÃE.............: JOANA MARTINS FREIRE
+   NOME DO PAI.............: Sem Informação
+   RG......................: Sem Informação
+
+   ▸ TELEFONES VINCULADOS
+   📞 ALTERNATIVO..........: 6136012398
+
+   ▸ FONTES CONSULTADAS
+   FONTES..................: ZYREXTEL BIGDATA
+   TOTAL DE FONTES.........: 2 de 2 bases
+
+
+── 2. REGISTRO 2 ──────────────────────────────
+
+   ▸ DADOS PESSOAIS
+   NOME....................: JOSE FABIO DE SOUZA FREIRE
+   CPF.....................: 96977159120
+   DATA DE NASCIMENTO......: 11/11/1980
+   SEXO....................: Masculino
+   NOME DA MÃE.............: MARIA NINA DE SOUZA FREIRE
+   NOME DO PAI.............: Sem Informação
+   RG......................: Sem Informação
+
+   ▸ TELEFONES VINCULADOS
+   📞 ALTERNATIVO..........: 6136012398
+
+   ▸ FONTES CONSULTADAS
+   FONTES..................: ZYREXTEL BIGDATA
+   TOTAL DE FONTES.........: 2 de 2 bases
+
+
+── 3. REGISTRO 3 ──────────────────────────────
+
+   ▸ DADOS PESSOAIS
+   NOME....................: MARILIA DE QUEIROZ AZEVEDO
+   CPF.....................: 01794335129
+   DATA DE NASCIMENTO......: 08/03/1987
+   SEXO....................: Feminino
+   NOME DA MÃE.............: MARISA DO ESPIRITO SANTO DE QU
+   NOME DO PAI.............: Sem Informação
+   RG......................: Sem Informação
+
+   ▸ TELEFONES VINCULADOS
+   📞 ALTERNATIVO..........: 6136012398
+
+   ▸ FONTES CONSULTADAS
+   FONTES..................: ZYREXTEL BIGDATA
+   TOTAL DE FONTES.........: 2 de 2 bases
+
+
+── 4. REGISTRO 4 ──────────────────────────────
+
+   ▸ DADOS PESSOAIS
+   NOME....................: CRISLAYNE DE SOUZA FREIRE
+   CPF.....................: 02389572170
+   DATA DE NASCIMENTO......: 23/05/1988
+   SEXO....................: Feminino
+   NOME DA MÃE.............: MARIA NINA DE SOUZA FREIRE
+   NOME DO PAI.............: Sem Informação
+   RG......................: Sem Informação
+
+   ▸ TELEFONES VINCULADOS
+   📞 ALTERNATIVO..........: 6136012398
+
+   ▸ FONTES CONSULTADAS
+   FONTES..................: ZYREXTEL BIGDATA
+   TOTAL DE FONTES.........: 2 de 2 bases
+
+
+── 5. REGISTRO 5 ──────────────────────────────
+
+   ▸ DADOS PESSOAIS
+   NOME....................: DAMIANA LEITE DA SILVA
+   CPF.....................: 03293037160
+   DATA DE NASCIMENTO......: 25/06/1989
+   SEXO....................: Feminino
+   NOME DA MÃE.............: GUIOMAR LEITE DA SILVA
+   NOME DO PAI.............: Sem Informação
+   RG......................: Sem Informação
+
+   ▸ TELEFONES VINCULADOS
+   📞 ALTERNATIVO..........: 6136012398
+
+   ▸ FONTES CONSULTADAS
+   FONTES..................: ZYREXTEL BIGDATA
+   TOTAL DE FONTES.........: 2 de 2 bases
+
+
+── 6. REGISTRO 6 ──────────────────────────────
+
+   ▸ DADOS PESSOAIS
+   NOME....................: JAQUELINE OLIVEIRA COSTA
+   CPF.....................: 02460333129
+   DATA DE NASCIMENTO......: 01/01/1988
+   SEXO....................: Feminino
+   NOME DA MÃE.............: NELCI ALVES DE OLIVEIRA COSTA
+   NOME DO PAI.............: Sem Informação
+   RG......................: Sem Informação
+
+   ▸ TELEFONES VINCULADOS
+   📞 ALTERNATIVO..........: 6136012398
+
+   ▸ FONTES CONSULTADAS
+   FONTES..................: ZYREXTEL BIGDATA
+   TOTAL DE FONTES.........: 2 de 2 bases
+
+
+── 7. REGISTRO 7 ──────────────────────────────
+
+   ▸ DADOS PESSOAIS
+   NOME....................: LILIAN DE OLIVEIRA COSTA BARBOSA
+   CPF.....................: 00357787170
+   DATA DE NASCIMENTO......: 24/08/1984
+   SEXO....................: Feminino
+   NOME DA MÃE.............: NELCI ALVES DE OLIVEIRA COSTA
+   NOME DO PAI.............: Sem Informação
+   RG......................: Sem Informação
+
+   ▸ TELEFONES VINCULADOS
+   📞 ALTERNATIVO..........: 6136012398
+
+   ▸ FONTES CONSULTADAS
+   FONTES..................: ZYREXTEL BIGDATA
+   TOTAL DE FONTES.........: 2 de 2 bases
+
+
+── 8. REGISTRO 8 ──────────────────────────────
+
+   ▸ DADOS PESSOAIS
+   NOME....................: CENTRO DE FORMACAO DE COND PREMIUM LTDA ME
+   CPF.....................: 11568571000143
+   DATA DE NASCIMENTO......: Sem Informação
+   SEXO....................: Sem Informação
+   NOME DA MÃE.............: Sem Informação
+   NOME DO PAI.............: Sem Informação
+   RG......................: Sem Informação
+
+   ▸ TELEFONES VINCULADOS
+   📞 ALTERNATIVO..........: 6136012398
+
+   ▸ FONTES CONSULTADAS
+   FONTES..................: ZYREXTEL
+   TOTAL DE FONTES.........: 1 de 2 bases
+
+
+── 9. RESUMO DA CONSULTA ──────────────────────────────
+TELEFONE CONSULTADO.........: 6136012398
+DATA DA CONSULTA............: 20/08/2026 15:05:30
+EXPIRA EM...................: 21/08/2026 15:05:30
+TOTAL DE REGISTROS..........: 8
+TOTAL DE PESSOAS............: 8
+BASES CONSULTADAS...........: 2
+STATUS......................: 200
+
+══════════════════════════════════════════════════════
+⏰ Link expira em 24 horas
+© 2026 Unix Grupos — Todos os direitos reservados
+══════════════════════════════════════════════════════
+--- 26/08/2026 (Wed) ---
+[13:36] CLIENTE: [documento]
+[13:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:43] LOJA: *Josy :*
+teste
+[14:09] LOJA: [vídeo]
+[14:20] LOJA: *Josy :*
+Pergunta;;; lá no feirão estão usando a mesma tabela de preço daqui? Vi o anuncio com os preços que usamos .
+[14:21] LOJA: *Josy :*
+E na City 165/70/13 é 229,00 mesmo?
+[14:21] CLIENTE: o da city vai ser trocado
+[14:21] CLIENTE: vai entrar uma promoção nova
+[14:21] CLIENTE: esses que tao rodando e pq ainda tem saldo no anuncio
+[14:22] CLIENTE: tipo um pouquinho dai tão rodando, mas vao parar
+[14:22] CLIENTE: to tentando corrigir isso dai
+[14:31] CLIENTE: [foto]
+[14:32] LOJA: *Josy :*
+sim, sou eu
+[14:32] CLIENTE: deu certo aqui
+[14:32] CLIENTE: obrigado
+[14:32] LOJA: *Josy :*
+naaada
+[14:35] LOJA: *Josy :*
+e como uso o robô?
+[15:26] LOJA: *Josy :*
+Sim — o desconto de 5% vale tanto no PIX quanto em dinheiro. Vale o desconto no Pix?
+[15:26] CLIENTE: só dinheiro
+[15:26] LOJA: *Josy :*
+então precisamos corrigir.
+[15:40] LOJA: [foto]
+--- 27/08/2026 (Thu) ---
+[16:52] LOJA: *Josy:*
+Maicom....
+[16:52] CLIENTE: fala cmg mestra
+[16:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:52] LOJA: No anúncio mostra valores a partir de 219,00
+[16:52] LOJA: *Josy:*
+Não vi esse anuncio
+[16:55] CLIENTE: feirao né ?
+[16:55] LOJA: *Josy:*
+Mandou no daqui da loja.
+[17:19] LOJA: [foto]
+[17:52] LOJA: *Josy:*
+Jovem... estava repassando as mensagens do dia e não está sinalizando quando o cliente manda mensagem, e eu não visualizei...
+--- 28/08/2026 (Fri) ---
+[14:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:39] CLIENTE: [foto]
+[14:39] CLIENTE: aceita por favor
+[14:49] LOJA: *Josy:*
+estava com cliente
+[14:49] LOJA: *Josy:*
+aceito
+[14:59] LOJA: *Josy:*
+qual  numero?
+[15:00] CLIENTE: 72
+[15:00] LOJA: *Josy:*
+ok
+[15:02] CLIENTE: 73 agora
+[15:02] LOJA: *Josy:*
+gzuis
+[15:03] CLIENTE: 78 kkkk
+[15:03] LOJA: *Josy:*
+🫩
+[15:03] LOJA: *Josy:*
+agora é bingo?
+[15:03] LOJA: *Josy:*
+kkkk
+[15:03] LOJA: ,
+[15:04] CLIENTE: tentando criar um anuncio no google
+[15:04] LOJA: *Josy:*
+que trabalheira não é?
+--- 31/08/2026 (Mon) ---
+[16:35] LOJA: *Josy:*
+Oie
+--- 01/09/2026 (Tue) ---
+[08:39] LOJA: *Josy:*
+Acabou de acontecer o que te falei
+[08:39] CLIENTE: eu ouvir aqui de cima
+[08:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:40] CLIENTE: me envia a tabela deles
+[08:41] LOJA: [documento]
+[08:43] LOJA: *Josy:*
+o moço disse uai...aqui não é a fabrica? lá na loja perto da primavia é o mesmo preço, na verdade está  mais barato. aí eu disse para ele que se o pagamento for em dinheiro aqui eu faço por 268,00 , ele disse que sacar não vale a pena, já que la eles fazem o mesmo 289,00 daqui e passa no pix.
+[08:44] LOJA: *Josy:*
+e eu uai...mas aqui eu também passo
+[08:44] LOJA: *Josy:*
+ele questionou que que se lá faz o mesmo preço, não precisa vir aqui.
+[12:58] CLIENTE: https://crm.nailacademyprofissional.com
+--- 02/09/2026 (Wed) ---
+[08:37] LOJA: [áudio] "Maicon, o áudio não funciona lá para a borracharia, tá?"  {audio:midias/3EB06E2EA3EEB8CB3D230C_252700.ogg}
+[09:23] CLIENTE: aperta o 82
+[09:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:24] LOJA: *Josy:*
+O whats da borracharia travou
+[09:24] LOJA: [foto]
+[09:24] CLIENTE: ta subindo atualização
+[09:39] CLIENTE: atualizei
+[09:39] CLIENTE: da um f5 ai
+[09:40] CLIENTE: agora da pra enviar mensagem no control v
+[09:40] LOJA: [áudio] "Eu fui ali, só que daí o que aconteceu? Tem que ter a opção de apagar a mensagem, que eu estou aqui na borracharia, aí eu estava com um orçamento de 31 por 10,5 aqui para o meu WhatsApp, daí eu cliquei e prendi a folha de 31 por 10,5 no orçamento de 215,65. Socorro!"  {audio:midias/3EB09D325E5EF6058EE89C_183001.ogg}
+[09:40] LOJA: [figurinha]
+[09:44] LOJA: *Josy:*
+Deu erro de novo
+[09:44] CLIENTE: me manda o print do erro
+[09:45] LOJA: *Josy:*
+Voltou ao normal
+[09:45] LOJA: *Josy:*
+apareceu a tela escrito Erro e um nº
+[09:47] LOJA: [áudio] "E também precisa me permitir editar a mensagem quando digito rápido e as mensagens saem com dilexia."  {audio:midias/3EB033E3395BF3F782347E_878665.ogg}
+[09:53] CLIENTE: feito
+[09:55] CLIENTE: teve um la que voce ja tinha passado preço e o robo veio e passou outro peço
+[09:55] CLIENTE: preço *
+[09:55] CLIENTE: to ajustando aqui
+[09:56] LOJA: *Josy:*
+verdade...
+[09:56] LOJA: [foto]
+[09:57] LOJA: [áudio] "É, e ele disse que vai, esse cliente, ele disse que vai na segunda, mas segunda é feriado, eu até agendei aqui, depois você só dá uma verificada se realmente agendou, de eu mandar um bom dia pra ele na terça-feira. Ele vai querer ficar, provavelmente, com 5 pneus."  {audio:midias/3EB0D762C4B65C3D404595_461516.ogg}
+[09:58] LOJA: [áudio] "E agora as mensagens sumiram todas."  {audio:midias/3EB0EA2C406069C04BADA0_541411.ogg}
+[10:24] LOJA: [áudio] "Maicon, olha, o bot, ele tá passando um negócio errado. Eu tava falando aqui com a pessoa, aí o bot respondeu que 185-6014 é 279 e que dá pra parcelar esse valor em até 10 vezes. Não pode colocar assim, não."  {audio:midias/3EB00D85E70FA56EBDDCBD_645991.ogg}
+[10:24] LOJA: [foto]
+[10:24] LOJA: [áudio] "E o preço dessa medida é 289."  {audio:midias/3EB0FBA3ED1842CBDB762E_283158.ogg}
+[10:37] CLIENTE: como seria a melhor forma de colocar isso
+[10:37] CLIENTE: tipo dizendo so o preço avista ?
+[10:38] LOJA: [áudio] "Bem, primeiro que o preço não está certo, né? Ele é R$ 289,00. Então, acho que vale a pena explicar que esse preço é para forma de pagamento à vista."  {audio:midias/3EB08F8D02BF33DDF09E27_607989.ogg}
+[10:38] LOJA: [áudio] "Que eu não sei quando coloca que parcelem até das vezes, a pessoa acha que vai parcelar esse valor em 10 vezes, sem juros, entendeu?"  {audio:midias/3EB05CB87E928DF6D986E3_158156.ogg}
+[10:42] LOJA: [foto] *Josy:*
+175/70/14 não é 249,00
+[10:43] LOJA: [áudio] "Ai, por favor, mandei mensagem ali no número e saiu o print da... desse print que eu acabei de te mandar, saiu lá na conversa do WhatsApp da borracharia. Socorro!"  {audio:midias/3EB09A24387ADB8E7768AB_941766.ogg}
+[10:43] LOJA: [figurinha]
+[10:43] LOJA: [foto]
+[10:46] LOJA: *Josy:*
+apaga pelamor de God
+[10:48] CLIENTE: apageuei
+[10:49] LOJA: *Josy:*
+você é o cara
+[10:49] CLIENTE: dai tenta so continuar a conversa
+[10:49] CLIENTE: acho que nao precisa dizer Bom dia, eu me chamo Josy. A partir deste momento vou  dar continuidade em seu atendimento.
+[10:49] CLIENTE: pq eu vou colocar ele pra ler o contexto de cada conversa
+[10:49] LOJA: *Josy:*
+estou fazendo isso rsrs
+[10:56] LOJA: [foto]
+[10:56] LOJA: *Josy:*
+esse aqui está querendo vender para nós!
+[10:56] LOJA: [figurinha]
+[11:00] LOJA: [foto] *Josy:*
+????
+[11:01] CLIENTE: ja corrigi isso ontem
+[11:01] LOJA: *Josy:*
+Vou responder o rapaz que ficou no vácuo
+[11:11] LOJA: [foto]
+[14:33] LOJA: [foto] *Josy:*
+tem que ajustar isso também.
+[14:35] LOJA: *Josy:*
+Primeiro que não foi perguntado se o pneu é remold ou não.
+[15:15] LOJA: [foto] *Josy:*
+Está melhorando... igual ao povo , sem acento
+[15:17] LOJA: *Josy:*
+e estão discutindo entre si
+[15:17] CLIENTE: eu vi
+[15:17] CLIENTE: tô pausando isso daí
+[15:17] LOJA: *Josy:*
+kkkkkk
+[15:17] CLIENTE: já virou loucura
+[15:27] LOJA: [foto] *Josy:*
+?
+[15:28] LOJA: [foto] *Josy:*
+ele está ficando perdido.
+--- 03/09/2026 (Thu) ---
+[08:33] LOJA: *Josy:*
+O chat borracharia está travado.
+[12:13] CLIENTE: aperta o numero 37 por favor
+[12:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:14] LOJA: *Josy:*
+Maiiicon
+[17:15] LOJA: *Josy:*
+o zap da borracharia travou e eu estou atendendo um rapaz
+--- 05/09/2026 (Sat) ---
+[08:44] LOJA: *Josy:*
+Bom dia!
+[08:44] LOJA: *Josy:*
+Não consigo atender a borracharia
+[08:44] LOJA: [foto]
+[11:13] LOJA: [áudio] "Agora que eu consegui começar a responder os atendimentos lá da borracharia, mas assim, a IA tá completamente doida."  {audio:midias/3EB07268D4B023E9D0B6D5_674384.ogg}
+[11:13] LOJA: [áudio] "Dá uma olhadinha no atendimento do seu José Bezerra. Ontem, eu mandei pra ele lá quanto que fica o pneu 225-65-17. E ele tá mandando coisas de um 7565."  {audio:midias/3EB025119CE2E6B4B7027D_981561.ogg}
+[11:22] CLIENTE: subi uma atualização lá
+[11:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:22] CLIENTE: pra você conseguir atender
+[11:23] LOJA: *Josy:*
+isso... pq lá ficou tudo travado, agora que consegui falar com o cliente
+[11:23] LOJA: [foto] *Josy:*
+óóóó o cliente fechou la na borracharia.
+[11:24] CLIENTE: fechou lá esse dai ?
+[11:24] LOJA: *Josy:*
+sim!
+[11:24] CLIENTE: robô fecho sozinho será ?
+[11:24] LOJA: *Josy:*
+não consegui acompranhar pois não está carregando para mim
+[11:24] LOJA: *Josy:*
+mas acho que sim
+[11:24] CLIENTE: [áudio] "Ah, mas ainda vou ajustar. Eu ajustei já, mas ainda tem muita coisa para tirar. Tipo, ó, para eu deixar tudo organizado para você, me conte qual é o modelo e o ano do seu carro. Sendo que ele já passou por isso, porque o cara já falou o modelo. Eu tenho que remover toda essa mensagem, tipo de marca preferida, se gostaria de incluir algum serviço adicional. E eu não estou entendendo essa marca de ar que está conseguindo, que está aparecendo aí. Esse print aí foi quem te mandou, foi o Lázaro?"
+[11:25] LOJA: [áudio] "Isso, isso mesmo, foi o Lázaro."  {audio:midias/3EB00EAD7141F62664886C_151147.ogg}
+[11:30] LOJA: [áudio] "E assim, depois dá uma olhada no atendimento do seu José Bezerra, que eu tô vendendo dois pneus pra ele, 225, 65, 17. Aí você vê que ficou uma loucura aquilo lá, meu Deus do céu."  {audio:midias/3EB04A9E2B6E36B264340B_454298.ogg}
+--- 09/09/2026 (Wed) ---
+[08:06] CLIENTE: ta certo isso daqui ?
+[08:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:06] CLIENTE: teve de drift ?
+[08:06] CLIENTE: ontem vendeu 47
+[08:07] LOJA: *Josy:*
+Não.
+[08:08] LOJA: *Josy:*
+Foi 54 se não me negano
+[08:15] LOJA: *Josy:*
+foi 47 kkkk
+[08:17] LOJA: *Josy:*
+foi 51
+[08:18] LOJA: *Josy:*
+tiveram 4 pneus que vendi, mas o bruno deu saida no nome dele, igual a sábado, teve o nemesio que vendi 6 pneus mas ele deu saida no nome dele.
+[08:19] CLIENTE: e quando ele dá saída no nome dele não dá para colocar no seu ?
+[08:19] LOJA: *Josy:*
+se Deus tocar no coração dele dá kkkkk
+[09:49] CLIENTE: [foto]
+[09:52] CLIENTE: aceita aí por favor
+[09:54] LOJA: *Josy:*
+jazin...
+[10:00] LOJA: *Josy:*
+pronto
+[10:35] LOJA: *Josy:*
+Maicon... você viu isso?
+[10:35] LOJA: [foto]
+[10:36] CLIENTE: vi to até ajustando
+[10:36] LOJA: *Josy:*
+estou respondendo lá está bem!
+[10:36] LOJA: *Josy:*
+mas não dá para responder rsrs
+[10:37] LOJA: [foto]
+[10:37] LOJA: [foto]
+[10:42] CLIENTE: whatsapp desconectou
+[11:01] CLIENTE: tenta dnv
+[11:01] CLIENTE: agora foi conectado
+[11:21] CLIENTE: [foto]
+[11:21] CLIENTE: clica aí dnv aí por favor
+[11:27] CLIENTE: mandei outro e
+[11:27] CLIENTE: [foto]
+[11:28] LOJA: [áudio] "Não tá aparecendo nada aqui ainda."  {audio:midias/3EB0DCBC647965B11388E4_714128.ogg}
+[11:41] CLIENTE: na borracharia ali quando for atender só da continuidade
+[11:41] CLIENTE: [foto]
+[11:41] CLIENTE: pra ele não perceber que é um robô
+[11:43] LOJA: *Josy:*
+perdão...
+[11:44] LOJA: *Josy:*
+é automático
+[11:56] LOJA: *Josy:*
+Achei nas conversas a Rosa kkkk ele só faz orçamento aqui na GP
+[12:05] LOJA: *Josy:*
+Estou respondendo um cliente Paulo só me ajuda a apagar a mensagem kkkk
+[12:05] LOJA: *Josy:*
+preciso editar.
+[12:07] CLIENTE: paulo ?
+[12:07] CLIENTE: no robo ?
+[12:08] LOJA: *Josy:*
+isso
+[12:08] LOJA: *Josy:*
+Perdaõa... é danilo
+[12:08] LOJA: *Josy:*
+kkkk
+[12:08] LOJA: *Josy:*
+estou deslexica
+[16:55] LOJA: [foto]
+[16:55] LOJA: *Josy:*
+Çocorro
+[16:56] CLIENTE: meu deus 😨
+[16:56] LOJA: *Josy:*
+eu apaguei
+[16:56] LOJA: *Josy:*
+espero que tenha apagado mesmo
+[16:56] LOJA: [figurinha]
+[16:57] CLIENTE: pior que nem cheguei em casa ainda
+[16:57] CLIENTE: chegando já vou correr pra ajustar
+[16:58] LOJA: *Josy:*
+eu apaguei... mas não sei se realmnte sumiu lá para o cleinte.
+[16:59] LOJA: [áudio] "Que assim, eu pedi para ele confirmar na lateral do pneu, né? Porque o próprio robô sugeriu para ele 185-6015 e 195-6515. Aí eu fui lendo as conversas e coloquei aqui, né? Que eu vou dar continuidade no atendimento dele. Falei que, de modo geral, a medida é 195-55, mas se ele pudesse olhar na lateral do pneu para poder confirmar, aí ajudava, né? Aí ele falou que era 195-6015. Aí o robô respondeu, certo, só para confirmar, quando você fala 950, quer dizer 950 o valor que tem disponível. Ah, meu Deus, socorro!"  {audio:midias/3EB094769D5946AAF26329_183297.ogg}
+--- 10/09/2026 (Thu) ---
+[08:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:27] CLIENTE: [foto]
+[08:27] CLIENTE: [figurinha]
+[08:28] LOJA: *Josy:*
+sou eu
+[08:28] LOJA: *Josy:*
+kkk
+[14:22] LOJA: [áudio] "Maicon, você pode ver para mim, por gentileza, que tem um cliente que pediu um orçamento aqui, eu mandei para ele, aí ele falou assim, não foi esse preço que eu vi no Face. Aí eu falei, mas o que foi que você viu no Facebook? Pode me explicar? Aí a pessoa me ignorou com sucesso. Você pode verificar para mim, porque aqui no WhatsApp não aparece o que a pessoa estava buscando."  {audio:midias/3EB0903804E54C8FD683CF_318141.ogg}
+[14:22] LOJA: *Josy:*
+6161 8446-2774
+[14:23] CLIENTE: no robô ?
+[14:23] CLIENTE: ou nos anúncios
+[14:23] LOJA: [áudio] "Obrigada, Luana, daqui da GT."  {audio:midias/3EB0E93EA1669F5448844E_250111.ogg}
+[14:26] LOJA: [foto]
+[14:26] LOJA: *Josy:*
+Acho que é esse anuncio, mas eu não consigo abrir para ver.
+[14:26] CLIENTE: esse anúncio não tem nada de preço
+[14:26] LOJA: [figurinha]
+[14:26] CLIENTE: puxei aqui ele clicou do preço de fábrica
+[14:26] CLIENTE: e esse mesmo anúncio
+[14:28] LOJA: [figurinha]
+[14:28] LOJA: *Josy:*
+gente que quer causar...
+--- 14/09/2026 (Mon) ---
+[11:16] CLIENTE: ja voltou
+[11:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:16] LOJA: Não.
+[11:17] LOJA: Não voltou, só eu.
+[11:17] CLIENTE: da um f5 veja se abre
+[11:17] LOJA: Estou fazendo de novo
+[11:18] LOJA: *Josy:*
+volyou
+[11:37] LOJA: *Josy:*
+Viu essa aqui da borracharia/
+[11:37] LOJA: [foto]
+[11:38] CLIENTE: isso fui eu meia vida depende muito certo ?
+[11:38] CLIENTE: ou ja e um valor fixo la
+[11:39] LOJA: *Josy:*
+esse texto foi tu?
+[11:40] CLIENTE: eu montei ele
+[11:41] LOJA: *Josy:*
+sim, tem 1/2 vida, a partir de 69,00
+[12:28] LOJA: *Josy:*
+acho que pode tirar essa palavras das respostas *flanco.* pois as pessoas não entendem o que é!
+--- 15/09/2026 (Tue) ---
+[08:30] LOJA: *Josy:*
+Bom dia, jovem!
+[08:30] LOJA: [foto]
+[08:31] LOJA: *Josy:*
+265/70/16 é R$ 559,00
+[15:06] LOJA: [foto]
+--- 17/09/2026 (Thu) ---
+[09:55] LOJA: *Josy:*
+Oiê...
+[09:55] LOJA: *Josy:*
+Você está na via?
+[16:16] LOJA: [foto]
+[16:17] LOJA: [figurinha]
+[16:27] LOJA: *Josy:*
+vendi 4 pneus lá na borracharia, e o cliente disse que u não avisei ele que o pneu era remold. sendo que fiz video
+[16:27] CLIENTE: vixi
+[16:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:27] LOJA: *Josy:*
+ai avisei ao Lazaro que o cliente ia voltar la
+[16:27] CLIENTE: daí o robô veio respondendo isso daí ?
+[16:27] LOJA: *Josy:*
+ai a ia me resposdeu
+[16:27] LOJA: *Josy:*
+isso
+[16:27] LOJA: *Josy:*
+mas na minha conversa com lazaro
+[16:28] LOJA: *Josy:*
+te mandei a mensagm para ajustar, pois vira e mexe o cliente pergunta
+[16:43] LOJA: *Josy:*
+você não quer que eu te ajude mesmo.
+[16:43] LOJA: *Josy:*
+City :
+[16:43] LOJA: [foto]
+[16:43] CLIENTE: é pq tem que pausar lá no chat
+[16:44] CLIENTE: geralmente pausa só por uma hora
+[16:44] LOJA: *Josy:*
+👆🏻👆🏻👆🏻👆🏻👆🏻
+[16:44] CLIENTE: eu ajustei e o robô continua nessa noia
+[16:44] CLIENTE: o que ? a city
+[16:45] LOJA: [áudio] "Eu tô conversando aqui com o cliente, que o nome dele é Antônio. Ele falou, já comprei muitas vezes com vocês aí, mas eu não vou comprar porque lá na City, o mesmo pneu que você tá vendendo aí tá muito mais barato, está por apenas R$199,00. Aí ele me mandou o print aqui da conversa, aí eu liguei para saber e a Gina disse que é um anúncio lá do Facebook."  {audio:midias/3EB01B1B10540032457ED3_384498.ogg}
+[16:45] LOJA: [áudio] "Ele disse, como que pode? Se aí a fábrica tá mais caro e lá que não é, tá mais barato. Então, tô indo pra lá. Aí você não me ajuda."  {audio:midias/3EB0916C45E48152734936_395996.ogg}
+[16:45] LOJA: [figurinha]
+[16:46] LOJA: [áudio] "Eu estava tão feliz, tão empolgada, agora já me bateu a depressão."  {audio:midias/3EB039B6A7E2DC5193138D_669766.ogg}
+[16:55] CLIENTE: clica no infinito pra pausar o robô
+[16:55] CLIENTE: vou tentar resolver isso de vez tá bugando mt
+[17:36] LOJA: *Josy:*
+Oi
+[17:36] LOJA: *Josy:*
+acabei de receber uma notificação aqui no pc
+[17:36] LOJA: [foto]
+[17:37] CLIENTE: deixa eu ver a foto
+[17:37] LOJA: *Josy:*
+já sei o que é
+[17:37] LOJA: *Josy:*
+kkkk
+[17:37] LOJA: *Josy:*
+Pela mor
+[17:38] LOJA: *Josy:*
+Nunca te pedi nada... mas pelamor...desatica essa ia quando eu estiver falando com lázaro.
+[17:39] LOJA: [figurinha]
+[17:43] CLIENTE: vou desativar no chat dele ali
+[17:44] LOJA: *Josy:*
+E onde está esse infinito?
+[17:44] LOJA: [foto]
+[17:44] CLIENTE: ali do lado de 4h
+[17:45] LOJA: [figurinha]
+[17:45] LOJA: *Josy:*
+trem chato, credu
+--- 18/09/2026 (Fri) ---
+[08:04] LOJA: Meu jovem.... Bom dia!
+[08:04] LOJA: Me dá uma luz...
+[08:04] LOJA: [foto] Meu PC
+[08:04] LOJA: [figurinha]
+[08:12] CLIENTE: http://26.38.68.40:4173/dashboard/gestao-a-vista
+[08:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:13] CLIENTE: http://26.38.68.40:4173/dashboard/gestao-a-vista
+[10:22] CLIENTE: Bom dia, como vai ? o senhor consegue vir ate a loja hoje ? estamos te aguardando
+[10:22] CLIENTE: fica ao mercado pontão mercado vendas bem na avenida
+[10:23] LOJA: *Josy:*
+Borracharia Popular Pneus — Em frente ao posto de gasolina Pontão 24h Lunabel, Novo Gama-GO, 520 - Lunabel. Segue nossa localização!
+[10:26] CLIENTE: ficamos abertos das sexta-feira	07:00–18:00
+sábado	07:00–12:00
+[10:34] CLIENTE: chegando aqui na borracharia pode procurar o lázaro que ele vai cuidar do seu atendimento
+[10:35] CLIENTE: se o cliente mandar mensagem depois das 18:00 a gente diz 
+
+
+estamos fechamos vou te mandar nosso horário de funcionamento
+--- 21/09/2026 (Mon) ---
+[08:46] LOJA: *Josy:*
+Jovem... o robô preciptou-se na resposta rs
+[08:46] LOJA: [foto]
+[11:01] LOJA: *Josy:*
+eu ajudando o coleguiinha...
+[11:01] LOJA: [foto]
+[11:01] CLIENTE: esse dai ele respondeu bem o robo ?
+[11:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:02] LOJA: *Josy:*
+sim, teve bom desempenho nesse aqui.
+[11:51] LOJA: *Josy:*
+É ví que as mensagens que enviamos para o cliente, só apagam para nós, para o cliente não.
+[13:36] CLIENTE: do robo voce diz ?
+[13:38] LOJA: *Josy:*
+isso
+[14:06] CLIENTE: parou de enviar mensagem sozinho ?
+[14:06] LOJA: *Josy:*
+Sim!
+[14:07] LOJA: *Josy:*
+ia mandar mensagem agora
+[14:07] LOJA: *Josy:*
+como está a meta
+[16:49] LOJA: [foto]
+[16:57] LOJA: *Josy:*
+País: Luziania
+[16:58] LOJA: *Josy:*
+tem que informar isso,
+--- 22/09/2026 (Tue) ---
+[08:17] LOJA: *Josy:*
+eu acho que esse sistema não faz a contagem corretamente...
+[08:18] LOJA: *Josy:*
+exemplo ...no feirão só aqui tem 12 pneus 👇🏻
+[08:18] CLIENTE: 12 gp ? vendidos ontem ?
+[08:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:19] LOJA: [foto]
+[08:19] LOJA: *Josy:*
+Meus não... no feirão.
+[08:20] LOJA: *Josy:*
+apareceu agora...
+[11:52] LOJA: *Josy:*
+oie
+[11:53] CLIENTE: oie
+[11:53] LOJA: *Josy:*
+pode verificar onde um cliente está sendo atendido se eu te passar o numero dele?
+[11:54] CLIENTE: me envia vou dar uma olhada
+[11:54] LOJA: *Josy:*
+ 61 9849-8698
+--- 23/09/2026 (Wed) ---
+[12:44] LOJA: [foto]
+[12:44] LOJA: *Josy:*
+Não dá para bloquear ?
+[12:44] CLIENTE: da sim
+[12:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:44] CLIENTE: vou bloquear
+--- 24/09/2026 (Thu) ---
+[14:30] LOJA: *Josy:*
+meu Dels... hoje aqui está fraco...
+[14:30] LOJA: [figurinha]
+--- 25/09/2026 (Fri) ---
+[08:51] LOJA: *Josy:*
+Hello
+[08:52] LOJA: *Josy:*
+Posso te pedir para colocar o adesivo na caixa do sorteio?
+[08:52] CLIENTE: chegou o adesivo ?
+[08:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:52] LOJA: *Josy:*
+sim
+[08:53] LOJA: *Josy:*
+Vou sibir ai
+[10:04] LOJA: *Josy:*
+Faltam quantos todos pneus para eu bater a meta?
+[10:04] LOJA: *Josy:*
+Estou tensa.
+[10:04] LOJA: [figurinha]
+[10:07] CLIENTE: relaxa
+[10:07] CLIENTE: falta só 14
+[10:13] LOJA: [figurinha]
+[10:13] LOJA: [figurinha]
+[10:13] CLIENTE: já foram quantos hj ?
+[10:14] LOJA: *Josy:*
+2 e 1/2
+[10:14] LOJA: *Josy:*
+rsrs
+[10:14] CLIENTE: diz para o bruno que falta exatamente os 16 dele
+[10:14] CLIENTE: pea sua meta ser batida
+[10:15] LOJA: *Josy:*
+ele vai fazer bem assim:
+[10:15] LOJA: [figurinha]
+[10:15] LOJA: *Josy:*
+já não basta os coleguinhas, até meu time é contra mim .
+[10:15] LOJA: [figurinha]
+[10:16] CLIENTE: os coleguinhas acha que trabalhamos aqui na fábrica e tudo um privilégio
+[10:17] LOJA: *Josy:*
+Acham sim! E é pq você não vê nos bastidores, vira e mexe saem aquelas piadinhas maldosas...
+[14:05] CLIENTE: esses que o bruno vendeu agora na hora do almoço
+[14:05] CLIENTE: foram pro seu nome ?
+[15:03] LOJA: Foi no meu... Faz tempo que atendi o cliente no whatsapp
+[15:03] LOJA: Eu ia  chorar se não fosse sério..
+Estou tensa.
+--- 29/09/2026 (Tue) ---
+[08:19] LOJA: *Josy:*
+Bom dia!
+[08:20] CLIENTE: Bom dia
+[08:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:20] CLIENTE: 458 ontem você vendeu 27
+[08:20] LOJA: *Josy:*
+Isso!
+[08:21] LOJA: [figurinha]
+[10:15] LOJA: [foto]
+--- 30/09/2026 (Wed) ---
+[15:09] LOJA: *Josy:*
+Maicon jackson...
+[15:10] LOJA: *Josy:*
+Vendi 23 até o presente momento
+[15:10] CLIENTE: com os 16 que tá com o bruno da 521
+[15:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:12] LOJA: *Josy:*
+tem 2 que ele vendeu hoje
+[15:12] CLIENTE: ai ele ta quebrando a gente
+[15:12] CLIENTE: ta jogando contra
+[15:13] LOJA: *Josy:*
+conversa com ele... poxa vida... eu sou tão esforçada... fico aqui o dia todo lidando com um monte de gente mal educada, parece que não tenho valor...cadê a  consideração comigo?
+[15:13] LOJA: [figurinha]
+[15:14] CLIENTE: ele disse que passaria
+[15:18] LOJA: *Josy:*
+passaria:  é do futuro do pretérito, em tese são suposições... com chances de não acontecer.
+[15:23] LOJA: [figurinha]
+--- 01/10/2026 (Thu) ---
+[13:02] LOJA: [áudio] "Maicon, deixa eu te falar uma outra coisa aqui, que acabou de acontecer, é que as pessoas que eu preciso fazer orçamentos de pneus, eu deixo com uma lista, certo? Daí eu coloco aquelas marquinhas de roxo, vermelho, qualquer cor, mas para poder sinalizar que eu preciso fazer cotação desses clientes. Sumiu tudo. Sumiu tudo."  {audio:midias/3EB04C24FB49C3D4BB2D79_474885.ogg}
+[13:04] CLIENTE: vou tentar ajustar mas acho que nao tem como recuperar
+[13:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:04] CLIENTE: perdeu todos literalmente ?
+[13:05] LOJA: *Josy:*
+literalmente não!!! Perdeu tuuuudo!
+[13:05] LOJA: [figurinha]
+[13:05] LOJA: [áudio] "Vou voltar a fazer como os maias, incas e aztecas. Vou voltar com a minha listinha física."  {audio:midias/3EB04CB64950290EA7AACF_51391.ogg}
+--- 02/10/2026 (Fri) ---
+[08:21] CLIENTE: quando tiver de boa sobe aqui
+[08:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:21] CLIENTE: pra gente ver as vendas de ontem e você tomar o remédio
+--- 05/10/2026 (Mon) ---
+[08:57] CLIENTE: admin@crm.com
+
+senha: admin123
+[08:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:57] CLIENTE: https://crm.nailacademyprofissional.com
+[15:14] LOJA: *Josy:*
+jovem... e esse grupo?
+[15:25] CLIENTE: ja explico ali to esperando todo mundo aceitar
+[16:46] LOJA: *Josy:*
+jovem...
+[16:47] LOJA: *Josy:*
+pergunta... a direcional foi marcada em um post nosso.
+[16:47] LOJA: *Josy:*
+O que está escrito... AQUI NA PNEUS GP PREMIUM...
+[16:48] LOJA: [foto]
+[16:49] LOJA: *Josy:*
+as outras lojas também estão marcadas... .
+--- 06/10/2026 (Tue) ---
+[08:13] CLIENTE: bruno quem fez isso daí
+[08:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:13] CLIENTE: ele disse que ia postar em todas que vendesse o pneu go
+[08:14] LOJA: *Josy:*
+Ah sim...
+[08:14] LOJA: *Josy:*
+Bom dia!
+[09:27] CLIENTE: [foto]
+[09:28] CLIENTE: [foto]
+[16:52] LOJA: *Josy:*
+Agora abriu o painel
+[16:52] LOJA: [foto]
+[16:53] LOJA: [figurinha]
+--- 07/10/2026 (Wed) ---
+[15:04] LOJA: *Josy:*
+te falar... o link para avaliar está ativo?
+[15:05] LOJA: *Josy:*
+aqui está dando erro
+[15:05] CLIENTE: me manda aí vou dar uma olhada
+[15:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:05] CLIENTE: que gero outro pra vc
+[15:05] LOJA: *Josy:*
+https://da.gd/gp-avaliar
+[15:06] CLIENTE: [foto] aqui funcionou
+[15:06] LOJA: *Josy:*
+hmmmmm
+[15:06] LOJA: [figurinha]
+[15:28] LOJA: *Josy:*
+pode spor uma musiquinha nos storys?
+[15:28] CLIENTE: pode
+[15:28] LOJA: *Josy:*
+Eapaiz...vou me desdobrar para fazer essas postagens, pois aqui tem coisa para fazer...
+[15:31] LOJA: [foto]
+[15:31] LOJA: *Josy:*
+Vou postar assim
+[15:31] CLIENTE: perfeito
+[15:31] CLIENTE: eu gostei
+[15:32] LOJA: *Josy:*
+é para repostar as outras lojas? não né?
+[15:32] CLIENTE: so se tiver algo deles mostrando o pneu gp
+[15:33] LOJA: *Josy:*
+eu repostando conta também?
+[15:33] LOJA: [figurinha]
+[15:33] CLIENTE: nao kkkkkkkk
+[15:33] LOJA: [figurinha]
+[15:33] CLIENTE: eu vou tentar repostar eles ali
+[15:33] LOJA: *Josy:*
+kkkk
+[15:33] LOJA: *Josy:*
+brincando.
+[16:38] LOJA: joooovem... tem uma moça que fez a avaliação mas não está aparecendo...
+[16:39] LOJA: [foto]
+--- 08/10/2026 (Thu) ---
+[09:33] LOJA: Bom dia, jovem... te falar...
+--- 13/10/2026 (Tue) ---
+[14:44] LOJA: Maicon
+[14:44] LOJA: Oi...
+[14:45] LOJA: tem um senhor aqui chamdo Ivair esperando pelo Bruno.
+[14:49] CLIENTE: avisei pra ele
+[14:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 14/10/2026 (Wed) ---
+[13:25] LOJA: estou indo almoçar
+[13:26] CLIENTE: tá bom
+[13:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:35] LOJA: *Carro de Passeio*
+* Balanceamento = 35,00 (por pneu)
+* Alinhamento = 120,00 (somente Alinhamento de Direção)
+
+*SUV/Van/Caminhonete*
+* Balanceamento = 45,00 (por pneu)
+* Alinhamento = 140,00 (somente Alinhamento de Direção)
+[14:36] LOJA: [foto]
+--- 17/10/2026 (Sat) ---
+[12:01] LOJA: Oiê... desculpa incomodar... quando possivel, dá um confere nas avaliações do google... cliente fez a avaliação , mas não consta lá! 😢
+[12:01] LOJA: Eu que estava lá, mas sumiu,
+--- 20/10/2026 (Tue) ---
+[12:44] CLIENTE: confirma no telefone por favor
+[12:44] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[12:45] CLIENTE: [foto]
+[12:46] LOJA: *Josy:*
+ok
+--- 21/10/2026 (Wed) ---
+[10:22] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:37] LOJA: Apromoção existe e é válida para os pneus da marca GP Premium nas medidas 195/65/15 e 215/55/17.
+[13:58] ROBÔ: 🙋🏼‍♀️
+[14:04] LOJA: [foto]
+[14:35] LOJA: [foto]
+[14:44] CLIENTE: ajustei essas duas questoes aqui
+[14:45] LOJA: [foto] o chat precisa entedner quando estão brigando com a gente kkkkkkk
+[14:46] LOJA: [foto]
+[15:27] LOJA: [foto] podemos tirar essa parte de controle rigido
+[15:27] CLIENTE: controle rígido ?
+[15:28] LOJA: isso
+[15:32] CLIENTE: fala o que nisso ?
+[15:33] LOJA: [áudio] "Maicon, no caso, o cliente perguntou aqui, né, se fazia serviço, tem a parte da conversa acima, né? Perguntou se fazia serviço. Daqui falou que aqui trabalha só com pneus, serviço de mecânica não fazemos. E depois ele próprio se contradisse, porque ele disse, a loja não faz alinhamento não, só o balanceamento. Então, se contradisse aqui. Eu falo que esses serviços são feitos aqui na nossa oficina, né? E que os valores são combinados com os meninos aqui da oficina. Só isso."  {audio:midias/3EB06B3F8C43E50C109B98_796738.ogg}
+[15:34] LOJA: [áudio] "E aí, Maicon, como que eu faço para parar o robô, que igual tem o Thiago aqui que quer revender, aí mais cedo ele já mandou a mãozinha, eu fui pedir desculpa, e agora ele foi e mandou a mãozinha de novo, sendo que quando eu vou lá no CRM, está como pausado."  {audio:midias/3EB03E7CCF2A3F11863712_25794.ogg}
+[15:34] CLIENTE: [áudio] "Para parar, você tem que ir lá naquele lugar que eu tinei hoje de manhã, que é o sumul do infinito. Quando você clica lá, o robô para e não responde mais aquela pessoa."
+[15:34] CLIENTE: [áudio] "Ah, entendi, entendi. Acabei me confundindo aqui. Eu vou ver o porquê que ele não pausou."
+[16:58] LOJA: [foto] e está mandando mensagm para o cliente
+[16:58] CLIENTE: msm desativado né ?
+[16:58] LOJA: sim
+[16:58] CLIENTE: tem algo mais pra alterar aqui ?
+[16:58] LOJA: Por ora, não
+--- 22/10/2026 (Thu) ---
+[08:07] ROBÔ: 🙋🏼‍♀️
+[08:08] LOJA: Bom dia!
+[08:13] CLIENTE: Bom dia
+[08:13] CLIENTE: temos algo para alterar ?
+[08:56] LOJA: [foto] não precisa dizer isso rsrs
+[09:36] LOJA: [foto]
+[10:04] LOJA: [foto] cliente pediu 195/55/15
+[11:16] LOJA: [foto] Não precisa fazer isso de mandar o link, foge do contexto
+[11:17] CLIENTE: esse link era o teste do pneu eu acredito
+[11:17] LOJA: [áudio] "É que a pessoa está perguntando uma coisa, aí ele vai e manda isso, aí foge do contexto."  {audio:midias/3EB0CB861C0C6B73469421_854360.ogg}
+[12:10] CLIENTE: [foto] ta certo ?
+[12:11] LOJA: certo

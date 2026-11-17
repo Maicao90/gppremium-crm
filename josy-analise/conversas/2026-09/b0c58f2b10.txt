@@ -1,0 +1,23 @@
+CONVERSA b0c58f2b10 | contato: William Maciel | 19/09/2026 09:00 até 21/09/2026 15:34 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[09:00] CLIENTE: Bom dia
+[09:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:01] CLIENTE: Pneu 195/40/17
+[09:08] LOJA: *Josy:*
+Bom dia, estou verificando para você.
+[09:39] LOJA: [foto]
+[09:39] LOJA: [áudio] "William, obrigada por aguardar, está bem? No dia de hoje eu tenho aqui sim a pronta entrega, os pneus da marca Conforcer. A unidade está por apenas R$ 348,00, se o seu pagamento for no débito ou no Pix. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB016BFC6E1BCAFFDA47A_868394.ogg}
+[09:46] CLIENTE: Cidade ocidental
+[09:48] LOJA: *Josy:*
+Pertinho de nós!
+--- 21/09/2026 (Mon) ---
+[14:52] LOJA: [áudio] "Oi Wilson, tudo jóia? No sábado eu te mandei um orçamento de pneus e gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0DD0734F84CCF7F77E9_331788.ogg}
+[15:32] CLIENTE: Mês que vem quando eu pagar a fatura do meu cartão
+[15:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:33] LOJA: [áudio] "William, eu vou deixar aqui na conversa a nossa localização, pois se houver a possibilidade, você vem aqui, está bem?"  {audio:midias/3EB0139FD8E25BDAB68CE7_824189.ogg}
+[15:33] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:33] LOJA: [foto]
+[15:34] CLIENTE: Ta bom

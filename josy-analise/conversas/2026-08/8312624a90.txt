@@ -1,0 +1,20 @@
+CONVERSA 8312624a90 | contato: delano | 20/08/2026 09:15 até 20/08/2026 09:48 | 10 msgs do cliente, 6 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[09:15] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:15] CLIENTE: Bom dia
+[09:15] CLIENTE: Pneu 195/55/15
+[09:15] CLIENTE: Gol 1.6 2022
+[09:15] CLIENTE: Tem
+[09:17] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Me chamo Josi. Eu tenho a Xim. A princípio, os pneus da marca GP Premium, a unidade está por apenas R$ 289,00 à vista. Você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0AA7C779F2E520D3829_837412.ogg}
+[09:18] CLIENTE: [áudio] "Bom dia, bom dia. Eu sou de Minas Gerais. Eu comprei de vocês há muito tempo o pneu para minha van. E agora eu tenho um golzinho. Estava querendo fazer o orçamento. Aí lembrei de vocês. Lembrei que o pneu era muito bom. Realmente recomendo a todo mundo. Entendeu? E depois vou te passar o meu CEP. Pra você ver o que fica de frete. Entendeu?"
+[09:18] CLIENTE: [áudio] "Se você tiver modelo dele para me mandar, entendeu? Me dá uma olhada, modelo dos frisos, né? O desenho dele."
+[09:19] LOJA: [áudio] "Sim, claro, tenho sim, posso te passar. Me encaminha, por gentileza, qual que é o seu CEP?"  {audio:midias/3EB00AFFD3CAA661465DB1_46914.ogg}
+[09:27] CLIENTE: 36880063
+[09:28] LOJA: Precisa dos 4 pneus?
+[09:33] CLIENTE: [áudio] "É, poderia. Faz uma simulação pra mim. Tipo assim, de 2 pneus e 4 pneus."
+[09:46] LOJA: O preço para o frete é o mesmo para 2 ou 4 pneus.
+[09:46] LOJA: [foto]
+[09:48] CLIENTE: [áudio] "Certo, eu vou dar uma estudada aqui direitinho, porque o frete é quase que mais um pneu, né? Teria que aproveitar e comprar 4 de uma vez, né? Me manda aí a foto do pneu, do modelo, do desenho dele."

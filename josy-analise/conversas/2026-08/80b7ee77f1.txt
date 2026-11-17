@@ -1,0 +1,17 @@
+CONVERSA 80b7ee77f1 | contato: Devailton | 27/08/2026 23:14 até 28/08/2026 09:38 | 2 msgs do cliente, 6 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[23:14] CLIENTE: Quero cotar o pneu 195/55 R15 GP Premium.
+[23:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 28/08/2026 (Fri) ---
+[08:08] LOJA: [foto]
+[08:08] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:35] LOJA: [áudio] "E Devailton, posso separar os pneus aqui para você?"  {audio:midias/A543B298EDAEAFB9EBD8F07ADA9FFAC3_752925.ogg}
+[09:36] CLIENTE: [áudio] "Bom dia. Não, obrigado. Eu não vou comprar não. Achei mais barato no Carrefour. Já estou fechando aqui com eles."
+[09:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:38] LOJA: [áudio] "Ah, excelente."  {audio:midias/3EB03D00810AC171B4BD54_155093.ogg}

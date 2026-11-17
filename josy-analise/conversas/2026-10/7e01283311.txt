@@ -1,0 +1,10 @@
+CONVERSA 7e01283311 | contato: Gustavo Silva | 08/10/2026 07:51 até 08/10/2026 08:21 | 3 msgs do cliente, 3 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[07:51] CLIENTE: Bom dia
+[07:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:52] CLIENTE: 90/90 18
+[08:04] LOJA: Bom dia, não trabalhamos com pneus de moto.
+[08:04] CLIENTE: Obrigado
+[08:21] LOJA: Disponha

@@ -1,0 +1,54 @@
+CONVERSA b8dd6dc87a | contato: Gilvaneide Ferreira Olive | 12/09/2026 09:26 até 12/09/2026 10:42 | 34 msgs do cliente, 16 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[09:26] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:26] CLIENTE: Bom dia!
+[09:26] CLIENTE: Você tem pneu aro 14
+[09:26] CLIENTE: ?
+[09:27] CLIENTE: Para o Ford Fiesta
+[10:08] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Bem, no aro 14, eu tenho 7565. Se você estiver utilizando essa opção, a unidade está para apenas R$ 249,00 a vista."  {audio:midias/A53B6D90F811BB277FA0BD53E245A81A_300777.ogg}
+[10:08] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/A5E9159E482187523A42B3A643599598_627555.ogg}
+[10:09] CLIENTE: Moto na Ocidental
+[10:10] CLIENTE: Vou olhar aqui
+[10:11] CLIENTE: 175/70/14
+[10:12] CLIENTE: Você tem o 65
+[10:14] LOJA: Sim
+[10:14] LOJA: 279,00 a vista
+[10:14] LOJA: Quer que eu envie a localização?
+[10:14] CLIENTE: Eu estou em uma oficina
+[10:20] CLIENTE: Vocês entregam?
+[10:21] CLIENTE: Ou vocês podem colocar e alinhar?
+[10:21] CLIENTE: Como funciona?
+[10:22] LOJA: [áudio] "Uai, os serviços de alinhamento e balanceamento, eles são cobrados à parte, tá? E você vindo aqui comprar os pneus comigo, pelo menos a instalação eu já te ajudo pagando ela pra você."  {audio:midias/A588431A6FA2FBA4D9D465E4510E0695_945681.ogg}
+[10:23] CLIENTE: Certo
+[10:23] CLIENTE: Até que horas funciona?
+[10:24] LOJA: [áudio] "Aqui funciona até o meio-dia. Vou te encaminhar a localização, tá joia? Qual que é o seu nome?"  {audio:midias/A56EBD90859C84CBDE917892893828A3_609030.ogg}
+[10:24] CLIENTE: Vocês não dividem no cartão?
+[10:25] LOJA: [áudio] "Sim, para dividir, o valor aumenta cerca de 3 reais por parcela, tá bom? É muito pouca coisa."  {audio:midias/A5A232D4E3A39DC388160F5C0AF02125_5056.ogg}
+[10:25] CLIENTE: Divide até  quantas vezes?
+[10:27] LOJA: [áudio] "Em 10 vezes, por exemplo, o pneu na medida 175-70 fica por 313 cada um. Digamos que você queira os 4, né? Então, 313 vezes 4 pneus dá um total de 1.252, ou seja, você vai pagar 10 parcelas de R$ 125,20."  {audio:midias/A5F3E7115199C95C052B9E5FB8B74861_139648.ogg}
+[10:27] CLIENTE: Eu não sei se consigo chegar antes do meio dia
+[10:27] CLIENTE: Eu quero dois
+[10:27] CLIENTE: Não quero os 4
+[10:27] LOJA: [áudio] "Moça, foi só um exemplo."  {audio:midias/A5912ABC8ADABB9D67D283A92E27ACA5_816144.ogg}
+[10:28] CLIENTE: [áudio] "Não, amor, eu entendi. É porque eu quero só os dois. Eu quero dois pneus, entende? Por exemplo, aí você pode fazer um orçamento para mim de dois pneus, por favor?"
+[10:28] LOJA: [áudio] "Claro, posso sim. Giovana Eide, você quer parcelar nessas 10 vezes ou em menos vezes?"  {audio:midias/A571ED6339561B0A93DE4F1E392056B8_111626.ogg}
+[10:31] CLIENTE: Pode ser em 10
+[10:34] CLIENTE: Onde fica a loja?
+[10:34] CLIENTE: Esse pneu é remolde?
+[10:35] CLIENTE: Ou tem o original?
+[10:36] LOJA: [áudio] "Ele é o pneu GP Premium, o pneu que nós fazemos, tá? E ele entrará na categoria de remodelagem, só que linha Premium, que não tem nada a ver com os pneus que são remoldes convencionais. Se você quiser, eu até gravo um vídeo pra você poder entender melhor, tá? Os pneus, eles têm 2 anos de garantia, rodam 60 mil km, igual outras marcas famosíssimas, tá? Eles têm o selo do Inmetro justamente porque são todos testados e aprovados, são de primeira linha."  {audio:midias/A576578627E30DD0AA4432D24F011C5A_749240.ogg}
+[10:36] LOJA: [áudio] "A minha loja, ela é aqui em Luziânia, tá? Mas você disse que mora em Cidade Ocidental, certo? Eu consigo mandar pra uma oficina, que inclusive, daqui a pouquinho eu tô levando uns pneus aí da marca GP Premium pra montar nos carros. Aí, se você quiser, eu já providencio os dois pra você também."  {audio:midias/A5D52E62C80516C85BC958C6B911ECC1_858105.ogg}
+[10:37] LOJA: [áudio] "Então, em 10 vezes, os dois pneus ficam por R$ 626,00. Você vai pagar 10 parcelas de R$ 62,60."  {audio:midias/A54A9E5950A4C2201431166F06C5B42B_568970.ogg}
+[10:39] CLIENTE: Tá bom
+[10:39] CLIENTE: Eu vou ver aqui e te aviso
+[10:39] CLIENTE: Obrigada
+[10:39] CLIENTE: Por acaso você tem o Goodyear?
+[10:40] LOJA: [áudio] "Tem, tem Goodyear sim, tá? Eu vendo o GP Premium muito mais que ele, justamente porque a qualidade vai ser a mesma. O Goodyear, na medida 175, 70 a 13, ele está por 446 reais à vista, mas aí a retirada é somente aqui na empresa, tá?"  {audio:midias/A5A24A6DF3B4C4725410C2F0414F6F44_740645.ogg}
+[10:41] CLIENTE: E o valor?
+[10:41] CLIENTE: Certo
+[10:41] CLIENTE: É 14
+[10:42] CLIENTE: Tá bom
+[10:42] CLIENTE: Eu vou olhar aqui

@@ -1,0 +1,34 @@
+CONVERSA bdad3be996 | contato: Lucidio de Jesus | 24/09/2026 13:20 até 24/09/2026 14:32 | 10 msgs do cliente, 12 da loja, 0 do robô
+
+--- 24/09/2026 (Thu) ---
+[13:20] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi
+[13:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:20] CLIENTE: Pneu 175/70 -14C
+[13:20] CLIENTE: Valor ???
+[13:56] LOJA: *Josy:*
+Boa tarde!
+[13:57] LOJA: *Josy:*
+Temos sim!
+[13:57] LOJA: [foto]
+[13:58] LOJA: *Josy:*
+pneu 175/70/14c 8pr 98/96s cf350 comforser R$ 360,00 a unidade a vista.
+[13:58] CLIENTE: Se  for  os 4  a vista???
+[13:59] LOJA: *Josy:*
+R$ 360,00 x 4 = R$ 1.440,00
+[14:00] CLIENTE: Sim,  me  refiro  ao  desconto mulher????
+[14:00] LOJA: *Josy:*
+Esse é o preço final realmente.
+[14:00] CLIENTE: Ahhhh Josy !!!!
+[14:01] LOJA: [figurinha]
+[14:01] CLIENTE: No  meli  fica  menos  de  1300
+[14:02] CLIENTE: Vê aí  pra  mim
+[14:05] LOJA: [áudio] "Ô Lucídio, eu não consigo, esse daqui é o preço que o distribuidor me passa e eu só repasso ele."  {audio:midias/3EB0719C2DFBF13BC8E492_492558.ogg}
+[14:06] CLIENTE: [áudio] "Ô, Júlio, tá bom. Eu vou seguir, então, com a minha saga, atrás de 4 pneus novos aí, tá bom? Mas obrigado pela tua disposição em me atender. Te agradeço de coração, viu? Valeu, tá? Um abraço, fique com Deus."
+[14:07] LOJA: [áudio] "Um abraço para você também. Fica com Deus, tá? Qualquer coisa me chama aqui."  {audio:midias/3EB0AA1494F37A58B95102_989933.ogg}
+[14:19] LOJA: [áudio] "Bem, de todo modo, vou te mandar aqui a nossa localização. Se for possível, você passa aqui na nossa empresa. Obrigadão, até mais."  {audio:midias/3EB07F7E8D363965F6CB42_124192.ogg}
+[14:19] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:32] CLIENTE: Tá bom querida um abraço

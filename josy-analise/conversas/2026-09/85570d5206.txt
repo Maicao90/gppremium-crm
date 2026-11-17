@@ -1,0 +1,35 @@
+CONVERSA 85570d5206 | contato: Benedito | 04/09/2026 21:16 até 24/09/2026 14:18 | 9 msgs do cliente, 17 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[21:16] CLIENTE: Boa noite. Você ainda está na loja de pneus?
+[21:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[21:37] CLIENTE: Amanhã te falo.
+--- 05/09/2026 (Sat) ---
+[08:25] LOJA: [áudio] "Olá, bom dia! Tudo bem com você?"  {audio:midias/3EB0CAC0F633846831AFC0_601455.ogg}
+[08:25] LOJA: [áudio] "Por gentileza, me diz qual que é a medida dos pneus que o senhor precisa."  {audio:midias/3EB04B59ED8ECC138A656E_268556.ogg}
+--- 08/09/2026 (Tue) ---
+[17:08] LOJA: *Josy:*
+🙋🏼‍♀️
+[17:08] LOJA: [áudio] "Oi, seu Benedito, tudo jóia? O Senhor me mandou mensagem aqui no final de semana, depois disse que falaria comigo no outro dia. E aí, em que eu posso te ajudar?"  {audio:midias/3EB0B626771CB676F675C2_589615.ogg}
+--- 24/09/2026 (Thu) ---
+[14:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:02] CLIENTE: [áudio] "Josi, você desculpa não ter te dado retorno, mas eu vou passar seu telefone para minha mulher, minha esposa, e ela vai entrar em contato para você, tá?"
+[14:04] CLIENTE: 195 55 aro 16 pirelli
+[14:04] LOJA: [áudio] "Oi, Sr. Benedito, boa tarde. Tudo jóia? Nossa, dessa marca eu não tenho aqui a pronta entrega, mas eu vou contar com os meus distribuidores, tá bom? Assim que eles me responderem, eu te passo direitinho o preço e o prazo de entrega."  {audio:midias/3EB05D3D7DA1CD48D7450C_334459.ogg}
+[14:05] LOJA: [áudio] "E o seu olho está bem?"  {audio:midias/3EB0A17F2E0C496C722D4E_546084.ogg}
+[14:05] LOJA: [áudio] "E tem que ser dessa marca mesmo? Pode ser outra não?"  {audio:midias/3EB0C4ACD740DA6FB0657C_419062.ogg}
+[14:05] CLIENTE: [áudio] "Tudo bem, e se não for da Pirelli, tá? Se for de outra marca, mas sendo 19516, 1955 aro 16."
+[14:06] CLIENTE: [áudio] "Depende do preço, né? Vê o preço aí pra mim, é um preço bom."
+[14:06] LOJA: [áudio] "Olha, eu estou aqui com a promoção do pneu GP Premium. Ele de R$ 289,00, eu faço por R$ 259,00 para o pagamento à vista e ainda coloco esse pneu para vocês."  {audio:midias/3EB0269D32CA60F319DD45_863445.ogg}
+[14:07] LOJA: [foto]
+[14:07] LOJA: .
+[14:08] LOJA: [áudio] "Olha, à vista, estou fazendo por 259 cada, se for para parcelar o valor muda, mas o senhor pode ver aí que é muito pouca coisa, alterei 3 reais por parcela somente, tá bom?"  {audio:midias/3EB0BE89C6F004F8040648_492120.ogg}
+[14:13] CLIENTE: Vocês  ainda estão no Vicente Pires?
+[14:13] LOJA: [áudio] "Não, não, nós estamos em Vicente Pires, mas se for de fácil acesso para o senhor, eu consigo mandar os pneus ali para o novo Gama, seu Benedito. Aí, o senhor me diz para quando que o senhor precisa dos pneus, a quantidade, qual que é a forma do pagamento, que eu ajeito esses pneus, mando para uma borracharia que tem me ajudado bastante para poder atender aí a redondeza e te mando a localização. Nós podemos ir nos falando aqui."  {audio:midias/3EB049722863013A183195_712944.ogg}
+[14:14] CLIENTE: [áudio] "Vocês estão em Luziânia, é?"
+[14:15] LOJA: [áudio] "Isso, isso, nós estamos em Luziânia. Aí eu mando os pneus da GP Premium ali para o Novo Gama, que no momento é o recurso que eu tenho para poder atender a região todinha aí de Brasília."  {audio:midias/3EB0464C762B59857FC79B_803969.ogg}
+[14:16] CLIENTE: [áudio] "Você trabalha no sábado até que hora? Não, é porque minha irmã tem uma chácara aí, atrás de vocês, bem dizer, tá? Pra mim não custaria nada ir aí, tá?"
+[14:17] LOJA: [áudio] "Sim, no sábado nós atendemos de 8 da manhã até o meio-dia."  {audio:midias/3EB0A15C5D40DAC0E2B10D_388569.ogg}
+[14:18] LOJA: [áudio] "Vem daqui e pede para me procurar, tá bom?"  {audio:midias/3EB000DC2A4FC06613EC46_585317.ogg}

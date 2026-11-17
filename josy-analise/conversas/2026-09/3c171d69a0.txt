@@ -1,0 +1,37 @@
+CONVERSA 3c171d69a0 | contato: Daniel Melo | 23/09/2026 14:05 até 23/09/2026 15:23 | 5 msgs do cliente, 16 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[14:05] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[14:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:05] CLIENTE: 185x65x15
+[14:06] LOJA: *Josy:*
+Boa tarde!
+[14:06] LOJA: [foto]
+[14:06] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:07] LOJA: *Josy:*
+Daniel, você reside aqui em Luziânia, mesmo?
+[14:08] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+[14:09] LOJA: [áudio] "Oi Daniel, boa tarde, tudo bem? Eu sou a Josi. Sim, ele é um pneu que nós fazemos, ele é um pneu ecológico, ele entrará na categoria de remodelagem, só que Premium, que não tem nada a ver com os pneus que são remoldes convencionais. Justamente por isso, essa é a opção mais vendida que eu tenho, pneu com garantia total de 2 anos e roda uns 60 mil km, assim como as demais marcas nacionais do orçamento."  {audio:midias/3EB0173E81C9D4CBF74EA5_856402.ogg}
+[14:09] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+[14:09] LOJA: [áudio] "Se você quiser, eu gravo um vídeo aqui para você poder ter uma pequena percepção dos pneus GP Premium e do que é um pneu remold mesmo, tá? Porque são coisas bem distintas."  {audio:midias/3EB05F40E6CCD8975E3A41_340446.ogg}
+[14:10] LOJA: [áudio] "Justamente por isso, igual você citou em viagem, os pneus GP Premium não tem restrição de uso alguma, inclusive usa aqui na caminhonete."  {audio:midias/3EB00AD7550EEA0AF0D6C0_345893.ogg}
+[14:11] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+[14:11] LOJA: *Josy:*
+Claro!
+[14:11] LOJA: *Josy:*
+Vou gravar.
+[14:25] LOJA: [vídeo]
+[14:27] LOJA: [foto] Produzimos pneus desde aro 13 até 18 de camionete
+[14:29] LOJA: *Josy:*
+Uso aqui na Amarok do meu irmão
+[14:29] LOJA: [foto]
+[15:22] LOJA: *Josy:*
+Caso realmente os pneus não sejam de seu agrado, temos as outras opções do orçamento a pronta entrega.
+[15:23] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

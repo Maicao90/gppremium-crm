@@ -1,0 +1,15 @@
+CONVERSA b21d419846 | contato: ✌️🤝 | 15/10/2026 11:46 até 15/10/2026 12:07 | 3 msgs do cliente, 4 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[11:46] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[11:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:46] CLIENTE: 185x70
+[11:49] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:49] LOJA: [foto]
+[11:54] CLIENTE: [figurinha]
+[12:07] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu me chamo Josi. Assim que possível, me diz também qual é o seu nome. E você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB08DBC6701A4D2EA1BDC_443775.ogg}

@@ -1,0 +1,63 @@
+CONVERSA 58ac28e19b | contato: Savio Móveis Planejados | 31/08/2026 10:10 até 31/08/2026 17:08 | 29 msgs do cliente, 21 da loja, 0 do robô
+
+--- 31/08/2026 (Mon) ---
+[10:10] CLIENTE: Ola bom dia
+[10:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:11] LOJA: *Josy:*
+Ola bom dia
+[10:12] LOJA: *Josy:*
+Diga
+[10:12] CLIENTE: Bom dia
+[10:12] CLIENTE: [foto]
+[10:12] CLIENTE: 175 aro 13
+[10:13] LOJA: *Josy:*
+Temos sim!
+[10:13] LOJA: *Josy:*
+1 instante
+[10:13] CLIENTE: Qual valor menor vc consegue ta fazendo dois pneus
+[10:13] LOJA: *Josy:*
+ No *dinheiro* 250,00 cada.  Pix ou débito 269,00 cada
+[10:13] CLIENTE: Ja sou cliente ai anos
+[10:14] CLIENTE: 250 pix cada
+[10:14] CLIENTE: Pix e na hora
+[10:14] LOJA: *Josy:*
+ No *dinheiro* 250,00 cada.  Pix ou débito 269,00 cada
+[10:15] CLIENTE: [áudio] "Josi, meu nome é Sávio, tudo bem? Eu já sou cliente seu e há muito tempo, comprei muitos pneus para mim e para minha família toda. Tá, mas que diferença tem o dinheiro do Pix? Do Pix também cai na hora."
+[10:16] LOJA: [áudio] "Oi, seu Sávio, tudo bom? A diferença é a cobrança para mim, entendeu? Então, estamos até fugindo aí de questões de Pix e tudo mais, porque para mim é cobrado, ou seja, desses 269, eu não vou receber esse valor todo. Então, se o pagamento é em dinheiro, há a possibilidade de eu fazer a 250 cada. Já para as outras opções, eu já não consigo, tá? Já é justamente porque eu já não recebo esse valor."  {audio:midias/3EB0C0A4D79C53D0782F7E_665192.ogg}
+[10:16] CLIENTE: A bom
+[10:17] LOJA: [áudio] "Olha, de R$ 269,00 na máquina aqui, pra você ver como que desconta, eles descontam R$ 32,00 de mim, entendeu?"  {audio:midias/3EB0AB2E07E502AFE43C00_609813.ogg}
+[10:17] CLIENTE: [áudio] "Entendi. Então eu vou ver se eu passo no caixa eletrônico e tiro. Na hora que eu estiver indo, eu vou ir hoje. Eu só não sei ainda bem o horário, mas eu vou. Eu preciso de dois para colocar na frente do carro."
+[10:17] LOJA: *Josy:*
+Ta bom
+[10:17] CLIENTE: [áudio] "Eu vou aí hoje, nós falamos aí hoje, tá bom? Obrigado por enquanto. Nós vem aí hoje."
+[10:18] CLIENTE: [áudio] "E no cartão de crédito? Quantas vezes você divide? Por favor."
+[10:20] LOJA: [foto]
+[10:30] CLIENTE: [áudio] "É, divide para mim aí, dois pneus. Por favor, só simule aí, por favor. Dois pneus divididos em três vezes."
+[10:30] CLIENTE: [áudio] "Porque eu acho que sai mais antes eu dividir do que pegar o dinheiro no crédito, lá no cartão."
+[10:32] LOJA: [áudio] "Uai, para poder te ajudar aqui, Sr. Sávio, vou fazer o seguinte, então eu faço esse valor aí de duas vezes, eu parcelo nas três para o senhor sem juros, aí ficam, o valor é 277,96 vezes 2 pneus, dividido por 3, vai ficar 3 de 185,30."  {audio:midias/3EB077B427A102E92CD740_253526.ogg}
+[10:34] CLIENTE: 3 Venezuela 185.30 correto
+[10:34] CLIENTE: Vesez
+[10:34] CLIENTE: [áudio] "O telefone dele tem alguém meio doido, né?"
+[10:34] LOJA: [áudio] "Eu olhei aqui três venezuelanos e falei, uai, vamos falar sobre futebol hoje. Não, mas é isso mesmo, eu faço desse jeito aí para o senhor, tá bom?"  {audio:midias/3EB03063459EAD0A1303AC_988207.ogg}
+[10:35] CLIENTE: [áudio] "De qualquer forma eu vou ir buscar eles hoje, tá? De qualquer forma. Ou no dinheiro, ou à vista, ou nos três vezes, tá bom? De todo jeito eu vou ir hoje."
+[10:35] CLIENTE: [áudio] "Obrigado por enquanto."
+[10:36] LOJA: [áudio] "Imagina, senhora sabe, eu que agradecer pelo seu contato, tá bom? Eu sei que o senhor sabe onde é aqui a loja, mas eu só vou deixar anexada aqui a fotinho da frente da loja, porque o meu WhatsApp atualizou, aí eu não sei quem veio, quem não veio e um monte de coisas, as mensagens desaparecem, tá bom? Te aguardo."  {audio:midias/3EB0053667F269EB5E54FC_375348.ogg}
+[10:36] LOJA: [foto]
+[10:36] CLIENTE: Blz obg
+[10:36] CLIENTE: [áudio] "Eu moro perto, moro aqui perto do trevo, perto do dia-a-dia, perto de vocês."
+[10:37] CLIENTE: [áudio] "Eu já fui aí muitas vezes, sim. Mas você tá certo. Obrigado aí pela imagem."
+[10:37] LOJA: [áudio] "Pode nada ser assável. Até breve."  {audio:midias/3EB05520A416D334EB77E0_34927.ogg}
+[10:38] CLIENTE: [figurinha]
+[17:06] LOJA: *Josy:*
+Oiiii, sr Sávio...
+[17:06] LOJA: *Josy:*
+👀
+[17:06] CLIENTE: [áudio] "Oi, Josi. Tudo bom? Josi, eu tô meio enrolado aqui ainda. Se eu não for hoje, eu vou amanhã, tá? Mas se eu vou, eu vou. Tá bom?"
+[17:06] CLIENTE: [áudio] "Eu não esqueço, não estou precisando."
+[17:07] LOJA: [áudio] "Você sabe, seria um barato. Não, tá jóia então, tá bom?"  {audio:midias/3EB096F975F912C4C885B1_384116.ogg}
+[17:07] CLIENTE: [áudio] "De todo jeito eu vou. Se eu não der conta de hoje, amanhã eu tô aí. Não vai passar, não."
+[17:07] LOJA: [áudio] "Tá tranquilo, tá bom?"  {audio:midias/3EB06F5C610AC27AD6D007_523962.ogg}
+[17:07] CLIENTE: [áudio] "Tudo bem. Obrigado, Luzi."
+[17:08] LOJA: [áudio] "Por nada, sr. Sávio, bom descanso, tá?"  {audio:midias/3EB0A017A752619EECB9D2_337111.ogg}
+[17:08] CLIENTE: Obgduuuuuuuu

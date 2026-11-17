@@ -1,0 +1,11 @@
+CONVERSA 288d2250e9 | contato: Raimundo Nascimento Dos S | 13/10/2026 19:37 até 14/10/2026 13:07 | 1 msgs do cliente, 3 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[19:37] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Olá! Posso ter mais informações sobre isso?
+[19:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 14/10/2026 (Wed) ---
+[08:06] LOJA: 🙋🏼‍♀️
+[13:07] LOJA: [áudio] "Olá, bom dia. Tudo bem com você, Raimundo? Você entrou em contato aqui comigo, me disse que queria aqui informações, mas não deu procedimento. Pode me retornar, por gentileza, me dizem que eu posso te ajudar?"  {audio:midias/3EB068BD8F924327499421_107313.ogg}

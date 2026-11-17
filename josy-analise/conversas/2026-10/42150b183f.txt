@@ -1,0 +1,53 @@
+CONVERSA 42150b183f | contato: Roger | 08/10/2026 13:02 até 19/10/2026 08:08 | 18 msgs do cliente, 25 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[13:02] CLIENTE: Josi
+[13:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:02] CLIENTE: Pneus pra toro
+[13:03] CLIENTE: [áudio] "Ô Josi, é o Roger de Franca. Comprei dois pneus seu uma vez, da Toro, e eu precisava de mais dois, e eu precisava de pneu 17. Você tem aí, perfil baixo?"
+[13:04] LOJA: Oie...
+[13:04] LOJA: Lembro sim!
+[13:04] LOJA: Vou ver para ti!
+[13:04] CLIENTE: Ok
+[13:04] CLIENTE: Acho que vc tem meu cadastro ai
+[13:06] LOJA: [áudio] "Oi Roger, tudo jóia? Sim, temos sim."  {audio:midias/3EB01AA0863D0C4673EAB6_983985.ogg}
+[13:11] CLIENTE: albumMessage
+[13:11] CLIENTE: [foto]
+[13:11] CLIENTE: [foto]
+[13:15] LOJA: [foto]
+[13:16] LOJA: [foto]
+[13:16] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:16] CLIENTE: Me manda as fotos
+[13:16] LOJA: Consegue aguardar...estou sozinha aqui
+[13:17] CLIENTE: Tranquilo
+[13:17] CLIENTE: [áudio] "Ô Josiânia, não tem pressa não, tá? Na hora que der certo aí você me manda, tá? Fique em paz, tá bom? É só pra me ver que talvez eu vou ir pra aí na outra semana, aí eu já vou deixar organizado pra passar aí pegar. Esse do 17 é do meu menino."
+[14:16] LOJA: Oiê... agorinha mando as fotos.
+[14:16] LOJA: O pessoal chegou aqui.
+[14:16] CLIENTE: Ok
+[14:27] LOJA: [foto]
+[14:27] LOJA: [foto]
+[14:27] LOJA: [foto]
+[14:27] CLIENTE: [áudio] "Josi, o que você consegue fazer para mim? Dois pneus da Toro e 4 do 17, o que você consegue fazer?"
+[14:28] LOJA: [foto]
+[14:30] LOJA: [foto]
+[14:31] LOJA: [áudio] "Bem, Roger, com questão a preço, nesses pneus aí importados eu fico completamente de mãos atadas, o preço realmente é esse."  {audio:midias/A59DE94FD8AA299F5604BAA06DE6C568_616905.ogg}
+[14:34] CLIENTE: Ajuda eu
+[14:35] LOJA: [figurinha]
+[14:35] LOJA: rsrs
+[14:35] LOJA: [áudio] "Ai, Roger, nesses aí, realmente, eu não consigo fazer nada."  {audio:midias/3EB09CA8F61AE986CA3E89_268118.ogg}
+[14:35] LOJA: [áudio] "Se fosse o pneu aqui da fábrica, a gente podia encontrar uma maneira de negociar, mas esses daí realmente é o valor que o distribuidor me deixa, eu já passo ele."  {audio:midias/3EB048AB2ED028F5B8E302_730020.ogg}
+--- 17/10/2026 (Sat) ---
+[13:19] CLIENTE: Boa tarde
+[13:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 19/10/2026 (Mon) ---
+[08:07] LOJA: Bom dia, Roger...
+[08:07] LOJA: Como vai?
+[08:07] CLIENTE: Bom dia
+[08:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:07] CLIENTE: [contato] 👤 Alemao
+[08:08] CLIENTE: Chama esse rapaz ele.precis de 4 pneus pra triton

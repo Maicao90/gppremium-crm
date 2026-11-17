@@ -1,0 +1,23 @@
+CONVERSA 4e85260e09 | contato: Gilberto 😎 | 11/09/2026 19:48 até 18/09/2026 14:57 | 5 msgs do cliente, 8 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[19:48] CLIENTE: Tem 17 /205/40
+[19:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:49] CLIENTE: 17
+[19:49] CLIENTE: 205/40
+--- 12/09/2026 (Sat) ---
+[08:14] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Gilberto, eu não estou tendo essa opção de medida aqui à pronta entrega, tá? Eu queria que eu consigo dar uma resposta para você na segunda-feira, pode ser?"  {audio:midias/A534960F9B262FA204C51C6C8BF8BB8D_53990.ogg}
+--- 16/09/2026 (Wed) ---
+[15:26] LOJA: [foto]
+[15:26] LOJA: [áudio] "Oi Gilberto, tudo bom? Você disse que precisava de pneus 205, 40, 17 e ele estava em falta aqui para mim, né, que eu até mandei um áudio para você no sábado, mas acho que você não teve tempo de ouvir. Eles acabaram de chegar aqui na nossa empresa, vai ser o pneu da marca Fossiland, a unidade está por apenas R$ 327,00 se o seu pagamento for à vista. Para parcelar tem as opções de parcelamento aí em até 10 vezes, tá joia? Você mora aqui em Luziânia mesmo? Sim, tá joia? Sim. Sim. Sim. Sim. Sim. Sim. Sim. Sim. Sim. Sim."  {audio:midias/3EB0F5E063D19A3F26ADA1_961813.ogg}
+--- 17/09/2026 (Thu) ---
+[09:08] LOJA: [áudio] "Gilberto, tudo bom contigo? Eu te encaminhei um orçamento ontem, gostaria de saber se você teve a possibilidade de analisar e também se gostaria de seguir com a negociação. Você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB01606B52BCCFC8522DD_85284.ogg}
+--- 18/09/2026 (Fri) ---
+[14:40] LOJA: 👀
+[14:56] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:57] CLIENTE: Boa tarde
+[14:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:57] CLIENTE: Sou do novo Gama

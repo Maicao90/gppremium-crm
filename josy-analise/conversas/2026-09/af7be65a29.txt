@@ -1,0 +1,17 @@
+CONVERSA af7be65a29 | contato: GSS | 02/09/2026 11:48 até 03/09/2026 08:43 | 5 msgs do cliente, 6 da loja, 0 do robô
+
+--- 02/09/2026 (Wed) ---
+[11:48] CLIENTE: [áudio] "Oi, bom dia. Quanto é que tá os pneus de vocês aí? Vocês vendem a unidade ou é só no atacado? A partir de quantos?"
+[11:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:48] CLIENTE: [áudio] "Queria ver os valores dos pneus 1.70 aro 14, 1.75 aro 14."
+[11:49] LOJA: [áudio] "Olá, bom dia, tudo bem? Eu me chamo Josi. Nossa loja, ela fica aqui em Luziânia, Goiás. O senhor mora aqui? Eu tenho um 7570 14 da nossa marca, que ele está por apenas 279 a vista."  {audio:midias/3EB029C383230DAECFF229_918125.ogg}
+[11:50] CLIENTE: [áudio] "Entendi. Acabei de passar aí em frente de vocês. Estou aqui um pouco mais pra frente. E pneu remold, vocês trabalham também ou só original?"
+[11:51] LOJA: [áudio] "Sim, o pneu que nós fazemos, ele é um pneu ecológico, ele entra na categoria de remodelagem, só que da linha Premium. Justamente por isso ele é o pneu mais vendido que nós temos, porque a qualidade dele é impecável."  {audio:midias/3EB054BFBAFE43E98774D6_617537.ogg}
+[11:51] CLIENTE: [áudio] "Ah, entendi. O que você tá me falando aí é o remote."
+[11:52] LOJA: [áudio] "Eu vou fazer um vídeo aqui rapidinho para o senhor entender, tá joia?"  {audio:midias/3EB0F01694E81CEFF6DC5A_437979.ogg}
+[11:52] CLIENTE: Ok
+--- 03/09/2026 (Thu) ---
+[08:43] LOJA: [vídeo]
+[08:43] LOJA: *Josy:*
+Bom dia!

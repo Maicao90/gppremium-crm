@@ -1,0 +1,19 @@
+CONVERSA 5972955ef2 | contato: Ivanilson Portela | 22/09/2026 10:32 até 22/09/2026 10:57 | 3 msgs do cliente, 9 da loja, 0 do robô
+
+--- 22/09/2026 (Tue) ---
+[10:32] LOJA: *Josy:*
+OI
+[10:33] LOJA: *Josy:*
+Bom dia!
+[10:33] LOJA: *Josy:*
+205/70/15
+[10:33] CLIENTE: Bom Dia.
+[10:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:34] CLIENTE: 205 70 15
+[10:35] LOJA: [foto]
+[10:35] LOJA: [foto]
+[10:38] LOJA: [foto]
+[10:39] CLIENTE: [áudio] "Luzi, eu gostei do pneu. Deixa eu te falar, eu vou agora à tarde, eu vou decidir se eu vou aí amanhã de manhã, entendeu? Vou ver o que que eu faço aqui, vou arrumar alguém para ir comigo. Ou eu vou na loja e eu te peço o link de pagamento dele, que aí eu te pago pelo link, tá bom? Agora à tarde eu volto a entrar em contato com você. E eu queria saber que horas que abre a loja aí ou no Gama, Novo Gama."
+[10:57] LOJA: [áudio] "Sr. Ivanilson, eu só não gero link de parcelamento, tá? Se o senhor preferir, eu mando esses pneus para o novo Gama que fica mais perto do senhor, sem problema algum, tá, jóia? Ao invés do senhor ter que se deslocar até aqui, ainda mais, né, que o senhor está meio adoentado, eu mando para o novo Gama sem problemas, tá, jóia? Aí só não gera link de parcelamento, mas o senhor pode passar o cartão lá na hora, da maneira que o senhor combinar aqui comigo, que o senhor vai falar, olha, eu quero parcelar em tantas, eu deixo tudo alinhado para o senhor chegar lá na borracharia e concluir o atendimento do jeitinho que nós dois combinarmos, está bem?"  {audio:midias/3EB0DB499F935584ECA57F_623870.ogg}
+[10:57] LOJA: [áudio] "Na borracharia, ela abre às 7 da manhã e fecha às 18. E aqui eu abro às 8 e fecho às 18."  {audio:midias/3EB05D73887A1F7DB47255_730031.ogg}

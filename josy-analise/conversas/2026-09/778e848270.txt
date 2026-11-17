@@ -1,0 +1,82 @@
+CONVERSA 778e848270 | contato: Icaro Silva | 19/09/2026 21:20 até 24/09/2026 09:05 | 16 msgs do cliente, 33 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[21:20] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[21:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 21/09/2026 (Mon) ---
+[08:16] LOJA: *Josy:*
+🙋🏼‍♀️
+[08:44] LOJA: *Josy:*
+Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:34] CLIENTE: [áudio] "Bom dia, tudo bem? Me diga uma coisa, seu pneu, 195-55-16, qual o valor de vocês aí?"
+[09:47] LOJA: [foto]
+[09:47] LOJA: *Josy:*
+Pneu da marca GP Premium
+[09:47] LOJA: *Josy:*
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:47] CLIENTE: [áudio] "Você tem foto desse pneu aí, pra você me mandar, por favor?"
+[09:48] CLIENTE: Esse loja fica onde
+[09:48] LOJA: *Josy:*
+Somos de Luziânia-Go
+[09:50] LOJA: *Josy:*
+E você?
+[10:33] LOJA: [foto]
+[10:33] CLIENTE: Q valor avista
+[10:35] LOJA: *Josy:*
+De R$ 289,00 por apenas *R$ 259,00* cada total dos 4 pneus R$ 1.036,00
+[10:35] CLIENTE: Vou prestar de 2
+[10:36] LOJA: *Josy:*
+Então.. R$ 518,00
+[10:38] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[10:39] CLIENTE: Valparaíso
+[10:39] LOJA: *Josy:*
+Passa aqui na nossa loja!
+[10:39] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:39] LOJA: [foto]
+[10:46] CLIENTE: Jaja vou aí
+[10:46] LOJA: *Josy:*
+Combinado.
+[11:16] CLIENTE: [documento]
+--- 22/09/2026 (Tue) ---
+[10:22] CLIENTE: [áudio] "Bom dia, Josi. Josi, o pneu é 215, 65, 16 de vocês. Estão quantos aí?"
+[10:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:23] LOJA: *Josy:*
+Bom dia!
+[10:23] LOJA: *Josy:*
+Como vai?
+[10:24] CLIENTE: 215 65 16
+[10:24] LOJA: *Josy:*
+Temos sim!
+[10:24] LOJA: *Josy:*
+Vou te mandar o preço...
+[10:25] LOJA: [áudio] "Pois nós temos sim, Icaro. Olha, dá para fazer ele aqui, se for no débito ou no Pix, por R$ 349 cada. E vindo com o carro, já faz a instalação."  {audio:midias/3EB071C66F5EB7B5619D71_598900.ogg}
+[10:26] CLIENTE: [áudio] "Tá bem, qualquer coisa amanhã a gente vai ir, que é para um vizinho meu aqui."
+[10:26] LOJA: [foto]
+[10:26] LOJA: [áudio] "Ó, esse pneu bonitão aí."  {audio:midias/3EB0E78172B2E416085A8D_106611.ogg}
+[10:27] LOJA: [foto]
+[10:28] LOJA: [áudio] "Aqui ó, se for no débito o Pix 349 caro, se for para parcelar o valor muda, mas é muito pouca coisa, tá joia?"  {audio:midias/3EB07EB464CA8EAAAB67E2_662358.ogg}
+--- 24/09/2026 (Thu) ---
+[08:58] CLIENTE: [contato] 👤 Dona Maria Viz
+[08:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:58] LOJA: *Josy:*
+Bom dia!
+[08:58] LOJA: [áudio] "Oi, Caru, bom dia. Como é que você está?"  {audio:midias/3EB08FEA9180C109623518_507174.ogg}
+[08:58] CLIENTE: [áudio] "Josi, bom dia. Entre em contato com essa senhora aí que ela tá procurando a localização aí da loja, o endereço, viu? Ela é aqui de Valparaíso. Ela já tá aí em Luziânia já. O nome dela é Dona Maria, eu vou falar pra ela aqui que você vai ter em contato com ela."
+[08:58] CLIENTE: [áudio] "Você vai comprar os pneus lá, aqueles que eu perguntei para você antes de ontem."
+[09:01] LOJA: *Josy:*
+Estou ligando para ela, e ela não atende
+[09:05] LOJA: *Josy:*
+Consegui falar com ela,
+[09:05] LOJA: *Josy:*
+Obrigada.

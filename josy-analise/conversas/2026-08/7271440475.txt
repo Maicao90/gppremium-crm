@@ -1,0 +1,7 @@
+CONVERSA 7271440475 | contato: Adilio | 29/08/2026 11:12 até 29/08/2026 12:18 | 1 msgs do cliente, 2 da loja, 0 do robô
+
+--- 29/08/2026 (Sat) ---
+[11:12] LOJA: [áudio] "Oi Adilio, tudo jóia? No decorrer da semana nós conversamos aqui a respeito de uns pneus para ti e fiquei aguardando o seu retorno para dizer se você pretende dar continuidade na negociação, assim que possível você me dá uma resposta."  {audio:midias/3EB02B08C71415EBD7E695_221153.ogg}
+[12:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:18] CLIENTE: [áudio] "Oi, bom dia, tudo bem? Eu peguei os pneus aí na sexta-feira, ontem, né? Foi ontem. Peguei ontem. Peguei com o Bruno."

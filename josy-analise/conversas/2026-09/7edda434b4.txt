@@ -1,0 +1,47 @@
+CONVERSA 7edda434b4 | contato: Nilma | 03/09/2026 11:28 até 03/09/2026 14:38 | 16 msgs do cliente, 14 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[11:28] CLIENTE: Bom dia
+[11:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:29] CLIENTE: 175/70 aro 14
+[11:29] CLIENTE: Para fiorino
+[11:33] LOJA: *Josy:*
+Nilma...você usa pneu de carga ai?
+[11:34] CLIENTE: Qual o preço dos 2 tipos ?
+[11:37] LOJA: [foto]
+[11:37] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:39] LOJA: [áudio] "Nilma, quanto que você transporta de carga na Fiorino?"  {audio:midias/3EB088140D5E3C8DE7FA14_827452.ogg}
+[11:39] CLIENTE: 500 kg
+[11:39] CLIENTE: No máximo
+[11:40] LOJA: *Josy:*
+Entendi...
+[11:41] CLIENTE: Sempre usei o normal
+[11:42] LOJA: *Josy:*
+Tem a opção de 185/65/14 que deixa a fiorino com mais estabilidade.... 289,00 se for no débito/pix Ou R$ 273,00 em *dinheiro*
+[11:45] CLIENTE: Me diga uma coisa são pneus novos ?
+[11:45] CLIENTE: Pois não quero remoudi
+[11:45] LOJA: [foto] *Josy:*
+*NOVOS*
+[11:46] CLIENTE: Vou querer 2 desse valor de 279, 00
+[11:46] LOJA: *Josy:*
+Remold
+[11:46] LOJA: *Josy:*
+NOVOS são esses
+[11:48] CLIENTE: Quero  então  vou querer 2 de 307,37
+[11:48] CLIENTE: Fica direto?
+[11:48] CLIENTE: Porque vou ai 14 horas
+[11:49] CLIENTE: É  aqui mesmo né?
+[11:49] LOJA: *Josy:*
+Isso!
+[11:49] LOJA: *Josy:*
+Isso mesmo!
+[11:50] LOJA: *Josy:*
+Não fechamos não, pode vir o horário que for bom para você!
+[11:50] CLIENTE: Ok
+[14:29] LOJA: *Josy:*
+Obrigada, Nilma...o sr Rafael, levou os pneus.
+[14:38] CLIENTE: Obrigada vc

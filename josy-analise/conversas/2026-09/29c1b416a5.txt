@@ -1,0 +1,46 @@
+CONVERSA 29c1b416a5 | contato: rafaelpelinha1313 | 11/09/2026 08:01 até 12/09/2026 08:08 | 13 msgs do cliente, 18 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[08:01] CLIENTE: Bom diaa
+[08:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:03] CLIENTE: aro 215/50/17
+[08:10] LOJA: *Josy:*
+Bom dia!
+[08:10] LOJA: [foto]
+[08:10] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:11] LOJA: *Josy:*
+Mora aqui em Luziânia, Go, mesmo?
+[08:16] CLIENTE: Qual marca desse pneu seu ai
+[08:26] LOJA: *Josy:*
+Dunlop e GP Premium
+[08:28] CLIENTE: muinto esse pneu mesmo
+[08:31] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi. Rafael, desculpa, não consegui compreender o que você quis dizer. Se você preferir, pode me mandar áudio também, certo?"  {audio:midias/3EB044D1EB34D0516A983C_14823.ogg}
+[08:32] CLIENTE: essa marca de pneu ai e boa to vendo aqui oq vou fazer ser meu orçamento vai da certo de compra esses ai
+[08:33] LOJA: [áudio] "Sim, sim. Ambas as marcas são muito boas. E os pneus GP Premium, que são esses de 329, são os pneus mais vendidos que eu tenho justamente por conta da qualidade. O preço é muito bom e ele vai ter a mesma qualidade do Dunlop. Então, é o pneu mais vendido que eu tenho, Rafael. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0E98820939EAB4273FE_459366.ogg}
+[08:36] CLIENTE: [áudio] "Não, eu moro em Malajó, daqui para onde eu moro, para Luziânia dá uns 100 km ainda."
+[08:37] LOJA: [áudio] "Ah, mas de todo modo ainda é próximo. Marajó é aqui próximo à Cidade Ocidental, é isso?"  {audio:midias/3EB0E2C577EDE3E0FAB388_871134.ogg}
+[08:38] CLIENTE: [áudio] "Não, tem essa Marajó aí, tem a outra aqui onde é que eu moro, que é município de Cristalina, no sentido Unaí. Depois de São Sebastião dá 50 km onde é que a gente mora."
+[14:16] CLIENTE: Oi boa tarde
+[14:16] LOJA: [áudio] "Rafael, tudo jóia!"  {audio:midias/3EB0960D73706464EC8EAC_559810.ogg}
+[14:17] CLIENTE: Qual marca desse pneu de 329
+[14:17] LOJA: *Josy:*
+GP Premium
+[14:17] LOJA: [áudio] "Esse pneu é o pneu mais vendido que eu tenho. O pessoal aí de Cristalina conhece muito bem esse pneu. Não sei se você sabe quem é o Freytag, ele é uma referência aí de pessoa que conhece os pneus da nossa empresa."  {audio:midias/3EB0737D7F8B47C9289F78_370606.ogg}
+[14:19] CLIENTE: Me.manda a localização da loja ai pra mim por favor ai amanhã cedo vou desse pra ir
+[14:19] LOJA: *Josy:*
+Claro, vou enviar agora mesmo.
+[14:19] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:20] LOJA: [foto]
+--- 12/09/2026 (Sat) ---
+[07:40] CLIENTE: Bom diaa
+[07:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:40] CLIENTE: a loja abre ai que horas
+[08:07] LOJA: [áudio] "Oi, Rafael, bom dia, tudo bom? Às 8."  {audio:midias/A5896B8184AC04C6F76E61CF23841B00_671713.ogg}
+[08:07] CLIENTE: [áudio] "Então tá bom, eu tô aqui no Valparaíso. Tudo é sempre aí, gato. Beleza?"
+[08:08] LOJA: Perfeito

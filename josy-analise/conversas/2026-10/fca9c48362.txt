@@ -1,0 +1,64 @@
+CONVERSA fca9c48362 | contato: Arnobio | 13/10/2026 18:10 até 22/10/2026 11:18 | 12 msgs do cliente, 25 da loja, 4 do robô
+
+--- 13/10/2026 (Tue) ---
+[18:10] CLIENTE: Olá
+[18:10] CLIENTE: Ta quanto o pneu 14/175/70
+[18:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 14/10/2026 (Wed) ---
+[08:04] LOJA: Bom dia!
+[08:05] LOJA: [foto]
+[08:05] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:02] CLIENTE: [áudio] "O mais barato é esse aí, 279 ou tem outros mais baratos?"
+[10:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:11] LOJA: [áudio] "Eu tenho aqui na medida 165,7014 por 239 e tem também na medida 175,65 por 249."  {audio:midias/3EB0A315DC90B7B2C60F73_988637.ogg}
+--- 20/10/2026 (Tue) ---
+[12:15] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[12:15] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[12:15] CLIENTE: Ta quanto o pneu  175/70 ,  14
+[12:16] LOJA: [foto]
+[12:16] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:14] LOJA: [foto]
+[15:14] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 21/10/2026 (Wed) ---
+[12:03] ROBÔ: 🙋🏼‍♀️
+[12:14] CLIENTE: [áudio] "Encontrei essa mesma medida aí de R$ 235,00 na Moniz. Vocês conseguem fazer o mesmo preço?"
+[12:14] ROBÔ: Não consegui ouvir seu áudio direito por aqui. Pode me escrever o que você precisa? 😊
+[12:16] LOJA: Deixa eu arrumar o vo,ume aqui
+[12:17] CLIENTE: [áudio] "É o que eu encontrei na Muniz, aí mesmo, Luziana, 235. Eu já comprei pneu com eles, só que fica lá no final, fica muito longe. Eu não queria ir lá. Não sei se tem algum pneu desse valor aí."
+[12:18] LOJA: [áudio] "Então, o senhor diz que já comprou lá, mas o que acontece? Que eu tenho recebido com muita frequência, as pessoas que dizem que vão lá para comprar, eles estão mudando a estratégia de atendimento, né? Se o cliente for apenas comprar os pneus e levar para montar em outro lugar, eles já não vendem ou vão dizer que não tem o pneu. E aí, ainda tem a questão de eles ficarem inventando serviços, tá? Então, não sei se realmente vai proceder dessa maneira aí."  {audio:midias/3EB0E6E73648DD1E36D50D_74039.ogg}
+[12:22] CLIENTE: [áudio] "Quando eu comprei dois pneus com eles lá, foi normal, igual as outras também, eles oferecem o serviço deles, falam que tem isto, tem isto, tem isto para arrumar, e você arruma quem quer. Não sei se tem algum pneu aí com mais ou menos um valor deles aí, que eu só não gostei porque fica lá no final, Luziano, lá no finalzinho mesmo."
+[12:23] LOJA: [áudio] "Eu vou ter um 7565 14, por R$ 249,00, se for no débito ou no Pix, ou R$ 235,00, se for em dinheiro."  {audio:midias/3EB0BFD4A4A3F1A06358F2_1849.ogg}
+[15:23] ROBÔ: 🙋🏼‍♀️
+[15:27] CLIENTE: [áudio] "E o 7570? Tá quanto ele aí? Mais em conta."
+[15:28] LOJA: R$ 279,00 se for no débito/pix  ou  265,00 em *dinheiro*
+[15:29] CLIENTE: Qual marca
+[15:29] LOJA: GP PREMIUM
+[15:32] CLIENTE: [áudio] "Se for 150, eu vou levar 2."
+[15:32] LOJA: [áudio] "Não, não, esse desejo é meu preço final e eu já coloco o pneu para você."  {audio:midias/3EB005FEBE468A2F01D4BA_69718.ogg}
+[17:54] LOJA: /
+[17:54] LOJA: [áudio] "Deixa eu só te falar aqui, no preço de 250 reais, eu consigo fazer a medida 175-65-14, tá bom?"  {audio:midias/3EB0A3C4A06CA7E7130E46_990245.ogg}
+[17:55] LOJA: [áudio] "Você é daqui de Luziânia, Goiás?"  {audio:midias/3EB0E2B3B4A34DA0A3A3C1_998930.ogg}
+--- 22/10/2026 (Thu) ---
+[08:02] ROBÔ: 🙋🏼‍♀️
+[10:03] LOJA: [áudio] "Olá, bom dia, tudo jóia? Eu vou te mandar nossa localização para você vir aqui, tá bom?"  {audio:midias/3EB0A640AA1B703020535E_525345.ogg}
+[10:03] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:04] LOJA: [foto]
+[11:18] CLIENTE: [áudio] "Bom dia. Não, eu teria que sair uns 75, 70 mesmo. Se tiver desse preço aí, duas unidades eu conseguiria."

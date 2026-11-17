@@ -1,0 +1,108 @@
+CONVERSA d25ca2946e | contato: Anderson Gualberto | 17/10/2026 10:39 até 22/10/2026 11:56 | 29 msgs do cliente, 50 da loja, 6 do robô
+
+--- 17/10/2026 (Sat) ---
+[10:39] LOJA: Bom dia, bom dia!
+[10:39] LOJA: Anderson, sou a Josi... Charles me pediu para falar contigo.
+[10:39] LOJA: Como poss ajudar?
+[12:01] CLIENTE: Olá tudo bem?
+[12:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:01] LOJA: Oi!
+[12:01] LOJA: Jóia!
+[12:01] CLIENTE: Qual o valor do pneu 205 65 16
+[12:04] LOJA: Qual é seu carro e precisa de quantos pneus?
+[12:05] CLIENTE: Megane
+[12:05] CLIENTE: Preciso dos 4
+[12:08] LOJA: Já usa essa medida?
+[12:08] LOJA: Pois o original é 205/55/16 podendo chegar até 205/60
+[12:08] LOJA: [foto]
+[12:10] LOJA: Pneus aqui da GP Premium na medida 205/55/16 estão por 289,00 a unidade a vista e 205/60/16 por R$ 329,00 a unidade a visat.
+[12:13] CLIENTE: [áudio] "Ah tá, entendi. Eu uso 60, mas o negócio é que meu carro é baixo. Eu vou ver que aí na segunda eu devo entrar em contato com você de novo, tá bom? Esse é o menor preço."
+[12:13] LOJA: [áudio] "É que o 65, ele, bem provavelmente, que ele vai raspar aí, tá?"  {audio:midias/3EB025E8C0F519C5AC7DE9_128659.ogg}
+[12:13] CLIENTE: [áudio] "Ah, tá. Entendi."
+[12:14] CLIENTE: [áudio] "Mas eu tenho quase certeza que o último que eu comprei aí, que o último que eu comprei foi aí com vocês. Eu acho que foi o 60, eu vou até ali confirmar ali no carro."
+[12:15] LOJA: [áudio] "Me fala qual que é o seu CPF."  {audio:midias/3EB01AA134E012429D33F8_957641.ogg}
+[12:16] CLIENTE: 72679417100
+[12:16] CLIENTE: [áudio] "Ah não, o que está aqui é 55 mesmo, mas acho que dá para colocar os 60, não dá não?"
+[12:17] CLIENTE: [foto]
+[12:17] LOJA: [áudio] "É o que eu ia dizer. É o 205,55. Caramba! Tava vendo aqui sua compra. Foi em 2022."  {audio:midias/3EB0395B63DBE0135AC295_212345.ogg}
+[12:19] CLIENTE: [áudio] "Pois é, hein? Caramba! Show de bola, show de bola. O pneu é bom mesmo. Aí veio para mim, eu ia ver com o Chaves, mas veio para mim qual o menor valor que dá para fazer nos quatro. E eu queria ver se tem alguma revenda aqui por Taguatinga ou no Plano, para eu não precisar ir em Luziânia, porque eu moro em Braslândia."
+[12:20] LOJA: [áudio] "Anderson, eu posso mandar os pneus ali para o novo Gama para você."  {audio:midias/3EB0422FA0998155AA0CEB_976216.ogg}
+[12:38] CLIENTE: [áudio] "Aí, você consegue mandar para onde? Hoje a loja lá fica aberta até que horas? Queria ver se dá já para trocar esses pneus."
+--- 19/10/2026 (Mon) ---
+[12:14] LOJA: *Josy:*
+Bom dia!
+[12:14] LOJA: *Josy:*
+Bom dia!
+[12:15] LOJA: [áudio] "Oi Anderson, tudo jóia? Nós estávamos conversando no sábado, né, a respeito dos pneus e olha, eu posso mandar os pneus para o novo Gama, tá? Tem uma borracharia que me ajuda bastante nessas horas e eu posso mandar os pneus para lá, se for de seu interesse."  {audio:midias/3EB023F6F4C0EE5A3886DA_355899.ogg}
+--- 20/10/2026 (Tue) ---
+[09:10] LOJA: *Josy:*
+Bom dia!
+[09:13] CLIENTE: [áudio] "Oi Jôs, bom dia, tudo bom? Qual o valor que tinha ficado mesmo esse pneu?"
+[09:13] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu NOME
+👉 A MEDIDA dos pneus que você precisa.
+[09:14] LOJA: [foto]
+[09:15] LOJA: [áudio] "Anderson, o 205, 55, 16, se for no débito, Pix, ele é 289. Para parcelar, muda o valor, mas é bem pouca coisa. Como que fica bom para você?"  {audio:midias/3EB013B97FE786CFED8204_18987.ogg}
+[09:25] CLIENTE: [áudio] "Eu estou querendo pagar à vista. O que você consegue melhorar aí? Vê com o Charles o que dá para melhorar um pouco mais aí."
+[09:25] LOJA: *Josy:*
+Consegue sacar *dinheiro* ?
+[09:26] CLIENTE: [áudio] "Pior que eu não consigo, porque é banco digital, né? Esses bancos digitais é complicado."
+[09:28] LOJA: *Josy:*
+Vou ver aqui
+--- 21/10/2026 (Wed) ---
+[09:51] LOJA: Oi!
+[09:57] CLIENTE: Olá bom dia
+[09:57] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[09:59] LOJA: [áudio] "Olá, bom dia. Tudo bem, Anderson? Eu te mandei uma mensagem aí, mas como a nossa internet caiu, eu creio que não tenha chegado para ti. Vou mandar de novo."  {audio:midias/3EB04690F0990F393EDD11_320186.ogg}
+[10:00] LOJA: [foto]
+[10:00] LOJA: Consegui um desconto para ti!
+[10:00] LOJA: Se for a vista a unidade sai por R$ 275,00 cada
+[13:01] ROBÔ: 🙋🏼‍♀️
+[13:14] CLIENTE: Olá tudo bem
+[13:14] ROBÔ: Oi, tudo bem? Em que posso te ajudar?
+[13:15] LOJA: [áudio] "Oi, tudo bom?"  {audio:midias/3EB0E50FABBEF710C7395F_799610.ogg}
+[13:16] LOJA: [áudio] "Anderson, desse jeito aí te ajuda, que se te ajudar, nós já vamos dando continuidade aqui na negociação, tá?"  {audio:midias/3EB0F4317F13C7628544FF_5350.ogg}
+[13:28] CLIENTE: [áudio] "Ajuda, ajuda. Eu só estou vendo aqui como é que eu vou fazer para ir buscar, entendeu? Você consegue deixar lá no Gama, aonde ali para mim?"
+[13:28] ROBÔ: Oi! Não consegui ouvir seu áudio direito por aqui. 😕
+[13:28] ROBÔ: Pode me escrever o que você precisa? Se puder, já me manda a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro.
+[14:39] LOJA: [áudio] "Eu consigo deixar, Anderson, no novo Gama? Aí, você me diz pra quando que você precisa, que eu ajeito pra você, tá? E eu tinha em caminho também a localização."  {audio:midias/3EB057B26DEFBED261D8DD_400577.ogg}
+[14:57] CLIENTE: [áudio] "Não, beleza. Provavelmente é amanhã. Quero ver se eu pego amanhã lá. Tá bom?"
+[14:58] LOJA: [áudio] "Então, Joia, deixa eu ver aqui como é que está a logística, tá?"  {audio:midias/3EB074410AA09D76AC3796_666147.ogg}
+[14:58] LOJA: [áudio] "E vai ser à vista mesmo ou você vai parcelar?"  {audio:midias/3EB0401904381292EABF99_439646.ogg}
+[14:58] CLIENTE: [áudio] "Vai ser à vista, tá bom?"
+[15:07] LOJA: [áudio] "Anderson, eu vou te mandar aqui a localização e aí chegando lá você vai procurar pelo Lázaro, que eu já providenciei o envio dos pneus 205-55 lá pra ti, tá bom?"  {audio:midias/3EB0925FDAD52E98AD73FD_276799.ogg}
+[15:09] LOJA: [localização] -16.0680034,-48.0643739
+[15:09] LOJA: Borracharia popular, no Lunabel. pode procurar pelo Lázaro que ele já está ciente
+[15:09] LOJA: 4 pneus 205/55/16
+[15:22] CLIENTE: [áudio] "Ah, beleza, beleza. Eu vou buscar amanhã, tá bom? Aí você já manda aí o Pix, já vou te mandar aí o valor."
+[15:22] LOJA: Cobinado!
+[18:26] ROBÔ: 🙋🏼‍♀️
+[18:29] CLIENTE: [áudio] "Opa doutora, tudo bom?"
+--- 22/10/2026 (Thu) ---
+[08:36] LOJA: [áudio] "Opa, doutor! Bom dia! Tudo já com você?"  {audio:midias/3EB0FFD579CD6CDB9B3923_413869.ogg}
+[08:39] CLIENTE: Olá bom dia!! Bão demais e vc?
+[08:41] LOJA: Ba=om, também , graças a Deus!
+[08:42] LOJA: Olha...se ficar chegando mensagem , desconsidere está bem, o whatsapp está com instabilidade, e desconfigueou todo meu atendimento.
+[08:44] CLIENTE: Ok kkkk
+[08:45] CLIENTE: Vc já conseguiu mandar os pneus lá ?
+[08:45] LOJA: Sim, mandei sim!
+[08:46] LOJA: Mandei ontem a tarde!
+[08:47] CLIENTE: [áudio] "Ah, não, beleza, beleza. Vou lá pegar mais tarde, então. É... Aí você manda aí o Pix, né, pra eu fazer o pagamento."
+[08:48] LOJA: [áudio] "Você pode fazer o Pix lá, o rapaz gera o QR Code para você, fica tranquilo."  {audio:midias/3EB08986356EE15DF3ACE8_78105.ogg}
+[08:48] CLIENTE: A ta blz
+[08:48] CLIENTE: Lá é uma borracharia né?
+[08:49] LOJA: isso
+[08:50] CLIENTE: Então já vou conseguir trocar os pneus la
+[08:52] LOJA: Ok
+[11:56] ROBÔ: 🙋🏼‍♀️

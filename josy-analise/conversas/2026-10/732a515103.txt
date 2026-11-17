@@ -1,0 +1,32 @@
+CONVERSA 732a515103 | contato: Vinicius | 16/10/2026 11:48 até 16/10/2026 17:21 | 12 msgs do cliente, 14 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[11:48] CLIENTE: Boa tarde
+[11:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:48] CLIENTE: 265/70R17
+[11:49] LOJA: Olá!
+[11:49] LOJA: Mora aqui em Luziânia-Go, mesmo?
+[11:49] CLIENTE: Fazenda
+[11:50] LOJA: Pode ser 265/65/17?
+[12:17] LOJA: 🙋🏼‍♀️
+[12:25] CLIENTE: Queria o 70
+[12:25] CLIENTE: Mas se não tiver
+[12:25] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[12:25] LOJA: Está em busca de alguma marca especifica?
+[12:26] CLIENTE: Não
+[12:26] CLIENTE: Preferência preço
+[12:26] CLIENTE: Baixo
+[16:41] CLIENTE: Qual o valor dos pneu 265/65r17
+[16:46] LOJA: Consegui um retorno de 3 marcas referente a medida 265/70/17
+[16:46] LOJA: [foto]
+[16:46] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:47] CLIENTE: Tá bom
+[16:47] CLIENTE: E o 265/65r17
+[16:48] LOJA: [foto]
+[16:48] LOJA: a pronta entrega temos as opções acima.
+[17:16] LOJA: [áudio] "O 265-65-17, eu vou ter aqui o pneu da marca Maxx. A unidade está por R$ 684,00. Esse é um modelo AT. E tem também o 265-65-17 da marca GP Premium, que está por apenas R$ 559,00 à vista."  {audio:midias/3EB02BB002291BA977FC5F_649867.ogg}
+[17:16] LOJA: [áudio] "Quer que eu te encaminhe à nossa localização?"  {audio:midias/3EB0B5A5B2594B0A673060_61559.ogg}
+[17:21] CLIENTE: [áudio] "É, não, beleza. Por enquanto não precisa da localização, não? Obrigado."

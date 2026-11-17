@@ -1,0 +1,54 @@
+CONVERSA 5708cec3fc | contato: Socorro bem Pres. Jesus | 27/08/2026 13:10 até 27/08/2026 16:36 | 12 msgs do cliente, 19 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[13:10] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[13:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:11] CLIENTE: 195/60 R16
+[14:25] LOJA: *Josy:*
+Boa tarde!
+[14:26] LOJA: [foto]
+[14:26] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:00] CLIENTE: qual a marca?
+[15:01] LOJA: [foto] *Josy:*
+Linglong
+[15:02] LOJA: *Josy:*
+Neste exato momento vou ter apenas 2 pneus.
+[15:30] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[15:32] CLIENTE: sim
+[15:33] LOJA: *Josy:*
+Que bacana!
+[15:33] LOJA: *Josy:*
+Essa opção te atende?
+[15:36] CLIENTE: então!
+[15:37] CLIENTE: está um pouco fora do meu orçamento
+[15:37] CLIENTE: esses valores são a base de troca?
+[15:39] LOJA: *Josy:*
+Não...não são a base de troca.
+[15:41] CLIENTE: eu chamo de classe,  é A, B, C,
+[15:43] CLIENTE: como fica a troca dos pneus com alinhamento e balanceamento?
+faz um preço melhor!
+[15:43] LOJA: [foto]
+[15:44] LOJA: *Josy:*
+Você é daqui de Luziânia, mesmo?
+[15:47] LOJA: *Josy:*
+Qual é seu carro?
+[15:51] CLIENTE: sandero stepway 2012
+[15:54] LOJA: *Josy:*
+* Balanceamento = 30,00 (por pneu a ser montado)
+* Alinhamento = 90,00 (Alinhamento de Direção)
+[15:55] CLIENTE: nesse não
+[15:56] CLIENTE: depois vou da uma passada ai
+[16:06] LOJA: *Josy:*
+Venha sim!
+[16:06] LOJA: *Josy:*
+Qual é se nome mesmo?
+[16:36] LOJA: *Josy:*
+Bem... vou encerrar seu atendimento, caso precise novamente é só chamar . Obrigada 👋🏻
+[16:36] LOJA: [foto]

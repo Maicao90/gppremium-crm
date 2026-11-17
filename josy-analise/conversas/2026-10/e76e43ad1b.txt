@@ -1,0 +1,20 @@
+CONVERSA e76e43ad1b | contato: Pedro Henrique | 05/10/2026 08:52 até 05/10/2026 09:41 | 4 msgs do cliente, 6 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[08:52] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[08:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:56] CLIENTE: 4 pneus para Ranger
+
+Medida: 235x75R15
+[09:02] LOJA: [áudio] "Oi Pedro, bom dia, tudo bem? Sim, nós temos aqui sim. Eu terei o pneu da marca Conforcer. A unidade está por R$ 728,00 para o pagamento à vista. E você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0145D79E99C31930A6A_439837.ogg}
+[09:08] LOJA: [foto]
+[09:08] LOJA: *Josy:*
+
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:08] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:08] LOJA: [foto]
+[09:41] CLIENTE: [contato] 👤 Mandaka Compras
+[09:41] CLIENTE: Me manda as informações nesse número.

@@ -1,0 +1,6 @@
+CONVERSA 604fe32918 | contato: Gervesson | 28/08/2026 08:46 até 28/08/2026 08:46 | 1 msgs do cliente, 1 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[08:46] CLIENTE: Bom dia tudo bem
+[08:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

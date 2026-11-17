@@ -1,0 +1,77 @@
+CONVERSA bc6d30c018 | contato: Thais. | 23/09/2026 16:36 até 24/09/2026 09:03 | 20 msgs do cliente, 30 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[16:36] CLIENTE: Boa tarde
+[16:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:36] CLIENTE: Vocês tem o pneu 225/50 17
+[16:38] LOJA: *Josy:*
+Boa tarde!
+[16:38] LOJA: *Josy:*
+Temos sim!
+[16:38] LOJA: [foto]
+[16:39] LOJA: *Josy:*
+Pneu 225/50/17 98w na305 sunny, a unidade a vista está por R$ 524,00
+[16:39] CLIENTE: Só tem importado?
+[16:39] LOJA: *Josy:*
+No momento sim!
+[16:39] CLIENTE: Então deixa
+[16:39] CLIENTE: Obg
+[16:40] LOJA: *Josy:*
+Nacionais estão sendo por encomenda, se quiser posso verificar se nossos distribuidores tem.
+[16:40] LOJA: *Josy:*
+Está em busca de qual marca?
+[16:40] CLIENTE: Da marca de vocês mesmo
+[16:40] LOJA: *Josy:*
+Ah, sim!
+[16:40] LOJA: *Josy:*
+Thais..qual é seu carro?
+[16:41] CLIENTE: Fusion
+[16:42] LOJA: *Josy:*
+Certo... tenho a promoção dos pneus GP Premium na medida 215/55/17 que dá para usar perfeitamente em seu carro.
+[16:43] LOJA: *Josy:*
+Ele está na promoção compre 3 e leve 4, e deixa o carro mais economico.
+[16:43] LOJA: [foto]
+[16:43] LOJA: *Josy:*
+Exemplo digamos que seu pagamento seja a viista a  unidade  é  R$ 395,00 x 3 pneus = R$ 1.185,00 por esse preço você vai levar os 4
+[16:45] LOJA: [áudio] "Thais, você está precisando de quantos pneus 225-50?"  {audio:midias/3EB0D9DFCA57B7FEE4C3E3_168038.ogg}
+[16:45] LOJA: [áudio] "Que no momento eu acho que eu consigo duas unidades para você, porque essa opção, ela está em falta no momento, mas eu creio que duas unidades eu consigo aqui para você."  {audio:midias/3EB0F3DD63FEFED95324A6_243989.ogg}
+[16:47] CLIENTE: Seria só 1 mesmo
+[16:48] LOJA: *Josy:*
+Certo... consigo para você!
+[16:48] LOJA: *Josy:*
+Passa aqui que horas?
+[16:49] LOJA: [foto]
+[16:52] LOJA: *Josy:*
+Posso reservar o pneu para você?
+[16:57] CLIENTE: Só consigo amanhã à tarde
+[16:57] CLIENTE: Pode sim
+[16:57] LOJA: Ok!
+[16:57] CLIENTE: Quando tiver indo eu te mando mensagem
+[16:57] LOJA: *Josy:*
+Combinado, Thais!
+[17:19] LOJA: [foto]
+--- 24/09/2026 (Thu) ---
+[08:44] CLIENTE: Bom dia
+[08:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:44] CLIENTE: O pneu já está aí?
+[08:45] LOJA: *Josy:*
+Bom dia!
+[08:45] LOJA: *Josy:*
+Está sim!
+[08:54] CLIENTE: Daqui a pouco chego aí
+[08:54] LOJA: *Josy:*
+Perfeito!
+[08:55] CLIENTE: Já posso fazer o pagamento por aqui?
+[08:55] CLIENTE: Que passo pra buscar
+[08:55] CLIENTE: Rapidão
+[08:55] LOJA: *Josy:*
+Pode sim! vou te mandar a chave Pix
+[08:55] LOJA: *Josy:*
+24.289.955/0001-79
+[08:55] LOJA: *Josy:*
+Já instala o pneu...
+[09:02] CLIENTE: [documento]
+[09:03] CLIENTE: CPF para garantia
+[09:03] CLIENTE: 70231675100

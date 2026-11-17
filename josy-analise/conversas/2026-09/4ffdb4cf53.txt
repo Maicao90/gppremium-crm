@@ -1,0 +1,9 @@
+CONVERSA 4ffdb4cf53 | contato: Pablo 🇧🇷⚔️🛡️ | 11/09/2026 23:18 até 12/09/2026 08:09 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[23:18] CLIENTE: Quero cotar o pneu 165/70 R14 GP Premium.
+[23:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[23:19] CLIENTE: 165.70.14
+--- 12/09/2026 (Sat) ---
+[08:09] LOJA: [áudio] "Olá, bom dia. Tudo bem? Eu sou a Josi e eu tenho aqui 100 pneus da marca GP Premium. A unidade está por apenas R$ 239,00. Seu pagamento foi no débito ou no Pix. E você mora aqui em Luziânia, Goiás?"  {audio:midias/A5C6D6029DC96EC234D9251E43CC57A1_222993.ogg}

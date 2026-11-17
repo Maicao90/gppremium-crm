@@ -1,0 +1,11 @@
+CONVERSA 6f5a2de51b | contato: Valdemar | 18/08/2026 08:31 até 18/08/2026 08:44 | 4 msgs do cliente, 3 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[08:31] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[08:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:31] CLIENTE: 265.70.16
+[08:32] LOJA: [áudio] "Oi, bom dia, tudo bem com você? Eu sou a Josi. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0C054108998CF652C3C_474411.ogg}
+[08:32] CLIENTE: [áudio] "Fogo do Interior, t'es peraí?"
+[08:33] LOJA: [áudio] "Ah, sim, perfeito. É porque, justamente, eu vi que o seu deveria de outra localidade e nós não trabalhamos com entregas."  {audio:midias/3EB0F74F7BE27F5B84F0AC_350047.ogg}
+[08:44] CLIENTE: Ok

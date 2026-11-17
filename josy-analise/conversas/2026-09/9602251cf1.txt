@@ -1,0 +1,45 @@
+CONVERSA 9602251cf1 | contato: Tio Cleytin 🚎👍🏿 | 19/09/2026 15:10 até 21/09/2026 10:54 | 9 msgs do cliente, 15 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[15:10] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Boa tarde
+[15:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:11] CLIENTE: 215/75R17.5
+205 /75R16
+--- 21/09/2026 (Mon) ---
+[08:30] LOJA: *Josy:*
+Bom dia!
+[08:30] LOJA: *Josy:*
+Não trabalhamos com 215/75r17,5
+[08:33] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Blz muito obrigado
+[08:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:34] CLIENTE: Bom dia
+[08:35] LOJA: *Josy:*
+205/75/16C 👇🏻
+[08:35] LOJA: [foto]
+[08:35] LOJA: *Josy:*
+
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:35] LOJA: [áudio] "Já o 205, 75, 16, eu tenho aqui sim, tá? Ele é da marca Surni, a unidade está por 516 reais à vista e eu só tenho os dois últimos no momento. Você é daqui de Luziânia?"  {audio:midias/3EB08A56B098370903E3BF_642468.ogg}
+[08:41] CLIENTE: Sou sim
+[09:00] LOJA: *Josy:*
+E você precisa de quantos pneus?
+[09:19] CLIENTE: [áudio] "Eu tô fazendo uma análise aqui, aí qualquer coisa eu te mando mensagem, tá bom, ou eu vou? Obrigado."
+[09:19] CLIENTE: [áudio] "Porque o Emergência mais era só o do micro. Aí, esse da Havan, eu queria deixar guardado, né? Com menos uns dois. Mas eu vou ver o do micro primeiro, tá bom?"
+[09:20] LOJA: [áudio] "Sim, entendi."  {audio:midias/3EB0228452239D4BD5F9E3_558741.ogg}
+[09:21] LOJA: [áudio] "Olha, eu não trabalho com esse pneu aqui, mas eu vou fazer o seguinte, eu vou contar com os meus distribuidores, aí só vou aguardar a resposta dele, mas se eles tiverem, chega em 3 dias úteis, tá bom? Só vou verificar aqui, tipo, as três."  {audio:midias/3EB0D3DDC74B0E23300A69_408600.ogg}
+[09:40] CLIENTE: [áudio] "Beleza, obrigado. Compra no CNPJ, tem a mesma coisa? Ou eu consigo um desconto melhor?"
+[09:46] LOJA: [áudio] "É o mesmo preço."  {audio:midias/3EB0B9EB7C59C6B904C584_875200.ogg}
+[10:43] LOJA: [foto]
+[10:45] LOJA: *Josy:*
+Cleytom.... 215/75R 17,5 somente por encomenda
+[10:46] LOJA: *Josy:*
+Marca Hifly 16 lonas liso 
+$ 8400,00 *a unidade a  vista*
+[10:54] CLIENTE: [figurinha]

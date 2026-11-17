@@ -1,0 +1,20 @@
+CONVERSA 629139aa96 | contato: : | 26/09/2026 07:33 até 29/09/2026 12:35 | 3 msgs do cliente, 7 da loja, 0 do robô
+
+--- 26/09/2026 (Sat) ---
+[07:33] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[07:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:37] CLIENTE: Qual valor do pneu 165/70 aro 14
+[08:13] LOJA: *Josy:*
+Bom dia!
+[08:14] LOJA: *Josy:*
+Temos a pronta entrega, pneus da marca GP Premium e estão em oferta!
+[08:14] LOJA: *Josy:*
+De R$ 279,00 por apenas R$ 239,00
+[08:14] LOJA: [foto]
+[08:16] CLIENTE: Pneu novo ou Remold?
+[08:17] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Não vi aqui seu nome, mas enfim. Esse é um pneu ecológico que nós fazemos, tá? Ele vai entrar na categoria de remodelagem Premium, que não tem nada a ver com os pneus que são remoldes, tá? Ele é um pneu que tem 2 anos de garantia, com questão da quilometragem, roda 60 mil km."  {audio:midias/3EB05EBE7BE3D7FD1EB230_540563.ogg}
+--- 29/09/2026 (Tue) ---
+[12:35] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? No final de semana nós conversamos aqui a respeito dos pneus para o seu carro e gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB037EE48D6EA10534888_190843.ogg}

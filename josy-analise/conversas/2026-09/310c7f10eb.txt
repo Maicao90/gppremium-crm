@@ -1,0 +1,53 @@
+CONVERSA 310c7f10eb | contato: Wilker | 18/09/2026 09:18 até 23/09/2026 15:24 | 10 msgs do cliente, 26 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[09:18] CLIENTE: Olaa
+[09:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:19] LOJA: *Josy:*
+Oi!
+[09:19] LOJA: *Josy:*
+Como você está?
+[09:20] LOJA: [áudio] "Tudo já? Eu e o que? Como é que você está?"  {audio:midias/3EB01614FF79703F24BB9C_997840.ogg}
+[09:21] CLIENTE: Bom dia, queria ver os pneus 185 65 14
+[09:21] LOJA: [áudio] "Wilker, continuam o mesmo preço, tá? Eu vou mandar aqui pra você o do Pneus GP Premium, né, que você conhece, já usa, vou colocar aqui pra você."  {audio:midias/3EB0632500A3A689211B9D_917207.ogg}
+[09:22] LOJA: [foto]
+[09:22] LOJA: [áudio] "Olha, se for no débito ou no Pix, é R$ 289,00, tá? Se for para parcelar, nós parcelamos em até 10 vezes para você, mas nós podemos negociar um parcelamento que fica legal aí para ti, tá joia?"  {audio:midias/3EB010B52F32479DF651F2_568262.ogg}
+[09:29] CLIENTE: O valor está diferente akka
+[09:30] LOJA: *Josy:*
+Não está não.
+[09:31] CLIENTE: Entendi o erro
+[09:31] LOJA: *Josy:*
+Vez passada você me pediu 175/65/14
+[09:31] CLIENTE: É as medidas
+[09:31] LOJA: [foto]
+[09:31] CLIENTE: Uhum
+[09:31] LOJA: *Josy:*
+Dever ser isso
+[09:31] CLIENTE: Putz
+[09:31] LOJA: [foto]
+[09:51] LOJA: [áudio] "Pois é, Wilker, aí, vez passada, né, nós conversamos lá no mês de julho. Você pediu aqui para mim o orçamento de 1,7565,14, né, e faço os pneus do mesmo jeitinho que nós tínhamos conversado anteriormente. Aí, hoje, você me pediu 1,8565,14, né, aí ele já é 289, se for no débito ou no Pix."  {audio:midias/3EB03AF96A7CD31651B91A_531222.ogg}
+[09:54] CLIENTE: Entendi
+[09:55] LOJA: [áudio] "Mas igual eu te falei, se você estiver precisando do 185-65, nós podemos negociar algo que fique bom para você, tá já? Fica tranquilo."  {audio:midias/3EB06540897F2A9EC161EB_288306.ogg}
+[09:55] LOJA: [áudio] "Você pretende vir aqui ainda hoje, amanhã? Como está a sua agenda?"  {audio:midias/3EB0E7269D8F3F333665B5_662472.ogg}
+[09:59] CLIENTE: Prentendia ir amanhã no primeiro horário
+[09:59] CLIENTE: Iria dividir esse valor em 5
+[10:05] LOJA: *Josy:*
+Pois venha!
+[10:06] LOJA: [áudio] "Meu quer, amanhã nós estaremos atendendo de 8 da manhã até o meio-dia, tá?"  {audio:midias/3EB0799A45FDD913E2B25F_157727.ogg}
+[10:09] LOJA: *Josy:*
+175/65/14 em 5 x  fica por R$ 261,32, faço para você por R$ 255,88
+[10:10] LOJA: *Josy:*
+185/65/15 em 5 x R$ 308,25 faço para você por R$ 301,00
+[10:10] LOJA: *Josy:*
+para te ajudar.
+[10:19] LOJA: *Josy:*
+Fica bom esse preço?
+--- 23/09/2026 (Wed) ---
+[14:12] LOJA: [áudio] "Oi, Will, que é tudo joia? Nós conversamos alguns dias atrás aí a respeito dos pneus para o seu carro e gostaria de saber se você pretende seguir com a negociação. E aí, consegue me dar um retorno?"  {audio:midias/3EB0A7774D6E7362B87550_466975.ogg}
+[15:23] LOJA: *Josy:*
+Vou te encaminhar a nossa localização, está bem!
+[15:23] LOJA: [foto]
+[15:23] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:24] LOJA: [foto]

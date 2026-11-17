@@ -1,0 +1,44 @@
+CONVERSA b61c0334d9 | contato: Diego | 09/09/2026 16:36 até 10/09/2026 11:02 | 14 msgs do cliente, 15 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[16:36] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[16:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:36] LOJA: *Josy:*
+🙋🏼‍♀️
+[16:37] CLIENTE: 215/55/17
+[16:37] LOJA: *Josy:*
+Temos sim!
+[16:37] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[16:37] CLIENTE: Sou de Goiânia
+[16:37] LOJA: *Josy:*
+Ah, sim!
+[16:38] CLIENTE: Qual são as marcas e valores
+[16:38] CLIENTE: Que vc tem
+[16:38] LOJA: *Josy:*
+Infelizmente não estamos atendendo a sua região, para entregas.
+[16:38] LOJA: *Josy:*
+Consegue vir aqui?
+[16:38] CLIENTE: Estarei indo até vcs
+[16:38] CLIENTE: Se o preço for bom
+[16:39] LOJA: [foto]
+[16:39] CLIENTE: Goodyear ou michelin
+[16:39] LOJA: *Josy:*
+Hoje temos os pneus da marca GP Premium
+[16:39] LOJA: *Josy:*
+Somente GP Premium.
+[16:39] CLIENTE: Ata
+[16:40] CLIENTE: Eu quero esse que te mandei
+[16:40] CLIENTE: Então obrigado por me atender
+[16:40] CLIENTE: Tenha uma boa tarde
+[16:40] LOJA: *Josy:*
+Não dispomos dessa opção de marcas a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, preço e prazo de entrega. Tudo bem?
+[16:52] CLIENTE: Ok
+[17:02] LOJA: [foto]
+[17:03] LOJA: [áudio] "Oi, Diego, tudo bom? Eu sou a Josi, tá? E eu consegui aqui o retorno da Goody, modelo Eficiente Grip. A unidade está por R$ 863,00 se o pagamento for no débito fixe e se precisar parcelar, seguem as opções de parcelamento em até 10 vezes. Aí, o distribuidor solicita um pagamento calção no valor de R$ 300,00 para poder reservar essa opção para você. E assim que os pneus chegarem e você estiver passando por aqui, aí você realiza o restante do pagamento. Leva uns três dias para esse pneu chegar aqui na nossa loja, a partir do seu pagamento do calção."  {audio:midias/3EB0184C46B7FF3FB5DF38_855143.ogg}
+--- 10/09/2026 (Thu) ---
+[10:19] LOJA: [áudio] "Oi Diego, tudo jóia? Ontem te encaminhei em um orçamento e gostaria de saber se você pretende seguir com a negociação. Você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB03BCC20DC358AA5C78C_308183.ogg}
+[11:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:02] CLIENTE: [áudio] "Não, olhei sim, só que eu achei uns orçamentos aqui em Goiânia que ficou mais em conta pra mim, sabe? Aí vai ficar mais em conta pra mim, entendeu? Eu achei o Michelin e o Gudi, o Gudi achei ele de 700 e pouco, e o Michelin eu achei ele, nas mesmas condições, de 820 reais, tá? Aí eu fico agradecido aí pra você ter me dado atenção aí, mas aqui em Goiânia ficou mais em conta pra mim, tá bom?"

@@ -1,0 +1,65 @@
+CONVERSA 7a80c7f62c | contato: A.Gustavo 😎 | 18/09/2026 13:29 até 18/09/2026 17:54 | 17 msgs do cliente, 26 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[13:29] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso?
+[13:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:29] CLIENTE: 175/65/13
+[13:51] LOJA: *Josy:*
+Boa tarde.
+[13:51] LOJA: *Josy:*
+Teremos 175/70/13 te atende?
+[14:09] LOJA: *Josy:*
+🙋🏼‍♀️
+[14:10] CLIENTE: Qnt ?
+[14:11] LOJA: [foto]
+[14:11] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:25] CLIENTE: Qual a marca do pneu?
+[14:27] LOJA: [foto] Dunlop. Goodyear  e GP Premium, são essas opções que temos hoje ☺️
+[14:49] LOJA: *Josy:*
+Você mora aqui em Luziania-Go?
+[14:53] CLIENTE: Não, em Santa Maria
+[14:53] CLIENTE: Fazem entrega?
+[14:54] LOJA: *Josy:*
+Se for de seu intresse, os pneus da marca GP Premium, consigo enviar para o Novo Gama., Ficará mais proximo a você.
+[15:22] CLIENTE: assim tbm fica bom
+[15:22] CLIENTE: pode ser tbm
+[15:23] LOJA: *Josy:*
+Quer foto dos pneus?
+[15:23] CLIENTE: SIM
+[15:24] LOJA: [foto]
+[15:24] LOJA: [foto]
+[15:25] CLIENTE: Das marcas somente ele?
+[15:25] LOJA: [foto]
+[15:25] LOJA: Que eu consigo enviar sim
+[15:26] CLIENTE: 175/60 não tem né?
+[15:26] LOJA: [áudio] "Não, não temos."  {audio:midias/3EB0FE48008CE856E1D2F2_735509.ogg}
+[15:26] CLIENTE: 175/65
+[15:26] LOJA: [áudio] "Essa medida é bem difícil de achar."  {audio:midias/3EB0F09D0FAC2E88615E2D_267569.ogg}
+[15:27] LOJA: [áudio] "Anuário 13, aqui somente 175,70."  {audio:midias/3EB01DD7D682F9ABB05D81_472775.ogg}
+[15:27] CLIENTE: tem alguma previsão de quando chega ?
+[15:32] LOJA: [áudio] "Gustavo, essa opção realmente não chega aqui para mim, tá? Eu vou ver se meu distribuidor tem alguma marca importada que seja por encomenda, aí eu vou solicitar aqui um orçamento para ele, assim que ele me responder eu te passo certinho a marca, o preço e o prazo de entrega, só que daí a retirada tem que ser somente aqui por conta de nota fiscal, tá bom?"  {audio:midias/3EB0B079F908EBC7726AC6_776756.ogg}
+[15:40] CLIENTE: Tranquilo, eu agradeço muito
+[15:59] LOJA: *Josy:*
+Gustavo... meu distribuidor vai ter comforser na medida 175/60/13
+[16:00] LOJA: [foto]
+[16:00] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:01] CLIENTE: É 175/65 😆
+[16:01] LOJA: *Josy:*
+essa é a opção que ele tem
+[16:02] LOJA: *Josy:*
+perguntei dessa e de 175/65
+[16:03] LOJA: [foto]
+[16:45] LOJA: [áudio] "Gustavo, aí se essa opção te atender, você me fala que eu vou fazer a encomenda para vocês."  {audio:midias/3EB0F37C89BBEB71278F2E_135273.ogg}
+[17:16] CLIENTE: 175 60 não. 😫
+[17:17] LOJA: *Josy:*
+Não tem.
+[17:54] CLIENTE: Tudo bem de qualquer forma muito obrigado

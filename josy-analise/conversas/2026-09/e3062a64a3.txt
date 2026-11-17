@@ -1,0 +1,44 @@
+CONVERSA e3062a64a3 | contato: Edivan Monteiro | 23/09/2026 20:54 até 02/10/2026 13:06 | 12 msgs do cliente, 15 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[20:54] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[20:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 24/09/2026 (Thu) ---
+[07:58] LOJA: 🙋🏼‍♀️
+--- 01/10/2026 (Thu) ---
+[12:56] CLIENTE: Boa tarde
+[12:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:57] LOJA: 🙋🏼‍♀️
+[12:57] CLIENTE: 235/50 R19
+[12:57] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[12:58] LOJA: *Josy:*
+Mora aqui em Luziânia-Go?
+[12:58] CLIENTE: Ok
+[12:58] CLIENTE: Gama/DF
+[13:00] LOJA: *Josy:*
+Entendi.
+[13:00] LOJA: *Josy:*
+De todo modo, solicitei a cotação... assim que me retornarem te informo.
+[13:01] CLIENTE: Ok. Obrigado.
+[13:03] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[13:03] LOJA: [foto]
+[13:03] LOJA: *Josy:*
+Perdão...
+[13:04] CLIENTE: Tranquilo.
+--- 02/10/2026 (Fri) ---
+[12:44] LOJA: [áudio] "Oi Edivan, boa tarde, como é que você está?"  {audio:midias/3EB025338E255F195A05C9_505343.ogg}
+[12:44] LOJA: [foto]
+[12:45] LOJA: [áudio] "Sra. Edivan, boa tarde, tudo jóia? Olha, eu consegui aqui um retorno a respeito da medida que o senhor está buscando e vai ser o pneu da marca Surni. A unidade está por 821 reais, se o seu pagamento for correspondente a débito ou Pix, e aí seguem as opções de parcelamento em até 10 vezes. Essa opção, ela é somente através de encomenda, leva 3 dias úteis para chegar e é mediante um pagamento calção de 250 reais, tá? Fazendo esse pagamento para o distribuidor, ele reserva a opção e assim que os pneus chegarem, né, chegarão aqui na nossa loja, eu te aviso e o senhor, vindo aqui para realizar o restante do pagamento, esse valor que o senhor pagou de calção vai ser abatido do total da sua compra, está bem?"  {audio:midias/3EB039E454EAF9C1272DC8_578015.ogg}
+[13:05] CLIENTE: Boa tarde
+[13:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:05] CLIENTE: Tá bom
+[13:06] CLIENTE: Ficou entendido
+[13:06] CLIENTE: Estou analisando e retorno, caso necessário
+[13:06] CLIENTE: Obrigado.

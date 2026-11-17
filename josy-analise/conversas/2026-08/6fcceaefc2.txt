@@ -1,0 +1,12 @@
+CONVERSA 6fcceaefc2 | contato: Sonia😊 | 31/08/2026 09:20 até 31/08/2026 09:21 | 4 msgs do cliente, 3 da loja, 0 do robô
+
+--- 31/08/2026 (Mon) ---
+[09:20] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:20] CLIENTE: Bom dia
+[09:20] CLIENTE: Essa é a loja do.paranoa
+[09:21] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Nós somos aqui de Luziânia, Goiás."  {audio:midias/3EB03EC8C7260415B2659B_618603.ogg}
+[09:21] CLIENTE: Vc tem o telefone  da gp peneu paranoa
+[09:21] LOJA: *Josy:*
+Não... não é a mesma empresa.

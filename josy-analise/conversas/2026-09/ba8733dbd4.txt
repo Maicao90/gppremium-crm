@@ -1,0 +1,27 @@
+CONVERSA ba8733dbd4 | contato: Digitando... | 20/09/2026 00:42 até 24/09/2026 12:47 | 5 msgs do cliente, 8 da loja, 0 do robô
+
+--- 20/09/2026 (Sun) ---
+[00:42] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[00:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:36] CLIENTE: 215 50 17
+--- 21/09/2026 (Mon) ---
+[08:33] LOJA: *Josy:*
+Bom dia!
+[08:34] LOJA: [foto]
+[08:34] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 24/09/2026 (Thu) ---
+[12:30] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Eu te mandei um orçamento alguns dias atrás e gostaria de saber se pretende seguir com a negociação. Você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB072D87AFF7A13573CC7_6386.ogg}
+[12:43] CLIENTE: Estou pesquisando ainda
+[12:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:43] LOJA: [áudio] "Certo, compreendo. Bem, para não ficar enchendo seu WhatsApp de mensagens, eu estou encerrando o seu atendimento e, caso você precise, passa aqui na nossa loja para conversarmos pessoalmente. Muito obrigada por sua atenção."  {audio:midias/3EB02BF911AD5C7B8A7777_842384.ogg}
+[12:43] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:47] CLIENTE: Ok
+[12:47] CLIENTE: Obrigado

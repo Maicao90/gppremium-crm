@@ -1,0 +1,23 @@
+CONVERSA 999ac55ab8 | contato: MVCar Flex e Diesel | 11/09/2026 12:56 até 23/09/2026 15:24 | 2 msgs do cliente, 9 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[12:56] CLIENTE: Quero cotar o pneu 175/65 R14 GP Premium.
+[12:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:59] LOJA: *Josy:*
+Boa tarde...temos sim!
+[12:59] LOJA: [foto]
+[12:59] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:09] LOJA: *Josy:*
+🙋🏼‍♀️
+[13:11] CLIENTE: Certo, vou providenciar a ida até a loja
+[13:11] LOJA: [áudio] "Olá, tudo bem com você? Eu sou a Josi e quando possível me diz qual é o Salome também. Você quer que eu te encaminhe aqui a minha localização?"  {audio:midias/3EB0DFF7DDB44F6F3C55F5_295875.ogg}
+[13:18] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 22/09/2026 (Tue) ---
+[16:02] LOJA: [áudio] "Olá, boa tarde, tudo bem? Há alguns dias atrás, nós conversamos a respeito dos pneus aí para o seu carro e você ficou de passar aqui na nossa loja. Ainda precisa dos pneus? Fala aqui comigo!"  {audio:midias/3EB00ED1E77019D9D9C49F_272519.ogg}
+--- 23/09/2026 (Wed) ---
+[15:24] LOJA: [foto]

@@ -1,0 +1,19 @@
+CONVERSA a047aab844 | contato: Glauber | 06/10/2026 10:36 até 06/10/2026 11:07 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[10:36] CLIENTE: Bom dia
+[10:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:36] CLIENTE: Vc tem pneu 175 70 13
+[10:36] LOJA: [áudio] "Oi, bom dia Glauber, tudo jóia? Temos sim, me dê só um instante que estou realizando seu orçamento."  {audio:midias/3EB0E13D80D69D7402AA6A_135660.ogg}
+[10:37] CLIENTE: [áudio] "Bom dia. Pode ser dois, tá? Vê quanto é que você consegue fazer dois."
+[10:37] LOJA: [foto]
+[10:38] LOJA: [áudio] "Gláber, eu te mandei o orçamento aí, só que só uma observação, o último item do orçamento ele acabou de esgotar."  {audio:midias/3EB0ACF57CF35AF615B46C_495182.ogg}
+[10:38] LOJA: [áudio] "Eu vou ter aqui o 165-7013, que de 279, eu faço aqui para você por 239 a vista."  {audio:midias/3EB0072D735862C385AD4C_331734.ogg}
+[10:38] LOJA: [foto]
+[10:39] CLIENTE: [áudio] "E que pneu é esse aí? Que marca é esse pneu? Não deu para ver? É remold ou é novo?"
+[10:39] LOJA: [áudio] "É o pneu da marca GP Premium, é um pneu ecológico que nós produzimos e ele vai entrar na categoria de remodelagem apenas por questão técnica. Ele é o pneu mais vendido que eu tenho, porque a qualidade dele é absurda."  {audio:midias/3EB08A7485F403398C66F7_356959.ogg}
+[10:39] LOJA: [áudio] "Você é daqui de Luziânia mesmo?"  {audio:midias/3EB02A94C2D778B478DCC9_805514.ogg}
+[10:41] CLIENTE: [áudio] "Sou, sou, moro em Luziânia. Então, beleza, eu vou dar um pulo aí, eu sei onde é, vou dar um pulo aí, tá?"
+[10:43] LOJA: [áudio] "Sim, vem assim, Glauber. Olha, nós não fechamos para o almoço, tá?"  {audio:midias/3EB0E77170AE664C381160_111292.ogg}
+[11:07] LOJA: [foto]

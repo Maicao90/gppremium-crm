@@ -1,0 +1,22 @@
+CONVERSA 44f4680bba | contato: Jessika | 03/09/2026 18:15 até 04/09/2026 18:53 | 3 msgs do cliente, 6 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[18:15] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[18:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:15] CLIENTE: Queria saber o valor dos pneus 175/70 R13 82T
+--- 04/09/2026 (Fri) ---
+[08:17] LOJA: *Josy:*
+Bom dia!
+[08:18] LOJA: *Josy:*
+Temos as seguintes opções:
+[08:18] LOJA: *Josy:*
+Pneu 175/70/13 r1 Dunlop R$ 371,69 (débito/pix)
+Pneu 175/70/13 82t Kelly Goodyear R$ 357,66 (débito/pix)
+Pneu GP Premium em *oferta* R$ 269,00 (débito/pix) Ou R$ 252,00 em *dinheiro*
+[18:07] LOJA: [áudio] "Olá, tudo bem com você? Pela manhã você me solicitou um orçamento de pneus 175-73. Eu te encaminhei algumas das opções que nós temos. Gostaria de saber se elas te atendem, se eu posso reservar alguma para você. Assim que possível, me dá um retorno, por gentileza."  {audio:midias/3EB01006E3B32E49DFB0A6_835976.ogg}
+[18:53] CLIENTE: Boa noite. Tudo bem ? Sou fazendo alguns orçamentos ainda. Obrigada !
+[18:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

@@ -1,0 +1,68 @@
+CONVERSA b2d788f019 | contato: Murilo Araújo | 28/08/2026 12:44 até 22/09/2026 16:03 | 19 msgs do cliente, 33 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[12:44] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:44] CLIENTE: [áudio] "Boa tarde, vocês tem o pneu 650-16 aí, o militar 10 lona?"
+[13:19] LOJA: [áudio] "Olá, tudo bem com você? Você está aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0425EB92542ED8CEF4E_253304.ogg}
+[13:20] LOJA: [áudio] "Eu só vou confirmar aqui, já te passo, tá bom?"  {audio:midias/3EB036D23640971CBC59EA_48180.ogg}
+[13:26] CLIENTE: Cristalina Goiás
+[13:32] LOJA: *Josy:*
+teremos 6,00-16 7.00-16 mas não é o militar
+[13:33] CLIENTE: [áudio] "Ah tá, o 6, 50, 16, 60, hein?"
+[13:34] LOJA: [áudio] "Não, agora serão esses mesmos."  {audio:midias/3EB02ED27D888ED840512D_373773.ogg}
+--- 18/09/2026 (Fri) ---
+[10:30] CLIENTE: Bom dia tem pneu 175-70-14
+[10:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:30] CLIENTE: 175-70-14
+[10:31] LOJA: [foto]
+[10:31] LOJA: [áudio] "Bom dia, Murilo. Tudo bem? Murilo, no dia de hoje eu tenho todas essas opções de marcas à pronta entrega. No orçamento está o valor unitário do pneu, na primeira coluna está o valor à vista, que já é o menor e melhor preço, e seguem as opções de parcelamento em até 10 vezes, caso você queira parcelar."  {audio:midias/3EB0BE588863AF1FD77F09_439398.ogg}
+[10:32] CLIENTE: [áudio] "Teria como você mandar uma foto desse, esse de baixo aí, o nacional, da 279, só pra gente dar uma olhada no material?"
+[10:33] LOJA: [áudio] "Claro, tem sim. Você prefere ele no modelo para o asfalto ou naquele mais borrachudo um pouco?"  {audio:midias/3EB07334DE60F1B7FA0D4B_329002.ogg}
+[10:33] CLIENTE: [áudio] "Olha, se não for muito incômodo, manda dos dois pra gente dar uma avaliada, pra ver."
+[10:39] LOJA: *Josy:*
+Já te mando... um instante.
+[10:40] LOJA: [foto]
+[10:41] LOJA: [foto]
+[10:41] LOJA: [foto]
+[10:42] LOJA: [foto]
+[10:43] LOJA: [foto]
+[10:43] LOJA: [foto]
+[10:44] LOJA: [foto]
+[10:45] CLIENTE: [áudio] "O valor dos dois é o mesmo que você me mandou naquela tabela de preço."
+[10:46] LOJA: [áudio] "Isso, isso mesmo, o valor é o mesmo."  {audio:midias/3EB098F14F08A6EA84E3A2_651941.ogg}
+[10:47] CLIENTE: [áudio] "Vocês não tem nenhuma transportadora que faz de Luziana para Cristalina não, né? Porque geralmente para Catu tem a Rodonaves que traz pra gente, né? Só te perguntando, nós estamos em Cristalina, né? É pertinho, mas se tiver uma transportadora ficaria mais fácil, só pra saber mesmo."
+[10:48] LOJA: [áudio] "Sim, realmente Murilo, Cristalina é pertinho, lembro até que você havia conversado comigo, deixa eu ver aqui, eu posso verificar com a Rodonabes, quanto que eles cobram para fazer esse frete aí."  {audio:midias/3EB0D50F538E1CCB5A5F4F_471185.ogg}
+[10:49] LOJA: [áudio] "Você vai usar em que carro?"  {audio:midias/3EB0D4E0D4F57C9143D99F_701095.ogg}
+[10:52] CLIENTE: [áudio] "Seria na estrada, uma estradinha."
+[10:52] CLIENTE: [áudio] "Mas é o seguinte, se não te atrapalhar, aí você vê pra nós o valor que fica esse frete, pra ter uma noção, dependendo, só você deslocar um carro pra ir aí, né, Luzcar, dependendo, é que compensa mais pagar um frete."
+[10:52] LOJA: [áudio] "Murilo, me fala qual é o seu endereço, por gentileza."  {audio:midias/3EB0225B92F14244ABE67A_802909.ogg}
+[10:53] LOJA: [áudio] "É, o negócio que aqui, você vindo buscar, a gente já coloca esses pneus aí pra você. Me passa qual que é o seu CEP e a quantidade de pneus, Murilo."  {audio:midias/3EB05E0A80AD48A0923AEB_467245.ogg}
+[10:53] CLIENTE: Cep 73850-000
+4
+[10:53] CLIENTE: [áudio] "Quatro pneus no caso, né? Aí eu só não sei quanto vai pegar, se é esse borrachudo ou esse outro aí, né? Vamos só ver os valores por enquanto."
+[11:10] LOJA: *Josy:*
+A transportadora está me pedindo seu endereço.
+[11:14] CLIENTE: Rua João Silas de Souza 
+Setor norte
+Número 970
+[12:43] LOJA: Rodonaves 🫣
+[12:46] CLIENTE: Kkkkk
+[12:48] LOJA: [foto] *Josy:*
+Frete
+[12:50] LOJA: [áudio] "É que eu fui mandar aqui rodonaves e essa cara aí de vergonha, porque eu disse frete alto, misericórdia, e aí quando eu fui mandar a tela do frete pra você, travou. Ficou meio estranho, né? Mas é, rodonaves tá meio assim, sabe? Eu acho que é mais válido você vir até aqui e já instalar esses pneus, realmente, Murilo."  {audio:midias/3EB0A9E4E3CBA891B6FA67_762336.ogg}
+[12:50] LOJA: [áudio] "Com valor."  {audio:midias/3EB0DA1EEF73E1D8CCE869_211986.ogg}
+[12:51] CLIENTE: [áudio] "Tchau, tranquilo. Eu tô vendo aqui com a menina da baia, ela dá assistência no campo de milho aqui na fazenda. E daí ela mora em Luziânia, ela vai e vem todos os dias, né? Eu tô vendo com ela aqui se ela não tem a possibilidade de trazer pra gente. Aí até o fim do dia eu te dou um retorno aí, tá?"
+--- 22/09/2026 (Tue) ---
+[15:55] LOJA: [áudio] "Oi Murilo, tudo jóia? Nós nos falamos há alguns dias atrás a respeito dos pneus aí e gostaria de saber se você pretende seguir com a negociação, o que é que te envia a nossa localização para poderem virem aqui?"  {audio:midias/3EB0BDB757C1EF1A10574E_656007.ogg}
+[15:59] CLIENTE: [áudio] "Opa, boa tarde. Então, o senhor tá enrolado, viu? O negócio é a distância pra ele. Aí a moça não pode trazer por causa da empresa, sabe? Aí estamos vendo se consegue pra semana que vem. Alguém dá um punhinho aí que começa nas plantas agora, né? Mas nós vamos falando. O trem tá corrido demais, senhor."
+[15:59] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:01] LOJA: [áudio] "Ah, de correria eu entendo bem também, Murilo. Não tá fácil, né? Mas beleza, então, já vamos nos falando. Eu vou deixar aqui a nossa localização, tá bom?"  {audio:midias/3EB0C2E42BB7711A7F6168_363315.ogg}
+[16:01] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:01] CLIENTE: [áudio] "Não, tá bom. Desde já te agradeço. Desculpa aí o retorno, porque me passa despercebido, né? Mas vamos falando. Eu te mando uma mensagem. Tem na localização, também fica fácil também. Obrigado, viu?"
+[16:03] LOJA: [áudio] "Sim, exatamente. Mas eu entendo, é corrido mesmo. 24 horas é pouco para tanta coisa para fazer no nosso dia, né?"  {audio:midias/3EB09C9E0F5E482F196F96_714131.ogg}
+[16:03] LOJA: [áudio] "Aí na localização, não sei se ela está abrindo corretamente porque meu WhatsApp está com instabilidade, mas tem a foto aqui da frente da nossa loja, tá bom? Aí vamos nos falando sim. Obrigada pela atenção."  {audio:midias/3EB0095AF9248175249AB2_137733.ogg}

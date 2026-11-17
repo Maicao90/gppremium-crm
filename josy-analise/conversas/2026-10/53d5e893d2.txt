@@ -1,0 +1,18 @@
+CONVERSA 53d5e893d2 | contato: Marcionelo Reis | 14/10/2026 18:33 até 16/10/2026 10:39 | 2 msgs do cliente, 6 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[18:33] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[18:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:33] CLIENTE: 185x60x15
+--- 15/10/2026 (Thu) ---
+[08:17] LOJA: [áudio] "Bom dia, Márcio. Como é que você está?"  {audio:midias/3EB0B9BBFE98FEE3AE442D_716108.ogg}
+[08:17] LOJA: [foto]
+[08:17] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[18:07] LOJA: [áudio] "Olá, tudo bem contigo? Márcio, você teve a oportunidade de analisar aí o orçamento? Tem alguma dessas opções que eu possa reservar para você? Assim que você vir, me dê um retorno, por gentileza, está bem?"  {audio:midias/3EB03E481A97FB99851837_184934.ogg}
+--- 16/10/2026 (Fri) ---
+[10:39] LOJA: 🙋🏼‍♀️

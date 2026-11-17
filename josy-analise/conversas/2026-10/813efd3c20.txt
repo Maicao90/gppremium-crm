@@ -1,0 +1,35 @@
+CONVERSA 813efd3c20 | contato: Thiago Mendonça | 02/10/2026 08:17 até 02/10/2026 09:51 | 10 msgs do cliente, 18 da loja, 0 do robô
+
+--- 02/10/2026 (Fri) ---
+[08:17] CLIENTE: Bom dia
+[08:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:17] CLIENTE: 175/70R13
+[08:25] LOJA: [foto]
+[08:26] LOJA: [áudio] "Olá, bom dia! Tudo bem com você, Thiago? Eu tenho aqui sim, tá joia? No dia de hoje eu tenho essas opções. No orçamento está o valor unitário do pneu. Na primeira coluna está o valor à vista, que é correspondente a Debit ou Pix. E seguem as opções de parcelamento em 10 vezes, caso você queira parcelar. Você é daqui de Luziânia mesmo?"  {audio:midias/3EB02605970CBEBDF6D83E_441991.ogg}
+[08:26] CLIENTE: Sou sim
+[08:27] LOJA: [áudio] "Ah, eu tenho aqui também da marca GP Premium, na medida 165-7013, que está na oferta, por R$ 239,00 cada para o pagamento à vista, e tenho também o 75-7013, também da marca GP Premium, que está por R$ 269,00 à vista."  {audio:midias/3EB0F871F537F9D2F3975E_785901.ogg}
+[08:35] CLIENTE: [áudio] "Deixa eu te perguntar, esses GP Premium são remote? E vocês sabem dizer se eles passam na vistoria?"
+[08:36] CLIENTE: [áudio] "É porque, na verdade, eu tô atrás dos pneus que eu acabei de comprar um carro, um carrozinho, um palhozinho, que é pra mim ajeitar ele do jeito que eu tô querendo ajeitar, só que o que acontece, eu tava querendo trocar, os pneus dele tá ruim, ele veio com os aro 13, os pneuzinho ruim, e eu tava querendo realmente os pneus, é só pra passar na vistoria, porque a vistoria dele eu vou fazer segunda-feira, e é só pra passar na vistoria, porque depois que eu passar na vistoria eu vou colocar os aro 17 nele, né? E os aro 17, ele não pode, né? Se não tiver legalizado, ele não pode passar na vistoria. Aos 13 justamente era mais, era pra isso, só pra passar na vistoria mesmo."
+[08:41] LOJA: [áudio] "Tiago, sim, o pneu GP Premium, como ele é um pneu que nós fazemos, é um pneu ecológico, ele vai entrar na categoria de remodelagem, só que a linha Premium, e eu vendo eles muito mais do que o pneu Goodyear, Dunlop e Conforcer, que estão nesse orçamento, e é por conta do preço? Não, é por conta da qualidade, se eu colocar os pneus GP Premium do lado desses aí, você vai ver que não tem diferença borracha é ainda melhor, que eu trabalho só com insumos de extrema primeira linha."  {audio:midias/3EB0BCD45697CDF4EA421A_811889.ogg}
+[08:42] LOJA: [áudio] "E passa-se na vistoria. Você sabe por quê? Porque os nossos pneus são todos testados pelo Inmetro, então eles têm o selo do Inmetro, de aprovação mesmo, porque o pneu é qualificado."  {audio:midias/3EB07FEC3E9B81886B1124_388110.ogg}
+[08:43] LOJA: [áudio] "E eles passam tranquilamente, tá? Você pode colocar esse mais em conta que eu te falei, que é o de 239, tá? Vou até tirar uma foto dele aqui pra poder te mostrar."  {audio:midias/3EB0B0E247895986FF1BBA_70791.ogg}
+[08:48] CLIENTE: [áudio] "Tá certo. E o jogo desse de 239, os quatro pneus, já é montado já no carro? Esse valor aí já é incluso a montagem?"
+[08:50] LOJA: [foto]
+[08:52] LOJA: [foto]
+[08:53] LOJA: [áudio] "Isso, já é colocado sim, tá? Só cobramos a parte, o balanceamento e o alinhamento, se realmente for preciso fazer."  {audio:midias/3EB0250A4F7088880E007B_742931.ogg}
+[08:59] LOJA: [foto]
+[09:10] CLIENTE: [áudio] "Moça, deixa eu te perguntar, só tirar uma dúvida. Qual que é a diferença do 165 para 175? Em questão de conforto, muda alguma coisa no carro?"
+[09:16] LOJA: *Josy:*
+165/70 traz mais econonia
+[09:36] CLIENTE: Vocês abrem amanhã ?
+[09:38] LOJA: *Josy:*
+Sim!
+[09:38] LOJA: Amanha das 08:0 á s12:00
+[09:38] CLIENTE: Tá ok
+[09:39] LOJA: [áudio] "Amanhã, assim que eu abrir a loja, eu te mando um bom dia. Tchau, Thiago."  {audio:midias/3EB013D902C1EE8970F0AE_112652.ogg}
+[09:42] CLIENTE: Tá joia
+[09:50] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:50] LOJA: [foto]
+[09:51] LOJA: *Josy:*
+Ah, e se conseguir trazer o pagamento em *dinheiro* podemos negociar.

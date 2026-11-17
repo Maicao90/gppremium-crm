@@ -1,0 +1,27 @@
+CONVERSA 8367babb8f | contato: Paulo José | 09/09/2026 16:07 até 09/09/2026 17:41 | 5 msgs do cliente, 11 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[16:07] LOJA: *Josy:*
+Olá boa tarde!
+[16:08] LOJA: *Josy:*
+205/70/15  CERTO?
+[16:08] CLIENTE: Sim
+[16:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:08] LOJA: *Josy:*
+Vou te encaminhar o orçamento.
+[16:08] CLIENTE: OK posso te mandar em áudio que estou dirigindo
+[16:09] LOJA: *Josy:*
+Pode... claro!
+[16:09] LOJA: *Josy:*
+Já te ouço.
+[16:13] LOJA: [foto]
+[16:13] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:00] CLIENTE: [áudio] "Tá bom, vou só confirmar com o meu motorista, se ele tem como vir aí, eu te pego com você o Pix para te transferir, no caso, 600 reais, né?"
+[17:02] LOJA: [áudio] "Olá, tudo bem com você? Eu sou a Josi. Qual das duas opções você quer reservar? Que aí eu encaminho aqui o Pix para você."  {audio:midias/3EB0EBA55F037364F2914E_162637.ogg}
+[17:02] LOJA: [áudio] "Não, e o valor do calção é somente 300 reais mesmo."  {audio:midias/3EB0F37531BCF95B107D76_128574.ogg}
+[17:07] CLIENTE: [áudio] "No caso, seria essa segunda opção, mais debaixo, o da Godia, que é mais conhecido. Mas eu preciso só de uma confirmação aqui da empresa, tá bom?"
+[17:41] CLIENTE: [áudio] "Na troca aqui, uma vez, aqui perto do Dallas, o cara me deu 33% nele, Lionapps, para me levar ele, para ele ter certeza depois que eu olhasse, mas a princípio ele me colocou 31%. Tudo troca, base de troca."

@@ -1,0 +1,24 @@
+CONVERSA b8b08b5777 | contato: Metal Forte | 03/09/2026 10:46 até 10/09/2026 17:07 | 4 msgs do cliente, 10 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[10:46] LOJA: *Josy:*
+Bom dia, sr Irã
+[10:51] CLIENTE: Bom dia!🙏🏻
+[10:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:49] LOJA: [foto]
+[11:49] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:21] LOJA: [áudio] "Oi, senhorita, tudo jóia? Eu te mandei aí o orçamento da medida 285-75-16. Esses pneus aí, eles são bem reforçados, são pneus lonados, tá, jóia? Então, dá uma olhada, analisa aí o orçamento com carinho, tá? E se for de seu agrado alguma dessas opções, o senhor me fala aqui já para nós fazermos a encomenda dos mesmos, está bem? Obrigado."  {audio:midias/3EB06E16B6EE131A999082_819656.ogg}
+--- 10/09/2026 (Thu) ---
+[16:40] LOJA: [áudio] "Olá, Irã. Tudo bem?"  {audio:midias/3EB0AAC02E9CD8DB8D5DD5_36913.ogg}
+[16:41] LOJA: [vídeo]
+[16:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:58] CLIENTE: [áudio] "Oi Júlio, boa tarde, tudo bem? Eu vi o orçamento de vocês aqui e realmente o preço de vocês não está ruim, só que só vou colocar esses pneus aqui uns 20 a 30 dias, tá bom? Aí eu entro em contato com vocês aí."
+[17:00] LOJA: [áudio] "Beleza, Irã, entendi. Deixa eu ver aqui. Igual eu tinha falado com o senhor, na medida que o senhor quer, vai ser somente por encomenda. Aí, até lá, nós vamos falando. O senhor me manda mensagem novamente para perguntar se ainda tem a jóia."  {audio:midias/3EB04ACC6FDC353FD3BCC1_922619.ogg}
+[17:02] CLIENTE: Tá bom , tem como vc mandar a foto do pneu?
+[17:03] LOJA: [áudio] "Eu vou ver se meu distribuidor tem, tá?"  {audio:midias/3EB08BA397CFA4F0F8FE55_705490.ogg}
+[17:07] CLIENTE: Tá bom

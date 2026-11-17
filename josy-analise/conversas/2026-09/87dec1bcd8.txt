@@ -1,0 +1,81 @@
+CONVERSA 87dec1bcd8 | contato: Paulinho | 12/09/2026 09:28 até 24/09/2026 14:40 | 27 msgs do cliente, 42 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[09:28] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[09:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:28] CLIENTE: Bom dia
+[09:29] CLIENTE: Pneu 225/65 17
+[09:29] CLIENTE: Preço
+[09:52] LOJA: [áudio] "Olá, bom dia. Tudo bem? Obrigada por aguardar. Eu tenho aqui os pneus da marca GP Premium, que eles estão por apenas R$ 399,00 à vista."  {audio:midias/A5628E43900A744D0E87D89DFC20E8B1_718749.ogg}
+[09:52] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/A52CDA030945348661D446537CF8C5CE_339751.ogg}
+[10:06] CLIENTE: [áudio] "Eu moro sim, qual é a marca do pneu? Moro sim, moro em Luziânia. Qual é a marca do pneu?"
+[10:12] LOJA: GP Premium
+[10:12] LOJA: [foto]
+[10:12] LOJA: [áudio] "Quer que eu te mando a nossa localização?"  {audio:midias/A5B2AE99A817CC8D5F8FA79FF963DEFD_23803.ogg}
+[10:13] CLIENTE: [áudio] "Manda, por favor, localização."
+[10:14] LOJA: [áudio] "Certinho, agora mesmo."  {audio:midias/A538AE6612BA8CE1AA54747882AC07AE_976765.ogg}
+[10:14] LOJA: [áudio] "Qual é o seu nome mesmo?"  {audio:midias/A563FCD8BED2F032142135730379A8D0_982553.ogg}
+[10:15] CLIENTE: Paulo
+[10:15] LOJA: Certo!
+[10:16] LOJA: [foto]
+[10:16] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:17] CLIENTE: [áudio] "Qual é o seu nome? Qual é a marca desses pneus? Por favor. Eu sei de onde é GP aí. Eu moro em Luziânia. Qual é a marca do pneu?"
+[10:21] LOJA: [áudio] "É o pneu da marca GP Premium. Paulo, o pneu aqui da nossa empresa. E eu sou a Josi."  {audio:midias/A531EB326125E9CB757FCF607E7B6493_64459.ogg}
+[10:39] LOJA: [áudio] "Paulo, você já está a caminho?"  {audio:midias/A59AD6FA0B675BDED4BA3838C1256C17_648319.ogg}
+[10:45] CLIENTE: [áudio] "Não, não, eu tô no Valparaíso ainda, Luziânia. Eu tô no Valparaíso. Vou marcar pra segunda-feira. Esse pneu não é remold não, né?"
+[10:50] LOJA: Parece que conheço sua voz.
+É o Paulinho?
+[10:51] CLIENTE: Sim kkkk
+[10:56] LOJA: Ahhhh kkkk
+[10:58] CLIENTE: [áudio] "Ah, é porque não tem a foto, né, Josi? Não tem a foto. Quando você falou o nome, eu deduzi aqui o tempo, falei que eu falei que você estava trabalhando negócio de pneu, eu lembrei disso aqui. Mas, Josi, esses pneus não é remolde, não? Não."
+[10:59] LOJA: [figurinha]
+[10:59] LOJA: [áudio] "Paulinho, esse aqui é o pneu que nós produzimos, tá? Ele é um pneu ecológico, ele entra assim na categoria de remodelagem, e assim, é o pneu mais vendido que eu tenho. É porque o meu chefe saiu aqui agora, mas eu tenho instalado justamente numa Amarok. Aí, se você quiser, eu te mando uma foto assim que ele chegar. Mas também tenho pneus importados, é porque o meu computador travou, aí eu já não tô conseguindo fazer o pneu. fazer orçamento, não tô sabendo o preço de nada, tá tudo uma loucura. Mas se você quiser pneu importado, eu consigo verificar pra você na segunda-feira."  {audio:midias/A5DE15349E68E05C4B3D99849EE0D157_62869.ogg}
+[11:05] CLIENTE: [áudio] "Não, Jô, segunda eu passo aí. Segunda-feira eu vou aí."
+[11:07] LOJA: [áudio] "Combinado, tá? Eu lembro que o pneu que eu tenho aqui vai ser mais borrachudo da marca importada, mas se vindo aqui eu te mostro tudo certinho, tá bom?"  {audio:midias/A5BB1DF8784358A2C317C3C682739349_155721.ogg}
+[11:25] CLIENTE: [áudio] "Beleza, Josi. Segunda de tarde eu passei."
+[11:43] LOJA: [áudio] "Certinho, Paulinho. Obrigada."  {audio:midias/A5D470EFF7798D16DCC6AE85D2621CE6_630418.ogg}
+[11:44] CLIENTE: Por nada
+--- 16/09/2026 (Wed) ---
+[12:10] LOJA: [áudio] "Olá Paulinho, como é que você está? Vai conseguir passar aqui essa semana? Sim."  {audio:midias/3EB0EE7FBADA256CCEF4E0_631065.ogg}
+[12:40] CLIENTE: [áudio] "Olá, Josi! Boa tarde, tudo bem? Eu estou bem? Você também está bem? Ah, Josi, com certeza eu quero dar um pulo aí. Eu até falei com a Marlene, tem que dar um pulo aí. Chegou, você tem os modelos dos pneus, porque esse pneu remold eu não quero não, viu, Josi? Eu tenho medo desses pneus. Eu não quero esses pneus, não. Remold, não. Mas eu dou um pulo aí."
+[12:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:19] LOJA: [áudio] "Aí, Paulinho, tudo jóia?"  {audio:midias/3EB0A80E5C040650DBDADB_459523.ogg}
+[13:20] LOJA: *Josy:*
+Tenho importado novo !
+[13:21] LOJA: [áudio] "Aí, lembra que eu te disse que eu tenho pneu novo importado? Só que eu tava sem sistema na segunda-feira e por isso que eu não te encaminhei. Aí, falei, você vem cá que daí a gente mostra ele pra você, tá bom?"  {audio:midias/3EB084EDA75C60BE28A005_843835.ogg}
+[13:55] CLIENTE: [áudio] "Não, tá bom o Itaú, Josi. Eu vou aí. Essa semana eu vou. Eu irei aí, vou ficar tranquilo. Daqui passado eu dou um pulo aí."
+[13:58] LOJA: [áudio] "Fechou, Paulinho? Eu vou ver se consigo tirar foto dos pneus aqui e já te mando, tá?"  {audio:midias/3EB094E89CF133FF7DAE4F_491514.ogg}
+[14:00] LOJA: [foto]
+[14:01] LOJA: [áudio] "Esse daqui, ele é o pneu da marca Maxx, Maxx, alguma coisa assim. Aí a unidade está por R$ 683,00 a vista. Eu vou te mandar foto deles agora. Se porventura vocês estiverem em busca de alguma marca específica, você me fala que eu verifico com os meus distribuidores, que nós podemos fazer encomendas também."  {audio:midias/3EB064C56375D47023167C_31579.ogg}
+[14:02] CLIENTE: [áudio] "Tá bom, Luziânia, mas o pneu é 255, 65, 17, Luziânia. É 265, claro, é 255. Entendeu? 255. Um pouco diferente, mas o carro é mais largo, né? O 265 é mais largo, né? É mais alto o pneu, né? 255 é mais baixo. Então você manda a foto desse pra me ver, por favor."
+[14:04] LOJA: [áudio] "Seu 255, beleza. Qual que é o ano aí da sua caminhonete? E... 265 é um centímetro mais largo, só isso."  {audio:midias/3EB04BACB56A387CDACE2D_869300.ogg}
+[14:05] CLIENTE: [áudio] "Ah, mas não tem problema não, isso não muda não. Como eu falei para você, ô Josi, isso não muda nada não, não tem problema não, até melhor o pneu, né? Não muda não. Eu vou ver, Josi, eu vou deixar um caminhão ali na oficina e vou ver se eu conseguir aí daqui a pouquinho. Dei umas 4 horas, acho que eu consegui aí, sem fechar em que horas? Pra mim mesmo olhar aí e ver, e ver o que faz."
+[14:08] LOJA: [foto]
+[14:10] LOJA: [foto]
+[14:10] CLIENTE: [áudio] "Ó o pneu desenho bonito, né? Misto, né? Esse aí é bom que é misto, dá pra ir no asfalto e chão, né? Asfalto e chão, é bom esse pneu aí, hein? Misto."
+[14:12] LOJA: [áudio] "Sim, sim, ele é misto."  {audio:midias/3EB0E32501505E5C8C4105_786534.ogg}
+--- 24/09/2026 (Thu) ---
+[12:43] LOJA: [áudio] "Oi, senhor Paulinho, como é que o senhor está? Fiquei te esperando aqui no sábado, mas eu imagino que você estava trabalhando. E aí, como é que estão as coisas?"  {audio:midias/3EB0E3182096E75C8C4CFC_634469.ogg}
+[13:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:08] CLIENTE: [áudio] "Olá, tudo bem, Luzi? Ah, eu tava pensando, sabe, Luzi? Vou comprar esses pneus remolde não, esse pneu remolde e vou colocar isso no meu carro não. Vou comprar um pneu importado e eu achei mais em conta que em Goiânia. Eu não comprei ainda não, sabe? Eu não comprei não, Luzi. Mas eu encontrei os pneus mais em conta e sabe que ele não sabe que tava trabalhando, né? E eu achei os pneus mais em conta quanto os seus importados ainda 600 e pouco, não sei. Aqui eu encontrei mais em conta em Goiânia. Não comprei, mas eu encontrei mais em conta, sabe?"
+[14:08] LOJA: [áudio] "Falei que eu tenho importado também."  {audio:midias/3EB0093FA789B9BC430102_172543.ogg}
+[14:09] LOJA: [áudio] "Sim, eu entendi. E sim, existem marcas aí que são muito baratas. O negócio é qualidade também, né?"  {audio:midias/3EB0DA86E420B3449A1C4F_302999.ogg}
+[14:12] LOJA: [áudio] "Mas beleza, tá? Você vê aí, qualquer coisa você me fala."  {audio:midias/3EB0AF0791A9ECB444E7DF_589839.ogg}
+[14:13] CLIENTE: [áudio] "Sim, sim, qualidade. Eu olhei, eu olhei. O X-Bri. Aqui em Goiânia ele está a 680, né? X-Bri. É um pneu muito bom. Já usei ele na cabionete, ele é um excelente pneu, né? Ele é muito bom. Aqui em Goiânia ele está a 680. Ele divide em 6 vezes isso aqui. E ele é o TR, né? É nem o Lysos. O Lysos é 500 reais. O Lysos."
+[14:13] CLIENTE: [áudio] "Com certeza, Josi, com certeza. Pode deixar que eu fale. Pode deixar que eu te aviso, minha amiga."
+[14:14] LOJA: [áudio] "Não, esse aí realmente vale a pena."  {audio:midias/3EB0AB2831842BAD637B4F_24950.ogg}
+[14:15] CLIENTE: [áudio] "É, eu vim aqui em Goiânia com o caminhão, sabe? Aí tem umas 5 lojas aqui em Aparecida de Goiânia, sabe? Eu fui passando em uma por uma, num dia eu passei em duas, num dia eu passei em outra, fui vendo os preços, sabe? Aí o XB225, 65, 70, 680. O pneu liso aqui é 500, 550, 530. Depende da marca, sabe? Mas é isso aí. Estamos aqui. E aí, você falou que ia jogar? Jogou? Deu um treino de vôlei?"
+[14:19] LOJA: [áudio] "É vantagem que você consegue fazer uma boa pesquisa de campo, isso é legal."  {audio:midias/3EB0E76CD7D4ECDA7566DD_666880.ogg}
+[14:19] LOJA: [áudio] "Sim, fui lá, sim. Só ferrugem. Ai, ai."  {audio:midias/3EB02404AE1661CD4E289E_839275.ogg}
+[14:19] LOJA: [áudio] "Foi triste."  {audio:midias/3EB04919B1800B2FE2BA58_520474.ogg}
+[14:20] CLIENTE: [áudio] "Não, mas que isso, aí ferrugem não, aí com a Júzia é fazer o outro, é o costume, né? É o costume. Depois, voltando a jogar, todo mundo vai treinando, jogando e vai melhorando, né? E aí vai dar certo."
+[14:21] CLIENTE: [áudio] "Não, sim, eu fui em várias lojas lá. Eu passo na porta, né? Todo dia eu passo aqui na porta. Eu passo na porta das lojas, todo dia. Aí eu passo, eu paro e pergunto. Vou buscar um cartãozinho aqui, aí eu vou fazer negócio com eles lá, semana que vem também. Depois que eu receber, aí eu vou comprar o dinheiro, né? Fica mais fácil. Depois do dia 5, né? Depois da eleição."
+[14:23] LOJA: [áudio] "É, realmente. Falta de costume. Depois que a gente volta, volta tudo ao normal. Ai, ai. E, pois é, então, que dê bons negócios, que dê tudo certo aí na aquisição dos novos pneus aí para o seu carro, tá, jóia? Precisamos, estamos por aqui. Desde já, bom final de semana para você, tá, jóia? Até mais."  {audio:midias/3EB097016DE3CD42666AE3_117880.ogg}
+[14:29] CLIENTE: [áudio] "É, Josi, minha querida, esse último áudio que você mandou aí não chegou nada não, só tá rodando, mas não abre não. Os áudios agora arrumou esse negócio, né?"
+[14:34] LOJA: [áudio] "É, o WhatsApp está com instabilidade desde ontem, né? Bem, eu disse que, realmente, quando a gente retorna a fazer as atividades, a gente fica perdido, mas é questão de tempo para a gente se situar. E, assim, que dê certo aí na aquisição dos pneus aí para o seu carro e qualquer coisa, estamos por aqui. Obrigada aí pela atenção e que você tenha um bom final de semana."  {audio:midias/3EB0D7C564A2928CDEA22A_798269.ogg}
+[14:40] CLIENTE: [áudio] "Obrigado pra você também. Pode deixar que eu vou falar. Depois nós comunicamos. Tá bom, Josi? Tranquilo então."

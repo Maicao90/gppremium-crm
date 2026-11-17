@@ -1,0 +1,31 @@
+CONVERSA 8bab78d9dd | contato: Erika Arcanjo | 15/10/2026 15:19 até 16/10/2026 15:26 | 10 msgs do cliente, 16 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[15:19] CLIENTE: Olá boa tarde
+[15:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:20] CLIENTE: 14
+[15:23] LOJA: Claro! Para que eu possa gerar o orçamento para você, poderia me informar a *medida* do pneu que você precisa (ex: 185/70/14)  😊
+[15:24] CLIENTE: [foto]
+[15:27] LOJA: [foto]
+[15:27] LOJA: No dia de hoje temos todas essas opções a pronta entrega.
+[15:27] LOJA: Mora aqui em Luziânia-Go?
+[15:27] CLIENTE: Sim
+[15:28] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:29] LOJA: Passa aqui na loja!
+[15:30] CLIENTE: No caso 4 se eu comprasse 4 e divisse em 4 x a montagem vcs montão como funciona?
+[15:31] CLIENTE: O nacional
+[15:31] LOJA: [áudio] "Na compra do pneu da marca GP Premium, Erika, os pneus já são instalados? Sim, tá? A parte, negociamos apenas os valores de balanceamento e alinhamento, serviços de modo geral que forem necessários serem feitos."  {audio:midias/3EB0670F160A00B482D74B_516452.ogg}
+[15:34] CLIENTE: Essa marca gp Premium entra esse nacional ?
+[15:38] LOJA: É
+[15:38] LOJA: [áudio] "Aí, a unidade em quatro vezes é 294 reais, tá? Ou seja, você vai pagar um pneu por mês."  {audio:midias/3EB0B50EB3935688366850_967662.ogg}
+[15:39] LOJA: [áudio] "O que eu te mando aqui a nossa localização, Erika?"  {audio:midias/3EB050F032E67BA4100B7B_69602.ogg}
+[15:40] CLIENTE: Eu acho que sei onde é e na Br 040 né ?
+[15:40] LOJA: [áudio] "Isso, isso mesmo, aqui na BR-040."  {audio:midias/3EB00E8743DE132E3B86A3_613473.ogg}
+[15:41] LOJA: [foto]
+[15:41] CLIENTE: Amanhã quando eu sair do trabalho eu passo aí, hj estou na roça
+[15:41] CLIENTE: Umas 16:00
+[15:41] LOJA: Trnaquilo!
+[15:41] LOJA: Ficamos combiandas!
+--- 16/10/2026 (Fri) ---
+[15:26] LOJA: Está a caminho?

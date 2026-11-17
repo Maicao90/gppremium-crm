@@ -1,0 +1,102 @@
+CONVERSA 4a09a604a0 | contato: Schumacher | 11/09/2026 09:47 até 14/09/2026 16:56 | 42 msgs do cliente, 36 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[09:47] CLIENTE: Bom dia
+[09:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:47] CLIENTE: Beleza?
+[09:48] CLIENTE: Vocês possuem este pneu GP radial remold pneu do onix 185/70 14?
+[09:48] LOJA: [áudio] "Olá, bom dia, tudo bem? Eu ia te chamar agora mesmo aí no WhatsApp, eu sou a Josi e tenho sim, tá? Vou te mandar aqui o orçamento."  {audio:midias/3EB009016DE21BA81C4780_432291.ogg}
+[09:49] LOJA: [foto]
+[09:49] LOJA: [áudio] "O pneu GP Premium, ele está por apenas R$ 289,00 se o seu pagamento for no débito ou no Pix."  {audio:midias/3EB06C2757330794C3947D_327452.ogg}
+[09:51] CLIENTE: Vocês conseguem entregar lá na Speedcar?
+[09:51] LOJA: [áudio] "Onde é Speed Car?"  {audio:midias/3EB0E740C284782AA3C6C7_355114.ogg}
+[09:51] CLIENTE: Em valparaiso de Goiás
+[09:51] CLIENTE: No Ipanema
+[09:52] LOJA: *Josy:*
+Vai precisar de quantos pneus?
+[09:52] CLIENTE: Apenas 1
+[09:53] LOJA: *Josy:*
+posso tentar na parte da tarde, não sei comprecisão o horário.
+[09:54] CLIENTE: Vou ver se conseguem buscar aí
+[09:54] CLIENTE: Onde fica a loja de vocês?
+[09:55] LOJA: [áudio] "Nós somos aqui de Luziânia. Deixa eu ver aqui se eu consigo te ajudar de alguma outra forma também. Só um instante, tá?"  {audio:midias/3EB0FBC524F9F1CC33B5AE_201468.ogg}
+[09:58] CLIENTE: Ta bom
+[10:00] CLIENTE: Aí já fica difícil pra ir buscar
+[10:01] CLIENTE: Vou fazer mais alguns orçamentos e retorno com você
+[10:01] LOJA: [áudio] "Oi, eu consegui para você, só um instantinho que eu já vou te informar. Tá bom."  {audio:midias/3EB0C2D6D546BFBA33802C_981306.ogg}
+[10:03] CLIENTE: Vocês tem loja aqui em Valparaíso tbm?
+[10:03] CLIENTE: E quanto fica a entrega?
+[10:12] LOJA: *Josy:*
+Se eu te enviar uma localização de cia
+[10:12] LOJA: *Josy:*
+será que consegue ir buscar?
+[10:14] CLIENTE: Consigo não
+[10:14] CLIENTE: Vou tentar orçar por aqui mesmo
+[10:14] CLIENTE: Muito obrigado
+[10:16] LOJA: *Josy:*
+Então, posso tentar na parte da tarde, não sei com precisão o horário.
+[10:17] LOJA: *Josy:*
+Que o rapaz fez uma entrega agora a pouco na cidade ocidental, fica um pouci perto de você, por isso sugeri de te mandar a localização.
+[10:18] CLIENTE: Entendi
+[10:18] CLIENTE: Vou ver aqui e falo com você
+[10:31] LOJA: [áudio] "Tudo bem, então."  {audio:midias/3EB016490E6580B04C5B06_174445.ogg}
+[10:54] CLIENTE: Vou pegar com vocês mesmo
+[10:54] CLIENTE: O rapaz vai aí pegar
+[10:54] CLIENTE: Rogério Demetrio o nome
+[10:54] CLIENTE: Me passa o pix de vocês por favor
+[10:56] LOJA: *Josy:*
+Claro!
+[10:56] LOJA: *Josy:*
+24.289.955/0001-79
+[10:57] LOJA: *Josy:*
+me informa seu nome completo...cpf e dados de endereço para fazer a garantia.
+[10:57] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:57] LOJA: [áudio] "Você já usa os pneus, certo? O modelo que está instalado aí no seu veículo, qual modelo? Pode me dizer, para eu poder pegar do mesmo?"  {audio:midias/3EB05F52A2A11413AB5720_927907.ogg}
+[10:59] CLIENTE: Ele comprou aí com vocês antes faz uns 15 dias
+[10:59] CLIENTE: Consegue colocar no nome dele a garantia?
+[10:59] LOJA: *Josy:*
+pode ser sim!
+[11:00] LOJA: *Josy:*
+Qual o nome dele?
+[11:00] CLIENTE: Rogério Demétrio
+[11:03] LOJA: [áudio] "Ah, é ele mesmo que vai vir aqui pra buscar, né?"  {audio:midias/3EB0F14E860D93829C8DB9_488335.ogg}
+[11:03] CLIENTE: Isso
+[11:04] CLIENTE: Você não consegue fazer um desconto não?
+[11:04] CLIENTE: Já vou fazer o pix agora
+[11:04] LOJA: *Josy:*
+Se for pagamento em *dinheiro* em espécie, consigo sim.
+[11:04] CLIENTE: Vai ser pix
+[11:04] LOJA: *Josy:*
+Pix é 289,00
+[11:05] LOJA: *Josy:*
+é que para mim cobra taxa... para dizer que não fiz nada, faço por 286,00, é apertado...
+[11:05] CLIENTE: Já ajuda kkk
+[11:05] LOJA: *Josy:*
+kkkk
+[11:06] LOJA: *Josy:*
+Arrocha!
+[11:07] CLIENTE: [documento]
+[11:07] CLIENTE: Ta na mão
+[11:09] LOJA: [foto]
+[11:36] LOJA: *Josy:*
+Esperando o Rogério!
+[11:37] CLIENTE: Certo
+[11:47] LOJA: *Josy:*
+Obrigada! Bom final de semana!
+[11:49] CLIENTE: Ele pegou?
+[11:49] CLIENTE: Eu quem agradeço!! Bom fim de semana pra você também
+--- 14/09/2026 (Mon) ---
+[16:44] CLIENTE: Boa tarde, tudo bem?
+[16:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:44] CLIENTE: Você consegue me passar a NF do pneu que comprei?
+[16:44] LOJA: [áudio] "Olá, tudo bem com você?"  {audio:midias/3EB02B69EAA58C7EFDF6BA_753295.ogg}
+[16:44] LOJA: [áudio] "Sim, sim, mas dê só um instante que eu já tinha um caminho, tá?"  {audio:midias/3EB0F8A0407D513EA1A2E0_143234.ogg}
+[16:44] CLIENTE: Como foi por um problema de batida que precisei comprar queria deixar tudo certinho pro rapaz depois não vir me questionar sobre
+[16:45] CLIENTE: Ótimo
+[16:45] CLIENTE: Muito obrigado
+[16:47] LOJA: [documento]
+[16:55] CLIENTE: Muito obrigado
+[16:56] LOJA: [áudio] "Por nada, Schumacher. Até mais!"  {audio:midias/3EB09E57973868D3D9CA15_39558.ogg}

@@ -1,0 +1,18 @@
+CONVERSA 2a3573919f | contato: Alessandro Rodrigues | 31/08/2026 11:22 até 09/09/2026 10:12 | 3 msgs do cliente, 6 da loja, 0 do robô
+
+--- 31/08/2026 (Mon) ---
+[11:22] CLIENTE: Queria ver com vc. Ok que podemos fazer
+[11:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:30] LOJA: [áudio] "Oi, seu Alessandro, tudo jóia? Me parece que tem um furo aí, né? Mas precisa trazer para nós podermos ver o que está acontecendo, tá jóia? E aí o rapaz faz análise de 8 da manhã até às 11 e das 13 às 17. Isso de segunda à sexta, tá bom?"  {audio:midias/3EB0B8A718ABED744974BF_928196.ogg}
+[12:05] CLIENTE: Ok
+--- 09/09/2026 (Wed) ---
+[09:46] LOJA: *Josy:*
+Oi!
+[09:46] LOJA: *Josy:*
+Já troquei o pneu para o senhor!
+[09:46] LOJA: *Josy:*
+Só vir retirar.
+[10:12] CLIENTE: Ok
+[10:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

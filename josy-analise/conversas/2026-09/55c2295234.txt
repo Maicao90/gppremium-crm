@@ -1,0 +1,43 @@
+CONVERSA 55c2295234 | contato: Fernanda 🙌 | 01/09/2026 14:36 até 03/09/2026 08:35 | 6 msgs do cliente, 17 da loja, 0 do robô
+
+--- 01/09/2026 (Tue) ---
+[14:36] LOJA: *Josy:*
+Boa tarde, Fernanda.
+[14:48] CLIENTE: Boa tarde
+[14:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:49] CLIENTE: 225/50/18 95v
+
+Dunlop sport Max 050
+[14:50] LOJA: [áudio] "Beleza, Fernanda, eu solicitei lá o orçamento. Assim que eles me responderem, eu te passo aqui, tá?"  {audio:midias/3EB0650F997D1717D8D040_10431.ogg}
+[14:50] CLIENTE: Obrigada
+[14:50] LOJA: *Josy:*
+Disponha!
+[15:41] LOJA: *Josy:*
+Oi.. Fer
+[15:41] LOJA: [foto]
+[15:41] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:43] CLIENTE: Obrigada, vou avisar meu genro
+[15:47] LOJA: *Josy:*
+Certo.
+[16:09] LOJA: *Josy:*
+Oi
+[16:10] LOJA: *Josy:*
+Me passaram o preço errado acredita!
+[16:10] LOJA: [figurinha]
+[16:12] LOJA: *Josy:*
+Agora vai o certo.
+[16:12] LOJA: [foto]
+[16:16] LOJA: *Josy:*
+🙋🏼‍♀️
+[16:31] CLIENTE: Eita kkkkk
+[16:31] CLIENTE: Diferença kkk
+[16:32] LOJA: *Josy:*
+Muuuuuita...
+[17:07] LOJA: *Josy:*
+Analisa e me dá um retorno, está bem! ☺️
+--- 03/09/2026 (Thu) ---
+[08:35] LOJA: [áudio] "Oi, Fernanda, tudo jóia? Nós conversamos na terça-feira a respeito dos pneus aí para o carro do seu genro, né? E eu gostaria de saber se vocês gostariam de seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB009EAE72E6468FC209E_136736.ogg}

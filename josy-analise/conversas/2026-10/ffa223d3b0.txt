@@ -1,0 +1,43 @@
+CONVERSA ffa223d3b0 | contato: Lidiane Ribeiro• | 05/10/2026 13:57 até 05/10/2026 16:30 | 9 msgs do cliente, 21 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[13:57] CLIENTE: Oi
+[13:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:08] LOJA: *Josy:*
+Oi...
+[14:08] LOJA: *Josy:*
+Estou te  aguardando...
+[14:08] CLIENTE: Tem pneus 13 ?
+[14:11] LOJA: [foto]
+[15:09] LOJA: [áudio] "Oi, Lidiane. Boa tarde. Tudo bem com você? Lidiane, olha, no dia de hoje eu vou ter aqui, na verdade, os pneus da Dunlop, a unidade R$ 371,00 à vista, e os pneus da Goodyear, por R$ 357,00 a unidade à vista. O pneu da promoção, este de R$ 269,00, ele já esgotou, tá? Eu vou ter aqui também um R$ 75,00, 75,00 a unidade por R$ 290,00 à vista, e um R$ 65,00, 70,13 por R$ 239,00."  {audio:midias/3EB04104C6E0D037F0D378_52825.ogg}
+[15:10] LOJA: [áudio] "Você mora aqui em Luziânia?"  {audio:midias/3EB0CF6CBF6F95B57D6868_185458.ogg}
+[15:12] CLIENTE: Sim
+[15:13] LOJA: [foto]
+[15:16] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:17] CLIENTE: [áudio] "Eu decidi perguntar... ele é remolde?"
+[15:18] CLIENTE: Meu esposo não quer remolde
+[15:19] LOJA: *Josy:*
+*NOVOS* GOODYEAR E DUNLOP
+[15:19] LOJA: [foto]
+[15:20] LOJA: [foto] *Josy:*
+NOVO
+[15:33] LOJA: *Josy:*
+Vou te encaminhar  a nossa localização.
+[15:33] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:38] CLIENTE: [áudio] "Moça, tem como você me explicar em áudio, porque eu não entendo nada sobre pneus. Só sei que meu esposo quer pneus sem ser remolde e pneu 13, 175, 70."
+[15:38] CLIENTE: [áudio] "Eu queria saber se o pneu é remolde ou não, você me mandou um monte de orçamento aí, mas eu não sei especificar se é remolde ou não, entendeu?"
+[15:38] CLIENTE: [áudio] "É porque eu mandaria para ele, ele quer pagar à vista, aí a vista é esse valor que você mandou, né, dos orçamentos, né, mas ele me explica qual é o que não é remolde."
+[15:38] LOJA: [foto]
+[15:39] LOJA: [áudio] "Oi Lidiane, tudo bem? Eu deixei escrito, né? Novos Gudiri Dunlop. Aí coloquei quais que são os Gudiri Dunlop. Também tem o pneu chinês da marca Van Lee, tá? Que eu coloquei aí escrito como novo."  {audio:midias/3EB066D6F1603649D1EDEA_918951.ogg}
+[15:43] LOJA: [áudio] "Aí, Lidiane, você pode passar aí pra ele dessa forma, tá bom?"  {audio:midias/3EB0B65E3AA0D9EC596E84_551455.ogg}
+[15:43] CLIENTE: Qual é o melhor ?
+[15:43] LOJA: [áudio] "Aí o gosto é particular."  {audio:midias/3EB0A3B8D7A9215BDABB37_379850.ogg}
+[16:04] LOJA: [áudio] "Lidiane, obrigada por aguardar. Estou mandando as mensagens explicadas porque a loja fica cheia, aí eu vou falando com o pessoal aqui. Bem, vamos lá. Então, com a questão qual é o melhor, aí realmente depende muito do gosto da pessoa, porque tem quem prefere Dunlop, tem quem prefere Godia, é realmente uma questão bem particular."  {audio:midias/3EB08E4C8010717B0AD93E_54269.ogg}
+[16:23] LOJA: [áudio] "Lidiane, eu vou te mandar aqui a nossa localização, pois se houver a possibilidade, vocês passam aqui."  {audio:midias/3EB00FE41439614E1F602A_497062.ogg}
+[16:23] LOJA: [áudio] "Eu até te mandei aí em cima, só que eu não sei se está carregando, aí eu vou te mandar a foto aqui da frente da loja, tá?"  {audio:midias/3EB0389D4A4F3E3FA822FE_239102.ogg}
+[16:30] LOJA: [foto]

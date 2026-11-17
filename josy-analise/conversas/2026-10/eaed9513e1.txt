@@ -1,0 +1,53 @@
+CONVERSA eaed9513e1 | contato: . | 21/10/2026 11:41 até 22/10/2026 08:07 | 22 msgs do cliente, 17 da loja, 6 do robô
+
+--- 21/10/2026 (Wed) ---
+[11:41] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[11:41] ROBÔ: Oi, tudo bem?
+[11:41] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[14:43] ROBÔ: 🙋🏼‍♀️
+[14:54] CLIENTE: Fiat punto
+[14:54] CLIENTE: [foto]
+[14:54] ROBÔ: Pro Fiat Punto a medida mais comum é o *185/65/15*.
+[14:54] ROBÔ: Temos o pneu *185/65/15* da marca *GP Premium* saindo por *R$ 249,00 à vista*.
+[14:54] CLIENTE: ..
+[14:55] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:55] LOJA: [foto]
+[14:57] CLIENTE: 339 ?
+[14:57] CLIENTE: Nacional?
+[15:01] LOJA: Isso pneu da marca GP Premium
+[15:02] CLIENTE: [áudio] "Deixa eu te perguntar, aí eu vi uma promoção lá, comprando 3, ganha o quarto, né? Tipo assim, é... Deixa eu te falar. É, dessa marca também vale, né? Convidar que era 15 e era 17. Então tá valendo, né? Fala comigo. Se for isso, eu vou querer fechar logo pra mim poder já fazer esse serviço. Eu tô precisando, meu carro tá muito pobre de pneu, velho."
+[15:03] LOJA: [áudio] "O que é seu carro?"  {audio:midias/3EB069A739D015DFA6A254_999304.ogg}
+[15:05] CLIENTE: Fala isso nao moça
+[15:06] CLIENTE: Consegue essa promoção nao ,pra essa medida
+[15:06] CLIENTE: Pra mim fechar com vcs o serviço
+[15:06] LOJA: [áudio] "Não, a promoção é exclusiva para o R$ 215,55,17."  {audio:midias/3EB0FE1DEDB9750BA6DCCE_399632.ogg}
+[15:10] CLIENTE: Entendi
+[15:30] LOJA: [áudio] "Você mora aqui na cidade de Luziânia mesmo, moço?"  {audio:midias/3EB006EF8340AF7AB53A5D_549318.ogg}
+[15:32] CLIENTE: Isso
+[15:33] LOJA: [áudio] "Tá, mas de todo modo vamos negociar aqui que vai dar certo, tá? Como que você gostaria de realizar esse pagamento, meu jovem? Seria à vista mesmo? Você gostaria de parcelar? Ah sim, me diz, qual que é o seu nome que aqui no WhatsApp não aparece?"  {audio:midias/3EB07F7042ED7240FD3B1C_806041.ogg}
+[15:34] CLIENTE: A vista no cartão
+[15:34] CLIENTE: Pa pufi
+[15:34] CLIENTE: Bruno
+[15:35] LOJA: [áudio] "Bruno, será no cartão de crédito à vista, né? Então, no crédito à vista, você viu que os pneus, eles têm um acréscimo, certo? No caso do pneu do GP Premium, ele ficaria por 346,53, né? Mas eu faço aqui pra você, pelo valor do débito, tá bom? Que é 339. Eu faço esse valor pra você passar no crédito à vista, tá? Aí fica o total de 1.356, e você vindo com o carro aqui, eu já coloco os pneus pra você."  {audio:midias/3EB065D7E826E572367559_627083.ogg}
+[15:36] CLIENTE: Entendi
+[15:36] CLIENTE: [áudio] "Beleza, beleza. No caso seria o seguinte, no caso só dava pra me fazer os 4 se fosse naquela promoção. Se fosse naquela promoção, entendeu? Aí no caso só vai dar pra me fazer os 3 pneus, porque o cartão lá de crédito é só mil reais de limite, entendeu?"
+[15:37] CLIENTE: [áudio] "Aí, no caso, ficaria 1.017. Aí eu passava de financiamento no dinheiro, entendeu?"
+[15:38] LOJA: [áudio] "Pai, mas aí não tem problema, que no caso, com esse valor de 1.017, você está pagando 3 pneus, e um dos pneus você vai pagar a parte. Dá elas por elas, dá certo?"  {audio:midias/3EB0F6FADBA14E6D15602C_346601.ogg}
+[15:38] LOJA: [áudio] "Só que naquela promoção, Bruno, só para você ter uma ideia, cada pneu é 395 reais, então ele é bem mais caro, é outra opção."  {audio:midias/3EB00BB61C4C9D193A2B72_910975.ogg}
+[15:38] LOJA: [áudio] "E qual que é o seu carro que eu tinha te perguntado e você não me respondeu?"  {audio:midias/3EB04A10DD23BD08FC6D3F_501740.ogg}
+[15:42] LOJA: Perdão...aqui não tinha mostrado a mensagem.
+[15:43] CLIENTE: [áudio] "Entendi, entendi. Então fica certo assim, os três pneus GP Premium, 1017, já com... Inclui montagem, montagem, alinhamento, todo lugar inclui. Me diz isso daí."
+[16:16] LOJA: [áudio] "Não, a montagem é inclusa. Alinhamento e balanceamento são cobrados à parte, tá? Aí, o que que tem acontecido? As empresas estão dizendo que o serviço já é todo incluso, mas é só para atrair o cliente. Aí, quando o cliente chega lá, a conversa muda completamente de história. Aqui, não trabalho dessa forma, beleza? Esse é o preço do pneu. Serviços de balanceamento. Anunciamento e alinhamento serão cobrados à parte, mas são valores negociáveis com os meninos aqui da oficina, tá bom?"  {audio:midias/3EB07FEC9E15D69C2AAC51_353309.ogg}
+[16:19] CLIENTE: Vish
+[16:19] CLIENTE: Entendi
+[16:20] LOJA: [áudio] "É, aqui assim, de recomendação que eu te faço, tá, Bruno? Que você realize pelo menos o balanceamento, tá? Que balanceamento, por exemplo, se você foi viajar pra Sergipe, digamos, aí se você tiver que trocar um pneu, né, nesse trajeto, você tendo que trocar esse pneu, você tem que fazer pelo menos o balanceamento, tá, Joyce? Aí é de praxe. E é o valor que nós podemos negociar aqui com os meninos da oficina, fique tranquilo, tá?"  {audio:midias/3EB0937BEE7C2503B450B4_281426.ogg}
+[16:44] CLIENTE: [áudio] "Entendi, beleza, beleza. Eu vou ver aqui direitinho, aviso pra vocês aí. É... Quando liberar o limite do cartão lá."
+[17:17] LOJA: [áudio] "Beleza, ficamos combinados. Bruno, eu vou te mandar aqui a localização da nossa loja, tá?"  {audio:midias/3EB0F6A6527B1FC0E2680A_926567.ogg}
+[17:17] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:18] LOJA: [foto]
+--- 22/10/2026 (Thu) ---
+[08:07] ROBÔ: 🙋🏼‍♀️

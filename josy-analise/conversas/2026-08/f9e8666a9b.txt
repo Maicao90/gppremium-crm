@@ -1,0 +1,59 @@
+CONVERSA f9e8666a9b | contato: Ricardo | 27/08/2026 08:57 até 28/08/2026 14:23 | 19 msgs do cliente, 23 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[08:57] CLIENTE: [áudio] "Bom dia, minha querida. Como é que você tá? Você tá bem? Você tá tendo os pneus aí, minha querida?"
+[08:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:02] LOJA: [áudio] "Bom dia Ricardo, como é que você está? Rapaz, eu acho que eu vou ter 8 ali, só vou conferir para ti, tá bom?"  {audio:midias/3EB0B02213357E23B4EFD5_554974.ogg}
+[09:26] CLIENTE: [áudio] "Tô bem, e você, minha querida? Você tá bem? Tá bom, então. Vai ser 8, mas é 8 de drift, né? E quais as medidas? Qual medida que você vai ter ali?"
+[09:32] LOJA: [áudio] "Eu tenho 11 pneus de R$160,00, tá?"  {audio:midias/3EB0A658603FA1DD30CF6B_535495.ogg}
+[09:32] LOJA: [áudio] "E eles estão completamente novos."  {audio:midias/3EB04774AA1BCD28483AAF_384131.ogg}
+[09:37] CLIENTE: [áudio] "Eu vou ficar com eles aí, meu querido. E qual que é as medidas? Quais são as medidas deles aí? Me passem, por favor."
+[09:38] LOJA: *Josy:*
+Ok
+[09:38] LOJA: *Josy:*
+185/60/15
+[09:39] CLIENTE: [áudio] "Todos eles, né, minha querida? 185-60-15, né? Pode deixar separado pra mim."
+[09:39] LOJA: [foto]
+[09:39] CLIENTE: [áudio] "Então, no caso aí, vai ter 11. Não tem 12 não, né? Que aí fechava 6 par. É, 6 par, né? Só tem 11, né?"
+[09:39] CLIENTE: [áudio] "Não vende meus pneus, viu, meu querido. Se você vender meus pneus, eu vou ficar chateado com você."
+[09:39] CLIENTE: [áudio] "Segure-as para mim que eu vou buscar."
+[09:40] CLIENTE: [áudio] "Tem dois de manobra que ainda ficou na casa do rapaz aí, eu vou passar e vou pegar aí, que o dia que eu peguei eu deixei dois ir para trás, eu vou pegar eles aí também."
+[09:42] LOJA: *Josy:*
+Já vou faturar eles para você tenho os 11 realmente
+[09:47] LOJA: *Josy:*
+1.760,00 os 11pneus .
+[10:13] CLIENTE: [áudio] "Bem, Josi, então tem 11, tudo a medida só, né?"
+[10:14] CLIENTE: [áudio] "185, 60, 15, né? Todos são dessa medida, né?"
+[10:14] LOJA: *Josy:*
+isso
+[10:14] CLIENTE: [áudio] "Você já separou eles aí pra mim, já?"
+[10:14] LOJA: *Josy:*
+isso
+[10:14] CLIENTE: [áudio] "E o desconto você vai fazer aí pra mim?"
+[10:14] LOJA: *Josy:*
+Separados.
+[10:15] LOJA: [áudio] "Ricardo, sério, esses pneus aqui eles não tem defeito nenhum, nenhum mesmo, esse, assim, é porque o padrão aqui da empresa ele é extremamente rígido, então não pode ser um fiozinho de cabelo fora do lugar, esses pneus eles não tem nada, foi apenas porque a letra saiu apagada, aí eu não posso colocar ele na circulação aqui, entendeu, esse daqui ele não tem nadinha, nadinha, nadinha mesmo, então o preço dele, estou fazendo assim por minha conta de 160 mesmo, porque ele não tem nada, nada, nada mesmo, não tem deslocado, ele está perfeito."  {audio:midias/3EB01B055FB6DE3543E890_28736.ogg}
+[10:16] LOJA: [áudio] "Você vai passar aqui..."  {audio:midias/A5FEEE4FA9585F3B910C19640F797B14_198086.ogg}
+[10:20] CLIENTE: [áudio] "Tá bom, minha querida, pode deixar separado pra mim, hein? Eu vou dar um jeito de subir pra aí hoje, ou então amanhã. Mas pode deixar separado, hein? Não deixa, não vende meus pneus, não. Viu?"
+--- 28/08/2026 (Fri) ---
+[11:22] LOJA: *Josy:*
+Bom dia, Ricardo!
+[11:22] LOJA: *Josy:*
+Você vem hoje?
+[12:17] CLIENTE: [áudio] "Bom dia, minha querida. Vou sim."
+[12:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:20] LOJA: [áudio] "Que horas você vai passar por aqui?"  {audio:midias/3EB0E7C0E899BA44FDE497_463149.ogg}
+[12:23] CLIENTE: [áudio] "Minha querida, eu vou passar aí depois do almoço, na parte da tarde, que eu vou sair de Cristalina daqui a pouco."
+[12:24] LOJA: [áudio] "Tá, já então, Ricardo, vou pedir só para os meninos deixarem os pneus mais aqui próximo, tá bom?"  {audio:midias/3EB02302320428C8F2A335_107357.ogg}
+[12:25] CLIENTE: [áudio] "Certinho, meu querido. Obrigado, viu? Se quiser deixar separado aí, porque geralmente eu passei bem com pressa, porque ainda tenho que ir em Brasília. Eu te agradeço."
+[12:25] LOJA: [áudio] "Você vai passar por aqui, que horário mais ou menos? Porque agora o pessoal saiu todo mundo pro almoço, eles vão chegar uma hora. Acho que até esse horário você ainda não tá aqui não, né? Mas eu já vou deixar o pedido ali pra eles, tá bom?"  {audio:midias/3EB0648E04E9DC7F00C23A_60311.ogg}
+[12:28] CLIENTE: [áudio] "Meu querido, eu vou passar aí, eu acredito, ainda vou demorar um pouquinho para sair daqui, eu gasto 45 minutos de cristalina aí, eu acredito que 1,5 mais ou menos eu estou passando aí, eles já vão estar aí, né?"
+[12:29] LOJA: *Josy:*
+Tranquilo...
+[12:29] LOJA: [áudio] "Beleza, como os meninos chegam uma hora e eu tô aqui só, eu vou deixar ali escrito pra eles já providenciarem os pneus pra nós, tá joia?"  {audio:midias/3EB08321766044C603D86B_381091.ogg}
+[12:30] CLIENTE: Ta bom
+[12:30] CLIENTE: Brigado
+[14:23] LOJA: *Josy:*
+Te devo 2 pneus

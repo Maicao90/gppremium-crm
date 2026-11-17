@@ -1,0 +1,35 @@
+CONVERSA 90e3e10246 | contato: Raphael Andrade | 16/09/2026 11:22 até 16/09/2026 11:59 | 12 msgs do cliente, 13 da loja, 0 do robô
+
+--- 16/09/2026 (Wed) ---
+[11:22] CLIENTE: Olá
+[11:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:22] CLIENTE: Bom dia
+[11:22] CLIENTE: Par de pneus 205/55/17
+[11:23] LOJA: [foto]
+[11:23] LOJA: [áudio] "Olá, Rafael. Tudo bem com você? Eu sou a Josi. No dia de hoje, eu tenho aqui os pneus da marca Conforcer e da marca GP Premium. Digamos que o seu pagamento seja à vista. Então, a unidade do pneu Conforcer está por R$ 361,00. Então, os dois pneus ficarão por R$ 722,00, tá?"  {audio:midias/3EB0655219F323F9DB58F6_933612.ogg}
+[11:23] LOJA: [áudio] "Você mora aqui em Luziânia?"  {audio:midias/3EB0C8F87869B766100AC4_43119.ogg}
+[11:49] CLIENTE: Não
+[11:49] CLIENTE: Vcs tem remold dessa medida?
+[11:50] LOJA: *Josy:*
+Sim, o GP Premium , ele é de primeira linha o de R$ 349,00
+[11:52] CLIENTE: Vocês fazem instalação? Quanto ficaria esse par de pneus remold
+[11:52] CLIENTE: ?
+[11:53] LOJA: [áudio] "Rafael, sim, fazemos a instalação dos pneus. Se o pagamento for no débito ou no Pix, a unidade é R$ 349,00 e os dois pneus, no caso, ficam por R$ 698,00, tá? Para parcelar com a fama orçamento, o valor muda, mas você pode observar aí que muda muito pouca coisa, né? Por exemplo, no crédito à vista, ele é R$ 356,75. Se for no crédito parcelado em duas vezes, a unidade já fica por R$ 360,62, que aumenta aí por parcela cerca de R$ 3,80, então a taxa é muito pequena."  {audio:midias/3EB00BBCDDBAD08A8325FF_541925.ogg}
+[11:54] LOJA: [áudio] "Rafael, você mora aonde?"  {audio:midias/3EB0E04166726914CBBE92_835388.ogg}
+[11:54] CLIENTE: Planaltina Goiás
+[11:54] LOJA: *Josy:*
+Hm... estamos distante de ti...
+[11:55] LOJA: *Josy:*
+Para encurtar o trajeto, se eu encaminhar os pneus para uma borracharia no Novo Gama, já te ajuda?
+[11:57] CLIENTE: Pra mim é tranquilo ir buscar aí, seria até interessante já até instalar
+[11:57] CLIENTE: Só vou ver o dia que eu posso te aviso
+[11:58] LOJA: *Josy:*
+Perfeito, então!
+[11:58] LOJA: *Josy:*
+Vou deixar aqui registrada a nossa localização.
+[11:58] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:58] LOJA: [foto]
+[11:59] CLIENTE: Ok
+[11:59] CLIENTE: Obrigado

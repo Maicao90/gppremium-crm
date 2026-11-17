@@ -1,0 +1,26 @@
+CONVERSA 6677a5aa63 | contato: ADM OBRAS 202, 211 E 078 | 28/09/2026 14:26 até 28/09/2026 17:09 | 6 msgs do cliente, 10 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[14:26] CLIENTE: Boa tarde!
+[14:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:27] CLIENTE: pneu 275/35 R22 104Y Pirelli
+[14:28] LOJA: [áudio] "Boa tarde, tudo bem com você? Infelizmente, não trabalhamos com essa opção. Aqui é a pronta entrega. Você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB0BBD0531A7633515C06_417341.ogg}
+[14:39] CLIENTE: Em luziania
+[14:42] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo,  preço e prazo de entrega. Tudo bem?
+[14:42] CLIENTE: ok!
+[15:05] LOJA: *Josy:*
+Assim que os fornecedores me responderem te informo, e repasso para as outras empresas que estão a procura.
+[15:05] CLIENTE: ok
+[15:37] LOJA: *Josy:*
+esse 275/35 r22 pirelli está em falta
+[15:37] LOJA: *Josy:*
+Pode ser outra marca?
+[15:37] CLIENTE: pode ser
+[15:39] LOJA: *Josy:*
+Certo.
+[17:09] LOJA: *Josy:*
+Oi... , medida completamente em falta independente de marca.
+[17:09] LOJA: *Josy:*
+Sinto muito.

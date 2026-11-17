@@ -1,0 +1,25 @@
+CONVERSA 6ec752effc | contato: Rubens | 17/09/2026 15:10 até 17/09/2026 16:09 | 7 msgs do cliente, 11 da loja, 0 do robô
+
+--- 17/09/2026 (Thu) ---
+[15:10] LOJA: *Josy:*
+Boa tarde, Rubens.
+[15:11] LOJA: [foto]
+[15:13] CLIENTE: 👍🏾
+[15:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:14] CLIENTE: 225 65 17
+[15:14] CLIENTE: Obrigada
+[15:27] LOJA: [áudio] "Oi, tudo bem com o senhor? Seu Rubens, eu já vou te mandar a foto dos pneus, tá?"  {audio:midias/3EB0778379701E447FF568_769221.ogg}
+[16:02] CLIENTE: [áudio] "Esses pneus são remolde, né?"
+[16:05] LOJA: *Josy:*
+Sim, entram na categoria.
+[16:05] LOJA: *Josy:*
+E são os pneus mais vendidos que temos.
+[16:05] LOJA: [foto]
+[16:05] CLIENTE: [áudio] "Qual o preço dele mesmo? Qual o preço desse pneu?"
+[16:06] LOJA: [áudio] "Se for no débito ou no Pix, R$ 399,00, Sr. Rubens, igual eu mandei aqui no orçamento para o senhor, mas se for para parcelar o valor muda, mas é muito pouca coisa."  {audio:midias/3EB097737FBEEC091D6CF8_946275.ogg}
+[16:06] LOJA: [áudio] "Os pneus tem 2 anos de garantia, rodam aí 60 mil km, assim como todo tipo de marca de pneu, tá? Ainda mais se o seu carro estiver bem alinhado."  {audio:midias/3EB000E1241DAA66BD2E2B_536245.ogg}
+[16:06] CLIENTE: [áudio] "Ah, beleza. Deixa eu virar esse mês aí meu cartão. Vou dar uma chegadinha aí. Eu te ligo. Obrigado, hein."
+[16:08] LOJA: [áudio] "O senhor prefere vir aqui em Luziânia ou quer que eu mando os pneus aí para o Novo Gama?"  {audio:midias/3EB0D68D65222E32382624_612684.ogg}
+[16:08] LOJA: [áudio] "E posso falar com o senhor novamente que dia?"  {audio:midias/3EB06B0705470B1A30B039_717002.ogg}
+[16:09] CLIENTE: [áudio] "Eu volto a te ligar, tá bom? Pode ficar tranquilo que eu volto a te ligar, tá bom? Obrigado pela atenção, hein?"

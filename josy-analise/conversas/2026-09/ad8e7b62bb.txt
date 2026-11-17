@@ -1,0 +1,103 @@
+CONVERSA ad8e7b62bb | contato: Eryka Souza | 29/09/2026 08:06 até 13/10/2026 17:42 | 28 msgs do cliente, 43 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[08:06] CLIENTE: Josy tudo bem ?
+[08:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:07] CLIENTE: Vcs tem entrega próximo a Taguatinga ou samambaia hj ?
+[08:07] CLIENTE: Preciso de 2 pneu
+[08:07] LOJA: *Josy:*
+Bom dia, tudo bem Eryka!
+[08:07] CLIENTE: Tudo ótimo
+[08:07] LOJA: *Josy:*
+Que benção!
+[08:08] LOJA: *Josy:*
+Qual medida de pneus qye você precisa hoje?
+[08:08] CLIENTE: E o mesmo do meu cadastro
+[08:08] CLIENTE: Eryka Ercilia Ap de Souza Sandri
+[08:08] LOJA: *Josy:*
+Ah, sim... 225/55/18
+[08:08] CLIENTE: Isso
+[08:08] LOJA: *Josy:*
+Deixqa eu ver aqqui
+[08:56] LOJA: [áudio] "Érica, hoje eu não estou com nenhuma rota para essa região. Creio que talvez amanhã eu consiga chegar ao novo Gama. Aí, se você tiver interesse, eu peço para o povo deixar numa borracharia lá para mim, aí eu te passo a localização, tudo direitinho, para você poder ir até lá."  {audio:midias/3EB0D8A50B6230717F8B27_876552.ogg}
+[09:02] CLIENTE: Já vamos marcar
+[09:02] CLIENTE: Então
+[09:03] CLIENTE: Vou ver aqui preciso pra hj
+[09:03] LOJA: *Josy:*
+Hm...
+[09:03] CLIENTE: Talvez consigo ir buscar
+[09:04] CLIENTE: Qt consegue me fazer os dois ?
+[09:04] LOJA: [áudio] "Perfeito. Se você conseguir vir buscar, né, é ótimo que daí nós já fazemos a instalação desses pneus para você, pois com questão a envio, como não estou tendo mais a loja aí nessa região, aí eu consigo mandar para o Novo Gama, mandando para o Novo Gama, né, não cobra frete e você pode até fazer a instalação lá e pagar por lá, nós apenas deixamos alinhados aqui, tá? Se for para eu pedir para o rapaz que faz a entrega mesmo, né, a domicílio, ele cobra frete, aí já ficaria mais apertado e a única forma de pagamento que você teria é de fazer o Pix para mim dos pneus e pagar esse frete, que seria em torno aí de uns 100 reais mais ou menos, tá? Eu vou te mandar aqui o orçamento dos pneus para você, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá? Eu vou te mandar aqui, tá?"  {audio:midias/3EB0F37CF994FBFF850674_482764.ogg}
+[09:05] LOJA: [foto]
+[09:06] LOJA: [áudio] "Érica, se for no débito ou no Pix, a unidade está pelo mesmo preço, que é R$ 399. Se for para parcelar, o valor muda, mas é bem pouca coisa, tá? Aí nós podemos ver aqui um parcelamento que fique bacana para você, podemos negociar a respeito. Se, porventura, você conseguir trazer o pagamento em dinheiro em espécie, aí já consigo fazer aqui para você, por R$ 379 a unidade, só que R$ 379 é somente para dinheiro físico, tá? Débito e Pix permanece R$ 399."  {audio:midias/3EB0274BC226D721EE55A7_399312.ogg}
+[16:58] LOJA: [áudio] "Oi, Erika. Eu creio que hoje você não consegue vir aqui, né? Você quer que eu tento fazer a opção que eu te falei de mandar para o novo Gama? Eu só estou aguardando a resposta dos atendimentos de amanhã, que se você quiser, nós podemos alinhar aqui."  {audio:midias/3EB069EC352FE9A846A55C_15391.ogg}
+--- 30/09/2026 (Wed) ---
+[09:31] LOJA: [áudio] "Oi Erika, tudo jóia? Olha, hoje eu ainda estou sem rota, tá bom? Mas eu vou te informando tudo o que estiver acontecendo aqui para eu poder conseguir te atender."  {audio:midias/3EB0356CA5498FB2F2098B_301326.ogg}
+[09:33] CLIENTE: Bom dia
+[09:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:15] LOJA: [áudio] "Oi, Érica! Tudo jóia? Érica, eu vou conseguir deixar os pneus agora na parte da tarde, lá onde eu havia combinado com você. Fica jóia? Sim?"  {audio:midias/3EB0950F09A1E3F8C96BF2_849289.ogg}
+[11:16] LOJA: Desculpa te ligar... é para confirmar....
+[11:17] LOJA: *Josy:*
+posso mandar?
+[11:17] CLIENTE: Só me avisa q vou lá pra colocar
+[11:17] CLIENTE: Pode sim
+[11:17] LOJA: *Josy:*
+pk
+[11:17] LOJA: *Josy:*
+vou mandar
+[11:17] LOJA: *Josy:*
+vai ser em dinheiro...
+[11:17] CLIENTE: Me envia a localização de lá por favor
+[11:18] CLIENTE: Quero o desconto se puder ser pix com desconto
+[11:20] LOJA: *Josy:*
+PIX  399,00 CADA
+[11:21] LOJA: *Josy:*
+Te mandei o ádio, explicando.
+[11:22] CLIENTE: Pode ser dinheiro
+[11:23] CLIENTE: [áudio] "Josi, eu preciso de outro favor seu. Tem uns dois do meu esposo, do Fábio, que é o da captiva. Ele tava falando com você. Você fez 300 e pouco pra ele. Dá uma olhadinha nas conversas e eu vou precisar que você manda dois do dele também. E a gente vai lá pegar os quatro pneus juntos, tá?"
+[11:24] LOJA: [áudio] "Érica, como meu WhatsApp caiu, porque a internet hoje está oscilando, só pede para ele mandar um oi aqui para mim novamente."  {audio:midias/3EB02A8DD063C451B8F96F_91524.ogg}
+[11:31] LOJA: *Josy:*
+Oi!
+[12:02] LOJA: [áudio] "Oi, Érica, tudo jóia? O Fábio me mandou um oi aqui, são os pneus 2256517, já coloquei aqui no carro e eu combinei com ele 380 a cada, tá?"  {audio:midias/3EB038896D2773D68DF2CA_440512.ogg}
+[12:07] LOJA: [áudio] "Você quer que emite tudo no seu nome mesmo, Érica?"  {audio:midias/3EB052A7733E3CA10C7A78_984676.ogg}
+[12:07] CLIENTE: Sim
+[12:27] LOJA: [localização] -16.0680034,-48.0643739
+[12:27] LOJA: *Josy:*
+Borracharia Popular, essa é a localização. Pode procurar pelo Lázaro.
+[12:28] LOJA: *Josy:*
+ 2 pneus 225/65/17 e 225/55/18  valor total para pagamento em *dinheiro* Total R$ 1.518,00
+[12:28] CLIENTE: Combinado 🤝
+[12:29] LOJA: [áudio] "O pessoal que está responsável pelo transporte vai sair daqui de Luziânia por volta de uma hora, estourando uma e meia, tá? Eu vou mantendo você informada no horário certinho que eles vão chegar lá."  {audio:midias/3EB0AA5CFA1CF3C88D0DE3_81119.ogg}
+[12:30] CLIENTE: [áudio] "Não, certinho. Qualquer coisa a gente pega amanhã de manhã também, né? Se enrolar muito agora à tarde, que o Fábio tem um compromisso também às 14 horas, uma reunião. E eu creio que a gente vai se liberar lá umas 5 e meia, 6 horas, né? Como o trânsito é muito pesado, qualquer coisa a gente pega lá amanhã de manhã, tá? Já instala os meus e já pega os do Fábio."
+[12:32] LOJA: [áudio] "Combinado, Erika, muito obrigada. Tchau, Joia!"  {audio:midias/3EB090D4D39A335A5F5CBD_554919.ogg}
+[12:33] CLIENTE: Eu q agradeço
+[16:32] LOJA: *Josy:*
+Os pneus ja chegaram lá!
+--- 01/10/2026 (Thu) ---
+[17:52] LOJA: *Josy:*
+Oi...deu tudo certo, Eryka?
+--- 03/10/2026 (Sat) ---
+[11:27] LOJA: *Josy:*
+Bom dia, bom dia!
+[11:27] LOJA: *Josy:*
+Deu tudo certo?
+[11:28] CLIENTE: Bom dia
+[11:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:28] CLIENTE: Deu sim
+[11:28] CLIENTE: Mto obrigada
+[11:29] LOJA: *Josy:*
+Perfeito, Eryka...
+[11:29] LOJA: *Josy:*
+Eu quem agradeço a vocês!
+[11:29] LOJA: *Josy:*
+Tenham um bom final de semana, Deus os abençoe muito!
+[11:50] CLIENTE: Igualmente obrigada pra vc tbm
+--- 13/10/2026 (Tue) ---
+[17:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:12] CLIENTE: [áudio] "Oi Josi, boa tarde, tudo bem? Josi, nós vamos ter que despachar os pneus, os do meu esposo, do meu carro a gente já colocou, e eu precisaria de uma nota à parte, tem como? Você consegue desmembrar pra minha nota? Porque a gente vai despachar, então a gente vai pagar em cima da nota, né? E aí pra gente vai ficar pesado esse valor, porque aí foi dos 4."
+[17:21] LOJA: [áudio] "Oi Erika, tudo jóia? Vou ver aqui o que eu consigo para você, tá bom?"  {audio:midias/3EB0D17CFF16260D8F2E79_570484.ogg}
+[17:42] LOJA: [áudio] "Érica, eu até consigo fazer a nota para você. Entretanto, aqui em Goiás, o sistema está fora do ar."  {audio:midias/3EB07012804980B6B66425_29901.ogg}

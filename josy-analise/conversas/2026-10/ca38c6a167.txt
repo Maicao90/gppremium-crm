@@ -1,0 +1,22 @@
+CONVERSA ca38c6a167 | contato: Waldecir Pereira | 14/10/2026 15:07 até 15/10/2026 08:32 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[15:07] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[15:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:08] CLIENTE: 205 17 50
+[15:08] CLIENTE: Os 4
+[15:08] CLIENTE: Quanto
+[15:11] LOJA: 205/50/17, isso?
+[15:17] LOJA: [foto]
+[15:18] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 15/10/2026 (Thu) ---
+[06:31] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Manda a localização
+[06:31] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:21] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:32] LOJA: Moram por aqui?

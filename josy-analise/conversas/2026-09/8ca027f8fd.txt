@@ -1,0 +1,33 @@
+CONVERSA 8ca027f8fd | contato: wilsonlopes | 30/09/2026 11:22 até 30/09/2026 14:11 | 11 msgs do cliente, 14 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[11:22] LOJA: [áudio] "Oi, sou o Wilson, tudo jóia?"  {audio:midias/A5AF36AFBB87C80A5B38841CB52E388B_292167.ogg}
+[11:22] LOJA: [áudio] "Qual que é sua caminhonete mesmo?"  {audio:midias/A597C27D112BE957E7EBD7DDD34F5B07_415026.ogg}
+[11:24] CLIENTE: [áudio] "É uma S10, 2011. E outra pergunta, a gente vai te falar. Estava na promoção aí, comprava 3 e levava 1. Qual o valor que esse cara comprasse 3 e levasse 1? Por favor, também."
+[11:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:24] CLIENTE: [áudio] "Porque dependendo, qualquer coisa, eu compro alguns 4, entendeu?"
+[11:28] LOJA: [áudio] "Essa promoção compre 3, leve 4, ela não está válida para a medida do seu carro, tá? Ela é para a medida 95, 65, 15, 215, 55, 17, que são pneus de carro de passeio."  {audio:midias/3EB0E95D41DFFDD6774593_738711.ogg}
+[11:29] CLIENTE: [áudio] "Não, beleza, não entendi."
+[11:33] CLIENTE: [áudio] "Me vê aí, fala o total que fica, então, dos dois dianteiros, com alinhamento e balançamento, por favor. É, vou pagando dinheiro, depende do preço que foi, beleza?"
+[11:51] LOJA: *Josy:*
+Valor negociável 
+Alinhamento 120,00
+Balanceamento 40,00 por roda
+[11:52] LOJA: [áudio] "Senhora Wilson, aqui a nossa internet, ela tá oscilando e eu tô tentando mandar mensagem e não tô conseguindo, tá? E por isso que tá demorando um pouco. Mas, de modo geral, é esse serviço. Mas, quando chegar aqui, o rapaz vai analisar pra ver se realmente precisa fazer, tá?"  {audio:midias/3EB03671585DD10F39AA71_436717.ogg}
+[11:52] CLIENTE: [áudio] "Não, tudo bem, tranquilo. A partir de que hora que a bosta tá indo aí? Renato, cheguei, já vi direitinho, analisei, por favor. Eu troquei o embuchamento, troquei tudo, mas o certo é ir mesmo verificar mesmo. Fora a hora que o dia tá indo aí, por favor."
+[11:58] LOJA: [áudio] "O senhor pode vir o horário que for bom para o senhor, tá joia? Aqui eu não fecho para o almoço, pode vir que eu estou por aqui."  {audio:midias/3EB09FDF5BB4B803D4CD61_959096.ogg}
+[11:58] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:58] LOJA: [foto]
+[11:59] LOJA: [áudio] "Olha, essa é a nossa localização, tá? Como a minha internet tá oscilando, eu não sei se apareceu a foto da fachada aí na localização, aí eu fui ali fora, tirei a foto pra poder mostrar direitinho como que é aqui, tá bom? E estou te aguardando, Sr. Wilson."  {audio:midias/3EB019DAD469182948EA41_792351.ogg}
+[12:00] CLIENTE: [áudio] "Beleza, tranquilo daqui, a pouco eu chego aí. Valeu, obrigado."
+[12:00] LOJA: [áudio] "Combinado, Sr. Wilson."  {audio:midias/3EB04DD69AD49679E61BA7_941317.ogg}
+[12:08] CLIENTE: [áudio] "Deixa eu te falar. Fica lá do posto, esse posto. Deixa eu ver se eu não trevi. Fica de frente do posto, é isso? Fala aí, por favor."
+[12:09] LOJA: [áudio] "Olha, o senhor passa, aqui na BR, o senhor vai passar pelo, deixa eu ver aqui, meu Deus, vai ter um hotel grandão ali, que acho que é Las Vegas, alguma coisa assim, aí o senhor vai seguir um pouco adiante, aí o senhor vai ver o posto de combustível. Passando um pouquinho o posto de combustível, o senhor já vai entrar à sua direita, que vai ter aqui a Goiás Diesel, Hotel Goiás, tá bom? Vai ter uma placa bem grandona, escrito, compre aqui, pneus da fábrica."  {audio:midias/3EB0E33C4CA43BD8A736B0_855598.ogg}
+[12:10] CLIENTE: [áudio] "Não, beleza, eu entendi. Beleza, daqui a pouco estou chegando por aí. Valeu."
+[12:10] LOJA: [vídeo]
+[13:46] CLIENTE: [áudio] "Eu quero te falar. Obrigado pela atenção aí e, na verdade, eu invito pra falar dos 4 pneus aqui. Beleza? Muito obrigado pela atenção aí. E outra coisa, eu sou serra-levo."
+[13:46] CLIENTE: [áudio] "Opa, obrigado pela atenção. Eu devia trocar falar com os quatro pneus aqui. Eu sou serralheiro, moro de ferro de bombeiro ali. Salve meu nome, qualquer coisa, algum serviço, alguma coisinha, manutenção no portão, publicação, alguma coisinha... pode falar comigo, beleza? O que eu puder aposentar também eu faço, te garanto. Boa tarde."
+[14:09] LOJA: [áudio] "Oi, Sr. Wilson, tudo jóia? Olha, obrigada por aguardar o seu nome do áudio aqui para mim, só que a minha internet está péssima hoje, agora que eu consegui ouvir, tá? É, nossa, eu, igual falei para o senhor ali na porta, felicíssima em ter a satisfação de conhecê-lo, de recebê-lo aqui na nossa empresa, e eu vou salvar, sim, o seu contato no meu número particular, porque eu vou precisar de serviço de serralheiro, tá bom? Pode deixar que eu vou salvar, sim."  {audio:midias/3EB04487C8BFD1DF21D4C2_205978.ogg}
+[14:11] CLIENTE: [áudio] "Estou com a Valente, sem dúvida. Eu só agradeço. E posso ter certeza que o que eu estou podendo fazer lá, assim, eu faço com todas as certezas. Beleza? Só agradeço. E outra coisa, como foi a indicação do meu filho lá, eu tenho muito conhecimento, vou indicar muitas pessoas aqui. Estou mexendo com muitos... alguns oficinos aqui... e... às vezes levou decepção. E eu estou muito agradecido. Eu vou indicar vocês muito aqui, vocês podem ter certeza disso aí. Te garanto. Então, boa tarde."

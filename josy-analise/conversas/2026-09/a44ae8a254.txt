@@ -1,0 +1,31 @@
+CONVERSA a44ae8a254 | contato: pedrons | 22/09/2026 15:51 até 24/09/2026 10:30 | 5 msgs do cliente, 11 da loja, 0 do robô
+
+--- 22/09/2026 (Tue) ---
+[15:51] CLIENTE: Boa tarde
+[15:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:51] CLIENTE: Gostaria de saber os valores para 4 pneus na medida 185/70 R14. Vocês têm marcas em promoção para essa medida? Se puderem me enviar as opções disponíveis e os preços unitários ou do jogo completo, agradeço!"
+[15:51] LOJA: *Josy:*
+Boa tarde!
+[15:51] LOJA: [foto]
+[15:51] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:52] LOJA: *Josy:*
+Você mora aqui em Luziânia-Go?
+[16:43] LOJA: *Josy:*
+Pretende prosseguir com a negociação?
+[16:43] CLIENTE: Opa
+Estou avaliando ainda
+Logo mais, retorno!
+[16:44] LOJA: *Josy:*
+Certo... da maeira que enviei o orçamento ficou claro?
+[16:44] CLIENTE: Ficou sim
+[16:45] LOJA: *Josy:*
+Ok...
+--- 24/09/2026 (Thu) ---
+[10:16] LOJA: [áudio] "Pedro, bom dia, tudo bem? Ontem nós estávamos nos falando aqui e te mandei o orçamento e entendo que você ainda está avaliando as opções aí do mercado. O pneu GP Premium, que é o pneu de 289, nós já entregamos eles colocados para você, caso você queira, está bem? E eu não sei de onde você está falando, mas eu vou deixar aqui a nossa localização, pois se houver a possibilidade, você passa aqui na nossa loja para conversarmos pessoalmente, está bem? Obrigada aí pela sua atenção. Até mais!"  {audio:midias/3EB086B017EAA104C81E84_862646.ogg}
+[10:16] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:30] LOJA: [foto]

@@ -1,0 +1,39 @@
+CONVERSA d23780fba1 | contato: Dr. Gabriel Tenório | 15/10/2026 13:17 até 15/10/2026 15:29 | 12 msgs do cliente, 22 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[13:17] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+Olá! Tenho interesse e queria mais informações, por favor.
+[13:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:19] LOJA: 🙋🏼‍♀️
+[13:20] CLIENTE: Qual valor do pneu 265/60 R18
+[13:20] CLIENTE: Vi no anúncio 599,00
+[13:21] CLIENTE: E esse valor já é instalo ?
+[13:21] CLIENTE: Me manda foto do pneu
+[13:21] CLIENTE: Os ruídos
+[13:21] LOJA: Boa tarde!
+[13:22] LOJA: [foto]
+[13:22] LOJA: Como é no modelo Offroad faz barulho
+[13:23] LOJA: Terei no modelo HT também!
+[13:23] LOJA: Pneus da marca GP Premium
+[13:23] LOJA: [foto]
+[13:24] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:24] LOJA: [foto]
+[13:25] CLIENTE: Esse é o Brutus II
+[13:26] LOJA: BRUTUS
+[13:26] LOJA: HT
+[13:27] CLIENTE: Esse é qual valor ?
+[13:27] CLIENTE: Vi na tabela
+[13:30] CLIENTE: Posso vê a lateral dele
+[13:34] LOJA: Certo
+[13:35] LOJA: [vídeo]
+[13:35] LOJA: [vídeo]
+[14:09] CLIENTE: [áudio] "Esse pneu não é um pneu remolde, né? Esse pneu é um pneu importado, correto? Ou nacional, não sei, mas não é remolde, né?"
+[14:33] LOJA: É
+[14:33] LOJA: Remold de 1ª linha
+[14:35] LOJA: Teremos também em nosso estoque o pneu novo chines da marca maxzez, chegou agora a pouco
+[14:35] LOJA: [foto]
+[14:35] LOJA: [foto]
+[14:54] LOJA: [áudio] "E, Gabriel, se vocês tiverem em busca de alguma marca específica, né, que no momento eu terei essas aí, você me diz, de repente, vocês têm em busca de algum Goodyear, algum Michelin, algo assim, então você me fala que eu verifico com os meus distribuidores para poder realizar um orçamento através de encomenda para você."  {audio:midias/3EB03E3CFD739026D39099_940008.ogg}
+[15:29] LOJA: Gabriel...

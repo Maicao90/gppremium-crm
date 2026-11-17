@@ -1,0 +1,27 @@
+CONVERSA 5d16617942 | contato: Débora | 15/10/2026 07:57 até 16/10/2026 09:24 | 6 msgs do cliente, 12 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[07:57] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[07:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:57] CLIENTE: Eu me chamo Débora
+[07:57] CLIENTE: [foto] Podes me dizer mais sobre a promoção?
+[08:24] LOJA: Bom dia, Débora!
+[08:25] LOJA: A promoção compre 3 e leve 4 é válida para pneus da marca *GP Premium*, nas medidas 195/65/15 e 215/55/17 😉
+[08:25] CLIENTE: Mas os pneus são novos?
+[08:27] LOJA: No caso desses especificamente  são Remold de 1ª linha , são os pneus mais vendidos por conta da qualidade. Também temos pneus de outras marcas, assim que você nos disser qual a *medida* de pneus que precisa, poderemos fazer um orçamento e te dar mais deetalhes.
+[08:28] CLIENTE: Os meus são aro 15 meu carro é um HB20 2023
+[08:29] LOJA: 185/60/15 ou 185/65/15?
+[08:29] CLIENTE: Eita, pera q vou perguntar pro meu esposo rs essa parte eu não sei
+[09:08] LOJA: Bem... vou encaminhar o orçamento do 185/60/15  por ora.
+[09:08] LOJA: [foto]
+[09:08] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:09] LOJA: O ultimo é o remold de 1ª linha.
+[18:18] LOJA: [áudio] "Oi Débora, tudo jóia? Eu vou gravar aqui pra você um vídeo rapidinho, tá? Pra poder te explicar como que é a diferença do pneu que é o GP Premium pro pneu remolde, tá bom?"  {audio:midias/3EB07FA8FDD0CE3E20EBE4_391813.ogg}
+[18:18] LOJA: [vídeo]
+--- 16/10/2026 (Fri) ---
+[09:24] LOJA: [áudio] "Oi Débora, bom dia, tudo bom? Ontem eu mandei um orçamento aí pra ti e só que você ficou de confirmar se realmente é essa opção que eu te encaminhei. Conseguiu verificar essa informação?"  {audio:midias/3EB064BB1FF188C8166FCD_704876.ogg}

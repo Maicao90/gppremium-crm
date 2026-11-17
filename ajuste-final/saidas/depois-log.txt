@@ -1,0 +1,41 @@
+[BotService][TRAVA POS-ORCAMENTO] cortado: ["O valor de R$ 249,00 que te passei antes era da 175/65/14, outra medida.","Também dá pra parcelar em até 10x no cartão."]
+[BotService][TRAVA POS-ORCAMENTO] cortado: ["Também dá pra parcelar em até 10x no cartão!"]
+[BotService] troca de aro: 185/65/15 cotada + "aro 16" -> 185/65/16 nao tem; pede a medida (195/55/16, 205/55/16, 205/60/16, 215/65/16).
+[BotService] troca de aro: 185/65/15 cotada + "aro 16" -> 185/65/16 nao tem; pede a medida (195/55/16, 205/55/16, 205/60/16, 215/65/16).
+[BotService] troca de aro: 185/65/15 cotada + "e aro 16?" -> 185/65/16 nao tem; pede a medida (195/55/16, 205/55/16, 205/60/16, 215/65/16).
+[BotService] troca de aro: 185/65/15 cotada + "e aro 16?" -> 185/65/16 nao tem; pede a medida (195/55/16, 205/55/16, 205/60/16, 215/65/16).
+[BotService] troca de aro: 195/55/15 cotada + "aro 16" -> 195/55/16.
+[BotService] troca de aro: 195/55/15 cotada + "aro 16" -> 195/55/16.
+[BotService] troca de aro: 195/55/15 cotada + "e aro 16?" -> 195/55/16.
+[BotService] troca de aro: 195/55/15 cotada + "e aro 16?" -> 195/55/16.
+[BotService] troca de aro: 205/60/15 cotada + "tem aro 16?" -> 205/60/16.
+[BotService] troca de aro: 205/60/15 cotada + "tem aro 16?" -> 205/60/16.
+[BotService] troca de aro: 175/70/13 cotada + "e no aro 14?" -> 175/70/14.
+[BotService] troca de aro: 175/70/13 cotada + "e no aro 14?" -> 175/70/14.
+[BotService] troca de aro: 185/65/15 cotada + "e aro 16?" -> 185/65/16 nao tem; pede a medida (195/55/16, 205/55/16, 205/60/16, 215/65/16).
+[BotService] troca de aro: 185/65/15 cotada + "e aro 16?" -> 185/65/16 nao tem; pede a medida (195/55/16, 205/55/16, 205/60/16, 215/65/16).
+[BotService] troca de aro: 185/65/15 cotada + "aro 19" -> 185/65/19 nao tem; pede a medida ().
+[BotService] troca de aro: 185/65/15 cotada + "aro 19" -> 185/65/19 nao tem; pede a medida ().
+[BotService][TRAVA POS-ORCAMENTO] cortado: ["O preço certo é *R$ 249,00 à vista*, e continua dando pra parcelar em até 10x no cartão."]
+[BotService] troca de aro: 185/65/15 cotada + "aro 16" -> 185/65/16 nao tem; pede a medida (195/55/16, 205/55/16, 205/60/16, 215/65/16).
+[BotService] troca de aro: 185/65/15 cotada + "aro 16" -> 185/65/16 nao tem; pede a medida (195/55/16, 205/55/16, 205/60/16, 215/65/16).
+[BotService] troca de aro: 195/55/16 cotada + "e aro 15?" -> 195/55/15.
+[BotService] troca de aro: 195/55/16 cotada + "e aro 15?" -> 195/55/15.
+[BotService][TRAVA POS-ORCAMENTO] cortado: ["O 175/65/14 de R$ 249,00 que te passei antes é outra medida.","Também dá pra parcelar em até 10x no cartão."]
+[BotService][TRAVA POS-ORCAMENTO] cortado: ["O 175/65/14 que te passei antes é dos Gol mais novos.","Se preferir, você pode parcelar em até 10x no cartão!"]
+[BotService] troca de aro: 185/65/15 cotada + "aro 16" -> 185/65/16 nao tem; pede a medida (195/55/16, 205/55/16, 205/60/16, 215/65/16).
+[BotService] troca de aro: 185/65/15 cotada + "aro 16" -> 185/65/16 nao tem; pede a medida (195/55/16, 205/55/16, 205/60/16, 215/65/16).
+[BotService] troca de aro: 185/65/15 cotada + "e aro 16?" -> 185/65/16 nao tem; pede a medida (195/55/16, 205/55/16, 205/60/16, 215/65/16).
+[BotService] troca de aro: 185/65/15 cotada + "e aro 16?" -> 185/65/16 nao tem; pede a medida (195/55/16, 205/55/16, 205/60/16, 215/65/16).
+[BotService] troca de aro: 195/55/15 cotada + "aro 16" -> 195/55/16.
+[BotService] troca de aro: 195/55/15 cotada + "aro 16" -> 195/55/16.
+[BotService] troca de aro: 195/55/15 cotada + "e aro 16?" -> 195/55/16.
+[BotService] troca de aro: 195/55/15 cotada + "e aro 16?" -> 195/55/16.
+[BotService] troca de aro: 205/60/15 cotada + "tem aro 16?" -> 205/60/16.
+[BotService] troca de aro: 205/60/15 cotada + "tem aro 16?" -> 205/60/16.
+[BotService] troca de aro: 175/70/13 cotada + "e no aro 14?" -> 175/70/14.
+[BotService] troca de aro: 175/70/13 cotada + "e no aro 14?" -> 175/70/14.
+[BotService] troca de aro: 185/65/15 cotada + "e aro 16?" -> 185/65/16 nao tem; pede a medida (195/55/16, 205/55/16, 205/60/16, 215/65/16).
+[BotService] troca de aro: 185/65/15 cotada + "e aro 16?" -> 185/65/16 nao tem; pede a medida (195/55/16, 205/55/16, 205/60/16, 215/65/16).
+[BotService] troca de aro: 185/65/15 cotada + "aro 19" -> 185/65/19 nao tem; pede a medida ().
+[BotService] troca de aro: 185/65/15 cotada + "aro 19" -> 185/65/19 nao tem; pede a medida ().

@@ -1,0 +1,8 @@
+CONVERSA a334914d33 | contato: 556192412926 | 19/07/2026 10:48 até 20/07/2026 09:30 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 19/07/2026 (Sun) ---
+[10:48] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:50] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 20/07/2026 (Mon) ---
+[09:28] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:30] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

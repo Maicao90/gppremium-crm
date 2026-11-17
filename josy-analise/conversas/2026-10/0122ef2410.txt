@@ -1,0 +1,13 @@
+CONVERSA 0122ef2410 | contato: Rafael | 09/10/2026 12:53 até 09/10/2026 13:45 | 3 msgs do cliente, 4 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[12:53] CLIENTE: [áudio] "Opa, jóia. Bom dia."
+[12:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:53] CLIENTE: 195/50-16
+[12:54] CLIENTE: Opa
+[13:44] LOJA: [áudio] "Rafael, tudo jóia?"  {audio:midias/3EB0FB8A92F9FA9E2098E2_893608.ogg}
+[13:45] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:45] LOJA: [foto]

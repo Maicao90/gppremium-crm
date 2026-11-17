@@ -1,0 +1,12 @@
+CONVERSA 547672980c | contato: Gilmar Freitas | 27/09/2026 15:47 até 28/09/2026 17:42 | 1 msgs do cliente, 4 da loja, 0 do robô
+
+--- 27/09/2026 (Sun) ---
+[15:47] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Boa tarde
+[15:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 28/09/2026 (Mon) ---
+[08:23] LOJA: 🙋🏼‍♀️
+[08:23] LOJA: [áudio] "Olá, bom dia. Tudo bem? Por gentileza, Gilma, me diz qual é a medida dos pneus que você precisa."  {audio:midias/3EB0DBCC7521D7D873C91D_763019.ogg}
+[17:42] LOJA: 🙋🏼‍♀️

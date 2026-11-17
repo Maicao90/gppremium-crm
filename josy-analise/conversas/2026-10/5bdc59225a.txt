@@ -1,0 +1,68 @@
+CONVERSA 5bdc59225a | contato: Fabricio | 01/10/2026 17:00 até 15/10/2026 11:48 | 15 msgs do cliente, 34 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[17:00] LOJA: *Josy:*
+Boa tarde, Fabricio.
+[17:00] LOJA: *Josy:*
+215/60/17
+[17:02] CLIENTE: Sim
+[17:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 02/10/2026 (Fri) ---
+[12:42] LOJA: [áudio] "Boa tarde, senhor Fabrício. Tudo jóia? Eu fiquei de te dar um retorno a respeito dos pneus no modelo que o senhor está buscando e agora que eu tive a resposta, porque nós buscamos aqui justamente esgotar todas as possibilidades para poder dar um parecer para o cliente e realmente no modelo que o senhor quer mais borrachudinho, olha, não encontramos nenhum para contar a história do outro."  {audio:midias/3EB03744D8B998DBA3759D_203974.ogg}
+[12:58] CLIENTE: Esse
+[12:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:00] LOJA: 😊
+[13:01] LOJA: [áudio] "O que é que eu te encaminho novamente às opções que nós nos falamos ontem?"  {audio:midias/3EB08B6140A2AA2FF4EEB4_931041.ogg}
+[13:21] CLIENTE: Sim
+[14:20] LOJA: [foto]
+[14:21] LOJA: *Josy:*
+Pneu da marca Sunny R$ a vista é o menor preço R$ 558,00 a unidade.
+[14:24] LOJA: *Josy:*
+Por ora, ainda dispomos das 4 unidades em estoque.
+[14:40] LOJA: *Josy:*
+Quer que mando a foto dele novamente?
+[15:43] CLIENTE: Eu tenho aqui
+[15:47] LOJA: *Josy:*
+Está bem então.
+--- 09/10/2026 (Fri) ---
+[00:03] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[00:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[00:21] CLIENTE: Teria 215 x60x17
+[08:56] LOJA: [áudio] "Oi, Fabrício, tudo jóia?"  {audio:midias/3EB012F9724D50EBB9EBAF_980331.ogg}
+[08:57] LOJA: [foto]
+[08:57] LOJA: [áudio] "Por ora, continuo tendo aqueles nos quais nós já havíamos conversado anteriormente."  {audio:midias/3EB009816045B45C6B0F36_956023.ogg}
+--- 15/10/2026 (Thu) ---
+[10:18] LOJA: Bom dia, Fabricio!
+[10:19] LOJA: Como posso ajudar?
+[10:19] LOJA: Nossa linha telefonica está com problemas por conta da internet
+[10:19] LOJA: 🙋🏼‍♀️
+[10:20] CLIENTE: Bom dia
+[10:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:20] LOJA: Como posso ajudar?
+[10:20] CLIENTE: Pneu 215x60x17
+[10:20] CLIENTE: Gp
+[10:20] CLIENTE: Teria ele mais cravudo
+[10:21] LOJA: Não temos , infelizmente, Fabricio...
+[10:21] LOJA: Somente no modelo Adventure
+[10:21] CLIENTE: Pode mandar a foto
+[10:22] CLIENTE: Quanto faz trocado e balanceado
+[10:22] CLIENTE: Avista dinheiro
+[10:23] LOJA: Sim, claro!
+[10:23] LOJA: [foto]
+[10:23] LOJA: [foto]
+[10:33] LOJA: Os pneusGP Premium  para pagamento em *dinheiro fisico* a unidade ficará por R$  345,00
+[10:34] LOJA: * Balanceamento = 45,00 (por pneu)
+* Alinhamento = 140,00 (Alinhamento de Direção)
+[10:34] LOJA: Valores negociáveis com os rapazes da oficina
+[11:46] CLIENTE: Entrega montado a base de troca
+[11:46] CLIENTE: Qual garantia do pneu
+[11:47] LOJA: Não é a base de troca.
+[11:48] LOJA: Os pneus da GP Premium já são colocados , a parte cobra-se os serviços que forem necessário ser realizados.
+[11:48] LOJA: Tem garantia de 2 anos.
+[11:48] LOJA: Assim como toda e qualquer marca de pneus a garantia é válida se por ventura ocorrer algum tipo de defeito de fabricação.

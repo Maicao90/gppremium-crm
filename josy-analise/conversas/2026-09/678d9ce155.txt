@@ -1,0 +1,28 @@
+CONVERSA 678d9ce155 | contato: INSP. SANTOS ALVES | 02/09/2026 08:47 até 22/09/2026 15:41 | 9 msgs do cliente, 12 da loja, 0 do robô
+
+--- 02/09/2026 (Wed) ---
+[08:47] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi e o João Carlos me passou o seu contato."  {audio:midias/3EB026C7488410D54F4089_126416.ogg}
+[08:52] CLIENTE: [áudio] "Olá Josi, bom dia, tudo bem?"
+[08:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:56] LOJA: [áudio] "Eu estou bem, e você como é que vai?"  {audio:midias/3EB0962652BE5533F778A9_753842.ogg}
+[09:02] CLIENTE: [áudio] "Tudo jóia, tudo bem, graças a Deus."
+[09:02] CLIENTE: [áudio] "Eu estava precisando de pneu 13. Pálio, você está tendo?"
+[09:21] LOJA: [áudio] "Sim, eu tenho o pneu da marca GP Premium que ele está em oferta ainda. O preço normal dele é R$ 299 a vista, mas está por apenas R$ 269 e nós já colocamos eles para você, se assim você quiser."  {audio:midias/3EB0DA415401B5F8712B03_544957.ogg}
+[09:28] LOJA: [áudio] "Eu vou te mandar aqui as opções de parcelamento, caso você queira parcelar, está bem?"  {audio:midias/3EB0DE2E9CD4FD6F7B35D7_359513.ogg}
+[09:28] CLIENTE: Estou em cristalina,  acho que os que estão nele nao da pra ir
+[09:28] CLIENTE: Ok
+[09:28] LOJA: [foto]
+[09:38] LOJA: [áudio] "Olha, se for à vista, né, que é para débito e Pix, a unidade está por R$ 269, tá? Se for para parcelar, seguem as opções de parcelamento em até 10 vezes."  {audio:midias/3EB0C02EC8D785E0925669_464346.ogg}
+[09:39] LOJA: *Josy:*
+ Se o pagamento for em *dinheiro* em espécie a unidade fica pro R$ 256,00
+[09:41] CLIENTE: [áudio] "Está bem, não, ok. Você poderia mandar para mim, por favor, só a localização, tá? Eu vou verificar aqui o dia que eu consigo ir para buscar, tá bom? Obrigado."
+[09:47] LOJA: [áudio] "Claro, mando sim, agora mesmo."  {audio:midias/3EB095DA184DADCDE8BA71_171747.ogg}
+[09:47] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:48] CLIENTE: Certinho
+[09:48] CLIENTE: Muito obrigado
+[09:48] LOJA: [áudio] "Imagina que é isso, eu quem agradeço."  {audio:midias/3EB022A5F43A3640E97650_900778.ogg}
+[09:49] CLIENTE: 🤝
+--- 22/09/2026 (Tue) ---
+[15:41] LOJA: [áudio] "Olá, tudo bem com você? Nós conversamos alguns dias atrás aí a respeito dos pneus para o seu carro. Quando que você vai conseguir passar aqui em Luziânia para nós instalarmos?"  {audio:midias/3EB014A49BA03E7EA5B24B_422133.ogg}

@@ -1,0 +1,18 @@
+CONVERSA 37622070de | contato: Gabriel | 29/09/2026 19:09 até 30/09/2026 08:03 | 3 msgs do cliente, 4 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[19:09] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[19:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:11] CLIENTE: Pneu 185/65 
+4
+[19:12] CLIENTE: Roda 15
+--- 30/09/2026 (Wed) ---
+[08:03] LOJA: [áudio] "Oi Gabriel, bom dia. Tudo bem com você? Eu sou a Josi."  {audio:midias/3EB069E7D4D79CE89BAF66_600468.ogg}
+[08:03] LOJA: [foto]
+[08:03] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

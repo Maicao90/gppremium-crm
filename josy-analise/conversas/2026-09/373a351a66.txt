@@ -1,0 +1,60 @@
+CONVERSA 373a351a66 | contato: Waldicir | 19/09/2026 10:09 até 19/09/2026 11:59 | 18 msgs do cliente, 24 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[10:09] LOJA: *Josy:*
+Bom dia!
+[10:13] CLIENTE: Bom dia, José!
+[10:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:14] LOJA: [foto]
+[10:14] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:14] CLIENTE: Aro 13 para o Fiat uno mille mais antigo
+[10:14] LOJA: *Josy:*
+175/70/13!
+[10:15] LOJA: *Josy:*
+Já te mando um áudio , posso?
+[10:15] CLIENTE: Ok
+[10:17] CLIENTE: Esse mais em conta José, qual é a marca?
+[10:17] CLIENTE: Josy…
+[10:18] CLIENTE: Qual a marca desse pneu mais barato?
+[10:20] LOJA: *Josy:*
+1 instante
+[10:24] LOJA: [áudio] "Oi moço, tudo bom? Obrigada por aguardar que a nossa loja hoje está lotada. Esse é o pneu da marca GP Premium, tá?"  {audio:midias/3EB0AEF1B8294C21AB2A53_591202.ogg}
+[10:24] CLIENTE: Fabricação de vcs?
+[10:25] LOJA: *Josy:*
+Isso!
+[10:26] CLIENTE: E a garantia?
+[10:26] LOJA: *Josy:*
+de 2 anos
+[10:26] LOJA: *Josy:*
+☺️
+[10:27] LOJA: *Josy:*
+MOra aqui em Luziania-Go?
+[10:29] CLIENTE: O amigo que eu quero ajudar nesta compra mora em Luziânia, próximo ao campo de futebol ⚽️
+[10:29] LOJA: [áudio] "Ah, sim, perfeito. Pois é, a nossa loja fica aqui na BR-040."  {audio:midias/3EB0B607BC4F955BF5C1CA_143914.ogg}
+[10:29] LOJA: [foto]
+[10:30] CLIENTE: Está dentro da cidade de Luziânia?
+[10:33] LOJA: Na Br 040
+[11:50] LOJA: [áudio] "Bem, eu vou fazer o seguinte, como eu te mandei a foto aí da frente da nossa loja, Valdeci, eu vou te mandar a localização, que de repente fica mais prático para você chegar aqui, tá jóia?"  {audio:midias/3EB0446483077172D56056_267461.ogg}
+[11:50] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:51] LOJA: [áudio] "Aí, vindo aqui, você me procura, está bem?"  {audio:midias/3EB07EABA8A22C394A6632_590244.ogg}
+[11:53] CLIENTE: Ok, Josy! A partir de segunda-feira, é isso?
+[11:55] CLIENTE: Vc pode passar pra esse numero a localização, ok?
+[11:55] LOJA: [áudio] "Hoje nós estamos encerrando o nosso atendimento, né? Mas retornaremos na segunda-feira, 8 horas da manhã, já estamos com a loja aberta, tá joia?"  {audio:midias/3EB0E8A04FAC38DFB82D4A_804445.ogg}
+[11:56] CLIENTE: 61996291071
+[11:56] LOJA: [áudio] "Sim, vou mandar um oi pra ele agora mesmo, tá?"  {audio:midias/3EB08515D66EDB114CDB22_219772.ogg}
+[11:57] LOJA: [áudio] "Qual é o nome da pessoa?"  {audio:midias/3EB0815ABC2D83B9A67CAF_391589.ogg}
+[11:57] CLIENTE: Ok, Josy, se puder passa a localização para o número que eu enviei. Obrigado!
+Bom final de semana!
+[11:57] CLIENTE: Sr Raimundo.
+[11:58] LOJA: *Josy:*
+Já mandei
+[11:58] CLIENTE: Vamos fazer um preço especial pra ele, Josy!
+[11:59] LOJA: [áudio] "Vai ser você que estará realizando o pagamento, Valdeci?"  {audio:midias/3EB09593EB3A07591AFA5B_603014.ogg}
+[11:59] LOJA: *Josy:*
+posso te ligar?
+[11:59] CLIENTE: 2 pneus 13 175/70
+[11:59] CLIENTE: Pode ligar, Josy

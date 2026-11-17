@@ -1,0 +1,16 @@
+CONVERSA e84bba34a9 | contato: Tainara Vieira | 17/08/2026 12:16 até 17/08/2026 13:01 | 6 msgs do cliente, 7 da loja, 0 do robô
+
+--- 17/08/2026 (Mon) ---
+[12:16] CLIENTE: Quero cotar o pneu 195/55 R15 GP Premium.
+[12:18] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Me chamo Josi e você reside aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB0F913522E5DAB4DDF2F_124162.ogg}
+[12:18] CLIENTE: Sim.
+[12:23] LOJA: [foto]
+[12:23] LOJA: [áudio] "Bem, no dia de hoje eu tenho aqui os pneus da marca Confort, a unidade está por R$ 288,00, seu pagamento foi no débito ou Pix, e os pneus da marca GP Premium por R$ 289,00, também pagamento para débito ou Pix."  {audio:midias/3EB0B941CF09E9296D3E6F_141124.ogg}
+[12:24] CLIENTE: Alinhamento e balanceamento de brinde? 😁
+[12:25] LOJA: Não, não são brinde. Serão cobrados a parte.
+[12:25] CLIENTE: E quanto fica?
+[12:26] LOJA: Alinhamento entre R$ 80,00...110,00
+[12:37] CLIENTE: Certo, obrigada.
+[12:38] LOJA: Passa aqui na loja, você conversando pessoalmente com os rapazes da oficina é mais prático de negociar.
+[12:39] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[13:01] CLIENTE: Perfeito, te agradeço pela dica.

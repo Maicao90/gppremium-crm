@@ -1,0 +1,27 @@
+CONVERSA 53290e3abb | contato: Rodrigo | 21/09/2026 10:10 até 21/09/2026 10:42 | 6 msgs do cliente, 10 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[10:10] CLIENTE: Bom dia
+[10:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:11] CLIENTE: 225 x60x18
+[10:12] LOJA: *Josy:*
+Bom dia!
+[10:12] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[10:13] CLIENTE: Estou em Paracatu , mas dependendo do preço que vc fizer vou aí colocar 4
+[10:17] CLIENTE: Preciso de 2 205x60x16
+[10:18] CLIENTE: Fiat toro
+[10:18] CLIENTE: Palio
+[10:19] LOJA: [foto]
+[10:20] LOJA: [foto]
+[10:20] LOJA: *Josy:*
+No dia de hoje temos  essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:41] LOJA: [foto]
+[10:42] LOJA: *Josy:*
+Vou te encaminhar a nossa localização, pois se estiver passando por aqui... será uma satisfação recebe-lo.
+[10:42] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:42] LOJA: [foto]

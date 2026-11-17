@@ -1,0 +1,23 @@
+CONVERSA 73fbe23f8d | contato: José | 28/08/2026 09:01 até 04/09/2026 14:38 | 3 msgs do cliente, 10 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[09:01] LOJA: *Josy:*
+Bom dia!
+[09:01] LOJA: *Josy:*
+265/60/18
+[11:57] CLIENTE: Blz
+[11:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:58] LOJA: [áudio] "Oi, seu José, bom dia, tudo bem?"  {audio:midias/3EB0E4032550419738E248_522219.ogg}
+[11:58] LOJA: [áudio] "Estava só aguardando aqui o seu retorno para te mandar o orçamento."  {audio:midias/3EB055108FAD8C284F9A47_980173.ogg}
+[11:59] LOJA: [foto]
+[12:04] CLIENTE: Tá bom então obrigado
+[12:15] LOJA: [áudio] "Imagina, eu que agradeço."  {audio:midias/3EB01D1D45B6F54637F2B8_96662.ogg}
+--- 01/09/2026 (Tue) ---
+[09:26] LOJA: *Josy:*
+Bom dia, sr José!
+[09:26] LOJA: [áudio] "Tudo já é por aí, Sr. José? Alguns dias atrás nós estávamos conversando aqui a respeito dos pneus aí para a sua caminhonete e gostaria de saber se o senhor pretende seguir aqui com a negociação? Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB06A7B0BFC58B578804C_23941.ogg}
+--- 04/09/2026 (Fri) ---
+[14:38] CLIENTE: Boa tarde tive um imprevisto e acabei colocando os pneus aqui em BSB assim que for preciso eu entro em contato
+[14:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

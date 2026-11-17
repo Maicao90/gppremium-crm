@@ -1,0 +1,37 @@
+CONVERSA 27f9171527 | contato: pensamentos sobrinhos | 31/08/2026 14:43 até 31/08/2026 15:30 | 6 msgs do cliente, 17 da loja, 0 do robô
+
+--- 31/08/2026 (Mon) ---
+[14:43] CLIENTE: Tarde
+[14:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:43] CLIENTE: Pneu 185/60/14
+[14:49] CLIENTE: ?
+[14:50] LOJA: *Josy:*
+Boa tarde, Edson... temos sim! 1 instante...
+[14:51] LOJA: *Josy:*
+O GP Premium em *dinheiro* fica por R$ 270,00 a unidade.
+[14:51] CLIENTE: Tem desconto 2 nao
+[14:54] LOJA: *Josy:*
+Ele é 289,00 no debito e no Pix
+[14:55] LOJA: *Josy:*
+Posso separar para voc~e?
+[14:55] CLIENTE: N
+[14:55] LOJA: *Josy:*
+Pq?
+[14:56] LOJA: *Josy:*
+Olha... o minimo nessa medida é 268,00 em *dinheiro*
+[15:01] LOJA: Olha...
+Se for 175/65/14 faço a 249,00 cada e 175/80/14 a 279,00 se te atender.
+[15:01] CLIENTE: Esse 175 se leva dois dividir
+[15:03] LOJA: [áudio] "Edson, pra parcelar, o valor muda. Eu vou mandar aqui pra você como que fica pra parcelar, você analisa, você me diz como que vai ficar bom pra você, que eu vou conversar aqui com o nosso gerente, tá bom?"  {audio:midias/3EB088F875A193EB4B2CDE_484973.ogg}
+[15:03] LOJA: [foto]
+[15:04] LOJA: *Josy:*
+Analisa e me fala, que aí eu converso com o gerente.
+[15:12] LOJA: *Josy:*
+E aí? Diga-me
+[15:16] LOJA: [áudio] "E aí, Edson, analisou? O que você achou aí? Fala para mim quantas vezes que você quer que eu vou conversar aqui com o chefe."  {audio:midias/3EB0C944745DC9AEB428C0_414132.ogg}
+[15:25] LOJA: *Josy:*
+👀
+[15:27] LOJA: *Josy:*
+Bem, imagino que você esteja ocupado, então para não ficar enchendo seu whatsapp de mensagem, vou parar por aqui.                                                                                                                                                                                                                                            Se precisar me chame, ou venha aqui na loja para conversar pessoalmente com o dono da loja. 👋🏻
+[15:30] LOJA: [foto]

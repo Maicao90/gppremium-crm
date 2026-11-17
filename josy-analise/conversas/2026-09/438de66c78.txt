@@ -1,0 +1,24 @@
+CONVERSA 438de66c78 | contato: André Gonçalves 🏄🏻‍♂️ | 28/09/2026 09:06 até 28/09/2026 11:38 | 5 msgs do cliente, 9 da loja, 0 do robô
+
+--- 28/09/2026 (Mon) ---
+[09:06] CLIENTE: Bom dia, tudo bem?
+Tem o pneu 205/40 R17 disponível?
+[09:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:12] CLIENTE: 205/40 R17
+[09:13] LOJA: *Josy:*
+Bom dia, André.
+[09:14] LOJA: *Josy:*
+Temos sim!
+[09:14] LOJA: [foto] Marca Forceland
+[09:14] LOJA: *Josy:*
+Somente essa marca a pronta entrega.
+[09:24] CLIENTE: Tá bom
+[09:25] CLIENTE: Me manda a localização da loja por favor, vou tentar ir ai hoje
+[09:25] LOJA: *Josy:*
+Claro!
+[09:25] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:26] LOJA: [foto]
+[11:29] CLIENTE: A loja fecha pra almoço?
+[11:38] LOJA: *Josy:*
+Não fechamos não!

@@ -1,0 +1,38 @@
+CONVERSA 2ea50df1ff | contato: Jeison 15 | 15/10/2026 13:28 até 15/10/2026 15:48 | 16 msgs do cliente, 14 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[13:28] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[13:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:28] CLIENTE: 175/65 14
+[13:29] CLIENTE: Preciso de três
+[13:30] LOJA: [áudio] "Oi, Jason, tudo bom?"  {audio:midias/3EB0B8B69BFB0E062E6EF2_962705.ogg}
+[13:31] LOJA: [foto]
+[13:31] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:31] CLIENTE: Jóia
+[13:32] CLIENTE: [áudio] "Tu tem, eu queria ver, Continental, Pirelli, Godia, é para um forte casinho."
+[13:32] LOJA: No dia de hoje temos todas essas opções a pronta entrega.
+[13:33] LOJA: Exceto Continental e Pirelli
+[13:34] CLIENTE: [áudio] "Me chamo..."
+[13:35] CLIENTE: [áudio] "E o Godia? Você tem? Tá quanto?"
+[13:38] LOJA: [áudio] "Então, Geisa, eu te mandei o orçamento aí justamente com todas as opções de marcas que eu tenho e nele tem o Goodyear sim. Aí depende da maneira que você gostaria de realizar o pagamento. Qual que é a forma que fica melhor para você?"  {audio:midias/3EB0073CEBA53ED422DFFD_617769.ogg}
+[13:48] CLIENTE: A vista
+[13:48] CLIENTE: Somente três pneus
+[14:31] LOJA: [foto] 371,00 x 3 = 1.113,00
+[14:31] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:52] CLIENTE: Ok
+[15:10] LOJA: [áudio] "Posso separar os pneus aqui para vocês, Jason?"  {audio:midias/3EB0CE19D023CAF1D8ACDF_415992.ogg}
+[15:15] CLIENTE: Pois é
+[15:15] CLIENTE: É uma colega que tá querendo
+[15:15] CLIENTE: Mandei pra ela analisar
+[15:15] CLIENTE: Estou no aguardo
+[15:23] LOJA: Certo... perfeito!
+[15:24] LOJA: Passa aqui na loja!
+[15:24] LOJA: Ou pede para ele vir aqui!
+[15:46] CLIENTE: Vou falar com ela
+[15:47] LOJA: Vindo aqui na fabrica , me procurem Josy
+[15:48] CLIENTE: Perfeito

@@ -1,0 +1,5 @@
+CONVERSA 2c052a2ba4 | contato: 556191582510 | 16/08/2026 06:24 até 16/08/2026 06:26 | 1 msgs do cliente, 1 da loja, 0 do robô
+
+--- 16/08/2026 (Sun) ---
+[06:24] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[06:26] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

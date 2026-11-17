@@ -1,0 +1,46 @@
+CONVERSA 49e8ac2b2d | contato: Leandro Lins | 08/10/2026 09:20 até 09/10/2026 16:16 | 16 msgs do cliente, 25 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[09:20] CLIENTE: [áudio] "Bom dia, Joice. Tudo bem? Estou precisando de 4 pneus, 175,70. Eu queria daquele borrachudo. Se ele tiver com problema estético, melhor ainda. Se ele tiver aí, você me passa o valor aqui. 4, 175,70. Problema estético."
+[09:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:20] LOJA: Bom dia!
+[09:20] LOJA: Bom dia!
+[09:20] LOJA: [áudio] "Eu tenho no modelo ATR, Leandro."  {audio:midias/3EB077472F83864AA7EBC3_657666.ogg}
+[09:20] LOJA: [foto]
+[09:20] LOJA: [áudio] "Desse jeito aqui, tá? Ele está por... dá para fazer por 269 a vista."  {audio:midias/3EB08FDEF9D10DCFD08CA4_774127.ogg}
+[09:22] CLIENTE: [áudio] "Isso, é esse mesmo. Você separa 4 pra mim e me manda um Pix, por favor."
+[09:22] LOJA: [áudio] "Separo sim, agora mesmo."  {audio:midias/3EB03943356B38088F01AF_930604.ogg}
+[09:22] LOJA: [áudio] "Leandro, só me fala com seu CPF para eu gerar a sua via."  {audio:midias/3EB0D0F8B4A5D8ECD5FB16_624929.ogg}
+[09:22] CLIENTE: [áudio] "Tá, e cê me manda aqui que daqui a pouco eu te faço o Pix aí, tá? Que eu tô com um sinal meio ruim aqui, que eu tô numa obra aqui no Curumbá. Aí eu vou fazer o Pix aí pro meu irmão pegar aí pra mim."
+[09:23] CLIENTE: [áudio] "CPF é 00045819114. Leandro, Link Lima."
+[09:31] LOJA: [áudio] "Beleza, Leandro. Já separei aqui os pneus para você, tá? E vou te mandar o valor e o Pix."  {audio:midias/3EB0252764FB491082C7EE_279357.ogg}
+[09:31] LOJA: 1.076,00
+[09:31] LOJA: 24.289.955/0001-79
+[12:11] LOJA: Qual é o nome de seu irmão?
+[12:11] CLIENTE: Leovaldo
+[12:12] CLIENTE: Ele vai pegar aí só amanhã
+[12:12] LOJA: Tranquilo...
+[12:13] LOJA: Assim que fizer o pix, me encaminha o comprovante, está bem!
+[12:13] CLIENTE: Blz
+--- 09/10/2026 (Fri) ---
+[10:00] LOJA: oie
+[12:33] LOJA: [áudio] "Oi Leandro, tudo jóia? Que horas que seu irmão vai passar aqui?"  {audio:midias/3EB0D9D6247AA6C5D99510_893846.ogg}
+[12:34] CLIENTE: [áudio] "Boa tarde, tudo bem? Eu tô vendo com ele que ele se acidentou ontem e aí bagunçou as entregas todas, ele tá lá pro Surucucu ainda. Pode ficar tranquilo que eu te aviso antes, eu tenho que te pagar antes também."
+[12:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:39] LOJA: [áudio] "Nossa, sério mesmo? E eles também? Não? Beleza, então. Assim que possível, você também me encaminhe o comprovante do pagamento do Pix, porque o pessoal do Departamento Financeiro já me acionou aqui, tá bom?"  {audio:midias/3EB0F45A7BAAF058BBA5D1_482245.ogg}
+[15:16] CLIENTE: Opa boa tarde
+[15:16] CLIENTE: Até que horas fica aberto aí? To indo buscar os pneus
+[15:16] LOJA: Até as 18:00
+[15:18] CLIENTE: Blz
+[15:44] LOJA: Vou deixar os pneus aqui na frente, esto te esperando.
+[15:54] CLIENTE: Blz
+[15:54] CLIENTE: To aqui do lado pegando um diesel
+[15:55] LOJA: ok
+[16:14] LOJA: Leandro... esqueci de te falar... como você já é nosso cliente, pode nos avaliar no google, dizendo como é sua expriencia usando os pneus Gp premium e o atendimento da loja?
+[16:14] CLIENTE: Sim
+[16:15] LOJA: https://da.gd/gp-avaliar
+[16:16] LOJA: Te encaminhei o link para ficar mais pratico.
+[16:16] CLIENTE: Tá bom
+[16:16] CLIENTE: Amanhã eu entro blz

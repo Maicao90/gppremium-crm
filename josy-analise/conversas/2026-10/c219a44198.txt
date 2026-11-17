@@ -1,0 +1,23 @@
+CONVERSA c219a44198 | contato: andersonbarbosa45942 | 06/10/2026 10:51 até 06/10/2026 11:54 | 6 msgs do cliente, 11 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[10:51] LOJA: *Josy:*
+Bom dia, Anderson!
+[10:51] LOJA: [foto]
+[10:51] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:22] CLIENTE: Os quatro sai fica qual valor
+[11:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:23] CLIENTE: [áudio] "E se pneu 15 só tem essa medida, tem outra medida que sem ser aquele pneu que eu tô achando que ele pode ficar, ele é bonito, mas pode ser que ele faz muito barulho, mais 15 para caminhonete, tem qual numeração que vocês têm aí?"
+[11:42] LOJA: [áudio] "Somente nesse daí, viu?"  {audio:midias/3EB05FD5D0D8215409CA64_865985.ogg}
+[11:42] CLIENTE: Valor dos quartos avista?
+[11:43] LOJA: [áudio] "Como é 728 cada, os dois vão ficar por 1.456."  {audio:midias/3EB05701A0F00D64CDEE26_203925.ogg}
+[11:44] LOJA: [áudio] "Mas eu acho que o desenho que tá ali no 235 não vai ser exatamente como esse cravudão aqui. Eu acho que ele vai ser o modelo mais AT. Daqui a pouquinho eu vou lá tirar uma foto pra você, tá?"  {audio:midias/3EB06B19172EB92BB6B1E8_261868.ogg}
+[11:49] LOJA: [foto] Vai ser nesse modelo.
+[11:53] CLIENTE: Os 4 a vista com desconto
+[11:53] LOJA: [áudio] "Esses pneus, eles já estão no menor preço realmente, tá?"  {audio:midias/3EB0F949AB08E31061F3E6_816287.ogg}
+[11:53] CLIENTE: [áudio] "Beleza então, deixa eu somar aqui e ver o que eu posso fazer, se eu compro outras rodas ou não, aí eu te aviso."
+[11:53] LOJA: *Josy:*
+O 4 ficam por R$ 2.912,00
+[11:54] CLIENTE: [figurinha]
+[11:54] LOJA: [áudio] "Perfeito. Ficamos combinados dessa maneira. Tu já é Anderson?"  {audio:midias/3EB0ECB3C6CD2095EDF5BD_102495.ogg}

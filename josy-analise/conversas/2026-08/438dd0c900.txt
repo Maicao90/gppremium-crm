@@ -1,0 +1,23 @@
+CONVERSA 438dd0c900 | contato: 5519991280924 | 10/08/2026 12:12 até 16/08/2026 06:14 | 7 msgs do cliente, 7 da loja, 0 do robô
+
+--- 10/08/2026 (Mon) ---
+[12:12] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[12:14] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 11/08/2026 (Tue) ---
+[11:52] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[11:54] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 12/08/2026 (Wed) ---
+[10:32] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[10:34] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 13/08/2026 (Thu) ---
+[09:12] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[09:14] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 14/08/2026 (Fri) ---
+[08:52] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[08:54] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 15/08/2026 (Sat) ---
+[07:32] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[07:34] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?
+--- 16/08/2026 (Sun) ---
+[06:12] CLIENTE: Olá, gostaria de saber os preços de pneus.
+[06:14] LOJA: *josy:* Olá! Tudo bem? Qual aro você procura?

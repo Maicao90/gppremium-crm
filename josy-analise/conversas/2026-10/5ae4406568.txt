@@ -1,0 +1,10 @@
+CONVERSA 5ae4406568 | contato: Edina Madella | 22/10/2026 11:31 até 22/10/2026 12:37 | 1 msgs do cliente, 2 da loja, 2 do robô
+
+--- 22/10/2026 (Thu) ---
+[11:31] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[11:31] ROBÔ: Oi, tudo bem?
+[11:31] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[12:37] LOJA: [áudio] "Oi, Edna. Você me mandou um oi, tudo bem, aqui? E eu gostaria de saber qual é a medida dos pneus que você precisa."  {audio:midias/3EB0EED6AC6668C7D00660_224590.ogg}
+[12:37] LOJA: [áudio] "E você mora aqui em Luziânia mesmo?"  {audio:midias/3EB02B7DBFBB49AE362DFB_572488.ogg}

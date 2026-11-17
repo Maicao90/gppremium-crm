@@ -1,0 +1,20 @@
+CONVERSA f2572cb576 | contato: Ricardo Junior | 08/09/2026 11:48 até 08/09/2026 12:48 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 08/09/2026 (Tue) ---
+[11:48] LOJA: [foto]
+[11:48] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:01] LOJA: [áudio] "Oi, seu Ricardo, eu falei aqui com o meu gerente, ele faz aqui para você o valor do crédito à vista, né, que a unidade é 571 reais, ele faz esse valor para parcelar nas quatro vezes sem juros para o senhor, tá jóia?"  {audio:midias/3EB01AD9AE8553846EBE6C_376872.ogg}
+[12:02] CLIENTE: [áudio] "Esse é o Brutus, né? Eu quero esse, o Brutus, igual você colocou na sua aí."
+[12:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:04] LOJA: *Josy:*
+Isso...ele mesmo!
+[12:05] CLIENTE: Ok
+[12:46] CLIENTE: Isso é base de troca ?
+[12:47] LOJA: [áudio] "Não, não é a base de troca não, fique tranquilo, tá bom? O senhor desmontando os pneus da sua caminhonete, o senhor pode levar eles para casa sem problemas."  {audio:midias/3EB0D00FE2ACECC3C31E64_490870.ogg}
+[12:47] CLIENTE: [áudio] "Ah não, tá ok então. Eu só vou ver um negócio do cartão aqui, porque meu cartão vira dia 12. Aí eu vou ver com a minha esposa se o dela já virou, aí eu passo o dela. Senão eu já tenho que pagar agora. Tá bom? Vou ver se o dela ainda não virou. E se o dela já tiver virado, aí eu vou ir buscar eles aí."
+[12:48] LOJA: [áudio] "Entendo, entendo, Sr. Ricardo. Pois é, eu já até pedi para os meninos separarem os pneus aqui para nós, tá?"  {audio:midias/3EB05F3C993A52C7D272EE_509137.ogg}
+[12:48] CLIENTE: Ok

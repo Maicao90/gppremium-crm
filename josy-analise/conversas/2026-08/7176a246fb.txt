@@ -1,0 +1,46 @@
+CONVERSA 7176a246fb | contato: Jair | 18/08/2026 15:15 até 03/09/2026 11:26 | 16 msgs do cliente, 23 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[15:15] LOJA: [áudio] "Oi Jair, tudo bom? É você que estava ligando aqui, eu atendi, mas a ligação caiu, é por isso que ficou tocando a musiquinha."  {audio:midias/3EB0BCECA444A3E8EF0FDF_288217.ogg}
+[15:15] CLIENTE: Boa tarde
+[15:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:15] CLIENTE: Isso mesmo
+[15:15] CLIENTE: [áudio] "Isso mesmo, eu mesmo. Ajeita aí para nós aí. Esqueci de perguntar, aí vocês fazem a montagem também, né? Alinhamento, essas coisas e tudo."
+[15:15] LOJA: [áudio] "Sim, esses serviços são feitos aqui na nossa oficina, tá bom?"  {audio:midias/3EB0CF564A8A2C4FF8BC0F_361270.ogg}
+[15:16] LOJA: pneu 245/70/16 111s catchfors a/t lanvigator👇🏻
+[15:17] LOJA: [foto]
+[15:18] LOJA: pneu GP Premium  235/70/16 Brutus 👇🏻
+[15:18] LOJA: [foto]
+[15:18] LOJA: pneu GP Premium  245/70/16 ATR 👇🏻
+[15:22] CLIENTE: Falta esse
+[15:22] LOJA: [áudio] "Não, não estou em falta não, é porque eu ainda não pude mandar foto para você, me dê só um instante."  {audio:midias/3EB0DECDFEB0CD82FD1E1D_536790.ogg}
+[15:22] CLIENTE: 😅
+[15:27] LOJA: [foto]
+[15:29] CLIENTE: Esse é o adventure atr
+[15:29] LOJA: Isso!
+[15:29] CLIENTE: Gostei mais dele
+[15:29] CLIENTE: Melhor p asfalta
+[15:30] LOJA: Isso mesmo!
+[15:30] CLIENTE: 235 ou 245 ?
+[15:30] LOJA: 😉
+[15:30] CLIENTE: 489,00?
+[15:31] LOJA: R$ 479,00
+[15:31] CLIENTE: [foto]
+[15:31] LOJA: Eu faço por R$ 479,00
+[15:32] CLIENTE: [áudio] "Não, Jôs, beleza então, fechou. Deixa dois apartados aí. E aí eu tenho dois lá que tá meia vida. Quando eu for comprar de novo eu compro seus, né?"
+[15:32] CLIENTE: 958 o par né
+[15:33] CLIENTE: [áudio] "Beleza, então, fica combinado. Me manda a localização da loja, que aí se eu não for sinal de semana, se eu chegar tarde eu vou no outro, durante a semana. Se não der tempo de montar sábado, eu pelo menos pego eles e monto pra cá depois."
+[15:33] LOJA: [áudio] "Certo, beleza. Então, ficamos combinados dessa forma. Vou te mandar aqui a localização sim, tá bom?"  {audio:midias/3EB0017E03FCFD08F1AB55_529209.ogg}
+[15:33] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:34] CLIENTE: Te perguntar , não é remold não né
+[15:35] LOJA: [áudio] "Ele é um pneu ecológico que nós fabricamos, nós que fazemos. Por questão técnica, o Inmetro pede para colocar como pertencente à categoria de remodelagem, só que são coisas completamente distintas."  {audio:midias/3EB09AC0495B5DFD7A56B3_525367.ogg}
+--- 29/08/2026 (Sat) ---
+[11:44] LOJA: [áudio] "Oi Jair, tudo bom contigo? Homem, tu não vai passar aqui mais não, né?"  {audio:midias/3EB05C78E922B5E7D8BE1E_110193.ogg}
+--- 02/09/2026 (Wed) ---
+[17:47] LOJA: *Josy:*
+☺️
+--- 03/09/2026 (Thu) ---
+[10:55] LOJA: [áudio] "Jair, fala comigo, moço. Te mandei um áudio aí no sábado, mas eu imagino que é bem corrido aí pra ti e você não conseguiu me responder. Mas e aí, quando que você vem pra cá?"  {audio:midias/3EB0236DC615DF553BED73_175241.ogg}
+[11:26] LOJA: [áudio] "Bem, eu vou encerrar definitivamente aqui o seu atendimento, tá? E caso você precise, futuramente você me chama aqui de novo, ou apareça aqui na nossa loja que será uma satisfação receber você aqui, tá já já aí? Um abraço, até mais!"  {audio:midias/3EB07FEB63EE483878BD18_851281.ogg}
+[11:26] LOJA: [foto]

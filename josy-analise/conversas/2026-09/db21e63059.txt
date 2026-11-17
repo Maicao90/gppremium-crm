@@ -1,0 +1,8 @@
+CONVERSA db21e63059 | contato: Simeão Santiago | 09/09/2026 17:15 até 09/09/2026 17:16 | 1 msgs do cliente, 2 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[17:15] LOJA: *Josy:*
+Oi
+[17:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:16] CLIENTE: [foto]

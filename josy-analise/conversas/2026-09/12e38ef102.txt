@@ -1,0 +1,10 @@
+CONVERSA 12e38ef102 | contato: (sem nome) | 25/09/2026 16:57 até 25/09/2026 17:01 | 2 msgs do cliente, 3 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[16:57] LOJA: *Josy:*
+Boa tarde!
+[17:00] CLIENTE: Boa tarde.
+[17:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:01] LOJA: [áudio] "Oi Ismael, tudo bem? Eu te mandei aí o orçamento, mas como estamos com instabilidade na internet, eu não sei se o orçamento chegou aí para ti, mas assim que possível eu te mando novamente, tá?"  {audio:midias/3EB0AE0AE45258DC9D1434_510938.ogg}
+[17:01] CLIENTE: Acredito que o número esteja incorreto. Não sou Ismael, irei bloquear aqui, obrigada.

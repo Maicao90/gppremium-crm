@@ -1,0 +1,292 @@
+CONVERSA df0d3eef6c | contato: Klaydson | 27/08/2026 16:14 até 20/10/2026 15:49 | 99 msgs do cliente, 107 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[16:14] CLIENTE: Boa tarde 🙏🏽🙏🏽🙏🏽
+[16:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:15] CLIENTE: Tudo bem Josy?
+[16:15] LOJA: [áudio] "Olá, boa tarde e tudo? Joia Cleidson."  {audio:midias/3EB0DF0664E018F00549EA_714207.ogg}
+[16:16] CLIENTE: *Gol 1.0 3cil 20/21*
+
+
+Pneu 165/65/R14
+[16:18] LOJA: *Josy:*
+Não seria 175/65/14?
+[16:21] CLIENTE: [áudio] "É porque está essa numeração na plataforma da prefeitura que a gente atende, entendeu? Então eu tenho que colocar o que eles estão pedindo lá, de repente já trocaram o pneu. E aí eles estão vendo essa numeração, eu não posso pôr diferente, eu tenho que ser igual a essa numeração que está aí. Aí me passa o valor aí, se no dia que o cara vier a gente altera, entendeu? Mas de imediato eu preciso ter o valor dessa medida para pôr o valor na plataforma."
+[16:21] CLIENTE: [áudio] "É plataforma, prefeitura, órgão público, aí acaba que os caras, às vezes, mexem, trocam, enfim. Só me passa dessa numeração..."
+[16:21] LOJA: [áudio] "Não, essa medida não tem, não."  {audio:midias/3EB0B8FD10A3B1877A5025_462472.ogg}
+[16:22] LOJA: [áudio] "Bem, eu não tenho como te passar esse preço porque eu não trabalho com essa medida e não é uma numeração que se use no seu veículo."  {audio:midias/3EB0500657138FDABD0947_842523.ogg}
+[16:23] LOJA: *Josy:*
+Ou é 175/65/14 ou 175/70/14
+[16:23] LOJA: [áudio] "Pede para a pessoa que solicitou isso para você verificar corretamente, tá joia?"  {audio:midias/3EB0F7DC4B1FB1F8196D67_474441.ogg}
+[16:24] CLIENTE: Me manda essa
+[16:24] CLIENTE: Só  para eu ter uma base de preço.
+[16:24] CLIENTE: Por favor.
+[16:29] LOJA: [foto]
+[16:29] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:30] CLIENTE: [áudio] "Só para não haver confusão, tem uma opção ali embaixo, que é um nacional de R$ 249,00, certo? Preço à vista."
+[16:30] LOJA: *Josy:*
+Isso, certo!
+[16:30] LOJA: *Josy:*
+É o pneu aqui da fabrica.
+[16:30] LOJA: *Josy:*
+O Fernando usa deles.
+[16:31] CLIENTE: [áudio] "Isso mesmo, é aqui da loja do Fernando, isso mesmo."
+[16:33] LOJA: [áudio] "Beleza, aí depois você só confirma direito pra nós, tá joia? A questão da medida, certo? Pra poder fazer um orçamento preciso pra você."  {audio:midias/3EB094F31032A603C61570_512515.ogg}
+--- 28/08/2026 (Fri) ---
+[11:18] LOJA: [áudio] "Oi Cláudia, são tudo jóia? Vamos dar continuidade aqui na nossa negociação."  {audio:midias/3EB084BFA3E578EFF0D667_29883.ogg}
+[11:20] CLIENTE: [áudio] "Bom dia, Josi. Tudo bom? Não, como eu te falei, eu mando para a plataforma, que é uma licitação, né, eu passo meus valores e eu aguardo o retorno, mas parece que foi aprovado para a gente. Porém, o carro tem que chegar aqui para eu ver no mercado."
+[11:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:21] LOJA: *Josy:*
+Entendo...
+[11:21] LOJA: [áudio] "Tá, jóia. Vamos nos falando aí, tá bom? Eu vou encerrar aqui o seu atendimento e a hora que você precisar, você me chama aqui de volta. Obrigadão, bom final de semana."  {audio:midias/3EB05978BE9002EE98111A_931544.ogg}
+--- 02/09/2026 (Wed) ---
+[08:49] CLIENTE: Bom dia Josy
+[08:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:49] CLIENTE: Tudo bem?
+[08:49] LOJA: [áudio] "Bom dia, Clydson. Como é que você está? Bem, graças a Deus. E você?"  {audio:midias/3EB0B379943BDB27E010DA_205095.ogg}
+[08:50] CLIENTE: [foto] Do gol.
+[08:50] CLIENTE: Estou bem!
+[08:52] LOJA: [áudio] "Temos, temos sim, Clydson. O pneu da marca GP Premium, o pneu aqui da empresa, ele está por apenas R$ 289,00 a vista."  {audio:midias/3EB0627C6BD483D5E855F5_420346.ogg}
+[08:53] CLIENTE: Tem outro mais barato?
+
+Para levar 2 consegue melhorar o preço?
+[08:54] CLIENTE: 175/65/14
+[08:54] CLIENTE: [foto]
+[08:54] LOJA: *Josy:*
+Esse aqui de R$ 279,00 faço por 249,00 no pix ou debito
+[08:55] LOJA: *Josy:*
+185/65/14 é 289,00 mesmo... mas para dizer que não fiz nada faço a 285,00 cada
+[08:55] CLIENTE: [áudio] "Aí vocês não trabalham com entrega não, aí tem que retirar aí, né? Correto?"
+[08:55] LOJA: [áudio] "Correto."  {audio:midias/3EB00AD746A0D6AD5FD11B_926119.ogg}
+[08:55] LOJA: [áudio] "Você vai precisar de 218-565 e 217-565? Como que é?"  {audio:midias/3EB09071F602463AE9A9B8_51182.ogg}
+[08:56] CLIENTE: [áudio] "185 é 2, tá? 185 do gol é 2. São 2, né? E o 175 eu vou passar o valor primeiro aqui, porque aí eu vou ver se eu faço uma viagem só. Se é os 4, quantos são? Só um instante."
+[09:00] CLIENTE: [áudio] "Josi, vai ser isso mesmo, 2185 e 2175, tá? São quatro pneus então com medidas diferentes, né?"
+[09:04] CLIENTE: [áudio] "Tira dois aí, 2185 e 2175, beleza? Dois de cada. Aí manda a chave Pix para o Fernando, que você tem o contato do Fernando aí, manda para ele que ele já vai fazer o pagamento. Aí me manda a localização aí, de onde é certinho, um ponto de referência, bom dia, que eu vou buscar esse trem."
+[09:09] LOJA: [áudio] "Beleza, então."  {audio:midias/3EB0AD04B67831FF338167_656453.ogg}
+[11:00] CLIENTE: Localização
+[11:00] CLIENTE: Por favor
+[11:00] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:01] CLIENTE: [áudio] "Tô indo pra ir buscar os pneus, tá bom? O Fernando já acertou, já tá tudo separadinho, bacana?"
+[11:01] LOJA: [áudio] "Te aguardando, Clydson."  {audio:midias/3EB02554A910CA672EE823_668011.ogg}
+[15:38] CLIENTE: *Pneu Strada*
+
+175/70/R14
+[15:38] LOJA: *Josy:*
+Temos sim!
+[15:39] LOJA: *Josy:*
+Temos no modelo liso e ATR de 299,00 faço para vocês por R$ 279,00 no pix
+[15:39] LOJA: [foto]
+[15:41] CLIENTE: A strada é 2017
+[15:42] CLIENTE: [áudio] "Oi, Jos, bom, deixa eu te falar. Modelo liso e modelo ATR, o que seria isso aí? Assim, cara, eu sou leigo, eu mexo com pressa, pressa, suspensão, mas por questão de pneu a gente é meio leigo. Esse que seria o liso ou esse tal de ATR aí?"
+[15:45] LOJA: *Josy:*
+ATR
+[15:45] LOJA: *Josy:*
+Liso 👇🏻
+[15:45] LOJA: [foto]
+[15:46] CLIENTE: [áudio] "Ah, provavelmente vai ser esse liso aqui. Qualquer um dos dois é 280, né? Qual que é a marca aí mesmo? É GP Premium mesmo? É."
+[15:47] LOJA: [áudio] "Isso, é o GP Premium mesmo."  {audio:midias/3EB0F1FBA0153B3A026ADD_495572.ogg}
+--- 08/09/2026 (Tue) ---
+[09:35] CLIENTE: Bom dia Josy
+[09:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:35] CLIENTE: Tudo bem?
+[09:36] CLIENTE: 185/65/15
+[09:36] CLIENTE: [foto]
+[09:36] CLIENTE: Versa 1.6 16v 13/14
+[09:48] LOJA: *Josy:*
+Bom dia! Como vai?
+[09:49] LOJA: *Josy:*
+Faço de 289,00 por R$ 250,00 para vocês! Valor para débito/pix
+[10:12] LOJA: *Josy:*
+Te atende?
+[10:16] CLIENTE: [áudio] "Bom dia, Jos. Bom, só um instante, quando eu pergunto os valores aí, eu vou passar o orçamento ainda, beleza? Aí só o cliente esse vai autorizar aqui, às vezes é plataforma, é prefeitura, é algum órgão, aí eu tenho que botar na plataforma e demora a aprovar, entendeu? Às vezes é cliente, mas a maioria das vezes é plataforma. Aí eu pergunto o valor e ponho, né, alimento a disputa na plataforma e se a gente ganhar, a gente pede, tá bom? Se der certo aqui, eu entro em contato com você aí. Mas ficou um preço bom. Se der certo aqui, depois spotlo, baciarei, pera."
+[10:17] LOJA: [áudio] "Não, tranquilo, eu só pergunto te atende pra ver se te atende. E aí, como é que você tá?"  {audio:midias/3EB04753815B32382C9CDA_641675.ogg}
+[10:17] CLIENTE: [áudio] "Eu tô bem, graças a Deus. Se você, tudo só de boa, como foi o final de semana, atende. O que você mandar aí, atende. Fazendo o melhor preço, vai me atender sempre."
+[10:17] CLIENTE: 😂😂😂
+[10:23] CLIENTE: [áudio] "Josi, deixa eu te perguntar, esse pneu aí você tá passando aí no CNPJ do Fernando ou se for pra cliente normal, quanto é que sai esse pneu aí?"
+[10:25] LOJA: [áudio] "Faça o mesmo preço. Estou negociando com você, faça o mesmo preço."  {audio:midias/3EB0A4AC2F24461612392A_87392.ogg}
+[11:05] CLIENTE: [áudio] "Josi, me manda um áudio aí. Qual é a garantia do pneu? É um ano, seis meses? Só para me reportar para o rapazinho lá."
+[11:06] LOJA: [áudio] "Garantia de 2 anos se, porventura, acontecer algum defeito de produto."  {audio:midias/3EB0D0822F91DE7FB924E7_94325.ogg}
+[12:42] CLIENTE: Opaaaa
+[12:42] CLIENTE: Estou indo buscar os pneus.
+[12:43] CLIENTE: [áudio] "Não tira no CNPJ do Fernando não, tá? Vou pegar como cliente balcão aí. Você vai fazer o mesmo preço para mim, mas vou pegar no preço de cliente balcão, beleza? Não tira na empresa da FC Autopeça não, tá bom?"
+[12:43] CLIENTE: 127.292.697-46
+[12:43] CLIENTE: Klaydson da Conceição Duarte
+[12:43] CLIENTE: [áudio] "Esse aí são meus dados aí. Se precisar do meu CPF, do meu não pode fazer cadastro, tá aí."
+[12:47] LOJA: [áudio] "Só me fala o seu endereço para eu anexar aqui no comprovante."  {audio:midias/3EB0C8D52E38890FF2FA6B_463624.ogg}
+[12:49] LOJA: [áudio] "E me fala, Clydson, quantos pneus você quer que eu separo aqui para ti?"  {audio:midias/3EB04153C2B690D30F4479_557222.ogg}
+[12:49] CLIENTE: [áudio] "São dois, Júlio, dois pneus, tá? O endereço eu vou puxar aqui que eu não lembro de cabeça. Calma aí."
+[12:52] CLIENTE: 72873178
+[12:52] CLIENTE: [áudio] "Condomínio Flores da Serra, quadra 7, casa 38, bairro Florais do Planalto. Fica no Valparaíso 1."
+[12:54] LOJA: [áudio] "Vai ser à vista mesmo, Cláidson?"  {audio:midias/3EB0437910F6B4D16078B0_241640.ogg}
+[13:05] CLIENTE: Me manda a chave pix.
+[13:05] CLIENTE: Vai ficar 500?
+[13:05] LOJA: *Josy:*
+24.289.955/0001-79
+[13:05] LOJA: *Josy:*
+isso
+[13:10] CLIENTE: [foto]
+[14:42] CLIENTE: [foto]
+[14:43] CLIENTE: [áudio] "João, veja pra mim esse pneu aí, por favor."
+[14:43] LOJA: *Josy:*
+Dá para fazer a 289,00
+[14:43] LOJA: *Josy:*
+Ele é mais caro
+[14:43] CLIENTE: [áudio] "Eita, esse tá caro, hein? É que o rapaz conseguiu aqui já de 300 a vista, então isso não deu preço, não. É porque eles estão vendendo aqui na borracharia Patricio, estão vendendo uma marca aqui importada e nem conhece pneu. Mas aí o cliente não quer saber, né? O cliente quer pagar o mais barato."
+[14:44] LOJA: [áudio] "Se você conseguir sacar o dinheiro, trazer ele em espécie para mim, aí eu já consigo fazer um regalo para ti. Dá para fazer por 275 cada."  {audio:midias/3EB01877583CD6DA34F33A_88904.ogg}
+[14:44] LOJA: [áudio] "Mas, no dinheiro, se for no débito ou no Pix, é 289."  {audio:midias/3EB000B7E2D3FC8F46E1B7_862845.ogg}
+--- 22/09/2026 (Tue) ---
+[14:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:16] CLIENTE: [foto] 185/60 R15
+[14:17] CLIENTE: [áudio] "Boa tarde, Josi. Bom? Josi, isso aí tá no Argo, beleza? Tá no Argo."
+[14:21] LOJA: [áudio] "E aí, Claidson, tudo jóia?"  {audio:midias/3EB0A6A41030BAFF7F1D2E_565085.ogg}
+[14:21] LOJA: [áudio] "Vai precisar de quantos?"  {audio:midias/3EB079836FF55202DC9D2B_350951.ogg}
+[14:21] LOJA: *Josy:*
+Faço a R$ 250,00 cada
+[14:43] CLIENTE: [áudio] "Oi, Josi. A princípio é só um. É uma frota que o cara teve uma batida no Meifi lá e torou o pneu. A princípio é só um."
+[14:44] LOJA: *Josy:*
+Beleza...
+[14:44] LOJA: *Josy:*
+tenho aqui
+--- 23/09/2026 (Wed) ---
+[09:54] CLIENTE: Oi
+[09:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:54] CLIENTE: Bom dia 🙏🏽🙏🏽🙏🏽
+[09:54] LOJA: *Josy:*
+Booom dia!
+[09:54] CLIENTE: 195/60/R15
+[09:54] LOJA: *Josy:*
+Como você está?
+[09:54] CLIENTE: C3
+[09:54] CLIENTE: Estou bem! E vc?
+[09:55] LOJA: *Josy:*
+195/60 R$ 289,00 ....    se fosse 185/60/15 R$ 250,00
+[10:02] LOJA: *Josy:*
+bem também...
+--- 26/09/2026 (Sat) ---
+[09:03] CLIENTE: Bom dia 🙏🏽🙏🏽🙏🏽
+[09:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:04] CLIENTE: 165/70/R14?
+[09:04] CLIENTE: Tudo bom Josy?
+[09:04] LOJA: *Josy:*
+Bom dia!
+[09:04] LOJA: *Josy:*
+Temos sim!
+[09:05] LOJA: *Josy:*
+De R$ 279,00 por R$ 239,00
+--- 29/09/2026 (Tue) ---
+[11:18] CLIENTE: Bom dia🙏🏽🙏🏽🙏🏽
+[11:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:18] CLIENTE: Pneu = 175/65/14
+[11:18] CLIENTE: Ford ka novo.
+[11:19] LOJA: *Josy:*
+Bom dia! Bom dia! De R$ 279,00 por R$ 249,00
+[11:33] LOJA: [áudio] "Fala meu amigo, como é que você está? Olha, aqui está extremamente corrida e por isso não estou conseguindo nem mandar áudio para você, tá? Só estou vendo que você está mandando, já estou mandando o preço logo, tá bom? Olha, se você conseguir trazer o dinheiro em espécie para mim, esse de R$ 249,00, que é valor para débito ou fixo, eu consigo fazer no dinheiro aqui para você por R$ 235,00, se for lhe atender dessa forma."  {audio:midias/3EB09DF37FABB79C25CB53_143680.ogg}
+[11:47] CLIENTE: [áudio] "Pode tirar dois pneus desse aí, dois. Já, já cheguei para buscar."
+[12:25] CLIENTE: [áudio] "Oi, João, bom? Rapaz, tu mandou um áudio aí e eu nem respondi. Não, tá tranquilo, pô, eu sei como é que é. Eu também fico na minha loucura aqui também. E olha que eu tenho oficina na porta da loja, moço. E é corrido, corrido, corrido. Beleza? Pode ficar tranquilo. Pode tirar dois pneus desse aí e aí ele vai pagar no Pix mesmo, que tava sem dinheiro lá. Tá bom? Eu já tô quase chegando aí."
+[12:26] LOJA: *Josy:*
+Ok!
+--- 05/10/2026 (Mon) ---
+[12:33] CLIENTE: Bom dia Josy
+[12:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:34] CLIENTE: Tudo bem?
+[12:34] CLIENTE: [foto]
+[12:34] CLIENTE: [áudio] "Josi, vou precisar de 6 pneus de 66. Passa o valor normal e o valor com desconto, que você pode baixar ao máximo para mim, beleza?"
+[12:39] LOJA: [áudio] "E aí, Clyde, são tudo jóia?"  {audio:midias/3EB05DBE1787061E040013_462992.ogg}
+[12:40] LOJA: Jovem ...
+[12:40] LOJA: *Josy:*
+Infelizmente não tem
+--- 06/10/2026 (Tue) ---
+[09:11] CLIENTE: [foto]
+[09:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:11] CLIENTE: Bom dia Josy 🙏🏽🙏🏽🙏🏽
+[09:12] CLIENTE: Tudo bem?
+[09:12] LOJA: [áudio] "Bom dia, Clydson, tudo jóia? Como é que você tá? Eu estou bem, agora estamos mais fresquinhos, né? Choveu, graças a Deus? Ai, ai, Clydson, esse pneu aí é... deixa eu só ver aqui... esse daí é daquele que tá de... que eu fiz pra você há uns dias atrás por 249 no Peaks, tá bom?"  {audio:midias/3EB0E6E9CF8F83BFAEA3D2_136230.ogg}
+[09:12] CLIENTE: 175/70/14
+[09:13] LOJA: [áudio] "Já o 175-70-14, de 299, faz por 279 pratiques."  {audio:midias/3EB0084A5393EECE40E092_185115.ogg}
+[09:13] CLIENTE: Graças a Deus,  refrescou 😃😃😃
+[09:14] CLIENTE: [áudio] "Pijos, vamos fazer uma coisa boa. Os 4 aí, eu vou precisar de 4 de cada, 4. Faz um preço melhor, melhor para o seu amigo, para levar 4 pneus hoje, 4 pneus do 85, 60, 15 e 4 pneus desse aqui, 175, 70, 14. Faz um precinho camarada no Pix, seu amigo."
+[09:14] LOJA: *Josy:*
+185/60/15 DE R$ 289,00 por R$ 249,00 cada
+[09:14] LOJA: *Josy:*
+175/70/14 de R$ 299,00 por R$ 279,00 cada
+[09:16] LOJA: [áudio] "Clydson, você não conseguiria trazer em dinheiro pra mim? Que daí eu consigo te dar mais um desconto, porque assim ó, eu já coloquei escrito pra você ver o que é que eu tô fazendo pra poder sempre te ajudar. Aí, se você conseguir trazer em dinheiro, em espécie pra mim, esse de 249, eu faço aqui pra você por 235 cada, e esse de 279, eu faço pra você por 265 cada, mas esses preços são somente em dinheiro em espécie."  {audio:midias/3EB0665B00A94CB6AA34CA_740449.ogg}
+[09:16] CLIENTE: Melhora para nós. 🙏🏽🙏🏽🙏🏽
+[09:16] LOJA: [figurinha]
+[09:16] LOJA: *Josy:*
+Consegue?,
+[09:16] CLIENTE: 😂😂😂
+[09:16] CLIENTE: Vou tentar.
+[09:17] LOJA: *Josy:*
+185/60/15 R$ 235,00 x 4 = 940,00 em *dinheiro*
+[09:18] LOJA: *Josy:*
+175/70/14 R$ 265,00 x 4 = 1060,00 em *dinheiro*
+[09:19] LOJA: [áudio] "Porque, Cláudio, eu já faço, sim, o melhor realmente que eu consigo para vocês, tá? Débito e Pix, como para mim, é taxado aqui, a cada 100 reais, tira ali seus 32 reais. E é puxado, tá? Débito, Pix, parcelamento, tudo tem, tem taxas aqui para mim. Aí, o mínimo do máximo que eu consigo fazer para você, no débito ou no Pix, o de 249, é porque eu consigo tirar muito pouca coisa. Dá para fazer por 246 cada, já uns 7,570, faço por 276, porque realmente, para mim, é complicado fazer as coisas aí no Pix. Aí, se você conseguir trazer o dinheiro, nossa, é uma mão na roda, que eu consigo fazer justamente esses preços que eu combinei contigo. E aí, se você conseguir trazer o dinheiro, nossa, é uma mão na roda, que eu consigo fazer o dinheiro, nossa, é uma mão na roda, que eu consigo fazer o dinheiro, nossa, é uma mão na roda."  {audio:midias/3EB02F0C566DE1D0AB07D6_819775.ogg}
+[09:21] LOJA: *Josy:*
+Está bem?
+[09:24] CLIENTE: Eu entendo.  Fica tranquila.
+[09:25] CLIENTE: Somos empresários,  e entendo esses impostos.
+[09:25] LOJA: [figurinha]
+[09:25] CLIENTE: Estou resolvendo.
+[09:25] LOJA: *Josy:*
+Beleza!
+[09:26] LOJA: *Josy:*
+🎶🎵 vai dar tudo certo...🎵🎶 vai dar tudo certo!
+[10:30] CLIENTE: [áudio] "Minha jovem, parou de novo. Separa aí os 4 pneus de cada aí, vai ser no Pix mesmo, tá? Aí fica o último combinado que você me mandou aí. Beleza? 4 pneus de cada aí. Tô indo buscar já."
+[10:36] LOJA: [áudio] "Perfeito, Clayson. Vai ser no seu nome ou no da oficina?"  {audio:midias/3EB0C39B08B796438C62B3_800256.ogg}
+[10:39] LOJA: [áudio] "Em seu nome ou nome da Federal?"  {audio:midias/3EB0ABA43C428B06006889_390034.ogg}
+[10:39] CLIENTE: [áudio] "Federal, Federal, toda vez é Federal. Aí no dia que for pra mim mesmo eu vou te avisar antes, mas toda vez que eu estiver fazendo cotação assim grande assim, é pra Federal, beleza? Obrigado por perguntar."
+[10:42] LOJA: Total 8 pneus R$ 2.208,00
+[10:43] CLIENTE: [áudio] "O Jones, pode mandar aí pro Fernando, beleza? Pode mandar pro Fernando. Eu tô no caminho dirigindo aqui e ele já vai fazer aí pra vocês já, tá bom? Tô quase chegando aí."
+[10:43] LOJA: *Josy:*
+Ok
+--- 08/10/2026 (Thu) ---
+[09:09] LOJA: Oie... bom dia! Klaydson... gostaria de pedir um favor. Os vendedores, estão participando de uma competição, onde somos pontuados através de avaliações no Google, o qual consiste em um cliente deixar um depoimento , contando sua experiênica com os pneus e o atendimento do vendedor, se não for incômodo, pode nos fazer uma avaliação?
+[09:10] CLIENTE: Bom dia🙏🏽🙏🏽🙏🏽
+[09:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:10] CLIENTE: Manda.
+[09:19] LOJA: https://da.gd/gp-avaliar
+[10:57] CLIENTE: Bom dia🙏🏽🙏🏽🙏🏽
+[10:57] CLIENTE: 175/70/13
+[10:57] CLIENTE: Gol G2
+[10:58] LOJA: Te passar aqui
+[11:02] LOJA: De R$ 299,00 por R$ 269,00
+[12:13] LOJA: Te atende?
+[12:14] LOJA: Teremos também o 165/70/13 de R$ 279,00 por R$ 239,00
+[12:14] CLIENTE: [áudio] "Não, porque ele tem 2 já desse modelo aí, ele tá com 2 semi-novos, né? Aí ele vai trocar os 2 mais gastos. Tá bom? Eu tô negociando com ele aqui ainda."
+[12:15] LOJA: [áudio] "Entendi, entendi."  {audio:midias/3EB076DA0E76F99EDCBA4D_529088.ogg}
+[12:15] LOJA: [áudio] "Não, não, tranquilo, é só para caso você precise, né, aí já tem essa opção aí também de uns 165,70. O que muda aí no caso, você sabe, né, é só a largura do pneu, eu diferenciei só de um centímetro, coisa pouca."  {audio:midias/3EB05EF5A68087A0C5A0CF_163747.ogg}
+--- 09/10/2026 (Fri) ---
+[09:51] LOJA: Oi... bom dia!
+[09:52] LOJA: Klaydson... não esquece de fazer a avaliação assim que possivel !
+--- 13/10/2026 (Tue) ---
+[11:01] LOJA: Oiê...como você está? Como passou o final de semana?
+--- 20/10/2026 (Tue) ---
+[10:41] LOJA: *Josy:*
+Oi, Klaydson... como vai? Amigo... você conseguiu fazer a avaliação no Google?
+[15:22] CLIENTE: [áudio] "Olá, boa tarde, bom? Como é que cê tá?"
+[15:22] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[15:22] CLIENTE: [áudio] "Mas eu fico na minha correria aqui, pra cima e pra baixo, correndo pra cima e pra baixo. Hoje já fui na... Já fui ali no Setor Aranorte buscar peças, cabeçote. Fico na correria muito doida aqui. É, mas existem três lá. Dá uma olhadinha lá depois, tá bom? Valeu, valeu, valeu."
+[15:26] LOJA: [áudio] "Rapaz, aqui também tá uma correria, Jesus do céu. Caramba, não achei lá não, Clayson, você acredita?"  {audio:midias/3EB066EE8E8737C9045711_577556.ogg}
+[15:49] CLIENTE: Klay
+[15:49] CLIENTE: Deve esta assim.

@@ -1,0 +1,37 @@
+CONVERSA 985ed48dfc | contato: 🪙💰 | 21/08/2026 09:36 até 27/08/2026 16:21 | 14 msgs do cliente, 15 da loja, 0 do robô
+
+--- 21/08/2026 (Fri) ---
+[09:36] CLIENTE: Bom dia
+[09:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:37] LOJA: Bom dia, Rafa!
+[09:37] CLIENTE: Chegou a nova remessa de pneu 225/75/16C ?
+[09:37] LOJA: Por ora, nada.
+[09:38] CLIENTE: Ta bom
+[09:38] CLIENTE: Vc tem
+Alguma loja para me indicar
+[09:39] LOJA: Aqui em Luziânia, não . Pois as empesas pegam os pneus do meu estoque para revender.
+[09:39] CLIENTE: Entendi
+[10:54] LOJA: [áudio] "Rafa, deixa eu ver uma coisa aqui contigo. Você está precisando dos quatro pneus que eu vou ver se eu consigo fazer uma manobra aqui para poder te atender."  {audio:midias/3EB01F1D45912276B3FA77_167683.ogg}
+[10:56] CLIENTE: Preciso de no mínimo 6
+[10:56] CLIENTE: Mais queria mesmo era 7
+[10:57] LOJA: [áudio] "Certo, deixa eu só confirmar aqui que eu acho que eu consigo agilizar esse daí para você."  {audio:midias/3EB077886BC83E90347D3F_257348.ogg}
+[11:06] CLIENTE: Ta
+[13:06] CLIENTE: Conseguiu coração
+[13:08] LOJA: [áudio] "Rafa, eu só estou aguardando a confirmação da marca porque eu solicitei que eles façam um orçamento que fique mais acessível e por hora eles ainda não me responderam. Estou correndo atrás aqui para ti, tá joia?"  {audio:midias/3EB0C099C9FA64F25E6B31_227843.ogg}
+[13:08] CLIENTE: Ta bom
+[14:52] LOJA: OI...
+[14:52] CLIENTE: Oi
+[14:53] LOJA: [áudio] "Rafa, seguinte, eu vou conseguir para você os pneus, tá? E eu vou conseguir, para o pagamento à vista, a unidade por 669 reais, tá? Aí, se você não se importar, você, né, para poder reservar esses pneus para você, porque eu já estou com a lista de espera bem grande. Você faz um fix de reserva de 200 reais, aí, o dia que o pneu chegar, você vem cá buscar eles e acerta o restante, pode ser?"  {audio:midias/3EB000A49D448AC11A00C3_351592.ogg}
+[14:53] LOJA: [áudio] "Pneus da marca Ling Long."  {audio:midias/3EB0CD5F218C0D9208A6A4_264974.ogg}
+[14:55] CLIENTE: Eu queria era aquele de 505  o conforser
+[14:55] LOJA: [áudio] "Estou buscando ajeitar aqui para você, porque eu estava verificando com o distribuidor, que quando ele chegar aqui mesmo, à vista, o valor dele já vai para 745 reais, então estou negociando com você para ver se eu já fecho a 669."  {audio:midias/3EB0EDD740FE071EB66AAC_886829.ogg}
+[14:55] LOJA: [áudio] "Eu já estou buscando esse aqui para você, da Ling Long, que já está no menor preço realmente, que igual eu te falei, ele vai chegar a outro valor, estou negociando com ele aqui abaixo já, para poder te atender, porque vai ter reajuste."  {audio:midias/3EB08067BBE88FBE179A72_852419.ogg}
+[14:56] CLIENTE: Esse valor ae nao da pra min nao
+[14:56] CLIENTE: Pensei que era quele conforser
+--- 27/08/2026 (Thu) ---
+[16:21] LOJA: *Josy:*
+Oi... ainda precisa dos pneus?
+[16:21] LOJA: *Josy:*
+Acabaram de chegar.
+[16:21] LOJA: [foto]

@@ -1,0 +1,19 @@
+CONVERSA 7e098705b9 | contato: Davi Menezes | 15/10/2026 11:16 até 15/10/2026 12:37 | 5 msgs do cliente, 8 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[11:16] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Aro 17/245/70
+[11:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:16] CLIENTE: Quanto?
+[11:16] CLIENTE: Aro 17/245/70
+[11:32] LOJA: [áudio] "Olá, bom dia! Tudo bem com você, Davi?"  {audio:midias/3EB04C8F942CF6D58D5C0D_902937.ogg}
+[11:32] LOJA: 245/70/16  Pneu da marca GP Premium
+[11:32] LOJA: [foto]
+[11:32] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:32] LOJA: [foto]
+[12:10] CLIENTE: Valeu !
+[12:12] LOJA: Mora aqui em Luziânia-Go?
+[12:16] CLIENTE: Valparaiso
+[12:37] LOJA: Pertinho!

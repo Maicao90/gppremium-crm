@@ -1,0 +1,10 @@
+CONVERSA f276ed1662 | contato: Rosane ❤️ | 08/09/2026 14:08 até 08/09/2026 14:11 | 2 msgs do cliente, 2 da loja, 0 do robô
+
+--- 08/09/2026 (Tue) ---
+[14:08] LOJA: *Josy:*
+Boa tarde!
+[14:10] CLIENTE: Ok
+[14:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:11] CLIENTE: 235/60/14 ou 
+225/70/14

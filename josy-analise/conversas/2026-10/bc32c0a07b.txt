@@ -1,0 +1,23 @@
+CONVERSA bc32c0a07b | contato: Aliomar Junior | 07/10/2026 11:10 até 14/10/2026 12:10 | 9 msgs do cliente, 9 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[11:10] CLIENTE: Ola
+[11:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:10] CLIENTE: Bom dia
+[11:10] LOJA: [áudio] "Oi, tudo bom?"  {audio:midias/3EB0BC0DA926E836F6F4F3_632061.ogg}
+[11:10] CLIENTE: [áudio] "Bom, meus amigos da Joia, eu tô com um problema nos pneus, naqueles últimos que eu te comprei, ele tá dando uns nós nele, sabe, nas laterais dele, nas bordas dele, vou te mandar um vídeo aí."
+[11:11] LOJA: [áudio] "Salyama, pode trazer o pneu para avaliar sem problemas, tá bom?"  {audio:midias/3EB0DD45151B20DCDE8C0F_261222.ogg}
+[11:12] CLIENTE: [vídeo]
+[11:12] LOJA: [áudio] "Sim, sim. Aí, no caso, tem que tirar o pneu, deixar ele aqui, que nós vamos mandar para o distribuidor, tá bom?"  {audio:midias/3EB0F78F67ADA1311B3866_14089.ogg}
+[11:18] CLIENTE: [áudio] "Moço, aí agora complicou. Como é que nós vamos tirar esses pneus? Vou ficar sem pneus para você mandar isso aí. Como é que vamos fazer?"
+[11:19] LOJA: [áudio] "Aí você vai ter que colocar aqueles outros para poder rodar e esses daí a gente manda lá para o pessoal da empresa responsável."  {audio:midias/3EB02199F087F8758EE26D_73586.ogg}
+[11:19] CLIENTE: [áudio] "Porque assim, os pneus, dá pra ver que tá com problema. Todos estão, os quatro, não é só um, nem nada, se fosse só um, por dizer, será que pegou uma guia, pegou um pneu, pegou um buraco, alguma coisa, mas os quatro. Aí o que acontece? Eu vou ter que ficar sem pneus, vou ter que arrancar os pneus, arrancar, ficar sem pneus, pra poder mandar pra vocês. Fora o pagamento da instalação de tudo, é complicado."
+[11:19] CLIENTE: [áudio] "O que é assim, correto é eles pegarem os pneus, colocar os pneus aí, a gente vai na loja do lado, vamos trocar de novo, coloca e devolve. Correto é isso?"
+--- 14/10/2026 (Wed) ---
+[12:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:07] CLIENTE: [áudio] "Oi, bom dia, tudo bem? E aí, mulher? Eu vou ter que levar esses pneus aí, mas e aí? Como é que eu faço? Eles vão pedir os pneus primeiro? Vou poder chegar e trocar logo na hora? Como é que eu vou fazer?"
+[12:07] LOJA: Oi... bia tarde!
+[12:09] CLIENTE: [áudio] "O senhor já paguei R$200 isso, o menino foi R$280 que o rapaz me cobrou o vizinho em seu ZI, agora eu tenho que pagar mais de R$280 para poder desmontar, montar novamente. Como é que eu não vou fazer isso aí, minha amiga? Me ajuda?"
+[12:10] LOJA: [áudio] "Oi, Leomar, tudo jóia? Então, precisa que tire os pneus da caminhonete, deixa aqui na nossa loja, que nós vamos mandar para o representante da marca fazer a avaliação, geralmente leva-se uns 30 dias aí para eles poderem dar uma resposta."  {audio:midias/3EB02D09197105241EFA0D_590219.ogg}

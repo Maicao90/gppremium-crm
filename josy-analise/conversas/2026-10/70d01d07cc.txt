@@ -1,0 +1,28 @@
+CONVERSA 70d01d07cc | contato: Gerson Carreiro Lacerda | 21/10/2026 08:23 até 21/10/2026 14:15 | 4 msgs do cliente, 14 da loja, 1 do robô
+
+--- 21/10/2026 (Wed) ---
+[08:23] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+[08:23] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[08:24] CLIENTE: 31-10-50-15 109s
+[08:24] LOJA: 31 X 10,5 R15 certo?
+[08:25] CLIENTE: É 31x10,50r15
+[08:26] LOJA: [foto]
+[08:26] LOJA: [foto]
+[08:26] LOJA: [foto]
+[08:26] LOJA: [foto]
+[08:26] LOJA: [áudio] "Oi, seu Gerson. Bom dia. Como é que o senhor está? Eu tenho a Xim e é o pneu da marca Conforcer. A unidade está por R$ 779,00, se o seu pagamento for à vista, tá? Esse aí é o desenho dele."  {audio:midias/3EB0EFDAB73F4D191BDFE9_782381.ogg}
+[08:27] CLIENTE: E em  quantas vezes vocês dividem
+[08:32] LOJA: [foto]
+[08:32] LOJA: No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:08] LOJA: [áudio] "Oi, Sr. Gerson, tudo bom? Acabou de chegar aqui para mim um pneu na mesma medida, da mesma marca, mas com a banda de rodagem diferente, então ele vai ser um pouco mais em conta, vou te mandar aqui o orçamento e a foto também, tá?"  {audio:midias/3EB07A81F702968A0F68FC_70784.ogg}
+[11:09] LOJA: [foto]
+[11:09] LOJA: [foto]
+[11:09] LOJA: [foto]
+[11:10] LOJA: [áudio] "Esse daí, ele já sai um pouco mais em conta, tá? Se for para parcelar em 10 vezes, a unidade é R$ 789,00. Se o senhor quiser os 4 pneus, dá um total de R$ 3.156,00. Então, o senhor vai pagar 10 parcelas de R$ 315,60."  {audio:midias/3EB0EE2621FC31672CD852_278530.ogg}
+[14:15] ROBÔ: 🙋🏼‍♀️

@@ -1,0 +1,18 @@
+CONVERSA 79a08c2003 | contato: Aluísio Antônio De Paiva | 28/08/2026 15:27 até 28/08/2026 16:06 | 5 msgs do cliente, 6 da loja, 0 do robô
+
+--- 28/08/2026 (Fri) ---
+[15:27] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[15:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:28] LOJA: *Josy:*
+🙋🏼‍♀️
+[15:28] CLIENTE: Onde fica a loja ?
+[15:28] LOJA: [áudio] "Olá, boa tarde, tudo bem? Nós somos aqui de Luziânia, Goiás, e você?"  {audio:midias/3EB034BD69A4F1925F9722_69674.ogg}
+[15:29] CLIENTE: Taguatinga sul
+[15:53] LOJA: *Josy:*
+Ah, sim!
+[15:55] LOJA: *Josy:*
+Posso ajudar em algo?
+[16:04] CLIENTE: Desculpe achei que era mais perto
+[16:05] LOJA: [áudio] "Ah sim, sem problemas então. Obrigada pelo contato e bom final de semana."  {audio:midias/3EB08220B2CA148BD028CA_249124.ogg}
+[16:06] CLIENTE: Obrigado pra vc também

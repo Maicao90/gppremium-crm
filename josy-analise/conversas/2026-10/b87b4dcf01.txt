@@ -1,0 +1,32 @@
+CONVERSA b87b4dcf01 | contato: Guilherme Rodrigues | 01/10/2026 13:08 até 01/10/2026 14:29 | 6 msgs do cliente, 17 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[13:08] CLIENTE: Boa tarde!
+[13:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:09] LOJA: Oooi
+[13:09] LOJA: Boa tarde!
+[13:09] LOJA: [áudio] "Oi Guilherme, tudo bem? Pode falar, estou te aguardando."  {audio:midias/3EB0069F7F7AD9787A551E_529184.ogg}
+[13:10] CLIENTE: [áudio] "Oi Jôs, tudo bem? Eu vim para a indicação do Júlio Meirelles da Facilita Veículos. Estou precisando de dois pneuzinhos 175-7013. Você tem eles aí?"
+[13:10] LOJA: [áudio] "Deixa eu ver aqui para você, tá?"  {audio:midias/3EB0F53BC937A9C6AF148F_615387.ogg}
+[13:11] LOJA: [áudio] "Tenho aqui sim. Guilherme, se você for fazer o pagamento no débito ou no Pix, dá para fazer por R$ 269,00 cada."  {audio:midias/3EB09004745D0D7429F77C_410092.ogg}
+[13:11] LOJA: [áudio] "Aí eu tenho aqui também 165,70, que dá para fazer por 239 a vista."  {audio:midias/3EB00AE0B3DFA0928A5D17_557902.ogg}
+[13:12] LOJA: [foto]
+[13:13] CLIENTE: [áudio] "Deixa eu te falar, vocês fazem alinhamento, balanceamento também ou é só venda de pneu?"
+[13:13] LOJA: [áudio] "Vende o pneu e, se você precisar desses serviços, fazemos também, tá?"  {audio:midias/3EB0723F1F28918475D401_445302.ogg}
+[13:13] LOJA: *Josy:*
+* Balanceamento = 35,00 (por pneu)
+* Alinhamento = 120,00 (somente Alinhamento de Direção)
+[13:13] LOJA: [áudio] "Só que são valores negociáveis, esses que eu te passei. Pode ficar tranquilo, tá? Que isso daí é a média."  {audio:midias/3EB0D96653305B7EA3C592_507291.ogg}
+[13:14] CLIENTE: [áudio] "Vê para mim quanto você faz para alinhar e balancear o carro todo. E dois pneus, três para colocar na dianteira. Faz um combinho para mim no propagamento do Pix."
+[13:16] LOJA: [áudio] "Olha, Guilherme, esses serviços, né, são já o preço dos mecânicos. Aí, você vindo aqui, é mais fácil de você negociar com eles, brigar com eles, fazer o que você quiser com eles. Tá joia? Eu não, assim, prefiro que você realmente converse e alinhe com eles, tá bom? Passa aqui que a gente já ajeita isso daí pra você."  {audio:midias/3EB0EFAD8F51E52B953C4B_629554.ogg}
+[13:17] LOJA: [áudio] "Eu tô saindo pro almoço agora, mas daqui a pouco eu retorno, porque eu almoço aqui na fábrica mesmo, tá? Eu saio agora, volto às 2h20. Mas se você vier aqui, só pedir pra eu me chamar, tá bom?"  {audio:midias/3EB0084ECAEE3AF7F73554_525878.ogg}
+[13:18] CLIENTE: Tranquilo, eu vou passar ai
+[14:01] LOJA: *Josy:*
+oie...voltei
+[14:28] LOJA: [áudio] "Posso separar os pneus aqui para você, Guilherme?"  {audio:midias/3EB04B939BB663A6997BF1_18083.ogg}
+[14:29] CLIENTE: [áudio] "Jos, eu não vou conseguir subir hoje não, eu tive um previsto aqui, eu vou ver se eu consigo amanhã, a gente procura aí, amanhã cedo, tá? A gente já fecha o negócio aí."
+[14:29] LOJA: *Josy:*
+Ok
+[14:29] LOJA: *Josy:*
+Combinado!

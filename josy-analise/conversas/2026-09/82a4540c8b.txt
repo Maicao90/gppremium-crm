@@ -1,0 +1,36 @@
+CONVERSA 82a4540c8b | contato: Mary Farias ❤️ | 21/09/2026 09:55 até 22/09/2026 08:54 | 7 msgs do cliente, 12 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[09:55] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:55] CLIENTE: pneu pirelli numeração 225/60 R18
+[09:56] LOJA: *Josy:*
+Bom dia.. Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[09:59] CLIENTE: Ta bom
+[10:02] LOJA: *Josy:*
+Mora aqui em Luziânia-Go?
+[10:02] CLIENTE: Brasília
+[10:03] CLIENTE: So tem em luziania??
+[10:03] LOJA: *Josy:*
+Somente
+[10:04] CLIENTE: Dependendo do valor as vezes compensa também eu dou um jeito aqui
+[10:44] LOJA: *Josy:*
+Retorno da marca Delinte apenas essa opção disponivel.
+[10:44] LOJA: [foto]
+[10:44] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:46] CLIENTE: Pirelli não tem?
+[10:47] LOJA: *Josy:*
+Desconsidere.
+[10:49] LOJA: *Josy:*
+Terá sim!
+[10:49] LOJA: [foto]
+[14:30] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 22/09/2026 (Tue) ---
+[08:54] LOJA: [áudio] "Bom dia! Tudo bem com você, Mari? Eu te encaminhei um orçamento ontem e gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB049A218981319775C1D_848261.ogg}

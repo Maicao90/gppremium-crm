@@ -1,0 +1,21 @@
+CONVERSA 2ee54cf107 | contato: Geralda F Pego | 17/08/2026 15:28 até 17/08/2026 15:48 | 8 msgs do cliente, 9 da loja, 0 do robô
+
+--- 17/08/2026 (Mon) ---
+[15:28] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[15:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:30] LOJA: Boa tarde
+[15:31] CLIENTE: 185/70 R 14
+[15:33] CLIENTE: 4 pneus..
+[15:33] CLIENTE: Qual a marca dos pneus
+[15:34] LOJA: [foto]
+[15:35] LOJA: O pneu do anuncio é esse que estou enviando , a marca é GP Premium
+[15:35] LOJA: o mais vendido da loja, caso queira posso estar enviando a foto
+[15:36] CLIENTE: Por favor mande a foto
+[15:36] CLIENTE: Onde fica sua loja
+[15:37] LOJA: em Luziania Goiás
+[15:37] LOJA: você mora onde?
+[15:37] CLIENTE: Águas Quentes DF
+[15:39] LOJA: não trabalhamos com entrega, teria como vir a loja?
+[15:43] CLIENTE: Não obrigado
+[15:48] LOJA: Que pena, caso mude de ideia sera uma prazer atende la.

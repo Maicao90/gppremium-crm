@@ -1,0 +1,33 @@
+CONVERSA e70c650b1b | contato: Geraldo | 01/10/2026 09:38 até 08/10/2026 12:29 | 7 msgs do cliente, 14 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[09:38] CLIENTE: Bom dia
+[09:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:39] LOJA: *Josy:*
+Bom dia!
+[09:39] CLIENTE: Vc tem o 225 70 15c
+[09:41] LOJA: [áudio] "Olá, bom dia. Tudo bem com você, Geraldo? Olha, no momento está em falta. Se você não estiver com urgência, assim que eu tiver novamente aqui no meu estoque, eu posso avisá-lo."  {audio:midias/3EB0FB963A934414324CD4_625278.ogg}
+[09:43] CLIENTE: [áudio] "Qual é a marca e os valores que você estava tendo aí. Se tiver o 225, 75, 15, também serve."
+[09:44] LOJA: [áudio] "Não temos nenhuma opção, Geraldo."  {audio:midias/3EB0EDDEC16539FAC3DAFB_404839.ogg}
+[09:45] CLIENTE: [áudio] "Mas você não tem nem valor de tabela mais ou menos quanto que fica, porque dependendo do valor eu aguardo, senão tem que comprar."
+[10:01] LOJA: [áudio] "Não, não tenho. Sabe por quê? Porque esses pneus, como eles são importados, todo dia eles mudam o preço."  {audio:midias/3EB0BE829B7FE352014081_866887.ogg}
+[10:01] LOJA: [áudio] "Aí eu pedi a cotação justamente para que eles me informem, tá? Aí eu já te dou o retorno."  {audio:midias/3EB0BB89233E24BB762F25_431919.ogg}
+[10:44] CLIENTE: Blz obg
+--- 07/10/2026 (Wed) ---
+[17:38] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[17:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:38] LOJA: [áudio] "Eu sou Geraldo, tudo jóia!"  {audio:midias/3EB0CFA86F5049209F6E9F_558972.ogg}
+[17:39] LOJA: [áudio] "Então, a respeito do pneu da van que o senhor me solicitou, ele continua em falta, eu não tenho como te mandar um orçamento porque não tem nenhuma opção disponível."  {audio:midias/3EB01E8E3D8773B2D4A8CC_47546.ogg}
+[17:39] CLIENTE: Ta bom obg
+[17:39] LOJA: [áudio] "E eu deixei salvo com seu contato até com uma marquinha que eu deixo para os clientes que eu preciso, né, fazer cotação, então eu não me esqueci do senhor de jeito nenhum, tá? E todo dia eu cobro lá, mas realmente essa opção tem falta."  {audio:midias/3EB056869927B65C9D1154_20784.ogg}
+--- 08/10/2026 (Thu) ---
+[08:33] LOJA: Bom dia!
+[08:33] LOJA: [foto]
+[08:33] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:29] LOJA: [áudio] "Sr. Geraldo, tudo jóia? Eu consegui um retorno aí a respeito da medida que o senhor está buscando e gostaria de fazer a encomenda?"  {audio:midias/3EB06B7C4D487E2317A924_646849.ogg}

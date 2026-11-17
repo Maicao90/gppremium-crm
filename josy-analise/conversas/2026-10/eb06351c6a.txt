@@ -1,0 +1,18 @@
+CONVERSA eb06351c6a | contato: Alfredo De Almeida | 07/10/2026 13:58 até 07/10/2026 17:33 | 6 msgs do cliente, 8 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[13:58] CLIENTE: [áudio] "Olá, boa tarde. Eu preciso confirmar se vocês são da GP Pneus e que está com outro nome de uma oficina mecânica, entendeu? É isso que eu queria falar com vocês."
+[13:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:58] CLIENTE: [áudio] "Eu estou trazendo pneu de Curitiba para entregar na loja de vocês."
+[14:04] LOJA: [áudio] "Senhora Alfredo, aqui é a Pneus GP Premium em Luziânia, Goiás."  {audio:midias/3EB09673427774B3DB0C52_528560.ogg}
+[14:05] CLIENTE: [foto]
+[14:05] CLIENTE: [áudio] "Oi querida, boa tarde, obrigado da resposta. Então, essa nota que eu tenho para fazer de entrega em pneu em Brasília não é com vocês? Eu tenho uma nota com esse nome aí, quando eu chamo cai no GP Pneus."
+[14:05] LOJA: [áudio] "Não é a nossa loja. Aí está escrito Brasília, né? Então, essa loja que o senhor está buscando é em Brasília. Aqui nós somos de Luziânia, Goiás. Eu não sei qual empresa é essa aí, não."  {audio:midias/3EB01E43E528D4504118DD_186981.ogg}
+[14:06] CLIENTE: [áudio] "Muito obrigado, desculpe comandar, Deus abençoe as vendas da loja aí, vendem bastante, vamos fazer dinheiro, muito obrigado, Deus abençoe."
+[16:59] LOJA: Estava pesquisando no google a empresa que procura, e achei o seguinte numero
+[16:59] LOJA: 61 4042-6730.
+[17:01] LOJA: espero que te ajude...
+[17:01] LOJA: Deus te abençoe !
+[17:29] CLIENTE: [áudio] "Valeu, muito obrigado. Deus abençoe vocês aí. Ajudou muito. Muito obrigado."
+[17:33] LOJA: [áudio] "Também, imagina!"  {audio:midias/3EB05FF2732888C9B63D0C_362274.ogg}

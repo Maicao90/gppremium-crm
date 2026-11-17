@@ -1,0 +1,29 @@
+CONVERSA ba4efff047 | contato: ilmer | 08/09/2026 12:05 até 08/09/2026 12:48 | 9 msgs do cliente, 13 da loja, 0 do robô
+
+--- 08/09/2026 (Tue) ---
+[12:05] LOJA: *Josy:*
+Boa tarde, Ismael!
+[12:06] LOJA: *Josy:*
+195/55/16 R$ 245,00 em *dinheiro*
+[12:07] CLIENTE: ‎ilmer agradece seu contato. Como podemos ajudar?
+[12:07] CLIENTE: Agradecemos sua mensagem. Não estamos disponíveis no momento, mas responderemos assim que possível.
+[12:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:24] CLIENTE: Boa tarde josy
+[12:28] CLIENTE: Quanto ficaria  4 pneus eu passando metade no dinheiro e o restante no cartão
+[12:29] LOJA: [foto]
+[12:29] LOJA: [áudio] "Para parcelar, o valor muda um pouco, tá joia? Aí você só me diz em quantas que você quer parcelar que eu calculo aqui para você."  {audio:midias/3EB0FF9FF445EDC84F00F3_302955.ogg}
+[12:30] CLIENTE: [áudio] "Então, eu vou passar 600 reais em dinheiro. Aí eu gostaria de saber quanto que vai dar os quatro pneus. 600 eu tenho em dinheiro, o restante eu vou passar no cartão."
+[12:34] LOJA: [áudio] "Moça, é que para parcelar, o valor sofre uma pequena alteração conforme o orçamento que eu te encaminhei, tá?"  {audio:midias/3EB083A6D3DAB2BF1C0E33_434615.ogg}
+[12:35] CLIENTE: [áudio] "Esse valor à vista pode ser no Pix ou tem que ser só no dinheiro?"
+[12:35] LOJA: [áudio] "Não, o 245 eu deixei frisado aqui que é em dinheiro mesmo."  {audio:midias/3EB0100646480B0C7417E5_145927.ogg}
+[12:35] LOJA: [áudio] "No Pix, a unidade fica por R$ 259,00."  {audio:midias/3EB005C8F70BDAC9682DAF_488329.ogg}
+[12:41] LOJA: [áudio] "Moça, com esse valor de 600 reais, você tá pagando praticamente dois pneus e meio, né? Porque dois pneus vão ficar aí no total de 490 reais e você tá pagando a mais aí 110 reais. Então, digamos que você quisesse pagar esses pneus em quatro vezes. Em quatro vezes, a unidade é 273,37. Então, 273,37 vezes outros dois pneus, dá um total de 546,74 menos 110 reais que você já está pagando, vai ficar aí 436,74. Para parcelar em quatro vezes, fica 4 de 109 reais e 18 centavos."  {audio:midias/3EB086D90FE95FF127FD34_776076.ogg}
+[12:42] CLIENTE: [áudio] "Então, os três pneus vai dar 735, né? Eu passaria os 735 em dinheiro e vai ficar um pneu, né? Que vai dar 259, aí esses 259 eu passo no crédito. Pode ser?"
+[12:44] LOJA: [áudio] "Ah, 259 eu faço para você no crédito à vista, então, porque esse 259 é valor de débito, tá? Mas eu faço ele no crédito à vista para você."  {audio:midias/3EB0B359D8150B8CC4E0D8_333606.ogg}
+[12:46] CLIENTE: [áudio] "Ok, então. Então a gente fecha assim. Aí eu vou passar ali com o meu esposo para a gente sacar o dinheiro e daqui a pouquinho a gente passa aí, tá bom? Aí outra coisa, vocês trocam os pneus, né? Aí na hora..."
+[12:46] LOJA: *Josy:*
+Combinado!
+[12:46] LOJA: [áudio] "Sim, trocamos."  {audio:midias/3EB098E4AFAF30169C418B_698355.ogg}
+[12:48] CLIENTE: Ok. Obrigada
+[12:48] LOJA: [áudio] "Imagina!"  {audio:midias/3EB0D358D789D0D7CB3551_837337.ogg}

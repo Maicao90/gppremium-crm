@@ -1,0 +1,19 @@
+CONVERSA f6d82e2ce4 | contato: Adriano | 11/09/2026 14:12 até 11/09/2026 14:14 | 8 msgs do cliente, 5 da loja, 0 do robô
+
+--- 11/09/2026 (Fri) ---
+[14:12] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:12] CLIENTE: Bao tarde
+[14:12] CLIENTE: Vcs são do cia ?
+[14:12] LOJA: *Josy:*
+Boa tarde!
+[14:13] LOJA: *Josy:*
+Somos de Luziânia-Go.
+[14:13] CLIENTE: Hum
+[14:13] CLIENTE: Preciso fala na do Cia
+[14:13] LOJA: [áudio] "Oi Adriano, boa tarde, tudo bem? Eu sou a Josi. Nossa, infelizmente eu fico te devendo, porque eu não sei qual que é o contato do CIA, não sei o que você está buscando, mas enfim, minha empresa é somente aqui em Luziânia, tá joia?"  {audio:midias/3EB0A33A19FF5AB45DC7F5_166725.ogg}
+[14:14] CLIENTE: Ta bom
+[14:14] CLIENTE: Muito agradecido a atenção
+[14:14] CLIENTE: Tenha uma boa tarde
+[14:14] LOJA: [áudio] "Imagina, eu quem agradeço pelo contato. Lamento não poder ajudá-los, tá bem? Bom final de semana."  {audio:midias/3EB0D68E6ED6CB306EAD8F_4594.ogg}

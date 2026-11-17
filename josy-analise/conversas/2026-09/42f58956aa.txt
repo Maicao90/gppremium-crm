@@ -1,0 +1,45 @@
+CONVERSA 42f58956aa | contato: Sérgio Costa | 04/09/2026 12:00 até 24/09/2026 10:12 | 6 msgs do cliente, 17 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[12:00] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[12:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:00] CLIENTE: 215 60 17
+[12:10] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu sou a Josi e eu tenho aqui sim o pneu da marca GP Premium, ele está por apenas R$ 359 a vista. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0D91457D047800E7EE2_259450.ogg}
+[12:11] CLIENTE: Não. No gama.
+
+Esse pneu é remolde ou novos?
+[12:12] LOJA: *Josy:*
+Remold
+[12:14] LOJA: [foto]
+[12:14] LOJA: *Josy:*
+É o pneu mais vendido.
+--- 10/09/2026 (Thu) ---
+[17:00] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Sérgio?"  {audio:midias/3EB01CB5EA3E6392BDD2E4_334523.ogg}
+[17:01] LOJA: [vídeo]
+--- 23/09/2026 (Wed) ---
+[21:00] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[21:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 24/09/2026 (Thu) ---
+[07:34] CLIENTE: 215 60 17
+[07:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:35] CLIENTE: 215 60 17
+[08:02] LOJA: *Josy:*
+Bom dia, Sergio!
+[08:02] LOJA: *Josy:*
+Ainda dispomos dessa opção.
+[08:04] LOJA: [foto]
+[08:04] LOJA: *Josy:*
+No dia de hoje temos essas 2  opções de marca  a pronta entrega.  
+Pneus da marca Sunny e da marca GP Premium.
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:31] LOJA: [áudio] "Sérgio, bom dia. No dia de hoje eu tenho os pneus novos da marca Sunny, que eu mandei no orçamento para você. A unidade está por R$ 558,00 a vista e os pneus da marca GP Premium, que são os remoldes, só que de primeira linha. E eles são os pneus mais vendidos que eu tenho, tá? Tem 2 anos de garantia, rodam 60 mil km, tá joia? Assim que possível, fala aqui comigo, por gentileza, tá bom?"  {audio:midias/3EB03E89EB9FF71108B661_342027.ogg}
+[10:12] LOJA: [áudio] "Sérgio, para não ficar enchendo o seu WhatsApp de mensagens, até mesmo porque acaba que se torna chato, eu vou encerrar o seu atendimento, tá bom? Caso haja a possibilidade, você venha aqui na nossa loja para conversarmos pessoalmente. Obrigada por sua atenção. Até mais."  {audio:midias/3EB0C437C31054231064CC_525050.ogg}
+[10:12] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:12] LOJA: [foto]

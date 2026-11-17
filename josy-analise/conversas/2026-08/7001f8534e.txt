@@ -1,0 +1,52 @@
+CONVERSA 7001f8534e | contato: Anderson | 25/08/2026 17:15 até 28/08/2026 10:35 | 10 msgs do cliente, 22 da loja, 0 do robô
+
+--- 25/08/2026 (Tue) ---
+[17:15] LOJA: *Josy :*
+Oi, Tudo bem, e você ?
+[17:16] CLIENTE: Gostaria de saber qual valor dos pneus 195/65
+[17:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:16] CLIENTE: Vocês tem aí
+[17:20] LOJA: *Josy :*
+Temos sim!
+[17:21] LOJA: *Josy :*
+Estou realizando seu orçamento.
+[17:25] LOJA: [áudio] "Moço, meu sistema, ele está com instabilidade, não estou conseguindo carregar aqui as opções, aí, enquanto aguardo, só me diz, por gentileza, quantos pneus que você vai precisar?"  {audio:midias/3EB0A952E2A64D12740210_367471.ogg}
+[17:36] CLIENTE: Ok
+[17:36] LOJA: [áudio] "Você precisa de quantos pneus mesmo, moço?"  {audio:midias/3EB0EB2EB9AA3DC7FA294F_261839.ogg}
+[17:39] LOJA: *Josy :*
+Bem...
+[17:39] LOJA: *Josy :*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:39] LOJA: [foto]
+[17:39] LOJA: *Josy :*
+Pneu da marca GP Premium está na promoção compre 3 e leve 4
+[17:39] LOJA: *Josy :*
+Exemplo: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[17:53] CLIENTE: 4 pneus
+[17:54] CLIENTE: [áudio] "Essa marca GP Premium que você me mandou, ela é boa mesmo, né? Você não tem aquele XRBI ou aquele Baurum, que é da marca da Continental, não, né? Porque os meus, na verdade, é Pirelli. Só que Pirelli e Godia tá muito caro."
+[17:56] LOJA: [áudio] "As marcas que eu tenho realmente são essas aí do orçamento, tá joia jovem? E esse XB, se eu vou para as opções de pneus importados, aqui na região é um pouco difícil de encontrar pelo emprego. Você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB0EE740919BD347DFAF0_405068.ogg}
+[17:56] LOJA: *Josy :*
+Teste do Pneu 195/65 R15 GP-7 em ALTA VELOCIDADE ! https://youtu.be/e6sdoRnqSpU?si=XN-VSBiLQ8QiWwQz&t=668
+[18:16] CLIENTE: Top
+--- 26/08/2026 (Wed) ---
+[08:51] LOJA: [áudio] "Bom dia, Anderson. Como é que você está? Eu gostaria de saber se eu posso reservar alguma dessas opções aí para ti. Quando você estiver com disponibilidade de ouvir o meu áudio, me dá um retorno, por gentileza."  {audio:midias/3EB07B04B7BFACF2DFD76F_595899.ogg}
+[17:38] LOJA: [áudio] "Bem, eu imagino que o seu dia esteja extremamente corrido, aí por essa razão você não conseguiu me responder aí, tá? Eu vou fazer o seguinte, por hora eu estou encerrando o seu atendimento, e caso você precise, você me chama aqui de novo, tá bom? Eu já vou deixar aqui na conversa também a nossa localização, para que se de repente você decidir vir diretamente aqui na nossa empresa, vai ser uma satisfação receber você aqui, está bem Anderson? Por hora obrigada e até breve."  {audio:midias/3EB0B64A78CE046EE93C87_550461.ogg}
+[17:38] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:42] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:42] CLIENTE: [áudio] "Então, acho que não sei se foi você, outra pessoa também chegou a falar comigo aqui. Mas amanhã eu vou ir na loja, porque realmente não deu tempo hoje, vai fechar às 6 horas daqui pra Luziânia, tô no Valparaíso, não vai dar tempo. Mas aí amanhã eu vou ir pra me trocar os pneus."
+[17:47] LOJA: [áudio] "Combinado, Anderson. Eu te encaminhei aí a nossa localização, mas eu vou mandar aqui a foto da frente da nossa empresa, tá joia?"  {audio:midias/3EB08373724B3E51DC36FD_584907.ogg}
+[17:47] LOJA: [foto]
+[17:55] CLIENTE: Ok
+--- 27/08/2026 (Thu) ---
+[12:07] LOJA: *Josy:*
+Bom dia, bom dia!
+--- 28/08/2026 (Fri) ---
+[10:01] LOJA: [áudio] "Oi Anderson, tudo jóia? Josi aqui falando. Na quarta-feira, né, imagino que tenha sido bem corrida aí pra ti e você não conseguiu passar aqui na loja. Eu ainda estou com os pneus reservados aqui pra você. Você consegue vir ainda hoje? Quer agendar pra amanhã? Quer mais tranquilo? Fala aqui comigo."  {audio:midias/3EB07160A1EB22E197D8C8_589095.ogg}
+[10:34] CLIENTE: Opa tudo bem!!
+[10:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:35] CLIENTE: Acabei comprando em outro lugar, devido ao preço preferir pegar Pirelli mesmo do carro com um preço bom

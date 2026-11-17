@@ -1,0 +1,14 @@
+CONVERSA 82b5992d11 | contato: Victor Hugo | 15/10/2026 14:11 até 15/10/2026 14:49 | 4 msgs do cliente, 4 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[14:11] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[14:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:12] CLIENTE: 175/65/15
+[14:44] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Vitor? Deixa eu te fazer uma pergunta. É essa medida mesmo no aro 15, certo?"  {audio:midias/3EB0945C32B4B73311F57D_816230.ogg}
+[14:44] CLIENTE: Sim, isso mesmo!
+[14:45] LOJA: Certo... mora aqui em Luziânia-Go, mesmo?
+[14:48] CLIENTE: Planaltina-DF
+[14:49] LOJA: Estamos distantes...

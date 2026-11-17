@@ -1,0 +1,54 @@
+CONVERSA 688a3f8f76 | contato: Fran | 23/09/2026 08:09 até 23/09/2026 12:08 | 12 msgs do cliente, 21 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[08:09] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[08:09] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:09] CLIENTE: Bom dia
+[08:09] CLIENTE: 205/60 Aro 15
+[08:10] CLIENTE: Qual o valor do kit?
+[08:10] LOJA: *Josy:*
+Precisa de pneus ATR ou normais?
+[08:10] CLIENTE: ATR
+[08:12] LOJA: [foto]
+[08:12] LOJA: *Josy:*
+Temos a pronta entrega pneus da marca GP Premium.
+[08:13] LOJA: *Josy:*
+A unidade está por apenas R$ 319,00 se o pagamento for a vista.
+[08:13] CLIENTE: Ok, muito obrigada.
+[08:14] LOJA: *Josy:*
+E os pneus já são colocados.
+[08:14] LOJA: *Josy:*
+Quer foto ou algo assim?
+[08:14] CLIENTE: Entendi.
+[08:14] LOJA: [áudio] "Fran, bom dia. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB09532D4C5DF13057538_245831.ogg}
+[08:15] LOJA: *Josy:*
+Está em busca de alguma amrca especifica?
+[08:17] CLIENTE: Moro em Valparaíso
+[08:19] CLIENTE: A marca seria a mesma que veio de loja, SCORPION/ PIRELLI.
+[08:20] LOJA: *Josy:*
+Bem.. o pneu GP Premium tem o mesmo desenho do Pirelli, e com o preço mais acessivel. Como não tenho o Pirelli a pronta entrega vou ver se algum distribuidor tenha, e assim que eles me responderem te passo o preço e prazo de entrega.
+[08:29] CLIENTE: Blz, fico aguardando. Muito obrigada.
+[11:22] LOJA: *Josy:*
+Olá...
+[11:22] LOJA: *Josy:*
+Olha...da Pirelli, não obtiver resposta, creio que esteja em falta.
+[11:22] LOJA: *Josy:*
+Consegui um retorno da Continental, não sei se te atende...
+[11:22] LOJA: [foto]
+[11:22] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:23] LOJA: *Josy:*
+E tenho aqui a pronta entrega os pneus da GP Premium que te mandei o orçamento no inicio da nossa conversa.
+[11:24] LOJA: [foto] *Josy:*
+Nesse desenho.
+[11:51] LOJA: *Josy:*
+Te atende?
+[12:06] CLIENTE: Obrigada pelo retorno, vou encaminhar para meu esposo ele entende mais, essa questão de desenho não faço nem ideia kkkkkkk, mas qualquer coisa entro em contato com você, desde já meu muito obrigada.
+[12:06] LOJA: *Josy:*
+Disponha, Fran!
+[12:07] LOJA: *Josy:*
+Vou deixar aqui a nossa localização, se puderem venham aqui!
+[12:07] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:08] CLIENTE: Blz.

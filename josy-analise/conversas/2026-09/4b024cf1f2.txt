@@ -1,0 +1,16 @@
+CONVERSA 4b024cf1f2 | contato: Marcos Ronaldo | 18/09/2026 15:31 até 18/09/2026 15:41 | 1 msgs do cliente, 7 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[15:31] LOJA: *Josy:*
+🙋🏼‍♀️
+[15:35] LOJA: *Josy:*
+Boa tarde, você nos ligou mas a ligação ficou muda.
+[15:35] LOJA: *Josy:*
+Posso te ajduar?
+[15:39] CLIENTE: Desculpa, foi engano...
+[15:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:41] LOJA: [áudio] "Sem problemas."  {audio:midias/3EB05106AA219A54714F37_165210.ogg}
+[15:41] LOJA: [áudio] "Dessa vez foi em gama, mas a próxima vez, quando precisar realmente, venha até nossa loja que será uma satisfação receber você aqui, está bem?"  {audio:midias/3EB04275AD78816F53519F_907881.ogg}
+[15:41] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

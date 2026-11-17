@@ -1,0 +1,23 @@
+CONVERSA 643c76ade2 | contato: Eduardo Ribeiro | 16/10/2026 07:58 até 16/10/2026 17:47 | 5 msgs do cliente, 9 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[07:58] CLIENTE: [foto] 📢 [Anúncio] Pneus Brutus em Oferta
+
+Bom dia,
+Pneu 265/60/18
+[07:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:58] CLIENTE: 265/60/18
+[08:23] LOJA: Bom dia!
+[08:23] LOJA: [foto]
+[08:23] LOJA: No dia de hoje temos os pneus da marca  Maxzez e GP Premium essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:26] CLIENTE: Aonde fica a loja?
+[08:27] LOJA: [áudio] "Oi Eduardo, bom dia. Tudo bem com você? Nós somos aqui de Luziânia, Goiás. E você é de onde?"  {audio:midias/3EB0810D3F5C77E32E36F1_617881.ogg}
+[08:50] CLIENTE: Brasilia
+[09:01] LOJA: Ah, sim!
+[17:44] LOJA: [áudio] "Eduardo, eu vou finalizar aqui o seu atendimento, tá? Pra não ficar enchendo o seu WhatsApp de mensagens, mas eu vou te mandar aqui a nossa localização, pois assim que você estiver com disponibilidade, você vem cá pra conversar nos pessoalmente, tá bom? Muitíssimo, obrigada por sua atenção, até mais."  {audio:midias/3EB0DF76737FAA0BE11C3C_901323.ogg}
+[17:44] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:44] LOJA: [foto]
+[17:47] CLIENTE: 🤝obrigado

@@ -1,0 +1,38 @@
+CONVERSA cd2f960c69 | contato: Cida Gonçalves 🌷 | 21/09/2026 11:57 até 22/09/2026 09:08 | 9 msgs do cliente, 16 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[11:57] CLIENTE: Olá
+[11:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:57] CLIENTE: Tudo bem?? Por gentileza, está a partir de quanto os pneus na medida 225 65 17?
+[11:58] LOJA: *Josy:*
+Tudo bem sim, Cida...e você?
+[11:58] LOJA: [foto]
+[11:58] LOJA: *Josy:*
+No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:58] LOJA: *Josy:*
+MOra aqui em Luziania-Go?
+[11:59] CLIENTE: Sim
+[11:59] CLIENTE: Vcs fazem alinhamento e balanceamento tb?
+[12:00] LOJA: *Josy:*
+Sim, nossa oficina faz todos os serviços que precisar.
+--- 22/09/2026 (Tue) ---
+[08:51] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Ontem eu te encaminhei um orçamento para os pneus dentro do seu carro e eu gostaria muito de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza, Cida?"  {audio:midias/3EB078F7BDC2890980CA76_336150.ogg}
+[08:54] CLIENTE: Bom Dia! No caso já tenho dois pneus, só iria adquirir dois. Para fazer a instalação, alinhamento e balanceamento dos 4 ficaria um total de quanto?
+[08:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:55] LOJA: [áudio] "Cida, deixa eu só compreender aqui. Você já tem dois pneus. No caso, você comprou dois pneus e ainda não fez a instalação, certo?"  {audio:midias/3EB019D252F2D44C39BB95_347365.ogg}
+[08:55] LOJA: [áudio] "Na compra do pneu GP Premium, não é cobrada a instalação, eu já faço ela em automático."  {audio:midias/3EB0BC7F542F8FE6869186_178291.ogg}
+[08:57] CLIENTE: Faria, a instalação dos 04 pneus + alinhamento+ balanceamento, sem valor por esses serviços?
+[08:57] LOJA: [áudio] "Não, não. Na compra do pneu GP Premium, ele já é instalado. Balanceamento e alinhamento são serviços que são cobrados à parte."  {audio:midias/3EB08C44139E387F412604_734687.ogg}
+[08:58] LOJA: [áudio] "Inclusive, vou te dar uma dica, não caia nessa das empresas que dizem que já vão entregar os pneus com todos esses serviços sem o cliente ter que pagar nada, tá? Só uma observação que eu te faço."  {audio:midias/3EB0DF8EB6E49546DB2948_333435.ogg}
+[08:58] CLIENTE: A minha pergunta foi essa
+[08:58] CLIENTE: Eu sei, por isso estranhei quando vc mesmo disse que era automático e perguntei novamente
+[08:59] LOJA: [áudio] "Sim, é porque o pneu ele é instalado sem cobrar, porque as empresas elas cobram para fazer a instalação e na compra do pneu GP Premium, não cobro por isso, a instalação é por minha conta, o que nós cobramos a parte é o serviço de balanceamento e alinhamento, tá?"  {audio:midias/3EB05396464F04D2F00802_25897.ogg}
+[08:59] LOJA: [áudio] "Ficou claro agora?"  {audio:midias/3EB036A114B783E12CF085_303036.ogg}
+[09:07] CLIENTE: Todas as empresas que eu fiz cotação trabalham da mesma forma. Vou aguardar mais uns orçamentos e qualquer coisa entro em contato. Obrigada
+[09:08] LOJA: *Josy:*
+Vou encerrar seu atendimento, caso precise futuramente é só chamar ...ou se preferir  venha até nossa empresa será uma satisfação recebe-la aqui. 👋🏻
+[09:08] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

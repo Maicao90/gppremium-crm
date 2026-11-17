@@ -1,0 +1,19 @@
+CONVERSA db2775e0d0 | contato: Davi | 06/10/2026 13:37 até 06/10/2026 16:55 | 4 msgs do cliente, 6 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[13:37] CLIENTE: Olá! Quero um orçamento de pneus.
+[13:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:37] CLIENTE: 175/65 r14
+[14:11] LOJA: *Josy:*
+Boa tarde, está aqui em Luziânia-Go?
+[14:11] CLIENTE: Sim
+[14:17] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:17] LOJA: [foto]
+[16:48] LOJA: [áudio] "Olá, tudo bem com você, Davi? Você quer continuar aqui na nossa localização?"  {audio:midias/3EB0335ACBAD6F68F16EF5_443498.ogg}
+[16:54] CLIENTE: Eu tenho já obg
+[16:55] LOJA: *Josy:*
+Perfeito, Davi!

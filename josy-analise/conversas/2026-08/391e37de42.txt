@@ -1,0 +1,47 @@
+CONVERSA 391e37de42 | contato: Elândia ✨ | 27/08/2026 11:07 até 27/08/2026 17:16 | 14 msgs do cliente, 18 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[11:07] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[11:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:07] CLIENTE: Bom dia
+[11:07] CLIENTE: Vcs tem desse pneu?
+[11:08] LOJA: *Josy:*
+Bom dia.
+[11:08] LOJA: *Josy:*
+Qual?
+[11:08] CLIENTE: [foto]
+[11:08] CLIENTE: Desse
+[11:10] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi e quando possível me diz o seu nome. Olha, essa opção, eu não tenho ela aqui à pronta entrega, tá? É pra qual carro?"  {audio:midias/3EB04F0A1D84A684478BC9_507621.ogg}
+[11:10] CLIENTE: Tuckson
+[11:11] LOJA: [áudio] "Certo. Como essa medida aí é uma medida que está sendo bem difícil de achar, eu tenho aqui na medida 215,65, 16."  {audio:midias/3EB0368C3AD316957E1E0C_399311.ogg}
+[11:11] CLIENTE: E serve nela?
+[11:11] CLIENTE: Ta quanto?
+[11:12] LOJA: *Josy:*
+Serve e muito!
+[11:12] LOJA: [áudio] "Eu vou realizar aqui o seu orçamento, tá? Você vai precisar de quantos pneus e você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB02333AFE6511263CF19_742550.ogg}
+[11:12] CLIENTE: Sim
+[11:12] CLIENTE: Vê o valor dos 4
+[11:15] LOJA: [foto]
+[11:15] LOJA: [áudio] "Bem, eu tenho aqui a pronta entrega com as 4 unidades, os pneus da marca GP Premium. Se for no débito ou no Pix, a unidade fica por R$ 349. Para parcelar, o valor sofre alteração conforme a quantidade de parcelas, tá? Agora, se você trouxer o pagamento em dinheiro, aí o meu gerente falou que vai fazer a unidade por R$ 330,00, mas aí pagamento em dinheiro em espécie, débito ou Pix, R$ 349,00 e para parcelamento tem as opções em até 10 vezes."  {audio:midias/3EB07828A28BF4F55332F2_188328.ogg}
+[11:16] LOJA: *Josy:*
+215/65/16 GP Premium👇🏻
+[11:16] LOJA: [foto]
+[11:21] CLIENTE: Vou ver e já falo com vc
+[11:23] LOJA: *Josy:*
+Ok!
+[11:23] LOJA: *Josy:*
+E esses pneus já são colocados está bem!
+[11:24] CLIENTE: Entendi
+[11:24] CLIENTE: [áudio] "Estou vendo aqui e já te respondo aí, tá?"
+[11:24] LOJA: [áudio] "Combinado. Muitíssimo obrigada."  {audio:midias/3EB060E4136E039C3DD92E_861095.ogg}
+[12:12] LOJA: *Josy:*
+Oi...
+[12:14] LOJA: *Josy:*
+Posso reservar os pneus para você? neste exato momento estou com o ultimo jogo.
+[17:01] LOJA: [áudio] "Oi, moça. Eu, por hora, vou encerrar aqui o seu entendimento, tá? Justamente para não ficar enchendo o seu WhatsApp de mensagens. E vou deixar aqui na nossa conversa a localização da nossa empresa. Pois, se houver a possibilidade, você passa aqui para nós conversarmos pessoalmente, está bem? Obrigada pelo seu contato e tenha um bom final de semana."  {audio:midias/3EB07247245A987873DBFF_517675.ogg}
+[17:01] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:16] CLIENTE: [áudio] "Então, qualquer coisa eu entro em contato, tá?"

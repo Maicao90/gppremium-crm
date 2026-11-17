@@ -1,0 +1,38 @@
+CONVERSA e2e627601d | contato: Gutemberg Rocha. | 29/09/2026 10:57 até 30/09/2026 09:32 | 5 msgs do cliente, 22 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[10:57] CLIENTE: [áudio] "Bom dia! Qual que é o valor dos pneus 15?"
+[10:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:57] LOJA: [áudio] "Oi Gutenberg, como é que você está?"  {audio:midias/3EB045C245C4BAE6D7272F_156023.ogg}
+[10:57] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa hoje?
+[10:57] CLIENTE: [áudio] "Tudo bem. É, tá o 9565, 15..."
+[10:58] LOJA: *Josy:*
+O GP Premium está na promoção, compre 3 e leve 4
+[10:58] LOJA: [foto]
+[10:58] LOJA: *Josy:*
+Digamos que seja a vista: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[11:02] CLIENTE: [áudio] "Esse valor à vista tem um desconto? Ou já tá no desconto? Você não tem uma outra medida não? Tipo 185 que seja mais barato? Qual é o 15 mais barato que você tá tendo aí?"
+[16:28] LOJA: [áudio] "Gustavo, como esse pneu já está na oferta, você está levando 4 pneus pelo preço de 3, então ele está no menor preço mesmo."  {audio:midias/3EB0F0E12D64C74BA1A066_73270.ogg}
+[16:29] LOJA: [áudio] "E obrigada por aguardar, tá? Que o meu WhatsApp travou e sua mensagem não tinha chegado aqui pra mim."  {audio:midias/3EB0F4D82FEC795C86DD3E_127199.ogg}
+[16:29] LOJA: [áudio] "Olha, eu vou ter aqui o 185-65-15. Eu consigo ele fazer aqui para você, à vista, por R$ 249 cada."  {audio:midias/3EB04139E7163B4CDDDF5C_826899.ogg}
+[16:34] CLIENTE: Os quatro fica quanto
+[16:34] LOJA: Digamos que seja a vista: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[16:34] LOJA: *Josy:*
+Já o 285/65/15
+[16:35] LOJA: *Josy:*
+Como está por R$ 249,00 x 4 = R$ 996,00
+[16:36] LOJA: *Josy:*
+Nesses aqui se você conseguir trazer o pagamento em *dinheiro* físico, faço a 235,00 cada os 4 ficam por R$ 940,00
+[16:38] LOJA: [áudio] "Igor Tenberg, se você quiser, já coloco os pneus para você também, tá?"  {audio:midias/3EB0520B18753992285CCE_989472.ogg}
+[17:11] CLIENTE: [áudio] "Eu vou falar com o motorista subir mais cedo da manhã, para ele poder passar aí. Ele passa aí com a Fiorina."
+[17:11] LOJA: [áudio] "Beleza, então, ficamos combinados."  {audio:midias/3EB0569763C10D1610785C_434731.ogg}
+[17:12] LOJA: [áudio] "Aí, esses pneus que você está comprando são pra Fiorino mesmo?"  {audio:midias/3EB032945C6C157155FE2E_74039.ogg}
+--- 30/09/2026 (Wed) ---
+[09:31] LOJA: *Josy:*
+Bom dia, bom dia!
+[09:32] LOJA: [áudio] "Oi Gutenberg, como é que você está? O seu motorista vai passar aqui em que horário? E me diz quantos pneus que são, que eu já deixei eles reservados aqui para vocês, tá bem?"  {audio:midias/3EB0F3EE128796076A23B4_96516.ogg}
+[09:32] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:32] LOJA: [foto]

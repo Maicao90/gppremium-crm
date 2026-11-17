@@ -1,0 +1,30 @@
+CONVERSA f4ffa419fb | contato: Bruna 🤍 | 18/08/2026 11:29 até 18/08/2026 16:34 | 10 msgs do cliente, 16 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[11:29] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[11:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:29] LOJA: 🙋🏼‍♀️
+[11:30] CLIENTE: [foto]
+[11:30] CLIENTE: Quanto sairia 4 pneus
+[11:36] CLIENTE: Poderia ver para mim meu esposo vai hoje a tarde ai
+[11:36] LOJA: [áudio] "Oi, bom dia. Um instante, por gentileza, que o meu sistema está com instabilidade. Eu não estou conseguindo mandar o orçamento para você, tá? Me dá só um instante."  {audio:midias/3EB0886DEF4B031D176534_85142.ogg}
+[11:37] CLIENTE: A sim sem problemas
+[11:38] LOJA: [foto]
+[11:39] LOJA: [áudio] "Prontinho. Eu tenho aqui no dia de hoje os pneus da marca Goodyear, onde a unidade está por apenas R$ 446,00 à vista e os pneus da marca GP Premium por R$ 279,00 à unidade à vista."  {audio:midias/3EB0736D3F1AA823E7760C_425147.ogg}
+[11:39] LOJA: [áudio] "Vocês são aqui de Luziânia mesmo?"  {audio:midias/3EB096069AD3EADACD77B5_79886.ogg}
+[11:41] CLIENTE: Isso ocidental
+[11:42] CLIENTE: Ta okey iremos a tarde ai tabom
+[11:42] LOJA: [áudio] "Tá, Jó, então. Eu vou te mandar aqui a nossa localização. Aqui é a fábrica de pneus GP Premium, em Luziânia."  {audio:midias/3EB070EE7B0A2B363326E7_805195.ogg}
+[11:42] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:43] CLIENTE: Sim ja compramos algumas vezes com voces
+[11:43] LOJA: Perfeito!
+[11:43] LOJA: Aguardo por vocês!
+[13:10] LOJA: [áudio] "É Bruna o seu nome, né moça. Qual das duas opções que você quer que reserva aqui para vocês? O da Budia ou o da GP Premium?"  {audio:midias/3EB0E6033DF788273BFE66_874946.ogg}
+[13:12] CLIENTE: [áudio] "Moça, pode separar o GP Premium mesmo, tá? Remold, né, de vocês? Já comprei outras vezes, é bom."
+[13:13] LOJA: [áudio] "Tá, já então. Vou pedir para separar os quatro aqui, tá? E aguardo por vocês."  {audio:midias/3EB03179FF8432E5D7CD7D_929183.ogg}
+[14:15] LOJA: da uns 5 reais a taxa
+[14:18] LOJA: Mas faço aqui para você.
+[14:18] LOJA: Pode vir.
+[14:19] CLIENTE: Ok
+[16:34] LOJA: Oi... vocês estão a caminho? Vou precisar sair aqui , é rápido, já deixei os pneus separados.

@@ -1,0 +1,22 @@
+CONVERSA b4e311e221 | contato: Marcio Pereira | 05/09/2026 07:23 até 06/10/2026 17:43 | 6 msgs do cliente, 6 da loja, 0 do robô
+
+--- 05/09/2026 (Sat) ---
+[07:23] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[07:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:34] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu sou a Josi. Com a gentileza, assim que possível, me diz qual o seu nome e a medida dos pneus que você precisa."  {audio:midias/3EB0A08686CEC8EC6663A7_814723.ogg}
+--- 05/10/2026 (Mon) ---
+[08:50] CLIENTE: Bom.dia
+[08:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:50] CLIENTE: Vcs ficam.no gama?
+[08:50] CLIENTE: ?
+[08:52] CLIENTE: Aro 14
+[08:52] CLIENTE: Kwid
+[09:01] LOJA: *Josy:*
+Bom dia, somos de Luziânia-Go
+[09:03] LOJA: [foto]
+--- 06/10/2026 (Tue) ---
+[17:43] LOJA: [áudio] "Oi, senhor Márcio, tudo jóia? Eu te encaminhei um orçamento ontem e o senhor falou pra mim que mora no Gama, né? Se eu mandar esses pneus pro senhor aí pro novo Gama, o senhor consegue ir pra retirar, se eu te mandar a localização, tudo direitinho? Que aí nós combinamos a maneira que fica boa pro senhor pagar e eu mandando a localização, o senhor pode pagar justamente lá pra pessoa que vai dar continuidade, aqui no atendimento. Se pode ser o interesse, o senhor me retona, tá bom?"  {audio:midias/3EB0E37621380ACEAE164A_452979.ogg}

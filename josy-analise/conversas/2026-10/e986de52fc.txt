@@ -1,0 +1,33 @@
+CONVERSA e986de52fc | contato: wesleijuvi | 06/10/2026 08:58 até 06/10/2026 09:07 | 12 msgs do cliente, 9 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[08:58] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[08:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:58] CLIENTE: Duas unidades de pneus
+[08:58] CLIENTE: Pneus da van 
+205/75R16c
+[08:58] CLIENTE: Ano 2018
+[08:58] CLIENTE: Ducato
+[08:59] CLIENTE: Vcs trabalham no boleto?
+[08:59] CLIENTE: Sou apenas o motorista, preciso em PDF
+[08:59] LOJA: *Josy:*
+Bom dia!
+[09:00] LOJA: *Josy:*
+Não trabalhamos com boleto, infelizmente.
+[09:00] CLIENTE: Obrigado pela atenção
+[09:00] LOJA: [foto]
+[09:01] LOJA: *Josy:*
+Teremos as 2 ultimas unidades dos pneus da marca Sunny.
+[09:01] LOJA: *Josy:*
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:05] CLIENTE: Josy eu preciso em PDF e a empresa paga no boleto,pagamos primeiro pra depois retirar
+[09:05] LOJA: *Josy:*
+Preciso dos dados da empresa.
+[09:06] LOJA: *Josy:*
+Mas não fazemos boleto.
+[09:06] CLIENTE: Então não adianta, obrigado
+[09:07] CLIENTE: Posso te passar para o encarregado e vcs tentarem no boleto?
+[09:07] LOJA: *Josy:*
+Não fazemos boleto
+[09:07] CLIENTE: Obrigado pela atenção

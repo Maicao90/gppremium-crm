@@ -1,0 +1,28 @@
+CONVERSA 5ac7830298 | contato: Syndria Roberta | 01/10/2026 10:50 até 01/10/2026 11:29 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[10:50] CLIENTE: Ola
+[10:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:50] CLIENTE: Tem Dunlop 185/70R14?
+[10:50] LOJA: *Josy:*
+Bom dia!
+[10:51] LOJA: Prefere mensagem de áudio ou texto?
+[11:04] CLIENTE: Mensagem de texto
+[11:08] LOJA: *Josy:*
+Certo...
+[11:09] LOJA: [foto]
+[11:09] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:09] LOJA: *Josy:*
+O Dunlop está por R$ 481,00 a vista.
+[11:09] LOJA: *Josy:*
+Mora aqui em Luziânia-Go/
+[11:13] CLIENTE: Não
+Taguatinga
+[11:17] LOJA: *Josy:*
+Ah, sim!
+[11:18] LOJA: *Josy:*
+Syndria... para não ficar enchendo seu whatsapp de mensagem, por ora vou encerrar seu atendimento. Caso precise é só me chamar!
+[11:29] CLIENTE: Obrigada

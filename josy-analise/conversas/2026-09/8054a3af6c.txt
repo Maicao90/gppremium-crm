@@ -1,0 +1,29 @@
+CONVERSA 8054a3af6c | contato: Roberto | 21/09/2026 12:50 até 21/09/2026 13:18 | 10 msgs do cliente, 11 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[12:50] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:50] CLIENTE: Boa tarde
+[12:51] CLIENTE: Qual o valor dos pneu aro 16 205/55
+[12:57] LOJA: [áudio] "Oi, Sr. Roberto, tudo jóia? Olha, o pneu da marca GP Premium ainda está por apenas R$ 289,00 à vista."  {audio:midias/3EB034BCD84152FDCE617B_203059.ogg}
+[12:57] CLIENTE: [áudio] "Olá, boa tarde, tudo bem? 289? Seria 4 pneus. Não dá um desconto melhor pra mim, não? Tô precisando colocar 4 pneus no meu carro. E ver o que você consegue pra me ajudar aí. Vai ser no Pix ainda, viu?"
+[13:00] LOJA: [áudio] "Se o senhor trouxer o pagamento no dinheiro, dou 5% de desconto."  {audio:midias/3EB0048BAF5B5131DBCBE0_164800.ogg}
+[13:00] LOJA: [áudio] "Aí, no caso, como a unidade é 289, você é trazendo no dinheiro, pra mim eu faço por 274 cada."  {audio:midias/3EB09698718CE39897B39D_623041.ogg}
+[13:00] LOJA: [áudio] "E os 4 ficam por 1.096 e já instala."  {audio:midias/3EB036E287A3F9C5587C23_651374.ogg}
+[13:04] CLIENTE: Certinho
+[13:04] CLIENTE: Então ficou 1096
+[13:04] CLIENTE: Já montagem
+[13:09] LOJA: *Josy:*
+Isso...valor somente em *dinheiro*
+[13:13] CLIENTE: Vai ser no pix
+[13:13] LOJA: *Josy:*
+R$ 289,00 cada
+[13:15] LOJA: *Josy:*
+R$ 1.156,00
+[13:17] LOJA: [áudio] "Sr. Roberto, só para deixar bem explicado, que o valor de 1.096 é para pagamento somente em dinheiro, débito e Pix, a unidade é 289, então dá um total de 1.156, tá?"  {audio:midias/3EB050C2C001EA0DBE2814_943549.ogg}
+[13:17] CLIENTE: Ta bom
+[13:17] LOJA: *Josy:*
+pneus instalados, sim.
+[13:18] LOJA: [foto]
+[13:18] CLIENTE: Ta bom

@@ -1,0 +1,9 @@
+CONVERSA 5e967d7526 | contato: Nayara Melo Capanema  | 20/08/2026 14:22 até 20/08/2026 14:37 | 3 msgs do cliente, 2 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[14:22] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:29] CLIENTE: É de cachoeira alta Goiás
+[14:29] CLIENTE: ?
+[14:37] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Obrigada por aguardar. Nós somos aqui de Luziânia, Goiás."  {audio:midias/3EB05893C110444742D093_617267.ogg}

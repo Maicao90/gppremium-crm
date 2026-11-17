@@ -1,0 +1,41 @@
+CONVERSA 5f0200ee7e | contato: Helcio Silva | 22/09/2026 09:48 até 22/09/2026 10:48 | 9 msgs do cliente, 19 da loja, 0 do robô
+
+--- 22/09/2026 (Tue) ---
+[09:48] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:49] CLIENTE: 0k 185/65/15
+[09:49] LOJA: *Josy:*
+Bom dia1
+[09:49] CLIENTE: Qual o valor?
+[09:49] LOJA: *Josy:*
+1 instante por gentileza. ☺️
+[09:50] LOJA: [foto]
+[09:50] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:51] LOJA: *Josy:*
+Os pneus GP Premium entraram em promoção de R$ 289,00 por apenas R$ 249,00 a vista e já são colocados.
+[09:52] LOJA: [áudio] "Olá, bom dia. Tudo bem com você, Elcio? E você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB0997DB7BA94A48FEF69_769394.ogg}
+[09:54] CLIENTE: [áudio] "Pô, minha filha, bom dia, porque eu moro aqui no Gama, né? Pensei que vocês eram no Valparaíso, né? Eu achava que era no Valparaíso, que eu estando aqui no Gama eu ia até aí botar esse pneu, entendeu? Aí ficou meio longe, né, pra mim aí."
+[09:56] LOJA: [áudio] "Qual das marcas que o senhor se interessou?"  {audio:midias/3EB0F16233C8CB24E03D32_695757.ogg}
+[09:56] CLIENTE: [áudio] "Bom, eu tô querendo pegar o mais barato, né, filho? Que é esse aí que você falou. Esse GP Premium é pneu bom? Eu preciso comprar os pneus bons, né? Que eu vou viajar no carro, né? Preciso pneu bom, né? Com garantia, né? Tá bom?"
+[09:57] LOJA: [áudio] "Sim, esse pneu é o pneu mais vendido que eu tenho, e igual eu te falei, ele está na promoção. O senhor disse que mora no Gama, né? Eu consigo mandar os pneus para o novo Gama para o senhor, tá jóia? Te ajuda se eu fizer isso?"  {audio:midias/3EB018C9923B86E0FDB8CB_754179.ogg}
+[09:57] CLIENTE: [áudio] "Beleza, você manda para o novo Gama e como é que faz para meter a nota e tudo direitinho? E aí eles dão um balanceado também não? Como é que é? Alinhado, balanceado? Como é que é isso aí?"
+[10:00] LOJA: [áudio] "Bem, com questão anota, eu já providencio aqui pro senhor tudo direitinho. Se o senhor realmente estiver interessado em dar continuidade, eu vou pedir pro senhor me passar o seu nome completo, o seu CPF, o seu CPF de endereço e endereço, tá? E me informar qual que vai ser a forma de pagamento dos pneus, que eu já vou deixar o pessoal da borracharia informado. Eu vou pegar os pneus daqui e vou mandar pra lá. A borracharia, eu fiquei no novo Gama, se chama Borracharia Popular. Eu vou te mandar aqui a localização, tudo certinho, tá? Com questão a balanceamento, esse valor pode negociar com o rapaz lá da oficina, mas ele vai fazer um preço bacana pro senhor, pode ficar tranquilo, tá bom?"  {audio:midias/3EB0ED6B71783E19D571F5_591482.ogg}
+[10:01] LOJA: [localização] -16.0680034,-48.0643739
+[10:01] LOJA: *Josy:*
+Essa é a localização da borracharia popular.
+[10:02] LOJA: *Josy:*
+ Fica  em frente ao posto de gasolina Pontão 24h Lunabel, em Novo Gama-GO.
+[10:02] LOJA: [áudio] "Aí, se for realmente do seu interesse, o senhor me fala aqui que eu já providencio de enviar os pneus aí nessa borracharia, tá bom? Só vou mandar assim que o senhor falar. Pode mandar."  {audio:midias/3EB04E6B9CC44E6409083A_634522.ogg}
+[10:03] CLIENTE: [áudio] "Tá bom, aguardo um pouquinho que eu dou resposta a você daqui a pouco, tá bom? Pra te falar direitinho, porque eu tenho que ver com meu filho lá que ele vai mandar o dinheiro pra mim, tá bom?"
+[10:03] LOJA: *Josy:*
+Tranquilo.
+[10:19] CLIENTE: [áudio] "Oi, Josi. Bom dia. Deixa eu te falar aqui. Os seus pneus, eu estou pesquisando aqui. Esse pneu é recapado. Para mim, recapado não dá não, entendeu? Remote, recapado eu não quero. Quero pneu novo, tá entendendo? Então, aí, nesse modelo de pneu recapado, eu estava pesquisando aqui. Eu entrei no Google aqui e vi lá que os pneus de vocês são recapados, né? Aí, para mim, não serve, entendeu? Porque eu vou viajar, né? Preciso de pneu bom."
+[10:21] LOJA: [áudio] "Não, ele não é recapado."  {audio:midias/3EB026CC0F174D6EAF4925_93711.ogg}
+[10:21] LOJA: [áudio] "Recapagem, traz somente em pneus de caminhão."  {audio:midias/3EB0FFB67FA970AD5B7222_917328.ogg}
+[10:22] CLIENTE: [áudio] "Pois é, mas no Google aqui tá dizendo que os pneus são recapados. Você pergunta aí no Google sobre o GP Premium. Eu perguntei. Dizem que os pneus são recapados. Entendeu?"
+[10:48] LOJA: [áudio] "Sim, eu sei. Só que não vem a explicação da maneira que ela deve ser feita, entende?"  {audio:midias/3EB07F39460EE80A97BE69_703498.ogg}
+[10:48] LOJA: [áudio] "Não são recapados."  {audio:midias/3EB0D5EABC9C31B98C4F17_354184.ogg}

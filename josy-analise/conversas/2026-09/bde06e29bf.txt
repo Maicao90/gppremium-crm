@@ -1,0 +1,21 @@
+CONVERSA bde06e29bf | contato: Lucas | 09/09/2026 11:39 até 11/09/2026 14:11 | 2 msgs do cliente, 9 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[11:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:39] CLIENTE: [áudio] "Opa, bom dia! Quanto que tá o pneu 16, aro 16 de caminhonete?"
+[11:42] LOJA: [áudio] "Olá, tudo bem, Lucas? Eu sou a Josi. Eu tenho aqui no aro 16 a partir de R$ 479,00. Aí eu preciso que você confirme para mim qual que é a medida que você está precisando."  {audio:midias/3EB01521A8CC569CC2DADB_891601.ogg}
+[11:45] CLIENTE: [áudio] "Assim, eu vou... Assim que eu chegar lá em casa, eu vou dar uma olhada no pneu que tá no carro. Lá eu te falei."
+[17:41] LOJA: [áudio] "Oi Lucas, tudo jóia?"  {audio:midias/3EB02D600F993A106C11A8_67220.ogg}
+[17:41] LOJA: [áudio] "Conseguiu confirmar para mim, com a gentileza?"  {audio:midias/3EB065AE517ABDE41950C7_213446.ogg}
+--- 10/09/2026 (Thu) ---
+[15:24] LOJA: [áudio] "Oi Lucas, tudo jóia? Você pôde me mandar aqui a opção dos pneus que você precisa e gostaria de saber se você conseguiu."  {audio:midias/3EB0DCAF26F2836BEF1282_960461.ogg}
+--- 11/09/2026 (Fri) ---
+[14:11] LOJA: [áudio] "Oi Lucas, tudo bom com você? Olha, eu fiquei aqui aguardando um retorno da sua parte, mas eu sei que é extremamente corrido e como eu não sei o que você está buscando, eu vou te mandar um orçamento aqui bem aleatório com diversas medidas que eu tenho aqui neste momento para ver se te atende, tá? Eu vou encerrar o seu atendimento, vou te mandar o orçamento e, precisando, você me chama. Então vem aqui na nossa loja para conversarmos pessoalmente, tá joia? Eu vou encerrar aqui o seu atendimento para não ficar enchendo o seu WhatsApp de mensagem, porque sei que você está na correria aí, tá bom?"  {audio:midias/3EB0A2430E33C92B8E9E30_912163.ogg}
+[14:11] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:11] LOJA: [foto]
+[14:11] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

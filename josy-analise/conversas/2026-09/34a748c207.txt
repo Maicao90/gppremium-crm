@@ -1,0 +1,19 @@
+CONVERSA 34a748c207 | contato: Welson Gonçalves De Olive | 09/09/2026 16:23 até 09/09/2026 16:26 | 5 msgs do cliente, 5 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[16:23] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[16:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:23] CLIENTE: 14 185/65
+[16:23] LOJA: *Josy:*
+Oi, Welson!
+[16:24] CLIENTE: Oi
+[16:24] CLIENTE: Onde é a loja de vcs?
+[16:25] LOJA: *Josy:*
+Luziânia-Go
+[16:25] LOJA: [foto]
+[16:26] CLIENTE: Aumentou?tava 249
+[16:26] LOJA: *Josy:*
+249,00 era 185/65/15

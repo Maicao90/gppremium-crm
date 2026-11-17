@@ -1,0 +1,16 @@
+CONVERSA 14374608cd | contato: João Guilherme | 21/08/2026 12:18 até 21/08/2026 12:31 | 7 msgs do cliente, 6 da loja, 0 do robô
+
+--- 21/08/2026 (Fri) ---
+[12:18] CLIENTE: Boa tarde, beleza
+[12:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:19] CLIENTE: Vcs estão tendo os pneus pra Drift no aro 15 ??
+[12:19] CLIENTE: Medida 195/50 ou 195/45
+[12:23] LOJA: Oi Gui... tuddo jóia?
+[12:24] LOJA: Teremos apenas 195/55/15 no valor de R$ 289,00
+[12:28] CLIENTE: Os de 160R$ não esta tendo ??
+[12:29] LOJA: Não estão...
+[12:29] LOJA: Em falta já tem um tempo.
+[12:29] CLIENTE: Blz 👍🏽
+[12:30] CLIENTE: Obrigado
+[12:31] LOJA: João...se conseguir trazer o pagamento em *dinheiro*, consigo fazer os pneus por R$ 268,00 cada,

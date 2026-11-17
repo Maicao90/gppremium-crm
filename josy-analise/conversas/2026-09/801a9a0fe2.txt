@@ -1,0 +1,39 @@
+CONVERSA 801a9a0fe2 | contato: Silvano Rodrigues | 23/09/2026 17:49 até 26/09/2026 08:50 | 7 msgs do cliente, 15 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[17:49] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[17:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:49] CLIENTE: 175/70/13
+[17:50] LOJA: *Josy:*
+Boa tarde!
+[17:50] LOJA: [foto]
+[17:50] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 24/09/2026 (Thu) ---
+[10:39] LOJA: [áudio] "Olá, bom dia! Tudo bem com você, Silvano? Ontem eu te mandei um orçamento a respeito dos pneus 013 e eu gostaria muito de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB04D3C52E4655AD4815E_786136.ogg}
+[13:06] CLIENTE: [áudio] "Oi Joice, boa tarde, tudo bem? Desculpa pela demora. Me diga uma coisa, esse Nacional aí, esse negócio é tudo montagem na loja ou vocês vêm pra gente montar em outro canto? Figue aí, por favor. Tô precisando de uns pneus, mas eu tô querendo montar depois, quer comprar agora pra depois eu montar. Beleza? Se fazer esse de 2,69, se eu não me engano dessa... Esse somente que você me passou, é o último que você me passou, lá embaixo, o Nacional. Vê, por favor, como é que é isso no cartão, é o mesmo preço. Comecei a dividir, preço à vista."
+[13:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:54] LOJA: [áudio] "Silvana, se você quiser montar aqui, monta. Se quiser levar, também pode."  {audio:midias/3EB0F441D2B6DA6B994E92_463395.ogg}
+[22:59] CLIENTE: Qual e local da loja?
+--- 25/09/2026 (Fri) ---
+[08:02] LOJA: [áudio] "Oi, seu Silvano, tudo jóia? Nossa loja, ela fica aqui em Luziânia, na BR-040."  {audio:midias/3EB054868940BAC89CBC2B_9417.ogg}
+[08:02] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:02] LOJA: [foto]
+[18:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:50] CLIENTE: [áudio] "Hein? Boa noite, desculpa pela hora que eu tava na correria, Fê, hoje. Me diga uma coisa, esse pneu nacional seu, você é recapado, é? Me diga aí como é que é que funciona esse nacional. Você é recapado ou você é fabricado mesmo?"
+[18:50] CLIENTE: 175/70/13
+--- 26/09/2026 (Sat) ---
+[08:08] LOJA: *Josy:*
+Bom dia, tudo bem?
+[08:09] LOJA: [áudio] "Não, Silvano, não é recapado. Recapado só faz em pneu de caminhão, de ônibus. Esse pneu aí não tem nada a ver com recapagem, não."  {audio:midias/3EB05AD4C39ADC33FD01F0_252421.ogg}
+[08:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:50] CLIENTE: [áudio] "Bom dia, Joice. Não, beleza, então. Essa semana já acabou, né? Semana que vem aparecer pra não negociar, tá bom? Obrigado. Até um ótimo final de semana, tá?"
+[08:50] LOJA: [áudio] "Beleza, Silvano. Eu que agradeço pelo seu contato e venha que sim, tá joia? Te mandei aí a fotinho da nossa empresa. Pode chegar aqui que nós inclusive já colocamos esse pneu aí no seu carro, se você quiser. Tá joia? Obrigadão."  {audio:midias/3EB0766D1FFFB8398D929E_234491.ogg}

@@ -1,0 +1,75 @@
+CONVERSA 5b3d9bb397 | contato: Nah Rosa | 03/09/2026 18:51 até 04/09/2026 10:07 | 16 msgs do cliente, 22 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[18:51] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso?
+[18:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:52] CLIENTE: Boa noite
+Aro 17, qual valor
+[18:52] CLIENTE: Marca michelon
+--- 04/09/2026 (Fri) ---
+[08:18] LOJA: *Josy:*
+Bom dia!
+[08:18] LOJA: *Josy:*
+Não dispomos de Michellin a pronta entrega, mas posso cotar para você.
+[08:19] LOJA: *Josy:*
+Porém preciso que me diga qual é a *medida* dos pneus que você precisa.
+[08:21] CLIENTE: Bom dia Josy
+
+150/50 alguma coisa assim, eu esqueci de olhar
+[08:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:22] CLIENTE: 150/50 aro 17
+[08:22] LOJA: *Josy:*
+desconheço essa medida, pode olhar na lateral do pneu para se certificar?
+[08:22] CLIENTE: So consigo olhar a tarde depois das 17h
+[08:23] CLIENTE: Nao estou mais em casa
+[08:40] LOJA: *Josy:*
+Tem alguém que esteja lá?
+[08:48] CLIENTE: No momento nao
+[08:51] LOJA: *Josy:*
+E qual é seu carro?
+[08:57] CLIENTE: 205/50 R17 (ou 215/50 R17 e um desses 2
+[08:58] LOJA: *Josy:*
+Estou fazendo o orçamento com as 2 opções
+[08:58] LOJA: *Josy:*
+1 instante.
+[08:58] CLIENTE: Ok
+[08:59] LOJA: [foto]
+[08:59] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:02] CLIENTE: Ok, tem michellin, que preciso
+[09:02] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.
+[09:02] CLIENTE: Ta certo! 
+Obrigada
+[09:03] LOJA: *Josy:*
+Exeto Michellin
+[09:03] LOJA: *Josy:*
+Mora aqui em Luzlânia-Go?
+[09:13] CLIENTE: Valparaiso!
+[09:15] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Bem aqui no início da nossa conversa, eu disse que Michelin, eu não tenho a pronta entrega, mas que eu posso cotar para você. E quando você me informou aqui qual é o seu carro, eu já solicitei o orçamento para o meu distribuidor, aí eu só estou aguardando realmente a resposta dele para te dizer o prazo de entrega e o preço, tá bom?"  {audio:midias/3EB020AE38B609DEB40003_556182.ogg}
+[09:34] LOJA: [foto]
+[09:34] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:54] CLIENTE: Ta joia!
+Mas e apenas uma pesquisa ainda. 
+
+Nao sei se vou comprar ok!
+[09:57] LOJA: *Josy:*
+Ok!
+[09:57] LOJA: *Josy:*
+Quando decidir, se meu orçamento te atender, retorne nossa conversa.
+[09:57] LOJA: *Josy:*
+Será uma satisfação recebe-la em nossa loja!
+[10:03] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:07] CLIENTE: Otimo!!!
+Aviso sim, assim que concluir a pesquisa. Ok 
+Obrigada

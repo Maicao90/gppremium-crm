@@ -1,0 +1,52 @@
+CONVERSA e97bfcfbdb | contato: maxuel | 13/10/2026 12:08 até 15/10/2026 08:17 | 13 msgs do cliente, 25 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[12:08] CLIENTE: Boa tarde
+[12:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:08] CLIENTE: 235 60 16
+[12:15] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[12:15] LOJA: [áudio] "Maxwell, qual que é o seu carro? Pois, justamente todas as pessoas que utilizam o 235-60 aro 16, estão migrando para o 215-65, que além de ser uma opção na qual deixa o veículo mais econômico, ela ainda é muito mais prático e fácil de encontrar."  {audio:midias/3EB0BBE07506DAEADF1124_762107.ogg}
+[12:18] CLIENTE: Tucsom
+[12:33] LOJA: Pode usar o 215/65/16
+[12:34] LOJA: Vou te encaminhar o orçamento.
+[12:42] LOJA: [foto]
+[12:42] LOJA: No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:06] LOJA: [áudio] "Eles ainda não me responderam se tem essa opção, tá? Mas eu não esqueci de você. Assim que eles me falarem, eu te passo o direito a marca para esse prazo de entrega, que vai ser somente por encomenda, tá, Maxwell? E aí eu te mandei o 215-65, conforme eu disse, né? São as opções que estão realmente mais utilizando. Agora, só uma observação, com a medida que você está buscando, você quer alguma marca específica ou a que eles me mandarem, eu posso te passar?"  {audio:midias/3EB0EFE82BFCFD8DCE7493_839984.ogg}
+[13:08] CLIENTE: De preferencia goodyear
+[13:09] CLIENTE: Mas se tiver outras marcas boas pode me passar pra mim fazer orçamento
+[13:10] LOJA: Certo...
+[16:04] LOJA: Oi... consegui um retorno da Dunlop e Goodyear, no dia de hoje somente as 2 tem a medida 235/60/16
+[16:04] LOJA: [foto]
+[16:04] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 14/10/2026 (Wed) ---
+[16:40] CLIENTE: 235/60/16
+[16:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:41] CLIENTE: 235/60/16
+[16:42] LOJA: [áudio] "Oi, Maxwell. Tudo jóia? Eu até te mandei o orçamento, só que como o seu WhatsApp aí é de mensagem temporária, as mensagens sumiram. Vou fazer aqui novamente, tá? Essa opção é somente por encomenda."  {audio:midias/3EB0987D2798AD441C9E8A_639617.ogg}
+[16:44] LOJA: [foto]
+[16:44] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:45] CLIENTE: Ok obrigado
+[16:54] LOJA: [áudio] "E eu esqueci, você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB0BC7EF0231ADDEFC777_190889.ogg}
+[16:59] CLIENTE: Nao
+[16:59] CLIENTE: Moro depois de cristalina
+[16:59] LOJA: Ah, sim!
+[16:59] LOJA: Marajó?
+[16:59] CLIENTE: 22 km depois de cristalina
+[16:59] CLIENTE: Domiciano ribeiro
+[16:59] LOJA: Sim! Sim!
+[16:59] LOJA: Bacana!
+[17:10] LOJA: Pois é na medida que você busca será somente por encomenda.
+[17:54] LOJA: [áudio] "Maxwell, o 215-65-16 não te atende? Que eles eu tenho aqui a pronta entrega."  {audio:midias/3EB0AB6D240B6926CF34BC_632758.ogg}
+[18:21] CLIENTE: Nao, obrigado 
+Tinha que ser o 235/60/16 mesmo
+--- 15/10/2026 (Thu) ---
+[08:17] LOJA: [áudio] "Bom dia, Max. Como é que você está? Perfeito. Eu vou encerrar aqui o seu atendimento, justamente para não ficar enchendo seu WhatsApp de mensagens, tá? E vou deixar aqui a nossa localização. Se houver a possibilidade, passa aqui na nossa loja para conversarmos pessoalmente. Obrigada. Tchau, tchau."  {audio:midias/3EB004EA5179578E1AAB24_352520.ogg}
+[08:17] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

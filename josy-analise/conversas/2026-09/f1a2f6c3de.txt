@@ -1,0 +1,19 @@
+CONVERSA f1a2f6c3de | contato: Wallace | 26/09/2026 18:44 até 28/09/2026 08:26 | 4 msgs do cliente, 5 da loja, 0 do robô
+
+--- 26/09/2026 (Sat) ---
+[18:44] CLIENTE: Oi, Tudo bem ?
+[18:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:44] CLIENTE: Pneu aro 15 195 55
+--- 28/09/2026 (Mon) ---
+[08:11] CLIENTE: ?
+[08:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:12] CLIENTE: Pneu aro 15 195 55
+[08:26] LOJA: *Josy:*
+Bom dia!
+[08:26] LOJA: [foto]
+[08:26] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

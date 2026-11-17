@@ -1,0 +1,24 @@
+CONVERSA c895dfbdff | contato: Andre | 14/10/2026 14:12 até 14/10/2026 18:00 | 7 msgs do cliente, 11 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[14:12] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[14:12] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:18] LOJA: 🙋🏼‍♀️
+[14:54] CLIENTE: 185/45/17
+[14:54] CLIENTE: 2
+[14:56] LOJA: Vou verificar para você, 1 instante.
+[14:58] CLIENTE: Ok
+[14:58] LOJA: Teremos 195/45/17
+[14:58] LOJA: [foto]
+[14:58] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:00] CLIENTE: Esse pneu presta nunca ouvi falar
+[15:02] LOJA: Sim! E muito!
+[15:39] CLIENTE: Onde é a loja
+[15:39] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, André? Nós somos aqui de Luziânia, Goiás. E você de onde?"  {audio:midias/3EB056E45E3E0C2C358C69_415868.ogg}
+[15:39] CLIENTE: Recanto das emas
+[15:41] LOJA: Ah, sim!
+[18:00] LOJA: [áudio] "André, eu vou finalizar aqui seu atendimento por hora, tá? Aí dá uma pesquisada no Google a respeito dessa marca e eu vou te mandar aqui a nossa localização, tá bom? Se puder, você passa aqui."  {audio:midias/3EB0FD824134A0F3B4FE04_909769.ogg}
+[18:00] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

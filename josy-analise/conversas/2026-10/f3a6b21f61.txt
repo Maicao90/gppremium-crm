@@ -1,0 +1,14 @@
+CONVERSA f3a6b21f61 | contato: Toda á Glória a Jesus | 15/10/2026 12:30 até 15/10/2026 12:33 | 3 msgs do cliente, 3 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[12:30] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[12:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:30] CLIENTE: 205/55/16
+[12:31] CLIENTE: Vocês tem pneus aro 16???
+[12:33] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:33] LOJA: [foto]

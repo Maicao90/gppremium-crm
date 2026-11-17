@@ -1,0 +1,20 @@
+CONVERSA 8aa295dc22 | contato: Celso E Flávia | 26/08/2026 10:02 até 27/08/2026 15:45 | 2 msgs do cliente, 7 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[10:02] CLIENTE: Opa
+[10:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:02] LOJA: *Josy :*
+Bom dia!
+[10:03] LOJA: *Josy :*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 27/08/2026 (Thu) ---
+[15:40] CLIENTE: Qual valor do 175/70/14
+[15:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:44] LOJA: *Josy:*
+Boa tarde!
+[15:45] LOJA: *Josy:*
+R$ 279,00 a unidade a vista, pneu da marca GP Premium.
+[15:45] LOJA: *Josy:*
+Mora aqui em Luziânia-Go?

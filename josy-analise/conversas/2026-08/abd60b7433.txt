@@ -1,0 +1,16 @@
+CONVERSA abd60b7433 | contato: Davi | 21/08/2026 08:17 até 21/08/2026 08:20 | 6 msgs do cliente, 6 da loja, 0 do robô
+
+--- 21/08/2026 (Fri) ---
+[08:17] LOJA: Bom dia, Davi... tudo bem? Ainda trabalha na Rodonaves?
+[08:18] CLIENTE: Bom dia, tudo bem sim.
+[08:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:18] CLIENTE: Não eu sai em fevereiro
+[08:18] LOJA: Ah, sim! Compreendo.
+[08:19] CLIENTE: É sobre coleta?
+[08:19] LOJA: isso rs
+[08:19] CLIENTE: Eu mando o contato do pessoal
+[08:19] LOJA: Muito obrigada!
+[08:19] CLIENTE: [contato] 👤 Thiago Lider
+[08:19] CLIENTE: Fala com ele e pede o contato do josias
+[08:20] LOJA: Obrigada, Davi! Sucesso onde for.

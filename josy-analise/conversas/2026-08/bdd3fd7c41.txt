@@ -1,0 +1,53 @@
+CONVERSA bdd3fd7c41 | contato: Mikael Xavier 🐺 | 19/08/2026 15:21 até 27/08/2026 10:19 | 18 msgs do cliente, 24 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[15:21] CLIENTE: Boa tarde
+[15:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:21] CLIENTE: PNEU MICHELAN 195/65R15
+[15:21] CLIENTE: Você tem !
+[15:21] CLIENTE: ?*
+[15:22] LOJA: Oi, jóia Mikael!
+[15:22] LOJA: Não tem não.
+[15:22] LOJA: Somente essa marca que te atende?
+[15:29] CLIENTE: Quais você tem
+[15:30] LOJA: [foto]
+[15:30] LOJA: [áudio] "Micael, os pneus aqui da GP Premium, eles estão na promoção, compre 3 e leve 4. De repente, se você achar viável..."  {audio:midias/3EB0FFCED8304683B8ED4A_365953.ogg}
+[15:31] LOJA: Exemplo: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[15:50] CLIENTE: [áudio] "Eu tô precisando só de um, Luziânia. Deixa eu ver com o pessoal aqui se pode ser alguma marca dessa."
+[16:20] LOJA: [áudio] "Beleza, porque o Michel não tem a pronta entrega, eu até solicitei uma cotação aqui com os meus distribuidores, aí é aquela opção, né, que chega com 3 dias úteis se eles tiverem, só estou aguardando a resposta para poder te passar."  {audio:midias/3EB0EDF920074E05179BDF_775313.ogg}
+[16:20] CLIENTE: [áudio] "Josi, esse da Gudi aí, tá? Vou querer um dele. Você consegue fazer ele faturar pra gente no boleto?"
+[16:21] LOJA: [áudio] "Eu vou verificar aqui com o meu financeiro, tá? É pra Marberg, né?"  {audio:midias/3EB07F10468639340E62B8_954617.ogg}
+[16:22] CLIENTE: Sim
+[16:22] LOJA: Sim. fatura para 30 dias fica por 560,51, ok
+[16:23] CLIENTE: [áudio] "Tá bom, pode faturar pra nós aí então. Vou ver se o menino consegue buscar ele aí. Eu tô sem motorista aqui agora, assim chegar um rapaz aqui eu peço a buscar aí, tá bom?"
+[16:24] LOJA: Beleza...
+[16:24] LOJA: Separando e emitindo a nota.
+[16:24] LOJA: Quem vai vir aqui?
+[16:42] LOJA: por aqui está tudo pronto.
+[16:43] CLIENTE: [áudio] "Eu tô só aguardando o motorista chegar. Eu tô com um carro aqui, mas tô sem motorista. Pra ver se ele consegue pegar ele ainda hoje. Se caso ele não conseguir, eu pego amanhã, tá bom?"
+[16:44] LOJA: stá tranquilo!
+--- 27/08/2026 (Thu) ---
+[09:46] CLIENTE: Bom dia
+[09:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:46] LOJA: *Josy:*
+Bom dia!
+[09:46] LOJA: *Josy:*
+Como vai Mikael!
+[09:47] CLIENTE: [foto]
+[09:47] CLIENTE: Tem desse ?
+[09:49] LOJA: *Josy:*
+A pronta entrega não temos , mas verificar com meus distribuidores.
+[09:51] LOJA: *Josy:*
+usa em que esse pneu?
+[09:52] CLIENTE: [áudio] "Eu vou colocar numa carretinha, numa carretinha baixa. Eu já tenho uma roda aqui já. Só precisava do pneu, né? Eu pirando essas medidas. O que eu tenho aqui, que eu tô usando na roda, é aqueles de carrinho de mão, então ele não aguenta. Aí eu quero mudar pra um desse aí."
+[09:52] CLIENTE: [foto]
+[09:52] CLIENTE: [áudio] "Esse é o que eu estou usando nela, tá vendo? Só que esse 3.25 não aguenta. Eu teria que ser ou um 4.8 ou um 4.0."
+[09:53] LOJA: [áudio] "Não, não aguenta não, porque, igual você falou, né, é pra carrinho de mão. Aí não dá certo no que você tá usando. Eu verifiquei aqui, vou aguardar a resposta do pessoal pra poder te dar um parecer, tá bom?"  {audio:midias/3EB08DFD2B4E51CFDA0AEC_439123.ogg}
+[09:53] CLIENTE: Ok
+[09:59] LOJA: *Josy:*
+Não tem Mikael.
+[10:18] CLIENTE: Obrigado
+[10:19] LOJA: *Josy:*
+Disponah!

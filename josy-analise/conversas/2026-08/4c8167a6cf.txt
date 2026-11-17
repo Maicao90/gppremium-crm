@@ -1,0 +1,51 @@
+CONVERSA 4c8167a6cf | contato: líder rastreadores | 20/08/2026 14:00 até 29/08/2026 11:09 | 15 msgs do cliente, 26 da loja, 0 do robô
+
+--- 20/08/2026 (Thu) ---
+[14:00] CLIENTE: Boa tarde
+[14:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:00] CLIENTE: 16
+[14:37] LOJA: Boa tarde!
+[14:37] LOJA: Claro! Para que eu possa gerar o orçamento para você, poderia me informar a *medida* do pneu que você precisa (ex: 265/70 R16)  😊
+[17:18] LOJA: 🙋🏼‍♀️
+[17:18] LOJA: Estou aguardando sei retorno referente a medida dos pneus.
+[17:18] CLIENTE: Ja já eu passo
+--- 21/08/2026 (Fri) ---
+[09:32] LOJA: Bom dia!
+[10:16] LOJA: Pode me dizer para qual carro ? Pois já me ajuda .
+[11:45] LOJA: Oi!
+[13:02] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu me chamo Josi e eu gostaria de saber qual é a medida dos pneus aí que você está precisando ou então me diz qual é o seu carro que me ajuda muito para poder realizar o seu orçamento. Você pode me dizer, por gentileza?"  {audio:midias/3EB08443E37943B3B690B2_586204.ogg}
+[13:03] CLIENTE: 185/55 roda 16
+[13:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:04] CLIENTE: 185/55 R 17
+[13:04] CLIENTE: 185/55 R16
+[13:04] LOJA: Teremos a pronta entrega 195/55/16, te atende?
+[13:05] CLIENTE: Sim
+[13:05] LOJA: [foto]
+[13:05] CLIENTE: [áudio] "Só me tira uma dúvida, ele é mais largo ou é mais fino do que esse que eu mandei aí?"
+[13:05] LOJA: Pneu da marca GP Premium
+[13:05] LOJA: Mais largo
+[13:05] LOJA: 185... 195...
+[13:05] LOJA: Perfil 55
+[13:05] LOJA: [áudio] "Você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB04EB03BA2A8C2800C36_989496.ogg}
+[13:06] CLIENTE: [áudio] "Não, eu moro no Gama, mas eu sempre, quando preciso, compro a opinião aí de vocês, aí eu vou ir buscar, acho que eu já comprei umas três vezes."
+[13:08] CLIENTE: 4 dividir em 3 vezes fica quanto
+[13:08] LOJA: [áudio] "Em 4 vezes, a unidade é 270. Então, você vai pagar 3 parcelas de 360 reais."  {audio:midias/3EB0D5C4BC1BA2F330ECB9_10154.ogg}
+[13:09] CLIENTE: Tá bom
+[13:10] CLIENTE: Sábado abre aí
+[14:03] LOJA: Sim funcionemento
+[14:11] CLIENTE: Ok
+--- 29/08/2026 (Sat) ---
+[11:07] LOJA: *Josy:*
+Bom dia!
+[11:07] LOJA: *Josy:*
+Tudo jóia?
+[11:08] CLIENTE: Bom dia sim
+[11:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:08] LOJA: [áudio] "Para saber se você vem ainda hoje, que nós conversamos durante a semana, né?"  {audio:midias/3EB0A982A2EECA4D89A0F4_369899.ogg}
+[11:08] CLIENTE: Eu vendi o carro
+[11:09] LOJA: *Josy:*
+Que bacana!
+[11:09] LOJA: [áudio] "Então, quando você precisar, novamente, fala aqui comigo, certinho? Bom final de semana para você."  {audio:midias/3EB066C59742D51A8151D3_324330.ogg}

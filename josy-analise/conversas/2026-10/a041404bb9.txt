@@ -1,0 +1,10 @@
+CONVERSA a041404bb9 | contato: PauloHenrique | 06/10/2026 09:39 até 06/10/2026 09:43 | 4 msgs do cliente, 2 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[09:39] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:39] CLIENTE: 205 /60 R16
+[09:41] LOJA: [áudio] "Oi Paulo, bom dia, tudo bem com você? Você mora aqui na cidade de Luziânia?"  {audio:midias/3EB0A5E08B97E7B0E2626C_296472.ogg}
+[09:42] CLIENTE: Orizana
+[09:43] CLIENTE: [áudio] "Aí, eu pedi para o número aqui do Horizona deu, foi esse número aí, ué."

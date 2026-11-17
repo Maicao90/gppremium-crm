@@ -1,0 +1,29 @@
+CONVERSA 31aab89ca4 | contato: Edson Dos Santos | 24/09/2026 14:43 até 08/10/2026 12:25 | 4 msgs do cliente, 11 da loja, 0 do robô
+
+--- 24/09/2026 (Thu) ---
+[14:43] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Gostaria de saber o valor de pneu 185/60/15?
+[14:43] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:44] LOJA: *Josy:*
+Boa tarde!
+[14:44] LOJA: [foto]
+[14:44] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:46] LOJA: *Josy:*
+Mora aqui em Luziânia, mesmo?
+[15:01] CLIENTE: Não
+[15:01] CLIENTE: Valparaiso
+[15:03] LOJA: *Josy:*
+Pertinho de nós!
+[15:06] LOJA: [áudio] "Edson, se você tiver interesse em realizar a troca dos pneus neste final de semana, estaremos com a loja aberta."  {audio:midias/3EB0307D5482197AA5504C_416278.ogg}
+[15:06] LOJA: [áudio] "Quer que eu te encaminhe a nossa localização?"  {audio:midias/3EB08450BBE1C895327FF7_969123.ogg}
+[15:52] CLIENTE: Ok
+[16:04] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:04] LOJA: [foto]
+--- 08/10/2026 (Thu) ---
+[12:25] LOJA: [áudio] "Oi, Sra. Edson, bom dia. Tudo jóia? Josi aqui falando. Sra. Edson, no sábado nós estaremos atendendo de 8 da manhã até o meio-dia, tá? Eu posso agendar a sua vinda aqui na nossa loja?"  {audio:midias/3EB0B34E59169E77DA64A2_651916.ogg}

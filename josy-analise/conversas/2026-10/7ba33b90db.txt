@@ -1,0 +1,18 @@
+CONVERSA 7ba33b90db | contato: Carlos Augusto | 01/10/2026 09:53 até 01/10/2026 09:59 | 9 msgs do cliente, 5 da loja, 0 do robô
+
+--- 01/10/2026 (Thu) ---
+[09:53] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:54] CLIENTE: Preciso de pneu agrícola aro 15
+[09:54] CLIENTE: [foto]
+[09:54] CLIENTE: Vocês teriam?
+[09:57] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Carlos, infelizmente não temos."  {audio:midias/3EB09D6B716CB8D406A0C8_849796.ogg}
+[09:57] CLIENTE: Eu estou bem obrigado
+[09:57] CLIENTE: Você poderia por gentileza me indicar alguém que tenha?
+[09:57] LOJA: [áudio sem fala]  {audio:midias/3EB0B39DBCD7E6B099C486_971205.ogg}
+[09:58] CLIENTE: O áudio cortou
+[09:58] LOJA: [áudio] "Eu disse que aqui em Luziânia, eu não sei dizer para você quem tem esse pneu, Carlos, eu fico te devendo."  {audio:midias/3EB0E41DD3E22014607ECA_115422.ogg}
+[09:58] CLIENTE: Muito obrigado
+[09:59] LOJA: [áudio] "Imagina, eu quem agradeço pelo contato. Bom final de semana."  {audio:midias/3EB05F64234620DFCC9386_67080.ogg}
+[09:59] CLIENTE: Igualmente

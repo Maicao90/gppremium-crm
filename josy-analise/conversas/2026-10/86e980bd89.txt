@@ -1,0 +1,26 @@
+CONVERSA 86e980bd89 | contato: Claudemir Tim | 11/10/2026 10:47 até 13/10/2026 10:56 | 7 msgs do cliente, 11 da loja, 0 do robô
+
+--- 11/10/2026 (Sun) ---
+[10:47] CLIENTE: Bom dia
+[10:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 13/10/2026 (Tue) ---
+[08:18] LOJA: 🙋🏼‍♀️
+[08:26] CLIENTE: Aro 13.
+[08:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:26] CLIENTE: Aro 13
+[08:28] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:28] LOJA: [foto]
+[08:29] CLIENTE: Me manda a tabela do aro 15
+[08:30] LOJA: Mando sim, mas preciso saber qual a medida que você precisa.
+[08:31] CLIENTE: 185/60 aro 15
+[08:31] LOJA: [foto]
+[08:32] CLIENTE: São  novo ou remold?
+[08:33] LOJA: O ultimo é o GP Premium, que entra na categoria de remodelagem , mas na linha premium, é o pneu mais vendido que temos, tem 2 anos de garantia.
+[09:04] LOJA: [áudio] "Oi, bom dia a tudo já. Claudemir, você mora aqui em Lusíânia?"  {audio:midias/3EB05C736D6C059977A15C_571975.ogg}
+[09:44] CLIENTE: Moro aqui em valparaíso.
+[09:48] LOJA: Pertinho!
+[10:56] LOJA: Qual opção posso reservar para você?

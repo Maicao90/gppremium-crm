@@ -1,0 +1,18 @@
+CONVERSA 0737d6bb95 | contato: Warcos | 06/10/2026 11:40 até 06/10/2026 11:51 | 4 msgs do cliente, 8 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[11:40] CLIENTE: Bom dia
+[11:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:40] CLIENTE: Qual o pré do pneu aro 14 75/75
+[11:44] LOJA: [áudio] "Oi, Marcos. Bom dia. Como é que você está?"  {audio:midias/3EB0F9A550711FBD8B1680_334378.ogg}
+[11:45] LOJA: [foto]
+[11:46] LOJA: [áudio] "No dia de hoje eu terei os pneus da marca Conforcer. A unidade está por 300 reais, se seu pagamento for à vista."  {audio:midias/3EB050E8BF09F09050AB9D_873618.ogg}
+[11:47] LOJA: *Josy:*
+Temos também 175/70/14
+[11:47] LOJA: [foto]
+[11:50] CLIENTE: [áudio] "Ah não, bom dia. Eu vou dar mais uma pesquisadazinha aqui, tá bom? Qualquer coisa eu entro em contato de novo."
+[11:50] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:50] LOJA: [foto]
+[11:51] CLIENTE: Ok. Obrigado

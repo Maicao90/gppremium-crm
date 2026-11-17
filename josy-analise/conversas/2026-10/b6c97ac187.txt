@@ -1,0 +1,25 @@
+CONVERSA b6c97ac187 | contato: MS | 22/10/2026 11:42 até 22/10/2026 11:48 | 9 msgs do cliente, 0 da loja, 11 do robô
+
+--- 22/10/2026 (Thu) ---
+[11:42] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Qual o valor do aro 16
+[11:42] CLIENTE: 195/55
+[11:42] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[11:43] CLIENTE: Aro 16
+[11:43] CLIENTE: 195/55
+[11:43] ROBÔ: Show, aro 16! 👍
+[11:43] ROBÔ: Qual é o carro? Já te passo a medida certa e o valor.
+[11:43] CLIENTE: Pegeuot 208
+[11:44] ROBÔ: Temos o pneu *195/55/16* da marca *GP Premium* está saindo por *R$ 259,00 à vista*.
+[11:44] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[11:45] CLIENTE: Na compra do 3 sair quanto ❓
+[11:45] ROBÔ: A promoção *compre 3 e leve 4* funciona assim: você paga 3 pneus e leva 4 — o 4º sai de graça.
+[11:45] ROBÔ: Ela vale para os pneus da marca GP Premium nas medidas 195/65/15 e 215/55/17.
+[11:46] CLIENTE: Vixi
+[11:47] ROBÔ: Na sua medida (195/55/16) a promoção de 3 leva 4 não vale, mas o preço já está bem em conta 😉
+[11:47] ROBÔ: Os 3 pneus ficam R$ 777,00 à vista (R$ 259,00 cada), com a montagem grátis. Se quiser fazer os 4, fica R$ 1.036,00.
+[11:47] ROBÔ: Quando você consegue passar aqui na loja?
+[11:47] CLIENTE: Vou da mais uma pesquisada 👍🏻
+[11:48] ROBÔ: Tranquilo! Qualquer dúvida ou se quiser fechar, é só me chamar por aqui.
+[11:48] CLIENTE: Ta bom

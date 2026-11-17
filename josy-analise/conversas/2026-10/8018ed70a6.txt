@@ -1,0 +1,24 @@
+CONVERSA 8018ed70a6 | contato: Fabricio Sousa | 15/10/2026 14:56 até 16/10/2026 10:41 | 5 msgs do cliente, 14 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[14:56] CLIENTE: Oi, Tudo bem ?
+[14:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:57] CLIENTE: Qual o valor do aro 18
+[14:57] LOJA: Qual a medida dos pneus que você precisa ?
+[14:58] LOJA: Para que eu possa gerar o orçamento para você, poderia me informar a *medida* do pneu que você precisa (ex: 185/35/18)  😊
+[14:59] CLIENTE: 235/45/18
+[15:03] LOJA: Temos sim!
+[15:03] LOJA: pneu 235/45/18 98w cf710 comforser
+[15:03] LOJA: [foto]
+[15:04] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:08] LOJA: Mora aqui em Luziânia-Go?
+[15:44] LOJA: [áudio] "Oi Fabrício, tudo bom? Você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB08C8444D894D5721C0F_651704.ogg}
+[16:30] CLIENTE: Nao
+[16:30] CLIENTE: Ponte Alta df
+[16:41] LOJA: [áudio] "Estamos um pouco distantes, hein Fabrício?"  {audio:midias/3EB0BA44FE6E79CD29B5FD_984109.ogg}
+--- 16/10/2026 (Fri) ---
+[10:40] LOJA: Bom dia, Fabricio...
+[10:41] LOJA: Eu vou encerrar seu atendimento para não encher seu whatsapp de mensagem.                                                                                                                   Mas vou deixar aqui a nossa localização, se houver a possibilidade, venha até nossa loja!                                                                                                Bom final de semana e Obrigada 👋🏻
+[10:41] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:41] LOJA: [foto]

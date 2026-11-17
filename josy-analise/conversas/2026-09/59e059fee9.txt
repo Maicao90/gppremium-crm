@@ -1,0 +1,9 @@
+CONVERSA 59e059fee9 | contato: Informações Orientações. | 14/09/2026 13:23 até 14/09/2026 14:06 | 1 msgs do cliente, 3 da loja, 0 do robô
+
+--- 14/09/2026 (Mon) ---
+[13:23] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor. endereço de Vocês
+[13:23] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:06] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Nós somos aqui de Luziânia, Goiás."  {audio:midias/3EB0384FE6249C12C5BD61_806996.ogg}
+[14:06] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

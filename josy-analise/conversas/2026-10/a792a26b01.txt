@@ -1,0 +1,29 @@
+CONVERSA a792a26b01 | contato: Rodrigo Ferretti | 16/10/2026 15:46 até 19/10/2026 10:20 | 6 msgs do cliente, 13 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[15:46] CLIENTE: Boa tarde
+[15:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:47] CLIENTE: Vc tem pneu 235/50 e 19 para Compass
+[15:47] LOJA: [áudio] "Boa tarde, tudo bem? Eu vou verificar para vocês, tá bem?"  {audio:midias/A555DCC9A92C07E4AA9ABF7C846EB686_388850.ogg}
+[15:49] CLIENTE: Ok
+[15:59] LOJA: [áudio] "Rodrigo, eu não tenho aqui a pronta entrega, mas eu vou solicitar um orçamento com os meus distribuidores. Vocês têm busca de alguma mic específica?"  {audio:midias/A55588D8320DB3298ADCFC2B0FD1E099_3980.ogg}
+[16:02] CLIENTE: [áudio] "Não, não tenho... Não, não tenho XBRI, quem sabe? Um pneu razoável e que não seja muito ruim e nem bom demais."
+[17:52] LOJA: [áudio] "Rodrigo, o único retorno que eu consegui aqui foi o pneu da marca Goodyear, que vai ser uma opção por encomenda, tá?"  {audio:midias/3EB0183F5FF7672C53D204_40304.ogg}
+[17:52] LOJA: [foto]
+[17:52] LOJA: Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:53] LOJA: [áudio] "Aí, olha, aqui a pronta entrega eu vou ter o 235-45-19 e tá com preço melhor. É um pneu importado com 5 anos de garantia também."  {audio:midias/3EB0C44E207A1CF85BECC4_670988.ogg}
+[17:53] LOJA: [foto]
+[17:54] LOJA: [áudio] "Aí, à vista, o pneu 23545, dá para fazer por R$ 677,00 à vista. Ele é da marca Linglong. Esse é o valor unitário do pneu."  {audio:midias/3EB019CF3693F57794E59E_464452.ogg}
+[17:55] CLIENTE: Ok. Muito obrigado pela atenção. Vou avaliar as possibilidades.
+[17:58] LOJA: [áudio] "Rodrigo, então por hora eu vou encerrar aqui o seu atendimento, tá? E já vou te encaminhar a nossa localização, pois se houver a possibilidade, você vem aqui na nossa loja para conversarmos pessoalmente, tá bom? Obrigada pela atenção e bom final de semana."  {audio:midias/3EB006ECDB927263DC5FB7_76239.ogg}
+[17:58] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:58] LOJA: [foto]
+[17:59] CLIENTE: Grato !
+--- 19/10/2026 (Mon) ---
+[10:20] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor UNITÁRIO do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

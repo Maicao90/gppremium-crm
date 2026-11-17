@@ -1,0 +1,22 @@
+CONVERSA 705f942704 | contato: Y | 12/09/2026 18:21 até 22/09/2026 16:05 | 5 msgs do cliente, 7 da loja, 0 do robô
+
+--- 12/09/2026 (Sat) ---
+[18:21] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[18:21] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:38] CLIENTE: 1856515
+--- 14/09/2026 (Mon) ---
+[15:03] CLIENTE: [áudio] "Boa tarde, tudo bem? Não, sou de Santa Maria. Mais ou menos o próximo, né? Eu já comprei dos pneus de vocês, né? Mas já tem uns 3 a 4 anos atrás. Acho que é isso. Aí eu tava vendo o preço, né? Procurando novamente. E aí eu também... Normalmente eu compro aqueles importados, sabe? Eu consigo num preço bom. Só que os importados agora tá... Próximo dos preços dos comuns e das nacionais, né? Essas marcas mais famosas, né? Os importados ficaram muito caros, né? O pessoal descobriu, né?"
+[15:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:05] LOJA: [áudio] "Isso, isso mesmo. Os pneus chineses estão com o preço bem parecido. Entretanto, é de observação que eu te faço, tá? É que eu até tenho ele aqui, mas quase não vendo esses pneus. Você pode ver que os pneus chineses, ele vem com bem menos borracha, tá? Igual eu tenho aqui porque tem gente que gosta, mas eu tenho, mas não vendo porque... Quando as pessoas têm essa percepção de entendimento, que vem menos produto, aí as pessoas acabam declinando realmente, tá? E também não é borracha, é sintético, aí é mais barato, mas também dura menos."  {audio:midias/3EB06C74A6EB1ED6EA39E6_549145.ogg}
+[15:05] LOJA: [áudio] "Aí, de repente, se você tiver interesse, eu mando os pneus, como você mora em Santa Maria, eu mando os pneus para uma borracharia que está me ajudando muito. Fica ali no Lunabel. Aí, se você quiser, eu mando os pneus GP Premium para lá."  {audio:midias/3EB0EDEF406A6876A00A76_22211.ogg}
+[15:07] CLIENTE: [áudio] "É, seria até bacana, poderia ser também, mas vamos fazer assim, como eu falei com um colega meu hoje pela manhã, ele ficou de ver uns pneus para mim, tá bom? Então assim, vou aguardar a resposta dele, tá bom? Se ele não conseguir esses pneus para mim, se ele não me falar que não vai conseguir, que eu falei com ele pela manhã, aí a gente volta a falar, tá bom? Só para ficar uma coisa mais ou menos já direcionada assim, tá bom?"
+[15:12] LOJA: [áudio] "Não, não tem problema, não. Fica tranquilo, tá? Aí, inclusive, igual o pneu do GP Premium, ele está na oferta que eu te falei, né? O preço normal dele é 289, porém, ainda tem mais uma vantagem pra você, caso você tenha interesse, se você conseguir sacar o dinheiro pra fazer o pagamento em espécie, eu ainda consigo te dar 5% de desconto. Aí, cada pneu fica por 236 reais no dinheiro. Aí, você analisa, vê direitinho aí, que se der tudo certo, eu mando aí os pneus pra você ali pro Novo Gama, te falo direitinho onde fica, te mando a localização, você pode até pagar os pneus lá, eu só aviso o rapaz que eu tô mandando os pneus e que você vai lá pra retirar, tá bom?"  {audio:midias/3EB095E24B1306959722DE_182153.ogg}
+[15:13] CLIENTE: Certinho
+--- 16/09/2026 (Wed) ---
+[12:10] LOJA: [áudio] "Oi Thiago, como é que você está? Nós conversamos aí na segunda-feira, você disse que estava aguardando o retorno de um amigo seu aí sobre os pneus. E aí, como é que ficou? Conta aí pra mim."  {audio:midias/3EB09F4CD971AFDE1902BB_23072.ogg}
+--- 22/09/2026 (Tue) ---
+[16:05] LOJA: [áudio] "Oi Thiago, tudo jóia? Alguns dias atrás nós conversamos, você ficou de me dar um retorno aqui a respeito dos pneus, daí tu sumiu. Fala aí, deu certa negociação lá com seu amigo, vamos continuar por aqui?"  {audio:midias/3EB077DB75456BB5E97BE1_227719.ogg}

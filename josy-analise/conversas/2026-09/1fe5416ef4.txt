@@ -1,0 +1,25 @@
+CONVERSA 1fe5416ef4 | contato: Gustavo | 24/09/2026 19:52 até 25/09/2026 09:47 | 3 msgs do cliente, 9 da loja, 0 do robô
+
+--- 24/09/2026 (Thu) ---
+[19:52] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[19:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[19:52] CLIENTE: 205 70 r15
+--- 25/09/2026 (Fri) ---
+[08:06] LOJA: *Josy:*
+Bom dia!
+[08:07] LOJA: Mas é para carga ou não?
+[08:07] CLIENTE: Bom dia não
+[08:07] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:11] LOJA: [foto]
+[08:11] LOJA: *Josy:*
+No dia de hoje temos essas 2 opções a pronta entrega.  Pneus da marca Comforser e Pneus da marca GP Premium
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:01] LOJA: [áudio] "Gustavo, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB063973038516F7949B4_200632.ogg}
+[09:34] LOJA: [áudio] "Sim, entendi perfeitamente, Gustavo. Eu vou deixar aqui a nossa localização, pois se de repente houver a possibilidade, você passa aqui na nossa loja, está bem?"  {audio:midias/3EB0639B4436882C0A3A7E_884532.ogg}
+[09:47] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

@@ -1,0 +1,20 @@
+CONVERSA a1175a5abc | contato: Eliomar Santos | 06/10/2026 14:47 até 06/10/2026 15:04 | 7 msgs do cliente, 6 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[14:47] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor. Boa tarde
+[14:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:47] LOJA: *Josy:*
+🙋🏼‍♀️
+[14:48] CLIENTE: Olá! Vi o anúncio no Google e gostaria de mais informações, por favor.boa tarde
+[14:48] CLIENTE: Quanto fica para recapagem de pneus 205/65/15
+[14:50] LOJA: *Josy:*
+Não fazemos serviços de recapagem.
+[14:50] CLIENTE: [foto] 205/65/15/
+[14:51] CLIENTE: Vc tem esse modelo
+[14:51] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Ilhomar? Não, não temos esse modelo, que nesse BF ele é somente através de encomenda, mas eu vou solicitar os meus distribuidores para saber quanto que está o preço e assim que eles me responderem eu te passo, tá joia?"  {audio:midias/3EB007DFFC98A18FCCB34E_723616.ogg}
+[14:52] CLIENTE: [áudio] "Você me manda a localização, que eu tô aqui em Luziânia, eu passo aí e vejo os modelos que vocês têm, tá bom?"
+[14:52] CLIENTE: [áudio] "Saindo aqui do Luziânia agora, mande aí que eu já vou, eu moro no Jardim Gá, né, eu passo aí e vejo, tá bom?"
+[15:04] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[15:04] LOJA: [foto]

@@ -1,0 +1,69 @@
+CONVERSA be52f0a32e | contato: Denis Pereira | 16/10/2026 14:32 até 19/10/2026 17:05 | 25 msgs do cliente, 31 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[14:32] CLIENTE: [áudio] "Boa tarde, tudo bem? Gostaria de fazer um orçamento com vocês."
+[14:32] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:32] CLIENTE: 185/60r15
+[14:32] CLIENTE: [áudio] "Essa medida aí. Quais pneus que você trabalha?"
+[14:33] LOJA: [foto]
+[14:33] LOJA: Somos de Luziânia-Go, e você é daqui?
+[14:34] CLIENTE: [áudio] "Sou não, sou caminhoneiro. Eu já comprei pneu com vocês aí. Eu sou de Minas, sou de Betim."
+[14:35] LOJA: [áudio] "Ah sim, bacana, bacana. Pois é, no dia de hoje temos essas opções, tá bom?"  {audio:midias/3EB041BBC6A345151A2E20_104253.ogg}
+[14:36] CLIENTE: [áudio] "Tá, e deixa eu te falar. No caso, esse chinês. Esse chinês é bom pra rodagem? E o tal do Gema, que é um GP, é de vocês mesmos? Pedrão novo?"
+[14:38] LOJA: [áudio] "Na verdade, esse de 249 que tá na oferta, ele roda mais do que os chineses, ele vai rodar a mesma coisa do que os demais de marcas nacionais, tá?"  {audio:midias/3EB06205DEC26E8420FB40_653998.ogg}
+[14:38] CLIENTE: [áudio] "Você tem foto dele? Se eu não lhe pergunto, você tem foto dele? Pra te mostrar. E ele é novo, não é recapado, não fala, né? Recondicionado, tirado, não fala."
+[14:38] LOJA: [áudio] "Tem sim, já a gente manda, tá?"  {audio:midias/3EB043DDA51D7383270C28_564873.ogg}
+[14:54] CLIENTE: [áudio] "Deixa eu te perguntar. No caso, se eu comprasse no cartão, né? O cartão é minha esposa. Tem até um amigo meu aí que tá olhando contigo, ele também vai comprar pra esposa dele, o João. Ela consegue comprar lá com o cartão dela? Como é que faz? Pra gente, eu tô querendo quatro pneus."
+[15:02] LOJA: [áudio] "Pai, estando com o cartão aqui, passando a senha, tranquilo, passa tranquilo."  {audio:midias/A528EB0F779E8552E1FB3CE12B7BBF15_490755.ogg}
+[15:27] CLIENTE: [áudio] "Então, beleza. E deixa eu te fazer outra pergunta. Amanhã até que hora vocês trabalham? Amanhã vocês abrem? Até que hora? Eu vou estar descarregando aí amanhã. Prazer. Depois eu dou uma passadinha aí, já olho os pneus e já pego no Samuel, já comprei, entendeu? Tem um amigo meu aí conversando com você aí. Ele tá vendo se vai comprar dois ou se vai comprar quatro. Eu já vou levar pra ele também, tá bom?"
+[15:27] LOJA: [áudio] "Sim, abrimos sim. Amanhã é de 8 da manhã até o meio-dia."  {audio:midias/A5EE5DB791F931DD000667DCC02913BF_870867.ogg}
+[15:29] LOJA: [áudio] "Você quer que eu te mande a localização?"  {audio:midias/A596A422C5BF85534A16D156BF683FBD_855674.ogg}
+[15:34] CLIENTE: [áudio] "Então beleza, a gente fica perto aí do, deixa o post aí, esqueci o nosso postinho, do lado direito aí, né? BR, eu acho, BR."
+[15:34] LOJA: [áudio] "Isso, isso mesmo."  {audio:midias/A5363917580B7A1F3013E14AA322BB83_248347.ogg}
+[15:35] LOJA: [foto]
+[15:40] CLIENTE: [áudio] "Quando sim, por favor, você me manda a localização, aí amanhã, de manhã, que estiver passando, eu já te ligo, falo para você dos pneus, você já deixa separado para mim, faz a nota, qualquer coisa eu tento, vamos ver a hora que vou chegar aí, aí eu já pego na ida, né?"
+[15:42] LOJA: Ok
+[15:42] LOJA: Essa é a frente da loja
+--- 17/10/2026 (Sat) ---
+[10:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:14] CLIENTE: [áudio] "Bom dia, tudo bem? Deixa eu te falar, eu estou descarregando aqui, então hoje é só até meio dia, né? Eu ainda estou descarregando. Vamos ver a hora que eu vou sair, eu te aviso aí, se vai dar tempo. Beleza? Que aí eu vou pegar 4 pneus aí. Aí meu amigo ficou de ver também lá, que se ele vai querer 2 ou 4, aí eu te falo, tá bom? Bom dia."
+[10:14] LOJA: Bom dia, Denis!
+[10:14] LOJA: [áudio] "Tá, Joia, Denis? Aqui nós fechamos meio-dia."  {audio:midias/3EB0ACE6817CBE3A559AB0_822116.ogg}
+[10:14] LOJA: [áudio] "Você está descarregando onde? Que, de repente, eu te espero um pouco."  {audio:midias/3EB0B60EE5B0541285871C_898666.ogg}
+[10:16] CLIENTE: [localização] -15.8382834,-47.9455949
+[10:16] CLIENTE: [áudio] "Estou nesse lugar aqui. Estou na Cegonha. Estou descarregando os carros aqui. Você entendeu? Vamos ver se vai dar tempo. Se der tempo, eu vou te avisando. Tá? Até 11h30 eu te aviso aí. Beleza?"
+[10:16] LOJA: [áudio] "Sim, sim, na saga, né?"  {audio:midias/3EB0310E972B0F20089554_518197.ogg}
+[10:18] CLIENTE: [áudio] "Isso, isso, isso, na saga, isso mesmo! Tá? Aí eu te falo. Quero agilizar aqui, conferir rapidinho. A gente sabe dar tempo, né? Em nome de Jesus."
+[11:26] CLIENTE: [áudio] "Ei, minha amiga, boa tarde, bom dia. Estou saindo daqui agora, você acha que dá tempo? Estou saindo daqui agora. Você acha que dá tempo de eu chegar aí?"
+[11:35] CLIENTE: Vai me esperar
+[11:40] LOJA: Consigo esperar sim!
+[11:40] CLIENTE: [áudio] "Beleza, tô indo aí, tá? Se você quiser já deixar separado, é os quatro... Daqui de 249, né? Beleza? Aí se puder fazer uma notinha, uma nota pra mim, pra poder levar. Daqui a pouco eu tô aí."
+[11:41] LOJA: 4 seu e 4 para seu amigo, certo?
+[11:41] CLIENTE: [áudio] "Eu acabei de mandar uma mensagem pra ele e dizer que ele vai aguardar mais um pouco, que ele vai estar vindo. Entendeu? Porque ele deve estar vindo aí pra semana que vem, ele dizer que compra. Tá? Aí vai ser só 4 mil mesmo."
+[11:43] LOJA: Ok
+[12:12] LOJA: [áudio] "Denis, se você quiser, já me passa aqui o número do seu CPF, que eu já vou adiantando aqui a nota fiscal para você, tá bom?"  {audio:midias/3EB074FCDF21869177FCBD_521700.ogg}
+[12:13] CLIENTE: 05523653608
+[12:13] CLIENTE: [áudio] "Beleza, tô chegando, tá? Agora tá perto. Nossa, sai do tumulto aí."
+[12:14] LOJA: [áudio] "Tá, jóia. Me fala o CEP do seu endereço e o endereço também, por gentileza."  {audio:midias/3EB09CF9C242955C839174_912115.ogg}
+[12:16] LOJA: [áudio] "E vai ser à vista mesmo?"  {audio:midias/3EB0E28182C02A3934B362_330395.ogg}
+[12:17] CLIENTE: Rua Itaúna 18 Niterói Betim MG 
+CEP 32672038
+[12:18] CLIENTE: [áudio] "Vai ser no débito, tá? No débito. Vocês passam no débito, não passam?"
+[12:18] LOJA: [áudio] "Passa sim."  {audio:midias/3EB034743BCA1803EDFD8D_321425.ogg}
+[12:18] CLIENTE: [áudio] "Beleza, vai ser no debutante, tá?"
+[12:33] LOJA: [foto]
+--- 19/10/2026 (Mon) ---
+[17:03] LOJA: *Josy:*
+OI, Denis...tudo bem?
+[17:04] LOJA: *Josy:*
+Denis... você pode nos avaliar no google?  Dizer brevemente sua experiência já que conhece nossos produtos, e avaliar o atendimento.
+[17:04] LOJA: *Josy:*
+Vou te encaminhar um link
+[17:04] LOJA: *Josy:*
+https://da.gd/gp-avaliar
+[17:05] CLIENTE: Oi boa tarde
+[17:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:05] CLIENTE: Posso sim

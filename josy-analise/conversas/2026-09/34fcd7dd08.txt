@@ -1,0 +1,46 @@
+CONVERSA 34fcd7dd08 | contato: Rodrigues  | 18/09/2026 15:26 até 24/09/2026 12:42 | 14 msgs do cliente, 19 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[15:26] CLIENTE: Boa tarde
+[15:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:27] LOJA: *Josy:*
+🙋🏼‍♀️
+[15:27] CLIENTE: [foto]
+[15:27] CLIENTE: Qual valor ?
+[15:27] LOJA: *Josy:*
+Boa tarde.... Temos sim!
+[15:27] LOJA: *Josy:*
+Se for pix ou débito  R$ 289,00
+[15:28] LOJA: *Josy:*
+em *dinheiro* tem 5 % de desconto
+[15:29] CLIENTE: Vai ser no crédito
+[15:29] CLIENTE: Precisando de 2 pneu
+[15:32] LOJA: [foto]
+[15:39] CLIENTE: [foto]
+[15:40] CLIENTE: Hoje fechar que hrs ?
+[15:40] LOJA: *Josy:*
+Somente às 18:00 ☺️
+[15:41] CLIENTE: Leva o carro uma 17:00 da certo ?
+[15:42] CLIENTE: E os dois pneu traseiro
+[15:42] LOJA: [áudio] "Dá certo sim."  {audio:midias/3EB030474B701F199DA237_491752.ogg}
+[15:42] LOJA: [áudio] "Qual é o seu nome mesmo?"  {audio:midias/3EB0093179839CE587C67F_319224.ogg}
+[15:43] CLIENTE: Alex
+[15:43] CLIENTE: [áudio] "Já fiz a troca de 2 pneus, acho que faz uns 3 meses. Vou fazer cadrasto ou tá no nome do meu pai ou tá no meu nome. Zé, manda aí pra você ver."
+[15:43] LOJA: [foto]
+[15:44] LOJA: [áudio] "Pode ficar tranquilo quando você chegar, a gente vê, tá bom? Não se preocupa com isso."  {audio:midias/3EB0CD9BCF1EBEC5696085_826205.ogg}
+[17:15] LOJA: *Josy:*
+Oiiii
+[17:15] LOJA: [áudio] "Alex, você está chegando?"  {audio:midias/3EB0AAB1DC3DF04C1874CD_397385.ogg}
+[17:21] CLIENTE: [áudio] "Não, hoje não vai dar para ir, não. Vamos marcar para amanhã. Amanhã abre que horas, hein?"
+[17:22] LOJA: [áudio] "8 horas da manhã."  {audio:midias/3EB0513FC8A5CFAB9274FB_910592.ogg}
+[17:24] CLIENTE: [áudio] "Tá bom, amanhã cedo leva o carro aí. Aconteceu uma entrevista aqui."
+--- 24/09/2026 (Thu) ---
+[12:38] LOJA: [áudio] "Oi Alex, tudo jóia? Nós conversamos alguns dias atrás, né? Você tinha ficado de vir aqui, mas tinha acontecido um imprevisto. E aí, como é que você está?"  {audio:midias/3EB0BCA726D464CA54F987_245145.ogg}
+[12:41] CLIENTE: [áudio] "Boa tarde, tudo bem? Então, no dia seguinte meu pai levou o carro aí, foi um Gol G3, trocou as duas rodas traseiras. Aí deu tudo certo."
+[12:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:41] LOJA: *Josy:*
+Ahhhhh...sim!
+[12:41] LOJA: [áudio] "Sim, perfeito, Alex. É porque a pessoa não fala, eu não sei quem que veio, quem que não veio. Mas obrigada, Ita. Jóia, tenha um bom final de semana, desde já."  {audio:midias/3EB008796102B0DD04E625_519071.ogg}
+[12:42] LOJA: [áudio] "E olha, nós teremos um evento de Drift aqui em Luziânia. Aí está super convidado, tá bom?"  {audio:midias/3EB0D85C5117E53479DE3B_302026.ogg}

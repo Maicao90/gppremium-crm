@@ -1,0 +1,56 @@
+CONVERSA ccdb8bb29b | contato: Galo imports | 29/09/2026 21:25 até 15/10/2026 11:51 | 17 msgs do cliente, 23 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[21:25] CLIENTE: Olá! Posso ter mais informações sobre isso?
+[21:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[21:25] CLIENTE: 185/65/14
+--- 30/09/2026 (Wed) ---
+[08:12] LOJA: *Josy:*
+Bom dia!
+[08:13] LOJA: [foto]
+[08:13] LOJA: [áudio] "Oi Alexandre, tudo bom? Olha, no dia de hoje nós temos todas essas opções aí, apronta e entregue, está bem?"  {audio:midias/3EB0D41B117E9C88875D0C_647866.ogg}
+[08:13] LOJA: *Josy:*
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:14] CLIENTE: Ok
+[08:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:15] CLIENTE: 185/65/14
+[08:15] LOJA: [áudio] "Oi Alexandre, bom dia, tudo jóia? Eu acabei de te encaminhar aí o orçamento, essa mensagem que foi ela apenas automática, como inspira o prazo de mensagem aqui, acaba que retorna aí pra você, mas eu te mandei o orçamento, pode verificar pra mim, pô gente, se realmente chegou pra você?"  {audio:midias/3EB0A4345ED5A5FF2BB963_18647.ogg}
+[08:15] LOJA: 👆🏻
+[08:16] CLIENTE: Ok
+[08:16] CLIENTE: Chegou
+[08:17] CLIENTE: [áudio] "Meu anjo, esse pneu aí nacional mais em conta que você tem, 289, você teria uma foto para mandar para mim? Desse 185-65-14."
+[08:18] LOJA: 185/65/14 GP Premium 👇🏻
+[08:19] LOJA: [foto]
+[08:20] CLIENTE: Adorei
+[08:21] CLIENTE: [áudio] "Deixa eu lhe perguntar, porque tem muitos lugares que tem pegadinha, sabe? Se eu chegar aí na sua loja que eu sei que é em Luziana, porque o pneu do meu carro não está tão ruim ainda, entendeu? Mas eu estou querendo aproveitar o preço seu para comprar. Muita gente quer que a gente compre o pneu e deixe os velhos, né? A base de troca. Esse é o caso, esse é o caso? Porque se não, eu vou aguardar mais um pouquinho. Meu pneu aqui ainda roda uns, uns oito meses ainda. É o que eu preciso. Acabar de usar o pneu total. Se não for, dá um jeito de amanhã ou depois estar buscando o pneu aí com você."
+[08:22] LOJA: [áudio] "Nossa, Sra. Alexandre, excelente observação. Mas um diferencial nosso é exatamente esse. Não são pneus à base de troca. Não fique inventando nada. Esse é o preço do pneu. Se o senhor vier com o carro, inclusive, se quiser, já coloca os pneus para o senhor na hora. Se o senhor quiser levar para manter outro lugar também, fique à vontade, tá bom? Então fique tranquilo. Não tem nada com base de troca, nem nada."  {audio:midias/3EB0CDBC66C4EB5E33BE30_402231.ogg}
+[08:28] CLIENTE: [figurinha]
+[08:29] CLIENTE: [áudio] "Eu já sou cliente cheio, mas tem muito tempo que eu não compro pneu aí, eles exigiam dinheiro. Eu era da Foco Construtora, mas vou ver se eu consigo de hoje para amanhã e tá aí fazendo um negócio com você, tá bom? Por enquanto, muito obrigado. Adorei seu pneu."
+[08:34] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:34] LOJA: [foto]
+[08:35] LOJA: *Josy:*
+Combinado, sr Alexandre!
+[08:35] LOJA: *Josy:*
+Satisfação em falar com o senhor, te aguardo.
+[08:35] CLIENTE: Obrigado
+--- 01/10/2026 (Thu) ---
+[08:16] CLIENTE: [áudio] "Estou querendo passar não com o dinheiro cair na conta aqui. Estou só não aguardo de receber dois fiadinhos meus, para a gente estar indo buscar os pneus."
+[08:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:17] LOJA: [áudio] "Sim, tá? Joia, sou Alexandre."  {audio:midias/3EB0A10BFF5E8897B0B52A_933130.ogg}
+--- 15/10/2026 (Thu) ---
+[11:22] CLIENTE: [áudio] "Oi, Josi, tudo bem? Josi, como é que está aí? Está tendo promoção de pneu, que a gente está tentando comprar, mas é porque quem vive de comércio como eu, nossa, está ruim as vendas. Mas esse, o seu pneu nacional aí, né, no meu aqui está 185, mas eu estou pensando em colocar as originalzinhas, que é 175, 175, 65, 14. Estou pensando em botar os 5. Estou pensando em botar os 5. E aí?"
+[11:22] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:25] CLIENTE: [áudio] "Mas eu também, aí, a medida que tá, 185, 65, 14, se baixou, valor, no caso aqui seria 5 unidades, viu? Até o estepe meu não presta."
+[11:26] LOJA: [áudio] "Seu Alexandre, tudo bom? Os preços continuam os mesmos por hora."  {audio:midias/3EB038FA12C67AFDF6E565_619997.ogg}
+[11:27] CLIENTE: [áudio] "Tá bom então. Eu só ganhei um tempo aqui de fazer umas vendinhas melhor, pra gente tá fazendo negócio."
+[11:27] LOJA: [áudio] "Sim, sim. E, senhora, ainda tem a nossa localização, senhora Alexandre?"  {audio:midias/3EB0448C2B5D83B538C08A_281975.ogg}
+[11:27] CLIENTE: [áudio] "Eu conheço a loja em Luziânia."
+[11:28] LOJA: [áudio] "Qual que é o seu carro mesmo, Sra. Alexandre? Que eu tenho aqui o 175-65-14, que dá para fazer ele aqui por 249 a vista."  {audio:midias/3EB03B2BCD37E07BB8DA4B_507066.ogg}
+[11:28] LOJA: [foto]
+[11:51] LOJA: [áudio] "Aí, como o senhor sabe aqui onde é a fábrica, assim que possível, dá um pulo aqui, então, para nós conversarmos, tá, jóia?"  {audio:midias/3EB0944307A65C833C9965_363129.ogg}

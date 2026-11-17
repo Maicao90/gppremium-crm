@@ -1,0 +1,25 @@
+CONVERSA cc3474f483 | contato: Giovani Correia Jr. | 21/10/2026 06:10 até 21/10/2026 12:34 | 4 msgs do cliente, 7 da loja, 1 do robô
+
+--- 21/10/2026 (Wed) ---
+[06:10] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[06:10] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[06:56] CLIENTE: Giovani
+[06:56] CLIENTE: Pneu 205 55 r17
+[09:02] LOJA: Bom dia, Giovani...obrigada por aguardar!
+[09:04] LOJA: [foto]
+[09:04] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:19] LOJA: Mora aqui em Luziânia-Go?
+[09:19] CLIENTE: Em catalão
+[09:30] LOJA: Ah, sim!
+[12:33] ROBÔ: 🙋🏼‍♀️
+[12:34] LOJA: [áudio] "E para a gente encaminhar a nossa localização, você consegue vir até nossa loja, Giovanni?"  {audio:midias/3EB008599B374EBB0EF84B_157432.ogg}

@@ -1,0 +1,29 @@
+CONVERSA edd92ccf25 | contato: Jujuba | 10/09/2026 00:27 até 11/09/2026 13:40 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[00:27] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! Posso ter mais informações sobre isso? 175/65/15
+[00:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:19] LOJA: [áudio] "Oi, Juliana, tudo bem contigo? Juliana, foi lá em junho, eu acho, nós conversamos, né, a respeito desse pneu, que eu não tenho essa medida pronta entrega, tá? Ela é somente através de encomenda e chega com três dias úteis, se o meu distribuidor tiver. E naquele período ele já não tinha. Aí você tinha me solicitado aqui também as opções de 185-65-15 e eu te passei. por hora, 185-65-15 eu tenho aqui e continua o mesmo preço que nós conversamos anteriormente. O pneu da marca GP Premium ainda continua na promoção de R$ 249,00 a vista."  {audio:midias/3EB055FD92A4A191F3018A_469780.ogg}
+[08:53] CLIENTE: Minha querida ver um mais largo então
+[08:53] CLIENTE: Pra eu saber o valor
+[08:53] CLIENTE: Que eu vou trocar os 4
+[08:53] CLIENTE: Esses pneus eles são remold
+[08:54] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu tenho pneus novos e o pneu GP Premium, que é um pneu ecológico que nós produzimos, ele entra na categoria de remodelagem, só que linha Premium, e justamente por isso ele é o pneu mais vendido que eu tenho."  {audio:midias/3EB086610DB94B761E37B3_904051.ogg}
+[08:54] LOJA: [áudio] "Me dá só um estante que eu vou mandar aqui novamente, tá?"  {audio:midias/3EB069BFF82ABEA2A740EC_986667.ogg}
+[08:57] LOJA: [foto]
+[08:57] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:38] LOJA: *Josy:*
+Juliana.. consegui uma marca de pneu importado na medida 175/65/15
+[11:38] LOJA: [foto]
+[11:38] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 11/09/2026 (Fri) ---
+[13:40] LOJA: [áudio] "Oi Juliana, tudo bom? Eu te encaminhei um orçamento ontem. Você teve a oportunidade de analisar? Me dá um retorno, por gentileza, assim que possível, tá bom?"  {audio:midias/3EB08B5E13F66012579D0E_94968.ogg}

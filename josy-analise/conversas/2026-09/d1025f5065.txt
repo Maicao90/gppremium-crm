@@ -1,0 +1,20 @@
+CONVERSA d1025f5065 | contato: Claudio Roberto Pereira d | 09/09/2026 14:30 até 09/09/2026 14:37 | 7 msgs do cliente, 5 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[14:30] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[14:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:30] CLIENTE: 295
+[14:30] CLIENTE: Importado
+[14:30] LOJA: *Josy:*
+Boa tarde.
+[14:30] LOJA: *Josy:*
+Não trabalhamos com pneus de caminhão.
+[14:31] CLIENTE: Ok
+[14:31] CLIENTE: Vc tem um contato que eu posso encontrar?
+[14:31] LOJA: *Josy:*
+Aqui em Luziânia, infelizmente não sei.
+[14:31] CLIENTE: Ok obrigado
+[14:31] LOJA: *Josy:*
+Disponha...boa semana!
+[14:37] CLIENTE: Obrigado a vc também

@@ -1,0 +1,17 @@
+CONVERSA 7a833f9bfa | contato: Hiago_henrique 🙂 | 21/08/2026 09:24 até 21/08/2026 09:32 | 8 msgs do cliente, 5 da loja, 0 do robô
+
+--- 21/08/2026 (Fri) ---
+[09:24] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:25] CLIENTE: Bom dia
+[09:25] LOJA: Bom dia
+[09:25] CLIENTE: [áudio] "Vocês é de Itarumã, certo?"
+[09:25] LOJA: [áudio] "Olá, tudo bem com você? Nós somos de Luziânia, Goiás."  {audio:midias/3EB05300807A3AFF121296_884355.ogg}
+[09:27] CLIENTE: [áudio] "Eita, nem não conheço, é porque eu tô praticamente perto de Tarumã, aí aconteceu o imprevisto que o pneu meu rasgou, aí eu tô sem estepe, aí queria saber o valor, sem estepe, o pneu pra vender aí."
+[09:27] CLIENTE: [áudio] "Mas eu creio que estou mais próximo de Itarumã."
+[09:29] LOJA: [áudio] "Realmente, moço, eu não sei onde é esse local aí que você está, mas suponho eu que seja bem distante."  {audio:midias/3EB067E98182C98D824030_238737.ogg}
+[09:30] LOJA: Bom final de semana!
+[09:32] CLIENTE: Ok
+[09:32] CLIENTE: Bgdo
+[09:32] CLIENTE: Bom final de semana pra vc tbm

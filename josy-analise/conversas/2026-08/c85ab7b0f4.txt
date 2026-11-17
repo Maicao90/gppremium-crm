@@ -1,0 +1,27 @@
+CONVERSA c85ab7b0f4 | contato: Michel Rodrigues | 19/08/2026 12:05 até 31/08/2026 14:28 | 9 msgs do cliente, 12 da loja, 0 do robô
+
+--- 19/08/2026 (Wed) ---
+[12:05] CLIENTE: Bom dia
+[12:05] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:05] CLIENTE: 175 60 roda 14
+[12:06] CLIENTE: [áudio] "Bom dia. Moro, moro aqui em Luziânia. Moro pertinho aqui. Ano passado eu comprei quatro pneus com vocês aí. Estou precisando de dois."
+[12:07] LOJA: [áudio] "Pois é, tem aqui um 7565. Se for para o pagamento à vista, dá para fazer aqui esse preço, R$ 249. Já coloco os pneus para você."  {audio:midias/3EB05BB4E5E0A4F874B271_962899.ogg}
+[12:07] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:08] CLIENTE: [áudio] "Não, eu vou ver direitinho aqui, mas vem cá e parcelar, quanto é que ele fica. E eu vou levar, eu vou só buscar, não vou colocar agora não."
+[12:09] LOJA: [foto]
+[12:10] LOJA: [áudio] "Bem, para parcelar, você pode ver que o valor muda, mas é muito pouca coisa."  {audio:midias/3EB0D305A3BDAFBD7B6D0F_814538.ogg}
+[12:11] CLIENTE: [áudio] "Beleza, vou ver aqui, qualquer coisa eu dou um pulinho depois do almoço. Vou pesquisar, vou pesquisar, tá bom? Obrigadão."
+[12:12] LOJA: [áudio] "Você quer parcelar em quantas?"  {audio:midias/3EB00344D2BC90889D33CA_974818.ogg}
+[12:12] CLIENTE: [áudio] "Era 4 vezes só."
+[12:12] LOJA: Deixa eu ver aqui com meu gerente.
+[12:13] CLIENTE: [áudio] "Vem para mim 4x, dois pneus para mim, enquanto fica a parcela. Manda para mim aqui."
+[12:15] LOJA: Ficam 4 parcelas de R$ 128,50
+[12:16] CLIENTE: [áudio] "Beleza então, vou ver direitinho aqui o que eu te procuro, tá bom?"
+[17:02] LOJA: [áudio] "E aí, seu moço, já posso reservar os pneus aqui para você?"  {audio:midias/3EB082C58FAFF2DEECF51F_617539.ogg}
+--- 31/08/2026 (Mon) ---
+[14:01] LOJA: [áudio] "Oi, Michelle, tudo bom? Eu te mandei um vídeo alguns dias atrás, mas como você viu, mas imagino que não tenha conseguido me responder, porque eu sei que é recorrido, eu vou encerrar com seu atendimento, tá joia? Caso você precise, você me chama aqui no WhatsApp ou vem aqui na nossa loja para nós conversarmos pessoalmente, tá joia? Até mais, boa semana."  {audio:midias/3EB0C90213BBB00D821421_104425.ogg}
+[14:02] LOJA: [foto]
+[14:28] CLIENTE: Ok obrigado
+[14:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

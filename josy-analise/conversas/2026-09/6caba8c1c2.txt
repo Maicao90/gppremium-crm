@@ -1,0 +1,16 @@
+CONVERSA 6caba8c1c2 | contato: Cawboy | 19/09/2026 10:01 até 19/09/2026 12:11 | 5 msgs do cliente, 6 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[10:01] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:02] CLIENTE: 185/65/14
+[10:02] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Me dê só um instante que eu estou finalizando o seu orçamento."  {audio:midias/3EB07C9F247D4A587E6BF4_648994.ogg}
+[10:04] CLIENTE: Blz
+[10:06] LOJA: [foto]
+[11:52] LOJA: [áudio] "Olá, tudo bem? No dia de hoje eu tenho todas essas opções de marcas à pronta entrega. E no orçamento, o valor de apenas um pneu. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB09F9618544A9CDFC8A1_56654.ogg}
+[12:07] CLIENTE: [áudio] "Não, eu moro em Águas Lindas. É, eu achei que aí tinha um Pirelli. Não tem Pirelli não, né?"
+[12:07] LOJA: [áudio] "Hoje é na alma."  {audio:midias/3EB0B75B29597912ED7F7B_422811.ogg}
+[12:10] CLIENTE: Blz
+[12:11] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

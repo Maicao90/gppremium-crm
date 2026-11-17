@@ -1,0 +1,39 @@
+CONVERSA b883a2270f | contato: momento | 26/08/2026 21:10 até 19/09/2026 13:48 | 10 msgs do cliente, 13 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[21:10] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[21:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[21:10] CLIENTE: 175 70 14
+--- 27/08/2026 (Thu) ---
+[08:15] LOJA: Bom dia!
+[08:16] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:16] LOJA: [foto]
+[08:41] LOJA: *Josy:*
+Mora aqui em Luziânia-Go mesmo?
+[12:01] LOJA: [áudio] "Oi, tudo jóia? Eu vi que você visualizou aí as mensagens que eu te encaminhei e eu gostaria de saber se você pretende seguir com a negociação. Você mora aqui em Luziânia mesmo? Consegue me dar um retorno para gentileza?"  {audio:midias/3EB02DFFE122A919889DF0_105104.ogg}
+[12:02] CLIENTE: [áudio] "Sim, mas está quase o mesmo preço do importado. Achei o importado R$ 299,00. Deixa para a próxima."
+[12:02] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:02] CLIENTE: 175 70 14
+[12:03] LOJA: [áudio] "Moço, a gente sabe que por aí tem pneu que tá a preço de banana realmente, tá? E aí o que que ocorre? São pneus que você pode até pagar mais barato, mas não vai durar nada também, né? Então tem essas coisas aí que você tem que levar em consideração, né?"  {audio:midias/3EB026980601667B2D80FC_223650.ogg}
+[12:04] CLIENTE: 299
+[12:04] CLIENTE: [áudio] "Tem ele, track mark, tem ele. Deixa eu atacar."
+[12:05] LOJA: [áudio] "Pois é!"  {audio:midias/3EB065FFA913E6932D202E_813992.ogg}
+[12:05] LOJA: [áudio] "E o que eu mandei para o senhor, o meu menor preço é para 279 cada pneu à vista."  {audio:midias/3EB049E8C721535E5C3008_229867.ogg}
+[12:05] LOJA: [áudio] "E ele roda muito mais do que esses pneus aí que o senhor falou, tá?"  {audio:midias/3EB026EC50E335EE4E14CD_696410.ogg}
+[12:16] LOJA: [foto] *Josy:*
+Caso possivel, venha aqui na nossa loja.
+[12:17] CLIENTE: Ok
+--- 19/09/2026 (Sat) ---
+[13:36] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[13:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:36] CLIENTE: 15
+[13:48] CLIENTE: Oi, Tudo bem ?

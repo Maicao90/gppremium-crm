@@ -1,0 +1,18 @@
+
+# [marcelo#1] "2010" depois do preco 175/65/14 + parcelamento
+  via=ia_livre motivoLivre=assunto_sem_bloco chaves=[]
+  > Pro Gol 2010 aro 14, a medida original é a *175/70/14*. Ela sai por *R$ 279,00 à vista* na marca *GP Premium*, então vale esse valor no lugar da medida que te passei antes.
+  > Quando você consegue passar aqui na loja?
+
+# [marcelo#2] "2010" depois do preco 175/65/14 + parcelamento
+  via=ia_livre motivoLivre=assunto_sem_bloco chaves=[]
+  > Pro Gol 2010 aro 14, a medida original é *175/70/14*. Corrigindo o que te passei antes: nessa medida o pneu *GP Premium* sai por *R$ 279,00 à vista*. O 175/65/14 de R$ 249,00 é de Gol mais novo. Quando você consegue passar aqui pra gente fazer a troca?
+
+# [marcelo#1] "2010" depois do preco 175/65/14 + parcelamento
+  via=ia_livre motivoLivre=assunto_sem_bloco chaves=[]
+  > Temos o pneu *175/70/14* da marca *GP Premium* saindo por *R$ 279,00 à vista*. Se o seu for a versão aro 15, me avisa que eu te passo o valor dela.
+
+# [marcelo#2] "2010" depois do preco 175/65/14 + parcelamento
+  via=ia_livre motivoLivre=assunto_sem_bloco chaves=[]
+  > Pro Gol 2010 a medida original é a *175/70/14*, e ela sai por *R$ 279,00 à vista* na *GP Premium*.
+  > Quando você consegue vir até a loja?

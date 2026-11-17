@@ -1,0 +1,17 @@
+CONVERSA 6aab65900b | contato: Fernando Bruxel | 14/09/2026 16:20 até 14/09/2026 16:59 | 2 msgs do cliente, 7 da loja, 0 do robô
+
+--- 14/09/2026 (Mon) ---
+[16:20] LOJA: *Josy:*
+Boa tarde, Fernando...tudo bem?
+[16:43] LOJA: [foto]
+[16:43] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:43] LOJA: [foto]
+[16:45] CLIENTE: [áudio] "Opa, tudo bem? Tá, e o CXBri você não tem não? Meio pesado o preço dele, viu?"
+[16:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:48] LOJA: [áudio] "Oi, Fernando, tudo bem? A marca que você está buscando está em falta. Aí vai toda a marca com força, realmente."  {audio:midias/3EB051DD07FFA8BBD91498_222446.ogg}
+[16:48] CLIENTE: [áudio] "Eu achei pesado o preço dele. Tem mais alguma outra marca ou não?"
+[16:59] LOJA: [áudio] "Só está tendo esse mesmo."  {audio:midias/3EB0F24E4BF378A39919D4_921441.ogg}

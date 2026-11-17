@@ -1,0 +1,39 @@
+CONVERSA 2146f4057e | contato: Genaldo José Melo | 20/10/2026 12:37 até 21/10/2026 12:06 | 8 msgs do cliente, 15 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[12:37] CLIENTE: [áudio] "Boa tarde, meu jovem. Eu queria saber se você tem o pneu 235-75-15 e ver o preço que ele está para mim, por favor, que é aquele pneu de caminhonete 235-75-15."
+[12:37] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[12:37] LOJA: [foto]
+[12:37] LOJA: *josy:*
+No dia de hoje temos os pneus da marca Comfforser a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:37] LOJA: [foto]
+[12:37] LOJA: [foto]
+[12:37] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[12:38] CLIENTE: [áudio] "Não, meu irmão, meu nome é Genaldo, eu moro em Goiânia. Só que tem um enteado meu que mora aí. Direto ele vem aqui, aí ele passa e compra doce aí e já traz. Por isso que eu queria saber o valor."
+[12:38] CLIENTE: 2357515
+[12:39] CLIENTE: [áudio] "Eu quero um bem borrachudo mesmo, assim, aquele pra terra, entendeu? Quero deles."
+[12:39] LOJA: [áudio] "Oi, Sra. Janaldo, tudo bom? Eu sou a Josi. Então, a opção que eu tenho é essa do orçamento que eu te encaminhei, tá?"  {audio:midias/3EB0D7BE342A2C44FC03D4_258958.ogg}
+[12:39] CLIENTE: [áudio] "Ah, então tá, mas os pneus, você não tem um pneu assim mais de cravo, mais alto não, que eu queria um apropriado assim mais pra terra, esse aqui já é asfalto, né? Mas esses aí é os que você tem em dias mesmo."
+[12:41] LOJA: [áudio] "Eu vou ter o 31 por 10,5. Me dá só um instante que eu te mando aqui a foto dele e o orçamento, tá?"  {audio:midias/3EB00BC2D18166613E607E_546464.ogg}
+[12:41] CLIENTE: Ok
+[12:46] LOJA: [foto]
+[12:47] LOJA: [áudio] "Olha, no dia de hoje eu tenho apenas o pneu da marca Conforcer. Ele é um pneu bem resistente, de 6 lonas, tá? À vista, cada um está por R$779,00. Tá, Joia? Vou te mandar a foto dele aqui."  {audio:midias/3EB087758DE6E2B64905C7_485246.ogg}
+[12:47] LOJA: [foto]
+[12:47] LOJA: [foto]
+[12:47] CLIENTE: [áudio] "Esse é o menor preço à vista que você faz? Pagar à vista."
+[12:47] LOJA: [foto]
+[12:48] LOJA: [áudio] "Isso, esse é o menor preço que eu tenho para essa medida."  {audio:midias/3EB09A3CDA13E69BD0ED92_264182.ogg}
+[12:50] CLIENTE: [áudio] "Tá, eu vou ver com o menino aqui e dou um jeitinho de entrar em contato com você, tá? Vou mandar o dinheiro pra ele, aí ele compra e traz. Vou ver quando ele pode trazer, aí ele entra em contato contigo, tá bom? Valeu, minha irmã, muito obrigado, tá?"
+[15:00] LOJA: *Josy:*
+Está bem!
+--- 21/10/2026 (Wed) ---
+[12:06] ROBÔ: 🙋🏼‍♀️

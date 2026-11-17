@@ -1,0 +1,31 @@
+CONVERSA 12282c0066 | contato: AUTO SOCORRO | 23/09/2026 20:36 até 24/09/2026 10:21 | 8 msgs do cliente, 9 da loja, 0 do robô
+
+--- 23/09/2026 (Wed) ---
+[20:36] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[20:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[20:37] CLIENTE: 175/75/14
+--- 24/09/2026 (Thu) ---
+[07:58] LOJA: *Josy:*
+Pneu da marca Comforser R$ 300,00 a unidade a vista.
+[10:09] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Você é daqui de Luziânia mesmo?"  {audio:midias/3EB0BD910848366BE88815_663174.ogg}
+[10:16] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Jardim ingá
+[10:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:16] CLIENTE: 175/70/14
+[10:18] LOJA: 175/70 ou 175/75?
+[10:19] CLIENTE: 175/75
+[10:20] LOJA: *Josy:*
+Pneu da marca Comforser R$ 300,00 a unidade a vista.
+[10:20] LOJA: *Josy:*
+Passa aqui na loja para conversarmos pessoalmente!
+[10:20] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:21] CLIENTE: Ok
+[10:21] LOJA: *Josy:*
+Qual é seu nome mesmo/
+[10:21] CLIENTE: Moça já achei de 250
+[10:21] CLIENTE: Obrigado

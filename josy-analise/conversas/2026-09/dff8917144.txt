@@ -1,0 +1,28 @@
+CONVERSA dff8917144 | contato: Gilvan Rocha De Lima | 01/09/2026 11:45 até 01/09/2026 12:13 | 13 msgs do cliente, 8 da loja, 0 do robô
+
+--- 01/09/2026 (Tue) ---
+[11:45] CLIENTE: Bom dia
+[11:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:45] LOJA: [áudio] "Oi, Gilvan, bom dia, tudo bom?"  {audio:midias/3EB008A9E9FBBC1AF3A087_453361.ogg}
+[11:46] CLIENTE: Td ótimo com vc
+[11:46] CLIENTE: Td e vc?
+[11:46] LOJA: [áudio] "Bem também, graças a Deus, me recuperando de um resfriado, mas está tudo certo."  {audio:midias/3EB0F66700215A36380BFB_533517.ogg}
+[11:47] CLIENTE: [áudio] "Tá, que bom, né? Tirando esse calor, né? O calor tá passado da medida. Tinha pegado um resfriado, mas tá bem agora. Esse tempo, né? Essa mudança de clima, né?"
+[11:47] LOJA: [áudio] "Rapaz, o calor, não sei nem o que é que eu falo. Tá tenso demais."  {audio:midias/3EB05C305C9F5124968D19_473545.ogg}
+[11:47] CLIENTE: Muito bom ouvir sua voz viu
+[11:47] CLIENTE: [áudio] "Pior que é mesmo, tá calor pra caramba, viu? Muito calor, muito calor mesmo, tá doido."
+[11:47] LOJA: [áudio] "Sim, isso mesmo. A mudança de clima, ela desconfigura a gente. Não é legal, não é legal."  {audio:midias/3EB01F0341BB7BED7E6C1E_623955.ogg}
+[11:48] CLIENTE: [áudio] "É, pior que é verdade, é. Mece mesmo, né? Depois passa, né? Já que mais um dia pra frente veio uma chuvinha pra gente, pra dar uma melhorada, né? Apesar que ainda vai demorar um pouquinho, né?"
+[11:48] CLIENTE: Esse ZAP é seu ou da loja
+[11:57] LOJA: *Josy:*
+Isso , meu whatsapp é comercial
+[12:01] CLIENTE: Ata
+[12:01] CLIENTE: Vc é solteira?
+[12:04] CLIENTE: Se não gostou da pergunta me desculpa
+[12:11] LOJA: *Josy:*
+Eu não atendo somente o whatsapp, eu atendo presencial, estava com cliente instalando pneus.
+[12:13] CLIENTE: Atende oq?
+[12:13] LOJA: *Josy:*
+Vendas... aqui é venda de pneus.
+[12:13] CLIENTE: Sei

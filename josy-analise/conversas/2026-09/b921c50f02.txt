@@ -1,0 +1,34 @@
+CONVERSA b921c50f02 | contato: Fabricio Rocha | 16/09/2026 15:23 até 19/09/2026 08:09 | 5 msgs do cliente, 14 da loja, 0 do robô
+
+--- 16/09/2026 (Wed) ---
+[15:23] LOJA: *Josy:*
+Boa tarde, Fabricio...como vai?
+[15:23] LOJA: *Josy:*
+195/55/15 R$ 270,00 a unidasde em *dinheiro*
+[15:24] LOJA: [foto]
+--- 18/09/2026 (Fri) ---
+[18:20] LOJA: [áudio] "Fabrício, tudo bom?"  {audio:midias/3EB0311F89AA2AFCE6AB00_358984.ogg}
+[18:20] LOJA: [vídeo]
+[18:34] CLIENTE: Oi boa tarde 
+Amanhã pela manhã vou ai buscar os pneus
+[18:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:35] CLIENTE: 195 55 15
+[18:35] CLIENTE: 2 pneus
+--- 19/09/2026 (Sat) ---
+[08:06] LOJA: *Josy:*
+195/55/15
+[08:06] LOJA: [foto]
+[08:06] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:07] LOJA: *Josy:*
+Combinei contigo que  o pneu GP  Premium faço esse preço se o pagamento for em *dinheiro*
+[08:08] CLIENTE: Bom dia
+[08:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:09] LOJA: [áudio] "Bom dia Fabrício, tudo bom? E você já gostaria de vir aqui para poder buscar os pneus?"  {audio:midias/3EB0D3936FFDF2CEC82960_547327.ogg}
+[08:09] LOJA: [áudio] "Vou te mandar aqui a localização da loja, tá?"  {audio:midias/3EB049B94993F0BEF61228_330162.ogg}
+[08:09] LOJA: [foto]
+[08:09] CLIENTE: Daqui um pouco já estou aí

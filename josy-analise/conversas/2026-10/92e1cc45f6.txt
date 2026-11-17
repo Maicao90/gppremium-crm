@@ -1,0 +1,20 @@
+CONVERSA 92e1cc45f6 | contato: Alessandro | 06/10/2026 08:16 até 06/10/2026 08:23 | 6 msgs do cliente, 7 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[08:16] CLIENTE: [áudio] "Oi, bom dia. Queria ver com vocês aí quanto que tá o jogo do pneu 16."
+[08:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:17] CLIENTE: [foto]
+[08:18] LOJA: [foto]
+[08:18] CLIENTE: [áudio] "Os modelos do desenho do pneu, vocês têm essa mesma numeração, mas os desenhos do pneu diferente ou só desse modelo aí?"
+[08:18] LOJA: *Josy:*
+No dia de hoje temos  essas 2 opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:19] LOJA: [áudio] "Bom dia, Alessandro. Tudo bem? No dia de hoje eu tenho aqui os pneus da marca Conforcer e da marca GP Premium. O meu menor preço é justamente para o pneu da marca GP Premium, onde a unidade está por apenas R$ 289,00, se o seu pagamento for no débito ou no Pix."  {audio:midias/3EB02A0132B907117B24AF_30129.ogg}
+[08:21] CLIENTE: [áudio] "Ah não, beleza. E os 4? Vai sair no valor de quanto? Fazendo um favor."
+[08:21] LOJA: [áudio] "Se for à vista, o pneu da marca GP Premium fica por 1.156 e, se você quiser, nós já instalamos eles para você."  {audio:midias/3EB054EFDAC6E549CB7DBC_327659.ogg}
+[08:22] CLIENTE: [áudio] "Ah, tá bom. Eu vou ver aqui. Por favor, eu vou aí. Procura aí. Beleza? Obrigado aí."
+[08:22] LOJA: [áudio] "Sim, passa aqui na loja sim."  {audio:midias/3EB02B588CA2A5B307AA33_318627.ogg}
+[08:23] LOJA: [foto]
+[08:23] CLIENTE: [áudio] "Tá ok, dou uma passada aí."

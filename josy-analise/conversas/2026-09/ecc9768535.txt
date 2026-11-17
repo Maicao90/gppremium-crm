@@ -1,0 +1,67 @@
+CONVERSA ecc9768535 | contato: lb.segurança.eletrônica | 15/09/2026 11:30 até 16/09/2026 09:05 | 19 msgs do cliente, 25 da loja, 0 do robô
+
+--- 15/09/2026 (Tue) ---
+[11:30] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[11:31] LOJA: [foto]
+[11:45] CLIENTE: [áudio] "Você consegue mandar uma foto do pneu?"
+[11:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:46] CLIENTE: [áudio] "No caso, você já faz a instalação também ou só venda mesmo?"
+[11:46] LOJA: [áudio] "Lucas, eu vou te mandar aqui a foto e fazemos a instalação aqui na nossa oficina."  {audio:midias/3EB03FB4593FB095C885FB_608203.ogg}
+[11:47] CLIENTE: [áudio] "Assim tá certo, beleza."
+[11:47] LOJA: [foto]
+[14:12] LOJA: *Josy:*
+Oi... você virá?
+[14:12] CLIENTE: Sim o carro ainda ta aqui na oficina
+[14:13] CLIENTE: Ja ta acabando
+[14:13] LOJA: *Josy:*
+ok, vou almoçar aqui na cozinha rapinho, retorno a tempo de você chegar.
+[14:14] CLIENTE: Ok
+[15:04] LOJA: *Josy:*
+Voltei!
+[15:12] CLIENTE: Blz
+[16:28] LOJA: *Josy:*
+Oi...
+[16:28] LOJA: *Josy:*
+vou te encaminhar a localização da loja. ai em Ocidental, eu já mandei os pneus
+[16:30] LOJA: *Josy:*
+Se chama City...passando o tunel logo a sua direita. Pode procurar pela Edna
+[16:30] LOJA: *Josy:*
+https://maps.app.goo.gl/wQHyzZEpq4FCJVgy6?g_st=awb
+[21:54] CLIENTE: [áudio] "Boa noite, moça. Desculpe pelo horário que tá me saindo agora. Deu um problema aqui no cartão, que minha esposa tinha feito uma reserva em Caldas Novas e aí deu duplicidade. E aí o pessoal bloqueou o cartão, entendeu? E aí a gente pediu o estorno, só que aí depois só de 7 dias. E aí o cartão tá bloqueado, entendeu? E aí não tem como, tá? Eu tá indo amanhã ver a questão do pneu. Tem que esperar esses 7 dias aí pra poder liberar, né? o limite e o cartão."
+[22:09] CLIENTE: [áudio] "Mas eu vou ver aqui se eu consigo o valor à vista, aí dependendo à vista você vê se você consegue me dar algum desconto, e aí eu vejo se eu consigo o valor, porque o cartão deu ruim, tá?"
+--- 16/09/2026 (Wed) ---
+[07:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:56] CLIENTE: [áudio] "Olá, bom dia. Aí você só me informa direitinho o valor, quanto que fica visto, que eu não lembro mais o valor."
+[07:58] CLIENTE: 175/65 14
+[08:06] LOJA: *Josy:*
+Bom dia, Lucas...
+[08:07] LOJA: *Josy:*
+Entendi... não tem problema.
+[08:09] LOJA: *Josy:*
+Se o seu pagamento for no débito / pix R$ 249,00 cada, mas se você conseguir o pagamento em *dinheiro* em espécie fica por R$ 237,00 cada
+[08:16] CLIENTE: Bom dia voces conseque faser 230 ?
+[08:17] LOJA: *Josy:*
+Infelizmente não...
+[08:17] CLIENTE: Ok
+[08:17] LOJA: *Josy:*
+Nem eu nem você ... R$ 235 em *dinheiro*
+[08:18] LOJA: *Josy:*
+Negócio fechado, pode ser?
+[08:18] LOJA: *Josy:*
+Mas é em *dinheiro*
+[08:19] CLIENTE: Ok fechado
+[08:19] CLIENTE: Vou sacar o denheiro
+[08:20] CLIENTE: [áudio] "Aí no caso lá, se eu pedir para eles colocarem um pneu desse aqui no Step lá, eu falo com o pessoal lá ou você já deixa avisado?"
+[08:22] LOJA: *Josy:*
+Sim! Eu vou deixar avisado.
+[08:22] CLIENTE: Ok
+[08:22] LOJA: [áudio] "Você vai lá, agora pela manhã ainda, que eu já vou avisá-los."  {audio:midias/3EB06239D6B7A5D9428A59_219626.ogg}
+[08:24] CLIENTE: [áudio] "Oi, vou sim. Só vou sacar o dinheiro e tô indo pra lá agora."
+[08:27] LOJA: *Josy:*
+Tranquilo!
+[08:51] CLIENTE: Ja chequei aqui na Oficina
+[09:05] LOJA: *Josy:*
+Perfeito!

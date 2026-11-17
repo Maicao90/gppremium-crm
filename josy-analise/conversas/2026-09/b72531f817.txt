@@ -1,0 +1,26 @@
+CONVERSA b72531f817 | contato: Marcone Porto | 18/09/2026 15:30 até 19/09/2026 09:14 | 5 msgs do cliente, 13 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[15:30] LOJA: *Josy:*
+R$ 1.316,00
+[15:30] LOJA: *Josy:*
+Boa tardwe!
+[15:33] LOJA: *Josy:*
+215/65/16
+[15:34] CLIENTE: Eu vou deixar para ir amanhã pela manhã, por causa do fluxo do trânsito para voltar.
+[15:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:34] CLIENTE: Vc abrem as 08:00hs?
+[15:34] LOJA: [áudio] "Perfeito, Marconi. Amanhã nós abriremos a loja às 8 e encerraremos ao meio-dia, tá?"  {audio:midias/3EB0715F1CEF5E0B3E444E_893887.ogg}
+[15:34] LOJA: [foto]
+[15:35] LOJA: [áudio] "E a medida é essa mesma, né? 215, 65, 16."  {audio:midias/3EB079ADD7C9139072AC47_97836.ogg}
+--- 19/09/2026 (Sat) ---
+[08:15] LOJA: *Josy:*
+Bom dia, bom dia!
+[08:18] CLIENTE: Já estou indo
+[08:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:19] CLIENTE: Essa
+[08:20] LOJA: [áudio] "Perfeito, Sr. Marconi!"  {audio:midias/3EB0A4318F12C629D6272B_28492.ogg}
+[08:28] LOJA: [foto]
+[09:14] CLIENTE: [documento]

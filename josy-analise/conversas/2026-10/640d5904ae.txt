@@ -1,0 +1,13 @@
+CONVERSA 640d5904ae | contato: Tânia | 20/10/2026 18:53 até 21/10/2026 08:19 | 1 msgs do cliente, 2 da loja, 0 do robô
+
+--- 20/10/2026 (Tue) ---
+[18:53] CLIENTE: Olá! Quero um orçamento de pneus.
+[18:53] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+--- 21/10/2026 (Wed) ---
+[08:19] LOJA: 🙋🏼‍♀️

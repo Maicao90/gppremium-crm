@@ -1,0 +1,17 @@
+CONVERSA c24cff8410 | contato: Msc. Pires👨🏻‍⚕️ | 17/08/2026 17:53 até 17/08/2026 17:58 | 7 msgs do cliente, 4 da loja, 0 do robô
+
+--- 17/08/2026 (Mon) ---
+[17:53] LOJA: Oi!
+Vamos dar continuidade na sua negociação?
+Você mora aqui em Luziânia -Go?
+[17:57] CLIENTE: Sim
+[17:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:57] CLIENTE: Em Luziânia
+[17:57] CLIENTE: 185 60 15
+[17:57] LOJA: Te mandei aqui o orçamento, você teve oportunidade de analisar?
+[17:58] LOJA: Esse é o menor preço a vista 249,00
+[17:58] CLIENTE: Consegui em outro lugar sua em conta
+[17:58] CLIENTE: Com alinhamento e balanceamento grátis
+[17:58] CLIENTE: Montagem tbm
+[17:58] CLIENTE: Muito obrigado

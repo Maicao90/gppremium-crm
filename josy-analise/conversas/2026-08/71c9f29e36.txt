@@ -1,0 +1,14 @@
+CONVERSA 71c9f29e36 | contato: Everton Ribeiro | 18/08/2026 10:06 até 18/08/2026 10:12 | 6 msgs do cliente, 4 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[10:06] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:06] CLIENTE: Me chamo Everton estou procurando o Jet begue para Spin 2026
+[10:07] CLIENTE: Queria saber o valor
+[10:09] LOJA: [áudio] "Oi Everton, bom dia, como é que você está? Você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB07638E1FDA186DF1528_720473.ogg}
+[10:10] CLIENTE: [áudio] "Opa, tudo jóia? Não, eu falo aqui do Paranuá, aqui em Brasília."
+[10:11] CLIENTE: [áudio] "Eu não entendi, você não tem o jetbag, é isso? Você não tem o suporte? Ou você não tem a loja aqui na região?"
+[10:11] LOJA: [áudio] "Isso, isso mesmo, não temos."  {audio:midias/3EB0075F1CB690518BB0F0_961761.ogg}
+[10:12] LOJA: [áudio] "E também não tem uma loja aí na região, nós somos aqui de Luziânia."  {audio:midias/3EB0CB72CE6E418DB8D91A_586165.ogg}
+[10:12] CLIENTE: Ok

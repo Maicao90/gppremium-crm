@@ -1,0 +1,25 @@
+CONVERSA ae70233e25 | contato: Francisco | 20/10/2026 12:14 até 21/10/2026 12:23 | 4 msgs do cliente, 5 da loja, 1 do robô
+
+--- 20/10/2026 (Tue) ---
+[12:14] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[12:14] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[12:14] CLIENTE: 225 75 16 van
+[12:15] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você, Francisco? Essa opção vai ser somente através de encomenda."  {audio:midias/3EB08578530ABD371032AC_865982.ogg}
+[12:15] LOJA: [foto]
+[12:15] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor UNITÁRIO do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:16] CLIENTE: Ok
+[12:16] CLIENTE: Muito obrigado
+[12:17] LOJA: [áudio] "Imagina, aí se você quiser aproveitar para fazer encomenda, é só me falar aqui que eu já solicito, tá bom?"  {audio:midias/3EB0CA23D9ECCE68A4BCCD_910667.ogg}
+--- 21/10/2026 (Wed) ---
+[12:23] ROBÔ: 🙋🏼‍♀️

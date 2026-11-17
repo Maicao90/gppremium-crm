@@ -1,0 +1,28 @@
+CONVERSA 0eee6e635e | contato: Luciano Alexandre | 14/10/2026 16:35 até 15/10/2026 18:15 | 5 msgs do cliente, 13 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[16:35] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[16:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:35] LOJA: 🙋🏼‍♀️
+[16:35] CLIENTE: Preciso de 4 pneus 195/65 R15
+[16:38] LOJA: Certo...
+[16:38] LOJA: [foto]
+[16:38] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:38] LOJA: Os pneus da GP Premium estão na promoção compre 3 e leve 4
+[16:39] LOJA: Digamos que seja a vista: 195/65/15 a unidade a vista é 329,00 x 3 pneus =  R$ 987,00 por esse preço você vai levar os 4
+[16:49] LOJA: [áudio] "Luciano, você é mar aqui em Luziânia mesmo?"  {audio:midias/3EB08BD4785B7822E11D23_128916.ogg}
+[17:29] CLIENTE: Valparaíso
+[17:29] LOJA: Pertinho, Luciano!
+[18:09] CLIENTE: Esse valor já é com a montagem?
+--- 15/10/2026 (Thu) ---
+[08:16] LOJA: [áudio] "Bom dia, Luciano. Como é que você está? Luciano, na compra do pneu GP Premium, ele já é colocado sim, tá? A parte, nós negociaremos o valor de balanceamento e alinhamento do carro. Que serviços são cobrados à parte?"  {audio:midias/3EB082BBAB0FA1395E4A9C_85785.ogg}
+[18:10] LOJA: [áudio] "Oi Luciano, tudo jóia? Eu te encaminhei um orçamento ontem, até te mandei uma mensagem hoje cedo, mas imagino que na correria você não tenha conseguido me responder. Eu vou fazer o seguinte, eu vou encerrar o seu atendimento, justamente para não ficar enchendo o WhatsApp de mensagens, porque eu sei que acaba sendo chato, né? Mas eu vou te mandar a localização, se houver a possibilidade, você passa aqui na loja para nós conversarmos pessoalmente, tá jóia? Muitíssimo obrigada por sua atenção, boa noite."  {audio:midias/3EB02429E9D6D3DE2FB245_135180.ogg}
+[18:10] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[18:15] CLIENTE: Boa noite!
+[18:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

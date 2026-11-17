@@ -1,0 +1,38 @@
+CONVERSA 2474e7e504 | contato: Mariaabadia | 16/10/2026 13:13 até 17/10/2026 09:42 | 10 msgs do cliente, 22 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[13:13] LOJA: [áudio] "Sim, tá jóia. Quer que eu mando a foto dos pneus pra vocês, Maria?"  {audio:midias/3EB0C64D5972DF2162D64B_944405.ogg}
+[13:13] LOJA: [áudio] "Maria, eu só vou sair para o almoço agora e volto às 2h20 mais ou menos, aí eu te mando aqui a foto direito e te faço mais explicações, tá bem?"  {audio:midias/3EB0995103CA4682C5B267_847963.ogg}
+[13:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:15] CLIENTE: [áudio] "Tá bom, minha amiga. Bom almoço. Só que eu quero que você me manda o valor de cada pneu, tá? O quanto você vai fazer para nós, de cada pneu, que eu acho que ele vai querer trocar os quatro. Eu quero o valor de cada um, o preço de cada um pneu e quero a marca dos pneus. Tá bom? Você manda a marca, o valor de cada um, tá bom, pneu? Pra mim, pode ser?"
+[14:39] LOJA: Oi..
+[14:39] CLIENTE: [figurinha]
+[14:39] LOJA: Vou te mando
+[14:39] CLIENTE: [áudio] "Boa tarde. Eu quero que você mande o valor de cada pneu, tá? A marca, tá? E o modelo."
+[14:58] LOJA: [vídeo]
+[14:59] LOJA: [vídeo]
+[15:00] LOJA: [áudio] "Obrigada por aguardar que a nossa internet caiu, agora que eu estou conseguindo responder, tá bom?"  {audio:midias/A5FC857B1D9C8FD074A369AACF046A22_688948.ogg}
+[15:01] LOJA: [áudio] "Maria, o pneu mais borrachudo, que é o 235, os 4 pneus ficam por R$ 1.956, para você pagar no débito, tá? Já o pneu ATR, os 4 pneus, eles ficam por R$ 1.916. Qualquer uma das duas opções já são colocadas, tá bom?"  {audio:midias/A57B47BC01B5C7CD06C45A5A3A1001B0_212581.ogg}
+[15:03] CLIENTE: [áudio] "Tá, meu amigo, mais pontos em cada um desses aí. Dica."
+[15:03] CLIENTE: [áudio] "E me manda por escrito a marca do pneu, por favor."
+[15:07] LOJA: [áudio] "Então, igual eu falei para a senhora, esse daqui é o que é de R$ 489,00 para o pagamento no débito ou Pix, tá? Que é o que ficou um pouquinho mais caro."  {audio:midias/A52D3E2E6CF142BEC3901F5531D50A1F_219681.ogg}
+[15:07] LOJA: [áudio] "Esse daqui é 479 cada pneu caro pagamento à vista."  {audio:midias/A5F4E5643B2217403CEEAC5F69F2FD70_722785.ogg}
+[15:08] LOJA: Pneus da marca GP Premium
+[15:08] CLIENTE: [áudio] "Tá bom, obrigada. Eu vou... vou encontrar com meu marido, vou mandar para ele, tá? Vou mostrar para ele, aí qualquer coisinha eu entro em contato com você, tá bom? Vocês fecham até que horas? Amanhã é aberto até que horas também, contigo."
+[15:13] LOJA: [áudio] "Maria, aqui o nosso horário de atendimento é de segunda a sexta, de 8 da manhã, até as 18 e aos sábados, de 8 até o meio-dia, tá? Aí, daqui a pouco, eu mando escrito pra você tudo direitinho, tá bom?"  {audio:midias/A545F929212880DFECF6B9B48937CC35_605311.ogg}
+[15:14] CLIENTE: [áudio] "Me manda seu nome para me saber o que eu estou falando, tá? Para quando chegar aí amanhã, se nós resolver ir amanhã, aí eu te procuro."
+[15:15] LOJA: [áudio] "Tudo bem, Dona Maria? Eu me chamo Josi, tá?"  {audio:midias/A5DC8A095E0C143F9F470EB65DBB931A_698860.ogg}
+--- 17/10/2026 (Sat) ---
+[08:00] LOJA: Bom dia!
+[08:00] LOJA: Vou te encmainhar a nossa localização!
+[08:01] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:01] LOJA: [foto]
+[08:03] CLIENTE: [figurinha]
+[08:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:03] CLIENTE: [áudio] "Josi, nós estamos indo aí, tá?"
+[08:17] LOJA: [áudio] "Bom dia, Maria. Perfeito, então. Aí eu mandei a localização da nossa loja, tá, aí no Maps, e à frente aqui da nossa loja também. Aqui fica do lado do Hotel Goiás e da Goiás Diesel. Aí, se você quiser também eu faço um vídeo para poder mostrar direito como que fica para poder chegar aqui."  {audio:midias/3EB0A83987F7CCE6200C53_456987.ogg}
+[08:18] CLIENTE: [áudio] "Bom dia, não precisa não, nós sabemos que é. Nós passamos direto quando a gente vai para São Bartolomeu."
+[09:42] LOJA: Pode nos avaliar no Google?
+[09:42] LOJA: https://da.gd/gp-avaliar

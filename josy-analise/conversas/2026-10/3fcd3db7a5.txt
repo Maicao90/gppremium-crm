@@ -1,0 +1,12 @@
+CONVERSA 3fcd3db7a5 | contato: Henrique | 07/10/2026 09:23 até 09/10/2026 08:34 | 1 msgs do cliente, 4 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[09:23] LOJA: *Josy:*
+Bom dia, Henrique!
+[09:24] LOJA: [foto]
+--- 08/10/2026 (Thu) ---
+[12:34] LOJA: [áudio] "Oi Henrique, tudo jóia? Eu te encaminhei um orçamento e gostaria muito de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0ADB9283AA818452C8D_964796.ogg}
+--- 09/10/2026 (Fri) ---
+[08:34] CLIENTE: Ja compre os penel
+[08:34] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

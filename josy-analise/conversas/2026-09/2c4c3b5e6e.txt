@@ -1,0 +1,128 @@
+CONVERSA 2c4c3b5e6e | contato: Nivaldo Medeiros | 02/09/2026 10:47 até 14/09/2026 16:16 | 33 msgs do cliente, 56 da loja, 0 do robô
+
+--- 02/09/2026 (Wed) ---
+[10:47] LOJA: *Josy:*
+Bom dia, sr Nivaldo!
+[10:48] LOJA: *Josy:*
+185/65/14 R$ 274,00 em *dinheiro*   289,00 debito/pix
+[10:49] LOJA: *Josy:*
+265/70/16 528,00 em *dinheiro* 559,00 debito/pix
+[11:58] CLIENTE: Oi
+[11:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:59] CLIENTE: Qual preço do pneu 185/60/15 do polo
+[12:00] LOJA: *Josy:*
+R$ 249,00 a vista
+[12:00] CLIENTE: E 195/55/15
+[12:00] LOJA: *Josy:*
+R$ 289,00
+[12:00] CLIENTE: Já tô arrumando cliente
+[12:00] LOJA: *Josy:*
+O senhor é maravilhoso!
+[12:00] CLIENTE: São clientes da oficina do meu filho
+[12:00] LOJA: *Josy:*
+Obrigada!
+[12:02] CLIENTE: lottieStickerMessage
+[12:05] CLIENTE: Os pneus da caminhonete o Gustavo até amanhã ele vai pegar pq tem que pegar em dinheiro
+[12:05] LOJA: *Josy:*
+Combinado!
+[12:42] LOJA: *Josy:*
+Se os pagamentos forem em dinheiro faço do seguinte modo:
+[12:42] LOJA: *Josy:*
+R$ 249,00 debito/pix em *dinheiro* 236,00 cada
+[12:43] LOJA: *Josy:*
+R$ 289,00 debito/pix em *dinheiro* 273,00 cada
+[12:49] CLIENTE: Gustavo tá com um pouco de dificuldade pra pegar em dinheiro vc não consegue no pix pq a conta e digital o mesmo valor 528,00 pra ele pegar os 4 pneus??!
+[12:50] LOJA: *Josy:*
+Preciso que seja em dinheiro mesmo...
+[12:50] LOJA: *Josy:*
+No caso desse preço de 528,00 é somente para dinheiro mesmo.
+[12:51] CLIENTE: Ok vou ver o que dá pra fazer
+--- 03/09/2026 (Thu) ---
+[10:40] LOJA: [áudio] "Bom dia, bom dia. Tudo bem com o senhor, senhor Nivaldo?"  {audio:midias/3EB06BDA06CC3722E15DF5_492729.ogg}
+[10:41] LOJA: [áudio] "Vai ser o senhor mesmo que vai voltar aqui na loja ou vai ser o Gustavo?"  {audio:midias/3EB0C1E98D743BEB14223E_352229.ogg}
+[10:48] CLIENTE: Bom dia
+[10:48] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:48] CLIENTE: Sou eu que devo ir
+[10:49] LOJA: [áudio] "Perfeito, então. Ficamos combinados assim, Sr. Nivaldo."  {audio:midias/3EB02691823BE43D73B222_771029.ogg}
+[10:49] CLIENTE: Gustavo tá juntando o dinheiro pq se fosse pix teria feito ontem rss
+[10:50] CLIENTE: Entre hoje e amanhã acho que junta a quantia em dinheiro 💰
+[10:50] LOJA: [áudio] "Pois é, no Pix, o mínimo do máximo que eu consigo fazer é R$ 550,00. Por quê? Porque para mim cobra, sabe, Sr. Nivaldo? E cobra mesmo, porque eu até te mando a foto aqui para o senhor ver o tanto que cobra. Aí eu consigo fazer R$ 550,00. E no dinheiro, como não passa por transações bancárias nem nada, então fica mais prático para mim. Aí, no dinheiro, dá para fazer. Agora, no Pix, o mínimo do máximo que eu consigo é R$ 550,00 a unidade."  {audio:midias/3EB04088FD3CD18553F479_980737.ogg}
+[10:52] CLIENTE: [áudio] "É um tranquilo aqui também, dele não é sangria desatada, ele não vai viajar nem nada, entre hoje e amanhã ele levanta essa grana aí, porque a conta dele é digital, né? Se não, eu ia lá no banco e sacava. Mas vai dar certo. Obrigado, tá? Você é muito gentil."
+[10:53] LOJA: [áudio] "Ai, eu entendo perfeitamente. Imagina, eu que agradeço aí por tudo, tá bom? Você também é uma pessoa muito gentil. Obrigada."  {audio:midias/3EB0EC01726E36CBFDF97B_15589.ogg}
+[12:11] LOJA: [áudio] "E senhor Nivaldo, caso realmente esteja bem complicado e conseguir sacar o dinheiro, eu faço o seguinte, o valor como no débito e Pix, ele é 559, eu parcelo esse valor aí para vocês, umas 4 vezes sem juros também, para poder ajudá-los, aí verifique e me dão retorno, está bem?"  {audio:midias/3EB0EE5DCAF1ED55DD10DA_520946.ogg}
+--- 05/09/2026 (Sat) ---
+[08:15] LOJA: [áudio] "Professor Anivaldo, bom dia! Como é que o senhor está?"  {audio:midias/3EB031C6AA97A499E6AEE6_611095.ogg}
+[08:37] CLIENTE: [áudio] "Oi, bom dia. Deixa eu te fazer uma pergunta. Esses pneus são novos ou é remold?"
+[08:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:38] LOJA: [áudio] "Eu tenho pneus novos e tenho também pneus que são ecológicos, que são os pneus que nós produzimos, eles entram na categoria de remodelagem apenas por questão técnica, porque se eu mostrar aqui o pneu para o senhor, você vai ver que ele não tem nada a ver com os pneus remoldes convencionais, tá? E justamente os pneus da marca GP Premium são os pneus mais vendidos que nós temos."  {audio:midias/3EB0C68C772B535D74B04C_727645.ogg}
+[08:38] LOJA: [áudio] "Esse que eu mostrei para o senhor é o pneu aqui da nossa empresa, que é o pneu ecológico, tá?"  {audio:midias/3EB0FB82146ACB6618BFF2_710632.ogg}
+[08:39] LOJA: [áudio] "Eles têm 2 anos de garantia."  {audio:midias/3EB0A7BC9DD58666108482_296431.ogg}
+[08:45] CLIENTE: [áudio] "O pneu novo que você tem aí, o Gustavo não tá querendo pneu remold não. Qual que é o preço dele?"
+[08:47] LOJA: [foto]
+[08:47] LOJA: *Josy:*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:48] CLIENTE: Ok vou ver aqui
+[08:49] LOJA: Não tem restrição de uso
+[08:49] LOJA: [vídeo]
+[10:10] LOJA: [áudio] "As 4 unidades eu vou ter no dia de hoje do pneu da marca Conforcer, ele vai ser naquele modelo borrachudo, tá bom? Se quiser eu te mando foto deles."  {audio:midias/3EB0F99A8C9C13BD5288DD_461211.ogg}
+[10:12] CLIENTE: Manda aí por favor
+[10:14] LOJA: [vídeo]
+[10:14] LOJA: [áudio] "Desse daí eu tenho os 4 pneus, tá?"  {audio:midias/A5B9CCCF8C79DA0E3418F83B5C8DD7F3_979711.ogg}
+[10:15] CLIENTE: Esse qual o valor
+[10:15] LOJA: *Josy:*
+esse aqui.
+[10:18] LOJA: *Josy:*
+Debito ou pix 672,00 cada
+--- 08/09/2026 (Tue) ---
+[14:33] CLIENTE: Oi boa tarde 
+Pneu 195/60/15 tem 2 pro a entrega
+[14:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:35] LOJA: *Josy:*
+Boa tarde!
+[14:35] LOJA: *Josy:*
+temos sim1
+[14:38] LOJA: *Josy:*
+Ja vou separar eles
+[14:42] LOJA: [foto]
+[14:44] CLIENTE: Josy qual o menor valor mesmo rss?
+[14:45] LOJA: [áudio] "Seu Nivaldo, se for no débito ou Pix, dá para fazer por R$ 289,00 a vista."  {audio:midias/3EB0C0723182B83210F0BC_238756.ogg}
+[14:46] LOJA: *Josy:*
+Se for em *dinheiro* 275,00 cada
+[14:51] CLIENTE: Ok
+[16:24] CLIENTE: O menino vai aí assim que sair do serviço falou comigo agora
+[16:24] LOJA: *Josy:*
+Ta joia!
+--- 11/09/2026 (Fri) ---
+[17:23] LOJA: [áudio] "Oi, Sanivaldo, tudo jóia? Na terça-feira você falou que vinha um rapaz aqui buscar uns pneus, ele não veio não."  {audio:midias/3EB0E19BCB7C8CFD95C8D0_371007.ogg}
+[18:04] CLIENTE: Vou perguntar pra ele aqui
+[18:04] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[18:06] CLIENTE: [áudio] "Vou, Nivaldo, eu vou lá amanhã. Eu tenho que ir lá amanhã, porque essa semana eu fui para Brasília todos os dias, aí não deu para mim, não. Mas eu vou, vou lá amanhã."
+[18:06] CLIENTE: [áudio] "Fala com essa menina para mandar a localização, que eu não sei onde é, não?"
+--- 12/09/2026 (Sat) ---
+[08:09] LOJA: [áudio] "Bom dia! Tudo jóia!"  {audio:midias/A5163387F79DF6F1AF6C50FDDBF0F83C_815853.ogg}
+[08:10] LOJA: [áudio] "Olha, essa daqui é a frente da nossa loja. Eu vou ver se eu consigo mandar a localização direitinho aqui, tá bom?"  {audio:midias/A5DBD9D4AA86F848E3756EE7EF56738B_28102.ogg}
+[08:10] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:41] LOJA: [áudio] "Oi, Sanivaldo, tudo jóia? Eu mandei a localização aí para o senhor, chegou a ver?"  {audio:midias/A5DAB4F2849B6EA6F77DF05A8B0FC13A_546029.ogg}
+[10:57] CLIENTE: [áudio] "Chegou, mandei pro menino. Eu acho que ele nem vai aí hoje, que diz que tá meio corrido, mas ele e o Gustavo, eles vão aí na segunda-feira, no máximo, porque o Gustavo vai botar os pneus da caminhonete também, tá? Eu quero minha comissão, viu?"
+[10:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:58] LOJA: [áudio] "Sim, perfeito, seu Nivaldo. Se for mais prático também, me manda o contato dele, que daí eu converso aqui com ele e mando o orçamento tudo direitinho também. Se fica mais prático, claro. Joia? Obrigada aí pelo retorno. Bom final de semana."  {audio:midias/A5C5F9B04AEC43FA44811872B71814C5_959083.ogg}
+--- 14/09/2026 (Mon) ---
+[12:47] LOJA: [áudio] "Oi, Sanyvaldo, como é que o senhor está? Passou bem aí o final de semana? Estou passando para informar que o rapaz, o Matheus, ele passou aqui na loja. Muitíssimo obrigada, tá bom?"  {audio:midias/3EB04429863681334609BF_454286.ogg}
+[13:30] CLIENTE: Que bom que deu certo
+[13:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:30] CLIENTE: Tô vendo aqui com Gustavo tbn pra colocar os 4 pneus na L 200
+[16:14] CLIENTE: [foto]
+[16:14] CLIENTE: Busquei lá
+[16:14] CLIENTE: Mês que vem busco mais 2 lá
+[16:15] LOJA: *Josy:*
+Muito bom !
+[16:16] CLIENTE: Quem eu souber mando pra vc
+[16:16] LOJA: *Josy:*
+Ele falou que ia tirar o dia para resolver a instalação.

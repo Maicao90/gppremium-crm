@@ -1,0 +1,29 @@
+CONVERSA 6aa661a93c | contato: Dhone Vaz | 08/09/2026 07:52 até 08/09/2026 10:53 | 4 msgs do cliente, 13 da loja, 0 do robô
+
+--- 08/09/2026 (Tue) ---
+[07:52] CLIENTE: [foto] Bom dia
+[07:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:53] CLIENTE: Vc tem pneu nessa numeração
+[08:10] LOJA: *Josy:*
+Bom dia, Dhone... como vai?
+[08:11] LOJA: *Josy:*
+Temos sim!
+[08:11] LOJA: [foto]
+[08:11] LOJA: *Josy:*
+No dia de hoje temos  essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:20] CLIENTE: Vc tem foto dele
+[08:36] LOJA: *Josy:*
+pneu 265/65/17 112t peakgrip a/t maxzez 👇🏻
+[08:36] LOJA: [foto]
+[08:37] LOJA: *Josy:*
+pneu GP Premium ATR 👇🏻
+[08:37] LOJA: [foto]
+[09:15] LOJA: [áudio] "Oi Johnny, como é que você está? Olha, no dia de hoje eu tenho essas duas opções de marcas aí, a pronta entrega, tá? Os pneus da marca GP Premium, que são os pneus mais vendidos que nós temos no modelo ATR, ele vai estar por R$ 559,00. E eu coloquei também no modelo Brutus, que ele é R$ 599,00, e eu vou ter produção dele no final de semana."  {audio:midias/3EB026F7E0DF356D61213F_622933.ogg}
+[09:15] LOJA: *Josy:*
+265/65/17 Brutus👇🏻
+[09:16] LOJA: [foto]
+[10:43] CLIENTE: [áudio] "Oi Joas, bom dia, tudo bem? Não, beleza. Estou em viagem aqui, eu vou dar uma olhadinha direito, volta a gente te chamando aí. Obrigado."
+[10:53] LOJA: [áudio] "Sim, sim, qualquer coisa passa aqui na loja para nós conversarmos, fica ainda melhor, mais prático."  {audio:midias/3EB08427BF925BB3EA4D3A_187926.ogg}

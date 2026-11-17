@@ -1,0 +1,61 @@
+CONVERSA c51ae31329 | contato: cleiasantossantos1287 | 09/10/2026 22:28 até 10/10/2026 12:22 | 24 msgs do cliente, 29 da loja, 0 do robô
+
+--- 09/10/2026 (Fri) ---
+[22:28] CLIENTE: Olá boa noite, qual o valor dos pneus 14
+[22:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[22:34] CLIENTE: [áudio] "Oi, boa noite. Então, eu vou precisar de 2 pneus aro 14. Só que eu posso estar mandando a medida amanhã pra você, tá bom?"
+--- 10/10/2026 (Sat) ---
+[08:30] LOJA: [áudio] "Bom dia, Lucicléia. Como é que você está? Pois é, manda para mim qual que é a medida que você precisa que eu faço o orçamento para você, tá?"  {audio:midias/3EB0FE5748F72F423B3922_403377.ogg}
+[10:20] CLIENTE: Bom dia
+[10:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:20] CLIENTE: [foto]
+[10:21] CLIENTE: Vou querer dois pneus
+[10:21] CLIENTE: Pode ser pra hoje ?
+[10:21] LOJA: Sim, claro!
+[10:22] LOJA: Os pneus da GP Premium estão por apenas R$ 289,00 a vista
+[10:22] CLIENTE: Tá quanto cada ?
+[10:22] CLIENTE: Meu esposo comprou com você
+[10:24] LOJA: [foto]
+[10:24] LOJA: Ah, perfeito!
+[10:24] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:24] LOJA: [foto]
+[10:25] CLIENTE: [áudio] "Então, Josi, eu vou... porque eu moro aqui na cidade ocidental e sempre que ele compra com você, vocês têm aqui uma loja, né, que entrega. Aí eu vou querer aqui no ocidental, tá bom? Você divide em quantas vezes?"
+[10:32] LOJA: Vou ver para você!
+[10:32] LOJA: um instante
+[10:33] LOJA: [áudio] "Você vai precisar de quantos pneus, Lulu?"  {audio:midias/3EB0AB3BF270B7A7A24524_254318.ogg}
+[10:33] LOJA: [foto]
+[10:33] LOJA: aqui as opções d eparcelamentop
+[10:33] CLIENTE: Dois
+[10:34] CLIENTE: [áudio] "Ah, entendi. Se for dividido em duas vezes, ele fica de 290 e pouco, né?"
+[10:34] LOJA: Deixa eu ver aqui sobre os pneus
+[10:35] LOJA: Isso
+[10:36] CLIENTE: Vou querer os dois que horas posso ir na loja?
+[10:38] LOJA: [áudio] "Lu, qual que é mesmo o seu CPF? Que eu tô mandando os pneus pra lá, tá?"  {audio:midias/3EB0F5C6D66A53E25D0D88_968729.ogg}
+[10:38] LOJA: [áudio] "Vai ser em duas vezes, né?"  {audio:midias/3EB09EA53170DE9157F380_690900.ogg}
+[10:38] CLIENTE: 85749966291
+[10:39] LOJA: Pode ir
+[10:40] LOJA: Pode ir, que o rapaz já chega rapidinho
+[10:40] LOJA: pode procurar pelo José que ele está avisado.
+[10:41] CLIENTE: [áudio] "Oi, Josi. Meu marido está viajando e ele sempre falou que põe aqui no Ocidental, né? Só que eu nunca fui com ele na loja. Você pode me mandar o endereço? Por favor."
+[10:41] CLIENTE: [áudio] "Porque ele me mandou o áudio falando onde era loja, mas eu já esqueci. Tem como você reforçar aí pra mim, por favor?"
+[10:47] LOJA: Mando sim!
+[10:48] CLIENTE: [áudio] "É porque ele só falou que é na entrada do Ocidental, né? Mas o local, ele me explicou, mas eu já esqueci."
+[10:48] LOJA: [foto] CITY PNEUS & AUTO CENTER 🚘 🛞
+              👇🏼👇🏼👇🏼👇🏼
+https://maps.google.com/?q=-16.111513,-47.968296
+[10:51] CLIENTE: [áudio] "Oi, Josi. Desculpa, mulher. Eu falei que era 2 pneus, né? Só que aí meu marido me ligou aqui. Ele disse que é pra me comprar o da promoção, que você compra 3 e ganha 1. Então eu vou querer essa promoção aí, porque disse que é pra me trocar os 4 pneus, mulher. Desculpa. Eu não sei fazer isso, né? Então é a minha primeira vez comprando."
+[10:51] CLIENTE: [áudio] "Ele falou aqui comigo, que sempre compra com você, eu até falei que ele comprou, né, esses meses atrás, dessa promoção a gente compra 3 e ganha 1, que é para me trocar os pneus todos do carro."
+[10:52] LOJA: A promoção compre 3 e leve 4 é válida para pneus da marca GP Premium, mas na medida 195/65/15 e 215/55/17 😉
+[10:52] LOJA: Não é para aro 14
+[10:54] CLIENTE: [áudio] "Ah, entendi. Não, então vou trocar os dois agora, mas depois que eu pagar os dois pneus, eu entro em contato de novo, tá bom?"
+[10:54] CLIENTE: [áudio] "É porque o dele é aro 15, né, que é a Spin. Então tá bom, eu tô indo lá, tá? Obrigada."
+[10:58] LOJA: [áudio] "Tá Lu, pode ir lá sim, tá? Procura pelo José que ele já está te aguardando."  {audio:midias/3EB012744DDE53AB15AE65_247975.ogg}
+[10:58] CLIENTE: Ok obrigada
+[10:59] CLIENTE: Estou indo agora
+[10:59] LOJA: Perfeito!
+[11:14] LOJA: Lu... se não for incomodar você, assim que tiver um tempo, pode fazer uma avaliação da nossa empresa e atendimento no Google?
+[11:14] LOJA: https://da.gd/gp-avaliar
+[11:17] CLIENTE: Ok
+[12:22] CLIENTE: Tudo certo, muito obrigada

@@ -1,0 +1,11 @@
+CONVERSA ece87cf487 | contato: 📚🎸🎤 | 24/09/2026 11:38 até 24/09/2026 16:40 | 5 msgs do cliente, 2 da loja, 0 do robô
+
+--- 24/09/2026 (Thu) ---
+[11:38] CLIENTE: [áudio] "Olá, aqui é o Luiz Alberto da Rádio Luziana FM e eu tenho umas propostas para lhe apresentar, viu? Venha divulgar com a gente aqui. Eu tenho pacotes promocionais, divulgaremos em todos os programas, todos os dias. Quando for para o WhatsApp, mandarei a tabela dos horários, é só você escolher o pacote. Começa a pagar daqui 30 dias. Divulgaremos no rádio e também na internet. Então sua propaganda irá atingir ouvintes e internautas ao mesmo tempo. Só marcar um horário aí, a gente pode fechar aqui mesmo pelo WhatsApp, viu? Posso estar te enviando aí as propostas."
+[11:38] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:39] CLIENTE: [áudio] "Olá, aqui é o Luiz Alberto da Rádio Luziana FM e eu tenho umas propostas para lhe apresentar, viu? Venha divulgar com a gente aqui. Eu tenho pacotes promocionais, divulgaremos em todos os programas, todos os dias. Quando for para o WhatsApp, mandarei a tabela dos horários, é só você escolher o pacote. Começa a pagar daqui 30 dias. Divulgaremos no rádio e também na internet. Então sua propaganda irá atingir ouvintes e internautas ao mesmo tempo. Só marcar um horário aí, a gente pode fechar aqui mesmo pelo WhatsApp, viu? Posso estar te enviando aí as propostas."
+[15:39] CLIENTE: Olá!
+[15:39] CLIENTE: Aqui é o Luiz Alberto da rádio Luziânia FM.
+[16:00] LOJA: [áudio] "Certo, eu passei para o meu gestor, aí qualquer coisa ele te dá um retorno, tá bom?"  {audio:midias/3EB0C3A79962542938753D_53885.ogg}
+[16:40] CLIENTE: Ok

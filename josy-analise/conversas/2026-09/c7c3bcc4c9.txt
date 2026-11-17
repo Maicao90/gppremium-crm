@@ -1,0 +1,33 @@
+CONVERSA c7c3bcc4c9 | contato: Bruno Otávio | 04/09/2026 10:20 até 11/09/2026 17:38 | 6 msgs do cliente, 13 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[10:20] CLIENTE: Bom dia
+[10:20] CLIENTE: PNEUS BF ARO 18
+para Hilux.
+
+Quais marcas e valor você tem, por favor ?
+[10:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:21] LOJA: *Josy:*
+BF especificamente não temos. Mas tenho da marca GP Premium, não tem escrita lateral, mas vou te mandar o orçamento e foto.
+[10:22] LOJA: [foto]
+[10:22] LOJA: [foto]
+[10:22] LOJA: [áudio] "Bruno, você mora aqui em Luziânia mesmo?"  {audio:midias/3EB04624C37E576976E263_278093.ogg}
+[10:23] CLIENTE: Moro em Cristalina
+[10:23] CLIENTE: Tem foto de lateral ?
+[10:23] LOJA: [foto]
+[10:27] CLIENTE: Qual valor menor que consegue, nos 4 ?
+E se for para despachar pra Cristalina você consegue ?
+[10:27] LOJA: *Josy:*
+Fica mais prático você vir retirar os pneus aqui, acredite!
+[10:29] LOJA: *Josy:*
+O menor preço consigo se você me trouxer em *dinheiro* em espécie a unidade fica por R$ 578,00, e já fazemos a montagem dos pneus se você quiser.
+[10:34] CLIENTE: Certo.
+Deixa eu avaliar aqui com o patrão e te falo.😉
+--- 10/09/2026 (Thu) ---
+[16:56] LOJA: [áudio] "Oi, Bruno."  {audio:midias/3EB0649BF3FAB0FCA96606_706172.ogg}
+[16:56] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[17:38] LOJA: [áudio] "Oi Bruno, tudo bom contigo? Eu até fiz um vídeo aí para tentar uma interação contigo, mas imagino que na correria você não tenha conseguido ver. Eu vou encerrar o seu atendimento, tá? Justamente para não ficar enchendo o seu WhatsApp de mensagens, porque eu entendo que acaba que se torna inconveniente e desagradável. Eu vou te mandar aqui a localização da nossa loja, se houver a possibilidade, você passa aqui para conversar, nos está bem? Muitíssimo obrigada pela sua atenção, bom final de semana."  {audio:midias/3EB0EB9B79F01BB979A3D7_808499.ogg}
+[17:38] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

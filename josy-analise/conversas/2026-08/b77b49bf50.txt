@@ -1,0 +1,29 @@
+CONVERSA b77b49bf50 | contato: Carlos Alexandre | 17/08/2026 15:51 até 18/08/2026 13:41 | 7 msgs do cliente, 14 da loja, 0 do robô
+
+--- 17/08/2026 (Mon) ---
+[15:51] LOJA: Boa tarde
+[15:51] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:14] CLIENTE: Tem 175/70 r13.
+[17:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:24] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:24] LOJA: [foto]
+[17:35] LOJA: Você mora aqui em Luziânia-Go?
+[18:13] CLIENTE: Não.
+--- 18/08/2026 (Tue) ---
+[08:29] LOJA: Bom dia!
+[08:30] LOJA: Certo... e tem disponibilidade de vir até nossa loja?
+[08:30] LOJA: Vou te encaminhar a nossa localização.
+[08:30] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[13:39] CLIENTE: Muito longe para mim.
+[13:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:39] CLIENTE: Agradecido.
+[13:40] LOJA: Não tem ninguem que possa pegar p vc
+[13:40] CLIENTE: Tem não.
+[13:40] LOJA: Poxa que pena, mas caso mude de ideia estamos a disposição
+[13:41] CLIENTE: 👍🏼
+[13:41] LOJA: tenha uma otima tarde
+[13:41] CLIENTE: Para voce também.

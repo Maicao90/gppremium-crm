@@ -1,0 +1,25 @@
+CONVERSA 79645cdf0e | contato: Elizan Junior | 25/09/2026 10:09 até 25/09/2026 10:51 | 3 msgs do cliente, 9 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[10:09] LOJA: *Josy:*
+Bom dia!
+[10:18] CLIENTE: Opa.
+Bom Dia
+[10:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:18] LOJA: *Josy:*
+Vou te encaminhas as opções de aro 133
+[10:20] LOJA: [foto]
+[10:20] LOJA: *Josy:*
+Eliseu...
+[10:20] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:46] CLIENTE: Ok meu nobre.
+Obrigado 🤝🏻
+[10:47] LOJA: [áudio] "Imagina, Eliseu, eu quem agradeço."  {audio:midias/3EB016022E92A8972A805C_43984.ogg}
+[10:47] LOJA: [áudio] "Perdão, é Elisão o seu nome, né?"  {audio:midias/3EB00D7B4831D8AB3C94D2_500047.ogg}
+[10:51] CLIENTE: Sim kk
+Elizan
+Tá tudo bem, acontece kkk

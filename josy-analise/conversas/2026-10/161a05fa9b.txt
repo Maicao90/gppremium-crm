@@ -1,0 +1,22 @@
+CONVERSA 161a05fa9b | contato: Dwonata | 03/10/2026 10:44 até 06/10/2026 17:34 | 6 msgs do cliente, 7 da loja, 0 do robô
+
+--- 03/10/2026 (Sat) ---
+[10:44] CLIENTE: Bom dja
+[10:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:44] CLIENTE: Preciso do pneus 195/70 R 15
+[10:44] CLIENTE: Dunlop
+[10:59] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi e, primeiramente, eu não tenho essa opção de medida que é a pronta entrega, tá? E você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB0109B4E8EBE7AF71B4B_252037.ogg}
+--- 06/10/2026 (Tue) ---
+[13:49] CLIENTE: Boa tarde
+[13:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:49] CLIENTE: .
+[13:50] CLIENTE: To passando pela cidade
+[14:10] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[14:15] LOJA: *Josy:*
+Usa em qual carro?
+[14:15] LOJA: *Josy:*
+Pois dependendo , teremos 205/70/15
+[17:34] LOJA: *Josy:*
+🙋🏼‍♀️

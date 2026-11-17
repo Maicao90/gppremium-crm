@@ -1,0 +1,52 @@
+CONVERSA 21e2fc8aa2 | contato: João FERREIRA | 18/09/2026 21:08 até 21/09/2026 18:39 | 9 msgs do cliente, 23 da loja, 0 do robô
+
+--- 18/09/2026 (Fri) ---
+[21:08] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[21:08] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[21:09] CLIENTE: 215x65x16
+[21:09] CLIENTE: Ou 235x60x16
+[21:09] CLIENTE: Preco
+--- 19/09/2026 (Sat) ---
+[08:23] LOJA: *Josy:*
+Bom dia!
+[08:24] LOJA: [foto]
+[08:24] LOJA: *Josy:*
+Teremos 215/65/16
+[08:24] LOJA: *Josy:*
+No dia de hoje temos  essas 2 opções a pronta entrega.  Pneus Trackmax e GP Premium
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:36] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0C0B7E644A9302440EB_611699.ogg}
+[10:09] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:11] LOJA: [foto]
+[11:52] LOJA: [áudio] "Sr. João, eu imagino que hoje o senhor não consiga chegar aqui, né? O nosso horário de atendimento é de segunda a sexta, de 8 da manhã às 18 e aos sábados de 8 até o meio-dia. Mas eu mandei a localização para o senhor, né? E se o senhor tiver alguma dúvida quanto a chegar aqui, o senhor me fala novamente que eu faço um vídeo para poder te mostrar, tá bom?"  {audio:midias/3EB005DCA33CB0454C37D0_186727.ogg}
+[12:29] CLIENTE: [áudio] "Eu não vou ir hoje não, tá? Não vai dar para mim ir hoje não, tá? Desde que eu fui até eu ligo para você antes. Tchau!"
+[12:29] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+--- 21/09/2026 (Mon) ---
+[14:58] LOJA: *Josy:*
+Boa tarde!
+[15:00] LOJA: *Josy:*
+Alinhamento 140,00 balanceamento 45,00 por roda, mas são valores negociáveis. Fique tranquilo
+[15:02] LOJA: [foto]
+[15:03] LOJA: [áudio] "Olha, Sérgio, essa é a foto do pneu, tá? E é o pneu mais vendido que eu tenho, que realmente pensa no pneu bom, tá? Pode instalar tranquilo aí."  {audio:midias/3EB05B8E678DC17A93D357_217644.ogg}
+[15:03] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:03] CLIENTE: [áudio] "Oi, com desconto disso aí tudo, quanto é que vai ficar os 4 pneus? Com os descontos de alinhamento, de balanceamento, agora tá tudo caro esse balanceamento, seu e alinhamento, hein? Vê, manda pra mim quanto fica tudo, faz a conta aí, com o desconto."
+[15:04] LOJA: *Josy:*
+Os pneus de R$ 349,00 por R$ 325,00 cada, esse valor é somente em *DINHEIRO*
+[15:05] LOJA: [áudio] "Olha, os 325 que eu falei para o senhor, a unidade, são para pagamento em dinheiro mesmo. O senhor sacando o dinheiro e trazendo aqui para mim, eu faço por 325 cada. Os serviços, eu estou falando com os rapazes aqui da oficina, o senhor vai pagar em dinheiro também, né?"  {audio:midias/3EB0F9ADF8FE4A2B54F8C7_541075.ogg}
+[15:06] CLIENTE: Sim
+[15:07] LOJA: *Josy:*
+130,00 o alinhamento 40,00 o balanceamento, acho melhor o senhor vir aqui e negociar pessoalmente,
+[15:07] LOJA: [áudio] "Sr. João, acho que fica até melhor o senhor vir aqui e conversar direto com os meninos, que aí eles fazem um negócio melhor aí para o senhor."  {audio:midias/3EB0CCEC977CDBA7952961_66584.ogg}
+[15:08] LOJA: [áudio] "Seu João, onde é mesmo que o Senhor mora?"  {audio:midias/3EB0971C23FC78A4480130_649879.ogg}
+[15:08] CLIENTE: ZLuziania
+[15:08] LOJA: [áudio] "Ah, sim."  {audio:midias/3EB08EBDB5ACCF10B3C551_346688.ogg}
+[15:17] LOJA: [foto]
+[17:22] LOJA: *Josy:*
+Obrigada!
+[18:39] CLIENTE: [áudio] "Agradeço, muito obrigado. É que eu já comprei o pneu. Muito obrigado."

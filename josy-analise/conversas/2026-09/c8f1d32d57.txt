@@ -1,0 +1,10 @@
+CONVERSA c8f1d32d57 | contato: Renan Contador ∴ | 16/09/2026 12:00 até 16/09/2026 12:24 | 2 msgs do cliente, 4 da loja, 0 do robô
+
+--- 16/09/2026 (Wed) ---
+[12:00] LOJA: [áudio] "Oi Renan, tudo jóia? Renan, nós estávamos conversando aí na segunda-feira a respeito dos pneus para o seu carro e eu gostaria de saber se você pretende seguir aqui com a negociação, você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0D397445946BAD93A9B_698093.ogg}
+[12:15] CLIENTE: [áudio] "Opa, boa tarde, olha, então, eu tive aí na mesma segunda, comprei o pneu, comprei e carreguei, aí dois eu troquei em Luziânia, do lado da loja sua, e outros dois eu tô aqui, que é pra colocar na minha carretinha, no Valparaíso. Em que loja que eu coloco ele aqui no Valparaíso aqui, você tem alguma pra indicar? Que seja daquela parcelinha de vocês?"
+[12:15] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:19] LOJA: [áudio] "Ah, sim. Verdade, Renan. Meu Deus do céu. Desculpa. Ai, meu pai. Olha, aí no Valparais eu não tenho, mas deixa eu ver aqui. Você consegue ir ali na cidade ocidental, Renan? Que ali tem a... Como que é o nome, gente? A CIT. Uma loja que fica logo passando o túnel. Eles podem fazer a montagem dos pneus pra você."  {audio:midias/3EB00759578C2D2F777FFD_329242.ogg}
+[12:23] CLIENTE: [áudio] "O que você está falando é uma que fica próximo, quase em frente à faculdade? A Unidesc?"
+[12:24] LOJA: [áudio] "Isso, isso. Se eu passo o túnel e segue um pouquinho adiante, vai estar à sua direita."  {audio:midias/3EB0EF45BFA3E21F649E2E_176260.ogg}

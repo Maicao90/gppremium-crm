@@ -1,0 +1,43 @@
+CONVERSA 05343a1020 | contato: Elias | 26/08/2026 03:44 até 26/08/2026 17:36 | 7 msgs do cliente, 18 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[03:44] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[03:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:50] LOJA: *Josy :*
+🙋🏼‍♀️
+[09:48] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Pneu 17- 
+215- 50
+[09:48] LOJA: *Josy :*
+Certo... vou verificar para ti
+[09:54] LOJA: [foto]
+[09:54] LOJA: *Josy :*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:56] LOJA: *Josy :*
+Mora aqui em Luziania-Go?
+[10:01] CLIENTE: Moro  no Valparaiso 
+É só o preço a vista
+[10:02] LOJA: *Josy :*
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:02] LOJA: [áudio] "Olá, bom dia. Tudo bem com você? Eu sou a Josi. E assim que possível, me diz também qual é o seu nome?"  {audio:midias/3EB08FEB5120A23725ABEC_207858.ogg}
+[12:03] LOJA: [áudio] "E você gostaria de realizar a troca dos pneus quando? Que eu posso reservar eles aqui para você."  {audio:midias/3EB0B8995733F3331D085B_407172.ogg}
+[12:29] CLIENTE: [áudio] "Bom dia, tudo bem? Veja bem, o que eu estou precisando é de saber o preço, estou cotando o preço, quero trocar, mas tem que ver o preço. Qual é o menor preço que você tem no Michelin e qual é o custo-benefício que você tem aí mais barato, que esteja dentro da classificação do Inmetro, pelo menos na letra C. Então, me dê essas informações quanto é que fica esses pneus. Trabalha num preço mínimo que eu estou fazendo a cotação. Então, quem tiver o menor preço é onde eu vou estar fechando, tá bem?"
+[12:30] LOJA: [áudio] "Eu entendi perfeitamente. Eu te mandei o orçamento aí justamente com as duas opções que eu tenho no dia de hoje. Michelin é uma opção muito difícil de ter a pronta entrega. Aqui em Luziânia, pelo menos, não tem."  {audio:midias/3EB094438A3C471E737AD1_121348.ogg}
+[12:31] LOJA: [áudio] "Como o meu WhatsApp está com instabilidade, eu gostaria muito de saber de você se o orçamento realmente chegou aí no seu WhatsApp. Você pode confirmar para mim, por gentileza?"  {audio:midias/3EB09A4558696929248A3F_553238.ogg}
+[12:34] CLIENTE: [áudio] "Júlio, seria bom você me ligar. Você tem como me ligar para a gente conversar? Porque eu estou vendo que esses orçamentos se mandou aí, os preços individuais, não deu para me entender. Liga comigo, basta você falar, não precisa nem estar anotado, eu sei como é que está. E aí, se for o caso, eu dou resposta para você. Me ligue, por gentileza."
+[12:35] LOJA: *Josy :*
+Dunlop 👇🏻
+[12:35] LOJA: [foto]
+[12:39] LOJA: [foto]
+[12:39] LOJA: [foto]
+[12:51] CLIENTE: https://www.instagram.com/reel/DcaIZcltAXz/?igsi=NG03bjh1azEzMWFm
+[12:51] CLIENTE: [foto] https://www.instagram.com/repentbrasilia?utm_source=qr&igsi=dXpmY3I5Z3o5MThm
+[13:06] LOJA: [vídeo]
+[17:36] LOJA: [áudio] "Boa tarde, senhora Elias. Eu vou encerrar aqui o seu atendimento, tá? Caso precise futuramente, é só chamar. Vou deixar aqui na nossa conversa também a localização da nossa empresa, que se porventura o senhor estiver passando aqui na região, o senhor passa aqui na loja para conversarmos pessoalmente, tá joia? Muitíssimo obrigada aí pelo seu contato e até breve."  {audio:midias/3EB083E9ADF5523A3DBA2E_262760.ogg}
+[17:36] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6

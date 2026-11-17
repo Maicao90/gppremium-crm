@@ -1,0 +1,15 @@
+CONVERSA 150853b797 | contato: Henrique Nogueira | 01/09/2026 10:40 até 01/09/2026 10:52 | 5 msgs do cliente, 4 da loja, 0 do robô
+
+--- 01/09/2026 (Tue) ---
+[10:40] CLIENTE: Quero cotar o pneu 175/65 R14 GP Premium.
+[10:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:40] CLIENTE: 2 pneus
+[10:44] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Eu sou a Josi. E você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB088C488877C3FF13595_469785.ogg}
+[10:44] CLIENTE: Não Embu das artes sp
+[10:47] LOJA: [áudio] "Ah, sim, perfeito. Pois é, infelizmente não estamos atendendo São Paulo no momento, mas aqui o 175-65, pneu da marca GP Premium, remold de primeira linha, está por apenas R$ 249,00 a vista."  {audio:midias/3EB0F13043B3000B971633_715197.ogg}
+[10:48] CLIENTE: Ok 
+Muito obrigado 
+👍👍🙏🏻🙏🏻
+[10:48] LOJA: [áudio] "Imagina, eu que agradeço pelo contato. Tenha uma boa semana."  {audio:midias/3EB033B714F81575E506C8_647409.ogg}
+[10:52] CLIENTE: 👍🙏🏻🙏🏻

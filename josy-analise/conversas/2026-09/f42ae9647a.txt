@@ -1,0 +1,32 @@
+CONVERSA f42ae9647a | contato: Zack | 19/09/2026 08:53 até 21/09/2026 16:19 | 7 msgs do cliente, 11 da loja, 0 do robô
+
+--- 19/09/2026 (Sat) ---
+[08:53] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[08:53] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:53] CLIENTE: 195/45 R 16
+[09:01] LOJA: [áudio] "Olá, bom dia! Tudo bem com você?"  {audio:midias/3EB01BDA8DEA92447EEF2B_89803.ogg}
+[09:02] CLIENTE: Bom dia
+[09:02] CLIENTE: Tudo bem
+[09:35] LOJA: [áudio] "Jovem, tudo bem contigo? Então, aqui eu não disponho dessa opção a pronta entrega, ela vai ser somente por encomenda, e se meu distribuidor tiver, leva uns 3 dias úteis para poder chegar. Só que eu preciso confirmar com ele na segunda-feira, tudo bem?"  {audio:midias/3EB0DD000FA345AE8B5048_188164.ogg}
+[09:45] CLIENTE: Quais os valores
+[09:45] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+--- 21/09/2026 (Mon) ---
+[14:39] LOJA: *Josy:*
+Oi...boa tarde!
+[14:39] LOJA: *Josy:*
+Consegui retorno da Delinte
+[14:40] LOJA: [foto]
+[14:40] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:59] LOJA: [áudio] "Olá, tudo bem? Pretendo seguir com a negociação?"  {audio:midias/A5D88D2C1E63C93575FCFAEB05A0C67A_978554.ogg}
+[16:18] CLIENTE: Não
+[16:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:19] CLIENTE: Está muito caro
+[16:19] LOJA: *Josy:*
+É...

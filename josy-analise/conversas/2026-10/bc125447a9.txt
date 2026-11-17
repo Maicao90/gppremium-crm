@@ -1,0 +1,18 @@
+CONVERSA bc125447a9 | contato: Ele | 15/10/2026 17:13 até 16/10/2026 10:43 | 2 msgs do cliente, 8 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[17:13] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[17:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:13] LOJA: 🙋🏼‍♀️
+[17:22] LOJA: 🙋🏼‍♀️
+[17:39] CLIENTE: 205 60 R16
+[17:44] LOJA: [foto]
+[17:44] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:44] LOJA: Mora aqui em Luziânia-Go , Mauro?
+--- 16/10/2026 (Fri) ---
+[10:43] LOJA: [áudio] "Oi, bom dia! Tudo bem contigo? Ontem eu te encaminhei um orçamento e gostaria de saber se você pretende seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB08107851F10AD3AD0FC_569241.ogg}

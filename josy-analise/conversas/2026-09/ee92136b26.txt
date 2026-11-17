@@ -1,0 +1,28 @@
+CONVERSA ee92136b26 | contato: G@B$ M&ND&$ | 29/09/2026 12:55 até 29/09/2026 17:23 | 6 msgs do cliente, 11 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[12:55] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:06] LOJA: 🙋🏼‍♀️
+[13:06] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa hoje?
+[13:07] CLIENTE: [foto]
+[13:07] CLIENTE: [foto]
+[13:07] CLIENTE: As medidas
+[13:08] LOJA: [foto]
+[13:09] LOJA: [áudio] "Olá, boa tarde, tudo bem? Eu me chamo Josi e no dia de hoje eu tenho essas três opções de marcas, a pronta e a entrega, está bem?"  {audio:midias/3EB0E4ACBBC9049C781975_489900.ogg}
+[13:09] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:09] LOJA: [áudio] "mora aqui em Luziânia mesmo."  {audio:midias/3EB0CB9F7F558250A0BB8E_935177.ogg}
+[13:09] CLIENTE: Valparaiso
+[13:10] LOJA: *Josy:*
+Pertinho de nós!
+[13:10] CLIENTE: Um pouco kkkk
+[13:11] LOJA: *Josy:*
+rsrs
+[17:23] LOJA: [áudio] "Oi, tudo jóia? Bem, por hora eu vou encerrar aqui o seu atendimento, tá? E vou mandar a nossa localização, que se houver a possibilidade, você passa aqui para nós conversarmos pessoalmente, tá, jóia? O nosso horário de atendimento é de segunda a sexta, de 8 da manhã até as 18 e aos sábados de 8 até o meio-dia."  {audio:midias/3EB032D8ACAEDB91081ACD_786072.ogg}
+[17:23] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

@@ -1,0 +1,31 @@
+CONVERSA 80b627d4ee | contato: bon vivant | 25/09/2026 11:21 até 01/10/2026 11:08 | 7 msgs do cliente, 13 da loja, 0 do robô
+
+--- 25/09/2026 (Fri) ---
+[11:21] LOJA: *Josy:*
+Bom dia...
+[11:23] LOJA: [foto]
+[11:49] CLIENTE: [foto] Essa promoção sair também
+[11:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:49] CLIENTE: Compra 3 leva o outro gratis
+[11:50] LOJA: *Josy:*
+A promoção compre 3 e leve 4 é válida para pneus da marca GP Premium, mas na medida 195/65/15 e 215/55/17 😉
+[11:51] LOJA: *Josy:*
+O 195/55/16 está com preço muito bom para esse mês, de R$ 299,00 ´por apenas R$ 259,00 a vista
+[11:51] LOJA: *Josy:*
+E já instala os pneus se voc~e quiser.
+--- 01/10/2026 (Thu) ---
+[11:01] CLIENTE: Bom dia
+[11:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:01] CLIENTE: Qual valor dos pneu 225/35
+[11:01] LOJA: [áudio] "Oi jovem, tudo jóia? Eu preciso saber aqui qual que é o aro que você está precisando?"  {audio:midias/3EB06F1D446D325158545B_454014.ogg}
+[11:01] CLIENTE: Aro 20
+[11:02] LOJA: *Josy:*
+ 205/35/20 te atende? esse eu tenho a pronta entrega
+[11:03] CLIENTE: Qual valor
+[11:05] LOJA: *Josy:*
+Menino de sorte... acabou de chegar o 225 kkkk
+[11:05] LOJA: [foto]
+[11:06] CLIENTE: Tá vou conferir com rapaz aqui
+[11:08] LOJA: [áudio] "Oi moço, tudo bom? Olha, acabou de chegar o 22535, ele vai sair por 487 a unidade, se o pagamento for no débito ou no Pix, tá? Já o 205, ele sai por 480 reais, também valor para débito e Pix. Qual que é o seu nome mesmo?"  {audio:midias/3EB03C441CEE4CC3C1E010_815689.ogg}

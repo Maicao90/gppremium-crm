@@ -1,0 +1,36 @@
+CONVERSA 7419714ba4 | contato: Celio | 04/09/2026 14:13 até 11/09/2026 17:35 | 10 msgs do cliente, 17 da loja, 0 do robô
+
+--- 04/09/2026 (Fri) ---
+[14:13] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[14:13] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:13] CLIENTE: Aro  185/65-15
+[14:20] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Olha, eu estou com instabilidade aqui na nossa internet, então não estou conseguindo enviar o orçamento completo, mas eu tenho aqui sim a princípio da marca GP Premium, a unidade está por R$ 249,00 se o seu pagamento for no débito ou no Pix. Mora aqui em Luziânia mesmo?"  {audio:midias/A57D3B917C73AAEA56EBDC3ABE0EEFDA_149038.ogg}
+[14:34] CLIENTE: Santa María
+[14:34] CLIENTE: Preciso ver as fotos desse pneu
+[14:36] LOJA: [vídeo]
+[14:51] CLIENTE: Qual o valor desse ?
+[14:51] CLIENTE: Não  , e qual a  banda de rodagem dele?
+[14:59] LOJA: Apenas 249,00 a vista!
+[14:59] LOJA: Não entendi sua pergunta.
+[15:05] CLIENTE: Onde é de velocidade
+[15:06] CLIENTE: Indece
+[15:06] CLIENTE: 120 km 130, 140
+[15:06] LOJA: Ah, sim!
+[15:06] LOJA: 170 km
+[15:15] LOJA: [áudio] "Célio, para o parcelamento, as parcelas aumentam em torno de R$ 3,00, de uma para a outra, tá? Digamos que você queira parcelar os pneus em, deixa eu ver aqui, digamos que fosse em 10 vezes, aí o preço fica R$ 279,00, que antes o preço desse pneu era R$ 289,00, e aí R$ 279,00 eu tô fazendo ele em 10 vezes, tá? Então R$ 279,00 vezes 4, R$ 1.116,00. Então você vai pagar 10 parcelas de R$ 111,60."  {audio:midias/A5E98F2B05D61CE831498B32D9EB9C80_299397.ogg}
+[15:32] LOJA: [foto]
+[15:32] LOJA: [áudio] "Célio, olha só, eu consegui te encaminhar aqui as opções de parcelamento, tá?"  {audio:midias/A5F47989F9E4241B93F2B5F6502B3C3F_75119.ogg}
+[15:33] LOJA: [áudio] "Como você mora em Santa Maria, e eu sei que o deslocamento aqui fica um pouco distante, se for do seu interesse, eu encaminho esses pneus para uma borracharia que fica no Novo Gama, para poder te ajudar."  {audio:midias/A57AD08991E593E1CD0381274B6CCAAA_501604.ogg}
+[15:35] CLIENTE: Eu vou fazer uma pesquisa e te falo
+[15:35] LOJA: [áudio] "Sem problema, Célio. Aí, esse pneu aí, ele tem garantia de 2 anos, tá?"  {audio:midias/A5FC5FE559A2E232DF64B50C03DC03DF_922238.ogg}
+[15:35] LOJA: [áudio] "E se você achar que é mais fácil mandar ir para o novo Gama, eu pago para você fazer a instalação, tá Joia?"  {audio:midias/A5B5D438C0B89806DD39B3BB50C9D884_844488.ogg}
+--- 10/09/2026 (Thu) ---
+[17:14] LOJA: [áudio] "Oi Saelio, tudo bem com você?"  {audio:midias/3EB06E9E341E939167B189_976733.ogg}
+[17:14] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[17:35] LOJA: [áudio] "Oi, Célio. Tudo bom? Eu até gravei um vídeo aí, né, para tentar uma interação com você, mas imagino que na correria você acaba não conseguindo me responder. Então, eu vou encerrar aqui o seu atendimento, tá jóia? Justamente para não ficar enchendo o seu WhatsApp de mensagens, porque eu sei que é chato. Eu vou te mandar aqui a localização da nossa loja e se houver a possibilidade, você vem até aqui, tá jóia? Muitíssimo, obrigada pela sua atenção e tenha um bom final de semana."  {audio:midias/3EB0B9D79598E9E49565C8_759478.ogg}
+[17:35] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

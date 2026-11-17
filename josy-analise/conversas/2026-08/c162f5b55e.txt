@@ -1,0 +1,51 @@
+CONVERSA c162f5b55e | contato: torre | 26/08/2026 08:32 até 26/08/2026 17:29 | 14 msgs do cliente, 20 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[08:32] LOJA: *Josy :*
+Oi, Tudo bem ?
+[08:37] CLIENTE: 215/50/17/...90v
+[08:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:43] CLIENTE: 215/50/17/...90v
+[08:49] LOJA: *Josy :*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:49] LOJA: [foto]
+[08:50] LOJA: *Josy :*
+Mora aqui em Luziania-Go?
+[08:53] CLIENTE: Quanto e cada
+[08:54] LOJA: [foto]
+[08:56] CLIENTE: 628.75 cada
+[08:56] LOJA: [áudio] "Olá, bom dia, tudo bem? O valor unitário para o pneu da marca Dunlop, só uma observação, ele é nacional. A unidade está por 628 reais. O pneu da marca GP Premium, a unidade está por 329 reais."  {audio:midias/3EB05550AA057D5AEB9F17_448669.ogg}
+[08:57] LOJA: *Josy :*
+Mora aqui em Luziania-Go?
+[08:57] CLIENTE: Novo gama
+[08:58] LOJA: *Josy :*
+É próximo!
+[08:59] CLIENTE: Sim
+[09:01] LOJA: [áudio] "E você pretende realizar a troca desses pneus por agora? Que de repente eu posso deixar reservados aqui para você."  {audio:midias/3EB080774AF69DC389F806_471257.ogg}
+[09:02] CLIENTE: Estou fazendo uma cotação
+[09:02] LOJA: [áudio] "Certo, compreendo perfeitamente. Então, eu vou fazer o seguinte, eu vou deixar aqui registrada a nossa localização, pois, se houver a possibilidade, você vem até aqui para nós conversarmos pessoalmente, está bem? Qual é o seu nome?"  {audio:midias/3EB0706F2D9840AE04AFAB_832521.ogg}
+[16:25] LOJA: *Josy :*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:25] LOJA: *Josy :*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:25] LOJA: *Josy :*
+Estou encerrando seu atendimento, caso precise novamente é só chamar.
+[16:26] LOJA: *Josy :*
+Obrigada 👋🏻
+[17:22] CLIENTE: Boa tarde
+[17:22] CLIENTE: 215/50/17....9v
+[17:23] LOJA: 👆🏻 te encaminhei o orçamento.
+[17:24] CLIENTE: O nacional vocês faz quanto o pix
+[17:25] LOJA: Dunlop  628.75 cada e GP Premium 329,00 cada
+[17:26] CLIENTE: Premium
+[17:26] CLIENTE: E bom
+[17:26] CLIENTE: Tem garantia
+[17:26] LOJA: Sim , inclusive é o pneu mais vendido. Garantia de 2 anos.
+[17:27] LOJA: Teste do Pneu 215/50 R17 GP-4 em ALTA VELOCIDADE ! https://youtu.be/e6sdoRnqSpU?si=XN-VSBiLQ8QiWwQz&t=873
+[17:28] CLIENTE: Manda foto dele ai
+[17:29] LOJA: [vídeo]

@@ -1,0 +1,47 @@
+CONVERSA 2212b79045 | contato: Thiago | 20/10/2026 07:25 até 21/10/2026 15:33 | 13 msgs do cliente, 11 da loja, 4 do robô
+
+--- 20/10/2026 (Tue) ---
+[07:25] CLIENTE: Bom dia
+[07:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:26] CLIENTE: Queria conversar sobre valores , de uma compra grande
+[08:07] LOJA: *Josy:*
+Bom dia, Thiago.
+[08:08] LOJA: *Josy:*
+Qual a medida dos pneus que você precisa?
+[08:11] CLIENTE: Bom dia Josy
+[08:11] CLIENTE: Queria saber valores de atacado
+[08:13] CLIENTE: 17570r13
+17565r14
+17570r14
+18570r14
+18560r15
+18565r15
+19555r15 
+20555r16
+[08:13] LOJA: *Josy:*
+No momento não estamos atendendo no atacado.
+[08:13] LOJA: *Josy:*
+Mora aqui em Luziania-Go?
+[08:14] CLIENTE: Em Valparaíso
+[08:14] LOJA: *Josy:*
+Ah, sim!
+[08:14] LOJA: *Josy:*
+Tem borracharia? Me explica.
+[08:14] CLIENTE: Estou montando um auto Center
+[08:14] CLIENTE: Vou te mandar o vídeo
+[08:14] LOJA: *Josy:*
+Ah, sim!
+[08:15] CLIENTE: [vídeo]
+[12:26] CLIENTE: [áudio] "E aí, Josi? Não estão mais fazendo pedido e atacado?"
+[12:26] CLIENTE: [áudio] "Reformulando, vocês não estão mais vendendo nem atacado."
+[12:27] LOJA: [áudio] "Oi Tiago, tudo jóia? Olha, no momento realmente nós não estamos, tá? Estamos nos organizando para poder voltar a atender, mas por hora eu não tenho, né, uma data fixa para isso."  {audio:midias/3EB01EA2D485B3BF6E029E_59255.ogg}
+--- 21/10/2026 (Wed) ---
+[12:22] ROBÔ: 🙋🏼‍♀️
+[12:25] CLIENTE: Olá
+[12:25] ROBÔ: Oi, tudo bem?
+[12:25] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[12:26] LOJA: [áudio] "Oi Tiago, perdão aqui que eu fui mandar mensagem para outro Tiago, acabei mandando aqui para você, tá?"  {audio:midias/3EB08ED436CD9291B432E4_84778.ogg}
+[12:26] CLIENTE: [áudio] "Relaxa, só queria que vocês me vendessem atacado."
+[12:28] LOJA: [áudio] "Ô Tiago, nossa, por hora realmente eu vou deixá-la aí em standby. Já é que não estamos vendendo, mas eu salvei com seu contato e assim que reestabelecer toda aqui a nossa estrutura, aí eu entro em contato contigo novamente, tá bom?"  {audio:midias/3EB0BA41705D48891B40B6_227710.ogg}
+[15:33] ROBÔ: 🙋🏼‍♀️

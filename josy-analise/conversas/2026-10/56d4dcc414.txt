@@ -1,0 +1,28 @@
+CONVERSA 56d4dcc414 | contato: Leirivan! | 22/10/2026 08:28 até 22/10/2026 09:49 | 8 msgs do cliente, 4 da loja, 9 do robô
+
+--- 22/10/2026 (Thu) ---
+[08:28] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Olá! Posso ter mais informações sobre isso?
+[08:28] ROBÔ: Oi, tudo bem?
+[08:28] ROBÔ: Poderia me informar a medida do pneu (ex.: 175/65/14) ou o modelo do seu carro?
+[08:30] CLIENTE: Bom dia .
+[08:30] ROBÔ: Oi, tudo bem? Em que posso te ajudar?
+[08:30] CLIENTE: Qual valor do pneu 265 70/16
+[08:30] ROBÔ: Temos o pneu *265/70/16* da marca *GP Premium* está saindo por *R$ 559,00 à vista*.
+[08:30] ROBÔ: Se preferir, você pode parcelar em até 10x no cartão!
+[08:31] CLIENTE: Eles são remold ?
+[08:31] ROBÔ: [áudio — sem transcrição]
+[08:31] CLIENTE: O áudio não está disponível
+[08:32] ROBÔ: Sem problema, te mando o vídeo do teste por link aqui mesmo:
+[08:32] ROBÔ: https://youtu.be/e6sdoRnqSpU?t=93
+[08:32] ROBÔ: Ele já abre direto no minuto certo. Quando você consegue vir até a loja?
+[08:34] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu sou a Josi, obrigada por aguardar. O pneu da marca GP Premium, ele é um pneu ecológico que nós fazemos. Sim, ele vai entrar na categoria de remodelagem, só que linha Premium. Por essa razão, ele é o pneu mais vendido que nós temos. E justamente na medida que o senhor está procurando e precisando no momento, meu estoque já esgotou. Eu vou ter aqui a pronta entrega, o pneu da marca GP Premium na medida 245-70-16 e vou ter também pneus importados na medida 265-70-16. Me dê um instante que eu vou mandar o seu orçamento, tá?"  {audio:midias/3EB0B6ECE1983F234C8952_846971.ogg}
+[08:35] LOJA: [foto]
+[08:35] LOJA: No dia de hoje temos os pneus novos das marcas Comforser e Lanvigator  essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:13] CLIENTE: Intendi .
+[09:14] CLIENTE: Eu vou aguardar chegar esses.
+[09:38] LOJA: [áudio] "Leorivan, você mora aqui em Luziânia, Goiás?"  {audio:midias/3EB03795A68268806B5105_377709.ogg}
+[09:49] CLIENTE: Eu moro no Valparaíso.

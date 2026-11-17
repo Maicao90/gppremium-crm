@@ -1,0 +1,14 @@
+CONVERSA b28937516e | contato: Igor Amorim | 22/09/2026 12:00 até 22/09/2026 12:05 | 5 msgs do cliente, 5 da loja, 0 do robô
+
+--- 22/09/2026 (Tue) ---
+[12:00] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[12:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:01] CLIENTE: [foto]
+[12:01] CLIENTE: Boa tarde
+[12:02] LOJA: [áudio] "Olá, tudo jóia? Você mora aqui em Luziânia, Goiás?"  {audio:midias/A5820E25B89EAF3B21E0E28302D5546C_967582.ogg}
+[12:04] CLIENTE: [áudio] "Opa, não, é... Por mim, quero... Essa loja sua é lá em... Na Cidade Automóvel, lá em Brasília. Peguei aqui num anúncio aqui na internet."
+[12:04] LOJA: [áudio] "E aqui nós não estamos trabalhando com pneus de caminhão."  {audio:midias/A5840FF421CA0573AADEE93C58A05AB4_80930.ogg}
+[12:04] LOJA: [áudio] "Não, não, é aqui em Luziânia."  {audio:midias/A590519ADB9FC47C58280B8B90236E9F_191620.ogg}
+[12:05] CLIENTE: [áudio] "Então, desculpa, moça. Desculpe e obrigado, tá bom?"
+[12:05] LOJA: [áudio] "Imagina! Boa semana!"  {audio:midias/A58A0AB1A23BBFEC3B3680C06DC4D4D7_860844.ogg}

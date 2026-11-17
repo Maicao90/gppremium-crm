@@ -1,0 +1,33 @@
+CONVERSA 7e9f607066 | contato: Marcelo Jardinagem | 20/10/2026 10:16 até 22/10/2026 08:08 | 6 msgs do cliente, 10 da loja, 2 do robô
+
+--- 20/10/2026 (Tue) ---
+[10:16] LOJA: *Josy:*
+Bom dia, Marcelo!
+[10:21] LOJA: *Josy:*
+Assim que possível, confirma a medida direitinho .
+[10:21] CLIENTE: Ok
+[10:21] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+--- 21/10/2026 (Wed) ---
+[11:14] LOJA: 🙋🏼‍♀️
+[16:20] CLIENTE: [áudio] "Olá, tudo bem? Boa tarde. Deixa eu fazer uma pergunta para vocês. Qual a marca de pneus que vocês têm aí, sem ser remolde?"
+[16:21] ROBÔ: [áudio — sem transcrição]
+[16:21] CLIENTE: Não abre o áudio
+[16:22] LOJA: Oi, Marelo..
+[16:22] LOJA: Depende...
+[16:22] LOJA: Qual *A MEDIDA* dos pneus que você precisa?
+[16:23] CLIENTE: 1.85/65
+[16:23] LOJA: 14? 15?
+[16:23] CLIENTE: Aro 15
+[16:24] CLIENTE: Preço de cada um e os 4
+[16:32] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[16:32] LOJA: [foto]
+--- 22/10/2026 (Thu) ---
+[08:08] ROBÔ: 🙋🏼‍♀️

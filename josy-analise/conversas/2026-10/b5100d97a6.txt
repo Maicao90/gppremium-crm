@@ -1,0 +1,25 @@
+CONVERSA b5100d97a6 | contato: FMl Reforma e acabamentos | 16/10/2026 09:51 até 17/10/2026 11:10 | 6 msgs do cliente, 10 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[09:51] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[09:51] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:57] LOJA: 🙋🏼‍♀️
+[10:24] CLIENTE: Olá
+[10:24] CLIENTE: Vcs tem este peneus
+[10:24] CLIENTE: [foto]
+[10:26] LOJA: Qual a medida dos pneus? A imagem fica distorcida para mim, não consigo identificar
+[11:16] LOJA: 🙋🏼‍♀️
+[15:41] CLIENTE: [áudio] "Esses pneus aí são quatro pneus, 185-65-15."
+[16:01] LOJA: [áudio] "Sim, eu tenho 5, 8, 5, 6, 5, 15, mas não desse jeito aí."  {audio:midias/A51F7D5B58FE85D2D18FAAF02A4C6548_726968.ogg}
+[16:01] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/A5FC3E8822EAF3767C0D8395BFD8E4E4_424894.ogg}
+[16:04] CLIENTE: Não
+[16:22] LOJA: [foto]
+[16:22] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 17/10/2026 (Sat) ---
+[11:10] LOJA: Bom dia, vou te encaminhar a nossa localização, quando puder, passa aqui!
+[11:10] LOJA: [foto]

@@ -1,0 +1,21 @@
+CONVERSA 8a7d1cc329 | contato: Sagaz Transportes | 15/10/2026 13:20 até 15/10/2026 13:41 | 8 msgs do cliente, 9 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[13:20] CLIENTE: [áudio] "Boa tarde, tudo bem? Como estão as coisas? Estou precisando de um pneuzinho para um colega. Será que você teria aí? Vou te mandar o modelo."
+[13:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:21] CLIENTE: 205/70-15R
+[13:25] LOJA: [áudio] "Oi, Léo. Tudo jóia? Você está sumindo, moço? Como é que você está?"  {audio:midias/3EB04AF1B5B0092F3B760C_613895.ogg}
+[13:25] LOJA: [foto]
+[13:25] LOJA: No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:26] CLIENTE: Tô sem dinheiro pra comprar pneu aí
+[13:27] LOJA: Entendo...
+[13:36] CLIENTE: E n tem da marca d vcs msm, da GP?
+[13:37] LOJA: [áudio] "Não, só tem importado, Léo."  {audio:midias/3EB04D9C349F250079DFE9_753895.ogg}
+[13:39] CLIENTE: 205/75/16C
+[13:39] CLIENTE: E pra minha!?
+[13:40] LOJA: [áudio] "Léo, não tem também."  {audio:midias/3EB09FCBC53ED45D0EEDCF_444317.ogg}
+[13:40] CLIENTE: Esse é Carga tbm, desculpe
+[13:40] LOJA: [áudio] "É, eu suspeitei que era de carga e justamente por isso eu te mandei de carga, tá joia? Mas realmente a opção que eu tenho será essa, tá?"  {audio:midias/3EB0F01E836496104BB662_561089.ogg}
+[13:40] CLIENTE: Aí cm vai me vender pneu tbm!?
+[13:41] LOJA: Né!?

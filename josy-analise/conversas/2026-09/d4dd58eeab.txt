@@ -1,0 +1,84 @@
+CONVERSA d4dd58eeab | contato: Bianca Fernandes | 09/09/2026 14:49 até 22/09/2026 16:20 | 21 msgs do cliente, 29 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[14:49] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá, boa tarde! 
+Consigo comprar no cpf também?
+[14:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:49] LOJA: Boa tarde...sim!
+[14:51] CLIENTE: Precisava do 165/70 R13
+[14:51] LOJA: *Josy:*
+Hoje teremos 175/70/13, que também te atende muito bem! Inclusive trás mais estabilidade para o carro.
+[14:52] CLIENTE: Quanto está saindo ?
+[14:52] LOJA: *Josy:*
+1 instante estou finalizando seu orçamento.
+[14:53] LOJA: [foto]
+[14:53] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:53] CLIENTE: Seria 4 pneus, o valor é o mesmo certo ?
+[14:54] LOJA: *Josy:*
+Exemplo: pneu Dunlop  a unidade a vista é R$ 371,00 x 4 =R$  1.484,00
+[14:55] LOJA: *Josy:*
+Mora aqui em Luziânia-Go?
+[14:56] CLIENTE: Sim, entendi
+[14:56] CLIENTE: Isso mesmo
+[14:56] LOJA: *Josy:*
+Que bacana!
+[14:56] LOJA: *Josy:*
+A forma de pagamento será a vista mesmo, ou preferem parcelar?
+[15:00] CLIENTE: Seria no cartão
+[15:00] CLIENTE: 1x
+[15:01] LOJA: *Josy:*
+Hmmm, entendi...
+[15:01] LOJA: *Josy:*
+Os pneus da marca GP Premium (269,00) há a possibilidade de fazer esse valor no crédito a vista.
+[15:02] CLIENTE: Há, bom saber
+[15:02] CLIENTE: Só ir até aí fazer o pagamento e a retirada ?
+[15:03] LOJA: *Josy:*
+Se quiser, já podemos fazer a instalação para você.
+[15:04] CLIENTE: Quanto ficaria ?
+[15:04] CLIENTE: Uno vivace
+[15:05] LOJA: *Josy:*
+Certo...
+[15:09] LOJA: *Josy:*
+A instalação, não será cobrada, já faço isso de imediato, apenas o serviço de balanceamento que é cobrado, em torno de R$ 35,00 por roda.
+[15:12] LOJA: *Josy:*
+Mas pode ser negociado esse valor.
+[15:17] CLIENTE: 1.216,00 então com as rodas e o serviço
+[15:17] CLIENTE: Isso ?
+[15:19] LOJA: *Josy:*
+isso
+[15:20] CLIENTE: Posso confirmar até amanhã ?
+[15:20] LOJA: *Josy:*
+Siim!
+[15:21] CLIENTE: Então entro em contato novamente, muito obrigada pelo seu atendimento Josy
+[15:22] LOJA: *Josy:*
+Imagina... eu quem agradeço pelo contato, estava vendo aqui sua foto, muito parecida com uma amiga minha que mora em S.P ☺️
+[15:24] CLIENTE: Olha, que coincidência 😊
+[15:29] LOJA: *Josy:*
+Muuuuita!
+--- 10/09/2026 (Thu) ---
+[12:16] LOJA: *Josy:*
+Oi, Bianaca...tudo jóia?
+[12:37] LOJA: [áudio] "Tudo de joia, Bianca? Como é que você está? Eu gostaria de saber se você pretende seguir aqui com a nossa negociação. Assim que você tiver um tempinho, você me dá um retorno, por gentileza."  {audio:midias/3EB06831E642E4191E2551_804438.ogg}
+--- 11/09/2026 (Fri) ---
+[13:21] LOJA: [áudio] "Olá Bianca, tudo bem com você? Nós conversamos na quarta-feira a respeito dos pneus aí para o seu carro e eu gostaria de saber se você pretende seguir com a negociação ou você consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0051CB8BB4D41D44FC2_778546.ogg}
+--- 22/09/2026 (Tue) ---
+[16:03] LOJA: [áudio] "Oi Bianca, tudo jóia? Bianca, nós conversamos há alguns dias atrás e eu gostaria de saber se você ainda precisa dos pneus aí para o seu carro. Assim que você tiver um tempinho, você pode me dar uma resposta, por gentileza?"  {audio:midias/3EB06058660B7B48F42B0F_528254.ogg}
+[16:18] CLIENTE: Oi Josy, boa tarde 
+Tudo bem e você ?
+[16:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:18] LOJA: *Josy:*
+Bem ...obrigada por perguntar!
+[16:18] CLIENTE: [áudio] "Oi Josi, boa tarde, tudo bem? Josi, inclusive a Clariane acabou de te ligar e combinou de levar o carro amanhã porque realmente eu não tive tempo, desculpa, tá, de te responder, de dar o retorno que foi um pouco corrido esse mês, graças a Deus. Mas ela já combinou de levar o carro aí, tá bom?"
+[16:20] LOJA: *Josy:*
+Ah, sim!
+[16:20] LOJA: [áudio] "Ah, sim! Perfeito! Ela acabou de falar aqui comigo, realmente."  {audio:midias/3EB0F2233DC28C7EEEEDD4_623553.ogg}
+[16:20] CLIENTE: Desculpa a demora viu, e muito obrigada pela atenção
+[16:20] CLIENTE: Seu atendimento é maravilhoso ☺️
+[16:20] LOJA: [áudio] "Imagina, eu sei que é corrido, igual você falou, graças a Deus, sinal de que seu mês foi bom."  {audio:midias/3EB0756A89377ED2510D7B_471192.ogg}

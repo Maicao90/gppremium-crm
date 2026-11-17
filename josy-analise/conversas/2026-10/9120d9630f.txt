@@ -1,0 +1,25 @@
+CONVERSA 9120d9630f | contato: Raphael Gomes | 10/10/2026 11:33 até 10/10/2026 12:10 | 7 msgs do cliente, 14 da loja, 0 do robô
+
+--- 10/10/2026 (Sat) ---
+[11:33] CLIENTE: Bom dia!
+[11:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:33] LOJA: Bom dia!
+[11:33] LOJA: Qual a medida dos pneus que você precisa hoje, Raphael?
+[11:34] CLIENTE: 265/70 R16
+[11:34] LOJA: [foto]
+[11:34] LOJA: No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:36] CLIENTE: [áudio] "Você me manda umas fotos dele aí?"
+[11:41] LOJA: pneu 265/70/16 112h performax lanvigator
+[11:41] LOJA: [foto]
+[11:41] LOJA: [foto]
+[11:41] LOJA: [foto]
+[11:43] CLIENTE: E o adventure o nacional
+[11:45] LOJA: [áudio] "Sim, sim, tenho sim. É o pneu da marca GP Premium, que é um pneu ecológico que nós produzimos, tá? Ele vai entrar na categoria de remodelagem, só que linha Premium. Inclusive, é o pneu mais vendido que eu tenho."  {audio:midias/3EB0398CCABB9C514AF874_606751.ogg}
+[11:46] LOJA: [vídeo]
+[11:47] CLIENTE: [áudio] "Então, Josi, eu queria... Tem esse aí de 470, né? Que é o nacional. Eu tenho interesse por esse preço aí. Mas aí tinha que ser o 265, né? 265, 70, 16. Esse você tem?"
+[11:51] LOJA: [áudio] "265,70 da marca GP Premium, ele já esgotou no meu estoque, eu vendi todos. Agora eu tenho 245,00 realmente, tá? Aí, de outra opção, vai ter esse pneu importado, que eu te mandei também aí no orçamento. Mas se o senhor não estiver com pressa, assim que eu produzir o 265,00, eu posso te avisar."  {audio:midias/3EB054B759CE80717A4A52_77494.ogg}
+[11:54] CLIENTE: [áudio] "Mas você tem previsão, mais ou menos, da produção?"
+[11:55] LOJA: [áudio] "Eu creio que vai ser daqui uns 15 dias aproximadamente. Aí o modelo dele vai ser justamente igual desse 245 aí."  {audio:midias/3EB0865FE988BBF2EF40FC_520599.ogg}
+[12:09] CLIENTE: [áudio] "Não, beleza. Eu vou esperar essa semana. Não estou com muita urgência para ser hoje, mas também daqui 15 dias para mim é muito. Mas vamos esperar. Se me apertar aqui, eu fecho esse outro aí, esse importado. Mas aí eu te procuro. Obrigado, viu?"
+[12:10] LOJA: [áudio] "Até o seu Rafael, bom final de semana, bom feriado aí, tá?"  {audio:midias/3EB0686BC4190AFF805057_707381.ogg}

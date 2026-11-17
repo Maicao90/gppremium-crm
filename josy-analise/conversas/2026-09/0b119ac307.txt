@@ -1,0 +1,51 @@
+CONVERSA 0b119ac307 | contato: Tudo Começa Com Atitude | 30/09/2026 11:44 até 14/10/2026 17:30 | 13 msgs do cliente, 17 da loja, 0 do robô
+
+--- 30/09/2026 (Wed) ---
+[11:44] CLIENTE: Oi
+[11:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:44] LOJA: *Josy:*
+OOOi
+[11:44] LOJA: *Josy:*
+Jóia....?
+[11:44] CLIENTE: Temos o 225/65/17
+[11:45] LOJA: [áudio] "Oi, Fábio, tudo jóia? Nossa, Fábio, eu tava falando aqui com a Érica, que loucura que tá isso daqui. A internet não tá cooperando, sumiu tudo. Ai, socorro. Eu tenho aqui sim os pneus, tá?"  {audio:midias/3EB0DA7B735257F9590CDB_266629.ogg}
+[11:45] LOJA: [áudio] "Aí eu combinei com a Érica de mandar os pneus para o novo Gama, tá joia?"  {audio:midias/3EB0511D04246C1C0D4CEB_967848.ogg}
+[11:47] LOJA: Palavra dada é palavra cumprida, para pagamento em dinheiro esse preço que combinamos
+--- 14/10/2026 (Wed) ---
+[09:36] CLIENTE: Bom dia
+[09:36] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:36] LOJA: [áudio] "Oi Fábio, tudo jóia? Como é que você tá?"  {audio:midias/3EB0D189B1D73F516FA0F3_252474.ogg}
+[09:37] LOJA: 225/55/18=         67 x 24 x 67     peso 13,75
+[09:38] LOJA: [áudio] "O pneu que vai é o 17 ou 18?"  {audio:midias/3EB009DBD66687D5E2B08F_933203.ogg}
+[09:40] CLIENTE: 17
+[09:40] LOJA: ok
+[09:42] LOJA: [áudio] "Mas as dimensões serão as mesmas aí, tá joia? Eu só estou com o problema com a emissão da nota, porque tá fora do ar ainda."  {audio:midias/3EB04B557F625FB8062BB1_863516.ogg}
+[09:42] CLIENTE: [áudio] "Tá, José, dá tempo então, eu vou levar eles pra Goiânia, pra despachar em Goiânia na transportadora, aí dá tempo então de ver se sim consegue resolver. Aí a gente vai se falando. Obrigado."
+[09:42] LOJA: Ok
+[09:42] CLIENTE: [áudio] "Se eu tiver alguma nota, não precisa estar no meu nome não, alguma nota de algum pneu emitido aí, você dá a segunda via pra mim, desses pneus aí, passar de algum e me dá aí, serve, entendeu? Não precisa ser exatamente no meu nome a nota, pode ser qualquer nota que você tiver ali, 2 pneus 17."
+[09:43] LOJA: [áudio] "Não tenho e eu não estou tendo como acessar justamente o sistema de notas fiscais porque está fora do ar."  {audio:midias/3EB022532509D700932BB0_968127.ogg}
+[09:44] CLIENTE: [áudio] "Ah tá, entendi, Josi. Mas a gente vai se falando. Se não der certo, eu vou tentar botar essa canota aqui mais. Vamos ver o que vai dar."
+[09:44] CLIENTE: [áudio] "Aí, vamos tentar ver se dá certo."
+[12:08] CLIENTE: Obrigado minha amiga
+[17:02] CLIENTE: TAILÂNDIA (PA)
+Coleta/Entrega
+
+Avenida Belém, N 146 - Bairro: Santa Maria
+
+Telefone: (91) 99204-4865
+
+Responsável: Tailândia
+
+Contato: Thais Marra
+
+Enviar E-mail
+
+ATENDIMENTO DE SEGUNDA A SEXTA EM HORÁRIO COMERCIAL, AOS SÁBADOS DE 08:00HS ÀS 12:00HRS.
+[17:02] CLIENTE: Cep
+[17:02] CLIENTE: 68695-970
+[17:03] LOJA: carregou direto asim:
+[17:03] LOJA: [foto]
+[17:09] LOJA: [documento]
+[17:30] CLIENTE: Obrigado

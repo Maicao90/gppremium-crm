@@ -1,0 +1,55 @@
+CONVERSA e03eebeefd | contato: Fernando Braz | 06/10/2026 10:00 até 06/10/2026 14:21 | 20 msgs do cliente, 21 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[10:00] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:00] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:00] CLIENTE: 225/ 45r17
+[10:00] CLIENTE: para o Hyundai i30 2010
+[10:00] CLIENTE: Preciso de 2
+[10:01] LOJA: [foto]
+[10:01] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:04] CLIENTE: Oq quer dizer esse último ai
+[10:05] CLIENTE: De 339
+[10:05] LOJA: *Josy:*
+É o pneu da marca GP Premium, inclusive é o pneu mais vendido que temos.
+[10:05] LOJA: *Josy:*
+Mora aqui em Luziania-Go, mesmo?
+[10:06] CLIENTE: Moro sim
+[10:07] CLIENTE: Os dois montados fica quanto? No pix
+[10:08] LOJA: *Josy:*
+R$ 339,00 x 2 = R$ 678,00
+[10:09] LOJA: *Josy:*
+A parte cobramos apenas o balanceamento dos pneus. R$ 35,00 por roda, entretanto valor o valor é compeltamente negociável.
+[10:10] LOJA: [áudio] "Fernando, você sabe onde fica a nossa loja?"  {audio:midias/3EB0B5DF8A81D9C91A3B13_580643.ogg}
+[10:11] CLIENTE: [áudio] "Esse valor no Pix aí dá para ganhar o balanceamento, né?"
+[10:12] LOJA: [áudio] "O balanceamento é cobrado à parte."  {audio:midias/3EB0E6C5700E7BDCAEB883_885924.ogg}
+[10:12] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:13] LOJA: [foto]
+[10:13] CLIENTE: Vocês trabalham com usados TB?
+[10:13] LOJA: [áudio] "No momento, não temos usados."  {audio:midias/3EB0AC82B4EEDD9FAB4650_994091.ogg}
+[10:13] LOJA: [áudio] "E se, porventura, você conseguir sacar o dinheiro e trazer ele em espécie para mim, eu consigo te dar um desconto. Eu faço esse pneu de 339 a unidade por 325 cada, tá bom? Mas esses 325 são somente no dinheiro em espécie. Debit Pix permanece 339."  {audio:midias/3EB0B63409FE756A811FEB_148147.ogg}
+[10:19] CLIENTE: O GP premium é radial né?
+[10:35] LOJA: *Josy:*
+Sim.
+[10:37] CLIENTE: Vocês voltam do almoço que horas? Ou não param ..?
+[10:38] LOJA: [áudio] "Nós não fechamos para o almoço, não."  {audio:midias/3EB00FB1AF323E7074E189_643078.ogg}
+[10:38] CLIENTE: [áudio] "Beleza, depois do almoço eu apareço aí, tá? Obrigado."
+[10:39] CLIENTE: Eles tem garantia?
+[10:39] LOJA: [áudio] "Combinado, Fernando?"  {audio:midias/3EB060EE193428C80D05A8_418180.ogg}
+[10:39] LOJA: [áudio] "Sim, tem garantia sim, garantia de 2 anos."  {audio:midias/3EB0B45C333E9499125444_142543.ogg}
+[10:39] CLIENTE: [figurinha]
+[13:21] LOJA: *Josy:*
+Fernando, vou almoçar rapidinho e retorno, eu almoço aqui na loja mesmo.
+[13:22] LOJA: *Josy:*
+Te esperando.
+[13:28] CLIENTE: Já posso ir?
+[13:31] CLIENTE: 20 min pra chegar aí
+[13:32] CLIENTE: Tenho que passar no banco ainda..
+[14:05] CLIENTE: [áudio] "Já posso ir, né?"
+[14:21] CLIENTE: Cheguei
+[14:21] LOJA: [áudio] "Pode, pode sim."  {audio:midias/3EB0F9492F17D927CA4C4F_102992.ogg}

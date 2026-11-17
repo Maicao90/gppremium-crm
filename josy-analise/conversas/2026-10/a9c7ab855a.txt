@@ -1,0 +1,22 @@
+CONVERSA a9c7ab855a | contato: Daniel Barros | 13/10/2026 10:55 até 14/10/2026 13:12 | 5 msgs do cliente, 10 da loja, 0 do robô
+
+--- 13/10/2026 (Tue) ---
+[10:55] CLIENTE: Bom dia
+[10:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:55] LOJA: Bom dia!
+[10:56] CLIENTE: Bom dia
+[10:56] CLIENTE: Seriam 4 pneus aro 14 175/70
+[10:57] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:57] LOJA: [foto]
+[10:58] LOJA: Digamos que sua escolha seja o Goodyear... a UNIDADE é 446,48 x 4 = R$ 1.785,92
+[10:59] LOJA: [áudio] "Oi Daniel, bom dia. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0033A39B48EF1CF7084_549179.ogg}
+[11:01] CLIENTE: Moro no jardim ingá
+[11:01] LOJA: Pertinho de nós!
+[11:03] CLIENTE: Esse valor é só do pneu? Ou já tem a montagem inclusa?
+[11:04] LOJA: [áudio] "Daniel, na compra dos pneus GP Premium, que são esses que estão por R$ 279,00, a montagem é inclusa. A parte, a única coisa que é cobrada são os balanceamentos dos pneus e o alinhamento do veículo, se realmente precisar ser feito."  {audio:midias/3EB006DAB80F3E2BE38D04_814410.ogg}
+[15:00] LOJA: [áudio] "Oi Daniel, tudo jóia? E aí, vamos dar continuidade aqui na negociação? Posso reservar os pneus para você?"  {audio:midias/3EB04AF1FBEC582CBCFD5D_70234.ogg}
+--- 14/10/2026 (Wed) ---
+[13:12] LOJA: [áudio] "Oi, Daniel. Boa tarde. Tudo jóia? Eu te encaminhei um orçamento ontem e gostaria de saber se as opções que eu te encaminhei te atendem. Você consegue me dar um retorno, por gentileza? Me diz qual das opções que eu posso reservar para você."  {audio:midias/3EB0B6C396271BF3912D33_257008.ogg}

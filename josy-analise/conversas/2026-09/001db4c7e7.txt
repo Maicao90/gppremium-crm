@@ -1,0 +1,29 @@
+CONVERSA 001db4c7e7 | contato: WENDEL | 02/09/2026 15:20 até 02/09/2026 16:54 | 4 msgs do cliente, 12 da loja, 0 do robô
+
+--- 02/09/2026 (Wed) ---
+[15:20] LOJA: [foto]
+[15:22] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:18] LOJA: *Josy:*
+OI!
+[16:19] LOJA: *Josy:*
+🙋🏼‍♀️
+[16:43] LOJA: [áudio] "Oi, eu posso reservar aqui os pneus para vocês?"  {audio:midias/3EB087FCA267416A2ED27A_47620.ogg}
+[16:44] CLIENTE: [áudio] "Oi, então, eu achei um pouco mais barato aí, eu já fechei. Tá bom? Mas obrigado pelo atendimento aí, viu? Um abraço, tá aqui."
+[16:44] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:49] LOJA: *Josy:*
+Os pneus são 360,00 cada.
+[16:49] LOJA: *Josy:*
+Onde o senhor está comprando, eles estão pegando o pneu comigo pois não tem a pronta entrega.
+[16:49] LOJA: *Josy:*
+Estão te passando o mesmo preço.
+[16:51] LOJA: *Josy:*
+Mas obrigada.
+[16:52] CLIENTE: É pouca diferença mas já é alguma coisa eles fizeram lá 840 instalado e balanceado
+[16:52] CLIENTE: E tem outro detalhe eu não passei para eles o preço que você tinha me dado
+[16:53] LOJA: *Josy:*
+Eu sei...
+[16:53] LOJA: *Josy:*
+Obrigada!
+[16:54] CLIENTE: De nada

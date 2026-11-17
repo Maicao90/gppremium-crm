@@ -1,0 +1,46 @@
+CONVERSA 1e31a842f8 | contato: Giovanni Souza | 03/09/2026 07:01 até 11/09/2026 14:20 | 15 msgs do cliente, 17 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[07:01] CLIENTE: Bom dia
+[07:01] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[07:05] CLIENTE: Bom dia
+[07:06] CLIENTE: [foto]
+[07:06] CLIENTE: Vcs também fábrica esse tipo de peneu
+[07:06] CLIENTE: ?
+[08:04] LOJA: *Josy:*
+Bom dia, sr...
+[08:05] LOJA: *Josy:*
+Nosso horário de atendimento é das 08:00 às 18:00, e agora que vi sua mensagem. Obrigada por aguardar.
+[08:05] LOJA: *Josy:*
+Nesse modelo não produzimos.
+[08:05] CLIENTE: Ata
+[08:43] CLIENTE: Quanto ta o peneu 185/70 14 seus?
+[08:47] LOJA: *Josy:*
+Tenho aqui o pneu da marca GP Premium a unidade é R$ 289,00 para débito/pix ou R$ 274,00 para o pagamento em *dinheiro*
+[08:47] LOJA: *Josy:*
+Temos aqui no modelo ATR na medida 175/70/14
+[08:48] LOJA: [foto]
+[08:49] LOJA: *Josy:*
+Você mora aqui em Luziânia-Go?
+[08:50] LOJA: *Josy:*
+Nossos pneus tem garantia de 2 anos e já entregamos eles colocados
+[08:50] CLIENTE: Moro sim
+[08:50] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu sou a Josi."  {audio:midias/3EB0B53F4F29D4C1DBA3FD_206823.ogg}
+[08:51] LOJA: [áudio] "Em qual carro que você vai estar utilizando essa medida?"  {audio:midias/3EB02F1D56C2AD7BAA59EA_32425.ogg}
+[08:51] CLIENTE: Montana
+[08:51] CLIENTE: 2005
+[08:52] CLIENTE: Qria desce mais tô pensando ainda não sei c coloco desce outro
+[08:52] CLIENTE: E pq só rodo na roça
+[08:52] CLIENTE: Inclusive vou até levanta a suspensão
+[08:52] CLIENTE: Pq ando até no meio do mato
+[08:54] LOJA: [vídeo]
+[08:55] LOJA: [áudio] "Como você mora aqui em Luziânia, se você estiver com tempo, passa aqui na fábrica que você vê os pneus pessoalmente, acho que fica até melhor pra você."  {audio:midias/A51C59BC5C5C882E0C9599F7EAE2FC01_645318.ogg}
+[08:57] CLIENTE: [áudio] "Tá bom, depois eu dou uma passada aí, porque eu tô em Brasília. Aí eu dou uma passada aí, eu te procuro, tá bom?"
+[09:29] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+--- 10/09/2026 (Thu) ---
+[16:32] LOJA: [áudio] "Oi Giovanni, tudo bom?"  {audio:midias/3EB0B9CF640DCB64B2CB83_321673.ogg}
+[16:33] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[14:20] LOJA: [áudio] "Oi, Giovanni, tudo bom? Eu imagino que esteja extremamente corrido aí, aí por essa razão que você não tá conseguindo me responder, eu vou encerrar aqui o seu atendimento, tá joia? Pra não ficar aí mandando mensagem pra você, enchendo seu WhatsApp aí e te incomodar, tá joia? Como eu já te encaminhei a nossa localização, se houver a possibilidade, você vem até aqui. Obrigada pela atenção e bom final de semana."  {audio:midias/3EB0B6387D68252B7C8AC0_467040.ogg}

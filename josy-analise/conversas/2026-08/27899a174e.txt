@@ -1,0 +1,14 @@
+CONVERSA 27899a174e | contato: silvio | 26/08/2026 08:31 até 26/08/2026 10:51 | 4 msgs do cliente, 5 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[08:31] LOJA: [áudio] "Olá, bom dia. Seja bem-vindo ao Pneus GP Premium. Eu me chamo Josi e você mora aqui na cidade de Luziânia, Goiás?"  {audio:midias/3EB0DEFF1D301AB5939826_857243.ogg}
+[08:33] CLIENTE: em Tocantins
+[08:33] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:34] CLIENTE: saber o preço  do 175/70/13
+[08:34] LOJA: *Josy :*
+R$ 269,00 pneu da marca GP Premium.
+[10:44] CLIENTE: mais pra mandar pro Tocantins fica difícil
+[10:49] LOJA: [áudio] "Bem, nós não trabalhamos com envios, é justamente por isso, no início da nossa conversa, eu havia perguntado se você reside aqui na cidade, pois, justamente por conta do alto valor dos fretes, nós optamos em não realizar mais envios."  {audio:midias/3EB096DD67054628769CEA_662363.ogg}
+[10:50] CLIENTE: obrigado pela atenção
+[10:51] LOJA: [áudio] "Imagina, eu que agradeço pelo seu contato. Espero que você tenha uma boa semana e uma pena aí que eu não consigo te atender."  {audio:midias/3EB0366EFCC5D5668B245D_950837.ogg}

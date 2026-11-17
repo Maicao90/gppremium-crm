@@ -1,0 +1,20 @@
+CONVERSA 0db6c414eb | contato: Alex Furtado | 21/10/2026 10:39 até 21/10/2026 13:53 | 2 msgs do cliente, 4 da loja, 1 do robô
+
+--- 21/10/2026 (Wed) ---
+[10:39] CLIENTE: Fica quantos os pneus aro 15 195/60
+[10:39] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[10:39] CLIENTE: Alex
+
+ Fica quantos os pneus aro 15 195/65
+[10:40] LOJA: Bom dia, Alex!
+[10:40] LOJA: [foto]
+[10:40] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:53] ROBÔ: 🙋🏼‍♀️

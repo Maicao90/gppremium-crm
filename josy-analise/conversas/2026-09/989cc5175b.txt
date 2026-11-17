@@ -1,0 +1,33 @@
+CONVERSA 989cc5175b | contato: Cícero Neto | 05/09/2026 06:14 até 09/09/2026 11:49 | 5 msgs do cliente, 13 da loja, 0 do robô
+
+--- 05/09/2026 (Sat) ---
+[06:14] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[06:14] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:34] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Eu me chamo Josi. Com a gentileza, assim que você vai medir o seu nome, qual a medida dos pneus que você precisa?"  {audio:midias/3EB045BA9AB7638F14141A_664223.ogg}
+[10:11] CLIENTE: Bom dia Josi 
+
+Pneu 235/50 19
+[10:12] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Cícero, eu não disponho dessa opção à pronta entrega. Ela é somente através de encomenda e, se meu distribuidor tiver alguma opção, chega em até 3 dias úteis. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0C4A8A14240EFBE92B7_952260.ogg}
+[10:12] CLIENTE: Moro em Cidade Ocidental
+[10:12] CLIENTE: Sem problemas
+[10:13] LOJA: [áudio] "Sim, perfeito, então. Em decorrência do feriado, quando for na terça-feira, então, quando retornarmos, eu verifico para ti, está bem? Se estiver em busca de alguma marca específica, você pode me falar também que eu vou direto ao ponto com eles, está bem?"  {audio:midias/3EB09E647A0F04DE67A431_210044.ogg}
+--- 08/09/2026 (Tue) ---
+[17:22] LOJA: *Josy:*
+Oi...Como passou o final de semana!?
+[17:22] LOJA: *Josy:*
+Consegui aqui o retorno referente aos pneus 235/50/18
+[17:22] LOJA: [foto]
+[17:22] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 09/09/2026 (Wed) ---
+[10:43] LOJA: [áudio] "Oi Cícera, tudo jóia? Eu te encaminhei aí um orçamento e gostaria de saber se você pretende seguir com a negociação. Você consegue me dar um retorno, por gentileza? Valeu."  {audio:midias/3EB0391CA7F32EF208BBED_435573.ogg}
+[11:46] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:46] CLIENTE: [áudio] "Oi Josi, bom dia, tudo bem? Desculpa a demora, até que eu vi mesmo a mensagem, não te respondi, perdão. Eu vou dar um tempinho, vou segurar um pouquinho, achei o valor ainda tá um pouquinho acima do que eu tava em mente, mas em breve eu vou precisar. Os pneus que estão rodando aqui não aguentam rodar alguns meses, mas pra viagem eu precisaria trocar, que teria que ser um negócio mais de confiança, né? Mas eu tenho um salvo aqui teu contato, assim que eu tiver decidindo novamente, se for pra fechar, aí eu te mando a mensagem novamente, tá bom? Mas obrigado mesmo de primeira mão pelo atendimento."
+[11:48] LOJA: [áudio] "Ah, eu sei que é extremamente corrido, Cícera, não se preocupe."  {audio:midias/3EB01EA5F427086435A178_90906.ogg}
+[11:49] LOJA: [áudio] "Cícero, eu que agradeço pelo seu contato, espero que dê tudo certo aí, daqui uns dias, tudo bem? Obrigada aí pelo retorno e tenha uma boa semana."  {audio:midias/3EB06C67FD4FF4B52FEC8A_272886.ogg}

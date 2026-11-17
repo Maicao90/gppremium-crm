@@ -1,0 +1,24 @@
+CONVERSA 8990558c18 | contato: Marlon | 16/10/2026 14:28 até 16/10/2026 17:50 | 7 msgs do cliente, 11 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[14:28] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[14:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:28] CLIENTE: Boa tarde
+[14:28] LOJA: Boa tarde, Marlom!
+[14:29] CLIENTE: 195/ 55 r15
+[14:29] CLIENTE: Gp 7
+[14:30] LOJA: Temos sim!
+[14:30] LOJA: [foto]
+[14:31] LOJA: R$ 289,00 a unidade se o pagamento for no debito ou pix, e 275,00 se for em dinheiro.
+[15:27] LOJA: [áudio] "Não, não, quantas pneus você quer que deixe separados aqui?"  {audio:midias/A54C765AD4C9CA003E096C86DD00DF04_408904.ogg}
+[16:29] CLIENTE: [áudio] "Eu quero saber dessa promoção aí que apareceu aqui para mim, que você compra 4 e paga 3. O valor é o mesmo? Como é que funciona? Me fala aí."
+[16:42] LOJA: A promoção compre 3 e leve 4 é válida para pneus da marca *GP Premium*, nas medidas 195/65/15 e 215/55/17 😉
+[16:52] CLIENTE: Blz então, esta medida não me atende, obrigado pela atenção 😉
+[16:54] LOJA: Traz o pagamento em dinheiro
+[17:23] LOJA: [áudio] "Marlon, só uma pergunta, qual que é o seu carro mesmo? Porque eu tenho aqui em oferta também a medida 185-60-15 e 185-65-15, que são opções que de 289 na oferta está saindo por 249, de repente pode ser utilizado aí no seu carro."  {audio:midias/3EB0D8B25CEBA7BCBFF842_604101.ogg}
+[17:49] CLIENTE: Voyage confortilaine 2018
+[17:50] LOJA: Bem... qualquer coisa passa aqui na loja, amanhã estaremos com  aloja aberta das 08:00 às 12:00
+[17:50] LOJA: [foto]

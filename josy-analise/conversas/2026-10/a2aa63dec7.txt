@@ -1,0 +1,42 @@
+CONVERSA a2aa63dec7 | contato: Alex Garcia | 14/10/2026 12:37 até 14/10/2026 16:52 | 16 msgs do cliente, 20 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[12:37] LOJA: [áudio] "Alguma dessas opções te atendem ou vocês têm busca de alguma marca mais específica?"  {audio:midias/3EB04F1A6D82D68248AC04_373238.ogg}
+[13:16] CLIENTE: Esse Brutus é que marca ?
+[13:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:16] CLIENTE: Tem foto ?
+[13:17] LOJA: GP Premium
+[13:17] LOJA: 265/65/17 👇🏻
+[13:17] LOJA: [foto]
+[13:27] CLIENTE: Foto lateral
+[14:20] CLIENTE: Esse valor pode ser parcelado no cartão ?
+[14:21] LOJA: Segue as opções de parcelamento.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:21] LOJA: Ja te mando a foto lateral.
+[14:25] CLIENTE: Vou precisar das 4 unidades
+[14:25] CLIENTE: Consegue uma condição melhor ?
+[14:42] LOJA: [foto]
+[15:18] LOJA: Bem, na compra dos pneus GP Premium, podemos ver o que pode ser feito.
+[15:19] LOJA: Mora aqui em Luziânia-Go?
+[16:00] CLIENTE: Esse pneu são remold ?
+[16:01] LOJA: [vídeo]
+[16:02] LOJA: E tenho instalado eles aqui na camionete
+[16:14] LOJA: Só vou finalizar um atendimento presencial aqui e te mostro.
+[16:30] LOJA: [vídeo]
+[16:45] CLIENTE: Ok
+[16:45] CLIENTE: Vou pensar um pouco e te aviso
+[16:47] LOJA: Faz o seguinte... passa aqui na loja para conversarmos pessoalmente!
+[16:47] CLIENTE: Eu vou pra luziania na proxima semana
+[16:47] CLIENTE: Eu passo ai
+[16:48] LOJA: E caso você queira alguma marca especifica, pode me falar, que eu tento providenciar também.
+[16:48] CLIENTE: Combinado
+[16:48] CLIENTE: Eu vou ai e conversamos
+[16:49] LOJA: Tem a localização?
+[16:50] CLIENTE: Nao pode me encaminhar por favor
+[16:51] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[16:51] LOJA: [foto]
+[16:51] CLIENTE: ok
+[16:51] CLIENTE: Obrigado
+[16:52] LOJA: Disponha!

@@ -1,0 +1,13 @@
+CONVERSA 7eb4ce4d84 | contato: Leonardo Borges | 10/09/2026 16:56 até 10/09/2026 17:05 | 4 msgs do cliente, 3 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[16:56] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 239
+
+Olá! Posso ter mais informações sobre isso?
+[16:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:56] CLIENTE: Pneus 205/55/r16
+[16:58] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Tenho sim o pneu da marca GP Premium. Ele está por apenas R$ 289 a vista. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB043E3A4C6E188D113EE_460918.ogg}
+[17:04] CLIENTE: Não
+[17:04] CLIENTE: [áudio] "Vixe, moço, eu sou de Aparecida. É porque apareceu aqui no Facebook o link de vocês e eu mandei mensagem."
+[17:05] LOJA: [áudio] "Ah, não tem problema não. Pois é. Infelizmente, então, eu fico te devendo porque eu só consigo atender aqui a minha região, tá bom?"  {audio:midias/3EB037676F1910FC5CE4F8_72217.ogg}

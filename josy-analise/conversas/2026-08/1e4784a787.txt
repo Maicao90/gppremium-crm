@@ -1,0 +1,11 @@
+CONVERSA 1e4784a787 | contato: Paulo Bilhares | 21/08/2026 10:35 até 21/08/2026 10:37 | 4 msgs do cliente, 3 da loja, 0 do robô
+
+--- 21/08/2026 (Fri) ---
+[10:35] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:35] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:35] CLIENTE: Bom dia
+[10:35] LOJA: Bom dia!
+[10:36] CLIENTE: Vcs em posse Goiás fazem alinhamento e balanceamento na Ford f 350
+[10:37] LOJA: Somos de Luziânia-Go.
+[10:37] CLIENTE: Ok

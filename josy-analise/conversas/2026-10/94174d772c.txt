@@ -1,0 +1,50 @@
+CONVERSA 94174d772c | contato: Joe | 15/10/2026 10:24 até 15/10/2026 13:01 | 15 msgs do cliente, 24 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[10:24] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[10:24] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:24] CLIENTE: 225/45/17
+[10:24] CLIENTE: Ou 225/50/17
+[10:24] LOJA: Bom dia!
+[10:25] LOJA: [foto]
+[10:26] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:26] LOJA: [foto]
+[10:29] CLIENTE: Certo, breve procuro.
+Agradeço a atenção.
+[10:30] LOJA: [áudio] "Olá, bom dia! Tudo bem com você? Eu me chamo Josi e você mora aqui na cidade de Luziânia?"  {audio:midias/3EB073F0D9695F6E6975EC_702026.ogg}
+[11:36] CLIENTE: O áudio não concluiu
+[11:37] LOJA: [áudio] "Olá, tudo bem? Eu perguntei se você mora aqui em Luziânia."  {audio:midias/3EB044E5C5D495FA015996_154343.ogg}
+[11:38] CLIENTE: Tudo bem, moro em Santa Maria, porém é acessível à Luziânia.
+[11:41] LOJA: Um tanto próximo realmente!
+[11:49] LOJA: Vou te encaminhar a nossa localização, se houver a possibilidade, venha até nossa loja!
+[11:49] LOJA: Qual é seu nome mesmo?
+[12:22] CLIENTE: Sim
+[12:22] CLIENTE: Certo
+[12:23] CLIENTE: Joe
+[12:36] LOJA: Joe, Foi um prazer falar com você, sempre que precisar, conte comigo!
+[12:36] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:36] LOJA: [foto]
+[12:38] CLIENTE: Ok
+[12:38] CLIENTE: [foto]
+[12:38] LOJA: [figurinha]
+[12:39] CLIENTE: Creio que já fui em um evento promovido pela sua loja
+[12:39] LOJA: Sim!
+[12:39] LOJA: Isso mesmo!
+[12:39] LOJA: Todo mundo usa os pneus GP Premium!
+[12:40] LOJA: Que bacana que voc~e estava lá!
+[12:40] CLIENTE: Evento muito bom
+[12:40] LOJA: Fico feliz pelo feddback
+[12:41] CLIENTE: Breve irei fazer uma viagem e procuro vocês.
+Obrigado pela atenção
+[12:46] LOJA: Perfeito, ficamos combinados!
+[12:58] CLIENTE: Satisfação é toda minha.
+Grato pela atenção.
+Tenha uma excelente tarde.
+[13:00] LOJA: Satisfação toda minha, obrigada pela cordialidade.
+[13:01] LOJA: Vamos nos falando.
+[13:01] LOJA: Excelente tarde para ti, também!

@@ -1,0 +1,44 @@
+CONVERSA ed6129ba7d | contato: 61995965722 | 06/10/2026 15:18 até 15/10/2026 12:25 | 3 msgs do cliente, 22 da loja, 0 do robô
+
+--- 06/10/2026 (Tue) ---
+[15:18] LOJA: *Josy:*
+Boa tarde!
+[15:19] LOJA: [foto]
+[15:27] LOJA: *Josy:*
+* Balanceamento = 35,00 (por pneu)
+* Alinhamento = 120,00 (somente Alinhamento de Direção)
+[17:08] LOJA: *Josy:*
+Oi
+[17:08] LOJA: *Josy:*
+Já te retorno
+[17:09] LOJA: 🙋🏼‍♀️
+[17:09] LOJA: *Josy:*
+Já te retorno
+[17:09] LOJA: *Josy:*
+Se puder me encaminhe um aúdio
+[17:09] LOJA: *Josy:*
+Se puder me encaminhe um aúdio
+[17:09] LOJA: *Josy:*
+Por gentileza
+[17:10] LOJA: *Josy:*
+me encaminhe um aúdio
+[17:10] LOJA: *Josy:*
+🙋🏼‍♀️
+[17:10] CLIENTE: BOA tarde
+[17:10] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:10] LOJA: *Josy:*
+me encaminhe um aúdio
+[17:10] LOJA: *Josy:*
+Por gentileza
+[17:12] CLIENTE: Os pneus vendidos ai é remolde?
+[17:13] LOJA: [áudio] "Senhor Nildo, os pneus que nós fazemos, eles são pneus ecológicos, tá? Eles vão receber a nomenclatura de remodelagem apenas por questão técnica, porque são coisas completamente diferentes, tá bom? São os pneus mais vendidos que eu tenho, pode ficar despreocupado."  {audio:midias/3EB08B20895815060739F3_873982.ogg}
+[17:18] LOJA: [vídeo]
+[17:24] LOJA: *Josy:*
+Não saiu o áudio do vídeo né?
+[17:26] LOJA: [áudio] "Senhora Nildo, eu estava vendo o vídeo e não saiu o áudio dele. Eu disse que pneu remold é justamente esse pneu que tem perto da porta, que ele parece até mesmo um plástico, um pneu que não dá balanceamento nem nada, ele não presta. E o outro que eu coloquei ele deitado no chão é o pneu GP Premium, que é o que eu estou oferecendo para o senhor. Já é um pneu que tem 2 anos de garantia. A questão de quilometragem, ele roda 60 mil km, ainda mais se o carro estiver com os pneus sempre bem balanceados, o carro bem alinhado, né? E que aqui nós produzimos pneus desde o aro 13 até pneus grandes de caminhonete, né? Eu até gravei aí a lateral, mostrei os carros ali dos clientes que estavam ali fora, que aqui não para, todo mundo conhece a marca, então a todo instante tem gente aqui comprando, tá? Realmente os pneus são muito bons."  {audio:midias/3EB0C18D0873844E81B561_450345.ogg}
+[17:30] CLIENTE: Ok
+--- 15/10/2026 (Thu) ---
+[12:13] LOJA: Bom dia!
+[12:25] LOJA: [localização] -16.0680034,-48.0643739
+[12:25] LOJA: Borracharia Popular

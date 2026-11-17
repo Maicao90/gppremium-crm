@@ -1,0 +1,21 @@
+CONVERSA adb257b297 | contato: Vinicius | 16/10/2026 12:53 até 16/10/2026 17:49 | 6 msgs do cliente, 9 da loja, 0 do robô
+
+--- 16/10/2026 (Fri) ---
+[12:53] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[12:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:54] CLIENTE: Boa tarde
+[12:54] CLIENTE: Qual valor do pneu aro 13 e aro 14 ??
+[12:55] LOJA: [foto]
+[12:55] LOJA: 14 qual medida?
+[13:11] LOJA: [foto]
+[13:12] LOJA: [áudio] "Vinícius, para o Celta, a melhor opção é do 175-65-14, tá? E também tem uma outra opção que é muito boa, que é o 165-70-14, que deixa o carro bem mais econômico até, tá? O 165-70, eu tenho aqui na oferta também o pneu da marca GP Premium, tá? A vista, eu estou fazendo ele hoje por R$ 239, tá? E se você quiser, já fazemos a instalação deles aqui para você."  {audio:midias/3EB01F3CFEBC08D698582A_50250.ogg}
+[13:13] LOJA: [áudio] "Vinícius, você é daqui de Luziânia mesmo?"  {audio:midias/3EB0C54809E2DEB2B127DE_492300.ogg}
+[13:13] CLIENTE: Ta bom vou mandar tudo pro meu pai aq pq e pro carro dele vou ver oq ele vai querer fazer e retorno
+[13:13] CLIENTE: A loja fica a onde mesmon
+[13:14] CLIENTE: Sou aq do valparaiso moro perto do shopping sul
+[17:46] LOJA: [áudio] "Vinícius, eu vou te encaminhar aqui a nossa localização, pois se houver a possibilidade, você passa aqui na nossa loja para conversarmos pessoalmente, tá bom?"  {audio:midias/3EB0D546B5F7A5DC13047A_802196.ogg}
+[17:46] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:49] LOJA: [foto]

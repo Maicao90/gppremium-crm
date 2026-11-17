@@ -1,0 +1,30 @@
+CONVERSA 2a0b0b38de | contato: Edson Jr | 16/09/2026 06:54 até 18/09/2026 15:50 | 5 msgs do cliente, 12 da loja, 0 do robô
+
+--- 16/09/2026 (Wed) ---
+[06:54] CLIENTE: Quero cotar o pneu 195/55 R16 GP Premium.
+[06:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[06:54] CLIENTE: 195 55 16
+[06:55] CLIENTE: Gp 7
+[06:55] CLIENTE: Se pegar os 4, fica quanto?
+[08:16] LOJA: *Josy:*
+Bom dia!
+[08:16] LOJA: *Josy:*
+Tudo bem?
+[08:20] CLIENTE: Bom dia
+[08:22] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu sou a Josi. Estou finalizando o seu orçamento, está bem?"  {audio:midias/3EB0E22CDDC73AE235104A_273503.ogg}
+[08:31] LOJA: [foto]
+[08:31] LOJA: [áudio] "Tudo jóia? Obrigada por aguardar, tá? Que a minha tela que tava travada não estava conseguindo mandar o orçamento pra você. Bem, o valor normal 289, que é o valor pra débito ou Pix, mas eu estou fazendo aqui neste mês por 259, também valor pra débito e Pix. Se for pra parcelar, você observa que altera apenas, muda aí cerca de 3 reais por parcela."  {audio:midias/3EB0A80254BDAC9CA1E9F4_590697.ogg}
+[08:32] LOJA: [áudio] "Você está aqui em Luziânia mesmo? Digamos que o pagamento seja no débito ou no Pix, então os 4 pneus vão ficar por R$ 1.036 e já são instalados, tá bom?"  {audio:midias/3EB0A9294B7C5EB6250D1B_710967.ogg}
+[09:42] LOJA: *Josy:*
+🙋🏼‍♀️
+--- 17/09/2026 (Thu) ---
+[17:57] LOJA: *Josy:*
+Oi...
+--- 18/09/2026 (Fri) ---
+[15:50] LOJA: *Josy:*
+Boa tarde!
+[15:50] LOJA: *Josy:*
+Eu vou encerrar seu atendimento para não encher seu whatsapp de mensagem.                                                                                                                   Se precisar futuramente é só chamar. Ou se possivel, venham até nossa loja.                                                                                                  Obrigada 👋🏻
+[15:50] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

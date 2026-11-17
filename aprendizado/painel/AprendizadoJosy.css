@@ -1,0 +1,113 @@
+/* APRENDIZADO DA JOSY (22/10) — propostas do jeito da atendente pra aprovar. Prefixo aj- pra nao colidir com o resto. */
+.aj { display: grid; gap: 14px; min-width: 0; }
+.aj, .aj *, .aj-card, .aj-card * { box-sizing: border-box; }
+
+.aj-cabeca { display: grid; gap: 12px; }
+.aj-cabeca-linha { display: flex; gap: 14px; align-items: center; }
+.aj-contador {
+  display: grid; justify-items: center; gap: 2px; min-width: 96px; padding: 10px 12px; border-radius: 14px; flex-shrink: 0;
+  background: rgba(232, 121, 249, 0.1); border: 1px solid rgba(232, 121, 249, 0.35);
+}
+.aj-contador b { font-family: var(--font-display); font-size: 1.9rem; line-height: 1; color: #F0ABFC; }
+.aj-contador span { font-size: 0.68rem; color: var(--text-secondary); text-align: center; line-height: 1.25; max-width: 92px; }
+.aj-explica { margin: 0; flex: 1; min-width: 0; line-height: 1.5; }
+.aj-explica b { color: var(--text-primary); }
+.aj-atualizar {
+  display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; cursor: pointer; flex-shrink: 0; align-self: flex-start;
+  background: rgba(14, 22, 38, 0.85); border: 1px solid var(--panel-border-strong); color: var(--text-secondary);
+}
+.aj-atualizar:hover { color: var(--text-primary); }
+.aj-gira { animation: aj-gira 1s linear infinite; }
+@keyframes aj-gira { to { transform: rotate(360deg); } }
+
+.aj-filtros { display: flex; gap: 6px; flex-wrap: wrap; }
+.aj-filtro {
+  display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; min-height: 36px; border-radius: 999px; cursor: pointer;
+  font-size: 0.8rem; font-weight: 600; background: transparent; border: 1px solid var(--panel-border-strong); color: var(--text-muted);
+}
+.aj-filtro b { font-weight: 800; color: inherit; }
+.aj-filtro-on { color: var(--text-primary); background: rgba(232, 121, 249, 0.12); border-color: rgba(232, 121, 249, 0.5); }
+.aj-ok { font-size: 0.82rem; color: #A7F3D0; background: rgba(52, 211, 153, 0.1); border: 1px solid rgba(52, 211, 153, 0.3); padding: 8px 10px; border-radius: 10px; }
+.aj-erro { font-size: 0.82rem; color: #FECACA; background: rgba(232, 37, 44, 0.12); border: 1px solid rgba(232, 37, 44, 0.4); padding: 8px 10px; border-radius: 10px; }
+
+/* card */
+.aj-card { display: grid; gap: 14px; min-width: 0; border-left: 4px solid #E879F9; }
+.aj-card.aj-aprovado { border-left-color: #34D399; }
+.aj-card.aj-ignorado { border-left-color: #64748B; opacity: 0.85; }
+.aj-card-mapa { border-left: 0; padding: 0; background: none; }
+.aj-topo { display: grid; gap: 8px; }
+.aj-titulo-linha { display: flex; gap: 8px; align-items: flex-start; justify-content: space-between; }
+.aj-titulo { margin: 0; font-family: var(--font-display); font-size: 1.08rem; line-height: 1.3; overflow-wrap: anywhere; }
+.aj-selo {
+  flex-shrink: 0; font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; padding: 3px 8px; border-radius: 999px;
+  border: 1px solid currentColor; white-space: nowrap;
+}
+.aj-selo-pendente { color: #F0ABFC; }
+.aj-selo-aprovado { color: #6EE7B7; }
+.aj-selo-ignorado { color: #94A3B8; }
+.aj-selo-alerta { color: #FDBA74; text-transform: none; letter-spacing: 0; }
+.aj-quando { margin: 0; font-size: 0.86rem; color: var(--text-secondary); line-height: 1.5; }
+.aj-numeros { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.aj-numeros > div { display: grid; gap: 2px; padding: 8px 10px; border-radius: 10px; background: var(--panel-bg-2); border: 1px solid var(--panel-border); min-width: 0; }
+.aj-numeros b { font-family: var(--font-display); font-size: 1.25rem; line-height: 1.1; }
+.aj-numeros span { font-size: 0.7rem; color: var(--text-muted); }
+.aj-barra { display: block; height: 4px; border-radius: 4px; background: rgba(255, 255, 255, 0.08); overflow: hidden; margin-top: 3px; }
+.aj-barra > i { display: block; height: 100%; border-radius: 4px; }
+
+.aj-bloco { display: grid; gap: 8px; min-width: 0; }
+.aj-rotulo { font-size: 0.68rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.aj-texto { margin: 0; font-size: 0.88rem; line-height: 1.55; color: var(--text-secondary); white-space: pre-wrap; overflow-wrap: anywhere; }
+.aj-citacao { border-left: 3px solid #E879F9; padding-left: 10px; }
+.aj-dica { margin: 0; font-size: 0.76rem; color: var(--text-muted); line-height: 1.45; }
+.aj-dica b { color: var(--text-secondary); }
+.aj-frases { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.aj-frases li {
+  font-size: 0.8rem; padding: 5px 10px; border-radius: 12px; line-height: 1.35; color: var(--text-primary);
+  background: rgba(232, 121, 249, 0.07); border: 1px solid rgba(232, 121, 249, 0.25); overflow-wrap: anywhere;
+}
+.aj-link {
+  justify-self: start; display: inline-flex; align-items: center; gap: 6px; background: none; border: 0; padding: 4px 0; min-height: 32px;
+  color: var(--text-secondary); font-size: 0.8rem; font-weight: 700; cursor: pointer;
+}
+.aj-link:hover { color: var(--text-primary); }
+.aj-exemplos { display: grid; gap: 10px; }
+.aj-exemplo { display: grid; gap: 4px; padding: 10px; border-radius: 12px; background: rgba(255, 255, 255, 0.025); border: 1px solid var(--panel-border); }
+.aj-msg { max-width: 88%; padding: 7px 10px; border-radius: 10px; font-size: 0.84rem; line-height: 1.45; overflow-wrap: anywhere; white-space: pre-wrap; }
+.aj-msg span { display: block; font-size: 0.64rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.7; margin-bottom: 1px; }
+.aj-msg-cliente { justify-self: start; background: var(--panel-bg-3); color: var(--text-primary); }
+.aj-msg-loja { justify-self: end; background: #144d37; color: #e9f5ef; }
+
+.aj-audios { display: grid; gap: 8px; }
+.aj-audio { display: grid; gap: 6px; padding: 10px; border-radius: 12px; background: var(--panel-bg-2); border: 1px solid var(--panel-border); min-width: 0; }
+.aj-audio-sel { border-color: rgba(232, 121, 249, 0.6); background: rgba(232, 121, 249, 0.07); }
+.aj-audio-topo { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.aj-audio-escolha { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 700; color: var(--text-primary); cursor: pointer; min-height: 28px; }
+.aj-audio-escolha input { width: 16px; height: 16px; accent-color: #E879F9; margin: 0; }
+.aj-player { width: 100%; height: 38px; display: block; }
+.aj-transcricao { font-size: 0.84rem; font-style: italic; }
+
+.aj-form { padding: 12px; border-radius: 12px; background: var(--panel-bg-2); border: 1px solid var(--panel-border); }
+.aj-form .input-field { margin: 0; width: 100%; }
+.aj-alerta {
+  display: flex; gap: 8px; align-items: flex-start; font-size: 0.8rem; line-height: 1.45; color: #FDE68A;
+  background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.4); padding: 8px 10px; border-radius: 10px;
+}
+.aj-alerta svg { flex-shrink: 0; margin-top: 2px; color: #F59E0B; }
+.aj-alerta b { color: #FCD34D; }
+.aj-botoes { display: flex; gap: 8px; flex-wrap: wrap; }
+.aj-botoes .btn { flex: 1 1 auto; justify-content: center; min-height: 40px; }
+.aj-ignorar { flex: 0 1 auto !important; }
+
+@media (max-width: 560px) {
+  .aj-cabeca-linha { display: grid; grid-template-columns: auto 1fr; grid-template-areas: 'cont atual' 'exp exp'; gap: 10px; }
+  .aj-contador { grid-area: cont; grid-auto-flow: column; align-items: baseline; gap: 8px; min-width: 0; }
+  .aj-contador span { max-width: none; text-align: left; font-size: 0.78rem; }
+  .aj-atualizar { grid-area: atual; justify-self: end; align-self: center; }
+  .aj-explica { grid-area: exp; font-size: 0.8rem; }
+  .aj-numeros { gap: 6px; }
+  .aj-numeros > div { padding: 7px 8px; }
+  .aj-numeros b { font-size: 1.1rem; }
+  .aj-botoes .btn, .aj-ignorar { flex: 1 1 100% !important; }
+  .aj-titulo-linha { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) { .aj-gira { animation: none; } }

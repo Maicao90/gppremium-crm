@@ -1,0 +1,36 @@
+CONVERSA 4d98dc3abd | contato: Paulo, Madame Tulipa | 26/08/2026 11:19 até 24/09/2026 17:47 | 11 msgs do cliente, 14 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[11:19] CLIENTE: [foto]
+[11:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:19] CLIENTE: [áudio] "Oi, Josu. Bom dia, tudo bem? Josu, tá com esse pneu aí, com essas medidas aí? JP?"
+[11:20] LOJA: [áudio] "Oi Paulo, bom dia! Como é que você está?"  {audio:midias/3EB0B9BF5F17E80A6E60A5_770051.ogg}
+[11:21] LOJA: [áudio] "Oi Paulo, tudo jóia? Paulo, você consegue trazer o pagamento em dinheiro para mim? Esse pneu ele é 280 no débito ou no Pix, mas no dinheiro eu consigo fazer aqui por 265 cada."  {audio:midias/3EB063E80C58A54D201914_25786.ogg}
+[11:41] CLIENTE: [áudio] "Beleza, Josi? Vou passar aí..."
+[11:41] CLIENTE: [áudio] "Então, vou passar aí, tá bom? Acho que eu consigo levar em dinheiro, então. Fechou? Até daqui a pouco, então. Abraço."
+[11:50] LOJA: *Josy :*
+Show!
+[11:50] LOJA: *Josy :*
+Abraço!
+[12:25] CLIENTE: [áudio] "Manda aquela tabela dos outros pneus, que veio também um aro 13, tá bom? Obrigado."
+[12:25] LOJA: [foto]
+--- 28/08/2026 (Fri) ---
+[11:31] LOJA: [áudio] "Oi Paulo, tudo jóia? Paulo, nós conversamos alguns dias atrás, né, até separei os pneus aqui para ti, você vai dar continuidade na negociação?"  {audio:midias/3EB087C522551D89801B28_812716.ogg}
+--- 24/09/2026 (Thu) ---
+[16:56] CLIENTE: [foto]
+[16:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:56] CLIENTE: [áudio] "Jô, você tem o pneu nessas medidas aí? O Dual-Lop ou o Gugia? Você manda o preço, por favor?"
+[16:58] LOJA: [áudio] "Oi, Paulo, tudo jóia? Eu voltei da Good Year."  {audio:midias/3EB00309FF0A14CC6AE540_912154.ogg}
+[16:59] LOJA: [áudio] "O da Dunlop, por enquanto, está em falta. Eu não sei o dia que chega, mas se você quiser, eu te aviso. Acho que chega."  {audio:midias/3EB0350C5965E140DA7805_710937.ogg}
+[17:07] CLIENTE: [áudio] "Luzi, então me passa o dagudia, por favor."
+[17:07] LOJA: [foto]
+[17:18] LOJA: *Josy:*
+A vista R$ 446,00
+[17:19] CLIENTE: Vou repassar a informação,  não é pra mim
+[17:19] CLIENTE: Por ora, obrigado
+[17:23] LOJA: *Josy:*
+Sem problemas!
+[17:24] LOJA: [áudio] "Mas se quiser, sim, que chega Dom Lope, eu aviso."  {audio:midias/3EB0D246827C4880CEC1A9_836423.ogg}
+[17:47] CLIENTE: [áudio] "Obrigado, Jô. Beleza, então. Agradeço, então. Beleza? Vou repassar essa informação. Puxou."

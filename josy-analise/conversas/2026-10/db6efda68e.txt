@@ -1,0 +1,38 @@
+CONVERSA db6efda68e | contato: ⚡️Matheus Divino☠️ | 03/10/2026 08:27 até 15/10/2026 08:34 | 8 msgs do cliente, 14 da loja, 0 do robô
+
+--- 03/10/2026 (Sat) ---
+[08:27] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[08:27] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:27] CLIENTE: 265/75/R17
+[08:58] LOJA: *Josy:*
+Bom dia, tudo bem!
+[08:58] LOJA: *Josy:*
+Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+[08:58] CLIENTE: Bom dia, estou bem e você?
+[08:58] CLIENTE: Tá bom, obrigado
+--- 06/10/2026 (Tue) ---
+[15:11] CLIENTE: Boa tarde
+[15:11] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:11] CLIENTE: 265/65/R17
+[15:25] LOJA: *Josy:*
+Boa tarde, essa medida temos sim!
+[15:25] LOJA: [foto]
+[15:26] LOJA: *Josy:*
+No dia de hoje temos a marca Maxzez e GP Premium opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:45] LOJA: *Josy:*
+Essa opção até o presente momento não obtive retorno.
+[15:48] CLIENTE: So estou esperando o rapaz dar retorno
+--- 13/10/2026 (Tue) ---
+[09:48] LOJA: [áudio] "Oi Matheus, tudo jóia? Nós nos falamos há alguns dias atrás, eu creio que você ia até encaminhar o orçamento para alguma outra pessoa. E aí, o que é que vocês decidiram? Vamos dar continuidade aqui na negociação?"  {audio:midias/3EB0327D263BB2B54EEC29_814334.ogg}
+[09:58] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:58] CLIENTE: [áudio] "Fala comigo, tô bem, e você? Acabou que aquele dia lá eu mostrei o orçamento, a gente tá meio na correria, que a gente tá fechando uns trem pra uma fazenda aí, acabou que nem deu pra conversar direito, mas eu creio que hoje à noite eu vou sentar e conversar com ele, aí te dou um retorno amanhã cedo, pode ser?"
+[10:14] LOJA: [áudio] "Beleza, Matheus. Claro que pode."  {audio:midias/3EB0B1CB1684944FBD3E24_466379.ogg}
+--- 15/10/2026 (Thu) ---
+[08:33] LOJA: [áudio] "Oi, Matheus. Bom dia. Como é que você está? Matheus, como eu sei que você está aí na correria, eu vou fazer o seguinte, eu vou encerrar o seu atendimento justamente para não ficar enchendo o seu WhatsApp de mensagens a todo instante, que eu sei que acaba que incomoda, tá? Vou deixar aqui a nossa localização. De repente, se houver a possibilidade, você passa aqui na loja para nós conversarmos pessoalmente, tá bem? Obrigada aí pela atenção. Até mais."  {audio:midias/3EB03AA925B543F9348200_441889.ogg}
+[08:34] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[08:34] LOJA: [foto]

@@ -1,0 +1,21 @@
+CONVERSA 544803f908 | contato: CeloH | 26/08/2026 12:16 até 26/08/2026 12:52 | 5 msgs do cliente, 9 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[12:16] CLIENTE: Bom dia
+[12:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:17] CLIENTE: Estou precisando do pneu 235/60/16
+[12:17] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu me chamo Josi, e assim que possível me diz o seu nome? Bem, essa opção eu não disponho dela à pronta entrega, ela é somente por encomenda, e se meu distribuidor tiver, leva uns 3 dias para poder chegar. Qual que é o seu carro? E sim, quantas unidades de pneus que você precisa?"  {audio:midias/3EB008267D59CDDAD79D61_695431.ogg}
+[12:18] CLIENTE: [áudio] "Bom dia, me chamo Marcelo. Estou precisando dos 4 pneus. É um Abduxo. A pedida dela é 235-6016."
+[12:18] CLIENTE: [áudio] "E vê pra mim também se você tem o 215-70-16."
+[12:24] LOJA: [áudio] "Marcelo, tudo bem? Eu tenho 215-6516 a pronta entrega."  {audio:midias/3EB0054F8868A9F7EBBF57_465309.ogg}
+[12:33] CLIENTE: Me fala os preços
+[12:34] LOJA: [áudio] "O 235-66, eu estou aguardando a resposta aqui do meu distribuidor, tá? Aí você me dá só um instante que eu estou realizando o orçamento com 215."  {audio:midias/3EB05C78232D3D96A5FEBD_360841.ogg}
+[12:47] LOJA: [foto]
+[12:47] LOJA: *Josy :*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:50] LOJA: [foto]
+[12:51] LOJA: [foto]
+[12:52] LOJA: [áudio] "Olá, eu consegui aqui a resposta a respeito dos pneus na medida que você está buscando, tanto no 235-60-16, quanto no 215-70, então serão todas essas opções que eu te encaminhei, são opções somente através de encomendas, chegam em até 3 dias úteis mediante um pagamento calção, tá joia? Aí, se for de seu interesse, você me comunica aqui que eu já faço a reserva deles pra você, tá? Você é daqui de Luziânia mesmo?"  {audio:midias/3EB0D7FDB026EDF7ACA5B4_944804.ogg}

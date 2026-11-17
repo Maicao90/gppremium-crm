@@ -1,0 +1,18 @@
+CONVERSA 06115d2584 | contato: Clara | 29/09/2026 13:45 até 29/09/2026 14:40 | 5 msgs do cliente, 6 da loja, 0 do robô
+
+--- 29/09/2026 (Tue) ---
+[13:45] CLIENTE: Olá! Quero um orçamento de pneus.
+[13:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:46] CLIENTE: O pneu exato para você pedir é Pirelli Scorpion Zero All Season 235/50 R20 104W X
+[14:17] LOJA: *Josy:*
+Boa tarde, reside aqui em Luziania-Go?
+[14:17] CLIENTE: Sim
+[14:18] LOJA: *Josy:*
+Certo...
+[14:18] LOJA: *Josy:*
+Não dispomos dessa opção de marca e medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo,  preço e prazo de entrega. Tudo bem?
+[14:19] CLIENTE: Ik
+[14:39] LOJA: [áudio] "Oi, eu acabei de ter a resposta aqui e essa opção, ela está em falta."  {audio:midias/3EB0A93AC1FA4D5CD0331D_911818.ogg}
+[14:39] CLIENTE: Tá bom obrigado
+[14:40] LOJA: [áudio] "Disponha!"  {audio:midias/3EB0D5EED791E204D0A296_510877.ogg}

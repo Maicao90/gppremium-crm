@@ -1,0 +1,28 @@
+CONVERSA 76d1f49c2f | contato: Claudio Aguiar | 03/09/2026 11:47 até 11/09/2026 14:24 | 2 msgs do cliente, 11 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[11:47] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[11:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:47] CLIENTE: 175/65 14
+[11:56] LOJA: *Josy:*
+Bom dia!
+[11:57] LOJA: *Josy:*
+Obrigada por aguardar.
+[11:57] LOJA: [foto]
+[11:57] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[12:19] LOJA: [áudio] "Oi, você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB05A358F25F332EC27F6_959073.ogg}
+[12:33] LOJA: *Josy:*
+🙋🏼‍♀️
+--- 10/09/2026 (Thu) ---
+[16:42] LOJA: [áudio] "Olá Sr. Cláudio, tudo bom?"  {audio:midias/3EB0E2C12D8170E7008F8B_832385.ogg}
+[16:42] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[14:24] LOJA: [áudio] "Oi, seu Cláudio, tudo jóia? Olha, vou encerrar aqui o seu atendimento, para não ficar enchendo seu WhatsApp de mensagem, tá jóia? Vou te mandar aqui a nossa localização, se houver a possibilidade, passa aqui na loja para conversarmos, tá bem? Obrigada pela atenção, bom final de semana."  {audio:midias/3EB08C3D5C1377D3013FEA_864609.ogg}
+[14:24] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

@@ -1,0 +1,21 @@
+CONVERSA ea5a817afa | contato: Leandro | 10/09/2026 16:28 até 11/09/2026 14:41 | 3 msgs do cliente, 8 da loja, 0 do robô
+
+--- 10/09/2026 (Thu) ---
+[16:28] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[16:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:28] LOJA: *Josy:*
+🙋🏼‍♀️
+[16:29] CLIENTE: 195 55 r15
+[16:29] LOJA: [foto]
+[16:29] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+--- 11/09/2026 (Fri) ---
+[14:18] LOJA: [áudio] "Oi Leandro, tudo jóia?"  {audio:midias/3EB02621A0D46129E8460B_203497.ogg}
+[14:18] LOJA: [vídeo]
+[14:39] CLIENTE: [áudio] "Oi, Jorge. Boa tarde. Eu estava vendo aí o pneu aí, o 195, 55, 15. Mas eu vi um preço, aí parece que era, eu vi numa propaganda de 239. Aí parece que estava, era 300 e pouco. Me confirma aí mesmo."
+[14:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:41] LOJA: [áudio] "Não. Aqui, o pneu 1,955, que é o mais em conta, ele é 289. Aí, as pessoas das empresas aí do entorno estão colocando esse preço de 200 e poucos reais pra poder atrair o cliente, tá? Aí, quando o cliente chega lá na loja, a conversa é completamente diferente, se olhando. Eu digo porque é o que o meu próprio cliente me fala todo santo dia, quando ele vai atrás dessas oportunidades aí. É só pra chamar realmente cliente, quando o cliente chega lá, a conversa muda completamente. Então, aqui eu trabalho de maneira honesta, tá? Os pneus que eu tenho aqui são todos muito bons, o menor preço é pro GP Premium, que é de 289. E é isso, sem inventar nada."  {audio:midias/3EB0D20D971DADC7868F21_525416.ogg}

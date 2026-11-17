@@ -1,0 +1,40 @@
+CONVERSA 698f0e04ab | contato: Marquinho | 21/10/2026 09:59 até 22/10/2026 08:03 | 9 msgs do cliente, 15 da loja, 4 do robô
+
+--- 21/10/2026 (Wed) ---
+[09:59] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[10:24] CLIENTE: [áudio] "Fala, chefe. Vamos experimentar. Esse pedido seu aí tá... R$ 250,00, parece? R$ 58,00, sei lá. E... já comprei R$ 13,00 e ganha um, é?"
+[10:24] LOJA: Olá! 👋 Tudo bem? Espero que sim! 😊
+
+Seja bem-vindo(a) à Pneus GP Premium 🚗
+
+Eu sou a *Josy* e para melhor atendê-lo(a), por gentileza informe:
+👉 Seu *NOME*
+👉 *A MEDIDA* dos pneus que você precisa.
+[10:24] LOJA: [áudio] "Olá, bom dia, tudo bem com você? Eu não consegui ouvir o seu áudio, você pode repetir novamente?"  {audio:midias/3EB05A9AC33B4F3B3CA25F_580183.ogg}
+[10:25] CLIENTE: [áudio] "Aí eu tô perguntando, parece que eu passei na placa e comprei 3 pneus e ganhei 1."
+[10:45] ROBÔ: Oi! Não consegui ouvir seu áudio direito por aqui 😕 Pode me escrever por mensagem?
+[10:46] ROBÔ: Me passa a *medida do pneu* (ex.: 175/65/14) ou o *modelo do seu carro* que eu já te passo o valor.
+[10:46] LOJA: [áudio] "Sim, sim. A placa, compre 3, leve 4, para medida 1,95, 65, 15 e 215, 55, 17."  {audio:midias/3EB0FDC1AABD27068FA196_970927.ogg}
+[10:48] CLIENTE: [áudio] "Ah tá, pensei que era 14, pra todos, olha as marcas, medidas, vamos ver."
+[10:49] LOJA: 175/65/14 não é?
+[10:50] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:50] LOJA: [foto]
+[10:53] CLIENTE: Ok
+[10:54] LOJA: Mora aqui em Luziânia-Go?
+[10:55] CLIENTE: Vamos fazer um preço bom nós 4
+[10:56] LOJA: Consegue trazer o pagamento em *dinheiro* para mim?
+[10:58] CLIENTE: [áudio] "Depende do preço. Depende dos valores."
+[10:59] LOJA: Se o pagamento for em *dinheiro* minha oferta final R$ 235,00 cada.  E vindo com o carro já coloca os pneus.
+[14:01] ROBÔ: 🙋🏼‍♀️
+[17:44] LOJA: [áudio] "E aí, Marcos, eu te fiz aqui a minha proposta. Ai, tu não me respondeu mais. Fala comigo."  {audio:midias/3EB081EC9133C22225E99B_788035.ogg}
+[17:44] CLIENTE: [áudio] "Boa tarde, boa tarde. Tô dando uma pesadinha aqui. Quer ver se eu levar teu dinheiro também."
+[17:46] LOJA: [áudio] "Eu confio no seu potencial, você vai conseguir."  {audio:midias/3EB074B6D5D7D4537F7E5E_994042.ogg}
+[17:47] CLIENTE: Com certeza
+[17:47] LOJA: [áudio] "Você sabe onde que é loja, né? Mais cedo eu tinha te mandado a localização."  {audio:midias/3EB06754BFA6FD93E1DBE7_182837.ogg}
+[17:47] LOJA: [foto]
+[17:47] CLIENTE: [áudio] "Sim, sai sim."
+[17:48] LOJA: [áudio] "Beleza. Então, pra não ficar enchendo seu WhatsApp de mensagem, por hora eu vou encerrar aqui seu atendimento, tá? E assim que possível, você vem aqui na loja que nós já fazemos a troca dos pneus pra você, tá bom?"  {audio:midias/3EB0F54F8C65C396CD54F5_451379.ogg}
+--- 22/10/2026 (Thu) ---
+[08:03] ROBÔ: 🙋🏼‍♀️

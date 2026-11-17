@@ -1,0 +1,56 @@
+CONVERSA a006f192f1 | contato: Cristina | Pós venda PowerGrid Solar | 09/09/2026 10:54 até 10/09/2026 14:53 | 11 msgs do cliente, 20 da loja, 0 do robô
+
+--- 09/09/2026 (Wed) ---
+[10:54] CLIENTE: Olá! Vim pelo site e quero cotar pneus GP Premium.
+[10:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:55] CLIENTE: 4 pneus R13 175/70
+[11:02] LOJA: *Josy:*
+Bom dia!
+[11:03] LOJA: [foto]
+[11:03] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:03] LOJA: *Josy:*
+O menor preço é do pneu da  marca GP Premium a unidade se for para pagamento a vista é 269,00 x 4 pneus = 1.076,00
+[11:08] LOJA: *Josy:*
+E já entregamos os pneus colocados.
+[14:52] LOJA: *Josy:*
+🙋🏼‍♀️
+[14:52] CLIENTE: Boa tarde! Estou fazendo as cotações kkkk perdão a falta de retorno
+[14:53] LOJA: *Josy:*
+Entendo...
+[14:55] LOJA: *Josy:*
+A forma de pagamento será a vista mesmo, ou preferem parcelar?
+[14:56] CLIENTE: No momento vai ser a vista
+[14:56] LOJA: *Josy:*
+Certo... me de 1 instante.
+[14:58] LOJA: *Josy:*
+Cristina... falei com meu gerente aqui, ele me disse que se o pagamento for em *dinheiro* em espécie, na compra dos pneus da marca GP Premium ele disponibiliza um desconto para vocês.
+[14:59] LOJA: *Josy:*
+A unidade fica por R$ 255,00, porém em *dinheiro*
+[15:00] CLIENTE: Certo....então Josy nesse caso não serei eu que vou comprar, estou montando a cotação para repassar ao meu gerente. 
+
+Mas eu aviso ele em relação a isso agora
+[15:00] LOJA: *Josy:*
+Sem problemas!
+[15:00] CLIENTE: Mesmo assim obrigada!
+[15:00] CLIENTE: Aviso a ele
+[15:00] LOJA: *Josy:*
+Disponha!
+--- 10/09/2026 (Thu) ---
+[14:35] LOJA: [áudio] "Oi Cristina, tudo bem? Josi, aqui da Pneus GP Premium. Eu te encaminhei o orçamento ontem e gostaria de saber se você teve algum parecer aí da gerência da sua empresa. Quando possível, consegue me dar um retorno, por gentileza?"  {audio:midias/3EB07D661567961713808A_678052.ogg}
+[14:41] CLIENTE: Boa tarde!
+[14:41] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:41] CLIENTE: Eu repassei ao gerente sim só aguardando o retorno dele
+[14:42] LOJA: *Josy:*
+Perfeito!
+[14:42] CLIENTE: Hoje está em instalação então fica mais difícil de estar vendo no momento
+[14:42] LOJA: *Josy:*
+Compreendo... é bem corrido.
+[14:52] LOJA: [áudio] "Bem, eu vou fazer o seguinte, para não fechar esse WhatsApp de mensagens, eu vou encerrar aqui o seu atendimento e vou te encaminhar a nossa localização, pois assim que decidirem, fica mais prático que vocês venham aqui diretamente para conversarmos pessoalmente, está bem? Muito obrigada aí pela sua atenção e até mais."  {audio:midias/3EB0183005312C13B73AB5_723995.ogg}
+[14:52] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:53] CLIENTE: Eu quem agradeço a sua compreensão 😊

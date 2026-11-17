@@ -1,0 +1,37 @@
+CONVERSA ac4dcec243 | contato: Maiane | 07/10/2026 09:39 até 07/10/2026 09:57 | 11 msgs do cliente, 15 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[09:39] CLIENTE: Bom dia
+[09:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:39] CLIENTE: Tem o pneu comforser 225/50 R17?
+[09:39] LOJA: *Josy:*
+Bom dia!
+[09:40] LOJA: *Josy:*
+Teremos da marca Sunny, te atende?
+[09:41] CLIENTE: [áudio] "Eu vou te mandar uma outra numeração de um outro carro, tá? Esse primeiro que eu mandei tem que ser essa marca porque eu quero os quatro igual. E aí eu já coloquei dois dessa marca aí, aí tem que colocar mais dois. Mas eu vou te mandar uma outra numeração aqui, que é de um outro carro, que são os quatro. Aí eu quero ver o valor. Aí essa pode ser a marca mais barata que tiver mais em conta, tá?"
+[09:41] CLIENTE: 175/65R15
+Tem esse outro tbm
+[09:42] LOJA: [áudio] "Oi, Maiane. Bom dia. Tudo bem? E vocês são aqui de Luziânia, Goiás? Digo pelo seguinte, como eu não tenho o Conforcer aqui à pronta entrega, se eu conseguir, vai ser só por encomenda. E essa medida também, o 756 a 5, 15, ele é bem difícil de achar. Você utiliza ela em qualquer carro?"  {audio:midias/3EB031C1FDFA35A8F8F476_406057.ogg}
+[09:43] CLIENTE: [áudio] "Esse 1765-15 é do Clio. E esse outro que eu te passei aí, o 225-5017, é do Cruz. Aí, esse primeiro aí do Cruz, eu coloquei dois dele. E aí, eu quero colocar os outros dois, só que eu quero da mesma marca pra poder ficar igual. Desse 175-65 aí, como vai trocar os quatro, aí, tendo os quatro da mesma marca, não tem problema. Eu sou de Valparaíso, né? Valparaíso de Goiás."
+[09:44] LOJA: [áudio] "Então, vou te fazer uma sugestão melhor aí pra esse pneu do Clio, porque ele é bem estreito. Esse 165, ele fica estreito aí pro seu carro, tá? Você pode instalar nele o 185-6015. Eu vou te mandar aqui todas as opções que eu tenho aqui pra você, tá joia?"  {audio:midias/3EB0A7BBE19323B64C76AA_367308.ogg}
+[09:45] LOJA: [foto]
+[09:45] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[09:45] CLIENTE: [áudio] "Tá bom, é porque é o seguinte, o que que acontece? Esse Clio, ele era minha sogra. Aí o marido dela falou o seguinte, que quando ele veio, o original do carro, veio essa numeração aí, né, quando ele comprou. Mas eu acredito que 185 deve ficar bom, né? Me passa os valores aí."
+[09:46] CLIENTE: [áudio] "Qual é a diferença desse chinês para esse nacional aí? Qual dos dois é melhor, o chinês ou o nacional?"
+[09:46] LOJA: [áudio] "Não, 185 é a melhor escolha. Por quê? Esse pneu aí, que é o 175, além dele ser estreito, é uma opção que é bem difícil de encontrar."  {audio:midias/3EB0FDA17459B74E6665CF_357682.ogg}
+[09:47] CLIENTE: [áudio] "A loja de vocês fica em Luziânia, né?"
+[09:47] LOJA: [áudio] "Pneus nacionais rodam muito mais e o pneu, esse que está por 249, é o pneu da marca GP Premium, é o pneu que nós fazemos, tá? É um pneu que tem 2 anos de garantia, questão de quilometragem, ele roda 60 mil km, igual os pneus aí da Godir, da Dunlop, e esse mês ele está em oferta, o preço normal dele é 289, mas na oferta ele está por 249 reais, à vista."  {audio:midias/3EB07CE32E0E20A57C25E0_97619.ogg}
+[09:47] LOJA: [áudio] "E isso, nossa loja aqui em Luziânia."  {audio:midias/3EB06249CA235EDD94528B_954501.ogg}
+[09:47] CLIENTE: [áudio] "Me manda a localização da loja, por favor. Eu vou só esperar meu marido chegar aqui perto de mim, que aí eu vou ver com ele aqui certinho, tá bom? É outra coisa. Aí vocês fazem alinhamento e balanceamento."
+[09:48] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:48] LOJA: [foto]
+[09:49] LOJA: [áudio] "Sim, fazemos esse serviço sim, tá? O balanceamento está 35 por roda e o alinhamento de direção, 120. Entretanto, são todos valores extremamente negociáveis, podem ficar tranquilos, está bem?"  {audio:midias/3EB0F8B447E6FAC1D4835F_977531.ogg}
+[09:51] CLIENTE: [áudio] "No caso, o Clio seria as 4 rodas para fazer a troca. O outro meu, é como eu expliquei, como eu já coloquei as 2 rodas, os 2 pneus iguais da parte de trás, eu queria usar a frente da mesma marca igual, como não tem, e por encomenda vai demorar, porque eu precisaria fazer antes de sexta-feira, porque sexta-feira eu vou viajar no carro, por isso a troca. Teve uma loja que me ofereceu o serviço que ela me deu de cortesia, né, o balanceamento e o alinhamento. Eu sei que quando eles fazem o alinhamento, o balanceamento, como brinde, eles condenam várias coisas no carro e tal e tal, para poder fechar o serviço com eles. Mas não teria um valor menor nesse de 120 aí, porque vai ser os 4, né, e aí acaba que colocando os 4 pneus, aí pagar 120 de cada roda, mais 35 fica um pouco pesado. Não teria como fazer um pacote da troca dos 4 pneus, mais o balanceamento, mais o alinhamento com valor mais acessível?"
+[09:51] LOJA: [áudio] "No caso do pneu que você está precisando, exclusivamente da marca Conforcer, eu solicitei um orçamento para os meus distribuidores para saber se eles têm, tá? Então, assim que eles me responderem, eu te passo direitinho o preço e o prazo de entrega, tá joia?"  {audio:midias/3EB0B94D7603A708F4916A_465040.ogg}
+[09:53] LOJA: [áudio] "Então, Maiane, justamente, você é uma mulher inteligente, você já sabe que as empresas fazem isso, igual eu te falei, te passei o preço do serviço, porque sim, eles são cobrados, só que eles são completamente negociáveis, e aí eu te passei porque o preço de base é esse que nós trabalhamos, tá, mas você vindo aqui, você pode conversar diretamente com os meninos aqui da oficina, que aí vocês negociam algo que fique melhor para poder atendê-los, igual eu disse, é completamente negociável. Fique tranquila quanto a isso, tá bom?"  {audio:midias/3EB047A343A1F31A872621_323005.ogg}
+[09:57] CLIENTE: [áudio] "Em relação ao pneu do Clio aí que eu te falei, eu liguei aqui lá no dono do carro, ele falou o seguinte, que é o 175 mesmo, 65 R15, porque ele falou que o 185 fica grande, e aí ele quer, ele prefere o carro com o pequeno mesmo, aí você não tem essa numeração, eu sei que ele, eu acho que custa um pouco mais caro do que o 185, né, mas ele disse que é grande e não quer. Tchau, tchau."

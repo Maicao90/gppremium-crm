@@ -1,0 +1,15 @@
+CONVERSA f8df2c5aab | contato: Wesley | 14/10/2026 09:06 até 14/10/2026 14:14 | 2 msgs do cliente, 5 da loja, 0 do robô
+
+--- 14/10/2026 (Wed) ---
+[09:06] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[09:06] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:06] LOJA: 🙋🏼‍♀️
+[09:06] LOJA: [foto]
+[09:06] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[13:23] LOJA: [áudio] "Wesley, tudo jóia? Eu te mandei aí o orçamento dos pneus que você estava precisando e gostaria de saber se você quer que reserva alguma dessas opções para você. Bora aqui em Luziânia, Goiás."  {audio:midias/3EB0090F374CC8DCDF3703_74693.ogg}
+[14:14] CLIENTE: Já consegui aqui onde eu moro moça, obrigado

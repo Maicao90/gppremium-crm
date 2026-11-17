@@ -1,0 +1,20 @@
+CONVERSA ba278b0b0f | contato: Leonardo Debochado | 27/08/2026 14:25 até 27/08/2026 17:31 | 3 msgs do cliente, 6 da loja, 0 do robô
+
+--- 27/08/2026 (Thu) ---
+[14:25] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[14:25] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:26] CLIENTE: 265/40/22
+[14:32] LOJA: [áudio] "Olá, tudo bem? Eu não disponho dessa opção aqui a pronta entrega, mas eu posso fazer uma cotação para você. Você mora aqui na cidade de Luziânia mesmo?"  {audio:midias/3EB01B18011B1204340F5F_692090.ogg}
+[14:32] CLIENTE: [áudio] "Boa tarde? Não, é uma hora que eu moro no Gama. Tem como ver aí, fazer essa cotação para mim?"
+[17:30] LOJA: *Josy:*
+Oi! Acabei de obter o retorno a respeito da medida solicitada.
+[17:30] LOJA: [foto]
+[17:31] LOJA: *Josy:*
+Pneu da marca Delinte.
+[17:31] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 300,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X

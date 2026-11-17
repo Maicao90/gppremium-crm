@@ -1,0 +1,13 @@
+CONVERSA 2c7c3eebc0 | contato: Felipe Ferreira | 07/10/2026 14:40 até 07/10/2026 14:45 | 5 msgs do cliente, 3 da loja, 0 do robô
+
+--- 07/10/2026 (Wed) ---
+[14:40] CLIENTE: Boa tarde
+[14:40] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:40] CLIENTE: tudo bem?
+[14:41] CLIENTE: estou precisando de dois pneus 295/80R22.5 para tração
+[14:41] CLIENTE: consegue me passar uma cotação
+[14:42] LOJA: [áudio] "Olá, boa tarde. Tudo bem com você? Nós não temos esses pneus aqui em nossa empresa."  {audio:midias/3EB0FCA64BD44BF3421749_348301.ogg}
+[14:45] CLIENTE: Vc tem algum contato que vc possa me indicar
+[14:45] LOJA: *Josy:*
+Aqui, infelizmente não.

@@ -1,0 +1,23 @@
+CONVERSA e8324cd88d | contato: Pamella Seidler | 05/09/2026 08:39 até 05/09/2026 11:33 | 2 msgs do cliente, 11 da loja, 0 do robô
+
+--- 05/09/2026 (Sat) ---
+[08:39] CLIENTE: Quero cotar o pneu 175/65 R14 GP Premium.
+[08:39] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:40] LOJA: /14Pneu 175/65/14 86h Kelly Goodyear R$ 371,00 (débito/pix)
+Pneu 175/65/14 86t  Roadtrack R$ 308,34 (débito/pix)
+Pneu GP Premium 175/65/14 em *oferta*  R$ 249,00 (débito/pix) Ou R$ 235,00 em *dinheiro**Josy:*
+[08:40] LOJA: *Josy:*
+No dia de hoje temos essas opções a pronta entrega.
+[08:50] CLIENTE: Parcelado não tem?
+[08:54] LOJA: *Josy:*
+Tem sim!
+[08:54] LOJA: [foto]
+[08:54] LOJA: *Josy:*
+
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[10:10] LOJA: [áudio] "Olá, tudo bem com você? Eu sou a Josi e eu te encaminhei o orçamento das opções que nós temos no dia de hoje, inclusive com as opções de parcelamento. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0705552C4BEBF95E47B_214566.ogg}
+[10:54] LOJA: *Josy:*
+🙋🏼‍♀️
+[11:33] LOJA: [áudio] "Oi Pamela, tudo bem? Eu te mandei um orçamento aí mais cedo e gostaria de saber se as suas opções te atendem. Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB047533C358D497A9037_737759.ogg}

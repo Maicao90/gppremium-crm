@@ -1,0 +1,21 @@
+CONVERSA 9d817cb4a6 | contato: Nemesio | 05/09/2026 09:17 até 05/09/2026 09:48 | 5 msgs do cliente, 6 da loja, 0 do robô
+
+--- 05/09/2026 (Sat) ---
+[09:17] LOJA: *Josy:*
+Pneu 175/70/13 r1 Dunlop R$ 371,69 (débito/pix)
+Pneu 175/70/13 82t Kelly Goodyear R$ 357,66 (débito/pix)
+Pneu GP Premium em *oferta* R$ 269,00 (débito/pix) Ou R$ 252,00 em *dinheiro*
+[09:18] LOJA: *Josy:*
+Pneu 175/75/13 85t cf510 comforser R$ 290,87 (debito/pix )
+[09:46] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[09:47] CLIENTE: Tô indo ai
+[09:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:47] LOJA: [foto]
+[09:47] CLIENTE: 175/75
+[09:48] CLIENTE: Tá quanto mesmo
+[09:48] CLIENTE: No pix
+[09:48] LOJA: *Josy:*
+Os 2 ficam 581,74
+[09:48] CLIENTE: Ok

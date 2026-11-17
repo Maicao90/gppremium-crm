@@ -1,0 +1,30 @@
+CONVERSA 3cab988a67 | contato: Gleydson Lima | 03/09/2026 08:28 até 11/09/2026 14:20 | 6 msgs do cliente, 11 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[08:28] CLIENTE: [foto] 📢 [Anúncio] 🚗 Pneu ARO 13 a partir de R$ 239,90 — Montagem Grátis!
+
+Oi, Tudo bem ?
+[08:28] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:29] LOJA: 🙋🏼‍♀️
+[08:29] CLIENTE: Bom dia não lembro
+[08:29] CLIENTE: Daqui a pouco olho e te mando
+[08:30] LOJA: Qual é seu carro? Sabe dizer ao menos o aro?
+[08:30] CLIENTE: Polo trak
+[08:31] CLIENTE: Aro 15
+[08:32] LOJA: [foto]
+[08:32] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[08:32] LOJA: Mora aqui em Luziania -Go?
+--- 10/09/2026 (Thu) ---
+[16:31] LOJA: *Josy:*
+Oi
+[16:31] LOJA: [vídeo]
+--- 11/09/2026 (Fri) ---
+[14:19] LOJA: [áudio] "Oi, Cleidson, tudo jóia? Bem, eu imagino que esteja extremamente corrido aí, né? Vi que você viu o vídeo que eu fiz para tentar falar contigo e eu vou fazer o seguinte, para não ficar enchendo seu WhatsApp de mensagens aí, porque eu sei que é chato, eu vou encerrar o seu atendimento, tá? Se eu for a possibilidade, você passa aqui na loja para conversarmos pessoalmente. Muitíssimo obrigada por sua atenção e um bom final de semana."  {audio:midias/3EB09860F1AF45503871DF_575134.ogg}
+[14:19] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[14:20] CLIENTE: Obrigado josy
+[14:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?

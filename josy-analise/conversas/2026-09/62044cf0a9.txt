@@ -1,0 +1,132 @@
+CONVERSA 62044cf0a9 | contato: Felipe Alves - Supervisor Compras | 21/09/2026 10:55 até 30/09/2026 17:30 | 35 msgs do cliente, 46 da loja, 0 do robô
+
+--- 21/09/2026 (Mon) ---
+[10:55] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[10:55] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:55] LOJA: *Josy:*
+🙋🏼‍♀️
+[10:58] LOJA: [áudio] "Olá, bom dia, tudo bem? Em que eu posso te ajudar?"  {audio:midias/3EB00CA133515100E4E393_455838.ogg}
+[12:28] CLIENTE: [áudio] "Olá, Josi. Boa tarde, minha amiga. Aqui é o Felipe. Tudo bem? Eu sou da Casa Nova Material de Construção. Eu gostaria de fazer uma cotação de pneus com você. Eu vou estar te mandando os tamanhos que eu preciso. Ok, minha amiga? Muito obrigado."
+[12:56] LOJA: [áudio] "Oi, Felipe, tudo jóia? Sim, com a gentileza, me diz o que você está precisando."  {audio:midias/3EB098C1034507C283F493_307179.ogg}
+--- 22/09/2026 (Tue) ---
+[08:36] LOJA: 🙋🏼‍♀️
+[08:36] LOJA: [áudio] "Oi Felipe, bom dia, tudo bem? Eu gostaria de saber se você tem aí as medidas dos pneus que você precisa, ou então me diz quais são os carros que eu consigo fazer o orçamento para você, pelo menos com a medida original."  {audio:midias/3EB00C69CA6F942DADF12B_248221.ogg}
+[08:52] CLIENTE: [áudio] "Bom dia, minha amiga, tudo em paz. Me desculpe da demora de ter lhe respondido, tá? Eu tô aguardando só o meu chefe aqui me passar, tá? A cotação eu já te mando. Em 2 de manhã a gente resolve isso, não se preocupe não. No máximo até umas 10 horas eu te mando, tá ok?"
+[08:52] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:52] LOJA: [áudio] "Tudo bem, eu entendo. É corrida, né, Felipe? Estou aqui no seu aguardo."  {audio:midias/3EB08E7AAD912DB19F362F_121439.ogg}
+[08:53] CLIENTE: Obrigado 🙏
+[10:58] CLIENTE: 225/55 18 8 unidades
+255/70 16 16 unidades (xbri)
+275/80 R22.5   30 unidades
+275/80 R22.5   30 unidades
+215/75 R17.5    20 unidades
+[10:58] CLIENTE: seria esse tamnahos.
+[10:58] LOJA: [áudio] "Felipe, deixa eu te perguntar, tem que ser especificamente da marca XBRI? Porque eu tenho aqui os pneus da nossa empresa, que são os pneus da marca GP Premium, justamente na medida 255, 70 a 16."  {audio:midias/3EB0998E879C3E27DAFEBA_588487.ogg}
+[10:59] CLIENTE: entendi
+[10:59] CLIENTE: Pode ser sim
+[11:07] LOJA: *Josy:*
+Certo...uma breve explicação a respeito dos pneus GP Premium: são pneu que nossa empresa produz, são pneus ecológicos que entram na categoria de remodelagem apenas por questões técnicas,  são todos testados e aprovados pelo Inmetro , tem garantia de 2 anos e rodam 60,000 km se os veiculos estiverem bem alinhados . e pneus sempre bem calibrados.
+[11:08] LOJA: [foto]
+[11:08] LOJA: 225/55/18 GP Premium Adventure Verde👇🏻
+[11:08] LOJA: [foto]
+[11:08] LOJA: 255/70/16 Brutus 👇🏻
+[11:09] LOJA: [foto]
+[11:09] LOJA: *Josy:*
+Os de caminhão, precisa que sejam lisos ou borrachudos?
+[11:12] CLIENTE: [áudio] "Certo, meu amigo, vamos lá. No caso, você coloca ele liso e borrachudo, metade de cada um, entendeu? E esse que você colocou aí é o Brutus 2557016, é o concorrente do XBRI, correto? Aí você põe ele, tá?"
+[11:14] LOJA: [áudio] "Correto. E, inclusive, o da marca Exbri, conforme solicitado, ele está em falta. Quando eu vi aqui a sua mensagem, eu já perguntei lá para os nossos distribuidores e não está tendo."  {audio:midias/3EB0F681B40A6B9485E0BE_547008.ogg}
+[11:14] LOJA: [áudio] "Assim que o meu distribuidor me responde a respeito dos pneus de caminhão, eu te passo aqui, tá joia?"  {audio:midias/3EB0084AB83632B399EF49_821871.ogg}
+[14:52] LOJA: *Josy:*
+Boa tarde!
+[14:53] LOJA: 275/80 R22.5
+Marca HIFLY 18 lonas 
+Liso 1.799,00 *a vista*
+Tração 1.899,00 *a vista*
+
+215.75 R17.5
+Marca HIFLY 16 lonas
+Liso 739,00 *a vista*
+Tração 749,00 *a vista*
+[14:54] LOJA: PNEU LANDSPIDER 275/80 R22.5 18PR 149/146M LONGTRAXX AP800 LISO (RO)...1.704,00 *a vista*
+PNEU ROYALBLACK 275/80 R22.5 18PR 149/146M DV211 BORR (IP)...1.826,00 *a vista*
+PNEU WANLI 215/75 R17.5 16PR 135/133J SAH01 LISO E (RO)....699,00 *a vista*
+PNEU WANLI 215/75 R17.5 16PR 135/133J SDR01 BORR (RO)...759,00 *a vista*
+--- 23/09/2026 (Wed) ---
+[08:16] CLIENTE: Bom dia,
+[08:16] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:17] CLIENTE: Qual o precedimento para compra a prazo no boleto?
+[08:24] LOJA: *Josy:*
+Infelizmente não estamos trabalhando com boletos.
+[08:24] LOJA: *Josy:*
+Mas posso tentar, vai que...
+[08:26] CLIENTE: Ok, vamos tentar.
+[08:27] LOJA: *Josy:*
+Preciso de :-                                                                                                                                                                                                              Contrato Social
+- Cartão CNPJ
+- 03 (três) referências comerciais
+- Email corporativo
+[08:39] CLIENTE: [documento]
+[08:39] CLIENTE: [documento]
+[08:39] CLIENTE: [documento]
+[08:39] CLIENTE: financeiro@casanovadistribuidora.com.br
+
+felipe@casanovadistribuidora.com.br
+--- 24/09/2026 (Thu) ---
+[16:18] LOJA: [áudio] "Oi Felipe, tudo bom? Olha, eu ainda não obtive retorno do meu departamento financeiro, está bem? Ainda está sob análise."  {audio:midias/3EB0B201A659A8ABCB38E4_808731.ogg}
+[16:20] CLIENTE: Boa tarde,
+[16:20] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:20] CLIENTE: tudo bem, fico no aguardo.
+--- 28/09/2026 (Mon) ---
+[12:50] CLIENTE: Boa tarde,
+[12:50] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[12:50] CLIENTE: [documento]
+[12:52] LOJA: *Josy:*
+Bom dia,,,como vai?
+[12:53] LOJA: *Josy:*
+Agradeço muito por aguardar, como nosso gestor estava fora, creio que hoje consigo um parecer em falta.
+[12:53] LOJA: *Josy:*
+Vou ligar para ele agora.
+[12:53] CLIENTE: Tudo bem.
+[13:01] LOJA: [áudio] "Oi, Felipe. Obrigada por aguardar, tá? Olha, como no final de semana teve evento de carros, né, de corrida, o nosso supervisor aqui, ele estava fora justamente resolvendo essas coisas. Ele também tinha sofrido um pequeno acidente e agora que ele está voltando. Pedi para ele dar uma atenção especial aí no cadastro de vocês, tá, jóia? Então, assim que eu tiver a resposta, pode ficar tranquilo que eu entre em contato. Eu até liguei aí na empresa para poder falar com vocês, para ver a urgência que vocês estão tendo aí nesses pneus. E eu vi que é com muita urgência, né? Então, liguei para ele, pedi para ele dar uma atenção especial aí no cadastro de vocês, tá?"  {audio:midias/3EB03AEB5732E609F358B6_911966.ogg}
+[13:13] CLIENTE: Tudo bem minha amiga, eu agradeço.
+[13:15] CLIENTE: Eu só esqueci de colocar um tamanho.
+[13:16] CLIENTE: 265/65 17 8 unidades
+[13:17] LOJA: [áudio] "Tenho também, tá? E, né, assim como o pneu que eu te ofereci no 255-70, eu tenho aqui o pneu da GP Premium, que é o remodelado nosso de primeira linha, se for naquele modelo ATR, dá para fazer a unidade aqui por, deixa eu só confirmar, Deixa eu só ver aqui, no modelo ATR 571 e no modelo Borrachudo 612 a unidade, tá? Que eu até mandei a foto do Borrachudo para você."  {audio:midias/3EB0BE211B57967AD1C077_93938.ogg}
+[13:27] CLIENTE: [áudio] "Eu tava ligando pra você, mas era só pra dizer que a gente vai ter que refazer, porque eu falei aqui com o meu gestor e teve alguns tamanhos que ele já conseguiu. Aí eu vou refazer e mandar aqui pra você, tudo bem? Tem problema não, né?"
+[13:43] CLIENTE: 18 unidades — LANDSPIDER 275/80 R22.5 18PR 149/146M LONGTRAXX AP800 Liso
+• 8 unidades — 265/65 R17
+[13:43] CLIENTE: Se não for incomodo, você põe esses dois tamanhos e essas quantidades.
+[14:03] CLIENTE: .,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+[14:19] CLIENTE: .,0
+[14:22] LOJA: *Josy:*
+Pode deixar...
+[14:25] LOJA: *Josy:*
+Oi... eu estava almoçando. Vou fazer uma proposta comercial, e te encaminho.
+[14:43] CLIENTE: Ok
+--- 29/09/2026 (Tue) ---
+[14:17] CLIENTE: Boa tarde Josy,
+[14:17] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:17] LOJA: [áudio] "Oi, Sr. Felipe, boa tarde e tudo jóia."  {audio:midias/3EB0B869CD42EFBE6948E9_215202.ogg}
+[14:18] LOJA: Não obtive a resposta ainda, meu gestor teve de se ausentar, teve que retornar ao médico.
+[14:19] CLIENTE: Ok, fico no aguardo.
+--- 30/09/2026 (Wed) ---
+[15:47] LOJA: [áudio] "Oi, seu Felipe, boa tarde. Tudo jóia? Olha, eu consegui verificar como o Departamento Financeiro, tá? Eles não me informaram o motivo específico, mas não conseguiram aprovar para vender no boleto para vocês."  {audio:midias/3EB0D2C060D3A3B947279E_110399.ogg}
+[15:49] CLIENTE: Boa tarde,
+[15:49] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[15:49] CLIENTE: Tudo bem minha linda.
+[15:49] CLIENTE: mesmo assim agradeço sua atenção.
+[15:50] LOJA: [áudio] "Imagina! Disponha!"  {audio:midias/3EB063CD8B9112CAF324A3_468105.ogg}
+[17:29] LOJA: *Josy:*
+De todo modo segue orçamento das opções 265/65/17
+[17:30] LOJA: *Josy:*
+No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:30] LOJA: [foto]

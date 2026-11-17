@@ -1,0 +1,12 @@
+CONVERSA ddcf132553 | contato: Big Lanches | 18/08/2026 14:26 até 18/08/2026 16:25 | 3 msgs do cliente, 5 da loja, 0 do robô
+
+--- 18/08/2026 (Tue) ---
+[14:26] LOJA: oi
+[14:26] CLIENTE: Olá, tudo bem? Seja bem-vindo ao Saperfumaria e cosméticos]! Meu nome é Silvia Alexandra estou à sua disposição. Assim que puder te atendo ok
+[14:26] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[14:26] CLIENTE: Agradecemos sua mensagem. Não estamos disponíveis no momento, mas responderemos assim que possível.
+[14:26] LOJA: GP premium pneus
+[14:26] LOJA: voce ligou aqui agora e não consegui te ouvir
+[16:25] LOJA: 🙋🏼‍♀️
+[16:25] CLIENTE: Olá, tudo bem? Seja bem-vindo ao Saperfumaria e cosméticos]! Meu nome é Silvia Alexandra estou à sua disposição. Assim que puder te atendo ok

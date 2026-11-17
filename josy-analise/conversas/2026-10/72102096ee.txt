@@ -1,0 +1,26 @@
+CONVERSA 72102096ee | contato: Francimar FS. | 08/10/2026 11:57 até 08/10/2026 12:03 | 10 msgs do cliente, 8 da loja, 0 do robô
+
+--- 08/10/2026 (Thu) ---
+[11:57] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[11:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[11:57] CLIENTE: 185/60 15aro
+[11:57] CLIENTE: O mais barato
+[11:57] CLIENTE: Sem ser remold
+[11:58] LOJA: [foto]
+[11:58] LOJA: No dia de hoje temos todas essas opções a pronta entrega.  
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[11:58] LOJA: O ultimo é remold
+[12:00] LOJA: [áudio] "Oi, Sr. Franciman, bom dia, eu sou a Josi. O último, ele é o remold, só que é o premium, né, o de primeira linha, inclusive é o pneu mais vendido que eu tenho, por conta da qualidade."  {audio:midias/3EB0D34352C2E3E9D5B64E_664430.ogg}
+[12:00] CLIENTE: Obrigado pela gentileza
+[12:01] CLIENTE: Mas só quero novo e só dois pneus
+[12:01] LOJA: [áudio] "Ah, e no orçamento que eu te mandei, todas as outras opções são de pneus novas, o senhor analisou?"  {audio:midias/3EB0024A3594D5D8F5F87D_919481.ogg}
+[12:02] CLIENTE: O valor é acima do meu orçamento
+[12:02] CLIENTE: Obrigado
+[12:02] CLIENTE: Fica pra próxima
+[12:02] LOJA: Caso mude de ideia... segue nossa localização.
+[12:02] LOJA: https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[12:03] CLIENTE: Ok

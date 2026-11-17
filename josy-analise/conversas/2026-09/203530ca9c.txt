@@ -1,0 +1,23 @@
+CONVERSA 203530ca9c | contato: ⠀ | 16/09/2026 09:44 até 22/09/2026 16:37 | 4 msgs do cliente, 11 da loja, 0 do robô
+
+--- 16/09/2026 (Wed) ---
+[09:44] LOJA: *Josy:*
+Bom dia, Diego...
+[09:46] LOJA: [foto]
+[09:47] LOJA: [foto]
+[09:47] CLIENTE: da lateral do pneu consegue?
+[09:47] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:47] LOJA: [áudio] "Consigo sim, só um minutinho."  {audio:midias/3EB0BDAAE3322C82C2D21E_208564.ogg}
+[09:48] CLIENTE: manda o valor também
+[09:48] LOJA: [foto]
+[09:48] LOJA: [foto]
+[09:49] LOJA: [áudio] "Diego, aí no orçamento está o valor de apenas uma unidade, tá? Na primeira coluna é o valor à vista, que é correspondente a débito ou fixe, e aí seguem também as opções para parcelamento em até 10 vezes."  {audio:midias/3EB0F451B63734C2C59864_78820.ogg}
+[09:50] CLIENTE: ok, obrigado.
+--- 22/09/2026 (Tue) ---
+[16:12] LOJA: [áudio] "Oi Diego, boa tarde, tudo bom? Nós conversamos alguns dias atrás e eu gostaria de saber se você ainda está precisando dos pneus, se quer seguir com a negociação. Consegue me dar um retorno, por gentileza?"  {audio:midias/3EB0247D0C351D69A82997_413312.ogg}
+[16:37] CLIENTE: estou ocupado agora
+[16:37] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[16:37] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6

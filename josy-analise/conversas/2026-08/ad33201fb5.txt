@@ -1,0 +1,27 @@
+CONVERSA ad33201fb5 | contato: Maria | 26/08/2026 12:00 até 01/09/2026 10:07 | 7 msgs do cliente, 8 da loja, 0 do robô
+
+--- 26/08/2026 (Wed) ---
+[12:00] LOJA: *Josy :*
+Bom dia, Maria. Nós não trabalhamos mais com pneus de caminhão, trator, estereiras etc...
+--- 01/09/2026 (Tue) ---
+[09:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:45] CLIENTE: [foto] Bom dia. Orça esse pneu por favor
+[09:53] CLIENTE: 205/70R 15
+[09:53] CLIENTE: E 2 5.60 E 14
+[09:53] CLIENTE: E 2 um de cada.
+[09:58] CLIENTE: [foto]
+[10:01] LOJA: *Josy:*
+Bom dia!
+[10:01] LOJA: *Josy:*
+para qual carro?
+[10:03] LOJA: *Josy:*
+	
+pneu 205/70/15 96h cf2000 comforser 445,00 a vista
+[10:04] LOJA: *Josy:*
+pneu 205/70/15  GP Premium Adventure ATX R$ 349,00 a vista
+[10:05] CLIENTE: Seria esse 5.60  R 15
+[10:07] LOJA: *Josy:*
+Não trabalhamos mais com pneus
+[10:07] LOJA: *Josy:*
+Que tenham essas especificações.

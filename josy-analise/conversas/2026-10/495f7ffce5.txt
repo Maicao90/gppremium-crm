@@ -1,0 +1,31 @@
+CONVERSA 495f7ffce5 | contato: Suzana | 05/10/2026 09:19 até 14/10/2026 12:54 | 12 msgs do cliente, 13 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[09:19] CLIENTE: Olá, Vim Pelo Anúncio e Gostaria De Mais Informações, Por Favor.
+[09:19] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:19] LOJA: *Josy:*
+🙋🏼‍♀️
+[09:20] CLIENTE: Aro 18
+[09:20] CLIENTE: 215/50 92w
+[09:22] LOJA: Não dispomos dessa opção de medida a pronta entrega, mas vou verificar com nossos distribuidores, assim que eles me responderem te informo, marca  disponível, preço e prazo de entrega. Tudo bem?
+--- 14/10/2026 (Wed) ---
+[10:57] CLIENTE: Olá! Quero um orçamento de pneus.
+[10:57] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:57] CLIENTE: 215/50 92w  R18
+[10:59] LOJA: [áudio] "Oi Suzana, bom dia, tudo bem contigo? Então, ainda não disponho dessa opção à pronta entrega e eu solicitei a cotação com os meus distribuidores, tá? E até o presente momento eu não tive um retorno, mas eu salvei o seu contato para poder te passar aqui, tá bom?"  {audio:midias/3EB089C7B1AC98537F4A52_46437.ogg}
+[11:07] CLIENTE: Tá bom
+[11:07] CLIENTE: Obrigada
+[12:06] CLIENTE: [áudio] "Qual é a marca do pneu?"
+[12:09] LOJA: Delinte.
+[12:10] LOJA: [áudio] "Esse é o pneu da marca Delinte, Suzana. E você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0694624A0EBD0AB8F13_728692.ogg}
+[12:10] CLIENTE: [áudio] "Você acha que eles entregam só 4 dias úteis? Então, no sábado não chega, né?"
+[12:11] LOJA: [áudio] "Suzana, eu vou verificar aqui para você, tá bom? Você vai precisar das 4 unidades?"  {audio:midias/3EB0355CD5349E0AEC0679_635620.ogg}
+[12:13] CLIENTE: Moro sim
+[12:14] CLIENTE: Seria só 1 mesmo
+[12:17] LOJA: certo... consigo para sexta feita.
+[12:20] LOJA: Posso encomendar?
+[12:23] LOJA: [áudio] "Suzana, aí, esse valor que é cobrado de 250, é para poder reservar o pneu para você, tá? O pneu chegando aqui na loja, aí, você vindo realizar o restante do pagamento, esse valor vai ser abatido do total da sua compra, está bem?"  {audio:midias/3EB02EE4EF1878B882C00E_977467.ogg}
+[12:52] LOJA: 🙋🏼‍♀️
+[12:54] CLIENTE: [áudio] "Estou vendo aqui o meu esposo, tá? Sobre o valor, que aí vai ficar R$ 857,00. Aí eu estou vendo que aí da Brickstone está mais ou menos esse valor também. Eu vou dando uma olhada aqui. Obrigada."

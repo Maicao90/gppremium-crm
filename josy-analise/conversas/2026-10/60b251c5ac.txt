@@ -1,0 +1,15 @@
+CONVERSA 60b251c5ac | contato: marcos azevedo | 15/10/2026 09:30 até 15/10/2026 14:56 | 2 msgs do cliente, 5 da loja, 0 do robô
+
+--- 15/10/2026 (Thu) ---
+[09:30] CLIENTE: [foto] 📢 [Anúncio] Pneus a partir de R$ 479
+
+Olá! Posso ter mais informações sobre isso?
+[09:30] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[09:31] CLIENTE: 31x10.50/15
+[09:44] LOJA: [áudio] "Bom dia, seu Marcos. Como é que você está?"  {audio:midias/3EB00150B51DB01B9E806F_605119.ogg}
+[09:44] LOJA: [foto]
+[09:44] LOJA: Pneus da marca Comforser
+
+No orçamento, está o valor UNITÁRIO  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[14:56] LOJA: [áudio] "Marcos, eu te mandei o orçamento aí mais cedo, esqueci de perguntar se você quer que te mande a foto dos pneus."  {audio:midias/3EB033E398FD2F5C97D6F6_181610.ogg}

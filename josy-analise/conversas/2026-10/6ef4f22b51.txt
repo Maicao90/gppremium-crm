@@ -1,0 +1,25 @@
+CONVERSA 6ef4f22b51 | contato: Dr. Rafael Nascimento | 05/10/2026 13:54 até 05/10/2026 15:14 | 6 msgs do cliente, 8 da loja, 0 do robô
+
+--- 05/10/2026 (Mon) ---
+[13:54] CLIENTE: [foto] 📢 [Anúncio] 🔥 PNEUS SUV EM OFERTA 🔥
+
+Olá! vim do instagram e gostaria de fazer um orçamento
+[13:54] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[13:54] CLIENTE: Pneu 235 55 18
+[14:19] LOJA: [áudio] "Olá, boa tarde, tudo bem? Eu me chamo Josi e nós não dispomos dessa medida a pronta entrega, mas eu posso contar com os meus distribuidores e assim que eles me responderem eu te passo a marca o preço e o prazo de entrega."  {audio:midias/3EB04CDC9B97309273BA01_849292.ogg}
+[14:20] LOJA: *Josy:*
+225/55/18 te atende?
+[14:20] CLIENTE: Veja o valor por favor
+[14:20] CLIENTE: Qual valor dele ?
+[14:24] LOJA: *Josy:*
+busca alguma marca especifica?
+[14:26] CLIENTE: Confiável é em conta rsrs
+[14:40] LOJA: *Josy:*
+A pronta entrega teremos os pneus chineses da marca Comforser, e da marca GP Premium
+[14:40] LOJA: [foto]
+[14:40] LOJA: *Josy:*
+
+No orçamento, está o valor *UNITÁRIO*  do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[15:07] LOJA: [áudio] "Rafael, bem, eu creio que hoje eu não vou conseguir ter o retorno dos distribuidores, porque eu pedi orçamentos desde cedo e por hora ainda não obtive nenhum retorno, tá? Mas eu vou tentando até esgotar realmente as possibilidades, tá joia?"  {audio:midias/3EB0FA8A7396E4BC7966DE_251947.ogg}
+[15:14] CLIENTE: Fico no aguardo

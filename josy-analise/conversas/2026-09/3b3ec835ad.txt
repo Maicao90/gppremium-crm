@@ -1,0 +1,55 @@
+CONVERSA 3b3ec835ad | contato: Antônio | 03/09/2026 17:45 até 05/09/2026 10:45 | 13 msgs do cliente, 27 da loja, 0 do robô
+
+--- 03/09/2026 (Thu) ---
+[17:45] CLIENTE: Boa tarde
+[17:45] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[17:46] CLIENTE: 205/70 15 xbri bruto
+[17:46] LOJA: *Josy:*
+Xbri está em falta
+[17:46] LOJA: *Josy:*
+Pode ser outro modelo?
+[17:47] CLIENTE: Qual são outros modelos que vocês têm bom
+[17:47] LOJA: [foto]
+[17:47] LOJA: [foto]
+[17:47] LOJA: *Josy:*
+Esse pneu é da marca GP Premium
+[17:48] CLIENTE: Qual o valor dele
+[17:48] LOJA: [foto]
+[17:49] LOJA: [áudio] "Olá, boa tarde, tudo bem com você? Eu sou a Josi. O pneu da marca GP Premium, que é esse aí da foto, se for para o pagamento no débito ou Pix, a unidade está por apenas R$ 349,00. Se o pagamento for em dinheiro, a unidade já vai ficar por R$ 336,00. Mas para o pagamento em dinheiro, débito ou Pix, R$ 349,00."  {audio:midias/3EB0C8476107DB944033A8_353568.ogg}
+[17:49] CLIENTE: Vocês trabalham com a marca da continental
+[17:49] LOJA: [áudio] "No momento não, somente essa marca que está disponível."  {audio:midias/3EB00917872BF5A25C423F_65714.ogg}
+[17:49] LOJA: [áudio] "Você mora aqui em Luziânia mesmo?"  {audio:midias/3EB0DF0AAE74A51F9A66F2_181858.ogg}
+[17:49] CLIENTE: Cidade ocidental
+[17:50] LOJA: [áudio] "Ah sim, é pertinho aqui da nossa loja em Luziânia."  {audio:midias/3EB0A13E4B10A9545BF966_763933.ogg}
+[17:50] CLIENTE: Xbri tem previsão de chegada
+[17:50] LOJA: [áudio] "Não, não tem previsão de chegada. Bem, o que eu posso fazer é porque hoje os distribuidores já fecharam, mas eu pergunto para eles amanhã se tem previsão, né, para ver o que eu consigo dar de resposta aqui para o senhor, tudo bem?"  {audio:midias/3EB0DD7BFF7D726DBEAB1C_510690.ogg}
+[17:50] CLIENTE: Me manda a localização de vocês
+[17:51] LOJA: *Josy:*
+https://goo.gl/maps/96rnXxTkVtPWzXzw6
+[17:51] LOJA: [foto]
+[17:51] LOJA: [áudio] "Como, às vezes, a minha localização dá um tilt, dá um pane, aí eu mando aqui a foto da frente da loja também, para ficar mais fácil de localizar. Tá bom, Sr. Antônio?"  {audio:midias/3EB0D017BCF9E988C04643_519647.ogg}
+[17:51] CLIENTE: Tá bom então mas eu tava querendo aquele com o nome todo branco
+[17:51] LOJA: [áudio] "Você pode me mandar mensagem que eu só vou atender um cliente aqui e já te ouço, tá bom?"  {audio:midias/3EB0FA78EB59E2AC0BE1F1_305445.ogg}
+--- 04/09/2026 (Fri) ---
+[08:18] CLIENTE: [áudio] "Bom dia, tudo bom? Se você conseguir achar os pneus, você me manda mensagem, tá bom? Você disse que ia ver em outras lojas aí."
+[08:18] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[08:19] LOJA: [áudio] "Bom dia, Sr. António, tudo jóia!"  {audio:midias/3EB0161098B5F6369348A8_464998.ogg}
+[08:19] LOJA: [áudio] "Pode ficar tranquila, não vou esquecer não."  {audio:midias/3EB05FB7EF2F61FBCA1174_640325.ogg}
+[08:19] LOJA: [áudio] "Não, não é ver em outras lojas, é ver com importador, porque essa opção é muito difícil de encontrar, não está tendo, então realmente preciso ver com algum importador."  {audio:midias/3EB03F44BDD95D289844D3_439869.ogg}
+[08:20] CLIENTE: [áudio] "Tá ok, então. Eu estou precisando deles para essa semana agora. Se você conseguir, para mim, você me manda mensagem."
+[09:22] LOJA: [foto]
+[09:22] LOJA: *Josy:*
+Opção somente por encomenda , chega em 3 dias uteis mediante pagamento caução de R$ 250,00 
+
+No orçamento, está o valor *UNITÁRIO* do pneu.                                                                                                                                                                       Na 1ª coluna está o valor a vista e logo mais seguem as condições de parcelamento em até 10 X
+[17:42] LOJA: [áudio] "Sr. Antônio, eu te mandei aí mais cedo o orçamento do pneu da Exbri, e só agora que eu consegui falar com o senhor novamente, porque teve instabilidade na energia elétrica, ficamos sem internet, daí deu a chuva, aqui foi bem conturbada a parte do dia. Quero saber se interessa aí a encomenda para o senhor, tá? Que se for de seu agrado, nós fazemos a encomenda, se o senhor fala comigo. Caso o senhor queira dar uma oportunidade para o pneu GP Premium que eu te mandei as fotos, passa aqui na loja amanhã para nós conversarmos pessoalmente."  {audio:midias/3EB02393C1BC36FF145A8E_247930.ogg}
+--- 05/09/2026 (Sat) ---
+[09:54] LOJA: [áudio] "Oi, Sr. Antônio, bom dia. Eu te mandei um áudio aí, vi que o senhor ouviu, mas imagino que na correria o senhor não tenha conseguido me dar um retorno. E aí, a sua opção aí te atende ou a que eu mandei a foto aí já colabora com o senhor? O pneu que eu tenho, ele só não vai ter a escrita lateral realmente, mas é a opção que eu mais vendo justamente por conta da qualidade."  {audio:midias/3EB07666E94273825CA57A_862621.ogg}
+[09:56] CLIENTE: [áudio] "Opa, bom dia, tudo bom? Pois é, ontem eu tava na correria doida caçando esse pneu, mas consegui achar do que eu queria, tá bom? Muito obrigado mesmo, já coloquei já."
+[09:56] LOJA: Olái! Eu sou a  *Josy* 👋
+Qual a medida dos pneus que você precisa hoje?
+[10:06] LOJA: [áudio] "Sério? Você achou? Onde que o senhor achou, seu Antônio? Porque está tão difícil de encontrar desse modelo."  {audio:midias/3EB09731D0C5A05843703D_84496.ogg}
+[10:43] CLIENTE: [áudio] "Lá no Cia..."
+[10:45] LOJA: [áudio] "Ah, beleza. Então o senhor foi longe pra encontrar, porque por aqui é tenso. Mas que bom que o senhor encontrou. Espero conseguir atendê-lo numa próxima ocasião, tá joia? Bom final de semana. Até mais."  {audio:midias/3EB04A38B70C94C203261A_277141.ogg}
