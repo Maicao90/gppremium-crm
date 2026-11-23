@@ -212,6 +212,8 @@ const INSTRUCAO_CONFERENTE = [
   'Parcelamento: NUNCA fale de parcela/cartao se o cliente nao perguntou (regra da Josy). Se ele perguntou, de o valor da parcela pela tabela.',
   'Os TEXTOS OFICIAIS e os ENSINAMENTOS DO DONO (abaixo) sao a verdade da loja: frase que vem deles NUNCA e invencao, e eles valem mais que qualquer regra geral (ex.: o que a loja faz de servico, garantia, como e o pneu).',
   'NAO corrija estilo nem redacao: se a informacao esta certa e responde o cliente, o veredito e "ok". So corrija os erros da lista acima.',
+  'PADRAO APROVADO (nunca e erro, nao corrija por causa disso): a cotacao padrao do robo ("🔥 Boa notícia: esse pneu está em PROMOÇÃO!", "Temos o pneu X da marca GP Premium está saindo por R$ ...", "Quantos pneus você vai precisar? A montagem do GP Premium é por nossa conta 😉"), preco dado direto sem cumprimento, e a resposta que ja traz o preco que o cliente pediu.',
+  'TOTAIS: NUNCA mude nem recalcule o total/preco de uma cotacao que a resposta ja traz (o codigo calcula certo, inclusive o compre 3 leve 4, que so vale onde a TABELA marca [COMPRE 3 LEVE 4]; [PROMOCAO] sozinho e so preco promocional, NAO e compre 3 leve 4). So ACRESCENTE o valor da parcela, quando o cliente perguntou, a partir da tabela.',
   'Ao corrigir: escreva como a atendente Josy escreve no WhatsApp: curto, simpatico, no maximo 3 bolhas, no maximo 1 emoji por bolha. Use SO precos que estao na TABELA ou na resposta original. Prefira as frases dos TEXTOS OFICIAIS. Nao acrescente oferta, garantia ou pergunta que nao precisa. Mantenha o que a resposta original tinha de certo (preco certo, pergunta de quantidade, etc.).',
   'Responda SO com JSON: {"veredito":"ok|corrigir|atendente|nao_cliente|silencio","tipo":"nao_respondeu|repetiu|preco|inventou|contradisse|robotica|nao_cliente|outro","problema":"uma frase curta","partes":["bolha 1","bolha 2"]}',
 ].join('\n');
@@ -242,11 +244,12 @@ function sistemaDoConferente(lojaNome: string, textosFluxo: any): string {
   }).filter(Boolean).join('\n');
   let licoes = '';
   try {
-    licoes = licoesAtivasDaLoja(lojaNome).filter((l: any) => l.acao !== 'orientar')
-      .map((l: any) => '- ' + String(l.situacao || '').slice(0, 200) + ' -> ' + (l.acao === 'responder' ? 'responder: "' + limpa(l.resposta).slice(0, 240) + '"' : l.acao))
+    // CORRECOES 23/11e: TODOS os ensinamentos (responder, orientar, atendente, silencio) — o Cerebro passa a valer em toda resposta.
+    licoes = licoesAtivasDaLoja(lojaNome)
+      .map((l: any) => '- QUANDO ' + String(l.situacao || '').slice(0, 220) + ' -> ' + (l.acao === 'responder' ? 'RESPONDER: "' + limpa(l.resposta).slice(0, 260) + '"' : l.acao === 'orientar' ? 'ORIENTACAO: ' + limpa(l.resposta).slice(0, 420) : l.acao === 'atendente' ? 'PASSAR PRA ATENDENTE' : 'FICAR EM SILENCIO'))
       .join('\n');
   } catch { licoes = ''; }
-  return INSTRUCAO_CONFERENTE + '\n\nTEXTOS OFICIAIS DA LOJA (chave: texto):\n' + (textos || '(nenhum)') + '\n\nENSINAMENTOS DO DONO (situacao -> o que fazer):\n' + (licoes || '(nenhum)');
+  return INSTRUCAO_CONFERENTE + '\n\nTEXTOS OFICIAIS DA LOJA (chave: texto):\n' + (textos || '(nenhum)') + '\n\nENSINAMENTOS DO DONO — REGRA DE OURO: se a ULTIMA mensagem do cliente cai na situacao de um ensinamento, a resposta TEM que seguir o que o dono mandou (RESPONDER = esse texto; ORIENTACAO = seguir a orientacao; PASSAR PRA ATENDENTE; FICAR EM SILENCIO). Resposta que contraria um ensinamento e erro: veredito "corrigir" (ou "atendente"/"silencio" se o ensinamento manda). Se nenhum ensinamento se aplica, ignore esta lista.\n' + (licoes || '(nenhum)');
 }
 async function chamarConferente(sistema: string, usuario: string): Promise<string> {
   const apiKey = String(chaveDoFluxo() || '');
@@ -297,7 +300,10 @@ async function conferirResposta(body: any, messages: any[], lojaNome: string, te
       const marcadores = body.partes.filter((p: any) => /^\[[A-Z_]+(:[^\]]*)?\]$/.test(String(p).trim()) && !/AUDIO/i.test(String(p)));
       const valoresOriginais = new Set(valoresEmReais(body.partes.join('\n')));
       const precoRuim = novas.length ? precosForaDaTabela(novas, textosCliente).filter((v) => !valoresOriginais.has(v)) : [];
-      if (!novas.length || precoRuim.length || iaIndicouOutraLoja(novas, { nome: lojaNome, telefone: '' }) || novas.some((p) => /^\[/.test(p)) || prometeuTransferenciaFalsa(novas)) {
+      // CORRECOES 23/11e: cotacao do fluxo (preco_medida) tem o total calculado em codigo — a correcao nao pode trocar nem tirar esse valor.
+      const valoresNovos = new Set(valoresEmReais(novas.join('\n')));
+      const perdeuValor = chaves0.includes('preco_medida') && Array.from(valoresOriginais).some((v) => !valoresNovos.has(v));
+      if (!novas.length || precoRuim.length || perdeuValor || iaIndicouOutraLoja(novas, { nome: lojaNome, telefone: '' }) || novas.some((p) => /^\[/.test(p)) || prometeuTransferenciaFalsa(novas)) {
         console.log('[Conferente] correcao recusada pelas travas (' + (precoRuim.join(',') || 'formato') + ') — sai a original: ' + info.problema);
         return { ...body, conferente: { ...info, veredito: 'correcao_recusada' } };
       }
