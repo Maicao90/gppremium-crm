@@ -47,7 +47,8 @@ function aplicarBaseDeTroca(partes: string[], textoCliente: string, ditasAntes: 
   if (tudo.includes(TEXTO_BASE_TROCA) || ditasAntes.includes('deixando o seu pneu usado')) return saida;
   for (const [medida, valor] of Object.entries(BASE_TROCA_GP)) {
     if (new RegExp(medida.replace(/\//g, '\\/') + '\\*?.{0,80}R\\$', 'i').test(tudo)) {
-      saida.push(`Na *base de troca* (deixando o seu pneu usado aqui), o ${medida} sai por *R$ ${valor},00* cada.`);
+      // CORRECOES 23/11b: a loja nao trabalha mais com base de troca — so explica se o cliente citar 189/199/troca/usado.
+      if (/\b189\b|\b199\b|base de troca|troca d[oe] (meu )?(pneu )?usado|(pneu|meu) usado/i.test(String(textoCliente || '').replace(/^\s*📢\s*\[An[uú]ncio\][^\n]*$/gim, ''))) saida.push(`Na *base de troca* (deixando o seu pneu usado aqui), o ${medida} sai por *R$ ${valor},00* cada.`);
       return saida;
     }
   }
@@ -258,7 +259,9 @@ function guardaRespostaRestrita(body: any, messages: any[], textosFluxo: any): a
       return semAudio({ ...body, partes: [`Aqui é a ${nomeAtendenteGuarda} 😊 Em que posso te ajudar?`], acaoTipo: 'RESPONDER_NOME', chaves: ['nome_atendente'] });
     }
     const textoHorario = (textoFluxo(textosFluxo, 'horario') || []).join(' ');
-    if (body && Array.isArray(body.partes) && PERGUNTA_HORARIO.test(ultG) && textoHorario && !body.partes.join(' ').includes(textoHorario.slice(0, 25))) {
+    // CORRECOES 23/11b: "E em relação a montagem / Como funciona?" e pergunta da montagem, nao do horario (weliton 20/11).
+    const respostaJaDoAssunto = Array.isArray(body?.chaves) && body.chaves.some((c: string) => ['montagem', 'venda_sem_montagem', 'tempo_troca', 'reserva', 'boleto', 'vende_unidade'].includes(c));
+    if (body && Array.isArray(body.partes) && !respostaJaDoAssunto && PERGUNTA_HORARIO.test(ultG) && textoHorario && !body.partes.join(' ').includes(textoHorario.slice(0, 25))) {
       return semAudio({ ...body, partes: textoFluxo(textosFluxo, 'horario'), acaoTipo: 'RESPONDER_HORARIO', chaves: ['horario'] });
     }
   } catch { /* segue a guarda normal */ }
@@ -271,7 +274,8 @@ function guardaRespostaRestritaBase(body: any, messages: any[], textosFluxo: any
     const ultimaCliente = [...lista].reverse().find((m: any) => m?.role === 'user');
     const textoCliente = String(ultimaCliente?.content || '').trim();
     const ditasAntes = lista.filter((m: any) => m?.role === 'assistant').slice(-12).map((m: any) => String(m?.content || '')).join('\n');
-    if (textoCliente && !textoCliente.includes('?') && ENCERRAMENTO.test(textoCliente) && body.acaoTipo !== 'SILENCIO') {
+    // CORRECOES 23/11b: "4" + "Obrigado!" — o "obrigado" nao apaga a cotacao que acabou de sair (Jeova 22/11).
+    if (textoCliente && !textoCliente.includes('?') && ENCERRAMENTO.test(textoCliente) && body.acaoTipo !== 'SILENCIO' && !(Array.isArray(body.chaves) && body.chaves.includes('preco_medida'))) {
       const jaAgradeceu = chavesJaRespondidas(textosFluxo, ditasAntes).includes('agradecimento');
       const saida: any = { ...body, partes: jaAgradeceu ? [] : textoFluxo(textosFluxo, 'agradecimento'), acaoTipo: jaAgradeceu ? 'SILENCIO' : 'RESPONDER_AGRADECIMENTO', chaves: ['encerrou_vence'] };
       for (const k of Object.keys(saida)) if (/audio/i.test(k)) delete saida[k];
@@ -309,12 +313,22 @@ function guardaRespostaRestritaBase(body: any, messages: any[], textosFluxo: any
 }
 // 13/11 (caso "175/64 aro 14" -> "so um instante"): perfil fora do padrao (nao multiplo de 5) e erro de digitacao -> o mais proximo.
 // CORRECOES 17/11 (Luiz: "176/65 14" foi pra atendente tendo 175/65/14): largura com final 4 ou 6 = erro de digitacao.
+// CORRECOES 23/11b — "215/60 A16" -> 215/60/16; "pneu 15 ... a numeração é 195/55" -> 195/55/15 (uma largura/perfil sem aro + um aro solto).
+function juntarAroSolto(t0: string): string {
+  let t = String(t0 || '').replace(/(\d{3}\s*\/\s*\d{2})\s*[aA]\s*(1[2-9]|2[0-2])(?!\d)/g, '$1/$2');
+  const lps = t.match(/(?<!\d)\d{3}\s*\/\s*\d{2}(?!\s*[\/\-. xXrR]*\s*\d)(?!\d)/g) || [];
+  if (lps.length === 1) {
+    const aros = [...new Set([...t.matchAll(/(?<![a-zà-ú])(?:aro|pneu|roda)\s*(1[2-9]|2[0-2])(?!\d)(?!\s*\/)/gi)].map((m) => m[1]))];
+    if (aros.length === 1) t = t.replace(lps[0] as string, String(lps[0]).replace(/\s+/g, '') + '/' + aros[0]);
+  }
+  return t;
+}
 function corrigirLarguraDigitada(t: string): string {
   return String(t || '').replace(/(?<![\d$.,])(1[3-9]|2\d|3[0-3])([46])(\s*[\/xX\-]\s*[2-8][05])(?!\d)/g, (_todo, ini, _fim, resto) => `${ini}5${resto}`);
 }
 function corrigirPerfilDigitado(t0: string): string {
   // Durao 14/11: "265 /70' 16" — o apostrofo no meio da medida fazia o robo ignorar a segunda medida.
-  const t = corrigirLarguraDigitada(String(t0 || '').replace(/(\d)\s*['’´"]+\s*(?=\d)/g, '$1 '));
+  const t = corrigirLarguraDigitada(juntarAroSolto(String(t0 || '').replace(/(\d)\s*['’´"]+\s*(?=\d)/g, '$1 ')));
   return String(t || '').replace(/\b(1[3-9]\d|2[0-9]\d|3[0-3]\d)\s*\/\s*(\d{2})\b/g, (todo, larg, perf) => {
     const p = Number(perf);
     if (p % 5 === 0 || p < 25 || p > 85) return todo;
@@ -913,6 +927,53 @@ app.post('/gerar-resposta', async (req, res) => {
       if (!temMedidaDaTabelaE && !/alinh|balanc/i.test(ditoE) && /(sem (a )?montagem|sem montar|sem instalar|comprar e levar|levar (pra|para) (montar|casa|outro)|montar (em outro|fora|em casa|na minha|por conta)|trocar fora|tem que montar a[ií]|obrigad[oa] a montar|(?<![a-zà-ú])s[oó] comprar( ou|,| e |\?|$))/im.test(ditoE)) { textoFixoE(['Sim! É só comprar e levar 😉', 'A gente vende só o pneu, sem te obrigar a montar aqui, e sem enganação.'], 'RESPONDER_VENDA_SEM_MONTAGEM', 'venda_sem_montagem'); return; }
       // 2) Quanto tempo leva a troca: e rapida, na propria oficina.
       if (!temMedidaDaTabelaE && /((quanto tempo|demora|demorad|leva quanto|em quanto tempo)[^\n]{0,40}(troc|mont|instal|coloc|servi[cç]o)|(troc|mont|instal|coloc)[a-zçã]*[^\n]{0,30}(demora|quanto tempo|[eé] na hora|[eé] r[aá]pid)|quanto tempo (leva|demora)|leva quanto tempo|fica pronto (em|na)|d[aá] (pra|para) esperar|(troca|monta|faz) na hora)/i.test(ditoE)) { textoFixoE(['A troca é bem rápida, feita na nossa própria oficina 😊'], 'RESPONDER_TEMPO_TROCA', 'tempo_troca'); return; }
+      // CORRECOES 23/11b — achados da revisao diaria do Cerebro (17-22/11) que viraram regra fixa.
+      const semAgrE = ditoE.replace(/(muito )?(obrigad[oa]s?|obg|vlw|valeu|grat[oa])[!.\s]*/gi, ' ').replace(/\s+/g, ' ').trim();
+      // B3 Resposta automatica de OUTRA empresa: nao e cliente.
+      if (rajada.length <= 2 && !/pneu|\d{3}\s*\/\s*\d{2}/i.test(ditoE) && /(agradece (o |pelo )?(seu )?contato|no momento (estou|n[aã]o (posso|estou|podemos))|estou dirigindo|irei responder|responderei (assim que|em breve|o mais)|retornarei (assim que|em breve|o mais)|mensagem autom[aá]tica|resposta autom[aá]tica)/i.test(ditoE)) {
+        res.json({ ...baseE4, partes: [], acaoTipo: 'SILENCIO', chaves: ['resposta_automatica'] }); return;
+      }
+      // B4 Quantidade + "obrigado" depois de "Quantos pneus?": e a quantidade.
+      {
+        const medE = [dadosPrecoAtuais.medida, medidaDoHistorico(anteriores)].find((m) => !!m && encontrarPrecosExatosPorMedida(m as string).length > 0) as string | undefined;
+        const qE = /^(\d{1,2})( pneus?)?$/i.exec(semAgrE);
+        if (medE && qE && semAgrE !== ditoE.trim() && ditasE.slice(-2).some((x) => /Quantos pneus/i.test(x)) && Number(qE[1]) >= 1 && Number(qE[1]) <= 20) {
+          const cotE = decidirSequenciaPreco([{ intencao: 'DAR_MEDIDA', medidaExtraida: medE, quantidadeExtraida: Number(qE[1]), escolhaAlternativa: null } as any], 'preco_confirmado', dadosPrecoAtuais, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas: [], lojaFalouHaPouco: true });
+          if (cotE.partes.length && cotE.chaves.includes('preco_medida')) {
+            const pqE = cotE.partes.filter((p: string) => req.body?.audioFluxo === true || !/^\[ENVIAR_AUDIO:[^\]]+\]$/i.test(p.trim()));
+            if (cotE.chaves.length === 1) pqE.push('Quando você consegue passar aqui na loja pra gente fazer a troca?');
+            res.json({ ...baseE4, partes: pqE, acaoTipo: cotE.acaoPrincipal, novoEstadoPreco: cotE.novoEstado, novosDadosPreco: JSON.stringify(cotE.novosDados), assuntos: cotE.assuntos, chaves: cotE.chaves }); return;
+          }
+        }
+      }
+      // B5 Pneu comprado fora, so quer a troca/montagem: a atendente combina o servico.
+      if (/(j[aá] (comprei|tenho|trouxe)|comprei (em outr|fora|na internet|online|pela internet))/i.test(ditoE) && /(troca|trocar|montar|montagem|instalar|colocar)/i.test(ditoE)
+        && !/((?<![a-zà-ú])a[ií](?![a-zà-ú])|com voc[eê]s|de voc[eê]s|com vcs|de vcs|nessa loja|na loja de voc)/i.test(ditoE)) { praAtendenteE('montagem_pneu_de_fora'); return; }
+      // B6 Vende por unidade?
+      if (/((vend(e|em|o)|tem|d[aá] pra|pode|consigo|posso)[^\n?]{0,25}(unidade|avulso|s[oó] (um|1)(?![\d/])|um s[oó])|s[oó] (o |em )?par(?![a-zà-ú])|tem que (levar|comprar) (o |em )?par(?![a-zà-ú])|precis[ao] (levar|comprar) (o |em )?par(?![a-zà-ú]))/i.test(ditoE)) {
+        textoFixoE(['Vende sim, por unidade 😊 Pode levar quantos pneus você precisar.'], 'RESPONDER_UNIDADE', 'vende_unidade'); return;
+      }
+      // B7 Como funciona a montagem / ja vem montado.
+      if (!/alinh|balanc|camba|geometr/i.test(ditoE) && /((montagem|montad[oa]s?|instala[cç][aã]o)[^\n]{0,40}(como funciona|funciona como|\?|inclu|cobra|gr[aá]tis|de gra[cç]a|j[aá] vem|tem custo|paga)|(como funciona|entrega[m]?|j[aá] vem|vem)[^\n]{0,30}(montad|montagem)|em rela[cç][aã]o (a|à|da) montagem)/i.test(ditoE)) {
+        textoFixoE(['A montagem do GP Premium é por nossa conta 😉', 'É só trazer o carro aqui na loja que a gente monta na nossa própria oficina.'], 'RESPONDER_MONTAGEM', 'montagem'); return;
+      }
+      // B8 Boleto / crediario / cheque.
+      if (/(?<![a-zà-ú])(boleto|credi[aá]rio|carn[eê]|cheque|fiado|promiss[oó]ria)(?![a-zà-ú])/i.test(ditoE)) {
+        textoFixoE(['A gente não trabalha com boleto, crediário nem cheque 😊', 'O pagamento é presencial, aqui na loja.'], 'RESPONDER_PAGAMENTO_PRESENCIAL', 'boleto'); return;
+      }
+      // B9 Indice de carga/velocidade ("84H ou 88H?").
+      if (/((?<![\d\/])\d{2,3}\s?[a-z](?![a-z])\s*(ou|\/|e)\s*\d{2,3}\s?[a-z](?![a-z])|[ií]ndice (de )?(carga|velocidade))/i.test(ditoE)) { praAtendenteE('indice_carga'); return; }
+      // B10 "Guarda meus pneus ai": separa mediante o pagamento.
+      if (/(guard|separ|reserv)(a|e|em)\s+(os |meus |o |as |minhas? |uns |esses? )?pneus?/i.test(ditoE)) {
+        textoFixoE(['A gente separa os pneus mediante o pagamento, que é feito aqui na loja 😊', /(t[oô]|estou|t[aá]) indo|indo a[ií]|chego a[ií]/i.test(ditoE) ? 'Te esperamos aqui!' : 'Quando você consegue passar aqui?'], 'RESPONDER_RESERVA', 'reserva'); return;
+      }
+      // B11 "Voces trabalham amanha?" / "ja estao fechados?": o horario.
+      if (/((voc[eê]s|vcs|a loja)\s+(v[aã]o\s+)?(trabalh|abr|funcion|atend)[a-z]*(?![a-zà-ú])[^\n]{0,30}(amanh|hoje|s[aá]bado|domingo|feriado|\?|hein)|(amanh|hoje|s[aá]bado|domingo|feriado)[^\n]{0,40}(voc[eê]s|vcs)\s+(v[aã]o\s+)?(trabalh|abr|funcion|atend)|(j[aá]|ainda)\s+(est[aã]o|t[aã]o|ta|t[aá])\s+(fechad|abert))/i.test(ditoE)) {
+        const horE = textoFluxo(textosFluxo, 'horario');
+        if (horE.length) { textoFixoE(horE, 'RESPONDER_HORARIO', 'horario'); return; }
+      }
+      // B12 "Precisa nao" / "ganhou uns meia vida": desistencia (ensinamento do dono).
+      if (!/\?/.test(ditoE) && /(^\s*(precisa n[aã]o|n[aã]o precis[ao]( mais)?|n[aã]o vou precisar( mais)?|j[aá] (arrumei|consegui))(?![a-zà-ú])|ganh(ei|ou) (uns |os |um |o |dois |quatro )?(pneus?|meia ?vida))/im.test(ditoE) && fixoE('Lmvk919212kn', 'RESPONDER_DESISTIU', 'desistiu')) return;
       if (semMedidaE && /(j[aá] (foi|fui|fomos|passou|passei) a[ií]|(foi|fomos|fui) a[ií] (e )?(j[aá] )?(comprou|compramos|comprei)|(comprou|compramos|comprei) a[ií](?![a-zà-ú])|j[aá] comprou (a[ií]|com voc[eê]s))/i.test(ditoE) && fixoE("Lmvv3thl12am", "RESPONDER_JA_COMPROU", "ja_comprou_na_loja")) return;
       if (semMedidaE && semPerguntaE && /(j[aá] (coloquei|instalei|troquei|resolvi|montei|arrumei)(?![a-zà-ú])|j[aá] est[aá] (montad|instalad|resolvid)|j[aá] esta montando)/i.test(ditoE) && fixoE("Lmvv3thls1jw", "RESPONDER_JA_RESOLVEU", "ja_resolveu")) return;
       if (semMedidaE && semPerguntaE && /(n[aã]o (vou|vai|vamos) (mais )?(querer|precisar|comprar)|n[aã]o quero mais|n[aã]o precis[oa] mais|por enquanto n[aã]o|vou deixar (pra|para) (a )?pr[oó]xima|fica (pra|para) (a )?pr[oó]xima|deixa (pra|para) (depois|a pr[oó]xima)|desisti(?![a-zà-ú])|vendi o carro|n[aã]o tenho (mais )?interesse|sem interesse)/i.test(ditoE) && fixoE("Lmvk919212kn", "RESPONDER_DESISTIU", "desistiu")) return;
