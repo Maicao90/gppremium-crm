@@ -212,7 +212,8 @@ const INSTRUCAO_CONFERENTE = [
   'Parcelamento: NUNCA fale de parcela/cartao se o cliente nao perguntou (regra da Josy). Se ele perguntou, de o valor da parcela pela tabela.',
   'Os TEXTOS OFICIAIS e os ENSINAMENTOS DO DONO (abaixo) sao a verdade da loja: frase que vem deles NUNCA e invencao, e eles valem mais que qualquer regra geral (ex.: o que a loja faz de servico, garantia, como e o pneu).',
   'NAO corrija estilo nem redacao: se a informacao esta certa e responde o cliente, o veredito e "ok". So corrija os erros da lista acima.',
-  'PADRAO APROVADO (nunca e erro, nao corrija por causa disso): a cotacao padrao do robo ("🔥 Boa notícia: esse pneu está em PROMOÇÃO!", "Temos o pneu X da marca GP Premium está saindo por R$ ...", "Quantos pneus você vai precisar? A montagem do GP Premium é por nossa conta 😉"), preco dado direto sem cumprimento, e a resposta que ja traz o preco que o cliente pediu.',
+  'PADRAO APROVADO (nunca e erro, nao corrija por causa disso): a cotacao padrao do robo ("🔥 Boa notícia: esse pneu está em PROMOÇÃO!", "Temos o pneu X da marca GP Premium está saindo por R$ ...", "Quantos pneus você vai precisar?"), preco dado direto sem cumprimento, e a resposta que ja traz o preco que o cliente pediu.',
+  'MONTAGEM (CORRECOES 23/11f): so se fala de montagem/servico quando o cliente pergunta. Cotacao que oferece a montagem sem ele perguntar contraria o dono: corrija tirando so essa frase.',
   'TOTAIS: NUNCA mude nem recalcule o total/preco de uma cotacao que a resposta ja traz (o codigo calcula certo, inclusive o compre 3 leve 4, que so vale onde a TABELA marca [COMPRE 3 LEVE 4]; [PROMOCAO] sozinho e so preco promocional, NAO e compre 3 leve 4). So ACRESCENTE o valor da parcela, quando o cliente perguntou, a partir da tabela.',
   'Ao corrigir: escreva como a atendente Josy escreve no WhatsApp: curto, simpatico, no maximo 3 bolhas, no maximo 1 emoji por bolha. Use SO precos que estao na TABELA ou na resposta original. Prefira as frases dos TEXTOS OFICIAIS. Nao acrescente oferta, garantia ou pergunta que nao precisa. Mantenha o que a resposta original tinha de certo (preco certo, pergunta de quantidade, etc.).',
   'Responda SO com JSON: {"veredito":"ok|corrigir|atendente|nao_cliente|silencio","tipo":"nao_respondeu|repetiu|preco|inventou|contradisse|robotica|nao_cliente|outro","problema":"uma frase curta","partes":["bolha 1","bolha 2"]}',
@@ -1149,7 +1150,7 @@ app.post('/gerar-resposta', async (req, res) => {
           const cot = decidirSequenciaPreco([{ intencao: 'DAR_MEDIDA', medidaExtraida: escolhida, quantidadeExtraida: dadosPrecoAtuais.quantidade ?? null, escolhaAlternativa: null } as any], 'aguardando_medida', dadosPrecoAtuais, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas: [], lojaFalouHaPouco: true });
           if (cot.partes.length && cot.chaves.includes('preco_medida')) {
             const partesCot = cot.partes.filter((p: string) => req.body?.audioFluxo === true || !/^\[ENVIAR_AUDIO:[^\]]+\]$/i.test(p.trim()));
-            if (cot.chaves.length === 1) partesCot.push((cot.novosDados as any)?.quantidade ? 'Quando você consegue passar aqui na loja pra gente fazer a troca?' : 'Quantos pneus você vai precisar? A montagem do GP Premium é por nossa conta 😉');
+            if (cot.chaves.length === 1) partesCot.push((cot.novosDados as any)?.quantidade ? 'Quando você consegue passar aqui na loja pra gente fazer a troca?' : 'Quantos pneus você vai precisar?');
             return res.json({ ...baseL2, partes: partesCot, acaoTipo: cot.acaoPrincipal, novoEstadoPreco: cot.novoEstado, novosDadosPreco: JSON.stringify(cot.novosDados), assuntos: cot.assuntos, chaves: cot.chaves });
           }
           rajada.splice(0, rajada.length, escolhida);
@@ -1585,7 +1586,7 @@ app.post('/gerar-resposta', async (req, res) => {
             if (decisao.chaves.length === 1 && decisao.chaves[0] === 'preco_medida') {
               partesDoFluxo.push((decisao.novosDados as any)?.quantidade
                 ? 'Quando você consegue passar aqui na loja pra gente fazer a troca?'
-                : 'Quantos pneus você vai precisar? A montagem do GP Premium é por nossa conta 😉');
+                : 'Quantos pneus você vai precisar?');
             }
             return res.json({
               partes: partesDoFluxo,
@@ -1636,7 +1637,7 @@ app.post('/gerar-resposta', async (req, res) => {
           const cot = decidirSequenciaPreco(escritasL4.map((m) => ({ intencao: 'DAR_MEDIDA', medidaExtraida: m, quantidadeExtraida: null, escolhaAlternativa: null } as any)), estadoPrecoAtual, dadosPrecoAtuais, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas: [], lojaFalouHaPouco: true });
           if (cot.partes.length && cot.chaves.includes('preco_medida')) {
             const partesM = cot.partes.filter((p: string) => req.body?.audioFluxo === true || !/^\[ENVIAR_AUDIO:[^\]]+\]$/i.test(p.trim()));
-            if (cot.chaves.length === 1) partesM.push((cot.novosDados as any)?.quantidade ? 'Quando você consegue passar aqui na loja pra gente fazer a troca?' : 'Quantos pneus você vai precisar? A montagem do GP Premium é por nossa conta 😉');
+            if (cot.chaves.length === 1) partesM.push((cot.novosDados as any)?.quantidade ? 'Quando você consegue passar aqui na loja pra gente fazer a troca?' : 'Quantos pneus você vai precisar?');
             console.log(`[BotService] medida ${escritasL4.join(', ')} escrita na mensagem e o fluxo nao cotou — cotando pela tabela.`);
             return res.json({ ...baseL3, partes: partesM, acaoTipo: cot.acaoPrincipal, novoEstadoPreco: cot.novoEstado, novosDadosPreco: JSON.stringify(cot.novosDados), assuntos: cot.assuntos, chaves: cot.chaves });
           }
