@@ -1094,6 +1094,12 @@ app.post('/gerar-resposta', async (req, res) => {
       if (!temMedidaDaTabelaE && !/alinh|balanc/i.test(ditoE) && /(sem (a )?montagem|sem montar|sem instalar|comprar e levar|levar (pra|para) (montar|casa|outro)|montar (em outro|fora|em casa|na minha|por conta)|trocar fora|tem que montar a[ií]|obrigad[oa] a montar|(?<![a-zà-ú])s[oó] comprar( ou|,| e |\?|$))/im.test(ditoE)) { textoFixoE(['Sim! É só comprar e levar 😉', 'A gente vende só o pneu, sem te obrigar a montar aqui, e sem enganação.'], 'RESPONDER_VENDA_SEM_MONTAGEM', 'venda_sem_montagem'); return; }
       // 2) Quanto tempo leva a troca: e rapida, na propria oficina.
       if (!temMedidaDaTabelaE && /((quanto tempo|demora|demorad|leva quanto|em quanto tempo)[^\n]{0,40}(troc|mont|instal|coloc|servi[cç]o)|(troc|mont|instal|coloc)[a-zçã]*[^\n]{0,30}(demora|quanto tempo|[eé] na hora|[eé] r[aá]pid)|quanto tempo (leva|demora)|leva quanto tempo|fica pronto (em|na)|d[aá] (pra|para) esperar|(troca|monta|faz) na hora)/i.test(ditoE)) { textoFixoE(['A troca é bem rápida, feita na nossa própria oficina 😊'], 'RESPONDER_TEMPO_TROCA', 'tempo_troca'); return; }
+      // CORRECOES 23/11h — pergunta por pneu de OUTRA marca ("Voce tem o Landspider 185/70-14?"): a loja so vende GP Premium -> atendente.
+      {
+        const MARCA_OUTRA_H = /(?<![a-zà-ú])(michelin|pirelli|good ?year|bridgestone|continental|firestone|dunlop|xbri|westlake|landspider|aptany|maxxis|hankook|kumho|yokohama|goodride|sailun|ling ?long|triangle|farroad|lanvigator|sunfull|habilead|windforce|nankang|toyo|falken|cooper|barum|kleber|tigar|dayton|levorin|rinaldi|pneumac|aoteli|compasal|doublestar|hifly|ovation|arivo|tracmax|rotalla|delinte|sumitomo|sentury|joyroad|jinyu|kapsen|apollo|metzeler)(?![a-zà-ú])/i;
+        const mH = MARCA_OUTRA_H.exec(ditoE);
+        if (mH && !/gp ?premium/i.test(ditoE) && /(tem|t[eê]m|trabalh|vend|possu|dispon|\?)/i.test(ditoE.slice(Math.max(0, mH.index - 45), mH.index + mH[0].length + 45))) { praAtendenteE('outra_marca_citada'); return; }
+      }
       // CORRECOES 23/11b — achados da revisao diaria do Cerebro (17-22/11) que viraram regra fixa.
       const semAgrE = ditoE.replace(/(muito )?(obrigad[oa]s?|obg|vlw|valeu|grat[oa])[!.\s]*/gi, ' ').replace(/\s+/g, ' ').trim();
       // B3 Resposta automatica de OUTRA empresa: nao e cliente.
@@ -1523,6 +1529,27 @@ app.post('/gerar-resposta', async (req, res) => {
           const temMedidaNaRajada = intencoes.some((i: any) => i.medidaExtraida || i.intencao === 'DAR_MEDIDA');
           const intencoesUsadas = temMedidaNaRajada ? intencoes.filter((i: any) => i.intencao !== 'PERGUNTAR_PRECO_SEM_MEDIDA') : intencoes;
           const decisao = decidirSequenciaPreco(intencoesUsadas.length ? intencoesUsadas : intencoes, estadoUsado, dadosUsados, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas, lojaFalouHaPouco });
+          // CORRECOES 23/11h: "O valor parcela?" / "Parcelando qual o valor?" com a medida ja conhecida: o codigo da o valor da parcela pela tabela
+          // (antes so saia "Sim, parcelamos em ate 10x" — 3 vezes seguidas para o mesmo cliente em 23/11).
+          if (decisao.chaves.includes('parcelamento_generico')) {
+            const medP = (decisao.novosDados as any)?.medida || dadosUsados.medida || medidaDoHistorico(anteriores);
+            if (medP && encontrarPrecosExatosPorMedida(medP).length) {
+              const qtdP = (decisao.novosDados as any)?.quantidade ?? dadosUsados.quantidade ?? null;
+              const parcP = decidirSequenciaPreco([{ intencao: 'PERGUNTOU_PARCELAMENTO_ESPECIFICO', parcelasExtraida: 10, medidaExtraida: medP, quantidadeExtraida: qtdP, escolhaAlternativa: null } as any], 'preco_confirmado', { ...dadosUsados, medida: medP }, textosFluxo, { minutosDesdeLocalizacao, jaRespondidas: [], lojaFalouHaPouco: true });
+              if (parcP.partes.length && !parcP.chaves.includes('parcelamento_generico')) {
+                console.log('[BotService] parcelamento: cliente pediu o valor — da a parcela da tabela (' + medP + ', qtd ' + (qtdP ?? '-') + ').');
+                // "Em 10x fica R$ 156,60 cada, total de R$ 1.566,04." e ambiguo ("cada" pneu ou cada parcela?): diz claro (ensinamento Lmvv3thkz6os).
+                const claroP = (p: string): string => {
+                  const m = /^(\d{3}\/\d{2}\/\d{2})(?: \((\d+) unidades\))?\nEm (\d+)x fica R\$ ([\d.,]+) cada, total de R\$ ([\d.,]+)\.$/.exec(p);
+                  if (!m) return p;
+                  const qq = Number(m[2] || 1);
+                  return (qq > 1 ? 'Os ' + qq + ' pneus *' + m[1] + '*' : 'O pneu *' + m[1] + '*') + ' no cartão ' + (qq > 1 ? 'ficam' : 'fica') + ' em ' + m[3] + 'x de *R$ ' + m[4] + '* (total de R$ ' + m[5] + ').';
+                };
+                (decisao as any).partes = parcP.partes.map(claroP); (decisao as any).chaves = parcP.chaves; (decisao as any).novoEstado = parcP.novoEstado;
+                (decisao as any).novosDados = parcP.novosDados; (decisao as any).acaoPrincipal = parcP.acaoPrincipal;
+              }
+            }
+          }
           // So falta o aro (o cliente ja deu "195/55"): no lugar do pedido generico de medida, pede SO o aro.
           if (partesMedida.larguraPerfil && !partesMedida.aro) {
             for (const chave of ['pedir_medida', 'pedir_medida_repetida']) {

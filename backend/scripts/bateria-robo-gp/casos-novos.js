@@ -173,4 +173,5 @@ module.exports = [
   ...require("./casos-2311.js"),
   ...require("./casos-2311b.js"),
   ...require("./casos-2311g.js"),
+  ...require("./casos-2311h.js"),
 ];
