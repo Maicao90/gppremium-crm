@@ -79,12 +79,12 @@ async function chamar(body) {
       const saida = [];
       for (const p of pontos(conv)) {
         const j = await chamar({ messages: p.messages, estadoPreco: estado, dadosPreco: dados, textosFluxo, minutosDesdeUltimaDaLoja: p.minutosLoja, minutosDesdeLocalizacao: null,
-          agoraTeste: new Date(p.t * 1000).toISOString(), lojaBot: { nome: 'Pneus GP Premium', telefone: '', horario: '', localizacao: '', localizacaoTexto: 'na Avenida Perimetral, na Vila Guará, em Luziânia-GO' }, simular: true });
+          agoraTeste: new Date(p.t * 1000).toISOString(), lojaBot: { nome: 'Pneus GP Premium', telefone: '', horario: '', localizacao: '', localizacaoTexto: 'na Avenida Perimetral, na Vila Guará, em Luziânia-GO' }, simular: true, conferir: process.env.SIMCONF === '1' });
         if (j.novoEstadoPreco) estado = j.novoEstadoPreco;
         if (j.novosDadosPreco) dados = j.novosDadosPreco;
         const cliente = []; for (let k = p.messages.length - 1; k >= 0 && p.messages[k].role === 'user'; k--) cliente.unshift(p.messages[k].content);
         saida.push({ t: p.t, cliente, antes: p.messages.slice(0, p.messages.length - cliente.length).slice(-3).map((x) => `${x.role === 'user' ? 'C' : 'L'}: ${x.content.slice(0, 140)}`),
-          via: j.via, acao: j.acaoTipo, chaves: j.chaves || [], mot: j.motivoLivre || '', licao: j.licao || null, partes: j.partes || [], antesInstante: j.partesAntesDoInstante || null, erro: j.erro || null, real: p.real, temImagem: p.temImagem });
+          via: j.via, acao: j.acaoTipo, chaves: j.chaves || [], mot: j.motivoLivre || '', licao: j.licao || null, partes: j.partes || [], antesInstante: j.partesAntesDoInstante || null, erro: j.erro || null, real: p.real, temImagem: p.temImagem, conf: j.conferente || null });
         pontosTotal++;
       }
       fs.appendFileSync(ARQ, JSON.stringify({ c: conv.c, p: saida }) + '\n');
