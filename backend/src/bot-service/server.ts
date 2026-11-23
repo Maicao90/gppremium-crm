@@ -51,7 +51,12 @@ function aplicarBaseDeTroca(partes: string[], textoCliente: string, ditasAntes: 
       return saida;
     }
   }
-  if (CLIENTE_FALA_DE_TROCA.test(textoCliente) && /troca|an[uú]ncio|propaganda/i.test(textoCliente + tudo)) saida.unshift(TEXTO_BASE_TROCA);
+  // CORRECOES 23/11: o titulo do anuncio clicado ("📢 [Anúncio] Compre 3, leve 4") e o "vim pelo anúncio, quero mais informações"
+  // nao sao o cliente perguntando do preco do anuncio: ai o robo so pede a medida (dono: "a mensagem esta ficando longa demais").
+  const clienteSemTitulo = String(textoCliente || '').replace(/^\s*📢\s*\[An[uú]ncio\][^\n]*$/gim, '');
+  const falaDoPrecoDoAnuncio = /base de troca|troca d[oe] (meu )?(pneu )?usado|deixar? (o )?(meu )?(pneu )?usado|\b189\b|\b199\b/i.test(clienteSemTitulo)
+    || (/an[uú]ncio|propaganda/i.test(clienteSemTitulo) && /valor|pre[cç]o|R\$|barat|promo|\b189\b|\b199\b|troca/i.test(clienteSemTitulo));
+  if (falaDoPrecoDoAnuncio) saida.unshift(TEXTO_BASE_TROCA);
   return saida;
 }
 // 4) PERGUNTOU O NOME ("Nome ?", "Atendente ?", "com quem falo?") -> responde o nome da atendente da loja.
@@ -147,6 +152,14 @@ function precoDaMedida(medida: string): { texto: string } | null {
   const valores = itens.map((i) => i.aVista).sort((a, b) => a - b);
   const menor = valores[0] as number;
   return { texto: `${valores.some((v) => v !== menor) ? 'a partir de ' : ''}R$ ${brl(menor)} à vista` };
+}
+// CORRECOES 23/11 — "Qual essa numeração do 17?", "quais medidas do aro 15?", "tem pneu 14?": e o ARO (sem carro, sem medida).
+// A IA livre mandava a lista inteira do aro; o fluxo pergunta o carro numa frase.
+function aroPerguntaNumeracao(rajada: string[]): string | null {
+  const t = rajada.map((r) => String(r || '').replace(/^\s*📢\s*\[An[uú]ncio\][^\n]*\n?/i, '')).join('\n').trim();
+  if (!t || t.length > 120 || /\d{3}\s*[\/\\ x.\-]?\s*\d{2}/.test(t) || CARROS_BR.test(t)) return null;
+  const m = /\b(numera[cç][aã]o|n[uú]mero|medidas?|tamanhos?|op[cç][oõ]es|pneus?)\b[^\n?]{0,25}?\b(?:aro\s*)?(1[2-9]|2[0-2])\b(?!\s*(pneus?|unid|x\b|reais|r\$|mil|km|anos?|h\b|horas?))/i.exec(t);
+  return m ? (m[2] as string) : null;
 }
 // CORRECOES 18/11 — a resposta cita outra loja (do CRM ou conhecida) ou um telefone que nao e o da propria loja.
 const OUTRAS_LOJAS = /(borracharia|novo gama|lunabel|pont[aã]o 24h|pneu express|city pneus|feir[aã]o dos pneus|direcional pneus|super ?via|atacad[aã]o dos pneus)/i;
@@ -1087,7 +1100,7 @@ app.post('/gerar-resposta', async (req, res) => {
       const soAro = /^\s*(aro\s*)?(1[2-9]|2[0-2])\s*\.?\s*$/i.exec(rajada.join(' ').trim());
       // 27/10 (Josy, "acho que não compensa responder assim"): "O pneu aro 14" + "Tá quanto?" e "Tudo bem" + "Aro 15"
       // caiam na IA livre, que mandava a LISTA inteira do aro. Aro sozinho com cumprimento/pergunta de preco = pergunta o carro.
-      const aroDaRajada = soAro ? soAro[2] : (!temFoto && !temMidiaSemTexto ? aroSemMedidaNaRajada(rajada) : null);
+      const aroDaRajada = soAro ? soAro[2] : (!temFoto && !temMidiaSemTexto ? (aroSemMedidaNaRajada(rajada) || aroPerguntaNumeracao(rajada)) : null);
       if (aroDaRajada && !medidaJuntada && !dadosPrecoAtuais.medida && !medidaDoHistorico(anteriores)) {
         return res.json({
           partes: [`Show, aro ${aroDaRajada}! 👍`, 'Qual é o carro? Já te passo a medida certa e o valor.'],
@@ -1355,6 +1368,20 @@ app.post('/gerar-resposta', async (req, res) => {
             }
             // 30/10 (dono: "nao convence o cliente a comprar"): o preco terminava seco, sem proximo passo. Preco puro ganha a
             // pergunta que leva ao fechamento; o corte de repeticao (Josy 28/10) impede de sair duas vezes.
+            // CORRECOES 23/11: "Pegout 207 / Ano 2011 / Aonde fica a loja" recebia so a localizacao — o carro ficava sem resposta.
+            if (decisao.chaves.includes('localizacao') && !decisao.chaves.includes('preco_medida') && !dadosUsados.medida && !medidasEscritas.length && !medidaJuntada
+              && (CARROS_BR.test(gatilho) || /\b(19[89]\d|20[0-2]\d)\b/.test(gatilho) || /\b(peugeot|pegout|peugeout|pegeot|20[678])\b/i.test(gatilho))) {
+              const carroLoc = carroDaRajada(rajada, true);
+              const opLoc = carroLoc ? carroLoc.medidas.filter((m) => !!precoDaMedida(m)) : [];
+              if (carroLoc && opLoc.length === 1) {
+                partesDoFluxo.push('Pro ' + carroLoc.nome + ', a medida mais comum é a *' + opLoc[0] + '*, que sai por *' + precoDaMedida(opLoc[0] as string)?.texto + '*.', 'Confere na lateral do pneu se é essa mesma 😉');
+              } else if (carroLoc && opLoc.length > 1) {
+                partesDoFluxo.push('Pro ' + carroLoc.nome + ', as medidas mais comuns são:\n' + opLoc.map((m) => '• *' + m + '* — ' + precoDaMedida(m)?.texto).join('\n'), 'Qual é a do seu? A medida fica na lateral do pneu 😉');
+              } else {
+                partesDoFluxo.push('E pro seu carro, me confirma a medida que tá escrita na lateral do pneu? Aí já te passo o valor certinho 😉');
+              }
+              console.log('[BotService] localizacao + carro na mesma mensagem — responde os dois' + (carroLoc ? ' (' + carroLoc.nome + ')' : '') + '.');
+            }
             if (decisao.chaves.length === 1 && decisao.chaves[0] === 'preco_medida') {
               partesDoFluxo.push((decisao.novosDados as any)?.quantidade
                 ? 'Quando você consegue passar aqui na loja pra gente fazer a troca?'

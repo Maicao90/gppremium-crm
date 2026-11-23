@@ -170,4 +170,5 @@ module.exports = [
     ok: (j) => /S[aá]bado/i.test(T(j)) && !/Combinado/i.test(T(j)) },
   { nome: 'N12 "Pneu 255/60/18" (longe de tudo que a loja tem) continua indo pra atendente', msgs: [U('Pneu 255/60/18')],
     ok: (j) => (j.chaves || []).some((c) => /inexistente|alternativa/.test(c)) },
+  ...require("./casos-2311.js"),
 ];
