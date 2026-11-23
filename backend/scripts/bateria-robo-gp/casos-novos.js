@@ -172,4 +172,5 @@ module.exports = [
     ok: (j) => (j.chaves || []).some((c) => /inexistente|alternativa/.test(c)) },
   ...require("./casos-2311.js"),
   ...require("./casos-2311b.js"),
+  ...require("./casos-2311g.js"),
 ];

@@ -225,6 +225,7 @@ function conferenteLigado(req: any): boolean {
 }
 function precisaConferir(body: any): boolean {
   if (!body || !Array.isArray(body.partes) || !body.partes.length || body.acaoTipo === 'SILENCIO') return false;
+  if (Array.isArray(body.chaves) && body.chaves.includes('feriado')) return false;
   const textos = body.partes.map((p: any) => String(p || '').trim()).filter((p: string) => p && !/^\[[A-Z_]+(:[^\]]*)?\]$/.test(p));
   if (!textos.length) return false;
   return !textos.every((p: string) => /^S[oó] um instante que eu vou verificar/i.test(p));
@@ -318,6 +319,14 @@ async function conferirResposta(body: any, messages: any[], lojaNome: string, te
   }
 }
 function horaCurta(m: number): string { const h = Math.floor(m / 60), r = m % 60; return r ? `${h}h${String(r).padStart(2, '0')}` : `${h}h`; }
+// CORRECOES 23/11g — feriados nacionais (data fixa + Sexta-feira Santa e Corpus Christi 2026/2027). Municipais (Luziania/Goias) o dono avisa.
+const FERIADOS_FIXOS_BR: Record<string, string> = { '01/01': 'Confraternização Universal', '21/04': 'Tiradentes', '01/05': 'Dia do Trabalho', '07/09': 'Independência', '12/10': 'Nossa Senhora Aparecida', '02/11': 'Finados', '15/11': 'Proclamação da República', '20/11': 'Consciência Negra', '25/12': 'Natal' };
+const FERIADOS_MOVEIS_BR: Record<string, string> = { '03/04/2026': 'Sexta-feira Santa', '04/06/2026': 'Corpus Christi', '26/03/2027': 'Sexta-feira Santa', '27/05/2027': 'Corpus Christi' };
+function feriadoBR(d: Date): string | null {
+  const p = new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', year: 'numeric' }).format(d);
+  const [dd, mm, aaaa] = p.split('/');
+  return FERIADOS_FIXOS_BR[dd + '/' + mm] || FERIADOS_MOVEIS_BR[dd + '/' + mm + '/' + aaaa] || null;
+}
 function funcionamentoAgora(agora: Date) {
   const p = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(agora);
   const v = (t: string) => p.find((x) => x.type === t)?.value || '';
@@ -347,6 +356,24 @@ function guardaHorarioFuncionamento(body: any, messages: any[], textosFluxo: any
     const resp = body.partes.join(' \n ');
     const semAudio = (o: any) => { for (const k of Object.keys(o)) if (/audio/i.test(k)) delete o[k]; return o; };
     const confirmaVisita = /Combinado|Te esperamos|te espero|satisfa[cç][aã]o receber|Fica anotado/i.test(resp) || (Array.isArray(body.chaves) && body.chaves.some((c: string) => /^visita_/.test(c)));
+    // CORRECOES 23/11g: feriado — nao afirma horario nem confirma visita; a atendente confirma.
+    {
+      // So conta feriado em dia em que a loja normalmente abre (domingo ja e "nao abre").
+      const feriadoHoje = f.hoje ? feriadoBR(agora) : null, feriadoAmanha = !f.amanhaFechado ? feriadoBR(new Date(agora.getTime() + 864e5)) : null;
+      if (feriadoHoje || feriadoAmanha) {
+        const Ah = '(?<![A-Za-zÀ-ÿ0-9])', Zh = '(?![A-Za-zÀ-ÿ0-9])';
+        const hojeH = new RegExp(Ah + '(hoje|hj|agora|j[aá] j[aá]|daqui a pouco|t[oô] indo|estou indo|indo a[ií]|chegando|mais tarde|[aà] tarde|de tarde)' + Zh, 'i').test(txt);
+        const amanhaH = new RegExp(Ah + 'amanh[aã]' + Zh, 'i').test(txt);
+        const pergAbreH = PERGUNTA_HORARIO.test(txt) || /\b(abert[oa]s?|fechad[oa]s?|funcionando|atendendo|trabalhando|trabalham)\b/i.test(txt);
+        const vindaH = confirmaVisita || (body.via === 'ia_livre' && new RegExp(Ah + '(t[oô]u? indo|estou indo|vou|passo|passar|chego|chegar|indo|ir a[ií]|pode ser)' + Zh, 'i').test(txt) && !/\?/.test(txt));
+        const doHoje = !!feriadoHoje && !amanhaH && (pergAbreH || (vindaH && hojeH));
+        const doAmanha = !!feriadoAmanha && amanhaH && !hojeH && (pergAbreH || vindaH);
+        if (doHoje || doAmanha) {
+          console.log('[BotService][Feriado] ' + (doHoje ? 'hoje' : 'amanha') + ' e feriado (' + (doHoje ? feriadoHoje : feriadoAmanha) + ') — nao afirma horario; a atendente confirma.');
+          return semAudio({ ...body, partes: [(doHoje ? 'Hoje' : 'Amanhã') + ' é feriado 😊 O horário pode ser diferente do normal. Só um instante que eu confirmo aqui pra você, tá bem?'], acaoTipo: 'PASSAR_ATENDENTE', chaves: ['assunto_atendente', 'feriado'], visita: null, deterministico: true });
+        }
+      }
+    }
     // Limites de palavra que funcionam com acento ("amanhã ", "aí"): \b do JavaScript nao enxerga letra acentuada.
     const A = '(?<![A-Za-zÀ-ÿ0-9])', Z = '(?![A-Za-zÀ-ÿ0-9])';
     const vemHoje = new RegExp(A + '(hoje|hj|agora|j[aá] j[aá]|daqui a pouco|t[oô] indo|estou indo|indo a[ií]|chegando|mais tarde|[aà] tarde|de tarde)' + Z, 'i').test(txt);
